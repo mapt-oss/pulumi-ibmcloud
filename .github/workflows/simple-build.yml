@@ -1,0 +1,100 @@
+# Simple build workflow - builds and tests the provider
+# No secrets management, no publishing
+name: Simple Build
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  workflow_dispatch:
+
+env:
+  PROVIDER_NAME: ibmcloud
+
+jobs:
+  build-provider:
+    name: Build Provider
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache-dependency-path: provider/go.sum
+
+      - name: Install dependencies
+        run: |
+          cd provider
+          go mod download
+
+      - name: Build tfgen
+        run: |
+          cd provider
+          GOFLAGS="-mod=mod" go build \
+            -o ../bin/pulumi-tfgen-ibmcloud \
+            -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=dev" \
+            github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-tfgen-ibmcloud
+
+      - name: Build provider
+        run: |
+          cd provider
+          GOFLAGS="-mod=mod" go build \
+            -o ../bin/pulumi-resource-ibmcloud \
+            -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=dev" \
+            github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-resource-ibmcloud
+
+      - name: Verify binaries
+        run: |
+          test -f bin/pulumi-tfgen-ibmcloud
+          test -f bin/pulumi-resource-ibmcloud
+          ls -lh bin/
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache-dependency-path: provider/go.sum
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          working-directory: provider
+          args: --timeout=20m
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache-dependency-path: provider/go.sum
+
+      - name: Run tests
+        run: |
+          cd provider
+          go test -v ./...

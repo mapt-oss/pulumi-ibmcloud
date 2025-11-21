@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(sh -s -- -b $HOME/go/bin v1.64.8)",
+      "Bash(export PATH=$PATH:$HOME/go/bin)",
+      "Bash(golangci-lint config:*)",
+      "Bash(/go/bin/golangci-lint config verify:*)",
+      "Bash(/go/bin/golangci-lint run:*)",
+      "Bash(gofmt:*)",
+      "Bash(go install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

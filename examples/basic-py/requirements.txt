@@ -1,0 +1,6 @@
+pulumi>=3.0.0,<4.0.0
+# Install the IBM Cloud provider SDK locally:
+# pip install /path/to/pulumi-ibmcloud/sdk/python
+#
+# Or after publishing:
+# pulumi-ibmcloud>=0.0.1
