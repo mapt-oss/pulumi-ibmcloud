@@ -1,0 +1,136 @@
+# Simple release workflow - builds provider binaries and publishes to GitHub releases
+# No secrets management, no external registry publishing
+name: Simple Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., v1.0.0)'
+        required: true
+        type: string
+
+env:
+  PROVIDER_NAME: ibmcloud
+
+jobs:
+  build-provider:
+    name: Build Provider Binaries
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goos: [linux, darwin, windows]
+        goarch: [amd64, arm64]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache-dependency-path: provider/go.sum
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${GITHUB_REF#refs/tags/}"
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "version_no_v=${VERSION#v}" >> $GITHUB_OUTPUT
+
+      - name: Build provider binary
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          VERSION: ${{ steps.version.outputs.version_no_v }}
+        run: |
+          cd provider
+          BINARY_NAME="pulumi-resource-${PROVIDER_NAME}"
+          if [ "$GOOS" == "windows" ]; then
+            BINARY_NAME="${BINARY_NAME}.exe"
+          fi
+
+          GOFLAGS="-mod=mod" go build \
+            -o "../bin/${BINARY_NAME}" \
+            -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=${VERSION}" \
+            github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-resource-ibmcloud
+
+      - name: Package binary
+        id: package
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          cd bin
+          ARCHIVE_NAME="pulumi-resource-${PROVIDER_NAME}-${VERSION}-${GOOS}-${GOARCH}"
+
+          if [ "$GOOS" == "windows" ]; then
+            zip "${ARCHIVE_NAME}.zip" pulumi-resource-${PROVIDER_NAME}.exe
+            echo "archive=${ARCHIVE_NAME}.zip" >> $GITHUB_OUTPUT
+          else
+            tar czf "${ARCHIVE_NAME}.tar.gz" pulumi-resource-${PROVIDER_NAME}
+            echo "archive=${ARCHIVE_NAME}.tar.gz" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.goos }}-${{ matrix.goarch }}
+          path: bin/${{ steps.package.outputs.archive }}
+          retention-days: 5
+
+  create-release:
+    name: Create GitHub Release
+    needs: build-provider
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${GITHUB_REF#refs/tags/}"
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Calculate checksums
+        run: |
+          cd artifacts
+          # Move all files from subdirectories to current directory
+          find . -type f -exec mv {} . \;
+          # Remove empty directories
+          find . -type d -empty -delete
+          # Calculate checksums
+          sha256sum *.tar.gz *.zip > checksums.txt
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: ${{ steps.version.outputs.version }}
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.version, '-') }}
+          generate_release_notes: true
+          files: |
+            artifacts/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,3 @@
+name: basic-go
+runtime: go
+description: A basic Go program demonstrating IBM Cloud resource creation
