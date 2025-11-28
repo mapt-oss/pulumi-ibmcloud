@@ -18,9 +18,10 @@ on:
           See https://go.dev/ref/mod#versions for valid versions. E.g. "v0.1.0", "main", "da25dec".
         default: main
         type: string
-  schedule:
-    # 3 AM UTC ~ 8 PM PDT / 7 PM PST daily. Time chosen to run during off hours.
-    - cron: 0 3 * * *
+  # schedule:
+  #   # 3 AM UTC ~ 8 PM PDT / 7 PM PST daily. Time chosen to run during off hours.
+  #   # Disabled: ESC secrets not configured for mapt-oss organization
+  #   - cron: 0 3 * * *
 
 env:
   PULUMI_API: https://api.pulumi-staging.io
@@ -43,16 +44,17 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           # Persist credentials so upgrade-provider can push a new branch.
-          persist-credentials: true      
-      - env:
-          ESC_ACTION_ENVIRONMENT: imports/github-secrets
-          ESC_ACTION_EXPORT_ENVIRONMENT_VARIABLES: "false"
-          ESC_ACTION_OIDC_AUTH: "true"
-          ESC_ACTION_OIDC_ORGANIZATION: pulumi
-          ESC_ACTION_OIDC_REQUESTED_TOKEN_TYPE: urn:pulumi:token-type:access_token:organization
-        id: esc-secrets
-        name: Fetch secrets from ESC
-        uses: pulumi/esc-action@9eb774255b1a4afb7855678ae8d4a77359da0d9b
+          persist-credentials: true
+      # ESC secrets disabled - not configured for mapt-oss organization
+      # - env:
+      #     ESC_ACTION_ENVIRONMENT: imports/github-secrets
+      #     ESC_ACTION_EXPORT_ENVIRONMENT_VARIABLES: "false"
+      #     ESC_ACTION_OIDC_AUTH: "true"
+      #     ESC_ACTION_OIDC_ORGANIZATION: pulumi
+      #     ESC_ACTION_OIDC_REQUESTED_TOKEN_TYPE: urn:pulumi:token-type:access_token:organization
+      #   id: esc-secrets
+      #   name: Fetch secrets from ESC
+      #   uses: pulumi/esc-action@9eb774255b1a4afb7855678ae8d4a77359da0d9b
       - name: Setup mise
         uses: jdx/mise-action@v3
         with:
@@ -77,7 +79,7 @@ jobs:
         run: upgrade-provider "$REPO" --kind=check-upstream-version
         env:
           REPO: ${{ github.repository }}
-          GH_TOKEN: ${{ steps.esc-secrets.outputs.PULUMI_PROVIDER_AUTOMATION_TOKEN || steps.esc-secrets.outputs.PULUMI_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
       - name: Calculate target version
         id: target_version
@@ -98,7 +100,7 @@ jobs:
           target-version: ${{ steps.target_version.outputs.version }}
           allow-missing-docs: true
         env:
-          GH_TOKEN: ${{ steps.esc-secrets.outputs.PULUMI_PROVIDER_AUTOMATION_TOKEN || steps.esc-secrets.outputs.PULUMI_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Comment on upgrade issue if automated PR failed
         if: steps.upgrade_provider.outcome == 'failure'
         shell: bash
@@ -106,5 +108,5 @@ jobs:
           issue_number=$(gh issue list --search "pulumiupgradeproviderissue" --repo "${{ github.repository }}" --json=number --jq=".[0].number")
           gh issue comment "${issue_number}" --repo "${{ github.repository }}" --body "Failed to create automatic PR: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/"
         env:
-          GH_TOKEN: ${{ steps.esc-secrets.outputs.PULUMI_PROVIDER_AUTOMATION_TOKEN || steps.esc-secrets.outputs.PULUMI_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

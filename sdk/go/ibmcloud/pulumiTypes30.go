@@ -47299,7 +47299,7 @@ func (o GetProjectConfigNeedsAttentionStateArrayOutput) Index(i pulumi.IntInput)
 	}).(GetProjectConfigNeedsAttentionStateOutput)
 }
 
-type GetProjectConfigTypeOutput struct {
+type GetProjectConfigOutputValue struct {
 	// A short explanation of the output value.
 	Description string `pulumi:"description"`
 	// The variable name.
@@ -47308,18 +47308,18 @@ type GetProjectConfigTypeOutput struct {
 	Value string `pulumi:"value"`
 }
 
-// GetProjectConfigTypeOutputInput is an input type that accepts GetProjectConfigTypeOutputArgs and GetProjectConfigTypeOutputOutput values.
-// You can construct a concrete instance of `GetProjectConfigTypeOutputInput` via:
+// GetProjectConfigOutputValueInput is an input type that accepts GetProjectConfigOutputValueArgs and GetProjectConfigOutputValueOutput values.
+// You can construct a concrete instance of `GetProjectConfigOutputValueInput` via:
 //
-//	GetProjectConfigTypeOutputArgs{...}
-type GetProjectConfigTypeOutputInput interface {
+//	GetProjectConfigOutputValueArgs{...}
+type GetProjectConfigOutputValueInput interface {
 	pulumi.Input
 
-	ToGetProjectConfigTypeOutputOutput() GetProjectConfigTypeOutputOutput
-	ToGetProjectConfigTypeOutputOutputWithContext(context.Context) GetProjectConfigTypeOutputOutput
+	ToGetProjectConfigOutputValueOutput() GetProjectConfigOutputValueOutput
+	ToGetProjectConfigOutputValueOutputWithContext(context.Context) GetProjectConfigOutputValueOutput
 }
 
-type GetProjectConfigTypeOutputArgs struct {
+type GetProjectConfigOutputValueArgs struct {
 	// A short explanation of the output value.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The variable name.
@@ -47328,90 +47328,90 @@ type GetProjectConfigTypeOutputArgs struct {
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
-func (GetProjectConfigTypeOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectConfigTypeOutput)(nil)).Elem()
+func (GetProjectConfigOutputValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectConfigOutputValue)(nil)).Elem()
 }
 
-func (i GetProjectConfigTypeOutputArgs) ToGetProjectConfigTypeOutputOutput() GetProjectConfigTypeOutputOutput {
-	return i.ToGetProjectConfigTypeOutputOutputWithContext(context.Background())
+func (i GetProjectConfigOutputValueArgs) ToGetProjectConfigOutputValueOutput() GetProjectConfigOutputValueOutput {
+	return i.ToGetProjectConfigOutputValueOutputWithContext(context.Background())
 }
 
-func (i GetProjectConfigTypeOutputArgs) ToGetProjectConfigTypeOutputOutputWithContext(ctx context.Context) GetProjectConfigTypeOutputOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectConfigTypeOutputOutput)
+func (i GetProjectConfigOutputValueArgs) ToGetProjectConfigOutputValueOutputWithContext(ctx context.Context) GetProjectConfigOutputValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectConfigOutputValueOutput)
 }
 
-// GetProjectConfigTypeOutputArrayInput is an input type that accepts GetProjectConfigTypeOutputArray and GetProjectConfigTypeOutputArrayOutput values.
-// You can construct a concrete instance of `GetProjectConfigTypeOutputArrayInput` via:
+// GetProjectConfigOutputValueArrayInput is an input type that accepts GetProjectConfigOutputValueArray and GetProjectConfigOutputValueArrayOutput values.
+// You can construct a concrete instance of `GetProjectConfigOutputValueArrayInput` via:
 //
-//	GetProjectConfigTypeOutputArray{ GetProjectConfigTypeOutputArgs{...} }
-type GetProjectConfigTypeOutputArrayInput interface {
+//	GetProjectConfigOutputValueArray{ GetProjectConfigOutputValueArgs{...} }
+type GetProjectConfigOutputValueArrayInput interface {
 	pulumi.Input
 
-	ToGetProjectConfigTypeOutputArrayOutput() GetProjectConfigTypeOutputArrayOutput
-	ToGetProjectConfigTypeOutputArrayOutputWithContext(context.Context) GetProjectConfigTypeOutputArrayOutput
+	ToGetProjectConfigOutputValueArrayOutput() GetProjectConfigOutputValueArrayOutput
+	ToGetProjectConfigOutputValueArrayOutputWithContext(context.Context) GetProjectConfigOutputValueArrayOutput
 }
 
-type GetProjectConfigTypeOutputArray []GetProjectConfigTypeOutputInput
+type GetProjectConfigOutputValueArray []GetProjectConfigOutputValueInput
 
-func (GetProjectConfigTypeOutputArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectConfigTypeOutput)(nil)).Elem()
+func (GetProjectConfigOutputValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectConfigOutputValue)(nil)).Elem()
 }
 
-func (i GetProjectConfigTypeOutputArray) ToGetProjectConfigTypeOutputArrayOutput() GetProjectConfigTypeOutputArrayOutput {
-	return i.ToGetProjectConfigTypeOutputArrayOutputWithContext(context.Background())
+func (i GetProjectConfigOutputValueArray) ToGetProjectConfigOutputValueArrayOutput() GetProjectConfigOutputValueArrayOutput {
+	return i.ToGetProjectConfigOutputValueArrayOutputWithContext(context.Background())
 }
 
-func (i GetProjectConfigTypeOutputArray) ToGetProjectConfigTypeOutputArrayOutputWithContext(ctx context.Context) GetProjectConfigTypeOutputArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectConfigTypeOutputArrayOutput)
+func (i GetProjectConfigOutputValueArray) ToGetProjectConfigOutputValueArrayOutputWithContext(ctx context.Context) GetProjectConfigOutputValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectConfigOutputValueArrayOutput)
 }
 
-type GetProjectConfigTypeOutputOutput struct{ *pulumi.OutputState }
+type GetProjectConfigOutputValueOutput struct{ *pulumi.OutputState }
 
-func (GetProjectConfigTypeOutputOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectConfigTypeOutput)(nil)).Elem()
+func (GetProjectConfigOutputValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectConfigOutputValue)(nil)).Elem()
 }
 
-func (o GetProjectConfigTypeOutputOutput) ToGetProjectConfigTypeOutputOutput() GetProjectConfigTypeOutputOutput {
+func (o GetProjectConfigOutputValueOutput) ToGetProjectConfigOutputValueOutput() GetProjectConfigOutputValueOutput {
 	return o
 }
 
-func (o GetProjectConfigTypeOutputOutput) ToGetProjectConfigTypeOutputOutputWithContext(ctx context.Context) GetProjectConfigTypeOutputOutput {
+func (o GetProjectConfigOutputValueOutput) ToGetProjectConfigOutputValueOutputWithContext(ctx context.Context) GetProjectConfigOutputValueOutput {
 	return o
 }
 
 // A short explanation of the output value.
-func (o GetProjectConfigTypeOutputOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectConfigTypeOutput) string { return v.Description }).(pulumi.StringOutput)
+func (o GetProjectConfigOutputValueOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectConfigOutputValue) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // The variable name.
-func (o GetProjectConfigTypeOutputOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectConfigTypeOutput) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProjectConfigOutputValueOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectConfigOutputValue) string { return v.Name }).(pulumi.StringOutput)
 }
 
 // This property can be any value - a string, number, boolean, array, or object.
-func (o GetProjectConfigTypeOutputOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectConfigTypeOutput) string { return v.Value }).(pulumi.StringOutput)
+func (o GetProjectConfigOutputValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectConfigOutputValue) string { return v.Value }).(pulumi.StringOutput)
 }
 
-type GetProjectConfigTypeOutputArrayOutput struct{ *pulumi.OutputState }
+type GetProjectConfigOutputValueArrayOutput struct{ *pulumi.OutputState }
 
-func (GetProjectConfigTypeOutputArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectConfigTypeOutput)(nil)).Elem()
+func (GetProjectConfigOutputValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectConfigOutputValue)(nil)).Elem()
 }
 
-func (o GetProjectConfigTypeOutputArrayOutput) ToGetProjectConfigTypeOutputArrayOutput() GetProjectConfigTypeOutputArrayOutput {
+func (o GetProjectConfigOutputValueArrayOutput) ToGetProjectConfigOutputValueArrayOutput() GetProjectConfigOutputValueArrayOutput {
 	return o
 }
 
-func (o GetProjectConfigTypeOutputArrayOutput) ToGetProjectConfigTypeOutputArrayOutputWithContext(ctx context.Context) GetProjectConfigTypeOutputArrayOutput {
+func (o GetProjectConfigOutputValueArrayOutput) ToGetProjectConfigOutputValueArrayOutputWithContext(ctx context.Context) GetProjectConfigOutputValueArrayOutput {
 	return o
 }
 
-func (o GetProjectConfigTypeOutputArrayOutput) Index(i pulumi.IntInput) GetProjectConfigTypeOutputOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectConfigTypeOutput {
-		return vs[0].([]GetProjectConfigTypeOutput)[vs[1].(int)]
-	}).(GetProjectConfigTypeOutputOutput)
+func (o GetProjectConfigOutputValueArrayOutput) Index(i pulumi.IntInput) GetProjectConfigOutputValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectConfigOutputValue {
+		return vs[0].([]GetProjectConfigOutputValue)[vs[1].(int)]
+	}).(GetProjectConfigOutputValueOutput)
 }
 
 type GetProjectConfigProject struct {
@@ -61962,8 +61962,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigMemberOfDefinitionMemberArrayInput)(nil)).Elem(), GetProjectConfigMemberOfDefinitionMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigNeedsAttentionStateInput)(nil)).Elem(), GetProjectConfigNeedsAttentionStateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigNeedsAttentionStateArrayInput)(nil)).Elem(), GetProjectConfigNeedsAttentionStateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigTypeOutputInput)(nil)).Elem(), GetProjectConfigTypeOutputArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigTypeOutputArrayInput)(nil)).Elem(), GetProjectConfigTypeOutputArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigOutputValueInput)(nil)).Elem(), GetProjectConfigOutputValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigOutputValueArrayInput)(nil)).Elem(), GetProjectConfigOutputValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigProjectInput)(nil)).Elem(), GetProjectConfigProjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigProjectArrayInput)(nil)).Elem(), GetProjectConfigProjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConfigProjectDefinitionInput)(nil)).Elem(), GetProjectConfigProjectDefinitionArgs{})
@@ -62962,8 +62962,8 @@ func init() {
 	pulumi.RegisterOutputType(GetProjectConfigMemberOfDefinitionMemberArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectConfigNeedsAttentionStateOutput{})
 	pulumi.RegisterOutputType(GetProjectConfigNeedsAttentionStateArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectConfigTypeOutputOutput{})
-	pulumi.RegisterOutputType(GetProjectConfigTypeOutputArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectConfigOutputValueOutput{})
+	pulumi.RegisterOutputType(GetProjectConfigOutputValueArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectConfigProjectOutput{})
 	pulumi.RegisterOutputType(GetProjectConfigProjectArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectConfigProjectDefinitionOutput{})

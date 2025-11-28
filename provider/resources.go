@@ -182,5 +182,20 @@ func Provider() tfbridge.ProviderInfo {
 	prov.MustApplyAutoAliases()
 	prov.SetAutonaming(255, "-")
 
+	// Fix naming collision for getProjectConfigOutput type
+	// The type "ibmcloud:index/getProjectConfigOutput:getProjectConfigOutput" was conflicting
+	// with the output wrapper for "ibmcloud:index/getProjectConfig:getProjectConfig"
+	if prov.DataSources == nil {
+		prov.DataSources = map[string]*tfbridge.DataSourceInfo{}
+	}
+	prov.DataSources["ibm_project_config"] = &tfbridge.DataSourceInfo{
+		Fields: map[string]*tfbridge.SchemaInfo{
+			"outputs": {
+				// Rename the nested type to avoid collision with GetProjectConfigTypeOutput
+				Name: "OutputValues",
+			},
+		},
+	}
+
 	return prov
 }

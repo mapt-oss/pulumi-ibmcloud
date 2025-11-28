@@ -1,0 +1,13 @@
+# Pulumi
+.pulumi/
+Pulumi.*.yaml
+
+# Go
+go.sum
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

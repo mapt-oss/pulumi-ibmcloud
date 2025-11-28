@@ -10,7 +10,13 @@
       "Bash(/go/bin/golangci-lint config verify:*)",
       "Bash(/go/bin/golangci-lint run:*)",
       "Bash(gofmt:*)",
-      "Bash(go install:*)"
+      "Bash(go install:*)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(awk:*)",
+      "Bash(go build:*)",
+      "Bash($HOME/go/bin/go build:*)",
+      "Bash(go doc:*)"
     ],
     "deny": [],
     "ask": []

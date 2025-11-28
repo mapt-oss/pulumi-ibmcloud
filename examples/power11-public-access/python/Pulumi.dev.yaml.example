@@ -1,0 +1,24 @@
+# Example configuration for Power11 deployment
+# Copy this to Pulumi.dev.yaml and customize
+
+config:
+  # IBM Cloud API Key (required) - set as secret
+  # pulumi config set ibmcloud:ibmcloudApiKey --secret
+
+  # VPC Region and Zone
+  region: us-south
+  zone: us-south-1
+
+  # Power VS Zone (must support Power11 systems)
+  # Available zones: us-south, us-east, eu-de, eu-gb, jp-tok, au-syd
+  powerVsZone: us-south
+
+  # SSH Public Key (required)
+  # Run: pulumi config set sshPublicKey "$(cat ~/.ssh/id_rsa.pub)"
+  # sshPublicKey: "ssh-rsa AAAA..."
+
+  # Instance Name (optional)
+  instanceName: my-power11-vm
+
+  # IBM Cloud Global Settings
+  ibmcloud:region: us-south
