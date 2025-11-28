@@ -2,7 +2,7 @@ module github.com/mapt-oss/pulumi-ibmcloud/sdk
 
 go 1.23.11
 
-toolchain go1.24.6
+toolchain go1.25.4
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
