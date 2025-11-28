@@ -1,0 +1,20 @@
+name: power-vs-with-lb
+runtime: go
+description: IBM Cloud Power Virtual Server with VPC Load Balancer example
+
+config:
+  region:
+    description: IBM Cloud region for VPC resources (e.g., us-south, eu-de)
+    default: us-south
+
+  zone:
+    description: IBM Cloud zone for VPC resources (e.g., us-south-1)
+    default: us-south-1
+
+  powerVsZone:
+    description: IBM Cloud Power VS zone (e.g., dal12, lon06, tok04)
+    default: dal12
+
+  sshPublicKey:
+    description: SSH public key for accessing the Power VS instance
+    secret: false

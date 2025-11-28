@@ -43,7 +43,7 @@ type LookupProjectConfigResult struct {
 	MemberOfs            []GetProjectConfigMemberOf            `pulumi:"memberOfs"`
 	ModifiedAt           string                                `pulumi:"modifiedAt"`
 	NeedsAttentionStates []GetProjectConfigNeedsAttentionState `pulumi:"needsAttentionStates"`
-	Outputs              []GetProjectConfigTypeOutput          `pulumi:"outputs"`
+	Outputs              []GetProjectConfigOutputValue         `pulumi:"outputs"`
 	ProjectConfigId      string                                `pulumi:"projectConfigId"`
 	ProjectId            string                                `pulumi:"projectId"`
 	Projects             []GetProjectConfigProject             `pulumi:"projects"`
@@ -143,8 +143,8 @@ func (o LookupProjectConfigResultOutput) NeedsAttentionStates() GetProjectConfig
 	return o.ApplyT(func(v LookupProjectConfigResult) []GetProjectConfigNeedsAttentionState { return v.NeedsAttentionStates }).(GetProjectConfigNeedsAttentionStateArrayOutput)
 }
 
-func (o LookupProjectConfigResultOutput) Outputs() GetProjectConfigTypeOutputArrayOutput {
-	return o.ApplyT(func(v LookupProjectConfigResult) []GetProjectConfigTypeOutput { return v.Outputs }).(GetProjectConfigTypeOutputArrayOutput)
+func (o LookupProjectConfigResultOutput) Outputs() GetProjectConfigOutputValueArrayOutput {
+	return o.ApplyT(func(v LookupProjectConfigResult) []GetProjectConfigOutputValue { return v.Outputs }).(GetProjectConfigOutputValueArrayOutput)
 }
 
 func (o LookupProjectConfigResultOutput) ProjectConfigId() pulumi.StringOutput {

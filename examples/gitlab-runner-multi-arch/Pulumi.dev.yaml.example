@@ -1,0 +1,8 @@
+# Example Pulumi stack configuration
+# Copy this file to Pulumi.dev.yaml and fill in your values
+
+config:
+  ibmcloud:region: us-south
+  # Optionally set your API key here instead of environment variable
+  # ibmcloud:ibmcloudApiKey:
+  #   secure: <your-encrypted-api-key>

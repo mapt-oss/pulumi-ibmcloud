@@ -1,0 +1,31 @@
+{
+  "name": "power11-public-access-typescript",
+  "version": "1.0.0",
+  "description": "IBM Cloud Power11 Virtual Server with Public Access via Load Balancer",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "pulumi up",
+    "destroy": "pulumi destroy",
+    "preview": "pulumi preview"
+  },
+  "keywords": [
+    "ibm-cloud",
+    "power11",
+    "power-systems",
+    "pulumi",
+    "infrastructure-as-code",
+    "load-balancer",
+    "vpc"
+  ],
+  "author": "mapt-oss",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@pulumi/pulumi": "^3.0.0",
+    "@pulumi/ibmcloud": "file:../../../sdk/nodejs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

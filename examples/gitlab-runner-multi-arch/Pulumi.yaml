@@ -1,0 +1,8 @@
+name: gitlab-runner-multi-arch
+runtime: go
+description: Multi-architecture GitLab runners on IBM Cloud (s390x and ppc64)
+
+config:
+  ibmcloud:region:
+    description: IBM Cloud region
+    default: us-south

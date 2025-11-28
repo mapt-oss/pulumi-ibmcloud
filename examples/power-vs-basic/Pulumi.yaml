@@ -1,0 +1,12 @@
+name: power-vs-basic
+runtime: go
+description: Basic IBM Cloud Power Virtual Server example
+
+config:
+  powerVsZone:
+    description: IBM Cloud Power VS zone (e.g., dal12, lon06, tok04)
+    default: dal12
+
+  sshPublicKey:
+    description: SSH public key for accessing the Power VS instance
+    secret: false

@@ -1,0 +1,20 @@
+name: power11-public-access-typescript
+runtime: nodejs
+description: IBM Cloud Power11 Virtual Server with public access via Application Load Balancer
+
+config:
+  region:
+    description: IBM Cloud VPC region (us-south, us-east, eu-de, eu-gb, jp-tok, au-syd)
+    default: us-south
+  zone:
+    description: IBM Cloud VPC zone for load balancer (e.g., us-south-1)
+    default: us-south-1
+  powerVsZone:
+    description: IBM Cloud Power VS zone for Power11 instance (us-south, us-east, eu-de, etc.)
+    default: us-south
+  sshPublicKey:
+    description: SSH public key for instance access
+    secret: false
+  instanceName:
+    description: Name for the Power11 instance
+    default: power11-vm
