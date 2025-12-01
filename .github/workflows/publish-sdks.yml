@@ -1,0 +1,206 @@
+# Workflow to generate and publish SDKs with proper versioning
+# Triggered after a release is created
+name: Publish SDKs
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag to build SDKs for (e.g., v1.0.0)'
+        required: true
+        type: string
+
+env:
+  PROVIDER_NAME: ibmcloud
+
+jobs:
+  generate-sdks:
+    name: Generate SDKs
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [go, nodejs, python]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.version }}
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache-dependency-path: provider/go.sum
+
+      - name: Setup Node.js
+        if: matrix.language == 'nodejs'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pulumi CLI
+        uses: pulumi/actions@v5
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${{ github.event.release.tag_name }}"
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "version_no_v=${VERSION#v}" >> $GITHUB_OUTPUT
+
+      - name: Install dependencies
+        run: |
+          cd provider
+          GOFLAGS="-mod=mod" go mod download
+
+      - name: Build tfgen
+        env:
+          VERSION: ${{ steps.version.outputs.version_no_v }}
+        run: |
+          cd provider
+          GOFLAGS="-mod=mod" go build \
+            -o ../bin/pulumi-tfgen-${PROVIDER_NAME} \
+            -ldflags "-X github.com/mapt-oss/pulumi-${PROVIDER_NAME}/provider/pkg/version.Version=${VERSION}" \
+            github.com/mapt-oss/pulumi-${PROVIDER_NAME}/provider/cmd/pulumi-tfgen-${PROVIDER_NAME}
+
+      - name: Generate schema
+        env:
+          VERSION: ${{ steps.version.outputs.version_no_v }}
+        run: |
+          export PULUMI_HOME=$(pwd)/.pulumi
+          export PULUMI_CONVERT=1
+          export PULUMI_CONVERT_EXAMPLES_CACHE_DIR=$PULUMI_HOME/examples-cache
+          export PULUMI_DISABLE_AUTOMATIC_PLUGIN_ACQUISITION=1
+
+          ./bin/pulumi-tfgen-${PROVIDER_NAME} schema --out provider/cmd/pulumi-resource-${PROVIDER_NAME}
+
+      - name: Generate SDK
+        env:
+          VERSION: ${{ steps.version.outputs.version_no_v }}
+        run: |
+          export PULUMI_HOME=$(pwd)/.pulumi
+          export PULUMI_CONVERT=1
+          export PULUMI_CONVERT_EXAMPLES_CACHE_DIR=$PULUMI_HOME/examples-cache
+          export PULUMI_DISABLE_AUTOMATIC_PLUGIN_ACQUISITION=1
+
+          # Override version in Makefile
+          make generate_${{ matrix.language }} PROVIDER_VERSION="${VERSION}"
+
+      - name: Build SDK
+        env:
+          VERSION: ${{ steps.version.outputs.version_no_v }}
+        run: |
+          make build_${{ matrix.language }} PROVIDER_VERSION="${VERSION}"
+
+      - name: Package Go SDK
+        if: matrix.language == 'go'
+        run: |
+          cd sdk/go
+          tar czf ../go-sdk.tar.gz ibmcloud/
+
+      - name: Package Node.js SDK
+        if: matrix.language == 'nodejs'
+        run: |
+          cd sdk/nodejs/bin
+          npm pack
+          mv *.tgz ../../nodejs-sdk.tgz
+
+      - name: Package Python SDK
+        if: matrix.language == 'python'
+        run: |
+          cd sdk/python/bin/dist
+          mv *.tar.gz ../../../python-sdk.tar.gz
+          mv *.whl ../../../python-sdk.whl || true
+
+      - name: Upload SDK artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.language }}-sdk
+          path: |
+            sdk/${{ matrix.language }}-sdk.*
+          retention-days: 30
+
+  publish-sdk-release:
+    name: Publish SDK Assets
+    needs: generate-sdks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.version }}
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${{ github.event.release.tag_name }}"
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "sdk_tag=sdk/${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Download all SDK artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: sdk-artifacts
+
+      - name: Organize SDK artifacts
+        run: |
+          mkdir -p release-sdks
+          find sdk-artifacts -type f -exec mv {} release-sdks/ \;
+          ls -lah release-sdks/
+
+      - name: Upload SDKs to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.sdk_tag }}
+          name: SDK ${{ steps.version.outputs.version }}
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.version, '-') }}
+          body: |
+            ## SDK Release for ${{ steps.version.outputs.version }}
+
+            This release contains the generated SDKs for the IBM Cloud Pulumi provider version ${{ steps.version.outputs.version }}.
+
+            ### Available SDKs
+            - **Go**: `go-sdk.tar.gz`
+            - **Node.js/TypeScript**: `nodejs-sdk.tgz`
+            - **Python**: `python-sdk.tar.gz` and `python-sdk.whl`
+
+            ### Installation
+
+            #### Go
+            ```bash
+            go get github.com/mapt-oss/pulumi-ibmcloud/sdk/go/ibmcloud@${{ steps.version.outputs.sdk_tag }}
+            ```
+
+            #### Node.js/TypeScript
+            ```bash
+            npm install @pulumi/ibmcloud@${{ steps.version.outputs.version }}
+            ```
+
+            #### Python
+            ```bash
+            pip install pulumi-ibmcloud==${{ steps.version.outputs.version }}
+            ```
+          files: |
+            release-sdks/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
