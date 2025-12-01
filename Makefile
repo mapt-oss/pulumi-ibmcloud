@@ -16,7 +16,7 @@ PULUMI_MISSING_DOCS_ERROR := false
 
 # Override during CI using `make [TARGET] PROVIDER_VERSION=""` or by setting a PROVIDER_VERSION environment variable
 # Local & branch builds will just used this fixed default version unless specified
-PROVIDER_VERSION ?= 0.0.7
+PROVIDER_VERSION ?= 0.0.8
 
 # Check version doesn't start with a "v" - this is a common mistake
 ifeq ($(shell echo $(PROVIDER_VERSION) | cut -c1),v)

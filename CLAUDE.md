@@ -208,7 +208,7 @@ go mod download
 cd provider
 GOFLAGS="-mod=mod" go build \
   -o ../bin/pulumi-tfgen-ibmcloud \
-  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.7" \
+  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.8" \
   github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-tfgen-ibmcloud
 ```
 
@@ -234,7 +234,7 @@ mkdir -p .pulumi
 cd provider
 GOFLAGS="-mod=mod" go build \
   -o ../bin/pulumi-resource-ibmcloud \
-  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.7" \
+  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.8" \
   github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-resource-ibmcloud
 ```
 
@@ -804,7 +804,7 @@ cd ..
 cd provider
 GOFLAGS="-mod=mod" go build \
   -o ../bin/pulumi-tfgen-ibmcloud \
-  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.7" \
+  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.8" \
   github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-tfgen-ibmcloud
 cd ..
 
@@ -815,7 +815,7 @@ cd ..
 cd provider
 GOFLAGS="-mod=mod" go build \
   -o ../bin/pulumi-resource-ibmcloud \
-  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.7" \
+  -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=0.0.8" \
   github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-resource-ibmcloud
 cd ..
 
