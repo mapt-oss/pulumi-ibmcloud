@@ -16549,6 +16549,213 @@
                 }
             }
         },
+        "ibmcloud:index/TgConnectionTunnel:TgConnectionTunnel": {
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "description": "The date and time that this connection was created\n"
+                },
+                "localBgpAsn": {
+                    "type": "integer",
+                    "description": "The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.\n"
+                },
+                "localGatewayIp": {
+                    "type": "string",
+                    "description": "The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.\n",
+                    "willReplaceOnChanges": true
+                },
+                "localTunnelIp": {
+                    "type": "string",
+                    "description": "The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.\n",
+                    "willReplaceOnChanges": true
+                },
+                "mtu": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The user-defined name for this tunnel connection.\n"
+                },
+                "remoteBgpAsn": {
+                    "type": "integer",
+                    "description": "The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.\n"
+                },
+                "remoteGatewayIp": {
+                    "type": "string",
+                    "description": "The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.\n",
+                    "willReplaceOnChanges": true
+                },
+                "remoteTunnelIp": {
+                    "type": "string",
+                    "description": "The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.\n",
+                    "willReplaceOnChanges": true
+                },
+                "status": {
+                    "type": "string",
+                    "description": "What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]\n"
+                },
+                "tunnelId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection tunnel identifier\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "The date and time that this connection was last updated\n"
+                },
+                "zone": {
+                    "type": "string",
+                    "description": "Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.\n",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "type": "object",
+            "required": [
+                "localGatewayIp",
+                "localTunnelIp",
+                "name",
+                "remoteGatewayIp",
+                "remoteTunnelIp",
+                "zone"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "createdAt",
+                        "localBgpAsn",
+                        "localGatewayIp",
+                        "localTunnelIp",
+                        "mtu",
+                        "name",
+                        "remoteBgpAsn",
+                        "remoteGatewayIp",
+                        "remoteTunnelIp",
+                        "status",
+                        "tunnelId",
+                        "updatedAt",
+                        "zone"
+                    ]
+                }
+            }
+        },
+        "ibmcloud:index/TgRouteReportConnection:TgRouteReportConnection": {
+            "properties": {
+                "bgps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/TgRouteReportConnectionBgp:TgRouteReportConnectionBgp"
+                    },
+                    "description": "Collection of transit gateway connection's bgps\n"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/TgRouteReportConnectionRoute:TgRouteReportConnectionRoute"
+                    },
+                    "description": "Collection of transit gateway connection's used routes\n"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "bgps",
+                        "id",
+                        "name",
+                        "routes",
+                        "type"
+                    ]
+                }
+            }
+        },
+        "ibmcloud:index/TgRouteReportConnectionBgp:TgRouteReportConnectionBgp": {
+            "properties": {
+                "asPath": {
+                    "type": "string"
+                },
+                "isUsed": {
+                    "type": "boolean"
+                },
+                "localPreference": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "asPath",
+                        "isUsed",
+                        "localPreference",
+                        "prefix"
+                    ]
+                }
+            }
+        },
+        "ibmcloud:index/TgRouteReportConnectionRoute:TgRouteReportConnectionRoute": {
+            "properties": {
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "prefix"
+                    ]
+                }
+            }
+        },
+        "ibmcloud:index/TgRouteReportOverlappingRoute:TgRouteReportOverlappingRoute": {
+            "properties": {
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/TgRouteReportOverlappingRouteRoute:TgRouteReportOverlappingRouteRoute"
+                    },
+                    "description": "Collection of transit gateway overlapping route's details\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "routes"
+                    ]
+                }
+            }
+        },
+        "ibmcloud:index/TgRouteReportOverlappingRouteRoute:TgRouteReportOverlappingRouteRoute": {
+            "properties": {
+                "connectionId": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "connectionId",
+                        "prefix"
+                    ]
+                }
+            }
+        },
         "ibmcloud:index/getComputePlacementGroupVirtualGuest:getComputePlacementGroupVirtualGuest": {
             "properties": {
                 "domain": {
@@ -67964,6 +68171,629 @@
                     "requiredInputs": []
                 }
             }
+        },
+        "ibmcloud:index/getTgConnectionPrefixFiltersPrefixFilter:getTgConnectionPrefixFiltersPrefixFilter": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Whether to permit or deny the prefix filter\n"
+                },
+                "before": {
+                    "type": "string",
+                    "description": "Identifier of prefix filter that handles ordering\n"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "description": "The date and time that this prefix filter was created\n"
+                },
+                "ge": {
+                    "type": "integer",
+                    "description": "IP Prefix GE\n"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "le": {
+                    "type": "integer",
+                    "description": "IP Prefix LE\n"
+                },
+                "prefix": {
+                    "type": "string",
+                    "description": "IP Prefix\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "The date and time that this prefix filter was last updated\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "action",
+                "before",
+                "createdAt",
+                "ge",
+                "id",
+                "le",
+                "prefix",
+                "updatedAt"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgGatewayConnection:getTgGatewayConnection": {
+            "properties": {
+                "baseConnectionId": {
+                    "type": "string"
+                },
+                "baseNetworkType": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "defaultPrefixFilter": {
+                    "type": "string",
+                    "description": "Whether to permit or deny the prefix filter\n"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "localBgpAsn": {
+                    "type": "integer"
+                },
+                "localGatewayIp": {
+                    "type": "string"
+                },
+                "localTunnelIp": {
+                    "type": "string"
+                },
+                "mtu": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "networkAccountId": {
+                    "type": "string",
+                    "description": "The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.\n"
+                },
+                "networkId": {
+                    "type": "string"
+                },
+                "networkType": {
+                    "type": "string"
+                },
+                "remoteBgpAsn": {
+                    "type": "integer"
+                },
+                "remoteGatewayIp": {
+                    "type": "string"
+                },
+                "remoteTunnelIp": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tunnels": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgGatewayConnectionTunnel:getTgGatewayConnectionTunnel"
+                    },
+                    "description": "List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections\n"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "zone": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "baseConnectionId",
+                "baseNetworkType",
+                "createdAt",
+                "defaultPrefixFilter",
+                "id",
+                "localBgpAsn",
+                "localGatewayIp",
+                "localTunnelIp",
+                "mtu",
+                "name",
+                "networkAccountId",
+                "networkId",
+                "networkType",
+                "remoteBgpAsn",
+                "remoteGatewayIp",
+                "remoteTunnelIp",
+                "status",
+                "tunnels",
+                "updatedAt",
+                "zone"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgGatewayConnectionTunnel:getTgGatewayConnectionTunnel": {
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "description": "The date and time that this connection was created\n"
+                },
+                "localBgpAsn": {
+                    "type": "integer",
+                    "description": "The local network BGP ASN.\n"
+                },
+                "localGatewayIp": {
+                    "type": "string",
+                    "description": "The local gateway IP address.\n"
+                },
+                "localTunnelIp": {
+                    "type": "string",
+                    "description": "The local tunnel IP address.\n"
+                },
+                "mtu": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The user-defined name for this  rGRE tunnel.\n"
+                },
+                "remoteBgpAsn": {
+                    "type": "integer",
+                    "description": "The remote network BGP ASN.\n"
+                },
+                "remoteGatewayIp": {
+                    "type": "string",
+                    "description": "The remote gateway IP address.\n"
+                },
+                "remoteTunnelIp": {
+                    "type": "string",
+                    "description": "The remote tunnel IP address.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]\n"
+                },
+                "tunnelId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "The date and time that this connection was last updated\n"
+                },
+                "zone": {
+                    "type": "string",
+                    "description": "Location of GRE tunnel.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createdAt",
+                "localBgpAsn",
+                "localGatewayIp",
+                "localTunnelIp",
+                "mtu",
+                "name",
+                "remoteBgpAsn",
+                "remoteGatewayIp",
+                "remoteTunnelIp",
+                "status",
+                "tunnelId",
+                "updatedAt",
+                "zone"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgGatewaysTransitGateway:getTgGatewaysTransitGateway": {
+            "properties": {
+                "createdAt": {
+                    "type": "string"
+                },
+                "crn": {
+                    "type": "string"
+                },
+                "global": {
+                    "type": "boolean"
+                },
+                "greEnhancedRoutePropagation": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "resourceGroup": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createdAt",
+                "crn",
+                "global",
+                "greEnhancedRoutePropagation",
+                "id",
+                "location",
+                "name",
+                "resourceGroup",
+                "status",
+                "updatedAt"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgLocationLocalConnectionLocation:getTgLocationLocalConnectionLocation": {
+            "properties": {
+                "displayName": {
+                    "type": "string",
+                    "description": "A descriptive display name for the location.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the Location.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "displayName",
+                "name",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgLocationsLocation:getTgLocationsLocation": {
+            "properties": {
+                "billingLocation": {
+                    "type": "string",
+                    "description": "The geographical location of this location, used for billing purposes.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the Location.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "billingLocation",
+                "name",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportConnection:getTgRouteReportConnection": {
+            "properties": {
+                "bgps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportConnectionBgp:getTgRouteReportConnectionBgp"
+                    },
+                    "description": "Collection of transit gateway connection's bgps\n"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportConnectionRoute:getTgRouteReportConnectionRoute"
+                    },
+                    "description": "Collection of transit gateway connection's used routes\n"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "bgps",
+                "id",
+                "name",
+                "routes",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportConnectionBgp:getTgRouteReportConnectionBgp": {
+            "properties": {
+                "asPath": {
+                    "type": "string"
+                },
+                "isUsed": {
+                    "type": "boolean"
+                },
+                "localPreference": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "asPath",
+                "isUsed",
+                "localPreference",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportConnectionRoute:getTgRouteReportConnectionRoute": {
+            "properties": {
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportOverlappingRoute:getTgRouteReportOverlappingRoute": {
+            "properties": {
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportOverlappingRouteRoute:getTgRouteReportOverlappingRouteRoute"
+                    },
+                    "description": "Collection of transit gateway overlapping route's details\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "routes"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportOverlappingRouteRoute:getTgRouteReportOverlappingRouteRoute": {
+            "properties": {
+                "connectionId": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "connectionId",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportsRouteReport:getTgRouteReportsRouteReport": {
+            "properties": {
+                "connections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportsRouteReportConnection:getTgRouteReportsRouteReportConnection"
+                    },
+                    "description": "Collection of transit gateway connections\n"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "overlappingRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportsRouteReportOverlappingRoute:getTgRouteReportsRouteReportOverlappingRoute"
+                    },
+                    "description": "Collection of transit gateway overlapping routes\n"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "connections",
+                "createdAt",
+                "id",
+                "overlappingRoutes",
+                "status",
+                "updatedAt"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportsRouteReportConnection:getTgRouteReportsRouteReportConnection": {
+            "properties": {
+                "bgps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportsRouteReportConnectionBgp:getTgRouteReportsRouteReportConnectionBgp"
+                    },
+                    "description": "Collection of transit gateway connection's bgps\n"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportsRouteReportConnectionRoute:getTgRouteReportsRouteReportConnectionRoute"
+                    },
+                    "description": "Collection of transit gateway connection's used routes\n"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "bgps",
+                "id",
+                "name",
+                "routes",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportsRouteReportConnectionBgp:getTgRouteReportsRouteReportConnectionBgp": {
+            "properties": {
+                "asPath": {
+                    "type": "string"
+                },
+                "isUsed": {
+                    "type": "boolean"
+                },
+                "localPreference": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "asPath",
+                "isUsed",
+                "localPreference",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportsRouteReportConnectionRoute:getTgRouteReportsRouteReportConnectionRoute": {
+            "properties": {
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportsRouteReportOverlappingRoute:getTgRouteReportsRouteReportOverlappingRoute": {
+            "properties": {
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/getTgRouteReportsRouteReportOverlappingRouteRoute:getTgRouteReportsRouteReportOverlappingRouteRoute"
+                    },
+                    "description": "Collection of transit gateway overlapping route's details\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "routes"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "ibmcloud:index/getTgRouteReportsRouteReportOverlappingRouteRoute:getTgRouteReportsRouteReportOverlappingRouteRoute": {
+            "properties": {
+                "connectionId": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "connectionId",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
         }
     },
     "provider": {
@@ -103728,6 +104558,1027 @@
                 },
                 "type": "object"
             }
+        },
+        "ibmcloud:index/tgConnection:TgConnection": {
+            "properties": {
+                "baseConnectionId": {
+                    "type": "string",
+                    "description": "The ID of a\u003cspan pulumi-lang-nodejs=\" networkType \" pulumi-lang-dotnet=\" NetworkType \" pulumi-lang-go=\" networkType \" pulumi-lang-python=\" network_type \" pulumi-lang-yaml=\" networkType \" pulumi-lang-java=\" networkType \"\u003e network_type \u003c/span\u003e'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections."
+                },
+                "baseNetworkType": {
+                    "type": "string",
+                    "description": "The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'."
+                },
+                "connectionId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "description": "The date and time that this connection was created"
+                },
+                "defaultPrefixFilter": {
+                    "type": "string",
+                    "description": "Whether to permit or deny the prefix filter"
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier"
+                },
+                "localGatewayIp": {
+                    "type": "string",
+                    "description": "The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections."
+                },
+                "localTunnelIp": {
+                    "type": "string",
+                    "description": "The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic')."
+                },
+                "networkAccountId": {
+                    "type": "string",
+                    "description": "The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the\u003cspan pulumi-lang-nodejs=\" associatedNetworkType \" pulumi-lang-dotnet=\" AssociatedNetworkType \" pulumi-lang-go=\" associatedNetworkType \" pulumi-lang-python=\" associated_network_type \" pulumi-lang-yaml=\" associatedNetworkType \" pulumi-lang-java=\" associatedNetworkType \"\u003e associated_network_type \u003c/span\u003eis 'classic' and the GRE tunnel is in a different account than the gateway."
+                },
+                "networkId": {
+                    "type": "string",
+                    "description": "The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or\u003cspan pulumi-lang-nodejs=\" powerVirtualServer \" pulumi-lang-dotnet=\" PowerVirtualServer \" pulumi-lang-go=\" powerVirtualServer \" pulumi-lang-python=\" power_virtual_server \" pulumi-lang-yaml=\" powerVirtualServer \" pulumi-lang-java=\" powerVirtualServer \"\u003e power_virtual_server \u003c/span\u003egateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'."
+                },
+                "networkType": {
+                    "type": "string",
+                    "description": "Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)"
+                },
+                "relatedCrn": {
+                    "type": "string",
+                    "description": "The crn of the transit gateway"
+                },
+                "remoteBgpAsn": {
+                    "type": "integer",
+                    "description": "The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections."
+                },
+                "remoteGatewayIp": {
+                    "type": "string",
+                    "description": "The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections."
+                },
+                "remoteTunnelIp": {
+                    "type": "string",
+                    "description": "The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections."
+                },
+                "requestStatus": {
+                    "type": "string",
+                    "description": "Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]"
+                },
+                "tunnels": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/TgConnectionTunnel:TgConnectionTunnel"
+                    },
+                    "description": "List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "The date and time that this connection was last updated"
+                },
+                "zone": {
+                    "type": "string",
+                    "description": "Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections."
+                }
+            },
+            "required": [
+                "baseConnectionId",
+                "baseNetworkType",
+                "connectionId",
+                "createdAt",
+                "defaultPrefixFilter",
+                "gateway",
+                "name",
+                "networkAccountId",
+                "networkId",
+                "networkType",
+                "relatedCrn",
+                "requestStatus",
+                "status",
+                "updatedAt"
+            ],
+            "inputProperties": {
+                "baseConnectionId": {
+                    "type": "string",
+                    "description": "The ID of a\u003cspan pulumi-lang-nodejs=\" networkType \" pulumi-lang-dotnet=\" NetworkType \" pulumi-lang-go=\" networkType \" pulumi-lang-python=\" network_type \" pulumi-lang-yaml=\" networkType \" pulumi-lang-java=\" networkType \"\u003e network_type \u003c/span\u003e'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.",
+                    "willReplaceOnChanges": true
+                },
+                "baseNetworkType": {
+                    "type": "string",
+                    "description": "The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'."
+                },
+                "defaultPrefixFilter": {
+                    "type": "string",
+                    "description": "Whether to permit or deny the prefix filter"
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier",
+                    "willReplaceOnChanges": true
+                },
+                "localGatewayIp": {
+                    "type": "string",
+                    "description": "The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                    "willReplaceOnChanges": true
+                },
+                "localTunnelIp": {
+                    "type": "string",
+                    "description": "The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                    "willReplaceOnChanges": true
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic')."
+                },
+                "networkAccountId": {
+                    "type": "string",
+                    "description": "The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the\u003cspan pulumi-lang-nodejs=\" associatedNetworkType \" pulumi-lang-dotnet=\" AssociatedNetworkType \" pulumi-lang-go=\" associatedNetworkType \" pulumi-lang-python=\" associated_network_type \" pulumi-lang-yaml=\" associatedNetworkType \" pulumi-lang-java=\" associatedNetworkType \"\u003e associated_network_type \u003c/span\u003eis 'classic' and the GRE tunnel is in a different account than the gateway.",
+                    "willReplaceOnChanges": true
+                },
+                "networkId": {
+                    "type": "string",
+                    "description": "The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or\u003cspan pulumi-lang-nodejs=\" powerVirtualServer \" pulumi-lang-dotnet=\" PowerVirtualServer \" pulumi-lang-go=\" powerVirtualServer \" pulumi-lang-python=\" power_virtual_server \" pulumi-lang-yaml=\" powerVirtualServer \" pulumi-lang-java=\" powerVirtualServer \"\u003e power_virtual_server \u003c/span\u003egateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.",
+                    "willReplaceOnChanges": true
+                },
+                "networkType": {
+                    "type": "string",
+                    "description": "Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)",
+                    "willReplaceOnChanges": true
+                },
+                "remoteBgpAsn": {
+                    "type": "integer",
+                    "description": "The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                    "willReplaceOnChanges": true
+                },
+                "remoteGatewayIp": {
+                    "type": "string",
+                    "description": "The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                    "willReplaceOnChanges": true
+                },
+                "remoteTunnelIp": {
+                    "type": "string",
+                    "description": "The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                    "willReplaceOnChanges": true
+                },
+                "tunnels": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/TgConnectionTunnel:TgConnectionTunnel"
+                    },
+                    "description": "List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections"
+                },
+                "zone": {
+                    "type": "string",
+                    "description": "Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "gateway",
+                "networkType"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TgConnection resources.\n",
+                "properties": {
+                    "baseConnectionId": {
+                        "type": "string",
+                        "description": "The ID of a\u003cspan pulumi-lang-nodejs=\" networkType \" pulumi-lang-dotnet=\" NetworkType \" pulumi-lang-go=\" networkType \" pulumi-lang-python=\" network_type \" pulumi-lang-yaml=\" networkType \" pulumi-lang-java=\" networkType \"\u003e network_type \u003c/span\u003e'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.",
+                        "willReplaceOnChanges": true
+                    },
+                    "baseNetworkType": {
+                        "type": "string",
+                        "description": "The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'."
+                    },
+                    "connectionId": {
+                        "type": "string",
+                        "description": "The Transit Gateway Connection identifier"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "The date and time that this connection was created"
+                    },
+                    "defaultPrefixFilter": {
+                        "type": "string",
+                        "description": "Whether to permit or deny the prefix filter"
+                    },
+                    "gateway": {
+                        "type": "string",
+                        "description": "The Transit Gateway identifier",
+                        "willReplaceOnChanges": true
+                    },
+                    "localGatewayIp": {
+                        "type": "string",
+                        "description": "The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                        "willReplaceOnChanges": true
+                    },
+                    "localTunnelIp": {
+                        "type": "string",
+                        "description": "The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                        "willReplaceOnChanges": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic')."
+                    },
+                    "networkAccountId": {
+                        "type": "string",
+                        "description": "The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the\u003cspan pulumi-lang-nodejs=\" associatedNetworkType \" pulumi-lang-dotnet=\" AssociatedNetworkType \" pulumi-lang-go=\" associatedNetworkType \" pulumi-lang-python=\" associated_network_type \" pulumi-lang-yaml=\" associatedNetworkType \" pulumi-lang-java=\" associatedNetworkType \"\u003e associated_network_type \u003c/span\u003eis 'classic' and the GRE tunnel is in a different account than the gateway.",
+                        "willReplaceOnChanges": true
+                    },
+                    "networkId": {
+                        "type": "string",
+                        "description": "The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or\u003cspan pulumi-lang-nodejs=\" powerVirtualServer \" pulumi-lang-dotnet=\" PowerVirtualServer \" pulumi-lang-go=\" powerVirtualServer \" pulumi-lang-python=\" power_virtual_server \" pulumi-lang-yaml=\" powerVirtualServer \" pulumi-lang-java=\" powerVirtualServer \"\u003e power_virtual_server \u003c/span\u003egateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.",
+                        "willReplaceOnChanges": true
+                    },
+                    "networkType": {
+                        "type": "string",
+                        "description": "Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)",
+                        "willReplaceOnChanges": true
+                    },
+                    "relatedCrn": {
+                        "type": "string",
+                        "description": "The crn of the transit gateway"
+                    },
+                    "remoteBgpAsn": {
+                        "type": "integer",
+                        "description": "The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                        "willReplaceOnChanges": true
+                    },
+                    "remoteGatewayIp": {
+                        "type": "string",
+                        "description": "The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                        "willReplaceOnChanges": true
+                    },
+                    "remoteTunnelIp": {
+                        "type": "string",
+                        "description": "The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                        "willReplaceOnChanges": true
+                    },
+                    "requestStatus": {
+                        "type": "string",
+                        "description": "Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]"
+                    },
+                    "tunnels": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/TgConnectionTunnel:TgConnectionTunnel"
+                        },
+                        "description": "List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "The date and time that this connection was last updated"
+                    },
+                    "zone": {
+                        "type": "string",
+                        "description": "Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/tgConnectionAction:TgConnectionAction": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection cross account action"
+                },
+                "connectionId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier"
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier"
+                }
+            },
+            "required": [
+                "action",
+                "connectionId",
+                "gateway"
+            ],
+            "inputProperties": {
+                "action": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection cross account action",
+                    "willReplaceOnChanges": true
+                },
+                "connectionId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier",
+                    "willReplaceOnChanges": true
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "action",
+                "connectionId",
+                "gateway"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TgConnectionAction resources.\n",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "description": "The Transit Gateway Connection cross account action",
+                        "willReplaceOnChanges": true
+                    },
+                    "connectionId": {
+                        "type": "string",
+                        "description": "The Transit Gateway Connection identifier",
+                        "willReplaceOnChanges": true
+                    },
+                    "gateway": {
+                        "type": "string",
+                        "description": "The Transit Gateway identifier",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/tgConnectionPrefixFilter:TgConnectionPrefixFilter": {
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Whether to permit or deny the prefix filter"
+                },
+                "before": {
+                    "type": "string",
+                    "description": "Identifier of prefix filter that handles ordering"
+                },
+                "connectionId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "description": "The date and time that this prefix filter was created"
+                },
+                "filterId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection Prefix Filter identifier"
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier"
+                },
+                "ge": {
+                    "type": "integer",
+                    "description": "IP Prefix GE"
+                },
+                "le": {
+                    "type": "integer",
+                    "description": "IP Prefix LE"
+                },
+                "prefix": {
+                    "type": "string",
+                    "description": "IP Prefix"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "The date and time that this prefix filter was last updated"
+                }
+            },
+            "required": [
+                "action",
+                "connectionId",
+                "createdAt",
+                "filterId",
+                "gateway",
+                "prefix",
+                "updatedAt"
+            ],
+            "inputProperties": {
+                "action": {
+                    "type": "string",
+                    "description": "Whether to permit or deny the prefix filter"
+                },
+                "before": {
+                    "type": "string",
+                    "description": "Identifier of prefix filter that handles ordering"
+                },
+                "connectionId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier"
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier",
+                    "willReplaceOnChanges": true
+                },
+                "ge": {
+                    "type": "integer",
+                    "description": "IP Prefix GE"
+                },
+                "le": {
+                    "type": "integer",
+                    "description": "IP Prefix LE"
+                },
+                "prefix": {
+                    "type": "string",
+                    "description": "IP Prefix"
+                }
+            },
+            "requiredInputs": [
+                "action",
+                "connectionId",
+                "gateway",
+                "prefix"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TgConnectionPrefixFilter resources.\n",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "description": "Whether to permit or deny the prefix filter"
+                    },
+                    "before": {
+                        "type": "string",
+                        "description": "Identifier of prefix filter that handles ordering"
+                    },
+                    "connectionId": {
+                        "type": "string",
+                        "description": "The Transit Gateway Connection identifier"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "The date and time that this prefix filter was created"
+                    },
+                    "filterId": {
+                        "type": "string",
+                        "description": "The Transit Gateway Connection Prefix Filter identifier"
+                    },
+                    "gateway": {
+                        "type": "string",
+                        "description": "The Transit Gateway identifier",
+                        "willReplaceOnChanges": true
+                    },
+                    "ge": {
+                        "type": "integer",
+                        "description": "IP Prefix GE"
+                    },
+                    "le": {
+                        "type": "integer",
+                        "description": "IP Prefix LE"
+                    },
+                    "prefix": {
+                        "type": "string",
+                        "description": "IP Prefix"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "The date and time that this prefix filter was last updated"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/tgConnectionRgreTunnel:TgConnectionRgreTunnel": {
+            "properties": {
+                "baseNetworkType": {
+                    "type": "string",
+                    "description": "The type of the base network for the RGRE. It should be i.e classic or VPC"
+                },
+                "connectionId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "description": "The date and time that this tunnel was created"
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier"
+                },
+                "localBgpAsn": {
+                    "type": "integer",
+                    "description": "The local network BGP ASN."
+                },
+                "localGatewayIp": {
+                    "type": "string",
+                    "description": "The local gateway IP address."
+                },
+                "localTunnelIp": {
+                    "type": "string",
+                    "description": "The local tunnel IP address."
+                },
+                "mtu": {
+                    "type": "integer",
+                    "description": "Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The user-defined name for this tunnel connection."
+                },
+                "networkAccountId": {
+                    "type": "string",
+                    "description": "The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the\u003cspan pulumi-lang-nodejs=\" associatedNetworkType \" pulumi-lang-dotnet=\" AssociatedNetworkType \" pulumi-lang-go=\" associatedNetworkType \" pulumi-lang-python=\" associated_network_type \" pulumi-lang-yaml=\" associatedNetworkType \" pulumi-lang-java=\" associatedNetworkType \"\u003e associated_network_type \u003c/span\u003eis 'classic' and the GRE tunnel is in a different account than the gateway."
+                },
+                "networkId": {
+                    "type": "string",
+                    "description": "The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or\u003cspan pulumi-lang-nodejs=\" powerVirtualServer \" pulumi-lang-dotnet=\" PowerVirtualServer \" pulumi-lang-go=\" powerVirtualServer \" pulumi-lang-python=\" power_virtual_server \" pulumi-lang-yaml=\" powerVirtualServer \" pulumi-lang-java=\" powerVirtualServer \"\u003e power_virtual_server \u003c/span\u003egateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'."
+                },
+                "remoteBgpAsn": {
+                    "type": "integer",
+                    "description": "The remote network BGP ASN."
+                },
+                "remoteGatewayIp": {
+                    "type": "string",
+                    "description": "The remote gateway IP address."
+                },
+                "remoteTunnelIp": {
+                    "type": "string",
+                    "description": "The remote tunnel IP address."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "What is the current configuration state of this tunnel. Possible values: [attached,failed,pending,deleting,detaching,detached]"
+                },
+                "tunnelId": {
+                    "type": "string",
+                    "description": "The Transit Gateway tunnel identifier"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "The date and time that this tunnel was last updated"
+                },
+                "zone": {
+                    "type": "string",
+                    "description": "Location of GRE tunnel."
+                }
+            },
+            "required": [
+                "baseNetworkType",
+                "connectionId",
+                "createdAt",
+                "gateway",
+                "localBgpAsn",
+                "localGatewayIp",
+                "localTunnelIp",
+                "mtu",
+                "name",
+                "networkAccountId",
+                "networkId",
+                "remoteBgpAsn",
+                "remoteGatewayIp",
+                "remoteTunnelIp",
+                "status",
+                "tunnelId",
+                "updatedAt",
+                "zone"
+            ],
+            "inputProperties": {
+                "baseNetworkType": {
+                    "type": "string",
+                    "description": "The type of the base network for the RGRE. It should be i.e classic or VPC"
+                },
+                "connectionId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Connection identifier",
+                    "willReplaceOnChanges": true
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier",
+                    "willReplaceOnChanges": true
+                },
+                "localBgpAsn": {
+                    "type": "integer",
+                    "description": "The local network BGP ASN."
+                },
+                "localGatewayIp": {
+                    "type": "string",
+                    "description": "The local gateway IP address.",
+                    "willReplaceOnChanges": true
+                },
+                "localTunnelIp": {
+                    "type": "string",
+                    "description": "The local tunnel IP address.",
+                    "willReplaceOnChanges": true
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The user-defined name for this tunnel connection."
+                },
+                "networkAccountId": {
+                    "type": "string",
+                    "description": "The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the\u003cspan pulumi-lang-nodejs=\" associatedNetworkType \" pulumi-lang-dotnet=\" AssociatedNetworkType \" pulumi-lang-go=\" associatedNetworkType \" pulumi-lang-python=\" associated_network_type \" pulumi-lang-yaml=\" associatedNetworkType \" pulumi-lang-java=\" associatedNetworkType \"\u003e associated_network_type \u003c/span\u003eis 'classic' and the GRE tunnel is in a different account than the gateway.",
+                    "willReplaceOnChanges": true
+                },
+                "networkId": {
+                    "type": "string",
+                    "description": "The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or\u003cspan pulumi-lang-nodejs=\" powerVirtualServer \" pulumi-lang-dotnet=\" PowerVirtualServer \" pulumi-lang-go=\" powerVirtualServer \" pulumi-lang-python=\" power_virtual_server \" pulumi-lang-yaml=\" powerVirtualServer \" pulumi-lang-java=\" powerVirtualServer \"\u003e power_virtual_server \u003c/span\u003egateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.",
+                    "willReplaceOnChanges": true
+                },
+                "remoteBgpAsn": {
+                    "type": "integer",
+                    "description": "The remote network BGP ASN."
+                },
+                "remoteGatewayIp": {
+                    "type": "string",
+                    "description": "The remote gateway IP address.",
+                    "willReplaceOnChanges": true
+                },
+                "remoteTunnelIp": {
+                    "type": "string",
+                    "description": "The remote tunnel IP address.",
+                    "willReplaceOnChanges": true
+                },
+                "zone": {
+                    "type": "string",
+                    "description": "Location of GRE tunnel.",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "connectionId",
+                "gateway",
+                "localGatewayIp",
+                "localTunnelIp",
+                "remoteGatewayIp",
+                "remoteTunnelIp",
+                "zone"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TgConnectionRgreTunnel resources.\n",
+                "properties": {
+                    "baseNetworkType": {
+                        "type": "string",
+                        "description": "The type of the base network for the RGRE. It should be i.e classic or VPC"
+                    },
+                    "connectionId": {
+                        "type": "string",
+                        "description": "The Transit Gateway Connection identifier",
+                        "willReplaceOnChanges": true
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "The date and time that this tunnel was created"
+                    },
+                    "gateway": {
+                        "type": "string",
+                        "description": "The Transit Gateway identifier",
+                        "willReplaceOnChanges": true
+                    },
+                    "localBgpAsn": {
+                        "type": "integer",
+                        "description": "The local network BGP ASN."
+                    },
+                    "localGatewayIp": {
+                        "type": "string",
+                        "description": "The local gateway IP address.",
+                        "willReplaceOnChanges": true
+                    },
+                    "localTunnelIp": {
+                        "type": "string",
+                        "description": "The local tunnel IP address.",
+                        "willReplaceOnChanges": true
+                    },
+                    "mtu": {
+                        "type": "integer",
+                        "description": "Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The user-defined name for this tunnel connection."
+                    },
+                    "networkAccountId": {
+                        "type": "string",
+                        "description": "The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the\u003cspan pulumi-lang-nodejs=\" associatedNetworkType \" pulumi-lang-dotnet=\" AssociatedNetworkType \" pulumi-lang-go=\" associatedNetworkType \" pulumi-lang-python=\" associated_network_type \" pulumi-lang-yaml=\" associatedNetworkType \" pulumi-lang-java=\" associatedNetworkType \"\u003e associated_network_type \u003c/span\u003eis 'classic' and the GRE tunnel is in a different account than the gateway.",
+                        "willReplaceOnChanges": true
+                    },
+                    "networkId": {
+                        "type": "string",
+                        "description": "The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or\u003cspan pulumi-lang-nodejs=\" powerVirtualServer \" pulumi-lang-dotnet=\" PowerVirtualServer \" pulumi-lang-go=\" powerVirtualServer \" pulumi-lang-python=\" power_virtual_server \" pulumi-lang-yaml=\" powerVirtualServer \" pulumi-lang-java=\" powerVirtualServer \"\u003e power_virtual_server \u003c/span\u003egateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.",
+                        "willReplaceOnChanges": true
+                    },
+                    "remoteBgpAsn": {
+                        "type": "integer",
+                        "description": "The remote network BGP ASN."
+                    },
+                    "remoteGatewayIp": {
+                        "type": "string",
+                        "description": "The remote gateway IP address.",
+                        "willReplaceOnChanges": true
+                    },
+                    "remoteTunnelIp": {
+                        "type": "string",
+                        "description": "The remote tunnel IP address.",
+                        "willReplaceOnChanges": true
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "What is the current configuration state of this tunnel. Possible values: [attached,failed,pending,deleting,detaching,detached]"
+                    },
+                    "tunnelId": {
+                        "type": "string",
+                        "description": "The Transit Gateway tunnel identifier"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "The date and time that this tunnel was last updated"
+                    },
+                    "zone": {
+                        "type": "string",
+                        "description": "Location of GRE tunnel.",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/tgGateway:TgGateway": {
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "description": "The creation time of the resource"
+                },
+                "crn": {
+                    "type": "string",
+                    "description": "The crn of the resource"
+                },
+                "global": {
+                    "type": "boolean",
+                    "description": "Allow global routing for a Transit Gateway. If unspecified, the default value is false"
+                },
+                "greEnhancedRoutePropagation": {
+                    "type": "boolean",
+                    "description": "Allow route propagation across all GREs connected to the same transit gateway. This affects connections on the gateway of type redundant_gre,\u003cspan pulumi-lang-nodejs=\" unboundGreTunnel \" pulumi-lang-dotnet=\" UnboundGreTunnel \" pulumi-lang-go=\" unboundGreTunnel \" pulumi-lang-python=\" unbound_gre_tunnel \" pulumi-lang-yaml=\" unboundGreTunnel \" pulumi-lang-java=\" unboundGreTunnel \"\u003e unbound_gre_tunnel \u003c/span\u003eand gre_tunnel"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Location of Transit Gateway Services"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name Transit Gateway Services"
+                },
+                "resourceControllerUrl": {
+                    "type": "string",
+                    "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance"
+                },
+                "resourceCrn": {
+                    "type": "string",
+                    "description": "The crn of the resource"
+                },
+                "resourceGroup": {
+                    "type": "string"
+                },
+                "resourceGroupName": {
+                    "type": "string",
+                    "description": "The resource group name in which resource is provisioned"
+                },
+                "resourceName": {
+                    "type": "string",
+                    "description": "The name of the resource"
+                },
+                "resourceStatus": {
+                    "type": "string",
+                    "description": "The status of the resource"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The Status of the resource"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Tags for the transit gateway instance"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "The updation time of the resource"
+                }
+            },
+            "required": [
+                "createdAt",
+                "crn",
+                "location",
+                "name",
+                "resourceControllerUrl",
+                "resourceCrn",
+                "resourceGroup",
+                "resourceGroupName",
+                "resourceName",
+                "resourceStatus",
+                "status",
+                "tags",
+                "updatedAt"
+            ],
+            "inputProperties": {
+                "global": {
+                    "type": "boolean",
+                    "description": "Allow global routing for a Transit Gateway. If unspecified, the default value is false"
+                },
+                "greEnhancedRoutePropagation": {
+                    "type": "boolean",
+                    "description": "Allow route propagation across all GREs connected to the same transit gateway. This affects connections on the gateway of type redundant_gre,\u003cspan pulumi-lang-nodejs=\" unboundGreTunnel \" pulumi-lang-dotnet=\" UnboundGreTunnel \" pulumi-lang-go=\" unboundGreTunnel \" pulumi-lang-python=\" unbound_gre_tunnel \" pulumi-lang-yaml=\" unboundGreTunnel \" pulumi-lang-java=\" unboundGreTunnel \"\u003e unbound_gre_tunnel \u003c/span\u003eand gre_tunnel"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Location of Transit Gateway Services",
+                    "willReplaceOnChanges": true
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name Transit Gateway Services"
+                },
+                "resourceGroup": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Tags for the transit gateway instance"
+                }
+            },
+            "requiredInputs": [
+                "location"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TgGateway resources.\n",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "description": "The creation time of the resource"
+                    },
+                    "crn": {
+                        "type": "string",
+                        "description": "The crn of the resource"
+                    },
+                    "global": {
+                        "type": "boolean",
+                        "description": "Allow global routing for a Transit Gateway. If unspecified, the default value is false"
+                    },
+                    "greEnhancedRoutePropagation": {
+                        "type": "boolean",
+                        "description": "Allow route propagation across all GREs connected to the same transit gateway. This affects connections on the gateway of type redundant_gre,\u003cspan pulumi-lang-nodejs=\" unboundGreTunnel \" pulumi-lang-dotnet=\" UnboundGreTunnel \" pulumi-lang-go=\" unboundGreTunnel \" pulumi-lang-python=\" unbound_gre_tunnel \" pulumi-lang-yaml=\" unboundGreTunnel \" pulumi-lang-java=\" unboundGreTunnel \"\u003e unbound_gre_tunnel \u003c/span\u003eand gre_tunnel"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "Location of Transit Gateway Services",
+                        "willReplaceOnChanges": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name Transit Gateway Services"
+                    },
+                    "resourceControllerUrl": {
+                        "type": "string",
+                        "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance"
+                    },
+                    "resourceCrn": {
+                        "type": "string",
+                        "description": "The crn of the resource"
+                    },
+                    "resourceGroup": {
+                        "type": "string"
+                    },
+                    "resourceGroupName": {
+                        "type": "string",
+                        "description": "The resource group name in which resource is provisioned"
+                    },
+                    "resourceName": {
+                        "type": "string",
+                        "description": "The name of the resource"
+                    },
+                    "resourceStatus": {
+                        "type": "string",
+                        "description": "The status of the resource"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The Status of the resource"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Tags for the transit gateway instance"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "The updation time of the resource"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/tgRouteReport:TgRouteReport": {
+            "properties": {
+                "connections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/TgRouteReportConnection:TgRouteReportConnection"
+                    },
+                    "description": "Collection of transit gateway connections"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier"
+                },
+                "overlappingRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/ibmcloud:index/TgRouteReportOverlappingRoute:TgRouteReportOverlappingRoute"
+                    },
+                    "description": "Collection of transit gateway overlapping routes"
+                },
+                "routeReportId": {
+                    "type": "string",
+                    "description": "The Transit Gateway Route Report identifier"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "connections",
+                "createdAt",
+                "gateway",
+                "overlappingRoutes",
+                "routeReportId",
+                "status",
+                "updatedAt"
+            ],
+            "inputProperties": {
+                "gateway": {
+                    "type": "string",
+                    "description": "The Transit Gateway identifier",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "gateway"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TgRouteReport resources.\n",
+                "properties": {
+                    "connections": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/TgRouteReportConnection:TgRouteReportConnection"
+                        },
+                        "description": "Collection of transit gateway connections"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "string",
+                        "description": "The Transit Gateway identifier",
+                        "willReplaceOnChanges": true
+                    },
+                    "overlappingRoutes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/TgRouteReportOverlappingRoute:TgRouteReportOverlappingRoute"
+                        },
+                        "description": "Collection of transit gateway overlapping routes"
+                    },
+                    "routeReportId": {
+                        "type": "string",
+                        "description": "The Transit Gateway Route Report identifier"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
         }
     },
     "functions": {
@@ -125550,6 +127401,390 @@
                 },
                 "required": [
                     "tags",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgConnectionPrefixFilter:getTgConnectionPrefixFilter": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getTgConnectionPrefixFilter.\n",
+                "properties": {
+                    "connectionId": {
+                        "type": "string"
+                    },
+                    "filterId": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "connectionId",
+                    "filterId",
+                    "gateway"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTgConnectionPrefixFilter.\n",
+                "properties": {
+                    "action": {
+                        "type": "string"
+                    },
+                    "before": {
+                        "type": "string"
+                    },
+                    "connectionId": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "filterId": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "string"
+                    },
+                    "ge": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "le": {
+                        "type": "integer"
+                    },
+                    "prefix": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "action",
+                    "before",
+                    "connectionId",
+                    "createdAt",
+                    "filterId",
+                    "gateway",
+                    "ge",
+                    "le",
+                    "prefix",
+                    "updatedAt",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgConnectionPrefixFilters:getTgConnectionPrefixFilters": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getTgConnectionPrefixFilters.\n",
+                "properties": {
+                    "connectionId": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "connectionId",
+                    "gateway"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTgConnectionPrefixFilters.\n",
+                "properties": {
+                    "connectionId": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "prefixFilters": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgConnectionPrefixFiltersPrefixFilter:getTgConnectionPrefixFiltersPrefixFilter"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "connectionId",
+                    "gateway",
+                    "prefixFilters",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgGateway:getTgGateway": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getTgGateway.\n",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTgGateway.\n",
+                "properties": {
+                    "connections": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgGatewayConnection:getTgGatewayConnection"
+                        },
+                        "type": "array"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "crn": {
+                        "type": "string"
+                    },
+                    "global": {
+                        "type": "boolean"
+                    },
+                    "greEnhancedRoutePropagation": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "resourceGroup": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "connections",
+                    "createdAt",
+                    "crn",
+                    "global",
+                    "greEnhancedRoutePropagation",
+                    "location",
+                    "name",
+                    "resourceGroup",
+                    "status",
+                    "updatedAt",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgGateways:getTgGateways": {
+            "outputs": {
+                "description": "A collection of values returned by getTgGateways.\n",
+                "properties": {
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "transitGateways": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgGatewaysTransitGateway:getTgGatewaysTransitGateway"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "transitGateways",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgLocation:getTgLocation": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getTgLocation.\n",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTgLocation.\n",
+                "properties": {
+                    "billingLocation": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "localConnectionLocations": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgLocationLocalConnectionLocation:getTgLocationLocalConnectionLocation"
+                        },
+                        "type": "array"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "billingLocation",
+                    "localConnectionLocations",
+                    "name",
+                    "type",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgLocations:getTgLocations": {
+            "outputs": {
+                "description": "A collection of values returned by getTgLocations.\n",
+                "properties": {
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "locations": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgLocationsLocation:getTgLocationsLocation"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "locations",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgRouteReport:getTgRouteReport": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getTgRouteReport.\n",
+                "properties": {
+                    "gateway": {
+                        "type": "string"
+                    },
+                    "routeReport": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "gateway",
+                    "routeReport"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTgRouteReport.\n",
+                "properties": {
+                    "connections": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgRouteReportConnection:getTgRouteReportConnection"
+                        },
+                        "type": "array"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "overlappingRoutes": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgRouteReportOverlappingRoute:getTgRouteReportOverlappingRoute"
+                        },
+                        "type": "array"
+                    },
+                    "routeReport": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "connections",
+                    "createdAt",
+                    "gateway",
+                    "overlappingRoutes",
+                    "routeReport",
+                    "status",
+                    "updatedAt",
+                    "id"
+                ],
+                "type": "object"
+            }
+        },
+        "ibmcloud:index/getTgRouteReports:getTgRouteReports": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getTgRouteReports.\n",
+                "properties": {
+                    "gateway": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "gateway"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTgRouteReports.\n",
+                "properties": {
+                    "gateway": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "routeReports": {
+                        "items": {
+                            "$ref": "#/types/ibmcloud:index/getTgRouteReportsRouteReport:getTgRouteReportsRouteReport"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "gateway",
+                    "routeReports",
                     "id"
                 ],
                 "type": "object"

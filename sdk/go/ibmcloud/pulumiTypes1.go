@@ -7175,6 +7175,735 @@ func (o ResourceInstancePlanHistoryArrayOutput) Index(i pulumi.IntInput) Resourc
 	}).(ResourceInstancePlanHistoryOutput)
 }
 
+type TgConnectionTunnel struct {
+	// The date and time that this connection was created
+	CreatedAt *string `pulumi:"createdAt"`
+	// The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	LocalBgpAsn *int `pulumi:"localBgpAsn"`
+	// The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	LocalGatewayIp string `pulumi:"localGatewayIp"`
+	// The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	LocalTunnelIp string `pulumi:"localTunnelIp"`
+	Mtu           *int   `pulumi:"mtu"`
+	// The user-defined name for this tunnel connection.
+	Name string `pulumi:"name"`
+	// The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	RemoteBgpAsn *int `pulumi:"remoteBgpAsn"`
+	// The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	RemoteGatewayIp string `pulumi:"remoteGatewayIp"`
+	// The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	RemoteTunnelIp string `pulumi:"remoteTunnelIp"`
+	// What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+	Status *string `pulumi:"status"`
+	// The Transit Gateway Connection tunnel identifier
+	TunnelId *string `pulumi:"tunnelId"`
+	// The date and time that this connection was last updated
+	UpdatedAt *string `pulumi:"updatedAt"`
+	// Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	Zone string `pulumi:"zone"`
+}
+
+// TgConnectionTunnelInput is an input type that accepts TgConnectionTunnelArgs and TgConnectionTunnelOutput values.
+// You can construct a concrete instance of `TgConnectionTunnelInput` via:
+//
+//	TgConnectionTunnelArgs{...}
+type TgConnectionTunnelInput interface {
+	pulumi.Input
+
+	ToTgConnectionTunnelOutput() TgConnectionTunnelOutput
+	ToTgConnectionTunnelOutputWithContext(context.Context) TgConnectionTunnelOutput
+}
+
+type TgConnectionTunnelArgs struct {
+	// The date and time that this connection was created
+	CreatedAt pulumi.StringPtrInput `pulumi:"createdAt"`
+	// The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	LocalBgpAsn pulumi.IntPtrInput `pulumi:"localBgpAsn"`
+	// The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	LocalGatewayIp pulumi.StringInput `pulumi:"localGatewayIp"`
+	// The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	LocalTunnelIp pulumi.StringInput `pulumi:"localTunnelIp"`
+	Mtu           pulumi.IntPtrInput `pulumi:"mtu"`
+	// The user-defined name for this tunnel connection.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	RemoteBgpAsn pulumi.IntPtrInput `pulumi:"remoteBgpAsn"`
+	// The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	RemoteGatewayIp pulumi.StringInput `pulumi:"remoteGatewayIp"`
+	// The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	RemoteTunnelIp pulumi.StringInput `pulumi:"remoteTunnelIp"`
+	// What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The Transit Gateway Connection tunnel identifier
+	TunnelId pulumi.StringPtrInput `pulumi:"tunnelId"`
+	// The date and time that this connection was last updated
+	UpdatedAt pulumi.StringPtrInput `pulumi:"updatedAt"`
+	// Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+	Zone pulumi.StringInput `pulumi:"zone"`
+}
+
+func (TgConnectionTunnelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgConnectionTunnel)(nil)).Elem()
+}
+
+func (i TgConnectionTunnelArgs) ToTgConnectionTunnelOutput() TgConnectionTunnelOutput {
+	return i.ToTgConnectionTunnelOutputWithContext(context.Background())
+}
+
+func (i TgConnectionTunnelArgs) ToTgConnectionTunnelOutputWithContext(ctx context.Context) TgConnectionTunnelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgConnectionTunnelOutput)
+}
+
+// TgConnectionTunnelArrayInput is an input type that accepts TgConnectionTunnelArray and TgConnectionTunnelArrayOutput values.
+// You can construct a concrete instance of `TgConnectionTunnelArrayInput` via:
+//
+//	TgConnectionTunnelArray{ TgConnectionTunnelArgs{...} }
+type TgConnectionTunnelArrayInput interface {
+	pulumi.Input
+
+	ToTgConnectionTunnelArrayOutput() TgConnectionTunnelArrayOutput
+	ToTgConnectionTunnelArrayOutputWithContext(context.Context) TgConnectionTunnelArrayOutput
+}
+
+type TgConnectionTunnelArray []TgConnectionTunnelInput
+
+func (TgConnectionTunnelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgConnectionTunnel)(nil)).Elem()
+}
+
+func (i TgConnectionTunnelArray) ToTgConnectionTunnelArrayOutput() TgConnectionTunnelArrayOutput {
+	return i.ToTgConnectionTunnelArrayOutputWithContext(context.Background())
+}
+
+func (i TgConnectionTunnelArray) ToTgConnectionTunnelArrayOutputWithContext(ctx context.Context) TgConnectionTunnelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgConnectionTunnelArrayOutput)
+}
+
+type TgConnectionTunnelOutput struct{ *pulumi.OutputState }
+
+func (TgConnectionTunnelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgConnectionTunnel)(nil)).Elem()
+}
+
+func (o TgConnectionTunnelOutput) ToTgConnectionTunnelOutput() TgConnectionTunnelOutput {
+	return o
+}
+
+func (o TgConnectionTunnelOutput) ToTgConnectionTunnelOutputWithContext(ctx context.Context) TgConnectionTunnelOutput {
+	return o
+}
+
+// The date and time that this connection was created
+func (o TgConnectionTunnelOutput) CreatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) *string { return v.CreatedAt }).(pulumi.StringPtrOutput)
+}
+
+// The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+func (o TgConnectionTunnelOutput) LocalBgpAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) *int { return v.LocalBgpAsn }).(pulumi.IntPtrOutput)
+}
+
+// The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+func (o TgConnectionTunnelOutput) LocalGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) string { return v.LocalGatewayIp }).(pulumi.StringOutput)
+}
+
+// The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+func (o TgConnectionTunnelOutput) LocalTunnelIp() pulumi.StringOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) string { return v.LocalTunnelIp }).(pulumi.StringOutput)
+}
+
+func (o TgConnectionTunnelOutput) Mtu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) *int { return v.Mtu }).(pulumi.IntPtrOutput)
+}
+
+// The user-defined name for this tunnel connection.
+func (o TgConnectionTunnelOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+func (o TgConnectionTunnelOutput) RemoteBgpAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) *int { return v.RemoteBgpAsn }).(pulumi.IntPtrOutput)
+}
+
+// The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+func (o TgConnectionTunnelOutput) RemoteGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) string { return v.RemoteGatewayIp }).(pulumi.StringOutput)
+}
+
+// The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+func (o TgConnectionTunnelOutput) RemoteTunnelIp() pulumi.StringOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) string { return v.RemoteTunnelIp }).(pulumi.StringOutput)
+}
+
+// What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+func (o TgConnectionTunnelOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The Transit Gateway Connection tunnel identifier
+func (o TgConnectionTunnelOutput) TunnelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) *string { return v.TunnelId }).(pulumi.StringPtrOutput)
+}
+
+// The date and time that this connection was last updated
+func (o TgConnectionTunnelOutput) UpdatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) *string { return v.UpdatedAt }).(pulumi.StringPtrOutput)
+}
+
+// Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+func (o TgConnectionTunnelOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v TgConnectionTunnel) string { return v.Zone }).(pulumi.StringOutput)
+}
+
+type TgConnectionTunnelArrayOutput struct{ *pulumi.OutputState }
+
+func (TgConnectionTunnelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgConnectionTunnel)(nil)).Elem()
+}
+
+func (o TgConnectionTunnelArrayOutput) ToTgConnectionTunnelArrayOutput() TgConnectionTunnelArrayOutput {
+	return o
+}
+
+func (o TgConnectionTunnelArrayOutput) ToTgConnectionTunnelArrayOutputWithContext(ctx context.Context) TgConnectionTunnelArrayOutput {
+	return o
+}
+
+func (o TgConnectionTunnelArrayOutput) Index(i pulumi.IntInput) TgConnectionTunnelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TgConnectionTunnel {
+		return vs[0].([]TgConnectionTunnel)[vs[1].(int)]
+	}).(TgConnectionTunnelOutput)
+}
+
+type TgRouteReportConnection struct {
+	// Collection of transit gateway connection's bgps
+	Bgps []TgRouteReportConnectionBgp `pulumi:"bgps"`
+	Id   *string                      `pulumi:"id"`
+	Name *string                      `pulumi:"name"`
+	// Collection of transit gateway connection's used routes
+	Routes []TgRouteReportConnectionRoute `pulumi:"routes"`
+	Type   *string                        `pulumi:"type"`
+}
+
+// TgRouteReportConnectionInput is an input type that accepts TgRouteReportConnectionArgs and TgRouteReportConnectionOutput values.
+// You can construct a concrete instance of `TgRouteReportConnectionInput` via:
+//
+//	TgRouteReportConnectionArgs{...}
+type TgRouteReportConnectionInput interface {
+	pulumi.Input
+
+	ToTgRouteReportConnectionOutput() TgRouteReportConnectionOutput
+	ToTgRouteReportConnectionOutputWithContext(context.Context) TgRouteReportConnectionOutput
+}
+
+type TgRouteReportConnectionArgs struct {
+	// Collection of transit gateway connection's bgps
+	Bgps TgRouteReportConnectionBgpArrayInput `pulumi:"bgps"`
+	Id   pulumi.StringPtrInput                `pulumi:"id"`
+	Name pulumi.StringPtrInput                `pulumi:"name"`
+	// Collection of transit gateway connection's used routes
+	Routes TgRouteReportConnectionRouteArrayInput `pulumi:"routes"`
+	Type   pulumi.StringPtrInput                  `pulumi:"type"`
+}
+
+func (TgRouteReportConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportConnection)(nil)).Elem()
+}
+
+func (i TgRouteReportConnectionArgs) ToTgRouteReportConnectionOutput() TgRouteReportConnectionOutput {
+	return i.ToTgRouteReportConnectionOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportConnectionArgs) ToTgRouteReportConnectionOutputWithContext(ctx context.Context) TgRouteReportConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportConnectionOutput)
+}
+
+// TgRouteReportConnectionArrayInput is an input type that accepts TgRouteReportConnectionArray and TgRouteReportConnectionArrayOutput values.
+// You can construct a concrete instance of `TgRouteReportConnectionArrayInput` via:
+//
+//	TgRouteReportConnectionArray{ TgRouteReportConnectionArgs{...} }
+type TgRouteReportConnectionArrayInput interface {
+	pulumi.Input
+
+	ToTgRouteReportConnectionArrayOutput() TgRouteReportConnectionArrayOutput
+	ToTgRouteReportConnectionArrayOutputWithContext(context.Context) TgRouteReportConnectionArrayOutput
+}
+
+type TgRouteReportConnectionArray []TgRouteReportConnectionInput
+
+func (TgRouteReportConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportConnection)(nil)).Elem()
+}
+
+func (i TgRouteReportConnectionArray) ToTgRouteReportConnectionArrayOutput() TgRouteReportConnectionArrayOutput {
+	return i.ToTgRouteReportConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportConnectionArray) ToTgRouteReportConnectionArrayOutputWithContext(ctx context.Context) TgRouteReportConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportConnectionArrayOutput)
+}
+
+type TgRouteReportConnectionOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportConnection)(nil)).Elem()
+}
+
+func (o TgRouteReportConnectionOutput) ToTgRouteReportConnectionOutput() TgRouteReportConnectionOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionOutput) ToTgRouteReportConnectionOutputWithContext(ctx context.Context) TgRouteReportConnectionOutput {
+	return o
+}
+
+// Collection of transit gateway connection's bgps
+func (o TgRouteReportConnectionOutput) Bgps() TgRouteReportConnectionBgpArrayOutput {
+	return o.ApplyT(func(v TgRouteReportConnection) []TgRouteReportConnectionBgp { return v.Bgps }).(TgRouteReportConnectionBgpArrayOutput)
+}
+
+func (o TgRouteReportConnectionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnection) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+func (o TgRouteReportConnectionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnection) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Collection of transit gateway connection's used routes
+func (o TgRouteReportConnectionOutput) Routes() TgRouteReportConnectionRouteArrayOutput {
+	return o.ApplyT(func(v TgRouteReportConnection) []TgRouteReportConnectionRoute { return v.Routes }).(TgRouteReportConnectionRouteArrayOutput)
+}
+
+func (o TgRouteReportConnectionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnection) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type TgRouteReportConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportConnection)(nil)).Elem()
+}
+
+func (o TgRouteReportConnectionArrayOutput) ToTgRouteReportConnectionArrayOutput() TgRouteReportConnectionArrayOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionArrayOutput) ToTgRouteReportConnectionArrayOutputWithContext(ctx context.Context) TgRouteReportConnectionArrayOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionArrayOutput) Index(i pulumi.IntInput) TgRouteReportConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TgRouteReportConnection {
+		return vs[0].([]TgRouteReportConnection)[vs[1].(int)]
+	}).(TgRouteReportConnectionOutput)
+}
+
+type TgRouteReportConnectionBgp struct {
+	AsPath          *string `pulumi:"asPath"`
+	IsUsed          *bool   `pulumi:"isUsed"`
+	LocalPreference *string `pulumi:"localPreference"`
+	Prefix          *string `pulumi:"prefix"`
+}
+
+// TgRouteReportConnectionBgpInput is an input type that accepts TgRouteReportConnectionBgpArgs and TgRouteReportConnectionBgpOutput values.
+// You can construct a concrete instance of `TgRouteReportConnectionBgpInput` via:
+//
+//	TgRouteReportConnectionBgpArgs{...}
+type TgRouteReportConnectionBgpInput interface {
+	pulumi.Input
+
+	ToTgRouteReportConnectionBgpOutput() TgRouteReportConnectionBgpOutput
+	ToTgRouteReportConnectionBgpOutputWithContext(context.Context) TgRouteReportConnectionBgpOutput
+}
+
+type TgRouteReportConnectionBgpArgs struct {
+	AsPath          pulumi.StringPtrInput `pulumi:"asPath"`
+	IsUsed          pulumi.BoolPtrInput   `pulumi:"isUsed"`
+	LocalPreference pulumi.StringPtrInput `pulumi:"localPreference"`
+	Prefix          pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (TgRouteReportConnectionBgpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (i TgRouteReportConnectionBgpArgs) ToTgRouteReportConnectionBgpOutput() TgRouteReportConnectionBgpOutput {
+	return i.ToTgRouteReportConnectionBgpOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportConnectionBgpArgs) ToTgRouteReportConnectionBgpOutputWithContext(ctx context.Context) TgRouteReportConnectionBgpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportConnectionBgpOutput)
+}
+
+// TgRouteReportConnectionBgpArrayInput is an input type that accepts TgRouteReportConnectionBgpArray and TgRouteReportConnectionBgpArrayOutput values.
+// You can construct a concrete instance of `TgRouteReportConnectionBgpArrayInput` via:
+//
+//	TgRouteReportConnectionBgpArray{ TgRouteReportConnectionBgpArgs{...} }
+type TgRouteReportConnectionBgpArrayInput interface {
+	pulumi.Input
+
+	ToTgRouteReportConnectionBgpArrayOutput() TgRouteReportConnectionBgpArrayOutput
+	ToTgRouteReportConnectionBgpArrayOutputWithContext(context.Context) TgRouteReportConnectionBgpArrayOutput
+}
+
+type TgRouteReportConnectionBgpArray []TgRouteReportConnectionBgpInput
+
+func (TgRouteReportConnectionBgpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (i TgRouteReportConnectionBgpArray) ToTgRouteReportConnectionBgpArrayOutput() TgRouteReportConnectionBgpArrayOutput {
+	return i.ToTgRouteReportConnectionBgpArrayOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportConnectionBgpArray) ToTgRouteReportConnectionBgpArrayOutputWithContext(ctx context.Context) TgRouteReportConnectionBgpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportConnectionBgpArrayOutput)
+}
+
+type TgRouteReportConnectionBgpOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportConnectionBgpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (o TgRouteReportConnectionBgpOutput) ToTgRouteReportConnectionBgpOutput() TgRouteReportConnectionBgpOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionBgpOutput) ToTgRouteReportConnectionBgpOutputWithContext(ctx context.Context) TgRouteReportConnectionBgpOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionBgpOutput) AsPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnectionBgp) *string { return v.AsPath }).(pulumi.StringPtrOutput)
+}
+
+func (o TgRouteReportConnectionBgpOutput) IsUsed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnectionBgp) *bool { return v.IsUsed }).(pulumi.BoolPtrOutput)
+}
+
+func (o TgRouteReportConnectionBgpOutput) LocalPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnectionBgp) *string { return v.LocalPreference }).(pulumi.StringPtrOutput)
+}
+
+func (o TgRouteReportConnectionBgpOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnectionBgp) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type TgRouteReportConnectionBgpArrayOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportConnectionBgpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (o TgRouteReportConnectionBgpArrayOutput) ToTgRouteReportConnectionBgpArrayOutput() TgRouteReportConnectionBgpArrayOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionBgpArrayOutput) ToTgRouteReportConnectionBgpArrayOutputWithContext(ctx context.Context) TgRouteReportConnectionBgpArrayOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionBgpArrayOutput) Index(i pulumi.IntInput) TgRouteReportConnectionBgpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TgRouteReportConnectionBgp {
+		return vs[0].([]TgRouteReportConnectionBgp)[vs[1].(int)]
+	}).(TgRouteReportConnectionBgpOutput)
+}
+
+type TgRouteReportConnectionRoute struct {
+	Prefix *string `pulumi:"prefix"`
+}
+
+// TgRouteReportConnectionRouteInput is an input type that accepts TgRouteReportConnectionRouteArgs and TgRouteReportConnectionRouteOutput values.
+// You can construct a concrete instance of `TgRouteReportConnectionRouteInput` via:
+//
+//	TgRouteReportConnectionRouteArgs{...}
+type TgRouteReportConnectionRouteInput interface {
+	pulumi.Input
+
+	ToTgRouteReportConnectionRouteOutput() TgRouteReportConnectionRouteOutput
+	ToTgRouteReportConnectionRouteOutputWithContext(context.Context) TgRouteReportConnectionRouteOutput
+}
+
+type TgRouteReportConnectionRouteArgs struct {
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (TgRouteReportConnectionRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (i TgRouteReportConnectionRouteArgs) ToTgRouteReportConnectionRouteOutput() TgRouteReportConnectionRouteOutput {
+	return i.ToTgRouteReportConnectionRouteOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportConnectionRouteArgs) ToTgRouteReportConnectionRouteOutputWithContext(ctx context.Context) TgRouteReportConnectionRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportConnectionRouteOutput)
+}
+
+// TgRouteReportConnectionRouteArrayInput is an input type that accepts TgRouteReportConnectionRouteArray and TgRouteReportConnectionRouteArrayOutput values.
+// You can construct a concrete instance of `TgRouteReportConnectionRouteArrayInput` via:
+//
+//	TgRouteReportConnectionRouteArray{ TgRouteReportConnectionRouteArgs{...} }
+type TgRouteReportConnectionRouteArrayInput interface {
+	pulumi.Input
+
+	ToTgRouteReportConnectionRouteArrayOutput() TgRouteReportConnectionRouteArrayOutput
+	ToTgRouteReportConnectionRouteArrayOutputWithContext(context.Context) TgRouteReportConnectionRouteArrayOutput
+}
+
+type TgRouteReportConnectionRouteArray []TgRouteReportConnectionRouteInput
+
+func (TgRouteReportConnectionRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (i TgRouteReportConnectionRouteArray) ToTgRouteReportConnectionRouteArrayOutput() TgRouteReportConnectionRouteArrayOutput {
+	return i.ToTgRouteReportConnectionRouteArrayOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportConnectionRouteArray) ToTgRouteReportConnectionRouteArrayOutputWithContext(ctx context.Context) TgRouteReportConnectionRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportConnectionRouteArrayOutput)
+}
+
+type TgRouteReportConnectionRouteOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportConnectionRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (o TgRouteReportConnectionRouteOutput) ToTgRouteReportConnectionRouteOutput() TgRouteReportConnectionRouteOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionRouteOutput) ToTgRouteReportConnectionRouteOutputWithContext(ctx context.Context) TgRouteReportConnectionRouteOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionRouteOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportConnectionRoute) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type TgRouteReportConnectionRouteArrayOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportConnectionRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (o TgRouteReportConnectionRouteArrayOutput) ToTgRouteReportConnectionRouteArrayOutput() TgRouteReportConnectionRouteArrayOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionRouteArrayOutput) ToTgRouteReportConnectionRouteArrayOutputWithContext(ctx context.Context) TgRouteReportConnectionRouteArrayOutput {
+	return o
+}
+
+func (o TgRouteReportConnectionRouteArrayOutput) Index(i pulumi.IntInput) TgRouteReportConnectionRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TgRouteReportConnectionRoute {
+		return vs[0].([]TgRouteReportConnectionRoute)[vs[1].(int)]
+	}).(TgRouteReportConnectionRouteOutput)
+}
+
+type TgRouteReportOverlappingRoute struct {
+	// Collection of transit gateway overlapping route's details
+	Routes []TgRouteReportOverlappingRouteRoute `pulumi:"routes"`
+}
+
+// TgRouteReportOverlappingRouteInput is an input type that accepts TgRouteReportOverlappingRouteArgs and TgRouteReportOverlappingRouteOutput values.
+// You can construct a concrete instance of `TgRouteReportOverlappingRouteInput` via:
+//
+//	TgRouteReportOverlappingRouteArgs{...}
+type TgRouteReportOverlappingRouteInput interface {
+	pulumi.Input
+
+	ToTgRouteReportOverlappingRouteOutput() TgRouteReportOverlappingRouteOutput
+	ToTgRouteReportOverlappingRouteOutputWithContext(context.Context) TgRouteReportOverlappingRouteOutput
+}
+
+type TgRouteReportOverlappingRouteArgs struct {
+	// Collection of transit gateway overlapping route's details
+	Routes TgRouteReportOverlappingRouteRouteArrayInput `pulumi:"routes"`
+}
+
+func (TgRouteReportOverlappingRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportOverlappingRoute)(nil)).Elem()
+}
+
+func (i TgRouteReportOverlappingRouteArgs) ToTgRouteReportOverlappingRouteOutput() TgRouteReportOverlappingRouteOutput {
+	return i.ToTgRouteReportOverlappingRouteOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportOverlappingRouteArgs) ToTgRouteReportOverlappingRouteOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportOverlappingRouteOutput)
+}
+
+// TgRouteReportOverlappingRouteArrayInput is an input type that accepts TgRouteReportOverlappingRouteArray and TgRouteReportOverlappingRouteArrayOutput values.
+// You can construct a concrete instance of `TgRouteReportOverlappingRouteArrayInput` via:
+//
+//	TgRouteReportOverlappingRouteArray{ TgRouteReportOverlappingRouteArgs{...} }
+type TgRouteReportOverlappingRouteArrayInput interface {
+	pulumi.Input
+
+	ToTgRouteReportOverlappingRouteArrayOutput() TgRouteReportOverlappingRouteArrayOutput
+	ToTgRouteReportOverlappingRouteArrayOutputWithContext(context.Context) TgRouteReportOverlappingRouteArrayOutput
+}
+
+type TgRouteReportOverlappingRouteArray []TgRouteReportOverlappingRouteInput
+
+func (TgRouteReportOverlappingRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportOverlappingRoute)(nil)).Elem()
+}
+
+func (i TgRouteReportOverlappingRouteArray) ToTgRouteReportOverlappingRouteArrayOutput() TgRouteReportOverlappingRouteArrayOutput {
+	return i.ToTgRouteReportOverlappingRouteArrayOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportOverlappingRouteArray) ToTgRouteReportOverlappingRouteArrayOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportOverlappingRouteArrayOutput)
+}
+
+type TgRouteReportOverlappingRouteOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportOverlappingRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportOverlappingRoute)(nil)).Elem()
+}
+
+func (o TgRouteReportOverlappingRouteOutput) ToTgRouteReportOverlappingRouteOutput() TgRouteReportOverlappingRouteOutput {
+	return o
+}
+
+func (o TgRouteReportOverlappingRouteOutput) ToTgRouteReportOverlappingRouteOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteOutput {
+	return o
+}
+
+// Collection of transit gateway overlapping route's details
+func (o TgRouteReportOverlappingRouteOutput) Routes() TgRouteReportOverlappingRouteRouteArrayOutput {
+	return o.ApplyT(func(v TgRouteReportOverlappingRoute) []TgRouteReportOverlappingRouteRoute { return v.Routes }).(TgRouteReportOverlappingRouteRouteArrayOutput)
+}
+
+type TgRouteReportOverlappingRouteArrayOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportOverlappingRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportOverlappingRoute)(nil)).Elem()
+}
+
+func (o TgRouteReportOverlappingRouteArrayOutput) ToTgRouteReportOverlappingRouteArrayOutput() TgRouteReportOverlappingRouteArrayOutput {
+	return o
+}
+
+func (o TgRouteReportOverlappingRouteArrayOutput) ToTgRouteReportOverlappingRouteArrayOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteArrayOutput {
+	return o
+}
+
+func (o TgRouteReportOverlappingRouteArrayOutput) Index(i pulumi.IntInput) TgRouteReportOverlappingRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TgRouteReportOverlappingRoute {
+		return vs[0].([]TgRouteReportOverlappingRoute)[vs[1].(int)]
+	}).(TgRouteReportOverlappingRouteOutput)
+}
+
+type TgRouteReportOverlappingRouteRoute struct {
+	ConnectionId *string `pulumi:"connectionId"`
+	Prefix       *string `pulumi:"prefix"`
+}
+
+// TgRouteReportOverlappingRouteRouteInput is an input type that accepts TgRouteReportOverlappingRouteRouteArgs and TgRouteReportOverlappingRouteRouteOutput values.
+// You can construct a concrete instance of `TgRouteReportOverlappingRouteRouteInput` via:
+//
+//	TgRouteReportOverlappingRouteRouteArgs{...}
+type TgRouteReportOverlappingRouteRouteInput interface {
+	pulumi.Input
+
+	ToTgRouteReportOverlappingRouteRouteOutput() TgRouteReportOverlappingRouteRouteOutput
+	ToTgRouteReportOverlappingRouteRouteOutputWithContext(context.Context) TgRouteReportOverlappingRouteRouteOutput
+}
+
+type TgRouteReportOverlappingRouteRouteArgs struct {
+	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`
+	Prefix       pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (TgRouteReportOverlappingRouteRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportOverlappingRouteRoute)(nil)).Elem()
+}
+
+func (i TgRouteReportOverlappingRouteRouteArgs) ToTgRouteReportOverlappingRouteRouteOutput() TgRouteReportOverlappingRouteRouteOutput {
+	return i.ToTgRouteReportOverlappingRouteRouteOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportOverlappingRouteRouteArgs) ToTgRouteReportOverlappingRouteRouteOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportOverlappingRouteRouteOutput)
+}
+
+// TgRouteReportOverlappingRouteRouteArrayInput is an input type that accepts TgRouteReportOverlappingRouteRouteArray and TgRouteReportOverlappingRouteRouteArrayOutput values.
+// You can construct a concrete instance of `TgRouteReportOverlappingRouteRouteArrayInput` via:
+//
+//	TgRouteReportOverlappingRouteRouteArray{ TgRouteReportOverlappingRouteRouteArgs{...} }
+type TgRouteReportOverlappingRouteRouteArrayInput interface {
+	pulumi.Input
+
+	ToTgRouteReportOverlappingRouteRouteArrayOutput() TgRouteReportOverlappingRouteRouteArrayOutput
+	ToTgRouteReportOverlappingRouteRouteArrayOutputWithContext(context.Context) TgRouteReportOverlappingRouteRouteArrayOutput
+}
+
+type TgRouteReportOverlappingRouteRouteArray []TgRouteReportOverlappingRouteRouteInput
+
+func (TgRouteReportOverlappingRouteRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportOverlappingRouteRoute)(nil)).Elem()
+}
+
+func (i TgRouteReportOverlappingRouteRouteArray) ToTgRouteReportOverlappingRouteRouteArrayOutput() TgRouteReportOverlappingRouteRouteArrayOutput {
+	return i.ToTgRouteReportOverlappingRouteRouteArrayOutputWithContext(context.Background())
+}
+
+func (i TgRouteReportOverlappingRouteRouteArray) ToTgRouteReportOverlappingRouteRouteArrayOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TgRouteReportOverlappingRouteRouteArrayOutput)
+}
+
+type TgRouteReportOverlappingRouteRouteOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportOverlappingRouteRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TgRouteReportOverlappingRouteRoute)(nil)).Elem()
+}
+
+func (o TgRouteReportOverlappingRouteRouteOutput) ToTgRouteReportOverlappingRouteRouteOutput() TgRouteReportOverlappingRouteRouteOutput {
+	return o
+}
+
+func (o TgRouteReportOverlappingRouteRouteOutput) ToTgRouteReportOverlappingRouteRouteOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteRouteOutput {
+	return o
+}
+
+func (o TgRouteReportOverlappingRouteRouteOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportOverlappingRouteRoute) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
+}
+
+func (o TgRouteReportOverlappingRouteRouteOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TgRouteReportOverlappingRouteRoute) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type TgRouteReportOverlappingRouteRouteArrayOutput struct{ *pulumi.OutputState }
+
+func (TgRouteReportOverlappingRouteRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TgRouteReportOverlappingRouteRoute)(nil)).Elem()
+}
+
+func (o TgRouteReportOverlappingRouteRouteArrayOutput) ToTgRouteReportOverlappingRouteRouteArrayOutput() TgRouteReportOverlappingRouteRouteArrayOutput {
+	return o
+}
+
+func (o TgRouteReportOverlappingRouteRouteArrayOutput) ToTgRouteReportOverlappingRouteRouteArrayOutputWithContext(ctx context.Context) TgRouteReportOverlappingRouteRouteArrayOutput {
+	return o
+}
+
+func (o TgRouteReportOverlappingRouteRouteArrayOutput) Index(i pulumi.IntInput) TgRouteReportOverlappingRouteRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TgRouteReportOverlappingRouteRoute {
+		return vs[0].([]TgRouteReportOverlappingRouteRoute)[vs[1].(int)]
+	}).(TgRouteReportOverlappingRouteRouteOutput)
+}
+
 type GetComputePlacementGroupVirtualGuest struct {
 	Domain   string `pulumi:"domain"`
 	Hostname string `pulumi:"hostname"`
@@ -62416,956 +63145,6 @@ func (o GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput) Index(i pulumi.In
 	}).(GetIsDedicatedHostProfilesProfileVcpuCountOutput)
 }
 
-type GetIsDedicatedHostProfilesProfileVcpuManufacturer struct {
-	// The type for this profile field.
-	Type string `pulumi:"type"`
-	// TThe VCPU manufacturer for a dedicated host with this profile.
-	Value string `pulumi:"value"`
-}
-
-// GetIsDedicatedHostProfilesProfileVcpuManufacturerInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs and GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuManufacturerInput` via:
-//
-//	GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{...}
-type GetIsDedicatedHostProfilesProfileVcpuManufacturerInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput
-	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput
-}
-
-type GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs struct {
-	// The type for this profile field.
-	Type pulumi.StringInput `pulumi:"type"`
-	// TThe VCPU manufacturer for a dedicated host with this profile.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
-	return i.ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput)
-}
-
-// GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuManufacturerArray and GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput` via:
-//
-//	GetIsDedicatedHostProfilesProfileVcpuManufacturerArray{ GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{...} }
-type GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput
-	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput
-}
-
-type GetIsDedicatedHostProfilesProfileVcpuManufacturerArray []GetIsDedicatedHostProfilesProfileVcpuManufacturerInput
-
-func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
-	return i.ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput)
-}
-
-type GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
-	return o
-}
-
-// The type for this profile field.
-func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuManufacturer) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// TThe VCPU manufacturer for a dedicated host with this profile.
-func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuManufacturer) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileVcpuManufacturer {
-		return vs[0].([]GetIsDedicatedHostProfilesProfileVcpuManufacturer)[vs[1].(int)]
-	}).(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput)
-}
-
-type GetIsDedicatedHostSupportedInstanceProfile struct {
-	// The URL for this virtual server instance profile.
-	Href string `pulumi:"href"`
-	// The globally unique name for this virtual server instance profile.
-	Name string `pulumi:"name"`
-}
-
-// GetIsDedicatedHostSupportedInstanceProfileInput is an input type that accepts GetIsDedicatedHostSupportedInstanceProfileArgs and GetIsDedicatedHostSupportedInstanceProfileOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostSupportedInstanceProfileInput` via:
-//
-//	GetIsDedicatedHostSupportedInstanceProfileArgs{...}
-type GetIsDedicatedHostSupportedInstanceProfileInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput
-	ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput
-}
-
-type GetIsDedicatedHostSupportedInstanceProfileArgs struct {
-	// The URL for this virtual server instance profile.
-	Href pulumi.StringInput `pulumi:"href"`
-	// The globally unique name for this virtual server instance profile.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetIsDedicatedHostSupportedInstanceProfileArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostSupportedInstanceProfileArgs) ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput {
-	return i.ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostSupportedInstanceProfileArgs) ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostSupportedInstanceProfileOutput)
-}
-
-// GetIsDedicatedHostSupportedInstanceProfileArrayInput is an input type that accepts GetIsDedicatedHostSupportedInstanceProfileArray and GetIsDedicatedHostSupportedInstanceProfileArrayOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostSupportedInstanceProfileArrayInput` via:
-//
-//	GetIsDedicatedHostSupportedInstanceProfileArray{ GetIsDedicatedHostSupportedInstanceProfileArgs{...} }
-type GetIsDedicatedHostSupportedInstanceProfileArrayInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput
-	ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput
-}
-
-type GetIsDedicatedHostSupportedInstanceProfileArray []GetIsDedicatedHostSupportedInstanceProfileInput
-
-func (GetIsDedicatedHostSupportedInstanceProfileArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostSupportedInstanceProfileArray) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
-	return i.ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostSupportedInstanceProfileArray) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostSupportedInstanceProfileArrayOutput)
-}
-
-type GetIsDedicatedHostSupportedInstanceProfileOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostSupportedInstanceProfileOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostSupportedInstanceProfileOutput) ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostSupportedInstanceProfileOutput) ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput {
-	return o
-}
-
-// The URL for this virtual server instance profile.
-func (o GetIsDedicatedHostSupportedInstanceProfileOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostSupportedInstanceProfile) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// The globally unique name for this virtual server instance profile.
-func (o GetIsDedicatedHostSupportedInstanceProfileOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostSupportedInstanceProfile) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type GetIsDedicatedHostSupportedInstanceProfileArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostSupportedInstanceProfileOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostSupportedInstanceProfile {
-		return vs[0].([]GetIsDedicatedHostSupportedInstanceProfile)[vs[1].(int)]
-	}).(GetIsDedicatedHostSupportedInstanceProfileOutput)
-}
-
-type GetIsDedicatedHostVcpus struct {
-	// The VCPU architecture.
-	Architecture string `pulumi:"architecture"`
-	// The number of VCPUs assigned.
-	Count int `pulumi:"count"`
-	// The VCPU manufacturer.
-	Manufacturer string `pulumi:"manufacturer"`
-}
-
-// GetIsDedicatedHostVcpusInput is an input type that accepts GetIsDedicatedHostVcpusArgs and GetIsDedicatedHostVcpusOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostVcpusInput` via:
-//
-//	GetIsDedicatedHostVcpusArgs{...}
-type GetIsDedicatedHostVcpusInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput
-	ToGetIsDedicatedHostVcpusOutputWithContext(context.Context) GetIsDedicatedHostVcpusOutput
-}
-
-type GetIsDedicatedHostVcpusArgs struct {
-	// The VCPU architecture.
-	Architecture pulumi.StringInput `pulumi:"architecture"`
-	// The number of VCPUs assigned.
-	Count pulumi.IntInput `pulumi:"count"`
-	// The VCPU manufacturer.
-	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
-}
-
-func (GetIsDedicatedHostVcpusArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostVcpus)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostVcpusArgs) ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput {
-	return i.ToGetIsDedicatedHostVcpusOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostVcpusArgs) ToGetIsDedicatedHostVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostVcpusOutput)
-}
-
-// GetIsDedicatedHostVcpusArrayInput is an input type that accepts GetIsDedicatedHostVcpusArray and GetIsDedicatedHostVcpusArrayOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostVcpusArrayInput` via:
-//
-//	GetIsDedicatedHostVcpusArray{ GetIsDedicatedHostVcpusArgs{...} }
-type GetIsDedicatedHostVcpusArrayInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput
-	ToGetIsDedicatedHostVcpusArrayOutputWithContext(context.Context) GetIsDedicatedHostVcpusArrayOutput
-}
-
-type GetIsDedicatedHostVcpusArray []GetIsDedicatedHostVcpusInput
-
-func (GetIsDedicatedHostVcpusArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostVcpus)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostVcpusArray) ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput {
-	return i.ToGetIsDedicatedHostVcpusArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostVcpusArray) ToGetIsDedicatedHostVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostVcpusArrayOutput)
-}
-
-type GetIsDedicatedHostVcpusOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostVcpusOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostVcpus)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostVcpusOutput) ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostVcpusOutput) ToGetIsDedicatedHostVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusOutput {
-	return o
-}
-
-// The VCPU architecture.
-func (o GetIsDedicatedHostVcpusOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostVcpus) string { return v.Architecture }).(pulumi.StringOutput)
-}
-
-// The number of VCPUs assigned.
-func (o GetIsDedicatedHostVcpusOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostVcpus) int { return v.Count }).(pulumi.IntOutput)
-}
-
-// The VCPU manufacturer.
-func (o GetIsDedicatedHostVcpusOutput) Manufacturer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostVcpus) string { return v.Manufacturer }).(pulumi.StringOutput)
-}
-
-type GetIsDedicatedHostVcpusArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostVcpusArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostVcpus)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostVcpusArrayOutput) ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostVcpusArrayOutput) ToGetIsDedicatedHostVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostVcpusArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostVcpusOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostVcpus {
-		return vs[0].([]GetIsDedicatedHostVcpus)[vs[1].(int)]
-	}).(GetIsDedicatedHostVcpusOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHost struct {
-	// List of access tags
-	AccessTags []string `pulumi:"accessTags"`
-	// The amount of memory in gibibytes that is currently available for instances.
-	AvailableMemory int `pulumi:"availableMemory"`
-	// The available VCPU for the dedicated host.
-	AvailableVcpus []GetIsDedicatedHostsDedicatedHostAvailableVcpus `pulumi:"availableVcpus"`
-	// The date and time that the dedicated host was created.
-	CreatedAt string `pulumi:"createdAt"`
-	// The CRN for this dedicated host.
-	Crn string `pulumi:"crn"`
-	// Collection of the dedicated host's disks.
-	Disks []GetIsDedicatedHostsDedicatedHostDisk `pulumi:"disks"`
-	// The unique identifier of the dedicated host group this dedicated host is in.
-	HostGroup string `pulumi:"hostGroup"`
-	// The URL for this dedicated host.
-	Href string `pulumi:"href"`
-	// The unique identifier for this dedicated host.
-	Id string `pulumi:"id"`
-	// If set to true, instances can be placed on this dedicated host.
-	InstancePlacementEnabled bool `pulumi:"instancePlacementEnabled"`
-	// Array of instances that are allocated to this dedicated host.
-	Instances []GetIsDedicatedHostsDedicatedHostInstance `pulumi:"instances"`
-	// The lifecycle state of the dedicated host resource.
-	LifecycleState string `pulumi:"lifecycleState"`
-	// The total amount of memory in gibibytes for this host.
-	Memory int `pulumi:"memory"`
-	// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
-	Name string `pulumi:"name"`
-	// The dedicated host NUMA configuration
-	Numas []GetIsDedicatedHostsDedicatedHostNuma `pulumi:"numas"`
-	// The profile this dedicated host uses.
-	Profiles []GetIsDedicatedHostsDedicatedHostProfile `pulumi:"profiles"`
-	// Indicates whether this dedicated host is available for instance creation.
-	Provisionable bool `pulumi:"provisionable"`
-	// The unique identifier of the resource group for this dedicated host.
-	ResourceGroup string `pulumi:"resourceGroup"`
-	// The type of resource referenced.
-	ResourceType string `pulumi:"resourceType"`
-	// The total number of sockets for this host.
-	SocketCount int `pulumi:"socketCount"`
-	// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
-	State string `pulumi:"state"`
-	// Array of instance profiles that can be used by instances placed on this dedicated host.
-	SupportedInstanceProfiles []GetIsDedicatedHostsDedicatedHostSupportedInstanceProfile `pulumi:"supportedInstanceProfiles"`
-	// The total VCPU of the dedicated host.
-	Vcpus []GetIsDedicatedHostsDedicatedHostVcpus `pulumi:"vcpus"`
-	// The globally unique name of the zone this dedicated host resides in.
-	Zone string `pulumi:"zone"`
-}
-
-// GetIsDedicatedHostsDedicatedHostInput is an input type that accepts GetIsDedicatedHostsDedicatedHostArgs and GetIsDedicatedHostsDedicatedHostOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostInput` via:
-//
-//	GetIsDedicatedHostsDedicatedHostArgs{...}
-type GetIsDedicatedHostsDedicatedHostInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput
-	ToGetIsDedicatedHostsDedicatedHostOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostOutput
-}
-
-type GetIsDedicatedHostsDedicatedHostArgs struct {
-	// List of access tags
-	AccessTags pulumi.StringArrayInput `pulumi:"accessTags"`
-	// The amount of memory in gibibytes that is currently available for instances.
-	AvailableMemory pulumi.IntInput `pulumi:"availableMemory"`
-	// The available VCPU for the dedicated host.
-	AvailableVcpus GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput `pulumi:"availableVcpus"`
-	// The date and time that the dedicated host was created.
-	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
-	// The CRN for this dedicated host.
-	Crn pulumi.StringInput `pulumi:"crn"`
-	// Collection of the dedicated host's disks.
-	Disks GetIsDedicatedHostsDedicatedHostDiskArrayInput `pulumi:"disks"`
-	// The unique identifier of the dedicated host group this dedicated host is in.
-	HostGroup pulumi.StringInput `pulumi:"hostGroup"`
-	// The URL for this dedicated host.
-	Href pulumi.StringInput `pulumi:"href"`
-	// The unique identifier for this dedicated host.
-	Id pulumi.StringInput `pulumi:"id"`
-	// If set to true, instances can be placed on this dedicated host.
-	InstancePlacementEnabled pulumi.BoolInput `pulumi:"instancePlacementEnabled"`
-	// Array of instances that are allocated to this dedicated host.
-	Instances GetIsDedicatedHostsDedicatedHostInstanceArrayInput `pulumi:"instances"`
-	// The lifecycle state of the dedicated host resource.
-	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
-	// The total amount of memory in gibibytes for this host.
-	Memory pulumi.IntInput `pulumi:"memory"`
-	// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The dedicated host NUMA configuration
-	Numas GetIsDedicatedHostsDedicatedHostNumaArrayInput `pulumi:"numas"`
-	// The profile this dedicated host uses.
-	Profiles GetIsDedicatedHostsDedicatedHostProfileArrayInput `pulumi:"profiles"`
-	// Indicates whether this dedicated host is available for instance creation.
-	Provisionable pulumi.BoolInput `pulumi:"provisionable"`
-	// The unique identifier of the resource group for this dedicated host.
-	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
-	// The type of resource referenced.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-	// The total number of sockets for this host.
-	SocketCount pulumi.IntInput `pulumi:"socketCount"`
-	// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
-	State pulumi.StringInput `pulumi:"state"`
-	// Array of instance profiles that can be used by instances placed on this dedicated host.
-	SupportedInstanceProfiles GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayInput `pulumi:"supportedInstanceProfiles"`
-	// The total VCPU of the dedicated host.
-	Vcpus GetIsDedicatedHostsDedicatedHostVcpusArrayInput `pulumi:"vcpus"`
-	// The globally unique name of the zone this dedicated host resides in.
-	Zone pulumi.StringInput `pulumi:"zone"`
-}
-
-func (GetIsDedicatedHostsDedicatedHostArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostsDedicatedHostArgs) ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput {
-	return i.ToGetIsDedicatedHostsDedicatedHostOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostsDedicatedHostArgs) ToGetIsDedicatedHostsDedicatedHostOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostOutput)
-}
-
-// GetIsDedicatedHostsDedicatedHostArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostArray and GetIsDedicatedHostsDedicatedHostArrayOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostArrayInput` via:
-//
-//	GetIsDedicatedHostsDedicatedHostArray{ GetIsDedicatedHostsDedicatedHostArgs{...} }
-type GetIsDedicatedHostsDedicatedHostArrayInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput
-	ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput
-}
-
-type GetIsDedicatedHostsDedicatedHostArray []GetIsDedicatedHostsDedicatedHostInput
-
-func (GetIsDedicatedHostsDedicatedHostArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostsDedicatedHostArray) ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput {
-	return i.ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostsDedicatedHostArray) ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostArrayOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostsDedicatedHostOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostsDedicatedHostOutput) ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostOutput) ToGetIsDedicatedHostsDedicatedHostOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostOutput {
-	return o
-}
-
-// List of access tags
-func (o GetIsDedicatedHostsDedicatedHostOutput) AccessTags() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []string { return v.AccessTags }).(pulumi.StringArrayOutput)
-}
-
-// The amount of memory in gibibytes that is currently available for instances.
-func (o GetIsDedicatedHostsDedicatedHostOutput) AvailableMemory() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.AvailableMemory }).(pulumi.IntOutput)
-}
-
-// The available VCPU for the dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) AvailableVcpus() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostAvailableVcpus {
-		return v.AvailableVcpus
-	}).(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput)
-}
-
-// The date and time that the dedicated host was created.
-func (o GetIsDedicatedHostsDedicatedHostOutput) CreatedAt() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.CreatedAt }).(pulumi.StringOutput)
-}
-
-// The CRN for this dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Crn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Crn }).(pulumi.StringOutput)
-}
-
-// Collection of the dedicated host's disks.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Disks() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostDisk { return v.Disks }).(GetIsDedicatedHostsDedicatedHostDiskArrayOutput)
-}
-
-// The unique identifier of the dedicated host group this dedicated host is in.
-func (o GetIsDedicatedHostsDedicatedHostOutput) HostGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.HostGroup }).(pulumi.StringOutput)
-}
-
-// The URL for this dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// The unique identifier for this dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// If set to true, instances can be placed on this dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) InstancePlacementEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) bool { return v.InstancePlacementEnabled }).(pulumi.BoolOutput)
-}
-
-// Array of instances that are allocated to this dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Instances() GetIsDedicatedHostsDedicatedHostInstanceArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostInstance {
-		return v.Instances
-	}).(GetIsDedicatedHostsDedicatedHostInstanceArrayOutput)
-}
-
-// The lifecycle state of the dedicated host resource.
-func (o GetIsDedicatedHostsDedicatedHostOutput) LifecycleState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.LifecycleState }).(pulumi.StringOutput)
-}
-
-// The total amount of memory in gibibytes for this host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Memory() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.Memory }).(pulumi.IntOutput)
-}
-
-// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The dedicated host NUMA configuration
-func (o GetIsDedicatedHostsDedicatedHostOutput) Numas() GetIsDedicatedHostsDedicatedHostNumaArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostNuma { return v.Numas }).(GetIsDedicatedHostsDedicatedHostNumaArrayOutput)
-}
-
-// The profile this dedicated host uses.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Profiles() GetIsDedicatedHostsDedicatedHostProfileArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostProfile { return v.Profiles }).(GetIsDedicatedHostsDedicatedHostProfileArrayOutput)
-}
-
-// Indicates whether this dedicated host is available for instance creation.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Provisionable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) bool { return v.Provisionable }).(pulumi.BoolOutput)
-}
-
-// The unique identifier of the resource group for this dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.ResourceGroup }).(pulumi.StringOutput)
-}
-
-// The type of resource referenced.
-func (o GetIsDedicatedHostsDedicatedHostOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-// The total number of sockets for this host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) SocketCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.SocketCount }).(pulumi.IntOutput)
-}
-
-// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
-func (o GetIsDedicatedHostsDedicatedHostOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.State }).(pulumi.StringOutput)
-}
-
-// Array of instance profiles that can be used by instances placed on this dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) SupportedInstanceProfiles() GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostSupportedInstanceProfile {
-		return v.SupportedInstanceProfiles
-	}).(GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayOutput)
-}
-
-// The total VCPU of the dedicated host.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Vcpus() GetIsDedicatedHostsDedicatedHostVcpusArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostVcpus { return v.Vcpus }).(GetIsDedicatedHostsDedicatedHostVcpusArrayOutput)
-}
-
-// The globally unique name of the zone this dedicated host resides in.
-func (o GetIsDedicatedHostsDedicatedHostOutput) Zone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Zone }).(pulumi.StringOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostsDedicatedHostArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostsDedicatedHostArrayOutput) ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostArrayOutput) ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHost {
-		return vs[0].([]GetIsDedicatedHostsDedicatedHost)[vs[1].(int)]
-	}).(GetIsDedicatedHostsDedicatedHostOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostAvailableVcpus struct {
-	// The VCPU architecture.
-	Architecture string `pulumi:"architecture"`
-	// The number of VCPUs assigned.
-	Count int `pulumi:"count"`
-	// The VCPU manufacturer.
-	Manufacturer string `pulumi:"manufacturer"`
-}
-
-// GetIsDedicatedHostsDedicatedHostAvailableVcpusInput is an input type that accepts GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs and GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostAvailableVcpusInput` via:
-//
-//	GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{...}
-type GetIsDedicatedHostsDedicatedHostAvailableVcpusInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput
-	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput
-}
-
-type GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs struct {
-	// The VCPU architecture.
-	Architecture pulumi.StringInput `pulumi:"architecture"`
-	// The number of VCPUs assigned.
-	Count pulumi.IntInput `pulumi:"count"`
-	// The VCPU manufacturer.
-	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
-}
-
-func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
-	return i.ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput)
-}
-
-// GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostAvailableVcpusArray and GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput` via:
-//
-//	GetIsDedicatedHostsDedicatedHostAvailableVcpusArray{ GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{...} }
-type GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput
-	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput
-}
-
-type GetIsDedicatedHostsDedicatedHostAvailableVcpusArray []GetIsDedicatedHostsDedicatedHostAvailableVcpusInput
-
-func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
-	return i.ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
-	return o
-}
-
-// The VCPU architecture.
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) string { return v.Architecture }).(pulumi.StringOutput)
-}
-
-// The number of VCPUs assigned.
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) int { return v.Count }).(pulumi.IntOutput)
-}
-
-// The VCPU manufacturer.
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Manufacturer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) string { return v.Manufacturer }).(pulumi.StringOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHostAvailableVcpus {
-		return vs[0].([]GetIsDedicatedHostsDedicatedHostAvailableVcpus)[vs[1].(int)]
-	}).(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostDisk struct {
-	// The remaining space left for instance placement in GB (gigabytes).
-	Available int `pulumi:"available"`
-	// The date and time that the disk was created.
-	CreatedAt string `pulumi:"createdAt"`
-	// The URL for this disk.
-	Href string `pulumi:"href"`
-	// The unique identifier for this disk.
-	Id string `pulumi:"id"`
-	// Instance disks that are on this dedicated host disk.
-	InstanceDisks []GetIsDedicatedHostsDedicatedHostDiskInstanceDisk `pulumi:"instanceDisks"`
-	// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
-	InterfaceType string `pulumi:"interfaceType"`
-	// The lifecycle state of this dedicated host disk.
-	LifecycleState string `pulumi:"lifecycleState"`
-	// The user-defined or system-provided name for this disk.
-	Name string `pulumi:"name"`
-	// Indicates whether this dedicated host disk is available for instance disk creation.
-	Provisionable bool `pulumi:"provisionable"`
-	// The type of resource referenced.
-	ResourceType string `pulumi:"resourceType"`
-	// The size of the disk in GB (gigabytes).
-	Size int `pulumi:"size"`
-	// The instance disk interfaces supported for this dedicated host disk.
-	SupportedInstanceInterfaceTypes []string `pulumi:"supportedInstanceInterfaceTypes"`
-}
-
-// GetIsDedicatedHostsDedicatedHostDiskInput is an input type that accepts GetIsDedicatedHostsDedicatedHostDiskArgs and GetIsDedicatedHostsDedicatedHostDiskOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostDiskInput` via:
-//
-//	GetIsDedicatedHostsDedicatedHostDiskArgs{...}
-type GetIsDedicatedHostsDedicatedHostDiskInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput
-	ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput
-}
-
-type GetIsDedicatedHostsDedicatedHostDiskArgs struct {
-	// The remaining space left for instance placement in GB (gigabytes).
-	Available pulumi.IntInput `pulumi:"available"`
-	// The date and time that the disk was created.
-	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
-	// The URL for this disk.
-	Href pulumi.StringInput `pulumi:"href"`
-	// The unique identifier for this disk.
-	Id pulumi.StringInput `pulumi:"id"`
-	// Instance disks that are on this dedicated host disk.
-	InstanceDisks GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayInput `pulumi:"instanceDisks"`
-	// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
-	InterfaceType pulumi.StringInput `pulumi:"interfaceType"`
-	// The lifecycle state of this dedicated host disk.
-	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
-	// The user-defined or system-provided name for this disk.
-	Name pulumi.StringInput `pulumi:"name"`
-	// Indicates whether this dedicated host disk is available for instance disk creation.
-	Provisionable pulumi.BoolInput `pulumi:"provisionable"`
-	// The type of resource referenced.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-	// The size of the disk in GB (gigabytes).
-	Size pulumi.IntInput `pulumi:"size"`
-	// The instance disk interfaces supported for this dedicated host disk.
-	SupportedInstanceInterfaceTypes pulumi.StringArrayInput `pulumi:"supportedInstanceInterfaceTypes"`
-}
-
-func (GetIsDedicatedHostsDedicatedHostDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostsDedicatedHostDiskArgs) ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput {
-	return i.ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostsDedicatedHostDiskArgs) ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostDiskOutput)
-}
-
-// GetIsDedicatedHostsDedicatedHostDiskArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostDiskArray and GetIsDedicatedHostsDedicatedHostDiskArrayOutput values.
-// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostDiskArrayInput` via:
-//
-//	GetIsDedicatedHostsDedicatedHostDiskArray{ GetIsDedicatedHostsDedicatedHostDiskArgs{...} }
-type GetIsDedicatedHostsDedicatedHostDiskArrayInput interface {
-	pulumi.Input
-
-	ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput
-	ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput
-}
-
-type GetIsDedicatedHostsDedicatedHostDiskArray []GetIsDedicatedHostsDedicatedHostDiskInput
-
-func (GetIsDedicatedHostsDedicatedHostDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
-}
-
-func (i GetIsDedicatedHostsDedicatedHostDiskArray) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
-	return i.ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsDedicatedHostsDedicatedHostDiskArray) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostDiskArrayOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostDiskOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostsDedicatedHostDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput {
-	return o
-}
-
-// The remaining space left for instance placement in GB (gigabytes).
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Available() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) int { return v.Available }).(pulumi.IntOutput)
-}
-
-// The date and time that the disk was created.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) CreatedAt() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.CreatedAt }).(pulumi.StringOutput)
-}
-
-// The URL for this disk.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// The unique identifier for this disk.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// Instance disks that are on this dedicated host disk.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) InstanceDisks() GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) []GetIsDedicatedHostsDedicatedHostDiskInstanceDisk {
-		return v.InstanceDisks
-	}).(GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayOutput)
-}
-
-// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) InterfaceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.InterfaceType }).(pulumi.StringOutput)
-}
-
-// The lifecycle state of this dedicated host disk.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) LifecycleState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.LifecycleState }).(pulumi.StringOutput)
-}
-
-// The user-defined or system-provided name for this disk.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// Indicates whether this dedicated host disk is available for instance disk creation.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Provisionable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) bool { return v.Provisionable }).(pulumi.BoolOutput)
-}
-
-// The type of resource referenced.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-// The size of the disk in GB (gigabytes).
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) int { return v.Size }).(pulumi.IntOutput)
-}
-
-// The instance disk interfaces supported for this dedicated host disk.
-func (o GetIsDedicatedHostsDedicatedHostDiskOutput) SupportedInstanceInterfaceTypes() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) []string { return v.SupportedInstanceInterfaceTypes }).(pulumi.StringArrayOutput)
-}
-
-type GetIsDedicatedHostsDedicatedHostDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
-}
-
-func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
-	return o
-}
-
-func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHostDisk {
-		return vs[0].([]GetIsDedicatedHostsDedicatedHostDisk)[vs[1].(int)]
-	}).(GetIsDedicatedHostsDedicatedHostDiskOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PiHostGroupPiHostInput)(nil)).Elem(), PiHostGroupPiHostArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PiHostGroupPiHostArrayInput)(nil)).Elem(), PiHostGroupPiHostArray{})
@@ -63477,6 +63256,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeOnboardingResultsVolumeOnboardingFailureArrayInput)(nil)).Elem(), PiVolumeOnboardingResultsVolumeOnboardingFailureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResourceInstancePlanHistoryInput)(nil)).Elem(), ResourceInstancePlanHistoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResourceInstancePlanHistoryArrayInput)(nil)).Elem(), ResourceInstancePlanHistoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgConnectionTunnelInput)(nil)).Elem(), TgConnectionTunnelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgConnectionTunnelArrayInput)(nil)).Elem(), TgConnectionTunnelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportConnectionInput)(nil)).Elem(), TgRouteReportConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportConnectionArrayInput)(nil)).Elem(), TgRouteReportConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportConnectionBgpInput)(nil)).Elem(), TgRouteReportConnectionBgpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportConnectionBgpArrayInput)(nil)).Elem(), TgRouteReportConnectionBgpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportConnectionRouteInput)(nil)).Elem(), TgRouteReportConnectionRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportConnectionRouteArrayInput)(nil)).Elem(), TgRouteReportConnectionRouteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportOverlappingRouteInput)(nil)).Elem(), TgRouteReportOverlappingRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportOverlappingRouteArrayInput)(nil)).Elem(), TgRouteReportOverlappingRouteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportOverlappingRouteRouteInput)(nil)).Elem(), TgRouteReportOverlappingRouteRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TgRouteReportOverlappingRouteRouteArrayInput)(nil)).Elem(), TgRouteReportOverlappingRouteRouteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputePlacementGroupVirtualGuestInput)(nil)).Elem(), GetComputePlacementGroupVirtualGuestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputePlacementGroupVirtualGuestArrayInput)(nil)).Elem(), GetComputePlacementGroupVirtualGuestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeReservedCapacityVirtualGuestInput)(nil)).Elem(), GetComputeReservedCapacityVirtualGuestArgs{})
@@ -64355,18 +64146,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuArchitectureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuCountInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuCountArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuCountArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuCountArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturerInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuManufacturerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfileInput)(nil)).Elem(), GetIsDedicatedHostSupportedInstanceProfileArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfileArrayInput)(nil)).Elem(), GetIsDedicatedHostSupportedInstanceProfileArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostVcpusInput)(nil)).Elem(), GetIsDedicatedHostVcpusArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostVcpusArrayInput)(nil)).Elem(), GetIsDedicatedHostVcpusArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpusInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostAvailableVcpusArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskArray{})
 	pulumi.RegisterOutputType(PiHostGroupPiHostOutput{})
 	pulumi.RegisterOutputType(PiHostGroupPiHostArrayOutput{})
 	pulumi.RegisterOutputType(PiHostGroupPiSecondaryOutput{})
@@ -64477,6 +64256,18 @@ func init() {
 	pulumi.RegisterOutputType(PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput{})
 	pulumi.RegisterOutputType(ResourceInstancePlanHistoryOutput{})
 	pulumi.RegisterOutputType(ResourceInstancePlanHistoryArrayOutput{})
+	pulumi.RegisterOutputType(TgConnectionTunnelOutput{})
+	pulumi.RegisterOutputType(TgConnectionTunnelArrayOutput{})
+	pulumi.RegisterOutputType(TgRouteReportConnectionOutput{})
+	pulumi.RegisterOutputType(TgRouteReportConnectionArrayOutput{})
+	pulumi.RegisterOutputType(TgRouteReportConnectionBgpOutput{})
+	pulumi.RegisterOutputType(TgRouteReportConnectionBgpArrayOutput{})
+	pulumi.RegisterOutputType(TgRouteReportConnectionRouteOutput{})
+	pulumi.RegisterOutputType(TgRouteReportConnectionRouteArrayOutput{})
+	pulumi.RegisterOutputType(TgRouteReportOverlappingRouteOutput{})
+	pulumi.RegisterOutputType(TgRouteReportOverlappingRouteArrayOutput{})
+	pulumi.RegisterOutputType(TgRouteReportOverlappingRouteRouteOutput{})
+	pulumi.RegisterOutputType(TgRouteReportOverlappingRouteRouteArrayOutput{})
 	pulumi.RegisterOutputType(GetComputePlacementGroupVirtualGuestOutput{})
 	pulumi.RegisterOutputType(GetComputePlacementGroupVirtualGuestArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeReservedCapacityVirtualGuestOutput{})
@@ -65355,16 +65146,4 @@ func init() {
 	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput{})
 	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuCountOutput{})
 	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostSupportedInstanceProfileOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostSupportedInstanceProfileArrayOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostVcpusOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostVcpusArrayOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostArrayOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskOutput{})
-	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskArrayOutput{})
 }

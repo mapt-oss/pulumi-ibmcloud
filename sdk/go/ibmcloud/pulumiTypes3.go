@@ -13,6 +13,747 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetIsSecurityGroupsSecurityGroupTarget struct {
+	// The load balancer's CRN.
+	Crn string `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds []GetIsSecurityGroupsSecurityGroupTargetDeleted `pulumi:"deleteds"`
+	// The URL for this network interface.
+	Href string `pulumi:"href"`
+	// The unique identifier for this network interface.
+	Id string `pulumi:"id"`
+	// The user-defined name for this network interface.
+	Name string `pulumi:"name"`
+	// The resource type.
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetIsSecurityGroupsSecurityGroupTargetInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetArgs and GetIsSecurityGroupsSecurityGroupTargetOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupTargetArgs{...}
+type GetIsSecurityGroupsSecurityGroupTargetInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupTargetOutput() GetIsSecurityGroupsSecurityGroupTargetOutput
+	ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetArgs struct {
+	// The load balancer's CRN.
+	Crn pulumi.StringInput `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput `pulumi:"deleteds"`
+	// The URL for this network interface.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this network interface.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The user-defined name for this network interface.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The resource type.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetIsSecurityGroupsSecurityGroupTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetArgs) ToGetIsSecurityGroupsSecurityGroupTargetOutput() GetIsSecurityGroupsSecurityGroupTargetOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetArgs) ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetOutput)
+}
+
+// GetIsSecurityGroupsSecurityGroupTargetArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetArray and GetIsSecurityGroupsSecurityGroupTargetArrayOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetArrayInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupTargetArray{ GetIsSecurityGroupsSecurityGroupTargetArgs{...} }
+type GetIsSecurityGroupsSecurityGroupTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupTargetArrayOutput() GetIsSecurityGroupsSecurityGroupTargetArrayOutput
+	ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetArrayOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetArray []GetIsSecurityGroupsSecurityGroupTargetInput
+
+func (GetIsSecurityGroupsSecurityGroupTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetArray) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutput() GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetArray) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetArrayOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) ToGetIsSecurityGroupsSecurityGroupTargetOutput() GetIsSecurityGroupsSecurityGroupTargetOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetOutput {
+	return o
+}
+
+// The load balancer's CRN.
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Crn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Crn }).(pulumi.StringOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Deleteds() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) []GetIsSecurityGroupsSecurityGroupTargetDeleted {
+		return v.Deleteds
+	}).(GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput)
+}
+
+// The URL for this network interface.
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this network interface.
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The user-defined name for this network interface.
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The resource type.
+func (o GetIsSecurityGroupsSecurityGroupTargetOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutput() GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupTarget {
+		return vs[0].([]GetIsSecurityGroupsSecurityGroupTarget)[vs[1].(int)]
+	}).(GetIsSecurityGroupsSecurityGroupTargetOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetDeleted struct {
+	// Link to documentation about deleted resources.
+	MoreInfo string `pulumi:"moreInfo"`
+}
+
+// GetIsSecurityGroupsSecurityGroupTargetDeletedInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetDeletedArgs and GetIsSecurityGroupsSecurityGroupTargetDeletedOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetDeletedInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupTargetDeletedArgs{...}
+type GetIsSecurityGroupsSecurityGroupTargetDeletedInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedOutput
+	ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetDeletedArgs struct {
+	// Link to documentation about deleted resources.
+	MoreInfo pulumi.StringInput `pulumi:"moreInfo"`
+}
+
+func (GetIsSecurityGroupsSecurityGroupTargetDeletedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArgs) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArgs) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetDeletedOutput)
+}
+
+// GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetDeletedArray and GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupTargetDeletedArray{ GetIsSecurityGroupsSecurityGroupTargetDeletedArgs{...} }
+type GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput
+	ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetDeletedArray []GetIsSecurityGroupsSecurityGroupTargetDeletedInput
+
+func (GetIsSecurityGroupsSecurityGroupTargetDeletedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArray) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArray) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetDeletedOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
+	return o
+}
+
+// Link to documentation about deleted resources.
+func (o GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) MoreInfo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTargetDeleted) string { return v.MoreInfo }).(pulumi.StringOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupTargetDeleted {
+		return vs[0].([]GetIsSecurityGroupsSecurityGroupTargetDeleted)[vs[1].(int)]
+	}).(GetIsSecurityGroupsSecurityGroupTargetDeletedOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupVpc struct {
+	// The CRN for this VPC.
+	Crn string `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds []GetIsSecurityGroupsSecurityGroupVpcDeleted `pulumi:"deleteds"`
+	// The URL for this VPC.
+	Href string `pulumi:"href"`
+	// The unique identifier for this VPC.
+	Id string `pulumi:"id"`
+	// The unique user-defined name for this VPC.
+	Name string `pulumi:"name"`
+}
+
+// GetIsSecurityGroupsSecurityGroupVpcInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcArgs and GetIsSecurityGroupsSecurityGroupVpcOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupVpcArgs{...}
+type GetIsSecurityGroupsSecurityGroupVpcInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupVpcOutput() GetIsSecurityGroupsSecurityGroupVpcOutput
+	ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcArgs struct {
+	// The CRN for this VPC.
+	Crn pulumi.StringInput `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput `pulumi:"deleteds"`
+	// The URL for this VPC.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this VPC.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The unique user-defined name for this VPC.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetIsSecurityGroupsSecurityGroupVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcArgs) ToGetIsSecurityGroupsSecurityGroupVpcOutput() GetIsSecurityGroupsSecurityGroupVpcOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcArgs) ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcOutput)
+}
+
+// GetIsSecurityGroupsSecurityGroupVpcArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcArray and GetIsSecurityGroupsSecurityGroupVpcArrayOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcArrayInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupVpcArray{ GetIsSecurityGroupsSecurityGroupVpcArgs{...} }
+type GetIsSecurityGroupsSecurityGroupVpcArrayInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupVpcArrayOutput() GetIsSecurityGroupsSecurityGroupVpcArrayOutput
+	ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcArrayOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcArray []GetIsSecurityGroupsSecurityGroupVpcInput
+
+func (GetIsSecurityGroupsSecurityGroupVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcArray) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutput() GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcArray) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcArrayOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcOutput) ToGetIsSecurityGroupsSecurityGroupVpcOutput() GetIsSecurityGroupsSecurityGroupVpcOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcOutput) ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcOutput {
+	return o
+}
+
+// The CRN for this VPC.
+func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Crn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Crn }).(pulumi.StringOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Deleteds() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) []GetIsSecurityGroupsSecurityGroupVpcDeleted {
+		return v.Deleteds
+	}).(GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput)
+}
+
+// The URL for this VPC.
+func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this VPC.
+func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The unique user-defined name for this VPC.
+func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutput() GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupVpc {
+		return vs[0].([]GetIsSecurityGroupsSecurityGroupVpc)[vs[1].(int)]
+	}).(GetIsSecurityGroupsSecurityGroupVpcOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcDeleted struct {
+	// Link to documentation about deleted resources.
+	MoreInfo string `pulumi:"moreInfo"`
+}
+
+// GetIsSecurityGroupsSecurityGroupVpcDeletedInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcDeletedArgs and GetIsSecurityGroupsSecurityGroupVpcDeletedOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcDeletedInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupVpcDeletedArgs{...}
+type GetIsSecurityGroupsSecurityGroupVpcDeletedInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedOutput
+	ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcDeletedArgs struct {
+	// Link to documentation about deleted resources.
+	MoreInfo pulumi.StringInput `pulumi:"moreInfo"`
+}
+
+func (GetIsSecurityGroupsSecurityGroupVpcDeletedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArgs) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArgs) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcDeletedOutput)
+}
+
+// GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcDeletedArray and GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput values.
+// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput` via:
+//
+//	GetIsSecurityGroupsSecurityGroupVpcDeletedArray{ GetIsSecurityGroupsSecurityGroupVpcDeletedArgs{...} }
+type GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput interface {
+	pulumi.Input
+
+	ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput
+	ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcDeletedArray []GetIsSecurityGroupsSecurityGroupVpcDeletedInput
+
+func (GetIsSecurityGroupsSecurityGroupVpcDeletedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArray) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
+	return i.ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArray) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcDeletedOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
+	return o
+}
+
+// Link to documentation about deleted resources.
+func (o GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) MoreInfo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpcDeleted) string { return v.MoreInfo }).(pulumi.StringOutput)
+}
+
+type GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
+	return o
+}
+
+func (o GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupVpcDeleted {
+		return vs[0].([]GetIsSecurityGroupsSecurityGroupVpcDeleted)[vs[1].(int)]
+	}).(GetIsSecurityGroupsSecurityGroupVpcDeletedOutput)
+}
+
+type GetIsShareAccessorBinding struct {
+	// The URL for this share accessor binding.
+	Href string `pulumi:"href"`
+	// The unique identifier for this share accessor binding.
+	Id string `pulumi:"id"`
+	// The resource type.
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetIsShareAccessorBindingInput is an input type that accepts GetIsShareAccessorBindingArgs and GetIsShareAccessorBindingOutput values.
+// You can construct a concrete instance of `GetIsShareAccessorBindingInput` via:
+//
+//	GetIsShareAccessorBindingArgs{...}
+type GetIsShareAccessorBindingInput interface {
+	pulumi.Input
+
+	ToGetIsShareAccessorBindingOutput() GetIsShareAccessorBindingOutput
+	ToGetIsShareAccessorBindingOutputWithContext(context.Context) GetIsShareAccessorBindingOutput
+}
+
+type GetIsShareAccessorBindingArgs struct {
+	// The URL for this share accessor binding.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this share accessor binding.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The resource type.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetIsShareAccessorBindingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsShareAccessorBinding)(nil)).Elem()
+}
+
+func (i GetIsShareAccessorBindingArgs) ToGetIsShareAccessorBindingOutput() GetIsShareAccessorBindingOutput {
+	return i.ToGetIsShareAccessorBindingOutputWithContext(context.Background())
+}
+
+func (i GetIsShareAccessorBindingArgs) ToGetIsShareAccessorBindingOutputWithContext(ctx context.Context) GetIsShareAccessorBindingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingOutput)
+}
+
+// GetIsShareAccessorBindingArrayInput is an input type that accepts GetIsShareAccessorBindingArray and GetIsShareAccessorBindingArrayOutput values.
+// You can construct a concrete instance of `GetIsShareAccessorBindingArrayInput` via:
+//
+//	GetIsShareAccessorBindingArray{ GetIsShareAccessorBindingArgs{...} }
+type GetIsShareAccessorBindingArrayInput interface {
+	pulumi.Input
+
+	ToGetIsShareAccessorBindingArrayOutput() GetIsShareAccessorBindingArrayOutput
+	ToGetIsShareAccessorBindingArrayOutputWithContext(context.Context) GetIsShareAccessorBindingArrayOutput
+}
+
+type GetIsShareAccessorBindingArray []GetIsShareAccessorBindingInput
+
+func (GetIsShareAccessorBindingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsShareAccessorBinding)(nil)).Elem()
+}
+
+func (i GetIsShareAccessorBindingArray) ToGetIsShareAccessorBindingArrayOutput() GetIsShareAccessorBindingArrayOutput {
+	return i.ToGetIsShareAccessorBindingArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsShareAccessorBindingArray) ToGetIsShareAccessorBindingArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingArrayOutput)
+}
+
+type GetIsShareAccessorBindingOutput struct{ *pulumi.OutputState }
+
+func (GetIsShareAccessorBindingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsShareAccessorBinding)(nil)).Elem()
+}
+
+func (o GetIsShareAccessorBindingOutput) ToGetIsShareAccessorBindingOutput() GetIsShareAccessorBindingOutput {
+	return o
+}
+
+func (o GetIsShareAccessorBindingOutput) ToGetIsShareAccessorBindingOutputWithContext(ctx context.Context) GetIsShareAccessorBindingOutput {
+	return o
+}
+
+// The URL for this share accessor binding.
+func (o GetIsShareAccessorBindingOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBinding) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this share accessor binding.
+func (o GetIsShareAccessorBindingOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBinding) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The resource type.
+func (o GetIsShareAccessorBindingOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBinding) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetIsShareAccessorBindingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsShareAccessorBindingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsShareAccessorBinding)(nil)).Elem()
+}
+
+func (o GetIsShareAccessorBindingArrayOutput) ToGetIsShareAccessorBindingArrayOutput() GetIsShareAccessorBindingArrayOutput {
+	return o
+}
+
+func (o GetIsShareAccessorBindingArrayOutput) ToGetIsShareAccessorBindingArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingArrayOutput {
+	return o
+}
+
+func (o GetIsShareAccessorBindingArrayOutput) Index(i pulumi.IntInput) GetIsShareAccessorBindingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsShareAccessorBinding {
+		return vs[0].([]GetIsShareAccessorBinding)[vs[1].(int)]
+	}).(GetIsShareAccessorBindingOutput)
+}
+
+type GetIsShareAccessorBindingAccessor struct {
+	// The CRN for this file share.
+	Crn string `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+	Deleteds []GetIsShareAccessorBindingAccessorDeleted `pulumi:"deleteds"`
+	// The URL for this file share.
+	Href string `pulumi:"href"`
+	// The unique identifier for this file share.
+	Id string `pulumi:"id"`
+	// The name for this share. The name is unique across all shares in the region.
+	Name string `pulumi:"name"`
+	// If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
+	Remotes []GetIsShareAccessorBindingAccessorRemote `pulumi:"remotes"`
+	// The resource type.
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetIsShareAccessorBindingAccessorInput is an input type that accepts GetIsShareAccessorBindingAccessorArgs and GetIsShareAccessorBindingAccessorOutput values.
+// You can construct a concrete instance of `GetIsShareAccessorBindingAccessorInput` via:
+//
+//	GetIsShareAccessorBindingAccessorArgs{...}
+type GetIsShareAccessorBindingAccessorInput interface {
+	pulumi.Input
+
+	ToGetIsShareAccessorBindingAccessorOutput() GetIsShareAccessorBindingAccessorOutput
+	ToGetIsShareAccessorBindingAccessorOutputWithContext(context.Context) GetIsShareAccessorBindingAccessorOutput
+}
+
+type GetIsShareAccessorBindingAccessorArgs struct {
+	// The CRN for this file share.
+	Crn pulumi.StringInput `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+	Deleteds GetIsShareAccessorBindingAccessorDeletedArrayInput `pulumi:"deleteds"`
+	// The URL for this file share.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this file share.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name for this share. The name is unique across all shares in the region.
+	Name pulumi.StringInput `pulumi:"name"`
+	// If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
+	Remotes GetIsShareAccessorBindingAccessorRemoteArrayInput `pulumi:"remotes"`
+	// The resource type.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetIsShareAccessorBindingAccessorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsShareAccessorBindingAccessor)(nil)).Elem()
+}
+
+func (i GetIsShareAccessorBindingAccessorArgs) ToGetIsShareAccessorBindingAccessorOutput() GetIsShareAccessorBindingAccessorOutput {
+	return i.ToGetIsShareAccessorBindingAccessorOutputWithContext(context.Background())
+}
+
+func (i GetIsShareAccessorBindingAccessorArgs) ToGetIsShareAccessorBindingAccessorOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingAccessorOutput)
+}
+
+// GetIsShareAccessorBindingAccessorArrayInput is an input type that accepts GetIsShareAccessorBindingAccessorArray and GetIsShareAccessorBindingAccessorArrayOutput values.
+// You can construct a concrete instance of `GetIsShareAccessorBindingAccessorArrayInput` via:
+//
+//	GetIsShareAccessorBindingAccessorArray{ GetIsShareAccessorBindingAccessorArgs{...} }
+type GetIsShareAccessorBindingAccessorArrayInput interface {
+	pulumi.Input
+
+	ToGetIsShareAccessorBindingAccessorArrayOutput() GetIsShareAccessorBindingAccessorArrayOutput
+	ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(context.Context) GetIsShareAccessorBindingAccessorArrayOutput
+}
+
+type GetIsShareAccessorBindingAccessorArray []GetIsShareAccessorBindingAccessorInput
+
+func (GetIsShareAccessorBindingAccessorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsShareAccessorBindingAccessor)(nil)).Elem()
+}
+
+func (i GetIsShareAccessorBindingAccessorArray) ToGetIsShareAccessorBindingAccessorArrayOutput() GetIsShareAccessorBindingAccessorArrayOutput {
+	return i.ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsShareAccessorBindingAccessorArray) ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingAccessorArrayOutput)
+}
+
+type GetIsShareAccessorBindingAccessorOutput struct{ *pulumi.OutputState }
+
+func (GetIsShareAccessorBindingAccessorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsShareAccessorBindingAccessor)(nil)).Elem()
+}
+
+func (o GetIsShareAccessorBindingAccessorOutput) ToGetIsShareAccessorBindingAccessorOutput() GetIsShareAccessorBindingAccessorOutput {
+	return o
+}
+
+func (o GetIsShareAccessorBindingAccessorOutput) ToGetIsShareAccessorBindingAccessorOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorOutput {
+	return o
+}
+
+// The CRN for this file share.
+func (o GetIsShareAccessorBindingAccessorOutput) Crn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Crn }).(pulumi.StringOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+func (o GetIsShareAccessorBindingAccessorOutput) Deleteds() GetIsShareAccessorBindingAccessorDeletedArrayOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) []GetIsShareAccessorBindingAccessorDeleted {
+		return v.Deleteds
+	}).(GetIsShareAccessorBindingAccessorDeletedArrayOutput)
+}
+
+// The URL for this file share.
+func (o GetIsShareAccessorBindingAccessorOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this file share.
+func (o GetIsShareAccessorBindingAccessorOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name for this share. The name is unique across all shares in the region.
+func (o GetIsShareAccessorBindingAccessorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
+func (o GetIsShareAccessorBindingAccessorOutput) Remotes() GetIsShareAccessorBindingAccessorRemoteArrayOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) []GetIsShareAccessorBindingAccessorRemote { return v.Remotes }).(GetIsShareAccessorBindingAccessorRemoteArrayOutput)
+}
+
+// The resource type.
+func (o GetIsShareAccessorBindingAccessorOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetIsShareAccessorBindingAccessorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsShareAccessorBindingAccessorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsShareAccessorBindingAccessor)(nil)).Elem()
+}
+
+func (o GetIsShareAccessorBindingAccessorArrayOutput) ToGetIsShareAccessorBindingAccessorArrayOutput() GetIsShareAccessorBindingAccessorArrayOutput {
+	return o
+}
+
+func (o GetIsShareAccessorBindingAccessorArrayOutput) ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorArrayOutput {
+	return o
+}
+
+func (o GetIsShareAccessorBindingAccessorArrayOutput) Index(i pulumi.IntInput) GetIsShareAccessorBindingAccessorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsShareAccessorBindingAccessor {
+		return vs[0].([]GetIsShareAccessorBindingAccessor)[vs[1].(int)]
+	}).(GetIsShareAccessorBindingAccessorOutput)
+}
+
 type GetIsShareAccessorBindingAccessorDeleted struct {
 	// Link to documentation about deleted resources.
 	MoreInfo string `pulumi:"moreInfo"`
@@ -62228,7 +62969,1303 @@ func (o GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterArrayOutput) Ind
 	}).(GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterOutput)
 }
 
+type GetTgConnectionPrefixFiltersPrefixFilter struct {
+	// Whether to permit or deny the prefix filter
+	Action string `pulumi:"action"`
+	// Identifier of prefix filter that handles ordering
+	Before string `pulumi:"before"`
+	// The date and time that this prefix filter was created
+	CreatedAt string `pulumi:"createdAt"`
+	// IP Prefix GE
+	Ge int    `pulumi:"ge"`
+	Id string `pulumi:"id"`
+	// IP Prefix LE
+	Le int `pulumi:"le"`
+	// IP Prefix
+	Prefix string `pulumi:"prefix"`
+	// The date and time that this prefix filter was last updated
+	UpdatedAt string `pulumi:"updatedAt"`
+}
+
+// GetTgConnectionPrefixFiltersPrefixFilterInput is an input type that accepts GetTgConnectionPrefixFiltersPrefixFilterArgs and GetTgConnectionPrefixFiltersPrefixFilterOutput values.
+// You can construct a concrete instance of `GetTgConnectionPrefixFiltersPrefixFilterInput` via:
+//
+//	GetTgConnectionPrefixFiltersPrefixFilterArgs{...}
+type GetTgConnectionPrefixFiltersPrefixFilterInput interface {
+	pulumi.Input
+
+	ToGetTgConnectionPrefixFiltersPrefixFilterOutput() GetTgConnectionPrefixFiltersPrefixFilterOutput
+	ToGetTgConnectionPrefixFiltersPrefixFilterOutputWithContext(context.Context) GetTgConnectionPrefixFiltersPrefixFilterOutput
+}
+
+type GetTgConnectionPrefixFiltersPrefixFilterArgs struct {
+	// Whether to permit or deny the prefix filter
+	Action pulumi.StringInput `pulumi:"action"`
+	// Identifier of prefix filter that handles ordering
+	Before pulumi.StringInput `pulumi:"before"`
+	// The date and time that this prefix filter was created
+	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
+	// IP Prefix GE
+	Ge pulumi.IntInput    `pulumi:"ge"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// IP Prefix LE
+	Le pulumi.IntInput `pulumi:"le"`
+	// IP Prefix
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The date and time that this prefix filter was last updated
+	UpdatedAt pulumi.StringInput `pulumi:"updatedAt"`
+}
+
+func (GetTgConnectionPrefixFiltersPrefixFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgConnectionPrefixFiltersPrefixFilter)(nil)).Elem()
+}
+
+func (i GetTgConnectionPrefixFiltersPrefixFilterArgs) ToGetTgConnectionPrefixFiltersPrefixFilterOutput() GetTgConnectionPrefixFiltersPrefixFilterOutput {
+	return i.ToGetTgConnectionPrefixFiltersPrefixFilterOutputWithContext(context.Background())
+}
+
+func (i GetTgConnectionPrefixFiltersPrefixFilterArgs) ToGetTgConnectionPrefixFiltersPrefixFilterOutputWithContext(ctx context.Context) GetTgConnectionPrefixFiltersPrefixFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgConnectionPrefixFiltersPrefixFilterOutput)
+}
+
+// GetTgConnectionPrefixFiltersPrefixFilterArrayInput is an input type that accepts GetTgConnectionPrefixFiltersPrefixFilterArray and GetTgConnectionPrefixFiltersPrefixFilterArrayOutput values.
+// You can construct a concrete instance of `GetTgConnectionPrefixFiltersPrefixFilterArrayInput` via:
+//
+//	GetTgConnectionPrefixFiltersPrefixFilterArray{ GetTgConnectionPrefixFiltersPrefixFilterArgs{...} }
+type GetTgConnectionPrefixFiltersPrefixFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTgConnectionPrefixFiltersPrefixFilterArrayOutput() GetTgConnectionPrefixFiltersPrefixFilterArrayOutput
+	ToGetTgConnectionPrefixFiltersPrefixFilterArrayOutputWithContext(context.Context) GetTgConnectionPrefixFiltersPrefixFilterArrayOutput
+}
+
+type GetTgConnectionPrefixFiltersPrefixFilterArray []GetTgConnectionPrefixFiltersPrefixFilterInput
+
+func (GetTgConnectionPrefixFiltersPrefixFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgConnectionPrefixFiltersPrefixFilter)(nil)).Elem()
+}
+
+func (i GetTgConnectionPrefixFiltersPrefixFilterArray) ToGetTgConnectionPrefixFiltersPrefixFilterArrayOutput() GetTgConnectionPrefixFiltersPrefixFilterArrayOutput {
+	return i.ToGetTgConnectionPrefixFiltersPrefixFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgConnectionPrefixFiltersPrefixFilterArray) ToGetTgConnectionPrefixFiltersPrefixFilterArrayOutputWithContext(ctx context.Context) GetTgConnectionPrefixFiltersPrefixFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgConnectionPrefixFiltersPrefixFilterArrayOutput)
+}
+
+type GetTgConnectionPrefixFiltersPrefixFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTgConnectionPrefixFiltersPrefixFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgConnectionPrefixFiltersPrefixFilter)(nil)).Elem()
+}
+
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) ToGetTgConnectionPrefixFiltersPrefixFilterOutput() GetTgConnectionPrefixFiltersPrefixFilterOutput {
+	return o
+}
+
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) ToGetTgConnectionPrefixFiltersPrefixFilterOutputWithContext(ctx context.Context) GetTgConnectionPrefixFiltersPrefixFilterOutput {
+	return o
+}
+
+// Whether to permit or deny the prefix filter
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Identifier of prefix filter that handles ordering
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) Before() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) string { return v.Before }).(pulumi.StringOutput)
+}
+
+// The date and time that this prefix filter was created
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+// IP Prefix GE
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) Ge() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) int { return v.Ge }).(pulumi.IntOutput)
+}
+
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// IP Prefix LE
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) Le() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) int { return v.Le }).(pulumi.IntOutput)
+}
+
+// IP Prefix
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The date and time that this prefix filter was last updated
+func (o GetTgConnectionPrefixFiltersPrefixFilterOutput) UpdatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgConnectionPrefixFiltersPrefixFilter) string { return v.UpdatedAt }).(pulumi.StringOutput)
+}
+
+type GetTgConnectionPrefixFiltersPrefixFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgConnectionPrefixFiltersPrefixFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgConnectionPrefixFiltersPrefixFilter)(nil)).Elem()
+}
+
+func (o GetTgConnectionPrefixFiltersPrefixFilterArrayOutput) ToGetTgConnectionPrefixFiltersPrefixFilterArrayOutput() GetTgConnectionPrefixFiltersPrefixFilterArrayOutput {
+	return o
+}
+
+func (o GetTgConnectionPrefixFiltersPrefixFilterArrayOutput) ToGetTgConnectionPrefixFiltersPrefixFilterArrayOutputWithContext(ctx context.Context) GetTgConnectionPrefixFiltersPrefixFilterArrayOutput {
+	return o
+}
+
+func (o GetTgConnectionPrefixFiltersPrefixFilterArrayOutput) Index(i pulumi.IntInput) GetTgConnectionPrefixFiltersPrefixFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgConnectionPrefixFiltersPrefixFilter {
+		return vs[0].([]GetTgConnectionPrefixFiltersPrefixFilter)[vs[1].(int)]
+	}).(GetTgConnectionPrefixFiltersPrefixFilterOutput)
+}
+
+type GetTgGatewayConnection struct {
+	BaseConnectionId string `pulumi:"baseConnectionId"`
+	BaseNetworkType  string `pulumi:"baseNetworkType"`
+	CreatedAt        string `pulumi:"createdAt"`
+	// Whether to permit or deny the prefix filter
+	DefaultPrefixFilter string `pulumi:"defaultPrefixFilter"`
+	Id                  string `pulumi:"id"`
+	LocalBgpAsn         int    `pulumi:"localBgpAsn"`
+	LocalGatewayIp      string `pulumi:"localGatewayIp"`
+	LocalTunnelIp       string `pulumi:"localTunnelIp"`
+	Mtu                 int    `pulumi:"mtu"`
+	Name                string `pulumi:"name"`
+	// The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.
+	NetworkAccountId string `pulumi:"networkAccountId"`
+	NetworkId        string `pulumi:"networkId"`
+	NetworkType      string `pulumi:"networkType"`
+	RemoteBgpAsn     int    `pulumi:"remoteBgpAsn"`
+	RemoteGatewayIp  string `pulumi:"remoteGatewayIp"`
+	RemoteTunnelIp   string `pulumi:"remoteTunnelIp"`
+	Status           string `pulumi:"status"`
+	// List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
+	Tunnels   []GetTgGatewayConnectionTunnel `pulumi:"tunnels"`
+	UpdatedAt string                         `pulumi:"updatedAt"`
+	Zone      string                         `pulumi:"zone"`
+}
+
+// GetTgGatewayConnectionInput is an input type that accepts GetTgGatewayConnectionArgs and GetTgGatewayConnectionOutput values.
+// You can construct a concrete instance of `GetTgGatewayConnectionInput` via:
+//
+//	GetTgGatewayConnectionArgs{...}
+type GetTgGatewayConnectionInput interface {
+	pulumi.Input
+
+	ToGetTgGatewayConnectionOutput() GetTgGatewayConnectionOutput
+	ToGetTgGatewayConnectionOutputWithContext(context.Context) GetTgGatewayConnectionOutput
+}
+
+type GetTgGatewayConnectionArgs struct {
+	BaseConnectionId pulumi.StringInput `pulumi:"baseConnectionId"`
+	BaseNetworkType  pulumi.StringInput `pulumi:"baseNetworkType"`
+	CreatedAt        pulumi.StringInput `pulumi:"createdAt"`
+	// Whether to permit or deny the prefix filter
+	DefaultPrefixFilter pulumi.StringInput `pulumi:"defaultPrefixFilter"`
+	Id                  pulumi.StringInput `pulumi:"id"`
+	LocalBgpAsn         pulumi.IntInput    `pulumi:"localBgpAsn"`
+	LocalGatewayIp      pulumi.StringInput `pulumi:"localGatewayIp"`
+	LocalTunnelIp       pulumi.StringInput `pulumi:"localTunnelIp"`
+	Mtu                 pulumi.IntInput    `pulumi:"mtu"`
+	Name                pulumi.StringInput `pulumi:"name"`
+	// The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.
+	NetworkAccountId pulumi.StringInput `pulumi:"networkAccountId"`
+	NetworkId        pulumi.StringInput `pulumi:"networkId"`
+	NetworkType      pulumi.StringInput `pulumi:"networkType"`
+	RemoteBgpAsn     pulumi.IntInput    `pulumi:"remoteBgpAsn"`
+	RemoteGatewayIp  pulumi.StringInput `pulumi:"remoteGatewayIp"`
+	RemoteTunnelIp   pulumi.StringInput `pulumi:"remoteTunnelIp"`
+	Status           pulumi.StringInput `pulumi:"status"`
+	// List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
+	Tunnels   GetTgGatewayConnectionTunnelArrayInput `pulumi:"tunnels"`
+	UpdatedAt pulumi.StringInput                     `pulumi:"updatedAt"`
+	Zone      pulumi.StringInput                     `pulumi:"zone"`
+}
+
+func (GetTgGatewayConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgGatewayConnection)(nil)).Elem()
+}
+
+func (i GetTgGatewayConnectionArgs) ToGetTgGatewayConnectionOutput() GetTgGatewayConnectionOutput {
+	return i.ToGetTgGatewayConnectionOutputWithContext(context.Background())
+}
+
+func (i GetTgGatewayConnectionArgs) ToGetTgGatewayConnectionOutputWithContext(ctx context.Context) GetTgGatewayConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgGatewayConnectionOutput)
+}
+
+// GetTgGatewayConnectionArrayInput is an input type that accepts GetTgGatewayConnectionArray and GetTgGatewayConnectionArrayOutput values.
+// You can construct a concrete instance of `GetTgGatewayConnectionArrayInput` via:
+//
+//	GetTgGatewayConnectionArray{ GetTgGatewayConnectionArgs{...} }
+type GetTgGatewayConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTgGatewayConnectionArrayOutput() GetTgGatewayConnectionArrayOutput
+	ToGetTgGatewayConnectionArrayOutputWithContext(context.Context) GetTgGatewayConnectionArrayOutput
+}
+
+type GetTgGatewayConnectionArray []GetTgGatewayConnectionInput
+
+func (GetTgGatewayConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgGatewayConnection)(nil)).Elem()
+}
+
+func (i GetTgGatewayConnectionArray) ToGetTgGatewayConnectionArrayOutput() GetTgGatewayConnectionArrayOutput {
+	return i.ToGetTgGatewayConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgGatewayConnectionArray) ToGetTgGatewayConnectionArrayOutputWithContext(ctx context.Context) GetTgGatewayConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgGatewayConnectionArrayOutput)
+}
+
+type GetTgGatewayConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetTgGatewayConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgGatewayConnection)(nil)).Elem()
+}
+
+func (o GetTgGatewayConnectionOutput) ToGetTgGatewayConnectionOutput() GetTgGatewayConnectionOutput {
+	return o
+}
+
+func (o GetTgGatewayConnectionOutput) ToGetTgGatewayConnectionOutputWithContext(ctx context.Context) GetTgGatewayConnectionOutput {
+	return o
+}
+
+func (o GetTgGatewayConnectionOutput) BaseConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.BaseConnectionId }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) BaseNetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.BaseNetworkType }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+// Whether to permit or deny the prefix filter
+func (o GetTgGatewayConnectionOutput) DefaultPrefixFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.DefaultPrefixFilter }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) LocalBgpAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) int { return v.LocalBgpAsn }).(pulumi.IntOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) LocalGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.LocalGatewayIp }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) LocalTunnelIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.LocalTunnelIp }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) Mtu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) int { return v.Mtu }).(pulumi.IntOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.
+func (o GetTgGatewayConnectionOutput) NetworkAccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.NetworkAccountId }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) NetworkId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.NetworkId }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) RemoteBgpAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) int { return v.RemoteBgpAsn }).(pulumi.IntOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) RemoteGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.RemoteGatewayIp }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) RemoteTunnelIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.RemoteTunnelIp }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
+func (o GetTgGatewayConnectionOutput) Tunnels() GetTgGatewayConnectionTunnelArrayOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) []GetTgGatewayConnectionTunnel { return v.Tunnels }).(GetTgGatewayConnectionTunnelArrayOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) UpdatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.UpdatedAt }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnection) string { return v.Zone }).(pulumi.StringOutput)
+}
+
+type GetTgGatewayConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgGatewayConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgGatewayConnection)(nil)).Elem()
+}
+
+func (o GetTgGatewayConnectionArrayOutput) ToGetTgGatewayConnectionArrayOutput() GetTgGatewayConnectionArrayOutput {
+	return o
+}
+
+func (o GetTgGatewayConnectionArrayOutput) ToGetTgGatewayConnectionArrayOutputWithContext(ctx context.Context) GetTgGatewayConnectionArrayOutput {
+	return o
+}
+
+func (o GetTgGatewayConnectionArrayOutput) Index(i pulumi.IntInput) GetTgGatewayConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgGatewayConnection {
+		return vs[0].([]GetTgGatewayConnection)[vs[1].(int)]
+	}).(GetTgGatewayConnectionOutput)
+}
+
+type GetTgGatewayConnectionTunnel struct {
+	// The date and time that this connection was created
+	CreatedAt string `pulumi:"createdAt"`
+	// The local network BGP ASN.
+	LocalBgpAsn int `pulumi:"localBgpAsn"`
+	// The local gateway IP address.
+	LocalGatewayIp string `pulumi:"localGatewayIp"`
+	// The local tunnel IP address.
+	LocalTunnelIp string `pulumi:"localTunnelIp"`
+	Mtu           int    `pulumi:"mtu"`
+	// The user-defined name for this  rGRE tunnel.
+	Name string `pulumi:"name"`
+	// The remote network BGP ASN.
+	RemoteBgpAsn int `pulumi:"remoteBgpAsn"`
+	// The remote gateway IP address.
+	RemoteGatewayIp string `pulumi:"remoteGatewayIp"`
+	// The remote tunnel IP address.
+	RemoteTunnelIp string `pulumi:"remoteTunnelIp"`
+	// What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+	Status string `pulumi:"status"`
+	// The Transit Gateway Connection identifier
+	TunnelId string `pulumi:"tunnelId"`
+	// The date and time that this connection was last updated
+	UpdatedAt string `pulumi:"updatedAt"`
+	// Location of GRE tunnel.
+	Zone string `pulumi:"zone"`
+}
+
+// GetTgGatewayConnectionTunnelInput is an input type that accepts GetTgGatewayConnectionTunnelArgs and GetTgGatewayConnectionTunnelOutput values.
+// You can construct a concrete instance of `GetTgGatewayConnectionTunnelInput` via:
+//
+//	GetTgGatewayConnectionTunnelArgs{...}
+type GetTgGatewayConnectionTunnelInput interface {
+	pulumi.Input
+
+	ToGetTgGatewayConnectionTunnelOutput() GetTgGatewayConnectionTunnelOutput
+	ToGetTgGatewayConnectionTunnelOutputWithContext(context.Context) GetTgGatewayConnectionTunnelOutput
+}
+
+type GetTgGatewayConnectionTunnelArgs struct {
+	// The date and time that this connection was created
+	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
+	// The local network BGP ASN.
+	LocalBgpAsn pulumi.IntInput `pulumi:"localBgpAsn"`
+	// The local gateway IP address.
+	LocalGatewayIp pulumi.StringInput `pulumi:"localGatewayIp"`
+	// The local tunnel IP address.
+	LocalTunnelIp pulumi.StringInput `pulumi:"localTunnelIp"`
+	Mtu           pulumi.IntInput    `pulumi:"mtu"`
+	// The user-defined name for this  rGRE tunnel.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The remote network BGP ASN.
+	RemoteBgpAsn pulumi.IntInput `pulumi:"remoteBgpAsn"`
+	// The remote gateway IP address.
+	RemoteGatewayIp pulumi.StringInput `pulumi:"remoteGatewayIp"`
+	// The remote tunnel IP address.
+	RemoteTunnelIp pulumi.StringInput `pulumi:"remoteTunnelIp"`
+	// What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+	Status pulumi.StringInput `pulumi:"status"`
+	// The Transit Gateway Connection identifier
+	TunnelId pulumi.StringInput `pulumi:"tunnelId"`
+	// The date and time that this connection was last updated
+	UpdatedAt pulumi.StringInput `pulumi:"updatedAt"`
+	// Location of GRE tunnel.
+	Zone pulumi.StringInput `pulumi:"zone"`
+}
+
+func (GetTgGatewayConnectionTunnelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (i GetTgGatewayConnectionTunnelArgs) ToGetTgGatewayConnectionTunnelOutput() GetTgGatewayConnectionTunnelOutput {
+	return i.ToGetTgGatewayConnectionTunnelOutputWithContext(context.Background())
+}
+
+func (i GetTgGatewayConnectionTunnelArgs) ToGetTgGatewayConnectionTunnelOutputWithContext(ctx context.Context) GetTgGatewayConnectionTunnelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgGatewayConnectionTunnelOutput)
+}
+
+// GetTgGatewayConnectionTunnelArrayInput is an input type that accepts GetTgGatewayConnectionTunnelArray and GetTgGatewayConnectionTunnelArrayOutput values.
+// You can construct a concrete instance of `GetTgGatewayConnectionTunnelArrayInput` via:
+//
+//	GetTgGatewayConnectionTunnelArray{ GetTgGatewayConnectionTunnelArgs{...} }
+type GetTgGatewayConnectionTunnelArrayInput interface {
+	pulumi.Input
+
+	ToGetTgGatewayConnectionTunnelArrayOutput() GetTgGatewayConnectionTunnelArrayOutput
+	ToGetTgGatewayConnectionTunnelArrayOutputWithContext(context.Context) GetTgGatewayConnectionTunnelArrayOutput
+}
+
+type GetTgGatewayConnectionTunnelArray []GetTgGatewayConnectionTunnelInput
+
+func (GetTgGatewayConnectionTunnelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (i GetTgGatewayConnectionTunnelArray) ToGetTgGatewayConnectionTunnelArrayOutput() GetTgGatewayConnectionTunnelArrayOutput {
+	return i.ToGetTgGatewayConnectionTunnelArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgGatewayConnectionTunnelArray) ToGetTgGatewayConnectionTunnelArrayOutputWithContext(ctx context.Context) GetTgGatewayConnectionTunnelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgGatewayConnectionTunnelArrayOutput)
+}
+
+type GetTgGatewayConnectionTunnelOutput struct{ *pulumi.OutputState }
+
+func (GetTgGatewayConnectionTunnelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (o GetTgGatewayConnectionTunnelOutput) ToGetTgGatewayConnectionTunnelOutput() GetTgGatewayConnectionTunnelOutput {
+	return o
+}
+
+func (o GetTgGatewayConnectionTunnelOutput) ToGetTgGatewayConnectionTunnelOutputWithContext(ctx context.Context) GetTgGatewayConnectionTunnelOutput {
+	return o
+}
+
+// The date and time that this connection was created
+func (o GetTgGatewayConnectionTunnelOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+// The local network BGP ASN.
+func (o GetTgGatewayConnectionTunnelOutput) LocalBgpAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) int { return v.LocalBgpAsn }).(pulumi.IntOutput)
+}
+
+// The local gateway IP address.
+func (o GetTgGatewayConnectionTunnelOutput) LocalGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.LocalGatewayIp }).(pulumi.StringOutput)
+}
+
+// The local tunnel IP address.
+func (o GetTgGatewayConnectionTunnelOutput) LocalTunnelIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.LocalTunnelIp }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewayConnectionTunnelOutput) Mtu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) int { return v.Mtu }).(pulumi.IntOutput)
+}
+
+// The user-defined name for this  rGRE tunnel.
+func (o GetTgGatewayConnectionTunnelOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The remote network BGP ASN.
+func (o GetTgGatewayConnectionTunnelOutput) RemoteBgpAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) int { return v.RemoteBgpAsn }).(pulumi.IntOutput)
+}
+
+// The remote gateway IP address.
+func (o GetTgGatewayConnectionTunnelOutput) RemoteGatewayIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.RemoteGatewayIp }).(pulumi.StringOutput)
+}
+
+// The remote tunnel IP address.
+func (o GetTgGatewayConnectionTunnelOutput) RemoteTunnelIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.RemoteTunnelIp }).(pulumi.StringOutput)
+}
+
+// What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+func (o GetTgGatewayConnectionTunnelOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The Transit Gateway Connection identifier
+func (o GetTgGatewayConnectionTunnelOutput) TunnelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.TunnelId }).(pulumi.StringOutput)
+}
+
+// The date and time that this connection was last updated
+func (o GetTgGatewayConnectionTunnelOutput) UpdatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.UpdatedAt }).(pulumi.StringOutput)
+}
+
+// Location of GRE tunnel.
+func (o GetTgGatewayConnectionTunnelOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewayConnectionTunnel) string { return v.Zone }).(pulumi.StringOutput)
+}
+
+type GetTgGatewayConnectionTunnelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgGatewayConnectionTunnelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (o GetTgGatewayConnectionTunnelArrayOutput) ToGetTgGatewayConnectionTunnelArrayOutput() GetTgGatewayConnectionTunnelArrayOutput {
+	return o
+}
+
+func (o GetTgGatewayConnectionTunnelArrayOutput) ToGetTgGatewayConnectionTunnelArrayOutputWithContext(ctx context.Context) GetTgGatewayConnectionTunnelArrayOutput {
+	return o
+}
+
+func (o GetTgGatewayConnectionTunnelArrayOutput) Index(i pulumi.IntInput) GetTgGatewayConnectionTunnelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgGatewayConnectionTunnel {
+		return vs[0].([]GetTgGatewayConnectionTunnel)[vs[1].(int)]
+	}).(GetTgGatewayConnectionTunnelOutput)
+}
+
+type GetTgGatewaysTransitGateway struct {
+	CreatedAt                   string `pulumi:"createdAt"`
+	Crn                         string `pulumi:"crn"`
+	Global                      bool   `pulumi:"global"`
+	GreEnhancedRoutePropagation bool   `pulumi:"greEnhancedRoutePropagation"`
+	Id                          string `pulumi:"id"`
+	Location                    string `pulumi:"location"`
+	Name                        string `pulumi:"name"`
+	ResourceGroup               string `pulumi:"resourceGroup"`
+	Status                      string `pulumi:"status"`
+	UpdatedAt                   string `pulumi:"updatedAt"`
+}
+
+// GetTgGatewaysTransitGatewayInput is an input type that accepts GetTgGatewaysTransitGatewayArgs and GetTgGatewaysTransitGatewayOutput values.
+// You can construct a concrete instance of `GetTgGatewaysTransitGatewayInput` via:
+//
+//	GetTgGatewaysTransitGatewayArgs{...}
+type GetTgGatewaysTransitGatewayInput interface {
+	pulumi.Input
+
+	ToGetTgGatewaysTransitGatewayOutput() GetTgGatewaysTransitGatewayOutput
+	ToGetTgGatewaysTransitGatewayOutputWithContext(context.Context) GetTgGatewaysTransitGatewayOutput
+}
+
+type GetTgGatewaysTransitGatewayArgs struct {
+	CreatedAt                   pulumi.StringInput `pulumi:"createdAt"`
+	Crn                         pulumi.StringInput `pulumi:"crn"`
+	Global                      pulumi.BoolInput   `pulumi:"global"`
+	GreEnhancedRoutePropagation pulumi.BoolInput   `pulumi:"greEnhancedRoutePropagation"`
+	Id                          pulumi.StringInput `pulumi:"id"`
+	Location                    pulumi.StringInput `pulumi:"location"`
+	Name                        pulumi.StringInput `pulumi:"name"`
+	ResourceGroup               pulumi.StringInput `pulumi:"resourceGroup"`
+	Status                      pulumi.StringInput `pulumi:"status"`
+	UpdatedAt                   pulumi.StringInput `pulumi:"updatedAt"`
+}
+
+func (GetTgGatewaysTransitGatewayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgGatewaysTransitGateway)(nil)).Elem()
+}
+
+func (i GetTgGatewaysTransitGatewayArgs) ToGetTgGatewaysTransitGatewayOutput() GetTgGatewaysTransitGatewayOutput {
+	return i.ToGetTgGatewaysTransitGatewayOutputWithContext(context.Background())
+}
+
+func (i GetTgGatewaysTransitGatewayArgs) ToGetTgGatewaysTransitGatewayOutputWithContext(ctx context.Context) GetTgGatewaysTransitGatewayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgGatewaysTransitGatewayOutput)
+}
+
+// GetTgGatewaysTransitGatewayArrayInput is an input type that accepts GetTgGatewaysTransitGatewayArray and GetTgGatewaysTransitGatewayArrayOutput values.
+// You can construct a concrete instance of `GetTgGatewaysTransitGatewayArrayInput` via:
+//
+//	GetTgGatewaysTransitGatewayArray{ GetTgGatewaysTransitGatewayArgs{...} }
+type GetTgGatewaysTransitGatewayArrayInput interface {
+	pulumi.Input
+
+	ToGetTgGatewaysTransitGatewayArrayOutput() GetTgGatewaysTransitGatewayArrayOutput
+	ToGetTgGatewaysTransitGatewayArrayOutputWithContext(context.Context) GetTgGatewaysTransitGatewayArrayOutput
+}
+
+type GetTgGatewaysTransitGatewayArray []GetTgGatewaysTransitGatewayInput
+
+func (GetTgGatewaysTransitGatewayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgGatewaysTransitGateway)(nil)).Elem()
+}
+
+func (i GetTgGatewaysTransitGatewayArray) ToGetTgGatewaysTransitGatewayArrayOutput() GetTgGatewaysTransitGatewayArrayOutput {
+	return i.ToGetTgGatewaysTransitGatewayArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgGatewaysTransitGatewayArray) ToGetTgGatewaysTransitGatewayArrayOutputWithContext(ctx context.Context) GetTgGatewaysTransitGatewayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgGatewaysTransitGatewayArrayOutput)
+}
+
+type GetTgGatewaysTransitGatewayOutput struct{ *pulumi.OutputState }
+
+func (GetTgGatewaysTransitGatewayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgGatewaysTransitGateway)(nil)).Elem()
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) ToGetTgGatewaysTransitGatewayOutput() GetTgGatewaysTransitGatewayOutput {
+	return o
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) ToGetTgGatewaysTransitGatewayOutputWithContext(ctx context.Context) GetTgGatewaysTransitGatewayOutput {
+	return o
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) Crn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.Crn }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) Global() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) bool { return v.Global }).(pulumi.BoolOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) GreEnhancedRoutePropagation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) bool { return v.GreEnhancedRoutePropagation }).(pulumi.BoolOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.Location }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetTgGatewaysTransitGatewayOutput) UpdatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgGatewaysTransitGateway) string { return v.UpdatedAt }).(pulumi.StringOutput)
+}
+
+type GetTgGatewaysTransitGatewayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgGatewaysTransitGatewayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgGatewaysTransitGateway)(nil)).Elem()
+}
+
+func (o GetTgGatewaysTransitGatewayArrayOutput) ToGetTgGatewaysTransitGatewayArrayOutput() GetTgGatewaysTransitGatewayArrayOutput {
+	return o
+}
+
+func (o GetTgGatewaysTransitGatewayArrayOutput) ToGetTgGatewaysTransitGatewayArrayOutputWithContext(ctx context.Context) GetTgGatewaysTransitGatewayArrayOutput {
+	return o
+}
+
+func (o GetTgGatewaysTransitGatewayArrayOutput) Index(i pulumi.IntInput) GetTgGatewaysTransitGatewayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgGatewaysTransitGateway {
+		return vs[0].([]GetTgGatewaysTransitGateway)[vs[1].(int)]
+	}).(GetTgGatewaysTransitGatewayOutput)
+}
+
+type GetTgLocationLocalConnectionLocation struct {
+	// A descriptive display name for the location.
+	DisplayName string `pulumi:"displayName"`
+	// Name of the Location.
+	Name string `pulumi:"name"`
+	// The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+	Type string `pulumi:"type"`
+}
+
+// GetTgLocationLocalConnectionLocationInput is an input type that accepts GetTgLocationLocalConnectionLocationArgs and GetTgLocationLocalConnectionLocationOutput values.
+// You can construct a concrete instance of `GetTgLocationLocalConnectionLocationInput` via:
+//
+//	GetTgLocationLocalConnectionLocationArgs{...}
+type GetTgLocationLocalConnectionLocationInput interface {
+	pulumi.Input
+
+	ToGetTgLocationLocalConnectionLocationOutput() GetTgLocationLocalConnectionLocationOutput
+	ToGetTgLocationLocalConnectionLocationOutputWithContext(context.Context) GetTgLocationLocalConnectionLocationOutput
+}
+
+type GetTgLocationLocalConnectionLocationArgs struct {
+	// A descriptive display name for the location.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Name of the Location.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetTgLocationLocalConnectionLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgLocationLocalConnectionLocation)(nil)).Elem()
+}
+
+func (i GetTgLocationLocalConnectionLocationArgs) ToGetTgLocationLocalConnectionLocationOutput() GetTgLocationLocalConnectionLocationOutput {
+	return i.ToGetTgLocationLocalConnectionLocationOutputWithContext(context.Background())
+}
+
+func (i GetTgLocationLocalConnectionLocationArgs) ToGetTgLocationLocalConnectionLocationOutputWithContext(ctx context.Context) GetTgLocationLocalConnectionLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgLocationLocalConnectionLocationOutput)
+}
+
+// GetTgLocationLocalConnectionLocationArrayInput is an input type that accepts GetTgLocationLocalConnectionLocationArray and GetTgLocationLocalConnectionLocationArrayOutput values.
+// You can construct a concrete instance of `GetTgLocationLocalConnectionLocationArrayInput` via:
+//
+//	GetTgLocationLocalConnectionLocationArray{ GetTgLocationLocalConnectionLocationArgs{...} }
+type GetTgLocationLocalConnectionLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetTgLocationLocalConnectionLocationArrayOutput() GetTgLocationLocalConnectionLocationArrayOutput
+	ToGetTgLocationLocalConnectionLocationArrayOutputWithContext(context.Context) GetTgLocationLocalConnectionLocationArrayOutput
+}
+
+type GetTgLocationLocalConnectionLocationArray []GetTgLocationLocalConnectionLocationInput
+
+func (GetTgLocationLocalConnectionLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgLocationLocalConnectionLocation)(nil)).Elem()
+}
+
+func (i GetTgLocationLocalConnectionLocationArray) ToGetTgLocationLocalConnectionLocationArrayOutput() GetTgLocationLocalConnectionLocationArrayOutput {
+	return i.ToGetTgLocationLocalConnectionLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgLocationLocalConnectionLocationArray) ToGetTgLocationLocalConnectionLocationArrayOutputWithContext(ctx context.Context) GetTgLocationLocalConnectionLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgLocationLocalConnectionLocationArrayOutput)
+}
+
+type GetTgLocationLocalConnectionLocationOutput struct{ *pulumi.OutputState }
+
+func (GetTgLocationLocalConnectionLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgLocationLocalConnectionLocation)(nil)).Elem()
+}
+
+func (o GetTgLocationLocalConnectionLocationOutput) ToGetTgLocationLocalConnectionLocationOutput() GetTgLocationLocalConnectionLocationOutput {
+	return o
+}
+
+func (o GetTgLocationLocalConnectionLocationOutput) ToGetTgLocationLocalConnectionLocationOutputWithContext(ctx context.Context) GetTgLocationLocalConnectionLocationOutput {
+	return o
+}
+
+// A descriptive display name for the location.
+func (o GetTgLocationLocalConnectionLocationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgLocationLocalConnectionLocation) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Name of the Location.
+func (o GetTgLocationLocalConnectionLocationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgLocationLocalConnectionLocation) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+func (o GetTgLocationLocalConnectionLocationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgLocationLocalConnectionLocation) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetTgLocationLocalConnectionLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgLocationLocalConnectionLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgLocationLocalConnectionLocation)(nil)).Elem()
+}
+
+func (o GetTgLocationLocalConnectionLocationArrayOutput) ToGetTgLocationLocalConnectionLocationArrayOutput() GetTgLocationLocalConnectionLocationArrayOutput {
+	return o
+}
+
+func (o GetTgLocationLocalConnectionLocationArrayOutput) ToGetTgLocationLocalConnectionLocationArrayOutputWithContext(ctx context.Context) GetTgLocationLocalConnectionLocationArrayOutput {
+	return o
+}
+
+func (o GetTgLocationLocalConnectionLocationArrayOutput) Index(i pulumi.IntInput) GetTgLocationLocalConnectionLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgLocationLocalConnectionLocation {
+		return vs[0].([]GetTgLocationLocalConnectionLocation)[vs[1].(int)]
+	}).(GetTgLocationLocalConnectionLocationOutput)
+}
+
+type GetTgLocationsLocation struct {
+	// The geographical location of this location, used for billing purposes.
+	BillingLocation string `pulumi:"billingLocation"`
+	// Name of the Location.
+	Name string `pulumi:"name"`
+	// The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+	Type string `pulumi:"type"`
+}
+
+// GetTgLocationsLocationInput is an input type that accepts GetTgLocationsLocationArgs and GetTgLocationsLocationOutput values.
+// You can construct a concrete instance of `GetTgLocationsLocationInput` via:
+//
+//	GetTgLocationsLocationArgs{...}
+type GetTgLocationsLocationInput interface {
+	pulumi.Input
+
+	ToGetTgLocationsLocationOutput() GetTgLocationsLocationOutput
+	ToGetTgLocationsLocationOutputWithContext(context.Context) GetTgLocationsLocationOutput
+}
+
+type GetTgLocationsLocationArgs struct {
+	// The geographical location of this location, used for billing purposes.
+	BillingLocation pulumi.StringInput `pulumi:"billingLocation"`
+	// Name of the Location.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetTgLocationsLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgLocationsLocation)(nil)).Elem()
+}
+
+func (i GetTgLocationsLocationArgs) ToGetTgLocationsLocationOutput() GetTgLocationsLocationOutput {
+	return i.ToGetTgLocationsLocationOutputWithContext(context.Background())
+}
+
+func (i GetTgLocationsLocationArgs) ToGetTgLocationsLocationOutputWithContext(ctx context.Context) GetTgLocationsLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgLocationsLocationOutput)
+}
+
+// GetTgLocationsLocationArrayInput is an input type that accepts GetTgLocationsLocationArray and GetTgLocationsLocationArrayOutput values.
+// You can construct a concrete instance of `GetTgLocationsLocationArrayInput` via:
+//
+//	GetTgLocationsLocationArray{ GetTgLocationsLocationArgs{...} }
+type GetTgLocationsLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetTgLocationsLocationArrayOutput() GetTgLocationsLocationArrayOutput
+	ToGetTgLocationsLocationArrayOutputWithContext(context.Context) GetTgLocationsLocationArrayOutput
+}
+
+type GetTgLocationsLocationArray []GetTgLocationsLocationInput
+
+func (GetTgLocationsLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgLocationsLocation)(nil)).Elem()
+}
+
+func (i GetTgLocationsLocationArray) ToGetTgLocationsLocationArrayOutput() GetTgLocationsLocationArrayOutput {
+	return i.ToGetTgLocationsLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgLocationsLocationArray) ToGetTgLocationsLocationArrayOutputWithContext(ctx context.Context) GetTgLocationsLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgLocationsLocationArrayOutput)
+}
+
+type GetTgLocationsLocationOutput struct{ *pulumi.OutputState }
+
+func (GetTgLocationsLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgLocationsLocation)(nil)).Elem()
+}
+
+func (o GetTgLocationsLocationOutput) ToGetTgLocationsLocationOutput() GetTgLocationsLocationOutput {
+	return o
+}
+
+func (o GetTgLocationsLocationOutput) ToGetTgLocationsLocationOutputWithContext(ctx context.Context) GetTgLocationsLocationOutput {
+	return o
+}
+
+// The geographical location of this location, used for billing purposes.
+func (o GetTgLocationsLocationOutput) BillingLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgLocationsLocation) string { return v.BillingLocation }).(pulumi.StringOutput)
+}
+
+// Name of the Location.
+func (o GetTgLocationsLocationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgLocationsLocation) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+func (o GetTgLocationsLocationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgLocationsLocation) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetTgLocationsLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgLocationsLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgLocationsLocation)(nil)).Elem()
+}
+
+func (o GetTgLocationsLocationArrayOutput) ToGetTgLocationsLocationArrayOutput() GetTgLocationsLocationArrayOutput {
+	return o
+}
+
+func (o GetTgLocationsLocationArrayOutput) ToGetTgLocationsLocationArrayOutputWithContext(ctx context.Context) GetTgLocationsLocationArrayOutput {
+	return o
+}
+
+func (o GetTgLocationsLocationArrayOutput) Index(i pulumi.IntInput) GetTgLocationsLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgLocationsLocation {
+		return vs[0].([]GetTgLocationsLocation)[vs[1].(int)]
+	}).(GetTgLocationsLocationOutput)
+}
+
+type GetTgRouteReportConnection struct {
+	// Collection of transit gateway connection's bgps
+	Bgps []GetTgRouteReportConnectionBgp `pulumi:"bgps"`
+	Id   string                          `pulumi:"id"`
+	Name string                          `pulumi:"name"`
+	// Collection of transit gateway connection's used routes
+	Routes []GetTgRouteReportConnectionRoute `pulumi:"routes"`
+	Type   string                            `pulumi:"type"`
+}
+
+// GetTgRouteReportConnectionInput is an input type that accepts GetTgRouteReportConnectionArgs and GetTgRouteReportConnectionOutput values.
+// You can construct a concrete instance of `GetTgRouteReportConnectionInput` via:
+//
+//	GetTgRouteReportConnectionArgs{...}
+type GetTgRouteReportConnectionInput interface {
+	pulumi.Input
+
+	ToGetTgRouteReportConnectionOutput() GetTgRouteReportConnectionOutput
+	ToGetTgRouteReportConnectionOutputWithContext(context.Context) GetTgRouteReportConnectionOutput
+}
+
+type GetTgRouteReportConnectionArgs struct {
+	// Collection of transit gateway connection's bgps
+	Bgps GetTgRouteReportConnectionBgpArrayInput `pulumi:"bgps"`
+	Id   pulumi.StringInput                      `pulumi:"id"`
+	Name pulumi.StringInput                      `pulumi:"name"`
+	// Collection of transit gateway connection's used routes
+	Routes GetTgRouteReportConnectionRouteArrayInput `pulumi:"routes"`
+	Type   pulumi.StringInput                        `pulumi:"type"`
+}
+
+func (GetTgRouteReportConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgRouteReportConnection)(nil)).Elem()
+}
+
+func (i GetTgRouteReportConnectionArgs) ToGetTgRouteReportConnectionOutput() GetTgRouteReportConnectionOutput {
+	return i.ToGetTgRouteReportConnectionOutputWithContext(context.Background())
+}
+
+func (i GetTgRouteReportConnectionArgs) ToGetTgRouteReportConnectionOutputWithContext(ctx context.Context) GetTgRouteReportConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgRouteReportConnectionOutput)
+}
+
+// GetTgRouteReportConnectionArrayInput is an input type that accepts GetTgRouteReportConnectionArray and GetTgRouteReportConnectionArrayOutput values.
+// You can construct a concrete instance of `GetTgRouteReportConnectionArrayInput` via:
+//
+//	GetTgRouteReportConnectionArray{ GetTgRouteReportConnectionArgs{...} }
+type GetTgRouteReportConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTgRouteReportConnectionArrayOutput() GetTgRouteReportConnectionArrayOutput
+	ToGetTgRouteReportConnectionArrayOutputWithContext(context.Context) GetTgRouteReportConnectionArrayOutput
+}
+
+type GetTgRouteReportConnectionArray []GetTgRouteReportConnectionInput
+
+func (GetTgRouteReportConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgRouteReportConnection)(nil)).Elem()
+}
+
+func (i GetTgRouteReportConnectionArray) ToGetTgRouteReportConnectionArrayOutput() GetTgRouteReportConnectionArrayOutput {
+	return i.ToGetTgRouteReportConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgRouteReportConnectionArray) ToGetTgRouteReportConnectionArrayOutputWithContext(ctx context.Context) GetTgRouteReportConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgRouteReportConnectionArrayOutput)
+}
+
+type GetTgRouteReportConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetTgRouteReportConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgRouteReportConnection)(nil)).Elem()
+}
+
+func (o GetTgRouteReportConnectionOutput) ToGetTgRouteReportConnectionOutput() GetTgRouteReportConnectionOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionOutput) ToGetTgRouteReportConnectionOutputWithContext(ctx context.Context) GetTgRouteReportConnectionOutput {
+	return o
+}
+
+// Collection of transit gateway connection's bgps
+func (o GetTgRouteReportConnectionOutput) Bgps() GetTgRouteReportConnectionBgpArrayOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnection) []GetTgRouteReportConnectionBgp { return v.Bgps }).(GetTgRouteReportConnectionBgpArrayOutput)
+}
+
+func (o GetTgRouteReportConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetTgRouteReportConnectionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnection) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Collection of transit gateway connection's used routes
+func (o GetTgRouteReportConnectionOutput) Routes() GetTgRouteReportConnectionRouteArrayOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnection) []GetTgRouteReportConnectionRoute { return v.Routes }).(GetTgRouteReportConnectionRouteArrayOutput)
+}
+
+func (o GetTgRouteReportConnectionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnection) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetTgRouteReportConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgRouteReportConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgRouteReportConnection)(nil)).Elem()
+}
+
+func (o GetTgRouteReportConnectionArrayOutput) ToGetTgRouteReportConnectionArrayOutput() GetTgRouteReportConnectionArrayOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionArrayOutput) ToGetTgRouteReportConnectionArrayOutputWithContext(ctx context.Context) GetTgRouteReportConnectionArrayOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionArrayOutput) Index(i pulumi.IntInput) GetTgRouteReportConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgRouteReportConnection {
+		return vs[0].([]GetTgRouteReportConnection)[vs[1].(int)]
+	}).(GetTgRouteReportConnectionOutput)
+}
+
+type GetTgRouteReportConnectionBgp struct {
+	AsPath          string `pulumi:"asPath"`
+	IsUsed          bool   `pulumi:"isUsed"`
+	LocalPreference string `pulumi:"localPreference"`
+	Prefix          string `pulumi:"prefix"`
+}
+
+// GetTgRouteReportConnectionBgpInput is an input type that accepts GetTgRouteReportConnectionBgpArgs and GetTgRouteReportConnectionBgpOutput values.
+// You can construct a concrete instance of `GetTgRouteReportConnectionBgpInput` via:
+//
+//	GetTgRouteReportConnectionBgpArgs{...}
+type GetTgRouteReportConnectionBgpInput interface {
+	pulumi.Input
+
+	ToGetTgRouteReportConnectionBgpOutput() GetTgRouteReportConnectionBgpOutput
+	ToGetTgRouteReportConnectionBgpOutputWithContext(context.Context) GetTgRouteReportConnectionBgpOutput
+}
+
+type GetTgRouteReportConnectionBgpArgs struct {
+	AsPath          pulumi.StringInput `pulumi:"asPath"`
+	IsUsed          pulumi.BoolInput   `pulumi:"isUsed"`
+	LocalPreference pulumi.StringInput `pulumi:"localPreference"`
+	Prefix          pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetTgRouteReportConnectionBgpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (i GetTgRouteReportConnectionBgpArgs) ToGetTgRouteReportConnectionBgpOutput() GetTgRouteReportConnectionBgpOutput {
+	return i.ToGetTgRouteReportConnectionBgpOutputWithContext(context.Background())
+}
+
+func (i GetTgRouteReportConnectionBgpArgs) ToGetTgRouteReportConnectionBgpOutputWithContext(ctx context.Context) GetTgRouteReportConnectionBgpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgRouteReportConnectionBgpOutput)
+}
+
+// GetTgRouteReportConnectionBgpArrayInput is an input type that accepts GetTgRouteReportConnectionBgpArray and GetTgRouteReportConnectionBgpArrayOutput values.
+// You can construct a concrete instance of `GetTgRouteReportConnectionBgpArrayInput` via:
+//
+//	GetTgRouteReportConnectionBgpArray{ GetTgRouteReportConnectionBgpArgs{...} }
+type GetTgRouteReportConnectionBgpArrayInput interface {
+	pulumi.Input
+
+	ToGetTgRouteReportConnectionBgpArrayOutput() GetTgRouteReportConnectionBgpArrayOutput
+	ToGetTgRouteReportConnectionBgpArrayOutputWithContext(context.Context) GetTgRouteReportConnectionBgpArrayOutput
+}
+
+type GetTgRouteReportConnectionBgpArray []GetTgRouteReportConnectionBgpInput
+
+func (GetTgRouteReportConnectionBgpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (i GetTgRouteReportConnectionBgpArray) ToGetTgRouteReportConnectionBgpArrayOutput() GetTgRouteReportConnectionBgpArrayOutput {
+	return i.ToGetTgRouteReportConnectionBgpArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgRouteReportConnectionBgpArray) ToGetTgRouteReportConnectionBgpArrayOutputWithContext(ctx context.Context) GetTgRouteReportConnectionBgpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgRouteReportConnectionBgpArrayOutput)
+}
+
+type GetTgRouteReportConnectionBgpOutput struct{ *pulumi.OutputState }
+
+func (GetTgRouteReportConnectionBgpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (o GetTgRouteReportConnectionBgpOutput) ToGetTgRouteReportConnectionBgpOutput() GetTgRouteReportConnectionBgpOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionBgpOutput) ToGetTgRouteReportConnectionBgpOutputWithContext(ctx context.Context) GetTgRouteReportConnectionBgpOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionBgpOutput) AsPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnectionBgp) string { return v.AsPath }).(pulumi.StringOutput)
+}
+
+func (o GetTgRouteReportConnectionBgpOutput) IsUsed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnectionBgp) bool { return v.IsUsed }).(pulumi.BoolOutput)
+}
+
+func (o GetTgRouteReportConnectionBgpOutput) LocalPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnectionBgp) string { return v.LocalPreference }).(pulumi.StringOutput)
+}
+
+func (o GetTgRouteReportConnectionBgpOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnectionBgp) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetTgRouteReportConnectionBgpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgRouteReportConnectionBgpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgRouteReportConnectionBgp)(nil)).Elem()
+}
+
+func (o GetTgRouteReportConnectionBgpArrayOutput) ToGetTgRouteReportConnectionBgpArrayOutput() GetTgRouteReportConnectionBgpArrayOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionBgpArrayOutput) ToGetTgRouteReportConnectionBgpArrayOutputWithContext(ctx context.Context) GetTgRouteReportConnectionBgpArrayOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionBgpArrayOutput) Index(i pulumi.IntInput) GetTgRouteReportConnectionBgpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgRouteReportConnectionBgp {
+		return vs[0].([]GetTgRouteReportConnectionBgp)[vs[1].(int)]
+	}).(GetTgRouteReportConnectionBgpOutput)
+}
+
+type GetTgRouteReportConnectionRoute struct {
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetTgRouteReportConnectionRouteInput is an input type that accepts GetTgRouteReportConnectionRouteArgs and GetTgRouteReportConnectionRouteOutput values.
+// You can construct a concrete instance of `GetTgRouteReportConnectionRouteInput` via:
+//
+//	GetTgRouteReportConnectionRouteArgs{...}
+type GetTgRouteReportConnectionRouteInput interface {
+	pulumi.Input
+
+	ToGetTgRouteReportConnectionRouteOutput() GetTgRouteReportConnectionRouteOutput
+	ToGetTgRouteReportConnectionRouteOutputWithContext(context.Context) GetTgRouteReportConnectionRouteOutput
+}
+
+type GetTgRouteReportConnectionRouteArgs struct {
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetTgRouteReportConnectionRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (i GetTgRouteReportConnectionRouteArgs) ToGetTgRouteReportConnectionRouteOutput() GetTgRouteReportConnectionRouteOutput {
+	return i.ToGetTgRouteReportConnectionRouteOutputWithContext(context.Background())
+}
+
+func (i GetTgRouteReportConnectionRouteArgs) ToGetTgRouteReportConnectionRouteOutputWithContext(ctx context.Context) GetTgRouteReportConnectionRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgRouteReportConnectionRouteOutput)
+}
+
+// GetTgRouteReportConnectionRouteArrayInput is an input type that accepts GetTgRouteReportConnectionRouteArray and GetTgRouteReportConnectionRouteArrayOutput values.
+// You can construct a concrete instance of `GetTgRouteReportConnectionRouteArrayInput` via:
+//
+//	GetTgRouteReportConnectionRouteArray{ GetTgRouteReportConnectionRouteArgs{...} }
+type GetTgRouteReportConnectionRouteArrayInput interface {
+	pulumi.Input
+
+	ToGetTgRouteReportConnectionRouteArrayOutput() GetTgRouteReportConnectionRouteArrayOutput
+	ToGetTgRouteReportConnectionRouteArrayOutputWithContext(context.Context) GetTgRouteReportConnectionRouteArrayOutput
+}
+
+type GetTgRouteReportConnectionRouteArray []GetTgRouteReportConnectionRouteInput
+
+func (GetTgRouteReportConnectionRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (i GetTgRouteReportConnectionRouteArray) ToGetTgRouteReportConnectionRouteArrayOutput() GetTgRouteReportConnectionRouteArrayOutput {
+	return i.ToGetTgRouteReportConnectionRouteArrayOutputWithContext(context.Background())
+}
+
+func (i GetTgRouteReportConnectionRouteArray) ToGetTgRouteReportConnectionRouteArrayOutputWithContext(ctx context.Context) GetTgRouteReportConnectionRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTgRouteReportConnectionRouteArrayOutput)
+}
+
+type GetTgRouteReportConnectionRouteOutput struct{ *pulumi.OutputState }
+
+func (GetTgRouteReportConnectionRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (o GetTgRouteReportConnectionRouteOutput) ToGetTgRouteReportConnectionRouteOutput() GetTgRouteReportConnectionRouteOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionRouteOutput) ToGetTgRouteReportConnectionRouteOutputWithContext(ctx context.Context) GetTgRouteReportConnectionRouteOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionRouteOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTgRouteReportConnectionRoute) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetTgRouteReportConnectionRouteArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTgRouteReportConnectionRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTgRouteReportConnectionRoute)(nil)).Elem()
+}
+
+func (o GetTgRouteReportConnectionRouteArrayOutput) ToGetTgRouteReportConnectionRouteArrayOutput() GetTgRouteReportConnectionRouteArrayOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionRouteArrayOutput) ToGetTgRouteReportConnectionRouteArrayOutputWithContext(ctx context.Context) GetTgRouteReportConnectionRouteArrayOutput {
+	return o
+}
+
+func (o GetTgRouteReportConnectionRouteArrayOutput) Index(i pulumi.IntInput) GetTgRouteReportConnectionRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTgRouteReportConnectionRoute {
+		return vs[0].([]GetTgRouteReportConnectionRoute)[vs[1].(int)]
+	}).(GetTgRouteReportConnectionRouteOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeletedInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetDeletedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeletedInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcDeletedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingInput)(nil)).Elem(), GetIsShareAccessorBindingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingArrayInput)(nil)).Elem(), GetIsShareAccessorBindingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingAccessorInput)(nil)).Elem(), GetIsShareAccessorBindingAccessorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingAccessorArrayInput)(nil)).Elem(), GetIsShareAccessorBindingAccessorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingAccessorDeletedInput)(nil)).Elem(), GetIsShareAccessorBindingAccessorDeletedArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingAccessorDeletedArrayInput)(nil)).Elem(), GetIsShareAccessorBindingAccessorDeletedArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingAccessorRemoteInput)(nil)).Elem(), GetIsShareAccessorBindingAccessorRemoteArgs{})
@@ -63199,6 +65236,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPiWorkspacesWorkspacePiWorkspaceDetailNetworkSecurityGroupArrayInput)(nil)).Elem(), GetPiWorkspacesWorkspacePiWorkspaceDetailNetworkSecurityGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterInput)(nil)).Elem(), GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterArrayInput)(nil)).Elem(), GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgConnectionPrefixFiltersPrefixFilterInput)(nil)).Elem(), GetTgConnectionPrefixFiltersPrefixFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgConnectionPrefixFiltersPrefixFilterArrayInput)(nil)).Elem(), GetTgConnectionPrefixFiltersPrefixFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgGatewayConnectionInput)(nil)).Elem(), GetTgGatewayConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgGatewayConnectionArrayInput)(nil)).Elem(), GetTgGatewayConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgGatewayConnectionTunnelInput)(nil)).Elem(), GetTgGatewayConnectionTunnelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgGatewayConnectionTunnelArrayInput)(nil)).Elem(), GetTgGatewayConnectionTunnelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgGatewaysTransitGatewayInput)(nil)).Elem(), GetTgGatewaysTransitGatewayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgGatewaysTransitGatewayArrayInput)(nil)).Elem(), GetTgGatewaysTransitGatewayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgLocationLocalConnectionLocationInput)(nil)).Elem(), GetTgLocationLocalConnectionLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgLocationLocalConnectionLocationArrayInput)(nil)).Elem(), GetTgLocationLocalConnectionLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgLocationsLocationInput)(nil)).Elem(), GetTgLocationsLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgLocationsLocationArrayInput)(nil)).Elem(), GetTgLocationsLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgRouteReportConnectionInput)(nil)).Elem(), GetTgRouteReportConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgRouteReportConnectionArrayInput)(nil)).Elem(), GetTgRouteReportConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgRouteReportConnectionBgpInput)(nil)).Elem(), GetTgRouteReportConnectionBgpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgRouteReportConnectionBgpArrayInput)(nil)).Elem(), GetTgRouteReportConnectionBgpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgRouteReportConnectionRouteInput)(nil)).Elem(), GetTgRouteReportConnectionRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTgRouteReportConnectionRouteArrayInput)(nil)).Elem(), GetTgRouteReportConnectionRouteArray{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetOutput{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetDeletedOutput{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcOutput{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcArrayOutput{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcDeletedOutput{})
+	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput{})
+	pulumi.RegisterOutputType(GetIsShareAccessorBindingOutput{})
+	pulumi.RegisterOutputType(GetIsShareAccessorBindingArrayOutput{})
+	pulumi.RegisterOutputType(GetIsShareAccessorBindingAccessorOutput{})
+	pulumi.RegisterOutputType(GetIsShareAccessorBindingAccessorArrayOutput{})
 	pulumi.RegisterOutputType(GetIsShareAccessorBindingAccessorDeletedOutput{})
 	pulumi.RegisterOutputType(GetIsShareAccessorBindingAccessorDeletedArrayOutput{})
 	pulumi.RegisterOutputType(GetIsShareAccessorBindingAccessorRemoteOutput{})
@@ -64169,4 +66236,22 @@ func init() {
 	pulumi.RegisterOutputType(GetPiWorkspacesWorkspacePiWorkspaceDetailNetworkSecurityGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterOutput{})
 	pulumi.RegisterOutputType(GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouterArrayOutput{})
+	pulumi.RegisterOutputType(GetTgConnectionPrefixFiltersPrefixFilterOutput{})
+	pulumi.RegisterOutputType(GetTgConnectionPrefixFiltersPrefixFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTgGatewayConnectionOutput{})
+	pulumi.RegisterOutputType(GetTgGatewayConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTgGatewayConnectionTunnelOutput{})
+	pulumi.RegisterOutputType(GetTgGatewayConnectionTunnelArrayOutput{})
+	pulumi.RegisterOutputType(GetTgGatewaysTransitGatewayOutput{})
+	pulumi.RegisterOutputType(GetTgGatewaysTransitGatewayArrayOutput{})
+	pulumi.RegisterOutputType(GetTgLocationLocalConnectionLocationOutput{})
+	pulumi.RegisterOutputType(GetTgLocationLocalConnectionLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetTgLocationsLocationOutput{})
+	pulumi.RegisterOutputType(GetTgLocationsLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetTgRouteReportConnectionOutput{})
+	pulumi.RegisterOutputType(GetTgRouteReportConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTgRouteReportConnectionBgpOutput{})
+	pulumi.RegisterOutputType(GetTgRouteReportConnectionBgpArrayOutput{})
+	pulumi.RegisterOutputType(GetTgRouteReportConnectionRouteOutput{})
+	pulumi.RegisterOutputType(GetTgRouteReportConnectionRouteArrayOutput{})
 }
