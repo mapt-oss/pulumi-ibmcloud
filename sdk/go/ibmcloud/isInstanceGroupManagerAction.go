@@ -242,56 +242,6 @@ func (i *IsInstanceGroupManagerAction) ToIsInstanceGroupManagerActionOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupManagerActionOutput)
 }
 
-// IsInstanceGroupManagerActionArrayInput is an input type that accepts IsInstanceGroupManagerActionArray and IsInstanceGroupManagerActionArrayOutput values.
-// You can construct a concrete instance of `IsInstanceGroupManagerActionArrayInput` via:
-//
-//	IsInstanceGroupManagerActionArray{ IsInstanceGroupManagerActionArgs{...} }
-type IsInstanceGroupManagerActionArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceGroupManagerActionArrayOutput() IsInstanceGroupManagerActionArrayOutput
-	ToIsInstanceGroupManagerActionArrayOutputWithContext(context.Context) IsInstanceGroupManagerActionArrayOutput
-}
-
-type IsInstanceGroupManagerActionArray []IsInstanceGroupManagerActionInput
-
-func (IsInstanceGroupManagerActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceGroupManagerAction)(nil)).Elem()
-}
-
-func (i IsInstanceGroupManagerActionArray) ToIsInstanceGroupManagerActionArrayOutput() IsInstanceGroupManagerActionArrayOutput {
-	return i.ToIsInstanceGroupManagerActionArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceGroupManagerActionArray) ToIsInstanceGroupManagerActionArrayOutputWithContext(ctx context.Context) IsInstanceGroupManagerActionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupManagerActionArrayOutput)
-}
-
-// IsInstanceGroupManagerActionMapInput is an input type that accepts IsInstanceGroupManagerActionMap and IsInstanceGroupManagerActionMapOutput values.
-// You can construct a concrete instance of `IsInstanceGroupManagerActionMapInput` via:
-//
-//	IsInstanceGroupManagerActionMap{ "key": IsInstanceGroupManagerActionArgs{...} }
-type IsInstanceGroupManagerActionMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceGroupManagerActionMapOutput() IsInstanceGroupManagerActionMapOutput
-	ToIsInstanceGroupManagerActionMapOutputWithContext(context.Context) IsInstanceGroupManagerActionMapOutput
-}
-
-type IsInstanceGroupManagerActionMap map[string]IsInstanceGroupManagerActionInput
-
-func (IsInstanceGroupManagerActionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceGroupManagerAction)(nil)).Elem()
-}
-
-func (i IsInstanceGroupManagerActionMap) ToIsInstanceGroupManagerActionMapOutput() IsInstanceGroupManagerActionMapOutput {
-	return i.ToIsInstanceGroupManagerActionMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceGroupManagerActionMap) ToIsInstanceGroupManagerActionMapOutputWithContext(ctx context.Context) IsInstanceGroupManagerActionMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupManagerActionMapOutput)
-}
-
 type IsInstanceGroupManagerActionOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceGroupManagerActionOutput) ElementType() reflect.Type {
@@ -404,51 +354,7 @@ func (o IsInstanceGroupManagerActionOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceGroupManagerAction) pulumi.StringOutput { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-type IsInstanceGroupManagerActionArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceGroupManagerActionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceGroupManagerAction)(nil)).Elem()
-}
-
-func (o IsInstanceGroupManagerActionArrayOutput) ToIsInstanceGroupManagerActionArrayOutput() IsInstanceGroupManagerActionArrayOutput {
-	return o
-}
-
-func (o IsInstanceGroupManagerActionArrayOutput) ToIsInstanceGroupManagerActionArrayOutputWithContext(ctx context.Context) IsInstanceGroupManagerActionArrayOutput {
-	return o
-}
-
-func (o IsInstanceGroupManagerActionArrayOutput) Index(i pulumi.IntInput) IsInstanceGroupManagerActionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceGroupManagerAction {
-		return vs[0].([]*IsInstanceGroupManagerAction)[vs[1].(int)]
-	}).(IsInstanceGroupManagerActionOutput)
-}
-
-type IsInstanceGroupManagerActionMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceGroupManagerActionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceGroupManagerAction)(nil)).Elem()
-}
-
-func (o IsInstanceGroupManagerActionMapOutput) ToIsInstanceGroupManagerActionMapOutput() IsInstanceGroupManagerActionMapOutput {
-	return o
-}
-
-func (o IsInstanceGroupManagerActionMapOutput) ToIsInstanceGroupManagerActionMapOutputWithContext(ctx context.Context) IsInstanceGroupManagerActionMapOutput {
-	return o
-}
-
-func (o IsInstanceGroupManagerActionMapOutput) MapIndex(k pulumi.StringInput) IsInstanceGroupManagerActionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceGroupManagerAction {
-		return vs[0].(map[string]*IsInstanceGroupManagerAction)[vs[1].(string)]
-	}).(IsInstanceGroupManagerActionOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupManagerActionInput)(nil)).Elem(), &IsInstanceGroupManagerAction{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupManagerActionArrayInput)(nil)).Elem(), IsInstanceGroupManagerActionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupManagerActionMapInput)(nil)).Elem(), IsInstanceGroupManagerActionMap{})
 	pulumi.RegisterOutputType(IsInstanceGroupManagerActionOutput{})
-	pulumi.RegisterOutputType(IsInstanceGroupManagerActionArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceGroupManagerActionMapOutput{})
 }

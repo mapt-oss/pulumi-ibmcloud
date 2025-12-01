@@ -168,56 +168,6 @@ func (i *DnsCustomResolverForwardingRule) ToDnsCustomResolverForwardingRuleOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverForwardingRuleOutput)
 }
 
-// DnsCustomResolverForwardingRuleArrayInput is an input type that accepts DnsCustomResolverForwardingRuleArray and DnsCustomResolverForwardingRuleArrayOutput values.
-// You can construct a concrete instance of `DnsCustomResolverForwardingRuleArrayInput` via:
-//
-//	DnsCustomResolverForwardingRuleArray{ DnsCustomResolverForwardingRuleArgs{...} }
-type DnsCustomResolverForwardingRuleArrayInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverForwardingRuleArrayOutput() DnsCustomResolverForwardingRuleArrayOutput
-	ToDnsCustomResolverForwardingRuleArrayOutputWithContext(context.Context) DnsCustomResolverForwardingRuleArrayOutput
-}
-
-type DnsCustomResolverForwardingRuleArray []DnsCustomResolverForwardingRuleInput
-
-func (DnsCustomResolverForwardingRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsCustomResolverForwardingRule)(nil)).Elem()
-}
-
-func (i DnsCustomResolverForwardingRuleArray) ToDnsCustomResolverForwardingRuleArrayOutput() DnsCustomResolverForwardingRuleArrayOutput {
-	return i.ToDnsCustomResolverForwardingRuleArrayOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverForwardingRuleArray) ToDnsCustomResolverForwardingRuleArrayOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverForwardingRuleArrayOutput)
-}
-
-// DnsCustomResolverForwardingRuleMapInput is an input type that accepts DnsCustomResolverForwardingRuleMap and DnsCustomResolverForwardingRuleMapOutput values.
-// You can construct a concrete instance of `DnsCustomResolverForwardingRuleMapInput` via:
-//
-//	DnsCustomResolverForwardingRuleMap{ "key": DnsCustomResolverForwardingRuleArgs{...} }
-type DnsCustomResolverForwardingRuleMapInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverForwardingRuleMapOutput() DnsCustomResolverForwardingRuleMapOutput
-	ToDnsCustomResolverForwardingRuleMapOutputWithContext(context.Context) DnsCustomResolverForwardingRuleMapOutput
-}
-
-type DnsCustomResolverForwardingRuleMap map[string]DnsCustomResolverForwardingRuleInput
-
-func (DnsCustomResolverForwardingRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsCustomResolverForwardingRule)(nil)).Elem()
-}
-
-func (i DnsCustomResolverForwardingRuleMap) ToDnsCustomResolverForwardingRuleMapOutput() DnsCustomResolverForwardingRuleMapOutput {
-	return i.ToDnsCustomResolverForwardingRuleMapOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverForwardingRuleMap) ToDnsCustomResolverForwardingRuleMapOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverForwardingRuleMapOutput)
-}
-
 type DnsCustomResolverForwardingRuleOutput struct{ *pulumi.OutputState }
 
 func (DnsCustomResolverForwardingRuleOutput) ElementType() reflect.Type {
@@ -274,51 +224,7 @@ func (o DnsCustomResolverForwardingRuleOutput) Views() DnsCustomResolverForwardi
 	}).(DnsCustomResolverForwardingRuleViewArrayOutput)
 }
 
-type DnsCustomResolverForwardingRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverForwardingRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsCustomResolverForwardingRule)(nil)).Elem()
-}
-
-func (o DnsCustomResolverForwardingRuleArrayOutput) ToDnsCustomResolverForwardingRuleArrayOutput() DnsCustomResolverForwardingRuleArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverForwardingRuleArrayOutput) ToDnsCustomResolverForwardingRuleArrayOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverForwardingRuleArrayOutput) Index(i pulumi.IntInput) DnsCustomResolverForwardingRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsCustomResolverForwardingRule {
-		return vs[0].([]*DnsCustomResolverForwardingRule)[vs[1].(int)]
-	}).(DnsCustomResolverForwardingRuleOutput)
-}
-
-type DnsCustomResolverForwardingRuleMapOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverForwardingRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsCustomResolverForwardingRule)(nil)).Elem()
-}
-
-func (o DnsCustomResolverForwardingRuleMapOutput) ToDnsCustomResolverForwardingRuleMapOutput() DnsCustomResolverForwardingRuleMapOutput {
-	return o
-}
-
-func (o DnsCustomResolverForwardingRuleMapOutput) ToDnsCustomResolverForwardingRuleMapOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleMapOutput {
-	return o
-}
-
-func (o DnsCustomResolverForwardingRuleMapOutput) MapIndex(k pulumi.StringInput) DnsCustomResolverForwardingRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsCustomResolverForwardingRule {
-		return vs[0].(map[string]*DnsCustomResolverForwardingRule)[vs[1].(string)]
-	}).(DnsCustomResolverForwardingRuleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverForwardingRuleInput)(nil)).Elem(), &DnsCustomResolverForwardingRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverForwardingRuleArrayInput)(nil)).Elem(), DnsCustomResolverForwardingRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverForwardingRuleMapInput)(nil)).Elem(), DnsCustomResolverForwardingRuleMap{})
 	pulumi.RegisterOutputType(DnsCustomResolverForwardingRuleOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverForwardingRuleArrayOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverForwardingRuleMapOutput{})
 }

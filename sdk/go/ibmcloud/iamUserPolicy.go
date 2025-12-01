@@ -202,56 +202,6 @@ func (i *IamUserPolicy) ToIamUserPolicyOutputWithContext(ctx context.Context) Ia
 	return pulumi.ToOutputWithContext(ctx, i).(IamUserPolicyOutput)
 }
 
-// IamUserPolicyArrayInput is an input type that accepts IamUserPolicyArray and IamUserPolicyArrayOutput values.
-// You can construct a concrete instance of `IamUserPolicyArrayInput` via:
-//
-//	IamUserPolicyArray{ IamUserPolicyArgs{...} }
-type IamUserPolicyArrayInput interface {
-	pulumi.Input
-
-	ToIamUserPolicyArrayOutput() IamUserPolicyArrayOutput
-	ToIamUserPolicyArrayOutputWithContext(context.Context) IamUserPolicyArrayOutput
-}
-
-type IamUserPolicyArray []IamUserPolicyInput
-
-func (IamUserPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamUserPolicy)(nil)).Elem()
-}
-
-func (i IamUserPolicyArray) ToIamUserPolicyArrayOutput() IamUserPolicyArrayOutput {
-	return i.ToIamUserPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IamUserPolicyArray) ToIamUserPolicyArrayOutputWithContext(ctx context.Context) IamUserPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamUserPolicyArrayOutput)
-}
-
-// IamUserPolicyMapInput is an input type that accepts IamUserPolicyMap and IamUserPolicyMapOutput values.
-// You can construct a concrete instance of `IamUserPolicyMapInput` via:
-//
-//	IamUserPolicyMap{ "key": IamUserPolicyArgs{...} }
-type IamUserPolicyMapInput interface {
-	pulumi.Input
-
-	ToIamUserPolicyMapOutput() IamUserPolicyMapOutput
-	ToIamUserPolicyMapOutputWithContext(context.Context) IamUserPolicyMapOutput
-}
-
-type IamUserPolicyMap map[string]IamUserPolicyInput
-
-func (IamUserPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamUserPolicy)(nil)).Elem()
-}
-
-func (i IamUserPolicyMap) ToIamUserPolicyMapOutput() IamUserPolicyMapOutput {
-	return i.ToIamUserPolicyMapOutputWithContext(context.Background())
-}
-
-func (i IamUserPolicyMap) ToIamUserPolicyMapOutputWithContext(ctx context.Context) IamUserPolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamUserPolicyMapOutput)
-}
-
 type IamUserPolicyOutput struct{ *pulumi.OutputState }
 
 func (IamUserPolicyOutput) ElementType() reflect.Type {
@@ -324,51 +274,7 @@ func (o IamUserPolicyOutput) TransactionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUserPolicy) pulumi.StringOutput { return v.TransactionId }).(pulumi.StringOutput)
 }
 
-type IamUserPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IamUserPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamUserPolicy)(nil)).Elem()
-}
-
-func (o IamUserPolicyArrayOutput) ToIamUserPolicyArrayOutput() IamUserPolicyArrayOutput {
-	return o
-}
-
-func (o IamUserPolicyArrayOutput) ToIamUserPolicyArrayOutputWithContext(ctx context.Context) IamUserPolicyArrayOutput {
-	return o
-}
-
-func (o IamUserPolicyArrayOutput) Index(i pulumi.IntInput) IamUserPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamUserPolicy {
-		return vs[0].([]*IamUserPolicy)[vs[1].(int)]
-	}).(IamUserPolicyOutput)
-}
-
-type IamUserPolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IamUserPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamUserPolicy)(nil)).Elem()
-}
-
-func (o IamUserPolicyMapOutput) ToIamUserPolicyMapOutput() IamUserPolicyMapOutput {
-	return o
-}
-
-func (o IamUserPolicyMapOutput) ToIamUserPolicyMapOutputWithContext(ctx context.Context) IamUserPolicyMapOutput {
-	return o
-}
-
-func (o IamUserPolicyMapOutput) MapIndex(k pulumi.StringInput) IamUserPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamUserPolicy {
-		return vs[0].(map[string]*IamUserPolicy)[vs[1].(string)]
-	}).(IamUserPolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamUserPolicyInput)(nil)).Elem(), &IamUserPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamUserPolicyArrayInput)(nil)).Elem(), IamUserPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamUserPolicyMapInput)(nil)).Elem(), IamUserPolicyMap{})
 	pulumi.RegisterOutputType(IamUserPolicyOutput{})
-	pulumi.RegisterOutputType(IamUserPolicyArrayOutput{})
-	pulumi.RegisterOutputType(IamUserPolicyMapOutput{})
 }

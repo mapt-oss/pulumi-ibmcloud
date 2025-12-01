@@ -270,56 +270,6 @@ func (i *IsSubnet) ToIsSubnetOutputWithContext(ctx context.Context) IsSubnetOutp
 	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetOutput)
 }
 
-// IsSubnetArrayInput is an input type that accepts IsSubnetArray and IsSubnetArrayOutput values.
-// You can construct a concrete instance of `IsSubnetArrayInput` via:
-//
-//	IsSubnetArray{ IsSubnetArgs{...} }
-type IsSubnetArrayInput interface {
-	pulumi.Input
-
-	ToIsSubnetArrayOutput() IsSubnetArrayOutput
-	ToIsSubnetArrayOutputWithContext(context.Context) IsSubnetArrayOutput
-}
-
-type IsSubnetArray []IsSubnetInput
-
-func (IsSubnetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnet)(nil)).Elem()
-}
-
-func (i IsSubnetArray) ToIsSubnetArrayOutput() IsSubnetArrayOutput {
-	return i.ToIsSubnetArrayOutputWithContext(context.Background())
-}
-
-func (i IsSubnetArray) ToIsSubnetArrayOutputWithContext(ctx context.Context) IsSubnetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetArrayOutput)
-}
-
-// IsSubnetMapInput is an input type that accepts IsSubnetMap and IsSubnetMapOutput values.
-// You can construct a concrete instance of `IsSubnetMapInput` via:
-//
-//	IsSubnetMap{ "key": IsSubnetArgs{...} }
-type IsSubnetMapInput interface {
-	pulumi.Input
-
-	ToIsSubnetMapOutput() IsSubnetMapOutput
-	ToIsSubnetMapOutputWithContext(context.Context) IsSubnetMapOutput
-}
-
-type IsSubnetMap map[string]IsSubnetInput
-
-func (IsSubnetMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnet)(nil)).Elem()
-}
-
-func (i IsSubnetMap) ToIsSubnetMapOutput() IsSubnetMapOutput {
-	return i.ToIsSubnetMapOutputWithContext(context.Background())
-}
-
-func (i IsSubnetMap) ToIsSubnetMapOutputWithContext(ctx context.Context) IsSubnetMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetMapOutput)
-}
-
 type IsSubnetOutput struct{ *pulumi.OutputState }
 
 func (IsSubnetOutput) ElementType() reflect.Type {
@@ -439,51 +389,7 @@ func (o IsSubnetOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsSubnet) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsSubnetArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnet)(nil)).Elem()
-}
-
-func (o IsSubnetArrayOutput) ToIsSubnetArrayOutput() IsSubnetArrayOutput {
-	return o
-}
-
-func (o IsSubnetArrayOutput) ToIsSubnetArrayOutputWithContext(ctx context.Context) IsSubnetArrayOutput {
-	return o
-}
-
-func (o IsSubnetArrayOutput) Index(i pulumi.IntInput) IsSubnetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSubnet {
-		return vs[0].([]*IsSubnet)[vs[1].(int)]
-	}).(IsSubnetOutput)
-}
-
-type IsSubnetMapOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnet)(nil)).Elem()
-}
-
-func (o IsSubnetMapOutput) ToIsSubnetMapOutput() IsSubnetMapOutput {
-	return o
-}
-
-func (o IsSubnetMapOutput) ToIsSubnetMapOutputWithContext(ctx context.Context) IsSubnetMapOutput {
-	return o
-}
-
-func (o IsSubnetMapOutput) MapIndex(k pulumi.StringInput) IsSubnetOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSubnet {
-		return vs[0].(map[string]*IsSubnet)[vs[1].(string)]
-	}).(IsSubnetOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetInput)(nil)).Elem(), &IsSubnet{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetArrayInput)(nil)).Elem(), IsSubnetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetMapInput)(nil)).Elem(), IsSubnetMap{})
 	pulumi.RegisterOutputType(IsSubnetOutput{})
-	pulumi.RegisterOutputType(IsSubnetArrayOutput{})
-	pulumi.RegisterOutputType(IsSubnetMapOutput{})
 }

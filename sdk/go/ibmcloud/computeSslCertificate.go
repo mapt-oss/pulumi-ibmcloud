@@ -187,56 +187,6 @@ func (i *ComputeSslCertificate) ToComputeSslCertificateOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeSslCertificateOutput)
 }
 
-// ComputeSslCertificateArrayInput is an input type that accepts ComputeSslCertificateArray and ComputeSslCertificateArrayOutput values.
-// You can construct a concrete instance of `ComputeSslCertificateArrayInput` via:
-//
-//	ComputeSslCertificateArray{ ComputeSslCertificateArgs{...} }
-type ComputeSslCertificateArrayInput interface {
-	pulumi.Input
-
-	ToComputeSslCertificateArrayOutput() ComputeSslCertificateArrayOutput
-	ToComputeSslCertificateArrayOutputWithContext(context.Context) ComputeSslCertificateArrayOutput
-}
-
-type ComputeSslCertificateArray []ComputeSslCertificateInput
-
-func (ComputeSslCertificateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeSslCertificate)(nil)).Elem()
-}
-
-func (i ComputeSslCertificateArray) ToComputeSslCertificateArrayOutput() ComputeSslCertificateArrayOutput {
-	return i.ToComputeSslCertificateArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeSslCertificateArray) ToComputeSslCertificateArrayOutputWithContext(ctx context.Context) ComputeSslCertificateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeSslCertificateArrayOutput)
-}
-
-// ComputeSslCertificateMapInput is an input type that accepts ComputeSslCertificateMap and ComputeSslCertificateMapOutput values.
-// You can construct a concrete instance of `ComputeSslCertificateMapInput` via:
-//
-//	ComputeSslCertificateMap{ "key": ComputeSslCertificateArgs{...} }
-type ComputeSslCertificateMapInput interface {
-	pulumi.Input
-
-	ToComputeSslCertificateMapOutput() ComputeSslCertificateMapOutput
-	ToComputeSslCertificateMapOutputWithContext(context.Context) ComputeSslCertificateMapOutput
-}
-
-type ComputeSslCertificateMap map[string]ComputeSslCertificateInput
-
-func (ComputeSslCertificateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeSslCertificate)(nil)).Elem()
-}
-
-func (i ComputeSslCertificateMap) ToComputeSslCertificateMapOutput() ComputeSslCertificateMapOutput {
-	return i.ToComputeSslCertificateMapOutputWithContext(context.Background())
-}
-
-func (i ComputeSslCertificateMap) ToComputeSslCertificateMapOutputWithContext(ctx context.Context) ComputeSslCertificateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeSslCertificateMapOutput)
-}
-
 type ComputeSslCertificateOutput struct{ *pulumi.OutputState }
 
 func (ComputeSslCertificateOutput) ElementType() reflect.Type {
@@ -311,51 +261,7 @@ func (o ComputeSslCertificateOutput) ValidityEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeSslCertificate) pulumi.StringOutput { return v.ValidityEnd }).(pulumi.StringOutput)
 }
 
-type ComputeSslCertificateArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeSslCertificateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeSslCertificate)(nil)).Elem()
-}
-
-func (o ComputeSslCertificateArrayOutput) ToComputeSslCertificateArrayOutput() ComputeSslCertificateArrayOutput {
-	return o
-}
-
-func (o ComputeSslCertificateArrayOutput) ToComputeSslCertificateArrayOutputWithContext(ctx context.Context) ComputeSslCertificateArrayOutput {
-	return o
-}
-
-func (o ComputeSslCertificateArrayOutput) Index(i pulumi.IntInput) ComputeSslCertificateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeSslCertificate {
-		return vs[0].([]*ComputeSslCertificate)[vs[1].(int)]
-	}).(ComputeSslCertificateOutput)
-}
-
-type ComputeSslCertificateMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeSslCertificateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeSslCertificate)(nil)).Elem()
-}
-
-func (o ComputeSslCertificateMapOutput) ToComputeSslCertificateMapOutput() ComputeSslCertificateMapOutput {
-	return o
-}
-
-func (o ComputeSslCertificateMapOutput) ToComputeSslCertificateMapOutputWithContext(ctx context.Context) ComputeSslCertificateMapOutput {
-	return o
-}
-
-func (o ComputeSslCertificateMapOutput) MapIndex(k pulumi.StringInput) ComputeSslCertificateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeSslCertificate {
-		return vs[0].(map[string]*ComputeSslCertificate)[vs[1].(string)]
-	}).(ComputeSslCertificateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeSslCertificateInput)(nil)).Elem(), &ComputeSslCertificate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeSslCertificateArrayInput)(nil)).Elem(), ComputeSslCertificateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeSslCertificateMapInput)(nil)).Elem(), ComputeSslCertificateMap{})
 	pulumi.RegisterOutputType(ComputeSslCertificateOutput{})
-	pulumi.RegisterOutputType(ComputeSslCertificateArrayOutput{})
-	pulumi.RegisterOutputType(ComputeSslCertificateMapOutput{})
 }

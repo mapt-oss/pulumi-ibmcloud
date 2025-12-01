@@ -146,56 +146,6 @@ func (i *IamPolicyTemplateVersion) ToIamPolicyTemplateVersionOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyTemplateVersionOutput)
 }
 
-// IamPolicyTemplateVersionArrayInput is an input type that accepts IamPolicyTemplateVersionArray and IamPolicyTemplateVersionArrayOutput values.
-// You can construct a concrete instance of `IamPolicyTemplateVersionArrayInput` via:
-//
-//	IamPolicyTemplateVersionArray{ IamPolicyTemplateVersionArgs{...} }
-type IamPolicyTemplateVersionArrayInput interface {
-	pulumi.Input
-
-	ToIamPolicyTemplateVersionArrayOutput() IamPolicyTemplateVersionArrayOutput
-	ToIamPolicyTemplateVersionArrayOutputWithContext(context.Context) IamPolicyTemplateVersionArrayOutput
-}
-
-type IamPolicyTemplateVersionArray []IamPolicyTemplateVersionInput
-
-func (IamPolicyTemplateVersionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamPolicyTemplateVersion)(nil)).Elem()
-}
-
-func (i IamPolicyTemplateVersionArray) ToIamPolicyTemplateVersionArrayOutput() IamPolicyTemplateVersionArrayOutput {
-	return i.ToIamPolicyTemplateVersionArrayOutputWithContext(context.Background())
-}
-
-func (i IamPolicyTemplateVersionArray) ToIamPolicyTemplateVersionArrayOutputWithContext(ctx context.Context) IamPolicyTemplateVersionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyTemplateVersionArrayOutput)
-}
-
-// IamPolicyTemplateVersionMapInput is an input type that accepts IamPolicyTemplateVersionMap and IamPolicyTemplateVersionMapOutput values.
-// You can construct a concrete instance of `IamPolicyTemplateVersionMapInput` via:
-//
-//	IamPolicyTemplateVersionMap{ "key": IamPolicyTemplateVersionArgs{...} }
-type IamPolicyTemplateVersionMapInput interface {
-	pulumi.Input
-
-	ToIamPolicyTemplateVersionMapOutput() IamPolicyTemplateVersionMapOutput
-	ToIamPolicyTemplateVersionMapOutputWithContext(context.Context) IamPolicyTemplateVersionMapOutput
-}
-
-type IamPolicyTemplateVersionMap map[string]IamPolicyTemplateVersionInput
-
-func (IamPolicyTemplateVersionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamPolicyTemplateVersion)(nil)).Elem()
-}
-
-func (i IamPolicyTemplateVersionMap) ToIamPolicyTemplateVersionMapOutput() IamPolicyTemplateVersionMapOutput {
-	return i.ToIamPolicyTemplateVersionMapOutputWithContext(context.Background())
-}
-
-func (i IamPolicyTemplateVersionMap) ToIamPolicyTemplateVersionMapOutputWithContext(ctx context.Context) IamPolicyTemplateVersionMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyTemplateVersionMapOutput)
-}
-
 type IamPolicyTemplateVersionOutput struct{ *pulumi.OutputState }
 
 func (IamPolicyTemplateVersionOutput) ElementType() reflect.Type {
@@ -243,51 +193,7 @@ func (o IamPolicyTemplateVersionOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamPolicyTemplateVersion) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamPolicyTemplateVersionArrayOutput struct{ *pulumi.OutputState }
-
-func (IamPolicyTemplateVersionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamPolicyTemplateVersion)(nil)).Elem()
-}
-
-func (o IamPolicyTemplateVersionArrayOutput) ToIamPolicyTemplateVersionArrayOutput() IamPolicyTemplateVersionArrayOutput {
-	return o
-}
-
-func (o IamPolicyTemplateVersionArrayOutput) ToIamPolicyTemplateVersionArrayOutputWithContext(ctx context.Context) IamPolicyTemplateVersionArrayOutput {
-	return o
-}
-
-func (o IamPolicyTemplateVersionArrayOutput) Index(i pulumi.IntInput) IamPolicyTemplateVersionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamPolicyTemplateVersion {
-		return vs[0].([]*IamPolicyTemplateVersion)[vs[1].(int)]
-	}).(IamPolicyTemplateVersionOutput)
-}
-
-type IamPolicyTemplateVersionMapOutput struct{ *pulumi.OutputState }
-
-func (IamPolicyTemplateVersionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamPolicyTemplateVersion)(nil)).Elem()
-}
-
-func (o IamPolicyTemplateVersionMapOutput) ToIamPolicyTemplateVersionMapOutput() IamPolicyTemplateVersionMapOutput {
-	return o
-}
-
-func (o IamPolicyTemplateVersionMapOutput) ToIamPolicyTemplateVersionMapOutputWithContext(ctx context.Context) IamPolicyTemplateVersionMapOutput {
-	return o
-}
-
-func (o IamPolicyTemplateVersionMapOutput) MapIndex(k pulumi.StringInput) IamPolicyTemplateVersionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamPolicyTemplateVersion {
-		return vs[0].(map[string]*IamPolicyTemplateVersion)[vs[1].(string)]
-	}).(IamPolicyTemplateVersionOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyTemplateVersionInput)(nil)).Elem(), &IamPolicyTemplateVersion{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyTemplateVersionArrayInput)(nil)).Elem(), IamPolicyTemplateVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyTemplateVersionMapInput)(nil)).Elem(), IamPolicyTemplateVersionMap{})
 	pulumi.RegisterOutputType(IamPolicyTemplateVersionOutput{})
-	pulumi.RegisterOutputType(IamPolicyTemplateVersionArrayOutput{})
-	pulumi.RegisterOutputType(IamPolicyTemplateVersionMapOutput{})
 }

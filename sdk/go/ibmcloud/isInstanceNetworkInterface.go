@@ -225,56 +225,6 @@ func (i *IsInstanceNetworkInterface) ToIsInstanceNetworkInterfaceOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkInterfaceOutput)
 }
 
-// IsInstanceNetworkInterfaceArrayInput is an input type that accepts IsInstanceNetworkInterfaceArray and IsInstanceNetworkInterfaceArrayOutput values.
-// You can construct a concrete instance of `IsInstanceNetworkInterfaceArrayInput` via:
-//
-//	IsInstanceNetworkInterfaceArray{ IsInstanceNetworkInterfaceArgs{...} }
-type IsInstanceNetworkInterfaceArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceNetworkInterfaceArrayOutput() IsInstanceNetworkInterfaceArrayOutput
-	ToIsInstanceNetworkInterfaceArrayOutputWithContext(context.Context) IsInstanceNetworkInterfaceArrayOutput
-}
-
-type IsInstanceNetworkInterfaceArray []IsInstanceNetworkInterfaceInput
-
-func (IsInstanceNetworkInterfaceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceNetworkInterface)(nil)).Elem()
-}
-
-func (i IsInstanceNetworkInterfaceArray) ToIsInstanceNetworkInterfaceArrayOutput() IsInstanceNetworkInterfaceArrayOutput {
-	return i.ToIsInstanceNetworkInterfaceArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceNetworkInterfaceArray) ToIsInstanceNetworkInterfaceArrayOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkInterfaceArrayOutput)
-}
-
-// IsInstanceNetworkInterfaceMapInput is an input type that accepts IsInstanceNetworkInterfaceMap and IsInstanceNetworkInterfaceMapOutput values.
-// You can construct a concrete instance of `IsInstanceNetworkInterfaceMapInput` via:
-//
-//	IsInstanceNetworkInterfaceMap{ "key": IsInstanceNetworkInterfaceArgs{...} }
-type IsInstanceNetworkInterfaceMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceNetworkInterfaceMapOutput() IsInstanceNetworkInterfaceMapOutput
-	ToIsInstanceNetworkInterfaceMapOutputWithContext(context.Context) IsInstanceNetworkInterfaceMapOutput
-}
-
-type IsInstanceNetworkInterfaceMap map[string]IsInstanceNetworkInterfaceInput
-
-func (IsInstanceNetworkInterfaceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceNetworkInterface)(nil)).Elem()
-}
-
-func (i IsInstanceNetworkInterfaceMap) ToIsInstanceNetworkInterfaceMapOutput() IsInstanceNetworkInterfaceMapOutput {
-	return i.ToIsInstanceNetworkInterfaceMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceNetworkInterfaceMap) ToIsInstanceNetworkInterfaceMapOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkInterfaceMapOutput)
-}
-
 type IsInstanceNetworkInterfaceOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceNetworkInterfaceOutput) ElementType() reflect.Type {
@@ -372,51 +322,7 @@ func (o IsInstanceNetworkInterfaceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceNetworkInterface) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-type IsInstanceNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceNetworkInterfaceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceNetworkInterface)(nil)).Elem()
-}
-
-func (o IsInstanceNetworkInterfaceArrayOutput) ToIsInstanceNetworkInterfaceArrayOutput() IsInstanceNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceArrayOutput) ToIsInstanceNetworkInterfaceArrayOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) IsInstanceNetworkInterfaceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceNetworkInterface {
-		return vs[0].([]*IsInstanceNetworkInterface)[vs[1].(int)]
-	}).(IsInstanceNetworkInterfaceOutput)
-}
-
-type IsInstanceNetworkInterfaceMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceNetworkInterfaceMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceNetworkInterface)(nil)).Elem()
-}
-
-func (o IsInstanceNetworkInterfaceMapOutput) ToIsInstanceNetworkInterfaceMapOutput() IsInstanceNetworkInterfaceMapOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceMapOutput) ToIsInstanceNetworkInterfaceMapOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceMapOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceMapOutput) MapIndex(k pulumi.StringInput) IsInstanceNetworkInterfaceOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceNetworkInterface {
-		return vs[0].(map[string]*IsInstanceNetworkInterface)[vs[1].(string)]
-	}).(IsInstanceNetworkInterfaceOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkInterfaceInput)(nil)).Elem(), &IsInstanceNetworkInterface{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkInterfaceArrayInput)(nil)).Elem(), IsInstanceNetworkInterfaceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkInterfaceMapInput)(nil)).Elem(), IsInstanceNetworkInterfaceMap{})
 	pulumi.RegisterOutputType(IsInstanceNetworkInterfaceOutput{})
-	pulumi.RegisterOutputType(IsInstanceNetworkInterfaceArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceNetworkInterfaceMapOutput{})
 }

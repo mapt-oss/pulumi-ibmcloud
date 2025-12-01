@@ -247,56 +247,6 @@ func (i *DnsGlbMonitor) ToDnsGlbMonitorOutputWithContext(ctx context.Context) Dn
 	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbMonitorOutput)
 }
 
-// DnsGlbMonitorArrayInput is an input type that accepts DnsGlbMonitorArray and DnsGlbMonitorArrayOutput values.
-// You can construct a concrete instance of `DnsGlbMonitorArrayInput` via:
-//
-//	DnsGlbMonitorArray{ DnsGlbMonitorArgs{...} }
-type DnsGlbMonitorArrayInput interface {
-	pulumi.Input
-
-	ToDnsGlbMonitorArrayOutput() DnsGlbMonitorArrayOutput
-	ToDnsGlbMonitorArrayOutputWithContext(context.Context) DnsGlbMonitorArrayOutput
-}
-
-type DnsGlbMonitorArray []DnsGlbMonitorInput
-
-func (DnsGlbMonitorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsGlbMonitor)(nil)).Elem()
-}
-
-func (i DnsGlbMonitorArray) ToDnsGlbMonitorArrayOutput() DnsGlbMonitorArrayOutput {
-	return i.ToDnsGlbMonitorArrayOutputWithContext(context.Background())
-}
-
-func (i DnsGlbMonitorArray) ToDnsGlbMonitorArrayOutputWithContext(ctx context.Context) DnsGlbMonitorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbMonitorArrayOutput)
-}
-
-// DnsGlbMonitorMapInput is an input type that accepts DnsGlbMonitorMap and DnsGlbMonitorMapOutput values.
-// You can construct a concrete instance of `DnsGlbMonitorMapInput` via:
-//
-//	DnsGlbMonitorMap{ "key": DnsGlbMonitorArgs{...} }
-type DnsGlbMonitorMapInput interface {
-	pulumi.Input
-
-	ToDnsGlbMonitorMapOutput() DnsGlbMonitorMapOutput
-	ToDnsGlbMonitorMapOutputWithContext(context.Context) DnsGlbMonitorMapOutput
-}
-
-type DnsGlbMonitorMap map[string]DnsGlbMonitorInput
-
-func (DnsGlbMonitorMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsGlbMonitor)(nil)).Elem()
-}
-
-func (i DnsGlbMonitorMap) ToDnsGlbMonitorMapOutput() DnsGlbMonitorMapOutput {
-	return i.ToDnsGlbMonitorMapOutputWithContext(context.Background())
-}
-
-func (i DnsGlbMonitorMap) ToDnsGlbMonitorMapOutputWithContext(ctx context.Context) DnsGlbMonitorMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbMonitorMapOutput)
-}
-
 type DnsGlbMonitorOutput struct{ *pulumi.OutputState }
 
 func (DnsGlbMonitorOutput) ElementType() reflect.Type {
@@ -396,51 +346,7 @@ func (o DnsGlbMonitorOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DnsGlbMonitor) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-type DnsGlbMonitorArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbMonitorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsGlbMonitor)(nil)).Elem()
-}
-
-func (o DnsGlbMonitorArrayOutput) ToDnsGlbMonitorArrayOutput() DnsGlbMonitorArrayOutput {
-	return o
-}
-
-func (o DnsGlbMonitorArrayOutput) ToDnsGlbMonitorArrayOutputWithContext(ctx context.Context) DnsGlbMonitorArrayOutput {
-	return o
-}
-
-func (o DnsGlbMonitorArrayOutput) Index(i pulumi.IntInput) DnsGlbMonitorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsGlbMonitor {
-		return vs[0].([]*DnsGlbMonitor)[vs[1].(int)]
-	}).(DnsGlbMonitorOutput)
-}
-
-type DnsGlbMonitorMapOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbMonitorMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsGlbMonitor)(nil)).Elem()
-}
-
-func (o DnsGlbMonitorMapOutput) ToDnsGlbMonitorMapOutput() DnsGlbMonitorMapOutput {
-	return o
-}
-
-func (o DnsGlbMonitorMapOutput) ToDnsGlbMonitorMapOutputWithContext(ctx context.Context) DnsGlbMonitorMapOutput {
-	return o
-}
-
-func (o DnsGlbMonitorMapOutput) MapIndex(k pulumi.StringInput) DnsGlbMonitorOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsGlbMonitor {
-		return vs[0].(map[string]*DnsGlbMonitor)[vs[1].(string)]
-	}).(DnsGlbMonitorOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbMonitorInput)(nil)).Elem(), &DnsGlbMonitor{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbMonitorArrayInput)(nil)).Elem(), DnsGlbMonitorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbMonitorMapInput)(nil)).Elem(), DnsGlbMonitorMap{})
 	pulumi.RegisterOutputType(DnsGlbMonitorOutput{})
-	pulumi.RegisterOutputType(DnsGlbMonitorArrayOutput{})
-	pulumi.RegisterOutputType(DnsGlbMonitorMapOutput{})
 }

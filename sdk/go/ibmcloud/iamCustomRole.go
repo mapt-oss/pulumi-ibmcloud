@@ -169,56 +169,6 @@ func (i *IamCustomRole) ToIamCustomRoleOutputWithContext(ctx context.Context) Ia
 	return pulumi.ToOutputWithContext(ctx, i).(IamCustomRoleOutput)
 }
 
-// IamCustomRoleArrayInput is an input type that accepts IamCustomRoleArray and IamCustomRoleArrayOutput values.
-// You can construct a concrete instance of `IamCustomRoleArrayInput` via:
-//
-//	IamCustomRoleArray{ IamCustomRoleArgs{...} }
-type IamCustomRoleArrayInput interface {
-	pulumi.Input
-
-	ToIamCustomRoleArrayOutput() IamCustomRoleArrayOutput
-	ToIamCustomRoleArrayOutputWithContext(context.Context) IamCustomRoleArrayOutput
-}
-
-type IamCustomRoleArray []IamCustomRoleInput
-
-func (IamCustomRoleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamCustomRole)(nil)).Elem()
-}
-
-func (i IamCustomRoleArray) ToIamCustomRoleArrayOutput() IamCustomRoleArrayOutput {
-	return i.ToIamCustomRoleArrayOutputWithContext(context.Background())
-}
-
-func (i IamCustomRoleArray) ToIamCustomRoleArrayOutputWithContext(ctx context.Context) IamCustomRoleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamCustomRoleArrayOutput)
-}
-
-// IamCustomRoleMapInput is an input type that accepts IamCustomRoleMap and IamCustomRoleMapOutput values.
-// You can construct a concrete instance of `IamCustomRoleMapInput` via:
-//
-//	IamCustomRoleMap{ "key": IamCustomRoleArgs{...} }
-type IamCustomRoleMapInput interface {
-	pulumi.Input
-
-	ToIamCustomRoleMapOutput() IamCustomRoleMapOutput
-	ToIamCustomRoleMapOutputWithContext(context.Context) IamCustomRoleMapOutput
-}
-
-type IamCustomRoleMap map[string]IamCustomRoleInput
-
-func (IamCustomRoleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamCustomRole)(nil)).Elem()
-}
-
-func (i IamCustomRoleMap) ToIamCustomRoleMapOutput() IamCustomRoleMapOutput {
-	return i.ToIamCustomRoleMapOutputWithContext(context.Background())
-}
-
-func (i IamCustomRoleMap) ToIamCustomRoleMapOutputWithContext(ctx context.Context) IamCustomRoleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamCustomRoleMapOutput)
-}
-
 type IamCustomRoleOutput struct{ *pulumi.OutputState }
 
 func (IamCustomRoleOutput) ElementType() reflect.Type {
@@ -278,51 +228,7 @@ func (o IamCustomRoleOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamCustomRole) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
 }
 
-type IamCustomRoleArrayOutput struct{ *pulumi.OutputState }
-
-func (IamCustomRoleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamCustomRole)(nil)).Elem()
-}
-
-func (o IamCustomRoleArrayOutput) ToIamCustomRoleArrayOutput() IamCustomRoleArrayOutput {
-	return o
-}
-
-func (o IamCustomRoleArrayOutput) ToIamCustomRoleArrayOutputWithContext(ctx context.Context) IamCustomRoleArrayOutput {
-	return o
-}
-
-func (o IamCustomRoleArrayOutput) Index(i pulumi.IntInput) IamCustomRoleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamCustomRole {
-		return vs[0].([]*IamCustomRole)[vs[1].(int)]
-	}).(IamCustomRoleOutput)
-}
-
-type IamCustomRoleMapOutput struct{ *pulumi.OutputState }
-
-func (IamCustomRoleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamCustomRole)(nil)).Elem()
-}
-
-func (o IamCustomRoleMapOutput) ToIamCustomRoleMapOutput() IamCustomRoleMapOutput {
-	return o
-}
-
-func (o IamCustomRoleMapOutput) ToIamCustomRoleMapOutputWithContext(ctx context.Context) IamCustomRoleMapOutput {
-	return o
-}
-
-func (o IamCustomRoleMapOutput) MapIndex(k pulumi.StringInput) IamCustomRoleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamCustomRole {
-		return vs[0].(map[string]*IamCustomRole)[vs[1].(string)]
-	}).(IamCustomRoleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamCustomRoleInput)(nil)).Elem(), &IamCustomRole{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamCustomRoleArrayInput)(nil)).Elem(), IamCustomRoleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamCustomRoleMapInput)(nil)).Elem(), IamCustomRoleMap{})
 	pulumi.RegisterOutputType(IamCustomRoleOutput{})
-	pulumi.RegisterOutputType(IamCustomRoleArrayOutput{})
-	pulumi.RegisterOutputType(IamCustomRoleMapOutput{})
 }

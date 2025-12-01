@@ -105,56 +105,6 @@ func (i *IamAccessGroupAccountSettings) ToIamAccessGroupAccountSettingsOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupAccountSettingsOutput)
 }
 
-// IamAccessGroupAccountSettingsArrayInput is an input type that accepts IamAccessGroupAccountSettingsArray and IamAccessGroupAccountSettingsArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupAccountSettingsArrayInput` via:
-//
-//	IamAccessGroupAccountSettingsArray{ IamAccessGroupAccountSettingsArgs{...} }
-type IamAccessGroupAccountSettingsArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupAccountSettingsArrayOutput() IamAccessGroupAccountSettingsArrayOutput
-	ToIamAccessGroupAccountSettingsArrayOutputWithContext(context.Context) IamAccessGroupAccountSettingsArrayOutput
-}
-
-type IamAccessGroupAccountSettingsArray []IamAccessGroupAccountSettingsInput
-
-func (IamAccessGroupAccountSettingsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupAccountSettings)(nil)).Elem()
-}
-
-func (i IamAccessGroupAccountSettingsArray) ToIamAccessGroupAccountSettingsArrayOutput() IamAccessGroupAccountSettingsArrayOutput {
-	return i.ToIamAccessGroupAccountSettingsArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupAccountSettingsArray) ToIamAccessGroupAccountSettingsArrayOutputWithContext(ctx context.Context) IamAccessGroupAccountSettingsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupAccountSettingsArrayOutput)
-}
-
-// IamAccessGroupAccountSettingsMapInput is an input type that accepts IamAccessGroupAccountSettingsMap and IamAccessGroupAccountSettingsMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupAccountSettingsMapInput` via:
-//
-//	IamAccessGroupAccountSettingsMap{ "key": IamAccessGroupAccountSettingsArgs{...} }
-type IamAccessGroupAccountSettingsMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupAccountSettingsMapOutput() IamAccessGroupAccountSettingsMapOutput
-	ToIamAccessGroupAccountSettingsMapOutputWithContext(context.Context) IamAccessGroupAccountSettingsMapOutput
-}
-
-type IamAccessGroupAccountSettingsMap map[string]IamAccessGroupAccountSettingsInput
-
-func (IamAccessGroupAccountSettingsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupAccountSettings)(nil)).Elem()
-}
-
-func (i IamAccessGroupAccountSettingsMap) ToIamAccessGroupAccountSettingsMapOutput() IamAccessGroupAccountSettingsMapOutput {
-	return i.ToIamAccessGroupAccountSettingsMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupAccountSettingsMap) ToIamAccessGroupAccountSettingsMapOutputWithContext(ctx context.Context) IamAccessGroupAccountSettingsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupAccountSettingsMapOutput)
-}
-
 type IamAccessGroupAccountSettingsOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupAccountSettingsOutput) ElementType() reflect.Type {
@@ -179,51 +129,7 @@ func (o IamAccessGroupAccountSettingsOutput) PublicAccessEnabled() pulumi.BoolOu
 	return o.ApplyT(func(v *IamAccessGroupAccountSettings) pulumi.BoolOutput { return v.PublicAccessEnabled }).(pulumi.BoolOutput)
 }
 
-type IamAccessGroupAccountSettingsArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupAccountSettingsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupAccountSettings)(nil)).Elem()
-}
-
-func (o IamAccessGroupAccountSettingsArrayOutput) ToIamAccessGroupAccountSettingsArrayOutput() IamAccessGroupAccountSettingsArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupAccountSettingsArrayOutput) ToIamAccessGroupAccountSettingsArrayOutputWithContext(ctx context.Context) IamAccessGroupAccountSettingsArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupAccountSettingsArrayOutput) Index(i pulumi.IntInput) IamAccessGroupAccountSettingsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroupAccountSettings {
-		return vs[0].([]*IamAccessGroupAccountSettings)[vs[1].(int)]
-	}).(IamAccessGroupAccountSettingsOutput)
-}
-
-type IamAccessGroupAccountSettingsMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupAccountSettingsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupAccountSettings)(nil)).Elem()
-}
-
-func (o IamAccessGroupAccountSettingsMapOutput) ToIamAccessGroupAccountSettingsMapOutput() IamAccessGroupAccountSettingsMapOutput {
-	return o
-}
-
-func (o IamAccessGroupAccountSettingsMapOutput) ToIamAccessGroupAccountSettingsMapOutputWithContext(ctx context.Context) IamAccessGroupAccountSettingsMapOutput {
-	return o
-}
-
-func (o IamAccessGroupAccountSettingsMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupAccountSettingsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroupAccountSettings {
-		return vs[0].(map[string]*IamAccessGroupAccountSettings)[vs[1].(string)]
-	}).(IamAccessGroupAccountSettingsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupAccountSettingsInput)(nil)).Elem(), &IamAccessGroupAccountSettings{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupAccountSettingsArrayInput)(nil)).Elem(), IamAccessGroupAccountSettingsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupAccountSettingsMapInput)(nil)).Elem(), IamAccessGroupAccountSettingsMap{})
 	pulumi.RegisterOutputType(IamAccessGroupAccountSettingsOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupAccountSettingsArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupAccountSettingsMapOutput{})
 }

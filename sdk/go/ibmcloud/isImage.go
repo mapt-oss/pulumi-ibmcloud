@@ -309,56 +309,6 @@ func (i *IsImage) ToIsImageOutputWithContext(ctx context.Context) IsImageOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(IsImageOutput)
 }
 
-// IsImageArrayInput is an input type that accepts IsImageArray and IsImageArrayOutput values.
-// You can construct a concrete instance of `IsImageArrayInput` via:
-//
-//	IsImageArray{ IsImageArgs{...} }
-type IsImageArrayInput interface {
-	pulumi.Input
-
-	ToIsImageArrayOutput() IsImageArrayOutput
-	ToIsImageArrayOutputWithContext(context.Context) IsImageArrayOutput
-}
-
-type IsImageArray []IsImageInput
-
-func (IsImageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImage)(nil)).Elem()
-}
-
-func (i IsImageArray) ToIsImageArrayOutput() IsImageArrayOutput {
-	return i.ToIsImageArrayOutputWithContext(context.Background())
-}
-
-func (i IsImageArray) ToIsImageArrayOutputWithContext(ctx context.Context) IsImageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageArrayOutput)
-}
-
-// IsImageMapInput is an input type that accepts IsImageMap and IsImageMapOutput values.
-// You can construct a concrete instance of `IsImageMapInput` via:
-//
-//	IsImageMap{ "key": IsImageArgs{...} }
-type IsImageMapInput interface {
-	pulumi.Input
-
-	ToIsImageMapOutput() IsImageMapOutput
-	ToIsImageMapOutputWithContext(context.Context) IsImageMapOutput
-}
-
-type IsImageMap map[string]IsImageInput
-
-func (IsImageMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImage)(nil)).Elem()
-}
-
-func (i IsImageMap) ToIsImageMapOutput() IsImageMapOutput {
-	return i.ToIsImageMapOutputWithContext(context.Background())
-}
-
-func (i IsImageMap) ToIsImageMapOutputWithContext(ctx context.Context) IsImageMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageMapOutput)
-}
-
 type IsImageOutput struct{ *pulumi.OutputState }
 
 func (IsImageOutput) ElementType() reflect.Type {
@@ -513,51 +463,7 @@ func (o IsImageOutput) Visibility() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsImage) pulumi.StringOutput { return v.Visibility }).(pulumi.StringOutput)
 }
 
-type IsImageArrayOutput struct{ *pulumi.OutputState }
-
-func (IsImageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImage)(nil)).Elem()
-}
-
-func (o IsImageArrayOutput) ToIsImageArrayOutput() IsImageArrayOutput {
-	return o
-}
-
-func (o IsImageArrayOutput) ToIsImageArrayOutputWithContext(ctx context.Context) IsImageArrayOutput {
-	return o
-}
-
-func (o IsImageArrayOutput) Index(i pulumi.IntInput) IsImageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsImage {
-		return vs[0].([]*IsImage)[vs[1].(int)]
-	}).(IsImageOutput)
-}
-
-type IsImageMapOutput struct{ *pulumi.OutputState }
-
-func (IsImageMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImage)(nil)).Elem()
-}
-
-func (o IsImageMapOutput) ToIsImageMapOutput() IsImageMapOutput {
-	return o
-}
-
-func (o IsImageMapOutput) ToIsImageMapOutputWithContext(ctx context.Context) IsImageMapOutput {
-	return o
-}
-
-func (o IsImageMapOutput) MapIndex(k pulumi.StringInput) IsImageOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsImage {
-		return vs[0].(map[string]*IsImage)[vs[1].(string)]
-	}).(IsImageOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsImageInput)(nil)).Elem(), &IsImage{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageArrayInput)(nil)).Elem(), IsImageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageMapInput)(nil)).Elem(), IsImageMap{})
 	pulumi.RegisterOutputType(IsImageOutput{})
-	pulumi.RegisterOutputType(IsImageArrayOutput{})
-	pulumi.RegisterOutputType(IsImageMapOutput{})
 }

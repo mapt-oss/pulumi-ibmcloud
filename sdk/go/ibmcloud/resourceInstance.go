@@ -408,56 +408,6 @@ func (i *ResourceInstance) ToResourceInstanceOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceInstanceOutput)
 }
 
-// ResourceInstanceArrayInput is an input type that accepts ResourceInstanceArray and ResourceInstanceArrayOutput values.
-// You can construct a concrete instance of `ResourceInstanceArrayInput` via:
-//
-//	ResourceInstanceArray{ ResourceInstanceArgs{...} }
-type ResourceInstanceArrayInput interface {
-	pulumi.Input
-
-	ToResourceInstanceArrayOutput() ResourceInstanceArrayOutput
-	ToResourceInstanceArrayOutputWithContext(context.Context) ResourceInstanceArrayOutput
-}
-
-type ResourceInstanceArray []ResourceInstanceInput
-
-func (ResourceInstanceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ResourceInstance)(nil)).Elem()
-}
-
-func (i ResourceInstanceArray) ToResourceInstanceArrayOutput() ResourceInstanceArrayOutput {
-	return i.ToResourceInstanceArrayOutputWithContext(context.Background())
-}
-
-func (i ResourceInstanceArray) ToResourceInstanceArrayOutputWithContext(ctx context.Context) ResourceInstanceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ResourceInstanceArrayOutput)
-}
-
-// ResourceInstanceMapInput is an input type that accepts ResourceInstanceMap and ResourceInstanceMapOutput values.
-// You can construct a concrete instance of `ResourceInstanceMapInput` via:
-//
-//	ResourceInstanceMap{ "key": ResourceInstanceArgs{...} }
-type ResourceInstanceMapInput interface {
-	pulumi.Input
-
-	ToResourceInstanceMapOutput() ResourceInstanceMapOutput
-	ToResourceInstanceMapOutputWithContext(context.Context) ResourceInstanceMapOutput
-}
-
-type ResourceInstanceMap map[string]ResourceInstanceInput
-
-func (ResourceInstanceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ResourceInstance)(nil)).Elem()
-}
-
-func (i ResourceInstanceMap) ToResourceInstanceMapOutput() ResourceInstanceMapOutput {
-	return i.ToResourceInstanceMapOutputWithContext(context.Background())
-}
-
-func (i ResourceInstanceMap) ToResourceInstanceMapOutputWithContext(ctx context.Context) ResourceInstanceMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ResourceInstanceMapOutput)
-}
-
 type ResourceInstanceOutput struct{ *pulumi.OutputState }
 
 func (ResourceInstanceOutput) ElementType() reflect.Type {
@@ -700,51 +650,7 @@ func (o ResourceInstanceOutput) UpdateBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceInstance) pulumi.StringOutput { return v.UpdateBy }).(pulumi.StringOutput)
 }
 
-type ResourceInstanceArrayOutput struct{ *pulumi.OutputState }
-
-func (ResourceInstanceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ResourceInstance)(nil)).Elem()
-}
-
-func (o ResourceInstanceArrayOutput) ToResourceInstanceArrayOutput() ResourceInstanceArrayOutput {
-	return o
-}
-
-func (o ResourceInstanceArrayOutput) ToResourceInstanceArrayOutputWithContext(ctx context.Context) ResourceInstanceArrayOutput {
-	return o
-}
-
-func (o ResourceInstanceArrayOutput) Index(i pulumi.IntInput) ResourceInstanceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ResourceInstance {
-		return vs[0].([]*ResourceInstance)[vs[1].(int)]
-	}).(ResourceInstanceOutput)
-}
-
-type ResourceInstanceMapOutput struct{ *pulumi.OutputState }
-
-func (ResourceInstanceMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ResourceInstance)(nil)).Elem()
-}
-
-func (o ResourceInstanceMapOutput) ToResourceInstanceMapOutput() ResourceInstanceMapOutput {
-	return o
-}
-
-func (o ResourceInstanceMapOutput) ToResourceInstanceMapOutputWithContext(ctx context.Context) ResourceInstanceMapOutput {
-	return o
-}
-
-func (o ResourceInstanceMapOutput) MapIndex(k pulumi.StringInput) ResourceInstanceOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ResourceInstance {
-		return vs[0].(map[string]*ResourceInstance)[vs[1].(string)]
-	}).(ResourceInstanceOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ResourceInstanceInput)(nil)).Elem(), &ResourceInstance{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ResourceInstanceArrayInput)(nil)).Elem(), ResourceInstanceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ResourceInstanceMapInput)(nil)).Elem(), ResourceInstanceMap{})
 	pulumi.RegisterOutputType(ResourceInstanceOutput{})
-	pulumi.RegisterOutputType(ResourceInstanceArrayOutput{})
-	pulumi.RegisterOutputType(ResourceInstanceMapOutput{})
 }

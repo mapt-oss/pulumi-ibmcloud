@@ -300,56 +300,6 @@ func (i *ComputeUser) ToComputeUserOutputWithContext(ctx context.Context) Comput
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeUserOutput)
 }
 
-// ComputeUserArrayInput is an input type that accepts ComputeUserArray and ComputeUserArrayOutput values.
-// You can construct a concrete instance of `ComputeUserArrayInput` via:
-//
-//	ComputeUserArray{ ComputeUserArgs{...} }
-type ComputeUserArrayInput interface {
-	pulumi.Input
-
-	ToComputeUserArrayOutput() ComputeUserArrayOutput
-	ToComputeUserArrayOutputWithContext(context.Context) ComputeUserArrayOutput
-}
-
-type ComputeUserArray []ComputeUserInput
-
-func (ComputeUserArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeUser)(nil)).Elem()
-}
-
-func (i ComputeUserArray) ToComputeUserArrayOutput() ComputeUserArrayOutput {
-	return i.ToComputeUserArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeUserArray) ToComputeUserArrayOutputWithContext(ctx context.Context) ComputeUserArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeUserArrayOutput)
-}
-
-// ComputeUserMapInput is an input type that accepts ComputeUserMap and ComputeUserMapOutput values.
-// You can construct a concrete instance of `ComputeUserMapInput` via:
-//
-//	ComputeUserMap{ "key": ComputeUserArgs{...} }
-type ComputeUserMapInput interface {
-	pulumi.Input
-
-	ToComputeUserMapOutput() ComputeUserMapOutput
-	ToComputeUserMapOutputWithContext(context.Context) ComputeUserMapOutput
-}
-
-type ComputeUserMap map[string]ComputeUserInput
-
-func (ComputeUserMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeUser)(nil)).Elem()
-}
-
-func (i ComputeUserMap) ToComputeUserMapOutput() ComputeUserMapOutput {
-	return i.ToComputeUserMapOutputWithContext(context.Background())
-}
-
-func (i ComputeUserMap) ToComputeUserMapOutputWithContext(ctx context.Context) ComputeUserMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeUserMapOutput)
-}
-
 type ComputeUserOutput struct{ *pulumi.OutputState }
 
 func (ComputeUserOutput) ElementType() reflect.Type {
@@ -454,51 +404,7 @@ func (o ComputeUserOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeUser) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
 }
 
-type ComputeUserArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeUserArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeUser)(nil)).Elem()
-}
-
-func (o ComputeUserArrayOutput) ToComputeUserArrayOutput() ComputeUserArrayOutput {
-	return o
-}
-
-func (o ComputeUserArrayOutput) ToComputeUserArrayOutputWithContext(ctx context.Context) ComputeUserArrayOutput {
-	return o
-}
-
-func (o ComputeUserArrayOutput) Index(i pulumi.IntInput) ComputeUserOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeUser {
-		return vs[0].([]*ComputeUser)[vs[1].(int)]
-	}).(ComputeUserOutput)
-}
-
-type ComputeUserMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeUserMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeUser)(nil)).Elem()
-}
-
-func (o ComputeUserMapOutput) ToComputeUserMapOutput() ComputeUserMapOutput {
-	return o
-}
-
-func (o ComputeUserMapOutput) ToComputeUserMapOutputWithContext(ctx context.Context) ComputeUserMapOutput {
-	return o
-}
-
-func (o ComputeUserMapOutput) MapIndex(k pulumi.StringInput) ComputeUserOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeUser {
-		return vs[0].(map[string]*ComputeUser)[vs[1].(string)]
-	}).(ComputeUserOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeUserInput)(nil)).Elem(), &ComputeUser{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeUserArrayInput)(nil)).Elem(), ComputeUserArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeUserMapInput)(nil)).Elem(), ComputeUserMap{})
 	pulumi.RegisterOutputType(ComputeUserOutput{})
-	pulumi.RegisterOutputType(ComputeUserArrayOutput{})
-	pulumi.RegisterOutputType(ComputeUserMapOutput{})
 }

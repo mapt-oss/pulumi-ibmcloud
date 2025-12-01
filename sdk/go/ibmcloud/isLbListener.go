@@ -277,56 +277,6 @@ func (i *IsLbListener) ToIsLbListenerOutputWithContext(ctx context.Context) IsLb
 	return pulumi.ToOutputWithContext(ctx, i).(IsLbListenerOutput)
 }
 
-// IsLbListenerArrayInput is an input type that accepts IsLbListenerArray and IsLbListenerArrayOutput values.
-// You can construct a concrete instance of `IsLbListenerArrayInput` via:
-//
-//	IsLbListenerArray{ IsLbListenerArgs{...} }
-type IsLbListenerArrayInput interface {
-	pulumi.Input
-
-	ToIsLbListenerArrayOutput() IsLbListenerArrayOutput
-	ToIsLbListenerArrayOutputWithContext(context.Context) IsLbListenerArrayOutput
-}
-
-type IsLbListenerArray []IsLbListenerInput
-
-func (IsLbListenerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbListener)(nil)).Elem()
-}
-
-func (i IsLbListenerArray) ToIsLbListenerArrayOutput() IsLbListenerArrayOutput {
-	return i.ToIsLbListenerArrayOutputWithContext(context.Background())
-}
-
-func (i IsLbListenerArray) ToIsLbListenerArrayOutputWithContext(ctx context.Context) IsLbListenerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbListenerArrayOutput)
-}
-
-// IsLbListenerMapInput is an input type that accepts IsLbListenerMap and IsLbListenerMapOutput values.
-// You can construct a concrete instance of `IsLbListenerMapInput` via:
-//
-//	IsLbListenerMap{ "key": IsLbListenerArgs{...} }
-type IsLbListenerMapInput interface {
-	pulumi.Input
-
-	ToIsLbListenerMapOutput() IsLbListenerMapOutput
-	ToIsLbListenerMapOutputWithContext(context.Context) IsLbListenerMapOutput
-}
-
-type IsLbListenerMap map[string]IsLbListenerInput
-
-func (IsLbListenerMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbListener)(nil)).Elem()
-}
-
-func (i IsLbListenerMap) ToIsLbListenerMapOutput() IsLbListenerMapOutput {
-	return i.ToIsLbListenerMapOutputWithContext(context.Background())
-}
-
-func (i IsLbListenerMap) ToIsLbListenerMapOutputWithContext(ctx context.Context) IsLbListenerMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbListenerMapOutput)
-}
-
 type IsLbListenerOutput struct{ *pulumi.OutputState }
 
 func (IsLbListenerOutput) ElementType() reflect.Type {
@@ -431,51 +381,7 @@ func (o IsLbListenerOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsLbListener) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-type IsLbListenerArrayOutput struct{ *pulumi.OutputState }
-
-func (IsLbListenerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbListener)(nil)).Elem()
-}
-
-func (o IsLbListenerArrayOutput) ToIsLbListenerArrayOutput() IsLbListenerArrayOutput {
-	return o
-}
-
-func (o IsLbListenerArrayOutput) ToIsLbListenerArrayOutputWithContext(ctx context.Context) IsLbListenerArrayOutput {
-	return o
-}
-
-func (o IsLbListenerArrayOutput) Index(i pulumi.IntInput) IsLbListenerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsLbListener {
-		return vs[0].([]*IsLbListener)[vs[1].(int)]
-	}).(IsLbListenerOutput)
-}
-
-type IsLbListenerMapOutput struct{ *pulumi.OutputState }
-
-func (IsLbListenerMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbListener)(nil)).Elem()
-}
-
-func (o IsLbListenerMapOutput) ToIsLbListenerMapOutput() IsLbListenerMapOutput {
-	return o
-}
-
-func (o IsLbListenerMapOutput) ToIsLbListenerMapOutputWithContext(ctx context.Context) IsLbListenerMapOutput {
-	return o
-}
-
-func (o IsLbListenerMapOutput) MapIndex(k pulumi.StringInput) IsLbListenerOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsLbListener {
-		return vs[0].(map[string]*IsLbListener)[vs[1].(string)]
-	}).(IsLbListenerOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsLbListenerInput)(nil)).Elem(), &IsLbListener{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbListenerArrayInput)(nil)).Elem(), IsLbListenerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbListenerMapInput)(nil)).Elem(), IsLbListenerMap{})
 	pulumi.RegisterOutputType(IsLbListenerOutput{})
-	pulumi.RegisterOutputType(IsLbListenerArrayOutput{})
-	pulumi.RegisterOutputType(IsLbListenerMapOutput{})
 }

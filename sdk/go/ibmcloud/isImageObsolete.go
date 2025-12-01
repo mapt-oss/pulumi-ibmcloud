@@ -213,56 +213,6 @@ func (i *IsImageObsolete) ToIsImageObsoleteOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IsImageObsoleteOutput)
 }
 
-// IsImageObsoleteArrayInput is an input type that accepts IsImageObsoleteArray and IsImageObsoleteArrayOutput values.
-// You can construct a concrete instance of `IsImageObsoleteArrayInput` via:
-//
-//	IsImageObsoleteArray{ IsImageObsoleteArgs{...} }
-type IsImageObsoleteArrayInput interface {
-	pulumi.Input
-
-	ToIsImageObsoleteArrayOutput() IsImageObsoleteArrayOutput
-	ToIsImageObsoleteArrayOutputWithContext(context.Context) IsImageObsoleteArrayOutput
-}
-
-type IsImageObsoleteArray []IsImageObsoleteInput
-
-func (IsImageObsoleteArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImageObsolete)(nil)).Elem()
-}
-
-func (i IsImageObsoleteArray) ToIsImageObsoleteArrayOutput() IsImageObsoleteArrayOutput {
-	return i.ToIsImageObsoleteArrayOutputWithContext(context.Background())
-}
-
-func (i IsImageObsoleteArray) ToIsImageObsoleteArrayOutputWithContext(ctx context.Context) IsImageObsoleteArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageObsoleteArrayOutput)
-}
-
-// IsImageObsoleteMapInput is an input type that accepts IsImageObsoleteMap and IsImageObsoleteMapOutput values.
-// You can construct a concrete instance of `IsImageObsoleteMapInput` via:
-//
-//	IsImageObsoleteMap{ "key": IsImageObsoleteArgs{...} }
-type IsImageObsoleteMapInput interface {
-	pulumi.Input
-
-	ToIsImageObsoleteMapOutput() IsImageObsoleteMapOutput
-	ToIsImageObsoleteMapOutputWithContext(context.Context) IsImageObsoleteMapOutput
-}
-
-type IsImageObsoleteMap map[string]IsImageObsoleteInput
-
-func (IsImageObsoleteMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImageObsolete)(nil)).Elem()
-}
-
-func (i IsImageObsoleteMap) ToIsImageObsoleteMapOutput() IsImageObsoleteMapOutput {
-	return i.ToIsImageObsoleteMapOutputWithContext(context.Background())
-}
-
-func (i IsImageObsoleteMap) ToIsImageObsoleteMapOutputWithContext(ctx context.Context) IsImageObsoleteMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageObsoleteMapOutput)
-}
-
 type IsImageObsoleteOutput struct{ *pulumi.OutputState }
 
 func (IsImageObsoleteOutput) ElementType() reflect.Type {
@@ -377,51 +327,7 @@ func (o IsImageObsoleteOutput) Visibility() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsImageObsolete) pulumi.StringOutput { return v.Visibility }).(pulumi.StringOutput)
 }
 
-type IsImageObsoleteArrayOutput struct{ *pulumi.OutputState }
-
-func (IsImageObsoleteArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImageObsolete)(nil)).Elem()
-}
-
-func (o IsImageObsoleteArrayOutput) ToIsImageObsoleteArrayOutput() IsImageObsoleteArrayOutput {
-	return o
-}
-
-func (o IsImageObsoleteArrayOutput) ToIsImageObsoleteArrayOutputWithContext(ctx context.Context) IsImageObsoleteArrayOutput {
-	return o
-}
-
-func (o IsImageObsoleteArrayOutput) Index(i pulumi.IntInput) IsImageObsoleteOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsImageObsolete {
-		return vs[0].([]*IsImageObsolete)[vs[1].(int)]
-	}).(IsImageObsoleteOutput)
-}
-
-type IsImageObsoleteMapOutput struct{ *pulumi.OutputState }
-
-func (IsImageObsoleteMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImageObsolete)(nil)).Elem()
-}
-
-func (o IsImageObsoleteMapOutput) ToIsImageObsoleteMapOutput() IsImageObsoleteMapOutput {
-	return o
-}
-
-func (o IsImageObsoleteMapOutput) ToIsImageObsoleteMapOutputWithContext(ctx context.Context) IsImageObsoleteMapOutput {
-	return o
-}
-
-func (o IsImageObsoleteMapOutput) MapIndex(k pulumi.StringInput) IsImageObsoleteOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsImageObsolete {
-		return vs[0].(map[string]*IsImageObsolete)[vs[1].(string)]
-	}).(IsImageObsoleteOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsImageObsoleteInput)(nil)).Elem(), &IsImageObsolete{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageObsoleteArrayInput)(nil)).Elem(), IsImageObsoleteArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageObsoleteMapInput)(nil)).Elem(), IsImageObsoleteMap{})
 	pulumi.RegisterOutputType(IsImageObsoleteOutput{})
-	pulumi.RegisterOutputType(IsImageObsoleteArrayOutput{})
-	pulumi.RegisterOutputType(IsImageObsoleteMapOutput{})
 }

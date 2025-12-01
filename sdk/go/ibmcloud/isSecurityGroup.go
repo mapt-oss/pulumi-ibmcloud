@@ -175,56 +175,6 @@ func (i *IsSecurityGroup) ToIsSecurityGroupOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupOutput)
 }
 
-// IsSecurityGroupArrayInput is an input type that accepts IsSecurityGroupArray and IsSecurityGroupArrayOutput values.
-// You can construct a concrete instance of `IsSecurityGroupArrayInput` via:
-//
-//	IsSecurityGroupArray{ IsSecurityGroupArgs{...} }
-type IsSecurityGroupArrayInput interface {
-	pulumi.Input
-
-	ToIsSecurityGroupArrayOutput() IsSecurityGroupArrayOutput
-	ToIsSecurityGroupArrayOutputWithContext(context.Context) IsSecurityGroupArrayOutput
-}
-
-type IsSecurityGroupArray []IsSecurityGroupInput
-
-func (IsSecurityGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSecurityGroup)(nil)).Elem()
-}
-
-func (i IsSecurityGroupArray) ToIsSecurityGroupArrayOutput() IsSecurityGroupArrayOutput {
-	return i.ToIsSecurityGroupArrayOutputWithContext(context.Background())
-}
-
-func (i IsSecurityGroupArray) ToIsSecurityGroupArrayOutputWithContext(ctx context.Context) IsSecurityGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupArrayOutput)
-}
-
-// IsSecurityGroupMapInput is an input type that accepts IsSecurityGroupMap and IsSecurityGroupMapOutput values.
-// You can construct a concrete instance of `IsSecurityGroupMapInput` via:
-//
-//	IsSecurityGroupMap{ "key": IsSecurityGroupArgs{...} }
-type IsSecurityGroupMapInput interface {
-	pulumi.Input
-
-	ToIsSecurityGroupMapOutput() IsSecurityGroupMapOutput
-	ToIsSecurityGroupMapOutputWithContext(context.Context) IsSecurityGroupMapOutput
-}
-
-type IsSecurityGroupMap map[string]IsSecurityGroupInput
-
-func (IsSecurityGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSecurityGroup)(nil)).Elem()
-}
-
-func (i IsSecurityGroupMap) ToIsSecurityGroupMapOutput() IsSecurityGroupMapOutput {
-	return i.ToIsSecurityGroupMapOutputWithContext(context.Background())
-}
-
-func (i IsSecurityGroupMap) ToIsSecurityGroupMapOutputWithContext(ctx context.Context) IsSecurityGroupMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupMapOutput)
-}
-
 type IsSecurityGroupOutput struct{ *pulumi.OutputState }
 
 func (IsSecurityGroupOutput) ElementType() reflect.Type {
@@ -294,51 +244,7 @@ func (o IsSecurityGroupOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsSecurityGroup) pulumi.StringOutput { return v.Vpc }).(pulumi.StringOutput)
 }
 
-type IsSecurityGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSecurityGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSecurityGroup)(nil)).Elem()
-}
-
-func (o IsSecurityGroupArrayOutput) ToIsSecurityGroupArrayOutput() IsSecurityGroupArrayOutput {
-	return o
-}
-
-func (o IsSecurityGroupArrayOutput) ToIsSecurityGroupArrayOutputWithContext(ctx context.Context) IsSecurityGroupArrayOutput {
-	return o
-}
-
-func (o IsSecurityGroupArrayOutput) Index(i pulumi.IntInput) IsSecurityGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSecurityGroup {
-		return vs[0].([]*IsSecurityGroup)[vs[1].(int)]
-	}).(IsSecurityGroupOutput)
-}
-
-type IsSecurityGroupMapOutput struct{ *pulumi.OutputState }
-
-func (IsSecurityGroupMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSecurityGroup)(nil)).Elem()
-}
-
-func (o IsSecurityGroupMapOutput) ToIsSecurityGroupMapOutput() IsSecurityGroupMapOutput {
-	return o
-}
-
-func (o IsSecurityGroupMapOutput) ToIsSecurityGroupMapOutputWithContext(ctx context.Context) IsSecurityGroupMapOutput {
-	return o
-}
-
-func (o IsSecurityGroupMapOutput) MapIndex(k pulumi.StringInput) IsSecurityGroupOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSecurityGroup {
-		return vs[0].(map[string]*IsSecurityGroup)[vs[1].(string)]
-	}).(IsSecurityGroupOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupInput)(nil)).Elem(), &IsSecurityGroup{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupArrayInput)(nil)).Elem(), IsSecurityGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupMapInput)(nil)).Elem(), IsSecurityGroupMap{})
 	pulumi.RegisterOutputType(IsSecurityGroupOutput{})
-	pulumi.RegisterOutputType(IsSecurityGroupArrayOutput{})
-	pulumi.RegisterOutputType(IsSecurityGroupMapOutput{})
 }

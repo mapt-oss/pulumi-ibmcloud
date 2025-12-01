@@ -252,56 +252,6 @@ func (i *ContainerBindService) ToContainerBindServiceOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerBindServiceOutput)
 }
 
-// ContainerBindServiceArrayInput is an input type that accepts ContainerBindServiceArray and ContainerBindServiceArrayOutput values.
-// You can construct a concrete instance of `ContainerBindServiceArrayInput` via:
-//
-//	ContainerBindServiceArray{ ContainerBindServiceArgs{...} }
-type ContainerBindServiceArrayInput interface {
-	pulumi.Input
-
-	ToContainerBindServiceArrayOutput() ContainerBindServiceArrayOutput
-	ToContainerBindServiceArrayOutputWithContext(context.Context) ContainerBindServiceArrayOutput
-}
-
-type ContainerBindServiceArray []ContainerBindServiceInput
-
-func (ContainerBindServiceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerBindService)(nil)).Elem()
-}
-
-func (i ContainerBindServiceArray) ToContainerBindServiceArrayOutput() ContainerBindServiceArrayOutput {
-	return i.ToContainerBindServiceArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerBindServiceArray) ToContainerBindServiceArrayOutputWithContext(ctx context.Context) ContainerBindServiceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerBindServiceArrayOutput)
-}
-
-// ContainerBindServiceMapInput is an input type that accepts ContainerBindServiceMap and ContainerBindServiceMapOutput values.
-// You can construct a concrete instance of `ContainerBindServiceMapInput` via:
-//
-//	ContainerBindServiceMap{ "key": ContainerBindServiceArgs{...} }
-type ContainerBindServiceMapInput interface {
-	pulumi.Input
-
-	ToContainerBindServiceMapOutput() ContainerBindServiceMapOutput
-	ToContainerBindServiceMapOutputWithContext(context.Context) ContainerBindServiceMapOutput
-}
-
-type ContainerBindServiceMap map[string]ContainerBindServiceInput
-
-func (ContainerBindServiceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerBindService)(nil)).Elem()
-}
-
-func (i ContainerBindServiceMap) ToContainerBindServiceMapOutput() ContainerBindServiceMapOutput {
-	return i.ToContainerBindServiceMapOutputWithContext(context.Background())
-}
-
-func (i ContainerBindServiceMap) ToContainerBindServiceMapOutputWithContext(ctx context.Context) ContainerBindServiceMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerBindServiceMapOutput)
-}
-
 type ContainerBindServiceOutput struct{ *pulumi.OutputState }
 
 func (ContainerBindServiceOutput) ElementType() reflect.Type {
@@ -384,51 +334,7 @@ func (o ContainerBindServiceOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ContainerBindService) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type ContainerBindServiceArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerBindServiceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerBindService)(nil)).Elem()
-}
-
-func (o ContainerBindServiceArrayOutput) ToContainerBindServiceArrayOutput() ContainerBindServiceArrayOutput {
-	return o
-}
-
-func (o ContainerBindServiceArrayOutput) ToContainerBindServiceArrayOutputWithContext(ctx context.Context) ContainerBindServiceArrayOutput {
-	return o
-}
-
-func (o ContainerBindServiceArrayOutput) Index(i pulumi.IntInput) ContainerBindServiceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerBindService {
-		return vs[0].([]*ContainerBindService)[vs[1].(int)]
-	}).(ContainerBindServiceOutput)
-}
-
-type ContainerBindServiceMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerBindServiceMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerBindService)(nil)).Elem()
-}
-
-func (o ContainerBindServiceMapOutput) ToContainerBindServiceMapOutput() ContainerBindServiceMapOutput {
-	return o
-}
-
-func (o ContainerBindServiceMapOutput) ToContainerBindServiceMapOutputWithContext(ctx context.Context) ContainerBindServiceMapOutput {
-	return o
-}
-
-func (o ContainerBindServiceMapOutput) MapIndex(k pulumi.StringInput) ContainerBindServiceOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerBindService {
-		return vs[0].(map[string]*ContainerBindService)[vs[1].(string)]
-	}).(ContainerBindServiceOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerBindServiceInput)(nil)).Elem(), &ContainerBindService{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerBindServiceArrayInput)(nil)).Elem(), ContainerBindServiceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerBindServiceMapInput)(nil)).Elem(), ContainerBindServiceMap{})
 	pulumi.RegisterOutputType(ContainerBindServiceOutput{})
-	pulumi.RegisterOutputType(ContainerBindServiceArrayOutput{})
-	pulumi.RegisterOutputType(ContainerBindServiceMapOutput{})
 }

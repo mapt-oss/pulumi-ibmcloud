@@ -144,56 +144,6 @@ func (i *IamPolicyTemplate) ToIamPolicyTemplateOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyTemplateOutput)
 }
 
-// IamPolicyTemplateArrayInput is an input type that accepts IamPolicyTemplateArray and IamPolicyTemplateArrayOutput values.
-// You can construct a concrete instance of `IamPolicyTemplateArrayInput` via:
-//
-//	IamPolicyTemplateArray{ IamPolicyTemplateArgs{...} }
-type IamPolicyTemplateArrayInput interface {
-	pulumi.Input
-
-	ToIamPolicyTemplateArrayOutput() IamPolicyTemplateArrayOutput
-	ToIamPolicyTemplateArrayOutputWithContext(context.Context) IamPolicyTemplateArrayOutput
-}
-
-type IamPolicyTemplateArray []IamPolicyTemplateInput
-
-func (IamPolicyTemplateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamPolicyTemplate)(nil)).Elem()
-}
-
-func (i IamPolicyTemplateArray) ToIamPolicyTemplateArrayOutput() IamPolicyTemplateArrayOutput {
-	return i.ToIamPolicyTemplateArrayOutputWithContext(context.Background())
-}
-
-func (i IamPolicyTemplateArray) ToIamPolicyTemplateArrayOutputWithContext(ctx context.Context) IamPolicyTemplateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyTemplateArrayOutput)
-}
-
-// IamPolicyTemplateMapInput is an input type that accepts IamPolicyTemplateMap and IamPolicyTemplateMapOutput values.
-// You can construct a concrete instance of `IamPolicyTemplateMapInput` via:
-//
-//	IamPolicyTemplateMap{ "key": IamPolicyTemplateArgs{...} }
-type IamPolicyTemplateMapInput interface {
-	pulumi.Input
-
-	ToIamPolicyTemplateMapOutput() IamPolicyTemplateMapOutput
-	ToIamPolicyTemplateMapOutputWithContext(context.Context) IamPolicyTemplateMapOutput
-}
-
-type IamPolicyTemplateMap map[string]IamPolicyTemplateInput
-
-func (IamPolicyTemplateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamPolicyTemplate)(nil)).Elem()
-}
-
-func (i IamPolicyTemplateMap) ToIamPolicyTemplateMapOutput() IamPolicyTemplateMapOutput {
-	return i.ToIamPolicyTemplateMapOutputWithContext(context.Background())
-}
-
-func (i IamPolicyTemplateMap) ToIamPolicyTemplateMapOutputWithContext(ctx context.Context) IamPolicyTemplateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyTemplateMapOutput)
-}
-
 type IamPolicyTemplateOutput struct{ *pulumi.OutputState }
 
 func (IamPolicyTemplateOutput) ElementType() reflect.Type {
@@ -242,51 +192,7 @@ func (o IamPolicyTemplateOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamPolicyTemplate) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamPolicyTemplateArrayOutput struct{ *pulumi.OutputState }
-
-func (IamPolicyTemplateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamPolicyTemplate)(nil)).Elem()
-}
-
-func (o IamPolicyTemplateArrayOutput) ToIamPolicyTemplateArrayOutput() IamPolicyTemplateArrayOutput {
-	return o
-}
-
-func (o IamPolicyTemplateArrayOutput) ToIamPolicyTemplateArrayOutputWithContext(ctx context.Context) IamPolicyTemplateArrayOutput {
-	return o
-}
-
-func (o IamPolicyTemplateArrayOutput) Index(i pulumi.IntInput) IamPolicyTemplateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamPolicyTemplate {
-		return vs[0].([]*IamPolicyTemplate)[vs[1].(int)]
-	}).(IamPolicyTemplateOutput)
-}
-
-type IamPolicyTemplateMapOutput struct{ *pulumi.OutputState }
-
-func (IamPolicyTemplateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamPolicyTemplate)(nil)).Elem()
-}
-
-func (o IamPolicyTemplateMapOutput) ToIamPolicyTemplateMapOutput() IamPolicyTemplateMapOutput {
-	return o
-}
-
-func (o IamPolicyTemplateMapOutput) ToIamPolicyTemplateMapOutputWithContext(ctx context.Context) IamPolicyTemplateMapOutput {
-	return o
-}
-
-func (o IamPolicyTemplateMapOutput) MapIndex(k pulumi.StringInput) IamPolicyTemplateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamPolicyTemplate {
-		return vs[0].(map[string]*IamPolicyTemplate)[vs[1].(string)]
-	}).(IamPolicyTemplateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyTemplateInput)(nil)).Elem(), &IamPolicyTemplate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyTemplateArrayInput)(nil)).Elem(), IamPolicyTemplateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyTemplateMapInput)(nil)).Elem(), IamPolicyTemplateMap{})
 	pulumi.RegisterOutputType(IamPolicyTemplateOutput{})
-	pulumi.RegisterOutputType(IamPolicyTemplateArrayOutput{})
-	pulumi.RegisterOutputType(IamPolicyTemplateMapOutput{})
 }

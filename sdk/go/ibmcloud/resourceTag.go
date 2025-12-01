@@ -145,56 +145,6 @@ func (i *ResourceTag) ToResourceTagOutputWithContext(ctx context.Context) Resour
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceTagOutput)
 }
 
-// ResourceTagArrayInput is an input type that accepts ResourceTagArray and ResourceTagArrayOutput values.
-// You can construct a concrete instance of `ResourceTagArrayInput` via:
-//
-//	ResourceTagArray{ ResourceTagArgs{...} }
-type ResourceTagArrayInput interface {
-	pulumi.Input
-
-	ToResourceTagArrayOutput() ResourceTagArrayOutput
-	ToResourceTagArrayOutputWithContext(context.Context) ResourceTagArrayOutput
-}
-
-type ResourceTagArray []ResourceTagInput
-
-func (ResourceTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ResourceTag)(nil)).Elem()
-}
-
-func (i ResourceTagArray) ToResourceTagArrayOutput() ResourceTagArrayOutput {
-	return i.ToResourceTagArrayOutputWithContext(context.Background())
-}
-
-func (i ResourceTagArray) ToResourceTagArrayOutputWithContext(ctx context.Context) ResourceTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ResourceTagArrayOutput)
-}
-
-// ResourceTagMapInput is an input type that accepts ResourceTagMap and ResourceTagMapOutput values.
-// You can construct a concrete instance of `ResourceTagMapInput` via:
-//
-//	ResourceTagMap{ "key": ResourceTagArgs{...} }
-type ResourceTagMapInput interface {
-	pulumi.Input
-
-	ToResourceTagMapOutput() ResourceTagMapOutput
-	ToResourceTagMapOutputWithContext(context.Context) ResourceTagMapOutput
-}
-
-type ResourceTagMap map[string]ResourceTagInput
-
-func (ResourceTagMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ResourceTag)(nil)).Elem()
-}
-
-func (i ResourceTagMap) ToResourceTagMapOutput() ResourceTagMapOutput {
-	return i.ToResourceTagMapOutputWithContext(context.Background())
-}
-
-func (i ResourceTagMap) ToResourceTagMapOutputWithContext(ctx context.Context) ResourceTagMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ResourceTagMapOutput)
-}
-
 type ResourceTagOutput struct{ *pulumi.OutputState }
 
 func (ResourceTagOutput) ElementType() reflect.Type {
@@ -239,51 +189,7 @@ func (o ResourceTagOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ResourceTag) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type ResourceTagArrayOutput struct{ *pulumi.OutputState }
-
-func (ResourceTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ResourceTag)(nil)).Elem()
-}
-
-func (o ResourceTagArrayOutput) ToResourceTagArrayOutput() ResourceTagArrayOutput {
-	return o
-}
-
-func (o ResourceTagArrayOutput) ToResourceTagArrayOutputWithContext(ctx context.Context) ResourceTagArrayOutput {
-	return o
-}
-
-func (o ResourceTagArrayOutput) Index(i pulumi.IntInput) ResourceTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ResourceTag {
-		return vs[0].([]*ResourceTag)[vs[1].(int)]
-	}).(ResourceTagOutput)
-}
-
-type ResourceTagMapOutput struct{ *pulumi.OutputState }
-
-func (ResourceTagMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ResourceTag)(nil)).Elem()
-}
-
-func (o ResourceTagMapOutput) ToResourceTagMapOutput() ResourceTagMapOutput {
-	return o
-}
-
-func (o ResourceTagMapOutput) ToResourceTagMapOutputWithContext(ctx context.Context) ResourceTagMapOutput {
-	return o
-}
-
-func (o ResourceTagMapOutput) MapIndex(k pulumi.StringInput) ResourceTagOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ResourceTag {
-		return vs[0].(map[string]*ResourceTag)[vs[1].(string)]
-	}).(ResourceTagOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ResourceTagInput)(nil)).Elem(), &ResourceTag{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ResourceTagArrayInput)(nil)).Elem(), ResourceTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ResourceTagMapInput)(nil)).Elem(), ResourceTagMap{})
 	pulumi.RegisterOutputType(ResourceTagOutput{})
-	pulumi.RegisterOutputType(ResourceTagArrayOutput{})
-	pulumi.RegisterOutputType(ResourceTagMapOutput{})
 }

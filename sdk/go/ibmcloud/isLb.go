@@ -285,56 +285,6 @@ func (i *IsLb) ToIsLbOutputWithContext(ctx context.Context) IsLbOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IsLbOutput)
 }
 
-// IsLbArrayInput is an input type that accepts IsLbArray and IsLbArrayOutput values.
-// You can construct a concrete instance of `IsLbArrayInput` via:
-//
-//	IsLbArray{ IsLbArgs{...} }
-type IsLbArrayInput interface {
-	pulumi.Input
-
-	ToIsLbArrayOutput() IsLbArrayOutput
-	ToIsLbArrayOutputWithContext(context.Context) IsLbArrayOutput
-}
-
-type IsLbArray []IsLbInput
-
-func (IsLbArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLb)(nil)).Elem()
-}
-
-func (i IsLbArray) ToIsLbArrayOutput() IsLbArrayOutput {
-	return i.ToIsLbArrayOutputWithContext(context.Background())
-}
-
-func (i IsLbArray) ToIsLbArrayOutputWithContext(ctx context.Context) IsLbArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbArrayOutput)
-}
-
-// IsLbMapInput is an input type that accepts IsLbMap and IsLbMapOutput values.
-// You can construct a concrete instance of `IsLbMapInput` via:
-//
-//	IsLbMap{ "key": IsLbArgs{...} }
-type IsLbMapInput interface {
-	pulumi.Input
-
-	ToIsLbMapOutput() IsLbMapOutput
-	ToIsLbMapOutputWithContext(context.Context) IsLbMapOutput
-}
-
-type IsLbMap map[string]IsLbInput
-
-func (IsLbMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLb)(nil)).Elem()
-}
-
-func (i IsLbMap) ToIsLbMapOutput() IsLbMapOutput {
-	return i.ToIsLbMapOutputWithContext(context.Background())
-}
-
-func (i IsLbMap) ToIsLbMapOutputWithContext(ctx context.Context) IsLbMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbMapOutput)
-}
-
 type IsLbOutput struct{ *pulumi.OutputState }
 
 func (IsLbOutput) ElementType() reflect.Type {
@@ -491,51 +441,7 @@ func (o IsLbOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsLb) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IsLbArrayOutput struct{ *pulumi.OutputState }
-
-func (IsLbArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLb)(nil)).Elem()
-}
-
-func (o IsLbArrayOutput) ToIsLbArrayOutput() IsLbArrayOutput {
-	return o
-}
-
-func (o IsLbArrayOutput) ToIsLbArrayOutputWithContext(ctx context.Context) IsLbArrayOutput {
-	return o
-}
-
-func (o IsLbArrayOutput) Index(i pulumi.IntInput) IsLbOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsLb {
-		return vs[0].([]*IsLb)[vs[1].(int)]
-	}).(IsLbOutput)
-}
-
-type IsLbMapOutput struct{ *pulumi.OutputState }
-
-func (IsLbMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLb)(nil)).Elem()
-}
-
-func (o IsLbMapOutput) ToIsLbMapOutput() IsLbMapOutput {
-	return o
-}
-
-func (o IsLbMapOutput) ToIsLbMapOutputWithContext(ctx context.Context) IsLbMapOutput {
-	return o
-}
-
-func (o IsLbMapOutput) MapIndex(k pulumi.StringInput) IsLbOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsLb {
-		return vs[0].(map[string]*IsLb)[vs[1].(string)]
-	}).(IsLbOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsLbInput)(nil)).Elem(), &IsLb{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbArrayInput)(nil)).Elem(), IsLbArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbMapInput)(nil)).Elem(), IsLbMap{})
 	pulumi.RegisterOutputType(IsLbOutput{})
-	pulumi.RegisterOutputType(IsLbArrayOutput{})
-	pulumi.RegisterOutputType(IsLbMapOutput{})
 }

@@ -232,56 +232,6 @@ func (i *IamAuthorizationPolicy) ToIamAuthorizationPolicyOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(IamAuthorizationPolicyOutput)
 }
 
-// IamAuthorizationPolicyArrayInput is an input type that accepts IamAuthorizationPolicyArray and IamAuthorizationPolicyArrayOutput values.
-// You can construct a concrete instance of `IamAuthorizationPolicyArrayInput` via:
-//
-//	IamAuthorizationPolicyArray{ IamAuthorizationPolicyArgs{...} }
-type IamAuthorizationPolicyArrayInput interface {
-	pulumi.Input
-
-	ToIamAuthorizationPolicyArrayOutput() IamAuthorizationPolicyArrayOutput
-	ToIamAuthorizationPolicyArrayOutputWithContext(context.Context) IamAuthorizationPolicyArrayOutput
-}
-
-type IamAuthorizationPolicyArray []IamAuthorizationPolicyInput
-
-func (IamAuthorizationPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAuthorizationPolicy)(nil)).Elem()
-}
-
-func (i IamAuthorizationPolicyArray) ToIamAuthorizationPolicyArrayOutput() IamAuthorizationPolicyArrayOutput {
-	return i.ToIamAuthorizationPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IamAuthorizationPolicyArray) ToIamAuthorizationPolicyArrayOutputWithContext(ctx context.Context) IamAuthorizationPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAuthorizationPolicyArrayOutput)
-}
-
-// IamAuthorizationPolicyMapInput is an input type that accepts IamAuthorizationPolicyMap and IamAuthorizationPolicyMapOutput values.
-// You can construct a concrete instance of `IamAuthorizationPolicyMapInput` via:
-//
-//	IamAuthorizationPolicyMap{ "key": IamAuthorizationPolicyArgs{...} }
-type IamAuthorizationPolicyMapInput interface {
-	pulumi.Input
-
-	ToIamAuthorizationPolicyMapOutput() IamAuthorizationPolicyMapOutput
-	ToIamAuthorizationPolicyMapOutputWithContext(context.Context) IamAuthorizationPolicyMapOutput
-}
-
-type IamAuthorizationPolicyMap map[string]IamAuthorizationPolicyInput
-
-func (IamAuthorizationPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAuthorizationPolicy)(nil)).Elem()
-}
-
-func (i IamAuthorizationPolicyMap) ToIamAuthorizationPolicyMapOutput() IamAuthorizationPolicyMapOutput {
-	return i.ToIamAuthorizationPolicyMapOutputWithContext(context.Background())
-}
-
-func (i IamAuthorizationPolicyMap) ToIamAuthorizationPolicyMapOutputWithContext(ctx context.Context) IamAuthorizationPolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAuthorizationPolicyMapOutput)
-}
-
 type IamAuthorizationPolicyOutput struct{ *pulumi.OutputState }
 
 func (IamAuthorizationPolicyOutput) ElementType() reflect.Type {
@@ -374,51 +324,7 @@ func (o IamAuthorizationPolicyOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamAuthorizationPolicy) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamAuthorizationPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAuthorizationPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAuthorizationPolicy)(nil)).Elem()
-}
-
-func (o IamAuthorizationPolicyArrayOutput) ToIamAuthorizationPolicyArrayOutput() IamAuthorizationPolicyArrayOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyArrayOutput) ToIamAuthorizationPolicyArrayOutputWithContext(ctx context.Context) IamAuthorizationPolicyArrayOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyArrayOutput) Index(i pulumi.IntInput) IamAuthorizationPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAuthorizationPolicy {
-		return vs[0].([]*IamAuthorizationPolicy)[vs[1].(int)]
-	}).(IamAuthorizationPolicyOutput)
-}
-
-type IamAuthorizationPolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IamAuthorizationPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAuthorizationPolicy)(nil)).Elem()
-}
-
-func (o IamAuthorizationPolicyMapOutput) ToIamAuthorizationPolicyMapOutput() IamAuthorizationPolicyMapOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyMapOutput) ToIamAuthorizationPolicyMapOutputWithContext(ctx context.Context) IamAuthorizationPolicyMapOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyMapOutput) MapIndex(k pulumi.StringInput) IamAuthorizationPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAuthorizationPolicy {
-		return vs[0].(map[string]*IamAuthorizationPolicy)[vs[1].(string)]
-	}).(IamAuthorizationPolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAuthorizationPolicyInput)(nil)).Elem(), &IamAuthorizationPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAuthorizationPolicyArrayInput)(nil)).Elem(), IamAuthorizationPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAuthorizationPolicyMapInput)(nil)).Elem(), IamAuthorizationPolicyMap{})
 	pulumi.RegisterOutputType(IamAuthorizationPolicyOutput{})
-	pulumi.RegisterOutputType(IamAuthorizationPolicyArrayOutput{})
-	pulumi.RegisterOutputType(IamAuthorizationPolicyMapOutput{})
 }

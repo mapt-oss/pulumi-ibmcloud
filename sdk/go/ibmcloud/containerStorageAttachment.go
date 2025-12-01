@@ -159,56 +159,6 @@ func (i *ContainerStorageAttachment) ToContainerStorageAttachmentOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerStorageAttachmentOutput)
 }
 
-// ContainerStorageAttachmentArrayInput is an input type that accepts ContainerStorageAttachmentArray and ContainerStorageAttachmentArrayOutput values.
-// You can construct a concrete instance of `ContainerStorageAttachmentArrayInput` via:
-//
-//	ContainerStorageAttachmentArray{ ContainerStorageAttachmentArgs{...} }
-type ContainerStorageAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToContainerStorageAttachmentArrayOutput() ContainerStorageAttachmentArrayOutput
-	ToContainerStorageAttachmentArrayOutputWithContext(context.Context) ContainerStorageAttachmentArrayOutput
-}
-
-type ContainerStorageAttachmentArray []ContainerStorageAttachmentInput
-
-func (ContainerStorageAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerStorageAttachment)(nil)).Elem()
-}
-
-func (i ContainerStorageAttachmentArray) ToContainerStorageAttachmentArrayOutput() ContainerStorageAttachmentArrayOutput {
-	return i.ToContainerStorageAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerStorageAttachmentArray) ToContainerStorageAttachmentArrayOutputWithContext(ctx context.Context) ContainerStorageAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerStorageAttachmentArrayOutput)
-}
-
-// ContainerStorageAttachmentMapInput is an input type that accepts ContainerStorageAttachmentMap and ContainerStorageAttachmentMapOutput values.
-// You can construct a concrete instance of `ContainerStorageAttachmentMapInput` via:
-//
-//	ContainerStorageAttachmentMap{ "key": ContainerStorageAttachmentArgs{...} }
-type ContainerStorageAttachmentMapInput interface {
-	pulumi.Input
-
-	ToContainerStorageAttachmentMapOutput() ContainerStorageAttachmentMapOutput
-	ToContainerStorageAttachmentMapOutputWithContext(context.Context) ContainerStorageAttachmentMapOutput
-}
-
-type ContainerStorageAttachmentMap map[string]ContainerStorageAttachmentInput
-
-func (ContainerStorageAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerStorageAttachment)(nil)).Elem()
-}
-
-func (i ContainerStorageAttachmentMap) ToContainerStorageAttachmentMapOutput() ContainerStorageAttachmentMapOutput {
-	return i.ToContainerStorageAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i ContainerStorageAttachmentMap) ToContainerStorageAttachmentMapOutputWithContext(ctx context.Context) ContainerStorageAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerStorageAttachmentMapOutput)
-}
-
 type ContainerStorageAttachmentOutput struct{ *pulumi.OutputState }
 
 func (ContainerStorageAttachmentOutput) ElementType() reflect.Type {
@@ -263,51 +213,7 @@ func (o ContainerStorageAttachmentOutput) Worker() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerStorageAttachment) pulumi.StringOutput { return v.Worker }).(pulumi.StringOutput)
 }
 
-type ContainerStorageAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerStorageAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerStorageAttachment)(nil)).Elem()
-}
-
-func (o ContainerStorageAttachmentArrayOutput) ToContainerStorageAttachmentArrayOutput() ContainerStorageAttachmentArrayOutput {
-	return o
-}
-
-func (o ContainerStorageAttachmentArrayOutput) ToContainerStorageAttachmentArrayOutputWithContext(ctx context.Context) ContainerStorageAttachmentArrayOutput {
-	return o
-}
-
-func (o ContainerStorageAttachmentArrayOutput) Index(i pulumi.IntInput) ContainerStorageAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerStorageAttachment {
-		return vs[0].([]*ContainerStorageAttachment)[vs[1].(int)]
-	}).(ContainerStorageAttachmentOutput)
-}
-
-type ContainerStorageAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerStorageAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerStorageAttachment)(nil)).Elem()
-}
-
-func (o ContainerStorageAttachmentMapOutput) ToContainerStorageAttachmentMapOutput() ContainerStorageAttachmentMapOutput {
-	return o
-}
-
-func (o ContainerStorageAttachmentMapOutput) ToContainerStorageAttachmentMapOutputWithContext(ctx context.Context) ContainerStorageAttachmentMapOutput {
-	return o
-}
-
-func (o ContainerStorageAttachmentMapOutput) MapIndex(k pulumi.StringInput) ContainerStorageAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerStorageAttachment {
-		return vs[0].(map[string]*ContainerStorageAttachment)[vs[1].(string)]
-	}).(ContainerStorageAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerStorageAttachmentInput)(nil)).Elem(), &ContainerStorageAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerStorageAttachmentArrayInput)(nil)).Elem(), ContainerStorageAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerStorageAttachmentMapInput)(nil)).Elem(), ContainerStorageAttachmentMap{})
 	pulumi.RegisterOutputType(ContainerStorageAttachmentOutput{})
-	pulumi.RegisterOutputType(ContainerStorageAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(ContainerStorageAttachmentMapOutput{})
 }

@@ -223,56 +223,6 @@ func (i *IsBareMetalServerNetworkAttachment) ToIsBareMetalServerNetworkAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkAttachmentOutput)
 }
 
-// IsBareMetalServerNetworkAttachmentArrayInput is an input type that accepts IsBareMetalServerNetworkAttachmentArray and IsBareMetalServerNetworkAttachmentArrayOutput values.
-// You can construct a concrete instance of `IsBareMetalServerNetworkAttachmentArrayInput` via:
-//
-//	IsBareMetalServerNetworkAttachmentArray{ IsBareMetalServerNetworkAttachmentArgs{...} }
-type IsBareMetalServerNetworkAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerNetworkAttachmentArrayOutput() IsBareMetalServerNetworkAttachmentArrayOutput
-	ToIsBareMetalServerNetworkAttachmentArrayOutputWithContext(context.Context) IsBareMetalServerNetworkAttachmentArrayOutput
-}
-
-type IsBareMetalServerNetworkAttachmentArray []IsBareMetalServerNetworkAttachmentInput
-
-func (IsBareMetalServerNetworkAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerNetworkAttachment)(nil)).Elem()
-}
-
-func (i IsBareMetalServerNetworkAttachmentArray) ToIsBareMetalServerNetworkAttachmentArrayOutput() IsBareMetalServerNetworkAttachmentArrayOutput {
-	return i.ToIsBareMetalServerNetworkAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerNetworkAttachmentArray) ToIsBareMetalServerNetworkAttachmentArrayOutputWithContext(ctx context.Context) IsBareMetalServerNetworkAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkAttachmentArrayOutput)
-}
-
-// IsBareMetalServerNetworkAttachmentMapInput is an input type that accepts IsBareMetalServerNetworkAttachmentMap and IsBareMetalServerNetworkAttachmentMapOutput values.
-// You can construct a concrete instance of `IsBareMetalServerNetworkAttachmentMapInput` via:
-//
-//	IsBareMetalServerNetworkAttachmentMap{ "key": IsBareMetalServerNetworkAttachmentArgs{...} }
-type IsBareMetalServerNetworkAttachmentMapInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerNetworkAttachmentMapOutput() IsBareMetalServerNetworkAttachmentMapOutput
-	ToIsBareMetalServerNetworkAttachmentMapOutputWithContext(context.Context) IsBareMetalServerNetworkAttachmentMapOutput
-}
-
-type IsBareMetalServerNetworkAttachmentMap map[string]IsBareMetalServerNetworkAttachmentInput
-
-func (IsBareMetalServerNetworkAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerNetworkAttachment)(nil)).Elem()
-}
-
-func (i IsBareMetalServerNetworkAttachmentMap) ToIsBareMetalServerNetworkAttachmentMapOutput() IsBareMetalServerNetworkAttachmentMapOutput {
-	return i.ToIsBareMetalServerNetworkAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerNetworkAttachmentMap) ToIsBareMetalServerNetworkAttachmentMapOutputWithContext(ctx context.Context) IsBareMetalServerNetworkAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkAttachmentMapOutput)
-}
-
 type IsBareMetalServerNetworkAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IsBareMetalServerNetworkAttachmentOutput) ElementType() reflect.Type {
@@ -374,51 +324,7 @@ func (o IsBareMetalServerNetworkAttachmentOutput) Vlan() pulumi.IntOutput {
 	return o.ApplyT(func(v *IsBareMetalServerNetworkAttachment) pulumi.IntOutput { return v.Vlan }).(pulumi.IntOutput)
 }
 
-type IsBareMetalServerNetworkAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerNetworkAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerNetworkAttachment)(nil)).Elem()
-}
-
-func (o IsBareMetalServerNetworkAttachmentArrayOutput) ToIsBareMetalServerNetworkAttachmentArrayOutput() IsBareMetalServerNetworkAttachmentArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkAttachmentArrayOutput) ToIsBareMetalServerNetworkAttachmentArrayOutputWithContext(ctx context.Context) IsBareMetalServerNetworkAttachmentArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkAttachmentArrayOutput) Index(i pulumi.IntInput) IsBareMetalServerNetworkAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsBareMetalServerNetworkAttachment {
-		return vs[0].([]*IsBareMetalServerNetworkAttachment)[vs[1].(int)]
-	}).(IsBareMetalServerNetworkAttachmentOutput)
-}
-
-type IsBareMetalServerNetworkAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerNetworkAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerNetworkAttachment)(nil)).Elem()
-}
-
-func (o IsBareMetalServerNetworkAttachmentMapOutput) ToIsBareMetalServerNetworkAttachmentMapOutput() IsBareMetalServerNetworkAttachmentMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkAttachmentMapOutput) ToIsBareMetalServerNetworkAttachmentMapOutputWithContext(ctx context.Context) IsBareMetalServerNetworkAttachmentMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkAttachmentMapOutput) MapIndex(k pulumi.StringInput) IsBareMetalServerNetworkAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsBareMetalServerNetworkAttachment {
-		return vs[0].(map[string]*IsBareMetalServerNetworkAttachment)[vs[1].(string)]
-	}).(IsBareMetalServerNetworkAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkAttachmentInput)(nil)).Elem(), &IsBareMetalServerNetworkAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkAttachmentArrayInput)(nil)).Elem(), IsBareMetalServerNetworkAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkAttachmentMapInput)(nil)).Elem(), IsBareMetalServerNetworkAttachmentMap{})
 	pulumi.RegisterOutputType(IsBareMetalServerNetworkAttachmentOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerNetworkAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerNetworkAttachmentMapOutput{})
 }

@@ -309,56 +309,6 @@ func (i *ContainerVpcWorkerPool) ToContainerVpcWorkerPoolOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcWorkerPoolOutput)
 }
 
-// ContainerVpcWorkerPoolArrayInput is an input type that accepts ContainerVpcWorkerPoolArray and ContainerVpcWorkerPoolArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcWorkerPoolArrayInput` via:
-//
-//	ContainerVpcWorkerPoolArray{ ContainerVpcWorkerPoolArgs{...} }
-type ContainerVpcWorkerPoolArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcWorkerPoolArrayOutput() ContainerVpcWorkerPoolArrayOutput
-	ToContainerVpcWorkerPoolArrayOutputWithContext(context.Context) ContainerVpcWorkerPoolArrayOutput
-}
-
-type ContainerVpcWorkerPoolArray []ContainerVpcWorkerPoolInput
-
-func (ContainerVpcWorkerPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerVpcWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerVpcWorkerPoolArray) ToContainerVpcWorkerPoolArrayOutput() ContainerVpcWorkerPoolArrayOutput {
-	return i.ToContainerVpcWorkerPoolArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcWorkerPoolArray) ToContainerVpcWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcWorkerPoolArrayOutput)
-}
-
-// ContainerVpcWorkerPoolMapInput is an input type that accepts ContainerVpcWorkerPoolMap and ContainerVpcWorkerPoolMapOutput values.
-// You can construct a concrete instance of `ContainerVpcWorkerPoolMapInput` via:
-//
-//	ContainerVpcWorkerPoolMap{ "key": ContainerVpcWorkerPoolArgs{...} }
-type ContainerVpcWorkerPoolMapInput interface {
-	pulumi.Input
-
-	ToContainerVpcWorkerPoolMapOutput() ContainerVpcWorkerPoolMapOutput
-	ToContainerVpcWorkerPoolMapOutputWithContext(context.Context) ContainerVpcWorkerPoolMapOutput
-}
-
-type ContainerVpcWorkerPoolMap map[string]ContainerVpcWorkerPoolInput
-
-func (ContainerVpcWorkerPoolMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerVpcWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerVpcWorkerPoolMap) ToContainerVpcWorkerPoolMapOutput() ContainerVpcWorkerPoolMapOutput {
-	return i.ToContainerVpcWorkerPoolMapOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcWorkerPoolMap) ToContainerVpcWorkerPoolMapOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcWorkerPoolMapOutput)
-}
-
 type ContainerVpcWorkerPoolOutput struct{ *pulumi.OutputState }
 
 func (ContainerVpcWorkerPoolOutput) ElementType() reflect.Type {
@@ -482,51 +432,7 @@ func (o ContainerVpcWorkerPoolOutput) Zones() ContainerVpcWorkerPoolZoneArrayOut
 	return o.ApplyT(func(v *ContainerVpcWorkerPool) ContainerVpcWorkerPoolZoneArrayOutput { return v.Zones }).(ContainerVpcWorkerPoolZoneArrayOutput)
 }
 
-type ContainerVpcWorkerPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcWorkerPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerVpcWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerVpcWorkerPoolArrayOutput) ToContainerVpcWorkerPoolArrayOutput() ContainerVpcWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolArrayOutput) ToContainerVpcWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolArrayOutput) Index(i pulumi.IntInput) ContainerVpcWorkerPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerVpcWorkerPool {
-		return vs[0].([]*ContainerVpcWorkerPool)[vs[1].(int)]
-	}).(ContainerVpcWorkerPoolOutput)
-}
-
-type ContainerVpcWorkerPoolMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcWorkerPoolMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerVpcWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerVpcWorkerPoolMapOutput) ToContainerVpcWorkerPoolMapOutput() ContainerVpcWorkerPoolMapOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolMapOutput) ToContainerVpcWorkerPoolMapOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolMapOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolMapOutput) MapIndex(k pulumi.StringInput) ContainerVpcWorkerPoolOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerVpcWorkerPool {
-		return vs[0].(map[string]*ContainerVpcWorkerPool)[vs[1].(string)]
-	}).(ContainerVpcWorkerPoolOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcWorkerPoolInput)(nil)).Elem(), &ContainerVpcWorkerPool{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcWorkerPoolArrayInput)(nil)).Elem(), ContainerVpcWorkerPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcWorkerPoolMapInput)(nil)).Elem(), ContainerVpcWorkerPoolMap{})
 	pulumi.RegisterOutputType(ContainerVpcWorkerPoolOutput{})
-	pulumi.RegisterOutputType(ContainerVpcWorkerPoolArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcWorkerPoolMapOutput{})
 }

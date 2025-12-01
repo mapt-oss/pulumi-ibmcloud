@@ -198,56 +198,6 @@ func (i *IsIkePolicy) ToIsIkePolicyOutputWithContext(ctx context.Context) IsIkeP
 	return pulumi.ToOutputWithContext(ctx, i).(IsIkePolicyOutput)
 }
 
-// IsIkePolicyArrayInput is an input type that accepts IsIkePolicyArray and IsIkePolicyArrayOutput values.
-// You can construct a concrete instance of `IsIkePolicyArrayInput` via:
-//
-//	IsIkePolicyArray{ IsIkePolicyArgs{...} }
-type IsIkePolicyArrayInput interface {
-	pulumi.Input
-
-	ToIsIkePolicyArrayOutput() IsIkePolicyArrayOutput
-	ToIsIkePolicyArrayOutputWithContext(context.Context) IsIkePolicyArrayOutput
-}
-
-type IsIkePolicyArray []IsIkePolicyInput
-
-func (IsIkePolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsIkePolicy)(nil)).Elem()
-}
-
-func (i IsIkePolicyArray) ToIsIkePolicyArrayOutput() IsIkePolicyArrayOutput {
-	return i.ToIsIkePolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IsIkePolicyArray) ToIsIkePolicyArrayOutputWithContext(ctx context.Context) IsIkePolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsIkePolicyArrayOutput)
-}
-
-// IsIkePolicyMapInput is an input type that accepts IsIkePolicyMap and IsIkePolicyMapOutput values.
-// You can construct a concrete instance of `IsIkePolicyMapInput` via:
-//
-//	IsIkePolicyMap{ "key": IsIkePolicyArgs{...} }
-type IsIkePolicyMapInput interface {
-	pulumi.Input
-
-	ToIsIkePolicyMapOutput() IsIkePolicyMapOutput
-	ToIsIkePolicyMapOutputWithContext(context.Context) IsIkePolicyMapOutput
-}
-
-type IsIkePolicyMap map[string]IsIkePolicyInput
-
-func (IsIkePolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsIkePolicy)(nil)).Elem()
-}
-
-func (i IsIkePolicyMap) ToIsIkePolicyMapOutput() IsIkePolicyMapOutput {
-	return i.ToIsIkePolicyMapOutputWithContext(context.Background())
-}
-
-func (i IsIkePolicyMap) ToIsIkePolicyMapOutputWithContext(ctx context.Context) IsIkePolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsIkePolicyMapOutput)
-}
-
 type IsIkePolicyOutput struct{ *pulumi.OutputState }
 
 func (IsIkePolicyOutput) ElementType() reflect.Type {
@@ -326,51 +276,7 @@ func (o IsIkePolicyOutput) VpnConnections() IsIkePolicyVpnConnectionArrayOutput 
 	return o.ApplyT(func(v *IsIkePolicy) IsIkePolicyVpnConnectionArrayOutput { return v.VpnConnections }).(IsIkePolicyVpnConnectionArrayOutput)
 }
 
-type IsIkePolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IsIkePolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsIkePolicy)(nil)).Elem()
-}
-
-func (o IsIkePolicyArrayOutput) ToIsIkePolicyArrayOutput() IsIkePolicyArrayOutput {
-	return o
-}
-
-func (o IsIkePolicyArrayOutput) ToIsIkePolicyArrayOutputWithContext(ctx context.Context) IsIkePolicyArrayOutput {
-	return o
-}
-
-func (o IsIkePolicyArrayOutput) Index(i pulumi.IntInput) IsIkePolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsIkePolicy {
-		return vs[0].([]*IsIkePolicy)[vs[1].(int)]
-	}).(IsIkePolicyOutput)
-}
-
-type IsIkePolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IsIkePolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsIkePolicy)(nil)).Elem()
-}
-
-func (o IsIkePolicyMapOutput) ToIsIkePolicyMapOutput() IsIkePolicyMapOutput {
-	return o
-}
-
-func (o IsIkePolicyMapOutput) ToIsIkePolicyMapOutputWithContext(ctx context.Context) IsIkePolicyMapOutput {
-	return o
-}
-
-func (o IsIkePolicyMapOutput) MapIndex(k pulumi.StringInput) IsIkePolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsIkePolicy {
-		return vs[0].(map[string]*IsIkePolicy)[vs[1].(string)]
-	}).(IsIkePolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsIkePolicyInput)(nil)).Elem(), &IsIkePolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsIkePolicyArrayInput)(nil)).Elem(), IsIkePolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsIkePolicyMapInput)(nil)).Elem(), IsIkePolicyMap{})
 	pulumi.RegisterOutputType(IsIkePolicyOutput{})
-	pulumi.RegisterOutputType(IsIkePolicyArrayOutput{})
-	pulumi.RegisterOutputType(IsIkePolicyMapOutput{})
 }

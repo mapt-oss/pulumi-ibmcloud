@@ -219,56 +219,6 @@ func (i *ComputeAutoscaleGroup) ToComputeAutoscaleGroupOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeAutoscaleGroupOutput)
 }
 
-// ComputeAutoscaleGroupArrayInput is an input type that accepts ComputeAutoscaleGroupArray and ComputeAutoscaleGroupArrayOutput values.
-// You can construct a concrete instance of `ComputeAutoscaleGroupArrayInput` via:
-//
-//	ComputeAutoscaleGroupArray{ ComputeAutoscaleGroupArgs{...} }
-type ComputeAutoscaleGroupArrayInput interface {
-	pulumi.Input
-
-	ToComputeAutoscaleGroupArrayOutput() ComputeAutoscaleGroupArrayOutput
-	ToComputeAutoscaleGroupArrayOutputWithContext(context.Context) ComputeAutoscaleGroupArrayOutput
-}
-
-type ComputeAutoscaleGroupArray []ComputeAutoscaleGroupInput
-
-func (ComputeAutoscaleGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeAutoscaleGroup)(nil)).Elem()
-}
-
-func (i ComputeAutoscaleGroupArray) ToComputeAutoscaleGroupArrayOutput() ComputeAutoscaleGroupArrayOutput {
-	return i.ToComputeAutoscaleGroupArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeAutoscaleGroupArray) ToComputeAutoscaleGroupArrayOutputWithContext(ctx context.Context) ComputeAutoscaleGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeAutoscaleGroupArrayOutput)
-}
-
-// ComputeAutoscaleGroupMapInput is an input type that accepts ComputeAutoscaleGroupMap and ComputeAutoscaleGroupMapOutput values.
-// You can construct a concrete instance of `ComputeAutoscaleGroupMapInput` via:
-//
-//	ComputeAutoscaleGroupMap{ "key": ComputeAutoscaleGroupArgs{...} }
-type ComputeAutoscaleGroupMapInput interface {
-	pulumi.Input
-
-	ToComputeAutoscaleGroupMapOutput() ComputeAutoscaleGroupMapOutput
-	ToComputeAutoscaleGroupMapOutputWithContext(context.Context) ComputeAutoscaleGroupMapOutput
-}
-
-type ComputeAutoscaleGroupMap map[string]ComputeAutoscaleGroupInput
-
-func (ComputeAutoscaleGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeAutoscaleGroup)(nil)).Elem()
-}
-
-func (i ComputeAutoscaleGroupMap) ToComputeAutoscaleGroupMapOutput() ComputeAutoscaleGroupMapOutput {
-	return i.ToComputeAutoscaleGroupMapOutputWithContext(context.Background())
-}
-
-func (i ComputeAutoscaleGroupMap) ToComputeAutoscaleGroupMapOutputWithContext(ctx context.Context) ComputeAutoscaleGroupMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeAutoscaleGroupMapOutput)
-}
-
 type ComputeAutoscaleGroupOutput struct{ *pulumi.OutputState }
 
 func (ComputeAutoscaleGroupOutput) ElementType() reflect.Type {
@@ -344,51 +294,7 @@ func (o ComputeAutoscaleGroupOutput) VirtualServerId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ComputeAutoscaleGroup) pulumi.IntPtrOutput { return v.VirtualServerId }).(pulumi.IntPtrOutput)
 }
 
-type ComputeAutoscaleGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeAutoscaleGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeAutoscaleGroup)(nil)).Elem()
-}
-
-func (o ComputeAutoscaleGroupArrayOutput) ToComputeAutoscaleGroupArrayOutput() ComputeAutoscaleGroupArrayOutput {
-	return o
-}
-
-func (o ComputeAutoscaleGroupArrayOutput) ToComputeAutoscaleGroupArrayOutputWithContext(ctx context.Context) ComputeAutoscaleGroupArrayOutput {
-	return o
-}
-
-func (o ComputeAutoscaleGroupArrayOutput) Index(i pulumi.IntInput) ComputeAutoscaleGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeAutoscaleGroup {
-		return vs[0].([]*ComputeAutoscaleGroup)[vs[1].(int)]
-	}).(ComputeAutoscaleGroupOutput)
-}
-
-type ComputeAutoscaleGroupMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeAutoscaleGroupMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeAutoscaleGroup)(nil)).Elem()
-}
-
-func (o ComputeAutoscaleGroupMapOutput) ToComputeAutoscaleGroupMapOutput() ComputeAutoscaleGroupMapOutput {
-	return o
-}
-
-func (o ComputeAutoscaleGroupMapOutput) ToComputeAutoscaleGroupMapOutputWithContext(ctx context.Context) ComputeAutoscaleGroupMapOutput {
-	return o
-}
-
-func (o ComputeAutoscaleGroupMapOutput) MapIndex(k pulumi.StringInput) ComputeAutoscaleGroupOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeAutoscaleGroup {
-		return vs[0].(map[string]*ComputeAutoscaleGroup)[vs[1].(string)]
-	}).(ComputeAutoscaleGroupOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscaleGroupInput)(nil)).Elem(), &ComputeAutoscaleGroup{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscaleGroupArrayInput)(nil)).Elem(), ComputeAutoscaleGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscaleGroupMapInput)(nil)).Elem(), ComputeAutoscaleGroupMap{})
 	pulumi.RegisterOutputType(ComputeAutoscaleGroupOutput{})
-	pulumi.RegisterOutputType(ComputeAutoscaleGroupArrayOutput{})
-	pulumi.RegisterOutputType(ComputeAutoscaleGroupMapOutput{})
 }

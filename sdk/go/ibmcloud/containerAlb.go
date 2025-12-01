@@ -175,56 +175,6 @@ func (i *ContainerAlb) ToContainerAlbOutputWithContext(ctx context.Context) Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerAlbOutput)
 }
 
-// ContainerAlbArrayInput is an input type that accepts ContainerAlbArray and ContainerAlbArrayOutput values.
-// You can construct a concrete instance of `ContainerAlbArrayInput` via:
-//
-//	ContainerAlbArray{ ContainerAlbArgs{...} }
-type ContainerAlbArrayInput interface {
-	pulumi.Input
-
-	ToContainerAlbArrayOutput() ContainerAlbArrayOutput
-	ToContainerAlbArrayOutputWithContext(context.Context) ContainerAlbArrayOutput
-}
-
-type ContainerAlbArray []ContainerAlbInput
-
-func (ContainerAlbArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerAlb)(nil)).Elem()
-}
-
-func (i ContainerAlbArray) ToContainerAlbArrayOutput() ContainerAlbArrayOutput {
-	return i.ToContainerAlbArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerAlbArray) ToContainerAlbArrayOutputWithContext(ctx context.Context) ContainerAlbArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAlbArrayOutput)
-}
-
-// ContainerAlbMapInput is an input type that accepts ContainerAlbMap and ContainerAlbMapOutput values.
-// You can construct a concrete instance of `ContainerAlbMapInput` via:
-//
-//	ContainerAlbMap{ "key": ContainerAlbArgs{...} }
-type ContainerAlbMapInput interface {
-	pulumi.Input
-
-	ToContainerAlbMapOutput() ContainerAlbMapOutput
-	ToContainerAlbMapOutputWithContext(context.Context) ContainerAlbMapOutput
-}
-
-type ContainerAlbMap map[string]ContainerAlbInput
-
-func (ContainerAlbMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerAlb)(nil)).Elem()
-}
-
-func (i ContainerAlbMap) ToContainerAlbMapOutput() ContainerAlbMapOutput {
-	return i.ToContainerAlbMapOutputWithContext(context.Background())
-}
-
-func (i ContainerAlbMap) ToContainerAlbMapOutputWithContext(ctx context.Context) ContainerAlbMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAlbMapOutput)
-}
-
 type ContainerAlbOutput struct{ *pulumi.OutputState }
 
 func (ContainerAlbOutput) ElementType() reflect.Type {
@@ -294,51 +244,7 @@ func (o ContainerAlbOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerAlb) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type ContainerAlbArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerAlbArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerAlb)(nil)).Elem()
-}
-
-func (o ContainerAlbArrayOutput) ToContainerAlbArrayOutput() ContainerAlbArrayOutput {
-	return o
-}
-
-func (o ContainerAlbArrayOutput) ToContainerAlbArrayOutputWithContext(ctx context.Context) ContainerAlbArrayOutput {
-	return o
-}
-
-func (o ContainerAlbArrayOutput) Index(i pulumi.IntInput) ContainerAlbOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerAlb {
-		return vs[0].([]*ContainerAlb)[vs[1].(int)]
-	}).(ContainerAlbOutput)
-}
-
-type ContainerAlbMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerAlbMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerAlb)(nil)).Elem()
-}
-
-func (o ContainerAlbMapOutput) ToContainerAlbMapOutput() ContainerAlbMapOutput {
-	return o
-}
-
-func (o ContainerAlbMapOutput) ToContainerAlbMapOutputWithContext(ctx context.Context) ContainerAlbMapOutput {
-	return o
-}
-
-func (o ContainerAlbMapOutput) MapIndex(k pulumi.StringInput) ContainerAlbOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerAlb {
-		return vs[0].(map[string]*ContainerAlb)[vs[1].(string)]
-	}).(ContainerAlbOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAlbInput)(nil)).Elem(), &ContainerAlb{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAlbArrayInput)(nil)).Elem(), ContainerAlbArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAlbMapInput)(nil)).Elem(), ContainerAlbMap{})
 	pulumi.RegisterOutputType(ContainerAlbOutput{})
-	pulumi.RegisterOutputType(ContainerAlbArrayOutput{})
-	pulumi.RegisterOutputType(ContainerAlbMapOutput{})
 }

@@ -258,56 +258,6 @@ func (i *CosBucketObject) ToCosBucketObjectOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(CosBucketObjectOutput)
 }
 
-// CosBucketObjectArrayInput is an input type that accepts CosBucketObjectArray and CosBucketObjectArrayOutput values.
-// You can construct a concrete instance of `CosBucketObjectArrayInput` via:
-//
-//	CosBucketObjectArray{ CosBucketObjectArgs{...} }
-type CosBucketObjectArrayInput interface {
-	pulumi.Input
-
-	ToCosBucketObjectArrayOutput() CosBucketObjectArrayOutput
-	ToCosBucketObjectArrayOutputWithContext(context.Context) CosBucketObjectArrayOutput
-}
-
-type CosBucketObjectArray []CosBucketObjectInput
-
-func (CosBucketObjectArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketObject)(nil)).Elem()
-}
-
-func (i CosBucketObjectArray) ToCosBucketObjectArrayOutput() CosBucketObjectArrayOutput {
-	return i.ToCosBucketObjectArrayOutputWithContext(context.Background())
-}
-
-func (i CosBucketObjectArray) ToCosBucketObjectArrayOutputWithContext(ctx context.Context) CosBucketObjectArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketObjectArrayOutput)
-}
-
-// CosBucketObjectMapInput is an input type that accepts CosBucketObjectMap and CosBucketObjectMapOutput values.
-// You can construct a concrete instance of `CosBucketObjectMapInput` via:
-//
-//	CosBucketObjectMap{ "key": CosBucketObjectArgs{...} }
-type CosBucketObjectMapInput interface {
-	pulumi.Input
-
-	ToCosBucketObjectMapOutput() CosBucketObjectMapOutput
-	ToCosBucketObjectMapOutputWithContext(context.Context) CosBucketObjectMapOutput
-}
-
-type CosBucketObjectMap map[string]CosBucketObjectInput
-
-func (CosBucketObjectMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketObject)(nil)).Elem()
-}
-
-func (i CosBucketObjectMap) ToCosBucketObjectMapOutput() CosBucketObjectMapOutput {
-	return i.ToCosBucketObjectMapOutputWithContext(context.Background())
-}
-
-func (i CosBucketObjectMap) ToCosBucketObjectMapOutputWithContext(ctx context.Context) CosBucketObjectMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketObjectMapOutput)
-}
-
 type CosBucketObjectOutput struct{ *pulumi.OutputState }
 
 func (CosBucketObjectOutput) ElementType() reflect.Type {
@@ -416,51 +366,7 @@ func (o CosBucketObjectOutput) WebsiteRedirect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CosBucketObject) pulumi.StringPtrOutput { return v.WebsiteRedirect }).(pulumi.StringPtrOutput)
 }
 
-type CosBucketObjectArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBucketObjectArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketObject)(nil)).Elem()
-}
-
-func (o CosBucketObjectArrayOutput) ToCosBucketObjectArrayOutput() CosBucketObjectArrayOutput {
-	return o
-}
-
-func (o CosBucketObjectArrayOutput) ToCosBucketObjectArrayOutputWithContext(ctx context.Context) CosBucketObjectArrayOutput {
-	return o
-}
-
-func (o CosBucketObjectArrayOutput) Index(i pulumi.IntInput) CosBucketObjectOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBucketObject {
-		return vs[0].([]*CosBucketObject)[vs[1].(int)]
-	}).(CosBucketObjectOutput)
-}
-
-type CosBucketObjectMapOutput struct{ *pulumi.OutputState }
-
-func (CosBucketObjectMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketObject)(nil)).Elem()
-}
-
-func (o CosBucketObjectMapOutput) ToCosBucketObjectMapOutput() CosBucketObjectMapOutput {
-	return o
-}
-
-func (o CosBucketObjectMapOutput) ToCosBucketObjectMapOutputWithContext(ctx context.Context) CosBucketObjectMapOutput {
-	return o
-}
-
-func (o CosBucketObjectMapOutput) MapIndex(k pulumi.StringInput) CosBucketObjectOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBucketObject {
-		return vs[0].(map[string]*CosBucketObject)[vs[1].(string)]
-	}).(CosBucketObjectOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketObjectInput)(nil)).Elem(), &CosBucketObject{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketObjectArrayInput)(nil)).Elem(), CosBucketObjectArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketObjectMapInput)(nil)).Elem(), CosBucketObjectMap{})
 	pulumi.RegisterOutputType(CosBucketObjectOutput{})
-	pulumi.RegisterOutputType(CosBucketObjectArrayOutput{})
-	pulumi.RegisterOutputType(CosBucketObjectMapOutput{})
 }

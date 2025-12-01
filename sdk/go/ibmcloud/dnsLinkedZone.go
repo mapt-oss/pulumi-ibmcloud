@@ -193,56 +193,6 @@ func (i *DnsLinkedZone) ToDnsLinkedZoneOutputWithContext(ctx context.Context) Dn
 	return pulumi.ToOutputWithContext(ctx, i).(DnsLinkedZoneOutput)
 }
 
-// DnsLinkedZoneArrayInput is an input type that accepts DnsLinkedZoneArray and DnsLinkedZoneArrayOutput values.
-// You can construct a concrete instance of `DnsLinkedZoneArrayInput` via:
-//
-//	DnsLinkedZoneArray{ DnsLinkedZoneArgs{...} }
-type DnsLinkedZoneArrayInput interface {
-	pulumi.Input
-
-	ToDnsLinkedZoneArrayOutput() DnsLinkedZoneArrayOutput
-	ToDnsLinkedZoneArrayOutputWithContext(context.Context) DnsLinkedZoneArrayOutput
-}
-
-type DnsLinkedZoneArray []DnsLinkedZoneInput
-
-func (DnsLinkedZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsLinkedZone)(nil)).Elem()
-}
-
-func (i DnsLinkedZoneArray) ToDnsLinkedZoneArrayOutput() DnsLinkedZoneArrayOutput {
-	return i.ToDnsLinkedZoneArrayOutputWithContext(context.Background())
-}
-
-func (i DnsLinkedZoneArray) ToDnsLinkedZoneArrayOutputWithContext(ctx context.Context) DnsLinkedZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsLinkedZoneArrayOutput)
-}
-
-// DnsLinkedZoneMapInput is an input type that accepts DnsLinkedZoneMap and DnsLinkedZoneMapOutput values.
-// You can construct a concrete instance of `DnsLinkedZoneMapInput` via:
-//
-//	DnsLinkedZoneMap{ "key": DnsLinkedZoneArgs{...} }
-type DnsLinkedZoneMapInput interface {
-	pulumi.Input
-
-	ToDnsLinkedZoneMapOutput() DnsLinkedZoneMapOutput
-	ToDnsLinkedZoneMapOutputWithContext(context.Context) DnsLinkedZoneMapOutput
-}
-
-type DnsLinkedZoneMap map[string]DnsLinkedZoneInput
-
-func (DnsLinkedZoneMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsLinkedZone)(nil)).Elem()
-}
-
-func (i DnsLinkedZoneMap) ToDnsLinkedZoneMapOutput() DnsLinkedZoneMapOutput {
-	return i.ToDnsLinkedZoneMapOutputWithContext(context.Background())
-}
-
-func (i DnsLinkedZoneMap) ToDnsLinkedZoneMapOutputWithContext(ctx context.Context) DnsLinkedZoneMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsLinkedZoneMapOutput)
-}
-
 type DnsLinkedZoneOutput struct{ *pulumi.OutputState }
 
 func (DnsLinkedZoneOutput) ElementType() reflect.Type {
@@ -312,51 +262,7 @@ func (o DnsLinkedZoneOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DnsLinkedZone) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-type DnsLinkedZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsLinkedZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsLinkedZone)(nil)).Elem()
-}
-
-func (o DnsLinkedZoneArrayOutput) ToDnsLinkedZoneArrayOutput() DnsLinkedZoneArrayOutput {
-	return o
-}
-
-func (o DnsLinkedZoneArrayOutput) ToDnsLinkedZoneArrayOutputWithContext(ctx context.Context) DnsLinkedZoneArrayOutput {
-	return o
-}
-
-func (o DnsLinkedZoneArrayOutput) Index(i pulumi.IntInput) DnsLinkedZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsLinkedZone {
-		return vs[0].([]*DnsLinkedZone)[vs[1].(int)]
-	}).(DnsLinkedZoneOutput)
-}
-
-type DnsLinkedZoneMapOutput struct{ *pulumi.OutputState }
-
-func (DnsLinkedZoneMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsLinkedZone)(nil)).Elem()
-}
-
-func (o DnsLinkedZoneMapOutput) ToDnsLinkedZoneMapOutput() DnsLinkedZoneMapOutput {
-	return o
-}
-
-func (o DnsLinkedZoneMapOutput) ToDnsLinkedZoneMapOutputWithContext(ctx context.Context) DnsLinkedZoneMapOutput {
-	return o
-}
-
-func (o DnsLinkedZoneMapOutput) MapIndex(k pulumi.StringInput) DnsLinkedZoneOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsLinkedZone {
-		return vs[0].(map[string]*DnsLinkedZone)[vs[1].(string)]
-	}).(DnsLinkedZoneOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsLinkedZoneInput)(nil)).Elem(), &DnsLinkedZone{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsLinkedZoneArrayInput)(nil)).Elem(), DnsLinkedZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsLinkedZoneMapInput)(nil)).Elem(), DnsLinkedZoneMap{})
 	pulumi.RegisterOutputType(DnsLinkedZoneOutput{})
-	pulumi.RegisterOutputType(DnsLinkedZoneArrayOutput{})
-	pulumi.RegisterOutputType(DnsLinkedZoneMapOutput{})
 }

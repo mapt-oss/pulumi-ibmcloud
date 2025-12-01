@@ -322,56 +322,6 @@ func (i *IsVolume) ToIsVolumeOutputWithContext(ctx context.Context) IsVolumeOutp
 	return pulumi.ToOutputWithContext(ctx, i).(IsVolumeOutput)
 }
 
-// IsVolumeArrayInput is an input type that accepts IsVolumeArray and IsVolumeArrayOutput values.
-// You can construct a concrete instance of `IsVolumeArrayInput` via:
-//
-//	IsVolumeArray{ IsVolumeArgs{...} }
-type IsVolumeArrayInput interface {
-	pulumi.Input
-
-	ToIsVolumeArrayOutput() IsVolumeArrayOutput
-	ToIsVolumeArrayOutputWithContext(context.Context) IsVolumeArrayOutput
-}
-
-type IsVolumeArray []IsVolumeInput
-
-func (IsVolumeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVolume)(nil)).Elem()
-}
-
-func (i IsVolumeArray) ToIsVolumeArrayOutput() IsVolumeArrayOutput {
-	return i.ToIsVolumeArrayOutputWithContext(context.Background())
-}
-
-func (i IsVolumeArray) ToIsVolumeArrayOutputWithContext(ctx context.Context) IsVolumeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVolumeArrayOutput)
-}
-
-// IsVolumeMapInput is an input type that accepts IsVolumeMap and IsVolumeMapOutput values.
-// You can construct a concrete instance of `IsVolumeMapInput` via:
-//
-//	IsVolumeMap{ "key": IsVolumeArgs{...} }
-type IsVolumeMapInput interface {
-	pulumi.Input
-
-	ToIsVolumeMapOutput() IsVolumeMapOutput
-	ToIsVolumeMapOutputWithContext(context.Context) IsVolumeMapOutput
-}
-
-type IsVolumeMap map[string]IsVolumeInput
-
-func (IsVolumeMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVolume)(nil)).Elem()
-}
-
-func (i IsVolumeMap) ToIsVolumeMapOutput() IsVolumeMapOutput {
-	return i.ToIsVolumeMapOutputWithContext(context.Background())
-}
-
-func (i IsVolumeMap) ToIsVolumeMapOutputWithContext(ctx context.Context) IsVolumeMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVolumeMapOutput)
-}
-
 type IsVolumeOutput struct{ *pulumi.OutputState }
 
 func (IsVolumeOutput) ElementType() reflect.Type {
@@ -534,51 +484,7 @@ func (o IsVolumeOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsVolume) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsVolumeArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVolumeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVolume)(nil)).Elem()
-}
-
-func (o IsVolumeArrayOutput) ToIsVolumeArrayOutput() IsVolumeArrayOutput {
-	return o
-}
-
-func (o IsVolumeArrayOutput) ToIsVolumeArrayOutputWithContext(ctx context.Context) IsVolumeArrayOutput {
-	return o
-}
-
-func (o IsVolumeArrayOutput) Index(i pulumi.IntInput) IsVolumeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVolume {
-		return vs[0].([]*IsVolume)[vs[1].(int)]
-	}).(IsVolumeOutput)
-}
-
-type IsVolumeMapOutput struct{ *pulumi.OutputState }
-
-func (IsVolumeMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVolume)(nil)).Elem()
-}
-
-func (o IsVolumeMapOutput) ToIsVolumeMapOutput() IsVolumeMapOutput {
-	return o
-}
-
-func (o IsVolumeMapOutput) ToIsVolumeMapOutputWithContext(ctx context.Context) IsVolumeMapOutput {
-	return o
-}
-
-func (o IsVolumeMapOutput) MapIndex(k pulumi.StringInput) IsVolumeOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVolume {
-		return vs[0].(map[string]*IsVolume)[vs[1].(string)]
-	}).(IsVolumeOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVolumeInput)(nil)).Elem(), &IsVolume{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVolumeArrayInput)(nil)).Elem(), IsVolumeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVolumeMapInput)(nil)).Elem(), IsVolumeMap{})
 	pulumi.RegisterOutputType(IsVolumeOutput{})
-	pulumi.RegisterOutputType(IsVolumeArrayOutput{})
-	pulumi.RegisterOutputType(IsVolumeMapOutput{})
 }

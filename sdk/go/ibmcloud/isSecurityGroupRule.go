@@ -190,56 +190,6 @@ func (i *IsSecurityGroupRule) ToIsSecurityGroupRuleOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupRuleOutput)
 }
 
-// IsSecurityGroupRuleArrayInput is an input type that accepts IsSecurityGroupRuleArray and IsSecurityGroupRuleArrayOutput values.
-// You can construct a concrete instance of `IsSecurityGroupRuleArrayInput` via:
-//
-//	IsSecurityGroupRuleArray{ IsSecurityGroupRuleArgs{...} }
-type IsSecurityGroupRuleArrayInput interface {
-	pulumi.Input
-
-	ToIsSecurityGroupRuleArrayOutput() IsSecurityGroupRuleArrayOutput
-	ToIsSecurityGroupRuleArrayOutputWithContext(context.Context) IsSecurityGroupRuleArrayOutput
-}
-
-type IsSecurityGroupRuleArray []IsSecurityGroupRuleInput
-
-func (IsSecurityGroupRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSecurityGroupRule)(nil)).Elem()
-}
-
-func (i IsSecurityGroupRuleArray) ToIsSecurityGroupRuleArrayOutput() IsSecurityGroupRuleArrayOutput {
-	return i.ToIsSecurityGroupRuleArrayOutputWithContext(context.Background())
-}
-
-func (i IsSecurityGroupRuleArray) ToIsSecurityGroupRuleArrayOutputWithContext(ctx context.Context) IsSecurityGroupRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupRuleArrayOutput)
-}
-
-// IsSecurityGroupRuleMapInput is an input type that accepts IsSecurityGroupRuleMap and IsSecurityGroupRuleMapOutput values.
-// You can construct a concrete instance of `IsSecurityGroupRuleMapInput` via:
-//
-//	IsSecurityGroupRuleMap{ "key": IsSecurityGroupRuleArgs{...} }
-type IsSecurityGroupRuleMapInput interface {
-	pulumi.Input
-
-	ToIsSecurityGroupRuleMapOutput() IsSecurityGroupRuleMapOutput
-	ToIsSecurityGroupRuleMapOutputWithContext(context.Context) IsSecurityGroupRuleMapOutput
-}
-
-type IsSecurityGroupRuleMap map[string]IsSecurityGroupRuleInput
-
-func (IsSecurityGroupRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSecurityGroupRule)(nil)).Elem()
-}
-
-func (i IsSecurityGroupRuleMap) ToIsSecurityGroupRuleMapOutput() IsSecurityGroupRuleMapOutput {
-	return i.ToIsSecurityGroupRuleMapOutputWithContext(context.Background())
-}
-
-func (i IsSecurityGroupRuleMap) ToIsSecurityGroupRuleMapOutputWithContext(ctx context.Context) IsSecurityGroupRuleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupRuleMapOutput)
-}
-
 type IsSecurityGroupRuleOutput struct{ *pulumi.OutputState }
 
 func (IsSecurityGroupRuleOutput) ElementType() reflect.Type {
@@ -309,51 +259,7 @@ func (o IsSecurityGroupRuleOutput) Udp() IsSecurityGroupRuleUdpPtrOutput {
 	return o.ApplyT(func(v *IsSecurityGroupRule) IsSecurityGroupRuleUdpPtrOutput { return v.Udp }).(IsSecurityGroupRuleUdpPtrOutput)
 }
 
-type IsSecurityGroupRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSecurityGroupRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSecurityGroupRule)(nil)).Elem()
-}
-
-func (o IsSecurityGroupRuleArrayOutput) ToIsSecurityGroupRuleArrayOutput() IsSecurityGroupRuleArrayOutput {
-	return o
-}
-
-func (o IsSecurityGroupRuleArrayOutput) ToIsSecurityGroupRuleArrayOutputWithContext(ctx context.Context) IsSecurityGroupRuleArrayOutput {
-	return o
-}
-
-func (o IsSecurityGroupRuleArrayOutput) Index(i pulumi.IntInput) IsSecurityGroupRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSecurityGroupRule {
-		return vs[0].([]*IsSecurityGroupRule)[vs[1].(int)]
-	}).(IsSecurityGroupRuleOutput)
-}
-
-type IsSecurityGroupRuleMapOutput struct{ *pulumi.OutputState }
-
-func (IsSecurityGroupRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSecurityGroupRule)(nil)).Elem()
-}
-
-func (o IsSecurityGroupRuleMapOutput) ToIsSecurityGroupRuleMapOutput() IsSecurityGroupRuleMapOutput {
-	return o
-}
-
-func (o IsSecurityGroupRuleMapOutput) ToIsSecurityGroupRuleMapOutputWithContext(ctx context.Context) IsSecurityGroupRuleMapOutput {
-	return o
-}
-
-func (o IsSecurityGroupRuleMapOutput) MapIndex(k pulumi.StringInput) IsSecurityGroupRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSecurityGroupRule {
-		return vs[0].(map[string]*IsSecurityGroupRule)[vs[1].(string)]
-	}).(IsSecurityGroupRuleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupRuleInput)(nil)).Elem(), &IsSecurityGroupRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupRuleArrayInput)(nil)).Elem(), IsSecurityGroupRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupRuleMapInput)(nil)).Elem(), IsSecurityGroupRuleMap{})
 	pulumi.RegisterOutputType(IsSecurityGroupRuleOutput{})
-	pulumi.RegisterOutputType(IsSecurityGroupRuleArrayOutput{})
-	pulumi.RegisterOutputType(IsSecurityGroupRuleMapOutput{})
 }

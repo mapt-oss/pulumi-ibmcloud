@@ -165,56 +165,6 @@ func (i *ComputeMonitor) ToComputeMonitorOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeMonitorOutput)
 }
 
-// ComputeMonitorArrayInput is an input type that accepts ComputeMonitorArray and ComputeMonitorArrayOutput values.
-// You can construct a concrete instance of `ComputeMonitorArrayInput` via:
-//
-//	ComputeMonitorArray{ ComputeMonitorArgs{...} }
-type ComputeMonitorArrayInput interface {
-	pulumi.Input
-
-	ToComputeMonitorArrayOutput() ComputeMonitorArrayOutput
-	ToComputeMonitorArrayOutputWithContext(context.Context) ComputeMonitorArrayOutput
-}
-
-type ComputeMonitorArray []ComputeMonitorInput
-
-func (ComputeMonitorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeMonitor)(nil)).Elem()
-}
-
-func (i ComputeMonitorArray) ToComputeMonitorArrayOutput() ComputeMonitorArrayOutput {
-	return i.ToComputeMonitorArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeMonitorArray) ToComputeMonitorArrayOutputWithContext(ctx context.Context) ComputeMonitorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeMonitorArrayOutput)
-}
-
-// ComputeMonitorMapInput is an input type that accepts ComputeMonitorMap and ComputeMonitorMapOutput values.
-// You can construct a concrete instance of `ComputeMonitorMapInput` via:
-//
-//	ComputeMonitorMap{ "key": ComputeMonitorArgs{...} }
-type ComputeMonitorMapInput interface {
-	pulumi.Input
-
-	ToComputeMonitorMapOutput() ComputeMonitorMapOutput
-	ToComputeMonitorMapOutputWithContext(context.Context) ComputeMonitorMapOutput
-}
-
-type ComputeMonitorMap map[string]ComputeMonitorInput
-
-func (ComputeMonitorMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeMonitor)(nil)).Elem()
-}
-
-func (i ComputeMonitorMap) ToComputeMonitorMapOutput() ComputeMonitorMapOutput {
-	return i.ToComputeMonitorMapOutputWithContext(context.Background())
-}
-
-func (i ComputeMonitorMap) ToComputeMonitorMapOutputWithContext(ctx context.Context) ComputeMonitorMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeMonitorMapOutput)
-}
-
 type ComputeMonitorOutput struct{ *pulumi.OutputState }
 
 func (ComputeMonitorOutput) ElementType() reflect.Type {
@@ -264,51 +214,7 @@ func (o ComputeMonitorOutput) WaitCycles() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ComputeMonitor) pulumi.IntPtrOutput { return v.WaitCycles }).(pulumi.IntPtrOutput)
 }
 
-type ComputeMonitorArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeMonitorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeMonitor)(nil)).Elem()
-}
-
-func (o ComputeMonitorArrayOutput) ToComputeMonitorArrayOutput() ComputeMonitorArrayOutput {
-	return o
-}
-
-func (o ComputeMonitorArrayOutput) ToComputeMonitorArrayOutputWithContext(ctx context.Context) ComputeMonitorArrayOutput {
-	return o
-}
-
-func (o ComputeMonitorArrayOutput) Index(i pulumi.IntInput) ComputeMonitorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeMonitor {
-		return vs[0].([]*ComputeMonitor)[vs[1].(int)]
-	}).(ComputeMonitorOutput)
-}
-
-type ComputeMonitorMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeMonitorMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeMonitor)(nil)).Elem()
-}
-
-func (o ComputeMonitorMapOutput) ToComputeMonitorMapOutput() ComputeMonitorMapOutput {
-	return o
-}
-
-func (o ComputeMonitorMapOutput) ToComputeMonitorMapOutputWithContext(ctx context.Context) ComputeMonitorMapOutput {
-	return o
-}
-
-func (o ComputeMonitorMapOutput) MapIndex(k pulumi.StringInput) ComputeMonitorOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeMonitor {
-		return vs[0].(map[string]*ComputeMonitor)[vs[1].(string)]
-	}).(ComputeMonitorOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeMonitorInput)(nil)).Elem(), &ComputeMonitor{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeMonitorArrayInput)(nil)).Elem(), ComputeMonitorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeMonitorMapInput)(nil)).Elem(), ComputeMonitorMap{})
 	pulumi.RegisterOutputType(ComputeMonitorOutput{})
-	pulumi.RegisterOutputType(ComputeMonitorArrayOutput{})
-	pulumi.RegisterOutputType(ComputeMonitorMapOutput{})
 }

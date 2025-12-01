@@ -156,56 +156,6 @@ func (i *IsInstanceGroupMembership) ToIsInstanceGroupMembershipOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupMembershipOutput)
 }
 
-// IsInstanceGroupMembershipArrayInput is an input type that accepts IsInstanceGroupMembershipArray and IsInstanceGroupMembershipArrayOutput values.
-// You can construct a concrete instance of `IsInstanceGroupMembershipArrayInput` via:
-//
-//	IsInstanceGroupMembershipArray{ IsInstanceGroupMembershipArgs{...} }
-type IsInstanceGroupMembershipArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceGroupMembershipArrayOutput() IsInstanceGroupMembershipArrayOutput
-	ToIsInstanceGroupMembershipArrayOutputWithContext(context.Context) IsInstanceGroupMembershipArrayOutput
-}
-
-type IsInstanceGroupMembershipArray []IsInstanceGroupMembershipInput
-
-func (IsInstanceGroupMembershipArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceGroupMembership)(nil)).Elem()
-}
-
-func (i IsInstanceGroupMembershipArray) ToIsInstanceGroupMembershipArrayOutput() IsInstanceGroupMembershipArrayOutput {
-	return i.ToIsInstanceGroupMembershipArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceGroupMembershipArray) ToIsInstanceGroupMembershipArrayOutputWithContext(ctx context.Context) IsInstanceGroupMembershipArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupMembershipArrayOutput)
-}
-
-// IsInstanceGroupMembershipMapInput is an input type that accepts IsInstanceGroupMembershipMap and IsInstanceGroupMembershipMapOutput values.
-// You can construct a concrete instance of `IsInstanceGroupMembershipMapInput` via:
-//
-//	IsInstanceGroupMembershipMap{ "key": IsInstanceGroupMembershipArgs{...} }
-type IsInstanceGroupMembershipMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceGroupMembershipMapOutput() IsInstanceGroupMembershipMapOutput
-	ToIsInstanceGroupMembershipMapOutputWithContext(context.Context) IsInstanceGroupMembershipMapOutput
-}
-
-type IsInstanceGroupMembershipMap map[string]IsInstanceGroupMembershipInput
-
-func (IsInstanceGroupMembershipMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceGroupMembership)(nil)).Elem()
-}
-
-func (i IsInstanceGroupMembershipMap) ToIsInstanceGroupMembershipMapOutput() IsInstanceGroupMembershipMapOutput {
-	return i.ToIsInstanceGroupMembershipMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceGroupMembershipMap) ToIsInstanceGroupMembershipMapOutputWithContext(ctx context.Context) IsInstanceGroupMembershipMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupMembershipMapOutput)
-}
-
 type IsInstanceGroupMembershipOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceGroupMembershipOutput) ElementType() reflect.Type {
@@ -265,51 +215,7 @@ func (o IsInstanceGroupMembershipOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceGroupMembership) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-type IsInstanceGroupMembershipArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceGroupMembershipArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceGroupMembership)(nil)).Elem()
-}
-
-func (o IsInstanceGroupMembershipArrayOutput) ToIsInstanceGroupMembershipArrayOutput() IsInstanceGroupMembershipArrayOutput {
-	return o
-}
-
-func (o IsInstanceGroupMembershipArrayOutput) ToIsInstanceGroupMembershipArrayOutputWithContext(ctx context.Context) IsInstanceGroupMembershipArrayOutput {
-	return o
-}
-
-func (o IsInstanceGroupMembershipArrayOutput) Index(i pulumi.IntInput) IsInstanceGroupMembershipOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceGroupMembership {
-		return vs[0].([]*IsInstanceGroupMembership)[vs[1].(int)]
-	}).(IsInstanceGroupMembershipOutput)
-}
-
-type IsInstanceGroupMembershipMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceGroupMembershipMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceGroupMembership)(nil)).Elem()
-}
-
-func (o IsInstanceGroupMembershipMapOutput) ToIsInstanceGroupMembershipMapOutput() IsInstanceGroupMembershipMapOutput {
-	return o
-}
-
-func (o IsInstanceGroupMembershipMapOutput) ToIsInstanceGroupMembershipMapOutputWithContext(ctx context.Context) IsInstanceGroupMembershipMapOutput {
-	return o
-}
-
-func (o IsInstanceGroupMembershipMapOutput) MapIndex(k pulumi.StringInput) IsInstanceGroupMembershipOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceGroupMembership {
-		return vs[0].(map[string]*IsInstanceGroupMembership)[vs[1].(string)]
-	}).(IsInstanceGroupMembershipOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupMembershipInput)(nil)).Elem(), &IsInstanceGroupMembership{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupMembershipArrayInput)(nil)).Elem(), IsInstanceGroupMembershipArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupMembershipMapInput)(nil)).Elem(), IsInstanceGroupMembershipMap{})
 	pulumi.RegisterOutputType(IsInstanceGroupMembershipOutput{})
-	pulumi.RegisterOutputType(IsInstanceGroupMembershipArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceGroupMembershipMapOutput{})
 }

@@ -189,56 +189,6 @@ func (i *IamTrustedProfileClaimRule) ToIamTrustedProfileClaimRuleOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileClaimRuleOutput)
 }
 
-// IamTrustedProfileClaimRuleArrayInput is an input type that accepts IamTrustedProfileClaimRuleArray and IamTrustedProfileClaimRuleArrayOutput values.
-// You can construct a concrete instance of `IamTrustedProfileClaimRuleArrayInput` via:
-//
-//	IamTrustedProfileClaimRuleArray{ IamTrustedProfileClaimRuleArgs{...} }
-type IamTrustedProfileClaimRuleArrayInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileClaimRuleArrayOutput() IamTrustedProfileClaimRuleArrayOutput
-	ToIamTrustedProfileClaimRuleArrayOutputWithContext(context.Context) IamTrustedProfileClaimRuleArrayOutput
-}
-
-type IamTrustedProfileClaimRuleArray []IamTrustedProfileClaimRuleInput
-
-func (IamTrustedProfileClaimRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileClaimRule)(nil)).Elem()
-}
-
-func (i IamTrustedProfileClaimRuleArray) ToIamTrustedProfileClaimRuleArrayOutput() IamTrustedProfileClaimRuleArrayOutput {
-	return i.ToIamTrustedProfileClaimRuleArrayOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileClaimRuleArray) ToIamTrustedProfileClaimRuleArrayOutputWithContext(ctx context.Context) IamTrustedProfileClaimRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileClaimRuleArrayOutput)
-}
-
-// IamTrustedProfileClaimRuleMapInput is an input type that accepts IamTrustedProfileClaimRuleMap and IamTrustedProfileClaimRuleMapOutput values.
-// You can construct a concrete instance of `IamTrustedProfileClaimRuleMapInput` via:
-//
-//	IamTrustedProfileClaimRuleMap{ "key": IamTrustedProfileClaimRuleArgs{...} }
-type IamTrustedProfileClaimRuleMapInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileClaimRuleMapOutput() IamTrustedProfileClaimRuleMapOutput
-	ToIamTrustedProfileClaimRuleMapOutputWithContext(context.Context) IamTrustedProfileClaimRuleMapOutput
-}
-
-type IamTrustedProfileClaimRuleMap map[string]IamTrustedProfileClaimRuleInput
-
-func (IamTrustedProfileClaimRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileClaimRule)(nil)).Elem()
-}
-
-func (i IamTrustedProfileClaimRuleMap) ToIamTrustedProfileClaimRuleMapOutput() IamTrustedProfileClaimRuleMapOutput {
-	return i.ToIamTrustedProfileClaimRuleMapOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileClaimRuleMap) ToIamTrustedProfileClaimRuleMapOutputWithContext(ctx context.Context) IamTrustedProfileClaimRuleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileClaimRuleMapOutput)
-}
-
 type IamTrustedProfileClaimRuleOutput struct{ *pulumi.OutputState }
 
 func (IamTrustedProfileClaimRuleOutput) ElementType() reflect.Type {
@@ -310,51 +260,7 @@ func (o IamTrustedProfileClaimRuleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamTrustedProfileClaimRule) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-type IamTrustedProfileClaimRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileClaimRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileClaimRule)(nil)).Elem()
-}
-
-func (o IamTrustedProfileClaimRuleArrayOutput) ToIamTrustedProfileClaimRuleArrayOutput() IamTrustedProfileClaimRuleArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileClaimRuleArrayOutput) ToIamTrustedProfileClaimRuleArrayOutputWithContext(ctx context.Context) IamTrustedProfileClaimRuleArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileClaimRuleArrayOutput) Index(i pulumi.IntInput) IamTrustedProfileClaimRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamTrustedProfileClaimRule {
-		return vs[0].([]*IamTrustedProfileClaimRule)[vs[1].(int)]
-	}).(IamTrustedProfileClaimRuleOutput)
-}
-
-type IamTrustedProfileClaimRuleMapOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileClaimRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileClaimRule)(nil)).Elem()
-}
-
-func (o IamTrustedProfileClaimRuleMapOutput) ToIamTrustedProfileClaimRuleMapOutput() IamTrustedProfileClaimRuleMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileClaimRuleMapOutput) ToIamTrustedProfileClaimRuleMapOutputWithContext(ctx context.Context) IamTrustedProfileClaimRuleMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileClaimRuleMapOutput) MapIndex(k pulumi.StringInput) IamTrustedProfileClaimRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamTrustedProfileClaimRule {
-		return vs[0].(map[string]*IamTrustedProfileClaimRule)[vs[1].(string)]
-	}).(IamTrustedProfileClaimRuleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileClaimRuleInput)(nil)).Elem(), &IamTrustedProfileClaimRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileClaimRuleArrayInput)(nil)).Elem(), IamTrustedProfileClaimRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileClaimRuleMapInput)(nil)).Elem(), IamTrustedProfileClaimRuleMap{})
 	pulumi.RegisterOutputType(IamTrustedProfileClaimRuleOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileClaimRuleArrayOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileClaimRuleMapOutput{})
 }

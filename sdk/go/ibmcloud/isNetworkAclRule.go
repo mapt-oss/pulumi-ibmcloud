@@ -210,56 +210,6 @@ func (i *IsNetworkAclRule) ToIsNetworkAclRuleOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IsNetworkAclRuleOutput)
 }
 
-// IsNetworkAclRuleArrayInput is an input type that accepts IsNetworkAclRuleArray and IsNetworkAclRuleArrayOutput values.
-// You can construct a concrete instance of `IsNetworkAclRuleArrayInput` via:
-//
-//	IsNetworkAclRuleArray{ IsNetworkAclRuleArgs{...} }
-type IsNetworkAclRuleArrayInput interface {
-	pulumi.Input
-
-	ToIsNetworkAclRuleArrayOutput() IsNetworkAclRuleArrayOutput
-	ToIsNetworkAclRuleArrayOutputWithContext(context.Context) IsNetworkAclRuleArrayOutput
-}
-
-type IsNetworkAclRuleArray []IsNetworkAclRuleInput
-
-func (IsNetworkAclRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsNetworkAclRule)(nil)).Elem()
-}
-
-func (i IsNetworkAclRuleArray) ToIsNetworkAclRuleArrayOutput() IsNetworkAclRuleArrayOutput {
-	return i.ToIsNetworkAclRuleArrayOutputWithContext(context.Background())
-}
-
-func (i IsNetworkAclRuleArray) ToIsNetworkAclRuleArrayOutputWithContext(ctx context.Context) IsNetworkAclRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsNetworkAclRuleArrayOutput)
-}
-
-// IsNetworkAclRuleMapInput is an input type that accepts IsNetworkAclRuleMap and IsNetworkAclRuleMapOutput values.
-// You can construct a concrete instance of `IsNetworkAclRuleMapInput` via:
-//
-//	IsNetworkAclRuleMap{ "key": IsNetworkAclRuleArgs{...} }
-type IsNetworkAclRuleMapInput interface {
-	pulumi.Input
-
-	ToIsNetworkAclRuleMapOutput() IsNetworkAclRuleMapOutput
-	ToIsNetworkAclRuleMapOutputWithContext(context.Context) IsNetworkAclRuleMapOutput
-}
-
-type IsNetworkAclRuleMap map[string]IsNetworkAclRuleInput
-
-func (IsNetworkAclRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsNetworkAclRule)(nil)).Elem()
-}
-
-func (i IsNetworkAclRuleMap) ToIsNetworkAclRuleMapOutput() IsNetworkAclRuleMapOutput {
-	return i.ToIsNetworkAclRuleMapOutputWithContext(context.Background())
-}
-
-func (i IsNetworkAclRuleMap) ToIsNetworkAclRuleMapOutputWithContext(ctx context.Context) IsNetworkAclRuleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsNetworkAclRuleMapOutput)
-}
-
 type IsNetworkAclRuleOutput struct{ *pulumi.OutputState }
 
 func (IsNetworkAclRuleOutput) ElementType() reflect.Type {
@@ -341,51 +291,7 @@ func (o IsNetworkAclRuleOutput) Udp() IsNetworkAclRuleUdpPtrOutput {
 	return o.ApplyT(func(v *IsNetworkAclRule) IsNetworkAclRuleUdpPtrOutput { return v.Udp }).(IsNetworkAclRuleUdpPtrOutput)
 }
 
-type IsNetworkAclRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (IsNetworkAclRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsNetworkAclRule)(nil)).Elem()
-}
-
-func (o IsNetworkAclRuleArrayOutput) ToIsNetworkAclRuleArrayOutput() IsNetworkAclRuleArrayOutput {
-	return o
-}
-
-func (o IsNetworkAclRuleArrayOutput) ToIsNetworkAclRuleArrayOutputWithContext(ctx context.Context) IsNetworkAclRuleArrayOutput {
-	return o
-}
-
-func (o IsNetworkAclRuleArrayOutput) Index(i pulumi.IntInput) IsNetworkAclRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsNetworkAclRule {
-		return vs[0].([]*IsNetworkAclRule)[vs[1].(int)]
-	}).(IsNetworkAclRuleOutput)
-}
-
-type IsNetworkAclRuleMapOutput struct{ *pulumi.OutputState }
-
-func (IsNetworkAclRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsNetworkAclRule)(nil)).Elem()
-}
-
-func (o IsNetworkAclRuleMapOutput) ToIsNetworkAclRuleMapOutput() IsNetworkAclRuleMapOutput {
-	return o
-}
-
-func (o IsNetworkAclRuleMapOutput) ToIsNetworkAclRuleMapOutputWithContext(ctx context.Context) IsNetworkAclRuleMapOutput {
-	return o
-}
-
-func (o IsNetworkAclRuleMapOutput) MapIndex(k pulumi.StringInput) IsNetworkAclRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsNetworkAclRule {
-		return vs[0].(map[string]*IsNetworkAclRule)[vs[1].(string)]
-	}).(IsNetworkAclRuleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsNetworkAclRuleInput)(nil)).Elem(), &IsNetworkAclRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsNetworkAclRuleArrayInput)(nil)).Elem(), IsNetworkAclRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsNetworkAclRuleMapInput)(nil)).Elem(), IsNetworkAclRuleMap{})
 	pulumi.RegisterOutputType(IsNetworkAclRuleOutput{})
-	pulumi.RegisterOutputType(IsNetworkAclRuleArrayOutput{})
-	pulumi.RegisterOutputType(IsNetworkAclRuleMapOutput{})
 }

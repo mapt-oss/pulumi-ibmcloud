@@ -201,56 +201,6 @@ func (i *ContainerAlbCert) ToContainerAlbCertOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerAlbCertOutput)
 }
 
-// ContainerAlbCertArrayInput is an input type that accepts ContainerAlbCertArray and ContainerAlbCertArrayOutput values.
-// You can construct a concrete instance of `ContainerAlbCertArrayInput` via:
-//
-//	ContainerAlbCertArray{ ContainerAlbCertArgs{...} }
-type ContainerAlbCertArrayInput interface {
-	pulumi.Input
-
-	ToContainerAlbCertArrayOutput() ContainerAlbCertArrayOutput
-	ToContainerAlbCertArrayOutputWithContext(context.Context) ContainerAlbCertArrayOutput
-}
-
-type ContainerAlbCertArray []ContainerAlbCertInput
-
-func (ContainerAlbCertArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerAlbCert)(nil)).Elem()
-}
-
-func (i ContainerAlbCertArray) ToContainerAlbCertArrayOutput() ContainerAlbCertArrayOutput {
-	return i.ToContainerAlbCertArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerAlbCertArray) ToContainerAlbCertArrayOutputWithContext(ctx context.Context) ContainerAlbCertArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAlbCertArrayOutput)
-}
-
-// ContainerAlbCertMapInput is an input type that accepts ContainerAlbCertMap and ContainerAlbCertMapOutput values.
-// You can construct a concrete instance of `ContainerAlbCertMapInput` via:
-//
-//	ContainerAlbCertMap{ "key": ContainerAlbCertArgs{...} }
-type ContainerAlbCertMapInput interface {
-	pulumi.Input
-
-	ToContainerAlbCertMapOutput() ContainerAlbCertMapOutput
-	ToContainerAlbCertMapOutputWithContext(context.Context) ContainerAlbCertMapOutput
-}
-
-type ContainerAlbCertMap map[string]ContainerAlbCertInput
-
-func (ContainerAlbCertMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerAlbCert)(nil)).Elem()
-}
-
-func (i ContainerAlbCertMap) ToContainerAlbCertMapOutput() ContainerAlbCertMapOutput {
-	return i.ToContainerAlbCertMapOutputWithContext(context.Background())
-}
-
-func (i ContainerAlbCertMap) ToContainerAlbCertMapOutputWithContext(ctx context.Context) ContainerAlbCertMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAlbCertMapOutput)
-}
-
 type ContainerAlbCertOutput struct{ *pulumi.OutputState }
 
 func (ContainerAlbCertOutput) ElementType() reflect.Type {
@@ -324,51 +274,7 @@ func (o ContainerAlbCertOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerAlbCert) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-type ContainerAlbCertArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerAlbCertArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerAlbCert)(nil)).Elem()
-}
-
-func (o ContainerAlbCertArrayOutput) ToContainerAlbCertArrayOutput() ContainerAlbCertArrayOutput {
-	return o
-}
-
-func (o ContainerAlbCertArrayOutput) ToContainerAlbCertArrayOutputWithContext(ctx context.Context) ContainerAlbCertArrayOutput {
-	return o
-}
-
-func (o ContainerAlbCertArrayOutput) Index(i pulumi.IntInput) ContainerAlbCertOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerAlbCert {
-		return vs[0].([]*ContainerAlbCert)[vs[1].(int)]
-	}).(ContainerAlbCertOutput)
-}
-
-type ContainerAlbCertMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerAlbCertMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerAlbCert)(nil)).Elem()
-}
-
-func (o ContainerAlbCertMapOutput) ToContainerAlbCertMapOutput() ContainerAlbCertMapOutput {
-	return o
-}
-
-func (o ContainerAlbCertMapOutput) ToContainerAlbCertMapOutputWithContext(ctx context.Context) ContainerAlbCertMapOutput {
-	return o
-}
-
-func (o ContainerAlbCertMapOutput) MapIndex(k pulumi.StringInput) ContainerAlbCertOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerAlbCert {
-		return vs[0].(map[string]*ContainerAlbCert)[vs[1].(string)]
-	}).(ContainerAlbCertOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAlbCertInput)(nil)).Elem(), &ContainerAlbCert{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAlbCertArrayInput)(nil)).Elem(), ContainerAlbCertArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAlbCertMapInput)(nil)).Elem(), ContainerAlbCertMap{})
 	pulumi.RegisterOutputType(ContainerAlbCertOutput{})
-	pulumi.RegisterOutputType(ContainerAlbCertArrayOutput{})
-	pulumi.RegisterOutputType(ContainerAlbCertMapOutput{})
 }

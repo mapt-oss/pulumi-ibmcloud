@@ -203,56 +203,6 @@ func (i *IamTrustedProfileTemplate) ToIamTrustedProfileTemplateOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileTemplateOutput)
 }
 
-// IamTrustedProfileTemplateArrayInput is an input type that accepts IamTrustedProfileTemplateArray and IamTrustedProfileTemplateArrayOutput values.
-// You can construct a concrete instance of `IamTrustedProfileTemplateArrayInput` via:
-//
-//	IamTrustedProfileTemplateArray{ IamTrustedProfileTemplateArgs{...} }
-type IamTrustedProfileTemplateArrayInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileTemplateArrayOutput() IamTrustedProfileTemplateArrayOutput
-	ToIamTrustedProfileTemplateArrayOutputWithContext(context.Context) IamTrustedProfileTemplateArrayOutput
-}
-
-type IamTrustedProfileTemplateArray []IamTrustedProfileTemplateInput
-
-func (IamTrustedProfileTemplateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileTemplate)(nil)).Elem()
-}
-
-func (i IamTrustedProfileTemplateArray) ToIamTrustedProfileTemplateArrayOutput() IamTrustedProfileTemplateArrayOutput {
-	return i.ToIamTrustedProfileTemplateArrayOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileTemplateArray) ToIamTrustedProfileTemplateArrayOutputWithContext(ctx context.Context) IamTrustedProfileTemplateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileTemplateArrayOutput)
-}
-
-// IamTrustedProfileTemplateMapInput is an input type that accepts IamTrustedProfileTemplateMap and IamTrustedProfileTemplateMapOutput values.
-// You can construct a concrete instance of `IamTrustedProfileTemplateMapInput` via:
-//
-//	IamTrustedProfileTemplateMap{ "key": IamTrustedProfileTemplateArgs{...} }
-type IamTrustedProfileTemplateMapInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileTemplateMapOutput() IamTrustedProfileTemplateMapOutput
-	ToIamTrustedProfileTemplateMapOutputWithContext(context.Context) IamTrustedProfileTemplateMapOutput
-}
-
-type IamTrustedProfileTemplateMap map[string]IamTrustedProfileTemplateInput
-
-func (IamTrustedProfileTemplateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileTemplate)(nil)).Elem()
-}
-
-func (i IamTrustedProfileTemplateMap) ToIamTrustedProfileTemplateMapOutput() IamTrustedProfileTemplateMapOutput {
-	return i.ToIamTrustedProfileTemplateMapOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileTemplateMap) ToIamTrustedProfileTemplateMapOutputWithContext(ctx context.Context) IamTrustedProfileTemplateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileTemplateMapOutput)
-}
-
 type IamTrustedProfileTemplateOutput struct{ *pulumi.OutputState }
 
 func (IamTrustedProfileTemplateOutput) ElementType() reflect.Type {
@@ -344,51 +294,7 @@ func (o IamTrustedProfileTemplateOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *IamTrustedProfileTemplate) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
-type IamTrustedProfileTemplateArrayOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileTemplateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileTemplate)(nil)).Elem()
-}
-
-func (o IamTrustedProfileTemplateArrayOutput) ToIamTrustedProfileTemplateArrayOutput() IamTrustedProfileTemplateArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateArrayOutput) ToIamTrustedProfileTemplateArrayOutputWithContext(ctx context.Context) IamTrustedProfileTemplateArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateArrayOutput) Index(i pulumi.IntInput) IamTrustedProfileTemplateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamTrustedProfileTemplate {
-		return vs[0].([]*IamTrustedProfileTemplate)[vs[1].(int)]
-	}).(IamTrustedProfileTemplateOutput)
-}
-
-type IamTrustedProfileTemplateMapOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileTemplateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileTemplate)(nil)).Elem()
-}
-
-func (o IamTrustedProfileTemplateMapOutput) ToIamTrustedProfileTemplateMapOutput() IamTrustedProfileTemplateMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateMapOutput) ToIamTrustedProfileTemplateMapOutputWithContext(ctx context.Context) IamTrustedProfileTemplateMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateMapOutput) MapIndex(k pulumi.StringInput) IamTrustedProfileTemplateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamTrustedProfileTemplate {
-		return vs[0].(map[string]*IamTrustedProfileTemplate)[vs[1].(string)]
-	}).(IamTrustedProfileTemplateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileTemplateInput)(nil)).Elem(), &IamTrustedProfileTemplate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileTemplateArrayInput)(nil)).Elem(), IamTrustedProfileTemplateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileTemplateMapInput)(nil)).Elem(), IamTrustedProfileTemplateMap{})
 	pulumi.RegisterOutputType(IamTrustedProfileTemplateOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileTemplateArrayOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileTemplateMapOutput{})
 }

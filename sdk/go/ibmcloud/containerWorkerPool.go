@@ -272,56 +272,6 @@ func (i *ContainerWorkerPool) ToContainerWorkerPoolOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolOutput)
 }
 
-// ContainerWorkerPoolArrayInput is an input type that accepts ContainerWorkerPoolArray and ContainerWorkerPoolArrayOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolArrayInput` via:
-//
-//	ContainerWorkerPoolArray{ ContainerWorkerPoolArgs{...} }
-type ContainerWorkerPoolArrayInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolArrayOutput() ContainerWorkerPoolArrayOutput
-	ToContainerWorkerPoolArrayOutputWithContext(context.Context) ContainerWorkerPoolArrayOutput
-}
-
-type ContainerWorkerPoolArray []ContainerWorkerPoolInput
-
-func (ContainerWorkerPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolArray) ToContainerWorkerPoolArrayOutput() ContainerWorkerPoolArrayOutput {
-	return i.ToContainerWorkerPoolArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolArray) ToContainerWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolArrayOutput)
-}
-
-// ContainerWorkerPoolMapInput is an input type that accepts ContainerWorkerPoolMap and ContainerWorkerPoolMapOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolMapInput` via:
-//
-//	ContainerWorkerPoolMap{ "key": ContainerWorkerPoolArgs{...} }
-type ContainerWorkerPoolMapInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolMapOutput() ContainerWorkerPoolMapOutput
-	ToContainerWorkerPoolMapOutputWithContext(context.Context) ContainerWorkerPoolMapOutput
-}
-
-type ContainerWorkerPoolMap map[string]ContainerWorkerPoolInput
-
-func (ContainerWorkerPoolMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolMap) ToContainerWorkerPoolMapOutput() ContainerWorkerPoolMapOutput {
-	return i.ToContainerWorkerPoolMapOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolMap) ToContainerWorkerPoolMapOutputWithContext(ctx context.Context) ContainerWorkerPoolMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolMapOutput)
-}
-
 type ContainerWorkerPoolOutput struct{ *pulumi.OutputState }
 
 func (ContainerWorkerPoolOutput) ElementType() reflect.Type {
@@ -431,51 +381,7 @@ func (o ContainerWorkerPoolOutput) Zones() ContainerWorkerPoolZoneArrayOutput {
 	return o.ApplyT(func(v *ContainerWorkerPool) ContainerWorkerPoolZoneArrayOutput { return v.Zones }).(ContainerWorkerPoolZoneArrayOutput)
 }
 
-type ContainerWorkerPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolArrayOutput) ToContainerWorkerPoolArrayOutput() ContainerWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolArrayOutput) ToContainerWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolArrayOutput) Index(i pulumi.IntInput) ContainerWorkerPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerWorkerPool {
-		return vs[0].([]*ContainerWorkerPool)[vs[1].(int)]
-	}).(ContainerWorkerPoolOutput)
-}
-
-type ContainerWorkerPoolMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolMapOutput) ToContainerWorkerPoolMapOutput() ContainerWorkerPoolMapOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolMapOutput) ToContainerWorkerPoolMapOutputWithContext(ctx context.Context) ContainerWorkerPoolMapOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolMapOutput) MapIndex(k pulumi.StringInput) ContainerWorkerPoolOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerWorkerPool {
-		return vs[0].(map[string]*ContainerWorkerPool)[vs[1].(string)]
-	}).(ContainerWorkerPoolOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolInput)(nil)).Elem(), &ContainerWorkerPool{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolArrayInput)(nil)).Elem(), ContainerWorkerPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolMapInput)(nil)).Elem(), ContainerWorkerPoolMap{})
 	pulumi.RegisterOutputType(ContainerWorkerPoolOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolArrayOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolMapOutput{})
 }

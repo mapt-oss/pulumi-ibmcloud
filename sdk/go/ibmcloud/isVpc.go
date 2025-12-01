@@ -316,56 +316,6 @@ func (i *IsVpc) ToIsVpcOutputWithContext(ctx context.Context) IsVpcOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IsVpcOutput)
 }
 
-// IsVpcArrayInput is an input type that accepts IsVpcArray and IsVpcArrayOutput values.
-// You can construct a concrete instance of `IsVpcArrayInput` via:
-//
-//	IsVpcArray{ IsVpcArgs{...} }
-type IsVpcArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcArrayOutput() IsVpcArrayOutput
-	ToIsVpcArrayOutputWithContext(context.Context) IsVpcArrayOutput
-}
-
-type IsVpcArray []IsVpcInput
-
-func (IsVpcArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpc)(nil)).Elem()
-}
-
-func (i IsVpcArray) ToIsVpcArrayOutput() IsVpcArrayOutput {
-	return i.ToIsVpcArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcArray) ToIsVpcArrayOutputWithContext(ctx context.Context) IsVpcArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcArrayOutput)
-}
-
-// IsVpcMapInput is an input type that accepts IsVpcMap and IsVpcMapOutput values.
-// You can construct a concrete instance of `IsVpcMapInput` via:
-//
-//	IsVpcMap{ "key": IsVpcArgs{...} }
-type IsVpcMapInput interface {
-	pulumi.Input
-
-	ToIsVpcMapOutput() IsVpcMapOutput
-	ToIsVpcMapOutputWithContext(context.Context) IsVpcMapOutput
-}
-
-type IsVpcMap map[string]IsVpcInput
-
-func (IsVpcMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpc)(nil)).Elem()
-}
-
-func (i IsVpcMap) ToIsVpcMapOutput() IsVpcMapOutput {
-	return i.ToIsVpcMapOutputWithContext(context.Background())
-}
-
-func (i IsVpcMap) ToIsVpcMapOutputWithContext(ctx context.Context) IsVpcMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcMapOutput)
-}
-
 type IsVpcOutput struct{ *pulumi.OutputState }
 
 func (IsVpcOutput) ElementType() reflect.Type {
@@ -534,51 +484,7 @@ func (o IsVpcOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IsVpc) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type IsVpcArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpc)(nil)).Elem()
-}
-
-func (o IsVpcArrayOutput) ToIsVpcArrayOutput() IsVpcArrayOutput {
-	return o
-}
-
-func (o IsVpcArrayOutput) ToIsVpcArrayOutputWithContext(ctx context.Context) IsVpcArrayOutput {
-	return o
-}
-
-func (o IsVpcArrayOutput) Index(i pulumi.IntInput) IsVpcOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVpc {
-		return vs[0].([]*IsVpc)[vs[1].(int)]
-	}).(IsVpcOutput)
-}
-
-type IsVpcMapOutput struct{ *pulumi.OutputState }
-
-func (IsVpcMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpc)(nil)).Elem()
-}
-
-func (o IsVpcMapOutput) ToIsVpcMapOutput() IsVpcMapOutput {
-	return o
-}
-
-func (o IsVpcMapOutput) ToIsVpcMapOutputWithContext(ctx context.Context) IsVpcMapOutput {
-	return o
-}
-
-func (o IsVpcMapOutput) MapIndex(k pulumi.StringInput) IsVpcOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVpc {
-		return vs[0].(map[string]*IsVpc)[vs[1].(string)]
-	}).(IsVpcOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcInput)(nil)).Elem(), &IsVpc{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcArrayInput)(nil)).Elem(), IsVpcArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcMapInput)(nil)).Elem(), IsVpcMap{})
 	pulumi.RegisterOutputType(IsVpcOutput{})
-	pulumi.RegisterOutputType(IsVpcArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcMapOutput{})
 }

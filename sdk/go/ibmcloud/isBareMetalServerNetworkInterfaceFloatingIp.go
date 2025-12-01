@@ -161,56 +161,6 @@ func (i *IsBareMetalServerNetworkInterfaceFloatingIp) ToIsBareMetalServerNetwork
 	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkInterfaceFloatingIpOutput)
 }
 
-// IsBareMetalServerNetworkInterfaceFloatingIpArrayInput is an input type that accepts IsBareMetalServerNetworkInterfaceFloatingIpArray and IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput values.
-// You can construct a concrete instance of `IsBareMetalServerNetworkInterfaceFloatingIpArrayInput` via:
-//
-//	IsBareMetalServerNetworkInterfaceFloatingIpArray{ IsBareMetalServerNetworkInterfaceFloatingIpArgs{...} }
-type IsBareMetalServerNetworkInterfaceFloatingIpArrayInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerNetworkInterfaceFloatingIpArrayOutput() IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput
-	ToIsBareMetalServerNetworkInterfaceFloatingIpArrayOutputWithContext(context.Context) IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput
-}
-
-type IsBareMetalServerNetworkInterfaceFloatingIpArray []IsBareMetalServerNetworkInterfaceFloatingIpInput
-
-func (IsBareMetalServerNetworkInterfaceFloatingIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (i IsBareMetalServerNetworkInterfaceFloatingIpArray) ToIsBareMetalServerNetworkInterfaceFloatingIpArrayOutput() IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput {
-	return i.ToIsBareMetalServerNetworkInterfaceFloatingIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerNetworkInterfaceFloatingIpArray) ToIsBareMetalServerNetworkInterfaceFloatingIpArrayOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput)
-}
-
-// IsBareMetalServerNetworkInterfaceFloatingIpMapInput is an input type that accepts IsBareMetalServerNetworkInterfaceFloatingIpMap and IsBareMetalServerNetworkInterfaceFloatingIpMapOutput values.
-// You can construct a concrete instance of `IsBareMetalServerNetworkInterfaceFloatingIpMapInput` via:
-//
-//	IsBareMetalServerNetworkInterfaceFloatingIpMap{ "key": IsBareMetalServerNetworkInterfaceFloatingIpArgs{...} }
-type IsBareMetalServerNetworkInterfaceFloatingIpMapInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerNetworkInterfaceFloatingIpMapOutput() IsBareMetalServerNetworkInterfaceFloatingIpMapOutput
-	ToIsBareMetalServerNetworkInterfaceFloatingIpMapOutputWithContext(context.Context) IsBareMetalServerNetworkInterfaceFloatingIpMapOutput
-}
-
-type IsBareMetalServerNetworkInterfaceFloatingIpMap map[string]IsBareMetalServerNetworkInterfaceFloatingIpInput
-
-func (IsBareMetalServerNetworkInterfaceFloatingIpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (i IsBareMetalServerNetworkInterfaceFloatingIpMap) ToIsBareMetalServerNetworkInterfaceFloatingIpMapOutput() IsBareMetalServerNetworkInterfaceFloatingIpMapOutput {
-	return i.ToIsBareMetalServerNetworkInterfaceFloatingIpMapOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerNetworkInterfaceFloatingIpMap) ToIsBareMetalServerNetworkInterfaceFloatingIpMapOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceFloatingIpMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkInterfaceFloatingIpMapOutput)
-}
-
 type IsBareMetalServerNetworkInterfaceFloatingIpOutput struct{ *pulumi.OutputState }
 
 func (IsBareMetalServerNetworkInterfaceFloatingIpOutput) ElementType() reflect.Type {
@@ -270,51 +220,7 @@ func (o IsBareMetalServerNetworkInterfaceFloatingIpOutput) Zone() pulumi.StringO
 	return o.ApplyT(func(v *IsBareMetalServerNetworkInterfaceFloatingIp) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (o IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput) ToIsBareMetalServerNetworkInterfaceFloatingIpArrayOutput() IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput) ToIsBareMetalServerNetworkInterfaceFloatingIpArrayOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput) Index(i pulumi.IntInput) IsBareMetalServerNetworkInterfaceFloatingIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsBareMetalServerNetworkInterfaceFloatingIp {
-		return vs[0].([]*IsBareMetalServerNetworkInterfaceFloatingIp)[vs[1].(int)]
-	}).(IsBareMetalServerNetworkInterfaceFloatingIpOutput)
-}
-
-type IsBareMetalServerNetworkInterfaceFloatingIpMapOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerNetworkInterfaceFloatingIpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (o IsBareMetalServerNetworkInterfaceFloatingIpMapOutput) ToIsBareMetalServerNetworkInterfaceFloatingIpMapOutput() IsBareMetalServerNetworkInterfaceFloatingIpMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceFloatingIpMapOutput) ToIsBareMetalServerNetworkInterfaceFloatingIpMapOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceFloatingIpMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceFloatingIpMapOutput) MapIndex(k pulumi.StringInput) IsBareMetalServerNetworkInterfaceFloatingIpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsBareMetalServerNetworkInterfaceFloatingIp {
-		return vs[0].(map[string]*IsBareMetalServerNetworkInterfaceFloatingIp)[vs[1].(string)]
-	}).(IsBareMetalServerNetworkInterfaceFloatingIpOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkInterfaceFloatingIpInput)(nil)).Elem(), &IsBareMetalServerNetworkInterfaceFloatingIp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkInterfaceFloatingIpArrayInput)(nil)).Elem(), IsBareMetalServerNetworkInterfaceFloatingIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkInterfaceFloatingIpMapInput)(nil)).Elem(), IsBareMetalServerNetworkInterfaceFloatingIpMap{})
 	pulumi.RegisterOutputType(IsBareMetalServerNetworkInterfaceFloatingIpOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerNetworkInterfaceFloatingIpArrayOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerNetworkInterfaceFloatingIpMapOutput{})
 }

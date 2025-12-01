@@ -194,56 +194,6 @@ func (i *ContainerIngressSecretTls) ToContainerIngressSecretTlsOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretTlsOutput)
 }
 
-// ContainerIngressSecretTlsArrayInput is an input type that accepts ContainerIngressSecretTlsArray and ContainerIngressSecretTlsArrayOutput values.
-// You can construct a concrete instance of `ContainerIngressSecretTlsArrayInput` via:
-//
-//	ContainerIngressSecretTlsArray{ ContainerIngressSecretTlsArgs{...} }
-type ContainerIngressSecretTlsArrayInput interface {
-	pulumi.Input
-
-	ToContainerIngressSecretTlsArrayOutput() ContainerIngressSecretTlsArrayOutput
-	ToContainerIngressSecretTlsArrayOutputWithContext(context.Context) ContainerIngressSecretTlsArrayOutput
-}
-
-type ContainerIngressSecretTlsArray []ContainerIngressSecretTlsInput
-
-func (ContainerIngressSecretTlsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerIngressSecretTls)(nil)).Elem()
-}
-
-func (i ContainerIngressSecretTlsArray) ToContainerIngressSecretTlsArrayOutput() ContainerIngressSecretTlsArrayOutput {
-	return i.ToContainerIngressSecretTlsArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressSecretTlsArray) ToContainerIngressSecretTlsArrayOutputWithContext(ctx context.Context) ContainerIngressSecretTlsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretTlsArrayOutput)
-}
-
-// ContainerIngressSecretTlsMapInput is an input type that accepts ContainerIngressSecretTlsMap and ContainerIngressSecretTlsMapOutput values.
-// You can construct a concrete instance of `ContainerIngressSecretTlsMapInput` via:
-//
-//	ContainerIngressSecretTlsMap{ "key": ContainerIngressSecretTlsArgs{...} }
-type ContainerIngressSecretTlsMapInput interface {
-	pulumi.Input
-
-	ToContainerIngressSecretTlsMapOutput() ContainerIngressSecretTlsMapOutput
-	ToContainerIngressSecretTlsMapOutputWithContext(context.Context) ContainerIngressSecretTlsMapOutput
-}
-
-type ContainerIngressSecretTlsMap map[string]ContainerIngressSecretTlsInput
-
-func (ContainerIngressSecretTlsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerIngressSecretTls)(nil)).Elem()
-}
-
-func (i ContainerIngressSecretTlsMap) ToContainerIngressSecretTlsMapOutput() ContainerIngressSecretTlsMapOutput {
-	return i.ToContainerIngressSecretTlsMapOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressSecretTlsMap) ToContainerIngressSecretTlsMapOutputWithContext(ctx context.Context) ContainerIngressSecretTlsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretTlsMapOutput)
-}
-
 type ContainerIngressSecretTlsOutput struct{ *pulumi.OutputState }
 
 func (ContainerIngressSecretTlsOutput) ElementType() reflect.Type {
@@ -318,51 +268,7 @@ func (o ContainerIngressSecretTlsOutput) UserManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerIngressSecretTls) pulumi.BoolOutput { return v.UserManaged }).(pulumi.BoolOutput)
 }
 
-type ContainerIngressSecretTlsArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressSecretTlsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerIngressSecretTls)(nil)).Elem()
-}
-
-func (o ContainerIngressSecretTlsArrayOutput) ToContainerIngressSecretTlsArrayOutput() ContainerIngressSecretTlsArrayOutput {
-	return o
-}
-
-func (o ContainerIngressSecretTlsArrayOutput) ToContainerIngressSecretTlsArrayOutputWithContext(ctx context.Context) ContainerIngressSecretTlsArrayOutput {
-	return o
-}
-
-func (o ContainerIngressSecretTlsArrayOutput) Index(i pulumi.IntInput) ContainerIngressSecretTlsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerIngressSecretTls {
-		return vs[0].([]*ContainerIngressSecretTls)[vs[1].(int)]
-	}).(ContainerIngressSecretTlsOutput)
-}
-
-type ContainerIngressSecretTlsMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressSecretTlsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerIngressSecretTls)(nil)).Elem()
-}
-
-func (o ContainerIngressSecretTlsMapOutput) ToContainerIngressSecretTlsMapOutput() ContainerIngressSecretTlsMapOutput {
-	return o
-}
-
-func (o ContainerIngressSecretTlsMapOutput) ToContainerIngressSecretTlsMapOutputWithContext(ctx context.Context) ContainerIngressSecretTlsMapOutput {
-	return o
-}
-
-func (o ContainerIngressSecretTlsMapOutput) MapIndex(k pulumi.StringInput) ContainerIngressSecretTlsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerIngressSecretTls {
-		return vs[0].(map[string]*ContainerIngressSecretTls)[vs[1].(string)]
-	}).(ContainerIngressSecretTlsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretTlsInput)(nil)).Elem(), &ContainerIngressSecretTls{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretTlsArrayInput)(nil)).Elem(), ContainerIngressSecretTlsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretTlsMapInput)(nil)).Elem(), ContainerIngressSecretTlsMap{})
 	pulumi.RegisterOutputType(ContainerIngressSecretTlsOutput{})
-	pulumi.RegisterOutputType(ContainerIngressSecretTlsArrayOutput{})
-	pulumi.RegisterOutputType(ContainerIngressSecretTlsMapOutput{})
 }

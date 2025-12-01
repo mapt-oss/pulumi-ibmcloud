@@ -191,56 +191,6 @@ func (i *IsShareMountTarget) ToIsShareMountTargetOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(IsShareMountTargetOutput)
 }
 
-// IsShareMountTargetArrayInput is an input type that accepts IsShareMountTargetArray and IsShareMountTargetArrayOutput values.
-// You can construct a concrete instance of `IsShareMountTargetArrayInput` via:
-//
-//	IsShareMountTargetArray{ IsShareMountTargetArgs{...} }
-type IsShareMountTargetArrayInput interface {
-	pulumi.Input
-
-	ToIsShareMountTargetArrayOutput() IsShareMountTargetArrayOutput
-	ToIsShareMountTargetArrayOutputWithContext(context.Context) IsShareMountTargetArrayOutput
-}
-
-type IsShareMountTargetArray []IsShareMountTargetInput
-
-func (IsShareMountTargetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShareMountTarget)(nil)).Elem()
-}
-
-func (i IsShareMountTargetArray) ToIsShareMountTargetArrayOutput() IsShareMountTargetArrayOutput {
-	return i.ToIsShareMountTargetArrayOutputWithContext(context.Background())
-}
-
-func (i IsShareMountTargetArray) ToIsShareMountTargetArrayOutputWithContext(ctx context.Context) IsShareMountTargetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareMountTargetArrayOutput)
-}
-
-// IsShareMountTargetMapInput is an input type that accepts IsShareMountTargetMap and IsShareMountTargetMapOutput values.
-// You can construct a concrete instance of `IsShareMountTargetMapInput` via:
-//
-//	IsShareMountTargetMap{ "key": IsShareMountTargetArgs{...} }
-type IsShareMountTargetMapInput interface {
-	pulumi.Input
-
-	ToIsShareMountTargetMapOutput() IsShareMountTargetMapOutput
-	ToIsShareMountTargetMapOutputWithContext(context.Context) IsShareMountTargetMapOutput
-}
-
-type IsShareMountTargetMap map[string]IsShareMountTargetInput
-
-func (IsShareMountTargetMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShareMountTarget)(nil)).Elem()
-}
-
-func (i IsShareMountTargetMap) ToIsShareMountTargetMapOutput() IsShareMountTargetMapOutput {
-	return i.ToIsShareMountTargetMapOutputWithContext(context.Background())
-}
-
-func (i IsShareMountTargetMap) ToIsShareMountTargetMapOutputWithContext(ctx context.Context) IsShareMountTargetMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareMountTargetMapOutput)
-}
-
 type IsShareMountTargetOutput struct{ *pulumi.OutputState }
 
 func (IsShareMountTargetOutput) ElementType() reflect.Type {
@@ -322,51 +272,7 @@ func (o IsShareMountTargetOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsShareMountTarget) pulumi.StringOutput { return v.Vpc }).(pulumi.StringOutput)
 }
 
-type IsShareMountTargetArrayOutput struct{ *pulumi.OutputState }
-
-func (IsShareMountTargetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShareMountTarget)(nil)).Elem()
-}
-
-func (o IsShareMountTargetArrayOutput) ToIsShareMountTargetArrayOutput() IsShareMountTargetArrayOutput {
-	return o
-}
-
-func (o IsShareMountTargetArrayOutput) ToIsShareMountTargetArrayOutputWithContext(ctx context.Context) IsShareMountTargetArrayOutput {
-	return o
-}
-
-func (o IsShareMountTargetArrayOutput) Index(i pulumi.IntInput) IsShareMountTargetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsShareMountTarget {
-		return vs[0].([]*IsShareMountTarget)[vs[1].(int)]
-	}).(IsShareMountTargetOutput)
-}
-
-type IsShareMountTargetMapOutput struct{ *pulumi.OutputState }
-
-func (IsShareMountTargetMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShareMountTarget)(nil)).Elem()
-}
-
-func (o IsShareMountTargetMapOutput) ToIsShareMountTargetMapOutput() IsShareMountTargetMapOutput {
-	return o
-}
-
-func (o IsShareMountTargetMapOutput) ToIsShareMountTargetMapOutputWithContext(ctx context.Context) IsShareMountTargetMapOutput {
-	return o
-}
-
-func (o IsShareMountTargetMapOutput) MapIndex(k pulumi.StringInput) IsShareMountTargetOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsShareMountTarget {
-		return vs[0].(map[string]*IsShareMountTarget)[vs[1].(string)]
-	}).(IsShareMountTargetOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsShareMountTargetInput)(nil)).Elem(), &IsShareMountTarget{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareMountTargetArrayInput)(nil)).Elem(), IsShareMountTargetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareMountTargetMapInput)(nil)).Elem(), IsShareMountTargetMap{})
 	pulumi.RegisterOutputType(IsShareMountTargetOutput{})
-	pulumi.RegisterOutputType(IsShareMountTargetArrayOutput{})
-	pulumi.RegisterOutputType(IsShareMountTargetMapOutput{})
 }

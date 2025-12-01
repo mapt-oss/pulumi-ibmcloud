@@ -159,56 +159,6 @@ func (i *IamTrustedProfileLink) ToIamTrustedProfileLinkOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileLinkOutput)
 }
 
-// IamTrustedProfileLinkArrayInput is an input type that accepts IamTrustedProfileLinkArray and IamTrustedProfileLinkArrayOutput values.
-// You can construct a concrete instance of `IamTrustedProfileLinkArrayInput` via:
-//
-//	IamTrustedProfileLinkArray{ IamTrustedProfileLinkArgs{...} }
-type IamTrustedProfileLinkArrayInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileLinkArrayOutput() IamTrustedProfileLinkArrayOutput
-	ToIamTrustedProfileLinkArrayOutputWithContext(context.Context) IamTrustedProfileLinkArrayOutput
-}
-
-type IamTrustedProfileLinkArray []IamTrustedProfileLinkInput
-
-func (IamTrustedProfileLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileLink)(nil)).Elem()
-}
-
-func (i IamTrustedProfileLinkArray) ToIamTrustedProfileLinkArrayOutput() IamTrustedProfileLinkArrayOutput {
-	return i.ToIamTrustedProfileLinkArrayOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileLinkArray) ToIamTrustedProfileLinkArrayOutputWithContext(ctx context.Context) IamTrustedProfileLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileLinkArrayOutput)
-}
-
-// IamTrustedProfileLinkMapInput is an input type that accepts IamTrustedProfileLinkMap and IamTrustedProfileLinkMapOutput values.
-// You can construct a concrete instance of `IamTrustedProfileLinkMapInput` via:
-//
-//	IamTrustedProfileLinkMap{ "key": IamTrustedProfileLinkArgs{...} }
-type IamTrustedProfileLinkMapInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileLinkMapOutput() IamTrustedProfileLinkMapOutput
-	ToIamTrustedProfileLinkMapOutputWithContext(context.Context) IamTrustedProfileLinkMapOutput
-}
-
-type IamTrustedProfileLinkMap map[string]IamTrustedProfileLinkInput
-
-func (IamTrustedProfileLinkMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileLink)(nil)).Elem()
-}
-
-func (i IamTrustedProfileLinkMap) ToIamTrustedProfileLinkMapOutput() IamTrustedProfileLinkMapOutput {
-	return i.ToIamTrustedProfileLinkMapOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileLinkMap) ToIamTrustedProfileLinkMapOutputWithContext(ctx context.Context) IamTrustedProfileLinkMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileLinkMapOutput)
-}
-
 type IamTrustedProfileLinkOutput struct{ *pulumi.OutputState }
 
 func (IamTrustedProfileLinkOutput) ElementType() reflect.Type {
@@ -263,51 +213,7 @@ func (o IamTrustedProfileLinkOutput) ProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamTrustedProfileLink) pulumi.StringOutput { return v.ProfileId }).(pulumi.StringOutput)
 }
 
-type IamTrustedProfileLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileLink)(nil)).Elem()
-}
-
-func (o IamTrustedProfileLinkArrayOutput) ToIamTrustedProfileLinkArrayOutput() IamTrustedProfileLinkArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileLinkArrayOutput) ToIamTrustedProfileLinkArrayOutputWithContext(ctx context.Context) IamTrustedProfileLinkArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileLinkArrayOutput) Index(i pulumi.IntInput) IamTrustedProfileLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamTrustedProfileLink {
-		return vs[0].([]*IamTrustedProfileLink)[vs[1].(int)]
-	}).(IamTrustedProfileLinkOutput)
-}
-
-type IamTrustedProfileLinkMapOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileLinkMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileLink)(nil)).Elem()
-}
-
-func (o IamTrustedProfileLinkMapOutput) ToIamTrustedProfileLinkMapOutput() IamTrustedProfileLinkMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileLinkMapOutput) ToIamTrustedProfileLinkMapOutputWithContext(ctx context.Context) IamTrustedProfileLinkMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileLinkMapOutput) MapIndex(k pulumi.StringInput) IamTrustedProfileLinkOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamTrustedProfileLink {
-		return vs[0].(map[string]*IamTrustedProfileLink)[vs[1].(string)]
-	}).(IamTrustedProfileLinkOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileLinkInput)(nil)).Elem(), &IamTrustedProfileLink{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileLinkArrayInput)(nil)).Elem(), IamTrustedProfileLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileLinkMapInput)(nil)).Elem(), IamTrustedProfileLinkMap{})
 	pulumi.RegisterOutputType(IamTrustedProfileLinkOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileLinkArrayOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileLinkMapOutput{})
 }

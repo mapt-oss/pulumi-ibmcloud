@@ -184,56 +184,6 @@ func (i *IsClusterNetworkSubnet) ToIsClusterNetworkSubnetOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkSubnetOutput)
 }
 
-// IsClusterNetworkSubnetArrayInput is an input type that accepts IsClusterNetworkSubnetArray and IsClusterNetworkSubnetArrayOutput values.
-// You can construct a concrete instance of `IsClusterNetworkSubnetArrayInput` via:
-//
-//	IsClusterNetworkSubnetArray{ IsClusterNetworkSubnetArgs{...} }
-type IsClusterNetworkSubnetArrayInput interface {
-	pulumi.Input
-
-	ToIsClusterNetworkSubnetArrayOutput() IsClusterNetworkSubnetArrayOutput
-	ToIsClusterNetworkSubnetArrayOutputWithContext(context.Context) IsClusterNetworkSubnetArrayOutput
-}
-
-type IsClusterNetworkSubnetArray []IsClusterNetworkSubnetInput
-
-func (IsClusterNetworkSubnetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsClusterNetworkSubnet)(nil)).Elem()
-}
-
-func (i IsClusterNetworkSubnetArray) ToIsClusterNetworkSubnetArrayOutput() IsClusterNetworkSubnetArrayOutput {
-	return i.ToIsClusterNetworkSubnetArrayOutputWithContext(context.Background())
-}
-
-func (i IsClusterNetworkSubnetArray) ToIsClusterNetworkSubnetArrayOutputWithContext(ctx context.Context) IsClusterNetworkSubnetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkSubnetArrayOutput)
-}
-
-// IsClusterNetworkSubnetMapInput is an input type that accepts IsClusterNetworkSubnetMap and IsClusterNetworkSubnetMapOutput values.
-// You can construct a concrete instance of `IsClusterNetworkSubnetMapInput` via:
-//
-//	IsClusterNetworkSubnetMap{ "key": IsClusterNetworkSubnetArgs{...} }
-type IsClusterNetworkSubnetMapInput interface {
-	pulumi.Input
-
-	ToIsClusterNetworkSubnetMapOutput() IsClusterNetworkSubnetMapOutput
-	ToIsClusterNetworkSubnetMapOutputWithContext(context.Context) IsClusterNetworkSubnetMapOutput
-}
-
-type IsClusterNetworkSubnetMap map[string]IsClusterNetworkSubnetInput
-
-func (IsClusterNetworkSubnetMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsClusterNetworkSubnet)(nil)).Elem()
-}
-
-func (i IsClusterNetworkSubnetMap) ToIsClusterNetworkSubnetMapOutput() IsClusterNetworkSubnetMapOutput {
-	return i.ToIsClusterNetworkSubnetMapOutputWithContext(context.Background())
-}
-
-func (i IsClusterNetworkSubnetMap) ToIsClusterNetworkSubnetMapOutputWithContext(ctx context.Context) IsClusterNetworkSubnetMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkSubnetMapOutput)
-}
-
 type IsClusterNetworkSubnetOutput struct{ *pulumi.OutputState }
 
 func (IsClusterNetworkSubnetOutput) ElementType() reflect.Type {
@@ -314,51 +264,7 @@ func (o IsClusterNetworkSubnetOutput) TotalIpv4AddressCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *IsClusterNetworkSubnet) pulumi.IntOutput { return v.TotalIpv4AddressCount }).(pulumi.IntOutput)
 }
 
-type IsClusterNetworkSubnetArrayOutput struct{ *pulumi.OutputState }
-
-func (IsClusterNetworkSubnetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsClusterNetworkSubnet)(nil)).Elem()
-}
-
-func (o IsClusterNetworkSubnetArrayOutput) ToIsClusterNetworkSubnetArrayOutput() IsClusterNetworkSubnetArrayOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetArrayOutput) ToIsClusterNetworkSubnetArrayOutputWithContext(ctx context.Context) IsClusterNetworkSubnetArrayOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetArrayOutput) Index(i pulumi.IntInput) IsClusterNetworkSubnetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsClusterNetworkSubnet {
-		return vs[0].([]*IsClusterNetworkSubnet)[vs[1].(int)]
-	}).(IsClusterNetworkSubnetOutput)
-}
-
-type IsClusterNetworkSubnetMapOutput struct{ *pulumi.OutputState }
-
-func (IsClusterNetworkSubnetMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsClusterNetworkSubnet)(nil)).Elem()
-}
-
-func (o IsClusterNetworkSubnetMapOutput) ToIsClusterNetworkSubnetMapOutput() IsClusterNetworkSubnetMapOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetMapOutput) ToIsClusterNetworkSubnetMapOutputWithContext(ctx context.Context) IsClusterNetworkSubnetMapOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetMapOutput) MapIndex(k pulumi.StringInput) IsClusterNetworkSubnetOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsClusterNetworkSubnet {
-		return vs[0].(map[string]*IsClusterNetworkSubnet)[vs[1].(string)]
-	}).(IsClusterNetworkSubnetOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkSubnetInput)(nil)).Elem(), &IsClusterNetworkSubnet{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkSubnetArrayInput)(nil)).Elem(), IsClusterNetworkSubnetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkSubnetMapInput)(nil)).Elem(), IsClusterNetworkSubnetMap{})
 	pulumi.RegisterOutputType(IsClusterNetworkSubnetOutput{})
-	pulumi.RegisterOutputType(IsClusterNetworkSubnetArrayOutput{})
-	pulumi.RegisterOutputType(IsClusterNetworkSubnetMapOutput{})
 }

@@ -216,56 +216,6 @@ func (i *DnsGlbPool) ToDnsGlbPoolOutputWithContext(ctx context.Context) DnsGlbPo
 	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbPoolOutput)
 }
 
-// DnsGlbPoolArrayInput is an input type that accepts DnsGlbPoolArray and DnsGlbPoolArrayOutput values.
-// You can construct a concrete instance of `DnsGlbPoolArrayInput` via:
-//
-//	DnsGlbPoolArray{ DnsGlbPoolArgs{...} }
-type DnsGlbPoolArrayInput interface {
-	pulumi.Input
-
-	ToDnsGlbPoolArrayOutput() DnsGlbPoolArrayOutput
-	ToDnsGlbPoolArrayOutputWithContext(context.Context) DnsGlbPoolArrayOutput
-}
-
-type DnsGlbPoolArray []DnsGlbPoolInput
-
-func (DnsGlbPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsGlbPool)(nil)).Elem()
-}
-
-func (i DnsGlbPoolArray) ToDnsGlbPoolArrayOutput() DnsGlbPoolArrayOutput {
-	return i.ToDnsGlbPoolArrayOutputWithContext(context.Background())
-}
-
-func (i DnsGlbPoolArray) ToDnsGlbPoolArrayOutputWithContext(ctx context.Context) DnsGlbPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbPoolArrayOutput)
-}
-
-// DnsGlbPoolMapInput is an input type that accepts DnsGlbPoolMap and DnsGlbPoolMapOutput values.
-// You can construct a concrete instance of `DnsGlbPoolMapInput` via:
-//
-//	DnsGlbPoolMap{ "key": DnsGlbPoolArgs{...} }
-type DnsGlbPoolMapInput interface {
-	pulumi.Input
-
-	ToDnsGlbPoolMapOutput() DnsGlbPoolMapOutput
-	ToDnsGlbPoolMapOutputWithContext(context.Context) DnsGlbPoolMapOutput
-}
-
-type DnsGlbPoolMap map[string]DnsGlbPoolInput
-
-func (DnsGlbPoolMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsGlbPool)(nil)).Elem()
-}
-
-func (i DnsGlbPoolMap) ToDnsGlbPoolMapOutput() DnsGlbPoolMapOutput {
-	return i.ToDnsGlbPoolMapOutputWithContext(context.Background())
-}
-
-func (i DnsGlbPoolMap) ToDnsGlbPoolMapOutputWithContext(ctx context.Context) DnsGlbPoolMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbPoolMapOutput)
-}
-
 type DnsGlbPoolOutput struct{ *pulumi.OutputState }
 
 func (DnsGlbPoolOutput) ElementType() reflect.Type {
@@ -350,51 +300,7 @@ func (o DnsGlbPoolOutput) PoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DnsGlbPool) pulumi.StringOutput { return v.PoolId }).(pulumi.StringOutput)
 }
 
-type DnsGlbPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsGlbPool)(nil)).Elem()
-}
-
-func (o DnsGlbPoolArrayOutput) ToDnsGlbPoolArrayOutput() DnsGlbPoolArrayOutput {
-	return o
-}
-
-func (o DnsGlbPoolArrayOutput) ToDnsGlbPoolArrayOutputWithContext(ctx context.Context) DnsGlbPoolArrayOutput {
-	return o
-}
-
-func (o DnsGlbPoolArrayOutput) Index(i pulumi.IntInput) DnsGlbPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsGlbPool {
-		return vs[0].([]*DnsGlbPool)[vs[1].(int)]
-	}).(DnsGlbPoolOutput)
-}
-
-type DnsGlbPoolMapOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbPoolMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsGlbPool)(nil)).Elem()
-}
-
-func (o DnsGlbPoolMapOutput) ToDnsGlbPoolMapOutput() DnsGlbPoolMapOutput {
-	return o
-}
-
-func (o DnsGlbPoolMapOutput) ToDnsGlbPoolMapOutputWithContext(ctx context.Context) DnsGlbPoolMapOutput {
-	return o
-}
-
-func (o DnsGlbPoolMapOutput) MapIndex(k pulumi.StringInput) DnsGlbPoolOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsGlbPool {
-		return vs[0].(map[string]*DnsGlbPool)[vs[1].(string)]
-	}).(DnsGlbPoolOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbPoolInput)(nil)).Elem(), &DnsGlbPool{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbPoolArrayInput)(nil)).Elem(), DnsGlbPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbPoolMapInput)(nil)).Elem(), DnsGlbPoolMap{})
 	pulumi.RegisterOutputType(DnsGlbPoolOutput{})
-	pulumi.RegisterOutputType(DnsGlbPoolArrayOutput{})
-	pulumi.RegisterOutputType(DnsGlbPoolMapOutput{})
 }

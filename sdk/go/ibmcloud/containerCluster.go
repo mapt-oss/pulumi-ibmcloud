@@ -478,56 +478,6 @@ func (i *ContainerCluster) ToContainerClusterOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterOutput)
 }
 
-// ContainerClusterArrayInput is an input type that accepts ContainerClusterArray and ContainerClusterArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterArrayInput` via:
-//
-//	ContainerClusterArray{ ContainerClusterArgs{...} }
-type ContainerClusterArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterArrayOutput() ContainerClusterArrayOutput
-	ToContainerClusterArrayOutputWithContext(context.Context) ContainerClusterArrayOutput
-}
-
-type ContainerClusterArray []ContainerClusterInput
-
-func (ContainerClusterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerCluster)(nil)).Elem()
-}
-
-func (i ContainerClusterArray) ToContainerClusterArrayOutput() ContainerClusterArrayOutput {
-	return i.ToContainerClusterArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterArray) ToContainerClusterArrayOutputWithContext(ctx context.Context) ContainerClusterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterArrayOutput)
-}
-
-// ContainerClusterMapInput is an input type that accepts ContainerClusterMap and ContainerClusterMapOutput values.
-// You can construct a concrete instance of `ContainerClusterMapInput` via:
-//
-//	ContainerClusterMap{ "key": ContainerClusterArgs{...} }
-type ContainerClusterMapInput interface {
-	pulumi.Input
-
-	ToContainerClusterMapOutput() ContainerClusterMapOutput
-	ToContainerClusterMapOutputWithContext(context.Context) ContainerClusterMapOutput
-}
-
-type ContainerClusterMap map[string]ContainerClusterInput
-
-func (ContainerClusterMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerCluster)(nil)).Elem()
-}
-
-func (i ContainerClusterMap) ToContainerClusterMapOutput() ContainerClusterMapOutput {
-	return i.ToContainerClusterMapOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterMap) ToContainerClusterMapOutputWithContext(ctx context.Context) ContainerClusterMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterMapOutput)
-}
-
 type ContainerClusterOutput struct{ *pulumi.OutputState }
 
 func (ContainerClusterOutput) ElementType() reflect.Type {
@@ -764,51 +714,7 @@ func (o ContainerClusterOutput) WorkersInfos() ContainerClusterWorkersInfoArrayO
 	return o.ApplyT(func(v *ContainerCluster) ContainerClusterWorkersInfoArrayOutput { return v.WorkersInfos }).(ContainerClusterWorkersInfoArrayOutput)
 }
 
-type ContainerClusterArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerCluster)(nil)).Elem()
-}
-
-func (o ContainerClusterArrayOutput) ToContainerClusterArrayOutput() ContainerClusterArrayOutput {
-	return o
-}
-
-func (o ContainerClusterArrayOutput) ToContainerClusterArrayOutputWithContext(ctx context.Context) ContainerClusterArrayOutput {
-	return o
-}
-
-func (o ContainerClusterArrayOutput) Index(i pulumi.IntInput) ContainerClusterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerCluster {
-		return vs[0].([]*ContainerCluster)[vs[1].(int)]
-	}).(ContainerClusterOutput)
-}
-
-type ContainerClusterMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerCluster)(nil)).Elem()
-}
-
-func (o ContainerClusterMapOutput) ToContainerClusterMapOutput() ContainerClusterMapOutput {
-	return o
-}
-
-func (o ContainerClusterMapOutput) ToContainerClusterMapOutputWithContext(ctx context.Context) ContainerClusterMapOutput {
-	return o
-}
-
-func (o ContainerClusterMapOutput) MapIndex(k pulumi.StringInput) ContainerClusterOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerCluster {
-		return vs[0].(map[string]*ContainerCluster)[vs[1].(string)]
-	}).(ContainerClusterOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterInput)(nil)).Elem(), &ContainerCluster{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterArrayInput)(nil)).Elem(), ContainerClusterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterMapInput)(nil)).Elem(), ContainerClusterMap{})
 	pulumi.RegisterOutputType(ContainerClusterOutput{})
-	pulumi.RegisterOutputType(ContainerClusterArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterMapOutput{})
 }

@@ -119,56 +119,6 @@ func (i *ComputeProvisioningHook) ToComputeProvisioningHookOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeProvisioningHookOutput)
 }
 
-// ComputeProvisioningHookArrayInput is an input type that accepts ComputeProvisioningHookArray and ComputeProvisioningHookArrayOutput values.
-// You can construct a concrete instance of `ComputeProvisioningHookArrayInput` via:
-//
-//	ComputeProvisioningHookArray{ ComputeProvisioningHookArgs{...} }
-type ComputeProvisioningHookArrayInput interface {
-	pulumi.Input
-
-	ToComputeProvisioningHookArrayOutput() ComputeProvisioningHookArrayOutput
-	ToComputeProvisioningHookArrayOutputWithContext(context.Context) ComputeProvisioningHookArrayOutput
-}
-
-type ComputeProvisioningHookArray []ComputeProvisioningHookInput
-
-func (ComputeProvisioningHookArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeProvisioningHook)(nil)).Elem()
-}
-
-func (i ComputeProvisioningHookArray) ToComputeProvisioningHookArrayOutput() ComputeProvisioningHookArrayOutput {
-	return i.ToComputeProvisioningHookArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeProvisioningHookArray) ToComputeProvisioningHookArrayOutputWithContext(ctx context.Context) ComputeProvisioningHookArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeProvisioningHookArrayOutput)
-}
-
-// ComputeProvisioningHookMapInput is an input type that accepts ComputeProvisioningHookMap and ComputeProvisioningHookMapOutput values.
-// You can construct a concrete instance of `ComputeProvisioningHookMapInput` via:
-//
-//	ComputeProvisioningHookMap{ "key": ComputeProvisioningHookArgs{...} }
-type ComputeProvisioningHookMapInput interface {
-	pulumi.Input
-
-	ToComputeProvisioningHookMapOutput() ComputeProvisioningHookMapOutput
-	ToComputeProvisioningHookMapOutputWithContext(context.Context) ComputeProvisioningHookMapOutput
-}
-
-type ComputeProvisioningHookMap map[string]ComputeProvisioningHookInput
-
-func (ComputeProvisioningHookMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeProvisioningHook)(nil)).Elem()
-}
-
-func (i ComputeProvisioningHookMap) ToComputeProvisioningHookMapOutput() ComputeProvisioningHookMapOutput {
-	return i.ToComputeProvisioningHookMapOutputWithContext(context.Background())
-}
-
-func (i ComputeProvisioningHookMap) ToComputeProvisioningHookMapOutputWithContext(ctx context.Context) ComputeProvisioningHookMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeProvisioningHookMapOutput)
-}
-
 type ComputeProvisioningHookOutput struct{ *pulumi.OutputState }
 
 func (ComputeProvisioningHookOutput) ElementType() reflect.Type {
@@ -198,51 +148,7 @@ func (o ComputeProvisioningHookOutput) Uri() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeProvisioningHook) pulumi.StringOutput { return v.Uri }).(pulumi.StringOutput)
 }
 
-type ComputeProvisioningHookArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeProvisioningHookArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeProvisioningHook)(nil)).Elem()
-}
-
-func (o ComputeProvisioningHookArrayOutput) ToComputeProvisioningHookArrayOutput() ComputeProvisioningHookArrayOutput {
-	return o
-}
-
-func (o ComputeProvisioningHookArrayOutput) ToComputeProvisioningHookArrayOutputWithContext(ctx context.Context) ComputeProvisioningHookArrayOutput {
-	return o
-}
-
-func (o ComputeProvisioningHookArrayOutput) Index(i pulumi.IntInput) ComputeProvisioningHookOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeProvisioningHook {
-		return vs[0].([]*ComputeProvisioningHook)[vs[1].(int)]
-	}).(ComputeProvisioningHookOutput)
-}
-
-type ComputeProvisioningHookMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeProvisioningHookMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeProvisioningHook)(nil)).Elem()
-}
-
-func (o ComputeProvisioningHookMapOutput) ToComputeProvisioningHookMapOutput() ComputeProvisioningHookMapOutput {
-	return o
-}
-
-func (o ComputeProvisioningHookMapOutput) ToComputeProvisioningHookMapOutputWithContext(ctx context.Context) ComputeProvisioningHookMapOutput {
-	return o
-}
-
-func (o ComputeProvisioningHookMapOutput) MapIndex(k pulumi.StringInput) ComputeProvisioningHookOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeProvisioningHook {
-		return vs[0].(map[string]*ComputeProvisioningHook)[vs[1].(string)]
-	}).(ComputeProvisioningHookOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeProvisioningHookInput)(nil)).Elem(), &ComputeProvisioningHook{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeProvisioningHookArrayInput)(nil)).Elem(), ComputeProvisioningHookArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeProvisioningHookMapInput)(nil)).Elem(), ComputeProvisioningHookMap{})
 	pulumi.RegisterOutputType(ComputeProvisioningHookOutput{})
-	pulumi.RegisterOutputType(ComputeProvisioningHookArrayOutput{})
-	pulumi.RegisterOutputType(ComputeProvisioningHookMapOutput{})
 }

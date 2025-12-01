@@ -412,56 +412,6 @@ func (i *ComputeVmInstance) ToComputeVmInstanceOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeVmInstanceOutput)
 }
 
-// ComputeVmInstanceArrayInput is an input type that accepts ComputeVmInstanceArray and ComputeVmInstanceArrayOutput values.
-// You can construct a concrete instance of `ComputeVmInstanceArrayInput` via:
-//
-//	ComputeVmInstanceArray{ ComputeVmInstanceArgs{...} }
-type ComputeVmInstanceArrayInput interface {
-	pulumi.Input
-
-	ToComputeVmInstanceArrayOutput() ComputeVmInstanceArrayOutput
-	ToComputeVmInstanceArrayOutputWithContext(context.Context) ComputeVmInstanceArrayOutput
-}
-
-type ComputeVmInstanceArray []ComputeVmInstanceInput
-
-func (ComputeVmInstanceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeVmInstance)(nil)).Elem()
-}
-
-func (i ComputeVmInstanceArray) ToComputeVmInstanceArrayOutput() ComputeVmInstanceArrayOutput {
-	return i.ToComputeVmInstanceArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeVmInstanceArray) ToComputeVmInstanceArrayOutputWithContext(ctx context.Context) ComputeVmInstanceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeVmInstanceArrayOutput)
-}
-
-// ComputeVmInstanceMapInput is an input type that accepts ComputeVmInstanceMap and ComputeVmInstanceMapOutput values.
-// You can construct a concrete instance of `ComputeVmInstanceMapInput` via:
-//
-//	ComputeVmInstanceMap{ "key": ComputeVmInstanceArgs{...} }
-type ComputeVmInstanceMapInput interface {
-	pulumi.Input
-
-	ToComputeVmInstanceMapOutput() ComputeVmInstanceMapOutput
-	ToComputeVmInstanceMapOutputWithContext(context.Context) ComputeVmInstanceMapOutput
-}
-
-type ComputeVmInstanceMap map[string]ComputeVmInstanceInput
-
-func (ComputeVmInstanceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeVmInstance)(nil)).Elem()
-}
-
-func (i ComputeVmInstanceMap) ToComputeVmInstanceMapOutput() ComputeVmInstanceMapOutput {
-	return i.ToComputeVmInstanceMapOutputWithContext(context.Background())
-}
-
-func (i ComputeVmInstanceMap) ToComputeVmInstanceMapOutputWithContext(ctx context.Context) ComputeVmInstanceMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeVmInstanceMapOutput)
-}
-
 type ComputeVmInstanceOutput struct{ *pulumi.OutputState }
 
 func (ComputeVmInstanceOutput) ElementType() reflect.Type {
@@ -732,51 +682,7 @@ func (o ComputeVmInstanceOutput) WaitTimeMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ComputeVmInstance) pulumi.IntPtrOutput { return v.WaitTimeMinutes }).(pulumi.IntPtrOutput)
 }
 
-type ComputeVmInstanceArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeVmInstanceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeVmInstance)(nil)).Elem()
-}
-
-func (o ComputeVmInstanceArrayOutput) ToComputeVmInstanceArrayOutput() ComputeVmInstanceArrayOutput {
-	return o
-}
-
-func (o ComputeVmInstanceArrayOutput) ToComputeVmInstanceArrayOutputWithContext(ctx context.Context) ComputeVmInstanceArrayOutput {
-	return o
-}
-
-func (o ComputeVmInstanceArrayOutput) Index(i pulumi.IntInput) ComputeVmInstanceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeVmInstance {
-		return vs[0].([]*ComputeVmInstance)[vs[1].(int)]
-	}).(ComputeVmInstanceOutput)
-}
-
-type ComputeVmInstanceMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeVmInstanceMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeVmInstance)(nil)).Elem()
-}
-
-func (o ComputeVmInstanceMapOutput) ToComputeVmInstanceMapOutput() ComputeVmInstanceMapOutput {
-	return o
-}
-
-func (o ComputeVmInstanceMapOutput) ToComputeVmInstanceMapOutputWithContext(ctx context.Context) ComputeVmInstanceMapOutput {
-	return o
-}
-
-func (o ComputeVmInstanceMapOutput) MapIndex(k pulumi.StringInput) ComputeVmInstanceOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeVmInstance {
-		return vs[0].(map[string]*ComputeVmInstance)[vs[1].(string)]
-	}).(ComputeVmInstanceOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeVmInstanceInput)(nil)).Elem(), &ComputeVmInstance{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeVmInstanceArrayInput)(nil)).Elem(), ComputeVmInstanceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeVmInstanceMapInput)(nil)).Elem(), ComputeVmInstanceMap{})
 	pulumi.RegisterOutputType(ComputeVmInstanceOutput{})
-	pulumi.RegisterOutputType(ComputeVmInstanceArrayOutput{})
-	pulumi.RegisterOutputType(ComputeVmInstanceMapOutput{})
 }

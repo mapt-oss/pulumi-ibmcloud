@@ -187,56 +187,6 @@ func (i *IsReservationActivate) ToIsReservationActivateOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(IsReservationActivateOutput)
 }
 
-// IsReservationActivateArrayInput is an input type that accepts IsReservationActivateArray and IsReservationActivateArrayOutput values.
-// You can construct a concrete instance of `IsReservationActivateArrayInput` via:
-//
-//	IsReservationActivateArray{ IsReservationActivateArgs{...} }
-type IsReservationActivateArrayInput interface {
-	pulumi.Input
-
-	ToIsReservationActivateArrayOutput() IsReservationActivateArrayOutput
-	ToIsReservationActivateArrayOutputWithContext(context.Context) IsReservationActivateArrayOutput
-}
-
-type IsReservationActivateArray []IsReservationActivateInput
-
-func (IsReservationActivateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsReservationActivate)(nil)).Elem()
-}
-
-func (i IsReservationActivateArray) ToIsReservationActivateArrayOutput() IsReservationActivateArrayOutput {
-	return i.ToIsReservationActivateArrayOutputWithContext(context.Background())
-}
-
-func (i IsReservationActivateArray) ToIsReservationActivateArrayOutputWithContext(ctx context.Context) IsReservationActivateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsReservationActivateArrayOutput)
-}
-
-// IsReservationActivateMapInput is an input type that accepts IsReservationActivateMap and IsReservationActivateMapOutput values.
-// You can construct a concrete instance of `IsReservationActivateMapInput` via:
-//
-//	IsReservationActivateMap{ "key": IsReservationActivateArgs{...} }
-type IsReservationActivateMapInput interface {
-	pulumi.Input
-
-	ToIsReservationActivateMapOutput() IsReservationActivateMapOutput
-	ToIsReservationActivateMapOutputWithContext(context.Context) IsReservationActivateMapOutput
-}
-
-type IsReservationActivateMap map[string]IsReservationActivateInput
-
-func (IsReservationActivateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsReservationActivate)(nil)).Elem()
-}
-
-func (i IsReservationActivateMap) ToIsReservationActivateMapOutput() IsReservationActivateMapOutput {
-	return i.ToIsReservationActivateMapOutputWithContext(context.Background())
-}
-
-func (i IsReservationActivateMap) ToIsReservationActivateMapOutputWithContext(ctx context.Context) IsReservationActivateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsReservationActivateMapOutput)
-}
-
 type IsReservationActivateOutput struct{ *pulumi.OutputState }
 
 func (IsReservationActivateOutput) ElementType() reflect.Type {
@@ -326,51 +276,7 @@ func (o IsReservationActivateOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsReservationActivate) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsReservationActivateArrayOutput struct{ *pulumi.OutputState }
-
-func (IsReservationActivateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsReservationActivate)(nil)).Elem()
-}
-
-func (o IsReservationActivateArrayOutput) ToIsReservationActivateArrayOutput() IsReservationActivateArrayOutput {
-	return o
-}
-
-func (o IsReservationActivateArrayOutput) ToIsReservationActivateArrayOutputWithContext(ctx context.Context) IsReservationActivateArrayOutput {
-	return o
-}
-
-func (o IsReservationActivateArrayOutput) Index(i pulumi.IntInput) IsReservationActivateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsReservationActivate {
-		return vs[0].([]*IsReservationActivate)[vs[1].(int)]
-	}).(IsReservationActivateOutput)
-}
-
-type IsReservationActivateMapOutput struct{ *pulumi.OutputState }
-
-func (IsReservationActivateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsReservationActivate)(nil)).Elem()
-}
-
-func (o IsReservationActivateMapOutput) ToIsReservationActivateMapOutput() IsReservationActivateMapOutput {
-	return o
-}
-
-func (o IsReservationActivateMapOutput) ToIsReservationActivateMapOutputWithContext(ctx context.Context) IsReservationActivateMapOutput {
-	return o
-}
-
-func (o IsReservationActivateMapOutput) MapIndex(k pulumi.StringInput) IsReservationActivateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsReservationActivate {
-		return vs[0].(map[string]*IsReservationActivate)[vs[1].(string)]
-	}).(IsReservationActivateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsReservationActivateInput)(nil)).Elem(), &IsReservationActivate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsReservationActivateArrayInput)(nil)).Elem(), IsReservationActivateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsReservationActivateMapInput)(nil)).Elem(), IsReservationActivateMap{})
 	pulumi.RegisterOutputType(IsReservationActivateOutput{})
-	pulumi.RegisterOutputType(IsReservationActivateArrayOutput{})
-	pulumi.RegisterOutputType(IsReservationActivateMapOutput{})
 }

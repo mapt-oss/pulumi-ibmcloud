@@ -138,56 +138,6 @@ func (i *ComputeSshKey) ToComputeSshKeyOutputWithContext(ctx context.Context) Co
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeSshKeyOutput)
 }
 
-// ComputeSshKeyArrayInput is an input type that accepts ComputeSshKeyArray and ComputeSshKeyArrayOutput values.
-// You can construct a concrete instance of `ComputeSshKeyArrayInput` via:
-//
-//	ComputeSshKeyArray{ ComputeSshKeyArgs{...} }
-type ComputeSshKeyArrayInput interface {
-	pulumi.Input
-
-	ToComputeSshKeyArrayOutput() ComputeSshKeyArrayOutput
-	ToComputeSshKeyArrayOutputWithContext(context.Context) ComputeSshKeyArrayOutput
-}
-
-type ComputeSshKeyArray []ComputeSshKeyInput
-
-func (ComputeSshKeyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeSshKey)(nil)).Elem()
-}
-
-func (i ComputeSshKeyArray) ToComputeSshKeyArrayOutput() ComputeSshKeyArrayOutput {
-	return i.ToComputeSshKeyArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeSshKeyArray) ToComputeSshKeyArrayOutputWithContext(ctx context.Context) ComputeSshKeyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeSshKeyArrayOutput)
-}
-
-// ComputeSshKeyMapInput is an input type that accepts ComputeSshKeyMap and ComputeSshKeyMapOutput values.
-// You can construct a concrete instance of `ComputeSshKeyMapInput` via:
-//
-//	ComputeSshKeyMap{ "key": ComputeSshKeyArgs{...} }
-type ComputeSshKeyMapInput interface {
-	pulumi.Input
-
-	ToComputeSshKeyMapOutput() ComputeSshKeyMapOutput
-	ToComputeSshKeyMapOutputWithContext(context.Context) ComputeSshKeyMapOutput
-}
-
-type ComputeSshKeyMap map[string]ComputeSshKeyInput
-
-func (ComputeSshKeyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeSshKey)(nil)).Elem()
-}
-
-func (i ComputeSshKeyMap) ToComputeSshKeyMapOutput() ComputeSshKeyMapOutput {
-	return i.ToComputeSshKeyMapOutputWithContext(context.Background())
-}
-
-func (i ComputeSshKeyMap) ToComputeSshKeyMapOutputWithContext(ctx context.Context) ComputeSshKeyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeSshKeyMapOutput)
-}
-
 type ComputeSshKeyOutput struct{ *pulumi.OutputState }
 
 func (ComputeSshKeyOutput) ElementType() reflect.Type {
@@ -227,51 +177,7 @@ func (o ComputeSshKeyOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ComputeSshKey) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type ComputeSshKeyArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeSshKeyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeSshKey)(nil)).Elem()
-}
-
-func (o ComputeSshKeyArrayOutput) ToComputeSshKeyArrayOutput() ComputeSshKeyArrayOutput {
-	return o
-}
-
-func (o ComputeSshKeyArrayOutput) ToComputeSshKeyArrayOutputWithContext(ctx context.Context) ComputeSshKeyArrayOutput {
-	return o
-}
-
-func (o ComputeSshKeyArrayOutput) Index(i pulumi.IntInput) ComputeSshKeyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeSshKey {
-		return vs[0].([]*ComputeSshKey)[vs[1].(int)]
-	}).(ComputeSshKeyOutput)
-}
-
-type ComputeSshKeyMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeSshKeyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeSshKey)(nil)).Elem()
-}
-
-func (o ComputeSshKeyMapOutput) ToComputeSshKeyMapOutput() ComputeSshKeyMapOutput {
-	return o
-}
-
-func (o ComputeSshKeyMapOutput) ToComputeSshKeyMapOutputWithContext(ctx context.Context) ComputeSshKeyMapOutput {
-	return o
-}
-
-func (o ComputeSshKeyMapOutput) MapIndex(k pulumi.StringInput) ComputeSshKeyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeSshKey {
-		return vs[0].(map[string]*ComputeSshKey)[vs[1].(string)]
-	}).(ComputeSshKeyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeSshKeyInput)(nil)).Elem(), &ComputeSshKey{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeSshKeyArrayInput)(nil)).Elem(), ComputeSshKeyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeSshKeyMapInput)(nil)).Elem(), ComputeSshKeyMap{})
 	pulumi.RegisterOutputType(ComputeSshKeyOutput{})
-	pulumi.RegisterOutputType(ComputeSshKeyArrayOutput{})
-	pulumi.RegisterOutputType(ComputeSshKeyMapOutput{})
 }

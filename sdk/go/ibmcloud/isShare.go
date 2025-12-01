@@ -409,56 +409,6 @@ func (i *IsShare) ToIsShareOutputWithContext(ctx context.Context) IsShareOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(IsShareOutput)
 }
 
-// IsShareArrayInput is an input type that accepts IsShareArray and IsShareArrayOutput values.
-// You can construct a concrete instance of `IsShareArrayInput` via:
-//
-//	IsShareArray{ IsShareArgs{...} }
-type IsShareArrayInput interface {
-	pulumi.Input
-
-	ToIsShareArrayOutput() IsShareArrayOutput
-	ToIsShareArrayOutputWithContext(context.Context) IsShareArrayOutput
-}
-
-type IsShareArray []IsShareInput
-
-func (IsShareArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShare)(nil)).Elem()
-}
-
-func (i IsShareArray) ToIsShareArrayOutput() IsShareArrayOutput {
-	return i.ToIsShareArrayOutputWithContext(context.Background())
-}
-
-func (i IsShareArray) ToIsShareArrayOutputWithContext(ctx context.Context) IsShareArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareArrayOutput)
-}
-
-// IsShareMapInput is an input type that accepts IsShareMap and IsShareMapOutput values.
-// You can construct a concrete instance of `IsShareMapInput` via:
-//
-//	IsShareMap{ "key": IsShareArgs{...} }
-type IsShareMapInput interface {
-	pulumi.Input
-
-	ToIsShareMapOutput() IsShareMapOutput
-	ToIsShareMapOutputWithContext(context.Context) IsShareMapOutput
-}
-
-type IsShareMap map[string]IsShareInput
-
-func (IsShareMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShare)(nil)).Elem()
-}
-
-func (i IsShareMap) ToIsShareMapOutput() IsShareMapOutput {
-	return i.ToIsShareMapOutputWithContext(context.Background())
-}
-
-func (i IsShareMap) ToIsShareMapOutputWithContext(ctx context.Context) IsShareMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareMapOutput)
-}
-
 type IsShareOutput struct{ *pulumi.OutputState }
 
 func (IsShareOutput) ElementType() reflect.Type {
@@ -673,51 +623,7 @@ func (o IsShareOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsShare) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsShareArrayOutput struct{ *pulumi.OutputState }
-
-func (IsShareArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShare)(nil)).Elem()
-}
-
-func (o IsShareArrayOutput) ToIsShareArrayOutput() IsShareArrayOutput {
-	return o
-}
-
-func (o IsShareArrayOutput) ToIsShareArrayOutputWithContext(ctx context.Context) IsShareArrayOutput {
-	return o
-}
-
-func (o IsShareArrayOutput) Index(i pulumi.IntInput) IsShareOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsShare {
-		return vs[0].([]*IsShare)[vs[1].(int)]
-	}).(IsShareOutput)
-}
-
-type IsShareMapOutput struct{ *pulumi.OutputState }
-
-func (IsShareMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShare)(nil)).Elem()
-}
-
-func (o IsShareMapOutput) ToIsShareMapOutput() IsShareMapOutput {
-	return o
-}
-
-func (o IsShareMapOutput) ToIsShareMapOutputWithContext(ctx context.Context) IsShareMapOutput {
-	return o
-}
-
-func (o IsShareMapOutput) MapIndex(k pulumi.StringInput) IsShareOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsShare {
-		return vs[0].(map[string]*IsShare)[vs[1].(string)]
-	}).(IsShareOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsShareInput)(nil)).Elem(), &IsShare{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareArrayInput)(nil)).Elem(), IsShareArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareMapInput)(nil)).Elem(), IsShareMap{})
 	pulumi.RegisterOutputType(IsShareOutput{})
-	pulumi.RegisterOutputType(IsShareArrayOutput{})
-	pulumi.RegisterOutputType(IsShareMapOutput{})
 }

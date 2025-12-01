@@ -161,56 +161,6 @@ func (i *IsInstanceNetworkAttachment) ToIsInstanceNetworkAttachmentOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkAttachmentOutput)
 }
 
-// IsInstanceNetworkAttachmentArrayInput is an input type that accepts IsInstanceNetworkAttachmentArray and IsInstanceNetworkAttachmentArrayOutput values.
-// You can construct a concrete instance of `IsInstanceNetworkAttachmentArrayInput` via:
-//
-//	IsInstanceNetworkAttachmentArray{ IsInstanceNetworkAttachmentArgs{...} }
-type IsInstanceNetworkAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceNetworkAttachmentArrayOutput() IsInstanceNetworkAttachmentArrayOutput
-	ToIsInstanceNetworkAttachmentArrayOutputWithContext(context.Context) IsInstanceNetworkAttachmentArrayOutput
-}
-
-type IsInstanceNetworkAttachmentArray []IsInstanceNetworkAttachmentInput
-
-func (IsInstanceNetworkAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceNetworkAttachment)(nil)).Elem()
-}
-
-func (i IsInstanceNetworkAttachmentArray) ToIsInstanceNetworkAttachmentArrayOutput() IsInstanceNetworkAttachmentArrayOutput {
-	return i.ToIsInstanceNetworkAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceNetworkAttachmentArray) ToIsInstanceNetworkAttachmentArrayOutputWithContext(ctx context.Context) IsInstanceNetworkAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkAttachmentArrayOutput)
-}
-
-// IsInstanceNetworkAttachmentMapInput is an input type that accepts IsInstanceNetworkAttachmentMap and IsInstanceNetworkAttachmentMapOutput values.
-// You can construct a concrete instance of `IsInstanceNetworkAttachmentMapInput` via:
-//
-//	IsInstanceNetworkAttachmentMap{ "key": IsInstanceNetworkAttachmentArgs{...} }
-type IsInstanceNetworkAttachmentMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceNetworkAttachmentMapOutput() IsInstanceNetworkAttachmentMapOutput
-	ToIsInstanceNetworkAttachmentMapOutputWithContext(context.Context) IsInstanceNetworkAttachmentMapOutput
-}
-
-type IsInstanceNetworkAttachmentMap map[string]IsInstanceNetworkAttachmentInput
-
-func (IsInstanceNetworkAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceNetworkAttachment)(nil)).Elem()
-}
-
-func (i IsInstanceNetworkAttachmentMap) ToIsInstanceNetworkAttachmentMapOutput() IsInstanceNetworkAttachmentMapOutput {
-	return i.ToIsInstanceNetworkAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceNetworkAttachmentMap) ToIsInstanceNetworkAttachmentMapOutputWithContext(ctx context.Context) IsInstanceNetworkAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkAttachmentMapOutput)
-}
-
 type IsInstanceNetworkAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceNetworkAttachmentOutput) ElementType() reflect.Type {
@@ -277,51 +227,7 @@ func (o IsInstanceNetworkAttachmentOutput) VirtualNetworkInterface() IsInstanceN
 	}).(IsInstanceNetworkAttachmentVirtualNetworkInterfaceOutput)
 }
 
-type IsInstanceNetworkAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceNetworkAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceNetworkAttachment)(nil)).Elem()
-}
-
-func (o IsInstanceNetworkAttachmentArrayOutput) ToIsInstanceNetworkAttachmentArrayOutput() IsInstanceNetworkAttachmentArrayOutput {
-	return o
-}
-
-func (o IsInstanceNetworkAttachmentArrayOutput) ToIsInstanceNetworkAttachmentArrayOutputWithContext(ctx context.Context) IsInstanceNetworkAttachmentArrayOutput {
-	return o
-}
-
-func (o IsInstanceNetworkAttachmentArrayOutput) Index(i pulumi.IntInput) IsInstanceNetworkAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceNetworkAttachment {
-		return vs[0].([]*IsInstanceNetworkAttachment)[vs[1].(int)]
-	}).(IsInstanceNetworkAttachmentOutput)
-}
-
-type IsInstanceNetworkAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceNetworkAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceNetworkAttachment)(nil)).Elem()
-}
-
-func (o IsInstanceNetworkAttachmentMapOutput) ToIsInstanceNetworkAttachmentMapOutput() IsInstanceNetworkAttachmentMapOutput {
-	return o
-}
-
-func (o IsInstanceNetworkAttachmentMapOutput) ToIsInstanceNetworkAttachmentMapOutputWithContext(ctx context.Context) IsInstanceNetworkAttachmentMapOutput {
-	return o
-}
-
-func (o IsInstanceNetworkAttachmentMapOutput) MapIndex(k pulumi.StringInput) IsInstanceNetworkAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceNetworkAttachment {
-		return vs[0].(map[string]*IsInstanceNetworkAttachment)[vs[1].(string)]
-	}).(IsInstanceNetworkAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkAttachmentInput)(nil)).Elem(), &IsInstanceNetworkAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkAttachmentArrayInput)(nil)).Elem(), IsInstanceNetworkAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkAttachmentMapInput)(nil)).Elem(), IsInstanceNetworkAttachmentMap{})
 	pulumi.RegisterOutputType(IsInstanceNetworkAttachmentOutput{})
-	pulumi.RegisterOutputType(IsInstanceNetworkAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceNetworkAttachmentMapOutput{})
 }

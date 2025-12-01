@@ -197,56 +197,6 @@ func (i *IsSnapshotConsistencyGroup) ToIsSnapshotConsistencyGroupOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(IsSnapshotConsistencyGroupOutput)
 }
 
-// IsSnapshotConsistencyGroupArrayInput is an input type that accepts IsSnapshotConsistencyGroupArray and IsSnapshotConsistencyGroupArrayOutput values.
-// You can construct a concrete instance of `IsSnapshotConsistencyGroupArrayInput` via:
-//
-//	IsSnapshotConsistencyGroupArray{ IsSnapshotConsistencyGroupArgs{...} }
-type IsSnapshotConsistencyGroupArrayInput interface {
-	pulumi.Input
-
-	ToIsSnapshotConsistencyGroupArrayOutput() IsSnapshotConsistencyGroupArrayOutput
-	ToIsSnapshotConsistencyGroupArrayOutputWithContext(context.Context) IsSnapshotConsistencyGroupArrayOutput
-}
-
-type IsSnapshotConsistencyGroupArray []IsSnapshotConsistencyGroupInput
-
-func (IsSnapshotConsistencyGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSnapshotConsistencyGroup)(nil)).Elem()
-}
-
-func (i IsSnapshotConsistencyGroupArray) ToIsSnapshotConsistencyGroupArrayOutput() IsSnapshotConsistencyGroupArrayOutput {
-	return i.ToIsSnapshotConsistencyGroupArrayOutputWithContext(context.Background())
-}
-
-func (i IsSnapshotConsistencyGroupArray) ToIsSnapshotConsistencyGroupArrayOutputWithContext(ctx context.Context) IsSnapshotConsistencyGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSnapshotConsistencyGroupArrayOutput)
-}
-
-// IsSnapshotConsistencyGroupMapInput is an input type that accepts IsSnapshotConsistencyGroupMap and IsSnapshotConsistencyGroupMapOutput values.
-// You can construct a concrete instance of `IsSnapshotConsistencyGroupMapInput` via:
-//
-//	IsSnapshotConsistencyGroupMap{ "key": IsSnapshotConsistencyGroupArgs{...} }
-type IsSnapshotConsistencyGroupMapInput interface {
-	pulumi.Input
-
-	ToIsSnapshotConsistencyGroupMapOutput() IsSnapshotConsistencyGroupMapOutput
-	ToIsSnapshotConsistencyGroupMapOutputWithContext(context.Context) IsSnapshotConsistencyGroupMapOutput
-}
-
-type IsSnapshotConsistencyGroupMap map[string]IsSnapshotConsistencyGroupInput
-
-func (IsSnapshotConsistencyGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSnapshotConsistencyGroup)(nil)).Elem()
-}
-
-func (i IsSnapshotConsistencyGroupMap) ToIsSnapshotConsistencyGroupMapOutput() IsSnapshotConsistencyGroupMapOutput {
-	return i.ToIsSnapshotConsistencyGroupMapOutputWithContext(context.Background())
-}
-
-func (i IsSnapshotConsistencyGroupMap) ToIsSnapshotConsistencyGroupMapOutputWithContext(ctx context.Context) IsSnapshotConsistencyGroupMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSnapshotConsistencyGroupMapOutput)
-}
-
 type IsSnapshotConsistencyGroupOutput struct{ *pulumi.OutputState }
 
 func (IsSnapshotConsistencyGroupOutput) ElementType() reflect.Type {
@@ -335,51 +285,7 @@ func (o IsSnapshotConsistencyGroupOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IsSnapshotConsistencyGroup) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type IsSnapshotConsistencyGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSnapshotConsistencyGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSnapshotConsistencyGroup)(nil)).Elem()
-}
-
-func (o IsSnapshotConsistencyGroupArrayOutput) ToIsSnapshotConsistencyGroupArrayOutput() IsSnapshotConsistencyGroupArrayOutput {
-	return o
-}
-
-func (o IsSnapshotConsistencyGroupArrayOutput) ToIsSnapshotConsistencyGroupArrayOutputWithContext(ctx context.Context) IsSnapshotConsistencyGroupArrayOutput {
-	return o
-}
-
-func (o IsSnapshotConsistencyGroupArrayOutput) Index(i pulumi.IntInput) IsSnapshotConsistencyGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSnapshotConsistencyGroup {
-		return vs[0].([]*IsSnapshotConsistencyGroup)[vs[1].(int)]
-	}).(IsSnapshotConsistencyGroupOutput)
-}
-
-type IsSnapshotConsistencyGroupMapOutput struct{ *pulumi.OutputState }
-
-func (IsSnapshotConsistencyGroupMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSnapshotConsistencyGroup)(nil)).Elem()
-}
-
-func (o IsSnapshotConsistencyGroupMapOutput) ToIsSnapshotConsistencyGroupMapOutput() IsSnapshotConsistencyGroupMapOutput {
-	return o
-}
-
-func (o IsSnapshotConsistencyGroupMapOutput) ToIsSnapshotConsistencyGroupMapOutputWithContext(ctx context.Context) IsSnapshotConsistencyGroupMapOutput {
-	return o
-}
-
-func (o IsSnapshotConsistencyGroupMapOutput) MapIndex(k pulumi.StringInput) IsSnapshotConsistencyGroupOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSnapshotConsistencyGroup {
-		return vs[0].(map[string]*IsSnapshotConsistencyGroup)[vs[1].(string)]
-	}).(IsSnapshotConsistencyGroupOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSnapshotConsistencyGroupInput)(nil)).Elem(), &IsSnapshotConsistencyGroup{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSnapshotConsistencyGroupArrayInput)(nil)).Elem(), IsSnapshotConsistencyGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSnapshotConsistencyGroupMapInput)(nil)).Elem(), IsSnapshotConsistencyGroupMap{})
 	pulumi.RegisterOutputType(IsSnapshotConsistencyGroupOutput{})
-	pulumi.RegisterOutputType(IsSnapshotConsistencyGroupArrayOutput{})
-	pulumi.RegisterOutputType(IsSnapshotConsistencyGroupMapOutput{})
 }

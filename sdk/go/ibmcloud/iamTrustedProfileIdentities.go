@@ -115,56 +115,6 @@ func (i *IamTrustedProfileIdentities) ToIamTrustedProfileIdentitiesOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileIdentitiesOutput)
 }
 
-// IamTrustedProfileIdentitiesArrayInput is an input type that accepts IamTrustedProfileIdentitiesArray and IamTrustedProfileIdentitiesArrayOutput values.
-// You can construct a concrete instance of `IamTrustedProfileIdentitiesArrayInput` via:
-//
-//	IamTrustedProfileIdentitiesArray{ IamTrustedProfileIdentitiesArgs{...} }
-type IamTrustedProfileIdentitiesArrayInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileIdentitiesArrayOutput() IamTrustedProfileIdentitiesArrayOutput
-	ToIamTrustedProfileIdentitiesArrayOutputWithContext(context.Context) IamTrustedProfileIdentitiesArrayOutput
-}
-
-type IamTrustedProfileIdentitiesArray []IamTrustedProfileIdentitiesInput
-
-func (IamTrustedProfileIdentitiesArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileIdentities)(nil)).Elem()
-}
-
-func (i IamTrustedProfileIdentitiesArray) ToIamTrustedProfileIdentitiesArrayOutput() IamTrustedProfileIdentitiesArrayOutput {
-	return i.ToIamTrustedProfileIdentitiesArrayOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileIdentitiesArray) ToIamTrustedProfileIdentitiesArrayOutputWithContext(ctx context.Context) IamTrustedProfileIdentitiesArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileIdentitiesArrayOutput)
-}
-
-// IamTrustedProfileIdentitiesMapInput is an input type that accepts IamTrustedProfileIdentitiesMap and IamTrustedProfileIdentitiesMapOutput values.
-// You can construct a concrete instance of `IamTrustedProfileIdentitiesMapInput` via:
-//
-//	IamTrustedProfileIdentitiesMap{ "key": IamTrustedProfileIdentitiesArgs{...} }
-type IamTrustedProfileIdentitiesMapInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileIdentitiesMapOutput() IamTrustedProfileIdentitiesMapOutput
-	ToIamTrustedProfileIdentitiesMapOutputWithContext(context.Context) IamTrustedProfileIdentitiesMapOutput
-}
-
-type IamTrustedProfileIdentitiesMap map[string]IamTrustedProfileIdentitiesInput
-
-func (IamTrustedProfileIdentitiesMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileIdentities)(nil)).Elem()
-}
-
-func (i IamTrustedProfileIdentitiesMap) ToIamTrustedProfileIdentitiesMapOutput() IamTrustedProfileIdentitiesMapOutput {
-	return i.ToIamTrustedProfileIdentitiesMapOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileIdentitiesMap) ToIamTrustedProfileIdentitiesMapOutputWithContext(ctx context.Context) IamTrustedProfileIdentitiesMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileIdentitiesMapOutput)
-}
-
 type IamTrustedProfileIdentitiesOutput struct{ *pulumi.OutputState }
 
 func (IamTrustedProfileIdentitiesOutput) ElementType() reflect.Type {
@@ -196,51 +146,7 @@ func (o IamTrustedProfileIdentitiesOutput) ProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamTrustedProfileIdentities) pulumi.StringOutput { return v.ProfileId }).(pulumi.StringOutput)
 }
 
-type IamTrustedProfileIdentitiesArrayOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileIdentitiesArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileIdentities)(nil)).Elem()
-}
-
-func (o IamTrustedProfileIdentitiesArrayOutput) ToIamTrustedProfileIdentitiesArrayOutput() IamTrustedProfileIdentitiesArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileIdentitiesArrayOutput) ToIamTrustedProfileIdentitiesArrayOutputWithContext(ctx context.Context) IamTrustedProfileIdentitiesArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileIdentitiesArrayOutput) Index(i pulumi.IntInput) IamTrustedProfileIdentitiesOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamTrustedProfileIdentities {
-		return vs[0].([]*IamTrustedProfileIdentities)[vs[1].(int)]
-	}).(IamTrustedProfileIdentitiesOutput)
-}
-
-type IamTrustedProfileIdentitiesMapOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileIdentitiesMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileIdentities)(nil)).Elem()
-}
-
-func (o IamTrustedProfileIdentitiesMapOutput) ToIamTrustedProfileIdentitiesMapOutput() IamTrustedProfileIdentitiesMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileIdentitiesMapOutput) ToIamTrustedProfileIdentitiesMapOutputWithContext(ctx context.Context) IamTrustedProfileIdentitiesMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileIdentitiesMapOutput) MapIndex(k pulumi.StringInput) IamTrustedProfileIdentitiesOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamTrustedProfileIdentities {
-		return vs[0].(map[string]*IamTrustedProfileIdentities)[vs[1].(string)]
-	}).(IamTrustedProfileIdentitiesOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileIdentitiesInput)(nil)).Elem(), &IamTrustedProfileIdentities{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileIdentitiesArrayInput)(nil)).Elem(), IamTrustedProfileIdentitiesArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileIdentitiesMapInput)(nil)).Elem(), IamTrustedProfileIdentitiesMap{})
 	pulumi.RegisterOutputType(IamTrustedProfileIdentitiesOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileIdentitiesArrayOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileIdentitiesMapOutput{})
 }

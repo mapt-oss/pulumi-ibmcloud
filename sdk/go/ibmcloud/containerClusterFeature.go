@@ -145,56 +145,6 @@ func (i *ContainerClusterFeature) ToContainerClusterFeatureOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterFeatureOutput)
 }
 
-// ContainerClusterFeatureArrayInput is an input type that accepts ContainerClusterFeatureArray and ContainerClusterFeatureArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterFeatureArrayInput` via:
-//
-//	ContainerClusterFeatureArray{ ContainerClusterFeatureArgs{...} }
-type ContainerClusterFeatureArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterFeatureArrayOutput() ContainerClusterFeatureArrayOutput
-	ToContainerClusterFeatureArrayOutputWithContext(context.Context) ContainerClusterFeatureArrayOutput
-}
-
-type ContainerClusterFeatureArray []ContainerClusterFeatureInput
-
-func (ContainerClusterFeatureArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerClusterFeature)(nil)).Elem()
-}
-
-func (i ContainerClusterFeatureArray) ToContainerClusterFeatureArrayOutput() ContainerClusterFeatureArrayOutput {
-	return i.ToContainerClusterFeatureArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterFeatureArray) ToContainerClusterFeatureArrayOutputWithContext(ctx context.Context) ContainerClusterFeatureArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterFeatureArrayOutput)
-}
-
-// ContainerClusterFeatureMapInput is an input type that accepts ContainerClusterFeatureMap and ContainerClusterFeatureMapOutput values.
-// You can construct a concrete instance of `ContainerClusterFeatureMapInput` via:
-//
-//	ContainerClusterFeatureMap{ "key": ContainerClusterFeatureArgs{...} }
-type ContainerClusterFeatureMapInput interface {
-	pulumi.Input
-
-	ToContainerClusterFeatureMapOutput() ContainerClusterFeatureMapOutput
-	ToContainerClusterFeatureMapOutputWithContext(context.Context) ContainerClusterFeatureMapOutput
-}
-
-type ContainerClusterFeatureMap map[string]ContainerClusterFeatureInput
-
-func (ContainerClusterFeatureMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerClusterFeature)(nil)).Elem()
-}
-
-func (i ContainerClusterFeatureMap) ToContainerClusterFeatureMapOutput() ContainerClusterFeatureMapOutput {
-	return i.ToContainerClusterFeatureMapOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterFeatureMap) ToContainerClusterFeatureMapOutputWithContext(ctx context.Context) ContainerClusterFeatureMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterFeatureMapOutput)
-}
-
 type ContainerClusterFeatureOutput struct{ *pulumi.OutputState }
 
 func (ContainerClusterFeatureOutput) ElementType() reflect.Type {
@@ -245,51 +195,7 @@ func (o ContainerClusterFeatureOutput) ResourceGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerClusterFeature) pulumi.StringOutput { return v.ResourceGroupId }).(pulumi.StringOutput)
 }
 
-type ContainerClusterFeatureArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterFeatureArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerClusterFeature)(nil)).Elem()
-}
-
-func (o ContainerClusterFeatureArrayOutput) ToContainerClusterFeatureArrayOutput() ContainerClusterFeatureArrayOutput {
-	return o
-}
-
-func (o ContainerClusterFeatureArrayOutput) ToContainerClusterFeatureArrayOutputWithContext(ctx context.Context) ContainerClusterFeatureArrayOutput {
-	return o
-}
-
-func (o ContainerClusterFeatureArrayOutput) Index(i pulumi.IntInput) ContainerClusterFeatureOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerClusterFeature {
-		return vs[0].([]*ContainerClusterFeature)[vs[1].(int)]
-	}).(ContainerClusterFeatureOutput)
-}
-
-type ContainerClusterFeatureMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterFeatureMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerClusterFeature)(nil)).Elem()
-}
-
-func (o ContainerClusterFeatureMapOutput) ToContainerClusterFeatureMapOutput() ContainerClusterFeatureMapOutput {
-	return o
-}
-
-func (o ContainerClusterFeatureMapOutput) ToContainerClusterFeatureMapOutputWithContext(ctx context.Context) ContainerClusterFeatureMapOutput {
-	return o
-}
-
-func (o ContainerClusterFeatureMapOutput) MapIndex(k pulumi.StringInput) ContainerClusterFeatureOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerClusterFeature {
-		return vs[0].(map[string]*ContainerClusterFeature)[vs[1].(string)]
-	}).(ContainerClusterFeatureOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterFeatureInput)(nil)).Elem(), &ContainerClusterFeature{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterFeatureArrayInput)(nil)).Elem(), ContainerClusterFeatureArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterFeatureMapInput)(nil)).Elem(), ContainerClusterFeatureMap{})
 	pulumi.RegisterOutputType(ContainerClusterFeatureOutput{})
-	pulumi.RegisterOutputType(ContainerClusterFeatureArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterFeatureMapOutput{})
 }

@@ -202,56 +202,6 @@ func (i *IamServiceApiKey) ToIamServiceApiKeyOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IamServiceApiKeyOutput)
 }
 
-// IamServiceApiKeyArrayInput is an input type that accepts IamServiceApiKeyArray and IamServiceApiKeyArrayOutput values.
-// You can construct a concrete instance of `IamServiceApiKeyArrayInput` via:
-//
-//	IamServiceApiKeyArray{ IamServiceApiKeyArgs{...} }
-type IamServiceApiKeyArrayInput interface {
-	pulumi.Input
-
-	ToIamServiceApiKeyArrayOutput() IamServiceApiKeyArrayOutput
-	ToIamServiceApiKeyArrayOutputWithContext(context.Context) IamServiceApiKeyArrayOutput
-}
-
-type IamServiceApiKeyArray []IamServiceApiKeyInput
-
-func (IamServiceApiKeyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamServiceApiKey)(nil)).Elem()
-}
-
-func (i IamServiceApiKeyArray) ToIamServiceApiKeyArrayOutput() IamServiceApiKeyArrayOutput {
-	return i.ToIamServiceApiKeyArrayOutputWithContext(context.Background())
-}
-
-func (i IamServiceApiKeyArray) ToIamServiceApiKeyArrayOutputWithContext(ctx context.Context) IamServiceApiKeyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamServiceApiKeyArrayOutput)
-}
-
-// IamServiceApiKeyMapInput is an input type that accepts IamServiceApiKeyMap and IamServiceApiKeyMapOutput values.
-// You can construct a concrete instance of `IamServiceApiKeyMapInput` via:
-//
-//	IamServiceApiKeyMap{ "key": IamServiceApiKeyArgs{...} }
-type IamServiceApiKeyMapInput interface {
-	pulumi.Input
-
-	ToIamServiceApiKeyMapOutput() IamServiceApiKeyMapOutput
-	ToIamServiceApiKeyMapOutputWithContext(context.Context) IamServiceApiKeyMapOutput
-}
-
-type IamServiceApiKeyMap map[string]IamServiceApiKeyInput
-
-func (IamServiceApiKeyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamServiceApiKey)(nil)).Elem()
-}
-
-func (i IamServiceApiKeyMap) ToIamServiceApiKeyMapOutput() IamServiceApiKeyMapOutput {
-	return i.ToIamServiceApiKeyMapOutputWithContext(context.Background())
-}
-
-func (i IamServiceApiKeyMap) ToIamServiceApiKeyMapOutputWithContext(ctx context.Context) IamServiceApiKeyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamServiceApiKeyMapOutput)
-}
-
 type IamServiceApiKeyOutput struct{ *pulumi.OutputState }
 
 func (IamServiceApiKeyOutput) ElementType() reflect.Type {
@@ -331,51 +281,7 @@ func (o IamServiceApiKeyOutput) StoreValue() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IamServiceApiKey) pulumi.BoolPtrOutput { return v.StoreValue }).(pulumi.BoolPtrOutput)
 }
 
-type IamServiceApiKeyArrayOutput struct{ *pulumi.OutputState }
-
-func (IamServiceApiKeyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamServiceApiKey)(nil)).Elem()
-}
-
-func (o IamServiceApiKeyArrayOutput) ToIamServiceApiKeyArrayOutput() IamServiceApiKeyArrayOutput {
-	return o
-}
-
-func (o IamServiceApiKeyArrayOutput) ToIamServiceApiKeyArrayOutputWithContext(ctx context.Context) IamServiceApiKeyArrayOutput {
-	return o
-}
-
-func (o IamServiceApiKeyArrayOutput) Index(i pulumi.IntInput) IamServiceApiKeyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamServiceApiKey {
-		return vs[0].([]*IamServiceApiKey)[vs[1].(int)]
-	}).(IamServiceApiKeyOutput)
-}
-
-type IamServiceApiKeyMapOutput struct{ *pulumi.OutputState }
-
-func (IamServiceApiKeyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamServiceApiKey)(nil)).Elem()
-}
-
-func (o IamServiceApiKeyMapOutput) ToIamServiceApiKeyMapOutput() IamServiceApiKeyMapOutput {
-	return o
-}
-
-func (o IamServiceApiKeyMapOutput) ToIamServiceApiKeyMapOutputWithContext(ctx context.Context) IamServiceApiKeyMapOutput {
-	return o
-}
-
-func (o IamServiceApiKeyMapOutput) MapIndex(k pulumi.StringInput) IamServiceApiKeyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamServiceApiKey {
-		return vs[0].(map[string]*IamServiceApiKey)[vs[1].(string)]
-	}).(IamServiceApiKeyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamServiceApiKeyInput)(nil)).Elem(), &IamServiceApiKey{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamServiceApiKeyArrayInput)(nil)).Elem(), IamServiceApiKeyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamServiceApiKeyMapInput)(nil)).Elem(), IamServiceApiKeyMap{})
 	pulumi.RegisterOutputType(IamServiceApiKeyOutput{})
-	pulumi.RegisterOutputType(IamServiceApiKeyArrayOutput{})
-	pulumi.RegisterOutputType(IamServiceApiKeyMapOutput{})
 }

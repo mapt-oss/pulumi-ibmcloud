@@ -182,56 +182,6 @@ func (i *ContainerIngressSecretOpaque) ToContainerIngressSecretOpaqueOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretOpaqueOutput)
 }
 
-// ContainerIngressSecretOpaqueArrayInput is an input type that accepts ContainerIngressSecretOpaqueArray and ContainerIngressSecretOpaqueArrayOutput values.
-// You can construct a concrete instance of `ContainerIngressSecretOpaqueArrayInput` via:
-//
-//	ContainerIngressSecretOpaqueArray{ ContainerIngressSecretOpaqueArgs{...} }
-type ContainerIngressSecretOpaqueArrayInput interface {
-	pulumi.Input
-
-	ToContainerIngressSecretOpaqueArrayOutput() ContainerIngressSecretOpaqueArrayOutput
-	ToContainerIngressSecretOpaqueArrayOutputWithContext(context.Context) ContainerIngressSecretOpaqueArrayOutput
-}
-
-type ContainerIngressSecretOpaqueArray []ContainerIngressSecretOpaqueInput
-
-func (ContainerIngressSecretOpaqueArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerIngressSecretOpaque)(nil)).Elem()
-}
-
-func (i ContainerIngressSecretOpaqueArray) ToContainerIngressSecretOpaqueArrayOutput() ContainerIngressSecretOpaqueArrayOutput {
-	return i.ToContainerIngressSecretOpaqueArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressSecretOpaqueArray) ToContainerIngressSecretOpaqueArrayOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretOpaqueArrayOutput)
-}
-
-// ContainerIngressSecretOpaqueMapInput is an input type that accepts ContainerIngressSecretOpaqueMap and ContainerIngressSecretOpaqueMapOutput values.
-// You can construct a concrete instance of `ContainerIngressSecretOpaqueMapInput` via:
-//
-//	ContainerIngressSecretOpaqueMap{ "key": ContainerIngressSecretOpaqueArgs{...} }
-type ContainerIngressSecretOpaqueMapInput interface {
-	pulumi.Input
-
-	ToContainerIngressSecretOpaqueMapOutput() ContainerIngressSecretOpaqueMapOutput
-	ToContainerIngressSecretOpaqueMapOutputWithContext(context.Context) ContainerIngressSecretOpaqueMapOutput
-}
-
-type ContainerIngressSecretOpaqueMap map[string]ContainerIngressSecretOpaqueInput
-
-func (ContainerIngressSecretOpaqueMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerIngressSecretOpaque)(nil)).Elem()
-}
-
-func (i ContainerIngressSecretOpaqueMap) ToContainerIngressSecretOpaqueMapOutput() ContainerIngressSecretOpaqueMapOutput {
-	return i.ToContainerIngressSecretOpaqueMapOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressSecretOpaqueMap) ToContainerIngressSecretOpaqueMapOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretOpaqueMapOutput)
-}
-
 type ContainerIngressSecretOpaqueOutput struct{ *pulumi.OutputState }
 
 func (ContainerIngressSecretOpaqueOutput) ElementType() reflect.Type {
@@ -296,51 +246,7 @@ func (o ContainerIngressSecretOpaqueOutput) UserManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerIngressSecretOpaque) pulumi.BoolOutput { return v.UserManaged }).(pulumi.BoolOutput)
 }
 
-type ContainerIngressSecretOpaqueArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressSecretOpaqueArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerIngressSecretOpaque)(nil)).Elem()
-}
-
-func (o ContainerIngressSecretOpaqueArrayOutput) ToContainerIngressSecretOpaqueArrayOutput() ContainerIngressSecretOpaqueArrayOutput {
-	return o
-}
-
-func (o ContainerIngressSecretOpaqueArrayOutput) ToContainerIngressSecretOpaqueArrayOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueArrayOutput {
-	return o
-}
-
-func (o ContainerIngressSecretOpaqueArrayOutput) Index(i pulumi.IntInput) ContainerIngressSecretOpaqueOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerIngressSecretOpaque {
-		return vs[0].([]*ContainerIngressSecretOpaque)[vs[1].(int)]
-	}).(ContainerIngressSecretOpaqueOutput)
-}
-
-type ContainerIngressSecretOpaqueMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressSecretOpaqueMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerIngressSecretOpaque)(nil)).Elem()
-}
-
-func (o ContainerIngressSecretOpaqueMapOutput) ToContainerIngressSecretOpaqueMapOutput() ContainerIngressSecretOpaqueMapOutput {
-	return o
-}
-
-func (o ContainerIngressSecretOpaqueMapOutput) ToContainerIngressSecretOpaqueMapOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueMapOutput {
-	return o
-}
-
-func (o ContainerIngressSecretOpaqueMapOutput) MapIndex(k pulumi.StringInput) ContainerIngressSecretOpaqueOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerIngressSecretOpaque {
-		return vs[0].(map[string]*ContainerIngressSecretOpaque)[vs[1].(string)]
-	}).(ContainerIngressSecretOpaqueOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretOpaqueInput)(nil)).Elem(), &ContainerIngressSecretOpaque{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretOpaqueArrayInput)(nil)).Elem(), ContainerIngressSecretOpaqueArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretOpaqueMapInput)(nil)).Elem(), ContainerIngressSecretOpaqueMap{})
 	pulumi.RegisterOutputType(ContainerIngressSecretOpaqueOutput{})
-	pulumi.RegisterOutputType(ContainerIngressSecretOpaqueArrayOutput{})
-	pulumi.RegisterOutputType(ContainerIngressSecretOpaqueMapOutput{})
 }

@@ -213,56 +213,6 @@ func (i *IsImageDeprecate) ToIsImageDeprecateOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IsImageDeprecateOutput)
 }
 
-// IsImageDeprecateArrayInput is an input type that accepts IsImageDeprecateArray and IsImageDeprecateArrayOutput values.
-// You can construct a concrete instance of `IsImageDeprecateArrayInput` via:
-//
-//	IsImageDeprecateArray{ IsImageDeprecateArgs{...} }
-type IsImageDeprecateArrayInput interface {
-	pulumi.Input
-
-	ToIsImageDeprecateArrayOutput() IsImageDeprecateArrayOutput
-	ToIsImageDeprecateArrayOutputWithContext(context.Context) IsImageDeprecateArrayOutput
-}
-
-type IsImageDeprecateArray []IsImageDeprecateInput
-
-func (IsImageDeprecateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImageDeprecate)(nil)).Elem()
-}
-
-func (i IsImageDeprecateArray) ToIsImageDeprecateArrayOutput() IsImageDeprecateArrayOutput {
-	return i.ToIsImageDeprecateArrayOutputWithContext(context.Background())
-}
-
-func (i IsImageDeprecateArray) ToIsImageDeprecateArrayOutputWithContext(ctx context.Context) IsImageDeprecateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageDeprecateArrayOutput)
-}
-
-// IsImageDeprecateMapInput is an input type that accepts IsImageDeprecateMap and IsImageDeprecateMapOutput values.
-// You can construct a concrete instance of `IsImageDeprecateMapInput` via:
-//
-//	IsImageDeprecateMap{ "key": IsImageDeprecateArgs{...} }
-type IsImageDeprecateMapInput interface {
-	pulumi.Input
-
-	ToIsImageDeprecateMapOutput() IsImageDeprecateMapOutput
-	ToIsImageDeprecateMapOutputWithContext(context.Context) IsImageDeprecateMapOutput
-}
-
-type IsImageDeprecateMap map[string]IsImageDeprecateInput
-
-func (IsImageDeprecateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImageDeprecate)(nil)).Elem()
-}
-
-func (i IsImageDeprecateMap) ToIsImageDeprecateMapOutput() IsImageDeprecateMapOutput {
-	return i.ToIsImageDeprecateMapOutputWithContext(context.Background())
-}
-
-func (i IsImageDeprecateMap) ToIsImageDeprecateMapOutputWithContext(ctx context.Context) IsImageDeprecateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageDeprecateMapOutput)
-}
-
 type IsImageDeprecateOutput struct{ *pulumi.OutputState }
 
 func (IsImageDeprecateOutput) ElementType() reflect.Type {
@@ -377,51 +327,7 @@ func (o IsImageDeprecateOutput) Visibility() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsImageDeprecate) pulumi.StringOutput { return v.Visibility }).(pulumi.StringOutput)
 }
 
-type IsImageDeprecateArrayOutput struct{ *pulumi.OutputState }
-
-func (IsImageDeprecateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImageDeprecate)(nil)).Elem()
-}
-
-func (o IsImageDeprecateArrayOutput) ToIsImageDeprecateArrayOutput() IsImageDeprecateArrayOutput {
-	return o
-}
-
-func (o IsImageDeprecateArrayOutput) ToIsImageDeprecateArrayOutputWithContext(ctx context.Context) IsImageDeprecateArrayOutput {
-	return o
-}
-
-func (o IsImageDeprecateArrayOutput) Index(i pulumi.IntInput) IsImageDeprecateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsImageDeprecate {
-		return vs[0].([]*IsImageDeprecate)[vs[1].(int)]
-	}).(IsImageDeprecateOutput)
-}
-
-type IsImageDeprecateMapOutput struct{ *pulumi.OutputState }
-
-func (IsImageDeprecateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImageDeprecate)(nil)).Elem()
-}
-
-func (o IsImageDeprecateMapOutput) ToIsImageDeprecateMapOutput() IsImageDeprecateMapOutput {
-	return o
-}
-
-func (o IsImageDeprecateMapOutput) ToIsImageDeprecateMapOutputWithContext(ctx context.Context) IsImageDeprecateMapOutput {
-	return o
-}
-
-func (o IsImageDeprecateMapOutput) MapIndex(k pulumi.StringInput) IsImageDeprecateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsImageDeprecate {
-		return vs[0].(map[string]*IsImageDeprecate)[vs[1].(string)]
-	}).(IsImageDeprecateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsImageDeprecateInput)(nil)).Elem(), &IsImageDeprecate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageDeprecateArrayInput)(nil)).Elem(), IsImageDeprecateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageDeprecateMapInput)(nil)).Elem(), IsImageDeprecateMap{})
 	pulumi.RegisterOutputType(IsImageDeprecateOutput{})
-	pulumi.RegisterOutputType(IsImageDeprecateArrayOutput{})
-	pulumi.RegisterOutputType(IsImageDeprecateMapOutput{})
 }

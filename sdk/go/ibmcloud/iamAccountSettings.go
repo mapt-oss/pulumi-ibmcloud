@@ -251,56 +251,6 @@ func (i *IamAccountSettings) ToIamAccountSettingsOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsOutput)
 }
 
-// IamAccountSettingsArrayInput is an input type that accepts IamAccountSettingsArray and IamAccountSettingsArrayOutput values.
-// You can construct a concrete instance of `IamAccountSettingsArrayInput` via:
-//
-//	IamAccountSettingsArray{ IamAccountSettingsArgs{...} }
-type IamAccountSettingsArrayInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsArrayOutput() IamAccountSettingsArrayOutput
-	ToIamAccountSettingsArrayOutputWithContext(context.Context) IamAccountSettingsArrayOutput
-}
-
-type IamAccountSettingsArray []IamAccountSettingsInput
-
-func (IamAccountSettingsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettings)(nil)).Elem()
-}
-
-func (i IamAccountSettingsArray) ToIamAccountSettingsArrayOutput() IamAccountSettingsArrayOutput {
-	return i.ToIamAccountSettingsArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsArray) ToIamAccountSettingsArrayOutputWithContext(ctx context.Context) IamAccountSettingsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsArrayOutput)
-}
-
-// IamAccountSettingsMapInput is an input type that accepts IamAccountSettingsMap and IamAccountSettingsMapOutput values.
-// You can construct a concrete instance of `IamAccountSettingsMapInput` via:
-//
-//	IamAccountSettingsMap{ "key": IamAccountSettingsArgs{...} }
-type IamAccountSettingsMapInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsMapOutput() IamAccountSettingsMapOutput
-	ToIamAccountSettingsMapOutputWithContext(context.Context) IamAccountSettingsMapOutput
-}
-
-type IamAccountSettingsMap map[string]IamAccountSettingsInput
-
-func (IamAccountSettingsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettings)(nil)).Elem()
-}
-
-func (i IamAccountSettingsMap) ToIamAccountSettingsMapOutput() IamAccountSettingsMapOutput {
-	return i.ToIamAccountSettingsMapOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsMap) ToIamAccountSettingsMapOutputWithContext(ctx context.Context) IamAccountSettingsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsMapOutput)
-}
-
 type IamAccountSettingsOutput struct{ *pulumi.OutputState }
 
 func (IamAccountSettingsOutput) ElementType() reflect.Type {
@@ -402,51 +352,7 @@ func (o IamAccountSettingsOutput) UserMfas() IamAccountSettingsUserMfaArrayOutpu
 	return o.ApplyT(func(v *IamAccountSettings) IamAccountSettingsUserMfaArrayOutput { return v.UserMfas }).(IamAccountSettingsUserMfaArrayOutput)
 }
 
-type IamAccountSettingsArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettings)(nil)).Elem()
-}
-
-func (o IamAccountSettingsArrayOutput) ToIamAccountSettingsArrayOutput() IamAccountSettingsArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsArrayOutput) ToIamAccountSettingsArrayOutputWithContext(ctx context.Context) IamAccountSettingsArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsArrayOutput) Index(i pulumi.IntInput) IamAccountSettingsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccountSettings {
-		return vs[0].([]*IamAccountSettings)[vs[1].(int)]
-	}).(IamAccountSettingsOutput)
-}
-
-type IamAccountSettingsMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettings)(nil)).Elem()
-}
-
-func (o IamAccountSettingsMapOutput) ToIamAccountSettingsMapOutput() IamAccountSettingsMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsMapOutput) ToIamAccountSettingsMapOutputWithContext(ctx context.Context) IamAccountSettingsMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsMapOutput) MapIndex(k pulumi.StringInput) IamAccountSettingsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccountSettings {
-		return vs[0].(map[string]*IamAccountSettings)[vs[1].(string)]
-	}).(IamAccountSettingsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsInput)(nil)).Elem(), &IamAccountSettings{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsArrayInput)(nil)).Elem(), IamAccountSettingsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsMapInput)(nil)).Elem(), IamAccountSettingsMap{})
 	pulumi.RegisterOutputType(IamAccountSettingsOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsArrayOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsMapOutput{})
 }

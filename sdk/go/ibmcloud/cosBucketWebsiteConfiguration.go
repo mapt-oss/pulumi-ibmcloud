@@ -138,56 +138,6 @@ func (i *CosBucketWebsiteConfiguration) ToCosBucketWebsiteConfigurationOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(CosBucketWebsiteConfigurationOutput)
 }
 
-// CosBucketWebsiteConfigurationArrayInput is an input type that accepts CosBucketWebsiteConfigurationArray and CosBucketWebsiteConfigurationArrayOutput values.
-// You can construct a concrete instance of `CosBucketWebsiteConfigurationArrayInput` via:
-//
-//	CosBucketWebsiteConfigurationArray{ CosBucketWebsiteConfigurationArgs{...} }
-type CosBucketWebsiteConfigurationArrayInput interface {
-	pulumi.Input
-
-	ToCosBucketWebsiteConfigurationArrayOutput() CosBucketWebsiteConfigurationArrayOutput
-	ToCosBucketWebsiteConfigurationArrayOutputWithContext(context.Context) CosBucketWebsiteConfigurationArrayOutput
-}
-
-type CosBucketWebsiteConfigurationArray []CosBucketWebsiteConfigurationInput
-
-func (CosBucketWebsiteConfigurationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketWebsiteConfiguration)(nil)).Elem()
-}
-
-func (i CosBucketWebsiteConfigurationArray) ToCosBucketWebsiteConfigurationArrayOutput() CosBucketWebsiteConfigurationArrayOutput {
-	return i.ToCosBucketWebsiteConfigurationArrayOutputWithContext(context.Background())
-}
-
-func (i CosBucketWebsiteConfigurationArray) ToCosBucketWebsiteConfigurationArrayOutputWithContext(ctx context.Context) CosBucketWebsiteConfigurationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketWebsiteConfigurationArrayOutput)
-}
-
-// CosBucketWebsiteConfigurationMapInput is an input type that accepts CosBucketWebsiteConfigurationMap and CosBucketWebsiteConfigurationMapOutput values.
-// You can construct a concrete instance of `CosBucketWebsiteConfigurationMapInput` via:
-//
-//	CosBucketWebsiteConfigurationMap{ "key": CosBucketWebsiteConfigurationArgs{...} }
-type CosBucketWebsiteConfigurationMapInput interface {
-	pulumi.Input
-
-	ToCosBucketWebsiteConfigurationMapOutput() CosBucketWebsiteConfigurationMapOutput
-	ToCosBucketWebsiteConfigurationMapOutputWithContext(context.Context) CosBucketWebsiteConfigurationMapOutput
-}
-
-type CosBucketWebsiteConfigurationMap map[string]CosBucketWebsiteConfigurationInput
-
-func (CosBucketWebsiteConfigurationMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketWebsiteConfiguration)(nil)).Elem()
-}
-
-func (i CosBucketWebsiteConfigurationMap) ToCosBucketWebsiteConfigurationMapOutput() CosBucketWebsiteConfigurationMapOutput {
-	return i.ToCosBucketWebsiteConfigurationMapOutputWithContext(context.Background())
-}
-
-func (i CosBucketWebsiteConfigurationMap) ToCosBucketWebsiteConfigurationMapOutputWithContext(ctx context.Context) CosBucketWebsiteConfigurationMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketWebsiteConfigurationMapOutput)
-}
-
 type CosBucketWebsiteConfigurationOutput struct{ *pulumi.OutputState }
 
 func (CosBucketWebsiteConfigurationOutput) ElementType() reflect.Type {
@@ -228,51 +178,7 @@ func (o CosBucketWebsiteConfigurationOutput) WebsiteEndpoint() pulumi.StringOutp
 	return o.ApplyT(func(v *CosBucketWebsiteConfiguration) pulumi.StringOutput { return v.WebsiteEndpoint }).(pulumi.StringOutput)
 }
 
-type CosBucketWebsiteConfigurationArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBucketWebsiteConfigurationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketWebsiteConfiguration)(nil)).Elem()
-}
-
-func (o CosBucketWebsiteConfigurationArrayOutput) ToCosBucketWebsiteConfigurationArrayOutput() CosBucketWebsiteConfigurationArrayOutput {
-	return o
-}
-
-func (o CosBucketWebsiteConfigurationArrayOutput) ToCosBucketWebsiteConfigurationArrayOutputWithContext(ctx context.Context) CosBucketWebsiteConfigurationArrayOutput {
-	return o
-}
-
-func (o CosBucketWebsiteConfigurationArrayOutput) Index(i pulumi.IntInput) CosBucketWebsiteConfigurationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBucketWebsiteConfiguration {
-		return vs[0].([]*CosBucketWebsiteConfiguration)[vs[1].(int)]
-	}).(CosBucketWebsiteConfigurationOutput)
-}
-
-type CosBucketWebsiteConfigurationMapOutput struct{ *pulumi.OutputState }
-
-func (CosBucketWebsiteConfigurationMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketWebsiteConfiguration)(nil)).Elem()
-}
-
-func (o CosBucketWebsiteConfigurationMapOutput) ToCosBucketWebsiteConfigurationMapOutput() CosBucketWebsiteConfigurationMapOutput {
-	return o
-}
-
-func (o CosBucketWebsiteConfigurationMapOutput) ToCosBucketWebsiteConfigurationMapOutputWithContext(ctx context.Context) CosBucketWebsiteConfigurationMapOutput {
-	return o
-}
-
-func (o CosBucketWebsiteConfigurationMapOutput) MapIndex(k pulumi.StringInput) CosBucketWebsiteConfigurationOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBucketWebsiteConfiguration {
-		return vs[0].(map[string]*CosBucketWebsiteConfiguration)[vs[1].(string)]
-	}).(CosBucketWebsiteConfigurationOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketWebsiteConfigurationInput)(nil)).Elem(), &CosBucketWebsiteConfiguration{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketWebsiteConfigurationArrayInput)(nil)).Elem(), CosBucketWebsiteConfigurationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketWebsiteConfigurationMapInput)(nil)).Elem(), CosBucketWebsiteConfigurationMap{})
 	pulumi.RegisterOutputType(CosBucketWebsiteConfigurationOutput{})
-	pulumi.RegisterOutputType(CosBucketWebsiteConfigurationArrayOutput{})
-	pulumi.RegisterOutputType(CosBucketWebsiteConfigurationMapOutput{})
 }

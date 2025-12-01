@@ -254,56 +254,6 @@ func (i *IsVpnGateway) ToIsVpnGatewayOutputWithContext(ctx context.Context) IsVp
 	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayOutput)
 }
 
-// IsVpnGatewayArrayInput is an input type that accepts IsVpnGatewayArray and IsVpnGatewayArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayArrayInput` via:
-//
-//	IsVpnGatewayArray{ IsVpnGatewayArgs{...} }
-type IsVpnGatewayArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnGatewayArrayOutput() IsVpnGatewayArrayOutput
-	ToIsVpnGatewayArrayOutputWithContext(context.Context) IsVpnGatewayArrayOutput
-}
-
-type IsVpnGatewayArray []IsVpnGatewayInput
-
-func (IsVpnGatewayArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpnGateway)(nil)).Elem()
-}
-
-func (i IsVpnGatewayArray) ToIsVpnGatewayArrayOutput() IsVpnGatewayArrayOutput {
-	return i.ToIsVpnGatewayArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayArray) ToIsVpnGatewayArrayOutputWithContext(ctx context.Context) IsVpnGatewayArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayArrayOutput)
-}
-
-// IsVpnGatewayMapInput is an input type that accepts IsVpnGatewayMap and IsVpnGatewayMapOutput values.
-// You can construct a concrete instance of `IsVpnGatewayMapInput` via:
-//
-//	IsVpnGatewayMap{ "key": IsVpnGatewayArgs{...} }
-type IsVpnGatewayMapInput interface {
-	pulumi.Input
-
-	ToIsVpnGatewayMapOutput() IsVpnGatewayMapOutput
-	ToIsVpnGatewayMapOutputWithContext(context.Context) IsVpnGatewayMapOutput
-}
-
-type IsVpnGatewayMap map[string]IsVpnGatewayInput
-
-func (IsVpnGatewayMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpnGateway)(nil)).Elem()
-}
-
-func (i IsVpnGatewayMap) ToIsVpnGatewayMapOutput() IsVpnGatewayMapOutput {
-	return i.ToIsVpnGatewayMapOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayMap) ToIsVpnGatewayMapOutputWithContext(ctx context.Context) IsVpnGatewayMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayMapOutput)
-}
-
 type IsVpnGatewayOutput struct{ *pulumi.OutputState }
 
 func (IsVpnGatewayOutput) ElementType() reflect.Type {
@@ -437,51 +387,7 @@ func (o IsVpnGatewayOutput) Vpcs() IsVpnGatewayVpcArrayOutput {
 	return o.ApplyT(func(v *IsVpnGateway) IsVpnGatewayVpcArrayOutput { return v.Vpcs }).(IsVpnGatewayVpcArrayOutput)
 }
 
-type IsVpnGatewayArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpnGateway)(nil)).Elem()
-}
-
-func (o IsVpnGatewayArrayOutput) ToIsVpnGatewayArrayOutput() IsVpnGatewayArrayOutput {
-	return o
-}
-
-func (o IsVpnGatewayArrayOutput) ToIsVpnGatewayArrayOutputWithContext(ctx context.Context) IsVpnGatewayArrayOutput {
-	return o
-}
-
-func (o IsVpnGatewayArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVpnGateway {
-		return vs[0].([]*IsVpnGateway)[vs[1].(int)]
-	}).(IsVpnGatewayOutput)
-}
-
-type IsVpnGatewayMapOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpnGateway)(nil)).Elem()
-}
-
-func (o IsVpnGatewayMapOutput) ToIsVpnGatewayMapOutput() IsVpnGatewayMapOutput {
-	return o
-}
-
-func (o IsVpnGatewayMapOutput) ToIsVpnGatewayMapOutputWithContext(ctx context.Context) IsVpnGatewayMapOutput {
-	return o
-}
-
-func (o IsVpnGatewayMapOutput) MapIndex(k pulumi.StringInput) IsVpnGatewayOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVpnGateway {
-		return vs[0].(map[string]*IsVpnGateway)[vs[1].(string)]
-	}).(IsVpnGatewayOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayInput)(nil)).Elem(), &IsVpnGateway{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayArrayInput)(nil)).Elem(), IsVpnGatewayArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayMapInput)(nil)).Elem(), IsVpnGatewayMap{})
 	pulumi.RegisterOutputType(IsVpnGatewayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayMapOutput{})
 }

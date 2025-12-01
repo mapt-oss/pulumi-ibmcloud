@@ -130,56 +130,6 @@ func (i *IsSecurityGroupTarget) ToIsSecurityGroupTargetOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupTargetOutput)
 }
 
-// IsSecurityGroupTargetArrayInput is an input type that accepts IsSecurityGroupTargetArray and IsSecurityGroupTargetArrayOutput values.
-// You can construct a concrete instance of `IsSecurityGroupTargetArrayInput` via:
-//
-//	IsSecurityGroupTargetArray{ IsSecurityGroupTargetArgs{...} }
-type IsSecurityGroupTargetArrayInput interface {
-	pulumi.Input
-
-	ToIsSecurityGroupTargetArrayOutput() IsSecurityGroupTargetArrayOutput
-	ToIsSecurityGroupTargetArrayOutputWithContext(context.Context) IsSecurityGroupTargetArrayOutput
-}
-
-type IsSecurityGroupTargetArray []IsSecurityGroupTargetInput
-
-func (IsSecurityGroupTargetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (i IsSecurityGroupTargetArray) ToIsSecurityGroupTargetArrayOutput() IsSecurityGroupTargetArrayOutput {
-	return i.ToIsSecurityGroupTargetArrayOutputWithContext(context.Background())
-}
-
-func (i IsSecurityGroupTargetArray) ToIsSecurityGroupTargetArrayOutputWithContext(ctx context.Context) IsSecurityGroupTargetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupTargetArrayOutput)
-}
-
-// IsSecurityGroupTargetMapInput is an input type that accepts IsSecurityGroupTargetMap and IsSecurityGroupTargetMapOutput values.
-// You can construct a concrete instance of `IsSecurityGroupTargetMapInput` via:
-//
-//	IsSecurityGroupTargetMap{ "key": IsSecurityGroupTargetArgs{...} }
-type IsSecurityGroupTargetMapInput interface {
-	pulumi.Input
-
-	ToIsSecurityGroupTargetMapOutput() IsSecurityGroupTargetMapOutput
-	ToIsSecurityGroupTargetMapOutputWithContext(context.Context) IsSecurityGroupTargetMapOutput
-}
-
-type IsSecurityGroupTargetMap map[string]IsSecurityGroupTargetInput
-
-func (IsSecurityGroupTargetMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (i IsSecurityGroupTargetMap) ToIsSecurityGroupTargetMapOutput() IsSecurityGroupTargetMapOutput {
-	return i.ToIsSecurityGroupTargetMapOutputWithContext(context.Background())
-}
-
-func (i IsSecurityGroupTargetMap) ToIsSecurityGroupTargetMapOutputWithContext(ctx context.Context) IsSecurityGroupTargetMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSecurityGroupTargetMapOutput)
-}
-
 type IsSecurityGroupTargetOutput struct{ *pulumi.OutputState }
 
 func (IsSecurityGroupTargetOutput) ElementType() reflect.Type {
@@ -219,51 +169,7 @@ func (o IsSecurityGroupTargetOutput) Target() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsSecurityGroupTarget) pulumi.StringOutput { return v.Target }).(pulumi.StringOutput)
 }
 
-type IsSecurityGroupTargetArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSecurityGroupTargetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (o IsSecurityGroupTargetArrayOutput) ToIsSecurityGroupTargetArrayOutput() IsSecurityGroupTargetArrayOutput {
-	return o
-}
-
-func (o IsSecurityGroupTargetArrayOutput) ToIsSecurityGroupTargetArrayOutputWithContext(ctx context.Context) IsSecurityGroupTargetArrayOutput {
-	return o
-}
-
-func (o IsSecurityGroupTargetArrayOutput) Index(i pulumi.IntInput) IsSecurityGroupTargetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSecurityGroupTarget {
-		return vs[0].([]*IsSecurityGroupTarget)[vs[1].(int)]
-	}).(IsSecurityGroupTargetOutput)
-}
-
-type IsSecurityGroupTargetMapOutput struct{ *pulumi.OutputState }
-
-func (IsSecurityGroupTargetMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (o IsSecurityGroupTargetMapOutput) ToIsSecurityGroupTargetMapOutput() IsSecurityGroupTargetMapOutput {
-	return o
-}
-
-func (o IsSecurityGroupTargetMapOutput) ToIsSecurityGroupTargetMapOutputWithContext(ctx context.Context) IsSecurityGroupTargetMapOutput {
-	return o
-}
-
-func (o IsSecurityGroupTargetMapOutput) MapIndex(k pulumi.StringInput) IsSecurityGroupTargetOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSecurityGroupTarget {
-		return vs[0].(map[string]*IsSecurityGroupTarget)[vs[1].(string)]
-	}).(IsSecurityGroupTargetOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupTargetInput)(nil)).Elem(), &IsSecurityGroupTarget{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupTargetArrayInput)(nil)).Elem(), IsSecurityGroupTargetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSecurityGroupTargetMapInput)(nil)).Elem(), IsSecurityGroupTargetMap{})
 	pulumi.RegisterOutputType(IsSecurityGroupTargetOutput{})
-	pulumi.RegisterOutputType(IsSecurityGroupTargetArrayOutput{})
-	pulumi.RegisterOutputType(IsSecurityGroupTargetMapOutput{})
 }

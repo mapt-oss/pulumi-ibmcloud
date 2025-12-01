@@ -236,56 +236,6 @@ func (i *DnsResourceRecord) ToDnsResourceRecordOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(DnsResourceRecordOutput)
 }
 
-// DnsResourceRecordArrayInput is an input type that accepts DnsResourceRecordArray and DnsResourceRecordArrayOutput values.
-// You can construct a concrete instance of `DnsResourceRecordArrayInput` via:
-//
-//	DnsResourceRecordArray{ DnsResourceRecordArgs{...} }
-type DnsResourceRecordArrayInput interface {
-	pulumi.Input
-
-	ToDnsResourceRecordArrayOutput() DnsResourceRecordArrayOutput
-	ToDnsResourceRecordArrayOutputWithContext(context.Context) DnsResourceRecordArrayOutput
-}
-
-type DnsResourceRecordArray []DnsResourceRecordInput
-
-func (DnsResourceRecordArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsResourceRecord)(nil)).Elem()
-}
-
-func (i DnsResourceRecordArray) ToDnsResourceRecordArrayOutput() DnsResourceRecordArrayOutput {
-	return i.ToDnsResourceRecordArrayOutputWithContext(context.Background())
-}
-
-func (i DnsResourceRecordArray) ToDnsResourceRecordArrayOutputWithContext(ctx context.Context) DnsResourceRecordArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsResourceRecordArrayOutput)
-}
-
-// DnsResourceRecordMapInput is an input type that accepts DnsResourceRecordMap and DnsResourceRecordMapOutput values.
-// You can construct a concrete instance of `DnsResourceRecordMapInput` via:
-//
-//	DnsResourceRecordMap{ "key": DnsResourceRecordArgs{...} }
-type DnsResourceRecordMapInput interface {
-	pulumi.Input
-
-	ToDnsResourceRecordMapOutput() DnsResourceRecordMapOutput
-	ToDnsResourceRecordMapOutputWithContext(context.Context) DnsResourceRecordMapOutput
-}
-
-type DnsResourceRecordMap map[string]DnsResourceRecordInput
-
-func (DnsResourceRecordMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsResourceRecord)(nil)).Elem()
-}
-
-func (i DnsResourceRecordMap) ToDnsResourceRecordMapOutput() DnsResourceRecordMapOutput {
-	return i.ToDnsResourceRecordMapOutputWithContext(context.Background())
-}
-
-func (i DnsResourceRecordMap) ToDnsResourceRecordMapOutputWithContext(ctx context.Context) DnsResourceRecordMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsResourceRecordMapOutput)
-}
-
 type DnsResourceRecordOutput struct{ *pulumi.OutputState }
 
 func (DnsResourceRecordOutput) ElementType() reflect.Type {
@@ -375,51 +325,7 @@ func (o DnsResourceRecordOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DnsResourceRecord) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }
 
-type DnsResourceRecordArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsResourceRecordArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsResourceRecord)(nil)).Elem()
-}
-
-func (o DnsResourceRecordArrayOutput) ToDnsResourceRecordArrayOutput() DnsResourceRecordArrayOutput {
-	return o
-}
-
-func (o DnsResourceRecordArrayOutput) ToDnsResourceRecordArrayOutputWithContext(ctx context.Context) DnsResourceRecordArrayOutput {
-	return o
-}
-
-func (o DnsResourceRecordArrayOutput) Index(i pulumi.IntInput) DnsResourceRecordOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsResourceRecord {
-		return vs[0].([]*DnsResourceRecord)[vs[1].(int)]
-	}).(DnsResourceRecordOutput)
-}
-
-type DnsResourceRecordMapOutput struct{ *pulumi.OutputState }
-
-func (DnsResourceRecordMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsResourceRecord)(nil)).Elem()
-}
-
-func (o DnsResourceRecordMapOutput) ToDnsResourceRecordMapOutput() DnsResourceRecordMapOutput {
-	return o
-}
-
-func (o DnsResourceRecordMapOutput) ToDnsResourceRecordMapOutputWithContext(ctx context.Context) DnsResourceRecordMapOutput {
-	return o
-}
-
-func (o DnsResourceRecordMapOutput) MapIndex(k pulumi.StringInput) DnsResourceRecordOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsResourceRecord {
-		return vs[0].(map[string]*DnsResourceRecord)[vs[1].(string)]
-	}).(DnsResourceRecordOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsResourceRecordInput)(nil)).Elem(), &DnsResourceRecord{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsResourceRecordArrayInput)(nil)).Elem(), DnsResourceRecordArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsResourceRecordMapInput)(nil)).Elem(), DnsResourceRecordMap{})
 	pulumi.RegisterOutputType(DnsResourceRecordOutput{})
-	pulumi.RegisterOutputType(DnsResourceRecordArrayOutput{})
-	pulumi.RegisterOutputType(DnsResourceRecordMapOutput{})
 }

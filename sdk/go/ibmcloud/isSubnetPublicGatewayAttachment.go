@@ -163,56 +163,6 @@ func (i *IsSubnetPublicGatewayAttachment) ToIsSubnetPublicGatewayAttachmentOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetPublicGatewayAttachmentOutput)
 }
 
-// IsSubnetPublicGatewayAttachmentArrayInput is an input type that accepts IsSubnetPublicGatewayAttachmentArray and IsSubnetPublicGatewayAttachmentArrayOutput values.
-// You can construct a concrete instance of `IsSubnetPublicGatewayAttachmentArrayInput` via:
-//
-//	IsSubnetPublicGatewayAttachmentArray{ IsSubnetPublicGatewayAttachmentArgs{...} }
-type IsSubnetPublicGatewayAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToIsSubnetPublicGatewayAttachmentArrayOutput() IsSubnetPublicGatewayAttachmentArrayOutput
-	ToIsSubnetPublicGatewayAttachmentArrayOutputWithContext(context.Context) IsSubnetPublicGatewayAttachmentArrayOutput
-}
-
-type IsSubnetPublicGatewayAttachmentArray []IsSubnetPublicGatewayAttachmentInput
-
-func (IsSubnetPublicGatewayAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetPublicGatewayAttachment)(nil)).Elem()
-}
-
-func (i IsSubnetPublicGatewayAttachmentArray) ToIsSubnetPublicGatewayAttachmentArrayOutput() IsSubnetPublicGatewayAttachmentArrayOutput {
-	return i.ToIsSubnetPublicGatewayAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i IsSubnetPublicGatewayAttachmentArray) ToIsSubnetPublicGatewayAttachmentArrayOutputWithContext(ctx context.Context) IsSubnetPublicGatewayAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetPublicGatewayAttachmentArrayOutput)
-}
-
-// IsSubnetPublicGatewayAttachmentMapInput is an input type that accepts IsSubnetPublicGatewayAttachmentMap and IsSubnetPublicGatewayAttachmentMapOutput values.
-// You can construct a concrete instance of `IsSubnetPublicGatewayAttachmentMapInput` via:
-//
-//	IsSubnetPublicGatewayAttachmentMap{ "key": IsSubnetPublicGatewayAttachmentArgs{...} }
-type IsSubnetPublicGatewayAttachmentMapInput interface {
-	pulumi.Input
-
-	ToIsSubnetPublicGatewayAttachmentMapOutput() IsSubnetPublicGatewayAttachmentMapOutput
-	ToIsSubnetPublicGatewayAttachmentMapOutputWithContext(context.Context) IsSubnetPublicGatewayAttachmentMapOutput
-}
-
-type IsSubnetPublicGatewayAttachmentMap map[string]IsSubnetPublicGatewayAttachmentInput
-
-func (IsSubnetPublicGatewayAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetPublicGatewayAttachment)(nil)).Elem()
-}
-
-func (i IsSubnetPublicGatewayAttachmentMap) ToIsSubnetPublicGatewayAttachmentMapOutput() IsSubnetPublicGatewayAttachmentMapOutput {
-	return i.ToIsSubnetPublicGatewayAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i IsSubnetPublicGatewayAttachmentMap) ToIsSubnetPublicGatewayAttachmentMapOutputWithContext(ctx context.Context) IsSubnetPublicGatewayAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetPublicGatewayAttachmentMapOutput)
-}
-
 type IsSubnetPublicGatewayAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IsSubnetPublicGatewayAttachmentOutput) ElementType() reflect.Type {
@@ -281,51 +231,7 @@ func (o IsSubnetPublicGatewayAttachmentOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsSubnetPublicGatewayAttachment) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsSubnetPublicGatewayAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetPublicGatewayAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetPublicGatewayAttachment)(nil)).Elem()
-}
-
-func (o IsSubnetPublicGatewayAttachmentArrayOutput) ToIsSubnetPublicGatewayAttachmentArrayOutput() IsSubnetPublicGatewayAttachmentArrayOutput {
-	return o
-}
-
-func (o IsSubnetPublicGatewayAttachmentArrayOutput) ToIsSubnetPublicGatewayAttachmentArrayOutputWithContext(ctx context.Context) IsSubnetPublicGatewayAttachmentArrayOutput {
-	return o
-}
-
-func (o IsSubnetPublicGatewayAttachmentArrayOutput) Index(i pulumi.IntInput) IsSubnetPublicGatewayAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSubnetPublicGatewayAttachment {
-		return vs[0].([]*IsSubnetPublicGatewayAttachment)[vs[1].(int)]
-	}).(IsSubnetPublicGatewayAttachmentOutput)
-}
-
-type IsSubnetPublicGatewayAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetPublicGatewayAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetPublicGatewayAttachment)(nil)).Elem()
-}
-
-func (o IsSubnetPublicGatewayAttachmentMapOutput) ToIsSubnetPublicGatewayAttachmentMapOutput() IsSubnetPublicGatewayAttachmentMapOutput {
-	return o
-}
-
-func (o IsSubnetPublicGatewayAttachmentMapOutput) ToIsSubnetPublicGatewayAttachmentMapOutputWithContext(ctx context.Context) IsSubnetPublicGatewayAttachmentMapOutput {
-	return o
-}
-
-func (o IsSubnetPublicGatewayAttachmentMapOutput) MapIndex(k pulumi.StringInput) IsSubnetPublicGatewayAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSubnetPublicGatewayAttachment {
-		return vs[0].(map[string]*IsSubnetPublicGatewayAttachment)[vs[1].(string)]
-	}).(IsSubnetPublicGatewayAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetPublicGatewayAttachmentInput)(nil)).Elem(), &IsSubnetPublicGatewayAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetPublicGatewayAttachmentArrayInput)(nil)).Elem(), IsSubnetPublicGatewayAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetPublicGatewayAttachmentMapInput)(nil)).Elem(), IsSubnetPublicGatewayAttachmentMap{})
 	pulumi.RegisterOutputType(IsSubnetPublicGatewayAttachmentOutput{})
-	pulumi.RegisterOutputType(IsSubnetPublicGatewayAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(IsSubnetPublicGatewayAttachmentMapOutput{})
 }

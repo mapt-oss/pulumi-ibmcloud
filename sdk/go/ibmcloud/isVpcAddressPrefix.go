@@ -163,56 +163,6 @@ func (i *IsVpcAddressPrefix) ToIsVpcAddressPrefixOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(IsVpcAddressPrefixOutput)
 }
 
-// IsVpcAddressPrefixArrayInput is an input type that accepts IsVpcAddressPrefixArray and IsVpcAddressPrefixArrayOutput values.
-// You can construct a concrete instance of `IsVpcAddressPrefixArrayInput` via:
-//
-//	IsVpcAddressPrefixArray{ IsVpcAddressPrefixArgs{...} }
-type IsVpcAddressPrefixArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcAddressPrefixArrayOutput() IsVpcAddressPrefixArrayOutput
-	ToIsVpcAddressPrefixArrayOutputWithContext(context.Context) IsVpcAddressPrefixArrayOutput
-}
-
-type IsVpcAddressPrefixArray []IsVpcAddressPrefixInput
-
-func (IsVpcAddressPrefixArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpcAddressPrefix)(nil)).Elem()
-}
-
-func (i IsVpcAddressPrefixArray) ToIsVpcAddressPrefixArrayOutput() IsVpcAddressPrefixArrayOutput {
-	return i.ToIsVpcAddressPrefixArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcAddressPrefixArray) ToIsVpcAddressPrefixArrayOutputWithContext(ctx context.Context) IsVpcAddressPrefixArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcAddressPrefixArrayOutput)
-}
-
-// IsVpcAddressPrefixMapInput is an input type that accepts IsVpcAddressPrefixMap and IsVpcAddressPrefixMapOutput values.
-// You can construct a concrete instance of `IsVpcAddressPrefixMapInput` via:
-//
-//	IsVpcAddressPrefixMap{ "key": IsVpcAddressPrefixArgs{...} }
-type IsVpcAddressPrefixMapInput interface {
-	pulumi.Input
-
-	ToIsVpcAddressPrefixMapOutput() IsVpcAddressPrefixMapOutput
-	ToIsVpcAddressPrefixMapOutputWithContext(context.Context) IsVpcAddressPrefixMapOutput
-}
-
-type IsVpcAddressPrefixMap map[string]IsVpcAddressPrefixInput
-
-func (IsVpcAddressPrefixMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpcAddressPrefix)(nil)).Elem()
-}
-
-func (i IsVpcAddressPrefixMap) ToIsVpcAddressPrefixMapOutput() IsVpcAddressPrefixMapOutput {
-	return i.ToIsVpcAddressPrefixMapOutputWithContext(context.Background())
-}
-
-func (i IsVpcAddressPrefixMap) ToIsVpcAddressPrefixMapOutputWithContext(ctx context.Context) IsVpcAddressPrefixMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcAddressPrefixMapOutput)
-}
-
 type IsVpcAddressPrefixOutput struct{ *pulumi.OutputState }
 
 func (IsVpcAddressPrefixOutput) ElementType() reflect.Type {
@@ -267,51 +217,7 @@ func (o IsVpcAddressPrefixOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsVpcAddressPrefix) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsVpcAddressPrefixArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcAddressPrefixArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpcAddressPrefix)(nil)).Elem()
-}
-
-func (o IsVpcAddressPrefixArrayOutput) ToIsVpcAddressPrefixArrayOutput() IsVpcAddressPrefixArrayOutput {
-	return o
-}
-
-func (o IsVpcAddressPrefixArrayOutput) ToIsVpcAddressPrefixArrayOutputWithContext(ctx context.Context) IsVpcAddressPrefixArrayOutput {
-	return o
-}
-
-func (o IsVpcAddressPrefixArrayOutput) Index(i pulumi.IntInput) IsVpcAddressPrefixOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVpcAddressPrefix {
-		return vs[0].([]*IsVpcAddressPrefix)[vs[1].(int)]
-	}).(IsVpcAddressPrefixOutput)
-}
-
-type IsVpcAddressPrefixMapOutput struct{ *pulumi.OutputState }
-
-func (IsVpcAddressPrefixMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpcAddressPrefix)(nil)).Elem()
-}
-
-func (o IsVpcAddressPrefixMapOutput) ToIsVpcAddressPrefixMapOutput() IsVpcAddressPrefixMapOutput {
-	return o
-}
-
-func (o IsVpcAddressPrefixMapOutput) ToIsVpcAddressPrefixMapOutputWithContext(ctx context.Context) IsVpcAddressPrefixMapOutput {
-	return o
-}
-
-func (o IsVpcAddressPrefixMapOutput) MapIndex(k pulumi.StringInput) IsVpcAddressPrefixOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVpcAddressPrefix {
-		return vs[0].(map[string]*IsVpcAddressPrefix)[vs[1].(string)]
-	}).(IsVpcAddressPrefixOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcAddressPrefixInput)(nil)).Elem(), &IsVpcAddressPrefix{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcAddressPrefixArrayInput)(nil)).Elem(), IsVpcAddressPrefixArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcAddressPrefixMapInput)(nil)).Elem(), IsVpcAddressPrefixMap{})
 	pulumi.RegisterOutputType(IsVpcAddressPrefixOutput{})
-	pulumi.RegisterOutputType(IsVpcAddressPrefixArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcAddressPrefixMapOutput{})
 }

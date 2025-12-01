@@ -173,56 +173,6 @@ func (i *IamActionControlTemplate) ToIamActionControlTemplateOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlTemplateOutput)
 }
 
-// IamActionControlTemplateArrayInput is an input type that accepts IamActionControlTemplateArray and IamActionControlTemplateArrayOutput values.
-// You can construct a concrete instance of `IamActionControlTemplateArrayInput` via:
-//
-//	IamActionControlTemplateArray{ IamActionControlTemplateArgs{...} }
-type IamActionControlTemplateArrayInput interface {
-	pulumi.Input
-
-	ToIamActionControlTemplateArrayOutput() IamActionControlTemplateArrayOutput
-	ToIamActionControlTemplateArrayOutputWithContext(context.Context) IamActionControlTemplateArrayOutput
-}
-
-type IamActionControlTemplateArray []IamActionControlTemplateInput
-
-func (IamActionControlTemplateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamActionControlTemplate)(nil)).Elem()
-}
-
-func (i IamActionControlTemplateArray) ToIamActionControlTemplateArrayOutput() IamActionControlTemplateArrayOutput {
-	return i.ToIamActionControlTemplateArrayOutputWithContext(context.Background())
-}
-
-func (i IamActionControlTemplateArray) ToIamActionControlTemplateArrayOutputWithContext(ctx context.Context) IamActionControlTemplateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlTemplateArrayOutput)
-}
-
-// IamActionControlTemplateMapInput is an input type that accepts IamActionControlTemplateMap and IamActionControlTemplateMapOutput values.
-// You can construct a concrete instance of `IamActionControlTemplateMapInput` via:
-//
-//	IamActionControlTemplateMap{ "key": IamActionControlTemplateArgs{...} }
-type IamActionControlTemplateMapInput interface {
-	pulumi.Input
-
-	ToIamActionControlTemplateMapOutput() IamActionControlTemplateMapOutput
-	ToIamActionControlTemplateMapOutputWithContext(context.Context) IamActionControlTemplateMapOutput
-}
-
-type IamActionControlTemplateMap map[string]IamActionControlTemplateInput
-
-func (IamActionControlTemplateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamActionControlTemplate)(nil)).Elem()
-}
-
-func (i IamActionControlTemplateMap) ToIamActionControlTemplateMapOutput() IamActionControlTemplateMapOutput {
-	return i.ToIamActionControlTemplateMapOutputWithContext(context.Background())
-}
-
-func (i IamActionControlTemplateMap) ToIamActionControlTemplateMapOutputWithContext(ctx context.Context) IamActionControlTemplateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlTemplateMapOutput)
-}
-
 type IamActionControlTemplateOutput struct{ *pulumi.OutputState }
 
 func (IamActionControlTemplateOutput) ElementType() reflect.Type {
@@ -299,51 +249,7 @@ func (o IamActionControlTemplateOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamActionControlTemplate) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamActionControlTemplateArrayOutput struct{ *pulumi.OutputState }
-
-func (IamActionControlTemplateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamActionControlTemplate)(nil)).Elem()
-}
-
-func (o IamActionControlTemplateArrayOutput) ToIamActionControlTemplateArrayOutput() IamActionControlTemplateArrayOutput {
-	return o
-}
-
-func (o IamActionControlTemplateArrayOutput) ToIamActionControlTemplateArrayOutputWithContext(ctx context.Context) IamActionControlTemplateArrayOutput {
-	return o
-}
-
-func (o IamActionControlTemplateArrayOutput) Index(i pulumi.IntInput) IamActionControlTemplateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamActionControlTemplate {
-		return vs[0].([]*IamActionControlTemplate)[vs[1].(int)]
-	}).(IamActionControlTemplateOutput)
-}
-
-type IamActionControlTemplateMapOutput struct{ *pulumi.OutputState }
-
-func (IamActionControlTemplateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamActionControlTemplate)(nil)).Elem()
-}
-
-func (o IamActionControlTemplateMapOutput) ToIamActionControlTemplateMapOutput() IamActionControlTemplateMapOutput {
-	return o
-}
-
-func (o IamActionControlTemplateMapOutput) ToIamActionControlTemplateMapOutputWithContext(ctx context.Context) IamActionControlTemplateMapOutput {
-	return o
-}
-
-func (o IamActionControlTemplateMapOutput) MapIndex(k pulumi.StringInput) IamActionControlTemplateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamActionControlTemplate {
-		return vs[0].(map[string]*IamActionControlTemplate)[vs[1].(string)]
-	}).(IamActionControlTemplateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlTemplateInput)(nil)).Elem(), &IamActionControlTemplate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlTemplateArrayInput)(nil)).Elem(), IamActionControlTemplateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlTemplateMapInput)(nil)).Elem(), IamActionControlTemplateMap{})
 	pulumi.RegisterOutputType(IamActionControlTemplateOutput{})
-	pulumi.RegisterOutputType(IamActionControlTemplateArrayOutput{})
-	pulumi.RegisterOutputType(IamActionControlTemplateMapOutput{})
 }

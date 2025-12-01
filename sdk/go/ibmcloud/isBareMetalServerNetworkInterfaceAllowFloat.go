@@ -241,56 +241,6 @@ func (i *IsBareMetalServerNetworkInterfaceAllowFloat) ToIsBareMetalServerNetwork
 	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkInterfaceAllowFloatOutput)
 }
 
-// IsBareMetalServerNetworkInterfaceAllowFloatArrayInput is an input type that accepts IsBareMetalServerNetworkInterfaceAllowFloatArray and IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput values.
-// You can construct a concrete instance of `IsBareMetalServerNetworkInterfaceAllowFloatArrayInput` via:
-//
-//	IsBareMetalServerNetworkInterfaceAllowFloatArray{ IsBareMetalServerNetworkInterfaceAllowFloatArgs{...} }
-type IsBareMetalServerNetworkInterfaceAllowFloatArrayInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerNetworkInterfaceAllowFloatArrayOutput() IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput
-	ToIsBareMetalServerNetworkInterfaceAllowFloatArrayOutputWithContext(context.Context) IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput
-}
-
-type IsBareMetalServerNetworkInterfaceAllowFloatArray []IsBareMetalServerNetworkInterfaceAllowFloatInput
-
-func (IsBareMetalServerNetworkInterfaceAllowFloatArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerNetworkInterfaceAllowFloat)(nil)).Elem()
-}
-
-func (i IsBareMetalServerNetworkInterfaceAllowFloatArray) ToIsBareMetalServerNetworkInterfaceAllowFloatArrayOutput() IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput {
-	return i.ToIsBareMetalServerNetworkInterfaceAllowFloatArrayOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerNetworkInterfaceAllowFloatArray) ToIsBareMetalServerNetworkInterfaceAllowFloatArrayOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput)
-}
-
-// IsBareMetalServerNetworkInterfaceAllowFloatMapInput is an input type that accepts IsBareMetalServerNetworkInterfaceAllowFloatMap and IsBareMetalServerNetworkInterfaceAllowFloatMapOutput values.
-// You can construct a concrete instance of `IsBareMetalServerNetworkInterfaceAllowFloatMapInput` via:
-//
-//	IsBareMetalServerNetworkInterfaceAllowFloatMap{ "key": IsBareMetalServerNetworkInterfaceAllowFloatArgs{...} }
-type IsBareMetalServerNetworkInterfaceAllowFloatMapInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerNetworkInterfaceAllowFloatMapOutput() IsBareMetalServerNetworkInterfaceAllowFloatMapOutput
-	ToIsBareMetalServerNetworkInterfaceAllowFloatMapOutputWithContext(context.Context) IsBareMetalServerNetworkInterfaceAllowFloatMapOutput
-}
-
-type IsBareMetalServerNetworkInterfaceAllowFloatMap map[string]IsBareMetalServerNetworkInterfaceAllowFloatInput
-
-func (IsBareMetalServerNetworkInterfaceAllowFloatMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerNetworkInterfaceAllowFloat)(nil)).Elem()
-}
-
-func (i IsBareMetalServerNetworkInterfaceAllowFloatMap) ToIsBareMetalServerNetworkInterfaceAllowFloatMapOutput() IsBareMetalServerNetworkInterfaceAllowFloatMapOutput {
-	return i.ToIsBareMetalServerNetworkInterfaceAllowFloatMapOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerNetworkInterfaceAllowFloatMap) ToIsBareMetalServerNetworkInterfaceAllowFloatMapOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceAllowFloatMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerNetworkInterfaceAllowFloatMapOutput)
-}
-
 type IsBareMetalServerNetworkInterfaceAllowFloatOutput struct{ *pulumi.OutputState }
 
 func (IsBareMetalServerNetworkInterfaceAllowFloatOutput) ElementType() reflect.Type {
@@ -408,51 +358,7 @@ func (o IsBareMetalServerNetworkInterfaceAllowFloatOutput) Vlan() pulumi.IntOutp
 	return o.ApplyT(func(v *IsBareMetalServerNetworkInterfaceAllowFloat) pulumi.IntOutput { return v.Vlan }).(pulumi.IntOutput)
 }
 
-type IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerNetworkInterfaceAllowFloat)(nil)).Elem()
-}
-
-func (o IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput) ToIsBareMetalServerNetworkInterfaceAllowFloatArrayOutput() IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput) ToIsBareMetalServerNetworkInterfaceAllowFloatArrayOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput) Index(i pulumi.IntInput) IsBareMetalServerNetworkInterfaceAllowFloatOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsBareMetalServerNetworkInterfaceAllowFloat {
-		return vs[0].([]*IsBareMetalServerNetworkInterfaceAllowFloat)[vs[1].(int)]
-	}).(IsBareMetalServerNetworkInterfaceAllowFloatOutput)
-}
-
-type IsBareMetalServerNetworkInterfaceAllowFloatMapOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerNetworkInterfaceAllowFloatMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerNetworkInterfaceAllowFloat)(nil)).Elem()
-}
-
-func (o IsBareMetalServerNetworkInterfaceAllowFloatMapOutput) ToIsBareMetalServerNetworkInterfaceAllowFloatMapOutput() IsBareMetalServerNetworkInterfaceAllowFloatMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceAllowFloatMapOutput) ToIsBareMetalServerNetworkInterfaceAllowFloatMapOutputWithContext(ctx context.Context) IsBareMetalServerNetworkInterfaceAllowFloatMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerNetworkInterfaceAllowFloatMapOutput) MapIndex(k pulumi.StringInput) IsBareMetalServerNetworkInterfaceAllowFloatOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsBareMetalServerNetworkInterfaceAllowFloat {
-		return vs[0].(map[string]*IsBareMetalServerNetworkInterfaceAllowFloat)[vs[1].(string)]
-	}).(IsBareMetalServerNetworkInterfaceAllowFloatOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkInterfaceAllowFloatInput)(nil)).Elem(), &IsBareMetalServerNetworkInterfaceAllowFloat{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkInterfaceAllowFloatArrayInput)(nil)).Elem(), IsBareMetalServerNetworkInterfaceAllowFloatArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerNetworkInterfaceAllowFloatMapInput)(nil)).Elem(), IsBareMetalServerNetworkInterfaceAllowFloatMap{})
 	pulumi.RegisterOutputType(IsBareMetalServerNetworkInterfaceAllowFloatOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerNetworkInterfaceAllowFloatArrayOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerNetworkInterfaceAllowFloatMapOutput{})
 }

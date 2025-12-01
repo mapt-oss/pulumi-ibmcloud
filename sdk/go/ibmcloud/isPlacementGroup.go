@@ -169,56 +169,6 @@ func (i *IsPlacementGroup) ToIsPlacementGroupOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IsPlacementGroupOutput)
 }
 
-// IsPlacementGroupArrayInput is an input type that accepts IsPlacementGroupArray and IsPlacementGroupArrayOutput values.
-// You can construct a concrete instance of `IsPlacementGroupArrayInput` via:
-//
-//	IsPlacementGroupArray{ IsPlacementGroupArgs{...} }
-type IsPlacementGroupArrayInput interface {
-	pulumi.Input
-
-	ToIsPlacementGroupArrayOutput() IsPlacementGroupArrayOutput
-	ToIsPlacementGroupArrayOutputWithContext(context.Context) IsPlacementGroupArrayOutput
-}
-
-type IsPlacementGroupArray []IsPlacementGroupInput
-
-func (IsPlacementGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPlacementGroup)(nil)).Elem()
-}
-
-func (i IsPlacementGroupArray) ToIsPlacementGroupArrayOutput() IsPlacementGroupArrayOutput {
-	return i.ToIsPlacementGroupArrayOutputWithContext(context.Background())
-}
-
-func (i IsPlacementGroupArray) ToIsPlacementGroupArrayOutputWithContext(ctx context.Context) IsPlacementGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPlacementGroupArrayOutput)
-}
-
-// IsPlacementGroupMapInput is an input type that accepts IsPlacementGroupMap and IsPlacementGroupMapOutput values.
-// You can construct a concrete instance of `IsPlacementGroupMapInput` via:
-//
-//	IsPlacementGroupMap{ "key": IsPlacementGroupArgs{...} }
-type IsPlacementGroupMapInput interface {
-	pulumi.Input
-
-	ToIsPlacementGroupMapOutput() IsPlacementGroupMapOutput
-	ToIsPlacementGroupMapOutputWithContext(context.Context) IsPlacementGroupMapOutput
-}
-
-type IsPlacementGroupMap map[string]IsPlacementGroupInput
-
-func (IsPlacementGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPlacementGroup)(nil)).Elem()
-}
-
-func (i IsPlacementGroupMap) ToIsPlacementGroupMapOutput() IsPlacementGroupMapOutput {
-	return i.ToIsPlacementGroupMapOutputWithContext(context.Background())
-}
-
-func (i IsPlacementGroupMap) ToIsPlacementGroupMapOutputWithContext(ctx context.Context) IsPlacementGroupMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPlacementGroupMapOutput)
-}
-
 type IsPlacementGroupOutput struct{ *pulumi.OutputState }
 
 func (IsPlacementGroupOutput) ElementType() reflect.Type {
@@ -283,51 +233,7 @@ func (o IsPlacementGroupOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IsPlacementGroup) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type IsPlacementGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (IsPlacementGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPlacementGroup)(nil)).Elem()
-}
-
-func (o IsPlacementGroupArrayOutput) ToIsPlacementGroupArrayOutput() IsPlacementGroupArrayOutput {
-	return o
-}
-
-func (o IsPlacementGroupArrayOutput) ToIsPlacementGroupArrayOutputWithContext(ctx context.Context) IsPlacementGroupArrayOutput {
-	return o
-}
-
-func (o IsPlacementGroupArrayOutput) Index(i pulumi.IntInput) IsPlacementGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsPlacementGroup {
-		return vs[0].([]*IsPlacementGroup)[vs[1].(int)]
-	}).(IsPlacementGroupOutput)
-}
-
-type IsPlacementGroupMapOutput struct{ *pulumi.OutputState }
-
-func (IsPlacementGroupMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPlacementGroup)(nil)).Elem()
-}
-
-func (o IsPlacementGroupMapOutput) ToIsPlacementGroupMapOutput() IsPlacementGroupMapOutput {
-	return o
-}
-
-func (o IsPlacementGroupMapOutput) ToIsPlacementGroupMapOutputWithContext(ctx context.Context) IsPlacementGroupMapOutput {
-	return o
-}
-
-func (o IsPlacementGroupMapOutput) MapIndex(k pulumi.StringInput) IsPlacementGroupOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsPlacementGroup {
-		return vs[0].(map[string]*IsPlacementGroup)[vs[1].(string)]
-	}).(IsPlacementGroupOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsPlacementGroupInput)(nil)).Elem(), &IsPlacementGroup{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPlacementGroupArrayInput)(nil)).Elem(), IsPlacementGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPlacementGroupMapInput)(nil)).Elem(), IsPlacementGroupMap{})
 	pulumi.RegisterOutputType(IsPlacementGroupOutput{})
-	pulumi.RegisterOutputType(IsPlacementGroupArrayOutput{})
-	pulumi.RegisterOutputType(IsPlacementGroupMapOutput{})
 }

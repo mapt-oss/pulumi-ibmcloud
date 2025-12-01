@@ -159,56 +159,6 @@ func (i *DnsPermittedNetwork) ToDnsPermittedNetworkOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(DnsPermittedNetworkOutput)
 }
 
-// DnsPermittedNetworkArrayInput is an input type that accepts DnsPermittedNetworkArray and DnsPermittedNetworkArrayOutput values.
-// You can construct a concrete instance of `DnsPermittedNetworkArrayInput` via:
-//
-//	DnsPermittedNetworkArray{ DnsPermittedNetworkArgs{...} }
-type DnsPermittedNetworkArrayInput interface {
-	pulumi.Input
-
-	ToDnsPermittedNetworkArrayOutput() DnsPermittedNetworkArrayOutput
-	ToDnsPermittedNetworkArrayOutputWithContext(context.Context) DnsPermittedNetworkArrayOutput
-}
-
-type DnsPermittedNetworkArray []DnsPermittedNetworkInput
-
-func (DnsPermittedNetworkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsPermittedNetwork)(nil)).Elem()
-}
-
-func (i DnsPermittedNetworkArray) ToDnsPermittedNetworkArrayOutput() DnsPermittedNetworkArrayOutput {
-	return i.ToDnsPermittedNetworkArrayOutputWithContext(context.Background())
-}
-
-func (i DnsPermittedNetworkArray) ToDnsPermittedNetworkArrayOutputWithContext(ctx context.Context) DnsPermittedNetworkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsPermittedNetworkArrayOutput)
-}
-
-// DnsPermittedNetworkMapInput is an input type that accepts DnsPermittedNetworkMap and DnsPermittedNetworkMapOutput values.
-// You can construct a concrete instance of `DnsPermittedNetworkMapInput` via:
-//
-//	DnsPermittedNetworkMap{ "key": DnsPermittedNetworkArgs{...} }
-type DnsPermittedNetworkMapInput interface {
-	pulumi.Input
-
-	ToDnsPermittedNetworkMapOutput() DnsPermittedNetworkMapOutput
-	ToDnsPermittedNetworkMapOutputWithContext(context.Context) DnsPermittedNetworkMapOutput
-}
-
-type DnsPermittedNetworkMap map[string]DnsPermittedNetworkInput
-
-func (DnsPermittedNetworkMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsPermittedNetwork)(nil)).Elem()
-}
-
-func (i DnsPermittedNetworkMap) ToDnsPermittedNetworkMapOutput() DnsPermittedNetworkMapOutput {
-	return i.ToDnsPermittedNetworkMapOutputWithContext(context.Background())
-}
-
-func (i DnsPermittedNetworkMap) ToDnsPermittedNetworkMapOutputWithContext(ctx context.Context) DnsPermittedNetworkMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsPermittedNetworkMapOutput)
-}
-
 type DnsPermittedNetworkOutput struct{ *pulumi.OutputState }
 
 func (DnsPermittedNetworkOutput) ElementType() reflect.Type {
@@ -263,51 +213,7 @@ func (o DnsPermittedNetworkOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DnsPermittedNetwork) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }
 
-type DnsPermittedNetworkArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsPermittedNetworkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsPermittedNetwork)(nil)).Elem()
-}
-
-func (o DnsPermittedNetworkArrayOutput) ToDnsPermittedNetworkArrayOutput() DnsPermittedNetworkArrayOutput {
-	return o
-}
-
-func (o DnsPermittedNetworkArrayOutput) ToDnsPermittedNetworkArrayOutputWithContext(ctx context.Context) DnsPermittedNetworkArrayOutput {
-	return o
-}
-
-func (o DnsPermittedNetworkArrayOutput) Index(i pulumi.IntInput) DnsPermittedNetworkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsPermittedNetwork {
-		return vs[0].([]*DnsPermittedNetwork)[vs[1].(int)]
-	}).(DnsPermittedNetworkOutput)
-}
-
-type DnsPermittedNetworkMapOutput struct{ *pulumi.OutputState }
-
-func (DnsPermittedNetworkMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsPermittedNetwork)(nil)).Elem()
-}
-
-func (o DnsPermittedNetworkMapOutput) ToDnsPermittedNetworkMapOutput() DnsPermittedNetworkMapOutput {
-	return o
-}
-
-func (o DnsPermittedNetworkMapOutput) ToDnsPermittedNetworkMapOutputWithContext(ctx context.Context) DnsPermittedNetworkMapOutput {
-	return o
-}
-
-func (o DnsPermittedNetworkMapOutput) MapIndex(k pulumi.StringInput) DnsPermittedNetworkOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsPermittedNetwork {
-		return vs[0].(map[string]*DnsPermittedNetwork)[vs[1].(string)]
-	}).(DnsPermittedNetworkOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsPermittedNetworkInput)(nil)).Elem(), &DnsPermittedNetwork{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsPermittedNetworkArrayInput)(nil)).Elem(), DnsPermittedNetworkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsPermittedNetworkMapInput)(nil)).Elem(), DnsPermittedNetworkMap{})
 	pulumi.RegisterOutputType(DnsPermittedNetworkOutput{})
-	pulumi.RegisterOutputType(DnsPermittedNetworkArrayOutput{})
-	pulumi.RegisterOutputType(DnsPermittedNetworkMapOutput{})
 }

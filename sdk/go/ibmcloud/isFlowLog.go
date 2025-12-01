@@ -228,56 +228,6 @@ func (i *IsFlowLog) ToIsFlowLogOutputWithContext(ctx context.Context) IsFlowLogO
 	return pulumi.ToOutputWithContext(ctx, i).(IsFlowLogOutput)
 }
 
-// IsFlowLogArrayInput is an input type that accepts IsFlowLogArray and IsFlowLogArrayOutput values.
-// You can construct a concrete instance of `IsFlowLogArrayInput` via:
-//
-//	IsFlowLogArray{ IsFlowLogArgs{...} }
-type IsFlowLogArrayInput interface {
-	pulumi.Input
-
-	ToIsFlowLogArrayOutput() IsFlowLogArrayOutput
-	ToIsFlowLogArrayOutputWithContext(context.Context) IsFlowLogArrayOutput
-}
-
-type IsFlowLogArray []IsFlowLogInput
-
-func (IsFlowLogArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsFlowLog)(nil)).Elem()
-}
-
-func (i IsFlowLogArray) ToIsFlowLogArrayOutput() IsFlowLogArrayOutput {
-	return i.ToIsFlowLogArrayOutputWithContext(context.Background())
-}
-
-func (i IsFlowLogArray) ToIsFlowLogArrayOutputWithContext(ctx context.Context) IsFlowLogArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsFlowLogArrayOutput)
-}
-
-// IsFlowLogMapInput is an input type that accepts IsFlowLogMap and IsFlowLogMapOutput values.
-// You can construct a concrete instance of `IsFlowLogMapInput` via:
-//
-//	IsFlowLogMap{ "key": IsFlowLogArgs{...} }
-type IsFlowLogMapInput interface {
-	pulumi.Input
-
-	ToIsFlowLogMapOutput() IsFlowLogMapOutput
-	ToIsFlowLogMapOutputWithContext(context.Context) IsFlowLogMapOutput
-}
-
-type IsFlowLogMap map[string]IsFlowLogInput
-
-func (IsFlowLogMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsFlowLog)(nil)).Elem()
-}
-
-func (i IsFlowLogMap) ToIsFlowLogMapOutput() IsFlowLogMapOutput {
-	return i.ToIsFlowLogMapOutputWithContext(context.Background())
-}
-
-func (i IsFlowLogMap) ToIsFlowLogMapOutputWithContext(ctx context.Context) IsFlowLogMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsFlowLogMapOutput)
-}
-
 type IsFlowLogOutput struct{ *pulumi.OutputState }
 
 func (IsFlowLogOutput) ElementType() reflect.Type {
@@ -382,51 +332,7 @@ func (o IsFlowLogOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsFlowLog) pulumi.StringOutput { return v.Vpc }).(pulumi.StringOutput)
 }
 
-type IsFlowLogArrayOutput struct{ *pulumi.OutputState }
-
-func (IsFlowLogArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsFlowLog)(nil)).Elem()
-}
-
-func (o IsFlowLogArrayOutput) ToIsFlowLogArrayOutput() IsFlowLogArrayOutput {
-	return o
-}
-
-func (o IsFlowLogArrayOutput) ToIsFlowLogArrayOutputWithContext(ctx context.Context) IsFlowLogArrayOutput {
-	return o
-}
-
-func (o IsFlowLogArrayOutput) Index(i pulumi.IntInput) IsFlowLogOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsFlowLog {
-		return vs[0].([]*IsFlowLog)[vs[1].(int)]
-	}).(IsFlowLogOutput)
-}
-
-type IsFlowLogMapOutput struct{ *pulumi.OutputState }
-
-func (IsFlowLogMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsFlowLog)(nil)).Elem()
-}
-
-func (o IsFlowLogMapOutput) ToIsFlowLogMapOutput() IsFlowLogMapOutput {
-	return o
-}
-
-func (o IsFlowLogMapOutput) ToIsFlowLogMapOutputWithContext(ctx context.Context) IsFlowLogMapOutput {
-	return o
-}
-
-func (o IsFlowLogMapOutput) MapIndex(k pulumi.StringInput) IsFlowLogOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsFlowLog {
-		return vs[0].(map[string]*IsFlowLog)[vs[1].(string)]
-	}).(IsFlowLogOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsFlowLogInput)(nil)).Elem(), &IsFlowLog{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsFlowLogArrayInput)(nil)).Elem(), IsFlowLogArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsFlowLogMapInput)(nil)).Elem(), IsFlowLogMap{})
 	pulumi.RegisterOutputType(IsFlowLogOutput{})
-	pulumi.RegisterOutputType(IsFlowLogArrayOutput{})
-	pulumi.RegisterOutputType(IsFlowLogMapOutput{})
 }

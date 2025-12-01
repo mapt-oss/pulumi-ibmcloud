@@ -164,56 +164,6 @@ func (i *IsVpcDnsResolutionBinding) ToIsVpcDnsResolutionBindingOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(IsVpcDnsResolutionBindingOutput)
 }
 
-// IsVpcDnsResolutionBindingArrayInput is an input type that accepts IsVpcDnsResolutionBindingArray and IsVpcDnsResolutionBindingArrayOutput values.
-// You can construct a concrete instance of `IsVpcDnsResolutionBindingArrayInput` via:
-//
-//	IsVpcDnsResolutionBindingArray{ IsVpcDnsResolutionBindingArgs{...} }
-type IsVpcDnsResolutionBindingArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcDnsResolutionBindingArrayOutput() IsVpcDnsResolutionBindingArrayOutput
-	ToIsVpcDnsResolutionBindingArrayOutputWithContext(context.Context) IsVpcDnsResolutionBindingArrayOutput
-}
-
-type IsVpcDnsResolutionBindingArray []IsVpcDnsResolutionBindingInput
-
-func (IsVpcDnsResolutionBindingArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpcDnsResolutionBinding)(nil)).Elem()
-}
-
-func (i IsVpcDnsResolutionBindingArray) ToIsVpcDnsResolutionBindingArrayOutput() IsVpcDnsResolutionBindingArrayOutput {
-	return i.ToIsVpcDnsResolutionBindingArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcDnsResolutionBindingArray) ToIsVpcDnsResolutionBindingArrayOutputWithContext(ctx context.Context) IsVpcDnsResolutionBindingArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcDnsResolutionBindingArrayOutput)
-}
-
-// IsVpcDnsResolutionBindingMapInput is an input type that accepts IsVpcDnsResolutionBindingMap and IsVpcDnsResolutionBindingMapOutput values.
-// You can construct a concrete instance of `IsVpcDnsResolutionBindingMapInput` via:
-//
-//	IsVpcDnsResolutionBindingMap{ "key": IsVpcDnsResolutionBindingArgs{...} }
-type IsVpcDnsResolutionBindingMapInput interface {
-	pulumi.Input
-
-	ToIsVpcDnsResolutionBindingMapOutput() IsVpcDnsResolutionBindingMapOutput
-	ToIsVpcDnsResolutionBindingMapOutputWithContext(context.Context) IsVpcDnsResolutionBindingMapOutput
-}
-
-type IsVpcDnsResolutionBindingMap map[string]IsVpcDnsResolutionBindingInput
-
-func (IsVpcDnsResolutionBindingMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpcDnsResolutionBinding)(nil)).Elem()
-}
-
-func (i IsVpcDnsResolutionBindingMap) ToIsVpcDnsResolutionBindingMapOutput() IsVpcDnsResolutionBindingMapOutput {
-	return i.ToIsVpcDnsResolutionBindingMapOutputWithContext(context.Background())
-}
-
-func (i IsVpcDnsResolutionBindingMap) ToIsVpcDnsResolutionBindingMapOutputWithContext(ctx context.Context) IsVpcDnsResolutionBindingMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcDnsResolutionBindingMapOutput)
-}
-
 type IsVpcDnsResolutionBindingOutput struct{ *pulumi.OutputState }
 
 func (IsVpcDnsResolutionBindingOutput) ElementType() reflect.Type {
@@ -282,51 +232,7 @@ func (o IsVpcDnsResolutionBindingOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsVpcDnsResolutionBinding) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-type IsVpcDnsResolutionBindingArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcDnsResolutionBindingArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpcDnsResolutionBinding)(nil)).Elem()
-}
-
-func (o IsVpcDnsResolutionBindingArrayOutput) ToIsVpcDnsResolutionBindingArrayOutput() IsVpcDnsResolutionBindingArrayOutput {
-	return o
-}
-
-func (o IsVpcDnsResolutionBindingArrayOutput) ToIsVpcDnsResolutionBindingArrayOutputWithContext(ctx context.Context) IsVpcDnsResolutionBindingArrayOutput {
-	return o
-}
-
-func (o IsVpcDnsResolutionBindingArrayOutput) Index(i pulumi.IntInput) IsVpcDnsResolutionBindingOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVpcDnsResolutionBinding {
-		return vs[0].([]*IsVpcDnsResolutionBinding)[vs[1].(int)]
-	}).(IsVpcDnsResolutionBindingOutput)
-}
-
-type IsVpcDnsResolutionBindingMapOutput struct{ *pulumi.OutputState }
-
-func (IsVpcDnsResolutionBindingMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpcDnsResolutionBinding)(nil)).Elem()
-}
-
-func (o IsVpcDnsResolutionBindingMapOutput) ToIsVpcDnsResolutionBindingMapOutput() IsVpcDnsResolutionBindingMapOutput {
-	return o
-}
-
-func (o IsVpcDnsResolutionBindingMapOutput) ToIsVpcDnsResolutionBindingMapOutputWithContext(ctx context.Context) IsVpcDnsResolutionBindingMapOutput {
-	return o
-}
-
-func (o IsVpcDnsResolutionBindingMapOutput) MapIndex(k pulumi.StringInput) IsVpcDnsResolutionBindingOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVpcDnsResolutionBinding {
-		return vs[0].(map[string]*IsVpcDnsResolutionBinding)[vs[1].(string)]
-	}).(IsVpcDnsResolutionBindingOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcDnsResolutionBindingInput)(nil)).Elem(), &IsVpcDnsResolutionBinding{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcDnsResolutionBindingArrayInput)(nil)).Elem(), IsVpcDnsResolutionBindingArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcDnsResolutionBindingMapInput)(nil)).Elem(), IsVpcDnsResolutionBindingMap{})
 	pulumi.RegisterOutputType(IsVpcDnsResolutionBindingOutput{})
-	pulumi.RegisterOutputType(IsVpcDnsResolutionBindingArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcDnsResolutionBindingMapOutput{})
 }

@@ -161,56 +161,6 @@ func (i *CosBackupVault) ToCosBackupVaultOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(CosBackupVaultOutput)
 }
 
-// CosBackupVaultArrayInput is an input type that accepts CosBackupVaultArray and CosBackupVaultArrayOutput values.
-// You can construct a concrete instance of `CosBackupVaultArrayInput` via:
-//
-//	CosBackupVaultArray{ CosBackupVaultArgs{...} }
-type CosBackupVaultArrayInput interface {
-	pulumi.Input
-
-	ToCosBackupVaultArrayOutput() CosBackupVaultArrayOutput
-	ToCosBackupVaultArrayOutputWithContext(context.Context) CosBackupVaultArrayOutput
-}
-
-type CosBackupVaultArray []CosBackupVaultInput
-
-func (CosBackupVaultArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBackupVault)(nil)).Elem()
-}
-
-func (i CosBackupVaultArray) ToCosBackupVaultArrayOutput() CosBackupVaultArrayOutput {
-	return i.ToCosBackupVaultArrayOutputWithContext(context.Background())
-}
-
-func (i CosBackupVaultArray) ToCosBackupVaultArrayOutputWithContext(ctx context.Context) CosBackupVaultArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBackupVaultArrayOutput)
-}
-
-// CosBackupVaultMapInput is an input type that accepts CosBackupVaultMap and CosBackupVaultMapOutput values.
-// You can construct a concrete instance of `CosBackupVaultMapInput` via:
-//
-//	CosBackupVaultMap{ "key": CosBackupVaultArgs{...} }
-type CosBackupVaultMapInput interface {
-	pulumi.Input
-
-	ToCosBackupVaultMapOutput() CosBackupVaultMapOutput
-	ToCosBackupVaultMapOutputWithContext(context.Context) CosBackupVaultMapOutput
-}
-
-type CosBackupVaultMap map[string]CosBackupVaultInput
-
-func (CosBackupVaultMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBackupVault)(nil)).Elem()
-}
-
-func (i CosBackupVaultMap) ToCosBackupVaultMapOutput() CosBackupVaultMapOutput {
-	return i.ToCosBackupVaultMapOutputWithContext(context.Background())
-}
-
-func (i CosBackupVaultMap) ToCosBackupVaultMapOutputWithContext(ctx context.Context) CosBackupVaultMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBackupVaultMapOutput)
-}
-
 type CosBackupVaultOutput struct{ *pulumi.OutputState }
 
 func (CosBackupVaultOutput) ElementType() reflect.Type {
@@ -260,51 +210,7 @@ func (o CosBackupVaultOutput) ServiceInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CosBackupVault) pulumi.StringOutput { return v.ServiceInstanceId }).(pulumi.StringOutput)
 }
 
-type CosBackupVaultArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBackupVaultArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBackupVault)(nil)).Elem()
-}
-
-func (o CosBackupVaultArrayOutput) ToCosBackupVaultArrayOutput() CosBackupVaultArrayOutput {
-	return o
-}
-
-func (o CosBackupVaultArrayOutput) ToCosBackupVaultArrayOutputWithContext(ctx context.Context) CosBackupVaultArrayOutput {
-	return o
-}
-
-func (o CosBackupVaultArrayOutput) Index(i pulumi.IntInput) CosBackupVaultOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBackupVault {
-		return vs[0].([]*CosBackupVault)[vs[1].(int)]
-	}).(CosBackupVaultOutput)
-}
-
-type CosBackupVaultMapOutput struct{ *pulumi.OutputState }
-
-func (CosBackupVaultMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBackupVault)(nil)).Elem()
-}
-
-func (o CosBackupVaultMapOutput) ToCosBackupVaultMapOutput() CosBackupVaultMapOutput {
-	return o
-}
-
-func (o CosBackupVaultMapOutput) ToCosBackupVaultMapOutputWithContext(ctx context.Context) CosBackupVaultMapOutput {
-	return o
-}
-
-func (o CosBackupVaultMapOutput) MapIndex(k pulumi.StringInput) CosBackupVaultOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBackupVault {
-		return vs[0].(map[string]*CosBackupVault)[vs[1].(string)]
-	}).(CosBackupVaultOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBackupVaultInput)(nil)).Elem(), &CosBackupVault{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBackupVaultArrayInput)(nil)).Elem(), CosBackupVaultArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBackupVaultMapInput)(nil)).Elem(), CosBackupVaultMap{})
 	pulumi.RegisterOutputType(CosBackupVaultOutput{})
-	pulumi.RegisterOutputType(CosBackupVaultArrayOutput{})
-	pulumi.RegisterOutputType(CosBackupVaultMapOutput{})
 }

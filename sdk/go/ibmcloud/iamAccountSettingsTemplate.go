@@ -188,56 +188,6 @@ func (i *IamAccountSettingsTemplate) ToIamAccountSettingsTemplateOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsTemplateOutput)
 }
 
-// IamAccountSettingsTemplateArrayInput is an input type that accepts IamAccountSettingsTemplateArray and IamAccountSettingsTemplateArrayOutput values.
-// You can construct a concrete instance of `IamAccountSettingsTemplateArrayInput` via:
-//
-//	IamAccountSettingsTemplateArray{ IamAccountSettingsTemplateArgs{...} }
-type IamAccountSettingsTemplateArrayInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsTemplateArrayOutput() IamAccountSettingsTemplateArrayOutput
-	ToIamAccountSettingsTemplateArrayOutputWithContext(context.Context) IamAccountSettingsTemplateArrayOutput
-}
-
-type IamAccountSettingsTemplateArray []IamAccountSettingsTemplateInput
-
-func (IamAccountSettingsTemplateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettingsTemplate)(nil)).Elem()
-}
-
-func (i IamAccountSettingsTemplateArray) ToIamAccountSettingsTemplateArrayOutput() IamAccountSettingsTemplateArrayOutput {
-	return i.ToIamAccountSettingsTemplateArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsTemplateArray) ToIamAccountSettingsTemplateArrayOutputWithContext(ctx context.Context) IamAccountSettingsTemplateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsTemplateArrayOutput)
-}
-
-// IamAccountSettingsTemplateMapInput is an input type that accepts IamAccountSettingsTemplateMap and IamAccountSettingsTemplateMapOutput values.
-// You can construct a concrete instance of `IamAccountSettingsTemplateMapInput` via:
-//
-//	IamAccountSettingsTemplateMap{ "key": IamAccountSettingsTemplateArgs{...} }
-type IamAccountSettingsTemplateMapInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsTemplateMapOutput() IamAccountSettingsTemplateMapOutput
-	ToIamAccountSettingsTemplateMapOutputWithContext(context.Context) IamAccountSettingsTemplateMapOutput
-}
-
-type IamAccountSettingsTemplateMap map[string]IamAccountSettingsTemplateInput
-
-func (IamAccountSettingsTemplateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettingsTemplate)(nil)).Elem()
-}
-
-func (i IamAccountSettingsTemplateMap) ToIamAccountSettingsTemplateMapOutput() IamAccountSettingsTemplateMapOutput {
-	return i.ToIamAccountSettingsTemplateMapOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsTemplateMap) ToIamAccountSettingsTemplateMapOutputWithContext(ctx context.Context) IamAccountSettingsTemplateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsTemplateMapOutput)
-}
-
 type IamAccountSettingsTemplateOutput struct{ *pulumi.OutputState }
 
 func (IamAccountSettingsTemplateOutput) ElementType() reflect.Type {
@@ -323,51 +273,7 @@ func (o IamAccountSettingsTemplateOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *IamAccountSettingsTemplate) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
-type IamAccountSettingsTemplateArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsTemplateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettingsTemplate)(nil)).Elem()
-}
-
-func (o IamAccountSettingsTemplateArrayOutput) ToIamAccountSettingsTemplateArrayOutput() IamAccountSettingsTemplateArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateArrayOutput) ToIamAccountSettingsTemplateArrayOutputWithContext(ctx context.Context) IamAccountSettingsTemplateArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateArrayOutput) Index(i pulumi.IntInput) IamAccountSettingsTemplateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccountSettingsTemplate {
-		return vs[0].([]*IamAccountSettingsTemplate)[vs[1].(int)]
-	}).(IamAccountSettingsTemplateOutput)
-}
-
-type IamAccountSettingsTemplateMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsTemplateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettingsTemplate)(nil)).Elem()
-}
-
-func (o IamAccountSettingsTemplateMapOutput) ToIamAccountSettingsTemplateMapOutput() IamAccountSettingsTemplateMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateMapOutput) ToIamAccountSettingsTemplateMapOutputWithContext(ctx context.Context) IamAccountSettingsTemplateMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateMapOutput) MapIndex(k pulumi.StringInput) IamAccountSettingsTemplateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccountSettingsTemplate {
-		return vs[0].(map[string]*IamAccountSettingsTemplate)[vs[1].(string)]
-	}).(IamAccountSettingsTemplateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsTemplateInput)(nil)).Elem(), &IamAccountSettingsTemplate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsTemplateArrayInput)(nil)).Elem(), IamAccountSettingsTemplateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsTemplateMapInput)(nil)).Elem(), IamAccountSettingsTemplateMap{})
 	pulumi.RegisterOutputType(IamAccountSettingsTemplateOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsTemplateArrayOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsTemplateMapOutput{})
 }

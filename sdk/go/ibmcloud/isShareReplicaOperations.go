@@ -129,56 +129,6 @@ func (i *IsShareReplicaOperations) ToIsShareReplicaOperationsOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(IsShareReplicaOperationsOutput)
 }
 
-// IsShareReplicaOperationsArrayInput is an input type that accepts IsShareReplicaOperationsArray and IsShareReplicaOperationsArrayOutput values.
-// You can construct a concrete instance of `IsShareReplicaOperationsArrayInput` via:
-//
-//	IsShareReplicaOperationsArray{ IsShareReplicaOperationsArgs{...} }
-type IsShareReplicaOperationsArrayInput interface {
-	pulumi.Input
-
-	ToIsShareReplicaOperationsArrayOutput() IsShareReplicaOperationsArrayOutput
-	ToIsShareReplicaOperationsArrayOutputWithContext(context.Context) IsShareReplicaOperationsArrayOutput
-}
-
-type IsShareReplicaOperationsArray []IsShareReplicaOperationsInput
-
-func (IsShareReplicaOperationsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShareReplicaOperations)(nil)).Elem()
-}
-
-func (i IsShareReplicaOperationsArray) ToIsShareReplicaOperationsArrayOutput() IsShareReplicaOperationsArrayOutput {
-	return i.ToIsShareReplicaOperationsArrayOutputWithContext(context.Background())
-}
-
-func (i IsShareReplicaOperationsArray) ToIsShareReplicaOperationsArrayOutputWithContext(ctx context.Context) IsShareReplicaOperationsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareReplicaOperationsArrayOutput)
-}
-
-// IsShareReplicaOperationsMapInput is an input type that accepts IsShareReplicaOperationsMap and IsShareReplicaOperationsMapOutput values.
-// You can construct a concrete instance of `IsShareReplicaOperationsMapInput` via:
-//
-//	IsShareReplicaOperationsMap{ "key": IsShareReplicaOperationsArgs{...} }
-type IsShareReplicaOperationsMapInput interface {
-	pulumi.Input
-
-	ToIsShareReplicaOperationsMapOutput() IsShareReplicaOperationsMapOutput
-	ToIsShareReplicaOperationsMapOutputWithContext(context.Context) IsShareReplicaOperationsMapOutput
-}
-
-type IsShareReplicaOperationsMap map[string]IsShareReplicaOperationsInput
-
-func (IsShareReplicaOperationsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShareReplicaOperations)(nil)).Elem()
-}
-
-func (i IsShareReplicaOperationsMap) ToIsShareReplicaOperationsMapOutput() IsShareReplicaOperationsMapOutput {
-	return i.ToIsShareReplicaOperationsMapOutputWithContext(context.Background())
-}
-
-func (i IsShareReplicaOperationsMap) ToIsShareReplicaOperationsMapOutputWithContext(ctx context.Context) IsShareReplicaOperationsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareReplicaOperationsMapOutput)
-}
-
 type IsShareReplicaOperationsOutput struct{ *pulumi.OutputState }
 
 func (IsShareReplicaOperationsOutput) ElementType() reflect.Type {
@@ -213,51 +163,7 @@ func (o IsShareReplicaOperationsOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *IsShareReplicaOperations) pulumi.IntPtrOutput { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
-type IsShareReplicaOperationsArrayOutput struct{ *pulumi.OutputState }
-
-func (IsShareReplicaOperationsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShareReplicaOperations)(nil)).Elem()
-}
-
-func (o IsShareReplicaOperationsArrayOutput) ToIsShareReplicaOperationsArrayOutput() IsShareReplicaOperationsArrayOutput {
-	return o
-}
-
-func (o IsShareReplicaOperationsArrayOutput) ToIsShareReplicaOperationsArrayOutputWithContext(ctx context.Context) IsShareReplicaOperationsArrayOutput {
-	return o
-}
-
-func (o IsShareReplicaOperationsArrayOutput) Index(i pulumi.IntInput) IsShareReplicaOperationsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsShareReplicaOperations {
-		return vs[0].([]*IsShareReplicaOperations)[vs[1].(int)]
-	}).(IsShareReplicaOperationsOutput)
-}
-
-type IsShareReplicaOperationsMapOutput struct{ *pulumi.OutputState }
-
-func (IsShareReplicaOperationsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShareReplicaOperations)(nil)).Elem()
-}
-
-func (o IsShareReplicaOperationsMapOutput) ToIsShareReplicaOperationsMapOutput() IsShareReplicaOperationsMapOutput {
-	return o
-}
-
-func (o IsShareReplicaOperationsMapOutput) ToIsShareReplicaOperationsMapOutputWithContext(ctx context.Context) IsShareReplicaOperationsMapOutput {
-	return o
-}
-
-func (o IsShareReplicaOperationsMapOutput) MapIndex(k pulumi.StringInput) IsShareReplicaOperationsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsShareReplicaOperations {
-		return vs[0].(map[string]*IsShareReplicaOperations)[vs[1].(string)]
-	}).(IsShareReplicaOperationsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsShareReplicaOperationsInput)(nil)).Elem(), &IsShareReplicaOperations{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareReplicaOperationsArrayInput)(nil)).Elem(), IsShareReplicaOperationsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareReplicaOperationsMapInput)(nil)).Elem(), IsShareReplicaOperationsMap{})
 	pulumi.RegisterOutputType(IsShareReplicaOperationsOutput{})
-	pulumi.RegisterOutputType(IsShareReplicaOperationsArrayOutput{})
-	pulumi.RegisterOutputType(IsShareReplicaOperationsMapOutput{})
 }

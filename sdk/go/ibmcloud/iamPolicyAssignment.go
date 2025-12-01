@@ -199,56 +199,6 @@ func (i *IamPolicyAssignment) ToIamPolicyAssignmentOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyAssignmentOutput)
 }
 
-// IamPolicyAssignmentArrayInput is an input type that accepts IamPolicyAssignmentArray and IamPolicyAssignmentArrayOutput values.
-// You can construct a concrete instance of `IamPolicyAssignmentArrayInput` via:
-//
-//	IamPolicyAssignmentArray{ IamPolicyAssignmentArgs{...} }
-type IamPolicyAssignmentArrayInput interface {
-	pulumi.Input
-
-	ToIamPolicyAssignmentArrayOutput() IamPolicyAssignmentArrayOutput
-	ToIamPolicyAssignmentArrayOutputWithContext(context.Context) IamPolicyAssignmentArrayOutput
-}
-
-type IamPolicyAssignmentArray []IamPolicyAssignmentInput
-
-func (IamPolicyAssignmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamPolicyAssignment)(nil)).Elem()
-}
-
-func (i IamPolicyAssignmentArray) ToIamPolicyAssignmentArrayOutput() IamPolicyAssignmentArrayOutput {
-	return i.ToIamPolicyAssignmentArrayOutputWithContext(context.Background())
-}
-
-func (i IamPolicyAssignmentArray) ToIamPolicyAssignmentArrayOutputWithContext(ctx context.Context) IamPolicyAssignmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyAssignmentArrayOutput)
-}
-
-// IamPolicyAssignmentMapInput is an input type that accepts IamPolicyAssignmentMap and IamPolicyAssignmentMapOutput values.
-// You can construct a concrete instance of `IamPolicyAssignmentMapInput` via:
-//
-//	IamPolicyAssignmentMap{ "key": IamPolicyAssignmentArgs{...} }
-type IamPolicyAssignmentMapInput interface {
-	pulumi.Input
-
-	ToIamPolicyAssignmentMapOutput() IamPolicyAssignmentMapOutput
-	ToIamPolicyAssignmentMapOutputWithContext(context.Context) IamPolicyAssignmentMapOutput
-}
-
-type IamPolicyAssignmentMap map[string]IamPolicyAssignmentInput
-
-func (IamPolicyAssignmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamPolicyAssignment)(nil)).Elem()
-}
-
-func (i IamPolicyAssignmentMap) ToIamPolicyAssignmentMapOutput() IamPolicyAssignmentMapOutput {
-	return i.ToIamPolicyAssignmentMapOutputWithContext(context.Background())
-}
-
-func (i IamPolicyAssignmentMap) ToIamPolicyAssignmentMapOutputWithContext(ctx context.Context) IamPolicyAssignmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamPolicyAssignmentMapOutput)
-}
-
 type IamPolicyAssignmentOutput struct{ *pulumi.OutputState }
 
 func (IamPolicyAssignmentOutput) ElementType() reflect.Type {
@@ -333,51 +283,7 @@ func (o IamPolicyAssignmentOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamPolicyAssignment) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamPolicyAssignmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IamPolicyAssignmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamPolicyAssignment)(nil)).Elem()
-}
-
-func (o IamPolicyAssignmentArrayOutput) ToIamPolicyAssignmentArrayOutput() IamPolicyAssignmentArrayOutput {
-	return o
-}
-
-func (o IamPolicyAssignmentArrayOutput) ToIamPolicyAssignmentArrayOutputWithContext(ctx context.Context) IamPolicyAssignmentArrayOutput {
-	return o
-}
-
-func (o IamPolicyAssignmentArrayOutput) Index(i pulumi.IntInput) IamPolicyAssignmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamPolicyAssignment {
-		return vs[0].([]*IamPolicyAssignment)[vs[1].(int)]
-	}).(IamPolicyAssignmentOutput)
-}
-
-type IamPolicyAssignmentMapOutput struct{ *pulumi.OutputState }
-
-func (IamPolicyAssignmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamPolicyAssignment)(nil)).Elem()
-}
-
-func (o IamPolicyAssignmentMapOutput) ToIamPolicyAssignmentMapOutput() IamPolicyAssignmentMapOutput {
-	return o
-}
-
-func (o IamPolicyAssignmentMapOutput) ToIamPolicyAssignmentMapOutputWithContext(ctx context.Context) IamPolicyAssignmentMapOutput {
-	return o
-}
-
-func (o IamPolicyAssignmentMapOutput) MapIndex(k pulumi.StringInput) IamPolicyAssignmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamPolicyAssignment {
-		return vs[0].(map[string]*IamPolicyAssignment)[vs[1].(string)]
-	}).(IamPolicyAssignmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyAssignmentInput)(nil)).Elem(), &IamPolicyAssignment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyAssignmentArrayInput)(nil)).Elem(), IamPolicyAssignmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamPolicyAssignmentMapInput)(nil)).Elem(), IamPolicyAssignmentMap{})
 	pulumi.RegisterOutputType(IamPolicyAssignmentOutput{})
-	pulumi.RegisterOutputType(IamPolicyAssignmentArrayOutput{})
-	pulumi.RegisterOutputType(IamPolicyAssignmentMapOutput{})
 }

@@ -222,56 +222,6 @@ func (i *IsInstanceGroup) ToIsInstanceGroupOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupOutput)
 }
 
-// IsInstanceGroupArrayInput is an input type that accepts IsInstanceGroupArray and IsInstanceGroupArrayOutput values.
-// You can construct a concrete instance of `IsInstanceGroupArrayInput` via:
-//
-//	IsInstanceGroupArray{ IsInstanceGroupArgs{...} }
-type IsInstanceGroupArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceGroupArrayOutput() IsInstanceGroupArrayOutput
-	ToIsInstanceGroupArrayOutputWithContext(context.Context) IsInstanceGroupArrayOutput
-}
-
-type IsInstanceGroupArray []IsInstanceGroupInput
-
-func (IsInstanceGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceGroup)(nil)).Elem()
-}
-
-func (i IsInstanceGroupArray) ToIsInstanceGroupArrayOutput() IsInstanceGroupArrayOutput {
-	return i.ToIsInstanceGroupArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceGroupArray) ToIsInstanceGroupArrayOutputWithContext(ctx context.Context) IsInstanceGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupArrayOutput)
-}
-
-// IsInstanceGroupMapInput is an input type that accepts IsInstanceGroupMap and IsInstanceGroupMapOutput values.
-// You can construct a concrete instance of `IsInstanceGroupMapInput` via:
-//
-//	IsInstanceGroupMap{ "key": IsInstanceGroupArgs{...} }
-type IsInstanceGroupMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceGroupMapOutput() IsInstanceGroupMapOutput
-	ToIsInstanceGroupMapOutputWithContext(context.Context) IsInstanceGroupMapOutput
-}
-
-type IsInstanceGroupMap map[string]IsInstanceGroupInput
-
-func (IsInstanceGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceGroup)(nil)).Elem()
-}
-
-func (i IsInstanceGroupMap) ToIsInstanceGroupMapOutput() IsInstanceGroupMapOutput {
-	return i.ToIsInstanceGroupMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceGroupMap) ToIsInstanceGroupMapOutputWithContext(ctx context.Context) IsInstanceGroupMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceGroupMapOutput)
-}
-
 type IsInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceGroupOutput) ElementType() reflect.Type {
@@ -361,51 +311,7 @@ func (o IsInstanceGroupOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceGroup) pulumi.StringOutput { return v.Vpc }).(pulumi.StringOutput)
 }
 
-type IsInstanceGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceGroup)(nil)).Elem()
-}
-
-func (o IsInstanceGroupArrayOutput) ToIsInstanceGroupArrayOutput() IsInstanceGroupArrayOutput {
-	return o
-}
-
-func (o IsInstanceGroupArrayOutput) ToIsInstanceGroupArrayOutputWithContext(ctx context.Context) IsInstanceGroupArrayOutput {
-	return o
-}
-
-func (o IsInstanceGroupArrayOutput) Index(i pulumi.IntInput) IsInstanceGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceGroup {
-		return vs[0].([]*IsInstanceGroup)[vs[1].(int)]
-	}).(IsInstanceGroupOutput)
-}
-
-type IsInstanceGroupMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceGroupMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceGroup)(nil)).Elem()
-}
-
-func (o IsInstanceGroupMapOutput) ToIsInstanceGroupMapOutput() IsInstanceGroupMapOutput {
-	return o
-}
-
-func (o IsInstanceGroupMapOutput) ToIsInstanceGroupMapOutputWithContext(ctx context.Context) IsInstanceGroupMapOutput {
-	return o
-}
-
-func (o IsInstanceGroupMapOutput) MapIndex(k pulumi.StringInput) IsInstanceGroupOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceGroup {
-		return vs[0].(map[string]*IsInstanceGroup)[vs[1].(string)]
-	}).(IsInstanceGroupOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupInput)(nil)).Elem(), &IsInstanceGroup{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupArrayInput)(nil)).Elem(), IsInstanceGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceGroupMapInput)(nil)).Elem(), IsInstanceGroupMap{})
 	pulumi.RegisterOutputType(IsInstanceGroupOutput{})
-	pulumi.RegisterOutputType(IsInstanceGroupArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceGroupMapOutput{})
 }

@@ -193,56 +193,6 @@ func (i *IamAccessGroupTemplate) ToIamAccessGroupTemplateOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateOutput)
 }
 
-// IamAccessGroupTemplateArrayInput is an input type that accepts IamAccessGroupTemplateArray and IamAccessGroupTemplateArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupTemplateArrayInput` via:
-//
-//	IamAccessGroupTemplateArray{ IamAccessGroupTemplateArgs{...} }
-type IamAccessGroupTemplateArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupTemplateArrayOutput() IamAccessGroupTemplateArrayOutput
-	ToIamAccessGroupTemplateArrayOutputWithContext(context.Context) IamAccessGroupTemplateArrayOutput
-}
-
-type IamAccessGroupTemplateArray []IamAccessGroupTemplateInput
-
-func (IamAccessGroupTemplateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupTemplate)(nil)).Elem()
-}
-
-func (i IamAccessGroupTemplateArray) ToIamAccessGroupTemplateArrayOutput() IamAccessGroupTemplateArrayOutput {
-	return i.ToIamAccessGroupTemplateArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupTemplateArray) ToIamAccessGroupTemplateArrayOutputWithContext(ctx context.Context) IamAccessGroupTemplateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateArrayOutput)
-}
-
-// IamAccessGroupTemplateMapInput is an input type that accepts IamAccessGroupTemplateMap and IamAccessGroupTemplateMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupTemplateMapInput` via:
-//
-//	IamAccessGroupTemplateMap{ "key": IamAccessGroupTemplateArgs{...} }
-type IamAccessGroupTemplateMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupTemplateMapOutput() IamAccessGroupTemplateMapOutput
-	ToIamAccessGroupTemplateMapOutputWithContext(context.Context) IamAccessGroupTemplateMapOutput
-}
-
-type IamAccessGroupTemplateMap map[string]IamAccessGroupTemplateInput
-
-func (IamAccessGroupTemplateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupTemplate)(nil)).Elem()
-}
-
-func (i IamAccessGroupTemplateMap) ToIamAccessGroupTemplateMapOutput() IamAccessGroupTemplateMapOutput {
-	return i.ToIamAccessGroupTemplateMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupTemplateMap) ToIamAccessGroupTemplateMapOutputWithContext(ctx context.Context) IamAccessGroupTemplateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateMapOutput)
-}
-
 type IamAccessGroupTemplateOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupTemplateOutput) ElementType() reflect.Type {
@@ -329,51 +279,7 @@ func (o IamAccessGroupTemplateOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamAccessGroupTemplate) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamAccessGroupTemplateArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupTemplateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupTemplate)(nil)).Elem()
-}
-
-func (o IamAccessGroupTemplateArrayOutput) ToIamAccessGroupTemplateArrayOutput() IamAccessGroupTemplateArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateArrayOutput) ToIamAccessGroupTemplateArrayOutputWithContext(ctx context.Context) IamAccessGroupTemplateArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateArrayOutput) Index(i pulumi.IntInput) IamAccessGroupTemplateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroupTemplate {
-		return vs[0].([]*IamAccessGroupTemplate)[vs[1].(int)]
-	}).(IamAccessGroupTemplateOutput)
-}
-
-type IamAccessGroupTemplateMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupTemplateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupTemplate)(nil)).Elem()
-}
-
-func (o IamAccessGroupTemplateMapOutput) ToIamAccessGroupTemplateMapOutput() IamAccessGroupTemplateMapOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateMapOutput) ToIamAccessGroupTemplateMapOutputWithContext(ctx context.Context) IamAccessGroupTemplateMapOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupTemplateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroupTemplate {
-		return vs[0].(map[string]*IamAccessGroupTemplate)[vs[1].(string)]
-	}).(IamAccessGroupTemplateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateInput)(nil)).Elem(), &IamAccessGroupTemplate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateArrayInput)(nil)).Elem(), IamAccessGroupTemplateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateMapInput)(nil)).Elem(), IamAccessGroupTemplateMap{})
 	pulumi.RegisterOutputType(IamAccessGroupTemplateOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupTemplateArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupTemplateMapOutput{})
 }

@@ -135,56 +135,6 @@ func (i *CosBucketObjectLockConfiguration) ToCosBucketObjectLockConfigurationOut
 	return pulumi.ToOutputWithContext(ctx, i).(CosBucketObjectLockConfigurationOutput)
 }
 
-// CosBucketObjectLockConfigurationArrayInput is an input type that accepts CosBucketObjectLockConfigurationArray and CosBucketObjectLockConfigurationArrayOutput values.
-// You can construct a concrete instance of `CosBucketObjectLockConfigurationArrayInput` via:
-//
-//	CosBucketObjectLockConfigurationArray{ CosBucketObjectLockConfigurationArgs{...} }
-type CosBucketObjectLockConfigurationArrayInput interface {
-	pulumi.Input
-
-	ToCosBucketObjectLockConfigurationArrayOutput() CosBucketObjectLockConfigurationArrayOutput
-	ToCosBucketObjectLockConfigurationArrayOutputWithContext(context.Context) CosBucketObjectLockConfigurationArrayOutput
-}
-
-type CosBucketObjectLockConfigurationArray []CosBucketObjectLockConfigurationInput
-
-func (CosBucketObjectLockConfigurationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketObjectLockConfiguration)(nil)).Elem()
-}
-
-func (i CosBucketObjectLockConfigurationArray) ToCosBucketObjectLockConfigurationArrayOutput() CosBucketObjectLockConfigurationArrayOutput {
-	return i.ToCosBucketObjectLockConfigurationArrayOutputWithContext(context.Background())
-}
-
-func (i CosBucketObjectLockConfigurationArray) ToCosBucketObjectLockConfigurationArrayOutputWithContext(ctx context.Context) CosBucketObjectLockConfigurationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketObjectLockConfigurationArrayOutput)
-}
-
-// CosBucketObjectLockConfigurationMapInput is an input type that accepts CosBucketObjectLockConfigurationMap and CosBucketObjectLockConfigurationMapOutput values.
-// You can construct a concrete instance of `CosBucketObjectLockConfigurationMapInput` via:
-//
-//	CosBucketObjectLockConfigurationMap{ "key": CosBucketObjectLockConfigurationArgs{...} }
-type CosBucketObjectLockConfigurationMapInput interface {
-	pulumi.Input
-
-	ToCosBucketObjectLockConfigurationMapOutput() CosBucketObjectLockConfigurationMapOutput
-	ToCosBucketObjectLockConfigurationMapOutputWithContext(context.Context) CosBucketObjectLockConfigurationMapOutput
-}
-
-type CosBucketObjectLockConfigurationMap map[string]CosBucketObjectLockConfigurationInput
-
-func (CosBucketObjectLockConfigurationMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketObjectLockConfiguration)(nil)).Elem()
-}
-
-func (i CosBucketObjectLockConfigurationMap) ToCosBucketObjectLockConfigurationMapOutput() CosBucketObjectLockConfigurationMapOutput {
-	return i.ToCosBucketObjectLockConfigurationMapOutputWithContext(context.Background())
-}
-
-func (i CosBucketObjectLockConfigurationMap) ToCosBucketObjectLockConfigurationMapOutputWithContext(ctx context.Context) CosBucketObjectLockConfigurationMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketObjectLockConfigurationMapOutput)
-}
-
 type CosBucketObjectLockConfigurationOutput struct{ *pulumi.OutputState }
 
 func (CosBucketObjectLockConfigurationOutput) ElementType() reflect.Type {
@@ -221,51 +171,7 @@ func (o CosBucketObjectLockConfigurationOutput) ObjectLockConfiguration() CosBuc
 	}).(CosBucketObjectLockConfigurationObjectLockConfigurationOutput)
 }
 
-type CosBucketObjectLockConfigurationArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBucketObjectLockConfigurationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketObjectLockConfiguration)(nil)).Elem()
-}
-
-func (o CosBucketObjectLockConfigurationArrayOutput) ToCosBucketObjectLockConfigurationArrayOutput() CosBucketObjectLockConfigurationArrayOutput {
-	return o
-}
-
-func (o CosBucketObjectLockConfigurationArrayOutput) ToCosBucketObjectLockConfigurationArrayOutputWithContext(ctx context.Context) CosBucketObjectLockConfigurationArrayOutput {
-	return o
-}
-
-func (o CosBucketObjectLockConfigurationArrayOutput) Index(i pulumi.IntInput) CosBucketObjectLockConfigurationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBucketObjectLockConfiguration {
-		return vs[0].([]*CosBucketObjectLockConfiguration)[vs[1].(int)]
-	}).(CosBucketObjectLockConfigurationOutput)
-}
-
-type CosBucketObjectLockConfigurationMapOutput struct{ *pulumi.OutputState }
-
-func (CosBucketObjectLockConfigurationMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketObjectLockConfiguration)(nil)).Elem()
-}
-
-func (o CosBucketObjectLockConfigurationMapOutput) ToCosBucketObjectLockConfigurationMapOutput() CosBucketObjectLockConfigurationMapOutput {
-	return o
-}
-
-func (o CosBucketObjectLockConfigurationMapOutput) ToCosBucketObjectLockConfigurationMapOutputWithContext(ctx context.Context) CosBucketObjectLockConfigurationMapOutput {
-	return o
-}
-
-func (o CosBucketObjectLockConfigurationMapOutput) MapIndex(k pulumi.StringInput) CosBucketObjectLockConfigurationOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBucketObjectLockConfiguration {
-		return vs[0].(map[string]*CosBucketObjectLockConfiguration)[vs[1].(string)]
-	}).(CosBucketObjectLockConfigurationOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketObjectLockConfigurationInput)(nil)).Elem(), &CosBucketObjectLockConfiguration{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketObjectLockConfigurationArrayInput)(nil)).Elem(), CosBucketObjectLockConfigurationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketObjectLockConfigurationMapInput)(nil)).Elem(), CosBucketObjectLockConfigurationMap{})
 	pulumi.RegisterOutputType(CosBucketObjectLockConfigurationOutput{})
-	pulumi.RegisterOutputType(CosBucketObjectLockConfigurationArrayOutput{})
-	pulumi.RegisterOutputType(CosBucketObjectLockConfigurationMapOutput{})
 }

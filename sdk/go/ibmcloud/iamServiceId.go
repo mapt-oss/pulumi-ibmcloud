@@ -131,56 +131,6 @@ func (i *IamServiceId) ToIamServiceIdOutputWithContext(ctx context.Context) IamS
 	return pulumi.ToOutputWithContext(ctx, i).(IamServiceIdOutput)
 }
 
-// IamServiceIdArrayInput is an input type that accepts IamServiceIdArray and IamServiceIdArrayOutput values.
-// You can construct a concrete instance of `IamServiceIdArrayInput` via:
-//
-//	IamServiceIdArray{ IamServiceIdArgs{...} }
-type IamServiceIdArrayInput interface {
-	pulumi.Input
-
-	ToIamServiceIdArrayOutput() IamServiceIdArrayOutput
-	ToIamServiceIdArrayOutputWithContext(context.Context) IamServiceIdArrayOutput
-}
-
-type IamServiceIdArray []IamServiceIdInput
-
-func (IamServiceIdArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamServiceId)(nil)).Elem()
-}
-
-func (i IamServiceIdArray) ToIamServiceIdArrayOutput() IamServiceIdArrayOutput {
-	return i.ToIamServiceIdArrayOutputWithContext(context.Background())
-}
-
-func (i IamServiceIdArray) ToIamServiceIdArrayOutputWithContext(ctx context.Context) IamServiceIdArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamServiceIdArrayOutput)
-}
-
-// IamServiceIdMapInput is an input type that accepts IamServiceIdMap and IamServiceIdMapOutput values.
-// You can construct a concrete instance of `IamServiceIdMapInput` via:
-//
-//	IamServiceIdMap{ "key": IamServiceIdArgs{...} }
-type IamServiceIdMapInput interface {
-	pulumi.Input
-
-	ToIamServiceIdMapOutput() IamServiceIdMapOutput
-	ToIamServiceIdMapOutputWithContext(context.Context) IamServiceIdMapOutput
-}
-
-type IamServiceIdMap map[string]IamServiceIdInput
-
-func (IamServiceIdMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamServiceId)(nil)).Elem()
-}
-
-func (i IamServiceIdMap) ToIamServiceIdMapOutput() IamServiceIdMapOutput {
-	return i.ToIamServiceIdMapOutputWithContext(context.Background())
-}
-
-func (i IamServiceIdMap) ToIamServiceIdMapOutputWithContext(ctx context.Context) IamServiceIdMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamServiceIdMapOutput)
-}
-
 type IamServiceIdOutput struct{ *pulumi.OutputState }
 
 func (IamServiceIdOutput) ElementType() reflect.Type {
@@ -228,51 +178,7 @@ func (o IamServiceIdOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamServiceId) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamServiceIdArrayOutput struct{ *pulumi.OutputState }
-
-func (IamServiceIdArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamServiceId)(nil)).Elem()
-}
-
-func (o IamServiceIdArrayOutput) ToIamServiceIdArrayOutput() IamServiceIdArrayOutput {
-	return o
-}
-
-func (o IamServiceIdArrayOutput) ToIamServiceIdArrayOutputWithContext(ctx context.Context) IamServiceIdArrayOutput {
-	return o
-}
-
-func (o IamServiceIdArrayOutput) Index(i pulumi.IntInput) IamServiceIdOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamServiceId {
-		return vs[0].([]*IamServiceId)[vs[1].(int)]
-	}).(IamServiceIdOutput)
-}
-
-type IamServiceIdMapOutput struct{ *pulumi.OutputState }
-
-func (IamServiceIdMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamServiceId)(nil)).Elem()
-}
-
-func (o IamServiceIdMapOutput) ToIamServiceIdMapOutput() IamServiceIdMapOutput {
-	return o
-}
-
-func (o IamServiceIdMapOutput) ToIamServiceIdMapOutputWithContext(ctx context.Context) IamServiceIdMapOutput {
-	return o
-}
-
-func (o IamServiceIdMapOutput) MapIndex(k pulumi.StringInput) IamServiceIdOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamServiceId {
-		return vs[0].(map[string]*IamServiceId)[vs[1].(string)]
-	}).(IamServiceIdOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamServiceIdInput)(nil)).Elem(), &IamServiceId{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamServiceIdArrayInput)(nil)).Elem(), IamServiceIdArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamServiceIdMapInput)(nil)).Elem(), IamServiceIdMap{})
 	pulumi.RegisterOutputType(IamServiceIdOutput{})
-	pulumi.RegisterOutputType(IamServiceIdArrayOutput{})
-	pulumi.RegisterOutputType(IamServiceIdMapOutput{})
 }

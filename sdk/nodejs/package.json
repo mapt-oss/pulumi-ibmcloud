@@ -23,6 +23,7 @@
     "pulumi": {
         "resource": true,
         "name": "ibmcloud",
-        "version": "1.0.0-alpha.0+dev"
+        "version": "1.0.0-alpha.0+dev",
+        "server": "https://github.com/mapt-oss/pulumi-ibmcloud/releases/download/v${VERSION}/"
     }
 }

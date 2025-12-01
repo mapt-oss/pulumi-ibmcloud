@@ -160,56 +160,6 @@ func (i *ComputeAutoscalePolicy) ToComputeAutoscalePolicyOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeAutoscalePolicyOutput)
 }
 
-// ComputeAutoscalePolicyArrayInput is an input type that accepts ComputeAutoscalePolicyArray and ComputeAutoscalePolicyArrayOutput values.
-// You can construct a concrete instance of `ComputeAutoscalePolicyArrayInput` via:
-//
-//	ComputeAutoscalePolicyArray{ ComputeAutoscalePolicyArgs{...} }
-type ComputeAutoscalePolicyArrayInput interface {
-	pulumi.Input
-
-	ToComputeAutoscalePolicyArrayOutput() ComputeAutoscalePolicyArrayOutput
-	ToComputeAutoscalePolicyArrayOutputWithContext(context.Context) ComputeAutoscalePolicyArrayOutput
-}
-
-type ComputeAutoscalePolicyArray []ComputeAutoscalePolicyInput
-
-func (ComputeAutoscalePolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeAutoscalePolicy)(nil)).Elem()
-}
-
-func (i ComputeAutoscalePolicyArray) ToComputeAutoscalePolicyArrayOutput() ComputeAutoscalePolicyArrayOutput {
-	return i.ToComputeAutoscalePolicyArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeAutoscalePolicyArray) ToComputeAutoscalePolicyArrayOutputWithContext(ctx context.Context) ComputeAutoscalePolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeAutoscalePolicyArrayOutput)
-}
-
-// ComputeAutoscalePolicyMapInput is an input type that accepts ComputeAutoscalePolicyMap and ComputeAutoscalePolicyMapOutput values.
-// You can construct a concrete instance of `ComputeAutoscalePolicyMapInput` via:
-//
-//	ComputeAutoscalePolicyMap{ "key": ComputeAutoscalePolicyArgs{...} }
-type ComputeAutoscalePolicyMapInput interface {
-	pulumi.Input
-
-	ToComputeAutoscalePolicyMapOutput() ComputeAutoscalePolicyMapOutput
-	ToComputeAutoscalePolicyMapOutputWithContext(context.Context) ComputeAutoscalePolicyMapOutput
-}
-
-type ComputeAutoscalePolicyMap map[string]ComputeAutoscalePolicyInput
-
-func (ComputeAutoscalePolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeAutoscalePolicy)(nil)).Elem()
-}
-
-func (i ComputeAutoscalePolicyMap) ToComputeAutoscalePolicyMapOutput() ComputeAutoscalePolicyMapOutput {
-	return i.ToComputeAutoscalePolicyMapOutputWithContext(context.Background())
-}
-
-func (i ComputeAutoscalePolicyMap) ToComputeAutoscalePolicyMapOutputWithContext(ctx context.Context) ComputeAutoscalePolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeAutoscalePolicyMapOutput)
-}
-
 type ComputeAutoscalePolicyOutput struct{ *pulumi.OutputState }
 
 func (ComputeAutoscalePolicyOutput) ElementType() reflect.Type {
@@ -258,51 +208,7 @@ func (o ComputeAutoscalePolicyOutput) Triggers() ComputeAutoscalePolicyTriggerAr
 	return o.ApplyT(func(v *ComputeAutoscalePolicy) ComputeAutoscalePolicyTriggerArrayOutput { return v.Triggers }).(ComputeAutoscalePolicyTriggerArrayOutput)
 }
 
-type ComputeAutoscalePolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeAutoscalePolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeAutoscalePolicy)(nil)).Elem()
-}
-
-func (o ComputeAutoscalePolicyArrayOutput) ToComputeAutoscalePolicyArrayOutput() ComputeAutoscalePolicyArrayOutput {
-	return o
-}
-
-func (o ComputeAutoscalePolicyArrayOutput) ToComputeAutoscalePolicyArrayOutputWithContext(ctx context.Context) ComputeAutoscalePolicyArrayOutput {
-	return o
-}
-
-func (o ComputeAutoscalePolicyArrayOutput) Index(i pulumi.IntInput) ComputeAutoscalePolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeAutoscalePolicy {
-		return vs[0].([]*ComputeAutoscalePolicy)[vs[1].(int)]
-	}).(ComputeAutoscalePolicyOutput)
-}
-
-type ComputeAutoscalePolicyMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeAutoscalePolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeAutoscalePolicy)(nil)).Elem()
-}
-
-func (o ComputeAutoscalePolicyMapOutput) ToComputeAutoscalePolicyMapOutput() ComputeAutoscalePolicyMapOutput {
-	return o
-}
-
-func (o ComputeAutoscalePolicyMapOutput) ToComputeAutoscalePolicyMapOutputWithContext(ctx context.Context) ComputeAutoscalePolicyMapOutput {
-	return o
-}
-
-func (o ComputeAutoscalePolicyMapOutput) MapIndex(k pulumi.StringInput) ComputeAutoscalePolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeAutoscalePolicy {
-		return vs[0].(map[string]*ComputeAutoscalePolicy)[vs[1].(string)]
-	}).(ComputeAutoscalePolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscalePolicyInput)(nil)).Elem(), &ComputeAutoscalePolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscalePolicyArrayInput)(nil)).Elem(), ComputeAutoscalePolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscalePolicyMapInput)(nil)).Elem(), ComputeAutoscalePolicyMap{})
 	pulumi.RegisterOutputType(ComputeAutoscalePolicyOutput{})
-	pulumi.RegisterOutputType(ComputeAutoscalePolicyArrayOutput{})
-	pulumi.RegisterOutputType(ComputeAutoscalePolicyMapOutput{})
 }

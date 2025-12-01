@@ -117,56 +117,6 @@ func (i *IamAccessGroupMembers) ToIamAccessGroupMembersOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupMembersOutput)
 }
 
-// IamAccessGroupMembersArrayInput is an input type that accepts IamAccessGroupMembersArray and IamAccessGroupMembersArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupMembersArrayInput` via:
-//
-//	IamAccessGroupMembersArray{ IamAccessGroupMembersArgs{...} }
-type IamAccessGroupMembersArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupMembersArrayOutput() IamAccessGroupMembersArrayOutput
-	ToIamAccessGroupMembersArrayOutputWithContext(context.Context) IamAccessGroupMembersArrayOutput
-}
-
-type IamAccessGroupMembersArray []IamAccessGroupMembersInput
-
-func (IamAccessGroupMembersArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupMembers)(nil)).Elem()
-}
-
-func (i IamAccessGroupMembersArray) ToIamAccessGroupMembersArrayOutput() IamAccessGroupMembersArrayOutput {
-	return i.ToIamAccessGroupMembersArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupMembersArray) ToIamAccessGroupMembersArrayOutputWithContext(ctx context.Context) IamAccessGroupMembersArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupMembersArrayOutput)
-}
-
-// IamAccessGroupMembersMapInput is an input type that accepts IamAccessGroupMembersMap and IamAccessGroupMembersMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupMembersMapInput` via:
-//
-//	IamAccessGroupMembersMap{ "key": IamAccessGroupMembersArgs{...} }
-type IamAccessGroupMembersMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupMembersMapOutput() IamAccessGroupMembersMapOutput
-	ToIamAccessGroupMembersMapOutputWithContext(context.Context) IamAccessGroupMembersMapOutput
-}
-
-type IamAccessGroupMembersMap map[string]IamAccessGroupMembersInput
-
-func (IamAccessGroupMembersMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupMembers)(nil)).Elem()
-}
-
-func (i IamAccessGroupMembersMap) ToIamAccessGroupMembersMapOutput() IamAccessGroupMembersMapOutput {
-	return i.ToIamAccessGroupMembersMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupMembersMap) ToIamAccessGroupMembersMapOutputWithContext(ctx context.Context) IamAccessGroupMembersMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupMembersMapOutput)
-}
-
 type IamAccessGroupMembersOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupMembersOutput) ElementType() reflect.Type {
@@ -202,51 +152,7 @@ func (o IamAccessGroupMembersOutput) Members() IamAccessGroupMembersMemberArrayO
 	return o.ApplyT(func(v *IamAccessGroupMembers) IamAccessGroupMembersMemberArrayOutput { return v.Members }).(IamAccessGroupMembersMemberArrayOutput)
 }
 
-type IamAccessGroupMembersArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupMembersArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupMembers)(nil)).Elem()
-}
-
-func (o IamAccessGroupMembersArrayOutput) ToIamAccessGroupMembersArrayOutput() IamAccessGroupMembersArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupMembersArrayOutput) ToIamAccessGroupMembersArrayOutputWithContext(ctx context.Context) IamAccessGroupMembersArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupMembersArrayOutput) Index(i pulumi.IntInput) IamAccessGroupMembersOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroupMembers {
-		return vs[0].([]*IamAccessGroupMembers)[vs[1].(int)]
-	}).(IamAccessGroupMembersOutput)
-}
-
-type IamAccessGroupMembersMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupMembersMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupMembers)(nil)).Elem()
-}
-
-func (o IamAccessGroupMembersMapOutput) ToIamAccessGroupMembersMapOutput() IamAccessGroupMembersMapOutput {
-	return o
-}
-
-func (o IamAccessGroupMembersMapOutput) ToIamAccessGroupMembersMapOutputWithContext(ctx context.Context) IamAccessGroupMembersMapOutput {
-	return o
-}
-
-func (o IamAccessGroupMembersMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupMembersOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroupMembers {
-		return vs[0].(map[string]*IamAccessGroupMembers)[vs[1].(string)]
-	}).(IamAccessGroupMembersOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupMembersInput)(nil)).Elem(), &IamAccessGroupMembers{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupMembersArrayInput)(nil)).Elem(), IamAccessGroupMembersArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupMembersMapInput)(nil)).Elem(), IamAccessGroupMembersMap{})
 	pulumi.RegisterOutputType(IamAccessGroupMembersOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupMembersArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupMembersMapOutput{})
 }
