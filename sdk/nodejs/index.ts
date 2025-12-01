@@ -1715,6 +1715,46 @@ export const getResourceTag: typeof import("./getResourceTag").getResourceTag = 
 export const getResourceTagOutput: typeof import("./getResourceTag").getResourceTagOutput = null as any;
 utilities.lazyLoad(exports, ["getResourceTag","getResourceTagOutput"], () => require("./getResourceTag"));
 
+export { GetTgConnectionPrefixFilterArgs, GetTgConnectionPrefixFilterResult, GetTgConnectionPrefixFilterOutputArgs } from "./getTgConnectionPrefixFilter";
+export const getTgConnectionPrefixFilter: typeof import("./getTgConnectionPrefixFilter").getTgConnectionPrefixFilter = null as any;
+export const getTgConnectionPrefixFilterOutput: typeof import("./getTgConnectionPrefixFilter").getTgConnectionPrefixFilterOutput = null as any;
+utilities.lazyLoad(exports, ["getTgConnectionPrefixFilter","getTgConnectionPrefixFilterOutput"], () => require("./getTgConnectionPrefixFilter"));
+
+export { GetTgConnectionPrefixFiltersArgs, GetTgConnectionPrefixFiltersResult, GetTgConnectionPrefixFiltersOutputArgs } from "./getTgConnectionPrefixFilters";
+export const getTgConnectionPrefixFilters: typeof import("./getTgConnectionPrefixFilters").getTgConnectionPrefixFilters = null as any;
+export const getTgConnectionPrefixFiltersOutput: typeof import("./getTgConnectionPrefixFilters").getTgConnectionPrefixFiltersOutput = null as any;
+utilities.lazyLoad(exports, ["getTgConnectionPrefixFilters","getTgConnectionPrefixFiltersOutput"], () => require("./getTgConnectionPrefixFilters"));
+
+export { GetTgGatewayArgs, GetTgGatewayResult, GetTgGatewayOutputArgs } from "./getTgGateway";
+export const getTgGateway: typeof import("./getTgGateway").getTgGateway = null as any;
+export const getTgGatewayOutput: typeof import("./getTgGateway").getTgGatewayOutput = null as any;
+utilities.lazyLoad(exports, ["getTgGateway","getTgGatewayOutput"], () => require("./getTgGateway"));
+
+export { GetTgGatewaysResult } from "./getTgGateways";
+export const getTgGateways: typeof import("./getTgGateways").getTgGateways = null as any;
+export const getTgGatewaysOutput: typeof import("./getTgGateways").getTgGatewaysOutput = null as any;
+utilities.lazyLoad(exports, ["getTgGateways","getTgGatewaysOutput"], () => require("./getTgGateways"));
+
+export { GetTgLocationArgs, GetTgLocationResult, GetTgLocationOutputArgs } from "./getTgLocation";
+export const getTgLocation: typeof import("./getTgLocation").getTgLocation = null as any;
+export const getTgLocationOutput: typeof import("./getTgLocation").getTgLocationOutput = null as any;
+utilities.lazyLoad(exports, ["getTgLocation","getTgLocationOutput"], () => require("./getTgLocation"));
+
+export { GetTgLocationsResult } from "./getTgLocations";
+export const getTgLocations: typeof import("./getTgLocations").getTgLocations = null as any;
+export const getTgLocationsOutput: typeof import("./getTgLocations").getTgLocationsOutput = null as any;
+utilities.lazyLoad(exports, ["getTgLocations","getTgLocationsOutput"], () => require("./getTgLocations"));
+
+export { GetTgRouteReportArgs, GetTgRouteReportResult, GetTgRouteReportOutputArgs } from "./getTgRouteReport";
+export const getTgRouteReport: typeof import("./getTgRouteReport").getTgRouteReport = null as any;
+export const getTgRouteReportOutput: typeof import("./getTgRouteReport").getTgRouteReportOutput = null as any;
+utilities.lazyLoad(exports, ["getTgRouteReport","getTgRouteReportOutput"], () => require("./getTgRouteReport"));
+
+export { GetTgRouteReportsArgs, GetTgRouteReportsResult, GetTgRouteReportsOutputArgs } from "./getTgRouteReports";
+export const getTgRouteReports: typeof import("./getTgRouteReports").getTgRouteReports = null as any;
+export const getTgRouteReportsOutput: typeof import("./getTgRouteReports").getTgRouteReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getTgRouteReports","getTgRouteReportsOutput"], () => require("./getTgRouteReports"));
+
 export { IamAccessGroupArgs, IamAccessGroupState } from "./iamAccessGroup";
 export type IamAccessGroup = import("./iamAccessGroup").IamAccessGroup;
 export const IamAccessGroup: typeof import("./iamAccessGroup").IamAccessGroup = null as any;
@@ -2573,6 +2613,36 @@ export type ResourceTag = import("./resourceTag").ResourceTag;
 export const ResourceTag: typeof import("./resourceTag").ResourceTag = null as any;
 utilities.lazyLoad(exports, ["ResourceTag"], () => require("./resourceTag"));
 
+export { TgConnectionArgs, TgConnectionState } from "./tgConnection";
+export type TgConnection = import("./tgConnection").TgConnection;
+export const TgConnection: typeof import("./tgConnection").TgConnection = null as any;
+utilities.lazyLoad(exports, ["TgConnection"], () => require("./tgConnection"));
+
+export { TgConnectionActionArgs, TgConnectionActionState } from "./tgConnectionAction";
+export type TgConnectionAction = import("./tgConnectionAction").TgConnectionAction;
+export const TgConnectionAction: typeof import("./tgConnectionAction").TgConnectionAction = null as any;
+utilities.lazyLoad(exports, ["TgConnectionAction"], () => require("./tgConnectionAction"));
+
+export { TgConnectionPrefixFilterArgs, TgConnectionPrefixFilterState } from "./tgConnectionPrefixFilter";
+export type TgConnectionPrefixFilter = import("./tgConnectionPrefixFilter").TgConnectionPrefixFilter;
+export const TgConnectionPrefixFilter: typeof import("./tgConnectionPrefixFilter").TgConnectionPrefixFilter = null as any;
+utilities.lazyLoad(exports, ["TgConnectionPrefixFilter"], () => require("./tgConnectionPrefixFilter"));
+
+export { TgConnectionRgreTunnelArgs, TgConnectionRgreTunnelState } from "./tgConnectionRgreTunnel";
+export type TgConnectionRgreTunnel = import("./tgConnectionRgreTunnel").TgConnectionRgreTunnel;
+export const TgConnectionRgreTunnel: typeof import("./tgConnectionRgreTunnel").TgConnectionRgreTunnel = null as any;
+utilities.lazyLoad(exports, ["TgConnectionRgreTunnel"], () => require("./tgConnectionRgreTunnel"));
+
+export { TgGatewayArgs, TgGatewayState } from "./tgGateway";
+export type TgGateway = import("./tgGateway").TgGateway;
+export const TgGateway: typeof import("./tgGateway").TgGateway = null as any;
+utilities.lazyLoad(exports, ["TgGateway"], () => require("./tgGateway"));
+
+export { TgRouteReportArgs, TgRouteReportState } from "./tgRouteReport";
+export type TgRouteReport = import("./tgRouteReport").TgRouteReport;
+export const TgRouteReport: typeof import("./tgRouteReport").TgRouteReport = null as any;
+utilities.lazyLoad(exports, ["TgRouteReport"], () => require("./tgRouteReport"));
+
 
 // Export sub-modules:
 import * as config from "./config";
@@ -2969,6 +3039,18 @@ const _module = {
                 return new ResourceKey(name, <any>undefined, { urn })
             case "ibmcloud:index/resourceTag:ResourceTag":
                 return new ResourceTag(name, <any>undefined, { urn })
+            case "ibmcloud:index/tgConnection:TgConnection":
+                return new TgConnection(name, <any>undefined, { urn })
+            case "ibmcloud:index/tgConnectionAction:TgConnectionAction":
+                return new TgConnectionAction(name, <any>undefined, { urn })
+            case "ibmcloud:index/tgConnectionPrefixFilter:TgConnectionPrefixFilter":
+                return new TgConnectionPrefixFilter(name, <any>undefined, { urn })
+            case "ibmcloud:index/tgConnectionRgreTunnel:TgConnectionRgreTunnel":
+                return new TgConnectionRgreTunnel(name, <any>undefined, { urn })
+            case "ibmcloud:index/tgGateway:TgGateway":
+                return new TgGateway(name, <any>undefined, { urn })
+            case "ibmcloud:index/tgRouteReport:TgRouteReport":
+                return new TgRouteReport(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -3165,6 +3247,12 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceGroup", _module
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceInstance", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceKey", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceTag", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnection", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnectionAction", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnectionPrefixFilter", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnectionRgreTunnel", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/tgGateway", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/tgRouteReport", _module)
 pulumi.runtime.registerResourcePackage("ibmcloud", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

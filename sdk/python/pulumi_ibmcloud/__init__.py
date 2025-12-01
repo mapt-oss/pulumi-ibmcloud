@@ -348,6 +348,14 @@ from .get_resource_instance import *
 from .get_resource_key import *
 from .get_resource_quota import *
 from .get_resource_tag import *
+from .get_tg_connection_prefix_filter import *
+from .get_tg_connection_prefix_filters import *
+from .get_tg_gateway import *
+from .get_tg_gateways import *
+from .get_tg_location import *
+from .get_tg_locations import *
+from .get_tg_route_report import *
+from .get_tg_route_reports import *
 from .iam_access_group import *
 from .iam_access_group_account_settings import *
 from .iam_access_group_dynamic_rule import *
@@ -520,6 +528,12 @@ from .resource_group import *
 from .resource_instance import *
 from .resource_key import *
 from .resource_tag import *
+from .tg_connection import *
+from .tg_connection_action import *
+from .tg_connection_prefix_filter import *
+from .tg_connection_rgre_tunnel import *
+from .tg_gateway import *
+from .tg_route_report import *
 from ._inputs import *
 from . import outputs
 
@@ -2059,6 +2073,54 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/resourceTag:ResourceTag": "ResourceTag"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/tgConnection",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/tgConnection:TgConnection": "TgConnection"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/tgConnectionAction",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/tgConnectionAction:TgConnectionAction": "TgConnectionAction"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/tgConnectionPrefixFilter",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/tgConnectionPrefixFilter:TgConnectionPrefixFilter": "TgConnectionPrefixFilter"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/tgConnectionRgreTunnel",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/tgConnectionRgreTunnel:TgConnectionRgreTunnel": "TgConnectionRgreTunnel"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/tgGateway",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/tgGateway:TgGateway": "TgGateway"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/tgRouteReport",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/tgRouteReport:TgRouteReport": "TgRouteReport"
   }
  }
 ]

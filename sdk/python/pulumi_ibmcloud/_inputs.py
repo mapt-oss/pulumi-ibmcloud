@@ -1125,6 +1125,18 @@ __all__ = [
     'PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict',
     'ResourceInstancePlanHistoryArgs',
     'ResourceInstancePlanHistoryArgsDict',
+    'TgConnectionTunnelArgs',
+    'TgConnectionTunnelArgsDict',
+    'TgRouteReportConnectionArgs',
+    'TgRouteReportConnectionArgsDict',
+    'TgRouteReportConnectionBgpArgs',
+    'TgRouteReportConnectionBgpArgsDict',
+    'TgRouteReportConnectionRouteArgs',
+    'TgRouteReportConnectionRouteArgsDict',
+    'TgRouteReportOverlappingRouteArgs',
+    'TgRouteReportOverlappingRouteArgsDict',
+    'TgRouteReportOverlappingRouteRouteArgs',
+    'TgRouteReportOverlappingRouteRouteArgsDict',
     'GetIsReservationCapacityArgs',
     'GetIsReservationCapacityArgsDict',
     'GetIsReservationCommittedUseArgs',
@@ -47800,6 +47812,509 @@ class ResourceInstancePlanHistoryArgs:
     @start_date.setter
     def start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "start_date", value)
+
+
+if not MYPY:
+    class TgConnectionTunnelArgsDict(TypedDict):
+        local_gateway_ip: pulumi.Input[_builtins.str]
+        """
+        The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        local_tunnel_ip: pulumi.Input[_builtins.str]
+        """
+        The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        name: pulumi.Input[_builtins.str]
+        """
+        The user-defined name for this tunnel connection.
+        """
+        remote_gateway_ip: pulumi.Input[_builtins.str]
+        """
+        The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        remote_tunnel_ip: pulumi.Input[_builtins.str]
+        """
+        The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        zone: pulumi.Input[_builtins.str]
+        """
+        Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        created_at: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time that this connection was created
+        """
+        local_bgp_asn: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        mtu: NotRequired[pulumi.Input[_builtins.int]]
+        remote_bgp_asn: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+        """
+        tunnel_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The Transit Gateway Connection tunnel identifier
+        """
+        updated_at: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time that this connection was last updated
+        """
+elif False:
+    TgConnectionTunnelArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TgConnectionTunnelArgs:
+    def __init__(__self__, *,
+                 local_gateway_ip: pulumi.Input[_builtins.str],
+                 local_tunnel_ip: pulumi.Input[_builtins.str],
+                 name: pulumi.Input[_builtins.str],
+                 remote_gateway_ip: pulumi.Input[_builtins.str],
+                 remote_tunnel_ip: pulumi.Input[_builtins.str],
+                 zone: pulumi.Input[_builtins.str],
+                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
+                 local_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
+                 mtu: Optional[pulumi.Input[_builtins.int]] = None,
+                 remote_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 tunnel_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 updated_at: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] local_gateway_ip: The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] local_tunnel_ip: The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] name: The user-defined name for this tunnel connection.
+        :param pulumi.Input[_builtins.str] remote_gateway_ip: The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] remote_tunnel_ip: The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] zone: Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] created_at: The date and time that this connection was created
+        :param pulumi.Input[_builtins.int] local_bgp_asn: The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.int] remote_bgp_asn: The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] status: What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+        :param pulumi.Input[_builtins.str] tunnel_id: The Transit Gateway Connection tunnel identifier
+        :param pulumi.Input[_builtins.str] updated_at: The date and time that this connection was last updated
+        """
+        pulumi.set(__self__, "local_gateway_ip", local_gateway_ip)
+        pulumi.set(__self__, "local_tunnel_ip", local_tunnel_ip)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "remote_gateway_ip", remote_gateway_ip)
+        pulumi.set(__self__, "remote_tunnel_ip", remote_tunnel_ip)
+        pulumi.set(__self__, "zone", zone)
+        if created_at is not None:
+            pulumi.set(__self__, "created_at", created_at)
+        if local_bgp_asn is not None:
+            pulumi.set(__self__, "local_bgp_asn", local_bgp_asn)
+        if mtu is not None:
+            pulumi.set(__self__, "mtu", mtu)
+        if remote_bgp_asn is not None:
+            pulumi.set(__self__, "remote_bgp_asn", remote_bgp_asn)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tunnel_id is not None:
+            pulumi.set(__self__, "tunnel_id", tunnel_id)
+        if updated_at is not None:
+            pulumi.set(__self__, "updated_at", updated_at)
+
+    @_builtins.property
+    @pulumi.getter(name="localGatewayIp")
+    def local_gateway_ip(self) -> pulumi.Input[_builtins.str]:
+        """
+        The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        return pulumi.get(self, "local_gateway_ip")
+
+    @local_gateway_ip.setter
+    def local_gateway_ip(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "local_gateway_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localTunnelIp")
+    def local_tunnel_ip(self) -> pulumi.Input[_builtins.str]:
+        """
+        The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        return pulumi.get(self, "local_tunnel_ip")
+
+    @local_tunnel_ip.setter
+    def local_tunnel_ip(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "local_tunnel_ip", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The user-defined name for this tunnel connection.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteGatewayIp")
+    def remote_gateway_ip(self) -> pulumi.Input[_builtins.str]:
+        """
+        The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        return pulumi.get(self, "remote_gateway_ip")
+
+    @remote_gateway_ip.setter
+    def remote_gateway_ip(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "remote_gateway_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteTunnelIp")
+    def remote_tunnel_ip(self) -> pulumi.Input[_builtins.str]:
+        """
+        The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        return pulumi.get(self, "remote_tunnel_ip")
+
+    @remote_tunnel_ip.setter
+    def remote_tunnel_ip(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "remote_tunnel_ip", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def zone(self) -> pulumi.Input[_builtins.str]:
+        """
+        Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        return pulumi.get(self, "zone")
+
+    @zone.setter
+    def zone(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "zone", value)
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time that this connection was created
+        """
+        return pulumi.get(self, "created_at")
+
+    @created_at.setter
+    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "created_at", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localBgpAsn")
+    def local_bgp_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        return pulumi.get(self, "local_bgp_asn")
+
+    @local_bgp_asn.setter
+    def local_bgp_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "local_bgp_asn", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def mtu(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "mtu")
+
+    @mtu.setter
+    def mtu(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "mtu", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteBgpAsn")
+    def remote_bgp_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        """
+        return pulumi.get(self, "remote_bgp_asn")
+
+    @remote_bgp_asn.setter
+    def remote_bgp_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "remote_bgp_asn", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tunnelId")
+    def tunnel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Transit Gateway Connection tunnel identifier
+        """
+        return pulumi.get(self, "tunnel_id")
+
+    @tunnel_id.setter
+    def tunnel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "tunnel_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updatedAt")
+    def updated_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time that this connection was last updated
+        """
+        return pulumi.get(self, "updated_at")
+
+    @updated_at.setter
+    def updated_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "updated_at", value)
+
+
+if not MYPY:
+    class TgRouteReportConnectionArgsDict(TypedDict):
+        bgps: NotRequired[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionBgpArgsDict']]]]
+        """
+        Collection of transit gateway connection's bgps
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        name: NotRequired[pulumi.Input[_builtins.str]]
+        routes: NotRequired[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionRouteArgsDict']]]]
+        """
+        Collection of transit gateway connection's used routes
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    TgRouteReportConnectionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TgRouteReportConnectionArgs:
+    def __init__(__self__, *,
+                 bgps: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionBgpArgs']]]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 routes: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionRouteArgs']]]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionBgpArgs']]] bgps: Collection of transit gateway connection's bgps
+        :param pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionRouteArgs']]] routes: Collection of transit gateway connection's used routes
+        """
+        if bgps is not None:
+            pulumi.set(__self__, "bgps", bgps)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if routes is not None:
+            pulumi.set(__self__, "routes", routes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def bgps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionBgpArgs']]]]:
+        """
+        Collection of transit gateway connection's bgps
+        """
+        return pulumi.get(self, "bgps")
+
+    @bgps.setter
+    def bgps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionBgpArgs']]]]):
+        pulumi.set(self, "bgps", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionRouteArgs']]]]:
+        """
+        Collection of transit gateway connection's used routes
+        """
+        return pulumi.get(self, "routes")
+
+    @routes.setter
+    def routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionRouteArgs']]]]):
+        pulumi.set(self, "routes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class TgRouteReportConnectionBgpArgsDict(TypedDict):
+        as_path: NotRequired[pulumi.Input[_builtins.str]]
+        is_used: NotRequired[pulumi.Input[_builtins.bool]]
+        local_preference: NotRequired[pulumi.Input[_builtins.str]]
+        prefix: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    TgRouteReportConnectionBgpArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TgRouteReportConnectionBgpArgs:
+    def __init__(__self__, *,
+                 as_path: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_used: Optional[pulumi.Input[_builtins.bool]] = None,
+                 local_preference: Optional[pulumi.Input[_builtins.str]] = None,
+                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+        if as_path is not None:
+            pulumi.set(__self__, "as_path", as_path)
+        if is_used is not None:
+            pulumi.set(__self__, "is_used", is_used)
+        if local_preference is not None:
+            pulumi.set(__self__, "local_preference", local_preference)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter(name="asPath")
+    def as_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "as_path")
+
+    @as_path.setter
+    def as_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "as_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isUsed")
+    def is_used(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_used")
+
+    @is_used.setter
+    def is_used(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_used", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localPreference")
+    def local_preference(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "local_preference")
+
+    @local_preference.setter
+    def local_preference(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "local_preference", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
+
+if not MYPY:
+    class TgRouteReportConnectionRouteArgsDict(TypedDict):
+        prefix: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    TgRouteReportConnectionRouteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TgRouteReportConnectionRouteArgs:
+    def __init__(__self__, *,
+                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
+
+if not MYPY:
+    class TgRouteReportOverlappingRouteArgsDict(TypedDict):
+        routes: NotRequired[pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteRouteArgsDict']]]]
+        """
+        Collection of transit gateway overlapping route's details
+        """
+elif False:
+    TgRouteReportOverlappingRouteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TgRouteReportOverlappingRouteArgs:
+    def __init__(__self__, *,
+                 routes: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteRouteArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteRouteArgs']]] routes: Collection of transit gateway overlapping route's details
+        """
+        if routes is not None:
+            pulumi.set(__self__, "routes", routes)
+
+    @_builtins.property
+    @pulumi.getter
+    def routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteRouteArgs']]]]:
+        """
+        Collection of transit gateway overlapping route's details
+        """
+        return pulumi.get(self, "routes")
+
+    @routes.setter
+    def routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteRouteArgs']]]]):
+        pulumi.set(self, "routes", value)
+
+
+if not MYPY:
+    class TgRouteReportOverlappingRouteRouteArgsDict(TypedDict):
+        connection_id: NotRequired[pulumi.Input[_builtins.str]]
+        prefix: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    TgRouteReportOverlappingRouteRouteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TgRouteReportOverlappingRouteRouteArgs:
+    def __init__(__self__, *,
+                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+        if connection_id is not None:
+            pulumi.set(__self__, "connection_id", connection_id)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "connection_id")
+
+    @connection_id.setter
+    def connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "connection_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
 
 
 if not MYPY:

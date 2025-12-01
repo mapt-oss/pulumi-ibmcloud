@@ -9587,3 +9587,92 @@ export interface ResourceInstancePlanHistory {
     resourcePlanId?: pulumi.Input<string>;
     startDate?: pulumi.Input<string>;
 }
+
+export interface TgConnectionTunnel {
+    /**
+     * The date and time that this connection was created
+     */
+    createdAt?: pulumi.Input<string>;
+    /**
+     * The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    localBgpAsn?: pulumi.Input<number>;
+    /**
+     * The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    localGatewayIp: pulumi.Input<string>;
+    /**
+     * The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    localTunnelIp: pulumi.Input<string>;
+    mtu?: pulumi.Input<number>;
+    /**
+     * The user-defined name for this tunnel connection.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    remoteBgpAsn?: pulumi.Input<number>;
+    /**
+     * The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    remoteGatewayIp: pulumi.Input<string>;
+    /**
+     * The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    remoteTunnelIp: pulumi.Input<string>;
+    /**
+     * What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * The Transit Gateway Connection tunnel identifier
+     */
+    tunnelId?: pulumi.Input<string>;
+    /**
+     * The date and time that this connection was last updated
+     */
+    updatedAt?: pulumi.Input<string>;
+    /**
+     * Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    zone: pulumi.Input<string>;
+}
+
+export interface TgRouteReportConnection {
+    /**
+     * Collection of transit gateway connection's bgps
+     */
+    bgps?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnectionBgp>[]>;
+    id?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    /**
+     * Collection of transit gateway connection's used routes
+     */
+    routes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnectionRoute>[]>;
+    type?: pulumi.Input<string>;
+}
+
+export interface TgRouteReportConnectionBgp {
+    asPath?: pulumi.Input<string>;
+    isUsed?: pulumi.Input<boolean>;
+    localPreference?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string>;
+}
+
+export interface TgRouteReportConnectionRoute {
+    prefix?: pulumi.Input<string>;
+}
+
+export interface TgRouteReportOverlappingRoute {
+    /**
+     * Collection of transit gateway overlapping route's details
+     */
+    routes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportOverlappingRouteRoute>[]>;
+}
+
+export interface TgRouteReportOverlappingRouteRoute {
+    connectionId?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string>;
+}
