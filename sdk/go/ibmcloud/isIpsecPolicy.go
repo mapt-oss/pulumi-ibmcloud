@@ -194,56 +194,6 @@ func (i *IsIpsecPolicy) ToIsIpsecPolicyOutputWithContext(ctx context.Context) Is
 	return pulumi.ToOutputWithContext(ctx, i).(IsIpsecPolicyOutput)
 }
 
-// IsIpsecPolicyArrayInput is an input type that accepts IsIpsecPolicyArray and IsIpsecPolicyArrayOutput values.
-// You can construct a concrete instance of `IsIpsecPolicyArrayInput` via:
-//
-//	IsIpsecPolicyArray{ IsIpsecPolicyArgs{...} }
-type IsIpsecPolicyArrayInput interface {
-	pulumi.Input
-
-	ToIsIpsecPolicyArrayOutput() IsIpsecPolicyArrayOutput
-	ToIsIpsecPolicyArrayOutputWithContext(context.Context) IsIpsecPolicyArrayOutput
-}
-
-type IsIpsecPolicyArray []IsIpsecPolicyInput
-
-func (IsIpsecPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsIpsecPolicy)(nil)).Elem()
-}
-
-func (i IsIpsecPolicyArray) ToIsIpsecPolicyArrayOutput() IsIpsecPolicyArrayOutput {
-	return i.ToIsIpsecPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IsIpsecPolicyArray) ToIsIpsecPolicyArrayOutputWithContext(ctx context.Context) IsIpsecPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsIpsecPolicyArrayOutput)
-}
-
-// IsIpsecPolicyMapInput is an input type that accepts IsIpsecPolicyMap and IsIpsecPolicyMapOutput values.
-// You can construct a concrete instance of `IsIpsecPolicyMapInput` via:
-//
-//	IsIpsecPolicyMap{ "key": IsIpsecPolicyArgs{...} }
-type IsIpsecPolicyMapInput interface {
-	pulumi.Input
-
-	ToIsIpsecPolicyMapOutput() IsIpsecPolicyMapOutput
-	ToIsIpsecPolicyMapOutputWithContext(context.Context) IsIpsecPolicyMapOutput
-}
-
-type IsIpsecPolicyMap map[string]IsIpsecPolicyInput
-
-func (IsIpsecPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsIpsecPolicy)(nil)).Elem()
-}
-
-func (i IsIpsecPolicyMap) ToIsIpsecPolicyMapOutput() IsIpsecPolicyMapOutput {
-	return i.ToIsIpsecPolicyMapOutputWithContext(context.Background())
-}
-
-func (i IsIpsecPolicyMap) ToIsIpsecPolicyMapOutputWithContext(ctx context.Context) IsIpsecPolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsIpsecPolicyMapOutput)
-}
-
 type IsIpsecPolicyOutput struct{ *pulumi.OutputState }
 
 func (IsIpsecPolicyOutput) ElementType() reflect.Type {
@@ -322,51 +272,7 @@ func (o IsIpsecPolicyOutput) VpnConnections() IsIpsecPolicyVpnConnectionArrayOut
 	return o.ApplyT(func(v *IsIpsecPolicy) IsIpsecPolicyVpnConnectionArrayOutput { return v.VpnConnections }).(IsIpsecPolicyVpnConnectionArrayOutput)
 }
 
-type IsIpsecPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IsIpsecPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsIpsecPolicy)(nil)).Elem()
-}
-
-func (o IsIpsecPolicyArrayOutput) ToIsIpsecPolicyArrayOutput() IsIpsecPolicyArrayOutput {
-	return o
-}
-
-func (o IsIpsecPolicyArrayOutput) ToIsIpsecPolicyArrayOutputWithContext(ctx context.Context) IsIpsecPolicyArrayOutput {
-	return o
-}
-
-func (o IsIpsecPolicyArrayOutput) Index(i pulumi.IntInput) IsIpsecPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsIpsecPolicy {
-		return vs[0].([]*IsIpsecPolicy)[vs[1].(int)]
-	}).(IsIpsecPolicyOutput)
-}
-
-type IsIpsecPolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IsIpsecPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsIpsecPolicy)(nil)).Elem()
-}
-
-func (o IsIpsecPolicyMapOutput) ToIsIpsecPolicyMapOutput() IsIpsecPolicyMapOutput {
-	return o
-}
-
-func (o IsIpsecPolicyMapOutput) ToIsIpsecPolicyMapOutputWithContext(ctx context.Context) IsIpsecPolicyMapOutput {
-	return o
-}
-
-func (o IsIpsecPolicyMapOutput) MapIndex(k pulumi.StringInput) IsIpsecPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsIpsecPolicy {
-		return vs[0].(map[string]*IsIpsecPolicy)[vs[1].(string)]
-	}).(IsIpsecPolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsIpsecPolicyInput)(nil)).Elem(), &IsIpsecPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsIpsecPolicyArrayInput)(nil)).Elem(), IsIpsecPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsIpsecPolicyMapInput)(nil)).Elem(), IsIpsecPolicyMap{})
 	pulumi.RegisterOutputType(IsIpsecPolicyOutput{})
-	pulumi.RegisterOutputType(IsIpsecPolicyArrayOutput{})
-	pulumi.RegisterOutputType(IsIpsecPolicyMapOutput{})
 }

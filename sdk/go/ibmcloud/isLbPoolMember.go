@@ -179,56 +179,6 @@ func (i *IsLbPoolMember) ToIsLbPoolMemberOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(IsLbPoolMemberOutput)
 }
 
-// IsLbPoolMemberArrayInput is an input type that accepts IsLbPoolMemberArray and IsLbPoolMemberArrayOutput values.
-// You can construct a concrete instance of `IsLbPoolMemberArrayInput` via:
-//
-//	IsLbPoolMemberArray{ IsLbPoolMemberArgs{...} }
-type IsLbPoolMemberArrayInput interface {
-	pulumi.Input
-
-	ToIsLbPoolMemberArrayOutput() IsLbPoolMemberArrayOutput
-	ToIsLbPoolMemberArrayOutputWithContext(context.Context) IsLbPoolMemberArrayOutput
-}
-
-type IsLbPoolMemberArray []IsLbPoolMemberInput
-
-func (IsLbPoolMemberArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbPoolMember)(nil)).Elem()
-}
-
-func (i IsLbPoolMemberArray) ToIsLbPoolMemberArrayOutput() IsLbPoolMemberArrayOutput {
-	return i.ToIsLbPoolMemberArrayOutputWithContext(context.Background())
-}
-
-func (i IsLbPoolMemberArray) ToIsLbPoolMemberArrayOutputWithContext(ctx context.Context) IsLbPoolMemberArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbPoolMemberArrayOutput)
-}
-
-// IsLbPoolMemberMapInput is an input type that accepts IsLbPoolMemberMap and IsLbPoolMemberMapOutput values.
-// You can construct a concrete instance of `IsLbPoolMemberMapInput` via:
-//
-//	IsLbPoolMemberMap{ "key": IsLbPoolMemberArgs{...} }
-type IsLbPoolMemberMapInput interface {
-	pulumi.Input
-
-	ToIsLbPoolMemberMapOutput() IsLbPoolMemberMapOutput
-	ToIsLbPoolMemberMapOutputWithContext(context.Context) IsLbPoolMemberMapOutput
-}
-
-type IsLbPoolMemberMap map[string]IsLbPoolMemberInput
-
-func (IsLbPoolMemberMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbPoolMember)(nil)).Elem()
-}
-
-func (i IsLbPoolMemberMap) ToIsLbPoolMemberMapOutput() IsLbPoolMemberMapOutput {
-	return i.ToIsLbPoolMemberMapOutputWithContext(context.Background())
-}
-
-func (i IsLbPoolMemberMap) ToIsLbPoolMemberMapOutputWithContext(ctx context.Context) IsLbPoolMemberMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbPoolMemberMapOutput)
-}
-
 type IsLbPoolMemberOutput struct{ *pulumi.OutputState }
 
 func (IsLbPoolMemberOutput) ElementType() reflect.Type {
@@ -293,51 +243,7 @@ func (o IsLbPoolMemberOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v *IsLbPoolMember) pulumi.IntOutput { return v.Weight }).(pulumi.IntOutput)
 }
 
-type IsLbPoolMemberArrayOutput struct{ *pulumi.OutputState }
-
-func (IsLbPoolMemberArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbPoolMember)(nil)).Elem()
-}
-
-func (o IsLbPoolMemberArrayOutput) ToIsLbPoolMemberArrayOutput() IsLbPoolMemberArrayOutput {
-	return o
-}
-
-func (o IsLbPoolMemberArrayOutput) ToIsLbPoolMemberArrayOutputWithContext(ctx context.Context) IsLbPoolMemberArrayOutput {
-	return o
-}
-
-func (o IsLbPoolMemberArrayOutput) Index(i pulumi.IntInput) IsLbPoolMemberOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsLbPoolMember {
-		return vs[0].([]*IsLbPoolMember)[vs[1].(int)]
-	}).(IsLbPoolMemberOutput)
-}
-
-type IsLbPoolMemberMapOutput struct{ *pulumi.OutputState }
-
-func (IsLbPoolMemberMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbPoolMember)(nil)).Elem()
-}
-
-func (o IsLbPoolMemberMapOutput) ToIsLbPoolMemberMapOutput() IsLbPoolMemberMapOutput {
-	return o
-}
-
-func (o IsLbPoolMemberMapOutput) ToIsLbPoolMemberMapOutputWithContext(ctx context.Context) IsLbPoolMemberMapOutput {
-	return o
-}
-
-func (o IsLbPoolMemberMapOutput) MapIndex(k pulumi.StringInput) IsLbPoolMemberOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsLbPoolMember {
-		return vs[0].(map[string]*IsLbPoolMember)[vs[1].(string)]
-	}).(IsLbPoolMemberOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsLbPoolMemberInput)(nil)).Elem(), &IsLbPoolMember{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbPoolMemberArrayInput)(nil)).Elem(), IsLbPoolMemberArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbPoolMemberMapInput)(nil)).Elem(), IsLbPoolMemberMap{})
 	pulumi.RegisterOutputType(IsLbPoolMemberOutput{})
-	pulumi.RegisterOutputType(IsLbPoolMemberArrayOutput{})
-	pulumi.RegisterOutputType(IsLbPoolMemberMapOutput{})
 }

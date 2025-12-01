@@ -133,56 +133,6 @@ func (i *IamUserInvite) ToIamUserInviteOutputWithContext(ctx context.Context) Ia
 	return pulumi.ToOutputWithContext(ctx, i).(IamUserInviteOutput)
 }
 
-// IamUserInviteArrayInput is an input type that accepts IamUserInviteArray and IamUserInviteArrayOutput values.
-// You can construct a concrete instance of `IamUserInviteArrayInput` via:
-//
-//	IamUserInviteArray{ IamUserInviteArgs{...} }
-type IamUserInviteArrayInput interface {
-	pulumi.Input
-
-	ToIamUserInviteArrayOutput() IamUserInviteArrayOutput
-	ToIamUserInviteArrayOutputWithContext(context.Context) IamUserInviteArrayOutput
-}
-
-type IamUserInviteArray []IamUserInviteInput
-
-func (IamUserInviteArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamUserInvite)(nil)).Elem()
-}
-
-func (i IamUserInviteArray) ToIamUserInviteArrayOutput() IamUserInviteArrayOutput {
-	return i.ToIamUserInviteArrayOutputWithContext(context.Background())
-}
-
-func (i IamUserInviteArray) ToIamUserInviteArrayOutputWithContext(ctx context.Context) IamUserInviteArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamUserInviteArrayOutput)
-}
-
-// IamUserInviteMapInput is an input type that accepts IamUserInviteMap and IamUserInviteMapOutput values.
-// You can construct a concrete instance of `IamUserInviteMapInput` via:
-//
-//	IamUserInviteMap{ "key": IamUserInviteArgs{...} }
-type IamUserInviteMapInput interface {
-	pulumi.Input
-
-	ToIamUserInviteMapOutput() IamUserInviteMapOutput
-	ToIamUserInviteMapOutputWithContext(context.Context) IamUserInviteMapOutput
-}
-
-type IamUserInviteMap map[string]IamUserInviteInput
-
-func (IamUserInviteMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamUserInvite)(nil)).Elem()
-}
-
-func (i IamUserInviteMap) ToIamUserInviteMapOutput() IamUserInviteMapOutput {
-	return i.ToIamUserInviteMapOutputWithContext(context.Background())
-}
-
-func (i IamUserInviteMap) ToIamUserInviteMapOutputWithContext(ctx context.Context) IamUserInviteMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamUserInviteMapOutput)
-}
-
 type IamUserInviteOutput struct{ *pulumi.OutputState }
 
 func (IamUserInviteOutput) ElementType() reflect.Type {
@@ -228,51 +178,7 @@ func (o IamUserInviteOutput) Users() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IamUserInvite) pulumi.StringArrayOutput { return v.Users }).(pulumi.StringArrayOutput)
 }
 
-type IamUserInviteArrayOutput struct{ *pulumi.OutputState }
-
-func (IamUserInviteArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamUserInvite)(nil)).Elem()
-}
-
-func (o IamUserInviteArrayOutput) ToIamUserInviteArrayOutput() IamUserInviteArrayOutput {
-	return o
-}
-
-func (o IamUserInviteArrayOutput) ToIamUserInviteArrayOutputWithContext(ctx context.Context) IamUserInviteArrayOutput {
-	return o
-}
-
-func (o IamUserInviteArrayOutput) Index(i pulumi.IntInput) IamUserInviteOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamUserInvite {
-		return vs[0].([]*IamUserInvite)[vs[1].(int)]
-	}).(IamUserInviteOutput)
-}
-
-type IamUserInviteMapOutput struct{ *pulumi.OutputState }
-
-func (IamUserInviteMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamUserInvite)(nil)).Elem()
-}
-
-func (o IamUserInviteMapOutput) ToIamUserInviteMapOutput() IamUserInviteMapOutput {
-	return o
-}
-
-func (o IamUserInviteMapOutput) ToIamUserInviteMapOutputWithContext(ctx context.Context) IamUserInviteMapOutput {
-	return o
-}
-
-func (o IamUserInviteMapOutput) MapIndex(k pulumi.StringInput) IamUserInviteOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamUserInvite {
-		return vs[0].(map[string]*IamUserInvite)[vs[1].(string)]
-	}).(IamUserInviteOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamUserInviteInput)(nil)).Elem(), &IamUserInvite{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamUserInviteArrayInput)(nil)).Elem(), IamUserInviteArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamUserInviteMapInput)(nil)).Elem(), IamUserInviteMap{})
 	pulumi.RegisterOutputType(IamUserInviteOutput{})
-	pulumi.RegisterOutputType(IamUserInviteArrayOutput{})
-	pulumi.RegisterOutputType(IamUserInviteMapOutput{})
 }

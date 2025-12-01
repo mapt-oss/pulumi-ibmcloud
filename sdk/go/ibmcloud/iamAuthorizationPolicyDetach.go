@@ -99,56 +99,6 @@ func (i *IamAuthorizationPolicyDetach) ToIamAuthorizationPolicyDetachOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(IamAuthorizationPolicyDetachOutput)
 }
 
-// IamAuthorizationPolicyDetachArrayInput is an input type that accepts IamAuthorizationPolicyDetachArray and IamAuthorizationPolicyDetachArrayOutput values.
-// You can construct a concrete instance of `IamAuthorizationPolicyDetachArrayInput` via:
-//
-//	IamAuthorizationPolicyDetachArray{ IamAuthorizationPolicyDetachArgs{...} }
-type IamAuthorizationPolicyDetachArrayInput interface {
-	pulumi.Input
-
-	ToIamAuthorizationPolicyDetachArrayOutput() IamAuthorizationPolicyDetachArrayOutput
-	ToIamAuthorizationPolicyDetachArrayOutputWithContext(context.Context) IamAuthorizationPolicyDetachArrayOutput
-}
-
-type IamAuthorizationPolicyDetachArray []IamAuthorizationPolicyDetachInput
-
-func (IamAuthorizationPolicyDetachArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAuthorizationPolicyDetach)(nil)).Elem()
-}
-
-func (i IamAuthorizationPolicyDetachArray) ToIamAuthorizationPolicyDetachArrayOutput() IamAuthorizationPolicyDetachArrayOutput {
-	return i.ToIamAuthorizationPolicyDetachArrayOutputWithContext(context.Background())
-}
-
-func (i IamAuthorizationPolicyDetachArray) ToIamAuthorizationPolicyDetachArrayOutputWithContext(ctx context.Context) IamAuthorizationPolicyDetachArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAuthorizationPolicyDetachArrayOutput)
-}
-
-// IamAuthorizationPolicyDetachMapInput is an input type that accepts IamAuthorizationPolicyDetachMap and IamAuthorizationPolicyDetachMapOutput values.
-// You can construct a concrete instance of `IamAuthorizationPolicyDetachMapInput` via:
-//
-//	IamAuthorizationPolicyDetachMap{ "key": IamAuthorizationPolicyDetachArgs{...} }
-type IamAuthorizationPolicyDetachMapInput interface {
-	pulumi.Input
-
-	ToIamAuthorizationPolicyDetachMapOutput() IamAuthorizationPolicyDetachMapOutput
-	ToIamAuthorizationPolicyDetachMapOutputWithContext(context.Context) IamAuthorizationPolicyDetachMapOutput
-}
-
-type IamAuthorizationPolicyDetachMap map[string]IamAuthorizationPolicyDetachInput
-
-func (IamAuthorizationPolicyDetachMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAuthorizationPolicyDetach)(nil)).Elem()
-}
-
-func (i IamAuthorizationPolicyDetachMap) ToIamAuthorizationPolicyDetachMapOutput() IamAuthorizationPolicyDetachMapOutput {
-	return i.ToIamAuthorizationPolicyDetachMapOutputWithContext(context.Background())
-}
-
-func (i IamAuthorizationPolicyDetachMap) ToIamAuthorizationPolicyDetachMapOutputWithContext(ctx context.Context) IamAuthorizationPolicyDetachMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAuthorizationPolicyDetachMapOutput)
-}
-
 type IamAuthorizationPolicyDetachOutput struct{ *pulumi.OutputState }
 
 func (IamAuthorizationPolicyDetachOutput) ElementType() reflect.Type {
@@ -168,51 +118,7 @@ func (o IamAuthorizationPolicyDetachOutput) AuthorizationPolicyId() pulumi.Strin
 	return o.ApplyT(func(v *IamAuthorizationPolicyDetach) pulumi.StringOutput { return v.AuthorizationPolicyId }).(pulumi.StringOutput)
 }
 
-type IamAuthorizationPolicyDetachArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAuthorizationPolicyDetachArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAuthorizationPolicyDetach)(nil)).Elem()
-}
-
-func (o IamAuthorizationPolicyDetachArrayOutput) ToIamAuthorizationPolicyDetachArrayOutput() IamAuthorizationPolicyDetachArrayOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyDetachArrayOutput) ToIamAuthorizationPolicyDetachArrayOutputWithContext(ctx context.Context) IamAuthorizationPolicyDetachArrayOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyDetachArrayOutput) Index(i pulumi.IntInput) IamAuthorizationPolicyDetachOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAuthorizationPolicyDetach {
-		return vs[0].([]*IamAuthorizationPolicyDetach)[vs[1].(int)]
-	}).(IamAuthorizationPolicyDetachOutput)
-}
-
-type IamAuthorizationPolicyDetachMapOutput struct{ *pulumi.OutputState }
-
-func (IamAuthorizationPolicyDetachMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAuthorizationPolicyDetach)(nil)).Elem()
-}
-
-func (o IamAuthorizationPolicyDetachMapOutput) ToIamAuthorizationPolicyDetachMapOutput() IamAuthorizationPolicyDetachMapOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyDetachMapOutput) ToIamAuthorizationPolicyDetachMapOutputWithContext(ctx context.Context) IamAuthorizationPolicyDetachMapOutput {
-	return o
-}
-
-func (o IamAuthorizationPolicyDetachMapOutput) MapIndex(k pulumi.StringInput) IamAuthorizationPolicyDetachOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAuthorizationPolicyDetach {
-		return vs[0].(map[string]*IamAuthorizationPolicyDetach)[vs[1].(string)]
-	}).(IamAuthorizationPolicyDetachOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAuthorizationPolicyDetachInput)(nil)).Elem(), &IamAuthorizationPolicyDetach{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAuthorizationPolicyDetachArrayInput)(nil)).Elem(), IamAuthorizationPolicyDetachArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAuthorizationPolicyDetachMapInput)(nil)).Elem(), IamAuthorizationPolicyDetachMap{})
 	pulumi.RegisterOutputType(IamAuthorizationPolicyDetachOutput{})
-	pulumi.RegisterOutputType(IamAuthorizationPolicyDetachArrayOutput{})
-	pulumi.RegisterOutputType(IamAuthorizationPolicyDetachMapOutput{})
 }

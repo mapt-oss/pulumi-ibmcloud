@@ -148,56 +148,6 @@ func (i *IsVirtualEndpointGatewayIp) ToIsVirtualEndpointGatewayIpOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualEndpointGatewayIpOutput)
 }
 
-// IsVirtualEndpointGatewayIpArrayInput is an input type that accepts IsVirtualEndpointGatewayIpArray and IsVirtualEndpointGatewayIpArrayOutput values.
-// You can construct a concrete instance of `IsVirtualEndpointGatewayIpArrayInput` via:
-//
-//	IsVirtualEndpointGatewayIpArray{ IsVirtualEndpointGatewayIpArgs{...} }
-type IsVirtualEndpointGatewayIpArrayInput interface {
-	pulumi.Input
-
-	ToIsVirtualEndpointGatewayIpArrayOutput() IsVirtualEndpointGatewayIpArrayOutput
-	ToIsVirtualEndpointGatewayIpArrayOutputWithContext(context.Context) IsVirtualEndpointGatewayIpArrayOutput
-}
-
-type IsVirtualEndpointGatewayIpArray []IsVirtualEndpointGatewayIpInput
-
-func (IsVirtualEndpointGatewayIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVirtualEndpointGatewayIp)(nil)).Elem()
-}
-
-func (i IsVirtualEndpointGatewayIpArray) ToIsVirtualEndpointGatewayIpArrayOutput() IsVirtualEndpointGatewayIpArrayOutput {
-	return i.ToIsVirtualEndpointGatewayIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsVirtualEndpointGatewayIpArray) ToIsVirtualEndpointGatewayIpArrayOutputWithContext(ctx context.Context) IsVirtualEndpointGatewayIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualEndpointGatewayIpArrayOutput)
-}
-
-// IsVirtualEndpointGatewayIpMapInput is an input type that accepts IsVirtualEndpointGatewayIpMap and IsVirtualEndpointGatewayIpMapOutput values.
-// You can construct a concrete instance of `IsVirtualEndpointGatewayIpMapInput` via:
-//
-//	IsVirtualEndpointGatewayIpMap{ "key": IsVirtualEndpointGatewayIpArgs{...} }
-type IsVirtualEndpointGatewayIpMapInput interface {
-	pulumi.Input
-
-	ToIsVirtualEndpointGatewayIpMapOutput() IsVirtualEndpointGatewayIpMapOutput
-	ToIsVirtualEndpointGatewayIpMapOutputWithContext(context.Context) IsVirtualEndpointGatewayIpMapOutput
-}
-
-type IsVirtualEndpointGatewayIpMap map[string]IsVirtualEndpointGatewayIpInput
-
-func (IsVirtualEndpointGatewayIpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVirtualEndpointGatewayIp)(nil)).Elem()
-}
-
-func (i IsVirtualEndpointGatewayIpMap) ToIsVirtualEndpointGatewayIpMapOutput() IsVirtualEndpointGatewayIpMapOutput {
-	return i.ToIsVirtualEndpointGatewayIpMapOutputWithContext(context.Background())
-}
-
-func (i IsVirtualEndpointGatewayIpMap) ToIsVirtualEndpointGatewayIpMapOutputWithContext(ctx context.Context) IsVirtualEndpointGatewayIpMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualEndpointGatewayIpMapOutput)
-}
-
 type IsVirtualEndpointGatewayIpOutput struct{ *pulumi.OutputState }
 
 func (IsVirtualEndpointGatewayIpOutput) ElementType() reflect.Type {
@@ -252,51 +202,7 @@ func (o IsVirtualEndpointGatewayIpOutput) Targets() IsVirtualEndpointGatewayIpTa
 	return o.ApplyT(func(v *IsVirtualEndpointGatewayIp) IsVirtualEndpointGatewayIpTargetArrayOutput { return v.Targets }).(IsVirtualEndpointGatewayIpTargetArrayOutput)
 }
 
-type IsVirtualEndpointGatewayIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVirtualEndpointGatewayIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVirtualEndpointGatewayIp)(nil)).Elem()
-}
-
-func (o IsVirtualEndpointGatewayIpArrayOutput) ToIsVirtualEndpointGatewayIpArrayOutput() IsVirtualEndpointGatewayIpArrayOutput {
-	return o
-}
-
-func (o IsVirtualEndpointGatewayIpArrayOutput) ToIsVirtualEndpointGatewayIpArrayOutputWithContext(ctx context.Context) IsVirtualEndpointGatewayIpArrayOutput {
-	return o
-}
-
-func (o IsVirtualEndpointGatewayIpArrayOutput) Index(i pulumi.IntInput) IsVirtualEndpointGatewayIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVirtualEndpointGatewayIp {
-		return vs[0].([]*IsVirtualEndpointGatewayIp)[vs[1].(int)]
-	}).(IsVirtualEndpointGatewayIpOutput)
-}
-
-type IsVirtualEndpointGatewayIpMapOutput struct{ *pulumi.OutputState }
-
-func (IsVirtualEndpointGatewayIpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVirtualEndpointGatewayIp)(nil)).Elem()
-}
-
-func (o IsVirtualEndpointGatewayIpMapOutput) ToIsVirtualEndpointGatewayIpMapOutput() IsVirtualEndpointGatewayIpMapOutput {
-	return o
-}
-
-func (o IsVirtualEndpointGatewayIpMapOutput) ToIsVirtualEndpointGatewayIpMapOutputWithContext(ctx context.Context) IsVirtualEndpointGatewayIpMapOutput {
-	return o
-}
-
-func (o IsVirtualEndpointGatewayIpMapOutput) MapIndex(k pulumi.StringInput) IsVirtualEndpointGatewayIpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVirtualEndpointGatewayIp {
-		return vs[0].(map[string]*IsVirtualEndpointGatewayIp)[vs[1].(string)]
-	}).(IsVirtualEndpointGatewayIpOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualEndpointGatewayIpInput)(nil)).Elem(), &IsVirtualEndpointGatewayIp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualEndpointGatewayIpArrayInput)(nil)).Elem(), IsVirtualEndpointGatewayIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualEndpointGatewayIpMapInput)(nil)).Elem(), IsVirtualEndpointGatewayIpMap{})
 	pulumi.RegisterOutputType(IsVirtualEndpointGatewayIpOutput{})
-	pulumi.RegisterOutputType(IsVirtualEndpointGatewayIpArrayOutput{})
-	pulumi.RegisterOutputType(IsVirtualEndpointGatewayIpMapOutput{})
 }

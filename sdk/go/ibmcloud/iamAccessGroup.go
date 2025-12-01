@@ -119,56 +119,6 @@ func (i *IamAccessGroup) ToIamAccessGroupOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupOutput)
 }
 
-// IamAccessGroupArrayInput is an input type that accepts IamAccessGroupArray and IamAccessGroupArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupArrayInput` via:
-//
-//	IamAccessGroupArray{ IamAccessGroupArgs{...} }
-type IamAccessGroupArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupArrayOutput() IamAccessGroupArrayOutput
-	ToIamAccessGroupArrayOutputWithContext(context.Context) IamAccessGroupArrayOutput
-}
-
-type IamAccessGroupArray []IamAccessGroupInput
-
-func (IamAccessGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroup)(nil)).Elem()
-}
-
-func (i IamAccessGroupArray) ToIamAccessGroupArrayOutput() IamAccessGroupArrayOutput {
-	return i.ToIamAccessGroupArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupArray) ToIamAccessGroupArrayOutputWithContext(ctx context.Context) IamAccessGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupArrayOutput)
-}
-
-// IamAccessGroupMapInput is an input type that accepts IamAccessGroupMap and IamAccessGroupMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupMapInput` via:
-//
-//	IamAccessGroupMap{ "key": IamAccessGroupArgs{...} }
-type IamAccessGroupMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupMapOutput() IamAccessGroupMapOutput
-	ToIamAccessGroupMapOutputWithContext(context.Context) IamAccessGroupMapOutput
-}
-
-type IamAccessGroupMap map[string]IamAccessGroupInput
-
-func (IamAccessGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroup)(nil)).Elem()
-}
-
-func (i IamAccessGroupMap) ToIamAccessGroupMapOutput() IamAccessGroupMapOutput {
-	return i.ToIamAccessGroupMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupMap) ToIamAccessGroupMapOutputWithContext(ctx context.Context) IamAccessGroupMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupMapOutput)
-}
-
 type IamAccessGroupOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupOutput) ElementType() reflect.Type {
@@ -206,51 +156,7 @@ func (o IamAccessGroupOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamAccessGroup) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamAccessGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroup)(nil)).Elem()
-}
-
-func (o IamAccessGroupArrayOutput) ToIamAccessGroupArrayOutput() IamAccessGroupArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupArrayOutput) ToIamAccessGroupArrayOutputWithContext(ctx context.Context) IamAccessGroupArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupArrayOutput) Index(i pulumi.IntInput) IamAccessGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroup {
-		return vs[0].([]*IamAccessGroup)[vs[1].(int)]
-	}).(IamAccessGroupOutput)
-}
-
-type IamAccessGroupMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroup)(nil)).Elem()
-}
-
-func (o IamAccessGroupMapOutput) ToIamAccessGroupMapOutput() IamAccessGroupMapOutput {
-	return o
-}
-
-func (o IamAccessGroupMapOutput) ToIamAccessGroupMapOutputWithContext(ctx context.Context) IamAccessGroupMapOutput {
-	return o
-}
-
-func (o IamAccessGroupMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroup {
-		return vs[0].(map[string]*IamAccessGroup)[vs[1].(string)]
-	}).(IamAccessGroupOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupInput)(nil)).Elem(), &IamAccessGroup{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupArrayInput)(nil)).Elem(), IamAccessGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupMapInput)(nil)).Elem(), IamAccessGroupMap{})
 	pulumi.RegisterOutputType(IamAccessGroupOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupMapOutput{})
 }

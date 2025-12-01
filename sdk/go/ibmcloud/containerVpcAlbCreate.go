@@ -193,56 +193,6 @@ func (i *ContainerVpcAlbCreate) ToContainerVpcAlbCreateOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcAlbCreateOutput)
 }
 
-// ContainerVpcAlbCreateArrayInput is an input type that accepts ContainerVpcAlbCreateArray and ContainerVpcAlbCreateArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcAlbCreateArrayInput` via:
-//
-//	ContainerVpcAlbCreateArray{ ContainerVpcAlbCreateArgs{...} }
-type ContainerVpcAlbCreateArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcAlbCreateArrayOutput() ContainerVpcAlbCreateArrayOutput
-	ToContainerVpcAlbCreateArrayOutputWithContext(context.Context) ContainerVpcAlbCreateArrayOutput
-}
-
-type ContainerVpcAlbCreateArray []ContainerVpcAlbCreateInput
-
-func (ContainerVpcAlbCreateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerVpcAlbCreate)(nil)).Elem()
-}
-
-func (i ContainerVpcAlbCreateArray) ToContainerVpcAlbCreateArrayOutput() ContainerVpcAlbCreateArrayOutput {
-	return i.ToContainerVpcAlbCreateArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcAlbCreateArray) ToContainerVpcAlbCreateArrayOutputWithContext(ctx context.Context) ContainerVpcAlbCreateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcAlbCreateArrayOutput)
-}
-
-// ContainerVpcAlbCreateMapInput is an input type that accepts ContainerVpcAlbCreateMap and ContainerVpcAlbCreateMapOutput values.
-// You can construct a concrete instance of `ContainerVpcAlbCreateMapInput` via:
-//
-//	ContainerVpcAlbCreateMap{ "key": ContainerVpcAlbCreateArgs{...} }
-type ContainerVpcAlbCreateMapInput interface {
-	pulumi.Input
-
-	ToContainerVpcAlbCreateMapOutput() ContainerVpcAlbCreateMapOutput
-	ToContainerVpcAlbCreateMapOutputWithContext(context.Context) ContainerVpcAlbCreateMapOutput
-}
-
-type ContainerVpcAlbCreateMap map[string]ContainerVpcAlbCreateInput
-
-func (ContainerVpcAlbCreateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerVpcAlbCreate)(nil)).Elem()
-}
-
-func (i ContainerVpcAlbCreateMap) ToContainerVpcAlbCreateMapOutput() ContainerVpcAlbCreateMapOutput {
-	return i.ToContainerVpcAlbCreateMapOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcAlbCreateMap) ToContainerVpcAlbCreateMapOutputWithContext(ctx context.Context) ContainerVpcAlbCreateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcAlbCreateMapOutput)
-}
-
 type ContainerVpcAlbCreateOutput struct{ *pulumi.OutputState }
 
 func (ContainerVpcAlbCreateOutput) ElementType() reflect.Type {
@@ -322,51 +272,7 @@ func (o ContainerVpcAlbCreateOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerVpcAlbCreate) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type ContainerVpcAlbCreateArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcAlbCreateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerVpcAlbCreate)(nil)).Elem()
-}
-
-func (o ContainerVpcAlbCreateArrayOutput) ToContainerVpcAlbCreateArrayOutput() ContainerVpcAlbCreateArrayOutput {
-	return o
-}
-
-func (o ContainerVpcAlbCreateArrayOutput) ToContainerVpcAlbCreateArrayOutputWithContext(ctx context.Context) ContainerVpcAlbCreateArrayOutput {
-	return o
-}
-
-func (o ContainerVpcAlbCreateArrayOutput) Index(i pulumi.IntInput) ContainerVpcAlbCreateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerVpcAlbCreate {
-		return vs[0].([]*ContainerVpcAlbCreate)[vs[1].(int)]
-	}).(ContainerVpcAlbCreateOutput)
-}
-
-type ContainerVpcAlbCreateMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcAlbCreateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerVpcAlbCreate)(nil)).Elem()
-}
-
-func (o ContainerVpcAlbCreateMapOutput) ToContainerVpcAlbCreateMapOutput() ContainerVpcAlbCreateMapOutput {
-	return o
-}
-
-func (o ContainerVpcAlbCreateMapOutput) ToContainerVpcAlbCreateMapOutputWithContext(ctx context.Context) ContainerVpcAlbCreateMapOutput {
-	return o
-}
-
-func (o ContainerVpcAlbCreateMapOutput) MapIndex(k pulumi.StringInput) ContainerVpcAlbCreateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerVpcAlbCreate {
-		return vs[0].(map[string]*ContainerVpcAlbCreate)[vs[1].(string)]
-	}).(ContainerVpcAlbCreateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcAlbCreateInput)(nil)).Elem(), &ContainerVpcAlbCreate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcAlbCreateArrayInput)(nil)).Elem(), ContainerVpcAlbCreateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcAlbCreateMapInput)(nil)).Elem(), ContainerVpcAlbCreateMap{})
 	pulumi.RegisterOutputType(ContainerVpcAlbCreateOutput{})
-	pulumi.RegisterOutputType(ContainerVpcAlbCreateArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcAlbCreateMapOutput{})
 }

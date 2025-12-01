@@ -131,56 +131,6 @@ func (i *IsInstanceAction) ToIsInstanceActionOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceActionOutput)
 }
 
-// IsInstanceActionArrayInput is an input type that accepts IsInstanceActionArray and IsInstanceActionArrayOutput values.
-// You can construct a concrete instance of `IsInstanceActionArrayInput` via:
-//
-//	IsInstanceActionArray{ IsInstanceActionArgs{...} }
-type IsInstanceActionArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceActionArrayOutput() IsInstanceActionArrayOutput
-	ToIsInstanceActionArrayOutputWithContext(context.Context) IsInstanceActionArrayOutput
-}
-
-type IsInstanceActionArray []IsInstanceActionInput
-
-func (IsInstanceActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceAction)(nil)).Elem()
-}
-
-func (i IsInstanceActionArray) ToIsInstanceActionArrayOutput() IsInstanceActionArrayOutput {
-	return i.ToIsInstanceActionArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceActionArray) ToIsInstanceActionArrayOutputWithContext(ctx context.Context) IsInstanceActionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceActionArrayOutput)
-}
-
-// IsInstanceActionMapInput is an input type that accepts IsInstanceActionMap and IsInstanceActionMapOutput values.
-// You can construct a concrete instance of `IsInstanceActionMapInput` via:
-//
-//	IsInstanceActionMap{ "key": IsInstanceActionArgs{...} }
-type IsInstanceActionMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceActionMapOutput() IsInstanceActionMapOutput
-	ToIsInstanceActionMapOutputWithContext(context.Context) IsInstanceActionMapOutput
-}
-
-type IsInstanceActionMap map[string]IsInstanceActionInput
-
-func (IsInstanceActionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceAction)(nil)).Elem()
-}
-
-func (i IsInstanceActionMap) ToIsInstanceActionMapOutput() IsInstanceActionMapOutput {
-	return i.ToIsInstanceActionMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceActionMap) ToIsInstanceActionMapOutputWithContext(ctx context.Context) IsInstanceActionMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceActionMapOutput)
-}
-
 type IsInstanceActionOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceActionOutput) ElementType() reflect.Type {
@@ -219,51 +169,7 @@ func (o IsInstanceActionOutput) StatusReasons() IsInstanceActionStatusReasonArra
 	return o.ApplyT(func(v *IsInstanceAction) IsInstanceActionStatusReasonArrayOutput { return v.StatusReasons }).(IsInstanceActionStatusReasonArrayOutput)
 }
 
-type IsInstanceActionArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceActionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceAction)(nil)).Elem()
-}
-
-func (o IsInstanceActionArrayOutput) ToIsInstanceActionArrayOutput() IsInstanceActionArrayOutput {
-	return o
-}
-
-func (o IsInstanceActionArrayOutput) ToIsInstanceActionArrayOutputWithContext(ctx context.Context) IsInstanceActionArrayOutput {
-	return o
-}
-
-func (o IsInstanceActionArrayOutput) Index(i pulumi.IntInput) IsInstanceActionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceAction {
-		return vs[0].([]*IsInstanceAction)[vs[1].(int)]
-	}).(IsInstanceActionOutput)
-}
-
-type IsInstanceActionMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceActionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceAction)(nil)).Elem()
-}
-
-func (o IsInstanceActionMapOutput) ToIsInstanceActionMapOutput() IsInstanceActionMapOutput {
-	return o
-}
-
-func (o IsInstanceActionMapOutput) ToIsInstanceActionMapOutputWithContext(ctx context.Context) IsInstanceActionMapOutput {
-	return o
-}
-
-func (o IsInstanceActionMapOutput) MapIndex(k pulumi.StringInput) IsInstanceActionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceAction {
-		return vs[0].(map[string]*IsInstanceAction)[vs[1].(string)]
-	}).(IsInstanceActionOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceActionInput)(nil)).Elem(), &IsInstanceAction{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceActionArrayInput)(nil)).Elem(), IsInstanceActionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceActionMapInput)(nil)).Elem(), IsInstanceActionMap{})
 	pulumi.RegisterOutputType(IsInstanceActionOutput{})
-	pulumi.RegisterOutputType(IsInstanceActionArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceActionMapOutput{})
 }

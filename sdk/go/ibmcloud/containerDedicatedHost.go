@@ -156,56 +156,6 @@ func (i *ContainerDedicatedHost) ToContainerDedicatedHostOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostOutput)
 }
 
-// ContainerDedicatedHostArrayInput is an input type that accepts ContainerDedicatedHostArray and ContainerDedicatedHostArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostArrayInput` via:
-//
-//	ContainerDedicatedHostArray{ ContainerDedicatedHostArgs{...} }
-type ContainerDedicatedHostArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostArrayOutput() ContainerDedicatedHostArrayOutput
-	ToContainerDedicatedHostArrayOutputWithContext(context.Context) ContainerDedicatedHostArrayOutput
-}
-
-type ContainerDedicatedHostArray []ContainerDedicatedHostInput
-
-func (ContainerDedicatedHostArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerDedicatedHost)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostArray) ToContainerDedicatedHostArrayOutput() ContainerDedicatedHostArrayOutput {
-	return i.ToContainerDedicatedHostArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostArray) ToContainerDedicatedHostArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostArrayOutput)
-}
-
-// ContainerDedicatedHostMapInput is an input type that accepts ContainerDedicatedHostMap and ContainerDedicatedHostMapOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostMapInput` via:
-//
-//	ContainerDedicatedHostMap{ "key": ContainerDedicatedHostArgs{...} }
-type ContainerDedicatedHostMapInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostMapOutput() ContainerDedicatedHostMapOutput
-	ToContainerDedicatedHostMapOutputWithContext(context.Context) ContainerDedicatedHostMapOutput
-}
-
-type ContainerDedicatedHostMap map[string]ContainerDedicatedHostInput
-
-func (ContainerDedicatedHostMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerDedicatedHost)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostMap) ToContainerDedicatedHostMapOutput() ContainerDedicatedHostMapOutput {
-	return i.ToContainerDedicatedHostMapOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostMap) ToContainerDedicatedHostMapOutputWithContext(ctx context.Context) ContainerDedicatedHostMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostMapOutput)
-}
-
 type ContainerDedicatedHostOutput struct{ *pulumi.OutputState }
 
 func (ContainerDedicatedHostOutput) ElementType() reflect.Type {
@@ -259,51 +209,7 @@ func (o ContainerDedicatedHostOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerDedicatedHost) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type ContainerDedicatedHostArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerDedicatedHost)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostArrayOutput) ToContainerDedicatedHostArrayOutput() ContainerDedicatedHostArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostArrayOutput) ToContainerDedicatedHostArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerDedicatedHost {
-		return vs[0].([]*ContainerDedicatedHost)[vs[1].(int)]
-	}).(ContainerDedicatedHostOutput)
-}
-
-type ContainerDedicatedHostMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerDedicatedHost)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostMapOutput) ToContainerDedicatedHostMapOutput() ContainerDedicatedHostMapOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostMapOutput) ToContainerDedicatedHostMapOutputWithContext(ctx context.Context) ContainerDedicatedHostMapOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostMapOutput) MapIndex(k pulumi.StringInput) ContainerDedicatedHostOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerDedicatedHost {
-		return vs[0].(map[string]*ContainerDedicatedHost)[vs[1].(string)]
-	}).(ContainerDedicatedHostOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostInput)(nil)).Elem(), &ContainerDedicatedHost{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostArrayInput)(nil)).Elem(), ContainerDedicatedHostArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostMapInput)(nil)).Elem(), ContainerDedicatedHostMap{})
 	pulumi.RegisterOutputType(ContainerDedicatedHostOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostMapOutput{})
 }

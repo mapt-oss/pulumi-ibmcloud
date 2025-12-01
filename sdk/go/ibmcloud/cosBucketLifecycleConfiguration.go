@@ -130,56 +130,6 @@ func (i *CosBucketLifecycleConfiguration) ToCosBucketLifecycleConfigurationOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(CosBucketLifecycleConfigurationOutput)
 }
 
-// CosBucketLifecycleConfigurationArrayInput is an input type that accepts CosBucketLifecycleConfigurationArray and CosBucketLifecycleConfigurationArrayOutput values.
-// You can construct a concrete instance of `CosBucketLifecycleConfigurationArrayInput` via:
-//
-//	CosBucketLifecycleConfigurationArray{ CosBucketLifecycleConfigurationArgs{...} }
-type CosBucketLifecycleConfigurationArrayInput interface {
-	pulumi.Input
-
-	ToCosBucketLifecycleConfigurationArrayOutput() CosBucketLifecycleConfigurationArrayOutput
-	ToCosBucketLifecycleConfigurationArrayOutputWithContext(context.Context) CosBucketLifecycleConfigurationArrayOutput
-}
-
-type CosBucketLifecycleConfigurationArray []CosBucketLifecycleConfigurationInput
-
-func (CosBucketLifecycleConfigurationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketLifecycleConfiguration)(nil)).Elem()
-}
-
-func (i CosBucketLifecycleConfigurationArray) ToCosBucketLifecycleConfigurationArrayOutput() CosBucketLifecycleConfigurationArrayOutput {
-	return i.ToCosBucketLifecycleConfigurationArrayOutputWithContext(context.Background())
-}
-
-func (i CosBucketLifecycleConfigurationArray) ToCosBucketLifecycleConfigurationArrayOutputWithContext(ctx context.Context) CosBucketLifecycleConfigurationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketLifecycleConfigurationArrayOutput)
-}
-
-// CosBucketLifecycleConfigurationMapInput is an input type that accepts CosBucketLifecycleConfigurationMap and CosBucketLifecycleConfigurationMapOutput values.
-// You can construct a concrete instance of `CosBucketLifecycleConfigurationMapInput` via:
-//
-//	CosBucketLifecycleConfigurationMap{ "key": CosBucketLifecycleConfigurationArgs{...} }
-type CosBucketLifecycleConfigurationMapInput interface {
-	pulumi.Input
-
-	ToCosBucketLifecycleConfigurationMapOutput() CosBucketLifecycleConfigurationMapOutput
-	ToCosBucketLifecycleConfigurationMapOutputWithContext(context.Context) CosBucketLifecycleConfigurationMapOutput
-}
-
-type CosBucketLifecycleConfigurationMap map[string]CosBucketLifecycleConfigurationInput
-
-func (CosBucketLifecycleConfigurationMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketLifecycleConfiguration)(nil)).Elem()
-}
-
-func (i CosBucketLifecycleConfigurationMap) ToCosBucketLifecycleConfigurationMapOutput() CosBucketLifecycleConfigurationMapOutput {
-	return i.ToCosBucketLifecycleConfigurationMapOutputWithContext(context.Background())
-}
-
-func (i CosBucketLifecycleConfigurationMap) ToCosBucketLifecycleConfigurationMapOutputWithContext(ctx context.Context) CosBucketLifecycleConfigurationMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketLifecycleConfigurationMapOutput)
-}
-
 type CosBucketLifecycleConfigurationOutput struct{ *pulumi.OutputState }
 
 func (CosBucketLifecycleConfigurationOutput) ElementType() reflect.Type {
@@ -215,51 +165,7 @@ func (o CosBucketLifecycleConfigurationOutput) LifecycleRules() CosBucketLifecyc
 	}).(CosBucketLifecycleConfigurationLifecycleRuleArrayOutput)
 }
 
-type CosBucketLifecycleConfigurationArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBucketLifecycleConfigurationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketLifecycleConfiguration)(nil)).Elem()
-}
-
-func (o CosBucketLifecycleConfigurationArrayOutput) ToCosBucketLifecycleConfigurationArrayOutput() CosBucketLifecycleConfigurationArrayOutput {
-	return o
-}
-
-func (o CosBucketLifecycleConfigurationArrayOutput) ToCosBucketLifecycleConfigurationArrayOutputWithContext(ctx context.Context) CosBucketLifecycleConfigurationArrayOutput {
-	return o
-}
-
-func (o CosBucketLifecycleConfigurationArrayOutput) Index(i pulumi.IntInput) CosBucketLifecycleConfigurationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBucketLifecycleConfiguration {
-		return vs[0].([]*CosBucketLifecycleConfiguration)[vs[1].(int)]
-	}).(CosBucketLifecycleConfigurationOutput)
-}
-
-type CosBucketLifecycleConfigurationMapOutput struct{ *pulumi.OutputState }
-
-func (CosBucketLifecycleConfigurationMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketLifecycleConfiguration)(nil)).Elem()
-}
-
-func (o CosBucketLifecycleConfigurationMapOutput) ToCosBucketLifecycleConfigurationMapOutput() CosBucketLifecycleConfigurationMapOutput {
-	return o
-}
-
-func (o CosBucketLifecycleConfigurationMapOutput) ToCosBucketLifecycleConfigurationMapOutputWithContext(ctx context.Context) CosBucketLifecycleConfigurationMapOutput {
-	return o
-}
-
-func (o CosBucketLifecycleConfigurationMapOutput) MapIndex(k pulumi.StringInput) CosBucketLifecycleConfigurationOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBucketLifecycleConfiguration {
-		return vs[0].(map[string]*CosBucketLifecycleConfiguration)[vs[1].(string)]
-	}).(CosBucketLifecycleConfigurationOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketLifecycleConfigurationInput)(nil)).Elem(), &CosBucketLifecycleConfiguration{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketLifecycleConfigurationArrayInput)(nil)).Elem(), CosBucketLifecycleConfigurationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketLifecycleConfigurationMapInput)(nil)).Elem(), CosBucketLifecycleConfigurationMap{})
 	pulumi.RegisterOutputType(CosBucketLifecycleConfigurationOutput{})
-	pulumi.RegisterOutputType(CosBucketLifecycleConfigurationArrayOutput{})
-	pulumi.RegisterOutputType(CosBucketLifecycleConfigurationMapOutput{})
 }

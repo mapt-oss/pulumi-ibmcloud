@@ -254,56 +254,6 @@ func (i *IsDedicatedHost) ToIsDedicatedHostOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IsDedicatedHostOutput)
 }
 
-// IsDedicatedHostArrayInput is an input type that accepts IsDedicatedHostArray and IsDedicatedHostArrayOutput values.
-// You can construct a concrete instance of `IsDedicatedHostArrayInput` via:
-//
-//	IsDedicatedHostArray{ IsDedicatedHostArgs{...} }
-type IsDedicatedHostArrayInput interface {
-	pulumi.Input
-
-	ToIsDedicatedHostArrayOutput() IsDedicatedHostArrayOutput
-	ToIsDedicatedHostArrayOutputWithContext(context.Context) IsDedicatedHostArrayOutput
-}
-
-type IsDedicatedHostArray []IsDedicatedHostInput
-
-func (IsDedicatedHostArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsDedicatedHost)(nil)).Elem()
-}
-
-func (i IsDedicatedHostArray) ToIsDedicatedHostArrayOutput() IsDedicatedHostArrayOutput {
-	return i.ToIsDedicatedHostArrayOutputWithContext(context.Background())
-}
-
-func (i IsDedicatedHostArray) ToIsDedicatedHostArrayOutputWithContext(ctx context.Context) IsDedicatedHostArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsDedicatedHostArrayOutput)
-}
-
-// IsDedicatedHostMapInput is an input type that accepts IsDedicatedHostMap and IsDedicatedHostMapOutput values.
-// You can construct a concrete instance of `IsDedicatedHostMapInput` via:
-//
-//	IsDedicatedHostMap{ "key": IsDedicatedHostArgs{...} }
-type IsDedicatedHostMapInput interface {
-	pulumi.Input
-
-	ToIsDedicatedHostMapOutput() IsDedicatedHostMapOutput
-	ToIsDedicatedHostMapOutputWithContext(context.Context) IsDedicatedHostMapOutput
-}
-
-type IsDedicatedHostMap map[string]IsDedicatedHostInput
-
-func (IsDedicatedHostMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsDedicatedHost)(nil)).Elem()
-}
-
-func (i IsDedicatedHostMap) ToIsDedicatedHostMapOutput() IsDedicatedHostMapOutput {
-	return i.ToIsDedicatedHostMapOutputWithContext(context.Background())
-}
-
-func (i IsDedicatedHostMap) ToIsDedicatedHostMapOutputWithContext(ctx context.Context) IsDedicatedHostMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsDedicatedHostMapOutput)
-}
-
 type IsDedicatedHostOutput struct{ *pulumi.OutputState }
 
 func (IsDedicatedHostOutput) ElementType() reflect.Type {
@@ -435,51 +385,7 @@ func (o IsDedicatedHostOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsDedicatedHost) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsDedicatedHostArrayOutput struct{ *pulumi.OutputState }
-
-func (IsDedicatedHostArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsDedicatedHost)(nil)).Elem()
-}
-
-func (o IsDedicatedHostArrayOutput) ToIsDedicatedHostArrayOutput() IsDedicatedHostArrayOutput {
-	return o
-}
-
-func (o IsDedicatedHostArrayOutput) ToIsDedicatedHostArrayOutputWithContext(ctx context.Context) IsDedicatedHostArrayOutput {
-	return o
-}
-
-func (o IsDedicatedHostArrayOutput) Index(i pulumi.IntInput) IsDedicatedHostOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsDedicatedHost {
-		return vs[0].([]*IsDedicatedHost)[vs[1].(int)]
-	}).(IsDedicatedHostOutput)
-}
-
-type IsDedicatedHostMapOutput struct{ *pulumi.OutputState }
-
-func (IsDedicatedHostMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsDedicatedHost)(nil)).Elem()
-}
-
-func (o IsDedicatedHostMapOutput) ToIsDedicatedHostMapOutput() IsDedicatedHostMapOutput {
-	return o
-}
-
-func (o IsDedicatedHostMapOutput) ToIsDedicatedHostMapOutputWithContext(ctx context.Context) IsDedicatedHostMapOutput {
-	return o
-}
-
-func (o IsDedicatedHostMapOutput) MapIndex(k pulumi.StringInput) IsDedicatedHostOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsDedicatedHost {
-		return vs[0].(map[string]*IsDedicatedHost)[vs[1].(string)]
-	}).(IsDedicatedHostOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsDedicatedHostInput)(nil)).Elem(), &IsDedicatedHost{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsDedicatedHostArrayInput)(nil)).Elem(), IsDedicatedHostArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsDedicatedHostMapInput)(nil)).Elem(), IsDedicatedHostMap{})
 	pulumi.RegisterOutputType(IsDedicatedHostOutput{})
-	pulumi.RegisterOutputType(IsDedicatedHostArrayOutput{})
-	pulumi.RegisterOutputType(IsDedicatedHostMapOutput{})
 }

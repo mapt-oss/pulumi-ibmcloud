@@ -134,56 +134,6 @@ func (i *IsVpnServerClient) ToIsVpnServerClientOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerClientOutput)
 }
 
-// IsVpnServerClientArrayInput is an input type that accepts IsVpnServerClientArray and IsVpnServerClientArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerClientArrayInput` via:
-//
-//	IsVpnServerClientArray{ IsVpnServerClientArgs{...} }
-type IsVpnServerClientArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerClientArrayOutput() IsVpnServerClientArrayOutput
-	ToIsVpnServerClientArrayOutputWithContext(context.Context) IsVpnServerClientArrayOutput
-}
-
-type IsVpnServerClientArray []IsVpnServerClientInput
-
-func (IsVpnServerClientArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpnServerClient)(nil)).Elem()
-}
-
-func (i IsVpnServerClientArray) ToIsVpnServerClientArrayOutput() IsVpnServerClientArrayOutput {
-	return i.ToIsVpnServerClientArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerClientArray) ToIsVpnServerClientArrayOutputWithContext(ctx context.Context) IsVpnServerClientArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerClientArrayOutput)
-}
-
-// IsVpnServerClientMapInput is an input type that accepts IsVpnServerClientMap and IsVpnServerClientMapOutput values.
-// You can construct a concrete instance of `IsVpnServerClientMapInput` via:
-//
-//	IsVpnServerClientMap{ "key": IsVpnServerClientArgs{...} }
-type IsVpnServerClientMapInput interface {
-	pulumi.Input
-
-	ToIsVpnServerClientMapOutput() IsVpnServerClientMapOutput
-	ToIsVpnServerClientMapOutputWithContext(context.Context) IsVpnServerClientMapOutput
-}
-
-type IsVpnServerClientMap map[string]IsVpnServerClientInput
-
-func (IsVpnServerClientMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpnServerClient)(nil)).Elem()
-}
-
-func (i IsVpnServerClientMap) ToIsVpnServerClientMapOutput() IsVpnServerClientMapOutput {
-	return i.ToIsVpnServerClientMapOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerClientMap) ToIsVpnServerClientMapOutputWithContext(ctx context.Context) IsVpnServerClientMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerClientMapOutput)
-}
-
 type IsVpnServerClientOutput struct{ *pulumi.OutputState }
 
 func (IsVpnServerClientOutput) ElementType() reflect.Type {
@@ -223,51 +173,7 @@ func (o IsVpnServerClientOutput) VpnServer() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsVpnServerClient) pulumi.StringOutput { return v.VpnServer }).(pulumi.StringOutput)
 }
 
-type IsVpnServerClientArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerClientArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpnServerClient)(nil)).Elem()
-}
-
-func (o IsVpnServerClientArrayOutput) ToIsVpnServerClientArrayOutput() IsVpnServerClientArrayOutput {
-	return o
-}
-
-func (o IsVpnServerClientArrayOutput) ToIsVpnServerClientArrayOutputWithContext(ctx context.Context) IsVpnServerClientArrayOutput {
-	return o
-}
-
-func (o IsVpnServerClientArrayOutput) Index(i pulumi.IntInput) IsVpnServerClientOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVpnServerClient {
-		return vs[0].([]*IsVpnServerClient)[vs[1].(int)]
-	}).(IsVpnServerClientOutput)
-}
-
-type IsVpnServerClientMapOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerClientMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpnServerClient)(nil)).Elem()
-}
-
-func (o IsVpnServerClientMapOutput) ToIsVpnServerClientMapOutput() IsVpnServerClientMapOutput {
-	return o
-}
-
-func (o IsVpnServerClientMapOutput) ToIsVpnServerClientMapOutputWithContext(ctx context.Context) IsVpnServerClientMapOutput {
-	return o
-}
-
-func (o IsVpnServerClientMapOutput) MapIndex(k pulumi.StringInput) IsVpnServerClientOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVpnServerClient {
-		return vs[0].(map[string]*IsVpnServerClient)[vs[1].(string)]
-	}).(IsVpnServerClientOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerClientInput)(nil)).Elem(), &IsVpnServerClient{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerClientArrayInput)(nil)).Elem(), IsVpnServerClientArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerClientMapInput)(nil)).Elem(), IsVpnServerClientMap{})
 	pulumi.RegisterOutputType(IsVpnServerClientOutput{})
-	pulumi.RegisterOutputType(IsVpnServerClientArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerClientMapOutput{})
 }

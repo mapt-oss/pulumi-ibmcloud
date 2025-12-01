@@ -112,56 +112,6 @@ func (i *IsInstanceDiskManagement) ToIsInstanceDiskManagementOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceDiskManagementOutput)
 }
 
-// IsInstanceDiskManagementArrayInput is an input type that accepts IsInstanceDiskManagementArray and IsInstanceDiskManagementArrayOutput values.
-// You can construct a concrete instance of `IsInstanceDiskManagementArrayInput` via:
-//
-//	IsInstanceDiskManagementArray{ IsInstanceDiskManagementArgs{...} }
-type IsInstanceDiskManagementArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceDiskManagementArrayOutput() IsInstanceDiskManagementArrayOutput
-	ToIsInstanceDiskManagementArrayOutputWithContext(context.Context) IsInstanceDiskManagementArrayOutput
-}
-
-type IsInstanceDiskManagementArray []IsInstanceDiskManagementInput
-
-func (IsInstanceDiskManagementArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceDiskManagement)(nil)).Elem()
-}
-
-func (i IsInstanceDiskManagementArray) ToIsInstanceDiskManagementArrayOutput() IsInstanceDiskManagementArrayOutput {
-	return i.ToIsInstanceDiskManagementArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceDiskManagementArray) ToIsInstanceDiskManagementArrayOutputWithContext(ctx context.Context) IsInstanceDiskManagementArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceDiskManagementArrayOutput)
-}
-
-// IsInstanceDiskManagementMapInput is an input type that accepts IsInstanceDiskManagementMap and IsInstanceDiskManagementMapOutput values.
-// You can construct a concrete instance of `IsInstanceDiskManagementMapInput` via:
-//
-//	IsInstanceDiskManagementMap{ "key": IsInstanceDiskManagementArgs{...} }
-type IsInstanceDiskManagementMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceDiskManagementMapOutput() IsInstanceDiskManagementMapOutput
-	ToIsInstanceDiskManagementMapOutputWithContext(context.Context) IsInstanceDiskManagementMapOutput
-}
-
-type IsInstanceDiskManagementMap map[string]IsInstanceDiskManagementInput
-
-func (IsInstanceDiskManagementMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceDiskManagement)(nil)).Elem()
-}
-
-func (i IsInstanceDiskManagementMap) ToIsInstanceDiskManagementMapOutput() IsInstanceDiskManagementMapOutput {
-	return i.ToIsInstanceDiskManagementMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceDiskManagementMap) ToIsInstanceDiskManagementMapOutputWithContext(ctx context.Context) IsInstanceDiskManagementMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceDiskManagementMapOutput)
-}
-
 type IsInstanceDiskManagementOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceDiskManagementOutput) ElementType() reflect.Type {
@@ -186,51 +136,7 @@ func (o IsInstanceDiskManagementOutput) Instance() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceDiskManagement) pulumi.StringOutput { return v.Instance }).(pulumi.StringOutput)
 }
 
-type IsInstanceDiskManagementArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceDiskManagementArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceDiskManagement)(nil)).Elem()
-}
-
-func (o IsInstanceDiskManagementArrayOutput) ToIsInstanceDiskManagementArrayOutput() IsInstanceDiskManagementArrayOutput {
-	return o
-}
-
-func (o IsInstanceDiskManagementArrayOutput) ToIsInstanceDiskManagementArrayOutputWithContext(ctx context.Context) IsInstanceDiskManagementArrayOutput {
-	return o
-}
-
-func (o IsInstanceDiskManagementArrayOutput) Index(i pulumi.IntInput) IsInstanceDiskManagementOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceDiskManagement {
-		return vs[0].([]*IsInstanceDiskManagement)[vs[1].(int)]
-	}).(IsInstanceDiskManagementOutput)
-}
-
-type IsInstanceDiskManagementMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceDiskManagementMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceDiskManagement)(nil)).Elem()
-}
-
-func (o IsInstanceDiskManagementMapOutput) ToIsInstanceDiskManagementMapOutput() IsInstanceDiskManagementMapOutput {
-	return o
-}
-
-func (o IsInstanceDiskManagementMapOutput) ToIsInstanceDiskManagementMapOutputWithContext(ctx context.Context) IsInstanceDiskManagementMapOutput {
-	return o
-}
-
-func (o IsInstanceDiskManagementMapOutput) MapIndex(k pulumi.StringInput) IsInstanceDiskManagementOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceDiskManagement {
-		return vs[0].(map[string]*IsInstanceDiskManagement)[vs[1].(string)]
-	}).(IsInstanceDiskManagementOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceDiskManagementInput)(nil)).Elem(), &IsInstanceDiskManagement{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceDiskManagementArrayInput)(nil)).Elem(), IsInstanceDiskManagementArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceDiskManagementMapInput)(nil)).Elem(), IsInstanceDiskManagementMap{})
 	pulumi.RegisterOutputType(IsInstanceDiskManagementOutput{})
-	pulumi.RegisterOutputType(IsInstanceDiskManagementArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceDiskManagementMapOutput{})
 }

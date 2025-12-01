@@ -168,56 +168,6 @@ func (i *ComputeReservedCapacity) ToComputeReservedCapacityOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeReservedCapacityOutput)
 }
 
-// ComputeReservedCapacityArrayInput is an input type that accepts ComputeReservedCapacityArray and ComputeReservedCapacityArrayOutput values.
-// You can construct a concrete instance of `ComputeReservedCapacityArrayInput` via:
-//
-//	ComputeReservedCapacityArray{ ComputeReservedCapacityArgs{...} }
-type ComputeReservedCapacityArrayInput interface {
-	pulumi.Input
-
-	ToComputeReservedCapacityArrayOutput() ComputeReservedCapacityArrayOutput
-	ToComputeReservedCapacityArrayOutputWithContext(context.Context) ComputeReservedCapacityArrayOutput
-}
-
-type ComputeReservedCapacityArray []ComputeReservedCapacityInput
-
-func (ComputeReservedCapacityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeReservedCapacity)(nil)).Elem()
-}
-
-func (i ComputeReservedCapacityArray) ToComputeReservedCapacityArrayOutput() ComputeReservedCapacityArrayOutput {
-	return i.ToComputeReservedCapacityArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeReservedCapacityArray) ToComputeReservedCapacityArrayOutputWithContext(ctx context.Context) ComputeReservedCapacityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeReservedCapacityArrayOutput)
-}
-
-// ComputeReservedCapacityMapInput is an input type that accepts ComputeReservedCapacityMap and ComputeReservedCapacityMapOutput values.
-// You can construct a concrete instance of `ComputeReservedCapacityMapInput` via:
-//
-//	ComputeReservedCapacityMap{ "key": ComputeReservedCapacityArgs{...} }
-type ComputeReservedCapacityMapInput interface {
-	pulumi.Input
-
-	ToComputeReservedCapacityMapOutput() ComputeReservedCapacityMapOutput
-	ToComputeReservedCapacityMapOutputWithContext(context.Context) ComputeReservedCapacityMapOutput
-}
-
-type ComputeReservedCapacityMap map[string]ComputeReservedCapacityInput
-
-func (ComputeReservedCapacityMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeReservedCapacity)(nil)).Elem()
-}
-
-func (i ComputeReservedCapacityMap) ToComputeReservedCapacityMapOutput() ComputeReservedCapacityMapOutput {
-	return i.ToComputeReservedCapacityMapOutputWithContext(context.Background())
-}
-
-func (i ComputeReservedCapacityMap) ToComputeReservedCapacityMapOutputWithContext(ctx context.Context) ComputeReservedCapacityMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeReservedCapacityMapOutput)
-}
-
 type ComputeReservedCapacityOutput struct{ *pulumi.OutputState }
 
 func (ComputeReservedCapacityOutput) ElementType() reflect.Type {
@@ -267,51 +217,7 @@ func (o ComputeReservedCapacityOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ComputeReservedCapacity) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type ComputeReservedCapacityArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeReservedCapacityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeReservedCapacity)(nil)).Elem()
-}
-
-func (o ComputeReservedCapacityArrayOutput) ToComputeReservedCapacityArrayOutput() ComputeReservedCapacityArrayOutput {
-	return o
-}
-
-func (o ComputeReservedCapacityArrayOutput) ToComputeReservedCapacityArrayOutputWithContext(ctx context.Context) ComputeReservedCapacityArrayOutput {
-	return o
-}
-
-func (o ComputeReservedCapacityArrayOutput) Index(i pulumi.IntInput) ComputeReservedCapacityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeReservedCapacity {
-		return vs[0].([]*ComputeReservedCapacity)[vs[1].(int)]
-	}).(ComputeReservedCapacityOutput)
-}
-
-type ComputeReservedCapacityMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeReservedCapacityMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeReservedCapacity)(nil)).Elem()
-}
-
-func (o ComputeReservedCapacityMapOutput) ToComputeReservedCapacityMapOutput() ComputeReservedCapacityMapOutput {
-	return o
-}
-
-func (o ComputeReservedCapacityMapOutput) ToComputeReservedCapacityMapOutputWithContext(ctx context.Context) ComputeReservedCapacityMapOutput {
-	return o
-}
-
-func (o ComputeReservedCapacityMapOutput) MapIndex(k pulumi.StringInput) ComputeReservedCapacityOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeReservedCapacity {
-		return vs[0].(map[string]*ComputeReservedCapacity)[vs[1].(string)]
-	}).(ComputeReservedCapacityOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeReservedCapacityInput)(nil)).Elem(), &ComputeReservedCapacity{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeReservedCapacityArrayInput)(nil)).Elem(), ComputeReservedCapacityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeReservedCapacityMapInput)(nil)).Elem(), ComputeReservedCapacityMap{})
 	pulumi.RegisterOutputType(ComputeReservedCapacityOutput{})
-	pulumi.RegisterOutputType(ComputeReservedCapacityArrayOutput{})
-	pulumi.RegisterOutputType(ComputeReservedCapacityMapOutput{})
 }

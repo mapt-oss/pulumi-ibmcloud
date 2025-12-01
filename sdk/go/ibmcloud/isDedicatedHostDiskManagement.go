@@ -112,56 +112,6 @@ func (i *IsDedicatedHostDiskManagement) ToIsDedicatedHostDiskManagementOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(IsDedicatedHostDiskManagementOutput)
 }
 
-// IsDedicatedHostDiskManagementArrayInput is an input type that accepts IsDedicatedHostDiskManagementArray and IsDedicatedHostDiskManagementArrayOutput values.
-// You can construct a concrete instance of `IsDedicatedHostDiskManagementArrayInput` via:
-//
-//	IsDedicatedHostDiskManagementArray{ IsDedicatedHostDiskManagementArgs{...} }
-type IsDedicatedHostDiskManagementArrayInput interface {
-	pulumi.Input
-
-	ToIsDedicatedHostDiskManagementArrayOutput() IsDedicatedHostDiskManagementArrayOutput
-	ToIsDedicatedHostDiskManagementArrayOutputWithContext(context.Context) IsDedicatedHostDiskManagementArrayOutput
-}
-
-type IsDedicatedHostDiskManagementArray []IsDedicatedHostDiskManagementInput
-
-func (IsDedicatedHostDiskManagementArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsDedicatedHostDiskManagement)(nil)).Elem()
-}
-
-func (i IsDedicatedHostDiskManagementArray) ToIsDedicatedHostDiskManagementArrayOutput() IsDedicatedHostDiskManagementArrayOutput {
-	return i.ToIsDedicatedHostDiskManagementArrayOutputWithContext(context.Background())
-}
-
-func (i IsDedicatedHostDiskManagementArray) ToIsDedicatedHostDiskManagementArrayOutputWithContext(ctx context.Context) IsDedicatedHostDiskManagementArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsDedicatedHostDiskManagementArrayOutput)
-}
-
-// IsDedicatedHostDiskManagementMapInput is an input type that accepts IsDedicatedHostDiskManagementMap and IsDedicatedHostDiskManagementMapOutput values.
-// You can construct a concrete instance of `IsDedicatedHostDiskManagementMapInput` via:
-//
-//	IsDedicatedHostDiskManagementMap{ "key": IsDedicatedHostDiskManagementArgs{...} }
-type IsDedicatedHostDiskManagementMapInput interface {
-	pulumi.Input
-
-	ToIsDedicatedHostDiskManagementMapOutput() IsDedicatedHostDiskManagementMapOutput
-	ToIsDedicatedHostDiskManagementMapOutputWithContext(context.Context) IsDedicatedHostDiskManagementMapOutput
-}
-
-type IsDedicatedHostDiskManagementMap map[string]IsDedicatedHostDiskManagementInput
-
-func (IsDedicatedHostDiskManagementMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsDedicatedHostDiskManagement)(nil)).Elem()
-}
-
-func (i IsDedicatedHostDiskManagementMap) ToIsDedicatedHostDiskManagementMapOutput() IsDedicatedHostDiskManagementMapOutput {
-	return i.ToIsDedicatedHostDiskManagementMapOutputWithContext(context.Background())
-}
-
-func (i IsDedicatedHostDiskManagementMap) ToIsDedicatedHostDiskManagementMapOutputWithContext(ctx context.Context) IsDedicatedHostDiskManagementMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsDedicatedHostDiskManagementMapOutput)
-}
-
 type IsDedicatedHostDiskManagementOutput struct{ *pulumi.OutputState }
 
 func (IsDedicatedHostDiskManagementOutput) ElementType() reflect.Type {
@@ -186,51 +136,7 @@ func (o IsDedicatedHostDiskManagementOutput) Disks() IsDedicatedHostDiskManageme
 	return o.ApplyT(func(v *IsDedicatedHostDiskManagement) IsDedicatedHostDiskManagementDiskArrayOutput { return v.Disks }).(IsDedicatedHostDiskManagementDiskArrayOutput)
 }
 
-type IsDedicatedHostDiskManagementArrayOutput struct{ *pulumi.OutputState }
-
-func (IsDedicatedHostDiskManagementArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsDedicatedHostDiskManagement)(nil)).Elem()
-}
-
-func (o IsDedicatedHostDiskManagementArrayOutput) ToIsDedicatedHostDiskManagementArrayOutput() IsDedicatedHostDiskManagementArrayOutput {
-	return o
-}
-
-func (o IsDedicatedHostDiskManagementArrayOutput) ToIsDedicatedHostDiskManagementArrayOutputWithContext(ctx context.Context) IsDedicatedHostDiskManagementArrayOutput {
-	return o
-}
-
-func (o IsDedicatedHostDiskManagementArrayOutput) Index(i pulumi.IntInput) IsDedicatedHostDiskManagementOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsDedicatedHostDiskManagement {
-		return vs[0].([]*IsDedicatedHostDiskManagement)[vs[1].(int)]
-	}).(IsDedicatedHostDiskManagementOutput)
-}
-
-type IsDedicatedHostDiskManagementMapOutput struct{ *pulumi.OutputState }
-
-func (IsDedicatedHostDiskManagementMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsDedicatedHostDiskManagement)(nil)).Elem()
-}
-
-func (o IsDedicatedHostDiskManagementMapOutput) ToIsDedicatedHostDiskManagementMapOutput() IsDedicatedHostDiskManagementMapOutput {
-	return o
-}
-
-func (o IsDedicatedHostDiskManagementMapOutput) ToIsDedicatedHostDiskManagementMapOutputWithContext(ctx context.Context) IsDedicatedHostDiskManagementMapOutput {
-	return o
-}
-
-func (o IsDedicatedHostDiskManagementMapOutput) MapIndex(k pulumi.StringInput) IsDedicatedHostDiskManagementOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsDedicatedHostDiskManagement {
-		return vs[0].(map[string]*IsDedicatedHostDiskManagement)[vs[1].(string)]
-	}).(IsDedicatedHostDiskManagementOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsDedicatedHostDiskManagementInput)(nil)).Elem(), &IsDedicatedHostDiskManagement{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsDedicatedHostDiskManagementArrayInput)(nil)).Elem(), IsDedicatedHostDiskManagementArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsDedicatedHostDiskManagementMapInput)(nil)).Elem(), IsDedicatedHostDiskManagementMap{})
 	pulumi.RegisterOutputType(IsDedicatedHostDiskManagementOutput{})
-	pulumi.RegisterOutputType(IsDedicatedHostDiskManagementArrayOutput{})
-	pulumi.RegisterOutputType(IsDedicatedHostDiskManagementMapOutput{})
 }

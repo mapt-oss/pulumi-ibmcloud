@@ -157,56 +157,6 @@ func (i *CosBackupPolicy) ToCosBackupPolicyOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(CosBackupPolicyOutput)
 }
 
-// CosBackupPolicyArrayInput is an input type that accepts CosBackupPolicyArray and CosBackupPolicyArrayOutput values.
-// You can construct a concrete instance of `CosBackupPolicyArrayInput` via:
-//
-//	CosBackupPolicyArray{ CosBackupPolicyArgs{...} }
-type CosBackupPolicyArrayInput interface {
-	pulumi.Input
-
-	ToCosBackupPolicyArrayOutput() CosBackupPolicyArrayOutput
-	ToCosBackupPolicyArrayOutputWithContext(context.Context) CosBackupPolicyArrayOutput
-}
-
-type CosBackupPolicyArray []CosBackupPolicyInput
-
-func (CosBackupPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBackupPolicy)(nil)).Elem()
-}
-
-func (i CosBackupPolicyArray) ToCosBackupPolicyArrayOutput() CosBackupPolicyArrayOutput {
-	return i.ToCosBackupPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i CosBackupPolicyArray) ToCosBackupPolicyArrayOutputWithContext(ctx context.Context) CosBackupPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBackupPolicyArrayOutput)
-}
-
-// CosBackupPolicyMapInput is an input type that accepts CosBackupPolicyMap and CosBackupPolicyMapOutput values.
-// You can construct a concrete instance of `CosBackupPolicyMapInput` via:
-//
-//	CosBackupPolicyMap{ "key": CosBackupPolicyArgs{...} }
-type CosBackupPolicyMapInput interface {
-	pulumi.Input
-
-	ToCosBackupPolicyMapOutput() CosBackupPolicyMapOutput
-	ToCosBackupPolicyMapOutputWithContext(context.Context) CosBackupPolicyMapOutput
-}
-
-type CosBackupPolicyMap map[string]CosBackupPolicyInput
-
-func (CosBackupPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBackupPolicy)(nil)).Elem()
-}
-
-func (i CosBackupPolicyMap) ToCosBackupPolicyMapOutput() CosBackupPolicyMapOutput {
-	return i.ToCosBackupPolicyMapOutputWithContext(context.Background())
-}
-
-func (i CosBackupPolicyMap) ToCosBackupPolicyMapOutputWithContext(ctx context.Context) CosBackupPolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBackupPolicyMapOutput)
-}
-
 type CosBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (CosBackupPolicyOutput) ElementType() reflect.Type {
@@ -251,51 +201,7 @@ func (o CosBackupPolicyOutput) TargetBackupVaultCrn() pulumi.StringOutput {
 	return o.ApplyT(func(v *CosBackupPolicy) pulumi.StringOutput { return v.TargetBackupVaultCrn }).(pulumi.StringOutput)
 }
 
-type CosBackupPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBackupPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBackupPolicy)(nil)).Elem()
-}
-
-func (o CosBackupPolicyArrayOutput) ToCosBackupPolicyArrayOutput() CosBackupPolicyArrayOutput {
-	return o
-}
-
-func (o CosBackupPolicyArrayOutput) ToCosBackupPolicyArrayOutputWithContext(ctx context.Context) CosBackupPolicyArrayOutput {
-	return o
-}
-
-func (o CosBackupPolicyArrayOutput) Index(i pulumi.IntInput) CosBackupPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBackupPolicy {
-		return vs[0].([]*CosBackupPolicy)[vs[1].(int)]
-	}).(CosBackupPolicyOutput)
-}
-
-type CosBackupPolicyMapOutput struct{ *pulumi.OutputState }
-
-func (CosBackupPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBackupPolicy)(nil)).Elem()
-}
-
-func (o CosBackupPolicyMapOutput) ToCosBackupPolicyMapOutput() CosBackupPolicyMapOutput {
-	return o
-}
-
-func (o CosBackupPolicyMapOutput) ToCosBackupPolicyMapOutputWithContext(ctx context.Context) CosBackupPolicyMapOutput {
-	return o
-}
-
-func (o CosBackupPolicyMapOutput) MapIndex(k pulumi.StringInput) CosBackupPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBackupPolicy {
-		return vs[0].(map[string]*CosBackupPolicy)[vs[1].(string)]
-	}).(CosBackupPolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBackupPolicyInput)(nil)).Elem(), &CosBackupPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBackupPolicyArrayInput)(nil)).Elem(), CosBackupPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBackupPolicyMapInput)(nil)).Elem(), CosBackupPolicyMap{})
 	pulumi.RegisterOutputType(CosBackupPolicyOutput{})
-	pulumi.RegisterOutputType(CosBackupPolicyArrayOutput{})
-	pulumi.RegisterOutputType(CosBackupPolicyMapOutput{})
 }

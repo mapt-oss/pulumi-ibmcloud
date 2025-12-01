@@ -119,56 +119,6 @@ func (i *ContainerApiKeyReset) ToContainerApiKeyResetOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerApiKeyResetOutput)
 }
 
-// ContainerApiKeyResetArrayInput is an input type that accepts ContainerApiKeyResetArray and ContainerApiKeyResetArrayOutput values.
-// You can construct a concrete instance of `ContainerApiKeyResetArrayInput` via:
-//
-//	ContainerApiKeyResetArray{ ContainerApiKeyResetArgs{...} }
-type ContainerApiKeyResetArrayInput interface {
-	pulumi.Input
-
-	ToContainerApiKeyResetArrayOutput() ContainerApiKeyResetArrayOutput
-	ToContainerApiKeyResetArrayOutputWithContext(context.Context) ContainerApiKeyResetArrayOutput
-}
-
-type ContainerApiKeyResetArray []ContainerApiKeyResetInput
-
-func (ContainerApiKeyResetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerApiKeyReset)(nil)).Elem()
-}
-
-func (i ContainerApiKeyResetArray) ToContainerApiKeyResetArrayOutput() ContainerApiKeyResetArrayOutput {
-	return i.ToContainerApiKeyResetArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerApiKeyResetArray) ToContainerApiKeyResetArrayOutputWithContext(ctx context.Context) ContainerApiKeyResetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerApiKeyResetArrayOutput)
-}
-
-// ContainerApiKeyResetMapInput is an input type that accepts ContainerApiKeyResetMap and ContainerApiKeyResetMapOutput values.
-// You can construct a concrete instance of `ContainerApiKeyResetMapInput` via:
-//
-//	ContainerApiKeyResetMap{ "key": ContainerApiKeyResetArgs{...} }
-type ContainerApiKeyResetMapInput interface {
-	pulumi.Input
-
-	ToContainerApiKeyResetMapOutput() ContainerApiKeyResetMapOutput
-	ToContainerApiKeyResetMapOutputWithContext(context.Context) ContainerApiKeyResetMapOutput
-}
-
-type ContainerApiKeyResetMap map[string]ContainerApiKeyResetInput
-
-func (ContainerApiKeyResetMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerApiKeyReset)(nil)).Elem()
-}
-
-func (i ContainerApiKeyResetMap) ToContainerApiKeyResetMapOutput() ContainerApiKeyResetMapOutput {
-	return i.ToContainerApiKeyResetMapOutputWithContext(context.Background())
-}
-
-func (i ContainerApiKeyResetMap) ToContainerApiKeyResetMapOutputWithContext(ctx context.Context) ContainerApiKeyResetMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerApiKeyResetMapOutput)
-}
-
 type ContainerApiKeyResetOutput struct{ *pulumi.OutputState }
 
 func (ContainerApiKeyResetOutput) ElementType() reflect.Type {
@@ -198,51 +148,7 @@ func (o ContainerApiKeyResetOutput) ResourceGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ContainerApiKeyReset) pulumi.StringPtrOutput { return v.ResourceGroupId }).(pulumi.StringPtrOutput)
 }
 
-type ContainerApiKeyResetArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerApiKeyResetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerApiKeyReset)(nil)).Elem()
-}
-
-func (o ContainerApiKeyResetArrayOutput) ToContainerApiKeyResetArrayOutput() ContainerApiKeyResetArrayOutput {
-	return o
-}
-
-func (o ContainerApiKeyResetArrayOutput) ToContainerApiKeyResetArrayOutputWithContext(ctx context.Context) ContainerApiKeyResetArrayOutput {
-	return o
-}
-
-func (o ContainerApiKeyResetArrayOutput) Index(i pulumi.IntInput) ContainerApiKeyResetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerApiKeyReset {
-		return vs[0].([]*ContainerApiKeyReset)[vs[1].(int)]
-	}).(ContainerApiKeyResetOutput)
-}
-
-type ContainerApiKeyResetMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerApiKeyResetMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerApiKeyReset)(nil)).Elem()
-}
-
-func (o ContainerApiKeyResetMapOutput) ToContainerApiKeyResetMapOutput() ContainerApiKeyResetMapOutput {
-	return o
-}
-
-func (o ContainerApiKeyResetMapOutput) ToContainerApiKeyResetMapOutputWithContext(ctx context.Context) ContainerApiKeyResetMapOutput {
-	return o
-}
-
-func (o ContainerApiKeyResetMapOutput) MapIndex(k pulumi.StringInput) ContainerApiKeyResetOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerApiKeyReset {
-		return vs[0].(map[string]*ContainerApiKeyReset)[vs[1].(string)]
-	}).(ContainerApiKeyResetOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerApiKeyResetInput)(nil)).Elem(), &ContainerApiKeyReset{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerApiKeyResetArrayInput)(nil)).Elem(), ContainerApiKeyResetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerApiKeyResetMapInput)(nil)).Elem(), ContainerApiKeyResetMap{})
 	pulumi.RegisterOutputType(ContainerApiKeyResetOutput{})
-	pulumi.RegisterOutputType(ContainerApiKeyResetArrayOutput{})
-	pulumi.RegisterOutputType(ContainerApiKeyResetMapOutput{})
 }

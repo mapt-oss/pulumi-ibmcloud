@@ -204,56 +204,6 @@ func (i *IamAccountSettingsTemplateAssignment) ToIamAccountSettingsTemplateAssig
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsTemplateAssignmentOutput)
 }
 
-// IamAccountSettingsTemplateAssignmentArrayInput is an input type that accepts IamAccountSettingsTemplateAssignmentArray and IamAccountSettingsTemplateAssignmentArrayOutput values.
-// You can construct a concrete instance of `IamAccountSettingsTemplateAssignmentArrayInput` via:
-//
-//	IamAccountSettingsTemplateAssignmentArray{ IamAccountSettingsTemplateAssignmentArgs{...} }
-type IamAccountSettingsTemplateAssignmentArrayInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsTemplateAssignmentArrayOutput() IamAccountSettingsTemplateAssignmentArrayOutput
-	ToIamAccountSettingsTemplateAssignmentArrayOutputWithContext(context.Context) IamAccountSettingsTemplateAssignmentArrayOutput
-}
-
-type IamAccountSettingsTemplateAssignmentArray []IamAccountSettingsTemplateAssignmentInput
-
-func (IamAccountSettingsTemplateAssignmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettingsTemplateAssignment)(nil)).Elem()
-}
-
-func (i IamAccountSettingsTemplateAssignmentArray) ToIamAccountSettingsTemplateAssignmentArrayOutput() IamAccountSettingsTemplateAssignmentArrayOutput {
-	return i.ToIamAccountSettingsTemplateAssignmentArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsTemplateAssignmentArray) ToIamAccountSettingsTemplateAssignmentArrayOutputWithContext(ctx context.Context) IamAccountSettingsTemplateAssignmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsTemplateAssignmentArrayOutput)
-}
-
-// IamAccountSettingsTemplateAssignmentMapInput is an input type that accepts IamAccountSettingsTemplateAssignmentMap and IamAccountSettingsTemplateAssignmentMapOutput values.
-// You can construct a concrete instance of `IamAccountSettingsTemplateAssignmentMapInput` via:
-//
-//	IamAccountSettingsTemplateAssignmentMap{ "key": IamAccountSettingsTemplateAssignmentArgs{...} }
-type IamAccountSettingsTemplateAssignmentMapInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsTemplateAssignmentMapOutput() IamAccountSettingsTemplateAssignmentMapOutput
-	ToIamAccountSettingsTemplateAssignmentMapOutputWithContext(context.Context) IamAccountSettingsTemplateAssignmentMapOutput
-}
-
-type IamAccountSettingsTemplateAssignmentMap map[string]IamAccountSettingsTemplateAssignmentInput
-
-func (IamAccountSettingsTemplateAssignmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettingsTemplateAssignment)(nil)).Elem()
-}
-
-func (i IamAccountSettingsTemplateAssignmentMap) ToIamAccountSettingsTemplateAssignmentMapOutput() IamAccountSettingsTemplateAssignmentMapOutput {
-	return i.ToIamAccountSettingsTemplateAssignmentMapOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsTemplateAssignmentMap) ToIamAccountSettingsTemplateAssignmentMapOutputWithContext(ctx context.Context) IamAccountSettingsTemplateAssignmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsTemplateAssignmentMapOutput)
-}
-
 type IamAccountSettingsTemplateAssignmentOutput struct{ *pulumi.OutputState }
 
 func (IamAccountSettingsTemplateAssignmentOutput) ElementType() reflect.Type {
@@ -349,51 +299,7 @@ func (o IamAccountSettingsTemplateAssignmentOutput) TemplateVersion() pulumi.Int
 	return o.ApplyT(func(v *IamAccountSettingsTemplateAssignment) pulumi.IntOutput { return v.TemplateVersion }).(pulumi.IntOutput)
 }
 
-type IamAccountSettingsTemplateAssignmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsTemplateAssignmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettingsTemplateAssignment)(nil)).Elem()
-}
-
-func (o IamAccountSettingsTemplateAssignmentArrayOutput) ToIamAccountSettingsTemplateAssignmentArrayOutput() IamAccountSettingsTemplateAssignmentArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateAssignmentArrayOutput) ToIamAccountSettingsTemplateAssignmentArrayOutputWithContext(ctx context.Context) IamAccountSettingsTemplateAssignmentArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateAssignmentArrayOutput) Index(i pulumi.IntInput) IamAccountSettingsTemplateAssignmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccountSettingsTemplateAssignment {
-		return vs[0].([]*IamAccountSettingsTemplateAssignment)[vs[1].(int)]
-	}).(IamAccountSettingsTemplateAssignmentOutput)
-}
-
-type IamAccountSettingsTemplateAssignmentMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsTemplateAssignmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettingsTemplateAssignment)(nil)).Elem()
-}
-
-func (o IamAccountSettingsTemplateAssignmentMapOutput) ToIamAccountSettingsTemplateAssignmentMapOutput() IamAccountSettingsTemplateAssignmentMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateAssignmentMapOutput) ToIamAccountSettingsTemplateAssignmentMapOutputWithContext(ctx context.Context) IamAccountSettingsTemplateAssignmentMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsTemplateAssignmentMapOutput) MapIndex(k pulumi.StringInput) IamAccountSettingsTemplateAssignmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccountSettingsTemplateAssignment {
-		return vs[0].(map[string]*IamAccountSettingsTemplateAssignment)[vs[1].(string)]
-	}).(IamAccountSettingsTemplateAssignmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsTemplateAssignmentInput)(nil)).Elem(), &IamAccountSettingsTemplateAssignment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsTemplateAssignmentArrayInput)(nil)).Elem(), IamAccountSettingsTemplateAssignmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsTemplateAssignmentMapInput)(nil)).Elem(), IamAccountSettingsTemplateAssignmentMap{})
 	pulumi.RegisterOutputType(IamAccountSettingsTemplateAssignmentOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsTemplateAssignmentArrayOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsTemplateAssignmentMapOutput{})
 }

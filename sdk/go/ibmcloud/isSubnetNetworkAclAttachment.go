@@ -139,56 +139,6 @@ func (i *IsSubnetNetworkAclAttachment) ToIsSubnetNetworkAclAttachmentOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetNetworkAclAttachmentOutput)
 }
 
-// IsSubnetNetworkAclAttachmentArrayInput is an input type that accepts IsSubnetNetworkAclAttachmentArray and IsSubnetNetworkAclAttachmentArrayOutput values.
-// You can construct a concrete instance of `IsSubnetNetworkAclAttachmentArrayInput` via:
-//
-//	IsSubnetNetworkAclAttachmentArray{ IsSubnetNetworkAclAttachmentArgs{...} }
-type IsSubnetNetworkAclAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToIsSubnetNetworkAclAttachmentArrayOutput() IsSubnetNetworkAclAttachmentArrayOutput
-	ToIsSubnetNetworkAclAttachmentArrayOutputWithContext(context.Context) IsSubnetNetworkAclAttachmentArrayOutput
-}
-
-type IsSubnetNetworkAclAttachmentArray []IsSubnetNetworkAclAttachmentInput
-
-func (IsSubnetNetworkAclAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetNetworkAclAttachment)(nil)).Elem()
-}
-
-func (i IsSubnetNetworkAclAttachmentArray) ToIsSubnetNetworkAclAttachmentArrayOutput() IsSubnetNetworkAclAttachmentArrayOutput {
-	return i.ToIsSubnetNetworkAclAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i IsSubnetNetworkAclAttachmentArray) ToIsSubnetNetworkAclAttachmentArrayOutputWithContext(ctx context.Context) IsSubnetNetworkAclAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetNetworkAclAttachmentArrayOutput)
-}
-
-// IsSubnetNetworkAclAttachmentMapInput is an input type that accepts IsSubnetNetworkAclAttachmentMap and IsSubnetNetworkAclAttachmentMapOutput values.
-// You can construct a concrete instance of `IsSubnetNetworkAclAttachmentMapInput` via:
-//
-//	IsSubnetNetworkAclAttachmentMap{ "key": IsSubnetNetworkAclAttachmentArgs{...} }
-type IsSubnetNetworkAclAttachmentMapInput interface {
-	pulumi.Input
-
-	ToIsSubnetNetworkAclAttachmentMapOutput() IsSubnetNetworkAclAttachmentMapOutput
-	ToIsSubnetNetworkAclAttachmentMapOutputWithContext(context.Context) IsSubnetNetworkAclAttachmentMapOutput
-}
-
-type IsSubnetNetworkAclAttachmentMap map[string]IsSubnetNetworkAclAttachmentInput
-
-func (IsSubnetNetworkAclAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetNetworkAclAttachment)(nil)).Elem()
-}
-
-func (i IsSubnetNetworkAclAttachmentMap) ToIsSubnetNetworkAclAttachmentMapOutput() IsSubnetNetworkAclAttachmentMapOutput {
-	return i.ToIsSubnetNetworkAclAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i IsSubnetNetworkAclAttachmentMap) ToIsSubnetNetworkAclAttachmentMapOutputWithContext(ctx context.Context) IsSubnetNetworkAclAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetNetworkAclAttachmentMapOutput)
-}
-
 type IsSubnetNetworkAclAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IsSubnetNetworkAclAttachmentOutput) ElementType() reflect.Type {
@@ -237,51 +187,7 @@ func (o IsSubnetNetworkAclAttachmentOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsSubnetNetworkAclAttachment) pulumi.StringOutput { return v.Vpc }).(pulumi.StringOutput)
 }
 
-type IsSubnetNetworkAclAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetNetworkAclAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetNetworkAclAttachment)(nil)).Elem()
-}
-
-func (o IsSubnetNetworkAclAttachmentArrayOutput) ToIsSubnetNetworkAclAttachmentArrayOutput() IsSubnetNetworkAclAttachmentArrayOutput {
-	return o
-}
-
-func (o IsSubnetNetworkAclAttachmentArrayOutput) ToIsSubnetNetworkAclAttachmentArrayOutputWithContext(ctx context.Context) IsSubnetNetworkAclAttachmentArrayOutput {
-	return o
-}
-
-func (o IsSubnetNetworkAclAttachmentArrayOutput) Index(i pulumi.IntInput) IsSubnetNetworkAclAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSubnetNetworkAclAttachment {
-		return vs[0].([]*IsSubnetNetworkAclAttachment)[vs[1].(int)]
-	}).(IsSubnetNetworkAclAttachmentOutput)
-}
-
-type IsSubnetNetworkAclAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetNetworkAclAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetNetworkAclAttachment)(nil)).Elem()
-}
-
-func (o IsSubnetNetworkAclAttachmentMapOutput) ToIsSubnetNetworkAclAttachmentMapOutput() IsSubnetNetworkAclAttachmentMapOutput {
-	return o
-}
-
-func (o IsSubnetNetworkAclAttachmentMapOutput) ToIsSubnetNetworkAclAttachmentMapOutputWithContext(ctx context.Context) IsSubnetNetworkAclAttachmentMapOutput {
-	return o
-}
-
-func (o IsSubnetNetworkAclAttachmentMapOutput) MapIndex(k pulumi.StringInput) IsSubnetNetworkAclAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSubnetNetworkAclAttachment {
-		return vs[0].(map[string]*IsSubnetNetworkAclAttachment)[vs[1].(string)]
-	}).(IsSubnetNetworkAclAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetNetworkAclAttachmentInput)(nil)).Elem(), &IsSubnetNetworkAclAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetNetworkAclAttachmentArrayInput)(nil)).Elem(), IsSubnetNetworkAclAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetNetworkAclAttachmentMapInput)(nil)).Elem(), IsSubnetNetworkAclAttachmentMap{})
 	pulumi.RegisterOutputType(IsSubnetNetworkAclAttachmentOutput{})
-	pulumi.RegisterOutputType(IsSubnetNetworkAclAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(IsSubnetNetworkAclAttachmentMapOutput{})
 }

@@ -210,56 +210,6 @@ func (i *IsClusterNetworkInterface) ToIsClusterNetworkInterfaceOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkInterfaceOutput)
 }
 
-// IsClusterNetworkInterfaceArrayInput is an input type that accepts IsClusterNetworkInterfaceArray and IsClusterNetworkInterfaceArrayOutput values.
-// You can construct a concrete instance of `IsClusterNetworkInterfaceArrayInput` via:
-//
-//	IsClusterNetworkInterfaceArray{ IsClusterNetworkInterfaceArgs{...} }
-type IsClusterNetworkInterfaceArrayInput interface {
-	pulumi.Input
-
-	ToIsClusterNetworkInterfaceArrayOutput() IsClusterNetworkInterfaceArrayOutput
-	ToIsClusterNetworkInterfaceArrayOutputWithContext(context.Context) IsClusterNetworkInterfaceArrayOutput
-}
-
-type IsClusterNetworkInterfaceArray []IsClusterNetworkInterfaceInput
-
-func (IsClusterNetworkInterfaceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsClusterNetworkInterface)(nil)).Elem()
-}
-
-func (i IsClusterNetworkInterfaceArray) ToIsClusterNetworkInterfaceArrayOutput() IsClusterNetworkInterfaceArrayOutput {
-	return i.ToIsClusterNetworkInterfaceArrayOutputWithContext(context.Background())
-}
-
-func (i IsClusterNetworkInterfaceArray) ToIsClusterNetworkInterfaceArrayOutputWithContext(ctx context.Context) IsClusterNetworkInterfaceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkInterfaceArrayOutput)
-}
-
-// IsClusterNetworkInterfaceMapInput is an input type that accepts IsClusterNetworkInterfaceMap and IsClusterNetworkInterfaceMapOutput values.
-// You can construct a concrete instance of `IsClusterNetworkInterfaceMapInput` via:
-//
-//	IsClusterNetworkInterfaceMap{ "key": IsClusterNetworkInterfaceArgs{...} }
-type IsClusterNetworkInterfaceMapInput interface {
-	pulumi.Input
-
-	ToIsClusterNetworkInterfaceMapOutput() IsClusterNetworkInterfaceMapOutput
-	ToIsClusterNetworkInterfaceMapOutputWithContext(context.Context) IsClusterNetworkInterfaceMapOutput
-}
-
-type IsClusterNetworkInterfaceMap map[string]IsClusterNetworkInterfaceInput
-
-func (IsClusterNetworkInterfaceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsClusterNetworkInterface)(nil)).Elem()
-}
-
-func (i IsClusterNetworkInterfaceMap) ToIsClusterNetworkInterfaceMapOutput() IsClusterNetworkInterfaceMapOutput {
-	return i.ToIsClusterNetworkInterfaceMapOutputWithContext(context.Background())
-}
-
-func (i IsClusterNetworkInterfaceMap) ToIsClusterNetworkInterfaceMapOutputWithContext(ctx context.Context) IsClusterNetworkInterfaceMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkInterfaceMapOutput)
-}
-
 type IsClusterNetworkInterfaceOutput struct{ *pulumi.OutputState }
 
 func (IsClusterNetworkInterfaceOutput) ElementType() reflect.Type {
@@ -365,51 +315,7 @@ func (o IsClusterNetworkInterfaceOutput) Zones() IsClusterNetworkInterfaceZoneAr
 	return o.ApplyT(func(v *IsClusterNetworkInterface) IsClusterNetworkInterfaceZoneArrayOutput { return v.Zones }).(IsClusterNetworkInterfaceZoneArrayOutput)
 }
 
-type IsClusterNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
-
-func (IsClusterNetworkInterfaceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsClusterNetworkInterface)(nil)).Elem()
-}
-
-func (o IsClusterNetworkInterfaceArrayOutput) ToIsClusterNetworkInterfaceArrayOutput() IsClusterNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o IsClusterNetworkInterfaceArrayOutput) ToIsClusterNetworkInterfaceArrayOutputWithContext(ctx context.Context) IsClusterNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o IsClusterNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) IsClusterNetworkInterfaceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsClusterNetworkInterface {
-		return vs[0].([]*IsClusterNetworkInterface)[vs[1].(int)]
-	}).(IsClusterNetworkInterfaceOutput)
-}
-
-type IsClusterNetworkInterfaceMapOutput struct{ *pulumi.OutputState }
-
-func (IsClusterNetworkInterfaceMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsClusterNetworkInterface)(nil)).Elem()
-}
-
-func (o IsClusterNetworkInterfaceMapOutput) ToIsClusterNetworkInterfaceMapOutput() IsClusterNetworkInterfaceMapOutput {
-	return o
-}
-
-func (o IsClusterNetworkInterfaceMapOutput) ToIsClusterNetworkInterfaceMapOutputWithContext(ctx context.Context) IsClusterNetworkInterfaceMapOutput {
-	return o
-}
-
-func (o IsClusterNetworkInterfaceMapOutput) MapIndex(k pulumi.StringInput) IsClusterNetworkInterfaceOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsClusterNetworkInterface {
-		return vs[0].(map[string]*IsClusterNetworkInterface)[vs[1].(string)]
-	}).(IsClusterNetworkInterfaceOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkInterfaceInput)(nil)).Elem(), &IsClusterNetworkInterface{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkInterfaceArrayInput)(nil)).Elem(), IsClusterNetworkInterfaceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkInterfaceMapInput)(nil)).Elem(), IsClusterNetworkInterfaceMap{})
 	pulumi.RegisterOutputType(IsClusterNetworkInterfaceOutput{})
-	pulumi.RegisterOutputType(IsClusterNetworkInterfaceArrayOutput{})
-	pulumi.RegisterOutputType(IsClusterNetworkInterfaceMapOutput{})
 }

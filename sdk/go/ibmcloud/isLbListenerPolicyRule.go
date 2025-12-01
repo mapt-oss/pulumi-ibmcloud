@@ -181,56 +181,6 @@ func (i *IsLbListenerPolicyRule) ToIsLbListenerPolicyRuleOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(IsLbListenerPolicyRuleOutput)
 }
 
-// IsLbListenerPolicyRuleArrayInput is an input type that accepts IsLbListenerPolicyRuleArray and IsLbListenerPolicyRuleArrayOutput values.
-// You can construct a concrete instance of `IsLbListenerPolicyRuleArrayInput` via:
-//
-//	IsLbListenerPolicyRuleArray{ IsLbListenerPolicyRuleArgs{...} }
-type IsLbListenerPolicyRuleArrayInput interface {
-	pulumi.Input
-
-	ToIsLbListenerPolicyRuleArrayOutput() IsLbListenerPolicyRuleArrayOutput
-	ToIsLbListenerPolicyRuleArrayOutputWithContext(context.Context) IsLbListenerPolicyRuleArrayOutput
-}
-
-type IsLbListenerPolicyRuleArray []IsLbListenerPolicyRuleInput
-
-func (IsLbListenerPolicyRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbListenerPolicyRule)(nil)).Elem()
-}
-
-func (i IsLbListenerPolicyRuleArray) ToIsLbListenerPolicyRuleArrayOutput() IsLbListenerPolicyRuleArrayOutput {
-	return i.ToIsLbListenerPolicyRuleArrayOutputWithContext(context.Background())
-}
-
-func (i IsLbListenerPolicyRuleArray) ToIsLbListenerPolicyRuleArrayOutputWithContext(ctx context.Context) IsLbListenerPolicyRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbListenerPolicyRuleArrayOutput)
-}
-
-// IsLbListenerPolicyRuleMapInput is an input type that accepts IsLbListenerPolicyRuleMap and IsLbListenerPolicyRuleMapOutput values.
-// You can construct a concrete instance of `IsLbListenerPolicyRuleMapInput` via:
-//
-//	IsLbListenerPolicyRuleMap{ "key": IsLbListenerPolicyRuleArgs{...} }
-type IsLbListenerPolicyRuleMapInput interface {
-	pulumi.Input
-
-	ToIsLbListenerPolicyRuleMapOutput() IsLbListenerPolicyRuleMapOutput
-	ToIsLbListenerPolicyRuleMapOutputWithContext(context.Context) IsLbListenerPolicyRuleMapOutput
-}
-
-type IsLbListenerPolicyRuleMap map[string]IsLbListenerPolicyRuleInput
-
-func (IsLbListenerPolicyRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbListenerPolicyRule)(nil)).Elem()
-}
-
-func (i IsLbListenerPolicyRuleMap) ToIsLbListenerPolicyRuleMapOutput() IsLbListenerPolicyRuleMapOutput {
-	return i.ToIsLbListenerPolicyRuleMapOutputWithContext(context.Background())
-}
-
-func (i IsLbListenerPolicyRuleMap) ToIsLbListenerPolicyRuleMapOutputWithContext(ctx context.Context) IsLbListenerPolicyRuleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbListenerPolicyRuleMapOutput)
-}
-
 type IsLbListenerPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (IsLbListenerPolicyRuleOutput) ElementType() reflect.Type {
@@ -292,51 +242,7 @@ func (o IsLbListenerPolicyRuleOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsLbListenerPolicyRule) pulumi.StringOutput { return v.Value }).(pulumi.StringOutput)
 }
 
-type IsLbListenerPolicyRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (IsLbListenerPolicyRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbListenerPolicyRule)(nil)).Elem()
-}
-
-func (o IsLbListenerPolicyRuleArrayOutput) ToIsLbListenerPolicyRuleArrayOutput() IsLbListenerPolicyRuleArrayOutput {
-	return o
-}
-
-func (o IsLbListenerPolicyRuleArrayOutput) ToIsLbListenerPolicyRuleArrayOutputWithContext(ctx context.Context) IsLbListenerPolicyRuleArrayOutput {
-	return o
-}
-
-func (o IsLbListenerPolicyRuleArrayOutput) Index(i pulumi.IntInput) IsLbListenerPolicyRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsLbListenerPolicyRule {
-		return vs[0].([]*IsLbListenerPolicyRule)[vs[1].(int)]
-	}).(IsLbListenerPolicyRuleOutput)
-}
-
-type IsLbListenerPolicyRuleMapOutput struct{ *pulumi.OutputState }
-
-func (IsLbListenerPolicyRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbListenerPolicyRule)(nil)).Elem()
-}
-
-func (o IsLbListenerPolicyRuleMapOutput) ToIsLbListenerPolicyRuleMapOutput() IsLbListenerPolicyRuleMapOutput {
-	return o
-}
-
-func (o IsLbListenerPolicyRuleMapOutput) ToIsLbListenerPolicyRuleMapOutputWithContext(ctx context.Context) IsLbListenerPolicyRuleMapOutput {
-	return o
-}
-
-func (o IsLbListenerPolicyRuleMapOutput) MapIndex(k pulumi.StringInput) IsLbListenerPolicyRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsLbListenerPolicyRule {
-		return vs[0].(map[string]*IsLbListenerPolicyRule)[vs[1].(string)]
-	}).(IsLbListenerPolicyRuleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsLbListenerPolicyRuleInput)(nil)).Elem(), &IsLbListenerPolicyRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbListenerPolicyRuleArrayInput)(nil)).Elem(), IsLbListenerPolicyRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbListenerPolicyRuleMapInput)(nil)).Elem(), IsLbListenerPolicyRuleMap{})
 	pulumi.RegisterOutputType(IsLbListenerPolicyRuleOutput{})
-	pulumi.RegisterOutputType(IsLbListenerPolicyRuleArrayOutput{})
-	pulumi.RegisterOutputType(IsLbListenerPolicyRuleMapOutput{})
 }

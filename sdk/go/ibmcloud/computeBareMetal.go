@@ -396,56 +396,6 @@ func (i *ComputeBareMetal) ToComputeBareMetalOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeBareMetalOutput)
 }
 
-// ComputeBareMetalArrayInput is an input type that accepts ComputeBareMetalArray and ComputeBareMetalArrayOutput values.
-// You can construct a concrete instance of `ComputeBareMetalArrayInput` via:
-//
-//	ComputeBareMetalArray{ ComputeBareMetalArgs{...} }
-type ComputeBareMetalArrayInput interface {
-	pulumi.Input
-
-	ToComputeBareMetalArrayOutput() ComputeBareMetalArrayOutput
-	ToComputeBareMetalArrayOutputWithContext(context.Context) ComputeBareMetalArrayOutput
-}
-
-type ComputeBareMetalArray []ComputeBareMetalInput
-
-func (ComputeBareMetalArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeBareMetal)(nil)).Elem()
-}
-
-func (i ComputeBareMetalArray) ToComputeBareMetalArrayOutput() ComputeBareMetalArrayOutput {
-	return i.ToComputeBareMetalArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeBareMetalArray) ToComputeBareMetalArrayOutputWithContext(ctx context.Context) ComputeBareMetalArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeBareMetalArrayOutput)
-}
-
-// ComputeBareMetalMapInput is an input type that accepts ComputeBareMetalMap and ComputeBareMetalMapOutput values.
-// You can construct a concrete instance of `ComputeBareMetalMapInput` via:
-//
-//	ComputeBareMetalMap{ "key": ComputeBareMetalArgs{...} }
-type ComputeBareMetalMapInput interface {
-	pulumi.Input
-
-	ToComputeBareMetalMapOutput() ComputeBareMetalMapOutput
-	ToComputeBareMetalMapOutputWithContext(context.Context) ComputeBareMetalMapOutput
-}
-
-type ComputeBareMetalMap map[string]ComputeBareMetalInput
-
-func (ComputeBareMetalMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeBareMetal)(nil)).Elem()
-}
-
-func (i ComputeBareMetalMap) ToComputeBareMetalMapOutput() ComputeBareMetalMapOutput {
-	return i.ToComputeBareMetalMapOutputWithContext(context.Background())
-}
-
-func (i ComputeBareMetalMap) ToComputeBareMetalMapOutputWithContext(ctx context.Context) ComputeBareMetalMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeBareMetalMapOutput)
-}
-
 type ComputeBareMetalOutput struct{ *pulumi.OutputState }
 
 func (ComputeBareMetalOutput) ElementType() reflect.Type {
@@ -669,51 +619,7 @@ func (o ComputeBareMetalOutput) UserMetadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ComputeBareMetal) pulumi.StringPtrOutput { return v.UserMetadata }).(pulumi.StringPtrOutput)
 }
 
-type ComputeBareMetalArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeBareMetalArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeBareMetal)(nil)).Elem()
-}
-
-func (o ComputeBareMetalArrayOutput) ToComputeBareMetalArrayOutput() ComputeBareMetalArrayOutput {
-	return o
-}
-
-func (o ComputeBareMetalArrayOutput) ToComputeBareMetalArrayOutputWithContext(ctx context.Context) ComputeBareMetalArrayOutput {
-	return o
-}
-
-func (o ComputeBareMetalArrayOutput) Index(i pulumi.IntInput) ComputeBareMetalOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeBareMetal {
-		return vs[0].([]*ComputeBareMetal)[vs[1].(int)]
-	}).(ComputeBareMetalOutput)
-}
-
-type ComputeBareMetalMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeBareMetalMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeBareMetal)(nil)).Elem()
-}
-
-func (o ComputeBareMetalMapOutput) ToComputeBareMetalMapOutput() ComputeBareMetalMapOutput {
-	return o
-}
-
-func (o ComputeBareMetalMapOutput) ToComputeBareMetalMapOutputWithContext(ctx context.Context) ComputeBareMetalMapOutput {
-	return o
-}
-
-func (o ComputeBareMetalMapOutput) MapIndex(k pulumi.StringInput) ComputeBareMetalOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeBareMetal {
-		return vs[0].(map[string]*ComputeBareMetal)[vs[1].(string)]
-	}).(ComputeBareMetalOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeBareMetalInput)(nil)).Elem(), &ComputeBareMetal{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeBareMetalArrayInput)(nil)).Elem(), ComputeBareMetalArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeBareMetalMapInput)(nil)).Elem(), ComputeBareMetalMap{})
 	pulumi.RegisterOutputType(ComputeBareMetalOutput{})
-	pulumi.RegisterOutputType(ComputeBareMetalArrayOutput{})
-	pulumi.RegisterOutputType(ComputeBareMetalMapOutput{})
 }

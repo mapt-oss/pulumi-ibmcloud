@@ -135,56 +135,6 @@ func (i *CosBucketReplicationRule) ToCosBucketReplicationRuleOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(CosBucketReplicationRuleOutput)
 }
 
-// CosBucketReplicationRuleArrayInput is an input type that accepts CosBucketReplicationRuleArray and CosBucketReplicationRuleArrayOutput values.
-// You can construct a concrete instance of `CosBucketReplicationRuleArrayInput` via:
-//
-//	CosBucketReplicationRuleArray{ CosBucketReplicationRuleArgs{...} }
-type CosBucketReplicationRuleArrayInput interface {
-	pulumi.Input
-
-	ToCosBucketReplicationRuleArrayOutput() CosBucketReplicationRuleArrayOutput
-	ToCosBucketReplicationRuleArrayOutputWithContext(context.Context) CosBucketReplicationRuleArrayOutput
-}
-
-type CosBucketReplicationRuleArray []CosBucketReplicationRuleInput
-
-func (CosBucketReplicationRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketReplicationRule)(nil)).Elem()
-}
-
-func (i CosBucketReplicationRuleArray) ToCosBucketReplicationRuleArrayOutput() CosBucketReplicationRuleArrayOutput {
-	return i.ToCosBucketReplicationRuleArrayOutputWithContext(context.Background())
-}
-
-func (i CosBucketReplicationRuleArray) ToCosBucketReplicationRuleArrayOutputWithContext(ctx context.Context) CosBucketReplicationRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketReplicationRuleArrayOutput)
-}
-
-// CosBucketReplicationRuleMapInput is an input type that accepts CosBucketReplicationRuleMap and CosBucketReplicationRuleMapOutput values.
-// You can construct a concrete instance of `CosBucketReplicationRuleMapInput` via:
-//
-//	CosBucketReplicationRuleMap{ "key": CosBucketReplicationRuleArgs{...} }
-type CosBucketReplicationRuleMapInput interface {
-	pulumi.Input
-
-	ToCosBucketReplicationRuleMapOutput() CosBucketReplicationRuleMapOutput
-	ToCosBucketReplicationRuleMapOutputWithContext(context.Context) CosBucketReplicationRuleMapOutput
-}
-
-type CosBucketReplicationRuleMap map[string]CosBucketReplicationRuleInput
-
-func (CosBucketReplicationRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketReplicationRule)(nil)).Elem()
-}
-
-func (i CosBucketReplicationRuleMap) ToCosBucketReplicationRuleMapOutput() CosBucketReplicationRuleMapOutput {
-	return i.ToCosBucketReplicationRuleMapOutputWithContext(context.Background())
-}
-
-func (i CosBucketReplicationRuleMap) ToCosBucketReplicationRuleMapOutputWithContext(ctx context.Context) CosBucketReplicationRuleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketReplicationRuleMapOutput)
-}
-
 type CosBucketReplicationRuleOutput struct{ *pulumi.OutputState }
 
 func (CosBucketReplicationRuleOutput) ElementType() reflect.Type {
@@ -221,51 +171,7 @@ func (o CosBucketReplicationRuleOutput) ReplicationRules() CosBucketReplicationR
 	}).(CosBucketReplicationRuleReplicationRuleArrayOutput)
 }
 
-type CosBucketReplicationRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBucketReplicationRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucketReplicationRule)(nil)).Elem()
-}
-
-func (o CosBucketReplicationRuleArrayOutput) ToCosBucketReplicationRuleArrayOutput() CosBucketReplicationRuleArrayOutput {
-	return o
-}
-
-func (o CosBucketReplicationRuleArrayOutput) ToCosBucketReplicationRuleArrayOutputWithContext(ctx context.Context) CosBucketReplicationRuleArrayOutput {
-	return o
-}
-
-func (o CosBucketReplicationRuleArrayOutput) Index(i pulumi.IntInput) CosBucketReplicationRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBucketReplicationRule {
-		return vs[0].([]*CosBucketReplicationRule)[vs[1].(int)]
-	}).(CosBucketReplicationRuleOutput)
-}
-
-type CosBucketReplicationRuleMapOutput struct{ *pulumi.OutputState }
-
-func (CosBucketReplicationRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucketReplicationRule)(nil)).Elem()
-}
-
-func (o CosBucketReplicationRuleMapOutput) ToCosBucketReplicationRuleMapOutput() CosBucketReplicationRuleMapOutput {
-	return o
-}
-
-func (o CosBucketReplicationRuleMapOutput) ToCosBucketReplicationRuleMapOutputWithContext(ctx context.Context) CosBucketReplicationRuleMapOutput {
-	return o
-}
-
-func (o CosBucketReplicationRuleMapOutput) MapIndex(k pulumi.StringInput) CosBucketReplicationRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBucketReplicationRule {
-		return vs[0].(map[string]*CosBucketReplicationRule)[vs[1].(string)]
-	}).(CosBucketReplicationRuleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketReplicationRuleInput)(nil)).Elem(), &CosBucketReplicationRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketReplicationRuleArrayInput)(nil)).Elem(), CosBucketReplicationRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketReplicationRuleMapInput)(nil)).Elem(), CosBucketReplicationRuleMap{})
 	pulumi.RegisterOutputType(CosBucketReplicationRuleOutput{})
-	pulumi.RegisterOutputType(CosBucketReplicationRuleArrayOutput{})
-	pulumi.RegisterOutputType(CosBucketReplicationRuleMapOutput{})
 }

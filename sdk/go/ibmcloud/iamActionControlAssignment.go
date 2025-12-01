@@ -176,56 +176,6 @@ func (i *IamActionControlAssignment) ToIamActionControlAssignmentOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlAssignmentOutput)
 }
 
-// IamActionControlAssignmentArrayInput is an input type that accepts IamActionControlAssignmentArray and IamActionControlAssignmentArrayOutput values.
-// You can construct a concrete instance of `IamActionControlAssignmentArrayInput` via:
-//
-//	IamActionControlAssignmentArray{ IamActionControlAssignmentArgs{...} }
-type IamActionControlAssignmentArrayInput interface {
-	pulumi.Input
-
-	ToIamActionControlAssignmentArrayOutput() IamActionControlAssignmentArrayOutput
-	ToIamActionControlAssignmentArrayOutputWithContext(context.Context) IamActionControlAssignmentArrayOutput
-}
-
-type IamActionControlAssignmentArray []IamActionControlAssignmentInput
-
-func (IamActionControlAssignmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamActionControlAssignment)(nil)).Elem()
-}
-
-func (i IamActionControlAssignmentArray) ToIamActionControlAssignmentArrayOutput() IamActionControlAssignmentArrayOutput {
-	return i.ToIamActionControlAssignmentArrayOutputWithContext(context.Background())
-}
-
-func (i IamActionControlAssignmentArray) ToIamActionControlAssignmentArrayOutputWithContext(ctx context.Context) IamActionControlAssignmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlAssignmentArrayOutput)
-}
-
-// IamActionControlAssignmentMapInput is an input type that accepts IamActionControlAssignmentMap and IamActionControlAssignmentMapOutput values.
-// You can construct a concrete instance of `IamActionControlAssignmentMapInput` via:
-//
-//	IamActionControlAssignmentMap{ "key": IamActionControlAssignmentArgs{...} }
-type IamActionControlAssignmentMapInput interface {
-	pulumi.Input
-
-	ToIamActionControlAssignmentMapOutput() IamActionControlAssignmentMapOutput
-	ToIamActionControlAssignmentMapOutputWithContext(context.Context) IamActionControlAssignmentMapOutput
-}
-
-type IamActionControlAssignmentMap map[string]IamActionControlAssignmentInput
-
-func (IamActionControlAssignmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamActionControlAssignment)(nil)).Elem()
-}
-
-func (i IamActionControlAssignmentMap) ToIamActionControlAssignmentMapOutput() IamActionControlAssignmentMapOutput {
-	return i.ToIamActionControlAssignmentMapOutputWithContext(context.Background())
-}
-
-func (i IamActionControlAssignmentMap) ToIamActionControlAssignmentMapOutputWithContext(ctx context.Context) IamActionControlAssignmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlAssignmentMapOutput)
-}
-
 type IamActionControlAssignmentOutput struct{ *pulumi.OutputState }
 
 func (IamActionControlAssignmentOutput) ElementType() reflect.Type {
@@ -300,51 +250,7 @@ func (o IamActionControlAssignmentOutput) Templates() IamActionControlAssignment
 	return o.ApplyT(func(v *IamActionControlAssignment) IamActionControlAssignmentTemplatesOutput { return v.Templates }).(IamActionControlAssignmentTemplatesOutput)
 }
 
-type IamActionControlAssignmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IamActionControlAssignmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamActionControlAssignment)(nil)).Elem()
-}
-
-func (o IamActionControlAssignmentArrayOutput) ToIamActionControlAssignmentArrayOutput() IamActionControlAssignmentArrayOutput {
-	return o
-}
-
-func (o IamActionControlAssignmentArrayOutput) ToIamActionControlAssignmentArrayOutputWithContext(ctx context.Context) IamActionControlAssignmentArrayOutput {
-	return o
-}
-
-func (o IamActionControlAssignmentArrayOutput) Index(i pulumi.IntInput) IamActionControlAssignmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamActionControlAssignment {
-		return vs[0].([]*IamActionControlAssignment)[vs[1].(int)]
-	}).(IamActionControlAssignmentOutput)
-}
-
-type IamActionControlAssignmentMapOutput struct{ *pulumi.OutputState }
-
-func (IamActionControlAssignmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamActionControlAssignment)(nil)).Elem()
-}
-
-func (o IamActionControlAssignmentMapOutput) ToIamActionControlAssignmentMapOutput() IamActionControlAssignmentMapOutput {
-	return o
-}
-
-func (o IamActionControlAssignmentMapOutput) ToIamActionControlAssignmentMapOutputWithContext(ctx context.Context) IamActionControlAssignmentMapOutput {
-	return o
-}
-
-func (o IamActionControlAssignmentMapOutput) MapIndex(k pulumi.StringInput) IamActionControlAssignmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamActionControlAssignment {
-		return vs[0].(map[string]*IamActionControlAssignment)[vs[1].(string)]
-	}).(IamActionControlAssignmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlAssignmentInput)(nil)).Elem(), &IamActionControlAssignment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlAssignmentArrayInput)(nil)).Elem(), IamActionControlAssignmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlAssignmentMapInput)(nil)).Elem(), IamActionControlAssignmentMap{})
 	pulumi.RegisterOutputType(IamActionControlAssignmentOutput{})
-	pulumi.RegisterOutputType(IamActionControlAssignmentArrayOutput{})
-	pulumi.RegisterOutputType(IamActionControlAssignmentMapOutput{})
 }

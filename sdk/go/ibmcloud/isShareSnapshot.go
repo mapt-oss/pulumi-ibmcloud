@@ -213,56 +213,6 @@ func (i *IsShareSnapshot) ToIsShareSnapshotOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IsShareSnapshotOutput)
 }
 
-// IsShareSnapshotArrayInput is an input type that accepts IsShareSnapshotArray and IsShareSnapshotArrayOutput values.
-// You can construct a concrete instance of `IsShareSnapshotArrayInput` via:
-//
-//	IsShareSnapshotArray{ IsShareSnapshotArgs{...} }
-type IsShareSnapshotArrayInput interface {
-	pulumi.Input
-
-	ToIsShareSnapshotArrayOutput() IsShareSnapshotArrayOutput
-	ToIsShareSnapshotArrayOutputWithContext(context.Context) IsShareSnapshotArrayOutput
-}
-
-type IsShareSnapshotArray []IsShareSnapshotInput
-
-func (IsShareSnapshotArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShareSnapshot)(nil)).Elem()
-}
-
-func (i IsShareSnapshotArray) ToIsShareSnapshotArrayOutput() IsShareSnapshotArrayOutput {
-	return i.ToIsShareSnapshotArrayOutputWithContext(context.Background())
-}
-
-func (i IsShareSnapshotArray) ToIsShareSnapshotArrayOutputWithContext(ctx context.Context) IsShareSnapshotArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareSnapshotArrayOutput)
-}
-
-// IsShareSnapshotMapInput is an input type that accepts IsShareSnapshotMap and IsShareSnapshotMapOutput values.
-// You can construct a concrete instance of `IsShareSnapshotMapInput` via:
-//
-//	IsShareSnapshotMap{ "key": IsShareSnapshotArgs{...} }
-type IsShareSnapshotMapInput interface {
-	pulumi.Input
-
-	ToIsShareSnapshotMapOutput() IsShareSnapshotMapOutput
-	ToIsShareSnapshotMapOutputWithContext(context.Context) IsShareSnapshotMapOutput
-}
-
-type IsShareSnapshotMap map[string]IsShareSnapshotInput
-
-func (IsShareSnapshotMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShareSnapshot)(nil)).Elem()
-}
-
-func (i IsShareSnapshotMap) ToIsShareSnapshotMapOutput() IsShareSnapshotMapOutput {
-	return i.ToIsShareSnapshotMapOutputWithContext(context.Background())
-}
-
-func (i IsShareSnapshotMap) ToIsShareSnapshotMapOutputWithContext(ctx context.Context) IsShareSnapshotMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsShareSnapshotMapOutput)
-}
-
 type IsShareSnapshotOutput struct{ *pulumi.OutputState }
 
 func (IsShareSnapshotOutput) ElementType() reflect.Type {
@@ -367,51 +317,7 @@ func (o IsShareSnapshotOutput) Zones() IsShareSnapshotZoneArrayOutput {
 	return o.ApplyT(func(v *IsShareSnapshot) IsShareSnapshotZoneArrayOutput { return v.Zones }).(IsShareSnapshotZoneArrayOutput)
 }
 
-type IsShareSnapshotArrayOutput struct{ *pulumi.OutputState }
-
-func (IsShareSnapshotArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsShareSnapshot)(nil)).Elem()
-}
-
-func (o IsShareSnapshotArrayOutput) ToIsShareSnapshotArrayOutput() IsShareSnapshotArrayOutput {
-	return o
-}
-
-func (o IsShareSnapshotArrayOutput) ToIsShareSnapshotArrayOutputWithContext(ctx context.Context) IsShareSnapshotArrayOutput {
-	return o
-}
-
-func (o IsShareSnapshotArrayOutput) Index(i pulumi.IntInput) IsShareSnapshotOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsShareSnapshot {
-		return vs[0].([]*IsShareSnapshot)[vs[1].(int)]
-	}).(IsShareSnapshotOutput)
-}
-
-type IsShareSnapshotMapOutput struct{ *pulumi.OutputState }
-
-func (IsShareSnapshotMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsShareSnapshot)(nil)).Elem()
-}
-
-func (o IsShareSnapshotMapOutput) ToIsShareSnapshotMapOutput() IsShareSnapshotMapOutput {
-	return o
-}
-
-func (o IsShareSnapshotMapOutput) ToIsShareSnapshotMapOutputWithContext(ctx context.Context) IsShareSnapshotMapOutput {
-	return o
-}
-
-func (o IsShareSnapshotMapOutput) MapIndex(k pulumi.StringInput) IsShareSnapshotOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsShareSnapshot {
-		return vs[0].(map[string]*IsShareSnapshot)[vs[1].(string)]
-	}).(IsShareSnapshotOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsShareSnapshotInput)(nil)).Elem(), &IsShareSnapshot{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareSnapshotArrayInput)(nil)).Elem(), IsShareSnapshotArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsShareSnapshotMapInput)(nil)).Elem(), IsShareSnapshotMap{})
 	pulumi.RegisterOutputType(IsShareSnapshotOutput{})
-	pulumi.RegisterOutputType(IsShareSnapshotArrayOutput{})
-	pulumi.RegisterOutputType(IsShareSnapshotMapOutput{})
 }

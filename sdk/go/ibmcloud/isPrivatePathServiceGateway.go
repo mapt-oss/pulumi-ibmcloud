@@ -224,56 +224,6 @@ func (i *IsPrivatePathServiceGateway) ToIsPrivatePathServiceGatewayOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayOutput)
 }
 
-// IsPrivatePathServiceGatewayArrayInput is an input type that accepts IsPrivatePathServiceGatewayArray and IsPrivatePathServiceGatewayArrayOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayArrayInput` via:
-//
-//	IsPrivatePathServiceGatewayArray{ IsPrivatePathServiceGatewayArgs{...} }
-type IsPrivatePathServiceGatewayArrayInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayArrayOutput() IsPrivatePathServiceGatewayArrayOutput
-	ToIsPrivatePathServiceGatewayArrayOutputWithContext(context.Context) IsPrivatePathServiceGatewayArrayOutput
-}
-
-type IsPrivatePathServiceGatewayArray []IsPrivatePathServiceGatewayInput
-
-func (IsPrivatePathServiceGatewayArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGateway)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayArray) ToIsPrivatePathServiceGatewayArrayOutput() IsPrivatePathServiceGatewayArrayOutput {
-	return i.ToIsPrivatePathServiceGatewayArrayOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayArray) ToIsPrivatePathServiceGatewayArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayArrayOutput)
-}
-
-// IsPrivatePathServiceGatewayMapInput is an input type that accepts IsPrivatePathServiceGatewayMap and IsPrivatePathServiceGatewayMapOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayMapInput` via:
-//
-//	IsPrivatePathServiceGatewayMap{ "key": IsPrivatePathServiceGatewayArgs{...} }
-type IsPrivatePathServiceGatewayMapInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayMapOutput() IsPrivatePathServiceGatewayMapOutput
-	ToIsPrivatePathServiceGatewayMapOutputWithContext(context.Context) IsPrivatePathServiceGatewayMapOutput
-}
-
-type IsPrivatePathServiceGatewayMap map[string]IsPrivatePathServiceGatewayInput
-
-func (IsPrivatePathServiceGatewayMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGateway)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayMap) ToIsPrivatePathServiceGatewayMapOutput() IsPrivatePathServiceGatewayMapOutput {
-	return i.ToIsPrivatePathServiceGatewayMapOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayMap) ToIsPrivatePathServiceGatewayMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayMapOutput)
-}
-
 type IsPrivatePathServiceGatewayOutput struct{ *pulumi.OutputState }
 
 func (IsPrivatePathServiceGatewayOutput) ElementType() reflect.Type {
@@ -380,51 +330,7 @@ func (o IsPrivatePathServiceGatewayOutput) ZonalAffinity() pulumi.BoolOutput {
 	return o.ApplyT(func(v *IsPrivatePathServiceGateway) pulumi.BoolOutput { return v.ZonalAffinity }).(pulumi.BoolOutput)
 }
 
-type IsPrivatePathServiceGatewayArrayOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGateway)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayArrayOutput) ToIsPrivatePathServiceGatewayArrayOutput() IsPrivatePathServiceGatewayArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayArrayOutput) ToIsPrivatePathServiceGatewayArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayArrayOutput) Index(i pulumi.IntInput) IsPrivatePathServiceGatewayOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGateway {
-		return vs[0].([]*IsPrivatePathServiceGateway)[vs[1].(int)]
-	}).(IsPrivatePathServiceGatewayOutput)
-}
-
-type IsPrivatePathServiceGatewayMapOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGateway)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayMapOutput) ToIsPrivatePathServiceGatewayMapOutput() IsPrivatePathServiceGatewayMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayMapOutput) ToIsPrivatePathServiceGatewayMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayMapOutput) MapIndex(k pulumi.StringInput) IsPrivatePathServiceGatewayOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGateway {
-		return vs[0].(map[string]*IsPrivatePathServiceGateway)[vs[1].(string)]
-	}).(IsPrivatePathServiceGatewayOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayInput)(nil)).Elem(), &IsPrivatePathServiceGateway{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayArrayInput)(nil)).Elem(), IsPrivatePathServiceGatewayArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayMapInput)(nil)).Elem(), IsPrivatePathServiceGatewayMap{})
 	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayArrayOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayMapOutput{})
 }

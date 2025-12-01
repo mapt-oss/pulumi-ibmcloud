@@ -219,56 +219,6 @@ func (i *IamServicePolicy) ToIamServicePolicyOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IamServicePolicyOutput)
 }
 
-// IamServicePolicyArrayInput is an input type that accepts IamServicePolicyArray and IamServicePolicyArrayOutput values.
-// You can construct a concrete instance of `IamServicePolicyArrayInput` via:
-//
-//	IamServicePolicyArray{ IamServicePolicyArgs{...} }
-type IamServicePolicyArrayInput interface {
-	pulumi.Input
-
-	ToIamServicePolicyArrayOutput() IamServicePolicyArrayOutput
-	ToIamServicePolicyArrayOutputWithContext(context.Context) IamServicePolicyArrayOutput
-}
-
-type IamServicePolicyArray []IamServicePolicyInput
-
-func (IamServicePolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamServicePolicy)(nil)).Elem()
-}
-
-func (i IamServicePolicyArray) ToIamServicePolicyArrayOutput() IamServicePolicyArrayOutput {
-	return i.ToIamServicePolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IamServicePolicyArray) ToIamServicePolicyArrayOutputWithContext(ctx context.Context) IamServicePolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamServicePolicyArrayOutput)
-}
-
-// IamServicePolicyMapInput is an input type that accepts IamServicePolicyMap and IamServicePolicyMapOutput values.
-// You can construct a concrete instance of `IamServicePolicyMapInput` via:
-//
-//	IamServicePolicyMap{ "key": IamServicePolicyArgs{...} }
-type IamServicePolicyMapInput interface {
-	pulumi.Input
-
-	ToIamServicePolicyMapOutput() IamServicePolicyMapOutput
-	ToIamServicePolicyMapOutputWithContext(context.Context) IamServicePolicyMapOutput
-}
-
-type IamServicePolicyMap map[string]IamServicePolicyInput
-
-func (IamServicePolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamServicePolicy)(nil)).Elem()
-}
-
-func (i IamServicePolicyMap) ToIamServicePolicyMapOutput() IamServicePolicyMapOutput {
-	return i.ToIamServicePolicyMapOutputWithContext(context.Background())
-}
-
-func (i IamServicePolicyMap) ToIamServicePolicyMapOutputWithContext(ctx context.Context) IamServicePolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamServicePolicyMapOutput)
-}
-
 type IamServicePolicyOutput struct{ *pulumi.OutputState }
 
 func (IamServicePolicyOutput) ElementType() reflect.Type {
@@ -348,51 +298,7 @@ func (o IamServicePolicyOutput) TransactionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamServicePolicy) pulumi.StringOutput { return v.TransactionId }).(pulumi.StringOutput)
 }
 
-type IamServicePolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IamServicePolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamServicePolicy)(nil)).Elem()
-}
-
-func (o IamServicePolicyArrayOutput) ToIamServicePolicyArrayOutput() IamServicePolicyArrayOutput {
-	return o
-}
-
-func (o IamServicePolicyArrayOutput) ToIamServicePolicyArrayOutputWithContext(ctx context.Context) IamServicePolicyArrayOutput {
-	return o
-}
-
-func (o IamServicePolicyArrayOutput) Index(i pulumi.IntInput) IamServicePolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamServicePolicy {
-		return vs[0].([]*IamServicePolicy)[vs[1].(int)]
-	}).(IamServicePolicyOutput)
-}
-
-type IamServicePolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IamServicePolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamServicePolicy)(nil)).Elem()
-}
-
-func (o IamServicePolicyMapOutput) ToIamServicePolicyMapOutput() IamServicePolicyMapOutput {
-	return o
-}
-
-func (o IamServicePolicyMapOutput) ToIamServicePolicyMapOutputWithContext(ctx context.Context) IamServicePolicyMapOutput {
-	return o
-}
-
-func (o IamServicePolicyMapOutput) MapIndex(k pulumi.StringInput) IamServicePolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamServicePolicy {
-		return vs[0].(map[string]*IamServicePolicy)[vs[1].(string)]
-	}).(IamServicePolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamServicePolicyInput)(nil)).Elem(), &IamServicePolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamServicePolicyArrayInput)(nil)).Elem(), IamServicePolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamServicePolicyMapInput)(nil)).Elem(), IamServicePolicyMap{})
 	pulumi.RegisterOutputType(IamServicePolicyOutput{})
-	pulumi.RegisterOutputType(IamServicePolicyArrayOutput{})
-	pulumi.RegisterOutputType(IamServicePolicyMapOutput{})
 }

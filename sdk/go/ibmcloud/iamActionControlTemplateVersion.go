@@ -181,56 +181,6 @@ func (i *IamActionControlTemplateVersion) ToIamActionControlTemplateVersionOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlTemplateVersionOutput)
 }
 
-// IamActionControlTemplateVersionArrayInput is an input type that accepts IamActionControlTemplateVersionArray and IamActionControlTemplateVersionArrayOutput values.
-// You can construct a concrete instance of `IamActionControlTemplateVersionArrayInput` via:
-//
-//	IamActionControlTemplateVersionArray{ IamActionControlTemplateVersionArgs{...} }
-type IamActionControlTemplateVersionArrayInput interface {
-	pulumi.Input
-
-	ToIamActionControlTemplateVersionArrayOutput() IamActionControlTemplateVersionArrayOutput
-	ToIamActionControlTemplateVersionArrayOutputWithContext(context.Context) IamActionControlTemplateVersionArrayOutput
-}
-
-type IamActionControlTemplateVersionArray []IamActionControlTemplateVersionInput
-
-func (IamActionControlTemplateVersionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamActionControlTemplateVersion)(nil)).Elem()
-}
-
-func (i IamActionControlTemplateVersionArray) ToIamActionControlTemplateVersionArrayOutput() IamActionControlTemplateVersionArrayOutput {
-	return i.ToIamActionControlTemplateVersionArrayOutputWithContext(context.Background())
-}
-
-func (i IamActionControlTemplateVersionArray) ToIamActionControlTemplateVersionArrayOutputWithContext(ctx context.Context) IamActionControlTemplateVersionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlTemplateVersionArrayOutput)
-}
-
-// IamActionControlTemplateVersionMapInput is an input type that accepts IamActionControlTemplateVersionMap and IamActionControlTemplateVersionMapOutput values.
-// You can construct a concrete instance of `IamActionControlTemplateVersionMapInput` via:
-//
-//	IamActionControlTemplateVersionMap{ "key": IamActionControlTemplateVersionArgs{...} }
-type IamActionControlTemplateVersionMapInput interface {
-	pulumi.Input
-
-	ToIamActionControlTemplateVersionMapOutput() IamActionControlTemplateVersionMapOutput
-	ToIamActionControlTemplateVersionMapOutputWithContext(context.Context) IamActionControlTemplateVersionMapOutput
-}
-
-type IamActionControlTemplateVersionMap map[string]IamActionControlTemplateVersionInput
-
-func (IamActionControlTemplateVersionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamActionControlTemplateVersion)(nil)).Elem()
-}
-
-func (i IamActionControlTemplateVersionMap) ToIamActionControlTemplateVersionMapOutput() IamActionControlTemplateVersionMapOutput {
-	return i.ToIamActionControlTemplateVersionMapOutputWithContext(context.Background())
-}
-
-func (i IamActionControlTemplateVersionMap) ToIamActionControlTemplateVersionMapOutputWithContext(ctx context.Context) IamActionControlTemplateVersionMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamActionControlTemplateVersionMapOutput)
-}
-
 type IamActionControlTemplateVersionOutput struct{ *pulumi.OutputState }
 
 func (IamActionControlTemplateVersionOutput) ElementType() reflect.Type {
@@ -307,51 +257,7 @@ func (o IamActionControlTemplateVersionOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamActionControlTemplateVersion) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamActionControlTemplateVersionArrayOutput struct{ *pulumi.OutputState }
-
-func (IamActionControlTemplateVersionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamActionControlTemplateVersion)(nil)).Elem()
-}
-
-func (o IamActionControlTemplateVersionArrayOutput) ToIamActionControlTemplateVersionArrayOutput() IamActionControlTemplateVersionArrayOutput {
-	return o
-}
-
-func (o IamActionControlTemplateVersionArrayOutput) ToIamActionControlTemplateVersionArrayOutputWithContext(ctx context.Context) IamActionControlTemplateVersionArrayOutput {
-	return o
-}
-
-func (o IamActionControlTemplateVersionArrayOutput) Index(i pulumi.IntInput) IamActionControlTemplateVersionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamActionControlTemplateVersion {
-		return vs[0].([]*IamActionControlTemplateVersion)[vs[1].(int)]
-	}).(IamActionControlTemplateVersionOutput)
-}
-
-type IamActionControlTemplateVersionMapOutput struct{ *pulumi.OutputState }
-
-func (IamActionControlTemplateVersionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamActionControlTemplateVersion)(nil)).Elem()
-}
-
-func (o IamActionControlTemplateVersionMapOutput) ToIamActionControlTemplateVersionMapOutput() IamActionControlTemplateVersionMapOutput {
-	return o
-}
-
-func (o IamActionControlTemplateVersionMapOutput) ToIamActionControlTemplateVersionMapOutputWithContext(ctx context.Context) IamActionControlTemplateVersionMapOutput {
-	return o
-}
-
-func (o IamActionControlTemplateVersionMapOutput) MapIndex(k pulumi.StringInput) IamActionControlTemplateVersionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamActionControlTemplateVersion {
-		return vs[0].(map[string]*IamActionControlTemplateVersion)[vs[1].(string)]
-	}).(IamActionControlTemplateVersionOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlTemplateVersionInput)(nil)).Elem(), &IamActionControlTemplateVersion{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlTemplateVersionArrayInput)(nil)).Elem(), IamActionControlTemplateVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamActionControlTemplateVersionMapInput)(nil)).Elem(), IamActionControlTemplateVersionMap{})
 	pulumi.RegisterOutputType(IamActionControlTemplateVersionOutput{})
-	pulumi.RegisterOutputType(IamActionControlTemplateVersionArrayOutput{})
-	pulumi.RegisterOutputType(IamActionControlTemplateVersionMapOutput{})
 }

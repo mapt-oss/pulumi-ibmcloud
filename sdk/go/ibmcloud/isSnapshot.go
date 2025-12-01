@@ -271,56 +271,6 @@ func (i *IsSnapshot) ToIsSnapshotOutputWithContext(ctx context.Context) IsSnapsh
 	return pulumi.ToOutputWithContext(ctx, i).(IsSnapshotOutput)
 }
 
-// IsSnapshotArrayInput is an input type that accepts IsSnapshotArray and IsSnapshotArrayOutput values.
-// You can construct a concrete instance of `IsSnapshotArrayInput` via:
-//
-//	IsSnapshotArray{ IsSnapshotArgs{...} }
-type IsSnapshotArrayInput interface {
-	pulumi.Input
-
-	ToIsSnapshotArrayOutput() IsSnapshotArrayOutput
-	ToIsSnapshotArrayOutputWithContext(context.Context) IsSnapshotArrayOutput
-}
-
-type IsSnapshotArray []IsSnapshotInput
-
-func (IsSnapshotArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSnapshot)(nil)).Elem()
-}
-
-func (i IsSnapshotArray) ToIsSnapshotArrayOutput() IsSnapshotArrayOutput {
-	return i.ToIsSnapshotArrayOutputWithContext(context.Background())
-}
-
-func (i IsSnapshotArray) ToIsSnapshotArrayOutputWithContext(ctx context.Context) IsSnapshotArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSnapshotArrayOutput)
-}
-
-// IsSnapshotMapInput is an input type that accepts IsSnapshotMap and IsSnapshotMapOutput values.
-// You can construct a concrete instance of `IsSnapshotMapInput` via:
-//
-//	IsSnapshotMap{ "key": IsSnapshotArgs{...} }
-type IsSnapshotMapInput interface {
-	pulumi.Input
-
-	ToIsSnapshotMapOutput() IsSnapshotMapOutput
-	ToIsSnapshotMapOutputWithContext(context.Context) IsSnapshotMapOutput
-}
-
-type IsSnapshotMap map[string]IsSnapshotInput
-
-func (IsSnapshotMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSnapshot)(nil)).Elem()
-}
-
-func (i IsSnapshotMap) ToIsSnapshotMapOutput() IsSnapshotMapOutput {
-	return i.ToIsSnapshotMapOutputWithContext(context.Background())
-}
-
-func (i IsSnapshotMap) ToIsSnapshotMapOutputWithContext(ctx context.Context) IsSnapshotMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSnapshotMapOutput)
-}
-
 type IsSnapshotOutput struct{ *pulumi.OutputState }
 
 func (IsSnapshotOutput) ElementType() reflect.Type {
@@ -460,51 +410,7 @@ func (o IsSnapshotOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IsSnapshot) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
-type IsSnapshotArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSnapshotArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSnapshot)(nil)).Elem()
-}
-
-func (o IsSnapshotArrayOutput) ToIsSnapshotArrayOutput() IsSnapshotArrayOutput {
-	return o
-}
-
-func (o IsSnapshotArrayOutput) ToIsSnapshotArrayOutputWithContext(ctx context.Context) IsSnapshotArrayOutput {
-	return o
-}
-
-func (o IsSnapshotArrayOutput) Index(i pulumi.IntInput) IsSnapshotOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSnapshot {
-		return vs[0].([]*IsSnapshot)[vs[1].(int)]
-	}).(IsSnapshotOutput)
-}
-
-type IsSnapshotMapOutput struct{ *pulumi.OutputState }
-
-func (IsSnapshotMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSnapshot)(nil)).Elem()
-}
-
-func (o IsSnapshotMapOutput) ToIsSnapshotMapOutput() IsSnapshotMapOutput {
-	return o
-}
-
-func (o IsSnapshotMapOutput) ToIsSnapshotMapOutputWithContext(ctx context.Context) IsSnapshotMapOutput {
-	return o
-}
-
-func (o IsSnapshotMapOutput) MapIndex(k pulumi.StringInput) IsSnapshotOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSnapshot {
-		return vs[0].(map[string]*IsSnapshot)[vs[1].(string)]
-	}).(IsSnapshotOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSnapshotInput)(nil)).Elem(), &IsSnapshot{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSnapshotArrayInput)(nil)).Elem(), IsSnapshotArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSnapshotMapInput)(nil)).Elem(), IsSnapshotMap{})
 	pulumi.RegisterOutputType(IsSnapshotOutput{})
-	pulumi.RegisterOutputType(IsSnapshotArrayOutput{})
-	pulumi.RegisterOutputType(IsSnapshotMapOutput{})
 }

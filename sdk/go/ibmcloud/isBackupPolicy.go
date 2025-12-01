@@ -220,56 +220,6 @@ func (i *IsBackupPolicy) ToIsBackupPolicyOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(IsBackupPolicyOutput)
 }
 
-// IsBackupPolicyArrayInput is an input type that accepts IsBackupPolicyArray and IsBackupPolicyArrayOutput values.
-// You can construct a concrete instance of `IsBackupPolicyArrayInput` via:
-//
-//	IsBackupPolicyArray{ IsBackupPolicyArgs{...} }
-type IsBackupPolicyArrayInput interface {
-	pulumi.Input
-
-	ToIsBackupPolicyArrayOutput() IsBackupPolicyArrayOutput
-	ToIsBackupPolicyArrayOutputWithContext(context.Context) IsBackupPolicyArrayOutput
-}
-
-type IsBackupPolicyArray []IsBackupPolicyInput
-
-func (IsBackupPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBackupPolicy)(nil)).Elem()
-}
-
-func (i IsBackupPolicyArray) ToIsBackupPolicyArrayOutput() IsBackupPolicyArrayOutput {
-	return i.ToIsBackupPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IsBackupPolicyArray) ToIsBackupPolicyArrayOutputWithContext(ctx context.Context) IsBackupPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBackupPolicyArrayOutput)
-}
-
-// IsBackupPolicyMapInput is an input type that accepts IsBackupPolicyMap and IsBackupPolicyMapOutput values.
-// You can construct a concrete instance of `IsBackupPolicyMapInput` via:
-//
-//	IsBackupPolicyMap{ "key": IsBackupPolicyArgs{...} }
-type IsBackupPolicyMapInput interface {
-	pulumi.Input
-
-	ToIsBackupPolicyMapOutput() IsBackupPolicyMapOutput
-	ToIsBackupPolicyMapOutputWithContext(context.Context) IsBackupPolicyMapOutput
-}
-
-type IsBackupPolicyMap map[string]IsBackupPolicyInput
-
-func (IsBackupPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBackupPolicy)(nil)).Elem()
-}
-
-func (i IsBackupPolicyMap) ToIsBackupPolicyMapOutput() IsBackupPolicyMapOutput {
-	return i.ToIsBackupPolicyMapOutputWithContext(context.Background())
-}
-
-func (i IsBackupPolicyMap) ToIsBackupPolicyMapOutputWithContext(ctx context.Context) IsBackupPolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBackupPolicyMapOutput)
-}
-
 type IsBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (IsBackupPolicyOutput) ElementType() reflect.Type {
@@ -365,51 +315,7 @@ func (o IsBackupPolicyOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsBackupPolicy) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IsBackupPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IsBackupPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBackupPolicy)(nil)).Elem()
-}
-
-func (o IsBackupPolicyArrayOutput) ToIsBackupPolicyArrayOutput() IsBackupPolicyArrayOutput {
-	return o
-}
-
-func (o IsBackupPolicyArrayOutput) ToIsBackupPolicyArrayOutputWithContext(ctx context.Context) IsBackupPolicyArrayOutput {
-	return o
-}
-
-func (o IsBackupPolicyArrayOutput) Index(i pulumi.IntInput) IsBackupPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsBackupPolicy {
-		return vs[0].([]*IsBackupPolicy)[vs[1].(int)]
-	}).(IsBackupPolicyOutput)
-}
-
-type IsBackupPolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IsBackupPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBackupPolicy)(nil)).Elem()
-}
-
-func (o IsBackupPolicyMapOutput) ToIsBackupPolicyMapOutput() IsBackupPolicyMapOutput {
-	return o
-}
-
-func (o IsBackupPolicyMapOutput) ToIsBackupPolicyMapOutputWithContext(ctx context.Context) IsBackupPolicyMapOutput {
-	return o
-}
-
-func (o IsBackupPolicyMapOutput) MapIndex(k pulumi.StringInput) IsBackupPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsBackupPolicy {
-		return vs[0].(map[string]*IsBackupPolicy)[vs[1].(string)]
-	}).(IsBackupPolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsBackupPolicyInput)(nil)).Elem(), &IsBackupPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBackupPolicyArrayInput)(nil)).Elem(), IsBackupPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBackupPolicyMapInput)(nil)).Elem(), IsBackupPolicyMap{})
 	pulumi.RegisterOutputType(IsBackupPolicyOutput{})
-	pulumi.RegisterOutputType(IsBackupPolicyArrayOutput{})
-	pulumi.RegisterOutputType(IsBackupPolicyMapOutput{})
 }

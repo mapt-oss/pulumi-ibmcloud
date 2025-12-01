@@ -142,56 +142,6 @@ func (i *IsVirtualNetworkInterfaceFloatingIp) ToIsVirtualNetworkInterfaceFloatin
 	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualNetworkInterfaceFloatingIpOutput)
 }
 
-// IsVirtualNetworkInterfaceFloatingIpArrayInput is an input type that accepts IsVirtualNetworkInterfaceFloatingIpArray and IsVirtualNetworkInterfaceFloatingIpArrayOutput values.
-// You can construct a concrete instance of `IsVirtualNetworkInterfaceFloatingIpArrayInput` via:
-//
-//	IsVirtualNetworkInterfaceFloatingIpArray{ IsVirtualNetworkInterfaceFloatingIpArgs{...} }
-type IsVirtualNetworkInterfaceFloatingIpArrayInput interface {
-	pulumi.Input
-
-	ToIsVirtualNetworkInterfaceFloatingIpArrayOutput() IsVirtualNetworkInterfaceFloatingIpArrayOutput
-	ToIsVirtualNetworkInterfaceFloatingIpArrayOutputWithContext(context.Context) IsVirtualNetworkInterfaceFloatingIpArrayOutput
-}
-
-type IsVirtualNetworkInterfaceFloatingIpArray []IsVirtualNetworkInterfaceFloatingIpInput
-
-func (IsVirtualNetworkInterfaceFloatingIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVirtualNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (i IsVirtualNetworkInterfaceFloatingIpArray) ToIsVirtualNetworkInterfaceFloatingIpArrayOutput() IsVirtualNetworkInterfaceFloatingIpArrayOutput {
-	return i.ToIsVirtualNetworkInterfaceFloatingIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsVirtualNetworkInterfaceFloatingIpArray) ToIsVirtualNetworkInterfaceFloatingIpArrayOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceFloatingIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualNetworkInterfaceFloatingIpArrayOutput)
-}
-
-// IsVirtualNetworkInterfaceFloatingIpMapInput is an input type that accepts IsVirtualNetworkInterfaceFloatingIpMap and IsVirtualNetworkInterfaceFloatingIpMapOutput values.
-// You can construct a concrete instance of `IsVirtualNetworkInterfaceFloatingIpMapInput` via:
-//
-//	IsVirtualNetworkInterfaceFloatingIpMap{ "key": IsVirtualNetworkInterfaceFloatingIpArgs{...} }
-type IsVirtualNetworkInterfaceFloatingIpMapInput interface {
-	pulumi.Input
-
-	ToIsVirtualNetworkInterfaceFloatingIpMapOutput() IsVirtualNetworkInterfaceFloatingIpMapOutput
-	ToIsVirtualNetworkInterfaceFloatingIpMapOutputWithContext(context.Context) IsVirtualNetworkInterfaceFloatingIpMapOutput
-}
-
-type IsVirtualNetworkInterfaceFloatingIpMap map[string]IsVirtualNetworkInterfaceFloatingIpInput
-
-func (IsVirtualNetworkInterfaceFloatingIpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVirtualNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (i IsVirtualNetworkInterfaceFloatingIpMap) ToIsVirtualNetworkInterfaceFloatingIpMapOutput() IsVirtualNetworkInterfaceFloatingIpMapOutput {
-	return i.ToIsVirtualNetworkInterfaceFloatingIpMapOutputWithContext(context.Background())
-}
-
-func (i IsVirtualNetworkInterfaceFloatingIpMap) ToIsVirtualNetworkInterfaceFloatingIpMapOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceFloatingIpMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualNetworkInterfaceFloatingIpMapOutput)
-}
-
 type IsVirtualNetworkInterfaceFloatingIpOutput struct{ *pulumi.OutputState }
 
 func (IsVirtualNetworkInterfaceFloatingIpOutput) ElementType() reflect.Type {
@@ -243,51 +193,7 @@ func (o IsVirtualNetworkInterfaceFloatingIpOutput) VirtualNetworkInterface() pul
 	return o.ApplyT(func(v *IsVirtualNetworkInterfaceFloatingIp) pulumi.StringOutput { return v.VirtualNetworkInterface }).(pulumi.StringOutput)
 }
 
-type IsVirtualNetworkInterfaceFloatingIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVirtualNetworkInterfaceFloatingIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVirtualNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (o IsVirtualNetworkInterfaceFloatingIpArrayOutput) ToIsVirtualNetworkInterfaceFloatingIpArrayOutput() IsVirtualNetworkInterfaceFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceFloatingIpArrayOutput) ToIsVirtualNetworkInterfaceFloatingIpArrayOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceFloatingIpArrayOutput) Index(i pulumi.IntInput) IsVirtualNetworkInterfaceFloatingIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVirtualNetworkInterfaceFloatingIp {
-		return vs[0].([]*IsVirtualNetworkInterfaceFloatingIp)[vs[1].(int)]
-	}).(IsVirtualNetworkInterfaceFloatingIpOutput)
-}
-
-type IsVirtualNetworkInterfaceFloatingIpMapOutput struct{ *pulumi.OutputState }
-
-func (IsVirtualNetworkInterfaceFloatingIpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVirtualNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (o IsVirtualNetworkInterfaceFloatingIpMapOutput) ToIsVirtualNetworkInterfaceFloatingIpMapOutput() IsVirtualNetworkInterfaceFloatingIpMapOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceFloatingIpMapOutput) ToIsVirtualNetworkInterfaceFloatingIpMapOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceFloatingIpMapOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceFloatingIpMapOutput) MapIndex(k pulumi.StringInput) IsVirtualNetworkInterfaceFloatingIpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVirtualNetworkInterfaceFloatingIp {
-		return vs[0].(map[string]*IsVirtualNetworkInterfaceFloatingIp)[vs[1].(string)]
-	}).(IsVirtualNetworkInterfaceFloatingIpOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualNetworkInterfaceFloatingIpInput)(nil)).Elem(), &IsVirtualNetworkInterfaceFloatingIp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualNetworkInterfaceFloatingIpArrayInput)(nil)).Elem(), IsVirtualNetworkInterfaceFloatingIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualNetworkInterfaceFloatingIpMapInput)(nil)).Elem(), IsVirtualNetworkInterfaceFloatingIpMap{})
 	pulumi.RegisterOutputType(IsVirtualNetworkInterfaceFloatingIpOutput{})
-	pulumi.RegisterOutputType(IsVirtualNetworkInterfaceFloatingIpArrayOutput{})
-	pulumi.RegisterOutputType(IsVirtualNetworkInterfaceFloatingIpMapOutput{})
 }

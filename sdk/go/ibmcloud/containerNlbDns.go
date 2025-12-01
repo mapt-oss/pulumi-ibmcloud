@@ -143,56 +143,6 @@ func (i *ContainerNlbDns) ToContainerNlbDnsOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerNlbDnsOutput)
 }
 
-// ContainerNlbDnsArrayInput is an input type that accepts ContainerNlbDnsArray and ContainerNlbDnsArrayOutput values.
-// You can construct a concrete instance of `ContainerNlbDnsArrayInput` via:
-//
-//	ContainerNlbDnsArray{ ContainerNlbDnsArgs{...} }
-type ContainerNlbDnsArrayInput interface {
-	pulumi.Input
-
-	ToContainerNlbDnsArrayOutput() ContainerNlbDnsArrayOutput
-	ToContainerNlbDnsArrayOutputWithContext(context.Context) ContainerNlbDnsArrayOutput
-}
-
-type ContainerNlbDnsArray []ContainerNlbDnsInput
-
-func (ContainerNlbDnsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerNlbDns)(nil)).Elem()
-}
-
-func (i ContainerNlbDnsArray) ToContainerNlbDnsArrayOutput() ContainerNlbDnsArrayOutput {
-	return i.ToContainerNlbDnsArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerNlbDnsArray) ToContainerNlbDnsArrayOutputWithContext(ctx context.Context) ContainerNlbDnsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerNlbDnsArrayOutput)
-}
-
-// ContainerNlbDnsMapInput is an input type that accepts ContainerNlbDnsMap and ContainerNlbDnsMapOutput values.
-// You can construct a concrete instance of `ContainerNlbDnsMapInput` via:
-//
-//	ContainerNlbDnsMap{ "key": ContainerNlbDnsArgs{...} }
-type ContainerNlbDnsMapInput interface {
-	pulumi.Input
-
-	ToContainerNlbDnsMapOutput() ContainerNlbDnsMapOutput
-	ToContainerNlbDnsMapOutputWithContext(context.Context) ContainerNlbDnsMapOutput
-}
-
-type ContainerNlbDnsMap map[string]ContainerNlbDnsInput
-
-func (ContainerNlbDnsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerNlbDns)(nil)).Elem()
-}
-
-func (i ContainerNlbDnsMap) ToContainerNlbDnsMapOutput() ContainerNlbDnsMapOutput {
-	return i.ToContainerNlbDnsMapOutputWithContext(context.Background())
-}
-
-func (i ContainerNlbDnsMap) ToContainerNlbDnsMapOutputWithContext(ctx context.Context) ContainerNlbDnsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerNlbDnsMapOutput)
-}
-
 type ContainerNlbDnsOutput struct{ *pulumi.OutputState }
 
 func (ContainerNlbDnsOutput) ElementType() reflect.Type {
@@ -249,51 +199,7 @@ func (o ContainerNlbDnsOutput) SecretNamespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerNlbDns) pulumi.StringOutput { return v.SecretNamespace }).(pulumi.StringOutput)
 }
 
-type ContainerNlbDnsArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerNlbDnsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerNlbDns)(nil)).Elem()
-}
-
-func (o ContainerNlbDnsArrayOutput) ToContainerNlbDnsArrayOutput() ContainerNlbDnsArrayOutput {
-	return o
-}
-
-func (o ContainerNlbDnsArrayOutput) ToContainerNlbDnsArrayOutputWithContext(ctx context.Context) ContainerNlbDnsArrayOutput {
-	return o
-}
-
-func (o ContainerNlbDnsArrayOutput) Index(i pulumi.IntInput) ContainerNlbDnsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerNlbDns {
-		return vs[0].([]*ContainerNlbDns)[vs[1].(int)]
-	}).(ContainerNlbDnsOutput)
-}
-
-type ContainerNlbDnsMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerNlbDnsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerNlbDns)(nil)).Elem()
-}
-
-func (o ContainerNlbDnsMapOutput) ToContainerNlbDnsMapOutput() ContainerNlbDnsMapOutput {
-	return o
-}
-
-func (o ContainerNlbDnsMapOutput) ToContainerNlbDnsMapOutputWithContext(ctx context.Context) ContainerNlbDnsMapOutput {
-	return o
-}
-
-func (o ContainerNlbDnsMapOutput) MapIndex(k pulumi.StringInput) ContainerNlbDnsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerNlbDns {
-		return vs[0].(map[string]*ContainerNlbDns)[vs[1].(string)]
-	}).(ContainerNlbDnsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerNlbDnsInput)(nil)).Elem(), &ContainerNlbDns{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerNlbDnsArrayInput)(nil)).Elem(), ContainerNlbDnsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerNlbDnsMapInput)(nil)).Elem(), ContainerNlbDnsMap{})
 	pulumi.RegisterOutputType(ContainerNlbDnsOutput{})
-	pulumi.RegisterOutputType(ContainerNlbDnsArrayOutput{})
-	pulumi.RegisterOutputType(ContainerNlbDnsMapOutput{})
 }

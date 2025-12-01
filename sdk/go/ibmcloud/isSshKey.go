@@ -203,56 +203,6 @@ func (i *IsSshKey) ToIsSshKeyOutputWithContext(ctx context.Context) IsSshKeyOutp
 	return pulumi.ToOutputWithContext(ctx, i).(IsSshKeyOutput)
 }
 
-// IsSshKeyArrayInput is an input type that accepts IsSshKeyArray and IsSshKeyArrayOutput values.
-// You can construct a concrete instance of `IsSshKeyArrayInput` via:
-//
-//	IsSshKeyArray{ IsSshKeyArgs{...} }
-type IsSshKeyArrayInput interface {
-	pulumi.Input
-
-	ToIsSshKeyArrayOutput() IsSshKeyArrayOutput
-	ToIsSshKeyArrayOutputWithContext(context.Context) IsSshKeyArrayOutput
-}
-
-type IsSshKeyArray []IsSshKeyInput
-
-func (IsSshKeyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSshKey)(nil)).Elem()
-}
-
-func (i IsSshKeyArray) ToIsSshKeyArrayOutput() IsSshKeyArrayOutput {
-	return i.ToIsSshKeyArrayOutputWithContext(context.Background())
-}
-
-func (i IsSshKeyArray) ToIsSshKeyArrayOutputWithContext(ctx context.Context) IsSshKeyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSshKeyArrayOutput)
-}
-
-// IsSshKeyMapInput is an input type that accepts IsSshKeyMap and IsSshKeyMapOutput values.
-// You can construct a concrete instance of `IsSshKeyMapInput` via:
-//
-//	IsSshKeyMap{ "key": IsSshKeyArgs{...} }
-type IsSshKeyMapInput interface {
-	pulumi.Input
-
-	ToIsSshKeyMapOutput() IsSshKeyMapOutput
-	ToIsSshKeyMapOutputWithContext(context.Context) IsSshKeyMapOutput
-}
-
-type IsSshKeyMap map[string]IsSshKeyInput
-
-func (IsSshKeyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSshKey)(nil)).Elem()
-}
-
-func (i IsSshKeyMap) ToIsSshKeyMapOutput() IsSshKeyMapOutput {
-	return i.ToIsSshKeyMapOutputWithContext(context.Background())
-}
-
-func (i IsSshKeyMap) ToIsSshKeyMapOutputWithContext(ctx context.Context) IsSshKeyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSshKeyMapOutput)
-}
-
 type IsSshKeyOutput struct{ *pulumi.OutputState }
 
 func (IsSshKeyOutput) ElementType() reflect.Type {
@@ -342,51 +292,7 @@ func (o IsSshKeyOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsSshKey) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-type IsSshKeyArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSshKeyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSshKey)(nil)).Elem()
-}
-
-func (o IsSshKeyArrayOutput) ToIsSshKeyArrayOutput() IsSshKeyArrayOutput {
-	return o
-}
-
-func (o IsSshKeyArrayOutput) ToIsSshKeyArrayOutputWithContext(ctx context.Context) IsSshKeyArrayOutput {
-	return o
-}
-
-func (o IsSshKeyArrayOutput) Index(i pulumi.IntInput) IsSshKeyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSshKey {
-		return vs[0].([]*IsSshKey)[vs[1].(int)]
-	}).(IsSshKeyOutput)
-}
-
-type IsSshKeyMapOutput struct{ *pulumi.OutputState }
-
-func (IsSshKeyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSshKey)(nil)).Elem()
-}
-
-func (o IsSshKeyMapOutput) ToIsSshKeyMapOutput() IsSshKeyMapOutput {
-	return o
-}
-
-func (o IsSshKeyMapOutput) ToIsSshKeyMapOutputWithContext(ctx context.Context) IsSshKeyMapOutput {
-	return o
-}
-
-func (o IsSshKeyMapOutput) MapIndex(k pulumi.StringInput) IsSshKeyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSshKey {
-		return vs[0].(map[string]*IsSshKey)[vs[1].(string)]
-	}).(IsSshKeyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSshKeyInput)(nil)).Elem(), &IsSshKey{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSshKeyArrayInput)(nil)).Elem(), IsSshKeyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSshKeyMapInput)(nil)).Elem(), IsSshKeyMap{})
 	pulumi.RegisterOutputType(IsSshKeyOutput{})
-	pulumi.RegisterOutputType(IsSshKeyArrayOutput{})
-	pulumi.RegisterOutputType(IsSshKeyMapOutput{})
 }

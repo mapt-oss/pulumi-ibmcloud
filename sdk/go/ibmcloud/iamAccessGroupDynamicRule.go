@@ -154,56 +154,6 @@ func (i *IamAccessGroupDynamicRule) ToIamAccessGroupDynamicRuleOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupDynamicRuleOutput)
 }
 
-// IamAccessGroupDynamicRuleArrayInput is an input type that accepts IamAccessGroupDynamicRuleArray and IamAccessGroupDynamicRuleArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupDynamicRuleArrayInput` via:
-//
-//	IamAccessGroupDynamicRuleArray{ IamAccessGroupDynamicRuleArgs{...} }
-type IamAccessGroupDynamicRuleArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupDynamicRuleArrayOutput() IamAccessGroupDynamicRuleArrayOutput
-	ToIamAccessGroupDynamicRuleArrayOutputWithContext(context.Context) IamAccessGroupDynamicRuleArrayOutput
-}
-
-type IamAccessGroupDynamicRuleArray []IamAccessGroupDynamicRuleInput
-
-func (IamAccessGroupDynamicRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupDynamicRule)(nil)).Elem()
-}
-
-func (i IamAccessGroupDynamicRuleArray) ToIamAccessGroupDynamicRuleArrayOutput() IamAccessGroupDynamicRuleArrayOutput {
-	return i.ToIamAccessGroupDynamicRuleArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupDynamicRuleArray) ToIamAccessGroupDynamicRuleArrayOutputWithContext(ctx context.Context) IamAccessGroupDynamicRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupDynamicRuleArrayOutput)
-}
-
-// IamAccessGroupDynamicRuleMapInput is an input type that accepts IamAccessGroupDynamicRuleMap and IamAccessGroupDynamicRuleMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupDynamicRuleMapInput` via:
-//
-//	IamAccessGroupDynamicRuleMap{ "key": IamAccessGroupDynamicRuleArgs{...} }
-type IamAccessGroupDynamicRuleMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupDynamicRuleMapOutput() IamAccessGroupDynamicRuleMapOutput
-	ToIamAccessGroupDynamicRuleMapOutputWithContext(context.Context) IamAccessGroupDynamicRuleMapOutput
-}
-
-type IamAccessGroupDynamicRuleMap map[string]IamAccessGroupDynamicRuleInput
-
-func (IamAccessGroupDynamicRuleMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupDynamicRule)(nil)).Elem()
-}
-
-func (i IamAccessGroupDynamicRuleMap) ToIamAccessGroupDynamicRuleMapOutput() IamAccessGroupDynamicRuleMapOutput {
-	return i.ToIamAccessGroupDynamicRuleMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupDynamicRuleMap) ToIamAccessGroupDynamicRuleMapOutputWithContext(ctx context.Context) IamAccessGroupDynamicRuleMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupDynamicRuleMapOutput)
-}
-
 type IamAccessGroupDynamicRuleOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupDynamicRuleOutput) ElementType() reflect.Type {
@@ -248,51 +198,7 @@ func (o IamAccessGroupDynamicRuleOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamAccessGroupDynamicRule) pulumi.StringOutput { return v.RuleId }).(pulumi.StringOutput)
 }
 
-type IamAccessGroupDynamicRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupDynamicRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupDynamicRule)(nil)).Elem()
-}
-
-func (o IamAccessGroupDynamicRuleArrayOutput) ToIamAccessGroupDynamicRuleArrayOutput() IamAccessGroupDynamicRuleArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupDynamicRuleArrayOutput) ToIamAccessGroupDynamicRuleArrayOutputWithContext(ctx context.Context) IamAccessGroupDynamicRuleArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupDynamicRuleArrayOutput) Index(i pulumi.IntInput) IamAccessGroupDynamicRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroupDynamicRule {
-		return vs[0].([]*IamAccessGroupDynamicRule)[vs[1].(int)]
-	}).(IamAccessGroupDynamicRuleOutput)
-}
-
-type IamAccessGroupDynamicRuleMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupDynamicRuleMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupDynamicRule)(nil)).Elem()
-}
-
-func (o IamAccessGroupDynamicRuleMapOutput) ToIamAccessGroupDynamicRuleMapOutput() IamAccessGroupDynamicRuleMapOutput {
-	return o
-}
-
-func (o IamAccessGroupDynamicRuleMapOutput) ToIamAccessGroupDynamicRuleMapOutputWithContext(ctx context.Context) IamAccessGroupDynamicRuleMapOutput {
-	return o
-}
-
-func (o IamAccessGroupDynamicRuleMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupDynamicRuleOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroupDynamicRule {
-		return vs[0].(map[string]*IamAccessGroupDynamicRule)[vs[1].(string)]
-	}).(IamAccessGroupDynamicRuleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupDynamicRuleInput)(nil)).Elem(), &IamAccessGroupDynamicRule{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupDynamicRuleArrayInput)(nil)).Elem(), IamAccessGroupDynamicRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupDynamicRuleMapInput)(nil)).Elem(), IamAccessGroupDynamicRuleMap{})
 	pulumi.RegisterOutputType(IamAccessGroupDynamicRuleOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupDynamicRuleArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupDynamicRuleMapOutput{})
 }

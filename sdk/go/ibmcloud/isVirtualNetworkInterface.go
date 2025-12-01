@@ -259,56 +259,6 @@ func (i *IsVirtualNetworkInterface) ToIsVirtualNetworkInterfaceOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualNetworkInterfaceOutput)
 }
 
-// IsVirtualNetworkInterfaceArrayInput is an input type that accepts IsVirtualNetworkInterfaceArray and IsVirtualNetworkInterfaceArrayOutput values.
-// You can construct a concrete instance of `IsVirtualNetworkInterfaceArrayInput` via:
-//
-//	IsVirtualNetworkInterfaceArray{ IsVirtualNetworkInterfaceArgs{...} }
-type IsVirtualNetworkInterfaceArrayInput interface {
-	pulumi.Input
-
-	ToIsVirtualNetworkInterfaceArrayOutput() IsVirtualNetworkInterfaceArrayOutput
-	ToIsVirtualNetworkInterfaceArrayOutputWithContext(context.Context) IsVirtualNetworkInterfaceArrayOutput
-}
-
-type IsVirtualNetworkInterfaceArray []IsVirtualNetworkInterfaceInput
-
-func (IsVirtualNetworkInterfaceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVirtualNetworkInterface)(nil)).Elem()
-}
-
-func (i IsVirtualNetworkInterfaceArray) ToIsVirtualNetworkInterfaceArrayOutput() IsVirtualNetworkInterfaceArrayOutput {
-	return i.ToIsVirtualNetworkInterfaceArrayOutputWithContext(context.Background())
-}
-
-func (i IsVirtualNetworkInterfaceArray) ToIsVirtualNetworkInterfaceArrayOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualNetworkInterfaceArrayOutput)
-}
-
-// IsVirtualNetworkInterfaceMapInput is an input type that accepts IsVirtualNetworkInterfaceMap and IsVirtualNetworkInterfaceMapOutput values.
-// You can construct a concrete instance of `IsVirtualNetworkInterfaceMapInput` via:
-//
-//	IsVirtualNetworkInterfaceMap{ "key": IsVirtualNetworkInterfaceArgs{...} }
-type IsVirtualNetworkInterfaceMapInput interface {
-	pulumi.Input
-
-	ToIsVirtualNetworkInterfaceMapOutput() IsVirtualNetworkInterfaceMapOutput
-	ToIsVirtualNetworkInterfaceMapOutputWithContext(context.Context) IsVirtualNetworkInterfaceMapOutput
-}
-
-type IsVirtualNetworkInterfaceMap map[string]IsVirtualNetworkInterfaceInput
-
-func (IsVirtualNetworkInterfaceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVirtualNetworkInterface)(nil)).Elem()
-}
-
-func (i IsVirtualNetworkInterfaceMap) ToIsVirtualNetworkInterfaceMapOutput() IsVirtualNetworkInterfaceMapOutput {
-	return i.ToIsVirtualNetworkInterfaceMapOutputWithContext(context.Background())
-}
-
-func (i IsVirtualNetworkInterfaceMap) ToIsVirtualNetworkInterfaceMapOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVirtualNetworkInterfaceMapOutput)
-}
-
 type IsVirtualNetworkInterfaceOutput struct{ *pulumi.OutputState }
 
 func (IsVirtualNetworkInterfaceOutput) ElementType() reflect.Type {
@@ -428,51 +378,7 @@ func (o IsVirtualNetworkInterfaceOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsVirtualNetworkInterface) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsVirtualNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVirtualNetworkInterfaceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVirtualNetworkInterface)(nil)).Elem()
-}
-
-func (o IsVirtualNetworkInterfaceArrayOutput) ToIsVirtualNetworkInterfaceArrayOutput() IsVirtualNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceArrayOutput) ToIsVirtualNetworkInterfaceArrayOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) IsVirtualNetworkInterfaceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVirtualNetworkInterface {
-		return vs[0].([]*IsVirtualNetworkInterface)[vs[1].(int)]
-	}).(IsVirtualNetworkInterfaceOutput)
-}
-
-type IsVirtualNetworkInterfaceMapOutput struct{ *pulumi.OutputState }
-
-func (IsVirtualNetworkInterfaceMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVirtualNetworkInterface)(nil)).Elem()
-}
-
-func (o IsVirtualNetworkInterfaceMapOutput) ToIsVirtualNetworkInterfaceMapOutput() IsVirtualNetworkInterfaceMapOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceMapOutput) ToIsVirtualNetworkInterfaceMapOutputWithContext(ctx context.Context) IsVirtualNetworkInterfaceMapOutput {
-	return o
-}
-
-func (o IsVirtualNetworkInterfaceMapOutput) MapIndex(k pulumi.StringInput) IsVirtualNetworkInterfaceOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVirtualNetworkInterface {
-		return vs[0].(map[string]*IsVirtualNetworkInterface)[vs[1].(string)]
-	}).(IsVirtualNetworkInterfaceOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualNetworkInterfaceInput)(nil)).Elem(), &IsVirtualNetworkInterface{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualNetworkInterfaceArrayInput)(nil)).Elem(), IsVirtualNetworkInterfaceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVirtualNetworkInterfaceMapInput)(nil)).Elem(), IsVirtualNetworkInterfaceMap{})
 	pulumi.RegisterOutputType(IsVirtualNetworkInterfaceOutput{})
-	pulumi.RegisterOutputType(IsVirtualNetworkInterfaceArrayOutput{})
-	pulumi.RegisterOutputType(IsVirtualNetworkInterfaceMapOutput{})
 }

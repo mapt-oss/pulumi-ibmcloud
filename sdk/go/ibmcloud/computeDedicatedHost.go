@@ -186,56 +186,6 @@ func (i *ComputeDedicatedHost) ToComputeDedicatedHostOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeDedicatedHostOutput)
 }
 
-// ComputeDedicatedHostArrayInput is an input type that accepts ComputeDedicatedHostArray and ComputeDedicatedHostArrayOutput values.
-// You can construct a concrete instance of `ComputeDedicatedHostArrayInput` via:
-//
-//	ComputeDedicatedHostArray{ ComputeDedicatedHostArgs{...} }
-type ComputeDedicatedHostArrayInput interface {
-	pulumi.Input
-
-	ToComputeDedicatedHostArrayOutput() ComputeDedicatedHostArrayOutput
-	ToComputeDedicatedHostArrayOutputWithContext(context.Context) ComputeDedicatedHostArrayOutput
-}
-
-type ComputeDedicatedHostArray []ComputeDedicatedHostInput
-
-func (ComputeDedicatedHostArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeDedicatedHost)(nil)).Elem()
-}
-
-func (i ComputeDedicatedHostArray) ToComputeDedicatedHostArrayOutput() ComputeDedicatedHostArrayOutput {
-	return i.ToComputeDedicatedHostArrayOutputWithContext(context.Background())
-}
-
-func (i ComputeDedicatedHostArray) ToComputeDedicatedHostArrayOutputWithContext(ctx context.Context) ComputeDedicatedHostArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeDedicatedHostArrayOutput)
-}
-
-// ComputeDedicatedHostMapInput is an input type that accepts ComputeDedicatedHostMap and ComputeDedicatedHostMapOutput values.
-// You can construct a concrete instance of `ComputeDedicatedHostMapInput` via:
-//
-//	ComputeDedicatedHostMap{ "key": ComputeDedicatedHostArgs{...} }
-type ComputeDedicatedHostMapInput interface {
-	pulumi.Input
-
-	ToComputeDedicatedHostMapOutput() ComputeDedicatedHostMapOutput
-	ToComputeDedicatedHostMapOutputWithContext(context.Context) ComputeDedicatedHostMapOutput
-}
-
-type ComputeDedicatedHostMap map[string]ComputeDedicatedHostInput
-
-func (ComputeDedicatedHostMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeDedicatedHost)(nil)).Elem()
-}
-
-func (i ComputeDedicatedHostMap) ToComputeDedicatedHostMapOutput() ComputeDedicatedHostMapOutput {
-	return i.ToComputeDedicatedHostMapOutputWithContext(context.Background())
-}
-
-func (i ComputeDedicatedHostMap) ToComputeDedicatedHostMapOutputWithContext(ctx context.Context) ComputeDedicatedHostMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ComputeDedicatedHostMapOutput)
-}
-
 type ComputeDedicatedHostOutput struct{ *pulumi.OutputState }
 
 func (ComputeDedicatedHostOutput) ElementType() reflect.Type {
@@ -303,51 +253,7 @@ func (o ComputeDedicatedHostOutput) WaitTimeMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ComputeDedicatedHost) pulumi.IntPtrOutput { return v.WaitTimeMinutes }).(pulumi.IntPtrOutput)
 }
 
-type ComputeDedicatedHostArrayOutput struct{ *pulumi.OutputState }
-
-func (ComputeDedicatedHostArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ComputeDedicatedHost)(nil)).Elem()
-}
-
-func (o ComputeDedicatedHostArrayOutput) ToComputeDedicatedHostArrayOutput() ComputeDedicatedHostArrayOutput {
-	return o
-}
-
-func (o ComputeDedicatedHostArrayOutput) ToComputeDedicatedHostArrayOutputWithContext(ctx context.Context) ComputeDedicatedHostArrayOutput {
-	return o
-}
-
-func (o ComputeDedicatedHostArrayOutput) Index(i pulumi.IntInput) ComputeDedicatedHostOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeDedicatedHost {
-		return vs[0].([]*ComputeDedicatedHost)[vs[1].(int)]
-	}).(ComputeDedicatedHostOutput)
-}
-
-type ComputeDedicatedHostMapOutput struct{ *pulumi.OutputState }
-
-func (ComputeDedicatedHostMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ComputeDedicatedHost)(nil)).Elem()
-}
-
-func (o ComputeDedicatedHostMapOutput) ToComputeDedicatedHostMapOutput() ComputeDedicatedHostMapOutput {
-	return o
-}
-
-func (o ComputeDedicatedHostMapOutput) ToComputeDedicatedHostMapOutputWithContext(ctx context.Context) ComputeDedicatedHostMapOutput {
-	return o
-}
-
-func (o ComputeDedicatedHostMapOutput) MapIndex(k pulumi.StringInput) ComputeDedicatedHostOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ComputeDedicatedHost {
-		return vs[0].(map[string]*ComputeDedicatedHost)[vs[1].(string)]
-	}).(ComputeDedicatedHostOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeDedicatedHostInput)(nil)).Elem(), &ComputeDedicatedHost{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeDedicatedHostArrayInput)(nil)).Elem(), ComputeDedicatedHostArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ComputeDedicatedHostMapInput)(nil)).Elem(), ComputeDedicatedHostMap{})
 	pulumi.RegisterOutputType(ComputeDedicatedHostOutput{})
-	pulumi.RegisterOutputType(ComputeDedicatedHostArrayOutput{})
-	pulumi.RegisterOutputType(ComputeDedicatedHostMapOutput{})
 }

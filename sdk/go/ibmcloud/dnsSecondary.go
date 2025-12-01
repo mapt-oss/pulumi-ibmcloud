@@ -147,56 +147,6 @@ func (i *DnsSecondary) ToDnsSecondaryOutputWithContext(ctx context.Context) DnsS
 	return pulumi.ToOutputWithContext(ctx, i).(DnsSecondaryOutput)
 }
 
-// DnsSecondaryArrayInput is an input type that accepts DnsSecondaryArray and DnsSecondaryArrayOutput values.
-// You can construct a concrete instance of `DnsSecondaryArrayInput` via:
-//
-//	DnsSecondaryArray{ DnsSecondaryArgs{...} }
-type DnsSecondaryArrayInput interface {
-	pulumi.Input
-
-	ToDnsSecondaryArrayOutput() DnsSecondaryArrayOutput
-	ToDnsSecondaryArrayOutputWithContext(context.Context) DnsSecondaryArrayOutput
-}
-
-type DnsSecondaryArray []DnsSecondaryInput
-
-func (DnsSecondaryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsSecondary)(nil)).Elem()
-}
-
-func (i DnsSecondaryArray) ToDnsSecondaryArrayOutput() DnsSecondaryArrayOutput {
-	return i.ToDnsSecondaryArrayOutputWithContext(context.Background())
-}
-
-func (i DnsSecondaryArray) ToDnsSecondaryArrayOutputWithContext(ctx context.Context) DnsSecondaryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsSecondaryArrayOutput)
-}
-
-// DnsSecondaryMapInput is an input type that accepts DnsSecondaryMap and DnsSecondaryMapOutput values.
-// You can construct a concrete instance of `DnsSecondaryMapInput` via:
-//
-//	DnsSecondaryMap{ "key": DnsSecondaryArgs{...} }
-type DnsSecondaryMapInput interface {
-	pulumi.Input
-
-	ToDnsSecondaryMapOutput() DnsSecondaryMapOutput
-	ToDnsSecondaryMapOutputWithContext(context.Context) DnsSecondaryMapOutput
-}
-
-type DnsSecondaryMap map[string]DnsSecondaryInput
-
-func (DnsSecondaryMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsSecondary)(nil)).Elem()
-}
-
-func (i DnsSecondaryMap) ToDnsSecondaryMapOutput() DnsSecondaryMapOutput {
-	return i.ToDnsSecondaryMapOutputWithContext(context.Background())
-}
-
-func (i DnsSecondaryMap) ToDnsSecondaryMapOutputWithContext(ctx context.Context) DnsSecondaryMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsSecondaryMapOutput)
-}
-
 type DnsSecondaryOutput struct{ *pulumi.OutputState }
 
 func (DnsSecondaryOutput) ElementType() reflect.Type {
@@ -241,51 +191,7 @@ func (o DnsSecondaryOutput) ZoneName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DnsSecondary) pulumi.StringOutput { return v.ZoneName }).(pulumi.StringOutput)
 }
 
-type DnsSecondaryArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsSecondaryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsSecondary)(nil)).Elem()
-}
-
-func (o DnsSecondaryArrayOutput) ToDnsSecondaryArrayOutput() DnsSecondaryArrayOutput {
-	return o
-}
-
-func (o DnsSecondaryArrayOutput) ToDnsSecondaryArrayOutputWithContext(ctx context.Context) DnsSecondaryArrayOutput {
-	return o
-}
-
-func (o DnsSecondaryArrayOutput) Index(i pulumi.IntInput) DnsSecondaryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsSecondary {
-		return vs[0].([]*DnsSecondary)[vs[1].(int)]
-	}).(DnsSecondaryOutput)
-}
-
-type DnsSecondaryMapOutput struct{ *pulumi.OutputState }
-
-func (DnsSecondaryMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsSecondary)(nil)).Elem()
-}
-
-func (o DnsSecondaryMapOutput) ToDnsSecondaryMapOutput() DnsSecondaryMapOutput {
-	return o
-}
-
-func (o DnsSecondaryMapOutput) ToDnsSecondaryMapOutputWithContext(ctx context.Context) DnsSecondaryMapOutput {
-	return o
-}
-
-func (o DnsSecondaryMapOutput) MapIndex(k pulumi.StringInput) DnsSecondaryOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsSecondary {
-		return vs[0].(map[string]*DnsSecondary)[vs[1].(string)]
-	}).(DnsSecondaryOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsSecondaryInput)(nil)).Elem(), &DnsSecondary{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsSecondaryArrayInput)(nil)).Elem(), DnsSecondaryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsSecondaryMapInput)(nil)).Elem(), DnsSecondaryMap{})
 	pulumi.RegisterOutputType(DnsSecondaryOutput{})
-	pulumi.RegisterOutputType(DnsSecondaryArrayOutput{})
-	pulumi.RegisterOutputType(DnsSecondaryMapOutput{})
 }

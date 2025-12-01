@@ -19,6 +19,7 @@ import (
 	"path"
 
 	ibmcloud "github.com/IBM-Cloud/terraform-provider-ibm/ibm/provider"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
@@ -101,7 +102,7 @@ func Provider() tfbridge.ProviderInfo {
 		// - "github.com/hashicorp/terraform-plugin-framework/provider".Provider (for plugin-framework)
 		//
 		//nolint:lll
-		P: shimv2.NewProvider(ibmcloud.Provider()),
+		// P is set later after filtering resources
 
 		Name:    "ibmcloud",
 		Version: version.Version,
@@ -133,7 +134,7 @@ func Provider() tfbridge.ProviderInfo {
 		// match the TF provider module's require directive, not any replace directives.
 		GitHubOrg:    "IBM-Cloud",
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
-		Config: map[string]*tfbridge.SchemaInfo{
+		Config:       map[string]*tfbridge.SchemaInfo{
 			// IBM Cloud provider configuration is automatically detected from the upstream provider
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
@@ -154,9 +155,9 @@ func Provider() tfbridge.ProviderInfo {
 				"go",
 				mainPkg,
 			),
-			// Opt in to all available code generation features.
-			GenerateResourceContainerTypes: true,
-			GenerateExtraInputTypes:        true,
+			// Reduce SDK size by disabling extra type generation.
+			GenerateResourceContainerTypes: false,
+			GenerateExtraInputTypes:        false,
 			// RespectSchemaVersion ensures the SDK is generated linking to the correct version of the provider.
 			RespectSchemaVersion: true,
 		},
@@ -170,6 +171,52 @@ func Provider() tfbridge.ProviderInfo {
 		},
 	}
 
+	// IMPORTANT: Filter resources BEFORE token computation to reduce SDK size
+	// This prevents OOM during builds by excluding unused resources
+	// Edit provider/resource_filter.go to customize which resources you need
+
+	// Get the underlying Terraform provider to filter its resources
+	tfProvider := ibmcloud.Provider()
+
+	// Create a list of resource keys to keep based on prefixes
+	keepPrefixes := []string{
+		"ibm_is_",        // VPC Infrastructure
+		"ibm_resource_",  // Resource Groups
+		"ibm_compute_",   // Compute
+		"ibm_cos_",       // Cloud Object Storage
+		"ibm_container_", // Kubernetes
+		"ibm_dns_",       // DNS
+		"ibm_iam_",       // IAM
+		// Add more as needed - see resource_filter.go for full list
+	}
+
+	// Filter Terraform provider resources
+	filteredResources := make(map[string]*schema.Resource)
+	for key, resource := range tfProvider.ResourcesMap {
+		for _, prefix := range keepPrefixes {
+			if len(key) >= len(prefix) && key[:len(prefix)] == prefix {
+				filteredResources[key] = resource
+				break
+			}
+		}
+	}
+	tfProvider.ResourcesMap = filteredResources
+
+	// Filter Terraform provider data sources
+	filteredDataSources := make(map[string]*schema.Resource)
+	for key, dataSource := range tfProvider.DataSourcesMap {
+		for _, prefix := range keepPrefixes {
+			if len(key) >= len(prefix) && key[:len(prefix)] == prefix {
+				filteredDataSources[key] = dataSource
+				break
+			}
+		}
+	}
+	tfProvider.DataSourcesMap = filteredDataSources
+
+	// Now use the filtered provider
+	prov.P = shimv2.NewProvider(tfProvider)
+
 	// MustComputeTokens maps all resources and datasources from the upstream provider into Pulumi.
 	//
 	// tokens.SingleModule puts every upstream item into your provider's main module.
@@ -182,19 +229,21 @@ func Provider() tfbridge.ProviderInfo {
 	prov.MustApplyAutoAliases()
 	prov.SetAutonaming(255, "-")
 
-	// Fix naming collision for getProjectConfigOutput type
+	// Fix naming collision for getProjectConfigOutput type (only if not filtered out)
 	// The type "ibmcloud:index/getProjectConfigOutput:getProjectConfigOutput" was conflicting
 	// with the output wrapper for "ibmcloud:index/getProjectConfig:getProjectConfig"
-	if prov.DataSources == nil {
-		prov.DataSources = map[string]*tfbridge.DataSourceInfo{}
-	}
-	prov.DataSources["ibm_project_config"] = &tfbridge.DataSourceInfo{
-		Fields: map[string]*tfbridge.SchemaInfo{
-			"outputs": {
-				// Rename the nested type to avoid collision with GetProjectConfigTypeOutput
-				Name: "OutputValues",
+	if _, exists := tfProvider.DataSourcesMap["ibm_project_config"]; exists {
+		if prov.DataSources == nil {
+			prov.DataSources = map[string]*tfbridge.DataSourceInfo{}
+		}
+		prov.DataSources["ibm_project_config"] = &tfbridge.DataSourceInfo{
+			Fields: map[string]*tfbridge.SchemaInfo{
+				"outputs": {
+					// Rename the nested type to avoid collision with GetProjectConfigTypeOutput
+					Name: "OutputValues",
+				},
 			},
-		},
+		}
 	}
 
 	return prov

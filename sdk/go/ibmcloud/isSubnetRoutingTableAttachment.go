@@ -173,56 +173,6 @@ func (i *IsSubnetRoutingTableAttachment) ToIsSubnetRoutingTableAttachmentOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetRoutingTableAttachmentOutput)
 }
 
-// IsSubnetRoutingTableAttachmentArrayInput is an input type that accepts IsSubnetRoutingTableAttachmentArray and IsSubnetRoutingTableAttachmentArrayOutput values.
-// You can construct a concrete instance of `IsSubnetRoutingTableAttachmentArrayInput` via:
-//
-//	IsSubnetRoutingTableAttachmentArray{ IsSubnetRoutingTableAttachmentArgs{...} }
-type IsSubnetRoutingTableAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToIsSubnetRoutingTableAttachmentArrayOutput() IsSubnetRoutingTableAttachmentArrayOutput
-	ToIsSubnetRoutingTableAttachmentArrayOutputWithContext(context.Context) IsSubnetRoutingTableAttachmentArrayOutput
-}
-
-type IsSubnetRoutingTableAttachmentArray []IsSubnetRoutingTableAttachmentInput
-
-func (IsSubnetRoutingTableAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetRoutingTableAttachment)(nil)).Elem()
-}
-
-func (i IsSubnetRoutingTableAttachmentArray) ToIsSubnetRoutingTableAttachmentArrayOutput() IsSubnetRoutingTableAttachmentArrayOutput {
-	return i.ToIsSubnetRoutingTableAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i IsSubnetRoutingTableAttachmentArray) ToIsSubnetRoutingTableAttachmentArrayOutputWithContext(ctx context.Context) IsSubnetRoutingTableAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetRoutingTableAttachmentArrayOutput)
-}
-
-// IsSubnetRoutingTableAttachmentMapInput is an input type that accepts IsSubnetRoutingTableAttachmentMap and IsSubnetRoutingTableAttachmentMapOutput values.
-// You can construct a concrete instance of `IsSubnetRoutingTableAttachmentMapInput` via:
-//
-//	IsSubnetRoutingTableAttachmentMap{ "key": IsSubnetRoutingTableAttachmentArgs{...} }
-type IsSubnetRoutingTableAttachmentMapInput interface {
-	pulumi.Input
-
-	ToIsSubnetRoutingTableAttachmentMapOutput() IsSubnetRoutingTableAttachmentMapOutput
-	ToIsSubnetRoutingTableAttachmentMapOutputWithContext(context.Context) IsSubnetRoutingTableAttachmentMapOutput
-}
-
-type IsSubnetRoutingTableAttachmentMap map[string]IsSubnetRoutingTableAttachmentInput
-
-func (IsSubnetRoutingTableAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetRoutingTableAttachment)(nil)).Elem()
-}
-
-func (i IsSubnetRoutingTableAttachmentMap) ToIsSubnetRoutingTableAttachmentMapOutput() IsSubnetRoutingTableAttachmentMapOutput {
-	return i.ToIsSubnetRoutingTableAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i IsSubnetRoutingTableAttachmentMap) ToIsSubnetRoutingTableAttachmentMapOutputWithContext(ctx context.Context) IsSubnetRoutingTableAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetRoutingTableAttachmentMapOutput)
-}
-
 type IsSubnetRoutingTableAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IsSubnetRoutingTableAttachmentOutput) ElementType() reflect.Type {
@@ -306,51 +256,7 @@ func (o IsSubnetRoutingTableAttachmentOutput) Subnets() IsSubnetRoutingTableAtta
 	}).(IsSubnetRoutingTableAttachmentSubnetArrayOutput)
 }
 
-type IsSubnetRoutingTableAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetRoutingTableAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetRoutingTableAttachment)(nil)).Elem()
-}
-
-func (o IsSubnetRoutingTableAttachmentArrayOutput) ToIsSubnetRoutingTableAttachmentArrayOutput() IsSubnetRoutingTableAttachmentArrayOutput {
-	return o
-}
-
-func (o IsSubnetRoutingTableAttachmentArrayOutput) ToIsSubnetRoutingTableAttachmentArrayOutputWithContext(ctx context.Context) IsSubnetRoutingTableAttachmentArrayOutput {
-	return o
-}
-
-func (o IsSubnetRoutingTableAttachmentArrayOutput) Index(i pulumi.IntInput) IsSubnetRoutingTableAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSubnetRoutingTableAttachment {
-		return vs[0].([]*IsSubnetRoutingTableAttachment)[vs[1].(int)]
-	}).(IsSubnetRoutingTableAttachmentOutput)
-}
-
-type IsSubnetRoutingTableAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetRoutingTableAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetRoutingTableAttachment)(nil)).Elem()
-}
-
-func (o IsSubnetRoutingTableAttachmentMapOutput) ToIsSubnetRoutingTableAttachmentMapOutput() IsSubnetRoutingTableAttachmentMapOutput {
-	return o
-}
-
-func (o IsSubnetRoutingTableAttachmentMapOutput) ToIsSubnetRoutingTableAttachmentMapOutputWithContext(ctx context.Context) IsSubnetRoutingTableAttachmentMapOutput {
-	return o
-}
-
-func (o IsSubnetRoutingTableAttachmentMapOutput) MapIndex(k pulumi.StringInput) IsSubnetRoutingTableAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSubnetRoutingTableAttachment {
-		return vs[0].(map[string]*IsSubnetRoutingTableAttachment)[vs[1].(string)]
-	}).(IsSubnetRoutingTableAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetRoutingTableAttachmentInput)(nil)).Elem(), &IsSubnetRoutingTableAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetRoutingTableAttachmentArrayInput)(nil)).Elem(), IsSubnetRoutingTableAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetRoutingTableAttachmentMapInput)(nil)).Elem(), IsSubnetRoutingTableAttachmentMap{})
 	pulumi.RegisterOutputType(IsSubnetRoutingTableAttachmentOutput{})
-	pulumi.RegisterOutputType(IsSubnetRoutingTableAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(IsSubnetRoutingTableAttachmentMapOutput{})
 }

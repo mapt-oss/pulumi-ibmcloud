@@ -199,56 +199,6 @@ func (i *IsPublicGateway) ToIsPublicGatewayOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IsPublicGatewayOutput)
 }
 
-// IsPublicGatewayArrayInput is an input type that accepts IsPublicGatewayArray and IsPublicGatewayArrayOutput values.
-// You can construct a concrete instance of `IsPublicGatewayArrayInput` via:
-//
-//	IsPublicGatewayArray{ IsPublicGatewayArgs{...} }
-type IsPublicGatewayArrayInput interface {
-	pulumi.Input
-
-	ToIsPublicGatewayArrayOutput() IsPublicGatewayArrayOutput
-	ToIsPublicGatewayArrayOutputWithContext(context.Context) IsPublicGatewayArrayOutput
-}
-
-type IsPublicGatewayArray []IsPublicGatewayInput
-
-func (IsPublicGatewayArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPublicGateway)(nil)).Elem()
-}
-
-func (i IsPublicGatewayArray) ToIsPublicGatewayArrayOutput() IsPublicGatewayArrayOutput {
-	return i.ToIsPublicGatewayArrayOutputWithContext(context.Background())
-}
-
-func (i IsPublicGatewayArray) ToIsPublicGatewayArrayOutputWithContext(ctx context.Context) IsPublicGatewayArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPublicGatewayArrayOutput)
-}
-
-// IsPublicGatewayMapInput is an input type that accepts IsPublicGatewayMap and IsPublicGatewayMapOutput values.
-// You can construct a concrete instance of `IsPublicGatewayMapInput` via:
-//
-//	IsPublicGatewayMap{ "key": IsPublicGatewayArgs{...} }
-type IsPublicGatewayMapInput interface {
-	pulumi.Input
-
-	ToIsPublicGatewayMapOutput() IsPublicGatewayMapOutput
-	ToIsPublicGatewayMapOutputWithContext(context.Context) IsPublicGatewayMapOutput
-}
-
-type IsPublicGatewayMap map[string]IsPublicGatewayInput
-
-func (IsPublicGatewayMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPublicGateway)(nil)).Elem()
-}
-
-func (i IsPublicGatewayMap) ToIsPublicGatewayMapOutput() IsPublicGatewayMapOutput {
-	return i.ToIsPublicGatewayMapOutputWithContext(context.Background())
-}
-
-func (i IsPublicGatewayMap) ToIsPublicGatewayMapOutputWithContext(ctx context.Context) IsPublicGatewayMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPublicGatewayMapOutput)
-}
-
 type IsPublicGatewayOutput struct{ *pulumi.OutputState }
 
 func (IsPublicGatewayOutput) ElementType() reflect.Type {
@@ -332,51 +282,7 @@ func (o IsPublicGatewayOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsPublicGateway) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsPublicGatewayArrayOutput struct{ *pulumi.OutputState }
-
-func (IsPublicGatewayArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPublicGateway)(nil)).Elem()
-}
-
-func (o IsPublicGatewayArrayOutput) ToIsPublicGatewayArrayOutput() IsPublicGatewayArrayOutput {
-	return o
-}
-
-func (o IsPublicGatewayArrayOutput) ToIsPublicGatewayArrayOutputWithContext(ctx context.Context) IsPublicGatewayArrayOutput {
-	return o
-}
-
-func (o IsPublicGatewayArrayOutput) Index(i pulumi.IntInput) IsPublicGatewayOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsPublicGateway {
-		return vs[0].([]*IsPublicGateway)[vs[1].(int)]
-	}).(IsPublicGatewayOutput)
-}
-
-type IsPublicGatewayMapOutput struct{ *pulumi.OutputState }
-
-func (IsPublicGatewayMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPublicGateway)(nil)).Elem()
-}
-
-func (o IsPublicGatewayMapOutput) ToIsPublicGatewayMapOutput() IsPublicGatewayMapOutput {
-	return o
-}
-
-func (o IsPublicGatewayMapOutput) ToIsPublicGatewayMapOutputWithContext(ctx context.Context) IsPublicGatewayMapOutput {
-	return o
-}
-
-func (o IsPublicGatewayMapOutput) MapIndex(k pulumi.StringInput) IsPublicGatewayOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsPublicGateway {
-		return vs[0].(map[string]*IsPublicGateway)[vs[1].(string)]
-	}).(IsPublicGatewayOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsPublicGatewayInput)(nil)).Elem(), &IsPublicGateway{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPublicGatewayArrayInput)(nil)).Elem(), IsPublicGatewayArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPublicGatewayMapInput)(nil)).Elem(), IsPublicGatewayMap{})
 	pulumi.RegisterOutputType(IsPublicGatewayOutput{})
-	pulumi.RegisterOutputType(IsPublicGatewayArrayOutput{})
-	pulumi.RegisterOutputType(IsPublicGatewayMapOutput{})
 }

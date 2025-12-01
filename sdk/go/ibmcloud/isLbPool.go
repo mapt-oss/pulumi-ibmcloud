@@ -271,56 +271,6 @@ func (i *IsLbPool) ToIsLbPoolOutputWithContext(ctx context.Context) IsLbPoolOutp
 	return pulumi.ToOutputWithContext(ctx, i).(IsLbPoolOutput)
 }
 
-// IsLbPoolArrayInput is an input type that accepts IsLbPoolArray and IsLbPoolArrayOutput values.
-// You can construct a concrete instance of `IsLbPoolArrayInput` via:
-//
-//	IsLbPoolArray{ IsLbPoolArgs{...} }
-type IsLbPoolArrayInput interface {
-	pulumi.Input
-
-	ToIsLbPoolArrayOutput() IsLbPoolArrayOutput
-	ToIsLbPoolArrayOutputWithContext(context.Context) IsLbPoolArrayOutput
-}
-
-type IsLbPoolArray []IsLbPoolInput
-
-func (IsLbPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbPool)(nil)).Elem()
-}
-
-func (i IsLbPoolArray) ToIsLbPoolArrayOutput() IsLbPoolArrayOutput {
-	return i.ToIsLbPoolArrayOutputWithContext(context.Background())
-}
-
-func (i IsLbPoolArray) ToIsLbPoolArrayOutputWithContext(ctx context.Context) IsLbPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbPoolArrayOutput)
-}
-
-// IsLbPoolMapInput is an input type that accepts IsLbPoolMap and IsLbPoolMapOutput values.
-// You can construct a concrete instance of `IsLbPoolMapInput` via:
-//
-//	IsLbPoolMap{ "key": IsLbPoolArgs{...} }
-type IsLbPoolMapInput interface {
-	pulumi.Input
-
-	ToIsLbPoolMapOutput() IsLbPoolMapOutput
-	ToIsLbPoolMapOutputWithContext(context.Context) IsLbPoolMapOutput
-}
-
-type IsLbPoolMap map[string]IsLbPoolInput
-
-func (IsLbPoolMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbPool)(nil)).Elem()
-}
-
-func (i IsLbPoolMap) ToIsLbPoolMapOutput() IsLbPoolMapOutput {
-	return i.ToIsLbPoolMapOutputWithContext(context.Background())
-}
-
-func (i IsLbPoolMap) ToIsLbPoolMapOutputWithContext(ctx context.Context) IsLbPoolMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsLbPoolMapOutput)
-}
-
 type IsLbPoolOutput struct{ *pulumi.OutputState }
 
 func (IsLbPoolOutput) ElementType() reflect.Type {
@@ -425,51 +375,7 @@ func (o IsLbPoolOutput) SessionPersistenceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IsLbPool) pulumi.StringPtrOutput { return v.SessionPersistenceType }).(pulumi.StringPtrOutput)
 }
 
-type IsLbPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (IsLbPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsLbPool)(nil)).Elem()
-}
-
-func (o IsLbPoolArrayOutput) ToIsLbPoolArrayOutput() IsLbPoolArrayOutput {
-	return o
-}
-
-func (o IsLbPoolArrayOutput) ToIsLbPoolArrayOutputWithContext(ctx context.Context) IsLbPoolArrayOutput {
-	return o
-}
-
-func (o IsLbPoolArrayOutput) Index(i pulumi.IntInput) IsLbPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsLbPool {
-		return vs[0].([]*IsLbPool)[vs[1].(int)]
-	}).(IsLbPoolOutput)
-}
-
-type IsLbPoolMapOutput struct{ *pulumi.OutputState }
-
-func (IsLbPoolMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsLbPool)(nil)).Elem()
-}
-
-func (o IsLbPoolMapOutput) ToIsLbPoolMapOutput() IsLbPoolMapOutput {
-	return o
-}
-
-func (o IsLbPoolMapOutput) ToIsLbPoolMapOutputWithContext(ctx context.Context) IsLbPoolMapOutput {
-	return o
-}
-
-func (o IsLbPoolMapOutput) MapIndex(k pulumi.StringInput) IsLbPoolOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsLbPool {
-		return vs[0].(map[string]*IsLbPool)[vs[1].(string)]
-	}).(IsLbPoolOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsLbPoolInput)(nil)).Elem(), &IsLbPool{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbPoolArrayInput)(nil)).Elem(), IsLbPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsLbPoolMapInput)(nil)).Elem(), IsLbPoolMap{})
 	pulumi.RegisterOutputType(IsLbPoolOutput{})
-	pulumi.RegisterOutputType(IsLbPoolArrayOutput{})
-	pulumi.RegisterOutputType(IsLbPoolMapOutput{})
 }

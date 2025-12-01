@@ -128,56 +128,6 @@ func (i *ContainerAddons) ToContainerAddonsOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerAddonsOutput)
 }
 
-// ContainerAddonsArrayInput is an input type that accepts ContainerAddonsArray and ContainerAddonsArrayOutput values.
-// You can construct a concrete instance of `ContainerAddonsArrayInput` via:
-//
-//	ContainerAddonsArray{ ContainerAddonsArgs{...} }
-type ContainerAddonsArrayInput interface {
-	pulumi.Input
-
-	ToContainerAddonsArrayOutput() ContainerAddonsArrayOutput
-	ToContainerAddonsArrayOutputWithContext(context.Context) ContainerAddonsArrayOutput
-}
-
-type ContainerAddonsArray []ContainerAddonsInput
-
-func (ContainerAddonsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerAddons)(nil)).Elem()
-}
-
-func (i ContainerAddonsArray) ToContainerAddonsArrayOutput() ContainerAddonsArrayOutput {
-	return i.ToContainerAddonsArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerAddonsArray) ToContainerAddonsArrayOutputWithContext(ctx context.Context) ContainerAddonsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAddonsArrayOutput)
-}
-
-// ContainerAddonsMapInput is an input type that accepts ContainerAddonsMap and ContainerAddonsMapOutput values.
-// You can construct a concrete instance of `ContainerAddonsMapInput` via:
-//
-//	ContainerAddonsMap{ "key": ContainerAddonsArgs{...} }
-type ContainerAddonsMapInput interface {
-	pulumi.Input
-
-	ToContainerAddonsMapOutput() ContainerAddonsMapOutput
-	ToContainerAddonsMapOutputWithContext(context.Context) ContainerAddonsMapOutput
-}
-
-type ContainerAddonsMap map[string]ContainerAddonsInput
-
-func (ContainerAddonsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerAddons)(nil)).Elem()
-}
-
-func (i ContainerAddonsMap) ToContainerAddonsMapOutput() ContainerAddonsMapOutput {
-	return i.ToContainerAddonsMapOutputWithContext(context.Background())
-}
-
-func (i ContainerAddonsMap) ToContainerAddonsMapOutputWithContext(ctx context.Context) ContainerAddonsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAddonsMapOutput)
-}
-
 type ContainerAddonsOutput struct{ *pulumi.OutputState }
 
 func (ContainerAddonsOutput) ElementType() reflect.Type {
@@ -215,51 +165,7 @@ func (o ContainerAddonsOutput) ResourceGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerAddons) pulumi.StringOutput { return v.ResourceGroupId }).(pulumi.StringOutput)
 }
 
-type ContainerAddonsArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerAddonsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerAddons)(nil)).Elem()
-}
-
-func (o ContainerAddonsArrayOutput) ToContainerAddonsArrayOutput() ContainerAddonsArrayOutput {
-	return o
-}
-
-func (o ContainerAddonsArrayOutput) ToContainerAddonsArrayOutputWithContext(ctx context.Context) ContainerAddonsArrayOutput {
-	return o
-}
-
-func (o ContainerAddonsArrayOutput) Index(i pulumi.IntInput) ContainerAddonsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerAddons {
-		return vs[0].([]*ContainerAddons)[vs[1].(int)]
-	}).(ContainerAddonsOutput)
-}
-
-type ContainerAddonsMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerAddonsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerAddons)(nil)).Elem()
-}
-
-func (o ContainerAddonsMapOutput) ToContainerAddonsMapOutput() ContainerAddonsMapOutput {
-	return o
-}
-
-func (o ContainerAddonsMapOutput) ToContainerAddonsMapOutputWithContext(ctx context.Context) ContainerAddonsMapOutput {
-	return o
-}
-
-func (o ContainerAddonsMapOutput) MapIndex(k pulumi.StringInput) ContainerAddonsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerAddons {
-		return vs[0].(map[string]*ContainerAddons)[vs[1].(string)]
-	}).(ContainerAddonsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAddonsInput)(nil)).Elem(), &ContainerAddons{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAddonsArrayInput)(nil)).Elem(), ContainerAddonsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAddonsMapInput)(nil)).Elem(), ContainerAddonsMap{})
 	pulumi.RegisterOutputType(ContainerAddonsOutput{})
-	pulumi.RegisterOutputType(ContainerAddonsArrayOutput{})
-	pulumi.RegisterOutputType(ContainerAddonsMapOutput{})
 }

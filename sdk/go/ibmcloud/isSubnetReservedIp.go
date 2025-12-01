@@ -185,56 +185,6 @@ func (i *IsSubnetReservedIp) ToIsSubnetReservedIpOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetReservedIpOutput)
 }
 
-// IsSubnetReservedIpArrayInput is an input type that accepts IsSubnetReservedIpArray and IsSubnetReservedIpArrayOutput values.
-// You can construct a concrete instance of `IsSubnetReservedIpArrayInput` via:
-//
-//	IsSubnetReservedIpArray{ IsSubnetReservedIpArgs{...} }
-type IsSubnetReservedIpArrayInput interface {
-	pulumi.Input
-
-	ToIsSubnetReservedIpArrayOutput() IsSubnetReservedIpArrayOutput
-	ToIsSubnetReservedIpArrayOutputWithContext(context.Context) IsSubnetReservedIpArrayOutput
-}
-
-type IsSubnetReservedIpArray []IsSubnetReservedIpInput
-
-func (IsSubnetReservedIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetReservedIp)(nil)).Elem()
-}
-
-func (i IsSubnetReservedIpArray) ToIsSubnetReservedIpArrayOutput() IsSubnetReservedIpArrayOutput {
-	return i.ToIsSubnetReservedIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsSubnetReservedIpArray) ToIsSubnetReservedIpArrayOutputWithContext(ctx context.Context) IsSubnetReservedIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetReservedIpArrayOutput)
-}
-
-// IsSubnetReservedIpMapInput is an input type that accepts IsSubnetReservedIpMap and IsSubnetReservedIpMapOutput values.
-// You can construct a concrete instance of `IsSubnetReservedIpMapInput` via:
-//
-//	IsSubnetReservedIpMap{ "key": IsSubnetReservedIpArgs{...} }
-type IsSubnetReservedIpMapInput interface {
-	pulumi.Input
-
-	ToIsSubnetReservedIpMapOutput() IsSubnetReservedIpMapOutput
-	ToIsSubnetReservedIpMapOutputWithContext(context.Context) IsSubnetReservedIpMapOutput
-}
-
-type IsSubnetReservedIpMap map[string]IsSubnetReservedIpInput
-
-func (IsSubnetReservedIpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetReservedIp)(nil)).Elem()
-}
-
-func (i IsSubnetReservedIpMap) ToIsSubnetReservedIpMapOutput() IsSubnetReservedIpMapOutput {
-	return i.ToIsSubnetReservedIpMapOutputWithContext(context.Background())
-}
-
-func (i IsSubnetReservedIpMap) ToIsSubnetReservedIpMapOutputWithContext(ctx context.Context) IsSubnetReservedIpMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsSubnetReservedIpMapOutput)
-}
-
 type IsSubnetReservedIpOutput struct{ *pulumi.OutputState }
 
 func (IsSubnetReservedIpOutput) ElementType() reflect.Type {
@@ -309,51 +259,7 @@ func (o IsSubnetReservedIpOutput) TargetCrn() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsSubnetReservedIp) pulumi.StringOutput { return v.TargetCrn }).(pulumi.StringOutput)
 }
 
-type IsSubnetReservedIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetReservedIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsSubnetReservedIp)(nil)).Elem()
-}
-
-func (o IsSubnetReservedIpArrayOutput) ToIsSubnetReservedIpArrayOutput() IsSubnetReservedIpArrayOutput {
-	return o
-}
-
-func (o IsSubnetReservedIpArrayOutput) ToIsSubnetReservedIpArrayOutputWithContext(ctx context.Context) IsSubnetReservedIpArrayOutput {
-	return o
-}
-
-func (o IsSubnetReservedIpArrayOutput) Index(i pulumi.IntInput) IsSubnetReservedIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsSubnetReservedIp {
-		return vs[0].([]*IsSubnetReservedIp)[vs[1].(int)]
-	}).(IsSubnetReservedIpOutput)
-}
-
-type IsSubnetReservedIpMapOutput struct{ *pulumi.OutputState }
-
-func (IsSubnetReservedIpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsSubnetReservedIp)(nil)).Elem()
-}
-
-func (o IsSubnetReservedIpMapOutput) ToIsSubnetReservedIpMapOutput() IsSubnetReservedIpMapOutput {
-	return o
-}
-
-func (o IsSubnetReservedIpMapOutput) ToIsSubnetReservedIpMapOutputWithContext(ctx context.Context) IsSubnetReservedIpMapOutput {
-	return o
-}
-
-func (o IsSubnetReservedIpMapOutput) MapIndex(k pulumi.StringInput) IsSubnetReservedIpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsSubnetReservedIp {
-		return vs[0].(map[string]*IsSubnetReservedIp)[vs[1].(string)]
-	}).(IsSubnetReservedIpOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetReservedIpInput)(nil)).Elem(), &IsSubnetReservedIp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetReservedIpArrayInput)(nil)).Elem(), IsSubnetReservedIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsSubnetReservedIpMapInput)(nil)).Elem(), IsSubnetReservedIpMap{})
 	pulumi.RegisterOutputType(IsSubnetReservedIpOutput{})
-	pulumi.RegisterOutputType(IsSubnetReservedIpArrayOutput{})
-	pulumi.RegisterOutputType(IsSubnetReservedIpMapOutput{})
 }

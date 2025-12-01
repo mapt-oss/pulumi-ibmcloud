@@ -204,56 +204,6 @@ func (i *IamTrustedProfileTemplateAssignment) ToIamTrustedProfileTemplateAssignm
 	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileTemplateAssignmentOutput)
 }
 
-// IamTrustedProfileTemplateAssignmentArrayInput is an input type that accepts IamTrustedProfileTemplateAssignmentArray and IamTrustedProfileTemplateAssignmentArrayOutput values.
-// You can construct a concrete instance of `IamTrustedProfileTemplateAssignmentArrayInput` via:
-//
-//	IamTrustedProfileTemplateAssignmentArray{ IamTrustedProfileTemplateAssignmentArgs{...} }
-type IamTrustedProfileTemplateAssignmentArrayInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileTemplateAssignmentArrayOutput() IamTrustedProfileTemplateAssignmentArrayOutput
-	ToIamTrustedProfileTemplateAssignmentArrayOutputWithContext(context.Context) IamTrustedProfileTemplateAssignmentArrayOutput
-}
-
-type IamTrustedProfileTemplateAssignmentArray []IamTrustedProfileTemplateAssignmentInput
-
-func (IamTrustedProfileTemplateAssignmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileTemplateAssignment)(nil)).Elem()
-}
-
-func (i IamTrustedProfileTemplateAssignmentArray) ToIamTrustedProfileTemplateAssignmentArrayOutput() IamTrustedProfileTemplateAssignmentArrayOutput {
-	return i.ToIamTrustedProfileTemplateAssignmentArrayOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileTemplateAssignmentArray) ToIamTrustedProfileTemplateAssignmentArrayOutputWithContext(ctx context.Context) IamTrustedProfileTemplateAssignmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileTemplateAssignmentArrayOutput)
-}
-
-// IamTrustedProfileTemplateAssignmentMapInput is an input type that accepts IamTrustedProfileTemplateAssignmentMap and IamTrustedProfileTemplateAssignmentMapOutput values.
-// You can construct a concrete instance of `IamTrustedProfileTemplateAssignmentMapInput` via:
-//
-//	IamTrustedProfileTemplateAssignmentMap{ "key": IamTrustedProfileTemplateAssignmentArgs{...} }
-type IamTrustedProfileTemplateAssignmentMapInput interface {
-	pulumi.Input
-
-	ToIamTrustedProfileTemplateAssignmentMapOutput() IamTrustedProfileTemplateAssignmentMapOutput
-	ToIamTrustedProfileTemplateAssignmentMapOutputWithContext(context.Context) IamTrustedProfileTemplateAssignmentMapOutput
-}
-
-type IamTrustedProfileTemplateAssignmentMap map[string]IamTrustedProfileTemplateAssignmentInput
-
-func (IamTrustedProfileTemplateAssignmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileTemplateAssignment)(nil)).Elem()
-}
-
-func (i IamTrustedProfileTemplateAssignmentMap) ToIamTrustedProfileTemplateAssignmentMapOutput() IamTrustedProfileTemplateAssignmentMapOutput {
-	return i.ToIamTrustedProfileTemplateAssignmentMapOutputWithContext(context.Background())
-}
-
-func (i IamTrustedProfileTemplateAssignmentMap) ToIamTrustedProfileTemplateAssignmentMapOutputWithContext(ctx context.Context) IamTrustedProfileTemplateAssignmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamTrustedProfileTemplateAssignmentMapOutput)
-}
-
 type IamTrustedProfileTemplateAssignmentOutput struct{ *pulumi.OutputState }
 
 func (IamTrustedProfileTemplateAssignmentOutput) ElementType() reflect.Type {
@@ -349,51 +299,7 @@ func (o IamTrustedProfileTemplateAssignmentOutput) TemplateVersion() pulumi.IntO
 	return o.ApplyT(func(v *IamTrustedProfileTemplateAssignment) pulumi.IntOutput { return v.TemplateVersion }).(pulumi.IntOutput)
 }
 
-type IamTrustedProfileTemplateAssignmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileTemplateAssignmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamTrustedProfileTemplateAssignment)(nil)).Elem()
-}
-
-func (o IamTrustedProfileTemplateAssignmentArrayOutput) ToIamTrustedProfileTemplateAssignmentArrayOutput() IamTrustedProfileTemplateAssignmentArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateAssignmentArrayOutput) ToIamTrustedProfileTemplateAssignmentArrayOutputWithContext(ctx context.Context) IamTrustedProfileTemplateAssignmentArrayOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateAssignmentArrayOutput) Index(i pulumi.IntInput) IamTrustedProfileTemplateAssignmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamTrustedProfileTemplateAssignment {
-		return vs[0].([]*IamTrustedProfileTemplateAssignment)[vs[1].(int)]
-	}).(IamTrustedProfileTemplateAssignmentOutput)
-}
-
-type IamTrustedProfileTemplateAssignmentMapOutput struct{ *pulumi.OutputState }
-
-func (IamTrustedProfileTemplateAssignmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamTrustedProfileTemplateAssignment)(nil)).Elem()
-}
-
-func (o IamTrustedProfileTemplateAssignmentMapOutput) ToIamTrustedProfileTemplateAssignmentMapOutput() IamTrustedProfileTemplateAssignmentMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateAssignmentMapOutput) ToIamTrustedProfileTemplateAssignmentMapOutputWithContext(ctx context.Context) IamTrustedProfileTemplateAssignmentMapOutput {
-	return o
-}
-
-func (o IamTrustedProfileTemplateAssignmentMapOutput) MapIndex(k pulumi.StringInput) IamTrustedProfileTemplateAssignmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamTrustedProfileTemplateAssignment {
-		return vs[0].(map[string]*IamTrustedProfileTemplateAssignment)[vs[1].(string)]
-	}).(IamTrustedProfileTemplateAssignmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileTemplateAssignmentInput)(nil)).Elem(), &IamTrustedProfileTemplateAssignment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileTemplateAssignmentArrayInput)(nil)).Elem(), IamTrustedProfileTemplateAssignmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamTrustedProfileTemplateAssignmentMapInput)(nil)).Elem(), IamTrustedProfileTemplateAssignmentMap{})
 	pulumi.RegisterOutputType(IamTrustedProfileTemplateAssignmentOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileTemplateAssignmentArrayOutput{})
-	pulumi.RegisterOutputType(IamTrustedProfileTemplateAssignmentMapOutput{})
 }

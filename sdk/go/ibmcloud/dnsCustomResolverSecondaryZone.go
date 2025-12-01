@@ -179,56 +179,6 @@ func (i *DnsCustomResolverSecondaryZone) ToDnsCustomResolverSecondaryZoneOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverSecondaryZoneOutput)
 }
 
-// DnsCustomResolverSecondaryZoneArrayInput is an input type that accepts DnsCustomResolverSecondaryZoneArray and DnsCustomResolverSecondaryZoneArrayOutput values.
-// You can construct a concrete instance of `DnsCustomResolverSecondaryZoneArrayInput` via:
-//
-//	DnsCustomResolverSecondaryZoneArray{ DnsCustomResolverSecondaryZoneArgs{...} }
-type DnsCustomResolverSecondaryZoneArrayInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverSecondaryZoneArrayOutput() DnsCustomResolverSecondaryZoneArrayOutput
-	ToDnsCustomResolverSecondaryZoneArrayOutputWithContext(context.Context) DnsCustomResolverSecondaryZoneArrayOutput
-}
-
-type DnsCustomResolverSecondaryZoneArray []DnsCustomResolverSecondaryZoneInput
-
-func (DnsCustomResolverSecondaryZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsCustomResolverSecondaryZone)(nil)).Elem()
-}
-
-func (i DnsCustomResolverSecondaryZoneArray) ToDnsCustomResolverSecondaryZoneArrayOutput() DnsCustomResolverSecondaryZoneArrayOutput {
-	return i.ToDnsCustomResolverSecondaryZoneArrayOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverSecondaryZoneArray) ToDnsCustomResolverSecondaryZoneArrayOutputWithContext(ctx context.Context) DnsCustomResolverSecondaryZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverSecondaryZoneArrayOutput)
-}
-
-// DnsCustomResolverSecondaryZoneMapInput is an input type that accepts DnsCustomResolverSecondaryZoneMap and DnsCustomResolverSecondaryZoneMapOutput values.
-// You can construct a concrete instance of `DnsCustomResolverSecondaryZoneMapInput` via:
-//
-//	DnsCustomResolverSecondaryZoneMap{ "key": DnsCustomResolverSecondaryZoneArgs{...} }
-type DnsCustomResolverSecondaryZoneMapInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverSecondaryZoneMapOutput() DnsCustomResolverSecondaryZoneMapOutput
-	ToDnsCustomResolverSecondaryZoneMapOutputWithContext(context.Context) DnsCustomResolverSecondaryZoneMapOutput
-}
-
-type DnsCustomResolverSecondaryZoneMap map[string]DnsCustomResolverSecondaryZoneInput
-
-func (DnsCustomResolverSecondaryZoneMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsCustomResolverSecondaryZone)(nil)).Elem()
-}
-
-func (i DnsCustomResolverSecondaryZoneMap) ToDnsCustomResolverSecondaryZoneMapOutput() DnsCustomResolverSecondaryZoneMapOutput {
-	return i.ToDnsCustomResolverSecondaryZoneMapOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverSecondaryZoneMap) ToDnsCustomResolverSecondaryZoneMapOutputWithContext(ctx context.Context) DnsCustomResolverSecondaryZoneMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverSecondaryZoneMapOutput)
-}
-
 type DnsCustomResolverSecondaryZoneOutput struct{ *pulumi.OutputState }
 
 func (DnsCustomResolverSecondaryZoneOutput) ElementType() reflect.Type {
@@ -288,51 +238,7 @@ func (o DnsCustomResolverSecondaryZoneOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *DnsCustomResolverSecondaryZone) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type DnsCustomResolverSecondaryZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverSecondaryZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsCustomResolverSecondaryZone)(nil)).Elem()
-}
-
-func (o DnsCustomResolverSecondaryZoneArrayOutput) ToDnsCustomResolverSecondaryZoneArrayOutput() DnsCustomResolverSecondaryZoneArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverSecondaryZoneArrayOutput) ToDnsCustomResolverSecondaryZoneArrayOutputWithContext(ctx context.Context) DnsCustomResolverSecondaryZoneArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverSecondaryZoneArrayOutput) Index(i pulumi.IntInput) DnsCustomResolverSecondaryZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsCustomResolverSecondaryZone {
-		return vs[0].([]*DnsCustomResolverSecondaryZone)[vs[1].(int)]
-	}).(DnsCustomResolverSecondaryZoneOutput)
-}
-
-type DnsCustomResolverSecondaryZoneMapOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverSecondaryZoneMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsCustomResolverSecondaryZone)(nil)).Elem()
-}
-
-func (o DnsCustomResolverSecondaryZoneMapOutput) ToDnsCustomResolverSecondaryZoneMapOutput() DnsCustomResolverSecondaryZoneMapOutput {
-	return o
-}
-
-func (o DnsCustomResolverSecondaryZoneMapOutput) ToDnsCustomResolverSecondaryZoneMapOutputWithContext(ctx context.Context) DnsCustomResolverSecondaryZoneMapOutput {
-	return o
-}
-
-func (o DnsCustomResolverSecondaryZoneMapOutput) MapIndex(k pulumi.StringInput) DnsCustomResolverSecondaryZoneOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsCustomResolverSecondaryZone {
-		return vs[0].(map[string]*DnsCustomResolverSecondaryZone)[vs[1].(string)]
-	}).(DnsCustomResolverSecondaryZoneOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverSecondaryZoneInput)(nil)).Elem(), &DnsCustomResolverSecondaryZone{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverSecondaryZoneArrayInput)(nil)).Elem(), DnsCustomResolverSecondaryZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverSecondaryZoneMapInput)(nil)).Elem(), DnsCustomResolverSecondaryZoneMap{})
 	pulumi.RegisterOutputType(DnsCustomResolverSecondaryZoneOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverSecondaryZoneArrayOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverSecondaryZoneMapOutput{})
 }

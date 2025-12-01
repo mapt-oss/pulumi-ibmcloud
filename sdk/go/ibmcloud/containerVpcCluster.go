@@ -482,56 +482,6 @@ func (i *ContainerVpcCluster) ToContainerVpcClusterOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterOutput)
 }
 
-// ContainerVpcClusterArrayInput is an input type that accepts ContainerVpcClusterArray and ContainerVpcClusterArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterArrayInput` via:
-//
-//	ContainerVpcClusterArray{ ContainerVpcClusterArgs{...} }
-type ContainerVpcClusterArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterArrayOutput() ContainerVpcClusterArrayOutput
-	ToContainerVpcClusterArrayOutputWithContext(context.Context) ContainerVpcClusterArrayOutput
-}
-
-type ContainerVpcClusterArray []ContainerVpcClusterInput
-
-func (ContainerVpcClusterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerVpcCluster)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterArray) ToContainerVpcClusterArrayOutput() ContainerVpcClusterArrayOutput {
-	return i.ToContainerVpcClusterArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterArray) ToContainerVpcClusterArrayOutputWithContext(ctx context.Context) ContainerVpcClusterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterArrayOutput)
-}
-
-// ContainerVpcClusterMapInput is an input type that accepts ContainerVpcClusterMap and ContainerVpcClusterMapOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterMapInput` via:
-//
-//	ContainerVpcClusterMap{ "key": ContainerVpcClusterArgs{...} }
-type ContainerVpcClusterMapInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterMapOutput() ContainerVpcClusterMapOutput
-	ToContainerVpcClusterMapOutputWithContext(context.Context) ContainerVpcClusterMapOutput
-}
-
-type ContainerVpcClusterMap map[string]ContainerVpcClusterInput
-
-func (ContainerVpcClusterMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerVpcCluster)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterMap) ToContainerVpcClusterMapOutput() ContainerVpcClusterMapOutput {
-	return i.ToContainerVpcClusterMapOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterMap) ToContainerVpcClusterMapOutputWithContext(ctx context.Context) ContainerVpcClusterMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterMapOutput)
-}
-
 type ContainerVpcClusterOutput struct{ *pulumi.OutputState }
 
 func (ContainerVpcClusterOutput) ElementType() reflect.Type {
@@ -772,51 +722,7 @@ func (o ContainerVpcClusterOutput) Zones() ContainerVpcClusterZoneArrayOutput {
 	return o.ApplyT(func(v *ContainerVpcCluster) ContainerVpcClusterZoneArrayOutput { return v.Zones }).(ContainerVpcClusterZoneArrayOutput)
 }
 
-type ContainerVpcClusterArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerVpcCluster)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterArrayOutput) ToContainerVpcClusterArrayOutput() ContainerVpcClusterArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterArrayOutput) ToContainerVpcClusterArrayOutputWithContext(ctx context.Context) ContainerVpcClusterArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterArrayOutput) Index(i pulumi.IntInput) ContainerVpcClusterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerVpcCluster {
-		return vs[0].([]*ContainerVpcCluster)[vs[1].(int)]
-	}).(ContainerVpcClusterOutput)
-}
-
-type ContainerVpcClusterMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerVpcCluster)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterMapOutput) ToContainerVpcClusterMapOutput() ContainerVpcClusterMapOutput {
-	return o
-}
-
-func (o ContainerVpcClusterMapOutput) ToContainerVpcClusterMapOutputWithContext(ctx context.Context) ContainerVpcClusterMapOutput {
-	return o
-}
-
-func (o ContainerVpcClusterMapOutput) MapIndex(k pulumi.StringInput) ContainerVpcClusterOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerVpcCluster {
-		return vs[0].(map[string]*ContainerVpcCluster)[vs[1].(string)]
-	}).(ContainerVpcClusterOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterInput)(nil)).Elem(), &ContainerVpcCluster{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterArrayInput)(nil)).Elem(), ContainerVpcClusterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterMapInput)(nil)).Elem(), ContainerVpcClusterMap{})
 	pulumi.RegisterOutputType(ContainerVpcClusterOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterMapOutput{})
 }

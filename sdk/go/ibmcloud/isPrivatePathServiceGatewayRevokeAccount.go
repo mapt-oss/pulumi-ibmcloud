@@ -112,56 +112,6 @@ func (i *IsPrivatePathServiceGatewayRevokeAccount) ToIsPrivatePathServiceGateway
 	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayRevokeAccountOutput)
 }
 
-// IsPrivatePathServiceGatewayRevokeAccountArrayInput is an input type that accepts IsPrivatePathServiceGatewayRevokeAccountArray and IsPrivatePathServiceGatewayRevokeAccountArrayOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayRevokeAccountArrayInput` via:
-//
-//	IsPrivatePathServiceGatewayRevokeAccountArray{ IsPrivatePathServiceGatewayRevokeAccountArgs{...} }
-type IsPrivatePathServiceGatewayRevokeAccountArrayInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayRevokeAccountArrayOutput() IsPrivatePathServiceGatewayRevokeAccountArrayOutput
-	ToIsPrivatePathServiceGatewayRevokeAccountArrayOutputWithContext(context.Context) IsPrivatePathServiceGatewayRevokeAccountArrayOutput
-}
-
-type IsPrivatePathServiceGatewayRevokeAccountArray []IsPrivatePathServiceGatewayRevokeAccountInput
-
-func (IsPrivatePathServiceGatewayRevokeAccountArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGatewayRevokeAccount)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayRevokeAccountArray) ToIsPrivatePathServiceGatewayRevokeAccountArrayOutput() IsPrivatePathServiceGatewayRevokeAccountArrayOutput {
-	return i.ToIsPrivatePathServiceGatewayRevokeAccountArrayOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayRevokeAccountArray) ToIsPrivatePathServiceGatewayRevokeAccountArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayRevokeAccountArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayRevokeAccountArrayOutput)
-}
-
-// IsPrivatePathServiceGatewayRevokeAccountMapInput is an input type that accepts IsPrivatePathServiceGatewayRevokeAccountMap and IsPrivatePathServiceGatewayRevokeAccountMapOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayRevokeAccountMapInput` via:
-//
-//	IsPrivatePathServiceGatewayRevokeAccountMap{ "key": IsPrivatePathServiceGatewayRevokeAccountArgs{...} }
-type IsPrivatePathServiceGatewayRevokeAccountMapInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayRevokeAccountMapOutput() IsPrivatePathServiceGatewayRevokeAccountMapOutput
-	ToIsPrivatePathServiceGatewayRevokeAccountMapOutputWithContext(context.Context) IsPrivatePathServiceGatewayRevokeAccountMapOutput
-}
-
-type IsPrivatePathServiceGatewayRevokeAccountMap map[string]IsPrivatePathServiceGatewayRevokeAccountInput
-
-func (IsPrivatePathServiceGatewayRevokeAccountMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGatewayRevokeAccount)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayRevokeAccountMap) ToIsPrivatePathServiceGatewayRevokeAccountMapOutput() IsPrivatePathServiceGatewayRevokeAccountMapOutput {
-	return i.ToIsPrivatePathServiceGatewayRevokeAccountMapOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayRevokeAccountMap) ToIsPrivatePathServiceGatewayRevokeAccountMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayRevokeAccountMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayRevokeAccountMapOutput)
-}
-
 type IsPrivatePathServiceGatewayRevokeAccountOutput struct{ *pulumi.OutputState }
 
 func (IsPrivatePathServiceGatewayRevokeAccountOutput) ElementType() reflect.Type {
@@ -188,51 +138,7 @@ func (o IsPrivatePathServiceGatewayRevokeAccountOutput) PrivatePathServiceGatewa
 	}).(pulumi.StringOutput)
 }
 
-type IsPrivatePathServiceGatewayRevokeAccountArrayOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayRevokeAccountArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGatewayRevokeAccount)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayRevokeAccountArrayOutput) ToIsPrivatePathServiceGatewayRevokeAccountArrayOutput() IsPrivatePathServiceGatewayRevokeAccountArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayRevokeAccountArrayOutput) ToIsPrivatePathServiceGatewayRevokeAccountArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayRevokeAccountArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayRevokeAccountArrayOutput) Index(i pulumi.IntInput) IsPrivatePathServiceGatewayRevokeAccountOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGatewayRevokeAccount {
-		return vs[0].([]*IsPrivatePathServiceGatewayRevokeAccount)[vs[1].(int)]
-	}).(IsPrivatePathServiceGatewayRevokeAccountOutput)
-}
-
-type IsPrivatePathServiceGatewayRevokeAccountMapOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayRevokeAccountMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGatewayRevokeAccount)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayRevokeAccountMapOutput) ToIsPrivatePathServiceGatewayRevokeAccountMapOutput() IsPrivatePathServiceGatewayRevokeAccountMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayRevokeAccountMapOutput) ToIsPrivatePathServiceGatewayRevokeAccountMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayRevokeAccountMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayRevokeAccountMapOutput) MapIndex(k pulumi.StringInput) IsPrivatePathServiceGatewayRevokeAccountOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGatewayRevokeAccount {
-		return vs[0].(map[string]*IsPrivatePathServiceGatewayRevokeAccount)[vs[1].(string)]
-	}).(IsPrivatePathServiceGatewayRevokeAccountOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayRevokeAccountInput)(nil)).Elem(), &IsPrivatePathServiceGatewayRevokeAccount{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayRevokeAccountArrayInput)(nil)).Elem(), IsPrivatePathServiceGatewayRevokeAccountArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayRevokeAccountMapInput)(nil)).Elem(), IsPrivatePathServiceGatewayRevokeAccountMap{})
 	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayRevokeAccountOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayRevokeAccountArrayOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayRevokeAccountMapOutput{})
 }

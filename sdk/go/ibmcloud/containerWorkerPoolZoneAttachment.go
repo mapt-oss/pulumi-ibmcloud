@@ -178,56 +178,6 @@ func (i *ContainerWorkerPoolZoneAttachment) ToContainerWorkerPoolZoneAttachmentO
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolZoneAttachmentOutput)
 }
 
-// ContainerWorkerPoolZoneAttachmentArrayInput is an input type that accepts ContainerWorkerPoolZoneAttachmentArray and ContainerWorkerPoolZoneAttachmentArrayOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolZoneAttachmentArrayInput` via:
-//
-//	ContainerWorkerPoolZoneAttachmentArray{ ContainerWorkerPoolZoneAttachmentArgs{...} }
-type ContainerWorkerPoolZoneAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolZoneAttachmentArrayOutput() ContainerWorkerPoolZoneAttachmentArrayOutput
-	ToContainerWorkerPoolZoneAttachmentArrayOutputWithContext(context.Context) ContainerWorkerPoolZoneAttachmentArrayOutput
-}
-
-type ContainerWorkerPoolZoneAttachmentArray []ContainerWorkerPoolZoneAttachmentInput
-
-func (ContainerWorkerPoolZoneAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerWorkerPoolZoneAttachment)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolZoneAttachmentArray) ToContainerWorkerPoolZoneAttachmentArrayOutput() ContainerWorkerPoolZoneAttachmentArrayOutput {
-	return i.ToContainerWorkerPoolZoneAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolZoneAttachmentArray) ToContainerWorkerPoolZoneAttachmentArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolZoneAttachmentArrayOutput)
-}
-
-// ContainerWorkerPoolZoneAttachmentMapInput is an input type that accepts ContainerWorkerPoolZoneAttachmentMap and ContainerWorkerPoolZoneAttachmentMapOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolZoneAttachmentMapInput` via:
-//
-//	ContainerWorkerPoolZoneAttachmentMap{ "key": ContainerWorkerPoolZoneAttachmentArgs{...} }
-type ContainerWorkerPoolZoneAttachmentMapInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolZoneAttachmentMapOutput() ContainerWorkerPoolZoneAttachmentMapOutput
-	ToContainerWorkerPoolZoneAttachmentMapOutputWithContext(context.Context) ContainerWorkerPoolZoneAttachmentMapOutput
-}
-
-type ContainerWorkerPoolZoneAttachmentMap map[string]ContainerWorkerPoolZoneAttachmentInput
-
-func (ContainerWorkerPoolZoneAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerWorkerPoolZoneAttachment)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolZoneAttachmentMap) ToContainerWorkerPoolZoneAttachmentMapOutput() ContainerWorkerPoolZoneAttachmentMapOutput {
-	return i.ToContainerWorkerPoolZoneAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolZoneAttachmentMap) ToContainerWorkerPoolZoneAttachmentMapOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolZoneAttachmentMapOutput)
-}
-
 type ContainerWorkerPoolZoneAttachmentOutput struct{ *pulumi.OutputState }
 
 func (ContainerWorkerPoolZoneAttachmentOutput) ElementType() reflect.Type {
@@ -286,51 +236,7 @@ func (o ContainerWorkerPoolZoneAttachmentOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerWorkerPoolZoneAttachment) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type ContainerWorkerPoolZoneAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolZoneAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerWorkerPoolZoneAttachment)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolZoneAttachmentArrayOutput) ToContainerWorkerPoolZoneAttachmentArrayOutput() ContainerWorkerPoolZoneAttachmentArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneAttachmentArrayOutput) ToContainerWorkerPoolZoneAttachmentArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneAttachmentArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneAttachmentArrayOutput) Index(i pulumi.IntInput) ContainerWorkerPoolZoneAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerWorkerPoolZoneAttachment {
-		return vs[0].([]*ContainerWorkerPoolZoneAttachment)[vs[1].(int)]
-	}).(ContainerWorkerPoolZoneAttachmentOutput)
-}
-
-type ContainerWorkerPoolZoneAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolZoneAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerWorkerPoolZoneAttachment)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolZoneAttachmentMapOutput) ToContainerWorkerPoolZoneAttachmentMapOutput() ContainerWorkerPoolZoneAttachmentMapOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneAttachmentMapOutput) ToContainerWorkerPoolZoneAttachmentMapOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneAttachmentMapOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneAttachmentMapOutput) MapIndex(k pulumi.StringInput) ContainerWorkerPoolZoneAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerWorkerPoolZoneAttachment {
-		return vs[0].(map[string]*ContainerWorkerPoolZoneAttachment)[vs[1].(string)]
-	}).(ContainerWorkerPoolZoneAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolZoneAttachmentInput)(nil)).Elem(), &ContainerWorkerPoolZoneAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolZoneAttachmentArrayInput)(nil)).Elem(), ContainerWorkerPoolZoneAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolZoneAttachmentMapInput)(nil)).Elem(), ContainerWorkerPoolZoneAttachmentMap{})
 	pulumi.RegisterOutputType(ContainerWorkerPoolZoneAttachmentOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolZoneAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolZoneAttachmentMapOutput{})
 }

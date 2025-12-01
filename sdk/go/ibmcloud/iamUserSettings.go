@@ -109,56 +109,6 @@ func (i *IamUserSettings) ToIamUserSettingsOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IamUserSettingsOutput)
 }
 
-// IamUserSettingsArrayInput is an input type that accepts IamUserSettingsArray and IamUserSettingsArrayOutput values.
-// You can construct a concrete instance of `IamUserSettingsArrayInput` via:
-//
-//	IamUserSettingsArray{ IamUserSettingsArgs{...} }
-type IamUserSettingsArrayInput interface {
-	pulumi.Input
-
-	ToIamUserSettingsArrayOutput() IamUserSettingsArrayOutput
-	ToIamUserSettingsArrayOutputWithContext(context.Context) IamUserSettingsArrayOutput
-}
-
-type IamUserSettingsArray []IamUserSettingsInput
-
-func (IamUserSettingsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamUserSettings)(nil)).Elem()
-}
-
-func (i IamUserSettingsArray) ToIamUserSettingsArrayOutput() IamUserSettingsArrayOutput {
-	return i.ToIamUserSettingsArrayOutputWithContext(context.Background())
-}
-
-func (i IamUserSettingsArray) ToIamUserSettingsArrayOutputWithContext(ctx context.Context) IamUserSettingsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamUserSettingsArrayOutput)
-}
-
-// IamUserSettingsMapInput is an input type that accepts IamUserSettingsMap and IamUserSettingsMapOutput values.
-// You can construct a concrete instance of `IamUserSettingsMapInput` via:
-//
-//	IamUserSettingsMap{ "key": IamUserSettingsArgs{...} }
-type IamUserSettingsMapInput interface {
-	pulumi.Input
-
-	ToIamUserSettingsMapOutput() IamUserSettingsMapOutput
-	ToIamUserSettingsMapOutputWithContext(context.Context) IamUserSettingsMapOutput
-}
-
-type IamUserSettingsMap map[string]IamUserSettingsInput
-
-func (IamUserSettingsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamUserSettings)(nil)).Elem()
-}
-
-func (i IamUserSettingsMap) ToIamUserSettingsMapOutput() IamUserSettingsMapOutput {
-	return i.ToIamUserSettingsMapOutputWithContext(context.Background())
-}
-
-func (i IamUserSettingsMap) ToIamUserSettingsMapOutputWithContext(ctx context.Context) IamUserSettingsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamUserSettingsMapOutput)
-}
-
 type IamUserSettingsOutput struct{ *pulumi.OutputState }
 
 func (IamUserSettingsOutput) ElementType() reflect.Type {
@@ -183,51 +133,7 @@ func (o IamUserSettingsOutput) IamId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUserSettings) pulumi.StringOutput { return v.IamId }).(pulumi.StringOutput)
 }
 
-type IamUserSettingsArrayOutput struct{ *pulumi.OutputState }
-
-func (IamUserSettingsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamUserSettings)(nil)).Elem()
-}
-
-func (o IamUserSettingsArrayOutput) ToIamUserSettingsArrayOutput() IamUserSettingsArrayOutput {
-	return o
-}
-
-func (o IamUserSettingsArrayOutput) ToIamUserSettingsArrayOutputWithContext(ctx context.Context) IamUserSettingsArrayOutput {
-	return o
-}
-
-func (o IamUserSettingsArrayOutput) Index(i pulumi.IntInput) IamUserSettingsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamUserSettings {
-		return vs[0].([]*IamUserSettings)[vs[1].(int)]
-	}).(IamUserSettingsOutput)
-}
-
-type IamUserSettingsMapOutput struct{ *pulumi.OutputState }
-
-func (IamUserSettingsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamUserSettings)(nil)).Elem()
-}
-
-func (o IamUserSettingsMapOutput) ToIamUserSettingsMapOutput() IamUserSettingsMapOutput {
-	return o
-}
-
-func (o IamUserSettingsMapOutput) ToIamUserSettingsMapOutputWithContext(ctx context.Context) IamUserSettingsMapOutput {
-	return o
-}
-
-func (o IamUserSettingsMapOutput) MapIndex(k pulumi.StringInput) IamUserSettingsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamUserSettings {
-		return vs[0].(map[string]*IamUserSettings)[vs[1].(string)]
-	}).(IamUserSettingsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamUserSettingsInput)(nil)).Elem(), &IamUserSettings{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamUserSettingsArrayInput)(nil)).Elem(), IamUserSettingsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamUserSettingsMapInput)(nil)).Elem(), IamUserSettingsMap{})
 	pulumi.RegisterOutputType(IamUserSettingsOutput{})
-	pulumi.RegisterOutputType(IamUserSettingsArrayOutput{})
-	pulumi.RegisterOutputType(IamUserSettingsMapOutput{})
 }

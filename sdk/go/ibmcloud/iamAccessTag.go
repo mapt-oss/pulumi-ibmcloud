@@ -101,56 +101,6 @@ func (i *IamAccessTag) ToIamAccessTagOutputWithContext(ctx context.Context) IamA
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessTagOutput)
 }
 
-// IamAccessTagArrayInput is an input type that accepts IamAccessTagArray and IamAccessTagArrayOutput values.
-// You can construct a concrete instance of `IamAccessTagArrayInput` via:
-//
-//	IamAccessTagArray{ IamAccessTagArgs{...} }
-type IamAccessTagArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessTagArrayOutput() IamAccessTagArrayOutput
-	ToIamAccessTagArrayOutputWithContext(context.Context) IamAccessTagArrayOutput
-}
-
-type IamAccessTagArray []IamAccessTagInput
-
-func (IamAccessTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessTag)(nil)).Elem()
-}
-
-func (i IamAccessTagArray) ToIamAccessTagArrayOutput() IamAccessTagArrayOutput {
-	return i.ToIamAccessTagArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessTagArray) ToIamAccessTagArrayOutputWithContext(ctx context.Context) IamAccessTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessTagArrayOutput)
-}
-
-// IamAccessTagMapInput is an input type that accepts IamAccessTagMap and IamAccessTagMapOutput values.
-// You can construct a concrete instance of `IamAccessTagMapInput` via:
-//
-//	IamAccessTagMap{ "key": IamAccessTagArgs{...} }
-type IamAccessTagMapInput interface {
-	pulumi.Input
-
-	ToIamAccessTagMapOutput() IamAccessTagMapOutput
-	ToIamAccessTagMapOutputWithContext(context.Context) IamAccessTagMapOutput
-}
-
-type IamAccessTagMap map[string]IamAccessTagInput
-
-func (IamAccessTagMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessTag)(nil)).Elem()
-}
-
-func (i IamAccessTagMap) ToIamAccessTagMapOutput() IamAccessTagMapOutput {
-	return i.ToIamAccessTagMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessTagMap) ToIamAccessTagMapOutputWithContext(ctx context.Context) IamAccessTagMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessTagMapOutput)
-}
-
 type IamAccessTagOutput struct{ *pulumi.OutputState }
 
 func (IamAccessTagOutput) ElementType() reflect.Type {
@@ -175,51 +125,7 @@ func (o IamAccessTagOutput) TagType() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamAccessTag) pulumi.StringOutput { return v.TagType }).(pulumi.StringOutput)
 }
 
-type IamAccessTagArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessTag)(nil)).Elem()
-}
-
-func (o IamAccessTagArrayOutput) ToIamAccessTagArrayOutput() IamAccessTagArrayOutput {
-	return o
-}
-
-func (o IamAccessTagArrayOutput) ToIamAccessTagArrayOutputWithContext(ctx context.Context) IamAccessTagArrayOutput {
-	return o
-}
-
-func (o IamAccessTagArrayOutput) Index(i pulumi.IntInput) IamAccessTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessTag {
-		return vs[0].([]*IamAccessTag)[vs[1].(int)]
-	}).(IamAccessTagOutput)
-}
-
-type IamAccessTagMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessTagMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessTag)(nil)).Elem()
-}
-
-func (o IamAccessTagMapOutput) ToIamAccessTagMapOutput() IamAccessTagMapOutput {
-	return o
-}
-
-func (o IamAccessTagMapOutput) ToIamAccessTagMapOutputWithContext(ctx context.Context) IamAccessTagMapOutput {
-	return o
-}
-
-func (o IamAccessTagMapOutput) MapIndex(k pulumi.StringInput) IamAccessTagOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessTag {
-		return vs[0].(map[string]*IamAccessTag)[vs[1].(string)]
-	}).(IamAccessTagOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessTagInput)(nil)).Elem(), &IamAccessTag{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessTagArrayInput)(nil)).Elem(), IamAccessTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessTagMapInput)(nil)).Elem(), IamAccessTagMap{})
 	pulumi.RegisterOutputType(IamAccessTagOutput{})
-	pulumi.RegisterOutputType(IamAccessTagArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessTagMapOutput{})
 }

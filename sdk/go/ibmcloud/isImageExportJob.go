@@ -198,56 +198,6 @@ func (i *IsImageExportJob) ToIsImageExportJobOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(IsImageExportJobOutput)
 }
 
-// IsImageExportJobArrayInput is an input type that accepts IsImageExportJobArray and IsImageExportJobArrayOutput values.
-// You can construct a concrete instance of `IsImageExportJobArrayInput` via:
-//
-//	IsImageExportJobArray{ IsImageExportJobArgs{...} }
-type IsImageExportJobArrayInput interface {
-	pulumi.Input
-
-	ToIsImageExportJobArrayOutput() IsImageExportJobArrayOutput
-	ToIsImageExportJobArrayOutputWithContext(context.Context) IsImageExportJobArrayOutput
-}
-
-type IsImageExportJobArray []IsImageExportJobInput
-
-func (IsImageExportJobArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImageExportJob)(nil)).Elem()
-}
-
-func (i IsImageExportJobArray) ToIsImageExportJobArrayOutput() IsImageExportJobArrayOutput {
-	return i.ToIsImageExportJobArrayOutputWithContext(context.Background())
-}
-
-func (i IsImageExportJobArray) ToIsImageExportJobArrayOutputWithContext(ctx context.Context) IsImageExportJobArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageExportJobArrayOutput)
-}
-
-// IsImageExportJobMapInput is an input type that accepts IsImageExportJobMap and IsImageExportJobMapOutput values.
-// You can construct a concrete instance of `IsImageExportJobMapInput` via:
-//
-//	IsImageExportJobMap{ "key": IsImageExportJobArgs{...} }
-type IsImageExportJobMapInput interface {
-	pulumi.Input
-
-	ToIsImageExportJobMapOutput() IsImageExportJobMapOutput
-	ToIsImageExportJobMapOutputWithContext(context.Context) IsImageExportJobMapOutput
-}
-
-type IsImageExportJobMap map[string]IsImageExportJobInput
-
-func (IsImageExportJobMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImageExportJob)(nil)).Elem()
-}
-
-func (i IsImageExportJobMap) ToIsImageExportJobMapOutput() IsImageExportJobMapOutput {
-	return i.ToIsImageExportJobMapOutputWithContext(context.Background())
-}
-
-func (i IsImageExportJobMap) ToIsImageExportJobMapOutputWithContext(ctx context.Context) IsImageExportJobMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsImageExportJobMapOutput)
-}
-
 type IsImageExportJobOutput struct{ *pulumi.OutputState }
 
 func (IsImageExportJobOutput) ElementType() reflect.Type {
@@ -337,51 +287,7 @@ func (o IsImageExportJobOutput) StorageObjects() IsImageExportJobStorageObjectAr
 	return o.ApplyT(func(v *IsImageExportJob) IsImageExportJobStorageObjectArrayOutput { return v.StorageObjects }).(IsImageExportJobStorageObjectArrayOutput)
 }
 
-type IsImageExportJobArrayOutput struct{ *pulumi.OutputState }
-
-func (IsImageExportJobArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsImageExportJob)(nil)).Elem()
-}
-
-func (o IsImageExportJobArrayOutput) ToIsImageExportJobArrayOutput() IsImageExportJobArrayOutput {
-	return o
-}
-
-func (o IsImageExportJobArrayOutput) ToIsImageExportJobArrayOutputWithContext(ctx context.Context) IsImageExportJobArrayOutput {
-	return o
-}
-
-func (o IsImageExportJobArrayOutput) Index(i pulumi.IntInput) IsImageExportJobOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsImageExportJob {
-		return vs[0].([]*IsImageExportJob)[vs[1].(int)]
-	}).(IsImageExportJobOutput)
-}
-
-type IsImageExportJobMapOutput struct{ *pulumi.OutputState }
-
-func (IsImageExportJobMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsImageExportJob)(nil)).Elem()
-}
-
-func (o IsImageExportJobMapOutput) ToIsImageExportJobMapOutput() IsImageExportJobMapOutput {
-	return o
-}
-
-func (o IsImageExportJobMapOutput) ToIsImageExportJobMapOutputWithContext(ctx context.Context) IsImageExportJobMapOutput {
-	return o
-}
-
-func (o IsImageExportJobMapOutput) MapIndex(k pulumi.StringInput) IsImageExportJobOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsImageExportJob {
-		return vs[0].(map[string]*IsImageExportJob)[vs[1].(string)]
-	}).(IsImageExportJobOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsImageExportJobInput)(nil)).Elem(), &IsImageExportJob{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageExportJobArrayInput)(nil)).Elem(), IsImageExportJobArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsImageExportJobMapInput)(nil)).Elem(), IsImageExportJobMap{})
 	pulumi.RegisterOutputType(IsImageExportJobOutput{})
-	pulumi.RegisterOutputType(IsImageExportJobArrayOutput{})
-	pulumi.RegisterOutputType(IsImageExportJobMapOutput{})
 }

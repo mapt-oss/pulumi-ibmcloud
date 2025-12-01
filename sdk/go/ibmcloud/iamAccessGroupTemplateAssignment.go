@@ -199,56 +199,6 @@ func (i *IamAccessGroupTemplateAssignment) ToIamAccessGroupTemplateAssignmentOut
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateAssignmentOutput)
 }
 
-// IamAccessGroupTemplateAssignmentArrayInput is an input type that accepts IamAccessGroupTemplateAssignmentArray and IamAccessGroupTemplateAssignmentArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupTemplateAssignmentArrayInput` via:
-//
-//	IamAccessGroupTemplateAssignmentArray{ IamAccessGroupTemplateAssignmentArgs{...} }
-type IamAccessGroupTemplateAssignmentArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupTemplateAssignmentArrayOutput() IamAccessGroupTemplateAssignmentArrayOutput
-	ToIamAccessGroupTemplateAssignmentArrayOutputWithContext(context.Context) IamAccessGroupTemplateAssignmentArrayOutput
-}
-
-type IamAccessGroupTemplateAssignmentArray []IamAccessGroupTemplateAssignmentInput
-
-func (IamAccessGroupTemplateAssignmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupTemplateAssignment)(nil)).Elem()
-}
-
-func (i IamAccessGroupTemplateAssignmentArray) ToIamAccessGroupTemplateAssignmentArrayOutput() IamAccessGroupTemplateAssignmentArrayOutput {
-	return i.ToIamAccessGroupTemplateAssignmentArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupTemplateAssignmentArray) ToIamAccessGroupTemplateAssignmentArrayOutputWithContext(ctx context.Context) IamAccessGroupTemplateAssignmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateAssignmentArrayOutput)
-}
-
-// IamAccessGroupTemplateAssignmentMapInput is an input type that accepts IamAccessGroupTemplateAssignmentMap and IamAccessGroupTemplateAssignmentMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupTemplateAssignmentMapInput` via:
-//
-//	IamAccessGroupTemplateAssignmentMap{ "key": IamAccessGroupTemplateAssignmentArgs{...} }
-type IamAccessGroupTemplateAssignmentMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupTemplateAssignmentMapOutput() IamAccessGroupTemplateAssignmentMapOutput
-	ToIamAccessGroupTemplateAssignmentMapOutputWithContext(context.Context) IamAccessGroupTemplateAssignmentMapOutput
-}
-
-type IamAccessGroupTemplateAssignmentMap map[string]IamAccessGroupTemplateAssignmentInput
-
-func (IamAccessGroupTemplateAssignmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupTemplateAssignment)(nil)).Elem()
-}
-
-func (i IamAccessGroupTemplateAssignmentMap) ToIamAccessGroupTemplateAssignmentMapOutput() IamAccessGroupTemplateAssignmentMapOutput {
-	return i.ToIamAccessGroupTemplateAssignmentMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupTemplateAssignmentMap) ToIamAccessGroupTemplateAssignmentMapOutputWithContext(ctx context.Context) IamAccessGroupTemplateAssignmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateAssignmentMapOutput)
-}
-
 type IamAccessGroupTemplateAssignmentOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupTemplateAssignmentOutput) ElementType() reflect.Type {
@@ -332,51 +282,7 @@ func (o IamAccessGroupTemplateAssignmentOutput) TransactionId() pulumi.StringPtr
 	return o.ApplyT(func(v *IamAccessGroupTemplateAssignment) pulumi.StringPtrOutput { return v.TransactionId }).(pulumi.StringPtrOutput)
 }
 
-type IamAccessGroupTemplateAssignmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupTemplateAssignmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupTemplateAssignment)(nil)).Elem()
-}
-
-func (o IamAccessGroupTemplateAssignmentArrayOutput) ToIamAccessGroupTemplateAssignmentArrayOutput() IamAccessGroupTemplateAssignmentArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateAssignmentArrayOutput) ToIamAccessGroupTemplateAssignmentArrayOutputWithContext(ctx context.Context) IamAccessGroupTemplateAssignmentArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateAssignmentArrayOutput) Index(i pulumi.IntInput) IamAccessGroupTemplateAssignmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroupTemplateAssignment {
-		return vs[0].([]*IamAccessGroupTemplateAssignment)[vs[1].(int)]
-	}).(IamAccessGroupTemplateAssignmentOutput)
-}
-
-type IamAccessGroupTemplateAssignmentMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupTemplateAssignmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupTemplateAssignment)(nil)).Elem()
-}
-
-func (o IamAccessGroupTemplateAssignmentMapOutput) ToIamAccessGroupTemplateAssignmentMapOutput() IamAccessGroupTemplateAssignmentMapOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateAssignmentMapOutput) ToIamAccessGroupTemplateAssignmentMapOutputWithContext(ctx context.Context) IamAccessGroupTemplateAssignmentMapOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateAssignmentMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupTemplateAssignmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroupTemplateAssignment {
-		return vs[0].(map[string]*IamAccessGroupTemplateAssignment)[vs[1].(string)]
-	}).(IamAccessGroupTemplateAssignmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateAssignmentInput)(nil)).Elem(), &IamAccessGroupTemplateAssignment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateAssignmentArrayInput)(nil)).Elem(), IamAccessGroupTemplateAssignmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateAssignmentMapInput)(nil)).Elem(), IamAccessGroupTemplateAssignmentMap{})
 	pulumi.RegisterOutputType(IamAccessGroupTemplateAssignmentOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupTemplateAssignmentArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupTemplateAssignmentMapOutput{})
 }

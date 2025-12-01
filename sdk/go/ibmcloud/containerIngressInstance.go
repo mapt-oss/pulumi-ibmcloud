@@ -162,56 +162,6 @@ func (i *ContainerIngressInstance) ToContainerIngressInstanceOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressInstanceOutput)
 }
 
-// ContainerIngressInstanceArrayInput is an input type that accepts ContainerIngressInstanceArray and ContainerIngressInstanceArrayOutput values.
-// You can construct a concrete instance of `ContainerIngressInstanceArrayInput` via:
-//
-//	ContainerIngressInstanceArray{ ContainerIngressInstanceArgs{...} }
-type ContainerIngressInstanceArrayInput interface {
-	pulumi.Input
-
-	ToContainerIngressInstanceArrayOutput() ContainerIngressInstanceArrayOutput
-	ToContainerIngressInstanceArrayOutputWithContext(context.Context) ContainerIngressInstanceArrayOutput
-}
-
-type ContainerIngressInstanceArray []ContainerIngressInstanceInput
-
-func (ContainerIngressInstanceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerIngressInstance)(nil)).Elem()
-}
-
-func (i ContainerIngressInstanceArray) ToContainerIngressInstanceArrayOutput() ContainerIngressInstanceArrayOutput {
-	return i.ToContainerIngressInstanceArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressInstanceArray) ToContainerIngressInstanceArrayOutputWithContext(ctx context.Context) ContainerIngressInstanceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressInstanceArrayOutput)
-}
-
-// ContainerIngressInstanceMapInput is an input type that accepts ContainerIngressInstanceMap and ContainerIngressInstanceMapOutput values.
-// You can construct a concrete instance of `ContainerIngressInstanceMapInput` via:
-//
-//	ContainerIngressInstanceMap{ "key": ContainerIngressInstanceArgs{...} }
-type ContainerIngressInstanceMapInput interface {
-	pulumi.Input
-
-	ToContainerIngressInstanceMapOutput() ContainerIngressInstanceMapOutput
-	ToContainerIngressInstanceMapOutputWithContext(context.Context) ContainerIngressInstanceMapOutput
-}
-
-type ContainerIngressInstanceMap map[string]ContainerIngressInstanceInput
-
-func (ContainerIngressInstanceMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerIngressInstance)(nil)).Elem()
-}
-
-func (i ContainerIngressInstanceMap) ToContainerIngressInstanceMapOutput() ContainerIngressInstanceMapOutput {
-	return i.ToContainerIngressInstanceMapOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressInstanceMap) ToContainerIngressInstanceMapOutputWithContext(ctx context.Context) ContainerIngressInstanceMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressInstanceMapOutput)
-}
-
 type ContainerIngressInstanceOutput struct{ *pulumi.OutputState }
 
 func (ContainerIngressInstanceOutput) ElementType() reflect.Type {
@@ -271,51 +221,7 @@ func (o ContainerIngressInstanceOutput) UserManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerIngressInstance) pulumi.BoolOutput { return v.UserManaged }).(pulumi.BoolOutput)
 }
 
-type ContainerIngressInstanceArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressInstanceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*ContainerIngressInstance)(nil)).Elem()
-}
-
-func (o ContainerIngressInstanceArrayOutput) ToContainerIngressInstanceArrayOutput() ContainerIngressInstanceArrayOutput {
-	return o
-}
-
-func (o ContainerIngressInstanceArrayOutput) ToContainerIngressInstanceArrayOutputWithContext(ctx context.Context) ContainerIngressInstanceArrayOutput {
-	return o
-}
-
-func (o ContainerIngressInstanceArrayOutput) Index(i pulumi.IntInput) ContainerIngressInstanceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerIngressInstance {
-		return vs[0].([]*ContainerIngressInstance)[vs[1].(int)]
-	}).(ContainerIngressInstanceOutput)
-}
-
-type ContainerIngressInstanceMapOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressInstanceMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*ContainerIngressInstance)(nil)).Elem()
-}
-
-func (o ContainerIngressInstanceMapOutput) ToContainerIngressInstanceMapOutput() ContainerIngressInstanceMapOutput {
-	return o
-}
-
-func (o ContainerIngressInstanceMapOutput) ToContainerIngressInstanceMapOutputWithContext(ctx context.Context) ContainerIngressInstanceMapOutput {
-	return o
-}
-
-func (o ContainerIngressInstanceMapOutput) MapIndex(k pulumi.StringInput) ContainerIngressInstanceOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ContainerIngressInstance {
-		return vs[0].(map[string]*ContainerIngressInstance)[vs[1].(string)]
-	}).(ContainerIngressInstanceOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressInstanceInput)(nil)).Elem(), &ContainerIngressInstance{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressInstanceArrayInput)(nil)).Elem(), ContainerIngressInstanceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressInstanceMapInput)(nil)).Elem(), ContainerIngressInstanceMap{})
 	pulumi.RegisterOutputType(ContainerIngressInstanceOutput{})
-	pulumi.RegisterOutputType(ContainerIngressInstanceArrayOutput{})
-	pulumi.RegisterOutputType(ContainerIngressInstanceMapOutput{})
 }

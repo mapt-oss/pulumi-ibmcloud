@@ -390,56 +390,6 @@ func (i *IsInstanceTemplate) ToIsInstanceTemplateOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceTemplateOutput)
 }
 
-// IsInstanceTemplateArrayInput is an input type that accepts IsInstanceTemplateArray and IsInstanceTemplateArrayOutput values.
-// You can construct a concrete instance of `IsInstanceTemplateArrayInput` via:
-//
-//	IsInstanceTemplateArray{ IsInstanceTemplateArgs{...} }
-type IsInstanceTemplateArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceTemplateArrayOutput() IsInstanceTemplateArrayOutput
-	ToIsInstanceTemplateArrayOutputWithContext(context.Context) IsInstanceTemplateArrayOutput
-}
-
-type IsInstanceTemplateArray []IsInstanceTemplateInput
-
-func (IsInstanceTemplateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceTemplate)(nil)).Elem()
-}
-
-func (i IsInstanceTemplateArray) ToIsInstanceTemplateArrayOutput() IsInstanceTemplateArrayOutput {
-	return i.ToIsInstanceTemplateArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceTemplateArray) ToIsInstanceTemplateArrayOutputWithContext(ctx context.Context) IsInstanceTemplateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceTemplateArrayOutput)
-}
-
-// IsInstanceTemplateMapInput is an input type that accepts IsInstanceTemplateMap and IsInstanceTemplateMapOutput values.
-// You can construct a concrete instance of `IsInstanceTemplateMapInput` via:
-//
-//	IsInstanceTemplateMap{ "key": IsInstanceTemplateArgs{...} }
-type IsInstanceTemplateMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceTemplateMapOutput() IsInstanceTemplateMapOutput
-	ToIsInstanceTemplateMapOutputWithContext(context.Context) IsInstanceTemplateMapOutput
-}
-
-type IsInstanceTemplateMap map[string]IsInstanceTemplateInput
-
-func (IsInstanceTemplateMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceTemplate)(nil)).Elem()
-}
-
-func (i IsInstanceTemplateMap) ToIsInstanceTemplateMapOutput() IsInstanceTemplateMapOutput {
-	return i.ToIsInstanceTemplateMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceTemplateMap) ToIsInstanceTemplateMapOutputWithContext(ctx context.Context) IsInstanceTemplateMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceTemplateMapOutput)
-}
-
 type IsInstanceTemplateOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceTemplateOutput) ElementType() reflect.Type {
@@ -617,51 +567,7 @@ func (o IsInstanceTemplateOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceTemplate) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsInstanceTemplateArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceTemplateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceTemplate)(nil)).Elem()
-}
-
-func (o IsInstanceTemplateArrayOutput) ToIsInstanceTemplateArrayOutput() IsInstanceTemplateArrayOutput {
-	return o
-}
-
-func (o IsInstanceTemplateArrayOutput) ToIsInstanceTemplateArrayOutputWithContext(ctx context.Context) IsInstanceTemplateArrayOutput {
-	return o
-}
-
-func (o IsInstanceTemplateArrayOutput) Index(i pulumi.IntInput) IsInstanceTemplateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceTemplate {
-		return vs[0].([]*IsInstanceTemplate)[vs[1].(int)]
-	}).(IsInstanceTemplateOutput)
-}
-
-type IsInstanceTemplateMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceTemplateMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceTemplate)(nil)).Elem()
-}
-
-func (o IsInstanceTemplateMapOutput) ToIsInstanceTemplateMapOutput() IsInstanceTemplateMapOutput {
-	return o
-}
-
-func (o IsInstanceTemplateMapOutput) ToIsInstanceTemplateMapOutputWithContext(ctx context.Context) IsInstanceTemplateMapOutput {
-	return o
-}
-
-func (o IsInstanceTemplateMapOutput) MapIndex(k pulumi.StringInput) IsInstanceTemplateOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceTemplate {
-		return vs[0].(map[string]*IsInstanceTemplate)[vs[1].(string)]
-	}).(IsInstanceTemplateOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceTemplateInput)(nil)).Elem(), &IsInstanceTemplate{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceTemplateArrayInput)(nil)).Elem(), IsInstanceTemplateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceTemplateMapInput)(nil)).Elem(), IsInstanceTemplateMap{})
 	pulumi.RegisterOutputType(IsInstanceTemplateOutput{})
-	pulumi.RegisterOutputType(IsInstanceTemplateArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceTemplateMapOutput{})
 }

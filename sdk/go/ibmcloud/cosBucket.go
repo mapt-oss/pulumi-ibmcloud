@@ -366,56 +366,6 @@ func (i *CosBucket) ToCosBucketOutputWithContext(ctx context.Context) CosBucketO
 	return pulumi.ToOutputWithContext(ctx, i).(CosBucketOutput)
 }
 
-// CosBucketArrayInput is an input type that accepts CosBucketArray and CosBucketArrayOutput values.
-// You can construct a concrete instance of `CosBucketArrayInput` via:
-//
-//	CosBucketArray{ CosBucketArgs{...} }
-type CosBucketArrayInput interface {
-	pulumi.Input
-
-	ToCosBucketArrayOutput() CosBucketArrayOutput
-	ToCosBucketArrayOutputWithContext(context.Context) CosBucketArrayOutput
-}
-
-type CosBucketArray []CosBucketInput
-
-func (CosBucketArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucket)(nil)).Elem()
-}
-
-func (i CosBucketArray) ToCosBucketArrayOutput() CosBucketArrayOutput {
-	return i.ToCosBucketArrayOutputWithContext(context.Background())
-}
-
-func (i CosBucketArray) ToCosBucketArrayOutputWithContext(ctx context.Context) CosBucketArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketArrayOutput)
-}
-
-// CosBucketMapInput is an input type that accepts CosBucketMap and CosBucketMapOutput values.
-// You can construct a concrete instance of `CosBucketMapInput` via:
-//
-//	CosBucketMap{ "key": CosBucketArgs{...} }
-type CosBucketMapInput interface {
-	pulumi.Input
-
-	ToCosBucketMapOutput() CosBucketMapOutput
-	ToCosBucketMapOutputWithContext(context.Context) CosBucketMapOutput
-}
-
-type CosBucketMap map[string]CosBucketInput
-
-func (CosBucketMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucket)(nil)).Elem()
-}
-
-func (i CosBucketMap) ToCosBucketMapOutput() CosBucketMapOutput {
-	return i.ToCosBucketMapOutputWithContext(context.Background())
-}
-
-func (i CosBucketMap) ToCosBucketMapOutputWithContext(ctx context.Context) CosBucketMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CosBucketMapOutput)
-}
-
 type CosBucketOutput struct{ *pulumi.OutputState }
 
 func (CosBucketOutput) ElementType() reflect.Type {
@@ -568,51 +518,7 @@ func (o CosBucketOutput) StorageClass() pulumi.StringOutput {
 	return o.ApplyT(func(v *CosBucket) pulumi.StringOutput { return v.StorageClass }).(pulumi.StringOutput)
 }
 
-type CosBucketArrayOutput struct{ *pulumi.OutputState }
-
-func (CosBucketArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*CosBucket)(nil)).Elem()
-}
-
-func (o CosBucketArrayOutput) ToCosBucketArrayOutput() CosBucketArrayOutput {
-	return o
-}
-
-func (o CosBucketArrayOutput) ToCosBucketArrayOutputWithContext(ctx context.Context) CosBucketArrayOutput {
-	return o
-}
-
-func (o CosBucketArrayOutput) Index(i pulumi.IntInput) CosBucketOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CosBucket {
-		return vs[0].([]*CosBucket)[vs[1].(int)]
-	}).(CosBucketOutput)
-}
-
-type CosBucketMapOutput struct{ *pulumi.OutputState }
-
-func (CosBucketMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*CosBucket)(nil)).Elem()
-}
-
-func (o CosBucketMapOutput) ToCosBucketMapOutput() CosBucketMapOutput {
-	return o
-}
-
-func (o CosBucketMapOutput) ToCosBucketMapOutputWithContext(ctx context.Context) CosBucketMapOutput {
-	return o
-}
-
-func (o CosBucketMapOutput) MapIndex(k pulumi.StringInput) CosBucketOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CosBucket {
-		return vs[0].(map[string]*CosBucket)[vs[1].(string)]
-	}).(CosBucketOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketInput)(nil)).Elem(), &CosBucket{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketArrayInput)(nil)).Elem(), CosBucketArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketMapInput)(nil)).Elem(), CosBucketMap{})
 	pulumi.RegisterOutputType(CosBucketOutput{})
-	pulumi.RegisterOutputType(CosBucketArrayOutput{})
-	pulumi.RegisterOutputType(CosBucketMapOutput{})
 }

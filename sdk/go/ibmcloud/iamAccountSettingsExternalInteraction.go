@@ -122,56 +122,6 @@ func (i *IamAccountSettingsExternalInteraction) ToIamAccountSettingsExternalInte
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsExternalInteractionOutput)
 }
 
-// IamAccountSettingsExternalInteractionArrayInput is an input type that accepts IamAccountSettingsExternalInteractionArray and IamAccountSettingsExternalInteractionArrayOutput values.
-// You can construct a concrete instance of `IamAccountSettingsExternalInteractionArrayInput` via:
-//
-//	IamAccountSettingsExternalInteractionArray{ IamAccountSettingsExternalInteractionArgs{...} }
-type IamAccountSettingsExternalInteractionArrayInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsExternalInteractionArrayOutput() IamAccountSettingsExternalInteractionArrayOutput
-	ToIamAccountSettingsExternalInteractionArrayOutputWithContext(context.Context) IamAccountSettingsExternalInteractionArrayOutput
-}
-
-type IamAccountSettingsExternalInteractionArray []IamAccountSettingsExternalInteractionInput
-
-func (IamAccountSettingsExternalInteractionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettingsExternalInteraction)(nil)).Elem()
-}
-
-func (i IamAccountSettingsExternalInteractionArray) ToIamAccountSettingsExternalInteractionArrayOutput() IamAccountSettingsExternalInteractionArrayOutput {
-	return i.ToIamAccountSettingsExternalInteractionArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsExternalInteractionArray) ToIamAccountSettingsExternalInteractionArrayOutputWithContext(ctx context.Context) IamAccountSettingsExternalInteractionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsExternalInteractionArrayOutput)
-}
-
-// IamAccountSettingsExternalInteractionMapInput is an input type that accepts IamAccountSettingsExternalInteractionMap and IamAccountSettingsExternalInteractionMapOutput values.
-// You can construct a concrete instance of `IamAccountSettingsExternalInteractionMapInput` via:
-//
-//	IamAccountSettingsExternalInteractionMap{ "key": IamAccountSettingsExternalInteractionArgs{...} }
-type IamAccountSettingsExternalInteractionMapInput interface {
-	pulumi.Input
-
-	ToIamAccountSettingsExternalInteractionMapOutput() IamAccountSettingsExternalInteractionMapOutput
-	ToIamAccountSettingsExternalInteractionMapOutputWithContext(context.Context) IamAccountSettingsExternalInteractionMapOutput
-}
-
-type IamAccountSettingsExternalInteractionMap map[string]IamAccountSettingsExternalInteractionInput
-
-func (IamAccountSettingsExternalInteractionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettingsExternalInteraction)(nil)).Elem()
-}
-
-func (i IamAccountSettingsExternalInteractionMap) ToIamAccountSettingsExternalInteractionMapOutput() IamAccountSettingsExternalInteractionMapOutput {
-	return i.ToIamAccountSettingsExternalInteractionMapOutputWithContext(context.Background())
-}
-
-func (i IamAccountSettingsExternalInteractionMap) ToIamAccountSettingsExternalInteractionMapOutputWithContext(ctx context.Context) IamAccountSettingsExternalInteractionMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccountSettingsExternalInteractionMapOutput)
-}
-
 type IamAccountSettingsExternalInteractionOutput struct{ *pulumi.OutputState }
 
 func (IamAccountSettingsExternalInteractionOutput) ElementType() reflect.Type {
@@ -203,51 +153,7 @@ func (o IamAccountSettingsExternalInteractionOutput) ExternalAccountIdentityInte
 	}).(IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionOutput)
 }
 
-type IamAccountSettingsExternalInteractionArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsExternalInteractionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccountSettingsExternalInteraction)(nil)).Elem()
-}
-
-func (o IamAccountSettingsExternalInteractionArrayOutput) ToIamAccountSettingsExternalInteractionArrayOutput() IamAccountSettingsExternalInteractionArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsExternalInteractionArrayOutput) ToIamAccountSettingsExternalInteractionArrayOutputWithContext(ctx context.Context) IamAccountSettingsExternalInteractionArrayOutput {
-	return o
-}
-
-func (o IamAccountSettingsExternalInteractionArrayOutput) Index(i pulumi.IntInput) IamAccountSettingsExternalInteractionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccountSettingsExternalInteraction {
-		return vs[0].([]*IamAccountSettingsExternalInteraction)[vs[1].(int)]
-	}).(IamAccountSettingsExternalInteractionOutput)
-}
-
-type IamAccountSettingsExternalInteractionMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccountSettingsExternalInteractionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccountSettingsExternalInteraction)(nil)).Elem()
-}
-
-func (o IamAccountSettingsExternalInteractionMapOutput) ToIamAccountSettingsExternalInteractionMapOutput() IamAccountSettingsExternalInteractionMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsExternalInteractionMapOutput) ToIamAccountSettingsExternalInteractionMapOutputWithContext(ctx context.Context) IamAccountSettingsExternalInteractionMapOutput {
-	return o
-}
-
-func (o IamAccountSettingsExternalInteractionMapOutput) MapIndex(k pulumi.StringInput) IamAccountSettingsExternalInteractionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccountSettingsExternalInteraction {
-		return vs[0].(map[string]*IamAccountSettingsExternalInteraction)[vs[1].(string)]
-	}).(IamAccountSettingsExternalInteractionOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsExternalInteractionInput)(nil)).Elem(), &IamAccountSettingsExternalInteraction{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsExternalInteractionArrayInput)(nil)).Elem(), IamAccountSettingsExternalInteractionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccountSettingsExternalInteractionMapInput)(nil)).Elem(), IamAccountSettingsExternalInteractionMap{})
 	pulumi.RegisterOutputType(IamAccountSettingsExternalInteractionOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsExternalInteractionArrayOutput{})
-	pulumi.RegisterOutputType(IamAccountSettingsExternalInteractionMapOutput{})
 }

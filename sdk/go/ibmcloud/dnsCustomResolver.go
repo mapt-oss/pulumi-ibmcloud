@@ -196,56 +196,6 @@ func (i *DnsCustomResolver) ToDnsCustomResolverOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverOutput)
 }
 
-// DnsCustomResolverArrayInput is an input type that accepts DnsCustomResolverArray and DnsCustomResolverArrayOutput values.
-// You can construct a concrete instance of `DnsCustomResolverArrayInput` via:
-//
-//	DnsCustomResolverArray{ DnsCustomResolverArgs{...} }
-type DnsCustomResolverArrayInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverArrayOutput() DnsCustomResolverArrayOutput
-	ToDnsCustomResolverArrayOutputWithContext(context.Context) DnsCustomResolverArrayOutput
-}
-
-type DnsCustomResolverArray []DnsCustomResolverInput
-
-func (DnsCustomResolverArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsCustomResolver)(nil)).Elem()
-}
-
-func (i DnsCustomResolverArray) ToDnsCustomResolverArrayOutput() DnsCustomResolverArrayOutput {
-	return i.ToDnsCustomResolverArrayOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverArray) ToDnsCustomResolverArrayOutputWithContext(ctx context.Context) DnsCustomResolverArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverArrayOutput)
-}
-
-// DnsCustomResolverMapInput is an input type that accepts DnsCustomResolverMap and DnsCustomResolverMapOutput values.
-// You can construct a concrete instance of `DnsCustomResolverMapInput` via:
-//
-//	DnsCustomResolverMap{ "key": DnsCustomResolverArgs{...} }
-type DnsCustomResolverMapInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverMapOutput() DnsCustomResolverMapOutput
-	ToDnsCustomResolverMapOutputWithContext(context.Context) DnsCustomResolverMapOutput
-}
-
-type DnsCustomResolverMap map[string]DnsCustomResolverInput
-
-func (DnsCustomResolverMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsCustomResolver)(nil)).Elem()
-}
-
-func (i DnsCustomResolverMap) ToDnsCustomResolverMapOutput() DnsCustomResolverMapOutput {
-	return i.ToDnsCustomResolverMapOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverMap) ToDnsCustomResolverMapOutputWithContext(ctx context.Context) DnsCustomResolverMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverMapOutput)
-}
-
 type DnsCustomResolverOutput struct{ *pulumi.OutputState }
 
 func (DnsCustomResolverOutput) ElementType() reflect.Type {
@@ -324,51 +274,7 @@ func (o DnsCustomResolverOutput) Rules() DnsCustomResolverRuleArrayOutput {
 	return o.ApplyT(func(v *DnsCustomResolver) DnsCustomResolverRuleArrayOutput { return v.Rules }).(DnsCustomResolverRuleArrayOutput)
 }
 
-type DnsCustomResolverArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsCustomResolver)(nil)).Elem()
-}
-
-func (o DnsCustomResolverArrayOutput) ToDnsCustomResolverArrayOutput() DnsCustomResolverArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverArrayOutput) ToDnsCustomResolverArrayOutputWithContext(ctx context.Context) DnsCustomResolverArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverArrayOutput) Index(i pulumi.IntInput) DnsCustomResolverOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsCustomResolver {
-		return vs[0].([]*DnsCustomResolver)[vs[1].(int)]
-	}).(DnsCustomResolverOutput)
-}
-
-type DnsCustomResolverMapOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsCustomResolver)(nil)).Elem()
-}
-
-func (o DnsCustomResolverMapOutput) ToDnsCustomResolverMapOutput() DnsCustomResolverMapOutput {
-	return o
-}
-
-func (o DnsCustomResolverMapOutput) ToDnsCustomResolverMapOutputWithContext(ctx context.Context) DnsCustomResolverMapOutput {
-	return o
-}
-
-func (o DnsCustomResolverMapOutput) MapIndex(k pulumi.StringInput) DnsCustomResolverOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsCustomResolver {
-		return vs[0].(map[string]*DnsCustomResolver)[vs[1].(string)]
-	}).(DnsCustomResolverOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverInput)(nil)).Elem(), &DnsCustomResolver{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverArrayInput)(nil)).Elem(), DnsCustomResolverArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverMapInput)(nil)).Elem(), DnsCustomResolverMap{})
 	pulumi.RegisterOutputType(DnsCustomResolverOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverArrayOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverMapOutput{})
 }

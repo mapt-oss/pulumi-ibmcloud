@@ -185,56 +185,6 @@ func (i *IsPublicAddressRange) ToIsPublicAddressRangeOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(IsPublicAddressRangeOutput)
 }
 
-// IsPublicAddressRangeArrayInput is an input type that accepts IsPublicAddressRangeArray and IsPublicAddressRangeArrayOutput values.
-// You can construct a concrete instance of `IsPublicAddressRangeArrayInput` via:
-//
-//	IsPublicAddressRangeArray{ IsPublicAddressRangeArgs{...} }
-type IsPublicAddressRangeArrayInput interface {
-	pulumi.Input
-
-	ToIsPublicAddressRangeArrayOutput() IsPublicAddressRangeArrayOutput
-	ToIsPublicAddressRangeArrayOutputWithContext(context.Context) IsPublicAddressRangeArrayOutput
-}
-
-type IsPublicAddressRangeArray []IsPublicAddressRangeInput
-
-func (IsPublicAddressRangeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPublicAddressRange)(nil)).Elem()
-}
-
-func (i IsPublicAddressRangeArray) ToIsPublicAddressRangeArrayOutput() IsPublicAddressRangeArrayOutput {
-	return i.ToIsPublicAddressRangeArrayOutputWithContext(context.Background())
-}
-
-func (i IsPublicAddressRangeArray) ToIsPublicAddressRangeArrayOutputWithContext(ctx context.Context) IsPublicAddressRangeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPublicAddressRangeArrayOutput)
-}
-
-// IsPublicAddressRangeMapInput is an input type that accepts IsPublicAddressRangeMap and IsPublicAddressRangeMapOutput values.
-// You can construct a concrete instance of `IsPublicAddressRangeMapInput` via:
-//
-//	IsPublicAddressRangeMap{ "key": IsPublicAddressRangeArgs{...} }
-type IsPublicAddressRangeMapInput interface {
-	pulumi.Input
-
-	ToIsPublicAddressRangeMapOutput() IsPublicAddressRangeMapOutput
-	ToIsPublicAddressRangeMapOutputWithContext(context.Context) IsPublicAddressRangeMapOutput
-}
-
-type IsPublicAddressRangeMap map[string]IsPublicAddressRangeInput
-
-func (IsPublicAddressRangeMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPublicAddressRange)(nil)).Elem()
-}
-
-func (i IsPublicAddressRangeMap) ToIsPublicAddressRangeMapOutput() IsPublicAddressRangeMapOutput {
-	return i.ToIsPublicAddressRangeMapOutputWithContext(context.Background())
-}
-
-func (i IsPublicAddressRangeMap) ToIsPublicAddressRangeMapOutputWithContext(ctx context.Context) IsPublicAddressRangeMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPublicAddressRangeMapOutput)
-}
-
 type IsPublicAddressRangeOutput struct{ *pulumi.OutputState }
 
 func (IsPublicAddressRangeOutput) ElementType() reflect.Type {
@@ -309,51 +259,7 @@ func (o IsPublicAddressRangeOutput) Target() IsPublicAddressRangeTargetPtrOutput
 	return o.ApplyT(func(v *IsPublicAddressRange) IsPublicAddressRangeTargetPtrOutput { return v.Target }).(IsPublicAddressRangeTargetPtrOutput)
 }
 
-type IsPublicAddressRangeArrayOutput struct{ *pulumi.OutputState }
-
-func (IsPublicAddressRangeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPublicAddressRange)(nil)).Elem()
-}
-
-func (o IsPublicAddressRangeArrayOutput) ToIsPublicAddressRangeArrayOutput() IsPublicAddressRangeArrayOutput {
-	return o
-}
-
-func (o IsPublicAddressRangeArrayOutput) ToIsPublicAddressRangeArrayOutputWithContext(ctx context.Context) IsPublicAddressRangeArrayOutput {
-	return o
-}
-
-func (o IsPublicAddressRangeArrayOutput) Index(i pulumi.IntInput) IsPublicAddressRangeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsPublicAddressRange {
-		return vs[0].([]*IsPublicAddressRange)[vs[1].(int)]
-	}).(IsPublicAddressRangeOutput)
-}
-
-type IsPublicAddressRangeMapOutput struct{ *pulumi.OutputState }
-
-func (IsPublicAddressRangeMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPublicAddressRange)(nil)).Elem()
-}
-
-func (o IsPublicAddressRangeMapOutput) ToIsPublicAddressRangeMapOutput() IsPublicAddressRangeMapOutput {
-	return o
-}
-
-func (o IsPublicAddressRangeMapOutput) ToIsPublicAddressRangeMapOutputWithContext(ctx context.Context) IsPublicAddressRangeMapOutput {
-	return o
-}
-
-func (o IsPublicAddressRangeMapOutput) MapIndex(k pulumi.StringInput) IsPublicAddressRangeOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsPublicAddressRange {
-		return vs[0].(map[string]*IsPublicAddressRange)[vs[1].(string)]
-	}).(IsPublicAddressRangeOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsPublicAddressRangeInput)(nil)).Elem(), &IsPublicAddressRange{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPublicAddressRangeArrayInput)(nil)).Elem(), IsPublicAddressRangeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPublicAddressRangeMapInput)(nil)).Elem(), IsPublicAddressRangeMap{})
 	pulumi.RegisterOutputType(IsPublicAddressRangeOutput{})
-	pulumi.RegisterOutputType(IsPublicAddressRangeArrayOutput{})
-	pulumi.RegisterOutputType(IsPublicAddressRangeMapOutput{})
 }

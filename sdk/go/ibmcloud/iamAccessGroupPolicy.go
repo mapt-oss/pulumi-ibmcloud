@@ -205,56 +205,6 @@ func (i *IamAccessGroupPolicy) ToIamAccessGroupPolicyOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupPolicyOutput)
 }
 
-// IamAccessGroupPolicyArrayInput is an input type that accepts IamAccessGroupPolicyArray and IamAccessGroupPolicyArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupPolicyArrayInput` via:
-//
-//	IamAccessGroupPolicyArray{ IamAccessGroupPolicyArgs{...} }
-type IamAccessGroupPolicyArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupPolicyArrayOutput() IamAccessGroupPolicyArrayOutput
-	ToIamAccessGroupPolicyArrayOutputWithContext(context.Context) IamAccessGroupPolicyArrayOutput
-}
-
-type IamAccessGroupPolicyArray []IamAccessGroupPolicyInput
-
-func (IamAccessGroupPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupPolicy)(nil)).Elem()
-}
-
-func (i IamAccessGroupPolicyArray) ToIamAccessGroupPolicyArrayOutput() IamAccessGroupPolicyArrayOutput {
-	return i.ToIamAccessGroupPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupPolicyArray) ToIamAccessGroupPolicyArrayOutputWithContext(ctx context.Context) IamAccessGroupPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupPolicyArrayOutput)
-}
-
-// IamAccessGroupPolicyMapInput is an input type that accepts IamAccessGroupPolicyMap and IamAccessGroupPolicyMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupPolicyMapInput` via:
-//
-//	IamAccessGroupPolicyMap{ "key": IamAccessGroupPolicyArgs{...} }
-type IamAccessGroupPolicyMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupPolicyMapOutput() IamAccessGroupPolicyMapOutput
-	ToIamAccessGroupPolicyMapOutputWithContext(context.Context) IamAccessGroupPolicyMapOutput
-}
-
-type IamAccessGroupPolicyMap map[string]IamAccessGroupPolicyInput
-
-func (IamAccessGroupPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupPolicy)(nil)).Elem()
-}
-
-func (i IamAccessGroupPolicyMap) ToIamAccessGroupPolicyMapOutput() IamAccessGroupPolicyMapOutput {
-	return i.ToIamAccessGroupPolicyMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupPolicyMap) ToIamAccessGroupPolicyMapOutputWithContext(ctx context.Context) IamAccessGroupPolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupPolicyMapOutput)
-}
-
 type IamAccessGroupPolicyOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupPolicyOutput) ElementType() reflect.Type {
@@ -333,51 +283,7 @@ func (o IamAccessGroupPolicyOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamAccessGroupPolicy) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamAccessGroupPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupPolicy)(nil)).Elem()
-}
-
-func (o IamAccessGroupPolicyArrayOutput) ToIamAccessGroupPolicyArrayOutput() IamAccessGroupPolicyArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupPolicyArrayOutput) ToIamAccessGroupPolicyArrayOutputWithContext(ctx context.Context) IamAccessGroupPolicyArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupPolicyArrayOutput) Index(i pulumi.IntInput) IamAccessGroupPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroupPolicy {
-		return vs[0].([]*IamAccessGroupPolicy)[vs[1].(int)]
-	}).(IamAccessGroupPolicyOutput)
-}
-
-type IamAccessGroupPolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupPolicy)(nil)).Elem()
-}
-
-func (o IamAccessGroupPolicyMapOutput) ToIamAccessGroupPolicyMapOutput() IamAccessGroupPolicyMapOutput {
-	return o
-}
-
-func (o IamAccessGroupPolicyMapOutput) ToIamAccessGroupPolicyMapOutputWithContext(ctx context.Context) IamAccessGroupPolicyMapOutput {
-	return o
-}
-
-func (o IamAccessGroupPolicyMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroupPolicy {
-		return vs[0].(map[string]*IamAccessGroupPolicy)[vs[1].(string)]
-	}).(IamAccessGroupPolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupPolicyInput)(nil)).Elem(), &IamAccessGroupPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupPolicyArrayInput)(nil)).Elem(), IamAccessGroupPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupPolicyMapInput)(nil)).Elem(), IamAccessGroupPolicyMap{})
 	pulumi.RegisterOutputType(IamAccessGroupPolicyOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupPolicyArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupPolicyMapOutput{})
 }

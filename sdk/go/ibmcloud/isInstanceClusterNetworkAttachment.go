@@ -162,56 +162,6 @@ func (i *IsInstanceClusterNetworkAttachment) ToIsInstanceClusterNetworkAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceClusterNetworkAttachmentOutput)
 }
 
-// IsInstanceClusterNetworkAttachmentArrayInput is an input type that accepts IsInstanceClusterNetworkAttachmentArray and IsInstanceClusterNetworkAttachmentArrayOutput values.
-// You can construct a concrete instance of `IsInstanceClusterNetworkAttachmentArrayInput` via:
-//
-//	IsInstanceClusterNetworkAttachmentArray{ IsInstanceClusterNetworkAttachmentArgs{...} }
-type IsInstanceClusterNetworkAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceClusterNetworkAttachmentArrayOutput() IsInstanceClusterNetworkAttachmentArrayOutput
-	ToIsInstanceClusterNetworkAttachmentArrayOutputWithContext(context.Context) IsInstanceClusterNetworkAttachmentArrayOutput
-}
-
-type IsInstanceClusterNetworkAttachmentArray []IsInstanceClusterNetworkAttachmentInput
-
-func (IsInstanceClusterNetworkAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceClusterNetworkAttachment)(nil)).Elem()
-}
-
-func (i IsInstanceClusterNetworkAttachmentArray) ToIsInstanceClusterNetworkAttachmentArrayOutput() IsInstanceClusterNetworkAttachmentArrayOutput {
-	return i.ToIsInstanceClusterNetworkAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceClusterNetworkAttachmentArray) ToIsInstanceClusterNetworkAttachmentArrayOutputWithContext(ctx context.Context) IsInstanceClusterNetworkAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceClusterNetworkAttachmentArrayOutput)
-}
-
-// IsInstanceClusterNetworkAttachmentMapInput is an input type that accepts IsInstanceClusterNetworkAttachmentMap and IsInstanceClusterNetworkAttachmentMapOutput values.
-// You can construct a concrete instance of `IsInstanceClusterNetworkAttachmentMapInput` via:
-//
-//	IsInstanceClusterNetworkAttachmentMap{ "key": IsInstanceClusterNetworkAttachmentArgs{...} }
-type IsInstanceClusterNetworkAttachmentMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceClusterNetworkAttachmentMapOutput() IsInstanceClusterNetworkAttachmentMapOutput
-	ToIsInstanceClusterNetworkAttachmentMapOutputWithContext(context.Context) IsInstanceClusterNetworkAttachmentMapOutput
-}
-
-type IsInstanceClusterNetworkAttachmentMap map[string]IsInstanceClusterNetworkAttachmentInput
-
-func (IsInstanceClusterNetworkAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceClusterNetworkAttachment)(nil)).Elem()
-}
-
-func (i IsInstanceClusterNetworkAttachmentMap) ToIsInstanceClusterNetworkAttachmentMapOutput() IsInstanceClusterNetworkAttachmentMapOutput {
-	return i.ToIsInstanceClusterNetworkAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceClusterNetworkAttachmentMap) ToIsInstanceClusterNetworkAttachmentMapOutputWithContext(ctx context.Context) IsInstanceClusterNetworkAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceClusterNetworkAttachmentMapOutput)
-}
-
 type IsInstanceClusterNetworkAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceClusterNetworkAttachmentOutput) ElementType() reflect.Type {
@@ -279,51 +229,7 @@ func (o IsInstanceClusterNetworkAttachmentOutput) ResourceType() pulumi.StringOu
 	return o.ApplyT(func(v *IsInstanceClusterNetworkAttachment) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
 }
 
-type IsInstanceClusterNetworkAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceClusterNetworkAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceClusterNetworkAttachment)(nil)).Elem()
-}
-
-func (o IsInstanceClusterNetworkAttachmentArrayOutput) ToIsInstanceClusterNetworkAttachmentArrayOutput() IsInstanceClusterNetworkAttachmentArrayOutput {
-	return o
-}
-
-func (o IsInstanceClusterNetworkAttachmentArrayOutput) ToIsInstanceClusterNetworkAttachmentArrayOutputWithContext(ctx context.Context) IsInstanceClusterNetworkAttachmentArrayOutput {
-	return o
-}
-
-func (o IsInstanceClusterNetworkAttachmentArrayOutput) Index(i pulumi.IntInput) IsInstanceClusterNetworkAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceClusterNetworkAttachment {
-		return vs[0].([]*IsInstanceClusterNetworkAttachment)[vs[1].(int)]
-	}).(IsInstanceClusterNetworkAttachmentOutput)
-}
-
-type IsInstanceClusterNetworkAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceClusterNetworkAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceClusterNetworkAttachment)(nil)).Elem()
-}
-
-func (o IsInstanceClusterNetworkAttachmentMapOutput) ToIsInstanceClusterNetworkAttachmentMapOutput() IsInstanceClusterNetworkAttachmentMapOutput {
-	return o
-}
-
-func (o IsInstanceClusterNetworkAttachmentMapOutput) ToIsInstanceClusterNetworkAttachmentMapOutputWithContext(ctx context.Context) IsInstanceClusterNetworkAttachmentMapOutput {
-	return o
-}
-
-func (o IsInstanceClusterNetworkAttachmentMapOutput) MapIndex(k pulumi.StringInput) IsInstanceClusterNetworkAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceClusterNetworkAttachment {
-		return vs[0].(map[string]*IsInstanceClusterNetworkAttachment)[vs[1].(string)]
-	}).(IsInstanceClusterNetworkAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceClusterNetworkAttachmentInput)(nil)).Elem(), &IsInstanceClusterNetworkAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceClusterNetworkAttachmentArrayInput)(nil)).Elem(), IsInstanceClusterNetworkAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceClusterNetworkAttachmentMapInput)(nil)).Elem(), IsInstanceClusterNetworkAttachmentMap{})
 	pulumi.RegisterOutputType(IsInstanceClusterNetworkAttachmentOutput{})
-	pulumi.RegisterOutputType(IsInstanceClusterNetworkAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceClusterNetworkAttachmentMapOutput{})
 }

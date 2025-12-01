@@ -122,56 +122,6 @@ func (i *DnsReverseRecord) ToDnsReverseRecordOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DnsReverseRecordOutput)
 }
 
-// DnsReverseRecordArrayInput is an input type that accepts DnsReverseRecordArray and DnsReverseRecordArrayOutput values.
-// You can construct a concrete instance of `DnsReverseRecordArrayInput` via:
-//
-//	DnsReverseRecordArray{ DnsReverseRecordArgs{...} }
-type DnsReverseRecordArrayInput interface {
-	pulumi.Input
-
-	ToDnsReverseRecordArrayOutput() DnsReverseRecordArrayOutput
-	ToDnsReverseRecordArrayOutputWithContext(context.Context) DnsReverseRecordArrayOutput
-}
-
-type DnsReverseRecordArray []DnsReverseRecordInput
-
-func (DnsReverseRecordArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsReverseRecord)(nil)).Elem()
-}
-
-func (i DnsReverseRecordArray) ToDnsReverseRecordArrayOutput() DnsReverseRecordArrayOutput {
-	return i.ToDnsReverseRecordArrayOutputWithContext(context.Background())
-}
-
-func (i DnsReverseRecordArray) ToDnsReverseRecordArrayOutputWithContext(ctx context.Context) DnsReverseRecordArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsReverseRecordArrayOutput)
-}
-
-// DnsReverseRecordMapInput is an input type that accepts DnsReverseRecordMap and DnsReverseRecordMapOutput values.
-// You can construct a concrete instance of `DnsReverseRecordMapInput` via:
-//
-//	DnsReverseRecordMap{ "key": DnsReverseRecordArgs{...} }
-type DnsReverseRecordMapInput interface {
-	pulumi.Input
-
-	ToDnsReverseRecordMapOutput() DnsReverseRecordMapOutput
-	ToDnsReverseRecordMapOutputWithContext(context.Context) DnsReverseRecordMapOutput
-}
-
-type DnsReverseRecordMap map[string]DnsReverseRecordInput
-
-func (DnsReverseRecordMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsReverseRecord)(nil)).Elem()
-}
-
-func (i DnsReverseRecordMap) ToDnsReverseRecordMapOutput() DnsReverseRecordMapOutput {
-	return i.ToDnsReverseRecordMapOutputWithContext(context.Background())
-}
-
-func (i DnsReverseRecordMap) ToDnsReverseRecordMapOutputWithContext(ctx context.Context) DnsReverseRecordMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsReverseRecordMapOutput)
-}
-
 type DnsReverseRecordOutput struct{ *pulumi.OutputState }
 
 func (DnsReverseRecordOutput) ElementType() reflect.Type {
@@ -201,51 +151,7 @@ func (o DnsReverseRecordOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DnsReverseRecord) pulumi.IntPtrOutput { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
-type DnsReverseRecordArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsReverseRecordArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*DnsReverseRecord)(nil)).Elem()
-}
-
-func (o DnsReverseRecordArrayOutput) ToDnsReverseRecordArrayOutput() DnsReverseRecordArrayOutput {
-	return o
-}
-
-func (o DnsReverseRecordArrayOutput) ToDnsReverseRecordArrayOutputWithContext(ctx context.Context) DnsReverseRecordArrayOutput {
-	return o
-}
-
-func (o DnsReverseRecordArrayOutput) Index(i pulumi.IntInput) DnsReverseRecordOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsReverseRecord {
-		return vs[0].([]*DnsReverseRecord)[vs[1].(int)]
-	}).(DnsReverseRecordOutput)
-}
-
-type DnsReverseRecordMapOutput struct{ *pulumi.OutputState }
-
-func (DnsReverseRecordMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*DnsReverseRecord)(nil)).Elem()
-}
-
-func (o DnsReverseRecordMapOutput) ToDnsReverseRecordMapOutput() DnsReverseRecordMapOutput {
-	return o
-}
-
-func (o DnsReverseRecordMapOutput) ToDnsReverseRecordMapOutputWithContext(ctx context.Context) DnsReverseRecordMapOutput {
-	return o
-}
-
-func (o DnsReverseRecordMapOutput) MapIndex(k pulumi.StringInput) DnsReverseRecordOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *DnsReverseRecord {
-		return vs[0].(map[string]*DnsReverseRecord)[vs[1].(string)]
-	}).(DnsReverseRecordOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsReverseRecordInput)(nil)).Elem(), &DnsReverseRecord{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsReverseRecordArrayInput)(nil)).Elem(), DnsReverseRecordArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsReverseRecordMapInput)(nil)).Elem(), DnsReverseRecordMap{})
 	pulumi.RegisterOutputType(DnsReverseRecordOutput{})
-	pulumi.RegisterOutputType(DnsReverseRecordArrayOutput{})
-	pulumi.RegisterOutputType(DnsReverseRecordMapOutput{})
 }

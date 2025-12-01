@@ -290,56 +290,6 @@ func (i *IsInstanceVolumeAttachment) ToIsInstanceVolumeAttachmentOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceVolumeAttachmentOutput)
 }
 
-// IsInstanceVolumeAttachmentArrayInput is an input type that accepts IsInstanceVolumeAttachmentArray and IsInstanceVolumeAttachmentArrayOutput values.
-// You can construct a concrete instance of `IsInstanceVolumeAttachmentArrayInput` via:
-//
-//	IsInstanceVolumeAttachmentArray{ IsInstanceVolumeAttachmentArgs{...} }
-type IsInstanceVolumeAttachmentArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceVolumeAttachmentArrayOutput() IsInstanceVolumeAttachmentArrayOutput
-	ToIsInstanceVolumeAttachmentArrayOutputWithContext(context.Context) IsInstanceVolumeAttachmentArrayOutput
-}
-
-type IsInstanceVolumeAttachmentArray []IsInstanceVolumeAttachmentInput
-
-func (IsInstanceVolumeAttachmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceVolumeAttachment)(nil)).Elem()
-}
-
-func (i IsInstanceVolumeAttachmentArray) ToIsInstanceVolumeAttachmentArrayOutput() IsInstanceVolumeAttachmentArrayOutput {
-	return i.ToIsInstanceVolumeAttachmentArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceVolumeAttachmentArray) ToIsInstanceVolumeAttachmentArrayOutputWithContext(ctx context.Context) IsInstanceVolumeAttachmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceVolumeAttachmentArrayOutput)
-}
-
-// IsInstanceVolumeAttachmentMapInput is an input type that accepts IsInstanceVolumeAttachmentMap and IsInstanceVolumeAttachmentMapOutput values.
-// You can construct a concrete instance of `IsInstanceVolumeAttachmentMapInput` via:
-//
-//	IsInstanceVolumeAttachmentMap{ "key": IsInstanceVolumeAttachmentArgs{...} }
-type IsInstanceVolumeAttachmentMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceVolumeAttachmentMapOutput() IsInstanceVolumeAttachmentMapOutput
-	ToIsInstanceVolumeAttachmentMapOutputWithContext(context.Context) IsInstanceVolumeAttachmentMapOutput
-}
-
-type IsInstanceVolumeAttachmentMap map[string]IsInstanceVolumeAttachmentInput
-
-func (IsInstanceVolumeAttachmentMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceVolumeAttachment)(nil)).Elem()
-}
-
-func (i IsInstanceVolumeAttachmentMap) ToIsInstanceVolumeAttachmentMapOutput() IsInstanceVolumeAttachmentMapOutput {
-	return i.ToIsInstanceVolumeAttachmentMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceVolumeAttachmentMap) ToIsInstanceVolumeAttachmentMapOutputWithContext(ctx context.Context) IsInstanceVolumeAttachmentMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceVolumeAttachmentMapOutput)
-}
-
 type IsInstanceVolumeAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceVolumeAttachmentOutput) ElementType() reflect.Type {
@@ -473,51 +423,7 @@ func (o IsInstanceVolumeAttachmentOutput) VolumeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceVolumeAttachment) pulumi.StringOutput { return v.VolumeName }).(pulumi.StringOutput)
 }
 
-type IsInstanceVolumeAttachmentArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceVolumeAttachmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceVolumeAttachment)(nil)).Elem()
-}
-
-func (o IsInstanceVolumeAttachmentArrayOutput) ToIsInstanceVolumeAttachmentArrayOutput() IsInstanceVolumeAttachmentArrayOutput {
-	return o
-}
-
-func (o IsInstanceVolumeAttachmentArrayOutput) ToIsInstanceVolumeAttachmentArrayOutputWithContext(ctx context.Context) IsInstanceVolumeAttachmentArrayOutput {
-	return o
-}
-
-func (o IsInstanceVolumeAttachmentArrayOutput) Index(i pulumi.IntInput) IsInstanceVolumeAttachmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceVolumeAttachment {
-		return vs[0].([]*IsInstanceVolumeAttachment)[vs[1].(int)]
-	}).(IsInstanceVolumeAttachmentOutput)
-}
-
-type IsInstanceVolumeAttachmentMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceVolumeAttachmentMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceVolumeAttachment)(nil)).Elem()
-}
-
-func (o IsInstanceVolumeAttachmentMapOutput) ToIsInstanceVolumeAttachmentMapOutput() IsInstanceVolumeAttachmentMapOutput {
-	return o
-}
-
-func (o IsInstanceVolumeAttachmentMapOutput) ToIsInstanceVolumeAttachmentMapOutputWithContext(ctx context.Context) IsInstanceVolumeAttachmentMapOutput {
-	return o
-}
-
-func (o IsInstanceVolumeAttachmentMapOutput) MapIndex(k pulumi.StringInput) IsInstanceVolumeAttachmentOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceVolumeAttachment {
-		return vs[0].(map[string]*IsInstanceVolumeAttachment)[vs[1].(string)]
-	}).(IsInstanceVolumeAttachmentOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceVolumeAttachmentInput)(nil)).Elem(), &IsInstanceVolumeAttachment{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceVolumeAttachmentArrayInput)(nil)).Elem(), IsInstanceVolumeAttachmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceVolumeAttachmentMapInput)(nil)).Elem(), IsInstanceVolumeAttachmentMap{})
 	pulumi.RegisterOutputType(IsInstanceVolumeAttachmentOutput{})
-	pulumi.RegisterOutputType(IsInstanceVolumeAttachmentArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceVolumeAttachmentMapOutput{})
 }

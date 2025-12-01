@@ -201,56 +201,6 @@ func (i *IamAccessGroupTemplateVersion) ToIamAccessGroupTemplateVersionOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateVersionOutput)
 }
 
-// IamAccessGroupTemplateVersionArrayInput is an input type that accepts IamAccessGroupTemplateVersionArray and IamAccessGroupTemplateVersionArrayOutput values.
-// You can construct a concrete instance of `IamAccessGroupTemplateVersionArrayInput` via:
-//
-//	IamAccessGroupTemplateVersionArray{ IamAccessGroupTemplateVersionArgs{...} }
-type IamAccessGroupTemplateVersionArrayInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupTemplateVersionArrayOutput() IamAccessGroupTemplateVersionArrayOutput
-	ToIamAccessGroupTemplateVersionArrayOutputWithContext(context.Context) IamAccessGroupTemplateVersionArrayOutput
-}
-
-type IamAccessGroupTemplateVersionArray []IamAccessGroupTemplateVersionInput
-
-func (IamAccessGroupTemplateVersionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupTemplateVersion)(nil)).Elem()
-}
-
-func (i IamAccessGroupTemplateVersionArray) ToIamAccessGroupTemplateVersionArrayOutput() IamAccessGroupTemplateVersionArrayOutput {
-	return i.ToIamAccessGroupTemplateVersionArrayOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupTemplateVersionArray) ToIamAccessGroupTemplateVersionArrayOutputWithContext(ctx context.Context) IamAccessGroupTemplateVersionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateVersionArrayOutput)
-}
-
-// IamAccessGroupTemplateVersionMapInput is an input type that accepts IamAccessGroupTemplateVersionMap and IamAccessGroupTemplateVersionMapOutput values.
-// You can construct a concrete instance of `IamAccessGroupTemplateVersionMapInput` via:
-//
-//	IamAccessGroupTemplateVersionMap{ "key": IamAccessGroupTemplateVersionArgs{...} }
-type IamAccessGroupTemplateVersionMapInput interface {
-	pulumi.Input
-
-	ToIamAccessGroupTemplateVersionMapOutput() IamAccessGroupTemplateVersionMapOutput
-	ToIamAccessGroupTemplateVersionMapOutputWithContext(context.Context) IamAccessGroupTemplateVersionMapOutput
-}
-
-type IamAccessGroupTemplateVersionMap map[string]IamAccessGroupTemplateVersionInput
-
-func (IamAccessGroupTemplateVersionMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupTemplateVersion)(nil)).Elem()
-}
-
-func (i IamAccessGroupTemplateVersionMap) ToIamAccessGroupTemplateVersionMapOutput() IamAccessGroupTemplateVersionMapOutput {
-	return i.ToIamAccessGroupTemplateVersionMapOutputWithContext(context.Background())
-}
-
-func (i IamAccessGroupTemplateVersionMap) ToIamAccessGroupTemplateVersionMapOutputWithContext(ctx context.Context) IamAccessGroupTemplateVersionMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IamAccessGroupTemplateVersionMapOutput)
-}
-
 type IamAccessGroupTemplateVersionOutput struct{ *pulumi.OutputState }
 
 func (IamAccessGroupTemplateVersionOutput) ElementType() reflect.Type {
@@ -337,51 +287,7 @@ func (o IamAccessGroupTemplateVersionOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamAccessGroupTemplateVersion) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
-type IamAccessGroupTemplateVersionArrayOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupTemplateVersionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IamAccessGroupTemplateVersion)(nil)).Elem()
-}
-
-func (o IamAccessGroupTemplateVersionArrayOutput) ToIamAccessGroupTemplateVersionArrayOutput() IamAccessGroupTemplateVersionArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateVersionArrayOutput) ToIamAccessGroupTemplateVersionArrayOutputWithContext(ctx context.Context) IamAccessGroupTemplateVersionArrayOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateVersionArrayOutput) Index(i pulumi.IntInput) IamAccessGroupTemplateVersionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamAccessGroupTemplateVersion {
-		return vs[0].([]*IamAccessGroupTemplateVersion)[vs[1].(int)]
-	}).(IamAccessGroupTemplateVersionOutput)
-}
-
-type IamAccessGroupTemplateVersionMapOutput struct{ *pulumi.OutputState }
-
-func (IamAccessGroupTemplateVersionMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IamAccessGroupTemplateVersion)(nil)).Elem()
-}
-
-func (o IamAccessGroupTemplateVersionMapOutput) ToIamAccessGroupTemplateVersionMapOutput() IamAccessGroupTemplateVersionMapOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateVersionMapOutput) ToIamAccessGroupTemplateVersionMapOutputWithContext(ctx context.Context) IamAccessGroupTemplateVersionMapOutput {
-	return o
-}
-
-func (o IamAccessGroupTemplateVersionMapOutput) MapIndex(k pulumi.StringInput) IamAccessGroupTemplateVersionOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IamAccessGroupTemplateVersion {
-		return vs[0].(map[string]*IamAccessGroupTemplateVersion)[vs[1].(string)]
-	}).(IamAccessGroupTemplateVersionOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateVersionInput)(nil)).Elem(), &IamAccessGroupTemplateVersion{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateVersionArrayInput)(nil)).Elem(), IamAccessGroupTemplateVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupTemplateVersionMapInput)(nil)).Elem(), IamAccessGroupTemplateVersionMap{})
 	pulumi.RegisterOutputType(IamAccessGroupTemplateVersionOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupTemplateVersionArrayOutput{})
-	pulumi.RegisterOutputType(IamAccessGroupTemplateVersionMapOutput{})
 }

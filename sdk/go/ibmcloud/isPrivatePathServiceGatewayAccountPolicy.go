@@ -155,56 +155,6 @@ func (i *IsPrivatePathServiceGatewayAccountPolicy) ToIsPrivatePathServiceGateway
 	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayAccountPolicyOutput)
 }
 
-// IsPrivatePathServiceGatewayAccountPolicyArrayInput is an input type that accepts IsPrivatePathServiceGatewayAccountPolicyArray and IsPrivatePathServiceGatewayAccountPolicyArrayOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayAccountPolicyArrayInput` via:
-//
-//	IsPrivatePathServiceGatewayAccountPolicyArray{ IsPrivatePathServiceGatewayAccountPolicyArgs{...} }
-type IsPrivatePathServiceGatewayAccountPolicyArrayInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayAccountPolicyArrayOutput() IsPrivatePathServiceGatewayAccountPolicyArrayOutput
-	ToIsPrivatePathServiceGatewayAccountPolicyArrayOutputWithContext(context.Context) IsPrivatePathServiceGatewayAccountPolicyArrayOutput
-}
-
-type IsPrivatePathServiceGatewayAccountPolicyArray []IsPrivatePathServiceGatewayAccountPolicyInput
-
-func (IsPrivatePathServiceGatewayAccountPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGatewayAccountPolicy)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayAccountPolicyArray) ToIsPrivatePathServiceGatewayAccountPolicyArrayOutput() IsPrivatePathServiceGatewayAccountPolicyArrayOutput {
-	return i.ToIsPrivatePathServiceGatewayAccountPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayAccountPolicyArray) ToIsPrivatePathServiceGatewayAccountPolicyArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayAccountPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayAccountPolicyArrayOutput)
-}
-
-// IsPrivatePathServiceGatewayAccountPolicyMapInput is an input type that accepts IsPrivatePathServiceGatewayAccountPolicyMap and IsPrivatePathServiceGatewayAccountPolicyMapOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayAccountPolicyMapInput` via:
-//
-//	IsPrivatePathServiceGatewayAccountPolicyMap{ "key": IsPrivatePathServiceGatewayAccountPolicyArgs{...} }
-type IsPrivatePathServiceGatewayAccountPolicyMapInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayAccountPolicyMapOutput() IsPrivatePathServiceGatewayAccountPolicyMapOutput
-	ToIsPrivatePathServiceGatewayAccountPolicyMapOutputWithContext(context.Context) IsPrivatePathServiceGatewayAccountPolicyMapOutput
-}
-
-type IsPrivatePathServiceGatewayAccountPolicyMap map[string]IsPrivatePathServiceGatewayAccountPolicyInput
-
-func (IsPrivatePathServiceGatewayAccountPolicyMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGatewayAccountPolicy)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayAccountPolicyMap) ToIsPrivatePathServiceGatewayAccountPolicyMapOutput() IsPrivatePathServiceGatewayAccountPolicyMapOutput {
-	return i.ToIsPrivatePathServiceGatewayAccountPolicyMapOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayAccountPolicyMap) ToIsPrivatePathServiceGatewayAccountPolicyMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayAccountPolicyMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayAccountPolicyMapOutput)
-}
-
 type IsPrivatePathServiceGatewayAccountPolicyOutput struct{ *pulumi.OutputState }
 
 func (IsPrivatePathServiceGatewayAccountPolicyOutput) ElementType() reflect.Type {
@@ -261,51 +211,7 @@ func (o IsPrivatePathServiceGatewayAccountPolicyOutput) UpdatedAt() pulumi.Strin
 	return o.ApplyT(func(v *IsPrivatePathServiceGatewayAccountPolicy) pulumi.StringOutput { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-type IsPrivatePathServiceGatewayAccountPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayAccountPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGatewayAccountPolicy)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayAccountPolicyArrayOutput) ToIsPrivatePathServiceGatewayAccountPolicyArrayOutput() IsPrivatePathServiceGatewayAccountPolicyArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayAccountPolicyArrayOutput) ToIsPrivatePathServiceGatewayAccountPolicyArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayAccountPolicyArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayAccountPolicyArrayOutput) Index(i pulumi.IntInput) IsPrivatePathServiceGatewayAccountPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGatewayAccountPolicy {
-		return vs[0].([]*IsPrivatePathServiceGatewayAccountPolicy)[vs[1].(int)]
-	}).(IsPrivatePathServiceGatewayAccountPolicyOutput)
-}
-
-type IsPrivatePathServiceGatewayAccountPolicyMapOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayAccountPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGatewayAccountPolicy)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayAccountPolicyMapOutput) ToIsPrivatePathServiceGatewayAccountPolicyMapOutput() IsPrivatePathServiceGatewayAccountPolicyMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayAccountPolicyMapOutput) ToIsPrivatePathServiceGatewayAccountPolicyMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayAccountPolicyMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayAccountPolicyMapOutput) MapIndex(k pulumi.StringInput) IsPrivatePathServiceGatewayAccountPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGatewayAccountPolicy {
-		return vs[0].(map[string]*IsPrivatePathServiceGatewayAccountPolicy)[vs[1].(string)]
-	}).(IsPrivatePathServiceGatewayAccountPolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayAccountPolicyInput)(nil)).Elem(), &IsPrivatePathServiceGatewayAccountPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayAccountPolicyArrayInput)(nil)).Elem(), IsPrivatePathServiceGatewayAccountPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayAccountPolicyMapInput)(nil)).Elem(), IsPrivatePathServiceGatewayAccountPolicyMap{})
 	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayAccountPolicyOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayAccountPolicyArrayOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayAccountPolicyMapOutput{})
 }

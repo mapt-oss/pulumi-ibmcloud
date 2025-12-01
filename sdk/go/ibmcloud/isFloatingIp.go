@@ -199,56 +199,6 @@ func (i *IsFloatingIp) ToIsFloatingIpOutputWithContext(ctx context.Context) IsFl
 	return pulumi.ToOutputWithContext(ctx, i).(IsFloatingIpOutput)
 }
 
-// IsFloatingIpArrayInput is an input type that accepts IsFloatingIpArray and IsFloatingIpArrayOutput values.
-// You can construct a concrete instance of `IsFloatingIpArrayInput` via:
-//
-//	IsFloatingIpArray{ IsFloatingIpArgs{...} }
-type IsFloatingIpArrayInput interface {
-	pulumi.Input
-
-	ToIsFloatingIpArrayOutput() IsFloatingIpArrayOutput
-	ToIsFloatingIpArrayOutputWithContext(context.Context) IsFloatingIpArrayOutput
-}
-
-type IsFloatingIpArray []IsFloatingIpInput
-
-func (IsFloatingIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsFloatingIp)(nil)).Elem()
-}
-
-func (i IsFloatingIpArray) ToIsFloatingIpArrayOutput() IsFloatingIpArrayOutput {
-	return i.ToIsFloatingIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsFloatingIpArray) ToIsFloatingIpArrayOutputWithContext(ctx context.Context) IsFloatingIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsFloatingIpArrayOutput)
-}
-
-// IsFloatingIpMapInput is an input type that accepts IsFloatingIpMap and IsFloatingIpMapOutput values.
-// You can construct a concrete instance of `IsFloatingIpMapInput` via:
-//
-//	IsFloatingIpMap{ "key": IsFloatingIpArgs{...} }
-type IsFloatingIpMapInput interface {
-	pulumi.Input
-
-	ToIsFloatingIpMapOutput() IsFloatingIpMapOutput
-	ToIsFloatingIpMapOutputWithContext(context.Context) IsFloatingIpMapOutput
-}
-
-type IsFloatingIpMap map[string]IsFloatingIpInput
-
-func (IsFloatingIpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsFloatingIp)(nil)).Elem()
-}
-
-func (i IsFloatingIpMap) ToIsFloatingIpMapOutput() IsFloatingIpMapOutput {
-	return i.ToIsFloatingIpMapOutputWithContext(context.Background())
-}
-
-func (i IsFloatingIpMap) ToIsFloatingIpMapOutputWithContext(ctx context.Context) IsFloatingIpMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsFloatingIpMapOutput)
-}
-
 type IsFloatingIpOutput struct{ *pulumi.OutputState }
 
 func (IsFloatingIpOutput) ElementType() reflect.Type {
@@ -338,51 +288,7 @@ func (o IsFloatingIpOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsFloatingIp) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsFloatingIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsFloatingIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsFloatingIp)(nil)).Elem()
-}
-
-func (o IsFloatingIpArrayOutput) ToIsFloatingIpArrayOutput() IsFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsFloatingIpArrayOutput) ToIsFloatingIpArrayOutputWithContext(ctx context.Context) IsFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsFloatingIpArrayOutput) Index(i pulumi.IntInput) IsFloatingIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsFloatingIp {
-		return vs[0].([]*IsFloatingIp)[vs[1].(int)]
-	}).(IsFloatingIpOutput)
-}
-
-type IsFloatingIpMapOutput struct{ *pulumi.OutputState }
-
-func (IsFloatingIpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsFloatingIp)(nil)).Elem()
-}
-
-func (o IsFloatingIpMapOutput) ToIsFloatingIpMapOutput() IsFloatingIpMapOutput {
-	return o
-}
-
-func (o IsFloatingIpMapOutput) ToIsFloatingIpMapOutputWithContext(ctx context.Context) IsFloatingIpMapOutput {
-	return o
-}
-
-func (o IsFloatingIpMapOutput) MapIndex(k pulumi.StringInput) IsFloatingIpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsFloatingIp {
-		return vs[0].(map[string]*IsFloatingIp)[vs[1].(string)]
-	}).(IsFloatingIpOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsFloatingIpInput)(nil)).Elem(), &IsFloatingIp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsFloatingIpArrayInput)(nil)).Elem(), IsFloatingIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsFloatingIpMapInput)(nil)).Elem(), IsFloatingIpMap{})
 	pulumi.RegisterOutputType(IsFloatingIpOutput{})
-	pulumi.RegisterOutputType(IsFloatingIpArrayOutput{})
-	pulumi.RegisterOutputType(IsFloatingIpMapOutput{})
 }

@@ -193,56 +193,6 @@ func (i *IsClusterNetworkSubnetReservedIp) ToIsClusterNetworkSubnetReservedIpOut
 	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkSubnetReservedIpOutput)
 }
 
-// IsClusterNetworkSubnetReservedIpArrayInput is an input type that accepts IsClusterNetworkSubnetReservedIpArray and IsClusterNetworkSubnetReservedIpArrayOutput values.
-// You can construct a concrete instance of `IsClusterNetworkSubnetReservedIpArrayInput` via:
-//
-//	IsClusterNetworkSubnetReservedIpArray{ IsClusterNetworkSubnetReservedIpArgs{...} }
-type IsClusterNetworkSubnetReservedIpArrayInput interface {
-	pulumi.Input
-
-	ToIsClusterNetworkSubnetReservedIpArrayOutput() IsClusterNetworkSubnetReservedIpArrayOutput
-	ToIsClusterNetworkSubnetReservedIpArrayOutputWithContext(context.Context) IsClusterNetworkSubnetReservedIpArrayOutput
-}
-
-type IsClusterNetworkSubnetReservedIpArray []IsClusterNetworkSubnetReservedIpInput
-
-func (IsClusterNetworkSubnetReservedIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsClusterNetworkSubnetReservedIp)(nil)).Elem()
-}
-
-func (i IsClusterNetworkSubnetReservedIpArray) ToIsClusterNetworkSubnetReservedIpArrayOutput() IsClusterNetworkSubnetReservedIpArrayOutput {
-	return i.ToIsClusterNetworkSubnetReservedIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsClusterNetworkSubnetReservedIpArray) ToIsClusterNetworkSubnetReservedIpArrayOutputWithContext(ctx context.Context) IsClusterNetworkSubnetReservedIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkSubnetReservedIpArrayOutput)
-}
-
-// IsClusterNetworkSubnetReservedIpMapInput is an input type that accepts IsClusterNetworkSubnetReservedIpMap and IsClusterNetworkSubnetReservedIpMapOutput values.
-// You can construct a concrete instance of `IsClusterNetworkSubnetReservedIpMapInput` via:
-//
-//	IsClusterNetworkSubnetReservedIpMap{ "key": IsClusterNetworkSubnetReservedIpArgs{...} }
-type IsClusterNetworkSubnetReservedIpMapInput interface {
-	pulumi.Input
-
-	ToIsClusterNetworkSubnetReservedIpMapOutput() IsClusterNetworkSubnetReservedIpMapOutput
-	ToIsClusterNetworkSubnetReservedIpMapOutputWithContext(context.Context) IsClusterNetworkSubnetReservedIpMapOutput
-}
-
-type IsClusterNetworkSubnetReservedIpMap map[string]IsClusterNetworkSubnetReservedIpInput
-
-func (IsClusterNetworkSubnetReservedIpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsClusterNetworkSubnetReservedIp)(nil)).Elem()
-}
-
-func (i IsClusterNetworkSubnetReservedIpMap) ToIsClusterNetworkSubnetReservedIpMapOutput() IsClusterNetworkSubnetReservedIpMapOutput {
-	return i.ToIsClusterNetworkSubnetReservedIpMapOutputWithContext(context.Background())
-}
-
-func (i IsClusterNetworkSubnetReservedIpMap) ToIsClusterNetworkSubnetReservedIpMapOutputWithContext(ctx context.Context) IsClusterNetworkSubnetReservedIpMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsClusterNetworkSubnetReservedIpMapOutput)
-}
-
 type IsClusterNetworkSubnetReservedIpOutput struct{ *pulumi.OutputState }
 
 func (IsClusterNetworkSubnetReservedIpOutput) ElementType() reflect.Type {
@@ -332,51 +282,7 @@ func (o IsClusterNetworkSubnetReservedIpOutput) Targets() IsClusterNetworkSubnet
 	}).(IsClusterNetworkSubnetReservedIpTargetArrayOutput)
 }
 
-type IsClusterNetworkSubnetReservedIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsClusterNetworkSubnetReservedIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsClusterNetworkSubnetReservedIp)(nil)).Elem()
-}
-
-func (o IsClusterNetworkSubnetReservedIpArrayOutput) ToIsClusterNetworkSubnetReservedIpArrayOutput() IsClusterNetworkSubnetReservedIpArrayOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetReservedIpArrayOutput) ToIsClusterNetworkSubnetReservedIpArrayOutputWithContext(ctx context.Context) IsClusterNetworkSubnetReservedIpArrayOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetReservedIpArrayOutput) Index(i pulumi.IntInput) IsClusterNetworkSubnetReservedIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsClusterNetworkSubnetReservedIp {
-		return vs[0].([]*IsClusterNetworkSubnetReservedIp)[vs[1].(int)]
-	}).(IsClusterNetworkSubnetReservedIpOutput)
-}
-
-type IsClusterNetworkSubnetReservedIpMapOutput struct{ *pulumi.OutputState }
-
-func (IsClusterNetworkSubnetReservedIpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsClusterNetworkSubnetReservedIp)(nil)).Elem()
-}
-
-func (o IsClusterNetworkSubnetReservedIpMapOutput) ToIsClusterNetworkSubnetReservedIpMapOutput() IsClusterNetworkSubnetReservedIpMapOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetReservedIpMapOutput) ToIsClusterNetworkSubnetReservedIpMapOutputWithContext(ctx context.Context) IsClusterNetworkSubnetReservedIpMapOutput {
-	return o
-}
-
-func (o IsClusterNetworkSubnetReservedIpMapOutput) MapIndex(k pulumi.StringInput) IsClusterNetworkSubnetReservedIpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsClusterNetworkSubnetReservedIp {
-		return vs[0].(map[string]*IsClusterNetworkSubnetReservedIp)[vs[1].(string)]
-	}).(IsClusterNetworkSubnetReservedIpOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkSubnetReservedIpInput)(nil)).Elem(), &IsClusterNetworkSubnetReservedIp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkSubnetReservedIpArrayInput)(nil)).Elem(), IsClusterNetworkSubnetReservedIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsClusterNetworkSubnetReservedIpMapInput)(nil)).Elem(), IsClusterNetworkSubnetReservedIpMap{})
 	pulumi.RegisterOutputType(IsClusterNetworkSubnetReservedIpOutput{})
-	pulumi.RegisterOutputType(IsClusterNetworkSubnetReservedIpArrayOutput{})
-	pulumi.RegisterOutputType(IsClusterNetworkSubnetReservedIpMapOutput{})
 }

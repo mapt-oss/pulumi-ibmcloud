@@ -373,56 +373,6 @@ func (i *IsBareMetalServer) ToIsBareMetalServerOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerOutput)
 }
 
-// IsBareMetalServerArrayInput is an input type that accepts IsBareMetalServerArray and IsBareMetalServerArrayOutput values.
-// You can construct a concrete instance of `IsBareMetalServerArrayInput` via:
-//
-//	IsBareMetalServerArray{ IsBareMetalServerArgs{...} }
-type IsBareMetalServerArrayInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerArrayOutput() IsBareMetalServerArrayOutput
-	ToIsBareMetalServerArrayOutputWithContext(context.Context) IsBareMetalServerArrayOutput
-}
-
-type IsBareMetalServerArray []IsBareMetalServerInput
-
-func (IsBareMetalServerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServer)(nil)).Elem()
-}
-
-func (i IsBareMetalServerArray) ToIsBareMetalServerArrayOutput() IsBareMetalServerArrayOutput {
-	return i.ToIsBareMetalServerArrayOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerArray) ToIsBareMetalServerArrayOutputWithContext(ctx context.Context) IsBareMetalServerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerArrayOutput)
-}
-
-// IsBareMetalServerMapInput is an input type that accepts IsBareMetalServerMap and IsBareMetalServerMapOutput values.
-// You can construct a concrete instance of `IsBareMetalServerMapInput` via:
-//
-//	IsBareMetalServerMap{ "key": IsBareMetalServerArgs{...} }
-type IsBareMetalServerMapInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerMapOutput() IsBareMetalServerMapOutput
-	ToIsBareMetalServerMapOutputWithContext(context.Context) IsBareMetalServerMapOutput
-}
-
-type IsBareMetalServerMap map[string]IsBareMetalServerInput
-
-func (IsBareMetalServerMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServer)(nil)).Elem()
-}
-
-func (i IsBareMetalServerMap) ToIsBareMetalServerMapOutput() IsBareMetalServerMapOutput {
-	return i.ToIsBareMetalServerMapOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerMap) ToIsBareMetalServerMapOutputWithContext(ctx context.Context) IsBareMetalServerMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerMapOutput)
-}
-
 type IsBareMetalServerOutput struct{ *pulumi.OutputState }
 
 func (IsBareMetalServerOutput) ElementType() reflect.Type {
@@ -621,51 +571,7 @@ func (o IsBareMetalServerOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsBareMetalServer) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsBareMetalServerArrayOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServer)(nil)).Elem()
-}
-
-func (o IsBareMetalServerArrayOutput) ToIsBareMetalServerArrayOutput() IsBareMetalServerArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerArrayOutput) ToIsBareMetalServerArrayOutputWithContext(ctx context.Context) IsBareMetalServerArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerArrayOutput) Index(i pulumi.IntInput) IsBareMetalServerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsBareMetalServer {
-		return vs[0].([]*IsBareMetalServer)[vs[1].(int)]
-	}).(IsBareMetalServerOutput)
-}
-
-type IsBareMetalServerMapOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServer)(nil)).Elem()
-}
-
-func (o IsBareMetalServerMapOutput) ToIsBareMetalServerMapOutput() IsBareMetalServerMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerMapOutput) ToIsBareMetalServerMapOutputWithContext(ctx context.Context) IsBareMetalServerMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerMapOutput) MapIndex(k pulumi.StringInput) IsBareMetalServerOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsBareMetalServer {
-		return vs[0].(map[string]*IsBareMetalServer)[vs[1].(string)]
-	}).(IsBareMetalServerOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerInput)(nil)).Elem(), &IsBareMetalServer{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerArrayInput)(nil)).Elem(), IsBareMetalServerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerMapInput)(nil)).Elem(), IsBareMetalServerMap{})
 	pulumi.RegisterOutputType(IsBareMetalServerOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerArrayOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerMapOutput{})
 }

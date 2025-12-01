@@ -158,56 +158,6 @@ func (i *IsBareMetalServerDisk) ToIsBareMetalServerDiskOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerDiskOutput)
 }
 
-// IsBareMetalServerDiskArrayInput is an input type that accepts IsBareMetalServerDiskArray and IsBareMetalServerDiskArrayOutput values.
-// You can construct a concrete instance of `IsBareMetalServerDiskArrayInput` via:
-//
-//	IsBareMetalServerDiskArray{ IsBareMetalServerDiskArgs{...} }
-type IsBareMetalServerDiskArrayInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerDiskArrayOutput() IsBareMetalServerDiskArrayOutput
-	ToIsBareMetalServerDiskArrayOutputWithContext(context.Context) IsBareMetalServerDiskArrayOutput
-}
-
-type IsBareMetalServerDiskArray []IsBareMetalServerDiskInput
-
-func (IsBareMetalServerDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerDisk)(nil)).Elem()
-}
-
-func (i IsBareMetalServerDiskArray) ToIsBareMetalServerDiskArrayOutput() IsBareMetalServerDiskArrayOutput {
-	return i.ToIsBareMetalServerDiskArrayOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerDiskArray) ToIsBareMetalServerDiskArrayOutputWithContext(ctx context.Context) IsBareMetalServerDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerDiskArrayOutput)
-}
-
-// IsBareMetalServerDiskMapInput is an input type that accepts IsBareMetalServerDiskMap and IsBareMetalServerDiskMapOutput values.
-// You can construct a concrete instance of `IsBareMetalServerDiskMapInput` via:
-//
-//	IsBareMetalServerDiskMap{ "key": IsBareMetalServerDiskArgs{...} }
-type IsBareMetalServerDiskMapInput interface {
-	pulumi.Input
-
-	ToIsBareMetalServerDiskMapOutput() IsBareMetalServerDiskMapOutput
-	ToIsBareMetalServerDiskMapOutputWithContext(context.Context) IsBareMetalServerDiskMapOutput
-}
-
-type IsBareMetalServerDiskMap map[string]IsBareMetalServerDiskInput
-
-func (IsBareMetalServerDiskMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerDisk)(nil)).Elem()
-}
-
-func (i IsBareMetalServerDiskMap) ToIsBareMetalServerDiskMapOutput() IsBareMetalServerDiskMapOutput {
-	return i.ToIsBareMetalServerDiskMapOutputWithContext(context.Background())
-}
-
-func (i IsBareMetalServerDiskMap) ToIsBareMetalServerDiskMapOutputWithContext(ctx context.Context) IsBareMetalServerDiskMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsBareMetalServerDiskMapOutput)
-}
-
 type IsBareMetalServerDiskOutput struct{ *pulumi.OutputState }
 
 func (IsBareMetalServerDiskOutput) ElementType() reflect.Type {
@@ -267,51 +217,7 @@ func (o IsBareMetalServerDiskOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v *IsBareMetalServerDisk) pulumi.IntOutput { return v.Size }).(pulumi.IntOutput)
 }
 
-type IsBareMetalServerDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsBareMetalServerDisk)(nil)).Elem()
-}
-
-func (o IsBareMetalServerDiskArrayOutput) ToIsBareMetalServerDiskArrayOutput() IsBareMetalServerDiskArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerDiskArrayOutput) ToIsBareMetalServerDiskArrayOutputWithContext(ctx context.Context) IsBareMetalServerDiskArrayOutput {
-	return o
-}
-
-func (o IsBareMetalServerDiskArrayOutput) Index(i pulumi.IntInput) IsBareMetalServerDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsBareMetalServerDisk {
-		return vs[0].([]*IsBareMetalServerDisk)[vs[1].(int)]
-	}).(IsBareMetalServerDiskOutput)
-}
-
-type IsBareMetalServerDiskMapOutput struct{ *pulumi.OutputState }
-
-func (IsBareMetalServerDiskMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsBareMetalServerDisk)(nil)).Elem()
-}
-
-func (o IsBareMetalServerDiskMapOutput) ToIsBareMetalServerDiskMapOutput() IsBareMetalServerDiskMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerDiskMapOutput) ToIsBareMetalServerDiskMapOutputWithContext(ctx context.Context) IsBareMetalServerDiskMapOutput {
-	return o
-}
-
-func (o IsBareMetalServerDiskMapOutput) MapIndex(k pulumi.StringInput) IsBareMetalServerDiskOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsBareMetalServerDisk {
-		return vs[0].(map[string]*IsBareMetalServerDisk)[vs[1].(string)]
-	}).(IsBareMetalServerDiskOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerDiskInput)(nil)).Elem(), &IsBareMetalServerDisk{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerDiskArrayInput)(nil)).Elem(), IsBareMetalServerDiskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsBareMetalServerDiskMapInput)(nil)).Elem(), IsBareMetalServerDiskMap{})
 	pulumi.RegisterOutputType(IsBareMetalServerDiskOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerDiskArrayOutput{})
-	pulumi.RegisterOutputType(IsBareMetalServerDiskMapOutput{})
 }

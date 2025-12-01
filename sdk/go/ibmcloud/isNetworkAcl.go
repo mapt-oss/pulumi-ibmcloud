@@ -170,56 +170,6 @@ func (i *IsNetworkAcl) ToIsNetworkAclOutputWithContext(ctx context.Context) IsNe
 	return pulumi.ToOutputWithContext(ctx, i).(IsNetworkAclOutput)
 }
 
-// IsNetworkAclArrayInput is an input type that accepts IsNetworkAclArray and IsNetworkAclArrayOutput values.
-// You can construct a concrete instance of `IsNetworkAclArrayInput` via:
-//
-//	IsNetworkAclArray{ IsNetworkAclArgs{...} }
-type IsNetworkAclArrayInput interface {
-	pulumi.Input
-
-	ToIsNetworkAclArrayOutput() IsNetworkAclArrayOutput
-	ToIsNetworkAclArrayOutputWithContext(context.Context) IsNetworkAclArrayOutput
-}
-
-type IsNetworkAclArray []IsNetworkAclInput
-
-func (IsNetworkAclArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsNetworkAcl)(nil)).Elem()
-}
-
-func (i IsNetworkAclArray) ToIsNetworkAclArrayOutput() IsNetworkAclArrayOutput {
-	return i.ToIsNetworkAclArrayOutputWithContext(context.Background())
-}
-
-func (i IsNetworkAclArray) ToIsNetworkAclArrayOutputWithContext(ctx context.Context) IsNetworkAclArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsNetworkAclArrayOutput)
-}
-
-// IsNetworkAclMapInput is an input type that accepts IsNetworkAclMap and IsNetworkAclMapOutput values.
-// You can construct a concrete instance of `IsNetworkAclMapInput` via:
-//
-//	IsNetworkAclMap{ "key": IsNetworkAclArgs{...} }
-type IsNetworkAclMapInput interface {
-	pulumi.Input
-
-	ToIsNetworkAclMapOutput() IsNetworkAclMapOutput
-	ToIsNetworkAclMapOutputWithContext(context.Context) IsNetworkAclMapOutput
-}
-
-type IsNetworkAclMap map[string]IsNetworkAclInput
-
-func (IsNetworkAclMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsNetworkAcl)(nil)).Elem()
-}
-
-func (i IsNetworkAclMap) ToIsNetworkAclMapOutput() IsNetworkAclMapOutput {
-	return i.ToIsNetworkAclMapOutputWithContext(context.Background())
-}
-
-func (i IsNetworkAclMap) ToIsNetworkAclMapOutputWithContext(ctx context.Context) IsNetworkAclMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsNetworkAclMapOutput)
-}
-
 type IsNetworkAclOutput struct{ *pulumi.OutputState }
 
 func (IsNetworkAclOutput) ElementType() reflect.Type {
@@ -288,51 +238,7 @@ func (o IsNetworkAclOutput) Vpc() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IsNetworkAcl) pulumi.StringPtrOutput { return v.Vpc }).(pulumi.StringPtrOutput)
 }
 
-type IsNetworkAclArrayOutput struct{ *pulumi.OutputState }
-
-func (IsNetworkAclArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsNetworkAcl)(nil)).Elem()
-}
-
-func (o IsNetworkAclArrayOutput) ToIsNetworkAclArrayOutput() IsNetworkAclArrayOutput {
-	return o
-}
-
-func (o IsNetworkAclArrayOutput) ToIsNetworkAclArrayOutputWithContext(ctx context.Context) IsNetworkAclArrayOutput {
-	return o
-}
-
-func (o IsNetworkAclArrayOutput) Index(i pulumi.IntInput) IsNetworkAclOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsNetworkAcl {
-		return vs[0].([]*IsNetworkAcl)[vs[1].(int)]
-	}).(IsNetworkAclOutput)
-}
-
-type IsNetworkAclMapOutput struct{ *pulumi.OutputState }
-
-func (IsNetworkAclMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsNetworkAcl)(nil)).Elem()
-}
-
-func (o IsNetworkAclMapOutput) ToIsNetworkAclMapOutput() IsNetworkAclMapOutput {
-	return o
-}
-
-func (o IsNetworkAclMapOutput) ToIsNetworkAclMapOutputWithContext(ctx context.Context) IsNetworkAclMapOutput {
-	return o
-}
-
-func (o IsNetworkAclMapOutput) MapIndex(k pulumi.StringInput) IsNetworkAclOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsNetworkAcl {
-		return vs[0].(map[string]*IsNetworkAcl)[vs[1].(string)]
-	}).(IsNetworkAclOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsNetworkAclInput)(nil)).Elem(), &IsNetworkAcl{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsNetworkAclArrayInput)(nil)).Elem(), IsNetworkAclArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsNetworkAclMapInput)(nil)).Elem(), IsNetworkAclMap{})
 	pulumi.RegisterOutputType(IsNetworkAclOutput{})
-	pulumi.RegisterOutputType(IsNetworkAclArrayOutput{})
-	pulumi.RegisterOutputType(IsNetworkAclMapOutput{})
 }

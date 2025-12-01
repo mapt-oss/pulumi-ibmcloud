@@ -227,56 +227,6 @@ func (i *IsVpcRoutingTableRoute) ToIsVpcRoutingTableRouteOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteOutput)
 }
 
-// IsVpcRoutingTableRouteArrayInput is an input type that accepts IsVpcRoutingTableRouteArray and IsVpcRoutingTableRouteArrayOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableRouteArrayInput` via:
-//
-//	IsVpcRoutingTableRouteArray{ IsVpcRoutingTableRouteArgs{...} }
-type IsVpcRoutingTableRouteArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableRouteArrayOutput() IsVpcRoutingTableRouteArrayOutput
-	ToIsVpcRoutingTableRouteArrayOutputWithContext(context.Context) IsVpcRoutingTableRouteArrayOutput
-}
-
-type IsVpcRoutingTableRouteArray []IsVpcRoutingTableRouteInput
-
-func (IsVpcRoutingTableRouteArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpcRoutingTableRoute)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableRouteArray) ToIsVpcRoutingTableRouteArrayOutput() IsVpcRoutingTableRouteArrayOutput {
-	return i.ToIsVpcRoutingTableRouteArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableRouteArray) ToIsVpcRoutingTableRouteArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteArrayOutput)
-}
-
-// IsVpcRoutingTableRouteMapInput is an input type that accepts IsVpcRoutingTableRouteMap and IsVpcRoutingTableRouteMapOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableRouteMapInput` via:
-//
-//	IsVpcRoutingTableRouteMap{ "key": IsVpcRoutingTableRouteArgs{...} }
-type IsVpcRoutingTableRouteMapInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableRouteMapOutput() IsVpcRoutingTableRouteMapOutput
-	ToIsVpcRoutingTableRouteMapOutputWithContext(context.Context) IsVpcRoutingTableRouteMapOutput
-}
-
-type IsVpcRoutingTableRouteMap map[string]IsVpcRoutingTableRouteInput
-
-func (IsVpcRoutingTableRouteMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpcRoutingTableRoute)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableRouteMap) ToIsVpcRoutingTableRouteMapOutput() IsVpcRoutingTableRouteMapOutput {
-	return i.ToIsVpcRoutingTableRouteMapOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableRouteMap) ToIsVpcRoutingTableRouteMapOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteMapOutput)
-}
-
 type IsVpcRoutingTableRouteOutput struct{ *pulumi.OutputState }
 
 func (IsVpcRoutingTableRouteOutput) ElementType() reflect.Type {
@@ -366,51 +316,7 @@ func (o IsVpcRoutingTableRouteOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsVpcRoutingTableRoute) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsVpcRoutingTableRouteArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableRouteArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsVpcRoutingTableRoute)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableRouteArrayOutput) ToIsVpcRoutingTableRouteArrayOutput() IsVpcRoutingTableRouteArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteArrayOutput) ToIsVpcRoutingTableRouteArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableRouteOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsVpcRoutingTableRoute {
-		return vs[0].([]*IsVpcRoutingTableRoute)[vs[1].(int)]
-	}).(IsVpcRoutingTableRouteOutput)
-}
-
-type IsVpcRoutingTableRouteMapOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableRouteMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsVpcRoutingTableRoute)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableRouteMapOutput) ToIsVpcRoutingTableRouteMapOutput() IsVpcRoutingTableRouteMapOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteMapOutput) ToIsVpcRoutingTableRouteMapOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteMapOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteMapOutput) MapIndex(k pulumi.StringInput) IsVpcRoutingTableRouteOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsVpcRoutingTableRoute {
-		return vs[0].(map[string]*IsVpcRoutingTableRoute)[vs[1].(string)]
-	}).(IsVpcRoutingTableRouteOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteInput)(nil)).Elem(), &IsVpcRoutingTableRoute{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteArrayInput)(nil)).Elem(), IsVpcRoutingTableRouteArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteMapInput)(nil)).Elem(), IsVpcRoutingTableRouteMap{})
 	pulumi.RegisterOutputType(IsVpcRoutingTableRouteOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableRouteArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableRouteMapOutput{})
 }

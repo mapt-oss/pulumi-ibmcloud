@@ -161,56 +161,6 @@ func (i *IsInstanceNetworkInterfaceFloatingIp) ToIsInstanceNetworkInterfaceFloat
 	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkInterfaceFloatingIpOutput)
 }
 
-// IsInstanceNetworkInterfaceFloatingIpArrayInput is an input type that accepts IsInstanceNetworkInterfaceFloatingIpArray and IsInstanceNetworkInterfaceFloatingIpArrayOutput values.
-// You can construct a concrete instance of `IsInstanceNetworkInterfaceFloatingIpArrayInput` via:
-//
-//	IsInstanceNetworkInterfaceFloatingIpArray{ IsInstanceNetworkInterfaceFloatingIpArgs{...} }
-type IsInstanceNetworkInterfaceFloatingIpArrayInput interface {
-	pulumi.Input
-
-	ToIsInstanceNetworkInterfaceFloatingIpArrayOutput() IsInstanceNetworkInterfaceFloatingIpArrayOutput
-	ToIsInstanceNetworkInterfaceFloatingIpArrayOutputWithContext(context.Context) IsInstanceNetworkInterfaceFloatingIpArrayOutput
-}
-
-type IsInstanceNetworkInterfaceFloatingIpArray []IsInstanceNetworkInterfaceFloatingIpInput
-
-func (IsInstanceNetworkInterfaceFloatingIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (i IsInstanceNetworkInterfaceFloatingIpArray) ToIsInstanceNetworkInterfaceFloatingIpArrayOutput() IsInstanceNetworkInterfaceFloatingIpArrayOutput {
-	return i.ToIsInstanceNetworkInterfaceFloatingIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsInstanceNetworkInterfaceFloatingIpArray) ToIsInstanceNetworkInterfaceFloatingIpArrayOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceFloatingIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkInterfaceFloatingIpArrayOutput)
-}
-
-// IsInstanceNetworkInterfaceFloatingIpMapInput is an input type that accepts IsInstanceNetworkInterfaceFloatingIpMap and IsInstanceNetworkInterfaceFloatingIpMapOutput values.
-// You can construct a concrete instance of `IsInstanceNetworkInterfaceFloatingIpMapInput` via:
-//
-//	IsInstanceNetworkInterfaceFloatingIpMap{ "key": IsInstanceNetworkInterfaceFloatingIpArgs{...} }
-type IsInstanceNetworkInterfaceFloatingIpMapInput interface {
-	pulumi.Input
-
-	ToIsInstanceNetworkInterfaceFloatingIpMapOutput() IsInstanceNetworkInterfaceFloatingIpMapOutput
-	ToIsInstanceNetworkInterfaceFloatingIpMapOutputWithContext(context.Context) IsInstanceNetworkInterfaceFloatingIpMapOutput
-}
-
-type IsInstanceNetworkInterfaceFloatingIpMap map[string]IsInstanceNetworkInterfaceFloatingIpInput
-
-func (IsInstanceNetworkInterfaceFloatingIpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (i IsInstanceNetworkInterfaceFloatingIpMap) ToIsInstanceNetworkInterfaceFloatingIpMapOutput() IsInstanceNetworkInterfaceFloatingIpMapOutput {
-	return i.ToIsInstanceNetworkInterfaceFloatingIpMapOutputWithContext(context.Background())
-}
-
-func (i IsInstanceNetworkInterfaceFloatingIpMap) ToIsInstanceNetworkInterfaceFloatingIpMapOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceFloatingIpMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsInstanceNetworkInterfaceFloatingIpMapOutput)
-}
-
 type IsInstanceNetworkInterfaceFloatingIpOutput struct{ *pulumi.OutputState }
 
 func (IsInstanceNetworkInterfaceFloatingIpOutput) ElementType() reflect.Type {
@@ -270,51 +220,7 @@ func (o IsInstanceNetworkInterfaceFloatingIpOutput) Zone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IsInstanceNetworkInterfaceFloatingIp) pulumi.StringOutput { return v.Zone }).(pulumi.StringOutput)
 }
 
-type IsInstanceNetworkInterfaceFloatingIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceNetworkInterfaceFloatingIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsInstanceNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (o IsInstanceNetworkInterfaceFloatingIpArrayOutput) ToIsInstanceNetworkInterfaceFloatingIpArrayOutput() IsInstanceNetworkInterfaceFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceFloatingIpArrayOutput) ToIsInstanceNetworkInterfaceFloatingIpArrayOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceFloatingIpArrayOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceFloatingIpArrayOutput) Index(i pulumi.IntInput) IsInstanceNetworkInterfaceFloatingIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsInstanceNetworkInterfaceFloatingIp {
-		return vs[0].([]*IsInstanceNetworkInterfaceFloatingIp)[vs[1].(int)]
-	}).(IsInstanceNetworkInterfaceFloatingIpOutput)
-}
-
-type IsInstanceNetworkInterfaceFloatingIpMapOutput struct{ *pulumi.OutputState }
-
-func (IsInstanceNetworkInterfaceFloatingIpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsInstanceNetworkInterfaceFloatingIp)(nil)).Elem()
-}
-
-func (o IsInstanceNetworkInterfaceFloatingIpMapOutput) ToIsInstanceNetworkInterfaceFloatingIpMapOutput() IsInstanceNetworkInterfaceFloatingIpMapOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceFloatingIpMapOutput) ToIsInstanceNetworkInterfaceFloatingIpMapOutputWithContext(ctx context.Context) IsInstanceNetworkInterfaceFloatingIpMapOutput {
-	return o
-}
-
-func (o IsInstanceNetworkInterfaceFloatingIpMapOutput) MapIndex(k pulumi.StringInput) IsInstanceNetworkInterfaceFloatingIpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsInstanceNetworkInterfaceFloatingIp {
-		return vs[0].(map[string]*IsInstanceNetworkInterfaceFloatingIp)[vs[1].(string)]
-	}).(IsInstanceNetworkInterfaceFloatingIpOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkInterfaceFloatingIpInput)(nil)).Elem(), &IsInstanceNetworkInterfaceFloatingIp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkInterfaceFloatingIpArrayInput)(nil)).Elem(), IsInstanceNetworkInterfaceFloatingIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsInstanceNetworkInterfaceFloatingIpMapInput)(nil)).Elem(), IsInstanceNetworkInterfaceFloatingIpMap{})
 	pulumi.RegisterOutputType(IsInstanceNetworkInterfaceFloatingIpOutput{})
-	pulumi.RegisterOutputType(IsInstanceNetworkInterfaceFloatingIpArrayOutput{})
-	pulumi.RegisterOutputType(IsInstanceNetworkInterfaceFloatingIpMapOutput{})
 }

@@ -125,56 +125,6 @@ func (i *IsPrivatePathServiceGatewayEndpointGatewayBindingOperations) ToIsPrivat
 	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput)
 }
 
-// IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayInput is an input type that accepts IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArray and IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayInput` via:
-//
-//	IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArray{ IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArgs{...} }
-type IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput() IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput
-	ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutputWithContext(context.Context) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput
-}
-
-type IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArray []IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsInput
-
-func (IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGatewayEndpointGatewayBindingOperations)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArray) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput() IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput {
-	return i.ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArray) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput)
-}
-
-// IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapInput is an input type that accepts IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMap and IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput values.
-// You can construct a concrete instance of `IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapInput` via:
-//
-//	IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMap{ "key": IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArgs{...} }
-type IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapInput interface {
-	pulumi.Input
-
-	ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput() IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput
-	ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutputWithContext(context.Context) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput
-}
-
-type IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMap map[string]IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsInput
-
-func (IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGatewayEndpointGatewayBindingOperations)(nil)).Elem()
-}
-
-func (i IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMap) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput() IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput {
-	return i.ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutputWithContext(context.Background())
-}
-
-func (i IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMap) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput)
-}
-
 type IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput struct{ *pulumi.OutputState }
 
 func (IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput) ElementType() reflect.Type {
@@ -210,51 +160,7 @@ func (o IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput) Priva
 	}).(pulumi.StringOutput)
 }
 
-type IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*IsPrivatePathServiceGatewayEndpointGatewayBindingOperations)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput() IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput) Index(i pulumi.IntInput) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGatewayEndpointGatewayBindingOperations {
-		return vs[0].([]*IsPrivatePathServiceGatewayEndpointGatewayBindingOperations)[vs[1].(int)]
-	}).(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput)
-}
-
-type IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput struct{ *pulumi.OutputState }
-
-func (IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*IsPrivatePathServiceGatewayEndpointGatewayBindingOperations)(nil)).Elem()
-}
-
-func (o IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput() IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput) ToIsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutputWithContext(ctx context.Context) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput {
-	return o
-}
-
-func (o IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput) MapIndex(k pulumi.StringInput) IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IsPrivatePathServiceGatewayEndpointGatewayBindingOperations {
-		return vs[0].(map[string]*IsPrivatePathServiceGatewayEndpointGatewayBindingOperations)[vs[1].(string)]
-	}).(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsInput)(nil)).Elem(), &IsPrivatePathServiceGatewayEndpointGatewayBindingOperations{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayInput)(nil)).Elem(), IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapInput)(nil)).Elem(), IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMap{})
 	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArrayOutput{})
-	pulumi.RegisterOutputType(IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsMapOutput{})
 }
