@@ -191,14 +191,6 @@ Run the tests:
 make test
 ```
 
-### Versioning and Releases
-
-This project uses git tags for versioning. The version is automatically detected from git tags during build.
-
-For detailed information about versioning, release process, and how to create new releases, see:
-- **[VERSIONING.md](VERSIONING.md)** - Complete versioning guide
-- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Development and build instructions
-
 ## Reference
 
 For detailed reference documentation on all available resources and functions, please visit the [Pulumi Registry](https://www.pulumi.com/registry/packages/ibmcloud/api-docs/) (once published).
