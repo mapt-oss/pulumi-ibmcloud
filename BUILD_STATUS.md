@@ -144,7 +144,7 @@ github.com/mapt-oss/pulumi-ibmcloud/sdk/go/ibmcloud
 ```json
 {
   "name": "@pulumi/ibmcloud",
-  "version": "1.0.0-alpha.0+dev"
+  "version": "0.0.7"
 }
 ```
 

@@ -1,6 +1,6 @@
 {
     "name": "@pulumi/ibmcloud",
-    "version": "1.0.0-alpha.0+dev",
+    "version": "0.0.7",
     "description": "A Pulumi package for creating and managing IBM Cloud resources.",
     "keywords": [
         "ibmcloud",
@@ -23,7 +23,7 @@
     "pulumi": {
         "resource": true,
         "name": "ibmcloud",
-        "version": "1.0.0-alpha.0+dev",
+        "version": "0.0.7",
         "server": "https://github.com/mapt-oss/pulumi-ibmcloud/releases/download/v${VERSION}/"
     }
 }
