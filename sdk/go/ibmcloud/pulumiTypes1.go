@@ -13,1845 +13,726 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-type IsVpcHealthReason struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code *string `pulumi:"code"`
-	// An explanation of the reason for this health state.
-	Message *string `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo *string `pulumi:"moreInfo"`
+type PiHostGroupPiHost struct {
+	// Name of the host chosen by the user.
+	DisplayName string `pulumi:"displayName"`
+	// System type.
+	SysType string `pulumi:"sysType"`
+	// List of user tags attached to the resource.
+	UserTags []string `pulumi:"userTags"`
 }
 
-// IsVpcHealthReasonInput is an input type that accepts IsVpcHealthReasonArgs and IsVpcHealthReasonOutput values.
-// You can construct a concrete instance of `IsVpcHealthReasonInput` via:
+// PiHostGroupPiHostInput is an input type that accepts PiHostGroupPiHostArgs and PiHostGroupPiHostOutput values.
+// You can construct a concrete instance of `PiHostGroupPiHostInput` via:
 //
-//	IsVpcHealthReasonArgs{...}
-type IsVpcHealthReasonInput interface {
+//	PiHostGroupPiHostArgs{...}
+type PiHostGroupPiHostInput interface {
 	pulumi.Input
 
-	ToIsVpcHealthReasonOutput() IsVpcHealthReasonOutput
-	ToIsVpcHealthReasonOutputWithContext(context.Context) IsVpcHealthReasonOutput
+	ToPiHostGroupPiHostOutput() PiHostGroupPiHostOutput
+	ToPiHostGroupPiHostOutputWithContext(context.Context) PiHostGroupPiHostOutput
 }
 
-type IsVpcHealthReasonArgs struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the reason for this health state.
-	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+type PiHostGroupPiHostArgs struct {
+	// Name of the host chosen by the user.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// System type.
+	SysType pulumi.StringInput `pulumi:"sysType"`
+	// List of user tags attached to the resource.
+	UserTags pulumi.StringArrayInput `pulumi:"userTags"`
 }
 
-func (IsVpcHealthReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcHealthReason)(nil)).Elem()
+func (PiHostGroupPiHostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostGroupPiHost)(nil)).Elem()
 }
 
-func (i IsVpcHealthReasonArgs) ToIsVpcHealthReasonOutput() IsVpcHealthReasonOutput {
-	return i.ToIsVpcHealthReasonOutputWithContext(context.Background())
+func (i PiHostGroupPiHostArgs) ToPiHostGroupPiHostOutput() PiHostGroupPiHostOutput {
+	return i.ToPiHostGroupPiHostOutputWithContext(context.Background())
 }
 
-func (i IsVpcHealthReasonArgs) ToIsVpcHealthReasonOutputWithContext(ctx context.Context) IsVpcHealthReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcHealthReasonOutput)
+func (i PiHostGroupPiHostArgs) ToPiHostGroupPiHostOutputWithContext(ctx context.Context) PiHostGroupPiHostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostGroupPiHostOutput)
 }
 
-// IsVpcHealthReasonArrayInput is an input type that accepts IsVpcHealthReasonArray and IsVpcHealthReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpcHealthReasonArrayInput` via:
+// PiHostGroupPiHostArrayInput is an input type that accepts PiHostGroupPiHostArray and PiHostGroupPiHostArrayOutput values.
+// You can construct a concrete instance of `PiHostGroupPiHostArrayInput` via:
 //
-//	IsVpcHealthReasonArray{ IsVpcHealthReasonArgs{...} }
-type IsVpcHealthReasonArrayInput interface {
+//	PiHostGroupPiHostArray{ PiHostGroupPiHostArgs{...} }
+type PiHostGroupPiHostArrayInput interface {
 	pulumi.Input
 
-	ToIsVpcHealthReasonArrayOutput() IsVpcHealthReasonArrayOutput
-	ToIsVpcHealthReasonArrayOutputWithContext(context.Context) IsVpcHealthReasonArrayOutput
+	ToPiHostGroupPiHostArrayOutput() PiHostGroupPiHostArrayOutput
+	ToPiHostGroupPiHostArrayOutputWithContext(context.Context) PiHostGroupPiHostArrayOutput
 }
 
-type IsVpcHealthReasonArray []IsVpcHealthReasonInput
+type PiHostGroupPiHostArray []PiHostGroupPiHostInput
 
-func (IsVpcHealthReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcHealthReason)(nil)).Elem()
+func (PiHostGroupPiHostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiHostGroupPiHost)(nil)).Elem()
 }
 
-func (i IsVpcHealthReasonArray) ToIsVpcHealthReasonArrayOutput() IsVpcHealthReasonArrayOutput {
-	return i.ToIsVpcHealthReasonArrayOutputWithContext(context.Background())
+func (i PiHostGroupPiHostArray) ToPiHostGroupPiHostArrayOutput() PiHostGroupPiHostArrayOutput {
+	return i.ToPiHostGroupPiHostArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpcHealthReasonArray) ToIsVpcHealthReasonArrayOutputWithContext(ctx context.Context) IsVpcHealthReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcHealthReasonArrayOutput)
+func (i PiHostGroupPiHostArray) ToPiHostGroupPiHostArrayOutputWithContext(ctx context.Context) PiHostGroupPiHostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostGroupPiHostArrayOutput)
 }
 
-type IsVpcHealthReasonOutput struct{ *pulumi.OutputState }
+type PiHostGroupPiHostOutput struct{ *pulumi.OutputState }
 
-func (IsVpcHealthReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcHealthReason)(nil)).Elem()
+func (PiHostGroupPiHostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostGroupPiHost)(nil)).Elem()
 }
 
-func (o IsVpcHealthReasonOutput) ToIsVpcHealthReasonOutput() IsVpcHealthReasonOutput {
+func (o PiHostGroupPiHostOutput) ToPiHostGroupPiHostOutput() PiHostGroupPiHostOutput {
 	return o
 }
 
-func (o IsVpcHealthReasonOutput) ToIsVpcHealthReasonOutputWithContext(ctx context.Context) IsVpcHealthReasonOutput {
+func (o PiHostGroupPiHostOutput) ToPiHostGroupPiHostOutputWithContext(ctx context.Context) PiHostGroupPiHostOutput {
 	return o
 }
 
-// A snake case string succinctly identifying the reason for this health state.
-func (o IsVpcHealthReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+// Name of the host chosen by the user.
+func (o PiHostGroupPiHostOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v PiHostGroupPiHost) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// An explanation of the reason for this health state.
-func (o IsVpcHealthReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+// System type.
+func (o PiHostGroupPiHostOutput) SysType() pulumi.StringOutput {
+	return o.ApplyT(func(v PiHostGroupPiHost) string { return v.SysType }).(pulumi.StringOutput)
 }
 
-// Link to documentation about the reason for this health state.
-func (o IsVpcHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+// List of user tags attached to the resource.
+func (o PiHostGroupPiHostOutput) UserTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PiHostGroupPiHost) []string { return v.UserTags }).(pulumi.StringArrayOutput)
 }
 
-type IsVpcHealthReasonArrayOutput struct{ *pulumi.OutputState }
+type PiHostGroupPiHostArrayOutput struct{ *pulumi.OutputState }
 
-func (IsVpcHealthReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcHealthReason)(nil)).Elem()
+func (PiHostGroupPiHostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiHostGroupPiHost)(nil)).Elem()
 }
 
-func (o IsVpcHealthReasonArrayOutput) ToIsVpcHealthReasonArrayOutput() IsVpcHealthReasonArrayOutput {
+func (o PiHostGroupPiHostArrayOutput) ToPiHostGroupPiHostArrayOutput() PiHostGroupPiHostArrayOutput {
 	return o
 }
 
-func (o IsVpcHealthReasonArrayOutput) ToIsVpcHealthReasonArrayOutputWithContext(ctx context.Context) IsVpcHealthReasonArrayOutput {
+func (o PiHostGroupPiHostArrayOutput) ToPiHostGroupPiHostArrayOutputWithContext(ctx context.Context) PiHostGroupPiHostArrayOutput {
 	return o
 }
 
-func (o IsVpcHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpcHealthReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcHealthReason {
-		return vs[0].([]IsVpcHealthReason)[vs[1].(int)]
-	}).(IsVpcHealthReasonOutput)
+func (o PiHostGroupPiHostArrayOutput) Index(i pulumi.IntInput) PiHostGroupPiHostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiHostGroupPiHost {
+		return vs[0].([]PiHostGroupPiHost)[vs[1].(int)]
+	}).(PiHostGroupPiHostOutput)
 }
 
-type IsVpcPublicAddressRange struct {
-	// The CRN for this public address range.
-	Crn *string `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
-	Deleteds []IsVpcPublicAddressRangeDeleted `pulumi:"deleteds"`
-	// The URL for this public address range.
-	Href *string `pulumi:"href"`
-	// The unique identifier for this public address range.
-	Id *string `pulumi:"id"`
-	// The name for this public address range. The name is unique across all public address ranges in the region.
+type PiHostGroupPiSecondary struct {
+	// Name of the host group to create in the secondary workspace.
 	Name *string `pulumi:"name"`
-	// The resource type.
-	ResourceType *string `pulumi:"resourceType"`
+	// ID of the workspace to share the host group with.
+	Workspace string `pulumi:"workspace"`
 }
 
-// IsVpcPublicAddressRangeInput is an input type that accepts IsVpcPublicAddressRangeArgs and IsVpcPublicAddressRangeOutput values.
-// You can construct a concrete instance of `IsVpcPublicAddressRangeInput` via:
+// PiHostGroupPiSecondaryInput is an input type that accepts PiHostGroupPiSecondaryArgs and PiHostGroupPiSecondaryOutput values.
+// You can construct a concrete instance of `PiHostGroupPiSecondaryInput` via:
 //
-//	IsVpcPublicAddressRangeArgs{...}
-type IsVpcPublicAddressRangeInput interface {
+//	PiHostGroupPiSecondaryArgs{...}
+type PiHostGroupPiSecondaryInput interface {
 	pulumi.Input
 
-	ToIsVpcPublicAddressRangeOutput() IsVpcPublicAddressRangeOutput
-	ToIsVpcPublicAddressRangeOutputWithContext(context.Context) IsVpcPublicAddressRangeOutput
+	ToPiHostGroupPiSecondaryOutput() PiHostGroupPiSecondaryOutput
+	ToPiHostGroupPiSecondaryOutputWithContext(context.Context) PiHostGroupPiSecondaryOutput
 }
 
-type IsVpcPublicAddressRangeArgs struct {
-	// The CRN for this public address range.
-	Crn pulumi.StringPtrInput `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
-	Deleteds IsVpcPublicAddressRangeDeletedArrayInput `pulumi:"deleteds"`
-	// The URL for this public address range.
-	Href pulumi.StringPtrInput `pulumi:"href"`
-	// The unique identifier for this public address range.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The name for this public address range. The name is unique across all public address ranges in the region.
+type PiHostGroupPiSecondaryArgs struct {
+	// Name of the host group to create in the secondary workspace.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The resource type.
-	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// ID of the workspace to share the host group with.
+	Workspace pulumi.StringInput `pulumi:"workspace"`
 }
 
-func (IsVpcPublicAddressRangeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcPublicAddressRange)(nil)).Elem()
+func (PiHostGroupPiSecondaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostGroupPiSecondary)(nil)).Elem()
 }
 
-func (i IsVpcPublicAddressRangeArgs) ToIsVpcPublicAddressRangeOutput() IsVpcPublicAddressRangeOutput {
-	return i.ToIsVpcPublicAddressRangeOutputWithContext(context.Background())
+func (i PiHostGroupPiSecondaryArgs) ToPiHostGroupPiSecondaryOutput() PiHostGroupPiSecondaryOutput {
+	return i.ToPiHostGroupPiSecondaryOutputWithContext(context.Background())
 }
 
-func (i IsVpcPublicAddressRangeArgs) ToIsVpcPublicAddressRangeOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeOutput)
+func (i PiHostGroupPiSecondaryArgs) ToPiHostGroupPiSecondaryOutputWithContext(ctx context.Context) PiHostGroupPiSecondaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostGroupPiSecondaryOutput)
 }
 
-// IsVpcPublicAddressRangeArrayInput is an input type that accepts IsVpcPublicAddressRangeArray and IsVpcPublicAddressRangeArrayOutput values.
-// You can construct a concrete instance of `IsVpcPublicAddressRangeArrayInput` via:
+// PiHostGroupPiSecondaryArrayInput is an input type that accepts PiHostGroupPiSecondaryArray and PiHostGroupPiSecondaryArrayOutput values.
+// You can construct a concrete instance of `PiHostGroupPiSecondaryArrayInput` via:
 //
-//	IsVpcPublicAddressRangeArray{ IsVpcPublicAddressRangeArgs{...} }
-type IsVpcPublicAddressRangeArrayInput interface {
+//	PiHostGroupPiSecondaryArray{ PiHostGroupPiSecondaryArgs{...} }
+type PiHostGroupPiSecondaryArrayInput interface {
 	pulumi.Input
 
-	ToIsVpcPublicAddressRangeArrayOutput() IsVpcPublicAddressRangeArrayOutput
-	ToIsVpcPublicAddressRangeArrayOutputWithContext(context.Context) IsVpcPublicAddressRangeArrayOutput
+	ToPiHostGroupPiSecondaryArrayOutput() PiHostGroupPiSecondaryArrayOutput
+	ToPiHostGroupPiSecondaryArrayOutputWithContext(context.Context) PiHostGroupPiSecondaryArrayOutput
 }
 
-type IsVpcPublicAddressRangeArray []IsVpcPublicAddressRangeInput
+type PiHostGroupPiSecondaryArray []PiHostGroupPiSecondaryInput
 
-func (IsVpcPublicAddressRangeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcPublicAddressRange)(nil)).Elem()
+func (PiHostGroupPiSecondaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiHostGroupPiSecondary)(nil)).Elem()
 }
 
-func (i IsVpcPublicAddressRangeArray) ToIsVpcPublicAddressRangeArrayOutput() IsVpcPublicAddressRangeArrayOutput {
-	return i.ToIsVpcPublicAddressRangeArrayOutputWithContext(context.Background())
+func (i PiHostGroupPiSecondaryArray) ToPiHostGroupPiSecondaryArrayOutput() PiHostGroupPiSecondaryArrayOutput {
+	return i.ToPiHostGroupPiSecondaryArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpcPublicAddressRangeArray) ToIsVpcPublicAddressRangeArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeArrayOutput)
+func (i PiHostGroupPiSecondaryArray) ToPiHostGroupPiSecondaryArrayOutputWithContext(ctx context.Context) PiHostGroupPiSecondaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostGroupPiSecondaryArrayOutput)
 }
 
-type IsVpcPublicAddressRangeOutput struct{ *pulumi.OutputState }
+type PiHostGroupPiSecondaryOutput struct{ *pulumi.OutputState }
 
-func (IsVpcPublicAddressRangeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcPublicAddressRange)(nil)).Elem()
+func (PiHostGroupPiSecondaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostGroupPiSecondary)(nil)).Elem()
 }
 
-func (o IsVpcPublicAddressRangeOutput) ToIsVpcPublicAddressRangeOutput() IsVpcPublicAddressRangeOutput {
+func (o PiHostGroupPiSecondaryOutput) ToPiHostGroupPiSecondaryOutput() PiHostGroupPiSecondaryOutput {
 	return o
 }
 
-func (o IsVpcPublicAddressRangeOutput) ToIsVpcPublicAddressRangeOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeOutput {
+func (o PiHostGroupPiSecondaryOutput) ToPiHostGroupPiSecondaryOutputWithContext(ctx context.Context) PiHostGroupPiSecondaryOutput {
 	return o
 }
 
-// The CRN for this public address range.
-func (o IsVpcPublicAddressRangeOutput) Crn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Crn }).(pulumi.StringPtrOutput)
+// Name of the host group to create in the secondary workspace.
+func (o PiHostGroupPiSecondaryOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiHostGroupPiSecondary) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
-func (o IsVpcPublicAddressRangeOutput) Deleteds() IsVpcPublicAddressRangeDeletedArrayOutput {
-	return o.ApplyT(func(v IsVpcPublicAddressRange) []IsVpcPublicAddressRangeDeleted { return v.Deleteds }).(IsVpcPublicAddressRangeDeletedArrayOutput)
+// ID of the workspace to share the host group with.
+func (o PiHostGroupPiSecondaryOutput) Workspace() pulumi.StringOutput {
+	return o.ApplyT(func(v PiHostGroupPiSecondary) string { return v.Workspace }).(pulumi.StringOutput)
 }
 
-// The URL for this public address range.
-func (o IsVpcPublicAddressRangeOutput) Href() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Href }).(pulumi.StringPtrOutput)
+type PiHostGroupPiSecondaryArrayOutput struct{ *pulumi.OutputState }
+
+func (PiHostGroupPiSecondaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiHostGroupPiSecondary)(nil)).Elem()
 }
 
-// The unique identifier for this public address range.
-func (o IsVpcPublicAddressRangeOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// The name for this public address range. The name is unique across all public address ranges in the region.
-func (o IsVpcPublicAddressRangeOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// The resource type.
-func (o IsVpcPublicAddressRangeOutput) ResourceType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
-}
-
-type IsVpcPublicAddressRangeArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcPublicAddressRangeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcPublicAddressRange)(nil)).Elem()
-}
-
-func (o IsVpcPublicAddressRangeArrayOutput) ToIsVpcPublicAddressRangeArrayOutput() IsVpcPublicAddressRangeArrayOutput {
+func (o PiHostGroupPiSecondaryArrayOutput) ToPiHostGroupPiSecondaryArrayOutput() PiHostGroupPiSecondaryArrayOutput {
 	return o
 }
 
-func (o IsVpcPublicAddressRangeArrayOutput) ToIsVpcPublicAddressRangeArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeArrayOutput {
+func (o PiHostGroupPiSecondaryArrayOutput) ToPiHostGroupPiSecondaryArrayOutputWithContext(ctx context.Context) PiHostGroupPiSecondaryArrayOutput {
 	return o
 }
 
-func (o IsVpcPublicAddressRangeArrayOutput) Index(i pulumi.IntInput) IsVpcPublicAddressRangeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcPublicAddressRange {
-		return vs[0].([]IsVpcPublicAddressRange)[vs[1].(int)]
-	}).(IsVpcPublicAddressRangeOutput)
+func (o PiHostGroupPiSecondaryArrayOutput) Index(i pulumi.IntInput) PiHostGroupPiSecondaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiHostGroupPiSecondary {
+		return vs[0].([]PiHostGroupPiSecondary)[vs[1].(int)]
+	}).(PiHostGroupPiSecondaryOutput)
 }
 
-type IsVpcPublicAddressRangeDeleted struct {
-	// Link to documentation about deleted resources.
-	MoreInfo *string `pulumi:"moreInfo"`
+type PiHostPiHost struct {
+	// Name of the host chosen by the user.
+	DisplayName string `pulumi:"displayName"`
+	// System type.
+	SysType string `pulumi:"sysType"`
+	// List of user tags attached to the resource.
+	UserTags []string `pulumi:"userTags"`
 }
 
-// IsVpcPublicAddressRangeDeletedInput is an input type that accepts IsVpcPublicAddressRangeDeletedArgs and IsVpcPublicAddressRangeDeletedOutput values.
-// You can construct a concrete instance of `IsVpcPublicAddressRangeDeletedInput` via:
+// PiHostPiHostInput is an input type that accepts PiHostPiHostArgs and PiHostPiHostOutput values.
+// You can construct a concrete instance of `PiHostPiHostInput` via:
 //
-//	IsVpcPublicAddressRangeDeletedArgs{...}
-type IsVpcPublicAddressRangeDeletedInput interface {
+//	PiHostPiHostArgs{...}
+type PiHostPiHostInput interface {
 	pulumi.Input
 
-	ToIsVpcPublicAddressRangeDeletedOutput() IsVpcPublicAddressRangeDeletedOutput
-	ToIsVpcPublicAddressRangeDeletedOutputWithContext(context.Context) IsVpcPublicAddressRangeDeletedOutput
+	ToPiHostPiHostOutput() PiHostPiHostOutput
+	ToPiHostPiHostOutputWithContext(context.Context) PiHostPiHostOutput
 }
 
-type IsVpcPublicAddressRangeDeletedArgs struct {
-	// Link to documentation about deleted resources.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+type PiHostPiHostArgs struct {
+	// Name of the host chosen by the user.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// System type.
+	SysType pulumi.StringInput `pulumi:"sysType"`
+	// List of user tags attached to the resource.
+	UserTags pulumi.StringArrayInput `pulumi:"userTags"`
 }
 
-func (IsVpcPublicAddressRangeDeletedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcPublicAddressRangeDeleted)(nil)).Elem()
+func (PiHostPiHostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostPiHost)(nil)).Elem()
 }
 
-func (i IsVpcPublicAddressRangeDeletedArgs) ToIsVpcPublicAddressRangeDeletedOutput() IsVpcPublicAddressRangeDeletedOutput {
-	return i.ToIsVpcPublicAddressRangeDeletedOutputWithContext(context.Background())
+func (i PiHostPiHostArgs) ToPiHostPiHostOutput() PiHostPiHostOutput {
+	return i.ToPiHostPiHostOutputWithContext(context.Background())
 }
 
-func (i IsVpcPublicAddressRangeDeletedArgs) ToIsVpcPublicAddressRangeDeletedOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeDeletedOutput)
+func (i PiHostPiHostArgs) ToPiHostPiHostOutputWithContext(ctx context.Context) PiHostPiHostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostPiHostOutput)
 }
 
-// IsVpcPublicAddressRangeDeletedArrayInput is an input type that accepts IsVpcPublicAddressRangeDeletedArray and IsVpcPublicAddressRangeDeletedArrayOutput values.
-// You can construct a concrete instance of `IsVpcPublicAddressRangeDeletedArrayInput` via:
+func (i PiHostPiHostArgs) ToPiHostPiHostPtrOutput() PiHostPiHostPtrOutput {
+	return i.ToPiHostPiHostPtrOutputWithContext(context.Background())
+}
+
+func (i PiHostPiHostArgs) ToPiHostPiHostPtrOutputWithContext(ctx context.Context) PiHostPiHostPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostPiHostOutput).ToPiHostPiHostPtrOutputWithContext(ctx)
+}
+
+// PiHostPiHostPtrInput is an input type that accepts PiHostPiHostArgs, PiHostPiHostPtr and PiHostPiHostPtrOutput values.
+// You can construct a concrete instance of `PiHostPiHostPtrInput` via:
 //
-//	IsVpcPublicAddressRangeDeletedArray{ IsVpcPublicAddressRangeDeletedArgs{...} }
-type IsVpcPublicAddressRangeDeletedArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcPublicAddressRangeDeletedArrayOutput() IsVpcPublicAddressRangeDeletedArrayOutput
-	ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(context.Context) IsVpcPublicAddressRangeDeletedArrayOutput
-}
-
-type IsVpcPublicAddressRangeDeletedArray []IsVpcPublicAddressRangeDeletedInput
-
-func (IsVpcPublicAddressRangeDeletedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcPublicAddressRangeDeleted)(nil)).Elem()
-}
-
-func (i IsVpcPublicAddressRangeDeletedArray) ToIsVpcPublicAddressRangeDeletedArrayOutput() IsVpcPublicAddressRangeDeletedArrayOutput {
-	return i.ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcPublicAddressRangeDeletedArray) ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeDeletedArrayOutput)
-}
-
-type IsVpcPublicAddressRangeDeletedOutput struct{ *pulumi.OutputState }
-
-func (IsVpcPublicAddressRangeDeletedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcPublicAddressRangeDeleted)(nil)).Elem()
-}
-
-func (o IsVpcPublicAddressRangeDeletedOutput) ToIsVpcPublicAddressRangeDeletedOutput() IsVpcPublicAddressRangeDeletedOutput {
-	return o
-}
-
-func (o IsVpcPublicAddressRangeDeletedOutput) ToIsVpcPublicAddressRangeDeletedOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedOutput {
-	return o
-}
-
-// Link to documentation about deleted resources.
-func (o IsVpcPublicAddressRangeDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcPublicAddressRangeDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpcPublicAddressRangeDeletedArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcPublicAddressRangeDeletedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcPublicAddressRangeDeleted)(nil)).Elem()
-}
-
-func (o IsVpcPublicAddressRangeDeletedArrayOutput) ToIsVpcPublicAddressRangeDeletedArrayOutput() IsVpcPublicAddressRangeDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpcPublicAddressRangeDeletedArrayOutput) ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpcPublicAddressRangeDeletedArrayOutput) Index(i pulumi.IntInput) IsVpcPublicAddressRangeDeletedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcPublicAddressRangeDeleted {
-		return vs[0].([]IsVpcPublicAddressRangeDeleted)[vs[1].(int)]
-	}).(IsVpcPublicAddressRangeDeletedOutput)
-}
-
-type IsVpcRoutingTableResourceGroup struct {
-	// The URL for this resource group.
-	Href *string `pulumi:"href"`
-	// The unique identifier for this resource group.
-	Id *string `pulumi:"id"`
-	// The user-defined name for this resource group.
-	Name *string `pulumi:"name"`
-}
-
-// IsVpcRoutingTableResourceGroupInput is an input type that accepts IsVpcRoutingTableResourceGroupArgs and IsVpcRoutingTableResourceGroupOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableResourceGroupInput` via:
-//
-//	IsVpcRoutingTableResourceGroupArgs{...}
-type IsVpcRoutingTableResourceGroupInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableResourceGroupOutput() IsVpcRoutingTableResourceGroupOutput
-	ToIsVpcRoutingTableResourceGroupOutputWithContext(context.Context) IsVpcRoutingTableResourceGroupOutput
-}
-
-type IsVpcRoutingTableResourceGroupArgs struct {
-	// The URL for this resource group.
-	Href pulumi.StringPtrInput `pulumi:"href"`
-	// The unique identifier for this resource group.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The user-defined name for this resource group.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-}
-
-func (IsVpcRoutingTableResourceGroupArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableResourceGroup)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableResourceGroupArgs) ToIsVpcRoutingTableResourceGroupOutput() IsVpcRoutingTableResourceGroupOutput {
-	return i.ToIsVpcRoutingTableResourceGroupOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableResourceGroupArgs) ToIsVpcRoutingTableResourceGroupOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableResourceGroupOutput)
-}
-
-// IsVpcRoutingTableResourceGroupArrayInput is an input type that accepts IsVpcRoutingTableResourceGroupArray and IsVpcRoutingTableResourceGroupArrayOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableResourceGroupArrayInput` via:
-//
-//	IsVpcRoutingTableResourceGroupArray{ IsVpcRoutingTableResourceGroupArgs{...} }
-type IsVpcRoutingTableResourceGroupArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableResourceGroupArrayOutput() IsVpcRoutingTableResourceGroupArrayOutput
-	ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(context.Context) IsVpcRoutingTableResourceGroupArrayOutput
-}
-
-type IsVpcRoutingTableResourceGroupArray []IsVpcRoutingTableResourceGroupInput
-
-func (IsVpcRoutingTableResourceGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableResourceGroup)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableResourceGroupArray) ToIsVpcRoutingTableResourceGroupArrayOutput() IsVpcRoutingTableResourceGroupArrayOutput {
-	return i.ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableResourceGroupArray) ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableResourceGroupArrayOutput)
-}
-
-type IsVpcRoutingTableResourceGroupOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableResourceGroupOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableResourceGroup)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableResourceGroupOutput) ToIsVpcRoutingTableResourceGroupOutput() IsVpcRoutingTableResourceGroupOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableResourceGroupOutput) ToIsVpcRoutingTableResourceGroupOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupOutput {
-	return o
-}
-
-// The URL for this resource group.
-func (o IsVpcRoutingTableResourceGroupOutput) Href() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableResourceGroup) *string { return v.Href }).(pulumi.StringPtrOutput)
-}
-
-// The unique identifier for this resource group.
-func (o IsVpcRoutingTableResourceGroupOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableResourceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// The user-defined name for this resource group.
-func (o IsVpcRoutingTableResourceGroupOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableResourceGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-type IsVpcRoutingTableResourceGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableResourceGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableResourceGroup)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableResourceGroupArrayOutput) ToIsVpcRoutingTableResourceGroupArrayOutput() IsVpcRoutingTableResourceGroupArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableResourceGroupArrayOutput) ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableResourceGroupArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableResourceGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableResourceGroup {
-		return vs[0].([]IsVpcRoutingTableResourceGroup)[vs[1].(int)]
-	}).(IsVpcRoutingTableResourceGroupOutput)
-}
-
-type IsVpcRoutingTableRouteCreator struct {
-	// The VPN gateway's CRN.
-	Crn *string `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds []IsVpcRoutingTableRouteCreatorDeleted `pulumi:"deleteds"`
-	// The VPN gateway's canonical URL.
-	Href *string `pulumi:"href"`
-	// The unique identifier for this VPN gateway.
-	Id *string `pulumi:"id"`
-	// The user-defined name for this VPN gateway.
-	Name *string `pulumi:"name"`
-	// The resource type.
-	ResourceType *string `pulumi:"resourceType"`
-}
-
-// IsVpcRoutingTableRouteCreatorInput is an input type that accepts IsVpcRoutingTableRouteCreatorArgs and IsVpcRoutingTableRouteCreatorOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorInput` via:
-//
-//	IsVpcRoutingTableRouteCreatorArgs{...}
-type IsVpcRoutingTableRouteCreatorInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableRouteCreatorOutput() IsVpcRoutingTableRouteCreatorOutput
-	ToIsVpcRoutingTableRouteCreatorOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorOutput
-}
-
-type IsVpcRoutingTableRouteCreatorArgs struct {
-	// The VPN gateway's CRN.
-	Crn pulumi.StringPtrInput `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds IsVpcRoutingTableRouteCreatorDeletedArrayInput `pulumi:"deleteds"`
-	// The VPN gateway's canonical URL.
-	Href pulumi.StringPtrInput `pulumi:"href"`
-	// The unique identifier for this VPN gateway.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The user-defined name for this VPN gateway.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The resource type.
-	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
-}
-
-func (IsVpcRoutingTableRouteCreatorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableRouteCreator)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableRouteCreatorArgs) ToIsVpcRoutingTableRouteCreatorOutput() IsVpcRoutingTableRouteCreatorOutput {
-	return i.ToIsVpcRoutingTableRouteCreatorOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableRouteCreatorArgs) ToIsVpcRoutingTableRouteCreatorOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorOutput)
-}
-
-// IsVpcRoutingTableRouteCreatorArrayInput is an input type that accepts IsVpcRoutingTableRouteCreatorArray and IsVpcRoutingTableRouteCreatorArrayOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorArrayInput` via:
-//
-//	IsVpcRoutingTableRouteCreatorArray{ IsVpcRoutingTableRouteCreatorArgs{...} }
-type IsVpcRoutingTableRouteCreatorArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableRouteCreatorArrayOutput() IsVpcRoutingTableRouteCreatorArrayOutput
-	ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorArrayOutput
-}
-
-type IsVpcRoutingTableRouteCreatorArray []IsVpcRoutingTableRouteCreatorInput
-
-func (IsVpcRoutingTableRouteCreatorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreator)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableRouteCreatorArray) ToIsVpcRoutingTableRouteCreatorArrayOutput() IsVpcRoutingTableRouteCreatorArrayOutput {
-	return i.ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableRouteCreatorArray) ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorArrayOutput)
-}
-
-type IsVpcRoutingTableRouteCreatorOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableRouteCreatorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableRouteCreator)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableRouteCreatorOutput) ToIsVpcRoutingTableRouteCreatorOutput() IsVpcRoutingTableRouteCreatorOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteCreatorOutput) ToIsVpcRoutingTableRouteCreatorOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorOutput {
-	return o
-}
-
-// The VPN gateway's CRN.
-func (o IsVpcRoutingTableRouteCreatorOutput) Crn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Crn }).(pulumi.StringPtrOutput)
-}
-
-// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-func (o IsVpcRoutingTableRouteCreatorOutput) Deleteds() IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) []IsVpcRoutingTableRouteCreatorDeleted { return v.Deleteds }).(IsVpcRoutingTableRouteCreatorDeletedArrayOutput)
-}
-
-// The VPN gateway's canonical URL.
-func (o IsVpcRoutingTableRouteCreatorOutput) Href() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Href }).(pulumi.StringPtrOutput)
-}
-
-// The unique identifier for this VPN gateway.
-func (o IsVpcRoutingTableRouteCreatorOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// The user-defined name for this VPN gateway.
-func (o IsVpcRoutingTableRouteCreatorOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// The resource type.
-func (o IsVpcRoutingTableRouteCreatorOutput) ResourceType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
-}
-
-type IsVpcRoutingTableRouteCreatorArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableRouteCreatorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreator)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableRouteCreatorArrayOutput) ToIsVpcRoutingTableRouteCreatorArrayOutput() IsVpcRoutingTableRouteCreatorArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteCreatorArrayOutput) ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteCreatorArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableRouteCreatorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableRouteCreator {
-		return vs[0].([]IsVpcRoutingTableRouteCreator)[vs[1].(int)]
-	}).(IsVpcRoutingTableRouteCreatorOutput)
-}
-
-type IsVpcRoutingTableRouteCreatorDeleted struct {
-	// Link to documentation about deleted resources.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpcRoutingTableRouteCreatorDeletedInput is an input type that accepts IsVpcRoutingTableRouteCreatorDeletedArgs and IsVpcRoutingTableRouteCreatorDeletedOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorDeletedInput` via:
-//
-//	IsVpcRoutingTableRouteCreatorDeletedArgs{...}
-type IsVpcRoutingTableRouteCreatorDeletedInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableRouteCreatorDeletedOutput() IsVpcRoutingTableRouteCreatorDeletedOutput
-	ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorDeletedOutput
-}
-
-type IsVpcRoutingTableRouteCreatorDeletedArgs struct {
-	// Link to documentation about deleted resources.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpcRoutingTableRouteCreatorDeletedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableRouteCreatorDeletedArgs) ToIsVpcRoutingTableRouteCreatorDeletedOutput() IsVpcRoutingTableRouteCreatorDeletedOutput {
-	return i.ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableRouteCreatorDeletedArgs) ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorDeletedOutput)
-}
-
-// IsVpcRoutingTableRouteCreatorDeletedArrayInput is an input type that accepts IsVpcRoutingTableRouteCreatorDeletedArray and IsVpcRoutingTableRouteCreatorDeletedArrayOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorDeletedArrayInput` via:
-//
-//	IsVpcRoutingTableRouteCreatorDeletedArray{ IsVpcRoutingTableRouteCreatorDeletedArgs{...} }
-type IsVpcRoutingTableRouteCreatorDeletedArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableRouteCreatorDeletedArrayOutput() IsVpcRoutingTableRouteCreatorDeletedArrayOutput
-	ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorDeletedArrayOutput
-}
-
-type IsVpcRoutingTableRouteCreatorDeletedArray []IsVpcRoutingTableRouteCreatorDeletedInput
-
-func (IsVpcRoutingTableRouteCreatorDeletedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableRouteCreatorDeletedArray) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutput() IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
-	return i.ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableRouteCreatorDeletedArray) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorDeletedArrayOutput)
-}
-
-type IsVpcRoutingTableRouteCreatorDeletedOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableRouteCreatorDeletedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableRouteCreatorDeletedOutput) ToIsVpcRoutingTableRouteCreatorDeletedOutput() IsVpcRoutingTableRouteCreatorDeletedOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteCreatorDeletedOutput) ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedOutput {
-	return o
-}
-
-// Link to documentation about deleted resources.
-func (o IsVpcRoutingTableRouteCreatorDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableRouteCreatorDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpcRoutingTableRouteCreatorDeletedArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableRouteCreatorDeletedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableRouteCreatorDeletedArrayOutput) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutput() IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteCreatorDeletedArrayOutput) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableRouteCreatorDeletedArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableRouteCreatorDeletedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableRouteCreatorDeleted {
-		return vs[0].([]IsVpcRoutingTableRouteCreatorDeleted)[vs[1].(int)]
-	}).(IsVpcRoutingTableRouteCreatorDeletedOutput)
-}
-
-type IsVpcRoutingTableSubnet struct {
-	// Subnet ID
-	Id *string `pulumi:"id"`
-	// Subnet name
-	Name *string `pulumi:"name"`
-}
-
-// IsVpcRoutingTableSubnetInput is an input type that accepts IsVpcRoutingTableSubnetArgs and IsVpcRoutingTableSubnetOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableSubnetInput` via:
-//
-//	IsVpcRoutingTableSubnetArgs{...}
-type IsVpcRoutingTableSubnetInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableSubnetOutput() IsVpcRoutingTableSubnetOutput
-	ToIsVpcRoutingTableSubnetOutputWithContext(context.Context) IsVpcRoutingTableSubnetOutput
-}
-
-type IsVpcRoutingTableSubnetArgs struct {
-	// Subnet ID
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// Subnet name
-	Name pulumi.StringPtrInput `pulumi:"name"`
-}
-
-func (IsVpcRoutingTableSubnetArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableSubnet)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableSubnetArgs) ToIsVpcRoutingTableSubnetOutput() IsVpcRoutingTableSubnetOutput {
-	return i.ToIsVpcRoutingTableSubnetOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableSubnetArgs) ToIsVpcRoutingTableSubnetOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableSubnetOutput)
-}
-
-// IsVpcRoutingTableSubnetArrayInput is an input type that accepts IsVpcRoutingTableSubnetArray and IsVpcRoutingTableSubnetArrayOutput values.
-// You can construct a concrete instance of `IsVpcRoutingTableSubnetArrayInput` via:
-//
-//	IsVpcRoutingTableSubnetArray{ IsVpcRoutingTableSubnetArgs{...} }
-type IsVpcRoutingTableSubnetArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcRoutingTableSubnetArrayOutput() IsVpcRoutingTableSubnetArrayOutput
-	ToIsVpcRoutingTableSubnetArrayOutputWithContext(context.Context) IsVpcRoutingTableSubnetArrayOutput
-}
-
-type IsVpcRoutingTableSubnetArray []IsVpcRoutingTableSubnetInput
-
-func (IsVpcRoutingTableSubnetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableSubnet)(nil)).Elem()
-}
-
-func (i IsVpcRoutingTableSubnetArray) ToIsVpcRoutingTableSubnetArrayOutput() IsVpcRoutingTableSubnetArrayOutput {
-	return i.ToIsVpcRoutingTableSubnetArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcRoutingTableSubnetArray) ToIsVpcRoutingTableSubnetArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableSubnetArrayOutput)
-}
-
-type IsVpcRoutingTableSubnetOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableSubnetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcRoutingTableSubnet)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableSubnetOutput) ToIsVpcRoutingTableSubnetOutput() IsVpcRoutingTableSubnetOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableSubnetOutput) ToIsVpcRoutingTableSubnetOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetOutput {
-	return o
-}
-
-// Subnet ID
-func (o IsVpcRoutingTableSubnetOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableSubnet) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// Subnet name
-func (o IsVpcRoutingTableSubnetOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcRoutingTableSubnet) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-type IsVpcRoutingTableSubnetArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcRoutingTableSubnetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcRoutingTableSubnet)(nil)).Elem()
-}
-
-func (o IsVpcRoutingTableSubnetArrayOutput) ToIsVpcRoutingTableSubnetArrayOutput() IsVpcRoutingTableSubnetArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableSubnetArrayOutput) ToIsVpcRoutingTableSubnetArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetArrayOutput {
-	return o
-}
-
-func (o IsVpcRoutingTableSubnetArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableSubnetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableSubnet {
-		return vs[0].([]IsVpcRoutingTableSubnet)[vs[1].(int)]
-	}).(IsVpcRoutingTableSubnetOutput)
-}
-
-type IsVpcSecurityGroup struct {
-	// Security group id
-	GroupId *string `pulumi:"groupId"`
-	// Security group name
-	GroupName *string `pulumi:"groupName"`
-	// Security Rules
-	Rules []IsVpcSecurityGroupRule `pulumi:"rules"`
-}
-
-// IsVpcSecurityGroupInput is an input type that accepts IsVpcSecurityGroupArgs and IsVpcSecurityGroupOutput values.
-// You can construct a concrete instance of `IsVpcSecurityGroupInput` via:
-//
-//	IsVpcSecurityGroupArgs{...}
-type IsVpcSecurityGroupInput interface {
-	pulumi.Input
-
-	ToIsVpcSecurityGroupOutput() IsVpcSecurityGroupOutput
-	ToIsVpcSecurityGroupOutputWithContext(context.Context) IsVpcSecurityGroupOutput
-}
-
-type IsVpcSecurityGroupArgs struct {
-	// Security group id
-	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	// Security group name
-	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
-	// Security Rules
-	Rules IsVpcSecurityGroupRuleArrayInput `pulumi:"rules"`
-}
-
-func (IsVpcSecurityGroupArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcSecurityGroup)(nil)).Elem()
-}
-
-func (i IsVpcSecurityGroupArgs) ToIsVpcSecurityGroupOutput() IsVpcSecurityGroupOutput {
-	return i.ToIsVpcSecurityGroupOutputWithContext(context.Background())
-}
-
-func (i IsVpcSecurityGroupArgs) ToIsVpcSecurityGroupOutputWithContext(ctx context.Context) IsVpcSecurityGroupOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupOutput)
-}
-
-// IsVpcSecurityGroupArrayInput is an input type that accepts IsVpcSecurityGroupArray and IsVpcSecurityGroupArrayOutput values.
-// You can construct a concrete instance of `IsVpcSecurityGroupArrayInput` via:
-//
-//	IsVpcSecurityGroupArray{ IsVpcSecurityGroupArgs{...} }
-type IsVpcSecurityGroupArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcSecurityGroupArrayOutput() IsVpcSecurityGroupArrayOutput
-	ToIsVpcSecurityGroupArrayOutputWithContext(context.Context) IsVpcSecurityGroupArrayOutput
-}
-
-type IsVpcSecurityGroupArray []IsVpcSecurityGroupInput
-
-func (IsVpcSecurityGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcSecurityGroup)(nil)).Elem()
-}
-
-func (i IsVpcSecurityGroupArray) ToIsVpcSecurityGroupArrayOutput() IsVpcSecurityGroupArrayOutput {
-	return i.ToIsVpcSecurityGroupArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcSecurityGroupArray) ToIsVpcSecurityGroupArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupArrayOutput)
-}
-
-type IsVpcSecurityGroupOutput struct{ *pulumi.OutputState }
-
-func (IsVpcSecurityGroupOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcSecurityGroup)(nil)).Elem()
-}
-
-func (o IsVpcSecurityGroupOutput) ToIsVpcSecurityGroupOutput() IsVpcSecurityGroupOutput {
-	return o
-}
-
-func (o IsVpcSecurityGroupOutput) ToIsVpcSecurityGroupOutputWithContext(ctx context.Context) IsVpcSecurityGroupOutput {
-	return o
-}
-
-// Security group id
-func (o IsVpcSecurityGroupOutput) GroupId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroup) *string { return v.GroupId }).(pulumi.StringPtrOutput)
-}
-
-// Security group name
-func (o IsVpcSecurityGroupOutput) GroupName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroup) *string { return v.GroupName }).(pulumi.StringPtrOutput)
-}
-
-// Security Rules
-func (o IsVpcSecurityGroupOutput) Rules() IsVpcSecurityGroupRuleArrayOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroup) []IsVpcSecurityGroupRule { return v.Rules }).(IsVpcSecurityGroupRuleArrayOutput)
-}
-
-type IsVpcSecurityGroupArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcSecurityGroupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcSecurityGroup)(nil)).Elem()
-}
-
-func (o IsVpcSecurityGroupArrayOutput) ToIsVpcSecurityGroupArrayOutput() IsVpcSecurityGroupArrayOutput {
-	return o
-}
-
-func (o IsVpcSecurityGroupArrayOutput) ToIsVpcSecurityGroupArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupArrayOutput {
-	return o
-}
-
-func (o IsVpcSecurityGroupArrayOutput) Index(i pulumi.IntInput) IsVpcSecurityGroupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcSecurityGroup {
-		return vs[0].([]IsVpcSecurityGroup)[vs[1].(int)]
-	}).(IsVpcSecurityGroupOutput)
-}
-
-type IsVpcSecurityGroupRule struct {
-	Code *int `pulumi:"code"`
-	// Direction of traffic to enforce, either inbound or outbound
-	Direction *string `pulumi:"direction"`
-	// IP version: ipv4
-	IpVersion *string `pulumi:"ipVersion"`
-	PortMax   *int    `pulumi:"portMax"`
-	PortMin   *int    `pulumi:"portMin"`
-	Protocol  *string `pulumi:"protocol"`
-	// Security group id: an IP address, a CIDR block, or a single security group identifier
-	Remote *string `pulumi:"remote"`
-	// Rule ID
-	RuleId *string `pulumi:"ruleId"`
-	Type   *int    `pulumi:"type"`
-}
-
-// IsVpcSecurityGroupRuleInput is an input type that accepts IsVpcSecurityGroupRuleArgs and IsVpcSecurityGroupRuleOutput values.
-// You can construct a concrete instance of `IsVpcSecurityGroupRuleInput` via:
-//
-//	IsVpcSecurityGroupRuleArgs{...}
-type IsVpcSecurityGroupRuleInput interface {
-	pulumi.Input
-
-	ToIsVpcSecurityGroupRuleOutput() IsVpcSecurityGroupRuleOutput
-	ToIsVpcSecurityGroupRuleOutputWithContext(context.Context) IsVpcSecurityGroupRuleOutput
-}
-
-type IsVpcSecurityGroupRuleArgs struct {
-	Code pulumi.IntPtrInput `pulumi:"code"`
-	// Direction of traffic to enforce, either inbound or outbound
-	Direction pulumi.StringPtrInput `pulumi:"direction"`
-	// IP version: ipv4
-	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
-	PortMax   pulumi.IntPtrInput    `pulumi:"portMax"`
-	PortMin   pulumi.IntPtrInput    `pulumi:"portMin"`
-	Protocol  pulumi.StringPtrInput `pulumi:"protocol"`
-	// Security group id: an IP address, a CIDR block, or a single security group identifier
-	Remote pulumi.StringPtrInput `pulumi:"remote"`
-	// Rule ID
-	RuleId pulumi.StringPtrInput `pulumi:"ruleId"`
-	Type   pulumi.IntPtrInput    `pulumi:"type"`
-}
-
-func (IsVpcSecurityGroupRuleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcSecurityGroupRule)(nil)).Elem()
-}
-
-func (i IsVpcSecurityGroupRuleArgs) ToIsVpcSecurityGroupRuleOutput() IsVpcSecurityGroupRuleOutput {
-	return i.ToIsVpcSecurityGroupRuleOutputWithContext(context.Background())
-}
-
-func (i IsVpcSecurityGroupRuleArgs) ToIsVpcSecurityGroupRuleOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupRuleOutput)
-}
-
-// IsVpcSecurityGroupRuleArrayInput is an input type that accepts IsVpcSecurityGroupRuleArray and IsVpcSecurityGroupRuleArrayOutput values.
-// You can construct a concrete instance of `IsVpcSecurityGroupRuleArrayInput` via:
-//
-//	IsVpcSecurityGroupRuleArray{ IsVpcSecurityGroupRuleArgs{...} }
-type IsVpcSecurityGroupRuleArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcSecurityGroupRuleArrayOutput() IsVpcSecurityGroupRuleArrayOutput
-	ToIsVpcSecurityGroupRuleArrayOutputWithContext(context.Context) IsVpcSecurityGroupRuleArrayOutput
-}
-
-type IsVpcSecurityGroupRuleArray []IsVpcSecurityGroupRuleInput
-
-func (IsVpcSecurityGroupRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcSecurityGroupRule)(nil)).Elem()
-}
-
-func (i IsVpcSecurityGroupRuleArray) ToIsVpcSecurityGroupRuleArrayOutput() IsVpcSecurityGroupRuleArrayOutput {
-	return i.ToIsVpcSecurityGroupRuleArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcSecurityGroupRuleArray) ToIsVpcSecurityGroupRuleArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupRuleArrayOutput)
-}
-
-type IsVpcSecurityGroupRuleOutput struct{ *pulumi.OutputState }
-
-func (IsVpcSecurityGroupRuleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcSecurityGroupRule)(nil)).Elem()
-}
-
-func (o IsVpcSecurityGroupRuleOutput) ToIsVpcSecurityGroupRuleOutput() IsVpcSecurityGroupRuleOutput {
-	return o
-}
-
-func (o IsVpcSecurityGroupRuleOutput) ToIsVpcSecurityGroupRuleOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleOutput {
-	return o
-}
-
-func (o IsVpcSecurityGroupRuleOutput) Code() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.Code }).(pulumi.IntPtrOutput)
-}
-
-// Direction of traffic to enforce, either inbound or outbound
-func (o IsVpcSecurityGroupRuleOutput) Direction() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.Direction }).(pulumi.StringPtrOutput)
-}
-
-// IP version: ipv4
-func (o IsVpcSecurityGroupRuleOutput) IpVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
-}
-
-func (o IsVpcSecurityGroupRuleOutput) PortMax() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.PortMax }).(pulumi.IntPtrOutput)
-}
-
-func (o IsVpcSecurityGroupRuleOutput) PortMin() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.PortMin }).(pulumi.IntPtrOutput)
-}
-
-func (o IsVpcSecurityGroupRuleOutput) Protocol() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.Protocol }).(pulumi.StringPtrOutput)
-}
-
-// Security group id: an IP address, a CIDR block, or a single security group identifier
-func (o IsVpcSecurityGroupRuleOutput) Remote() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.Remote }).(pulumi.StringPtrOutput)
-}
-
-// Rule ID
-func (o IsVpcSecurityGroupRuleOutput) RuleId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.RuleId }).(pulumi.StringPtrOutput)
-}
-
-func (o IsVpcSecurityGroupRuleOutput) Type() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.Type }).(pulumi.IntPtrOutput)
-}
-
-type IsVpcSecurityGroupRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcSecurityGroupRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcSecurityGroupRule)(nil)).Elem()
-}
-
-func (o IsVpcSecurityGroupRuleArrayOutput) ToIsVpcSecurityGroupRuleArrayOutput() IsVpcSecurityGroupRuleArrayOutput {
-	return o
-}
-
-func (o IsVpcSecurityGroupRuleArrayOutput) ToIsVpcSecurityGroupRuleArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleArrayOutput {
-	return o
-}
-
-func (o IsVpcSecurityGroupRuleArrayOutput) Index(i pulumi.IntInput) IsVpcSecurityGroupRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcSecurityGroupRule {
-		return vs[0].([]IsVpcSecurityGroupRule)[vs[1].(int)]
-	}).(IsVpcSecurityGroupRuleOutput)
-}
-
-type IsVpcSubnet struct {
-	// Available IPv4 address count in the subnet
-	AvailableIpv4AddressCount *int `pulumi:"availableIpv4AddressCount"`
-	// subnet ID
-	Id *string `pulumi:"id"`
-	// subent name
-	Name *string `pulumi:"name"`
-	// subnet status
-	Status *string `pulumi:"status"`
-	// Total IPv4 address count in the subnet
-	TotalIpv4AddressCount *int `pulumi:"totalIpv4AddressCount"`
-	// subnet location
-	Zone *string `pulumi:"zone"`
-}
-
-// IsVpcSubnetInput is an input type that accepts IsVpcSubnetArgs and IsVpcSubnetOutput values.
-// You can construct a concrete instance of `IsVpcSubnetInput` via:
-//
-//	IsVpcSubnetArgs{...}
-type IsVpcSubnetInput interface {
-	pulumi.Input
-
-	ToIsVpcSubnetOutput() IsVpcSubnetOutput
-	ToIsVpcSubnetOutputWithContext(context.Context) IsVpcSubnetOutput
-}
-
-type IsVpcSubnetArgs struct {
-	// Available IPv4 address count in the subnet
-	AvailableIpv4AddressCount pulumi.IntPtrInput `pulumi:"availableIpv4AddressCount"`
-	// subnet ID
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// subent name
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// subnet status
-	Status pulumi.StringPtrInput `pulumi:"status"`
-	// Total IPv4 address count in the subnet
-	TotalIpv4AddressCount pulumi.IntPtrInput `pulumi:"totalIpv4AddressCount"`
-	// subnet location
-	Zone pulumi.StringPtrInput `pulumi:"zone"`
-}
-
-func (IsVpcSubnetArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcSubnet)(nil)).Elem()
-}
-
-func (i IsVpcSubnetArgs) ToIsVpcSubnetOutput() IsVpcSubnetOutput {
-	return i.ToIsVpcSubnetOutputWithContext(context.Background())
-}
-
-func (i IsVpcSubnetArgs) ToIsVpcSubnetOutputWithContext(ctx context.Context) IsVpcSubnetOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSubnetOutput)
-}
-
-// IsVpcSubnetArrayInput is an input type that accepts IsVpcSubnetArray and IsVpcSubnetArrayOutput values.
-// You can construct a concrete instance of `IsVpcSubnetArrayInput` via:
-//
-//	IsVpcSubnetArray{ IsVpcSubnetArgs{...} }
-type IsVpcSubnetArrayInput interface {
-	pulumi.Input
-
-	ToIsVpcSubnetArrayOutput() IsVpcSubnetArrayOutput
-	ToIsVpcSubnetArrayOutputWithContext(context.Context) IsVpcSubnetArrayOutput
-}
-
-type IsVpcSubnetArray []IsVpcSubnetInput
-
-func (IsVpcSubnetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcSubnet)(nil)).Elem()
-}
-
-func (i IsVpcSubnetArray) ToIsVpcSubnetArrayOutput() IsVpcSubnetArrayOutput {
-	return i.ToIsVpcSubnetArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpcSubnetArray) ToIsVpcSubnetArrayOutputWithContext(ctx context.Context) IsVpcSubnetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSubnetArrayOutput)
-}
-
-type IsVpcSubnetOutput struct{ *pulumi.OutputState }
-
-func (IsVpcSubnetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpcSubnet)(nil)).Elem()
-}
-
-func (o IsVpcSubnetOutput) ToIsVpcSubnetOutput() IsVpcSubnetOutput {
-	return o
-}
-
-func (o IsVpcSubnetOutput) ToIsVpcSubnetOutputWithContext(ctx context.Context) IsVpcSubnetOutput {
-	return o
-}
-
-// Available IPv4 address count in the subnet
-func (o IsVpcSubnetOutput) AvailableIpv4AddressCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v IsVpcSubnet) *int { return v.AvailableIpv4AddressCount }).(pulumi.IntPtrOutput)
-}
-
-// subnet ID
-func (o IsVpcSubnetOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// subent name
-func (o IsVpcSubnetOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// subnet status
-func (o IsVpcSubnetOutput) Status() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Status }).(pulumi.StringPtrOutput)
-}
-
-// Total IPv4 address count in the subnet
-func (o IsVpcSubnetOutput) TotalIpv4AddressCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v IsVpcSubnet) *int { return v.TotalIpv4AddressCount }).(pulumi.IntPtrOutput)
-}
-
-// subnet location
-func (o IsVpcSubnetOutput) Zone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Zone }).(pulumi.StringPtrOutput)
-}
-
-type IsVpcSubnetArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpcSubnetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpcSubnet)(nil)).Elem()
-}
-
-func (o IsVpcSubnetArrayOutput) ToIsVpcSubnetArrayOutput() IsVpcSubnetArrayOutput {
-	return o
-}
-
-func (o IsVpcSubnetArrayOutput) ToIsVpcSubnetArrayOutputWithContext(ctx context.Context) IsVpcSubnetArrayOutput {
-	return o
-}
-
-func (o IsVpcSubnetArrayOutput) Index(i pulumi.IntInput) IsVpcSubnetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcSubnet {
-		return vs[0].([]IsVpcSubnet)[vs[1].(int)]
-	}).(IsVpcSubnetOutput)
-}
-
-type IsVpnGatewayConnectionLocal struct {
-	// VPN gateway connection local CIDRs
-	Cidrs []string `pulumi:"cidrs"`
-	// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
-	IkeIdentities []IsVpnGatewayConnectionLocalIkeIdentity `pulumi:"ikeIdentities"`
-}
-
-// IsVpnGatewayConnectionLocalInput is an input type that accepts IsVpnGatewayConnectionLocalArgs and IsVpnGatewayConnectionLocalOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionLocalInput` via:
-//
-//	IsVpnGatewayConnectionLocalArgs{...}
-type IsVpnGatewayConnectionLocalInput interface {
-	pulumi.Input
-
-	ToIsVpnGatewayConnectionLocalOutput() IsVpnGatewayConnectionLocalOutput
-	ToIsVpnGatewayConnectionLocalOutputWithContext(context.Context) IsVpnGatewayConnectionLocalOutput
-}
-
-type IsVpnGatewayConnectionLocalArgs struct {
-	// VPN gateway connection local CIDRs
-	Cidrs pulumi.StringArrayInput `pulumi:"cidrs"`
-	// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
-	IkeIdentities IsVpnGatewayConnectionLocalIkeIdentityArrayInput `pulumi:"ikeIdentities"`
-}
-
-func (IsVpnGatewayConnectionLocalArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionLocal)(nil)).Elem()
-}
-
-func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalOutput() IsVpnGatewayConnectionLocalOutput {
-	return i.ToIsVpnGatewayConnectionLocalOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalOutput)
-}
-
-func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
-	return i.ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalOutput).ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx)
-}
-
-// IsVpnGatewayConnectionLocalPtrInput is an input type that accepts IsVpnGatewayConnectionLocalArgs, IsVpnGatewayConnectionLocalPtr and IsVpnGatewayConnectionLocalPtrOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionLocalPtrInput` via:
-//
-//	        IsVpnGatewayConnectionLocalArgs{...}
+//	        PiHostPiHostArgs{...}
 //
 //	or:
 //
 //	        nil
-type IsVpnGatewayConnectionLocalPtrInput interface {
+type PiHostPiHostPtrInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput
-	ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Context) IsVpnGatewayConnectionLocalPtrOutput
+	ToPiHostPiHostPtrOutput() PiHostPiHostPtrOutput
+	ToPiHostPiHostPtrOutputWithContext(context.Context) PiHostPiHostPtrOutput
 }
 
-type isVpnGatewayConnectionLocalPtrType IsVpnGatewayConnectionLocalArgs
+type piHostPiHostPtrType PiHostPiHostArgs
 
-func IsVpnGatewayConnectionLocalPtr(v *IsVpnGatewayConnectionLocalArgs) IsVpnGatewayConnectionLocalPtrInput {
-	return (*isVpnGatewayConnectionLocalPtrType)(v)
+func PiHostPiHostPtr(v *PiHostPiHostArgs) PiHostPiHostPtrInput {
+	return (*piHostPiHostPtrType)(v)
 }
 
-func (*isVpnGatewayConnectionLocalPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**IsVpnGatewayConnectionLocal)(nil)).Elem()
+func (*piHostPiHostPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiHostPiHost)(nil)).Elem()
 }
 
-func (i *isVpnGatewayConnectionLocalPtrType) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
-	return i.ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Background())
+func (i *piHostPiHostPtrType) ToPiHostPiHostPtrOutput() PiHostPiHostPtrOutput {
+	return i.ToPiHostPiHostPtrOutputWithContext(context.Background())
 }
 
-func (i *isVpnGatewayConnectionLocalPtrType) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalPtrOutput)
+func (i *piHostPiHostPtrType) ToPiHostPiHostPtrOutputWithContext(ctx context.Context) PiHostPiHostPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostPiHostPtrOutput)
 }
 
-type IsVpnGatewayConnectionLocalOutput struct{ *pulumi.OutputState }
+type PiHostPiHostOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayConnectionLocalOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionLocal)(nil)).Elem()
+func (PiHostPiHostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostPiHost)(nil)).Elem()
 }
 
-func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalOutput() IsVpnGatewayConnectionLocalOutput {
+func (o PiHostPiHostOutput) ToPiHostPiHostOutput() PiHostPiHostOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalOutput {
+func (o PiHostPiHostOutput) ToPiHostPiHostOutputWithContext(ctx context.Context) PiHostPiHostOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
-	return o.ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Background())
+func (o PiHostPiHostOutput) ToPiHostPiHostPtrOutput() PiHostPiHostPtrOutput {
+	return o.ToPiHostPiHostPtrOutputWithContext(context.Background())
 }
 
-func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v IsVpnGatewayConnectionLocal) *IsVpnGatewayConnectionLocal {
+func (o PiHostPiHostOutput) ToPiHostPiHostPtrOutputWithContext(ctx context.Context) PiHostPiHostPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiHostPiHost) *PiHostPiHost {
 		return &v
-	}).(IsVpnGatewayConnectionLocalPtrOutput)
+	}).(PiHostPiHostPtrOutput)
 }
 
-// VPN gateway connection local CIDRs
-func (o IsVpnGatewayConnectionLocalOutput) Cidrs() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionLocal) []string { return v.Cidrs }).(pulumi.StringArrayOutput)
+// Name of the host chosen by the user.
+func (o PiHostPiHostOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v PiHostPiHost) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
-func (o IsVpnGatewayConnectionLocalOutput) IkeIdentities() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionLocal) []IsVpnGatewayConnectionLocalIkeIdentity { return v.IkeIdentities }).(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput)
+// System type.
+func (o PiHostPiHostOutput) SysType() pulumi.StringOutput {
+	return o.ApplyT(func(v PiHostPiHost) string { return v.SysType }).(pulumi.StringOutput)
 }
 
-type IsVpnGatewayConnectionLocalPtrOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayConnectionLocalPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**IsVpnGatewayConnectionLocal)(nil)).Elem()
+// List of user tags attached to the resource.
+func (o PiHostPiHostOutput) UserTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PiHostPiHost) []string { return v.UserTags }).(pulumi.StringArrayOutput)
 }
 
-func (o IsVpnGatewayConnectionLocalPtrOutput) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
+type PiHostPiHostPtrOutput struct{ *pulumi.OutputState }
+
+func (PiHostPiHostPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiHostPiHost)(nil)).Elem()
+}
+
+func (o PiHostPiHostPtrOutput) ToPiHostPiHostPtrOutput() PiHostPiHostPtrOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionLocalPtrOutput) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
+func (o PiHostPiHostPtrOutput) ToPiHostPiHostPtrOutputWithContext(ctx context.Context) PiHostPiHostPtrOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionLocalPtrOutput) Elem() IsVpnGatewayConnectionLocalOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionLocal) IsVpnGatewayConnectionLocal {
+func (o PiHostPiHostPtrOutput) Elem() PiHostPiHostOutput {
+	return o.ApplyT(func(v *PiHostPiHost) PiHostPiHost {
 		if v != nil {
 			return *v
 		}
-		var ret IsVpnGatewayConnectionLocal
+		var ret PiHostPiHost
 		return ret
-	}).(IsVpnGatewayConnectionLocalOutput)
+	}).(PiHostPiHostOutput)
 }
 
-// VPN gateway connection local CIDRs
-func (o IsVpnGatewayConnectionLocalPtrOutput) Cidrs() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionLocal) []string {
+// Name of the host chosen by the user.
+func (o PiHostPiHostPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiHostPiHost) *string {
 		if v == nil {
 			return nil
 		}
-		return v.Cidrs
+		return &v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+// System type.
+func (o PiHostPiHostPtrOutput) SysType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiHostPiHost) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SysType
+	}).(pulumi.StringPtrOutput)
+}
+
+// List of user tags attached to the resource.
+func (o PiHostPiHostPtrOutput) UserTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *PiHostPiHost) []string {
+		if v == nil {
+			return nil
+		}
+		return v.UserTags
 	}).(pulumi.StringArrayOutput)
 }
 
-// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
-func (o IsVpnGatewayConnectionLocalPtrOutput) IkeIdentities() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionLocal) []IsVpnGatewayConnectionLocalIkeIdentity {
-		if v == nil {
-			return nil
-		}
-		return v.IkeIdentities
-	}).(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput)
+type PiImagePiImageImportDetails struct {
+	// Origin of the license of the product.
+	LicenseType string `pulumi:"licenseType"`
+	// Product within the image.
+	Product string `pulumi:"product"`
+	// Vendor supporting the product.
+	Vendor string `pulumi:"vendor"`
 }
 
-type IsVpnGatewayConnectionLocalIkeIdentity struct {
-	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
-	Type string `pulumi:"type"`
-	// The IKE identity FQDN value.
-	Value *string `pulumi:"value"`
-}
-
-// IsVpnGatewayConnectionLocalIkeIdentityInput is an input type that accepts IsVpnGatewayConnectionLocalIkeIdentityArgs and IsVpnGatewayConnectionLocalIkeIdentityOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionLocalIkeIdentityInput` via:
+// PiImagePiImageImportDetailsInput is an input type that accepts PiImagePiImageImportDetailsArgs and PiImagePiImageImportDetailsOutput values.
+// You can construct a concrete instance of `PiImagePiImageImportDetailsInput` via:
 //
-//	IsVpnGatewayConnectionLocalIkeIdentityArgs{...}
-type IsVpnGatewayConnectionLocalIkeIdentityInput interface {
+//	PiImagePiImageImportDetailsArgs{...}
+type PiImagePiImageImportDetailsInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionLocalIkeIdentityOutput() IsVpnGatewayConnectionLocalIkeIdentityOutput
-	ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(context.Context) IsVpnGatewayConnectionLocalIkeIdentityOutput
+	ToPiImagePiImageImportDetailsOutput() PiImagePiImageImportDetailsOutput
+	ToPiImagePiImageImportDetailsOutputWithContext(context.Context) PiImagePiImageImportDetailsOutput
 }
 
-type IsVpnGatewayConnectionLocalIkeIdentityArgs struct {
-	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
-	Type pulumi.StringInput `pulumi:"type"`
-	// The IKE identity FQDN value.
-	Value pulumi.StringPtrInput `pulumi:"value"`
+type PiImagePiImageImportDetailsArgs struct {
+	// Origin of the license of the product.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// Product within the image.
+	Product pulumi.StringInput `pulumi:"product"`
+	// Vendor supporting the product.
+	Vendor pulumi.StringInput `pulumi:"vendor"`
 }
 
-func (IsVpnGatewayConnectionLocalIkeIdentityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
+func (PiImagePiImageImportDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiImagePiImageImportDetails)(nil)).Elem()
 }
 
-func (i IsVpnGatewayConnectionLocalIkeIdentityArgs) ToIsVpnGatewayConnectionLocalIkeIdentityOutput() IsVpnGatewayConnectionLocalIkeIdentityOutput {
-	return i.ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(context.Background())
+func (i PiImagePiImageImportDetailsArgs) ToPiImagePiImageImportDetailsOutput() PiImagePiImageImportDetailsOutput {
+	return i.ToPiImagePiImageImportDetailsOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayConnectionLocalIkeIdentityArgs) ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalIkeIdentityOutput)
+func (i PiImagePiImageImportDetailsArgs) ToPiImagePiImageImportDetailsOutputWithContext(ctx context.Context) PiImagePiImageImportDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiImagePiImageImportDetailsOutput)
 }
 
-// IsVpnGatewayConnectionLocalIkeIdentityArrayInput is an input type that accepts IsVpnGatewayConnectionLocalIkeIdentityArray and IsVpnGatewayConnectionLocalIkeIdentityArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionLocalIkeIdentityArrayInput` via:
+func (i PiImagePiImageImportDetailsArgs) ToPiImagePiImageImportDetailsPtrOutput() PiImagePiImageImportDetailsPtrOutput {
+	return i.ToPiImagePiImageImportDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PiImagePiImageImportDetailsArgs) ToPiImagePiImageImportDetailsPtrOutputWithContext(ctx context.Context) PiImagePiImageImportDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiImagePiImageImportDetailsOutput).ToPiImagePiImageImportDetailsPtrOutputWithContext(ctx)
+}
+
+// PiImagePiImageImportDetailsPtrInput is an input type that accepts PiImagePiImageImportDetailsArgs, PiImagePiImageImportDetailsPtr and PiImagePiImageImportDetailsPtrOutput values.
+// You can construct a concrete instance of `PiImagePiImageImportDetailsPtrInput` via:
 //
-//	IsVpnGatewayConnectionLocalIkeIdentityArray{ IsVpnGatewayConnectionLocalIkeIdentityArgs{...} }
-type IsVpnGatewayConnectionLocalIkeIdentityArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutput() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput
-	ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(context.Context) IsVpnGatewayConnectionLocalIkeIdentityArrayOutput
-}
-
-type IsVpnGatewayConnectionLocalIkeIdentityArray []IsVpnGatewayConnectionLocalIkeIdentityInput
-
-func (IsVpnGatewayConnectionLocalIkeIdentityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
-}
-
-func (i IsVpnGatewayConnectionLocalIkeIdentityArray) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutput() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
-	return i.ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayConnectionLocalIkeIdentityArray) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput)
-}
-
-type IsVpnGatewayConnectionLocalIkeIdentityOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayConnectionLocalIkeIdentityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
-}
-
-func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) ToIsVpnGatewayConnectionLocalIkeIdentityOutput() IsVpnGatewayConnectionLocalIkeIdentityOutput {
-	return o
-}
-
-func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityOutput {
-	return o
-}
-
-// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
-func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionLocalIkeIdentity) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// The IKE identity FQDN value.
-func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionLocalIkeIdentity) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnGatewayConnectionLocalIkeIdentityArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
-}
-
-func (o IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutput() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
-	return o
-}
-
-func (o IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
-	return o
-}
-
-func (o IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayConnectionLocalIkeIdentityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayConnectionLocalIkeIdentity {
-		return vs[0].([]IsVpnGatewayConnectionLocalIkeIdentity)[vs[1].(int)]
-	}).(IsVpnGatewayConnectionLocalIkeIdentityOutput)
-}
-
-type IsVpnGatewayConnectionPeer struct {
-	// The IP address of the peer VPN gateway for this connection.
-	Address *string `pulumi:"address"`
-	// VPN gateway connection peer CIDRs
-	Cidrs []string `pulumi:"cidrs"`
-	// The FQDN of the peer VPN gateway for this connection.
-	Fqdn *string `pulumi:"fqdn"`
-	// The peer IKE identity.
-	IkeIdentity *IsVpnGatewayConnectionPeerIkeIdentity `pulumi:"ikeIdentity"`
-	// Indicates whether `peer.address` or `peer.fqdn` is used.
-	Type *string `pulumi:"type"`
-}
-
-// IsVpnGatewayConnectionPeerInput is an input type that accepts IsVpnGatewayConnectionPeerArgs and IsVpnGatewayConnectionPeerOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionPeerInput` via:
-//
-//	IsVpnGatewayConnectionPeerArgs{...}
-type IsVpnGatewayConnectionPeerInput interface {
-	pulumi.Input
-
-	ToIsVpnGatewayConnectionPeerOutput() IsVpnGatewayConnectionPeerOutput
-	ToIsVpnGatewayConnectionPeerOutputWithContext(context.Context) IsVpnGatewayConnectionPeerOutput
-}
-
-type IsVpnGatewayConnectionPeerArgs struct {
-	// The IP address of the peer VPN gateway for this connection.
-	Address pulumi.StringPtrInput `pulumi:"address"`
-	// VPN gateway connection peer CIDRs
-	Cidrs pulumi.StringArrayInput `pulumi:"cidrs"`
-	// The FQDN of the peer VPN gateway for this connection.
-	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
-	// The peer IKE identity.
-	IkeIdentity IsVpnGatewayConnectionPeerIkeIdentityPtrInput `pulumi:"ikeIdentity"`
-	// Indicates whether `peer.address` or `peer.fqdn` is used.
-	Type pulumi.StringPtrInput `pulumi:"type"`
-}
-
-func (IsVpnGatewayConnectionPeerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionPeer)(nil)).Elem()
-}
-
-func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerOutput() IsVpnGatewayConnectionPeerOutput {
-	return i.ToIsVpnGatewayConnectionPeerOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerOutput)
-}
-
-func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
-	return i.ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerOutput).ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx)
-}
-
-// IsVpnGatewayConnectionPeerPtrInput is an input type that accepts IsVpnGatewayConnectionPeerArgs, IsVpnGatewayConnectionPeerPtr and IsVpnGatewayConnectionPeerPtrOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionPeerPtrInput` via:
-//
-//	        IsVpnGatewayConnectionPeerArgs{...}
+//	        PiImagePiImageImportDetailsArgs{...}
 //
 //	or:
 //
 //	        nil
-type IsVpnGatewayConnectionPeerPtrInput interface {
+type PiImagePiImageImportDetailsPtrInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput
-	ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Context) IsVpnGatewayConnectionPeerPtrOutput
+	ToPiImagePiImageImportDetailsPtrOutput() PiImagePiImageImportDetailsPtrOutput
+	ToPiImagePiImageImportDetailsPtrOutputWithContext(context.Context) PiImagePiImageImportDetailsPtrOutput
 }
 
-type isVpnGatewayConnectionPeerPtrType IsVpnGatewayConnectionPeerArgs
+type piImagePiImageImportDetailsPtrType PiImagePiImageImportDetailsArgs
 
-func IsVpnGatewayConnectionPeerPtr(v *IsVpnGatewayConnectionPeerArgs) IsVpnGatewayConnectionPeerPtrInput {
-	return (*isVpnGatewayConnectionPeerPtrType)(v)
+func PiImagePiImageImportDetailsPtr(v *PiImagePiImageImportDetailsArgs) PiImagePiImageImportDetailsPtrInput {
+	return (*piImagePiImageImportDetailsPtrType)(v)
 }
 
-func (*isVpnGatewayConnectionPeerPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**IsVpnGatewayConnectionPeer)(nil)).Elem()
+func (*piImagePiImageImportDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiImagePiImageImportDetails)(nil)).Elem()
 }
 
-func (i *isVpnGatewayConnectionPeerPtrType) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
-	return i.ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Background())
+func (i *piImagePiImageImportDetailsPtrType) ToPiImagePiImageImportDetailsPtrOutput() PiImagePiImageImportDetailsPtrOutput {
+	return i.ToPiImagePiImageImportDetailsPtrOutputWithContext(context.Background())
 }
 
-func (i *isVpnGatewayConnectionPeerPtrType) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerPtrOutput)
+func (i *piImagePiImageImportDetailsPtrType) ToPiImagePiImageImportDetailsPtrOutputWithContext(ctx context.Context) PiImagePiImageImportDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiImagePiImageImportDetailsPtrOutput)
 }
 
-type IsVpnGatewayConnectionPeerOutput struct{ *pulumi.OutputState }
+type PiImagePiImageImportDetailsOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayConnectionPeerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionPeer)(nil)).Elem()
+func (PiImagePiImageImportDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiImagePiImageImportDetails)(nil)).Elem()
 }
 
-func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerOutput() IsVpnGatewayConnectionPeerOutput {
+func (o PiImagePiImageImportDetailsOutput) ToPiImagePiImageImportDetailsOutput() PiImagePiImageImportDetailsOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerOutput {
+func (o PiImagePiImageImportDetailsOutput) ToPiImagePiImageImportDetailsOutputWithContext(ctx context.Context) PiImagePiImageImportDetailsOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
-	return o.ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Background())
+func (o PiImagePiImageImportDetailsOutput) ToPiImagePiImageImportDetailsPtrOutput() PiImagePiImageImportDetailsPtrOutput {
+	return o.ToPiImagePiImageImportDetailsPtrOutputWithContext(context.Background())
 }
 
-func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v IsVpnGatewayConnectionPeer) *IsVpnGatewayConnectionPeer {
+func (o PiImagePiImageImportDetailsOutput) ToPiImagePiImageImportDetailsPtrOutputWithContext(ctx context.Context) PiImagePiImageImportDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiImagePiImageImportDetails) *PiImagePiImageImportDetails {
 		return &v
-	}).(IsVpnGatewayConnectionPeerPtrOutput)
+	}).(PiImagePiImageImportDetailsPtrOutput)
 }
 
-// The IP address of the peer VPN gateway for this connection.
-func (o IsVpnGatewayConnectionPeerOutput) Address() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *string { return v.Address }).(pulumi.StringPtrOutput)
+// Origin of the license of the product.
+func (o PiImagePiImageImportDetailsOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v PiImagePiImageImportDetails) string { return v.LicenseType }).(pulumi.StringOutput)
 }
 
-// VPN gateway connection peer CIDRs
-func (o IsVpnGatewayConnectionPeerOutput) Cidrs() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) []string { return v.Cidrs }).(pulumi.StringArrayOutput)
+// Product within the image.
+func (o PiImagePiImageImportDetailsOutput) Product() pulumi.StringOutput {
+	return o.ApplyT(func(v PiImagePiImageImportDetails) string { return v.Product }).(pulumi.StringOutput)
 }
 
-// The FQDN of the peer VPN gateway for this connection.
-func (o IsVpnGatewayConnectionPeerOutput) Fqdn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
+// Vendor supporting the product.
+func (o PiImagePiImageImportDetailsOutput) Vendor() pulumi.StringOutput {
+	return o.ApplyT(func(v PiImagePiImageImportDetails) string { return v.Vendor }).(pulumi.StringOutput)
 }
 
-// The peer IKE identity.
-func (o IsVpnGatewayConnectionPeerOutput) IkeIdentity() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *IsVpnGatewayConnectionPeerIkeIdentity { return v.IkeIdentity }).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
+type PiImagePiImageImportDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PiImagePiImageImportDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiImagePiImageImportDetails)(nil)).Elem()
 }
 
-// Indicates whether `peer.address` or `peer.fqdn` is used.
-func (o IsVpnGatewayConnectionPeerOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnGatewayConnectionPeerPtrOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayConnectionPeerPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**IsVpnGatewayConnectionPeer)(nil)).Elem()
-}
-
-func (o IsVpnGatewayConnectionPeerPtrOutput) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
+func (o PiImagePiImageImportDetailsPtrOutput) ToPiImagePiImageImportDetailsPtrOutput() PiImagePiImageImportDetailsPtrOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerPtrOutput) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
+func (o PiImagePiImageImportDetailsPtrOutput) ToPiImagePiImageImportDetailsPtrOutputWithContext(ctx context.Context) PiImagePiImageImportDetailsPtrOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerPtrOutput) Elem() IsVpnGatewayConnectionPeerOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) IsVpnGatewayConnectionPeer {
+func (o PiImagePiImageImportDetailsPtrOutput) Elem() PiImagePiImageImportDetailsOutput {
+	return o.ApplyT(func(v *PiImagePiImageImportDetails) PiImagePiImageImportDetails {
 		if v != nil {
 			return *v
 		}
-		var ret IsVpnGatewayConnectionPeer
+		var ret PiImagePiImageImportDetails
 		return ret
-	}).(IsVpnGatewayConnectionPeerOutput)
+	}).(PiImagePiImageImportDetailsOutput)
 }
 
-// The IP address of the peer VPN gateway for this connection.
-func (o IsVpnGatewayConnectionPeerPtrOutput) Address() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *string {
+// Origin of the license of the product.
+func (o PiImagePiImageImportDetailsPtrOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiImagePiImageImportDetails) *string {
 		if v == nil {
 			return nil
 		}
-		return v.Address
+		return &v.LicenseType
 	}).(pulumi.StringPtrOutput)
 }
 
-// VPN gateway connection peer CIDRs
-func (o IsVpnGatewayConnectionPeerPtrOutput) Cidrs() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) []string {
+// Product within the image.
+func (o PiImagePiImageImportDetailsPtrOutput) Product() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiImagePiImageImportDetails) *string {
 		if v == nil {
 			return nil
 		}
-		return v.Cidrs
-	}).(pulumi.StringArrayOutput)
-}
-
-// The FQDN of the peer VPN gateway for this connection.
-func (o IsVpnGatewayConnectionPeerPtrOutput) Fqdn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Fqdn
+		return &v.Product
 	}).(pulumi.StringPtrOutput)
 }
 
-// The peer IKE identity.
-func (o IsVpnGatewayConnectionPeerPtrOutput) IkeIdentity() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *IsVpnGatewayConnectionPeerIkeIdentity {
+// Vendor supporting the product.
+func (o PiImagePiImageImportDetailsPtrOutput) Vendor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiImagePiImageImportDetails) *string {
 		if v == nil {
 			return nil
 		}
-		return v.IkeIdentity
-	}).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
-}
-
-// Indicates whether `peer.address` or `peer.fqdn` is used.
-func (o IsVpnGatewayConnectionPeerPtrOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Type
+		return &v.Vendor
 	}).(pulumi.StringPtrOutput)
 }
 
-type IsVpnGatewayConnectionPeerIkeIdentity struct {
-	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+type PiInstancePiDeploymentTarget struct {
+	// The uuid of the host group or host.
+	Id string `pulumi:"id"`
+	// The deployment target type. Supported values are `host` and `hostGroup`.
 	Type string `pulumi:"type"`
-	// The IKE identity FQDN value.
-	Value *string `pulumi:"value"`
 }
 
-// IsVpnGatewayConnectionPeerIkeIdentityInput is an input type that accepts IsVpnGatewayConnectionPeerIkeIdentityArgs and IsVpnGatewayConnectionPeerIkeIdentityOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionPeerIkeIdentityInput` via:
+// PiInstancePiDeploymentTargetInput is an input type that accepts PiInstancePiDeploymentTargetArgs and PiInstancePiDeploymentTargetOutput values.
+// You can construct a concrete instance of `PiInstancePiDeploymentTargetInput` via:
 //
-//	IsVpnGatewayConnectionPeerIkeIdentityArgs{...}
-type IsVpnGatewayConnectionPeerIkeIdentityInput interface {
+//	PiInstancePiDeploymentTargetArgs{...}
+type PiInstancePiDeploymentTargetInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionPeerIkeIdentityOutput() IsVpnGatewayConnectionPeerIkeIdentityOutput
-	ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(context.Context) IsVpnGatewayConnectionPeerIkeIdentityOutput
+	ToPiInstancePiDeploymentTargetOutput() PiInstancePiDeploymentTargetOutput
+	ToPiInstancePiDeploymentTargetOutputWithContext(context.Context) PiInstancePiDeploymentTargetOutput
 }
 
-type IsVpnGatewayConnectionPeerIkeIdentityArgs struct {
-	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+type PiInstancePiDeploymentTargetArgs struct {
+	// The uuid of the host group or host.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The deployment target type. Supported values are `host` and `hostGroup`.
 	Type pulumi.StringInput `pulumi:"type"`
-	// The IKE identity FQDN value.
-	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
-func (IsVpnGatewayConnectionPeerIkeIdentityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+func (PiInstancePiDeploymentTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiInstancePiDeploymentTarget)(nil)).Elem()
 }
 
-func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityOutput() IsVpnGatewayConnectionPeerIkeIdentityOutput {
-	return i.ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(context.Background())
+func (i PiInstancePiDeploymentTargetArgs) ToPiInstancePiDeploymentTargetOutput() PiInstancePiDeploymentTargetOutput {
+	return i.ToPiInstancePiDeploymentTargetOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerIkeIdentityOutput)
+func (i PiInstancePiDeploymentTargetArgs) ToPiInstancePiDeploymentTargetOutputWithContext(ctx context.Context) PiInstancePiDeploymentTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiDeploymentTargetOutput)
 }
 
-func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return i.ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Background())
+func (i PiInstancePiDeploymentTargetArgs) ToPiInstancePiDeploymentTargetPtrOutput() PiInstancePiDeploymentTargetPtrOutput {
+	return i.ToPiInstancePiDeploymentTargetPtrOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerIkeIdentityOutput).ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx)
+func (i PiInstancePiDeploymentTargetArgs) ToPiInstancePiDeploymentTargetPtrOutputWithContext(ctx context.Context) PiInstancePiDeploymentTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiDeploymentTargetOutput).ToPiInstancePiDeploymentTargetPtrOutputWithContext(ctx)
 }
 
-// IsVpnGatewayConnectionPeerIkeIdentityPtrInput is an input type that accepts IsVpnGatewayConnectionPeerIkeIdentityArgs, IsVpnGatewayConnectionPeerIkeIdentityPtr and IsVpnGatewayConnectionPeerIkeIdentityPtrOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionPeerIkeIdentityPtrInput` via:
+// PiInstancePiDeploymentTargetPtrInput is an input type that accepts PiInstancePiDeploymentTargetArgs, PiInstancePiDeploymentTargetPtr and PiInstancePiDeploymentTargetPtrOutput values.
+// You can construct a concrete instance of `PiInstancePiDeploymentTargetPtrInput` via:
 //
-//	        IsVpnGatewayConnectionPeerIkeIdentityArgs{...}
+//	        PiInstancePiDeploymentTargetArgs{...}
 //
 //	or:
 //
 //	        nil
-type IsVpnGatewayConnectionPeerIkeIdentityPtrInput interface {
+type PiInstancePiDeploymentTargetPtrInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput
-	ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput
+	ToPiInstancePiDeploymentTargetPtrOutput() PiInstancePiDeploymentTargetPtrOutput
+	ToPiInstancePiDeploymentTargetPtrOutputWithContext(context.Context) PiInstancePiDeploymentTargetPtrOutput
 }
 
-type isVpnGatewayConnectionPeerIkeIdentityPtrType IsVpnGatewayConnectionPeerIkeIdentityArgs
+type piInstancePiDeploymentTargetPtrType PiInstancePiDeploymentTargetArgs
 
-func IsVpnGatewayConnectionPeerIkeIdentityPtr(v *IsVpnGatewayConnectionPeerIkeIdentityArgs) IsVpnGatewayConnectionPeerIkeIdentityPtrInput {
-	return (*isVpnGatewayConnectionPeerIkeIdentityPtrType)(v)
+func PiInstancePiDeploymentTargetPtr(v *PiInstancePiDeploymentTargetArgs) PiInstancePiDeploymentTargetPtrInput {
+	return (*piInstancePiDeploymentTargetPtrType)(v)
 }
 
-func (*isVpnGatewayConnectionPeerIkeIdentityPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+func (*piInstancePiDeploymentTargetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiInstancePiDeploymentTarget)(nil)).Elem()
 }
 
-func (i *isVpnGatewayConnectionPeerIkeIdentityPtrType) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return i.ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Background())
+func (i *piInstancePiDeploymentTargetPtrType) ToPiInstancePiDeploymentTargetPtrOutput() PiInstancePiDeploymentTargetPtrOutput {
+	return i.ToPiInstancePiDeploymentTargetPtrOutputWithContext(context.Background())
 }
 
-func (i *isVpnGatewayConnectionPeerIkeIdentityPtrType) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
+func (i *piInstancePiDeploymentTargetPtrType) ToPiInstancePiDeploymentTargetPtrOutputWithContext(ctx context.Context) PiInstancePiDeploymentTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiDeploymentTargetPtrOutput)
 }
 
-type IsVpnGatewayConnectionPeerIkeIdentityOutput struct{ *pulumi.OutputState }
+type PiInstancePiDeploymentTargetOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayConnectionPeerIkeIdentityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+func (PiInstancePiDeploymentTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiInstancePiDeploymentTarget)(nil)).Elem()
 }
 
-func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityOutput() IsVpnGatewayConnectionPeerIkeIdentityOutput {
+func (o PiInstancePiDeploymentTargetOutput) ToPiInstancePiDeploymentTargetOutput() PiInstancePiDeploymentTargetOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityOutput {
+func (o PiInstancePiDeploymentTargetOutput) ToPiInstancePiDeploymentTargetOutputWithContext(ctx context.Context) PiInstancePiDeploymentTargetOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return o.ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Background())
+func (o PiInstancePiDeploymentTargetOutput) ToPiInstancePiDeploymentTargetPtrOutput() PiInstancePiDeploymentTargetPtrOutput {
+	return o.ToPiInstancePiDeploymentTargetPtrOutputWithContext(context.Background())
 }
 
-func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v IsVpnGatewayConnectionPeerIkeIdentity) *IsVpnGatewayConnectionPeerIkeIdentity {
+func (o PiInstancePiDeploymentTargetOutput) ToPiInstancePiDeploymentTargetPtrOutputWithContext(ctx context.Context) PiInstancePiDeploymentTargetPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiInstancePiDeploymentTarget) *PiInstancePiDeploymentTarget {
 		return &v
-	}).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
+	}).(PiInstancePiDeploymentTargetPtrOutput)
 }
 
-// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
-func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionPeerIkeIdentity) string { return v.Type }).(pulumi.StringOutput)
+// The uuid of the host group or host.
+func (o PiInstancePiDeploymentTargetOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v PiInstancePiDeploymentTarget) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The IKE identity FQDN value.
-func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionPeerIkeIdentity) *string { return v.Value }).(pulumi.StringPtrOutput)
+// The deployment target type. Supported values are `host` and `hostGroup`.
+func (o PiInstancePiDeploymentTargetOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v PiInstancePiDeploymentTarget) string { return v.Type }).(pulumi.StringOutput)
 }
 
-type IsVpnGatewayConnectionPeerIkeIdentityPtrOutput struct{ *pulumi.OutputState }
+type PiInstancePiDeploymentTargetPtrOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+func (PiInstancePiDeploymentTargetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiInstancePiDeploymentTarget)(nil)).Elem()
 }
 
-func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+func (o PiInstancePiDeploymentTargetPtrOutput) ToPiInstancePiDeploymentTargetPtrOutput() PiInstancePiDeploymentTargetPtrOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+func (o PiInstancePiDeploymentTargetPtrOutput) ToPiInstancePiDeploymentTargetPtrOutputWithContext(ctx context.Context) PiInstancePiDeploymentTargetPtrOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) Elem() IsVpnGatewayConnectionPeerIkeIdentityOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeerIkeIdentity) IsVpnGatewayConnectionPeerIkeIdentity {
+func (o PiInstancePiDeploymentTargetPtrOutput) Elem() PiInstancePiDeploymentTargetOutput {
+	return o.ApplyT(func(v *PiInstancePiDeploymentTarget) PiInstancePiDeploymentTarget {
 		if v != nil {
 			return *v
 		}
-		var ret IsVpnGatewayConnectionPeerIkeIdentity
+		var ret PiInstancePiDeploymentTarget
 		return ret
-	}).(IsVpnGatewayConnectionPeerIkeIdentityOutput)
+	}).(PiInstancePiDeploymentTargetOutput)
 }
 
-// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
-func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeerIkeIdentity) *string {
+// The uuid of the host group or host.
+func (o PiInstancePiDeploymentTargetPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiInstancePiDeploymentTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// The deployment target type. Supported values are `host` and `hostGroup`.
+func (o PiInstancePiDeploymentTargetPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiInstancePiDeploymentTarget) *string {
 		if v == nil {
 			return nil
 		}
@@ -1859,1863 +740,6339 @@ func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) Type() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// The IKE identity FQDN value.
-func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *IsVpnGatewayConnectionPeerIkeIdentity) *string {
+type PiInstancePiNetwork struct {
+	ExternalIp *string `pulumi:"externalIp"`
+	IpAddress  *string `pulumi:"ipAddress"`
+	MacAddress *string `pulumi:"macAddress"`
+	NetworkId  string  `pulumi:"networkId"`
+	// ID of the network interface.
+	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
+	NetworkName        *string `pulumi:"networkName"`
+	// Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// Links to the network security groups that the network interface is a member of.
+	NetworkSecurityGroupsHreves []string `pulumi:"networkSecurityGroupsHreves"`
+	Type                        *string  `pulumi:"type"`
+}
+
+// PiInstancePiNetworkInput is an input type that accepts PiInstancePiNetworkArgs and PiInstancePiNetworkOutput values.
+// You can construct a concrete instance of `PiInstancePiNetworkInput` via:
+//
+//	PiInstancePiNetworkArgs{...}
+type PiInstancePiNetworkInput interface {
+	pulumi.Input
+
+	ToPiInstancePiNetworkOutput() PiInstancePiNetworkOutput
+	ToPiInstancePiNetworkOutputWithContext(context.Context) PiInstancePiNetworkOutput
+}
+
+type PiInstancePiNetworkArgs struct {
+	ExternalIp pulumi.StringPtrInput `pulumi:"externalIp"`
+	IpAddress  pulumi.StringPtrInput `pulumi:"ipAddress"`
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	NetworkId  pulumi.StringInput    `pulumi:"networkId"`
+	// ID of the network interface.
+	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
+	NetworkName        pulumi.StringPtrInput `pulumi:"networkName"`
+	// Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// Links to the network security groups that the network interface is a member of.
+	NetworkSecurityGroupsHreves pulumi.StringArrayInput `pulumi:"networkSecurityGroupsHreves"`
+	Type                        pulumi.StringPtrInput   `pulumi:"type"`
+}
+
+func (PiInstancePiNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiInstancePiNetwork)(nil)).Elem()
+}
+
+func (i PiInstancePiNetworkArgs) ToPiInstancePiNetworkOutput() PiInstancePiNetworkOutput {
+	return i.ToPiInstancePiNetworkOutputWithContext(context.Background())
+}
+
+func (i PiInstancePiNetworkArgs) ToPiInstancePiNetworkOutputWithContext(ctx context.Context) PiInstancePiNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiNetworkOutput)
+}
+
+// PiInstancePiNetworkArrayInput is an input type that accepts PiInstancePiNetworkArray and PiInstancePiNetworkArrayOutput values.
+// You can construct a concrete instance of `PiInstancePiNetworkArrayInput` via:
+//
+//	PiInstancePiNetworkArray{ PiInstancePiNetworkArgs{...} }
+type PiInstancePiNetworkArrayInput interface {
+	pulumi.Input
+
+	ToPiInstancePiNetworkArrayOutput() PiInstancePiNetworkArrayOutput
+	ToPiInstancePiNetworkArrayOutputWithContext(context.Context) PiInstancePiNetworkArrayOutput
+}
+
+type PiInstancePiNetworkArray []PiInstancePiNetworkInput
+
+func (PiInstancePiNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiInstancePiNetwork)(nil)).Elem()
+}
+
+func (i PiInstancePiNetworkArray) ToPiInstancePiNetworkArrayOutput() PiInstancePiNetworkArrayOutput {
+	return i.ToPiInstancePiNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i PiInstancePiNetworkArray) ToPiInstancePiNetworkArrayOutputWithContext(ctx context.Context) PiInstancePiNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiNetworkArrayOutput)
+}
+
+type PiInstancePiNetworkOutput struct{ *pulumi.OutputState }
+
+func (PiInstancePiNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiInstancePiNetwork)(nil)).Elem()
+}
+
+func (o PiInstancePiNetworkOutput) ToPiInstancePiNetworkOutput() PiInstancePiNetworkOutput {
+	return o
+}
+
+func (o PiInstancePiNetworkOutput) ToPiInstancePiNetworkOutputWithContext(ctx context.Context) PiInstancePiNetworkOutput {
+	return o
+}
+
+func (o PiInstancePiNetworkOutput) ExternalIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) *string { return v.ExternalIp }).(pulumi.StringPtrOutput)
+}
+
+func (o PiInstancePiNetworkOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+func (o PiInstancePiNetworkOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+func (o PiInstancePiNetworkOutput) NetworkId() pulumi.StringOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) string { return v.NetworkId }).(pulumi.StringOutput)
+}
+
+// ID of the network interface.
+func (o PiInstancePiNetworkOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
+}
+
+func (o PiInstancePiNetworkOutput) NetworkName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) *string { return v.NetworkName }).(pulumi.StringPtrOutput)
+}
+
+// Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+func (o PiInstancePiNetworkOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Links to the network security groups that the network interface is a member of.
+func (o PiInstancePiNetworkOutput) NetworkSecurityGroupsHreves() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) []string { return v.NetworkSecurityGroupsHreves }).(pulumi.StringArrayOutput)
+}
+
+func (o PiInstancePiNetworkOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiNetwork) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiInstancePiNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (PiInstancePiNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiInstancePiNetwork)(nil)).Elem()
+}
+
+func (o PiInstancePiNetworkArrayOutput) ToPiInstancePiNetworkArrayOutput() PiInstancePiNetworkArrayOutput {
+	return o
+}
+
+func (o PiInstancePiNetworkArrayOutput) ToPiInstancePiNetworkArrayOutputWithContext(ctx context.Context) PiInstancePiNetworkArrayOutput {
+	return o
+}
+
+func (o PiInstancePiNetworkArrayOutput) Index(i pulumi.IntInput) PiInstancePiNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiInstancePiNetwork {
+		return vs[0].([]PiInstancePiNetwork)[vs[1].(int)]
+	}).(PiInstancePiNetworkOutput)
+}
+
+type PiInstancePiVirtualSerialNumber struct {
+	// Description of the Virtual Serial Number
+	Description *string `pulumi:"description"`
+	// Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+	Serial string `pulumi:"serial"`
+	// Software tier. Enum: ["P05", "P10", "P20", "P30"].
+	SoftwareTier *string `pulumi:"softwareTier"`
+}
+
+// PiInstancePiVirtualSerialNumberInput is an input type that accepts PiInstancePiVirtualSerialNumberArgs and PiInstancePiVirtualSerialNumberOutput values.
+// You can construct a concrete instance of `PiInstancePiVirtualSerialNumberInput` via:
+//
+//	PiInstancePiVirtualSerialNumberArgs{...}
+type PiInstancePiVirtualSerialNumberInput interface {
+	pulumi.Input
+
+	ToPiInstancePiVirtualSerialNumberOutput() PiInstancePiVirtualSerialNumberOutput
+	ToPiInstancePiVirtualSerialNumberOutputWithContext(context.Context) PiInstancePiVirtualSerialNumberOutput
+}
+
+type PiInstancePiVirtualSerialNumberArgs struct {
+	// Description of the Virtual Serial Number
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+	Serial pulumi.StringInput `pulumi:"serial"`
+	// Software tier. Enum: ["P05", "P10", "P20", "P30"].
+	SoftwareTier pulumi.StringPtrInput `pulumi:"softwareTier"`
+}
+
+func (PiInstancePiVirtualSerialNumberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiInstancePiVirtualSerialNumber)(nil)).Elem()
+}
+
+func (i PiInstancePiVirtualSerialNumberArgs) ToPiInstancePiVirtualSerialNumberOutput() PiInstancePiVirtualSerialNumberOutput {
+	return i.ToPiInstancePiVirtualSerialNumberOutputWithContext(context.Background())
+}
+
+func (i PiInstancePiVirtualSerialNumberArgs) ToPiInstancePiVirtualSerialNumberOutputWithContext(ctx context.Context) PiInstancePiVirtualSerialNumberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiVirtualSerialNumberOutput)
+}
+
+func (i PiInstancePiVirtualSerialNumberArgs) ToPiInstancePiVirtualSerialNumberPtrOutput() PiInstancePiVirtualSerialNumberPtrOutput {
+	return i.ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(context.Background())
+}
+
+func (i PiInstancePiVirtualSerialNumberArgs) ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(ctx context.Context) PiInstancePiVirtualSerialNumberPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiVirtualSerialNumberOutput).ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(ctx)
+}
+
+// PiInstancePiVirtualSerialNumberPtrInput is an input type that accepts PiInstancePiVirtualSerialNumberArgs, PiInstancePiVirtualSerialNumberPtr and PiInstancePiVirtualSerialNumberPtrOutput values.
+// You can construct a concrete instance of `PiInstancePiVirtualSerialNumberPtrInput` via:
+//
+//	        PiInstancePiVirtualSerialNumberArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiInstancePiVirtualSerialNumberPtrInput interface {
+	pulumi.Input
+
+	ToPiInstancePiVirtualSerialNumberPtrOutput() PiInstancePiVirtualSerialNumberPtrOutput
+	ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(context.Context) PiInstancePiVirtualSerialNumberPtrOutput
+}
+
+type piInstancePiVirtualSerialNumberPtrType PiInstancePiVirtualSerialNumberArgs
+
+func PiInstancePiVirtualSerialNumberPtr(v *PiInstancePiVirtualSerialNumberArgs) PiInstancePiVirtualSerialNumberPtrInput {
+	return (*piInstancePiVirtualSerialNumberPtrType)(v)
+}
+
+func (*piInstancePiVirtualSerialNumberPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiInstancePiVirtualSerialNumber)(nil)).Elem()
+}
+
+func (i *piInstancePiVirtualSerialNumberPtrType) ToPiInstancePiVirtualSerialNumberPtrOutput() PiInstancePiVirtualSerialNumberPtrOutput {
+	return i.ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(context.Background())
+}
+
+func (i *piInstancePiVirtualSerialNumberPtrType) ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(ctx context.Context) PiInstancePiVirtualSerialNumberPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiInstancePiVirtualSerialNumberPtrOutput)
+}
+
+type PiInstancePiVirtualSerialNumberOutput struct{ *pulumi.OutputState }
+
+func (PiInstancePiVirtualSerialNumberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiInstancePiVirtualSerialNumber)(nil)).Elem()
+}
+
+func (o PiInstancePiVirtualSerialNumberOutput) ToPiInstancePiVirtualSerialNumberOutput() PiInstancePiVirtualSerialNumberOutput {
+	return o
+}
+
+func (o PiInstancePiVirtualSerialNumberOutput) ToPiInstancePiVirtualSerialNumberOutputWithContext(ctx context.Context) PiInstancePiVirtualSerialNumberOutput {
+	return o
+}
+
+func (o PiInstancePiVirtualSerialNumberOutput) ToPiInstancePiVirtualSerialNumberPtrOutput() PiInstancePiVirtualSerialNumberPtrOutput {
+	return o.ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(context.Background())
+}
+
+func (o PiInstancePiVirtualSerialNumberOutput) ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(ctx context.Context) PiInstancePiVirtualSerialNumberPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiInstancePiVirtualSerialNumber) *PiInstancePiVirtualSerialNumber {
+		return &v
+	}).(PiInstancePiVirtualSerialNumberPtrOutput)
+}
+
+// Description of the Virtual Serial Number
+func (o PiInstancePiVirtualSerialNumberOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiVirtualSerialNumber) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+func (o PiInstancePiVirtualSerialNumberOutput) Serial() pulumi.StringOutput {
+	return o.ApplyT(func(v PiInstancePiVirtualSerialNumber) string { return v.Serial }).(pulumi.StringOutput)
+}
+
+// Software tier. Enum: ["P05", "P10", "P20", "P30"].
+func (o PiInstancePiVirtualSerialNumberOutput) SoftwareTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiInstancePiVirtualSerialNumber) *string { return v.SoftwareTier }).(pulumi.StringPtrOutput)
+}
+
+type PiInstancePiVirtualSerialNumberPtrOutput struct{ *pulumi.OutputState }
+
+func (PiInstancePiVirtualSerialNumberPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiInstancePiVirtualSerialNumber)(nil)).Elem()
+}
+
+func (o PiInstancePiVirtualSerialNumberPtrOutput) ToPiInstancePiVirtualSerialNumberPtrOutput() PiInstancePiVirtualSerialNumberPtrOutput {
+	return o
+}
+
+func (o PiInstancePiVirtualSerialNumberPtrOutput) ToPiInstancePiVirtualSerialNumberPtrOutputWithContext(ctx context.Context) PiInstancePiVirtualSerialNumberPtrOutput {
+	return o
+}
+
+func (o PiInstancePiVirtualSerialNumberPtrOutput) Elem() PiInstancePiVirtualSerialNumberOutput {
+	return o.ApplyT(func(v *PiInstancePiVirtualSerialNumber) PiInstancePiVirtualSerialNumber {
+		if v != nil {
+			return *v
+		}
+		var ret PiInstancePiVirtualSerialNumber
+		return ret
+	}).(PiInstancePiVirtualSerialNumberOutput)
+}
+
+// Description of the Virtual Serial Number
+func (o PiInstancePiVirtualSerialNumberPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiInstancePiVirtualSerialNumber) *string {
 		if v == nil {
 			return nil
 		}
-		return v.Value
+		return v.Description
 	}).(pulumi.StringPtrOutput)
 }
 
-type IsVpnGatewayConnectionStatusReason struct {
-	// A snake case string succinctly identifying the status reason.
-	Code *string `pulumi:"code"`
-	// An explanation of the status reason.
-	Message *string `pulumi:"message"`
-	// Link to documentation about this status reason.
-	MoreInfo *string `pulumi:"moreInfo"`
+// Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+func (o PiInstancePiVirtualSerialNumberPtrOutput) Serial() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiInstancePiVirtualSerialNumber) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Serial
+	}).(pulumi.StringPtrOutput)
 }
 
-// IsVpnGatewayConnectionStatusReasonInput is an input type that accepts IsVpnGatewayConnectionStatusReasonArgs and IsVpnGatewayConnectionStatusReasonOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionStatusReasonInput` via:
+// Software tier. Enum: ["P05", "P10", "P20", "P30"].
+func (o PiInstancePiVirtualSerialNumberPtrOutput) SoftwareTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiInstancePiVirtualSerialNumber) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SoftwareTier
+	}).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkAddressGroupMemberType struct {
+	// The IP addresses in CIDR notation for example 192.168.1.5/32.
+	Cidr *string `pulumi:"cidr"`
+	// The id of the Network Address Group member IP addresses.
+	Id *string `pulumi:"id"`
+}
+
+// PiNetworkAddressGroupMemberTypeInput is an input type that accepts PiNetworkAddressGroupMemberTypeArgs and PiNetworkAddressGroupMemberTypeOutput values.
+// You can construct a concrete instance of `PiNetworkAddressGroupMemberTypeInput` via:
 //
-//	IsVpnGatewayConnectionStatusReasonArgs{...}
-type IsVpnGatewayConnectionStatusReasonInput interface {
+//	PiNetworkAddressGroupMemberTypeArgs{...}
+type PiNetworkAddressGroupMemberTypeInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionStatusReasonOutput() IsVpnGatewayConnectionStatusReasonOutput
-	ToIsVpnGatewayConnectionStatusReasonOutputWithContext(context.Context) IsVpnGatewayConnectionStatusReasonOutput
+	ToPiNetworkAddressGroupMemberTypeOutput() PiNetworkAddressGroupMemberTypeOutput
+	ToPiNetworkAddressGroupMemberTypeOutputWithContext(context.Context) PiNetworkAddressGroupMemberTypeOutput
 }
 
-type IsVpnGatewayConnectionStatusReasonArgs struct {
-	// A snake case string succinctly identifying the status reason.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the status reason.
-	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about this status reason.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+type PiNetworkAddressGroupMemberTypeArgs struct {
+	// The IP addresses in CIDR notation for example 192.168.1.5/32.
+	Cidr pulumi.StringPtrInput `pulumi:"cidr"`
+	// The id of the Network Address Group member IP addresses.
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
-func (IsVpnGatewayConnectionStatusReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionStatusReason)(nil)).Elem()
+func (PiNetworkAddressGroupMemberTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkAddressGroupMemberType)(nil)).Elem()
 }
 
-func (i IsVpnGatewayConnectionStatusReasonArgs) ToIsVpnGatewayConnectionStatusReasonOutput() IsVpnGatewayConnectionStatusReasonOutput {
-	return i.ToIsVpnGatewayConnectionStatusReasonOutputWithContext(context.Background())
+func (i PiNetworkAddressGroupMemberTypeArgs) ToPiNetworkAddressGroupMemberTypeOutput() PiNetworkAddressGroupMemberTypeOutput {
+	return i.ToPiNetworkAddressGroupMemberTypeOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayConnectionStatusReasonArgs) ToIsVpnGatewayConnectionStatusReasonOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionStatusReasonOutput)
+func (i PiNetworkAddressGroupMemberTypeArgs) ToPiNetworkAddressGroupMemberTypeOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkAddressGroupMemberTypeOutput)
 }
 
-// IsVpnGatewayConnectionStatusReasonArrayInput is an input type that accepts IsVpnGatewayConnectionStatusReasonArray and IsVpnGatewayConnectionStatusReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionStatusReasonArrayInput` via:
+// PiNetworkAddressGroupMemberTypeArrayInput is an input type that accepts PiNetworkAddressGroupMemberTypeArray and PiNetworkAddressGroupMemberTypeArrayOutput values.
+// You can construct a concrete instance of `PiNetworkAddressGroupMemberTypeArrayInput` via:
 //
-//	IsVpnGatewayConnectionStatusReasonArray{ IsVpnGatewayConnectionStatusReasonArgs{...} }
-type IsVpnGatewayConnectionStatusReasonArrayInput interface {
+//	PiNetworkAddressGroupMemberTypeArray{ PiNetworkAddressGroupMemberTypeArgs{...} }
+type PiNetworkAddressGroupMemberTypeArrayInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionStatusReasonArrayOutput() IsVpnGatewayConnectionStatusReasonArrayOutput
-	ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(context.Context) IsVpnGatewayConnectionStatusReasonArrayOutput
+	ToPiNetworkAddressGroupMemberTypeArrayOutput() PiNetworkAddressGroupMemberTypeArrayOutput
+	ToPiNetworkAddressGroupMemberTypeArrayOutputWithContext(context.Context) PiNetworkAddressGroupMemberTypeArrayOutput
 }
 
-type IsVpnGatewayConnectionStatusReasonArray []IsVpnGatewayConnectionStatusReasonInput
+type PiNetworkAddressGroupMemberTypeArray []PiNetworkAddressGroupMemberTypeInput
 
-func (IsVpnGatewayConnectionStatusReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayConnectionStatusReason)(nil)).Elem()
+func (PiNetworkAddressGroupMemberTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkAddressGroupMemberType)(nil)).Elem()
 }
 
-func (i IsVpnGatewayConnectionStatusReasonArray) ToIsVpnGatewayConnectionStatusReasonArrayOutput() IsVpnGatewayConnectionStatusReasonArrayOutput {
-	return i.ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(context.Background())
+func (i PiNetworkAddressGroupMemberTypeArray) ToPiNetworkAddressGroupMemberTypeArrayOutput() PiNetworkAddressGroupMemberTypeArrayOutput {
+	return i.ToPiNetworkAddressGroupMemberTypeArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayConnectionStatusReasonArray) ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionStatusReasonArrayOutput)
+func (i PiNetworkAddressGroupMemberTypeArray) ToPiNetworkAddressGroupMemberTypeArrayOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkAddressGroupMemberTypeArrayOutput)
 }
 
-type IsVpnGatewayConnectionStatusReasonOutput struct{ *pulumi.OutputState }
+type PiNetworkAddressGroupMemberTypeOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayConnectionStatusReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionStatusReason)(nil)).Elem()
+func (PiNetworkAddressGroupMemberTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkAddressGroupMemberType)(nil)).Elem()
 }
 
-func (o IsVpnGatewayConnectionStatusReasonOutput) ToIsVpnGatewayConnectionStatusReasonOutput() IsVpnGatewayConnectionStatusReasonOutput {
+func (o PiNetworkAddressGroupMemberTypeOutput) ToPiNetworkAddressGroupMemberTypeOutput() PiNetworkAddressGroupMemberTypeOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionStatusReasonOutput) ToIsVpnGatewayConnectionStatusReasonOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonOutput {
+func (o PiNetworkAddressGroupMemberTypeOutput) ToPiNetworkAddressGroupMemberTypeOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberTypeOutput {
 	return o
 }
 
-// A snake case string succinctly identifying the status reason.
-func (o IsVpnGatewayConnectionStatusReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionStatusReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+// The IP addresses in CIDR notation for example 192.168.1.5/32.
+func (o PiNetworkAddressGroupMemberTypeOutput) Cidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkAddressGroupMemberType) *string { return v.Cidr }).(pulumi.StringPtrOutput)
 }
 
-// An explanation of the status reason.
-func (o IsVpnGatewayConnectionStatusReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionStatusReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+// The id of the Network Address Group member IP addresses.
+func (o PiNetworkAddressGroupMemberTypeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkAddressGroupMemberType) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// Link to documentation about this status reason.
-func (o IsVpnGatewayConnectionStatusReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionStatusReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+type PiNetworkAddressGroupMemberTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkAddressGroupMemberTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkAddressGroupMemberType)(nil)).Elem()
 }
 
-type IsVpnGatewayConnectionStatusReasonArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayConnectionStatusReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayConnectionStatusReason)(nil)).Elem()
-}
-
-func (o IsVpnGatewayConnectionStatusReasonArrayOutput) ToIsVpnGatewayConnectionStatusReasonArrayOutput() IsVpnGatewayConnectionStatusReasonArrayOutput {
+func (o PiNetworkAddressGroupMemberTypeArrayOutput) ToPiNetworkAddressGroupMemberTypeArrayOutput() PiNetworkAddressGroupMemberTypeArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionStatusReasonArrayOutput) ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonArrayOutput {
+func (o PiNetworkAddressGroupMemberTypeArrayOutput) ToPiNetworkAddressGroupMemberTypeArrayOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberTypeArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionStatusReasonArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayConnectionStatusReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayConnectionStatusReason {
-		return vs[0].([]IsVpnGatewayConnectionStatusReason)[vs[1].(int)]
-	}).(IsVpnGatewayConnectionStatusReasonOutput)
+func (o PiNetworkAddressGroupMemberTypeArrayOutput) Index(i pulumi.IntInput) PiNetworkAddressGroupMemberTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkAddressGroupMemberType {
+		return vs[0].([]PiNetworkAddressGroupMemberType)[vs[1].(int)]
+	}).(PiNetworkAddressGroupMemberTypeOutput)
 }
 
-type IsVpnGatewayConnectionTunnel struct {
-	// The IP address of the VPN gateway member in which the tunnel resides
-	Address *string `pulumi:"address"`
-	// The status of the VPN Tunnel
+type PiNetworkAddressGroupMemberMember struct {
+	// The IP addresses in CIDR notation for example 192.168.1.5/32.
+	Cidr *string `pulumi:"cidr"`
+	// The id of the Network Address Group member IP addresses.
+	Id *string `pulumi:"id"`
+}
+
+// PiNetworkAddressGroupMemberMemberInput is an input type that accepts PiNetworkAddressGroupMemberMemberArgs and PiNetworkAddressGroupMemberMemberOutput values.
+// You can construct a concrete instance of `PiNetworkAddressGroupMemberMemberInput` via:
+//
+//	PiNetworkAddressGroupMemberMemberArgs{...}
+type PiNetworkAddressGroupMemberMemberInput interface {
+	pulumi.Input
+
+	ToPiNetworkAddressGroupMemberMemberOutput() PiNetworkAddressGroupMemberMemberOutput
+	ToPiNetworkAddressGroupMemberMemberOutputWithContext(context.Context) PiNetworkAddressGroupMemberMemberOutput
+}
+
+type PiNetworkAddressGroupMemberMemberArgs struct {
+	// The IP addresses in CIDR notation for example 192.168.1.5/32.
+	Cidr pulumi.StringPtrInput `pulumi:"cidr"`
+	// The id of the Network Address Group member IP addresses.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (PiNetworkAddressGroupMemberMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkAddressGroupMemberMember)(nil)).Elem()
+}
+
+func (i PiNetworkAddressGroupMemberMemberArgs) ToPiNetworkAddressGroupMemberMemberOutput() PiNetworkAddressGroupMemberMemberOutput {
+	return i.ToPiNetworkAddressGroupMemberMemberOutputWithContext(context.Background())
+}
+
+func (i PiNetworkAddressGroupMemberMemberArgs) ToPiNetworkAddressGroupMemberMemberOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkAddressGroupMemberMemberOutput)
+}
+
+// PiNetworkAddressGroupMemberMemberArrayInput is an input type that accepts PiNetworkAddressGroupMemberMemberArray and PiNetworkAddressGroupMemberMemberArrayOutput values.
+// You can construct a concrete instance of `PiNetworkAddressGroupMemberMemberArrayInput` via:
+//
+//	PiNetworkAddressGroupMemberMemberArray{ PiNetworkAddressGroupMemberMemberArgs{...} }
+type PiNetworkAddressGroupMemberMemberArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkAddressGroupMemberMemberArrayOutput() PiNetworkAddressGroupMemberMemberArrayOutput
+	ToPiNetworkAddressGroupMemberMemberArrayOutputWithContext(context.Context) PiNetworkAddressGroupMemberMemberArrayOutput
+}
+
+type PiNetworkAddressGroupMemberMemberArray []PiNetworkAddressGroupMemberMemberInput
+
+func (PiNetworkAddressGroupMemberMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkAddressGroupMemberMember)(nil)).Elem()
+}
+
+func (i PiNetworkAddressGroupMemberMemberArray) ToPiNetworkAddressGroupMemberMemberArrayOutput() PiNetworkAddressGroupMemberMemberArrayOutput {
+	return i.ToPiNetworkAddressGroupMemberMemberArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkAddressGroupMemberMemberArray) ToPiNetworkAddressGroupMemberMemberArrayOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkAddressGroupMemberMemberArrayOutput)
+}
+
+type PiNetworkAddressGroupMemberMemberOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkAddressGroupMemberMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkAddressGroupMemberMember)(nil)).Elem()
+}
+
+func (o PiNetworkAddressGroupMemberMemberOutput) ToPiNetworkAddressGroupMemberMemberOutput() PiNetworkAddressGroupMemberMemberOutput {
+	return o
+}
+
+func (o PiNetworkAddressGroupMemberMemberOutput) ToPiNetworkAddressGroupMemberMemberOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberMemberOutput {
+	return o
+}
+
+// The IP addresses in CIDR notation for example 192.168.1.5/32.
+func (o PiNetworkAddressGroupMemberMemberOutput) Cidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkAddressGroupMemberMember) *string { return v.Cidr }).(pulumi.StringPtrOutput)
+}
+
+// The id of the Network Address Group member IP addresses.
+func (o PiNetworkAddressGroupMemberMemberOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkAddressGroupMemberMember) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkAddressGroupMemberMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkAddressGroupMemberMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkAddressGroupMemberMember)(nil)).Elem()
+}
+
+func (o PiNetworkAddressGroupMemberMemberArrayOutput) ToPiNetworkAddressGroupMemberMemberArrayOutput() PiNetworkAddressGroupMemberMemberArrayOutput {
+	return o
+}
+
+func (o PiNetworkAddressGroupMemberMemberArrayOutput) ToPiNetworkAddressGroupMemberMemberArrayOutputWithContext(ctx context.Context) PiNetworkAddressGroupMemberMemberArrayOutput {
+	return o
+}
+
+func (o PiNetworkAddressGroupMemberMemberArrayOutput) Index(i pulumi.IntInput) PiNetworkAddressGroupMemberMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkAddressGroupMemberMember {
+		return vs[0].([]PiNetworkAddressGroupMemberMember)[vs[1].(int)]
+	}).(PiNetworkAddressGroupMemberMemberOutput)
+}
+
+type PiNetworkInterfaceInstance struct {
+	// Link to instance resource.
+	Href *string `pulumi:"href"`
+	// The attached instance ID.
+	InstanceId *string `pulumi:"instanceId"`
+}
+
+// PiNetworkInterfaceInstanceInput is an input type that accepts PiNetworkInterfaceInstanceArgs and PiNetworkInterfaceInstanceOutput values.
+// You can construct a concrete instance of `PiNetworkInterfaceInstanceInput` via:
+//
+//	PiNetworkInterfaceInstanceArgs{...}
+type PiNetworkInterfaceInstanceInput interface {
+	pulumi.Input
+
+	ToPiNetworkInterfaceInstanceOutput() PiNetworkInterfaceInstanceOutput
+	ToPiNetworkInterfaceInstanceOutputWithContext(context.Context) PiNetworkInterfaceInstanceOutput
+}
+
+type PiNetworkInterfaceInstanceArgs struct {
+	// Link to instance resource.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// The attached instance ID.
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+}
+
+func (PiNetworkInterfaceInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkInterfaceInstance)(nil)).Elem()
+}
+
+func (i PiNetworkInterfaceInstanceArgs) ToPiNetworkInterfaceInstanceOutput() PiNetworkInterfaceInstanceOutput {
+	return i.ToPiNetworkInterfaceInstanceOutputWithContext(context.Background())
+}
+
+func (i PiNetworkInterfaceInstanceArgs) ToPiNetworkInterfaceInstanceOutputWithContext(ctx context.Context) PiNetworkInterfaceInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkInterfaceInstanceOutput)
+}
+
+// PiNetworkInterfaceInstanceArrayInput is an input type that accepts PiNetworkInterfaceInstanceArray and PiNetworkInterfaceInstanceArrayOutput values.
+// You can construct a concrete instance of `PiNetworkInterfaceInstanceArrayInput` via:
+//
+//	PiNetworkInterfaceInstanceArray{ PiNetworkInterfaceInstanceArgs{...} }
+type PiNetworkInterfaceInstanceArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkInterfaceInstanceArrayOutput() PiNetworkInterfaceInstanceArrayOutput
+	ToPiNetworkInterfaceInstanceArrayOutputWithContext(context.Context) PiNetworkInterfaceInstanceArrayOutput
+}
+
+type PiNetworkInterfaceInstanceArray []PiNetworkInterfaceInstanceInput
+
+func (PiNetworkInterfaceInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkInterfaceInstance)(nil)).Elem()
+}
+
+func (i PiNetworkInterfaceInstanceArray) ToPiNetworkInterfaceInstanceArrayOutput() PiNetworkInterfaceInstanceArrayOutput {
+	return i.ToPiNetworkInterfaceInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkInterfaceInstanceArray) ToPiNetworkInterfaceInstanceArrayOutputWithContext(ctx context.Context) PiNetworkInterfaceInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkInterfaceInstanceArrayOutput)
+}
+
+type PiNetworkInterfaceInstanceOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkInterfaceInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkInterfaceInstance)(nil)).Elem()
+}
+
+func (o PiNetworkInterfaceInstanceOutput) ToPiNetworkInterfaceInstanceOutput() PiNetworkInterfaceInstanceOutput {
+	return o
+}
+
+func (o PiNetworkInterfaceInstanceOutput) ToPiNetworkInterfaceInstanceOutputWithContext(ctx context.Context) PiNetworkInterfaceInstanceOutput {
+	return o
+}
+
+// Link to instance resource.
+func (o PiNetworkInterfaceInstanceOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkInterfaceInstance) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// The attached instance ID.
+func (o PiNetworkInterfaceInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkInterfaceInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkInterfaceInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkInterfaceInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkInterfaceInstance)(nil)).Elem()
+}
+
+func (o PiNetworkInterfaceInstanceArrayOutput) ToPiNetworkInterfaceInstanceArrayOutput() PiNetworkInterfaceInstanceArrayOutput {
+	return o
+}
+
+func (o PiNetworkInterfaceInstanceArrayOutput) ToPiNetworkInterfaceInstanceArrayOutputWithContext(ctx context.Context) PiNetworkInterfaceInstanceArrayOutput {
+	return o
+}
+
+func (o PiNetworkInterfaceInstanceArrayOutput) Index(i pulumi.IntInput) PiNetworkInterfaceInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkInterfaceInstance {
+		return vs[0].([]PiNetworkInterfaceInstance)[vs[1].(int)]
+	}).(PiNetworkInterfaceInstanceOutput)
+}
+
+type PiNetworkNetworkAddressTranslation struct {
+	// source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+	//
+	// Deprecated: This field is deprecated
+	SourceIp *string `pulumi:"sourceIp"`
+}
+
+// PiNetworkNetworkAddressTranslationInput is an input type that accepts PiNetworkNetworkAddressTranslationArgs and PiNetworkNetworkAddressTranslationOutput values.
+// You can construct a concrete instance of `PiNetworkNetworkAddressTranslationInput` via:
+//
+//	PiNetworkNetworkAddressTranslationArgs{...}
+type PiNetworkNetworkAddressTranslationInput interface {
+	pulumi.Input
+
+	ToPiNetworkNetworkAddressTranslationOutput() PiNetworkNetworkAddressTranslationOutput
+	ToPiNetworkNetworkAddressTranslationOutputWithContext(context.Context) PiNetworkNetworkAddressTranslationOutput
+}
+
+type PiNetworkNetworkAddressTranslationArgs struct {
+	// source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+	//
+	// Deprecated: This field is deprecated
+	SourceIp pulumi.StringPtrInput `pulumi:"sourceIp"`
+}
+
+func (PiNetworkNetworkAddressTranslationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (i PiNetworkNetworkAddressTranslationArgs) ToPiNetworkNetworkAddressTranslationOutput() PiNetworkNetworkAddressTranslationOutput {
+	return i.ToPiNetworkNetworkAddressTranslationOutputWithContext(context.Background())
+}
+
+func (i PiNetworkNetworkAddressTranslationArgs) ToPiNetworkNetworkAddressTranslationOutputWithContext(ctx context.Context) PiNetworkNetworkAddressTranslationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkNetworkAddressTranslationOutput)
+}
+
+// PiNetworkNetworkAddressTranslationArrayInput is an input type that accepts PiNetworkNetworkAddressTranslationArray and PiNetworkNetworkAddressTranslationArrayOutput values.
+// You can construct a concrete instance of `PiNetworkNetworkAddressTranslationArrayInput` via:
+//
+//	PiNetworkNetworkAddressTranslationArray{ PiNetworkNetworkAddressTranslationArgs{...} }
+type PiNetworkNetworkAddressTranslationArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkNetworkAddressTranslationArrayOutput() PiNetworkNetworkAddressTranslationArrayOutput
+	ToPiNetworkNetworkAddressTranslationArrayOutputWithContext(context.Context) PiNetworkNetworkAddressTranslationArrayOutput
+}
+
+type PiNetworkNetworkAddressTranslationArray []PiNetworkNetworkAddressTranslationInput
+
+func (PiNetworkNetworkAddressTranslationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (i PiNetworkNetworkAddressTranslationArray) ToPiNetworkNetworkAddressTranslationArrayOutput() PiNetworkNetworkAddressTranslationArrayOutput {
+	return i.ToPiNetworkNetworkAddressTranslationArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkNetworkAddressTranslationArray) ToPiNetworkNetworkAddressTranslationArrayOutputWithContext(ctx context.Context) PiNetworkNetworkAddressTranslationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkNetworkAddressTranslationArrayOutput)
+}
+
+type PiNetworkNetworkAddressTranslationOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkNetworkAddressTranslationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (o PiNetworkNetworkAddressTranslationOutput) ToPiNetworkNetworkAddressTranslationOutput() PiNetworkNetworkAddressTranslationOutput {
+	return o
+}
+
+func (o PiNetworkNetworkAddressTranslationOutput) ToPiNetworkNetworkAddressTranslationOutputWithContext(ctx context.Context) PiNetworkNetworkAddressTranslationOutput {
+	return o
+}
+
+// source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkNetworkAddressTranslationOutput) SourceIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkNetworkAddressTranslation) *string { return v.SourceIp }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkNetworkAddressTranslationArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkNetworkAddressTranslationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (o PiNetworkNetworkAddressTranslationArrayOutput) ToPiNetworkNetworkAddressTranslationArrayOutput() PiNetworkNetworkAddressTranslationArrayOutput {
+	return o
+}
+
+func (o PiNetworkNetworkAddressTranslationArrayOutput) ToPiNetworkNetworkAddressTranslationArrayOutputWithContext(ctx context.Context) PiNetworkNetworkAddressTranslationArrayOutput {
+	return o
+}
+
+func (o PiNetworkNetworkAddressTranslationArrayOutput) Index(i pulumi.IntInput) PiNetworkNetworkAddressTranslationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkNetworkAddressTranslation {
+		return vs[0].([]PiNetworkNetworkAddressTranslation)[vs[1].(int)]
+	}).(PiNetworkNetworkAddressTranslationOutput)
+}
+
+type PiNetworkPeerExportRouteFilter struct {
+	// Action of the filter.
+	Action *string `pulumi:"action"`
+	// Time stamp for create route filter.
+	CreationDate *string `pulumi:"creationDate"`
+	// Direction of the filter.
+	Direction *string `pulumi:"direction"`
+	// Error description.
+	Error *string `pulumi:"error"`
+	// The minimum matching length of the prefix-set.
+	Ge *int `pulumi:"ge"`
+	// Priority or order of the filter.
+	Index *int `pulumi:"index"`
+	// The maximum matching length of the prefix-set.
+	Le *int `pulumi:"le"`
+	// IP prefix representing an address and mask length of the prefix-set.
+	Prefix *string `pulumi:"prefix"`
+	// Route filter ID.
+	RouteFilterId *string `pulumi:"routeFilterId"`
+	// Status of the route filter.
+	State *string `pulumi:"state"`
+}
+
+// PiNetworkPeerExportRouteFilterInput is an input type that accepts PiNetworkPeerExportRouteFilterArgs and PiNetworkPeerExportRouteFilterOutput values.
+// You can construct a concrete instance of `PiNetworkPeerExportRouteFilterInput` via:
+//
+//	PiNetworkPeerExportRouteFilterArgs{...}
+type PiNetworkPeerExportRouteFilterInput interface {
+	pulumi.Input
+
+	ToPiNetworkPeerExportRouteFilterOutput() PiNetworkPeerExportRouteFilterOutput
+	ToPiNetworkPeerExportRouteFilterOutputWithContext(context.Context) PiNetworkPeerExportRouteFilterOutput
+}
+
+type PiNetworkPeerExportRouteFilterArgs struct {
+	// Action of the filter.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// Time stamp for create route filter.
+	CreationDate pulumi.StringPtrInput `pulumi:"creationDate"`
+	// Direction of the filter.
+	Direction pulumi.StringPtrInput `pulumi:"direction"`
+	// Error description.
+	Error pulumi.StringPtrInput `pulumi:"error"`
+	// The minimum matching length of the prefix-set.
+	Ge pulumi.IntPtrInput `pulumi:"ge"`
+	// Priority or order of the filter.
+	Index pulumi.IntPtrInput `pulumi:"index"`
+	// The maximum matching length of the prefix-set.
+	Le pulumi.IntPtrInput `pulumi:"le"`
+	// IP prefix representing an address and mask length of the prefix-set.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// Route filter ID.
+	RouteFilterId pulumi.StringPtrInput `pulumi:"routeFilterId"`
+	// Status of the route filter.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (PiNetworkPeerExportRouteFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPeerExportRouteFilter)(nil)).Elem()
+}
+
+func (i PiNetworkPeerExportRouteFilterArgs) ToPiNetworkPeerExportRouteFilterOutput() PiNetworkPeerExportRouteFilterOutput {
+	return i.ToPiNetworkPeerExportRouteFilterOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPeerExportRouteFilterArgs) ToPiNetworkPeerExportRouteFilterOutputWithContext(ctx context.Context) PiNetworkPeerExportRouteFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPeerExportRouteFilterOutput)
+}
+
+// PiNetworkPeerExportRouteFilterArrayInput is an input type that accepts PiNetworkPeerExportRouteFilterArray and PiNetworkPeerExportRouteFilterArrayOutput values.
+// You can construct a concrete instance of `PiNetworkPeerExportRouteFilterArrayInput` via:
+//
+//	PiNetworkPeerExportRouteFilterArray{ PiNetworkPeerExportRouteFilterArgs{...} }
+type PiNetworkPeerExportRouteFilterArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkPeerExportRouteFilterArrayOutput() PiNetworkPeerExportRouteFilterArrayOutput
+	ToPiNetworkPeerExportRouteFilterArrayOutputWithContext(context.Context) PiNetworkPeerExportRouteFilterArrayOutput
+}
+
+type PiNetworkPeerExportRouteFilterArray []PiNetworkPeerExportRouteFilterInput
+
+func (PiNetworkPeerExportRouteFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkPeerExportRouteFilter)(nil)).Elem()
+}
+
+func (i PiNetworkPeerExportRouteFilterArray) ToPiNetworkPeerExportRouteFilterArrayOutput() PiNetworkPeerExportRouteFilterArrayOutput {
+	return i.ToPiNetworkPeerExportRouteFilterArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPeerExportRouteFilterArray) ToPiNetworkPeerExportRouteFilterArrayOutputWithContext(ctx context.Context) PiNetworkPeerExportRouteFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPeerExportRouteFilterArrayOutput)
+}
+
+type PiNetworkPeerExportRouteFilterOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPeerExportRouteFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPeerExportRouteFilter)(nil)).Elem()
+}
+
+func (o PiNetworkPeerExportRouteFilterOutput) ToPiNetworkPeerExportRouteFilterOutput() PiNetworkPeerExportRouteFilterOutput {
+	return o
+}
+
+func (o PiNetworkPeerExportRouteFilterOutput) ToPiNetworkPeerExportRouteFilterOutputWithContext(ctx context.Context) PiNetworkPeerExportRouteFilterOutput {
+	return o
+}
+
+// Action of the filter.
+func (o PiNetworkPeerExportRouteFilterOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// Time stamp for create route filter.
+func (o PiNetworkPeerExportRouteFilterOutput) CreationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *string { return v.CreationDate }).(pulumi.StringPtrOutput)
+}
+
+// Direction of the filter.
+func (o PiNetworkPeerExportRouteFilterOutput) Direction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *string { return v.Direction }).(pulumi.StringPtrOutput)
+}
+
+// Error description.
+func (o PiNetworkPeerExportRouteFilterOutput) Error() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *string { return v.Error }).(pulumi.StringPtrOutput)
+}
+
+// The minimum matching length of the prefix-set.
+func (o PiNetworkPeerExportRouteFilterOutput) Ge() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *int { return v.Ge }).(pulumi.IntPtrOutput)
+}
+
+// Priority or order of the filter.
+func (o PiNetworkPeerExportRouteFilterOutput) Index() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *int { return v.Index }).(pulumi.IntPtrOutput)
+}
+
+// The maximum matching length of the prefix-set.
+func (o PiNetworkPeerExportRouteFilterOutput) Le() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *int { return v.Le }).(pulumi.IntPtrOutput)
+}
+
+// IP prefix representing an address and mask length of the prefix-set.
+func (o PiNetworkPeerExportRouteFilterOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// Route filter ID.
+func (o PiNetworkPeerExportRouteFilterOutput) RouteFilterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *string { return v.RouteFilterId }).(pulumi.StringPtrOutput)
+}
+
+// Status of the route filter.
+func (o PiNetworkPeerExportRouteFilterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerExportRouteFilter) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkPeerExportRouteFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPeerExportRouteFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkPeerExportRouteFilter)(nil)).Elem()
+}
+
+func (o PiNetworkPeerExportRouteFilterArrayOutput) ToPiNetworkPeerExportRouteFilterArrayOutput() PiNetworkPeerExportRouteFilterArrayOutput {
+	return o
+}
+
+func (o PiNetworkPeerExportRouteFilterArrayOutput) ToPiNetworkPeerExportRouteFilterArrayOutputWithContext(ctx context.Context) PiNetworkPeerExportRouteFilterArrayOutput {
+	return o
+}
+
+func (o PiNetworkPeerExportRouteFilterArrayOutput) Index(i pulumi.IntInput) PiNetworkPeerExportRouteFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkPeerExportRouteFilter {
+		return vs[0].([]PiNetworkPeerExportRouteFilter)[vs[1].(int)]
+	}).(PiNetworkPeerExportRouteFilterOutput)
+}
+
+type PiNetworkPeerImportRouteFilter struct {
+	// Action of the filter.
+	Action *string `pulumi:"action"`
+	// Time stamp for create route filter.
+	CreationDate *string `pulumi:"creationDate"`
+	// Direction of the filter.
+	Direction *string `pulumi:"direction"`
+	// Error description.
+	Error *string `pulumi:"error"`
+	// The minimum matching length of the prefix-set.
+	Ge *int `pulumi:"ge"`
+	// Priority or order of the filter.
+	Index *int `pulumi:"index"`
+	// The maximum matching length of the prefix-set.
+	Le *int `pulumi:"le"`
+	// IP prefix representing an address and mask length of the prefix-set.
+	Prefix *string `pulumi:"prefix"`
+	// Route filter ID.
+	RouteFilterId *string `pulumi:"routeFilterId"`
+	// Status of the route filter.
+	State *string `pulumi:"state"`
+}
+
+// PiNetworkPeerImportRouteFilterInput is an input type that accepts PiNetworkPeerImportRouteFilterArgs and PiNetworkPeerImportRouteFilterOutput values.
+// You can construct a concrete instance of `PiNetworkPeerImportRouteFilterInput` via:
+//
+//	PiNetworkPeerImportRouteFilterArgs{...}
+type PiNetworkPeerImportRouteFilterInput interface {
+	pulumi.Input
+
+	ToPiNetworkPeerImportRouteFilterOutput() PiNetworkPeerImportRouteFilterOutput
+	ToPiNetworkPeerImportRouteFilterOutputWithContext(context.Context) PiNetworkPeerImportRouteFilterOutput
+}
+
+type PiNetworkPeerImportRouteFilterArgs struct {
+	// Action of the filter.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// Time stamp for create route filter.
+	CreationDate pulumi.StringPtrInput `pulumi:"creationDate"`
+	// Direction of the filter.
+	Direction pulumi.StringPtrInput `pulumi:"direction"`
+	// Error description.
+	Error pulumi.StringPtrInput `pulumi:"error"`
+	// The minimum matching length of the prefix-set.
+	Ge pulumi.IntPtrInput `pulumi:"ge"`
+	// Priority or order of the filter.
+	Index pulumi.IntPtrInput `pulumi:"index"`
+	// The maximum matching length of the prefix-set.
+	Le pulumi.IntPtrInput `pulumi:"le"`
+	// IP prefix representing an address and mask length of the prefix-set.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// Route filter ID.
+	RouteFilterId pulumi.StringPtrInput `pulumi:"routeFilterId"`
+	// Status of the route filter.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (PiNetworkPeerImportRouteFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPeerImportRouteFilter)(nil)).Elem()
+}
+
+func (i PiNetworkPeerImportRouteFilterArgs) ToPiNetworkPeerImportRouteFilterOutput() PiNetworkPeerImportRouteFilterOutput {
+	return i.ToPiNetworkPeerImportRouteFilterOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPeerImportRouteFilterArgs) ToPiNetworkPeerImportRouteFilterOutputWithContext(ctx context.Context) PiNetworkPeerImportRouteFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPeerImportRouteFilterOutput)
+}
+
+// PiNetworkPeerImportRouteFilterArrayInput is an input type that accepts PiNetworkPeerImportRouteFilterArray and PiNetworkPeerImportRouteFilterArrayOutput values.
+// You can construct a concrete instance of `PiNetworkPeerImportRouteFilterArrayInput` via:
+//
+//	PiNetworkPeerImportRouteFilterArray{ PiNetworkPeerImportRouteFilterArgs{...} }
+type PiNetworkPeerImportRouteFilterArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkPeerImportRouteFilterArrayOutput() PiNetworkPeerImportRouteFilterArrayOutput
+	ToPiNetworkPeerImportRouteFilterArrayOutputWithContext(context.Context) PiNetworkPeerImportRouteFilterArrayOutput
+}
+
+type PiNetworkPeerImportRouteFilterArray []PiNetworkPeerImportRouteFilterInput
+
+func (PiNetworkPeerImportRouteFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkPeerImportRouteFilter)(nil)).Elem()
+}
+
+func (i PiNetworkPeerImportRouteFilterArray) ToPiNetworkPeerImportRouteFilterArrayOutput() PiNetworkPeerImportRouteFilterArrayOutput {
+	return i.ToPiNetworkPeerImportRouteFilterArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPeerImportRouteFilterArray) ToPiNetworkPeerImportRouteFilterArrayOutputWithContext(ctx context.Context) PiNetworkPeerImportRouteFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPeerImportRouteFilterArrayOutput)
+}
+
+type PiNetworkPeerImportRouteFilterOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPeerImportRouteFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPeerImportRouteFilter)(nil)).Elem()
+}
+
+func (o PiNetworkPeerImportRouteFilterOutput) ToPiNetworkPeerImportRouteFilterOutput() PiNetworkPeerImportRouteFilterOutput {
+	return o
+}
+
+func (o PiNetworkPeerImportRouteFilterOutput) ToPiNetworkPeerImportRouteFilterOutputWithContext(ctx context.Context) PiNetworkPeerImportRouteFilterOutput {
+	return o
+}
+
+// Action of the filter.
+func (o PiNetworkPeerImportRouteFilterOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// Time stamp for create route filter.
+func (o PiNetworkPeerImportRouteFilterOutput) CreationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *string { return v.CreationDate }).(pulumi.StringPtrOutput)
+}
+
+// Direction of the filter.
+func (o PiNetworkPeerImportRouteFilterOutput) Direction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *string { return v.Direction }).(pulumi.StringPtrOutput)
+}
+
+// Error description.
+func (o PiNetworkPeerImportRouteFilterOutput) Error() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *string { return v.Error }).(pulumi.StringPtrOutput)
+}
+
+// The minimum matching length of the prefix-set.
+func (o PiNetworkPeerImportRouteFilterOutput) Ge() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *int { return v.Ge }).(pulumi.IntPtrOutput)
+}
+
+// Priority or order of the filter.
+func (o PiNetworkPeerImportRouteFilterOutput) Index() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *int { return v.Index }).(pulumi.IntPtrOutput)
+}
+
+// The maximum matching length of the prefix-set.
+func (o PiNetworkPeerImportRouteFilterOutput) Le() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *int { return v.Le }).(pulumi.IntPtrOutput)
+}
+
+// IP prefix representing an address and mask length of the prefix-set.
+func (o PiNetworkPeerImportRouteFilterOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// Route filter ID.
+func (o PiNetworkPeerImportRouteFilterOutput) RouteFilterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *string { return v.RouteFilterId }).(pulumi.StringPtrOutput)
+}
+
+// Status of the route filter.
+func (o PiNetworkPeerImportRouteFilterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPeerImportRouteFilter) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkPeerImportRouteFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPeerImportRouteFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkPeerImportRouteFilter)(nil)).Elem()
+}
+
+func (o PiNetworkPeerImportRouteFilterArrayOutput) ToPiNetworkPeerImportRouteFilterArrayOutput() PiNetworkPeerImportRouteFilterArrayOutput {
+	return o
+}
+
+func (o PiNetworkPeerImportRouteFilterArrayOutput) ToPiNetworkPeerImportRouteFilterArrayOutputWithContext(ctx context.Context) PiNetworkPeerImportRouteFilterArrayOutput {
+	return o
+}
+
+func (o PiNetworkPeerImportRouteFilterArrayOutput) Index(i pulumi.IntInput) PiNetworkPeerImportRouteFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkPeerImportRouteFilter {
+		return vs[0].([]PiNetworkPeerImportRouteFilter)[vs[1].(int)]
+	}).(PiNetworkPeerImportRouteFilterOutput)
+}
+
+type PiNetworkPiIpaddressRange struct {
+	// The ending ip address.
+	PiEndingIpAddress string `pulumi:"piEndingIpAddress"`
+	// The staring ip address.
+	PiStartingIpAddress string `pulumi:"piStartingIpAddress"`
+}
+
+// PiNetworkPiIpaddressRangeInput is an input type that accepts PiNetworkPiIpaddressRangeArgs and PiNetworkPiIpaddressRangeOutput values.
+// You can construct a concrete instance of `PiNetworkPiIpaddressRangeInput` via:
+//
+//	PiNetworkPiIpaddressRangeArgs{...}
+type PiNetworkPiIpaddressRangeInput interface {
+	pulumi.Input
+
+	ToPiNetworkPiIpaddressRangeOutput() PiNetworkPiIpaddressRangeOutput
+	ToPiNetworkPiIpaddressRangeOutputWithContext(context.Context) PiNetworkPiIpaddressRangeOutput
+}
+
+type PiNetworkPiIpaddressRangeArgs struct {
+	// The ending ip address.
+	PiEndingIpAddress pulumi.StringInput `pulumi:"piEndingIpAddress"`
+	// The staring ip address.
+	PiStartingIpAddress pulumi.StringInput `pulumi:"piStartingIpAddress"`
+}
+
+func (PiNetworkPiIpaddressRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPiIpaddressRange)(nil)).Elem()
+}
+
+func (i PiNetworkPiIpaddressRangeArgs) ToPiNetworkPiIpaddressRangeOutput() PiNetworkPiIpaddressRangeOutput {
+	return i.ToPiNetworkPiIpaddressRangeOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPiIpaddressRangeArgs) ToPiNetworkPiIpaddressRangeOutputWithContext(ctx context.Context) PiNetworkPiIpaddressRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiIpaddressRangeOutput)
+}
+
+// PiNetworkPiIpaddressRangeArrayInput is an input type that accepts PiNetworkPiIpaddressRangeArray and PiNetworkPiIpaddressRangeArrayOutput values.
+// You can construct a concrete instance of `PiNetworkPiIpaddressRangeArrayInput` via:
+//
+//	PiNetworkPiIpaddressRangeArray{ PiNetworkPiIpaddressRangeArgs{...} }
+type PiNetworkPiIpaddressRangeArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkPiIpaddressRangeArrayOutput() PiNetworkPiIpaddressRangeArrayOutput
+	ToPiNetworkPiIpaddressRangeArrayOutputWithContext(context.Context) PiNetworkPiIpaddressRangeArrayOutput
+}
+
+type PiNetworkPiIpaddressRangeArray []PiNetworkPiIpaddressRangeInput
+
+func (PiNetworkPiIpaddressRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkPiIpaddressRange)(nil)).Elem()
+}
+
+func (i PiNetworkPiIpaddressRangeArray) ToPiNetworkPiIpaddressRangeArrayOutput() PiNetworkPiIpaddressRangeArrayOutput {
+	return i.ToPiNetworkPiIpaddressRangeArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPiIpaddressRangeArray) ToPiNetworkPiIpaddressRangeArrayOutputWithContext(ctx context.Context) PiNetworkPiIpaddressRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiIpaddressRangeArrayOutput)
+}
+
+type PiNetworkPiIpaddressRangeOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPiIpaddressRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPiIpaddressRange)(nil)).Elem()
+}
+
+func (o PiNetworkPiIpaddressRangeOutput) ToPiNetworkPiIpaddressRangeOutput() PiNetworkPiIpaddressRangeOutput {
+	return o
+}
+
+func (o PiNetworkPiIpaddressRangeOutput) ToPiNetworkPiIpaddressRangeOutputWithContext(ctx context.Context) PiNetworkPiIpaddressRangeOutput {
+	return o
+}
+
+// The ending ip address.
+func (o PiNetworkPiIpaddressRangeOutput) PiEndingIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v PiNetworkPiIpaddressRange) string { return v.PiEndingIpAddress }).(pulumi.StringOutput)
+}
+
+// The staring ip address.
+func (o PiNetworkPiIpaddressRangeOutput) PiStartingIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v PiNetworkPiIpaddressRange) string { return v.PiStartingIpAddress }).(pulumi.StringOutput)
+}
+
+type PiNetworkPiIpaddressRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPiIpaddressRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkPiIpaddressRange)(nil)).Elem()
+}
+
+func (o PiNetworkPiIpaddressRangeArrayOutput) ToPiNetworkPiIpaddressRangeArrayOutput() PiNetworkPiIpaddressRangeArrayOutput {
+	return o
+}
+
+func (o PiNetworkPiIpaddressRangeArrayOutput) ToPiNetworkPiIpaddressRangeArrayOutputWithContext(ctx context.Context) PiNetworkPiIpaddressRangeArrayOutput {
+	return o
+}
+
+func (o PiNetworkPiIpaddressRangeArrayOutput) Index(i pulumi.IntInput) PiNetworkPiIpaddressRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkPiIpaddressRange {
+		return vs[0].([]PiNetworkPiIpaddressRange)[vs[1].(int)]
+	}).(PiNetworkPiIpaddressRangeOutput)
+}
+
+type PiNetworkPiNetworkPeer struct {
+	// ID of the network peer.
+	//
+	// Deprecated: This field is deprecated
+	Id string `pulumi:"id"`
+	// Contains the network address translation Details.
+	//
+	// Deprecated: This field is deprecated
+	NetworkAddressTranslation *PiNetworkPiNetworkPeerNetworkAddressTranslation `pulumi:"networkAddressTranslation"`
+	// Type of the network peer.
+	//
+	// Deprecated: This field is deprecated
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkPiNetworkPeerInput is an input type that accepts PiNetworkPiNetworkPeerArgs and PiNetworkPiNetworkPeerOutput values.
+// You can construct a concrete instance of `PiNetworkPiNetworkPeerInput` via:
+//
+//	PiNetworkPiNetworkPeerArgs{...}
+type PiNetworkPiNetworkPeerInput interface {
+	pulumi.Input
+
+	ToPiNetworkPiNetworkPeerOutput() PiNetworkPiNetworkPeerOutput
+	ToPiNetworkPiNetworkPeerOutputWithContext(context.Context) PiNetworkPiNetworkPeerOutput
+}
+
+type PiNetworkPiNetworkPeerArgs struct {
+	// ID of the network peer.
+	//
+	// Deprecated: This field is deprecated
+	Id pulumi.StringInput `pulumi:"id"`
+	// Contains the network address translation Details.
+	//
+	// Deprecated: This field is deprecated
+	NetworkAddressTranslation PiNetworkPiNetworkPeerNetworkAddressTranslationPtrInput `pulumi:"networkAddressTranslation"`
+	// Type of the network peer.
+	//
+	// Deprecated: This field is deprecated
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkPiNetworkPeerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPiNetworkPeer)(nil)).Elem()
+}
+
+func (i PiNetworkPiNetworkPeerArgs) ToPiNetworkPiNetworkPeerOutput() PiNetworkPiNetworkPeerOutput {
+	return i.ToPiNetworkPiNetworkPeerOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPiNetworkPeerArgs) ToPiNetworkPiNetworkPeerOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiNetworkPeerOutput)
+}
+
+func (i PiNetworkPiNetworkPeerArgs) ToPiNetworkPiNetworkPeerPtrOutput() PiNetworkPiNetworkPeerPtrOutput {
+	return i.ToPiNetworkPiNetworkPeerPtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPiNetworkPeerArgs) ToPiNetworkPiNetworkPeerPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiNetworkPeerOutput).ToPiNetworkPiNetworkPeerPtrOutputWithContext(ctx)
+}
+
+// PiNetworkPiNetworkPeerPtrInput is an input type that accepts PiNetworkPiNetworkPeerArgs, PiNetworkPiNetworkPeerPtr and PiNetworkPiNetworkPeerPtrOutput values.
+// You can construct a concrete instance of `PiNetworkPiNetworkPeerPtrInput` via:
+//
+//	        PiNetworkPiNetworkPeerArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkPiNetworkPeerPtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkPiNetworkPeerPtrOutput() PiNetworkPiNetworkPeerPtrOutput
+	ToPiNetworkPiNetworkPeerPtrOutputWithContext(context.Context) PiNetworkPiNetworkPeerPtrOutput
+}
+
+type piNetworkPiNetworkPeerPtrType PiNetworkPiNetworkPeerArgs
+
+func PiNetworkPiNetworkPeerPtr(v *PiNetworkPiNetworkPeerArgs) PiNetworkPiNetworkPeerPtrInput {
+	return (*piNetworkPiNetworkPeerPtrType)(v)
+}
+
+func (*piNetworkPiNetworkPeerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkPiNetworkPeer)(nil)).Elem()
+}
+
+func (i *piNetworkPiNetworkPeerPtrType) ToPiNetworkPiNetworkPeerPtrOutput() PiNetworkPiNetworkPeerPtrOutput {
+	return i.ToPiNetworkPiNetworkPeerPtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkPiNetworkPeerPtrType) ToPiNetworkPiNetworkPeerPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiNetworkPeerPtrOutput)
+}
+
+type PiNetworkPiNetworkPeerOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPiNetworkPeerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPiNetworkPeer)(nil)).Elem()
+}
+
+func (o PiNetworkPiNetworkPeerOutput) ToPiNetworkPiNetworkPeerOutput() PiNetworkPiNetworkPeerOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerOutput) ToPiNetworkPiNetworkPeerOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerOutput) ToPiNetworkPiNetworkPeerPtrOutput() PiNetworkPiNetworkPeerPtrOutput {
+	return o.ToPiNetworkPiNetworkPeerPtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkPiNetworkPeerOutput) ToPiNetworkPiNetworkPeerPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkPiNetworkPeer) *PiNetworkPiNetworkPeer {
+		return &v
+	}).(PiNetworkPiNetworkPeerPtrOutput)
+}
+
+// ID of the network peer.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v PiNetworkPiNetworkPeer) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Contains the network address translation Details.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerOutput) NetworkAddressTranslation() PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return o.ApplyT(func(v PiNetworkPiNetworkPeer) *PiNetworkPiNetworkPeerNetworkAddressTranslation {
+		return v.NetworkAddressTranslation
+	}).(PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput)
+}
+
+// Type of the network peer.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkPiNetworkPeer) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkPiNetworkPeerPtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPiNetworkPeerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkPiNetworkPeer)(nil)).Elem()
+}
+
+func (o PiNetworkPiNetworkPeerPtrOutput) ToPiNetworkPiNetworkPeerPtrOutput() PiNetworkPiNetworkPeerPtrOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerPtrOutput) ToPiNetworkPiNetworkPeerPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerPtrOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerPtrOutput) Elem() PiNetworkPiNetworkPeerOutput {
+	return o.ApplyT(func(v *PiNetworkPiNetworkPeer) PiNetworkPiNetworkPeer {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkPiNetworkPeer
+		return ret
+	}).(PiNetworkPiNetworkPeerOutput)
+}
+
+// ID of the network peer.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiNetworkPiNetworkPeer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// Contains the network address translation Details.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerPtrOutput) NetworkAddressTranslation() PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return o.ApplyT(func(v *PiNetworkPiNetworkPeer) *PiNetworkPiNetworkPeerNetworkAddressTranslation {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkAddressTranslation
+	}).(PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput)
+}
+
+// Type of the network peer.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiNetworkPiNetworkPeer) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkPiNetworkPeerNetworkAddressTranslation struct {
+	// source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+	//
+	// Deprecated: This field is deprecated
+	SourceIp string `pulumi:"sourceIp"`
+}
+
+// PiNetworkPiNetworkPeerNetworkAddressTranslationInput is an input type that accepts PiNetworkPiNetworkPeerNetworkAddressTranslationArgs and PiNetworkPiNetworkPeerNetworkAddressTranslationOutput values.
+// You can construct a concrete instance of `PiNetworkPiNetworkPeerNetworkAddressTranslationInput` via:
+//
+//	PiNetworkPiNetworkPeerNetworkAddressTranslationArgs{...}
+type PiNetworkPiNetworkPeerNetworkAddressTranslationInput interface {
+	pulumi.Input
+
+	ToPiNetworkPiNetworkPeerNetworkAddressTranslationOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationOutput
+	ToPiNetworkPiNetworkPeerNetworkAddressTranslationOutputWithContext(context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationOutput
+}
+
+type PiNetworkPiNetworkPeerNetworkAddressTranslationArgs struct {
+	// source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+	//
+	// Deprecated: This field is deprecated
+	SourceIp pulumi.StringInput `pulumi:"sourceIp"`
+}
+
+func (PiNetworkPiNetworkPeerNetworkAddressTranslationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPiNetworkPeerNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (i PiNetworkPiNetworkPeerNetworkAddressTranslationArgs) ToPiNetworkPiNetworkPeerNetworkAddressTranslationOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationOutput {
+	return i.ToPiNetworkPiNetworkPeerNetworkAddressTranslationOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPiNetworkPeerNetworkAddressTranslationArgs) ToPiNetworkPiNetworkPeerNetworkAddressTranslationOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiNetworkPeerNetworkAddressTranslationOutput)
+}
+
+func (i PiNetworkPiNetworkPeerNetworkAddressTranslationArgs) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return i.ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkPiNetworkPeerNetworkAddressTranslationArgs) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiNetworkPeerNetworkAddressTranslationOutput).ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(ctx)
+}
+
+// PiNetworkPiNetworkPeerNetworkAddressTranslationPtrInput is an input type that accepts PiNetworkPiNetworkPeerNetworkAddressTranslationArgs, PiNetworkPiNetworkPeerNetworkAddressTranslationPtr and PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput values.
+// You can construct a concrete instance of `PiNetworkPiNetworkPeerNetworkAddressTranslationPtrInput` via:
+//
+//	        PiNetworkPiNetworkPeerNetworkAddressTranslationArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkPiNetworkPeerNetworkAddressTranslationPtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput
+	ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput
+}
+
+type piNetworkPiNetworkPeerNetworkAddressTranslationPtrType PiNetworkPiNetworkPeerNetworkAddressTranslationArgs
+
+func PiNetworkPiNetworkPeerNetworkAddressTranslationPtr(v *PiNetworkPiNetworkPeerNetworkAddressTranslationArgs) PiNetworkPiNetworkPeerNetworkAddressTranslationPtrInput {
+	return (*piNetworkPiNetworkPeerNetworkAddressTranslationPtrType)(v)
+}
+
+func (*piNetworkPiNetworkPeerNetworkAddressTranslationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkPiNetworkPeerNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (i *piNetworkPiNetworkPeerNetworkAddressTranslationPtrType) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return i.ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkPiNetworkPeerNetworkAddressTranslationPtrType) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput)
+}
+
+type PiNetworkPiNetworkPeerNetworkAddressTranslationOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPiNetworkPeerNetworkAddressTranslationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkPiNetworkPeerNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationOutput) ToPiNetworkPiNetworkPeerNetworkAddressTranslationOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationOutput) ToPiNetworkPiNetworkPeerNetworkAddressTranslationOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationOutput) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return o.ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationOutput) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkPiNetworkPeerNetworkAddressTranslation) *PiNetworkPiNetworkPeerNetworkAddressTranslation {
+		return &v
+	}).(PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput)
+}
+
+// source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationOutput) SourceIp() pulumi.StringOutput {
+	return o.ApplyT(func(v PiNetworkPiNetworkPeerNetworkAddressTranslation) string { return v.SourceIp }).(pulumi.StringOutput)
+}
+
+type PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkPiNetworkPeerNetworkAddressTranslation)(nil)).Elem()
+}
+
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput() PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput) ToPiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutputWithContext(ctx context.Context) PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput {
+	return o
+}
+
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput) Elem() PiNetworkPiNetworkPeerNetworkAddressTranslationOutput {
+	return o.ApplyT(func(v *PiNetworkPiNetworkPeerNetworkAddressTranslation) PiNetworkPiNetworkPeerNetworkAddressTranslation {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkPiNetworkPeerNetworkAddressTranslation
+		return ret
+	}).(PiNetworkPiNetworkPeerNetworkAddressTranslationOutput)
+}
+
+// source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+//
+// Deprecated: This field is deprecated
+func (o PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput) SourceIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiNetworkPiNetworkPeerNetworkAddressTranslation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceIp
+	}).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberType struct {
+	// The ID of the member in a network security group.
+	Id *string `pulumi:"id"`
+	// The mac address of a network interface included if the type is network-interface.
+	MacAddress *string `pulumi:"macAddress"`
+	// The network ID of a network interface included if the type is network-interface.
+	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
+	// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+	Target *string `pulumi:"target"`
+	// The type of member.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupMemberTypeInput is an input type that accepts PiNetworkSecurityGroupMemberTypeArgs and PiNetworkSecurityGroupMemberTypeOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberTypeInput` via:
+//
+//	PiNetworkSecurityGroupMemberTypeArgs{...}
+type PiNetworkSecurityGroupMemberTypeInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberTypeOutput() PiNetworkSecurityGroupMemberTypeOutput
+	ToPiNetworkSecurityGroupMemberTypeOutputWithContext(context.Context) PiNetworkSecurityGroupMemberTypeOutput
+}
+
+type PiNetworkSecurityGroupMemberTypeArgs struct {
+	// The ID of the member in a network security group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The mac address of a network interface included if the type is network-interface.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// The network ID of a network interface included if the type is network-interface.
+	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
+	// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+	Target pulumi.StringPtrInput `pulumi:"target"`
+	// The type of member.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupMemberTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberType)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberTypeArgs) ToPiNetworkSecurityGroupMemberTypeOutput() PiNetworkSecurityGroupMemberTypeOutput {
+	return i.ToPiNetworkSecurityGroupMemberTypeOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberTypeArgs) ToPiNetworkSecurityGroupMemberTypeOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberTypeOutput)
+}
+
+// PiNetworkSecurityGroupMemberTypeArrayInput is an input type that accepts PiNetworkSecurityGroupMemberTypeArray and PiNetworkSecurityGroupMemberTypeArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberTypeArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberTypeArray{ PiNetworkSecurityGroupMemberTypeArgs{...} }
+type PiNetworkSecurityGroupMemberTypeArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberTypeArrayOutput() PiNetworkSecurityGroupMemberTypeArrayOutput
+	ToPiNetworkSecurityGroupMemberTypeArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberTypeArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberTypeArray []PiNetworkSecurityGroupMemberTypeInput
+
+func (PiNetworkSecurityGroupMemberTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberType)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberTypeArray) ToPiNetworkSecurityGroupMemberTypeArrayOutput() PiNetworkSecurityGroupMemberTypeArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberTypeArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberTypeArray) ToPiNetworkSecurityGroupMemberTypeArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberTypeArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberTypeOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberType)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberTypeOutput) ToPiNetworkSecurityGroupMemberTypeOutput() PiNetworkSecurityGroupMemberTypeOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberTypeOutput) ToPiNetworkSecurityGroupMemberTypeOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberTypeOutput {
+	return o
+}
+
+// The ID of the member in a network security group.
+func (o PiNetworkSecurityGroupMemberTypeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberType) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The mac address of a network interface included if the type is network-interface.
+func (o PiNetworkSecurityGroupMemberTypeOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberType) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+// The network ID of a network interface included if the type is network-interface.
+func (o PiNetworkSecurityGroupMemberTypeOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberType) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
+}
+
+// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+func (o PiNetworkSecurityGroupMemberTypeOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberType) *string { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+// The type of member.
+func (o PiNetworkSecurityGroupMemberTypeOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberType) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberType)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberTypeArrayOutput) ToPiNetworkSecurityGroupMemberTypeArrayOutput() PiNetworkSecurityGroupMemberTypeArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberTypeArrayOutput) ToPiNetworkSecurityGroupMemberTypeArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberTypeArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberTypeArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberType {
+		return vs[0].([]PiNetworkSecurityGroupMemberType)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberTypeOutput)
+}
+
+type PiNetworkSecurityGroupMemberMember struct {
+	// The ID of the member in a network security group.
+	Id *string `pulumi:"id"`
+	// The mac address of a network interface included if the type is network-interface.
+	MacAddress *string `pulumi:"macAddress"`
+	// The network ID of a network interface included if the type is network-interface.
+	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
+	// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+	Target *string `pulumi:"target"`
+	// The type of member.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupMemberMemberInput is an input type that accepts PiNetworkSecurityGroupMemberMemberArgs and PiNetworkSecurityGroupMemberMemberOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberMemberInput` via:
+//
+//	PiNetworkSecurityGroupMemberMemberArgs{...}
+type PiNetworkSecurityGroupMemberMemberInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberMemberOutput() PiNetworkSecurityGroupMemberMemberOutput
+	ToPiNetworkSecurityGroupMemberMemberOutputWithContext(context.Context) PiNetworkSecurityGroupMemberMemberOutput
+}
+
+type PiNetworkSecurityGroupMemberMemberArgs struct {
+	// The ID of the member in a network security group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The mac address of a network interface included if the type is network-interface.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// The network ID of a network interface included if the type is network-interface.
+	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
+	// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+	Target pulumi.StringPtrInput `pulumi:"target"`
+	// The type of member.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupMemberMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberMember)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberMemberArgs) ToPiNetworkSecurityGroupMemberMemberOutput() PiNetworkSecurityGroupMemberMemberOutput {
+	return i.ToPiNetworkSecurityGroupMemberMemberOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberMemberArgs) ToPiNetworkSecurityGroupMemberMemberOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberMemberOutput)
+}
+
+// PiNetworkSecurityGroupMemberMemberArrayInput is an input type that accepts PiNetworkSecurityGroupMemberMemberArray and PiNetworkSecurityGroupMemberMemberArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberMemberArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberMemberArray{ PiNetworkSecurityGroupMemberMemberArgs{...} }
+type PiNetworkSecurityGroupMemberMemberArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberMemberArrayOutput() PiNetworkSecurityGroupMemberMemberArrayOutput
+	ToPiNetworkSecurityGroupMemberMemberArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberMemberArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberMemberArray []PiNetworkSecurityGroupMemberMemberInput
+
+func (PiNetworkSecurityGroupMemberMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberMember)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberMemberArray) ToPiNetworkSecurityGroupMemberMemberArrayOutput() PiNetworkSecurityGroupMemberMemberArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberMemberArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberMemberArray) ToPiNetworkSecurityGroupMemberMemberArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberMemberArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberMemberOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberMember)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberMemberOutput) ToPiNetworkSecurityGroupMemberMemberOutput() PiNetworkSecurityGroupMemberMemberOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberMemberOutput) ToPiNetworkSecurityGroupMemberMemberOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberMemberOutput {
+	return o
+}
+
+// The ID of the member in a network security group.
+func (o PiNetworkSecurityGroupMemberMemberOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberMember) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The mac address of a network interface included if the type is network-interface.
+func (o PiNetworkSecurityGroupMemberMemberOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberMember) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+// The network ID of a network interface included if the type is network-interface.
+func (o PiNetworkSecurityGroupMemberMemberOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberMember) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
+}
+
+// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+func (o PiNetworkSecurityGroupMemberMemberOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberMember) *string { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+// The type of member.
+func (o PiNetworkSecurityGroupMemberMemberOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberMember) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberMember)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberMemberArrayOutput) ToPiNetworkSecurityGroupMemberMemberArrayOutput() PiNetworkSecurityGroupMemberMemberArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberMemberArrayOutput) ToPiNetworkSecurityGroupMemberMemberArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberMemberArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberMemberArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberMember {
+		return vs[0].([]PiNetworkSecurityGroupMemberMember)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberMemberOutput)
+}
+
+type PiNetworkSecurityGroupMemberRule struct {
+	// The action to take if the rule matches network traffic.
+	Action *string `pulumi:"action"`
+	// The list of destination port.
+	DestinationPorts []PiNetworkSecurityGroupMemberRuleDestinationPort `pulumi:"destinationPorts"`
+	// The ID of the rule in a network security group.
+	Id *string `pulumi:"id"`
+	// The list of protocol.
+	Protocols []PiNetworkSecurityGroupMemberRuleProtocol `pulumi:"protocols"`
+	// List of remote.
+	Remotes []PiNetworkSecurityGroupMemberRuleRemote `pulumi:"remotes"`
+	// List of source port
+	SourcePorts []PiNetworkSecurityGroupMemberRuleSourcePort `pulumi:"sourcePorts"`
+}
+
+// PiNetworkSecurityGroupMemberRuleInput is an input type that accepts PiNetworkSecurityGroupMemberRuleArgs and PiNetworkSecurityGroupMemberRuleOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleArgs{...}
+type PiNetworkSecurityGroupMemberRuleInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleOutput() PiNetworkSecurityGroupMemberRuleOutput
+	ToPiNetworkSecurityGroupMemberRuleOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleArgs struct {
+	// The action to take if the rule matches network traffic.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// The list of destination port.
+	DestinationPorts PiNetworkSecurityGroupMemberRuleDestinationPortArrayInput `pulumi:"destinationPorts"`
+	// The ID of the rule in a network security group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The list of protocol.
+	Protocols PiNetworkSecurityGroupMemberRuleProtocolArrayInput `pulumi:"protocols"`
+	// List of remote.
+	Remotes PiNetworkSecurityGroupMemberRuleRemoteArrayInput `pulumi:"remotes"`
+	// List of source port
+	SourcePorts PiNetworkSecurityGroupMemberRuleSourcePortArrayInput `pulumi:"sourcePorts"`
+}
+
+func (PiNetworkSecurityGroupMemberRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRule)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleArgs) ToPiNetworkSecurityGroupMemberRuleOutput() PiNetworkSecurityGroupMemberRuleOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleArgs) ToPiNetworkSecurityGroupMemberRuleOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleOutput)
+}
+
+// PiNetworkSecurityGroupMemberRuleArrayInput is an input type that accepts PiNetworkSecurityGroupMemberRuleArray and PiNetworkSecurityGroupMemberRuleArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleArray{ PiNetworkSecurityGroupMemberRuleArgs{...} }
+type PiNetworkSecurityGroupMemberRuleArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleArrayOutput() PiNetworkSecurityGroupMemberRuleArrayOutput
+	ToPiNetworkSecurityGroupMemberRuleArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleArray []PiNetworkSecurityGroupMemberRuleInput
+
+func (PiNetworkSecurityGroupMemberRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRule)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleArray) ToPiNetworkSecurityGroupMemberRuleArrayOutput() PiNetworkSecurityGroupMemberRuleArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleArray) ToPiNetworkSecurityGroupMemberRuleArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRule)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleOutput) ToPiNetworkSecurityGroupMemberRuleOutput() PiNetworkSecurityGroupMemberRuleOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleOutput) ToPiNetworkSecurityGroupMemberRuleOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleOutput {
+	return o
+}
+
+// The action to take if the rule matches network traffic.
+func (o PiNetworkSecurityGroupMemberRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRule) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// The list of destination port.
+func (o PiNetworkSecurityGroupMemberRuleOutput) DestinationPorts() PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRule) []PiNetworkSecurityGroupMemberRuleDestinationPort {
+		return v.DestinationPorts
+	}).(PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput)
+}
+
+// The ID of the rule in a network security group.
+func (o PiNetworkSecurityGroupMemberRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRule) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The list of protocol.
+func (o PiNetworkSecurityGroupMemberRuleOutput) Protocols() PiNetworkSecurityGroupMemberRuleProtocolArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRule) []PiNetworkSecurityGroupMemberRuleProtocol {
+		return v.Protocols
+	}).(PiNetworkSecurityGroupMemberRuleProtocolArrayOutput)
+}
+
+// List of remote.
+func (o PiNetworkSecurityGroupMemberRuleOutput) Remotes() PiNetworkSecurityGroupMemberRuleRemoteArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRule) []PiNetworkSecurityGroupMemberRuleRemote { return v.Remotes }).(PiNetworkSecurityGroupMemberRuleRemoteArrayOutput)
+}
+
+// List of source port
+func (o PiNetworkSecurityGroupMemberRuleOutput) SourcePorts() PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRule) []PiNetworkSecurityGroupMemberRuleSourcePort {
+		return v.SourcePorts
+	}).(PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRule)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleArrayOutput) ToPiNetworkSecurityGroupMemberRuleArrayOutput() PiNetworkSecurityGroupMemberRuleArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleArrayOutput) ToPiNetworkSecurityGroupMemberRuleArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberRule {
+		return vs[0].([]PiNetworkSecurityGroupMemberRule)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberRuleOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleDestinationPort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupMemberRuleDestinationPortInput is an input type that accepts PiNetworkSecurityGroupMemberRuleDestinationPortArgs and PiNetworkSecurityGroupMemberRuleDestinationPortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleDestinationPortInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleDestinationPortArgs{...}
+type PiNetworkSecurityGroupMemberRuleDestinationPortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleDestinationPortOutput() PiNetworkSecurityGroupMemberRuleDestinationPortOutput
+	ToPiNetworkSecurityGroupMemberRuleDestinationPortOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleDestinationPortOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleDestinationPortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupMemberRuleDestinationPortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleDestinationPort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleDestinationPortArgs) ToPiNetworkSecurityGroupMemberRuleDestinationPortOutput() PiNetworkSecurityGroupMemberRuleDestinationPortOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleDestinationPortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleDestinationPortArgs) ToPiNetworkSecurityGroupMemberRuleDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleDestinationPortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleDestinationPortOutput)
+}
+
+// PiNetworkSecurityGroupMemberRuleDestinationPortArrayInput is an input type that accepts PiNetworkSecurityGroupMemberRuleDestinationPortArray and PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleDestinationPortArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleDestinationPortArray{ PiNetworkSecurityGroupMemberRuleDestinationPortArgs{...} }
+type PiNetworkSecurityGroupMemberRuleDestinationPortArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput() PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput
+	ToPiNetworkSecurityGroupMemberRuleDestinationPortArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleDestinationPortArray []PiNetworkSecurityGroupMemberRuleDestinationPortInput
+
+func (PiNetworkSecurityGroupMemberRuleDestinationPortArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleDestinationPort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleDestinationPortArray) ToPiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput() PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleDestinationPortArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleDestinationPortArray) ToPiNetworkSecurityGroupMemberRuleDestinationPortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleDestinationPortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleDestinationPortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleDestinationPortOutput) ToPiNetworkSecurityGroupMemberRuleDestinationPortOutput() PiNetworkSecurityGroupMemberRuleDestinationPortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleDestinationPortOutput) ToPiNetworkSecurityGroupMemberRuleDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleDestinationPortOutput {
+	return o
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupMemberRuleDestinationPortOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleDestinationPort) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupMemberRuleDestinationPortOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleDestinationPort) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput) ToPiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput() PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput) ToPiNetworkSecurityGroupMemberRuleDestinationPortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberRuleDestinationPortOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberRuleDestinationPort {
+		return vs[0].([]PiNetworkSecurityGroupMemberRuleDestinationPort)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberRuleDestinationPortOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocol struct {
+	// IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType *string `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags []PiNetworkSecurityGroupMemberRuleProtocolTcpFlag `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupMemberRuleProtocolInput is an input type that accepts PiNetworkSecurityGroupMemberRuleProtocolArgs and PiNetworkSecurityGroupMemberRuleProtocolOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleProtocolInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleProtocolArgs{...}
+type PiNetworkSecurityGroupMemberRuleProtocolInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleProtocolOutput() PiNetworkSecurityGroupMemberRuleProtocolOutput
+	ToPiNetworkSecurityGroupMemberRuleProtocolOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleProtocolOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolArgs struct {
+	// IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType pulumi.StringPtrInput `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayInput `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupMemberRuleProtocolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocol)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolArgs) ToPiNetworkSecurityGroupMemberRuleProtocolOutput() PiNetworkSecurityGroupMemberRuleProtocolOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleProtocolOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolArgs) ToPiNetworkSecurityGroupMemberRuleProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleProtocolOutput)
+}
+
+// PiNetworkSecurityGroupMemberRuleProtocolArrayInput is an input type that accepts PiNetworkSecurityGroupMemberRuleProtocolArray and PiNetworkSecurityGroupMemberRuleProtocolArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleProtocolArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleProtocolArray{ PiNetworkSecurityGroupMemberRuleProtocolArgs{...} }
+type PiNetworkSecurityGroupMemberRuleProtocolArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleProtocolArrayOutput() PiNetworkSecurityGroupMemberRuleProtocolArrayOutput
+	ToPiNetworkSecurityGroupMemberRuleProtocolArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleProtocolArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolArray []PiNetworkSecurityGroupMemberRuleProtocolInput
+
+func (PiNetworkSecurityGroupMemberRuleProtocolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleProtocol)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolArray) ToPiNetworkSecurityGroupMemberRuleProtocolArrayOutput() PiNetworkSecurityGroupMemberRuleProtocolArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleProtocolArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolArray) ToPiNetworkSecurityGroupMemberRuleProtocolArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleProtocolArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleProtocolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolOutput) ToPiNetworkSecurityGroupMemberRuleProtocolOutput() PiNetworkSecurityGroupMemberRuleProtocolOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolOutput) ToPiNetworkSecurityGroupMemberRuleProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolOutput {
+	return o
+}
+
+// IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+func (o PiNetworkSecurityGroupMemberRuleProtocolOutput) IcmpType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleProtocol) *string { return v.IcmpType }).(pulumi.StringPtrOutput)
+}
+
+// If tcp type, the list of TCP flags and if not present then all flags are matched.
+func (o PiNetworkSecurityGroupMemberRuleProtocolOutput) TcpFlags() PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleProtocol) []PiNetworkSecurityGroupMemberRuleProtocolTcpFlag {
+		return v.TcpFlags
+	}).(PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput)
+}
+
+// The protocol of the network traffic.
+func (o PiNetworkSecurityGroupMemberRuleProtocolOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleProtocol) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleProtocolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolArrayOutput) ToPiNetworkSecurityGroupMemberRuleProtocolArrayOutput() PiNetworkSecurityGroupMemberRuleProtocolArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolArrayOutput) ToPiNetworkSecurityGroupMemberRuleProtocolArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberRuleProtocolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberRuleProtocol {
+		return vs[0].([]PiNetworkSecurityGroupMemberRuleProtocol)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberRuleProtocolOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolTcpFlag struct {
+	// TCP flag.
+	Flag *string `pulumi:"flag"`
+}
+
+// PiNetworkSecurityGroupMemberRuleProtocolTcpFlagInput is an input type that accepts PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs and PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleProtocolTcpFlagInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs{...}
+type PiNetworkSecurityGroupMemberRuleProtocolTcpFlagInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput
+	ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs struct {
+	// TCP flag.
+	Flag pulumi.StringPtrInput `pulumi:"flag"`
+}
+
+func (PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput)
+}
+
+// PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayInput is an input type that accepts PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArray and PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArray{ PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs{...} }
+type PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput
+	ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArray []PiNetworkSecurityGroupMemberRuleProtocolTcpFlagInput
+
+func (PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArray) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArray) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput {
+	return o
+}
+
+// TCP flag.
+func (o PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput) Flag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleProtocolTcpFlag) *string { return v.Flag }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberRuleProtocolTcpFlag {
+		return vs[0].([]PiNetworkSecurityGroupMemberRuleProtocolTcpFlag)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleRemote struct {
+	// The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+	Id *string `pulumi:"id"`
+	// The type of remote group the rules apply to.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupMemberRuleRemoteInput is an input type that accepts PiNetworkSecurityGroupMemberRuleRemoteArgs and PiNetworkSecurityGroupMemberRuleRemoteOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleRemoteInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleRemoteArgs{...}
+type PiNetworkSecurityGroupMemberRuleRemoteInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleRemoteOutput() PiNetworkSecurityGroupMemberRuleRemoteOutput
+	ToPiNetworkSecurityGroupMemberRuleRemoteOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleRemoteOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleRemoteArgs struct {
+	// The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The type of remote group the rules apply to.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupMemberRuleRemoteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleRemote)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleRemoteArgs) ToPiNetworkSecurityGroupMemberRuleRemoteOutput() PiNetworkSecurityGroupMemberRuleRemoteOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleRemoteOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleRemoteArgs) ToPiNetworkSecurityGroupMemberRuleRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleRemoteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleRemoteOutput)
+}
+
+// PiNetworkSecurityGroupMemberRuleRemoteArrayInput is an input type that accepts PiNetworkSecurityGroupMemberRuleRemoteArray and PiNetworkSecurityGroupMemberRuleRemoteArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleRemoteArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleRemoteArray{ PiNetworkSecurityGroupMemberRuleRemoteArgs{...} }
+type PiNetworkSecurityGroupMemberRuleRemoteArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleRemoteArrayOutput() PiNetworkSecurityGroupMemberRuleRemoteArrayOutput
+	ToPiNetworkSecurityGroupMemberRuleRemoteArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleRemoteArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleRemoteArray []PiNetworkSecurityGroupMemberRuleRemoteInput
+
+func (PiNetworkSecurityGroupMemberRuleRemoteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleRemote)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleRemoteArray) ToPiNetworkSecurityGroupMemberRuleRemoteArrayOutput() PiNetworkSecurityGroupMemberRuleRemoteArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleRemoteArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleRemoteArray) ToPiNetworkSecurityGroupMemberRuleRemoteArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleRemoteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleRemoteArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleRemoteOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleRemoteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleRemoteOutput) ToPiNetworkSecurityGroupMemberRuleRemoteOutput() PiNetworkSecurityGroupMemberRuleRemoteOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleRemoteOutput) ToPiNetworkSecurityGroupMemberRuleRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleRemoteOutput {
+	return o
+}
+
+// The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+func (o PiNetworkSecurityGroupMemberRuleRemoteOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleRemote) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The type of remote group the rules apply to.
+func (o PiNetworkSecurityGroupMemberRuleRemoteOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleRemote) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleRemoteArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleRemoteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleRemoteArrayOutput) ToPiNetworkSecurityGroupMemberRuleRemoteArrayOutput() PiNetworkSecurityGroupMemberRuleRemoteArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleRemoteArrayOutput) ToPiNetworkSecurityGroupMemberRuleRemoteArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleRemoteArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleRemoteArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberRuleRemoteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberRuleRemote {
+		return vs[0].([]PiNetworkSecurityGroupMemberRuleRemote)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberRuleRemoteOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleSourcePort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupMemberRuleSourcePortInput is an input type that accepts PiNetworkSecurityGroupMemberRuleSourcePortArgs and PiNetworkSecurityGroupMemberRuleSourcePortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleSourcePortInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleSourcePortArgs{...}
+type PiNetworkSecurityGroupMemberRuleSourcePortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleSourcePortOutput() PiNetworkSecurityGroupMemberRuleSourcePortOutput
+	ToPiNetworkSecurityGroupMemberRuleSourcePortOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleSourcePortOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleSourcePortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupMemberRuleSourcePortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleSourcePort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleSourcePortArgs) ToPiNetworkSecurityGroupMemberRuleSourcePortOutput() PiNetworkSecurityGroupMemberRuleSourcePortOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleSourcePortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleSourcePortArgs) ToPiNetworkSecurityGroupMemberRuleSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleSourcePortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleSourcePortOutput)
+}
+
+// PiNetworkSecurityGroupMemberRuleSourcePortArrayInput is an input type that accepts PiNetworkSecurityGroupMemberRuleSourcePortArray and PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupMemberRuleSourcePortArrayInput` via:
+//
+//	PiNetworkSecurityGroupMemberRuleSourcePortArray{ PiNetworkSecurityGroupMemberRuleSourcePortArgs{...} }
+type PiNetworkSecurityGroupMemberRuleSourcePortArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupMemberRuleSourcePortArrayOutput() PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput
+	ToPiNetworkSecurityGroupMemberRuleSourcePortArrayOutputWithContext(context.Context) PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput
+}
+
+type PiNetworkSecurityGroupMemberRuleSourcePortArray []PiNetworkSecurityGroupMemberRuleSourcePortInput
+
+func (PiNetworkSecurityGroupMemberRuleSourcePortArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleSourcePort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupMemberRuleSourcePortArray) ToPiNetworkSecurityGroupMemberRuleSourcePortArrayOutput() PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput {
+	return i.ToPiNetworkSecurityGroupMemberRuleSourcePortArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupMemberRuleSourcePortArray) ToPiNetworkSecurityGroupMemberRuleSourcePortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleSourcePortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleSourcePortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleSourcePortOutput) ToPiNetworkSecurityGroupMemberRuleSourcePortOutput() PiNetworkSecurityGroupMemberRuleSourcePortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleSourcePortOutput) ToPiNetworkSecurityGroupMemberRuleSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleSourcePortOutput {
+	return o
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupMemberRuleSourcePortOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleSourcePort) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupMemberRuleSourcePortOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupMemberRuleSourcePort) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupMemberRuleSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput) ToPiNetworkSecurityGroupMemberRuleSourcePortArrayOutput() PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput) ToPiNetworkSecurityGroupMemberRuleSourcePortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupMemberRuleSourcePortOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupMemberRuleSourcePort {
+		return vs[0].([]PiNetworkSecurityGroupMemberRuleSourcePort)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupMemberRuleSourcePortOutput)
+}
+
+type PiNetworkSecurityGroupRuleType struct {
+	// The action to take if the rule matches network traffic.
+	Action *string `pulumi:"action"`
+	// The list of destination port.
+	DestinationPorts []PiNetworkSecurityGroupRuleDestinationPort `pulumi:"destinationPorts"`
+	// The ID of the rule in a network security group.
+	Id *string `pulumi:"id"`
+	// The list of protocol.
+	Protocols []PiNetworkSecurityGroupRuleProtocol `pulumi:"protocols"`
+	// List of remote.
+	Remotes []PiNetworkSecurityGroupRuleRemote `pulumi:"remotes"`
+	// ist of source port
+	SourcePorts []PiNetworkSecurityGroupRuleSourcePort `pulumi:"sourcePorts"`
+}
+
+// PiNetworkSecurityGroupRuleTypeInput is an input type that accepts PiNetworkSecurityGroupRuleTypeArgs and PiNetworkSecurityGroupRuleTypeOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleTypeInput` via:
+//
+//	PiNetworkSecurityGroupRuleTypeArgs{...}
+type PiNetworkSecurityGroupRuleTypeInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleTypeOutput() PiNetworkSecurityGroupRuleTypeOutput
+	ToPiNetworkSecurityGroupRuleTypeOutputWithContext(context.Context) PiNetworkSecurityGroupRuleTypeOutput
+}
+
+type PiNetworkSecurityGroupRuleTypeArgs struct {
+	// The action to take if the rule matches network traffic.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// The list of destination port.
+	DestinationPorts PiNetworkSecurityGroupRuleDestinationPortArrayInput `pulumi:"destinationPorts"`
+	// The ID of the rule in a network security group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The list of protocol.
+	Protocols PiNetworkSecurityGroupRuleProtocolArrayInput `pulumi:"protocols"`
+	// List of remote.
+	Remotes PiNetworkSecurityGroupRuleRemoteArrayInput `pulumi:"remotes"`
+	// ist of source port
+	SourcePorts PiNetworkSecurityGroupRuleSourcePortArrayInput `pulumi:"sourcePorts"`
+}
+
+func (PiNetworkSecurityGroupRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleType)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleTypeArgs) ToPiNetworkSecurityGroupRuleTypeOutput() PiNetworkSecurityGroupRuleTypeOutput {
+	return i.ToPiNetworkSecurityGroupRuleTypeOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleTypeArgs) ToPiNetworkSecurityGroupRuleTypeOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleTypeOutput)
+}
+
+// PiNetworkSecurityGroupRuleTypeArrayInput is an input type that accepts PiNetworkSecurityGroupRuleTypeArray and PiNetworkSecurityGroupRuleTypeArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleTypeArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleTypeArray{ PiNetworkSecurityGroupRuleTypeArgs{...} }
+type PiNetworkSecurityGroupRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleTypeArrayOutput() PiNetworkSecurityGroupRuleTypeArrayOutput
+	ToPiNetworkSecurityGroupRuleTypeArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleTypeArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleTypeArray []PiNetworkSecurityGroupRuleTypeInput
+
+func (PiNetworkSecurityGroupRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleType)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleTypeArray) ToPiNetworkSecurityGroupRuleTypeArrayOutput() PiNetworkSecurityGroupRuleTypeArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleTypeArray) ToPiNetworkSecurityGroupRuleTypeArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleTypeArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleType)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleTypeOutput) ToPiNetworkSecurityGroupRuleTypeOutput() PiNetworkSecurityGroupRuleTypeOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleTypeOutput) ToPiNetworkSecurityGroupRuleTypeOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleTypeOutput {
+	return o
+}
+
+// The action to take if the rule matches network traffic.
+func (o PiNetworkSecurityGroupRuleTypeOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleType) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// The list of destination port.
+func (o PiNetworkSecurityGroupRuleTypeOutput) DestinationPorts() PiNetworkSecurityGroupRuleDestinationPortArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleType) []PiNetworkSecurityGroupRuleDestinationPort {
+		return v.DestinationPorts
+	}).(PiNetworkSecurityGroupRuleDestinationPortArrayOutput)
+}
+
+// The ID of the rule in a network security group.
+func (o PiNetworkSecurityGroupRuleTypeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleType) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The list of protocol.
+func (o PiNetworkSecurityGroupRuleTypeOutput) Protocols() PiNetworkSecurityGroupRuleProtocolArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleType) []PiNetworkSecurityGroupRuleProtocol { return v.Protocols }).(PiNetworkSecurityGroupRuleProtocolArrayOutput)
+}
+
+// List of remote.
+func (o PiNetworkSecurityGroupRuleTypeOutput) Remotes() PiNetworkSecurityGroupRuleRemoteArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleType) []PiNetworkSecurityGroupRuleRemote { return v.Remotes }).(PiNetworkSecurityGroupRuleRemoteArrayOutput)
+}
+
+// ist of source port
+func (o PiNetworkSecurityGroupRuleTypeOutput) SourcePorts() PiNetworkSecurityGroupRuleSourcePortArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleType) []PiNetworkSecurityGroupRuleSourcePort { return v.SourcePorts }).(PiNetworkSecurityGroupRuleSourcePortArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleType)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleTypeArrayOutput) ToPiNetworkSecurityGroupRuleTypeArrayOutput() PiNetworkSecurityGroupRuleTypeArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleTypeArrayOutput) ToPiNetworkSecurityGroupRuleTypeArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleTypeArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleTypeArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleType {
+		return vs[0].([]PiNetworkSecurityGroupRuleType)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleTypeOutput)
+}
+
+type PiNetworkSecurityGroupRuleDestinationPort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRuleDestinationPortInput is an input type that accepts PiNetworkSecurityGroupRuleDestinationPortArgs and PiNetworkSecurityGroupRuleDestinationPortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleDestinationPortInput` via:
+//
+//	PiNetworkSecurityGroupRuleDestinationPortArgs{...}
+type PiNetworkSecurityGroupRuleDestinationPortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleDestinationPortOutput() PiNetworkSecurityGroupRuleDestinationPortOutput
+	ToPiNetworkSecurityGroupRuleDestinationPortOutputWithContext(context.Context) PiNetworkSecurityGroupRuleDestinationPortOutput
+}
+
+type PiNetworkSecurityGroupRuleDestinationPortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRuleDestinationPortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleDestinationPort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleDestinationPortArgs) ToPiNetworkSecurityGroupRuleDestinationPortOutput() PiNetworkSecurityGroupRuleDestinationPortOutput {
+	return i.ToPiNetworkSecurityGroupRuleDestinationPortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleDestinationPortArgs) ToPiNetworkSecurityGroupRuleDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleDestinationPortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleDestinationPortOutput)
+}
+
+// PiNetworkSecurityGroupRuleDestinationPortArrayInput is an input type that accepts PiNetworkSecurityGroupRuleDestinationPortArray and PiNetworkSecurityGroupRuleDestinationPortArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleDestinationPortArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleDestinationPortArray{ PiNetworkSecurityGroupRuleDestinationPortArgs{...} }
+type PiNetworkSecurityGroupRuleDestinationPortArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleDestinationPortArrayOutput() PiNetworkSecurityGroupRuleDestinationPortArrayOutput
+	ToPiNetworkSecurityGroupRuleDestinationPortArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleDestinationPortArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleDestinationPortArray []PiNetworkSecurityGroupRuleDestinationPortInput
+
+func (PiNetworkSecurityGroupRuleDestinationPortArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleDestinationPort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleDestinationPortArray) ToPiNetworkSecurityGroupRuleDestinationPortArrayOutput() PiNetworkSecurityGroupRuleDestinationPortArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleDestinationPortArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleDestinationPortArray) ToPiNetworkSecurityGroupRuleDestinationPortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleDestinationPortArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleDestinationPortArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleDestinationPortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleDestinationPortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleDestinationPortOutput) ToPiNetworkSecurityGroupRuleDestinationPortOutput() PiNetworkSecurityGroupRuleDestinationPortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleDestinationPortOutput) ToPiNetworkSecurityGroupRuleDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleDestinationPortOutput {
+	return o
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRuleDestinationPortOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleDestinationPort) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRuleDestinationPortOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleDestinationPort) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleDestinationPortArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleDestinationPortArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleDestinationPortArrayOutput) ToPiNetworkSecurityGroupRuleDestinationPortArrayOutput() PiNetworkSecurityGroupRuleDestinationPortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleDestinationPortArrayOutput) ToPiNetworkSecurityGroupRuleDestinationPortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleDestinationPortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleDestinationPortArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleDestinationPortOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleDestinationPort {
+		return vs[0].([]PiNetworkSecurityGroupRuleDestinationPort)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleDestinationPortOutput)
+}
+
+type PiNetworkSecurityGroupRuleMember struct {
+	// The ID of the member in a network security group.
+	Id *string `pulumi:"id"`
+	// The mac address of a network interface included if the type is network-interface.
+	MacAddress *string `pulumi:"macAddress"`
+	// The network ID of a network interface included if the type is network-interface.
+	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
+	// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+	Target *string `pulumi:"target"`
+	// The type of member.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupRuleMemberInput is an input type that accepts PiNetworkSecurityGroupRuleMemberArgs and PiNetworkSecurityGroupRuleMemberOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleMemberInput` via:
+//
+//	PiNetworkSecurityGroupRuleMemberArgs{...}
+type PiNetworkSecurityGroupRuleMemberInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleMemberOutput() PiNetworkSecurityGroupRuleMemberOutput
+	ToPiNetworkSecurityGroupRuleMemberOutputWithContext(context.Context) PiNetworkSecurityGroupRuleMemberOutput
+}
+
+type PiNetworkSecurityGroupRuleMemberArgs struct {
+	// The ID of the member in a network security group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The mac address of a network interface included if the type is network-interface.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// The network ID of a network interface included if the type is network-interface.
+	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
+	// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+	Target pulumi.StringPtrInput `pulumi:"target"`
+	// The type of member.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupRuleMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleMember)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleMemberArgs) ToPiNetworkSecurityGroupRuleMemberOutput() PiNetworkSecurityGroupRuleMemberOutput {
+	return i.ToPiNetworkSecurityGroupRuleMemberOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleMemberArgs) ToPiNetworkSecurityGroupRuleMemberOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleMemberOutput)
+}
+
+// PiNetworkSecurityGroupRuleMemberArrayInput is an input type that accepts PiNetworkSecurityGroupRuleMemberArray and PiNetworkSecurityGroupRuleMemberArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleMemberArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleMemberArray{ PiNetworkSecurityGroupRuleMemberArgs{...} }
+type PiNetworkSecurityGroupRuleMemberArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleMemberArrayOutput() PiNetworkSecurityGroupRuleMemberArrayOutput
+	ToPiNetworkSecurityGroupRuleMemberArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleMemberArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleMemberArray []PiNetworkSecurityGroupRuleMemberInput
+
+func (PiNetworkSecurityGroupRuleMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleMember)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleMemberArray) ToPiNetworkSecurityGroupRuleMemberArrayOutput() PiNetworkSecurityGroupRuleMemberArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleMemberArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleMemberArray) ToPiNetworkSecurityGroupRuleMemberArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleMemberArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleMemberOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleMember)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleMemberOutput) ToPiNetworkSecurityGroupRuleMemberOutput() PiNetworkSecurityGroupRuleMemberOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleMemberOutput) ToPiNetworkSecurityGroupRuleMemberOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleMemberOutput {
+	return o
+}
+
+// The ID of the member in a network security group.
+func (o PiNetworkSecurityGroupRuleMemberOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleMember) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The mac address of a network interface included if the type is network-interface.
+func (o PiNetworkSecurityGroupRuleMemberOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleMember) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+// The network ID of a network interface included if the type is network-interface.
+func (o PiNetworkSecurityGroupRuleMemberOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleMember) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
+}
+
+// If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+func (o PiNetworkSecurityGroupRuleMemberOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleMember) *string { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+// The type of member.
+func (o PiNetworkSecurityGroupRuleMemberOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleMember) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleMember)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleMemberArrayOutput) ToPiNetworkSecurityGroupRuleMemberArrayOutput() PiNetworkSecurityGroupRuleMemberArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleMemberArrayOutput) ToPiNetworkSecurityGroupRuleMemberArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleMemberArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleMemberArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleMember {
+		return vs[0].([]PiNetworkSecurityGroupRuleMember)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleMemberOutput)
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRulePiDestinationPortInput is an input type that accepts PiNetworkSecurityGroupRulePiDestinationPortArgs and PiNetworkSecurityGroupRulePiDestinationPortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiDestinationPortInput` via:
+//
+//	PiNetworkSecurityGroupRulePiDestinationPortArgs{...}
+type PiNetworkSecurityGroupRulePiDestinationPortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiDestinationPortOutput() PiNetworkSecurityGroupRulePiDestinationPortOutput
+	ToPiNetworkSecurityGroupRulePiDestinationPortOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiDestinationPortOutput
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRulePiDestinationPortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortArgs) ToPiNetworkSecurityGroupRulePiDestinationPortOutput() PiNetworkSecurityGroupRulePiDestinationPortOutput {
+	return i.ToPiNetworkSecurityGroupRulePiDestinationPortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortArgs) ToPiNetworkSecurityGroupRulePiDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiDestinationPortOutput)
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortArgs) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortArgs) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiDestinationPortOutput).ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(ctx)
+}
+
+// PiNetworkSecurityGroupRulePiDestinationPortPtrInput is an input type that accepts PiNetworkSecurityGroupRulePiDestinationPortArgs, PiNetworkSecurityGroupRulePiDestinationPortPtr and PiNetworkSecurityGroupRulePiDestinationPortPtrOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiDestinationPortPtrInput` via:
+//
+//	        PiNetworkSecurityGroupRulePiDestinationPortArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkSecurityGroupRulePiDestinationPortPtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortPtrOutput
+	ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiDestinationPortPtrOutput
+}
+
+type piNetworkSecurityGroupRulePiDestinationPortPtrType PiNetworkSecurityGroupRulePiDestinationPortArgs
+
+func PiNetworkSecurityGroupRulePiDestinationPortPtr(v *PiNetworkSecurityGroupRulePiDestinationPortArgs) PiNetworkSecurityGroupRulePiDestinationPortPtrInput {
+	return (*piNetworkSecurityGroupRulePiDestinationPortPtrType)(v)
+}
+
+func (*piNetworkSecurityGroupRulePiDestinationPortPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiDestinationPort)(nil)).Elem()
+}
+
+func (i *piNetworkSecurityGroupRulePiDestinationPortPtrType) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkSecurityGroupRulePiDestinationPortPtrType) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiDestinationPortPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiDestinationPortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortOutput) ToPiNetworkSecurityGroupRulePiDestinationPortOutput() PiNetworkSecurityGroupRulePiDestinationPortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortOutput) ToPiNetworkSecurityGroupRulePiDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortOutput) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return o.ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortOutput) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkSecurityGroupRulePiDestinationPort) *PiNetworkSecurityGroupRulePiDestinationPort {
+		return &v
+	}).(PiNetworkSecurityGroupRulePiDestinationPortPtrOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiDestinationPort) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiDestinationPort) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPortPtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiDestinationPortPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortPtrOutput) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortPtrOutput) ToPiNetworkSecurityGroupRulePiDestinationPortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortPtrOutput) Elem() PiNetworkSecurityGroupRulePiDestinationPortOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiDestinationPort) PiNetworkSecurityGroupRulePiDestinationPort {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkSecurityGroupRulePiDestinationPort
+		return ret
+	}).(PiNetworkSecurityGroupRulePiDestinationPortOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortPtrOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiDestinationPort) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Maximum
+	}).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortPtrOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiDestinationPort) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Minimum
+	}).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPorts struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRulePiDestinationPortsInput is an input type that accepts PiNetworkSecurityGroupRulePiDestinationPortsArgs and PiNetworkSecurityGroupRulePiDestinationPortsOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiDestinationPortsInput` via:
+//
+//	PiNetworkSecurityGroupRulePiDestinationPortsArgs{...}
+type PiNetworkSecurityGroupRulePiDestinationPortsInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiDestinationPortsOutput() PiNetworkSecurityGroupRulePiDestinationPortsOutput
+	ToPiNetworkSecurityGroupRulePiDestinationPortsOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiDestinationPortsOutput
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPortsArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRulePiDestinationPortsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPorts)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortsArgs) ToPiNetworkSecurityGroupRulePiDestinationPortsOutput() PiNetworkSecurityGroupRulePiDestinationPortsOutput {
+	return i.ToPiNetworkSecurityGroupRulePiDestinationPortsOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortsArgs) ToPiNetworkSecurityGroupRulePiDestinationPortsOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiDestinationPortsOutput)
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortsArgs) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiDestinationPortsArgs) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiDestinationPortsOutput).ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(ctx)
+}
+
+// PiNetworkSecurityGroupRulePiDestinationPortsPtrInput is an input type that accepts PiNetworkSecurityGroupRulePiDestinationPortsArgs, PiNetworkSecurityGroupRulePiDestinationPortsPtr and PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiDestinationPortsPtrInput` via:
+//
+//	        PiNetworkSecurityGroupRulePiDestinationPortsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkSecurityGroupRulePiDestinationPortsPtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput
+	ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput
+}
+
+type piNetworkSecurityGroupRulePiDestinationPortsPtrType PiNetworkSecurityGroupRulePiDestinationPortsArgs
+
+func PiNetworkSecurityGroupRulePiDestinationPortsPtr(v *PiNetworkSecurityGroupRulePiDestinationPortsArgs) PiNetworkSecurityGroupRulePiDestinationPortsPtrInput {
+	return (*piNetworkSecurityGroupRulePiDestinationPortsPtrType)(v)
+}
+
+func (*piNetworkSecurityGroupRulePiDestinationPortsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiDestinationPorts)(nil)).Elem()
+}
+
+func (i *piNetworkSecurityGroupRulePiDestinationPortsPtrType) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkSecurityGroupRulePiDestinationPortsPtrType) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPortsOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiDestinationPortsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPorts)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortsOutput) ToPiNetworkSecurityGroupRulePiDestinationPortsOutput() PiNetworkSecurityGroupRulePiDestinationPortsOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortsOutput) ToPiNetworkSecurityGroupRulePiDestinationPortsOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortsOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortsOutput) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return o.ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortsOutput) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkSecurityGroupRulePiDestinationPorts) *PiNetworkSecurityGroupRulePiDestinationPorts {
+		return &v
+	}).(PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortsOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiDestinationPorts) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortsOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiDestinationPorts) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiDestinationPorts)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutput() PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput) ToPiNetworkSecurityGroupRulePiDestinationPortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput) Elem() PiNetworkSecurityGroupRulePiDestinationPortsOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiDestinationPorts) PiNetworkSecurityGroupRulePiDestinationPorts {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkSecurityGroupRulePiDestinationPorts
+		return ret
+	}).(PiNetworkSecurityGroupRulePiDestinationPortsOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiDestinationPorts) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Maximum
+	}).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiDestinationPorts) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Minimum
+	}).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiProtocol struct {
+	// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType *string `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags []PiNetworkSecurityGroupRulePiProtocolTcpFlag `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupRulePiProtocolInput is an input type that accepts PiNetworkSecurityGroupRulePiProtocolArgs and PiNetworkSecurityGroupRulePiProtocolOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiProtocolInput` via:
+//
+//	PiNetworkSecurityGroupRulePiProtocolArgs{...}
+type PiNetworkSecurityGroupRulePiProtocolInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiProtocolOutput() PiNetworkSecurityGroupRulePiProtocolOutput
+	ToPiNetworkSecurityGroupRulePiProtocolOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiProtocolOutput
+}
+
+type PiNetworkSecurityGroupRulePiProtocolArgs struct {
+	// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType pulumi.StringPtrInput `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayInput `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupRulePiProtocolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocol)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolArgs) ToPiNetworkSecurityGroupRulePiProtocolOutput() PiNetworkSecurityGroupRulePiProtocolOutput {
+	return i.ToPiNetworkSecurityGroupRulePiProtocolOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolArgs) ToPiNetworkSecurityGroupRulePiProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiProtocolOutput)
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolArgs) ToPiNetworkSecurityGroupRulePiProtocolPtrOutput() PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolArgs) ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiProtocolOutput).ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(ctx)
+}
+
+// PiNetworkSecurityGroupRulePiProtocolPtrInput is an input type that accepts PiNetworkSecurityGroupRulePiProtocolArgs, PiNetworkSecurityGroupRulePiProtocolPtr and PiNetworkSecurityGroupRulePiProtocolPtrOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiProtocolPtrInput` via:
+//
+//	        PiNetworkSecurityGroupRulePiProtocolArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkSecurityGroupRulePiProtocolPtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiProtocolPtrOutput() PiNetworkSecurityGroupRulePiProtocolPtrOutput
+	ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiProtocolPtrOutput
+}
+
+type piNetworkSecurityGroupRulePiProtocolPtrType PiNetworkSecurityGroupRulePiProtocolArgs
+
+func PiNetworkSecurityGroupRulePiProtocolPtr(v *PiNetworkSecurityGroupRulePiProtocolArgs) PiNetworkSecurityGroupRulePiProtocolPtrInput {
+	return (*piNetworkSecurityGroupRulePiProtocolPtrType)(v)
+}
+
+func (*piNetworkSecurityGroupRulePiProtocolPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiProtocol)(nil)).Elem()
+}
+
+func (i *piNetworkSecurityGroupRulePiProtocolPtrType) ToPiNetworkSecurityGroupRulePiProtocolPtrOutput() PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkSecurityGroupRulePiProtocolPtrType) ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiProtocolPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiProtocolOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiProtocolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolOutput) ToPiNetworkSecurityGroupRulePiProtocolOutput() PiNetworkSecurityGroupRulePiProtocolOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolOutput) ToPiNetworkSecurityGroupRulePiProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolOutput) ToPiNetworkSecurityGroupRulePiProtocolPtrOutput() PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return o.ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolOutput) ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkSecurityGroupRulePiProtocol) *PiNetworkSecurityGroupRulePiProtocol {
+		return &v
+	}).(PiNetworkSecurityGroupRulePiProtocolPtrOutput)
+}
+
+// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+func (o PiNetworkSecurityGroupRulePiProtocolOutput) IcmpType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiProtocol) *string { return v.IcmpType }).(pulumi.StringPtrOutput)
+}
+
+// If tcp type, the list of TCP flags and if not present then all flags are matched.
+func (o PiNetworkSecurityGroupRulePiProtocolOutput) TcpFlags() PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiProtocol) []PiNetworkSecurityGroupRulePiProtocolTcpFlag {
+		return v.TcpFlags
+	}).(PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput)
+}
+
+// The protocol of the network traffic.
+func (o PiNetworkSecurityGroupRulePiProtocolOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiProtocol) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type PiNetworkSecurityGroupRulePiProtocolPtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiProtocolPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolPtrOutput) ToPiNetworkSecurityGroupRulePiProtocolPtrOutput() PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolPtrOutput) ToPiNetworkSecurityGroupRulePiProtocolPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolPtrOutput) Elem() PiNetworkSecurityGroupRulePiProtocolOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiProtocol) PiNetworkSecurityGroupRulePiProtocol {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkSecurityGroupRulePiProtocol
+		return ret
+	}).(PiNetworkSecurityGroupRulePiProtocolOutput)
+}
+
+// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+func (o PiNetworkSecurityGroupRulePiProtocolPtrOutput) IcmpType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiProtocol) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IcmpType
+	}).(pulumi.StringPtrOutput)
+}
+
+// If tcp type, the list of TCP flags and if not present then all flags are matched.
+func (o PiNetworkSecurityGroupRulePiProtocolPtrOutput) TcpFlags() PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiProtocol) []PiNetworkSecurityGroupRulePiProtocolTcpFlag {
+		if v == nil {
+			return nil
+		}
+		return v.TcpFlags
+	}).(PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput)
+}
+
+// The protocol of the network traffic.
+func (o PiNetworkSecurityGroupRulePiProtocolPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiProtocol) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiProtocolTcpFlag struct {
+	// TCP flag.
+	Flag string `pulumi:"flag"`
+}
+
+// PiNetworkSecurityGroupRulePiProtocolTcpFlagInput is an input type that accepts PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs and PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiProtocolTcpFlagInput` via:
+//
+//	PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs{...}
+type PiNetworkSecurityGroupRulePiProtocolTcpFlagInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiProtocolTcpFlagOutput() PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput
+	ToPiNetworkSecurityGroupRulePiProtocolTcpFlagOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput
+}
+
+type PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs struct {
+	// TCP flag.
+	Flag pulumi.StringInput `pulumi:"flag"`
+}
+
+func (PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagOutput() PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput {
+	return i.ToPiNetworkSecurityGroupRulePiProtocolTcpFlagOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput)
+}
+
+// PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayInput is an input type that accepts PiNetworkSecurityGroupRulePiProtocolTcpFlagArray and PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayInput` via:
+//
+//	PiNetworkSecurityGroupRulePiProtocolTcpFlagArray{ PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs{...} }
+type PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput
+	ToPiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput
+}
+
+type PiNetworkSecurityGroupRulePiProtocolTcpFlagArray []PiNetworkSecurityGroupRulePiProtocolTcpFlagInput
+
+func (PiNetworkSecurityGroupRulePiProtocolTcpFlagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRulePiProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolTcpFlagArray) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput {
+	return i.ToPiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiProtocolTcpFlagArray) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput)
+}
+
+type PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagOutput() PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput {
+	return o
+}
+
+// TCP flag.
+func (o PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput) Flag() pulumi.StringOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiProtocolTcpFlag) string { return v.Flag }).(pulumi.StringOutput)
+}
+
+type PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRulePiProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRulePiProtocolTcpFlag {
+		return vs[0].([]PiNetworkSecurityGroupRulePiProtocolTcpFlag)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput)
+}
+
+type PiNetworkSecurityGroupRulePiRemote struct {
+	// The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+	Id *string `pulumi:"id"`
+	// The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupRulePiRemoteInput is an input type that accepts PiNetworkSecurityGroupRulePiRemoteArgs and PiNetworkSecurityGroupRulePiRemoteOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiRemoteInput` via:
+//
+//	PiNetworkSecurityGroupRulePiRemoteArgs{...}
+type PiNetworkSecurityGroupRulePiRemoteInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiRemoteOutput() PiNetworkSecurityGroupRulePiRemoteOutput
+	ToPiNetworkSecurityGroupRulePiRemoteOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiRemoteOutput
+}
+
+type PiNetworkSecurityGroupRulePiRemoteArgs struct {
+	// The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupRulePiRemoteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiRemote)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiRemoteArgs) ToPiNetworkSecurityGroupRulePiRemoteOutput() PiNetworkSecurityGroupRulePiRemoteOutput {
+	return i.ToPiNetworkSecurityGroupRulePiRemoteOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiRemoteArgs) ToPiNetworkSecurityGroupRulePiRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiRemoteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiRemoteOutput)
+}
+
+func (i PiNetworkSecurityGroupRulePiRemoteArgs) ToPiNetworkSecurityGroupRulePiRemotePtrOutput() PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiRemoteArgs) ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiRemoteOutput).ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(ctx)
+}
+
+// PiNetworkSecurityGroupRulePiRemotePtrInput is an input type that accepts PiNetworkSecurityGroupRulePiRemoteArgs, PiNetworkSecurityGroupRulePiRemotePtr and PiNetworkSecurityGroupRulePiRemotePtrOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiRemotePtrInput` via:
+//
+//	        PiNetworkSecurityGroupRulePiRemoteArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkSecurityGroupRulePiRemotePtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiRemotePtrOutput() PiNetworkSecurityGroupRulePiRemotePtrOutput
+	ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiRemotePtrOutput
+}
+
+type piNetworkSecurityGroupRulePiRemotePtrType PiNetworkSecurityGroupRulePiRemoteArgs
+
+func PiNetworkSecurityGroupRulePiRemotePtr(v *PiNetworkSecurityGroupRulePiRemoteArgs) PiNetworkSecurityGroupRulePiRemotePtrInput {
+	return (*piNetworkSecurityGroupRulePiRemotePtrType)(v)
+}
+
+func (*piNetworkSecurityGroupRulePiRemotePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiRemote)(nil)).Elem()
+}
+
+func (i *piNetworkSecurityGroupRulePiRemotePtrType) ToPiNetworkSecurityGroupRulePiRemotePtrOutput() PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkSecurityGroupRulePiRemotePtrType) ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiRemotePtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiRemoteOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiRemoteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiRemoteOutput) ToPiNetworkSecurityGroupRulePiRemoteOutput() PiNetworkSecurityGroupRulePiRemoteOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiRemoteOutput) ToPiNetworkSecurityGroupRulePiRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiRemoteOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiRemoteOutput) ToPiNetworkSecurityGroupRulePiRemotePtrOutput() PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return o.ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkSecurityGroupRulePiRemoteOutput) ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkSecurityGroupRulePiRemote) *PiNetworkSecurityGroupRulePiRemote {
+		return &v
+	}).(PiNetworkSecurityGroupRulePiRemotePtrOutput)
+}
+
+// The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+func (o PiNetworkSecurityGroupRulePiRemoteOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiRemote) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+func (o PiNetworkSecurityGroupRulePiRemoteOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiRemote) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiRemotePtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiRemotePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiRemotePtrOutput) ToPiNetworkSecurityGroupRulePiRemotePtrOutput() PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiRemotePtrOutput) ToPiNetworkSecurityGroupRulePiRemotePtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiRemotePtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiRemotePtrOutput) Elem() PiNetworkSecurityGroupRulePiRemoteOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiRemote) PiNetworkSecurityGroupRulePiRemote {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkSecurityGroupRulePiRemote
+		return ret
+	}).(PiNetworkSecurityGroupRulePiRemoteOutput)
+}
+
+// The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+func (o PiNetworkSecurityGroupRulePiRemotePtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiRemote) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+func (o PiNetworkSecurityGroupRulePiRemotePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiRemote) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiSourcePort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRulePiSourcePortInput is an input type that accepts PiNetworkSecurityGroupRulePiSourcePortArgs and PiNetworkSecurityGroupRulePiSourcePortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiSourcePortInput` via:
+//
+//	PiNetworkSecurityGroupRulePiSourcePortArgs{...}
+type PiNetworkSecurityGroupRulePiSourcePortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiSourcePortOutput() PiNetworkSecurityGroupRulePiSourcePortOutput
+	ToPiNetworkSecurityGroupRulePiSourcePortOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiSourcePortOutput
+}
+
+type PiNetworkSecurityGroupRulePiSourcePortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRulePiSourcePortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortArgs) ToPiNetworkSecurityGroupRulePiSourcePortOutput() PiNetworkSecurityGroupRulePiSourcePortOutput {
+	return i.ToPiNetworkSecurityGroupRulePiSourcePortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortArgs) ToPiNetworkSecurityGroupRulePiSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiSourcePortOutput)
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortArgs) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutput() PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortArgs) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiSourcePortOutput).ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(ctx)
+}
+
+// PiNetworkSecurityGroupRulePiSourcePortPtrInput is an input type that accepts PiNetworkSecurityGroupRulePiSourcePortArgs, PiNetworkSecurityGroupRulePiSourcePortPtr and PiNetworkSecurityGroupRulePiSourcePortPtrOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiSourcePortPtrInput` via:
+//
+//	        PiNetworkSecurityGroupRulePiSourcePortArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkSecurityGroupRulePiSourcePortPtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiSourcePortPtrOutput() PiNetworkSecurityGroupRulePiSourcePortPtrOutput
+	ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiSourcePortPtrOutput
+}
+
+type piNetworkSecurityGroupRulePiSourcePortPtrType PiNetworkSecurityGroupRulePiSourcePortArgs
+
+func PiNetworkSecurityGroupRulePiSourcePortPtr(v *PiNetworkSecurityGroupRulePiSourcePortArgs) PiNetworkSecurityGroupRulePiSourcePortPtrInput {
+	return (*piNetworkSecurityGroupRulePiSourcePortPtrType)(v)
+}
+
+func (*piNetworkSecurityGroupRulePiSourcePortPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiSourcePort)(nil)).Elem()
+}
+
+func (i *piNetworkSecurityGroupRulePiSourcePortPtrType) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutput() PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkSecurityGroupRulePiSourcePortPtrType) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiSourcePortPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiSourcePortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiSourcePortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortOutput) ToPiNetworkSecurityGroupRulePiSourcePortOutput() PiNetworkSecurityGroupRulePiSourcePortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortOutput) ToPiNetworkSecurityGroupRulePiSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortOutput) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutput() PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return o.ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortOutput) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkSecurityGroupRulePiSourcePort) *PiNetworkSecurityGroupRulePiSourcePort {
+		return &v
+	}).(PiNetworkSecurityGroupRulePiSourcePortPtrOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiSourcePort) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiSourcePort) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiSourcePortPtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiSourcePortPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortPtrOutput) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutput() PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortPtrOutput) ToPiNetworkSecurityGroupRulePiSourcePortPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortPtrOutput) Elem() PiNetworkSecurityGroupRulePiSourcePortOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiSourcePort) PiNetworkSecurityGroupRulePiSourcePort {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkSecurityGroupRulePiSourcePort
+		return ret
+	}).(PiNetworkSecurityGroupRulePiSourcePortOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortPtrOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiSourcePort) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Maximum
+	}).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortPtrOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiSourcePort) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Minimum
+	}).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiSourcePorts struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRulePiSourcePortsInput is an input type that accepts PiNetworkSecurityGroupRulePiSourcePortsArgs and PiNetworkSecurityGroupRulePiSourcePortsOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiSourcePortsInput` via:
+//
+//	PiNetworkSecurityGroupRulePiSourcePortsArgs{...}
+type PiNetworkSecurityGroupRulePiSourcePortsInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiSourcePortsOutput() PiNetworkSecurityGroupRulePiSourcePortsOutput
+	ToPiNetworkSecurityGroupRulePiSourcePortsOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiSourcePortsOutput
+}
+
+type PiNetworkSecurityGroupRulePiSourcePortsArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRulePiSourcePortsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePorts)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortsArgs) ToPiNetworkSecurityGroupRulePiSourcePortsOutput() PiNetworkSecurityGroupRulePiSourcePortsOutput {
+	return i.ToPiNetworkSecurityGroupRulePiSourcePortsOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortsArgs) ToPiNetworkSecurityGroupRulePiSourcePortsOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiSourcePortsOutput)
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortsArgs) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutput() PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRulePiSourcePortsArgs) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiSourcePortsOutput).ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(ctx)
+}
+
+// PiNetworkSecurityGroupRulePiSourcePortsPtrInput is an input type that accepts PiNetworkSecurityGroupRulePiSourcePortsArgs, PiNetworkSecurityGroupRulePiSourcePortsPtr and PiNetworkSecurityGroupRulePiSourcePortsPtrOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRulePiSourcePortsPtrInput` via:
+//
+//	        PiNetworkSecurityGroupRulePiSourcePortsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiNetworkSecurityGroupRulePiSourcePortsPtrInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutput() PiNetworkSecurityGroupRulePiSourcePortsPtrOutput
+	ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(context.Context) PiNetworkSecurityGroupRulePiSourcePortsPtrOutput
+}
+
+type piNetworkSecurityGroupRulePiSourcePortsPtrType PiNetworkSecurityGroupRulePiSourcePortsArgs
+
+func PiNetworkSecurityGroupRulePiSourcePortsPtr(v *PiNetworkSecurityGroupRulePiSourcePortsArgs) PiNetworkSecurityGroupRulePiSourcePortsPtrInput {
+	return (*piNetworkSecurityGroupRulePiSourcePortsPtrType)(v)
+}
+
+func (*piNetworkSecurityGroupRulePiSourcePortsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiSourcePorts)(nil)).Elem()
+}
+
+func (i *piNetworkSecurityGroupRulePiSourcePortsPtrType) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutput() PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return i.ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(context.Background())
+}
+
+func (i *piNetworkSecurityGroupRulePiSourcePortsPtrType) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRulePiSourcePortsPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiSourcePortsOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiSourcePortsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePorts)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortsOutput) ToPiNetworkSecurityGroupRulePiSourcePortsOutput() PiNetworkSecurityGroupRulePiSourcePortsOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortsOutput) ToPiNetworkSecurityGroupRulePiSourcePortsOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortsOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortsOutput) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutput() PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return o.ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(context.Background())
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortsOutput) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiNetworkSecurityGroupRulePiSourcePorts) *PiNetworkSecurityGroupRulePiSourcePorts {
+		return &v
+	}).(PiNetworkSecurityGroupRulePiSourcePortsPtrOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortsOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiSourcePorts) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortsOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRulePiSourcePorts) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRulePiSourcePortsPtrOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRulePiSourcePortsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiNetworkSecurityGroupRulePiSourcePorts)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortsPtrOutput) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutput() PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortsPtrOutput) ToPiNetworkSecurityGroupRulePiSourcePortsPtrOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRulePiSourcePortsPtrOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRulePiSourcePortsPtrOutput) Elem() PiNetworkSecurityGroupRulePiSourcePortsOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiSourcePorts) PiNetworkSecurityGroupRulePiSourcePorts {
+		if v != nil {
+			return *v
+		}
+		var ret PiNetworkSecurityGroupRulePiSourcePorts
+		return ret
+	}).(PiNetworkSecurityGroupRulePiSourcePortsOutput)
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortsPtrOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiSourcePorts) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Maximum
+	}).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRulePiSourcePortsPtrOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PiNetworkSecurityGroupRulePiSourcePorts) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Minimum
+	}).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleProtocol struct {
+	// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType *string `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags []PiNetworkSecurityGroupRuleProtocolTcpFlag `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupRuleProtocolInput is an input type that accepts PiNetworkSecurityGroupRuleProtocolArgs and PiNetworkSecurityGroupRuleProtocolOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleProtocolInput` via:
+//
+//	PiNetworkSecurityGroupRuleProtocolArgs{...}
+type PiNetworkSecurityGroupRuleProtocolInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleProtocolOutput() PiNetworkSecurityGroupRuleProtocolOutput
+	ToPiNetworkSecurityGroupRuleProtocolOutputWithContext(context.Context) PiNetworkSecurityGroupRuleProtocolOutput
+}
+
+type PiNetworkSecurityGroupRuleProtocolArgs struct {
+	// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType pulumi.StringPtrInput `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags PiNetworkSecurityGroupRuleProtocolTcpFlagArrayInput `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupRuleProtocolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocol)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolArgs) ToPiNetworkSecurityGroupRuleProtocolOutput() PiNetworkSecurityGroupRuleProtocolOutput {
+	return i.ToPiNetworkSecurityGroupRuleProtocolOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolArgs) ToPiNetworkSecurityGroupRuleProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleProtocolOutput)
+}
+
+// PiNetworkSecurityGroupRuleProtocolArrayInput is an input type that accepts PiNetworkSecurityGroupRuleProtocolArray and PiNetworkSecurityGroupRuleProtocolArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleProtocolArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleProtocolArray{ PiNetworkSecurityGroupRuleProtocolArgs{...} }
+type PiNetworkSecurityGroupRuleProtocolArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleProtocolArrayOutput() PiNetworkSecurityGroupRuleProtocolArrayOutput
+	ToPiNetworkSecurityGroupRuleProtocolArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleProtocolArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleProtocolArray []PiNetworkSecurityGroupRuleProtocolInput
+
+func (PiNetworkSecurityGroupRuleProtocolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleProtocol)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolArray) ToPiNetworkSecurityGroupRuleProtocolArrayOutput() PiNetworkSecurityGroupRuleProtocolArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleProtocolArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolArray) ToPiNetworkSecurityGroupRuleProtocolArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleProtocolArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleProtocolOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleProtocolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolOutput) ToPiNetworkSecurityGroupRuleProtocolOutput() PiNetworkSecurityGroupRuleProtocolOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolOutput) ToPiNetworkSecurityGroupRuleProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolOutput {
+	return o
+}
+
+// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+func (o PiNetworkSecurityGroupRuleProtocolOutput) IcmpType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleProtocol) *string { return v.IcmpType }).(pulumi.StringPtrOutput)
+}
+
+// If tcp type, the list of TCP flags and if not present then all flags are matched.
+func (o PiNetworkSecurityGroupRuleProtocolOutput) TcpFlags() PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleProtocol) []PiNetworkSecurityGroupRuleProtocolTcpFlag {
+		return v.TcpFlags
+	}).(PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput)
+}
+
+// The protocol of the network traffic.
+func (o PiNetworkSecurityGroupRuleProtocolOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleProtocol) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleProtocolArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleProtocolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolArrayOutput) ToPiNetworkSecurityGroupRuleProtocolArrayOutput() PiNetworkSecurityGroupRuleProtocolArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolArrayOutput) ToPiNetworkSecurityGroupRuleProtocolArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleProtocolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleProtocol {
+		return vs[0].([]PiNetworkSecurityGroupRuleProtocol)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleProtocolOutput)
+}
+
+type PiNetworkSecurityGroupRuleProtocolTcpFlag struct {
+	// TCP flag.
+	Flag *string `pulumi:"flag"`
+}
+
+// PiNetworkSecurityGroupRuleProtocolTcpFlagInput is an input type that accepts PiNetworkSecurityGroupRuleProtocolTcpFlagArgs and PiNetworkSecurityGroupRuleProtocolTcpFlagOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleProtocolTcpFlagInput` via:
+//
+//	PiNetworkSecurityGroupRuleProtocolTcpFlagArgs{...}
+type PiNetworkSecurityGroupRuleProtocolTcpFlagInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupRuleProtocolTcpFlagOutput
+	ToPiNetworkSecurityGroupRuleProtocolTcpFlagOutputWithContext(context.Context) PiNetworkSecurityGroupRuleProtocolTcpFlagOutput
+}
+
+type PiNetworkSecurityGroupRuleProtocolTcpFlagArgs struct {
+	// TCP flag.
+	Flag pulumi.StringPtrInput `pulumi:"flag"`
+}
+
+func (PiNetworkSecurityGroupRuleProtocolTcpFlagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolTcpFlagArgs) ToPiNetworkSecurityGroupRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupRuleProtocolTcpFlagOutput {
+	return i.ToPiNetworkSecurityGroupRuleProtocolTcpFlagOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolTcpFlagArgs) ToPiNetworkSecurityGroupRuleProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolTcpFlagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleProtocolTcpFlagOutput)
+}
+
+// PiNetworkSecurityGroupRuleProtocolTcpFlagArrayInput is an input type that accepts PiNetworkSecurityGroupRuleProtocolTcpFlagArray and PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleProtocolTcpFlagArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleProtocolTcpFlagArray{ PiNetworkSecurityGroupRuleProtocolTcpFlagArgs{...} }
+type PiNetworkSecurityGroupRuleProtocolTcpFlagArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput
+	ToPiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleProtocolTcpFlagArray []PiNetworkSecurityGroupRuleProtocolTcpFlagInput
+
+func (PiNetworkSecurityGroupRuleProtocolTcpFlagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolTcpFlagArray) ToPiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleProtocolTcpFlagArray) ToPiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleProtocolTcpFlagOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleProtocolTcpFlagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolTcpFlagOutput) ToPiNetworkSecurityGroupRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupRuleProtocolTcpFlagOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolTcpFlagOutput) ToPiNetworkSecurityGroupRuleProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolTcpFlagOutput {
+	return o
+}
+
+// TCP flag.
+func (o PiNetworkSecurityGroupRuleProtocolTcpFlagOutput) Flag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleProtocolTcpFlag) *string { return v.Flag }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleProtocolTcpFlagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleProtocolTcpFlag {
+		return vs[0].([]PiNetworkSecurityGroupRuleProtocolTcpFlag)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleProtocolTcpFlagOutput)
+}
+
+type PiNetworkSecurityGroupRuleRemote struct {
+	// The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+	Id *string `pulumi:"id"`
+	// The type of remote group the rules apply to.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupRuleRemoteInput is an input type that accepts PiNetworkSecurityGroupRuleRemoteArgs and PiNetworkSecurityGroupRuleRemoteOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRemoteInput` via:
+//
+//	PiNetworkSecurityGroupRuleRemoteArgs{...}
+type PiNetworkSecurityGroupRuleRemoteInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRemoteOutput() PiNetworkSecurityGroupRuleRemoteOutput
+	ToPiNetworkSecurityGroupRuleRemoteOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRemoteOutput
+}
+
+type PiNetworkSecurityGroupRuleRemoteArgs struct {
+	// The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The type of remote group the rules apply to.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupRuleRemoteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRemote)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRemoteArgs) ToPiNetworkSecurityGroupRuleRemoteOutput() PiNetworkSecurityGroupRuleRemoteOutput {
+	return i.ToPiNetworkSecurityGroupRuleRemoteOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRemoteArgs) ToPiNetworkSecurityGroupRuleRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRemoteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRemoteOutput)
+}
+
+// PiNetworkSecurityGroupRuleRemoteArrayInput is an input type that accepts PiNetworkSecurityGroupRuleRemoteArray and PiNetworkSecurityGroupRuleRemoteArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRemoteArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleRemoteArray{ PiNetworkSecurityGroupRuleRemoteArgs{...} }
+type PiNetworkSecurityGroupRuleRemoteArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRemoteArrayOutput() PiNetworkSecurityGroupRuleRemoteArrayOutput
+	ToPiNetworkSecurityGroupRuleRemoteArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRemoteArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleRemoteArray []PiNetworkSecurityGroupRuleRemoteInput
+
+func (PiNetworkSecurityGroupRuleRemoteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRemote)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRemoteArray) ToPiNetworkSecurityGroupRuleRemoteArrayOutput() PiNetworkSecurityGroupRuleRemoteArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleRemoteArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRemoteArray) ToPiNetworkSecurityGroupRuleRemoteArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRemoteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRemoteArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRemoteOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRemoteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRemoteOutput) ToPiNetworkSecurityGroupRuleRemoteOutput() PiNetworkSecurityGroupRuleRemoteOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRemoteOutput) ToPiNetworkSecurityGroupRuleRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRemoteOutput {
+	return o
+}
+
+// The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+func (o PiNetworkSecurityGroupRuleRemoteOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRemote) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The type of remote group the rules apply to.
+func (o PiNetworkSecurityGroupRuleRemoteOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRemote) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleRemoteArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRemoteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRemoteArrayOutput) ToPiNetworkSecurityGroupRuleRemoteArrayOutput() PiNetworkSecurityGroupRuleRemoteArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRemoteArrayOutput) ToPiNetworkSecurityGroupRuleRemoteArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRemoteArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRemoteArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleRemoteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleRemote {
+		return vs[0].([]PiNetworkSecurityGroupRuleRemote)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleRemoteOutput)
+}
+
+type PiNetworkSecurityGroupRuleRule struct {
+	// The action to take if the rule matches network traffic.
+	Action *string `pulumi:"action"`
+	// Destination port ranges.
+	DestinationPorts []PiNetworkSecurityGroupRuleRuleDestinationPort `pulumi:"destinationPorts"`
+	// The ID of the rule in a network security group.
+	Id *string `pulumi:"id"`
+	// The list of protocol.
+	Protocols []PiNetworkSecurityGroupRuleRuleProtocol `pulumi:"protocols"`
+	// List of remote.
+	Remotes []PiNetworkSecurityGroupRuleRuleRemote `pulumi:"remotes"`
+	// Source port ranges.
+	SourcePorts []PiNetworkSecurityGroupRuleRuleSourcePort `pulumi:"sourcePorts"`
+}
+
+// PiNetworkSecurityGroupRuleRuleInput is an input type that accepts PiNetworkSecurityGroupRuleRuleArgs and PiNetworkSecurityGroupRuleRuleOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleArgs{...}
+type PiNetworkSecurityGroupRuleRuleInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleOutput() PiNetworkSecurityGroupRuleRuleOutput
+	ToPiNetworkSecurityGroupRuleRuleOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleArgs struct {
+	// The action to take if the rule matches network traffic.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// Destination port ranges.
+	DestinationPorts PiNetworkSecurityGroupRuleRuleDestinationPortArrayInput `pulumi:"destinationPorts"`
+	// The ID of the rule in a network security group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The list of protocol.
+	Protocols PiNetworkSecurityGroupRuleRuleProtocolArrayInput `pulumi:"protocols"`
+	// List of remote.
+	Remotes PiNetworkSecurityGroupRuleRuleRemoteArrayInput `pulumi:"remotes"`
+	// Source port ranges.
+	SourcePorts PiNetworkSecurityGroupRuleRuleSourcePortArrayInput `pulumi:"sourcePorts"`
+}
+
+func (PiNetworkSecurityGroupRuleRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRule)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleArgs) ToPiNetworkSecurityGroupRuleRuleOutput() PiNetworkSecurityGroupRuleRuleOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleArgs) ToPiNetworkSecurityGroupRuleRuleOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleOutput)
+}
+
+// PiNetworkSecurityGroupRuleRuleArrayInput is an input type that accepts PiNetworkSecurityGroupRuleRuleArray and PiNetworkSecurityGroupRuleRuleArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleArray{ PiNetworkSecurityGroupRuleRuleArgs{...} }
+type PiNetworkSecurityGroupRuleRuleArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleArrayOutput() PiNetworkSecurityGroupRuleRuleArrayOutput
+	ToPiNetworkSecurityGroupRuleRuleArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleArray []PiNetworkSecurityGroupRuleRuleInput
+
+func (PiNetworkSecurityGroupRuleRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRule)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleArray) ToPiNetworkSecurityGroupRuleRuleArrayOutput() PiNetworkSecurityGroupRuleRuleArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleArray) ToPiNetworkSecurityGroupRuleRuleArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRule)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleOutput) ToPiNetworkSecurityGroupRuleRuleOutput() PiNetworkSecurityGroupRuleRuleOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleOutput) ToPiNetworkSecurityGroupRuleRuleOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleOutput {
+	return o
+}
+
+// The action to take if the rule matches network traffic.
+func (o PiNetworkSecurityGroupRuleRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRule) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// Destination port ranges.
+func (o PiNetworkSecurityGroupRuleRuleOutput) DestinationPorts() PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRule) []PiNetworkSecurityGroupRuleRuleDestinationPort {
+		return v.DestinationPorts
+	}).(PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput)
+}
+
+// The ID of the rule in a network security group.
+func (o PiNetworkSecurityGroupRuleRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRule) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The list of protocol.
+func (o PiNetworkSecurityGroupRuleRuleOutput) Protocols() PiNetworkSecurityGroupRuleRuleProtocolArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRule) []PiNetworkSecurityGroupRuleRuleProtocol { return v.Protocols }).(PiNetworkSecurityGroupRuleRuleProtocolArrayOutput)
+}
+
+// List of remote.
+func (o PiNetworkSecurityGroupRuleRuleOutput) Remotes() PiNetworkSecurityGroupRuleRuleRemoteArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRule) []PiNetworkSecurityGroupRuleRuleRemote { return v.Remotes }).(PiNetworkSecurityGroupRuleRuleRemoteArrayOutput)
+}
+
+// Source port ranges.
+func (o PiNetworkSecurityGroupRuleRuleOutput) SourcePorts() PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRule) []PiNetworkSecurityGroupRuleRuleSourcePort {
+		return v.SourcePorts
+	}).(PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRule)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleArrayOutput) ToPiNetworkSecurityGroupRuleRuleArrayOutput() PiNetworkSecurityGroupRuleRuleArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleArrayOutput) ToPiNetworkSecurityGroupRuleRuleArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleRule {
+		return vs[0].([]PiNetworkSecurityGroupRuleRule)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleRuleOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleDestinationPort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRuleRuleDestinationPortInput is an input type that accepts PiNetworkSecurityGroupRuleRuleDestinationPortArgs and PiNetworkSecurityGroupRuleRuleDestinationPortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleDestinationPortInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleDestinationPortArgs{...}
+type PiNetworkSecurityGroupRuleRuleDestinationPortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleDestinationPortOutput() PiNetworkSecurityGroupRuleRuleDestinationPortOutput
+	ToPiNetworkSecurityGroupRuleRuleDestinationPortOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleDestinationPortOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleDestinationPortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRuleRuleDestinationPortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleDestinationPort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleDestinationPortArgs) ToPiNetworkSecurityGroupRuleRuleDestinationPortOutput() PiNetworkSecurityGroupRuleRuleDestinationPortOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleDestinationPortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleDestinationPortArgs) ToPiNetworkSecurityGroupRuleRuleDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleDestinationPortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleDestinationPortOutput)
+}
+
+// PiNetworkSecurityGroupRuleRuleDestinationPortArrayInput is an input type that accepts PiNetworkSecurityGroupRuleRuleDestinationPortArray and PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleDestinationPortArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleDestinationPortArray{ PiNetworkSecurityGroupRuleRuleDestinationPortArgs{...} }
+type PiNetworkSecurityGroupRuleRuleDestinationPortArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput() PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput
+	ToPiNetworkSecurityGroupRuleRuleDestinationPortArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleDestinationPortArray []PiNetworkSecurityGroupRuleRuleDestinationPortInput
+
+func (PiNetworkSecurityGroupRuleRuleDestinationPortArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleDestinationPort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleDestinationPortArray) ToPiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput() PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleDestinationPortArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleDestinationPortArray) ToPiNetworkSecurityGroupRuleRuleDestinationPortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleDestinationPortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleDestinationPortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleDestinationPortOutput) ToPiNetworkSecurityGroupRuleRuleDestinationPortOutput() PiNetworkSecurityGroupRuleRuleDestinationPortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleDestinationPortOutput) ToPiNetworkSecurityGroupRuleRuleDestinationPortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleDestinationPortOutput {
+	return o
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRuleRuleDestinationPortOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleDestinationPort) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRuleRuleDestinationPortOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleDestinationPort) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleDestinationPort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput) ToPiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput() PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput) ToPiNetworkSecurityGroupRuleRuleDestinationPortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleRuleDestinationPortOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleRuleDestinationPort {
+		return vs[0].([]PiNetworkSecurityGroupRuleRuleDestinationPort)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleRuleDestinationPortOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocol struct {
+	// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType *string `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags []PiNetworkSecurityGroupRuleRuleProtocolTcpFlag `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupRuleRuleProtocolInput is an input type that accepts PiNetworkSecurityGroupRuleRuleProtocolArgs and PiNetworkSecurityGroupRuleRuleProtocolOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleProtocolInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleProtocolArgs{...}
+type PiNetworkSecurityGroupRuleRuleProtocolInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleProtocolOutput() PiNetworkSecurityGroupRuleRuleProtocolOutput
+	ToPiNetworkSecurityGroupRuleRuleProtocolOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleProtocolOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolArgs struct {
+	// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+	IcmpType pulumi.StringPtrInput `pulumi:"icmpType"`
+	// If tcp type, the list of TCP flags and if not present then all flags are matched.
+	TcpFlags PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayInput `pulumi:"tcpFlags"`
+	// The protocol of the network traffic.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupRuleRuleProtocolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocol)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolArgs) ToPiNetworkSecurityGroupRuleRuleProtocolOutput() PiNetworkSecurityGroupRuleRuleProtocolOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleProtocolOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolArgs) ToPiNetworkSecurityGroupRuleRuleProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleProtocolOutput)
+}
+
+// PiNetworkSecurityGroupRuleRuleProtocolArrayInput is an input type that accepts PiNetworkSecurityGroupRuleRuleProtocolArray and PiNetworkSecurityGroupRuleRuleProtocolArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleProtocolArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleProtocolArray{ PiNetworkSecurityGroupRuleRuleProtocolArgs{...} }
+type PiNetworkSecurityGroupRuleRuleProtocolArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleProtocolArrayOutput() PiNetworkSecurityGroupRuleRuleProtocolArrayOutput
+	ToPiNetworkSecurityGroupRuleRuleProtocolArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleProtocolArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolArray []PiNetworkSecurityGroupRuleRuleProtocolInput
+
+func (PiNetworkSecurityGroupRuleRuleProtocolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleProtocol)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolArray) ToPiNetworkSecurityGroupRuleRuleProtocolArrayOutput() PiNetworkSecurityGroupRuleRuleProtocolArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleProtocolArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolArray) ToPiNetworkSecurityGroupRuleRuleProtocolArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleProtocolArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleProtocolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolOutput) ToPiNetworkSecurityGroupRuleRuleProtocolOutput() PiNetworkSecurityGroupRuleRuleProtocolOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolOutput) ToPiNetworkSecurityGroupRuleRuleProtocolOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolOutput {
+	return o
+}
+
+// If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+func (o PiNetworkSecurityGroupRuleRuleProtocolOutput) IcmpType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleProtocol) *string { return v.IcmpType }).(pulumi.StringPtrOutput)
+}
+
+// If tcp type, the list of TCP flags and if not present then all flags are matched.
+func (o PiNetworkSecurityGroupRuleRuleProtocolOutput) TcpFlags() PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleProtocol) []PiNetworkSecurityGroupRuleRuleProtocolTcpFlag {
+		return v.TcpFlags
+	}).(PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput)
+}
+
+// The protocol of the network traffic.
+func (o PiNetworkSecurityGroupRuleRuleProtocolOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleProtocol) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleProtocolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleProtocol)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolArrayOutput) ToPiNetworkSecurityGroupRuleRuleProtocolArrayOutput() PiNetworkSecurityGroupRuleRuleProtocolArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolArrayOutput) ToPiNetworkSecurityGroupRuleRuleProtocolArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleRuleProtocolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleRuleProtocol {
+		return vs[0].([]PiNetworkSecurityGroupRuleRuleProtocol)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleRuleProtocolOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolTcpFlag struct {
+	// TCP flag.
+	Flag *string `pulumi:"flag"`
+}
+
+// PiNetworkSecurityGroupRuleRuleProtocolTcpFlagInput is an input type that accepts PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs and PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleProtocolTcpFlagInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs{...}
+type PiNetworkSecurityGroupRuleRuleProtocolTcpFlagInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput
+	ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs struct {
+	// TCP flag.
+	Flag pulumi.StringPtrInput `pulumi:"flag"`
+}
+
+func (PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput)
+}
+
+// PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayInput is an input type that accepts PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArray and PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArray{ PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs{...} }
+type PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput
+	ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArray []PiNetworkSecurityGroupRuleRuleProtocolTcpFlagInput
+
+func (PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArray) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArray) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput() PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput {
+	return o
+}
+
+// TCP flag.
+func (o PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput) Flag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleProtocolTcpFlag) *string { return v.Flag }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleProtocolTcpFlag)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput() PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput) ToPiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleRuleProtocolTcpFlag {
+		return vs[0].([]PiNetworkSecurityGroupRuleRuleProtocolTcpFlag)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleRemote struct {
+	// The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+	Id *string `pulumi:"id"`
+	// The type of remote group the rules apply to.
+	Type *string `pulumi:"type"`
+}
+
+// PiNetworkSecurityGroupRuleRuleRemoteInput is an input type that accepts PiNetworkSecurityGroupRuleRuleRemoteArgs and PiNetworkSecurityGroupRuleRuleRemoteOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleRemoteInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleRemoteArgs{...}
+type PiNetworkSecurityGroupRuleRuleRemoteInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleRemoteOutput() PiNetworkSecurityGroupRuleRuleRemoteOutput
+	ToPiNetworkSecurityGroupRuleRuleRemoteOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleRemoteOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleRemoteArgs struct {
+	// The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The type of remote group the rules apply to.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (PiNetworkSecurityGroupRuleRuleRemoteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleRemote)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleRemoteArgs) ToPiNetworkSecurityGroupRuleRuleRemoteOutput() PiNetworkSecurityGroupRuleRuleRemoteOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleRemoteOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleRemoteArgs) ToPiNetworkSecurityGroupRuleRuleRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleRemoteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleRemoteOutput)
+}
+
+// PiNetworkSecurityGroupRuleRuleRemoteArrayInput is an input type that accepts PiNetworkSecurityGroupRuleRuleRemoteArray and PiNetworkSecurityGroupRuleRuleRemoteArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleRemoteArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleRemoteArray{ PiNetworkSecurityGroupRuleRuleRemoteArgs{...} }
+type PiNetworkSecurityGroupRuleRuleRemoteArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleRemoteArrayOutput() PiNetworkSecurityGroupRuleRuleRemoteArrayOutput
+	ToPiNetworkSecurityGroupRuleRuleRemoteArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleRemoteArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleRemoteArray []PiNetworkSecurityGroupRuleRuleRemoteInput
+
+func (PiNetworkSecurityGroupRuleRuleRemoteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleRemote)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleRemoteArray) ToPiNetworkSecurityGroupRuleRuleRemoteArrayOutput() PiNetworkSecurityGroupRuleRuleRemoteArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleRemoteArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleRemoteArray) ToPiNetworkSecurityGroupRuleRuleRemoteArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleRemoteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleRemoteArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleRemoteOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleRemoteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleRemoteOutput) ToPiNetworkSecurityGroupRuleRuleRemoteOutput() PiNetworkSecurityGroupRuleRuleRemoteOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleRemoteOutput) ToPiNetworkSecurityGroupRuleRuleRemoteOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleRemoteOutput {
+	return o
+}
+
+// The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+func (o PiNetworkSecurityGroupRuleRuleRemoteOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleRemote) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The type of remote group the rules apply to.
+func (o PiNetworkSecurityGroupRuleRuleRemoteOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleRemote) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleRemoteArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleRemoteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleRemote)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleRemoteArrayOutput) ToPiNetworkSecurityGroupRuleRuleRemoteArrayOutput() PiNetworkSecurityGroupRuleRuleRemoteArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleRemoteArrayOutput) ToPiNetworkSecurityGroupRuleRuleRemoteArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleRemoteArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleRemoteArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleRuleRemoteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleRuleRemote {
+		return vs[0].([]PiNetworkSecurityGroupRuleRuleRemote)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleRuleRemoteOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleSourcePort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *float64 `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *float64 `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRuleRuleSourcePortInput is an input type that accepts PiNetworkSecurityGroupRuleRuleSourcePortArgs and PiNetworkSecurityGroupRuleRuleSourcePortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleSourcePortInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleSourcePortArgs{...}
+type PiNetworkSecurityGroupRuleRuleSourcePortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleSourcePortOutput() PiNetworkSecurityGroupRuleRuleSourcePortOutput
+	ToPiNetworkSecurityGroupRuleRuleSourcePortOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleSourcePortOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleSourcePortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.Float64PtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.Float64PtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRuleRuleSourcePortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleSourcePort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleSourcePortArgs) ToPiNetworkSecurityGroupRuleRuleSourcePortOutput() PiNetworkSecurityGroupRuleRuleSourcePortOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleSourcePortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleSourcePortArgs) ToPiNetworkSecurityGroupRuleRuleSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleSourcePortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleSourcePortOutput)
+}
+
+// PiNetworkSecurityGroupRuleRuleSourcePortArrayInput is an input type that accepts PiNetworkSecurityGroupRuleRuleSourcePortArray and PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleRuleSourcePortArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleRuleSourcePortArray{ PiNetworkSecurityGroupRuleRuleSourcePortArgs{...} }
+type PiNetworkSecurityGroupRuleRuleSourcePortArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleRuleSourcePortArrayOutput() PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput
+	ToPiNetworkSecurityGroupRuleRuleSourcePortArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleRuleSourcePortArray []PiNetworkSecurityGroupRuleRuleSourcePortInput
+
+func (PiNetworkSecurityGroupRuleRuleSourcePortArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleSourcePort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleRuleSourcePortArray) ToPiNetworkSecurityGroupRuleRuleSourcePortArrayOutput() PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleRuleSourcePortArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleRuleSourcePortArray) ToPiNetworkSecurityGroupRuleRuleSourcePortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleSourcePortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleSourcePortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleSourcePortOutput) ToPiNetworkSecurityGroupRuleRuleSourcePortOutput() PiNetworkSecurityGroupRuleRuleSourcePortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleSourcePortOutput) ToPiNetworkSecurityGroupRuleRuleSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleSourcePortOutput {
+	return o
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRuleRuleSourcePortOutput) Maximum() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleSourcePort) *float64 { return v.Maximum }).(pulumi.Float64PtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRuleRuleSourcePortOutput) Minimum() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleRuleSourcePort) *float64 { return v.Minimum }).(pulumi.Float64PtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleRuleSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput) ToPiNetworkSecurityGroupRuleRuleSourcePortArrayOutput() PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput) ToPiNetworkSecurityGroupRuleRuleSourcePortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleRuleSourcePortOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleRuleSourcePort {
+		return vs[0].([]PiNetworkSecurityGroupRuleRuleSourcePort)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleRuleSourcePortOutput)
+}
+
+type PiNetworkSecurityGroupRuleSourcePort struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum *int `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// PiNetworkSecurityGroupRuleSourcePortInput is an input type that accepts PiNetworkSecurityGroupRuleSourcePortArgs and PiNetworkSecurityGroupRuleSourcePortOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleSourcePortInput` via:
+//
+//	PiNetworkSecurityGroupRuleSourcePortArgs{...}
+type PiNetworkSecurityGroupRuleSourcePortInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleSourcePortOutput() PiNetworkSecurityGroupRuleSourcePortOutput
+	ToPiNetworkSecurityGroupRuleSourcePortOutputWithContext(context.Context) PiNetworkSecurityGroupRuleSourcePortOutput
+}
+
+type PiNetworkSecurityGroupRuleSourcePortArgs struct {
+	// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (PiNetworkSecurityGroupRuleSourcePortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleSourcePort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleSourcePortArgs) ToPiNetworkSecurityGroupRuleSourcePortOutput() PiNetworkSecurityGroupRuleSourcePortOutput {
+	return i.ToPiNetworkSecurityGroupRuleSourcePortOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleSourcePortArgs) ToPiNetworkSecurityGroupRuleSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleSourcePortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleSourcePortOutput)
+}
+
+// PiNetworkSecurityGroupRuleSourcePortArrayInput is an input type that accepts PiNetworkSecurityGroupRuleSourcePortArray and PiNetworkSecurityGroupRuleSourcePortArrayOutput values.
+// You can construct a concrete instance of `PiNetworkSecurityGroupRuleSourcePortArrayInput` via:
+//
+//	PiNetworkSecurityGroupRuleSourcePortArray{ PiNetworkSecurityGroupRuleSourcePortArgs{...} }
+type PiNetworkSecurityGroupRuleSourcePortArrayInput interface {
+	pulumi.Input
+
+	ToPiNetworkSecurityGroupRuleSourcePortArrayOutput() PiNetworkSecurityGroupRuleSourcePortArrayOutput
+	ToPiNetworkSecurityGroupRuleSourcePortArrayOutputWithContext(context.Context) PiNetworkSecurityGroupRuleSourcePortArrayOutput
+}
+
+type PiNetworkSecurityGroupRuleSourcePortArray []PiNetworkSecurityGroupRuleSourcePortInput
+
+func (PiNetworkSecurityGroupRuleSourcePortArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleSourcePort)(nil)).Elem()
+}
+
+func (i PiNetworkSecurityGroupRuleSourcePortArray) ToPiNetworkSecurityGroupRuleSourcePortArrayOutput() PiNetworkSecurityGroupRuleSourcePortArrayOutput {
+	return i.ToPiNetworkSecurityGroupRuleSourcePortArrayOutputWithContext(context.Background())
+}
+
+func (i PiNetworkSecurityGroupRuleSourcePortArray) ToPiNetworkSecurityGroupRuleSourcePortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleSourcePortArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiNetworkSecurityGroupRuleSourcePortArrayOutput)
+}
+
+type PiNetworkSecurityGroupRuleSourcePortOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleSourcePortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiNetworkSecurityGroupRuleSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleSourcePortOutput) ToPiNetworkSecurityGroupRuleSourcePortOutput() PiNetworkSecurityGroupRuleSourcePortOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleSourcePortOutput) ToPiNetworkSecurityGroupRuleSourcePortOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleSourcePortOutput {
+	return o
+}
+
+// The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+func (o PiNetworkSecurityGroupRuleSourcePortOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleSourcePort) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+func (o PiNetworkSecurityGroupRuleSourcePortOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiNetworkSecurityGroupRuleSourcePort) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type PiNetworkSecurityGroupRuleSourcePortArrayOutput struct{ *pulumi.OutputState }
+
+func (PiNetworkSecurityGroupRuleSourcePortArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiNetworkSecurityGroupRuleSourcePort)(nil)).Elem()
+}
+
+func (o PiNetworkSecurityGroupRuleSourcePortArrayOutput) ToPiNetworkSecurityGroupRuleSourcePortArrayOutput() PiNetworkSecurityGroupRuleSourcePortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleSourcePortArrayOutput) ToPiNetworkSecurityGroupRuleSourcePortArrayOutputWithContext(ctx context.Context) PiNetworkSecurityGroupRuleSourcePortArrayOutput {
+	return o
+}
+
+func (o PiNetworkSecurityGroupRuleSourcePortArrayOutput) Index(i pulumi.IntInput) PiNetworkSecurityGroupRuleSourcePortOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiNetworkSecurityGroupRuleSourcePort {
+		return vs[0].([]PiNetworkSecurityGroupRuleSourcePort)[vs[1].(int)]
+	}).(PiNetworkSecurityGroupRuleSourcePortOutput)
+}
+
+type PiSharedProcessorPoolInstance struct {
+	// Availability zone for the server instances.
+	AvailabilityZone *string `pulumi:"availabilityZone"`
+	// The amount of cpus for the server instance.
+	Cpus *int `pulumi:"cpus"`
+	// The server instance ID.
+	Id *string `pulumi:"id"`
+	// The amount of memory for the server instance.
+	Memory *int `pulumi:"memory"`
+	// The server instance name.
+	Name *string `pulumi:"name"`
+	// Status of the instance.
 	Status *string `pulumi:"status"`
+	// Identifies if uncapped or not.
+	Uncapped *bool `pulumi:"uncapped"`
+	// The amout of vcpus for the server instance.
+	Vcpus *float64 `pulumi:"vcpus"`
 }
 
-// IsVpnGatewayConnectionTunnelInput is an input type that accepts IsVpnGatewayConnectionTunnelArgs and IsVpnGatewayConnectionTunnelOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionTunnelInput` via:
+// PiSharedProcessorPoolInstanceInput is an input type that accepts PiSharedProcessorPoolInstanceArgs and PiSharedProcessorPoolInstanceOutput values.
+// You can construct a concrete instance of `PiSharedProcessorPoolInstanceInput` via:
 //
-//	IsVpnGatewayConnectionTunnelArgs{...}
-type IsVpnGatewayConnectionTunnelInput interface {
+//	PiSharedProcessorPoolInstanceArgs{...}
+type PiSharedProcessorPoolInstanceInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionTunnelOutput() IsVpnGatewayConnectionTunnelOutput
-	ToIsVpnGatewayConnectionTunnelOutputWithContext(context.Context) IsVpnGatewayConnectionTunnelOutput
+	ToPiSharedProcessorPoolInstanceOutput() PiSharedProcessorPoolInstanceOutput
+	ToPiSharedProcessorPoolInstanceOutputWithContext(context.Context) PiSharedProcessorPoolInstanceOutput
 }
 
-type IsVpnGatewayConnectionTunnelArgs struct {
-	// The IP address of the VPN gateway member in which the tunnel resides
-	Address pulumi.StringPtrInput `pulumi:"address"`
-	// The status of the VPN Tunnel
+type PiSharedProcessorPoolInstanceArgs struct {
+	// Availability zone for the server instances.
+	AvailabilityZone pulumi.StringPtrInput `pulumi:"availabilityZone"`
+	// The amount of cpus for the server instance.
+	Cpus pulumi.IntPtrInput `pulumi:"cpus"`
+	// The server instance ID.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The amount of memory for the server instance.
+	Memory pulumi.IntPtrInput `pulumi:"memory"`
+	// The server instance name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Status of the instance.
 	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Identifies if uncapped or not.
+	Uncapped pulumi.BoolPtrInput `pulumi:"uncapped"`
+	// The amout of vcpus for the server instance.
+	Vcpus pulumi.Float64PtrInput `pulumi:"vcpus"`
 }
 
-func (IsVpnGatewayConnectionTunnelArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionTunnel)(nil)).Elem()
+func (PiSharedProcessorPoolInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiSharedProcessorPoolInstance)(nil)).Elem()
 }
 
-func (i IsVpnGatewayConnectionTunnelArgs) ToIsVpnGatewayConnectionTunnelOutput() IsVpnGatewayConnectionTunnelOutput {
-	return i.ToIsVpnGatewayConnectionTunnelOutputWithContext(context.Background())
+func (i PiSharedProcessorPoolInstanceArgs) ToPiSharedProcessorPoolInstanceOutput() PiSharedProcessorPoolInstanceOutput {
+	return i.ToPiSharedProcessorPoolInstanceOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayConnectionTunnelArgs) ToIsVpnGatewayConnectionTunnelOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionTunnelOutput)
+func (i PiSharedProcessorPoolInstanceArgs) ToPiSharedProcessorPoolInstanceOutputWithContext(ctx context.Context) PiSharedProcessorPoolInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiSharedProcessorPoolInstanceOutput)
 }
 
-// IsVpnGatewayConnectionTunnelArrayInput is an input type that accepts IsVpnGatewayConnectionTunnelArray and IsVpnGatewayConnectionTunnelArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayConnectionTunnelArrayInput` via:
+// PiSharedProcessorPoolInstanceArrayInput is an input type that accepts PiSharedProcessorPoolInstanceArray and PiSharedProcessorPoolInstanceArrayOutput values.
+// You can construct a concrete instance of `PiSharedProcessorPoolInstanceArrayInput` via:
 //
-//	IsVpnGatewayConnectionTunnelArray{ IsVpnGatewayConnectionTunnelArgs{...} }
-type IsVpnGatewayConnectionTunnelArrayInput interface {
+//	PiSharedProcessorPoolInstanceArray{ PiSharedProcessorPoolInstanceArgs{...} }
+type PiSharedProcessorPoolInstanceArrayInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayConnectionTunnelArrayOutput() IsVpnGatewayConnectionTunnelArrayOutput
-	ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(context.Context) IsVpnGatewayConnectionTunnelArrayOutput
+	ToPiSharedProcessorPoolInstanceArrayOutput() PiSharedProcessorPoolInstanceArrayOutput
+	ToPiSharedProcessorPoolInstanceArrayOutputWithContext(context.Context) PiSharedProcessorPoolInstanceArrayOutput
 }
 
-type IsVpnGatewayConnectionTunnelArray []IsVpnGatewayConnectionTunnelInput
+type PiSharedProcessorPoolInstanceArray []PiSharedProcessorPoolInstanceInput
 
-func (IsVpnGatewayConnectionTunnelArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayConnectionTunnel)(nil)).Elem()
+func (PiSharedProcessorPoolInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiSharedProcessorPoolInstance)(nil)).Elem()
 }
 
-func (i IsVpnGatewayConnectionTunnelArray) ToIsVpnGatewayConnectionTunnelArrayOutput() IsVpnGatewayConnectionTunnelArrayOutput {
-	return i.ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(context.Background())
+func (i PiSharedProcessorPoolInstanceArray) ToPiSharedProcessorPoolInstanceArrayOutput() PiSharedProcessorPoolInstanceArrayOutput {
+	return i.ToPiSharedProcessorPoolInstanceArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayConnectionTunnelArray) ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionTunnelArrayOutput)
+func (i PiSharedProcessorPoolInstanceArray) ToPiSharedProcessorPoolInstanceArrayOutputWithContext(ctx context.Context) PiSharedProcessorPoolInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiSharedProcessorPoolInstanceArrayOutput)
 }
 
-type IsVpnGatewayConnectionTunnelOutput struct{ *pulumi.OutputState }
+type PiSharedProcessorPoolInstanceOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayConnectionTunnelOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayConnectionTunnel)(nil)).Elem()
+func (PiSharedProcessorPoolInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiSharedProcessorPoolInstance)(nil)).Elem()
 }
 
-func (o IsVpnGatewayConnectionTunnelOutput) ToIsVpnGatewayConnectionTunnelOutput() IsVpnGatewayConnectionTunnelOutput {
+func (o PiSharedProcessorPoolInstanceOutput) ToPiSharedProcessorPoolInstanceOutput() PiSharedProcessorPoolInstanceOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionTunnelOutput) ToIsVpnGatewayConnectionTunnelOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelOutput {
+func (o PiSharedProcessorPoolInstanceOutput) ToPiSharedProcessorPoolInstanceOutputWithContext(ctx context.Context) PiSharedProcessorPoolInstanceOutput {
 	return o
 }
 
-// The IP address of the VPN gateway member in which the tunnel resides
-func (o IsVpnGatewayConnectionTunnelOutput) Address() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionTunnel) *string { return v.Address }).(pulumi.StringPtrOutput)
+// Availability zone for the server instances.
+func (o PiSharedProcessorPoolInstanceOutput) AvailabilityZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *string { return v.AvailabilityZone }).(pulumi.StringPtrOutput)
 }
 
-// The status of the VPN Tunnel
-func (o IsVpnGatewayConnectionTunnelOutput) Status() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayConnectionTunnel) *string { return v.Status }).(pulumi.StringPtrOutput)
+// The amount of cpus for the server instance.
+func (o PiSharedProcessorPoolInstanceOutput) Cpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *int { return v.Cpus }).(pulumi.IntPtrOutput)
 }
 
-type IsVpnGatewayConnectionTunnelArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayConnectionTunnelArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayConnectionTunnel)(nil)).Elem()
+// The server instance ID.
+func (o PiSharedProcessorPoolInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o IsVpnGatewayConnectionTunnelArrayOutput) ToIsVpnGatewayConnectionTunnelArrayOutput() IsVpnGatewayConnectionTunnelArrayOutput {
+// The amount of memory for the server instance.
+func (o PiSharedProcessorPoolInstanceOutput) Memory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *int { return v.Memory }).(pulumi.IntPtrOutput)
+}
+
+// The server instance name.
+func (o PiSharedProcessorPoolInstanceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Status of the instance.
+func (o PiSharedProcessorPoolInstanceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Identifies if uncapped or not.
+func (o PiSharedProcessorPoolInstanceOutput) Uncapped() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *bool { return v.Uncapped }).(pulumi.BoolPtrOutput)
+}
+
+// The amout of vcpus for the server instance.
+func (o PiSharedProcessorPoolInstanceOutput) Vcpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiSharedProcessorPoolInstance) *float64 { return v.Vcpus }).(pulumi.Float64PtrOutput)
+}
+
+type PiSharedProcessorPoolInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (PiSharedProcessorPoolInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiSharedProcessorPoolInstance)(nil)).Elem()
+}
+
+func (o PiSharedProcessorPoolInstanceArrayOutput) ToPiSharedProcessorPoolInstanceArrayOutput() PiSharedProcessorPoolInstanceArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionTunnelArrayOutput) ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelArrayOutput {
+func (o PiSharedProcessorPoolInstanceArrayOutput) ToPiSharedProcessorPoolInstanceArrayOutputWithContext(ctx context.Context) PiSharedProcessorPoolInstanceArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayConnectionTunnelArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayConnectionTunnelOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayConnectionTunnel {
-		return vs[0].([]IsVpnGatewayConnectionTunnel)[vs[1].(int)]
-	}).(IsVpnGatewayConnectionTunnelOutput)
+func (o PiSharedProcessorPoolInstanceArrayOutput) Index(i pulumi.IntInput) PiSharedProcessorPoolInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiSharedProcessorPoolInstance {
+		return vs[0].([]PiSharedProcessorPoolInstance)[vs[1].(int)]
+	}).(PiSharedProcessorPoolInstanceOutput)
 }
 
-type IsVpnGatewayHealthReason struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code *string `pulumi:"code"`
-	// An explanation of the reason for this health state.
+type PiVolumeCloneCloneVolume struct {
+	// The ID of the newly cloned volume.
+	CloneVolumeId *string `pulumi:"cloneVolumeId"`
+	// The ID of the source volume.
+	SourceVolumeId *string `pulumi:"sourceVolumeId"`
+}
+
+// PiVolumeCloneCloneVolumeInput is an input type that accepts PiVolumeCloneCloneVolumeArgs and PiVolumeCloneCloneVolumeOutput values.
+// You can construct a concrete instance of `PiVolumeCloneCloneVolumeInput` via:
+//
+//	PiVolumeCloneCloneVolumeArgs{...}
+type PiVolumeCloneCloneVolumeInput interface {
+	pulumi.Input
+
+	ToPiVolumeCloneCloneVolumeOutput() PiVolumeCloneCloneVolumeOutput
+	ToPiVolumeCloneCloneVolumeOutputWithContext(context.Context) PiVolumeCloneCloneVolumeOutput
+}
+
+type PiVolumeCloneCloneVolumeArgs struct {
+	// The ID of the newly cloned volume.
+	CloneVolumeId pulumi.StringPtrInput `pulumi:"cloneVolumeId"`
+	// The ID of the source volume.
+	SourceVolumeId pulumi.StringPtrInput `pulumi:"sourceVolumeId"`
+}
+
+func (PiVolumeCloneCloneVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeCloneCloneVolume)(nil)).Elem()
+}
+
+func (i PiVolumeCloneCloneVolumeArgs) ToPiVolumeCloneCloneVolumeOutput() PiVolumeCloneCloneVolumeOutput {
+	return i.ToPiVolumeCloneCloneVolumeOutputWithContext(context.Background())
+}
+
+func (i PiVolumeCloneCloneVolumeArgs) ToPiVolumeCloneCloneVolumeOutputWithContext(ctx context.Context) PiVolumeCloneCloneVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeCloneCloneVolumeOutput)
+}
+
+// PiVolumeCloneCloneVolumeArrayInput is an input type that accepts PiVolumeCloneCloneVolumeArray and PiVolumeCloneCloneVolumeArrayOutput values.
+// You can construct a concrete instance of `PiVolumeCloneCloneVolumeArrayInput` via:
+//
+//	PiVolumeCloneCloneVolumeArray{ PiVolumeCloneCloneVolumeArgs{...} }
+type PiVolumeCloneCloneVolumeArrayInput interface {
+	pulumi.Input
+
+	ToPiVolumeCloneCloneVolumeArrayOutput() PiVolumeCloneCloneVolumeArrayOutput
+	ToPiVolumeCloneCloneVolumeArrayOutputWithContext(context.Context) PiVolumeCloneCloneVolumeArrayOutput
+}
+
+type PiVolumeCloneCloneVolumeArray []PiVolumeCloneCloneVolumeInput
+
+func (PiVolumeCloneCloneVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeCloneCloneVolume)(nil)).Elem()
+}
+
+func (i PiVolumeCloneCloneVolumeArray) ToPiVolumeCloneCloneVolumeArrayOutput() PiVolumeCloneCloneVolumeArrayOutput {
+	return i.ToPiVolumeCloneCloneVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i PiVolumeCloneCloneVolumeArray) ToPiVolumeCloneCloneVolumeArrayOutputWithContext(ctx context.Context) PiVolumeCloneCloneVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeCloneCloneVolumeArrayOutput)
+}
+
+type PiVolumeCloneCloneVolumeOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeCloneCloneVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeCloneCloneVolume)(nil)).Elem()
+}
+
+func (o PiVolumeCloneCloneVolumeOutput) ToPiVolumeCloneCloneVolumeOutput() PiVolumeCloneCloneVolumeOutput {
+	return o
+}
+
+func (o PiVolumeCloneCloneVolumeOutput) ToPiVolumeCloneCloneVolumeOutputWithContext(ctx context.Context) PiVolumeCloneCloneVolumeOutput {
+	return o
+}
+
+// The ID of the newly cloned volume.
+func (o PiVolumeCloneCloneVolumeOutput) CloneVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiVolumeCloneCloneVolume) *string { return v.CloneVolumeId }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the source volume.
+func (o PiVolumeCloneCloneVolumeOutput) SourceVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiVolumeCloneCloneVolume) *string { return v.SourceVolumeId }).(pulumi.StringPtrOutput)
+}
+
+type PiVolumeCloneCloneVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeCloneCloneVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeCloneCloneVolume)(nil)).Elem()
+}
+
+func (o PiVolumeCloneCloneVolumeArrayOutput) ToPiVolumeCloneCloneVolumeArrayOutput() PiVolumeCloneCloneVolumeArrayOutput {
+	return o
+}
+
+func (o PiVolumeCloneCloneVolumeArrayOutput) ToPiVolumeCloneCloneVolumeArrayOutputWithContext(ctx context.Context) PiVolumeCloneCloneVolumeArrayOutput {
+	return o
+}
+
+func (o PiVolumeCloneCloneVolumeArrayOutput) Index(i pulumi.IntInput) PiVolumeCloneCloneVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiVolumeCloneCloneVolume {
+		return vs[0].([]PiVolumeCloneCloneVolume)[vs[1].(int)]
+	}).(PiVolumeCloneCloneVolumeOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupAction struct {
+	// Performs reset action on the volume group to update its status value.
+	Reset *PiVolumeGroupActionPiVolumeGroupActionReset `pulumi:"reset"`
+	// Performs start action on a volume group.
+	Start *PiVolumeGroupActionPiVolumeGroupActionStart `pulumi:"start"`
+	// Performs stop action on a volume group.
+	Stop *PiVolumeGroupActionPiVolumeGroupActionStop `pulumi:"stop"`
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionArgs and PiVolumeGroupActionPiVolumeGroupActionOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionInput` via:
+//
+//	PiVolumeGroupActionPiVolumeGroupActionArgs{...}
+type PiVolumeGroupActionPiVolumeGroupActionInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionOutput() PiVolumeGroupActionPiVolumeGroupActionOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionOutput
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionArgs struct {
+	// Performs reset action on the volume group to update its status value.
+	Reset PiVolumeGroupActionPiVolumeGroupActionResetPtrInput `pulumi:"reset"`
+	// Performs start action on a volume group.
+	Start PiVolumeGroupActionPiVolumeGroupActionStartPtrInput `pulumi:"start"`
+	// Performs stop action on a volume group.
+	Stop PiVolumeGroupActionPiVolumeGroupActionStopPtrInput `pulumi:"stop"`
+}
+
+func (PiVolumeGroupActionPiVolumeGroupActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupAction)(nil)).Elem()
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionArgs) ToPiVolumeGroupActionPiVolumeGroupActionOutput() PiVolumeGroupActionPiVolumeGroupActionOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionArgs) ToPiVolumeGroupActionPiVolumeGroupActionOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionOutput)
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionArgs) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutput() PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionArgs) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionOutput).ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(ctx)
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionPtrInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionArgs, PiVolumeGroupActionPiVolumeGroupActionPtr and PiVolumeGroupActionPiVolumeGroupActionPtrOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionPtrInput` via:
+//
+//	        PiVolumeGroupActionPiVolumeGroupActionArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiVolumeGroupActionPiVolumeGroupActionPtrInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionPtrOutput() PiVolumeGroupActionPiVolumeGroupActionPtrOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionPtrOutput
+}
+
+type piVolumeGroupActionPiVolumeGroupActionPtrType PiVolumeGroupActionPiVolumeGroupActionArgs
+
+func PiVolumeGroupActionPiVolumeGroupActionPtr(v *PiVolumeGroupActionPiVolumeGroupActionArgs) PiVolumeGroupActionPiVolumeGroupActionPtrInput {
+	return (*piVolumeGroupActionPiVolumeGroupActionPtrType)(v)
+}
+
+func (*piVolumeGroupActionPiVolumeGroupActionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupAction)(nil)).Elem()
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionPtrType) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutput() PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(context.Background())
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionPtrType) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupAction)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionOutput) ToPiVolumeGroupActionPiVolumeGroupActionOutput() PiVolumeGroupActionPiVolumeGroupActionOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionOutput) ToPiVolumeGroupActionPiVolumeGroupActionOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionOutput) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutput() PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return o.ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(context.Background())
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionOutput) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiVolumeGroupActionPiVolumeGroupAction) *PiVolumeGroupActionPiVolumeGroupAction {
+		return &v
+	}).(PiVolumeGroupActionPiVolumeGroupActionPtrOutput)
+}
+
+// Performs reset action on the volume group to update its status value.
+func (o PiVolumeGroupActionPiVolumeGroupActionOutput) Reset() PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return o.ApplyT(func(v PiVolumeGroupActionPiVolumeGroupAction) *PiVolumeGroupActionPiVolumeGroupActionReset {
+		return v.Reset
+	}).(PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput)
+}
+
+// Performs start action on a volume group.
+func (o PiVolumeGroupActionPiVolumeGroupActionOutput) Start() PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return o.ApplyT(func(v PiVolumeGroupActionPiVolumeGroupAction) *PiVolumeGroupActionPiVolumeGroupActionStart {
+		return v.Start
+	}).(PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput)
+}
+
+// Performs stop action on a volume group.
+func (o PiVolumeGroupActionPiVolumeGroupActionOutput) Stop() PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return o.ApplyT(func(v PiVolumeGroupActionPiVolumeGroupAction) *PiVolumeGroupActionPiVolumeGroupActionStop {
+		return v.Stop
+	}).(PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionPtrOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupAction)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutput() PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionPtrOutput) Elem() PiVolumeGroupActionPiVolumeGroupActionOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupAction) PiVolumeGroupActionPiVolumeGroupAction {
+		if v != nil {
+			return *v
+		}
+		var ret PiVolumeGroupActionPiVolumeGroupAction
+		return ret
+	}).(PiVolumeGroupActionPiVolumeGroupActionOutput)
+}
+
+// Performs reset action on the volume group to update its status value.
+func (o PiVolumeGroupActionPiVolumeGroupActionPtrOutput) Reset() PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupAction) *PiVolumeGroupActionPiVolumeGroupActionReset {
+		if v == nil {
+			return nil
+		}
+		return v.Reset
+	}).(PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput)
+}
+
+// Performs start action on a volume group.
+func (o PiVolumeGroupActionPiVolumeGroupActionPtrOutput) Start() PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupAction) *PiVolumeGroupActionPiVolumeGroupActionStart {
+		if v == nil {
+			return nil
+		}
+		return v.Start
+	}).(PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput)
+}
+
+// Performs stop action on a volume group.
+func (o PiVolumeGroupActionPiVolumeGroupActionPtrOutput) Stop() PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupAction) *PiVolumeGroupActionPiVolumeGroupActionStop {
+		if v == nil {
+			return nil
+		}
+		return v.Stop
+	}).(PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionReset struct {
+	// New status to be set for a volume group.
+	Status string `pulumi:"status"`
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionResetInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionResetArgs and PiVolumeGroupActionPiVolumeGroupActionResetOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionResetInput` via:
+//
+//	PiVolumeGroupActionPiVolumeGroupActionResetArgs{...}
+type PiVolumeGroupActionPiVolumeGroupActionResetInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionResetOutput() PiVolumeGroupActionPiVolumeGroupActionResetOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionResetOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionResetOutput
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionResetArgs struct {
+	// New status to be set for a volume group.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (PiVolumeGroupActionPiVolumeGroupActionResetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionReset)(nil)).Elem()
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionResetArgs) ToPiVolumeGroupActionPiVolumeGroupActionResetOutput() PiVolumeGroupActionPiVolumeGroupActionResetOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionResetOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionResetArgs) ToPiVolumeGroupActionPiVolumeGroupActionResetOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionResetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionResetOutput)
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionResetArgs) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutput() PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionResetArgs) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionResetOutput).ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(ctx)
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionResetPtrInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionResetArgs, PiVolumeGroupActionPiVolumeGroupActionResetPtr and PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionResetPtrInput` via:
+//
+//	        PiVolumeGroupActionPiVolumeGroupActionResetArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiVolumeGroupActionPiVolumeGroupActionResetPtrInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutput() PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput
+}
+
+type piVolumeGroupActionPiVolumeGroupActionResetPtrType PiVolumeGroupActionPiVolumeGroupActionResetArgs
+
+func PiVolumeGroupActionPiVolumeGroupActionResetPtr(v *PiVolumeGroupActionPiVolumeGroupActionResetArgs) PiVolumeGroupActionPiVolumeGroupActionResetPtrInput {
+	return (*piVolumeGroupActionPiVolumeGroupActionResetPtrType)(v)
+}
+
+func (*piVolumeGroupActionPiVolumeGroupActionResetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupActionReset)(nil)).Elem()
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionResetPtrType) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutput() PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(context.Background())
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionResetPtrType) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionResetOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionResetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionReset)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionResetOutput) ToPiVolumeGroupActionPiVolumeGroupActionResetOutput() PiVolumeGroupActionPiVolumeGroupActionResetOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionResetOutput) ToPiVolumeGroupActionPiVolumeGroupActionResetOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionResetOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionResetOutput) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutput() PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return o.ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(context.Background())
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionResetOutput) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiVolumeGroupActionPiVolumeGroupActionReset) *PiVolumeGroupActionPiVolumeGroupActionReset {
+		return &v
+	}).(PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput)
+}
+
+// New status to be set for a volume group.
+func (o PiVolumeGroupActionPiVolumeGroupActionResetOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v PiVolumeGroupActionPiVolumeGroupActionReset) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupActionReset)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutput() PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionResetPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput) Elem() PiVolumeGroupActionPiVolumeGroupActionResetOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupActionReset) PiVolumeGroupActionPiVolumeGroupActionReset {
+		if v != nil {
+			return *v
+		}
+		var ret PiVolumeGroupActionPiVolumeGroupActionReset
+		return ret
+	}).(PiVolumeGroupActionPiVolumeGroupActionResetOutput)
+}
+
+// New status to be set for a volume group.
+func (o PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupActionReset) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStart struct {
+	// Indicates the source of the action `master` or `aux`.
+	Source string `pulumi:"source"`
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionStartInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionStartArgs and PiVolumeGroupActionPiVolumeGroupActionStartOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionStartInput` via:
+//
+//	PiVolumeGroupActionPiVolumeGroupActionStartArgs{...}
+type PiVolumeGroupActionPiVolumeGroupActionStartInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionStartOutput() PiVolumeGroupActionPiVolumeGroupActionStartOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionStartOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionStartOutput
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStartArgs struct {
+	// Indicates the source of the action `master` or `aux`.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (PiVolumeGroupActionPiVolumeGroupActionStartArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStart)(nil)).Elem()
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStartArgs) ToPiVolumeGroupActionPiVolumeGroupActionStartOutput() PiVolumeGroupActionPiVolumeGroupActionStartOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionStartOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStartArgs) ToPiVolumeGroupActionPiVolumeGroupActionStartOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStartOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionStartOutput)
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStartArgs) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStartArgs) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionStartOutput).ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(ctx)
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionStartPtrInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionStartArgs, PiVolumeGroupActionPiVolumeGroupActionStartPtr and PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionStartPtrInput` via:
+//
+//	        PiVolumeGroupActionPiVolumeGroupActionStartArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiVolumeGroupActionPiVolumeGroupActionStartPtrInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput
+}
+
+type piVolumeGroupActionPiVolumeGroupActionStartPtrType PiVolumeGroupActionPiVolumeGroupActionStartArgs
+
+func PiVolumeGroupActionPiVolumeGroupActionStartPtr(v *PiVolumeGroupActionPiVolumeGroupActionStartArgs) PiVolumeGroupActionPiVolumeGroupActionStartPtrInput {
+	return (*piVolumeGroupActionPiVolumeGroupActionStartPtrType)(v)
+}
+
+func (*piVolumeGroupActionPiVolumeGroupActionStartPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupActionStart)(nil)).Elem()
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionStartPtrType) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(context.Background())
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionStartPtrType) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStartOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionStartOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStart)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStartOutput) ToPiVolumeGroupActionPiVolumeGroupActionStartOutput() PiVolumeGroupActionPiVolumeGroupActionStartOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStartOutput) ToPiVolumeGroupActionPiVolumeGroupActionStartOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStartOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStartOutput) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return o.ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(context.Background())
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStartOutput) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiVolumeGroupActionPiVolumeGroupActionStart) *PiVolumeGroupActionPiVolumeGroupActionStart {
+		return &v
+	}).(PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput)
+}
+
+// Indicates the source of the action `master` or `aux`.
+func (o PiVolumeGroupActionPiVolumeGroupActionStartOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v PiVolumeGroupActionPiVolumeGroupActionStart) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupActionStart)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionStartPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput) Elem() PiVolumeGroupActionPiVolumeGroupActionStartOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupActionStart) PiVolumeGroupActionPiVolumeGroupActionStart {
+		if v != nil {
+			return *v
+		}
+		var ret PiVolumeGroupActionPiVolumeGroupActionStart
+		return ret
+	}).(PiVolumeGroupActionPiVolumeGroupActionStartOutput)
+}
+
+// Indicates the source of the action `master` or `aux`.
+func (o PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupActionStart) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Source
+	}).(pulumi.StringPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStop struct {
+	// Indicates the access mode of aux volumes.
+	Access bool `pulumi:"access"`
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionStopInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionStopArgs and PiVolumeGroupActionPiVolumeGroupActionStopOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionStopInput` via:
+//
+//	PiVolumeGroupActionPiVolumeGroupActionStopArgs{...}
+type PiVolumeGroupActionPiVolumeGroupActionStopInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionStopOutput() PiVolumeGroupActionPiVolumeGroupActionStopOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionStopOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionStopOutput
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStopArgs struct {
+	// Indicates the access mode of aux volumes.
+	Access pulumi.BoolInput `pulumi:"access"`
+}
+
+func (PiVolumeGroupActionPiVolumeGroupActionStopArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStop)(nil)).Elem()
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStopArgs) ToPiVolumeGroupActionPiVolumeGroupActionStopOutput() PiVolumeGroupActionPiVolumeGroupActionStopOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionStopOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStopArgs) ToPiVolumeGroupActionPiVolumeGroupActionStopOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStopOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionStopOutput)
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStopArgs) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(context.Background())
+}
+
+func (i PiVolumeGroupActionPiVolumeGroupActionStopArgs) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionStopOutput).ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(ctx)
+}
+
+// PiVolumeGroupActionPiVolumeGroupActionStopPtrInput is an input type that accepts PiVolumeGroupActionPiVolumeGroupActionStopArgs, PiVolumeGroupActionPiVolumeGroupActionStopPtr and PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput values.
+// You can construct a concrete instance of `PiVolumeGroupActionPiVolumeGroupActionStopPtrInput` via:
+//
+//	        PiVolumeGroupActionPiVolumeGroupActionStopArgs{...}
+//
+//	or:
+//
+//	        nil
+type PiVolumeGroupActionPiVolumeGroupActionStopPtrInput interface {
+	pulumi.Input
+
+	ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput
+	ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(context.Context) PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput
+}
+
+type piVolumeGroupActionPiVolumeGroupActionStopPtrType PiVolumeGroupActionPiVolumeGroupActionStopArgs
+
+func PiVolumeGroupActionPiVolumeGroupActionStopPtr(v *PiVolumeGroupActionPiVolumeGroupActionStopArgs) PiVolumeGroupActionPiVolumeGroupActionStopPtrInput {
+	return (*piVolumeGroupActionPiVolumeGroupActionStopPtrType)(v)
+}
+
+func (*piVolumeGroupActionPiVolumeGroupActionStopPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupActionStop)(nil)).Elem()
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionStopPtrType) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return i.ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(context.Background())
+}
+
+func (i *piVolumeGroupActionPiVolumeGroupActionStopPtrType) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStopOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionStopOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStop)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStopOutput) ToPiVolumeGroupActionPiVolumeGroupActionStopOutput() PiVolumeGroupActionPiVolumeGroupActionStopOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStopOutput) ToPiVolumeGroupActionPiVolumeGroupActionStopOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStopOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStopOutput) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return o.ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(context.Background())
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStopOutput) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PiVolumeGroupActionPiVolumeGroupActionStop) *PiVolumeGroupActionPiVolumeGroupActionStop {
+		return &v
+	}).(PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput)
+}
+
+// Indicates the access mode of aux volumes.
+func (o PiVolumeGroupActionPiVolumeGroupActionStopOutput) Access() pulumi.BoolOutput {
+	return o.ApplyT(func(v PiVolumeGroupActionPiVolumeGroupActionStop) bool { return v.Access }).(pulumi.BoolOutput)
+}
+
+type PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PiVolumeGroupActionPiVolumeGroupActionStop)(nil)).Elem()
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutput() PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput) ToPiVolumeGroupActionPiVolumeGroupActionStopPtrOutputWithContext(ctx context.Context) PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput {
+	return o
+}
+
+func (o PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput) Elem() PiVolumeGroupActionPiVolumeGroupActionStopOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupActionStop) PiVolumeGroupActionPiVolumeGroupActionStop {
+		if v != nil {
+			return *v
+		}
+		var ret PiVolumeGroupActionPiVolumeGroupActionStop
+		return ret
+	}).(PiVolumeGroupActionPiVolumeGroupActionStopOutput)
+}
+
+// Indicates the access mode of aux volumes.
+func (o PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput) Access() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PiVolumeGroupActionPiVolumeGroupActionStop) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Access
+	}).(pulumi.BoolPtrOutput)
+}
+
+type PiVolumeGroupStatusDescriptionError struct {
+	// The volume group error key.
+	Key *string `pulumi:"key"`
+	// The failure message providing more details about the error key.
 	Message *string `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo *string `pulumi:"moreInfo"`
+	// List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+	VolumeIds []string `pulumi:"volumeIds"`
 }
 
-// IsVpnGatewayHealthReasonInput is an input type that accepts IsVpnGatewayHealthReasonArgs and IsVpnGatewayHealthReasonOutput values.
-// You can construct a concrete instance of `IsVpnGatewayHealthReasonInput` via:
+// PiVolumeGroupStatusDescriptionErrorInput is an input type that accepts PiVolumeGroupStatusDescriptionErrorArgs and PiVolumeGroupStatusDescriptionErrorOutput values.
+// You can construct a concrete instance of `PiVolumeGroupStatusDescriptionErrorInput` via:
 //
-//	IsVpnGatewayHealthReasonArgs{...}
-type IsVpnGatewayHealthReasonInput interface {
+//	PiVolumeGroupStatusDescriptionErrorArgs{...}
+type PiVolumeGroupStatusDescriptionErrorInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayHealthReasonOutput() IsVpnGatewayHealthReasonOutput
-	ToIsVpnGatewayHealthReasonOutputWithContext(context.Context) IsVpnGatewayHealthReasonOutput
+	ToPiVolumeGroupStatusDescriptionErrorOutput() PiVolumeGroupStatusDescriptionErrorOutput
+	ToPiVolumeGroupStatusDescriptionErrorOutputWithContext(context.Context) PiVolumeGroupStatusDescriptionErrorOutput
 }
 
-type IsVpnGatewayHealthReasonArgs struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the reason for this health state.
+type PiVolumeGroupStatusDescriptionErrorArgs struct {
+	// The volume group error key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// The failure message providing more details about the error key.
 	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+	// List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+	VolumeIds pulumi.StringArrayInput `pulumi:"volumeIds"`
 }
 
-func (IsVpnGatewayHealthReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayHealthReason)(nil)).Elem()
+func (PiVolumeGroupStatusDescriptionErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupStatusDescriptionError)(nil)).Elem()
 }
 
-func (i IsVpnGatewayHealthReasonArgs) ToIsVpnGatewayHealthReasonOutput() IsVpnGatewayHealthReasonOutput {
-	return i.ToIsVpnGatewayHealthReasonOutputWithContext(context.Background())
+func (i PiVolumeGroupStatusDescriptionErrorArgs) ToPiVolumeGroupStatusDescriptionErrorOutput() PiVolumeGroupStatusDescriptionErrorOutput {
+	return i.ToPiVolumeGroupStatusDescriptionErrorOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayHealthReasonArgs) ToIsVpnGatewayHealthReasonOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayHealthReasonOutput)
+func (i PiVolumeGroupStatusDescriptionErrorArgs) ToPiVolumeGroupStatusDescriptionErrorOutputWithContext(ctx context.Context) PiVolumeGroupStatusDescriptionErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupStatusDescriptionErrorOutput)
 }
 
-// IsVpnGatewayHealthReasonArrayInput is an input type that accepts IsVpnGatewayHealthReasonArray and IsVpnGatewayHealthReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayHealthReasonArrayInput` via:
+// PiVolumeGroupStatusDescriptionErrorArrayInput is an input type that accepts PiVolumeGroupStatusDescriptionErrorArray and PiVolumeGroupStatusDescriptionErrorArrayOutput values.
+// You can construct a concrete instance of `PiVolumeGroupStatusDescriptionErrorArrayInput` via:
 //
-//	IsVpnGatewayHealthReasonArray{ IsVpnGatewayHealthReasonArgs{...} }
-type IsVpnGatewayHealthReasonArrayInput interface {
+//	PiVolumeGroupStatusDescriptionErrorArray{ PiVolumeGroupStatusDescriptionErrorArgs{...} }
+type PiVolumeGroupStatusDescriptionErrorArrayInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayHealthReasonArrayOutput() IsVpnGatewayHealthReasonArrayOutput
-	ToIsVpnGatewayHealthReasonArrayOutputWithContext(context.Context) IsVpnGatewayHealthReasonArrayOutput
+	ToPiVolumeGroupStatusDescriptionErrorArrayOutput() PiVolumeGroupStatusDescriptionErrorArrayOutput
+	ToPiVolumeGroupStatusDescriptionErrorArrayOutputWithContext(context.Context) PiVolumeGroupStatusDescriptionErrorArrayOutput
 }
 
-type IsVpnGatewayHealthReasonArray []IsVpnGatewayHealthReasonInput
+type PiVolumeGroupStatusDescriptionErrorArray []PiVolumeGroupStatusDescriptionErrorInput
 
-func (IsVpnGatewayHealthReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayHealthReason)(nil)).Elem()
+func (PiVolumeGroupStatusDescriptionErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeGroupStatusDescriptionError)(nil)).Elem()
 }
 
-func (i IsVpnGatewayHealthReasonArray) ToIsVpnGatewayHealthReasonArrayOutput() IsVpnGatewayHealthReasonArrayOutput {
-	return i.ToIsVpnGatewayHealthReasonArrayOutputWithContext(context.Background())
+func (i PiVolumeGroupStatusDescriptionErrorArray) ToPiVolumeGroupStatusDescriptionErrorArrayOutput() PiVolumeGroupStatusDescriptionErrorArrayOutput {
+	return i.ToPiVolumeGroupStatusDescriptionErrorArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayHealthReasonArray) ToIsVpnGatewayHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayHealthReasonArrayOutput)
+func (i PiVolumeGroupStatusDescriptionErrorArray) ToPiVolumeGroupStatusDescriptionErrorArrayOutputWithContext(ctx context.Context) PiVolumeGroupStatusDescriptionErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeGroupStatusDescriptionErrorArrayOutput)
 }
 
-type IsVpnGatewayHealthReasonOutput struct{ *pulumi.OutputState }
+type PiVolumeGroupStatusDescriptionErrorOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayHealthReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayHealthReason)(nil)).Elem()
+func (PiVolumeGroupStatusDescriptionErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeGroupStatusDescriptionError)(nil)).Elem()
 }
 
-func (o IsVpnGatewayHealthReasonOutput) ToIsVpnGatewayHealthReasonOutput() IsVpnGatewayHealthReasonOutput {
+func (o PiVolumeGroupStatusDescriptionErrorOutput) ToPiVolumeGroupStatusDescriptionErrorOutput() PiVolumeGroupStatusDescriptionErrorOutput {
 	return o
 }
 
-func (o IsVpnGatewayHealthReasonOutput) ToIsVpnGatewayHealthReasonOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonOutput {
+func (o PiVolumeGroupStatusDescriptionErrorOutput) ToPiVolumeGroupStatusDescriptionErrorOutputWithContext(ctx context.Context) PiVolumeGroupStatusDescriptionErrorOutput {
 	return o
 }
 
-// A snake case string succinctly identifying the reason for this health state.
-func (o IsVpnGatewayHealthReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+// The volume group error key.
+func (o PiVolumeGroupStatusDescriptionErrorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiVolumeGroupStatusDescriptionError) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// An explanation of the reason for this health state.
-func (o IsVpnGatewayHealthReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+// The failure message providing more details about the error key.
+func (o PiVolumeGroupStatusDescriptionErrorOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiVolumeGroupStatusDescriptionError) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
-// Link to documentation about the reason for this health state.
-func (o IsVpnGatewayHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+// List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+func (o PiVolumeGroupStatusDescriptionErrorOutput) VolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PiVolumeGroupStatusDescriptionError) []string { return v.VolumeIds }).(pulumi.StringArrayOutput)
 }
 
-type IsVpnGatewayHealthReasonArrayOutput struct{ *pulumi.OutputState }
+type PiVolumeGroupStatusDescriptionErrorArrayOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayHealthReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayHealthReason)(nil)).Elem()
+func (PiVolumeGroupStatusDescriptionErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeGroupStatusDescriptionError)(nil)).Elem()
 }
 
-func (o IsVpnGatewayHealthReasonArrayOutput) ToIsVpnGatewayHealthReasonArrayOutput() IsVpnGatewayHealthReasonArrayOutput {
+func (o PiVolumeGroupStatusDescriptionErrorArrayOutput) ToPiVolumeGroupStatusDescriptionErrorArrayOutput() PiVolumeGroupStatusDescriptionErrorArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayHealthReasonArrayOutput) ToIsVpnGatewayHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonArrayOutput {
+func (o PiVolumeGroupStatusDescriptionErrorArrayOutput) ToPiVolumeGroupStatusDescriptionErrorArrayOutputWithContext(ctx context.Context) PiVolumeGroupStatusDescriptionErrorArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayHealthReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayHealthReason {
-		return vs[0].([]IsVpnGatewayHealthReason)[vs[1].(int)]
-	}).(IsVpnGatewayHealthReasonOutput)
+func (o PiVolumeGroupStatusDescriptionErrorArrayOutput) Index(i pulumi.IntInput) PiVolumeGroupStatusDescriptionErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiVolumeGroupStatusDescriptionError {
+		return vs[0].([]PiVolumeGroupStatusDescriptionError)[vs[1].(int)]
+	}).(PiVolumeGroupStatusDescriptionErrorOutput)
 }
 
-type IsVpnGatewayLifecycleReason struct {
-	// A snake case string succinctly identifying the reason for this lifecycle state.
-	Code *string `pulumi:"code"`
-	// An explanation of the reason for this lifecycle state.
-	Message *string `pulumi:"message"`
-	// Link to documentation about the reason for this lifecycle state.
-	MoreInfo *string `pulumi:"moreInfo"`
+type PiVolumeOnboardingPiOnboardingVolume struct {
+	// List auxiliary volumes.
+	PiAuxiliaryVolumes []PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume `pulumi:"piAuxiliaryVolumes"`
+	// The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+	PiSourceCrn string `pulumi:"piSourceCrn"`
 }
 
-// IsVpnGatewayLifecycleReasonInput is an input type that accepts IsVpnGatewayLifecycleReasonArgs and IsVpnGatewayLifecycleReasonOutput values.
-// You can construct a concrete instance of `IsVpnGatewayLifecycleReasonInput` via:
+// PiVolumeOnboardingPiOnboardingVolumeInput is an input type that accepts PiVolumeOnboardingPiOnboardingVolumeArgs and PiVolumeOnboardingPiOnboardingVolumeOutput values.
+// You can construct a concrete instance of `PiVolumeOnboardingPiOnboardingVolumeInput` via:
 //
-//	IsVpnGatewayLifecycleReasonArgs{...}
-type IsVpnGatewayLifecycleReasonInput interface {
+//	PiVolumeOnboardingPiOnboardingVolumeArgs{...}
+type PiVolumeOnboardingPiOnboardingVolumeInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayLifecycleReasonOutput() IsVpnGatewayLifecycleReasonOutput
-	ToIsVpnGatewayLifecycleReasonOutputWithContext(context.Context) IsVpnGatewayLifecycleReasonOutput
+	ToPiVolumeOnboardingPiOnboardingVolumeOutput() PiVolumeOnboardingPiOnboardingVolumeOutput
+	ToPiVolumeOnboardingPiOnboardingVolumeOutputWithContext(context.Context) PiVolumeOnboardingPiOnboardingVolumeOutput
 }
 
-type IsVpnGatewayLifecycleReasonArgs struct {
-	// A snake case string succinctly identifying the reason for this lifecycle state.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the reason for this lifecycle state.
-	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about the reason for this lifecycle state.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+type PiVolumeOnboardingPiOnboardingVolumeArgs struct {
+	// List auxiliary volumes.
+	PiAuxiliaryVolumes PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayInput `pulumi:"piAuxiliaryVolumes"`
+	// The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+	PiSourceCrn pulumi.StringInput `pulumi:"piSourceCrn"`
 }
 
-func (IsVpnGatewayLifecycleReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayLifecycleReason)(nil)).Elem()
+func (PiVolumeOnboardingPiOnboardingVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolume)(nil)).Elem()
 }
 
-func (i IsVpnGatewayLifecycleReasonArgs) ToIsVpnGatewayLifecycleReasonOutput() IsVpnGatewayLifecycleReasonOutput {
-	return i.ToIsVpnGatewayLifecycleReasonOutputWithContext(context.Background())
+func (i PiVolumeOnboardingPiOnboardingVolumeArgs) ToPiVolumeOnboardingPiOnboardingVolumeOutput() PiVolumeOnboardingPiOnboardingVolumeOutput {
+	return i.ToPiVolumeOnboardingPiOnboardingVolumeOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayLifecycleReasonArgs) ToIsVpnGatewayLifecycleReasonOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayLifecycleReasonOutput)
+func (i PiVolumeOnboardingPiOnboardingVolumeArgs) ToPiVolumeOnboardingPiOnboardingVolumeOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeOnboardingPiOnboardingVolumeOutput)
 }
 
-// IsVpnGatewayLifecycleReasonArrayInput is an input type that accepts IsVpnGatewayLifecycleReasonArray and IsVpnGatewayLifecycleReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayLifecycleReasonArrayInput` via:
+// PiVolumeOnboardingPiOnboardingVolumeArrayInput is an input type that accepts PiVolumeOnboardingPiOnboardingVolumeArray and PiVolumeOnboardingPiOnboardingVolumeArrayOutput values.
+// You can construct a concrete instance of `PiVolumeOnboardingPiOnboardingVolumeArrayInput` via:
 //
-//	IsVpnGatewayLifecycleReasonArray{ IsVpnGatewayLifecycleReasonArgs{...} }
-type IsVpnGatewayLifecycleReasonArrayInput interface {
+//	PiVolumeOnboardingPiOnboardingVolumeArray{ PiVolumeOnboardingPiOnboardingVolumeArgs{...} }
+type PiVolumeOnboardingPiOnboardingVolumeArrayInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayLifecycleReasonArrayOutput() IsVpnGatewayLifecycleReasonArrayOutput
-	ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(context.Context) IsVpnGatewayLifecycleReasonArrayOutput
+	ToPiVolumeOnboardingPiOnboardingVolumeArrayOutput() PiVolumeOnboardingPiOnboardingVolumeArrayOutput
+	ToPiVolumeOnboardingPiOnboardingVolumeArrayOutputWithContext(context.Context) PiVolumeOnboardingPiOnboardingVolumeArrayOutput
 }
 
-type IsVpnGatewayLifecycleReasonArray []IsVpnGatewayLifecycleReasonInput
+type PiVolumeOnboardingPiOnboardingVolumeArray []PiVolumeOnboardingPiOnboardingVolumeInput
 
-func (IsVpnGatewayLifecycleReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayLifecycleReason)(nil)).Elem()
+func (PiVolumeOnboardingPiOnboardingVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeOnboardingPiOnboardingVolume)(nil)).Elem()
 }
 
-func (i IsVpnGatewayLifecycleReasonArray) ToIsVpnGatewayLifecycleReasonArrayOutput() IsVpnGatewayLifecycleReasonArrayOutput {
-	return i.ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(context.Background())
+func (i PiVolumeOnboardingPiOnboardingVolumeArray) ToPiVolumeOnboardingPiOnboardingVolumeArrayOutput() PiVolumeOnboardingPiOnboardingVolumeArrayOutput {
+	return i.ToPiVolumeOnboardingPiOnboardingVolumeArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayLifecycleReasonArray) ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayLifecycleReasonArrayOutput)
+func (i PiVolumeOnboardingPiOnboardingVolumeArray) ToPiVolumeOnboardingPiOnboardingVolumeArrayOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeOnboardingPiOnboardingVolumeArrayOutput)
 }
 
-type IsVpnGatewayLifecycleReasonOutput struct{ *pulumi.OutputState }
+type PiVolumeOnboardingPiOnboardingVolumeOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayLifecycleReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayLifecycleReason)(nil)).Elem()
+func (PiVolumeOnboardingPiOnboardingVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolume)(nil)).Elem()
 }
 
-func (o IsVpnGatewayLifecycleReasonOutput) ToIsVpnGatewayLifecycleReasonOutput() IsVpnGatewayLifecycleReasonOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumeOutput) ToPiVolumeOnboardingPiOnboardingVolumeOutput() PiVolumeOnboardingPiOnboardingVolumeOutput {
 	return o
 }
 
-func (o IsVpnGatewayLifecycleReasonOutput) ToIsVpnGatewayLifecycleReasonOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumeOutput) ToPiVolumeOnboardingPiOnboardingVolumeOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumeOutput {
 	return o
 }
 
-// A snake case string succinctly identifying the reason for this lifecycle state.
-func (o IsVpnGatewayLifecycleReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayLifecycleReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+// List auxiliary volumes.
+func (o PiVolumeOnboardingPiOnboardingVolumeOutput) PiAuxiliaryVolumes() PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput {
+	return o.ApplyT(func(v PiVolumeOnboardingPiOnboardingVolume) []PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume {
+		return v.PiAuxiliaryVolumes
+	}).(PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput)
 }
 
-// An explanation of the reason for this lifecycle state.
-func (o IsVpnGatewayLifecycleReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayLifecycleReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+// The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+func (o PiVolumeOnboardingPiOnboardingVolumeOutput) PiSourceCrn() pulumi.StringOutput {
+	return o.ApplyT(func(v PiVolumeOnboardingPiOnboardingVolume) string { return v.PiSourceCrn }).(pulumi.StringOutput)
 }
 
-// Link to documentation about the reason for this lifecycle state.
-func (o IsVpnGatewayLifecycleReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayLifecycleReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+type PiVolumeOnboardingPiOnboardingVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeOnboardingPiOnboardingVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeOnboardingPiOnboardingVolume)(nil)).Elem()
 }
 
-type IsVpnGatewayLifecycleReasonArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayLifecycleReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayLifecycleReason)(nil)).Elem()
-}
-
-func (o IsVpnGatewayLifecycleReasonArrayOutput) ToIsVpnGatewayLifecycleReasonArrayOutput() IsVpnGatewayLifecycleReasonArrayOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumeArrayOutput) ToPiVolumeOnboardingPiOnboardingVolumeArrayOutput() PiVolumeOnboardingPiOnboardingVolumeArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayLifecycleReasonArrayOutput) ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonArrayOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumeArrayOutput) ToPiVolumeOnboardingPiOnboardingVolumeArrayOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumeArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayLifecycleReasonArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayLifecycleReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayLifecycleReason {
-		return vs[0].([]IsVpnGatewayLifecycleReason)[vs[1].(int)]
-	}).(IsVpnGatewayLifecycleReasonOutput)
+func (o PiVolumeOnboardingPiOnboardingVolumeArrayOutput) Index(i pulumi.IntInput) PiVolumeOnboardingPiOnboardingVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiVolumeOnboardingPiOnboardingVolume {
+		return vs[0].([]PiVolumeOnboardingPiOnboardingVolume)[vs[1].(int)]
+	}).(PiVolumeOnboardingPiOnboardingVolumeOutput)
 }
 
-type IsVpnGatewayMember struct {
-	// The public IP address assigned to the VPN gateway member
-	Address *string `pulumi:"address"`
-	// The private IP address assigned to the VPN gateway member
-	PrivateAddress *string `pulumi:"privateAddress"`
-	// The high availability role assigned to the VPN gateway member
-	Role *string `pulumi:"role"`
-	// The status of the VPN gateway member
-	Status *string `pulumi:"status"`
+type PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume struct {
+	// The auxiliary volume name.
+	PiAuxiliaryVolumeName string `pulumi:"piAuxiliaryVolumeName"`
+	// The display name of auxiliary volume which is to be onboarded.
+	PiDisplayName *string `pulumi:"piDisplayName"`
 }
 
-// IsVpnGatewayMemberInput is an input type that accepts IsVpnGatewayMemberArgs and IsVpnGatewayMemberOutput values.
-// You can construct a concrete instance of `IsVpnGatewayMemberInput` via:
+// PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeInput is an input type that accepts PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs and PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput values.
+// You can construct a concrete instance of `PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeInput` via:
 //
-//	IsVpnGatewayMemberArgs{...}
-type IsVpnGatewayMemberInput interface {
+//	PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs{...}
+type PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayMemberOutput() IsVpnGatewayMemberOutput
-	ToIsVpnGatewayMemberOutputWithContext(context.Context) IsVpnGatewayMemberOutput
+	ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput() PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput
+	ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutputWithContext(context.Context) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput
 }
 
-type IsVpnGatewayMemberArgs struct {
-	// The public IP address assigned to the VPN gateway member
-	Address pulumi.StringPtrInput `pulumi:"address"`
-	// The private IP address assigned to the VPN gateway member
-	PrivateAddress pulumi.StringPtrInput `pulumi:"privateAddress"`
-	// The high availability role assigned to the VPN gateway member
-	Role pulumi.StringPtrInput `pulumi:"role"`
-	// The status of the VPN gateway member
-	Status pulumi.StringPtrInput `pulumi:"status"`
+type PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs struct {
+	// The auxiliary volume name.
+	PiAuxiliaryVolumeName pulumi.StringInput `pulumi:"piAuxiliaryVolumeName"`
+	// The display name of auxiliary volume which is to be onboarded.
+	PiDisplayName pulumi.StringPtrInput `pulumi:"piDisplayName"`
 }
 
-func (IsVpnGatewayMemberArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayMember)(nil)).Elem()
+func (PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume)(nil)).Elem()
 }
 
-func (i IsVpnGatewayMemberArgs) ToIsVpnGatewayMemberOutput() IsVpnGatewayMemberOutput {
-	return i.ToIsVpnGatewayMemberOutputWithContext(context.Background())
+func (i PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput() PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput {
+	return i.ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayMemberArgs) ToIsVpnGatewayMemberOutputWithContext(ctx context.Context) IsVpnGatewayMemberOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayMemberOutput)
+func (i PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput)
 }
 
-// IsVpnGatewayMemberArrayInput is an input type that accepts IsVpnGatewayMemberArray and IsVpnGatewayMemberArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayMemberArrayInput` via:
+// PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayInput is an input type that accepts PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArray and PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput values.
+// You can construct a concrete instance of `PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayInput` via:
 //
-//	IsVpnGatewayMemberArray{ IsVpnGatewayMemberArgs{...} }
-type IsVpnGatewayMemberArrayInput interface {
+//	PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArray{ PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs{...} }
+type PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayMemberArrayOutput() IsVpnGatewayMemberArrayOutput
-	ToIsVpnGatewayMemberArrayOutputWithContext(context.Context) IsVpnGatewayMemberArrayOutput
+	ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput() PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput
+	ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutputWithContext(context.Context) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput
 }
 
-type IsVpnGatewayMemberArray []IsVpnGatewayMemberInput
+type PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArray []PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeInput
 
-func (IsVpnGatewayMemberArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayMember)(nil)).Elem()
+func (PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume)(nil)).Elem()
 }
 
-func (i IsVpnGatewayMemberArray) ToIsVpnGatewayMemberArrayOutput() IsVpnGatewayMemberArrayOutput {
-	return i.ToIsVpnGatewayMemberArrayOutputWithContext(context.Background())
+func (i PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArray) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput() PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput {
+	return i.ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayMemberArray) ToIsVpnGatewayMemberArrayOutputWithContext(ctx context.Context) IsVpnGatewayMemberArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayMemberArrayOutput)
+func (i PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArray) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput)
 }
 
-type IsVpnGatewayMemberOutput struct{ *pulumi.OutputState }
+type PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayMemberOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayMember)(nil)).Elem()
+func (PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume)(nil)).Elem()
 }
 
-func (o IsVpnGatewayMemberOutput) ToIsVpnGatewayMemberOutput() IsVpnGatewayMemberOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput() PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput {
 	return o
 }
 
-func (o IsVpnGatewayMemberOutput) ToIsVpnGatewayMemberOutputWithContext(ctx context.Context) IsVpnGatewayMemberOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput {
 	return o
 }
 
-// The public IP address assigned to the VPN gateway member
-func (o IsVpnGatewayMemberOutput) Address() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.Address }).(pulumi.StringPtrOutput)
+// The auxiliary volume name.
+func (o PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput) PiAuxiliaryVolumeName() pulumi.StringOutput {
+	return o.ApplyT(func(v PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume) string { return v.PiAuxiliaryVolumeName }).(pulumi.StringOutput)
 }
 
-// The private IP address assigned to the VPN gateway member
-func (o IsVpnGatewayMemberOutput) PrivateAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.PrivateAddress }).(pulumi.StringPtrOutput)
+// The display name of auxiliary volume which is to be onboarded.
+func (o PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput) PiDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume) *string { return v.PiDisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The high availability role assigned to the VPN gateway member
-func (o IsVpnGatewayMemberOutput) Role() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.Role }).(pulumi.StringPtrOutput)
+type PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume)(nil)).Elem()
 }
 
-// The status of the VPN gateway member
-func (o IsVpnGatewayMemberOutput) Status() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.Status }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnGatewayMemberArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayMemberArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayMember)(nil)).Elem()
-}
-
-func (o IsVpnGatewayMemberArrayOutput) ToIsVpnGatewayMemberArrayOutput() IsVpnGatewayMemberArrayOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput() PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayMemberArrayOutput) ToIsVpnGatewayMemberArrayOutputWithContext(ctx context.Context) IsVpnGatewayMemberArrayOutput {
+func (o PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput) ToPiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutputWithContext(ctx context.Context) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayMemberArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayMemberOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayMember {
-		return vs[0].([]IsVpnGatewayMember)[vs[1].(int)]
-	}).(IsVpnGatewayMemberOutput)
+func (o PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput) Index(i pulumi.IntInput) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume {
+		return vs[0].([]PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume)[vs[1].(int)]
+	}).(PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput)
 }
 
-type IsVpnGatewayVpc struct {
-	// The CRN for this VPC.
-	Crn *string `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds []IsVpnGatewayVpcDeleted `pulumi:"deleteds"`
-	// The URL for this VPC.
-	Href *string `pulumi:"href"`
-	// The unique identifier for this VPC.
-	Id *string `pulumi:"id"`
-	// The unique user-defined name for this VPC.
-	Name *string `pulumi:"name"`
+type PiVolumeOnboardingResultsVolumeOnboardingFailure struct {
+	// The failure reason for the volumes which have failed to be onboarded
+	FailureMessage *string `pulumi:"failureMessage"`
+	// List of volumes which have failed to be onboarded
+	Volumes []string `pulumi:"volumes"`
 }
 
-// IsVpnGatewayVpcInput is an input type that accepts IsVpnGatewayVpcArgs and IsVpnGatewayVpcOutput values.
-// You can construct a concrete instance of `IsVpnGatewayVpcInput` via:
+// PiVolumeOnboardingResultsVolumeOnboardingFailureInput is an input type that accepts PiVolumeOnboardingResultsVolumeOnboardingFailureArgs and PiVolumeOnboardingResultsVolumeOnboardingFailureOutput values.
+// You can construct a concrete instance of `PiVolumeOnboardingResultsVolumeOnboardingFailureInput` via:
 //
-//	IsVpnGatewayVpcArgs{...}
-type IsVpnGatewayVpcInput interface {
+//	PiVolumeOnboardingResultsVolumeOnboardingFailureArgs{...}
+type PiVolumeOnboardingResultsVolumeOnboardingFailureInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayVpcOutput() IsVpnGatewayVpcOutput
-	ToIsVpnGatewayVpcOutputWithContext(context.Context) IsVpnGatewayVpcOutput
+	ToPiVolumeOnboardingResultsVolumeOnboardingFailureOutput() PiVolumeOnboardingResultsVolumeOnboardingFailureOutput
+	ToPiVolumeOnboardingResultsVolumeOnboardingFailureOutputWithContext(context.Context) PiVolumeOnboardingResultsVolumeOnboardingFailureOutput
 }
 
-type IsVpnGatewayVpcArgs struct {
-	// The CRN for this VPC.
-	Crn pulumi.StringPtrInput `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds IsVpnGatewayVpcDeletedArrayInput `pulumi:"deleteds"`
-	// The URL for this VPC.
-	Href pulumi.StringPtrInput `pulumi:"href"`
-	// The unique identifier for this VPC.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The unique user-defined name for this VPC.
-	Name pulumi.StringPtrInput `pulumi:"name"`
+type PiVolumeOnboardingResultsVolumeOnboardingFailureArgs struct {
+	// The failure reason for the volumes which have failed to be onboarded
+	FailureMessage pulumi.StringPtrInput `pulumi:"failureMessage"`
+	// List of volumes which have failed to be onboarded
+	Volumes pulumi.StringArrayInput `pulumi:"volumes"`
 }
 
-func (IsVpnGatewayVpcArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayVpc)(nil)).Elem()
+func (PiVolumeOnboardingResultsVolumeOnboardingFailureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeOnboardingResultsVolumeOnboardingFailure)(nil)).Elem()
 }
 
-func (i IsVpnGatewayVpcArgs) ToIsVpnGatewayVpcOutput() IsVpnGatewayVpcOutput {
-	return i.ToIsVpnGatewayVpcOutputWithContext(context.Background())
+func (i PiVolumeOnboardingResultsVolumeOnboardingFailureArgs) ToPiVolumeOnboardingResultsVolumeOnboardingFailureOutput() PiVolumeOnboardingResultsVolumeOnboardingFailureOutput {
+	return i.ToPiVolumeOnboardingResultsVolumeOnboardingFailureOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayVpcArgs) ToIsVpnGatewayVpcOutputWithContext(ctx context.Context) IsVpnGatewayVpcOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcOutput)
+func (i PiVolumeOnboardingResultsVolumeOnboardingFailureArgs) ToPiVolumeOnboardingResultsVolumeOnboardingFailureOutputWithContext(ctx context.Context) PiVolumeOnboardingResultsVolumeOnboardingFailureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeOnboardingResultsVolumeOnboardingFailureOutput)
 }
 
-// IsVpnGatewayVpcArrayInput is an input type that accepts IsVpnGatewayVpcArray and IsVpnGatewayVpcArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayVpcArrayInput` via:
+// PiVolumeOnboardingResultsVolumeOnboardingFailureArrayInput is an input type that accepts PiVolumeOnboardingResultsVolumeOnboardingFailureArray and PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput values.
+// You can construct a concrete instance of `PiVolumeOnboardingResultsVolumeOnboardingFailureArrayInput` via:
 //
-//	IsVpnGatewayVpcArray{ IsVpnGatewayVpcArgs{...} }
-type IsVpnGatewayVpcArrayInput interface {
+//	PiVolumeOnboardingResultsVolumeOnboardingFailureArray{ PiVolumeOnboardingResultsVolumeOnboardingFailureArgs{...} }
+type PiVolumeOnboardingResultsVolumeOnboardingFailureArrayInput interface {
 	pulumi.Input
 
-	ToIsVpnGatewayVpcArrayOutput() IsVpnGatewayVpcArrayOutput
-	ToIsVpnGatewayVpcArrayOutputWithContext(context.Context) IsVpnGatewayVpcArrayOutput
+	ToPiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput() PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput
+	ToPiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutputWithContext(context.Context) PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput
 }
 
-type IsVpnGatewayVpcArray []IsVpnGatewayVpcInput
+type PiVolumeOnboardingResultsVolumeOnboardingFailureArray []PiVolumeOnboardingResultsVolumeOnboardingFailureInput
 
-func (IsVpnGatewayVpcArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayVpc)(nil)).Elem()
+func (PiVolumeOnboardingResultsVolumeOnboardingFailureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeOnboardingResultsVolumeOnboardingFailure)(nil)).Elem()
 }
 
-func (i IsVpnGatewayVpcArray) ToIsVpnGatewayVpcArrayOutput() IsVpnGatewayVpcArrayOutput {
-	return i.ToIsVpnGatewayVpcArrayOutputWithContext(context.Background())
+func (i PiVolumeOnboardingResultsVolumeOnboardingFailureArray) ToPiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput() PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput {
+	return i.ToPiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutputWithContext(context.Background())
 }
 
-func (i IsVpnGatewayVpcArray) ToIsVpnGatewayVpcArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcArrayOutput)
+func (i PiVolumeOnboardingResultsVolumeOnboardingFailureArray) ToPiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutputWithContext(ctx context.Context) PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput)
 }
 
-type IsVpnGatewayVpcOutput struct{ *pulumi.OutputState }
+type PiVolumeOnboardingResultsVolumeOnboardingFailureOutput struct{ *pulumi.OutputState }
 
-func (IsVpnGatewayVpcOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayVpc)(nil)).Elem()
+func (PiVolumeOnboardingResultsVolumeOnboardingFailureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiVolumeOnboardingResultsVolumeOnboardingFailure)(nil)).Elem()
 }
 
-func (o IsVpnGatewayVpcOutput) ToIsVpnGatewayVpcOutput() IsVpnGatewayVpcOutput {
+func (o PiVolumeOnboardingResultsVolumeOnboardingFailureOutput) ToPiVolumeOnboardingResultsVolumeOnboardingFailureOutput() PiVolumeOnboardingResultsVolumeOnboardingFailureOutput {
 	return o
 }
 
-func (o IsVpnGatewayVpcOutput) ToIsVpnGatewayVpcOutputWithContext(ctx context.Context) IsVpnGatewayVpcOutput {
+func (o PiVolumeOnboardingResultsVolumeOnboardingFailureOutput) ToPiVolumeOnboardingResultsVolumeOnboardingFailureOutputWithContext(ctx context.Context) PiVolumeOnboardingResultsVolumeOnboardingFailureOutput {
 	return o
 }
 
-// The CRN for this VPC.
-func (o IsVpnGatewayVpcOutput) Crn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Crn }).(pulumi.StringPtrOutput)
+// The failure reason for the volumes which have failed to be onboarded
+func (o PiVolumeOnboardingResultsVolumeOnboardingFailureOutput) FailureMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiVolumeOnboardingResultsVolumeOnboardingFailure) *string { return v.FailureMessage }).(pulumi.StringPtrOutput)
 }
 
-// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-func (o IsVpnGatewayVpcOutput) Deleteds() IsVpnGatewayVpcDeletedArrayOutput {
-	return o.ApplyT(func(v IsVpnGatewayVpc) []IsVpnGatewayVpcDeleted { return v.Deleteds }).(IsVpnGatewayVpcDeletedArrayOutput)
+// List of volumes which have failed to be onboarded
+func (o PiVolumeOnboardingResultsVolumeOnboardingFailureOutput) Volumes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PiVolumeOnboardingResultsVolumeOnboardingFailure) []string { return v.Volumes }).(pulumi.StringArrayOutput)
 }
 
-// The URL for this VPC.
-func (o IsVpnGatewayVpcOutput) Href() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Href }).(pulumi.StringPtrOutput)
+type PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput struct{ *pulumi.OutputState }
+
+func (PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiVolumeOnboardingResultsVolumeOnboardingFailure)(nil)).Elem()
 }
 
-// The unique identifier for this VPC.
-func (o IsVpnGatewayVpcOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// The unique user-defined name for this VPC.
-func (o IsVpnGatewayVpcOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnGatewayVpcArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayVpcArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayVpc)(nil)).Elem()
-}
-
-func (o IsVpnGatewayVpcArrayOutput) ToIsVpnGatewayVpcArrayOutput() IsVpnGatewayVpcArrayOutput {
+func (o PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput) ToPiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput() PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayVpcArrayOutput) ToIsVpnGatewayVpcArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcArrayOutput {
+func (o PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput) ToPiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutputWithContext(ctx context.Context) PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput {
 	return o
 }
 
-func (o IsVpnGatewayVpcArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayVpcOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayVpc {
-		return vs[0].([]IsVpnGatewayVpc)[vs[1].(int)]
-	}).(IsVpnGatewayVpcOutput)
-}
-
-type IsVpnGatewayVpcDeleted struct {
-	// Link to documentation about deleted resources.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpnGatewayVpcDeletedInput is an input type that accepts IsVpnGatewayVpcDeletedArgs and IsVpnGatewayVpcDeletedOutput values.
-// You can construct a concrete instance of `IsVpnGatewayVpcDeletedInput` via:
-//
-//	IsVpnGatewayVpcDeletedArgs{...}
-type IsVpnGatewayVpcDeletedInput interface {
-	pulumi.Input
-
-	ToIsVpnGatewayVpcDeletedOutput() IsVpnGatewayVpcDeletedOutput
-	ToIsVpnGatewayVpcDeletedOutputWithContext(context.Context) IsVpnGatewayVpcDeletedOutput
-}
-
-type IsVpnGatewayVpcDeletedArgs struct {
-	// Link to documentation about deleted resources.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpnGatewayVpcDeletedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayVpcDeleted)(nil)).Elem()
-}
-
-func (i IsVpnGatewayVpcDeletedArgs) ToIsVpnGatewayVpcDeletedOutput() IsVpnGatewayVpcDeletedOutput {
-	return i.ToIsVpnGatewayVpcDeletedOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayVpcDeletedArgs) ToIsVpnGatewayVpcDeletedOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcDeletedOutput)
-}
-
-// IsVpnGatewayVpcDeletedArrayInput is an input type that accepts IsVpnGatewayVpcDeletedArray and IsVpnGatewayVpcDeletedArrayOutput values.
-// You can construct a concrete instance of `IsVpnGatewayVpcDeletedArrayInput` via:
-//
-//	IsVpnGatewayVpcDeletedArray{ IsVpnGatewayVpcDeletedArgs{...} }
-type IsVpnGatewayVpcDeletedArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnGatewayVpcDeletedArrayOutput() IsVpnGatewayVpcDeletedArrayOutput
-	ToIsVpnGatewayVpcDeletedArrayOutputWithContext(context.Context) IsVpnGatewayVpcDeletedArrayOutput
-}
-
-type IsVpnGatewayVpcDeletedArray []IsVpnGatewayVpcDeletedInput
-
-func (IsVpnGatewayVpcDeletedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayVpcDeleted)(nil)).Elem()
-}
-
-func (i IsVpnGatewayVpcDeletedArray) ToIsVpnGatewayVpcDeletedArrayOutput() IsVpnGatewayVpcDeletedArrayOutput {
-	return i.ToIsVpnGatewayVpcDeletedArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnGatewayVpcDeletedArray) ToIsVpnGatewayVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcDeletedArrayOutput)
-}
-
-type IsVpnGatewayVpcDeletedOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayVpcDeletedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnGatewayVpcDeleted)(nil)).Elem()
-}
-
-func (o IsVpnGatewayVpcDeletedOutput) ToIsVpnGatewayVpcDeletedOutput() IsVpnGatewayVpcDeletedOutput {
-	return o
-}
-
-func (o IsVpnGatewayVpcDeletedOutput) ToIsVpnGatewayVpcDeletedOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedOutput {
-	return o
-}
-
-// Link to documentation about deleted resources.
-func (o IsVpnGatewayVpcDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnGatewayVpcDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnGatewayVpcDeletedArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnGatewayVpcDeletedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnGatewayVpcDeleted)(nil)).Elem()
-}
-
-func (o IsVpnGatewayVpcDeletedArrayOutput) ToIsVpnGatewayVpcDeletedArrayOutput() IsVpnGatewayVpcDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpnGatewayVpcDeletedArrayOutput) ToIsVpnGatewayVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpnGatewayVpcDeletedArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayVpcDeletedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayVpcDeleted {
-		return vs[0].([]IsVpnGatewayVpcDeleted)[vs[1].(int)]
-	}).(IsVpnGatewayVpcDeletedOutput)
-}
-
-type IsVpnServerClientAuthentication struct {
-	// The crn of certificate instance to use for the VPN client certificate authority (CA).
-	ClientCaCrn *string `pulumi:"clientCaCrn"`
-	// The type of identity provider to be used by the VPN client.- `iam`: IBM identity and access managementThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the route on which the unexpected property value was encountered.
-	IdentityProvider *string `pulumi:"identityProvider"`
-	// The type of authentication.
-	Method string `pulumi:"method"`
-}
-
-// IsVpnServerClientAuthenticationInput is an input type that accepts IsVpnServerClientAuthenticationArgs and IsVpnServerClientAuthenticationOutput values.
-// You can construct a concrete instance of `IsVpnServerClientAuthenticationInput` via:
-//
-//	IsVpnServerClientAuthenticationArgs{...}
-type IsVpnServerClientAuthenticationInput interface {
-	pulumi.Input
-
-	ToIsVpnServerClientAuthenticationOutput() IsVpnServerClientAuthenticationOutput
-	ToIsVpnServerClientAuthenticationOutputWithContext(context.Context) IsVpnServerClientAuthenticationOutput
-}
-
-type IsVpnServerClientAuthenticationArgs struct {
-	// The crn of certificate instance to use for the VPN client certificate authority (CA).
-	ClientCaCrn pulumi.StringPtrInput `pulumi:"clientCaCrn"`
-	// The type of identity provider to be used by the VPN client.- `iam`: IBM identity and access managementThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the route on which the unexpected property value was encountered.
-	IdentityProvider pulumi.StringPtrInput `pulumi:"identityProvider"`
-	// The type of authentication.
-	Method pulumi.StringInput `pulumi:"method"`
-}
-
-func (IsVpnServerClientAuthenticationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerClientAuthentication)(nil)).Elem()
-}
-
-func (i IsVpnServerClientAuthenticationArgs) ToIsVpnServerClientAuthenticationOutput() IsVpnServerClientAuthenticationOutput {
-	return i.ToIsVpnServerClientAuthenticationOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerClientAuthenticationArgs) ToIsVpnServerClientAuthenticationOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerClientAuthenticationOutput)
-}
-
-// IsVpnServerClientAuthenticationArrayInput is an input type that accepts IsVpnServerClientAuthenticationArray and IsVpnServerClientAuthenticationArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerClientAuthenticationArrayInput` via:
-//
-//	IsVpnServerClientAuthenticationArray{ IsVpnServerClientAuthenticationArgs{...} }
-type IsVpnServerClientAuthenticationArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerClientAuthenticationArrayOutput() IsVpnServerClientAuthenticationArrayOutput
-	ToIsVpnServerClientAuthenticationArrayOutputWithContext(context.Context) IsVpnServerClientAuthenticationArrayOutput
-}
-
-type IsVpnServerClientAuthenticationArray []IsVpnServerClientAuthenticationInput
-
-func (IsVpnServerClientAuthenticationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerClientAuthentication)(nil)).Elem()
-}
-
-func (i IsVpnServerClientAuthenticationArray) ToIsVpnServerClientAuthenticationArrayOutput() IsVpnServerClientAuthenticationArrayOutput {
-	return i.ToIsVpnServerClientAuthenticationArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerClientAuthenticationArray) ToIsVpnServerClientAuthenticationArrayOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerClientAuthenticationArrayOutput)
-}
-
-type IsVpnServerClientAuthenticationOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerClientAuthenticationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerClientAuthentication)(nil)).Elem()
-}
-
-func (o IsVpnServerClientAuthenticationOutput) ToIsVpnServerClientAuthenticationOutput() IsVpnServerClientAuthenticationOutput {
-	return o
-}
-
-func (o IsVpnServerClientAuthenticationOutput) ToIsVpnServerClientAuthenticationOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationOutput {
-	return o
-}
-
-// The crn of certificate instance to use for the VPN client certificate authority (CA).
-func (o IsVpnServerClientAuthenticationOutput) ClientCaCrn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerClientAuthentication) *string { return v.ClientCaCrn }).(pulumi.StringPtrOutput)
-}
-
-// The type of identity provider to be used by the VPN client.- `iam`: IBM identity and access managementThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the route on which the unexpected property value was encountered.
-func (o IsVpnServerClientAuthenticationOutput) IdentityProvider() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerClientAuthentication) *string { return v.IdentityProvider }).(pulumi.StringPtrOutput)
-}
-
-// The type of authentication.
-func (o IsVpnServerClientAuthenticationOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v IsVpnServerClientAuthentication) string { return v.Method }).(pulumi.StringOutput)
-}
-
-type IsVpnServerClientAuthenticationArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerClientAuthenticationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerClientAuthentication)(nil)).Elem()
-}
-
-func (o IsVpnServerClientAuthenticationArrayOutput) ToIsVpnServerClientAuthenticationArrayOutput() IsVpnServerClientAuthenticationArrayOutput {
-	return o
-}
-
-func (o IsVpnServerClientAuthenticationArrayOutput) ToIsVpnServerClientAuthenticationArrayOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationArrayOutput {
-	return o
-}
-
-func (o IsVpnServerClientAuthenticationArrayOutput) Index(i pulumi.IntInput) IsVpnServerClientAuthenticationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerClientAuthentication {
-		return vs[0].([]IsVpnServerClientAuthentication)[vs[1].(int)]
-	}).(IsVpnServerClientAuthenticationOutput)
-}
-
-type IsVpnServerHealthReason struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code *string `pulumi:"code"`
-	// An explanation of the reason for this health state.
-	Message *string `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpnServerHealthReasonInput is an input type that accepts IsVpnServerHealthReasonArgs and IsVpnServerHealthReasonOutput values.
-// You can construct a concrete instance of `IsVpnServerHealthReasonInput` via:
-//
-//	IsVpnServerHealthReasonArgs{...}
-type IsVpnServerHealthReasonInput interface {
-	pulumi.Input
-
-	ToIsVpnServerHealthReasonOutput() IsVpnServerHealthReasonOutput
-	ToIsVpnServerHealthReasonOutputWithContext(context.Context) IsVpnServerHealthReasonOutput
-}
-
-type IsVpnServerHealthReasonArgs struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the reason for this health state.
-	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpnServerHealthReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerHealthReason)(nil)).Elem()
-}
-
-func (i IsVpnServerHealthReasonArgs) ToIsVpnServerHealthReasonOutput() IsVpnServerHealthReasonOutput {
-	return i.ToIsVpnServerHealthReasonOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerHealthReasonArgs) ToIsVpnServerHealthReasonOutputWithContext(ctx context.Context) IsVpnServerHealthReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerHealthReasonOutput)
-}
-
-// IsVpnServerHealthReasonArrayInput is an input type that accepts IsVpnServerHealthReasonArray and IsVpnServerHealthReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerHealthReasonArrayInput` via:
-//
-//	IsVpnServerHealthReasonArray{ IsVpnServerHealthReasonArgs{...} }
-type IsVpnServerHealthReasonArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerHealthReasonArrayOutput() IsVpnServerHealthReasonArrayOutput
-	ToIsVpnServerHealthReasonArrayOutputWithContext(context.Context) IsVpnServerHealthReasonArrayOutput
-}
-
-type IsVpnServerHealthReasonArray []IsVpnServerHealthReasonInput
-
-func (IsVpnServerHealthReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerHealthReason)(nil)).Elem()
-}
-
-func (i IsVpnServerHealthReasonArray) ToIsVpnServerHealthReasonArrayOutput() IsVpnServerHealthReasonArrayOutput {
-	return i.ToIsVpnServerHealthReasonArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerHealthReasonArray) ToIsVpnServerHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerHealthReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerHealthReasonArrayOutput)
-}
-
-type IsVpnServerHealthReasonOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerHealthReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerHealthReason)(nil)).Elem()
-}
-
-func (o IsVpnServerHealthReasonOutput) ToIsVpnServerHealthReasonOutput() IsVpnServerHealthReasonOutput {
-	return o
-}
-
-func (o IsVpnServerHealthReasonOutput) ToIsVpnServerHealthReasonOutputWithContext(ctx context.Context) IsVpnServerHealthReasonOutput {
-	return o
-}
-
-// A snake case string succinctly identifying the reason for this health state.
-func (o IsVpnServerHealthReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
-}
-
-// An explanation of the reason for this health state.
-func (o IsVpnServerHealthReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
-}
-
-// Link to documentation about the reason for this health state.
-func (o IsVpnServerHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerHealthReasonArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerHealthReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerHealthReason)(nil)).Elem()
-}
-
-func (o IsVpnServerHealthReasonArrayOutput) ToIsVpnServerHealthReasonArrayOutput() IsVpnServerHealthReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerHealthReasonArrayOutput) ToIsVpnServerHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerHealthReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerHealthReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerHealthReason {
-		return vs[0].([]IsVpnServerHealthReason)[vs[1].(int)]
-	}).(IsVpnServerHealthReasonOutput)
-}
-
-type IsVpnServerLifecycleReason struct {
-	// A snake case string succinctly identifying the reason for this lifecycle state.
-	Code *string `pulumi:"code"`
-	// An explanation of the reason for this lifecycle state.
-	Message *string `pulumi:"message"`
-	// Link to documentation about the reason for this lifecycle state.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpnServerLifecycleReasonInput is an input type that accepts IsVpnServerLifecycleReasonArgs and IsVpnServerLifecycleReasonOutput values.
-// You can construct a concrete instance of `IsVpnServerLifecycleReasonInput` via:
-//
-//	IsVpnServerLifecycleReasonArgs{...}
-type IsVpnServerLifecycleReasonInput interface {
-	pulumi.Input
-
-	ToIsVpnServerLifecycleReasonOutput() IsVpnServerLifecycleReasonOutput
-	ToIsVpnServerLifecycleReasonOutputWithContext(context.Context) IsVpnServerLifecycleReasonOutput
-}
-
-type IsVpnServerLifecycleReasonArgs struct {
-	// A snake case string succinctly identifying the reason for this lifecycle state.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the reason for this lifecycle state.
-	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about the reason for this lifecycle state.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpnServerLifecycleReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerLifecycleReason)(nil)).Elem()
-}
-
-func (i IsVpnServerLifecycleReasonArgs) ToIsVpnServerLifecycleReasonOutput() IsVpnServerLifecycleReasonOutput {
-	return i.ToIsVpnServerLifecycleReasonOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerLifecycleReasonArgs) ToIsVpnServerLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerLifecycleReasonOutput)
-}
-
-// IsVpnServerLifecycleReasonArrayInput is an input type that accepts IsVpnServerLifecycleReasonArray and IsVpnServerLifecycleReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerLifecycleReasonArrayInput` via:
-//
-//	IsVpnServerLifecycleReasonArray{ IsVpnServerLifecycleReasonArgs{...} }
-type IsVpnServerLifecycleReasonArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerLifecycleReasonArrayOutput() IsVpnServerLifecycleReasonArrayOutput
-	ToIsVpnServerLifecycleReasonArrayOutputWithContext(context.Context) IsVpnServerLifecycleReasonArrayOutput
-}
-
-type IsVpnServerLifecycleReasonArray []IsVpnServerLifecycleReasonInput
-
-func (IsVpnServerLifecycleReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerLifecycleReason)(nil)).Elem()
-}
-
-func (i IsVpnServerLifecycleReasonArray) ToIsVpnServerLifecycleReasonArrayOutput() IsVpnServerLifecycleReasonArrayOutput {
-	return i.ToIsVpnServerLifecycleReasonArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerLifecycleReasonArray) ToIsVpnServerLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerLifecycleReasonArrayOutput)
-}
-
-type IsVpnServerLifecycleReasonOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerLifecycleReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerLifecycleReason)(nil)).Elem()
-}
-
-func (o IsVpnServerLifecycleReasonOutput) ToIsVpnServerLifecycleReasonOutput() IsVpnServerLifecycleReasonOutput {
-	return o
-}
-
-func (o IsVpnServerLifecycleReasonOutput) ToIsVpnServerLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonOutput {
-	return o
-}
-
-// A snake case string succinctly identifying the reason for this lifecycle state.
-func (o IsVpnServerLifecycleReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerLifecycleReason) *string { return v.Code }).(pulumi.StringPtrOutput)
-}
-
-// An explanation of the reason for this lifecycle state.
-func (o IsVpnServerLifecycleReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerLifecycleReason) *string { return v.Message }).(pulumi.StringPtrOutput)
-}
-
-// Link to documentation about the reason for this lifecycle state.
-func (o IsVpnServerLifecycleReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerLifecycleReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerLifecycleReasonArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerLifecycleReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerLifecycleReason)(nil)).Elem()
-}
-
-func (o IsVpnServerLifecycleReasonArrayOutput) ToIsVpnServerLifecycleReasonArrayOutput() IsVpnServerLifecycleReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerLifecycleReasonArrayOutput) ToIsVpnServerLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerLifecycleReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerLifecycleReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerLifecycleReason {
-		return vs[0].([]IsVpnServerLifecycleReason)[vs[1].(int)]
-	}).(IsVpnServerLifecycleReasonOutput)
-}
-
-type IsVpnServerPrivateIp struct {
-	// The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
-	Address *string `pulumi:"address"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds []IsVpnServerPrivateIpDeleted `pulumi:"deleteds"`
-	// The URL for this reserved IP.
-	Href *string `pulumi:"href"`
-	// The unique identifier for this reserved IP.
-	Id *string `pulumi:"id"`
-	// The user-defined or system-provided name for this reserved IP.
-	Name *string `pulumi:"name"`
-	// The resource type.
-	ResourceType *string `pulumi:"resourceType"`
-}
-
-// IsVpnServerPrivateIpInput is an input type that accepts IsVpnServerPrivateIpArgs and IsVpnServerPrivateIpOutput values.
-// You can construct a concrete instance of `IsVpnServerPrivateIpInput` via:
-//
-//	IsVpnServerPrivateIpArgs{...}
-type IsVpnServerPrivateIpInput interface {
-	pulumi.Input
-
-	ToIsVpnServerPrivateIpOutput() IsVpnServerPrivateIpOutput
-	ToIsVpnServerPrivateIpOutputWithContext(context.Context) IsVpnServerPrivateIpOutput
-}
-
-type IsVpnServerPrivateIpArgs struct {
-	// The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
-	Address pulumi.StringPtrInput `pulumi:"address"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds IsVpnServerPrivateIpDeletedArrayInput `pulumi:"deleteds"`
-	// The URL for this reserved IP.
-	Href pulumi.StringPtrInput `pulumi:"href"`
-	// The unique identifier for this reserved IP.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The user-defined or system-provided name for this reserved IP.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The resource type.
-	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
-}
-
-func (IsVpnServerPrivateIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerPrivateIp)(nil)).Elem()
-}
-
-func (i IsVpnServerPrivateIpArgs) ToIsVpnServerPrivateIpOutput() IsVpnServerPrivateIpOutput {
-	return i.ToIsVpnServerPrivateIpOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerPrivateIpArgs) ToIsVpnServerPrivateIpOutputWithContext(ctx context.Context) IsVpnServerPrivateIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpOutput)
-}
-
-// IsVpnServerPrivateIpArrayInput is an input type that accepts IsVpnServerPrivateIpArray and IsVpnServerPrivateIpArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerPrivateIpArrayInput` via:
-//
-//	IsVpnServerPrivateIpArray{ IsVpnServerPrivateIpArgs{...} }
-type IsVpnServerPrivateIpArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerPrivateIpArrayOutput() IsVpnServerPrivateIpArrayOutput
-	ToIsVpnServerPrivateIpArrayOutputWithContext(context.Context) IsVpnServerPrivateIpArrayOutput
-}
-
-type IsVpnServerPrivateIpArray []IsVpnServerPrivateIpInput
-
-func (IsVpnServerPrivateIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerPrivateIp)(nil)).Elem()
-}
-
-func (i IsVpnServerPrivateIpArray) ToIsVpnServerPrivateIpArrayOutput() IsVpnServerPrivateIpArrayOutput {
-	return i.ToIsVpnServerPrivateIpArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerPrivateIpArray) ToIsVpnServerPrivateIpArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpArrayOutput)
-}
-
-type IsVpnServerPrivateIpOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerPrivateIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerPrivateIp)(nil)).Elem()
-}
-
-func (o IsVpnServerPrivateIpOutput) ToIsVpnServerPrivateIpOutput() IsVpnServerPrivateIpOutput {
-	return o
-}
-
-func (o IsVpnServerPrivateIpOutput) ToIsVpnServerPrivateIpOutputWithContext(ctx context.Context) IsVpnServerPrivateIpOutput {
-	return o
-}
-
-// The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
-func (o IsVpnServerPrivateIpOutput) Address() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Address }).(pulumi.StringPtrOutput)
-}
-
-// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-func (o IsVpnServerPrivateIpOutput) Deleteds() IsVpnServerPrivateIpDeletedArrayOutput {
-	return o.ApplyT(func(v IsVpnServerPrivateIp) []IsVpnServerPrivateIpDeleted { return v.Deleteds }).(IsVpnServerPrivateIpDeletedArrayOutput)
-}
-
-// The URL for this reserved IP.
-func (o IsVpnServerPrivateIpOutput) Href() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Href }).(pulumi.StringPtrOutput)
-}
-
-// The unique identifier for this reserved IP.
-func (o IsVpnServerPrivateIpOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// The user-defined or system-provided name for this reserved IP.
-func (o IsVpnServerPrivateIpOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// The resource type.
-func (o IsVpnServerPrivateIpOutput) ResourceType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerPrivateIpArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerPrivateIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerPrivateIp)(nil)).Elem()
-}
-
-func (o IsVpnServerPrivateIpArrayOutput) ToIsVpnServerPrivateIpArrayOutput() IsVpnServerPrivateIpArrayOutput {
-	return o
-}
-
-func (o IsVpnServerPrivateIpArrayOutput) ToIsVpnServerPrivateIpArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpArrayOutput {
-	return o
-}
-
-func (o IsVpnServerPrivateIpArrayOutput) Index(i pulumi.IntInput) IsVpnServerPrivateIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerPrivateIp {
-		return vs[0].([]IsVpnServerPrivateIp)[vs[1].(int)]
-	}).(IsVpnServerPrivateIpOutput)
-}
-
-type IsVpnServerPrivateIpDeleted struct {
-	// Link to documentation about deleted resources.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpnServerPrivateIpDeletedInput is an input type that accepts IsVpnServerPrivateIpDeletedArgs and IsVpnServerPrivateIpDeletedOutput values.
-// You can construct a concrete instance of `IsVpnServerPrivateIpDeletedInput` via:
-//
-//	IsVpnServerPrivateIpDeletedArgs{...}
-type IsVpnServerPrivateIpDeletedInput interface {
-	pulumi.Input
-
-	ToIsVpnServerPrivateIpDeletedOutput() IsVpnServerPrivateIpDeletedOutput
-	ToIsVpnServerPrivateIpDeletedOutputWithContext(context.Context) IsVpnServerPrivateIpDeletedOutput
-}
-
-type IsVpnServerPrivateIpDeletedArgs struct {
-	// Link to documentation about deleted resources.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpnServerPrivateIpDeletedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerPrivateIpDeleted)(nil)).Elem()
-}
-
-func (i IsVpnServerPrivateIpDeletedArgs) ToIsVpnServerPrivateIpDeletedOutput() IsVpnServerPrivateIpDeletedOutput {
-	return i.ToIsVpnServerPrivateIpDeletedOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerPrivateIpDeletedArgs) ToIsVpnServerPrivateIpDeletedOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpDeletedOutput)
-}
-
-// IsVpnServerPrivateIpDeletedArrayInput is an input type that accepts IsVpnServerPrivateIpDeletedArray and IsVpnServerPrivateIpDeletedArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerPrivateIpDeletedArrayInput` via:
-//
-//	IsVpnServerPrivateIpDeletedArray{ IsVpnServerPrivateIpDeletedArgs{...} }
-type IsVpnServerPrivateIpDeletedArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerPrivateIpDeletedArrayOutput() IsVpnServerPrivateIpDeletedArrayOutput
-	ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(context.Context) IsVpnServerPrivateIpDeletedArrayOutput
-}
-
-type IsVpnServerPrivateIpDeletedArray []IsVpnServerPrivateIpDeletedInput
-
-func (IsVpnServerPrivateIpDeletedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerPrivateIpDeleted)(nil)).Elem()
-}
-
-func (i IsVpnServerPrivateIpDeletedArray) ToIsVpnServerPrivateIpDeletedArrayOutput() IsVpnServerPrivateIpDeletedArrayOutput {
-	return i.ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerPrivateIpDeletedArray) ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpDeletedArrayOutput)
-}
-
-type IsVpnServerPrivateIpDeletedOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerPrivateIpDeletedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerPrivateIpDeleted)(nil)).Elem()
-}
-
-func (o IsVpnServerPrivateIpDeletedOutput) ToIsVpnServerPrivateIpDeletedOutput() IsVpnServerPrivateIpDeletedOutput {
-	return o
-}
-
-func (o IsVpnServerPrivateIpDeletedOutput) ToIsVpnServerPrivateIpDeletedOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedOutput {
-	return o
-}
-
-// Link to documentation about deleted resources.
-func (o IsVpnServerPrivateIpDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerPrivateIpDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerPrivateIpDeletedArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerPrivateIpDeletedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerPrivateIpDeleted)(nil)).Elem()
-}
-
-func (o IsVpnServerPrivateIpDeletedArrayOutput) ToIsVpnServerPrivateIpDeletedArrayOutput() IsVpnServerPrivateIpDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpnServerPrivateIpDeletedArrayOutput) ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpnServerPrivateIpDeletedArrayOutput) Index(i pulumi.IntInput) IsVpnServerPrivateIpDeletedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerPrivateIpDeleted {
-		return vs[0].([]IsVpnServerPrivateIpDeleted)[vs[1].(int)]
-	}).(IsVpnServerPrivateIpDeletedOutput)
-}
-
-type IsVpnServerRouteHealthReason struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code *string `pulumi:"code"`
-	// An explanation of the reason for this health state.
-	Message *string `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpnServerRouteHealthReasonInput is an input type that accepts IsVpnServerRouteHealthReasonArgs and IsVpnServerRouteHealthReasonOutput values.
-// You can construct a concrete instance of `IsVpnServerRouteHealthReasonInput` via:
-//
-//	IsVpnServerRouteHealthReasonArgs{...}
-type IsVpnServerRouteHealthReasonInput interface {
-	pulumi.Input
-
-	ToIsVpnServerRouteHealthReasonOutput() IsVpnServerRouteHealthReasonOutput
-	ToIsVpnServerRouteHealthReasonOutputWithContext(context.Context) IsVpnServerRouteHealthReasonOutput
-}
-
-type IsVpnServerRouteHealthReasonArgs struct {
-	// A snake case string succinctly identifying the reason for this health state.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the reason for this health state.
-	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about the reason for this health state.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpnServerRouteHealthReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerRouteHealthReason)(nil)).Elem()
-}
-
-func (i IsVpnServerRouteHealthReasonArgs) ToIsVpnServerRouteHealthReasonOutput() IsVpnServerRouteHealthReasonOutput {
-	return i.ToIsVpnServerRouteHealthReasonOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerRouteHealthReasonArgs) ToIsVpnServerRouteHealthReasonOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteHealthReasonOutput)
-}
-
-// IsVpnServerRouteHealthReasonArrayInput is an input type that accepts IsVpnServerRouteHealthReasonArray and IsVpnServerRouteHealthReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerRouteHealthReasonArrayInput` via:
-//
-//	IsVpnServerRouteHealthReasonArray{ IsVpnServerRouteHealthReasonArgs{...} }
-type IsVpnServerRouteHealthReasonArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerRouteHealthReasonArrayOutput() IsVpnServerRouteHealthReasonArrayOutput
-	ToIsVpnServerRouteHealthReasonArrayOutputWithContext(context.Context) IsVpnServerRouteHealthReasonArrayOutput
-}
-
-type IsVpnServerRouteHealthReasonArray []IsVpnServerRouteHealthReasonInput
-
-func (IsVpnServerRouteHealthReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerRouteHealthReason)(nil)).Elem()
-}
-
-func (i IsVpnServerRouteHealthReasonArray) ToIsVpnServerRouteHealthReasonArrayOutput() IsVpnServerRouteHealthReasonArrayOutput {
-	return i.ToIsVpnServerRouteHealthReasonArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerRouteHealthReasonArray) ToIsVpnServerRouteHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteHealthReasonArrayOutput)
-}
-
-type IsVpnServerRouteHealthReasonOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerRouteHealthReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerRouteHealthReason)(nil)).Elem()
-}
-
-func (o IsVpnServerRouteHealthReasonOutput) ToIsVpnServerRouteHealthReasonOutput() IsVpnServerRouteHealthReasonOutput {
-	return o
-}
-
-func (o IsVpnServerRouteHealthReasonOutput) ToIsVpnServerRouteHealthReasonOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonOutput {
-	return o
-}
-
-// A snake case string succinctly identifying the reason for this health state.
-func (o IsVpnServerRouteHealthReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerRouteHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
-}
-
-// An explanation of the reason for this health state.
-func (o IsVpnServerRouteHealthReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerRouteHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
-}
-
-// Link to documentation about the reason for this health state.
-func (o IsVpnServerRouteHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerRouteHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerRouteHealthReasonArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerRouteHealthReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerRouteHealthReason)(nil)).Elem()
-}
-
-func (o IsVpnServerRouteHealthReasonArrayOutput) ToIsVpnServerRouteHealthReasonArrayOutput() IsVpnServerRouteHealthReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerRouteHealthReasonArrayOutput) ToIsVpnServerRouteHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerRouteHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerRouteHealthReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerRouteHealthReason {
-		return vs[0].([]IsVpnServerRouteHealthReason)[vs[1].(int)]
-	}).(IsVpnServerRouteHealthReasonOutput)
-}
-
-type IsVpnServerRouteLifecycleReason struct {
-	// A snake case string succinctly identifying the reason for this lifecycle state.
-	Code *string `pulumi:"code"`
-	// An explanation of the reason for this lifecycle state.
-	Message *string `pulumi:"message"`
-	// Link to documentation about the reason for this lifecycle state.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpnServerRouteLifecycleReasonInput is an input type that accepts IsVpnServerRouteLifecycleReasonArgs and IsVpnServerRouteLifecycleReasonOutput values.
-// You can construct a concrete instance of `IsVpnServerRouteLifecycleReasonInput` via:
-//
-//	IsVpnServerRouteLifecycleReasonArgs{...}
-type IsVpnServerRouteLifecycleReasonInput interface {
-	pulumi.Input
-
-	ToIsVpnServerRouteLifecycleReasonOutput() IsVpnServerRouteLifecycleReasonOutput
-	ToIsVpnServerRouteLifecycleReasonOutputWithContext(context.Context) IsVpnServerRouteLifecycleReasonOutput
-}
-
-type IsVpnServerRouteLifecycleReasonArgs struct {
-	// A snake case string succinctly identifying the reason for this lifecycle state.
-	Code pulumi.StringPtrInput `pulumi:"code"`
-	// An explanation of the reason for this lifecycle state.
-	Message pulumi.StringPtrInput `pulumi:"message"`
-	// Link to documentation about the reason for this lifecycle state.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpnServerRouteLifecycleReasonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerRouteLifecycleReason)(nil)).Elem()
-}
-
-func (i IsVpnServerRouteLifecycleReasonArgs) ToIsVpnServerRouteLifecycleReasonOutput() IsVpnServerRouteLifecycleReasonOutput {
-	return i.ToIsVpnServerRouteLifecycleReasonOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerRouteLifecycleReasonArgs) ToIsVpnServerRouteLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteLifecycleReasonOutput)
-}
-
-// IsVpnServerRouteLifecycleReasonArrayInput is an input type that accepts IsVpnServerRouteLifecycleReasonArray and IsVpnServerRouteLifecycleReasonArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerRouteLifecycleReasonArrayInput` via:
-//
-//	IsVpnServerRouteLifecycleReasonArray{ IsVpnServerRouteLifecycleReasonArgs{...} }
-type IsVpnServerRouteLifecycleReasonArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerRouteLifecycleReasonArrayOutput() IsVpnServerRouteLifecycleReasonArrayOutput
-	ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(context.Context) IsVpnServerRouteLifecycleReasonArrayOutput
-}
-
-type IsVpnServerRouteLifecycleReasonArray []IsVpnServerRouteLifecycleReasonInput
-
-func (IsVpnServerRouteLifecycleReasonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerRouteLifecycleReason)(nil)).Elem()
-}
-
-func (i IsVpnServerRouteLifecycleReasonArray) ToIsVpnServerRouteLifecycleReasonArrayOutput() IsVpnServerRouteLifecycleReasonArrayOutput {
-	return i.ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerRouteLifecycleReasonArray) ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteLifecycleReasonArrayOutput)
-}
-
-type IsVpnServerRouteLifecycleReasonOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerRouteLifecycleReasonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerRouteLifecycleReason)(nil)).Elem()
-}
-
-func (o IsVpnServerRouteLifecycleReasonOutput) ToIsVpnServerRouteLifecycleReasonOutput() IsVpnServerRouteLifecycleReasonOutput {
-	return o
-}
-
-func (o IsVpnServerRouteLifecycleReasonOutput) ToIsVpnServerRouteLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonOutput {
-	return o
-}
-
-// A snake case string succinctly identifying the reason for this lifecycle state.
-func (o IsVpnServerRouteLifecycleReasonOutput) Code() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerRouteLifecycleReason) *string { return v.Code }).(pulumi.StringPtrOutput)
-}
-
-// An explanation of the reason for this lifecycle state.
-func (o IsVpnServerRouteLifecycleReasonOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerRouteLifecycleReason) *string { return v.Message }).(pulumi.StringPtrOutput)
-}
-
-// Link to documentation about the reason for this lifecycle state.
-func (o IsVpnServerRouteLifecycleReasonOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerRouteLifecycleReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerRouteLifecycleReasonArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerRouteLifecycleReasonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerRouteLifecycleReason)(nil)).Elem()
-}
-
-func (o IsVpnServerRouteLifecycleReasonArrayOutput) ToIsVpnServerRouteLifecycleReasonArrayOutput() IsVpnServerRouteLifecycleReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerRouteLifecycleReasonArrayOutput) ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonArrayOutput {
-	return o
-}
-
-func (o IsVpnServerRouteLifecycleReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerRouteLifecycleReasonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerRouteLifecycleReason {
-		return vs[0].([]IsVpnServerRouteLifecycleReason)[vs[1].(int)]
-	}).(IsVpnServerRouteLifecycleReasonOutput)
-}
-
-type IsVpnServerVpc struct {
-	// The CRN for this VPC.
-	Crn *string `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds []IsVpnServerVpcDeleted `pulumi:"deleteds"`
-	// The URL for this VPC.
-	Href *string `pulumi:"href"`
-	// The unique identifier for this VPC.
-	Id *string `pulumi:"id"`
-	// The unique user-defined name for this VPC.
-	Name *string `pulumi:"name"`
-}
-
-// IsVpnServerVpcInput is an input type that accepts IsVpnServerVpcArgs and IsVpnServerVpcOutput values.
-// You can construct a concrete instance of `IsVpnServerVpcInput` via:
-//
-//	IsVpnServerVpcArgs{...}
-type IsVpnServerVpcInput interface {
-	pulumi.Input
-
-	ToIsVpnServerVpcOutput() IsVpnServerVpcOutput
-	ToIsVpnServerVpcOutputWithContext(context.Context) IsVpnServerVpcOutput
-}
-
-type IsVpnServerVpcArgs struct {
-	// The CRN for this VPC.
-	Crn pulumi.StringPtrInput `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds IsVpnServerVpcDeletedArrayInput `pulumi:"deleteds"`
-	// The URL for this VPC.
-	Href pulumi.StringPtrInput `pulumi:"href"`
-	// The unique identifier for this VPC.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The unique user-defined name for this VPC.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-}
-
-func (IsVpnServerVpcArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerVpc)(nil)).Elem()
-}
-
-func (i IsVpnServerVpcArgs) ToIsVpnServerVpcOutput() IsVpnServerVpcOutput {
-	return i.ToIsVpnServerVpcOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerVpcArgs) ToIsVpnServerVpcOutputWithContext(ctx context.Context) IsVpnServerVpcOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcOutput)
-}
-
-// IsVpnServerVpcArrayInput is an input type that accepts IsVpnServerVpcArray and IsVpnServerVpcArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerVpcArrayInput` via:
-//
-//	IsVpnServerVpcArray{ IsVpnServerVpcArgs{...} }
-type IsVpnServerVpcArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerVpcArrayOutput() IsVpnServerVpcArrayOutput
-	ToIsVpnServerVpcArrayOutputWithContext(context.Context) IsVpnServerVpcArrayOutput
-}
-
-type IsVpnServerVpcArray []IsVpnServerVpcInput
-
-func (IsVpnServerVpcArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerVpc)(nil)).Elem()
-}
-
-func (i IsVpnServerVpcArray) ToIsVpnServerVpcArrayOutput() IsVpnServerVpcArrayOutput {
-	return i.ToIsVpnServerVpcArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerVpcArray) ToIsVpnServerVpcArrayOutputWithContext(ctx context.Context) IsVpnServerVpcArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcArrayOutput)
-}
-
-type IsVpnServerVpcOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerVpcOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerVpc)(nil)).Elem()
-}
-
-func (o IsVpnServerVpcOutput) ToIsVpnServerVpcOutput() IsVpnServerVpcOutput {
-	return o
-}
-
-func (o IsVpnServerVpcOutput) ToIsVpnServerVpcOutputWithContext(ctx context.Context) IsVpnServerVpcOutput {
-	return o
-}
-
-// The CRN for this VPC.
-func (o IsVpnServerVpcOutput) Crn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Crn }).(pulumi.StringPtrOutput)
-}
-
-// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-func (o IsVpnServerVpcOutput) Deleteds() IsVpnServerVpcDeletedArrayOutput {
-	return o.ApplyT(func(v IsVpnServerVpc) []IsVpnServerVpcDeleted { return v.Deleteds }).(IsVpnServerVpcDeletedArrayOutput)
-}
-
-// The URL for this VPC.
-func (o IsVpnServerVpcOutput) Href() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Href }).(pulumi.StringPtrOutput)
-}
-
-// The unique identifier for this VPC.
-func (o IsVpnServerVpcOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// The unique user-defined name for this VPC.
-func (o IsVpnServerVpcOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerVpcArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerVpcArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerVpc)(nil)).Elem()
-}
-
-func (o IsVpnServerVpcArrayOutput) ToIsVpnServerVpcArrayOutput() IsVpnServerVpcArrayOutput {
-	return o
-}
-
-func (o IsVpnServerVpcArrayOutput) ToIsVpnServerVpcArrayOutputWithContext(ctx context.Context) IsVpnServerVpcArrayOutput {
-	return o
-}
-
-func (o IsVpnServerVpcArrayOutput) Index(i pulumi.IntInput) IsVpnServerVpcOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerVpc {
-		return vs[0].([]IsVpnServerVpc)[vs[1].(int)]
-	}).(IsVpnServerVpcOutput)
-}
-
-type IsVpnServerVpcDeleted struct {
-	// Link to documentation about deleted resources.
-	MoreInfo *string `pulumi:"moreInfo"`
-}
-
-// IsVpnServerVpcDeletedInput is an input type that accepts IsVpnServerVpcDeletedArgs and IsVpnServerVpcDeletedOutput values.
-// You can construct a concrete instance of `IsVpnServerVpcDeletedInput` via:
-//
-//	IsVpnServerVpcDeletedArgs{...}
-type IsVpnServerVpcDeletedInput interface {
-	pulumi.Input
-
-	ToIsVpnServerVpcDeletedOutput() IsVpnServerVpcDeletedOutput
-	ToIsVpnServerVpcDeletedOutputWithContext(context.Context) IsVpnServerVpcDeletedOutput
-}
-
-type IsVpnServerVpcDeletedArgs struct {
-	// Link to documentation about deleted resources.
-	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
-}
-
-func (IsVpnServerVpcDeletedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerVpcDeleted)(nil)).Elem()
-}
-
-func (i IsVpnServerVpcDeletedArgs) ToIsVpnServerVpcDeletedOutput() IsVpnServerVpcDeletedOutput {
-	return i.ToIsVpnServerVpcDeletedOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerVpcDeletedArgs) ToIsVpnServerVpcDeletedOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcDeletedOutput)
-}
-
-// IsVpnServerVpcDeletedArrayInput is an input type that accepts IsVpnServerVpcDeletedArray and IsVpnServerVpcDeletedArrayOutput values.
-// You can construct a concrete instance of `IsVpnServerVpcDeletedArrayInput` via:
-//
-//	IsVpnServerVpcDeletedArray{ IsVpnServerVpcDeletedArgs{...} }
-type IsVpnServerVpcDeletedArrayInput interface {
-	pulumi.Input
-
-	ToIsVpnServerVpcDeletedArrayOutput() IsVpnServerVpcDeletedArrayOutput
-	ToIsVpnServerVpcDeletedArrayOutputWithContext(context.Context) IsVpnServerVpcDeletedArrayOutput
-}
-
-type IsVpnServerVpcDeletedArray []IsVpnServerVpcDeletedInput
-
-func (IsVpnServerVpcDeletedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerVpcDeleted)(nil)).Elem()
-}
-
-func (i IsVpnServerVpcDeletedArray) ToIsVpnServerVpcDeletedArrayOutput() IsVpnServerVpcDeletedArrayOutput {
-	return i.ToIsVpnServerVpcDeletedArrayOutputWithContext(context.Background())
-}
-
-func (i IsVpnServerVpcDeletedArray) ToIsVpnServerVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcDeletedArrayOutput)
-}
-
-type IsVpnServerVpcDeletedOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerVpcDeletedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IsVpnServerVpcDeleted)(nil)).Elem()
-}
-
-func (o IsVpnServerVpcDeletedOutput) ToIsVpnServerVpcDeletedOutput() IsVpnServerVpcDeletedOutput {
-	return o
-}
-
-func (o IsVpnServerVpcDeletedOutput) ToIsVpnServerVpcDeletedOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedOutput {
-	return o
-}
-
-// Link to documentation about deleted resources.
-func (o IsVpnServerVpcDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v IsVpnServerVpcDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
-}
-
-type IsVpnServerVpcDeletedArrayOutput struct{ *pulumi.OutputState }
-
-func (IsVpnServerVpcDeletedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IsVpnServerVpcDeleted)(nil)).Elem()
-}
-
-func (o IsVpnServerVpcDeletedArrayOutput) ToIsVpnServerVpcDeletedArrayOutput() IsVpnServerVpcDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpnServerVpcDeletedArrayOutput) ToIsVpnServerVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedArrayOutput {
-	return o
-}
-
-func (o IsVpnServerVpcDeletedArrayOutput) Index(i pulumi.IntInput) IsVpnServerVpcDeletedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerVpcDeleted {
-		return vs[0].([]IsVpnServerVpcDeleted)[vs[1].(int)]
-	}).(IsVpnServerVpcDeletedOutput)
+func (o PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput) Index(i pulumi.IntInput) PiVolumeOnboardingResultsVolumeOnboardingFailureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiVolumeOnboardingResultsVolumeOnboardingFailure {
+		return vs[0].([]PiVolumeOnboardingResultsVolumeOnboardingFailure)[vs[1].(int)]
+	}).(PiVolumeOnboardingResultsVolumeOnboardingFailureOutput)
 }
 
 type ResourceInstancePlanHistory struct {
@@ -4028,3438 +7385,6 @@ func (o GetComputeReservedCapacityVirtualGuestArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeReservedCapacityVirtualGuest {
 		return vs[0].([]GetComputeReservedCapacityVirtualGuest)[vs[1].(int)]
 	}).(GetComputeReservedCapacityVirtualGuestOutput)
-}
-
-type GetContainerAddonsAddon struct {
-	// The versions that the addon can be upgraded to
-	AllowedUpgradeVersions []string `pulumi:"allowedUpgradeVersions"`
-	// Determines if this addon version is deprecated
-	Deprecated bool `pulumi:"deprecated"`
-	// The health state for this addon, a short indication (e.g. critical, pending)
-	HealthState string `pulumi:"healthState"`
-	// The health status for this addon, provides a description of the state (e.g. error message)
-	HealthStatus string `pulumi:"healthStatus"`
-	// The minimum kubernetes version for this addon.
-	MinKubeVersion string `pulumi:"minKubeVersion"`
-	// The minimum OpenShift version for this addon.
-	MinOcpVersion string `pulumi:"minOcpVersion"`
-	// The addon name such as 'istio'.
-	Name string `pulumi:"name"`
-	// The supported kubernetes version range for this addon.
-	SupportedKubeRange string `pulumi:"supportedKubeRange"`
-	// The addon target version.
-	TargetVersion string `pulumi:"targetVersion"`
-	// The addon version, omit the version if you wish to use the default version.
-	Version string `pulumi:"version"`
-	// VLAN spanning required for multi-zone clusters
-	VlanSpanningRequired bool `pulumi:"vlanSpanningRequired"`
-}
-
-// GetContainerAddonsAddonInput is an input type that accepts GetContainerAddonsAddonArgs and GetContainerAddonsAddonOutput values.
-// You can construct a concrete instance of `GetContainerAddonsAddonInput` via:
-//
-//	GetContainerAddonsAddonArgs{...}
-type GetContainerAddonsAddonInput interface {
-	pulumi.Input
-
-	ToGetContainerAddonsAddonOutput() GetContainerAddonsAddonOutput
-	ToGetContainerAddonsAddonOutputWithContext(context.Context) GetContainerAddonsAddonOutput
-}
-
-type GetContainerAddonsAddonArgs struct {
-	// The versions that the addon can be upgraded to
-	AllowedUpgradeVersions pulumi.StringArrayInput `pulumi:"allowedUpgradeVersions"`
-	// Determines if this addon version is deprecated
-	Deprecated pulumi.BoolInput `pulumi:"deprecated"`
-	// The health state for this addon, a short indication (e.g. critical, pending)
-	HealthState pulumi.StringInput `pulumi:"healthState"`
-	// The health status for this addon, provides a description of the state (e.g. error message)
-	HealthStatus pulumi.StringInput `pulumi:"healthStatus"`
-	// The minimum kubernetes version for this addon.
-	MinKubeVersion pulumi.StringInput `pulumi:"minKubeVersion"`
-	// The minimum OpenShift version for this addon.
-	MinOcpVersion pulumi.StringInput `pulumi:"minOcpVersion"`
-	// The addon name such as 'istio'.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The supported kubernetes version range for this addon.
-	SupportedKubeRange pulumi.StringInput `pulumi:"supportedKubeRange"`
-	// The addon target version.
-	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
-	// The addon version, omit the version if you wish to use the default version.
-	Version pulumi.StringInput `pulumi:"version"`
-	// VLAN spanning required for multi-zone clusters
-	VlanSpanningRequired pulumi.BoolInput `pulumi:"vlanSpanningRequired"`
-}
-
-func (GetContainerAddonsAddonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerAddonsAddon)(nil)).Elem()
-}
-
-func (i GetContainerAddonsAddonArgs) ToGetContainerAddonsAddonOutput() GetContainerAddonsAddonOutput {
-	return i.ToGetContainerAddonsAddonOutputWithContext(context.Background())
-}
-
-func (i GetContainerAddonsAddonArgs) ToGetContainerAddonsAddonOutputWithContext(ctx context.Context) GetContainerAddonsAddonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerAddonsAddonOutput)
-}
-
-// GetContainerAddonsAddonArrayInput is an input type that accepts GetContainerAddonsAddonArray and GetContainerAddonsAddonArrayOutput values.
-// You can construct a concrete instance of `GetContainerAddonsAddonArrayInput` via:
-//
-//	GetContainerAddonsAddonArray{ GetContainerAddonsAddonArgs{...} }
-type GetContainerAddonsAddonArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerAddonsAddonArrayOutput() GetContainerAddonsAddonArrayOutput
-	ToGetContainerAddonsAddonArrayOutputWithContext(context.Context) GetContainerAddonsAddonArrayOutput
-}
-
-type GetContainerAddonsAddonArray []GetContainerAddonsAddonInput
-
-func (GetContainerAddonsAddonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerAddonsAddon)(nil)).Elem()
-}
-
-func (i GetContainerAddonsAddonArray) ToGetContainerAddonsAddonArrayOutput() GetContainerAddonsAddonArrayOutput {
-	return i.ToGetContainerAddonsAddonArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerAddonsAddonArray) ToGetContainerAddonsAddonArrayOutputWithContext(ctx context.Context) GetContainerAddonsAddonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerAddonsAddonArrayOutput)
-}
-
-type GetContainerAddonsAddonOutput struct{ *pulumi.OutputState }
-
-func (GetContainerAddonsAddonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerAddonsAddon)(nil)).Elem()
-}
-
-func (o GetContainerAddonsAddonOutput) ToGetContainerAddonsAddonOutput() GetContainerAddonsAddonOutput {
-	return o
-}
-
-func (o GetContainerAddonsAddonOutput) ToGetContainerAddonsAddonOutputWithContext(ctx context.Context) GetContainerAddonsAddonOutput {
-	return o
-}
-
-// The versions that the addon can be upgraded to
-func (o GetContainerAddonsAddonOutput) AllowedUpgradeVersions() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) []string { return v.AllowedUpgradeVersions }).(pulumi.StringArrayOutput)
-}
-
-// Determines if this addon version is deprecated
-func (o GetContainerAddonsAddonOutput) Deprecated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) bool { return v.Deprecated }).(pulumi.BoolOutput)
-}
-
-// The health state for this addon, a short indication (e.g. critical, pending)
-func (o GetContainerAddonsAddonOutput) HealthState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.HealthState }).(pulumi.StringOutput)
-}
-
-// The health status for this addon, provides a description of the state (e.g. error message)
-func (o GetContainerAddonsAddonOutput) HealthStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.HealthStatus }).(pulumi.StringOutput)
-}
-
-// The minimum kubernetes version for this addon.
-func (o GetContainerAddonsAddonOutput) MinKubeVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.MinKubeVersion }).(pulumi.StringOutput)
-}
-
-// The minimum OpenShift version for this addon.
-func (o GetContainerAddonsAddonOutput) MinOcpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.MinOcpVersion }).(pulumi.StringOutput)
-}
-
-// The addon name such as 'istio'.
-func (o GetContainerAddonsAddonOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The supported kubernetes version range for this addon.
-func (o GetContainerAddonsAddonOutput) SupportedKubeRange() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.SupportedKubeRange }).(pulumi.StringOutput)
-}
-
-// The addon target version.
-func (o GetContainerAddonsAddonOutput) TargetVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.TargetVersion }).(pulumi.StringOutput)
-}
-
-// The addon version, omit the version if you wish to use the default version.
-func (o GetContainerAddonsAddonOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) string { return v.Version }).(pulumi.StringOutput)
-}
-
-// VLAN spanning required for multi-zone clusters
-func (o GetContainerAddonsAddonOutput) VlanSpanningRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerAddonsAddon) bool { return v.VlanSpanningRequired }).(pulumi.BoolOutput)
-}
-
-type GetContainerAddonsAddonArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerAddonsAddonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerAddonsAddon)(nil)).Elem()
-}
-
-func (o GetContainerAddonsAddonArrayOutput) ToGetContainerAddonsAddonArrayOutput() GetContainerAddonsAddonArrayOutput {
-	return o
-}
-
-func (o GetContainerAddonsAddonArrayOutput) ToGetContainerAddonsAddonArrayOutputWithContext(ctx context.Context) GetContainerAddonsAddonArrayOutput {
-	return o
-}
-
-func (o GetContainerAddonsAddonArrayOutput) Index(i pulumi.IntInput) GetContainerAddonsAddonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerAddonsAddon {
-		return vs[0].([]GetContainerAddonsAddon)[vs[1].(int)]
-	}).(GetContainerAddonsAddonOutput)
-}
-
-type GetContainerClusterAlb struct {
-	AlbIp             string `pulumi:"albIp"`
-	AlbType           string `pulumi:"albType"`
-	DisableDeployment bool   `pulumi:"disableDeployment"`
-	Enable            bool   `pulumi:"enable"`
-	Id                string `pulumi:"id"`
-	Name              string `pulumi:"name"`
-	NumOfInstances    string `pulumi:"numOfInstances"`
-	Resize            bool   `pulumi:"resize"`
-	State             string `pulumi:"state"`
-}
-
-// GetContainerClusterAlbInput is an input type that accepts GetContainerClusterAlbArgs and GetContainerClusterAlbOutput values.
-// You can construct a concrete instance of `GetContainerClusterAlbInput` via:
-//
-//	GetContainerClusterAlbArgs{...}
-type GetContainerClusterAlbInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterAlbOutput() GetContainerClusterAlbOutput
-	ToGetContainerClusterAlbOutputWithContext(context.Context) GetContainerClusterAlbOutput
-}
-
-type GetContainerClusterAlbArgs struct {
-	AlbIp             pulumi.StringInput `pulumi:"albIp"`
-	AlbType           pulumi.StringInput `pulumi:"albType"`
-	DisableDeployment pulumi.BoolInput   `pulumi:"disableDeployment"`
-	Enable            pulumi.BoolInput   `pulumi:"enable"`
-	Id                pulumi.StringInput `pulumi:"id"`
-	Name              pulumi.StringInput `pulumi:"name"`
-	NumOfInstances    pulumi.StringInput `pulumi:"numOfInstances"`
-	Resize            pulumi.BoolInput   `pulumi:"resize"`
-	State             pulumi.StringInput `pulumi:"state"`
-}
-
-func (GetContainerClusterAlbArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterAlb)(nil)).Elem()
-}
-
-func (i GetContainerClusterAlbArgs) ToGetContainerClusterAlbOutput() GetContainerClusterAlbOutput {
-	return i.ToGetContainerClusterAlbOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterAlbArgs) ToGetContainerClusterAlbOutputWithContext(ctx context.Context) GetContainerClusterAlbOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterAlbOutput)
-}
-
-// GetContainerClusterAlbArrayInput is an input type that accepts GetContainerClusterAlbArray and GetContainerClusterAlbArrayOutput values.
-// You can construct a concrete instance of `GetContainerClusterAlbArrayInput` via:
-//
-//	GetContainerClusterAlbArray{ GetContainerClusterAlbArgs{...} }
-type GetContainerClusterAlbArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterAlbArrayOutput() GetContainerClusterAlbArrayOutput
-	ToGetContainerClusterAlbArrayOutputWithContext(context.Context) GetContainerClusterAlbArrayOutput
-}
-
-type GetContainerClusterAlbArray []GetContainerClusterAlbInput
-
-func (GetContainerClusterAlbArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterAlb)(nil)).Elem()
-}
-
-func (i GetContainerClusterAlbArray) ToGetContainerClusterAlbArrayOutput() GetContainerClusterAlbArrayOutput {
-	return i.ToGetContainerClusterAlbArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterAlbArray) ToGetContainerClusterAlbArrayOutputWithContext(ctx context.Context) GetContainerClusterAlbArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterAlbArrayOutput)
-}
-
-type GetContainerClusterAlbOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterAlbOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterAlb)(nil)).Elem()
-}
-
-func (o GetContainerClusterAlbOutput) ToGetContainerClusterAlbOutput() GetContainerClusterAlbOutput {
-	return o
-}
-
-func (o GetContainerClusterAlbOutput) ToGetContainerClusterAlbOutputWithContext(ctx context.Context) GetContainerClusterAlbOutput {
-	return o
-}
-
-func (o GetContainerClusterAlbOutput) AlbIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) string { return v.AlbIp }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterAlbOutput) AlbType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) string { return v.AlbType }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterAlbOutput) DisableDeployment() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) bool { return v.DisableDeployment }).(pulumi.BoolOutput)
-}
-
-func (o GetContainerClusterAlbOutput) Enable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) bool { return v.Enable }).(pulumi.BoolOutput)
-}
-
-func (o GetContainerClusterAlbOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterAlbOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterAlbOutput) NumOfInstances() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) string { return v.NumOfInstances }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterAlbOutput) Resize() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) bool { return v.Resize }).(pulumi.BoolOutput)
-}
-
-func (o GetContainerClusterAlbOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterAlb) string { return v.State }).(pulumi.StringOutput)
-}
-
-type GetContainerClusterAlbArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterAlbArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterAlb)(nil)).Elem()
-}
-
-func (o GetContainerClusterAlbArrayOutput) ToGetContainerClusterAlbArrayOutput() GetContainerClusterAlbArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterAlbArrayOutput) ToGetContainerClusterAlbArrayOutputWithContext(ctx context.Context) GetContainerClusterAlbArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterAlbArrayOutput) Index(i pulumi.IntInput) GetContainerClusterAlbOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerClusterAlb {
-		return vs[0].([]GetContainerClusterAlb)[vs[1].(int)]
-	}).(GetContainerClusterAlbOutput)
-}
-
-type GetContainerClusterBoundedService struct {
-	Namespace      string `pulumi:"namespace"`
-	ServiceId      string `pulumi:"serviceId"`
-	ServiceKeyName string `pulumi:"serviceKeyName"`
-	ServiceName    string `pulumi:"serviceName"`
-}
-
-// GetContainerClusterBoundedServiceInput is an input type that accepts GetContainerClusterBoundedServiceArgs and GetContainerClusterBoundedServiceOutput values.
-// You can construct a concrete instance of `GetContainerClusterBoundedServiceInput` via:
-//
-//	GetContainerClusterBoundedServiceArgs{...}
-type GetContainerClusterBoundedServiceInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterBoundedServiceOutput() GetContainerClusterBoundedServiceOutput
-	ToGetContainerClusterBoundedServiceOutputWithContext(context.Context) GetContainerClusterBoundedServiceOutput
-}
-
-type GetContainerClusterBoundedServiceArgs struct {
-	Namespace      pulumi.StringInput `pulumi:"namespace"`
-	ServiceId      pulumi.StringInput `pulumi:"serviceId"`
-	ServiceKeyName pulumi.StringInput `pulumi:"serviceKeyName"`
-	ServiceName    pulumi.StringInput `pulumi:"serviceName"`
-}
-
-func (GetContainerClusterBoundedServiceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterBoundedService)(nil)).Elem()
-}
-
-func (i GetContainerClusterBoundedServiceArgs) ToGetContainerClusterBoundedServiceOutput() GetContainerClusterBoundedServiceOutput {
-	return i.ToGetContainerClusterBoundedServiceOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterBoundedServiceArgs) ToGetContainerClusterBoundedServiceOutputWithContext(ctx context.Context) GetContainerClusterBoundedServiceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterBoundedServiceOutput)
-}
-
-// GetContainerClusterBoundedServiceArrayInput is an input type that accepts GetContainerClusterBoundedServiceArray and GetContainerClusterBoundedServiceArrayOutput values.
-// You can construct a concrete instance of `GetContainerClusterBoundedServiceArrayInput` via:
-//
-//	GetContainerClusterBoundedServiceArray{ GetContainerClusterBoundedServiceArgs{...} }
-type GetContainerClusterBoundedServiceArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterBoundedServiceArrayOutput() GetContainerClusterBoundedServiceArrayOutput
-	ToGetContainerClusterBoundedServiceArrayOutputWithContext(context.Context) GetContainerClusterBoundedServiceArrayOutput
-}
-
-type GetContainerClusterBoundedServiceArray []GetContainerClusterBoundedServiceInput
-
-func (GetContainerClusterBoundedServiceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterBoundedService)(nil)).Elem()
-}
-
-func (i GetContainerClusterBoundedServiceArray) ToGetContainerClusterBoundedServiceArrayOutput() GetContainerClusterBoundedServiceArrayOutput {
-	return i.ToGetContainerClusterBoundedServiceArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterBoundedServiceArray) ToGetContainerClusterBoundedServiceArrayOutputWithContext(ctx context.Context) GetContainerClusterBoundedServiceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterBoundedServiceArrayOutput)
-}
-
-type GetContainerClusterBoundedServiceOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterBoundedServiceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterBoundedService)(nil)).Elem()
-}
-
-func (o GetContainerClusterBoundedServiceOutput) ToGetContainerClusterBoundedServiceOutput() GetContainerClusterBoundedServiceOutput {
-	return o
-}
-
-func (o GetContainerClusterBoundedServiceOutput) ToGetContainerClusterBoundedServiceOutputWithContext(ctx context.Context) GetContainerClusterBoundedServiceOutput {
-	return o
-}
-
-func (o GetContainerClusterBoundedServiceOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterBoundedService) string { return v.Namespace }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterBoundedServiceOutput) ServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterBoundedService) string { return v.ServiceId }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterBoundedServiceOutput) ServiceKeyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterBoundedService) string { return v.ServiceKeyName }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterBoundedServiceOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterBoundedService) string { return v.ServiceName }).(pulumi.StringOutput)
-}
-
-type GetContainerClusterBoundedServiceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterBoundedServiceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterBoundedService)(nil)).Elem()
-}
-
-func (o GetContainerClusterBoundedServiceArrayOutput) ToGetContainerClusterBoundedServiceArrayOutput() GetContainerClusterBoundedServiceArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterBoundedServiceArrayOutput) ToGetContainerClusterBoundedServiceArrayOutputWithContext(ctx context.Context) GetContainerClusterBoundedServiceArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterBoundedServiceArrayOutput) Index(i pulumi.IntInput) GetContainerClusterBoundedServiceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerClusterBoundedService {
-		return vs[0].([]GetContainerClusterBoundedService)[vs[1].(int)]
-	}).(GetContainerClusterBoundedServiceOutput)
-}
-
-type GetContainerClusterVlan struct {
-	Id      string                          `pulumi:"id"`
-	Subnets []GetContainerClusterVlanSubnet `pulumi:"subnets"`
-}
-
-// GetContainerClusterVlanInput is an input type that accepts GetContainerClusterVlanArgs and GetContainerClusterVlanOutput values.
-// You can construct a concrete instance of `GetContainerClusterVlanInput` via:
-//
-//	GetContainerClusterVlanArgs{...}
-type GetContainerClusterVlanInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterVlanOutput() GetContainerClusterVlanOutput
-	ToGetContainerClusterVlanOutputWithContext(context.Context) GetContainerClusterVlanOutput
-}
-
-type GetContainerClusterVlanArgs struct {
-	Id      pulumi.StringInput                      `pulumi:"id"`
-	Subnets GetContainerClusterVlanSubnetArrayInput `pulumi:"subnets"`
-}
-
-func (GetContainerClusterVlanArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterVlan)(nil)).Elem()
-}
-
-func (i GetContainerClusterVlanArgs) ToGetContainerClusterVlanOutput() GetContainerClusterVlanOutput {
-	return i.ToGetContainerClusterVlanOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterVlanArgs) ToGetContainerClusterVlanOutputWithContext(ctx context.Context) GetContainerClusterVlanOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterVlanOutput)
-}
-
-// GetContainerClusterVlanArrayInput is an input type that accepts GetContainerClusterVlanArray and GetContainerClusterVlanArrayOutput values.
-// You can construct a concrete instance of `GetContainerClusterVlanArrayInput` via:
-//
-//	GetContainerClusterVlanArray{ GetContainerClusterVlanArgs{...} }
-type GetContainerClusterVlanArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterVlanArrayOutput() GetContainerClusterVlanArrayOutput
-	ToGetContainerClusterVlanArrayOutputWithContext(context.Context) GetContainerClusterVlanArrayOutput
-}
-
-type GetContainerClusterVlanArray []GetContainerClusterVlanInput
-
-func (GetContainerClusterVlanArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterVlan)(nil)).Elem()
-}
-
-func (i GetContainerClusterVlanArray) ToGetContainerClusterVlanArrayOutput() GetContainerClusterVlanArrayOutput {
-	return i.ToGetContainerClusterVlanArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterVlanArray) ToGetContainerClusterVlanArrayOutputWithContext(ctx context.Context) GetContainerClusterVlanArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterVlanArrayOutput)
-}
-
-type GetContainerClusterVlanOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterVlanOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterVlan)(nil)).Elem()
-}
-
-func (o GetContainerClusterVlanOutput) ToGetContainerClusterVlanOutput() GetContainerClusterVlanOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanOutput) ToGetContainerClusterVlanOutputWithContext(ctx context.Context) GetContainerClusterVlanOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterVlan) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterVlanOutput) Subnets() GetContainerClusterVlanSubnetArrayOutput {
-	return o.ApplyT(func(v GetContainerClusterVlan) []GetContainerClusterVlanSubnet { return v.Subnets }).(GetContainerClusterVlanSubnetArrayOutput)
-}
-
-type GetContainerClusterVlanArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterVlanArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterVlan)(nil)).Elem()
-}
-
-func (o GetContainerClusterVlanArrayOutput) ToGetContainerClusterVlanArrayOutput() GetContainerClusterVlanArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanArrayOutput) ToGetContainerClusterVlanArrayOutputWithContext(ctx context.Context) GetContainerClusterVlanArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanArrayOutput) Index(i pulumi.IntInput) GetContainerClusterVlanOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerClusterVlan {
-		return vs[0].([]GetContainerClusterVlan)[vs[1].(int)]
-	}).(GetContainerClusterVlanOutput)
-}
-
-type GetContainerClusterVlanSubnet struct {
-	Cidr     string   `pulumi:"cidr"`
-	Id       string   `pulumi:"id"`
-	Ips      []string `pulumi:"ips"`
-	IsByoip  bool     `pulumi:"isByoip"`
-	IsPublic bool     `pulumi:"isPublic"`
-}
-
-// GetContainerClusterVlanSubnetInput is an input type that accepts GetContainerClusterVlanSubnetArgs and GetContainerClusterVlanSubnetOutput values.
-// You can construct a concrete instance of `GetContainerClusterVlanSubnetInput` via:
-//
-//	GetContainerClusterVlanSubnetArgs{...}
-type GetContainerClusterVlanSubnetInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterVlanSubnetOutput() GetContainerClusterVlanSubnetOutput
-	ToGetContainerClusterVlanSubnetOutputWithContext(context.Context) GetContainerClusterVlanSubnetOutput
-}
-
-type GetContainerClusterVlanSubnetArgs struct {
-	Cidr     pulumi.StringInput      `pulumi:"cidr"`
-	Id       pulumi.StringInput      `pulumi:"id"`
-	Ips      pulumi.StringArrayInput `pulumi:"ips"`
-	IsByoip  pulumi.BoolInput        `pulumi:"isByoip"`
-	IsPublic pulumi.BoolInput        `pulumi:"isPublic"`
-}
-
-func (GetContainerClusterVlanSubnetArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterVlanSubnet)(nil)).Elem()
-}
-
-func (i GetContainerClusterVlanSubnetArgs) ToGetContainerClusterVlanSubnetOutput() GetContainerClusterVlanSubnetOutput {
-	return i.ToGetContainerClusterVlanSubnetOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterVlanSubnetArgs) ToGetContainerClusterVlanSubnetOutputWithContext(ctx context.Context) GetContainerClusterVlanSubnetOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterVlanSubnetOutput)
-}
-
-// GetContainerClusterVlanSubnetArrayInput is an input type that accepts GetContainerClusterVlanSubnetArray and GetContainerClusterVlanSubnetArrayOutput values.
-// You can construct a concrete instance of `GetContainerClusterVlanSubnetArrayInput` via:
-//
-//	GetContainerClusterVlanSubnetArray{ GetContainerClusterVlanSubnetArgs{...} }
-type GetContainerClusterVlanSubnetArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterVlanSubnetArrayOutput() GetContainerClusterVlanSubnetArrayOutput
-	ToGetContainerClusterVlanSubnetArrayOutputWithContext(context.Context) GetContainerClusterVlanSubnetArrayOutput
-}
-
-type GetContainerClusterVlanSubnetArray []GetContainerClusterVlanSubnetInput
-
-func (GetContainerClusterVlanSubnetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterVlanSubnet)(nil)).Elem()
-}
-
-func (i GetContainerClusterVlanSubnetArray) ToGetContainerClusterVlanSubnetArrayOutput() GetContainerClusterVlanSubnetArrayOutput {
-	return i.ToGetContainerClusterVlanSubnetArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterVlanSubnetArray) ToGetContainerClusterVlanSubnetArrayOutputWithContext(ctx context.Context) GetContainerClusterVlanSubnetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterVlanSubnetArrayOutput)
-}
-
-type GetContainerClusterVlanSubnetOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterVlanSubnetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterVlanSubnet)(nil)).Elem()
-}
-
-func (o GetContainerClusterVlanSubnetOutput) ToGetContainerClusterVlanSubnetOutput() GetContainerClusterVlanSubnetOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanSubnetOutput) ToGetContainerClusterVlanSubnetOutputWithContext(ctx context.Context) GetContainerClusterVlanSubnetOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanSubnetOutput) Cidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterVlanSubnet) string { return v.Cidr }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterVlanSubnetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterVlanSubnet) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterVlanSubnetOutput) Ips() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetContainerClusterVlanSubnet) []string { return v.Ips }).(pulumi.StringArrayOutput)
-}
-
-func (o GetContainerClusterVlanSubnetOutput) IsByoip() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerClusterVlanSubnet) bool { return v.IsByoip }).(pulumi.BoolOutput)
-}
-
-func (o GetContainerClusterVlanSubnetOutput) IsPublic() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerClusterVlanSubnet) bool { return v.IsPublic }).(pulumi.BoolOutput)
-}
-
-type GetContainerClusterVlanSubnetArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterVlanSubnetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterVlanSubnet)(nil)).Elem()
-}
-
-func (o GetContainerClusterVlanSubnetArrayOutput) ToGetContainerClusterVlanSubnetArrayOutput() GetContainerClusterVlanSubnetArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanSubnetArrayOutput) ToGetContainerClusterVlanSubnetArrayOutputWithContext(ctx context.Context) GetContainerClusterVlanSubnetArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterVlanSubnetArrayOutput) Index(i pulumi.IntInput) GetContainerClusterVlanSubnetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerClusterVlanSubnet {
-		return vs[0].([]GetContainerClusterVlanSubnet)[vs[1].(int)]
-	}).(GetContainerClusterVlanSubnetOutput)
-}
-
-type GetContainerClusterWorkerPool struct {
-	Hardware    string                              `pulumi:"hardware"`
-	Id          string                              `pulumi:"id"`
-	Labels      map[string]string                   `pulumi:"labels"`
-	MachineType string                              `pulumi:"machineType"`
-	Name        string                              `pulumi:"name"`
-	SizePerZone int                                 `pulumi:"sizePerZone"`
-	State       string                              `pulumi:"state"`
-	Zones       []GetContainerClusterWorkerPoolZone `pulumi:"zones"`
-}
-
-// GetContainerClusterWorkerPoolInput is an input type that accepts GetContainerClusterWorkerPoolArgs and GetContainerClusterWorkerPoolOutput values.
-// You can construct a concrete instance of `GetContainerClusterWorkerPoolInput` via:
-//
-//	GetContainerClusterWorkerPoolArgs{...}
-type GetContainerClusterWorkerPoolInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterWorkerPoolOutput() GetContainerClusterWorkerPoolOutput
-	ToGetContainerClusterWorkerPoolOutputWithContext(context.Context) GetContainerClusterWorkerPoolOutput
-}
-
-type GetContainerClusterWorkerPoolArgs struct {
-	Hardware    pulumi.StringInput                          `pulumi:"hardware"`
-	Id          pulumi.StringInput                          `pulumi:"id"`
-	Labels      pulumi.StringMapInput                       `pulumi:"labels"`
-	MachineType pulumi.StringInput                          `pulumi:"machineType"`
-	Name        pulumi.StringInput                          `pulumi:"name"`
-	SizePerZone pulumi.IntInput                             `pulumi:"sizePerZone"`
-	State       pulumi.StringInput                          `pulumi:"state"`
-	Zones       GetContainerClusterWorkerPoolZoneArrayInput `pulumi:"zones"`
-}
-
-func (GetContainerClusterWorkerPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (i GetContainerClusterWorkerPoolArgs) ToGetContainerClusterWorkerPoolOutput() GetContainerClusterWorkerPoolOutput {
-	return i.ToGetContainerClusterWorkerPoolOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterWorkerPoolArgs) ToGetContainerClusterWorkerPoolOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterWorkerPoolOutput)
-}
-
-// GetContainerClusterWorkerPoolArrayInput is an input type that accepts GetContainerClusterWorkerPoolArray and GetContainerClusterWorkerPoolArrayOutput values.
-// You can construct a concrete instance of `GetContainerClusterWorkerPoolArrayInput` via:
-//
-//	GetContainerClusterWorkerPoolArray{ GetContainerClusterWorkerPoolArgs{...} }
-type GetContainerClusterWorkerPoolArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterWorkerPoolArrayOutput() GetContainerClusterWorkerPoolArrayOutput
-	ToGetContainerClusterWorkerPoolArrayOutputWithContext(context.Context) GetContainerClusterWorkerPoolArrayOutput
-}
-
-type GetContainerClusterWorkerPoolArray []GetContainerClusterWorkerPoolInput
-
-func (GetContainerClusterWorkerPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (i GetContainerClusterWorkerPoolArray) ToGetContainerClusterWorkerPoolArrayOutput() GetContainerClusterWorkerPoolArrayOutput {
-	return i.ToGetContainerClusterWorkerPoolArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterWorkerPoolArray) ToGetContainerClusterWorkerPoolArrayOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterWorkerPoolArrayOutput)
-}
-
-type GetContainerClusterWorkerPoolOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterWorkerPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (o GetContainerClusterWorkerPoolOutput) ToGetContainerClusterWorkerPoolOutput() GetContainerClusterWorkerPoolOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolOutput) ToGetContainerClusterWorkerPoolOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolOutput) Hardware() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) string { return v.Hardware }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterWorkerPoolOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterWorkerPoolOutput) Labels() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) map[string]string { return v.Labels }).(pulumi.StringMapOutput)
-}
-
-func (o GetContainerClusterWorkerPoolOutput) MachineType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) string { return v.MachineType }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterWorkerPoolOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterWorkerPoolOutput) SizePerZone() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) int { return v.SizePerZone }).(pulumi.IntOutput)
-}
-
-func (o GetContainerClusterWorkerPoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) string { return v.State }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterWorkerPoolOutput) Zones() GetContainerClusterWorkerPoolZoneArrayOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPool) []GetContainerClusterWorkerPoolZone { return v.Zones }).(GetContainerClusterWorkerPoolZoneArrayOutput)
-}
-
-type GetContainerClusterWorkerPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterWorkerPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (o GetContainerClusterWorkerPoolArrayOutput) ToGetContainerClusterWorkerPoolArrayOutput() GetContainerClusterWorkerPoolArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolArrayOutput) ToGetContainerClusterWorkerPoolArrayOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolArrayOutput) Index(i pulumi.IntInput) GetContainerClusterWorkerPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerClusterWorkerPool {
-		return vs[0].([]GetContainerClusterWorkerPool)[vs[1].(int)]
-	}).(GetContainerClusterWorkerPoolOutput)
-}
-
-type GetContainerClusterWorkerPoolZone struct {
-	PrivateVlan string `pulumi:"privateVlan"`
-	PublicVlan  string `pulumi:"publicVlan"`
-	WorkerCount int    `pulumi:"workerCount"`
-	Zone        string `pulumi:"zone"`
-}
-
-// GetContainerClusterWorkerPoolZoneInput is an input type that accepts GetContainerClusterWorkerPoolZoneArgs and GetContainerClusterWorkerPoolZoneOutput values.
-// You can construct a concrete instance of `GetContainerClusterWorkerPoolZoneInput` via:
-//
-//	GetContainerClusterWorkerPoolZoneArgs{...}
-type GetContainerClusterWorkerPoolZoneInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterWorkerPoolZoneOutput() GetContainerClusterWorkerPoolZoneOutput
-	ToGetContainerClusterWorkerPoolZoneOutputWithContext(context.Context) GetContainerClusterWorkerPoolZoneOutput
-}
-
-type GetContainerClusterWorkerPoolZoneArgs struct {
-	PrivateVlan pulumi.StringInput `pulumi:"privateVlan"`
-	PublicVlan  pulumi.StringInput `pulumi:"publicVlan"`
-	WorkerCount pulumi.IntInput    `pulumi:"workerCount"`
-	Zone        pulumi.StringInput `pulumi:"zone"`
-}
-
-func (GetContainerClusterWorkerPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerClusterWorkerPoolZoneArgs) ToGetContainerClusterWorkerPoolZoneOutput() GetContainerClusterWorkerPoolZoneOutput {
-	return i.ToGetContainerClusterWorkerPoolZoneOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterWorkerPoolZoneArgs) ToGetContainerClusterWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterWorkerPoolZoneOutput)
-}
-
-// GetContainerClusterWorkerPoolZoneArrayInput is an input type that accepts GetContainerClusterWorkerPoolZoneArray and GetContainerClusterWorkerPoolZoneArrayOutput values.
-// You can construct a concrete instance of `GetContainerClusterWorkerPoolZoneArrayInput` via:
-//
-//	GetContainerClusterWorkerPoolZoneArray{ GetContainerClusterWorkerPoolZoneArgs{...} }
-type GetContainerClusterWorkerPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerClusterWorkerPoolZoneArrayOutput() GetContainerClusterWorkerPoolZoneArrayOutput
-	ToGetContainerClusterWorkerPoolZoneArrayOutputWithContext(context.Context) GetContainerClusterWorkerPoolZoneArrayOutput
-}
-
-type GetContainerClusterWorkerPoolZoneArray []GetContainerClusterWorkerPoolZoneInput
-
-func (GetContainerClusterWorkerPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerClusterWorkerPoolZoneArray) ToGetContainerClusterWorkerPoolZoneArrayOutput() GetContainerClusterWorkerPoolZoneArrayOutput {
-	return i.ToGetContainerClusterWorkerPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerClusterWorkerPoolZoneArray) ToGetContainerClusterWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerClusterWorkerPoolZoneArrayOutput)
-}
-
-type GetContainerClusterWorkerPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterWorkerPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerClusterWorkerPoolZoneOutput) ToGetContainerClusterWorkerPoolZoneOutput() GetContainerClusterWorkerPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolZoneOutput) ToGetContainerClusterWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolZoneOutput) PrivateVlan() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPoolZone) string { return v.PrivateVlan }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterWorkerPoolZoneOutput) PublicVlan() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPoolZone) string { return v.PublicVlan }).(pulumi.StringOutput)
-}
-
-func (o GetContainerClusterWorkerPoolZoneOutput) WorkerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPoolZone) int { return v.WorkerCount }).(pulumi.IntOutput)
-}
-
-func (o GetContainerClusterWorkerPoolZoneOutput) Zone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerClusterWorkerPoolZone) string { return v.Zone }).(pulumi.StringOutput)
-}
-
-type GetContainerClusterWorkerPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerClusterWorkerPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerClusterWorkerPoolZoneArrayOutput) ToGetContainerClusterWorkerPoolZoneArrayOutput() GetContainerClusterWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolZoneArrayOutput) ToGetContainerClusterWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerClusterWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerClusterWorkerPoolZoneArrayOutput) Index(i pulumi.IntInput) GetContainerClusterWorkerPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerClusterWorkerPoolZone {
-		return vs[0].([]GetContainerClusterWorkerPoolZone)[vs[1].(int)]
-	}).(GetContainerClusterWorkerPoolZoneOutput)
-}
-
-type GetContainerDedicatedHostFlavorInstanceStorage struct {
-	Count int `pulumi:"count"`
-	Size  int `pulumi:"size"`
-}
-
-// GetContainerDedicatedHostFlavorInstanceStorageInput is an input type that accepts GetContainerDedicatedHostFlavorInstanceStorageArgs and GetContainerDedicatedHostFlavorInstanceStorageOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostFlavorInstanceStorageInput` via:
-//
-//	GetContainerDedicatedHostFlavorInstanceStorageArgs{...}
-type GetContainerDedicatedHostFlavorInstanceStorageInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostFlavorInstanceStorageOutput() GetContainerDedicatedHostFlavorInstanceStorageOutput
-	ToGetContainerDedicatedHostFlavorInstanceStorageOutputWithContext(context.Context) GetContainerDedicatedHostFlavorInstanceStorageOutput
-}
-
-type GetContainerDedicatedHostFlavorInstanceStorageArgs struct {
-	Count pulumi.IntInput `pulumi:"count"`
-	Size  pulumi.IntInput `pulumi:"size"`
-}
-
-func (GetContainerDedicatedHostFlavorInstanceStorageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostFlavorInstanceStorageArgs) ToGetContainerDedicatedHostFlavorInstanceStorageOutput() GetContainerDedicatedHostFlavorInstanceStorageOutput {
-	return i.ToGetContainerDedicatedHostFlavorInstanceStorageOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostFlavorInstanceStorageArgs) ToGetContainerDedicatedHostFlavorInstanceStorageOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorInstanceStorageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostFlavorInstanceStorageOutput)
-}
-
-// GetContainerDedicatedHostFlavorInstanceStorageArrayInput is an input type that accepts GetContainerDedicatedHostFlavorInstanceStorageArray and GetContainerDedicatedHostFlavorInstanceStorageArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostFlavorInstanceStorageArrayInput` via:
-//
-//	GetContainerDedicatedHostFlavorInstanceStorageArray{ GetContainerDedicatedHostFlavorInstanceStorageArgs{...} }
-type GetContainerDedicatedHostFlavorInstanceStorageArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostFlavorInstanceStorageArrayOutput() GetContainerDedicatedHostFlavorInstanceStorageArrayOutput
-	ToGetContainerDedicatedHostFlavorInstanceStorageArrayOutputWithContext(context.Context) GetContainerDedicatedHostFlavorInstanceStorageArrayOutput
-}
-
-type GetContainerDedicatedHostFlavorInstanceStorageArray []GetContainerDedicatedHostFlavorInstanceStorageInput
-
-func (GetContainerDedicatedHostFlavorInstanceStorageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostFlavorInstanceStorageArray) ToGetContainerDedicatedHostFlavorInstanceStorageArrayOutput() GetContainerDedicatedHostFlavorInstanceStorageArrayOutput {
-	return i.ToGetContainerDedicatedHostFlavorInstanceStorageArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostFlavorInstanceStorageArray) ToGetContainerDedicatedHostFlavorInstanceStorageArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorInstanceStorageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostFlavorInstanceStorageArrayOutput)
-}
-
-type GetContainerDedicatedHostFlavorInstanceStorageOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostFlavorInstanceStorageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostFlavorInstanceStorageOutput) ToGetContainerDedicatedHostFlavorInstanceStorageOutput() GetContainerDedicatedHostFlavorInstanceStorageOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorInstanceStorageOutput) ToGetContainerDedicatedHostFlavorInstanceStorageOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorInstanceStorageOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorInstanceStorageOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorInstanceStorage) int { return v.Count }).(pulumi.IntOutput)
-}
-
-func (o GetContainerDedicatedHostFlavorInstanceStorageOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorInstanceStorage) int { return v.Size }).(pulumi.IntOutput)
-}
-
-type GetContainerDedicatedHostFlavorInstanceStorageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostFlavorInstanceStorageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostFlavorInstanceStorageArrayOutput) ToGetContainerDedicatedHostFlavorInstanceStorageArrayOutput() GetContainerDedicatedHostFlavorInstanceStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorInstanceStorageArrayOutput) ToGetContainerDedicatedHostFlavorInstanceStorageArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorInstanceStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorInstanceStorageArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostFlavorInstanceStorageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostFlavorInstanceStorage {
-		return vs[0].([]GetContainerDedicatedHostFlavorInstanceStorage)[vs[1].(int)]
-	}).(GetContainerDedicatedHostFlavorInstanceStorageOutput)
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavor struct {
-	// Describes if the dedicated host flavor is deprecated
-	Deprecated bool `pulumi:"deprecated"`
-	// The class of the dedicated host flavor
-	FlavorClass string `pulumi:"flavorClass"`
-	// The id of the dedicated host flavor
-	HostFlavorId string `pulumi:"hostFlavorId"`
-	// The instance storage of the dedicated host flavor
-	InstanceStorages []GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage `pulumi:"instanceStorages"`
-	// The maximum available memory in the dedicated host flavor
-	MaxMemory int `pulumi:"maxMemory"`
-	// The maximum available vcpus in the dedicated host flavor
-	MaxVcpus int `pulumi:"maxVcpus"`
-	// The region of the dedicated host flavor
-	Region string `pulumi:"region"`
-}
-
-// GetContainerDedicatedHostFlavorsHostFlavorInput is an input type that accepts GetContainerDedicatedHostFlavorsHostFlavorArgs and GetContainerDedicatedHostFlavorsHostFlavorOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostFlavorsHostFlavorInput` via:
-//
-//	GetContainerDedicatedHostFlavorsHostFlavorArgs{...}
-type GetContainerDedicatedHostFlavorsHostFlavorInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostFlavorsHostFlavorOutput() GetContainerDedicatedHostFlavorsHostFlavorOutput
-	ToGetContainerDedicatedHostFlavorsHostFlavorOutputWithContext(context.Context) GetContainerDedicatedHostFlavorsHostFlavorOutput
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorArgs struct {
-	// Describes if the dedicated host flavor is deprecated
-	Deprecated pulumi.BoolInput `pulumi:"deprecated"`
-	// The class of the dedicated host flavor
-	FlavorClass pulumi.StringInput `pulumi:"flavorClass"`
-	// The id of the dedicated host flavor
-	HostFlavorId pulumi.StringInput `pulumi:"hostFlavorId"`
-	// The instance storage of the dedicated host flavor
-	InstanceStorages GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayInput `pulumi:"instanceStorages"`
-	// The maximum available memory in the dedicated host flavor
-	MaxMemory pulumi.IntInput `pulumi:"maxMemory"`
-	// The maximum available vcpus in the dedicated host flavor
-	MaxVcpus pulumi.IntInput `pulumi:"maxVcpus"`
-	// The region of the dedicated host flavor
-	Region pulumi.StringInput `pulumi:"region"`
-}
-
-func (GetContainerDedicatedHostFlavorsHostFlavorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavor)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorArgs) ToGetContainerDedicatedHostFlavorsHostFlavorOutput() GetContainerDedicatedHostFlavorsHostFlavorOutput {
-	return i.ToGetContainerDedicatedHostFlavorsHostFlavorOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorArgs) ToGetContainerDedicatedHostFlavorsHostFlavorOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostFlavorsHostFlavorOutput)
-}
-
-// GetContainerDedicatedHostFlavorsHostFlavorArrayInput is an input type that accepts GetContainerDedicatedHostFlavorsHostFlavorArray and GetContainerDedicatedHostFlavorsHostFlavorArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostFlavorsHostFlavorArrayInput` via:
-//
-//	GetContainerDedicatedHostFlavorsHostFlavorArray{ GetContainerDedicatedHostFlavorsHostFlavorArgs{...} }
-type GetContainerDedicatedHostFlavorsHostFlavorArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostFlavorsHostFlavorArrayOutput() GetContainerDedicatedHostFlavorsHostFlavorArrayOutput
-	ToGetContainerDedicatedHostFlavorsHostFlavorArrayOutputWithContext(context.Context) GetContainerDedicatedHostFlavorsHostFlavorArrayOutput
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorArray []GetContainerDedicatedHostFlavorsHostFlavorInput
-
-func (GetContainerDedicatedHostFlavorsHostFlavorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostFlavorsHostFlavor)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorArray) ToGetContainerDedicatedHostFlavorsHostFlavorArrayOutput() GetContainerDedicatedHostFlavorsHostFlavorArrayOutput {
-	return i.ToGetContainerDedicatedHostFlavorsHostFlavorArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorArray) ToGetContainerDedicatedHostFlavorsHostFlavorArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostFlavorsHostFlavorArrayOutput)
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostFlavorsHostFlavorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavor)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) ToGetContainerDedicatedHostFlavorsHostFlavorOutput() GetContainerDedicatedHostFlavorsHostFlavorOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) ToGetContainerDedicatedHostFlavorsHostFlavorOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorOutput {
-	return o
-}
-
-// Describes if the dedicated host flavor is deprecated
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) Deprecated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavor) bool { return v.Deprecated }).(pulumi.BoolOutput)
-}
-
-// The class of the dedicated host flavor
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) FlavorClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavor) string { return v.FlavorClass }).(pulumi.StringOutput)
-}
-
-// The id of the dedicated host flavor
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) HostFlavorId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavor) string { return v.HostFlavorId }).(pulumi.StringOutput)
-}
-
-// The instance storage of the dedicated host flavor
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) InstanceStorages() GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavor) []GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage {
-		return v.InstanceStorages
-	}).(GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput)
-}
-
-// The maximum available memory in the dedicated host flavor
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) MaxMemory() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavor) int { return v.MaxMemory }).(pulumi.IntOutput)
-}
-
-// The maximum available vcpus in the dedicated host flavor
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) MaxVcpus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavor) int { return v.MaxVcpus }).(pulumi.IntOutput)
-}
-
-// The region of the dedicated host flavor
-func (o GetContainerDedicatedHostFlavorsHostFlavorOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavor) string { return v.Region }).(pulumi.StringOutput)
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostFlavorsHostFlavorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostFlavorsHostFlavor)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorArrayOutput) ToGetContainerDedicatedHostFlavorsHostFlavorArrayOutput() GetContainerDedicatedHostFlavorsHostFlavorArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorArrayOutput) ToGetContainerDedicatedHostFlavorsHostFlavorArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostFlavorsHostFlavorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostFlavorsHostFlavor {
-		return vs[0].([]GetContainerDedicatedHostFlavorsHostFlavor)[vs[1].(int)]
-	}).(GetContainerDedicatedHostFlavorsHostFlavorOutput)
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage struct {
-	Count int `pulumi:"count"`
-	Size  int `pulumi:"size"`
-}
-
-// GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageInput is an input type that accepts GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs and GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageInput` via:
-//
-//	GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs{...}
-type GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput() GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput
-	ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutputWithContext(context.Context) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs struct {
-	Count pulumi.IntInput `pulumi:"count"`
-	Size  pulumi.IntInput `pulumi:"size"`
-}
-
-func (GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput() GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput {
-	return i.ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput)
-}
-
-// GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayInput is an input type that accepts GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArray and GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayInput` via:
-//
-//	GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArray{ GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs{...} }
-type GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput() GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput
-	ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutputWithContext(context.Context) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArray []GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageInput
-
-func (GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArray) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput() GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput {
-	return i.ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArray) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput)
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput() GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage) int { return v.Count }).(pulumi.IntOutput)
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage) int { return v.Size }).(pulumi.IntOutput)
-}
-
-type GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput() GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput) ToGetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage {
-		return vs[0].([]GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage)[vs[1].(int)]
-	}).(GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput)
-}
-
-type GetContainerDedicatedHostLifeCycle struct {
-	ActualState        string `pulumi:"actualState"`
-	DesiredState       string `pulumi:"desiredState"`
-	Message            string `pulumi:"message"`
-	MessageDate        string `pulumi:"messageDate"`
-	MessageDetails     string `pulumi:"messageDetails"`
-	MessageDetailsDate string `pulumi:"messageDetailsDate"`
-}
-
-// GetContainerDedicatedHostLifeCycleInput is an input type that accepts GetContainerDedicatedHostLifeCycleArgs and GetContainerDedicatedHostLifeCycleOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostLifeCycleInput` via:
-//
-//	GetContainerDedicatedHostLifeCycleArgs{...}
-type GetContainerDedicatedHostLifeCycleInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostLifeCycleOutput() GetContainerDedicatedHostLifeCycleOutput
-	ToGetContainerDedicatedHostLifeCycleOutputWithContext(context.Context) GetContainerDedicatedHostLifeCycleOutput
-}
-
-type GetContainerDedicatedHostLifeCycleArgs struct {
-	ActualState        pulumi.StringInput `pulumi:"actualState"`
-	DesiredState       pulumi.StringInput `pulumi:"desiredState"`
-	Message            pulumi.StringInput `pulumi:"message"`
-	MessageDate        pulumi.StringInput `pulumi:"messageDate"`
-	MessageDetails     pulumi.StringInput `pulumi:"messageDetails"`
-	MessageDetailsDate pulumi.StringInput `pulumi:"messageDetailsDate"`
-}
-
-func (GetContainerDedicatedHostLifeCycleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostLifeCycleArgs) ToGetContainerDedicatedHostLifeCycleOutput() GetContainerDedicatedHostLifeCycleOutput {
-	return i.ToGetContainerDedicatedHostLifeCycleOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostLifeCycleArgs) ToGetContainerDedicatedHostLifeCycleOutputWithContext(ctx context.Context) GetContainerDedicatedHostLifeCycleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostLifeCycleOutput)
-}
-
-// GetContainerDedicatedHostLifeCycleArrayInput is an input type that accepts GetContainerDedicatedHostLifeCycleArray and GetContainerDedicatedHostLifeCycleArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostLifeCycleArrayInput` via:
-//
-//	GetContainerDedicatedHostLifeCycleArray{ GetContainerDedicatedHostLifeCycleArgs{...} }
-type GetContainerDedicatedHostLifeCycleArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostLifeCycleArrayOutput() GetContainerDedicatedHostLifeCycleArrayOutput
-	ToGetContainerDedicatedHostLifeCycleArrayOutputWithContext(context.Context) GetContainerDedicatedHostLifeCycleArrayOutput
-}
-
-type GetContainerDedicatedHostLifeCycleArray []GetContainerDedicatedHostLifeCycleInput
-
-func (GetContainerDedicatedHostLifeCycleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostLifeCycleArray) ToGetContainerDedicatedHostLifeCycleArrayOutput() GetContainerDedicatedHostLifeCycleArrayOutput {
-	return i.ToGetContainerDedicatedHostLifeCycleArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostLifeCycleArray) ToGetContainerDedicatedHostLifeCycleArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostLifeCycleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostLifeCycleArrayOutput)
-}
-
-type GetContainerDedicatedHostLifeCycleOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostLifeCycleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) ToGetContainerDedicatedHostLifeCycleOutput() GetContainerDedicatedHostLifeCycleOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) ToGetContainerDedicatedHostLifeCycleOutputWithContext(ctx context.Context) GetContainerDedicatedHostLifeCycleOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) ActualState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostLifeCycle) string { return v.ActualState }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) DesiredState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostLifeCycle) string { return v.DesiredState }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostLifeCycle) string { return v.Message }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) MessageDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostLifeCycle) string { return v.MessageDate }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) MessageDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostLifeCycle) string { return v.MessageDetails }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostLifeCycleOutput) MessageDetailsDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostLifeCycle) string { return v.MessageDetailsDate }).(pulumi.StringOutput)
-}
-
-type GetContainerDedicatedHostLifeCycleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostLifeCycleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostLifeCycleArrayOutput) ToGetContainerDedicatedHostLifeCycleArrayOutput() GetContainerDedicatedHostLifeCycleArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostLifeCycleArrayOutput) ToGetContainerDedicatedHostLifeCycleArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostLifeCycleArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostLifeCycleArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostLifeCycleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostLifeCycle {
-		return vs[0].([]GetContainerDedicatedHostLifeCycle)[vs[1].(int)]
-	}).(GetContainerDedicatedHostLifeCycleOutput)
-}
-
-type GetContainerDedicatedHostPoolWorkerPool struct {
-	ClusterId    string `pulumi:"clusterId"`
-	WorkerPoolId string `pulumi:"workerPoolId"`
-}
-
-// GetContainerDedicatedHostPoolWorkerPoolInput is an input type that accepts GetContainerDedicatedHostPoolWorkerPoolArgs and GetContainerDedicatedHostPoolWorkerPoolOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostPoolWorkerPoolInput` via:
-//
-//	GetContainerDedicatedHostPoolWorkerPoolArgs{...}
-type GetContainerDedicatedHostPoolWorkerPoolInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostPoolWorkerPoolOutput() GetContainerDedicatedHostPoolWorkerPoolOutput
-	ToGetContainerDedicatedHostPoolWorkerPoolOutputWithContext(context.Context) GetContainerDedicatedHostPoolWorkerPoolOutput
-}
-
-type GetContainerDedicatedHostPoolWorkerPoolArgs struct {
-	ClusterId    pulumi.StringInput `pulumi:"clusterId"`
-	WorkerPoolId pulumi.StringInput `pulumi:"workerPoolId"`
-}
-
-func (GetContainerDedicatedHostPoolWorkerPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostPoolWorkerPoolArgs) ToGetContainerDedicatedHostPoolWorkerPoolOutput() GetContainerDedicatedHostPoolWorkerPoolOutput {
-	return i.ToGetContainerDedicatedHostPoolWorkerPoolOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostPoolWorkerPoolArgs) ToGetContainerDedicatedHostPoolWorkerPoolOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolWorkerPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostPoolWorkerPoolOutput)
-}
-
-// GetContainerDedicatedHostPoolWorkerPoolArrayInput is an input type that accepts GetContainerDedicatedHostPoolWorkerPoolArray and GetContainerDedicatedHostPoolWorkerPoolArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostPoolWorkerPoolArrayInput` via:
-//
-//	GetContainerDedicatedHostPoolWorkerPoolArray{ GetContainerDedicatedHostPoolWorkerPoolArgs{...} }
-type GetContainerDedicatedHostPoolWorkerPoolArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostPoolWorkerPoolArrayOutput() GetContainerDedicatedHostPoolWorkerPoolArrayOutput
-	ToGetContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(context.Context) GetContainerDedicatedHostPoolWorkerPoolArrayOutput
-}
-
-type GetContainerDedicatedHostPoolWorkerPoolArray []GetContainerDedicatedHostPoolWorkerPoolInput
-
-func (GetContainerDedicatedHostPoolWorkerPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostPoolWorkerPoolArray) ToGetContainerDedicatedHostPoolWorkerPoolArrayOutput() GetContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return i.ToGetContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostPoolWorkerPoolArray) ToGetContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostPoolWorkerPoolArrayOutput)
-}
-
-type GetContainerDedicatedHostPoolWorkerPoolOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostPoolWorkerPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostPoolWorkerPoolOutput) ToGetContainerDedicatedHostPoolWorkerPoolOutput() GetContainerDedicatedHostPoolWorkerPoolOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolWorkerPoolOutput) ToGetContainerDedicatedHostPoolWorkerPoolOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolWorkerPoolOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolWorkerPoolOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostPoolWorkerPool) string { return v.ClusterId }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostPoolWorkerPoolOutput) WorkerPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostPoolWorkerPool) string { return v.WorkerPoolId }).(pulumi.StringOutput)
-}
-
-type GetContainerDedicatedHostPoolWorkerPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostPoolWorkerPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostPoolWorkerPoolArrayOutput) ToGetContainerDedicatedHostPoolWorkerPoolArrayOutput() GetContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolWorkerPoolArrayOutput) ToGetContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolWorkerPoolArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostPoolWorkerPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostPoolWorkerPool {
-		return vs[0].([]GetContainerDedicatedHostPoolWorkerPool)[vs[1].(int)]
-	}).(GetContainerDedicatedHostPoolWorkerPoolOutput)
-}
-
-type GetContainerDedicatedHostPoolZone struct {
-	Capacities []GetContainerDedicatedHostPoolZoneCapacity `pulumi:"capacities"`
-	HostCount  int                                         `pulumi:"hostCount"`
-	Zone       string                                      `pulumi:"zone"`
-}
-
-// GetContainerDedicatedHostPoolZoneInput is an input type that accepts GetContainerDedicatedHostPoolZoneArgs and GetContainerDedicatedHostPoolZoneOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostPoolZoneInput` via:
-//
-//	GetContainerDedicatedHostPoolZoneArgs{...}
-type GetContainerDedicatedHostPoolZoneInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostPoolZoneOutput() GetContainerDedicatedHostPoolZoneOutput
-	ToGetContainerDedicatedHostPoolZoneOutputWithContext(context.Context) GetContainerDedicatedHostPoolZoneOutput
-}
-
-type GetContainerDedicatedHostPoolZoneArgs struct {
-	Capacities GetContainerDedicatedHostPoolZoneCapacityArrayInput `pulumi:"capacities"`
-	HostCount  pulumi.IntInput                                     `pulumi:"hostCount"`
-	Zone       pulumi.StringInput                                  `pulumi:"zone"`
-}
-
-func (GetContainerDedicatedHostPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostPoolZoneArgs) ToGetContainerDedicatedHostPoolZoneOutput() GetContainerDedicatedHostPoolZoneOutput {
-	return i.ToGetContainerDedicatedHostPoolZoneOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostPoolZoneArgs) ToGetContainerDedicatedHostPoolZoneOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostPoolZoneOutput)
-}
-
-// GetContainerDedicatedHostPoolZoneArrayInput is an input type that accepts GetContainerDedicatedHostPoolZoneArray and GetContainerDedicatedHostPoolZoneArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostPoolZoneArrayInput` via:
-//
-//	GetContainerDedicatedHostPoolZoneArray{ GetContainerDedicatedHostPoolZoneArgs{...} }
-type GetContainerDedicatedHostPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostPoolZoneArrayOutput() GetContainerDedicatedHostPoolZoneArrayOutput
-	ToGetContainerDedicatedHostPoolZoneArrayOutputWithContext(context.Context) GetContainerDedicatedHostPoolZoneArrayOutput
-}
-
-type GetContainerDedicatedHostPoolZoneArray []GetContainerDedicatedHostPoolZoneInput
-
-func (GetContainerDedicatedHostPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostPoolZoneArray) ToGetContainerDedicatedHostPoolZoneArrayOutput() GetContainerDedicatedHostPoolZoneArrayOutput {
-	return i.ToGetContainerDedicatedHostPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostPoolZoneArray) ToGetContainerDedicatedHostPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostPoolZoneArrayOutput)
-}
-
-type GetContainerDedicatedHostPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostPoolZoneOutput) ToGetContainerDedicatedHostPoolZoneOutput() GetContainerDedicatedHostPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneOutput) ToGetContainerDedicatedHostPoolZoneOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneOutput) Capacities() GetContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostPoolZone) []GetContainerDedicatedHostPoolZoneCapacity {
-		return v.Capacities
-	}).(GetContainerDedicatedHostPoolZoneCapacityArrayOutput)
-}
-
-func (o GetContainerDedicatedHostPoolZoneOutput) HostCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostPoolZone) int { return v.HostCount }).(pulumi.IntOutput)
-}
-
-func (o GetContainerDedicatedHostPoolZoneOutput) Zone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostPoolZone) string { return v.Zone }).(pulumi.StringOutput)
-}
-
-type GetContainerDedicatedHostPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostPoolZoneArrayOutput) ToGetContainerDedicatedHostPoolZoneArrayOutput() GetContainerDedicatedHostPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneArrayOutput) ToGetContainerDedicatedHostPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostPoolZone {
-		return vs[0].([]GetContainerDedicatedHostPoolZone)[vs[1].(int)]
-	}).(GetContainerDedicatedHostPoolZoneOutput)
-}
-
-type GetContainerDedicatedHostPoolZoneCapacity struct {
-	MemoryBytes int `pulumi:"memoryBytes"`
-	Vcpu        int `pulumi:"vcpu"`
-}
-
-// GetContainerDedicatedHostPoolZoneCapacityInput is an input type that accepts GetContainerDedicatedHostPoolZoneCapacityArgs and GetContainerDedicatedHostPoolZoneCapacityOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostPoolZoneCapacityInput` via:
-//
-//	GetContainerDedicatedHostPoolZoneCapacityArgs{...}
-type GetContainerDedicatedHostPoolZoneCapacityInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostPoolZoneCapacityOutput() GetContainerDedicatedHostPoolZoneCapacityOutput
-	ToGetContainerDedicatedHostPoolZoneCapacityOutputWithContext(context.Context) GetContainerDedicatedHostPoolZoneCapacityOutput
-}
-
-type GetContainerDedicatedHostPoolZoneCapacityArgs struct {
-	MemoryBytes pulumi.IntInput `pulumi:"memoryBytes"`
-	Vcpu        pulumi.IntInput `pulumi:"vcpu"`
-}
-
-func (GetContainerDedicatedHostPoolZoneCapacityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostPoolZoneCapacityArgs) ToGetContainerDedicatedHostPoolZoneCapacityOutput() GetContainerDedicatedHostPoolZoneCapacityOutput {
-	return i.ToGetContainerDedicatedHostPoolZoneCapacityOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostPoolZoneCapacityArgs) ToGetContainerDedicatedHostPoolZoneCapacityOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneCapacityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostPoolZoneCapacityOutput)
-}
-
-// GetContainerDedicatedHostPoolZoneCapacityArrayInput is an input type that accepts GetContainerDedicatedHostPoolZoneCapacityArray and GetContainerDedicatedHostPoolZoneCapacityArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostPoolZoneCapacityArrayInput` via:
-//
-//	GetContainerDedicatedHostPoolZoneCapacityArray{ GetContainerDedicatedHostPoolZoneCapacityArgs{...} }
-type GetContainerDedicatedHostPoolZoneCapacityArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostPoolZoneCapacityArrayOutput() GetContainerDedicatedHostPoolZoneCapacityArrayOutput
-	ToGetContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(context.Context) GetContainerDedicatedHostPoolZoneCapacityArrayOutput
-}
-
-type GetContainerDedicatedHostPoolZoneCapacityArray []GetContainerDedicatedHostPoolZoneCapacityInput
-
-func (GetContainerDedicatedHostPoolZoneCapacityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostPoolZoneCapacityArray) ToGetContainerDedicatedHostPoolZoneCapacityArrayOutput() GetContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return i.ToGetContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostPoolZoneCapacityArray) ToGetContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostPoolZoneCapacityArrayOutput)
-}
-
-type GetContainerDedicatedHostPoolZoneCapacityOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostPoolZoneCapacityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostPoolZoneCapacityOutput) ToGetContainerDedicatedHostPoolZoneCapacityOutput() GetContainerDedicatedHostPoolZoneCapacityOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneCapacityOutput) ToGetContainerDedicatedHostPoolZoneCapacityOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneCapacityOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneCapacityOutput) MemoryBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostPoolZoneCapacity) int { return v.MemoryBytes }).(pulumi.IntOutput)
-}
-
-func (o GetContainerDedicatedHostPoolZoneCapacityOutput) Vcpu() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostPoolZoneCapacity) int { return v.Vcpu }).(pulumi.IntOutput)
-}
-
-type GetContainerDedicatedHostPoolZoneCapacityArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostPoolZoneCapacityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostPoolZoneCapacityArrayOutput) ToGetContainerDedicatedHostPoolZoneCapacityArrayOutput() GetContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneCapacityArrayOutput) ToGetContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostPoolZoneCapacityArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostPoolZoneCapacityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostPoolZoneCapacity {
-		return vs[0].([]GetContainerDedicatedHostPoolZoneCapacity)[vs[1].(int)]
-	}).(GetContainerDedicatedHostPoolZoneCapacityOutput)
-}
-
-type GetContainerDedicatedHostResource struct {
-	Capacities []GetContainerDedicatedHostResourceCapacity `pulumi:"capacities"`
-	Consumeds  []GetContainerDedicatedHostResourceConsumed `pulumi:"consumeds"`
-}
-
-// GetContainerDedicatedHostResourceInput is an input type that accepts GetContainerDedicatedHostResourceArgs and GetContainerDedicatedHostResourceOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostResourceInput` via:
-//
-//	GetContainerDedicatedHostResourceArgs{...}
-type GetContainerDedicatedHostResourceInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostResourceOutput() GetContainerDedicatedHostResourceOutput
-	ToGetContainerDedicatedHostResourceOutputWithContext(context.Context) GetContainerDedicatedHostResourceOutput
-}
-
-type GetContainerDedicatedHostResourceArgs struct {
-	Capacities GetContainerDedicatedHostResourceCapacityArrayInput `pulumi:"capacities"`
-	Consumeds  GetContainerDedicatedHostResourceConsumedArrayInput `pulumi:"consumeds"`
-}
-
-func (GetContainerDedicatedHostResourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostResourceArgs) ToGetContainerDedicatedHostResourceOutput() GetContainerDedicatedHostResourceOutput {
-	return i.ToGetContainerDedicatedHostResourceOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostResourceArgs) ToGetContainerDedicatedHostResourceOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostResourceOutput)
-}
-
-// GetContainerDedicatedHostResourceArrayInput is an input type that accepts GetContainerDedicatedHostResourceArray and GetContainerDedicatedHostResourceArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostResourceArrayInput` via:
-//
-//	GetContainerDedicatedHostResourceArray{ GetContainerDedicatedHostResourceArgs{...} }
-type GetContainerDedicatedHostResourceArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostResourceArrayOutput() GetContainerDedicatedHostResourceArrayOutput
-	ToGetContainerDedicatedHostResourceArrayOutputWithContext(context.Context) GetContainerDedicatedHostResourceArrayOutput
-}
-
-type GetContainerDedicatedHostResourceArray []GetContainerDedicatedHostResourceInput
-
-func (GetContainerDedicatedHostResourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostResourceArray) ToGetContainerDedicatedHostResourceArrayOutput() GetContainerDedicatedHostResourceArrayOutput {
-	return i.ToGetContainerDedicatedHostResourceArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostResourceArray) ToGetContainerDedicatedHostResourceArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostResourceArrayOutput)
-}
-
-type GetContainerDedicatedHostResourceOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostResourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostResourceOutput) ToGetContainerDedicatedHostResourceOutput() GetContainerDedicatedHostResourceOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceOutput) ToGetContainerDedicatedHostResourceOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceOutput) Capacities() GetContainerDedicatedHostResourceCapacityArrayOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostResource) []GetContainerDedicatedHostResourceCapacity {
-		return v.Capacities
-	}).(GetContainerDedicatedHostResourceCapacityArrayOutput)
-}
-
-func (o GetContainerDedicatedHostResourceOutput) Consumeds() GetContainerDedicatedHostResourceConsumedArrayOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostResource) []GetContainerDedicatedHostResourceConsumed {
-		return v.Consumeds
-	}).(GetContainerDedicatedHostResourceConsumedArrayOutput)
-}
-
-type GetContainerDedicatedHostResourceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostResourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostResourceArrayOutput) ToGetContainerDedicatedHostResourceArrayOutput() GetContainerDedicatedHostResourceArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceArrayOutput) ToGetContainerDedicatedHostResourceArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostResourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostResource {
-		return vs[0].([]GetContainerDedicatedHostResource)[vs[1].(int)]
-	}).(GetContainerDedicatedHostResourceOutput)
-}
-
-type GetContainerDedicatedHostResourceCapacity struct {
-	MemoryBytes int `pulumi:"memoryBytes"`
-	Vcpu        int `pulumi:"vcpu"`
-}
-
-// GetContainerDedicatedHostResourceCapacityInput is an input type that accepts GetContainerDedicatedHostResourceCapacityArgs and GetContainerDedicatedHostResourceCapacityOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostResourceCapacityInput` via:
-//
-//	GetContainerDedicatedHostResourceCapacityArgs{...}
-type GetContainerDedicatedHostResourceCapacityInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostResourceCapacityOutput() GetContainerDedicatedHostResourceCapacityOutput
-	ToGetContainerDedicatedHostResourceCapacityOutputWithContext(context.Context) GetContainerDedicatedHostResourceCapacityOutput
-}
-
-type GetContainerDedicatedHostResourceCapacityArgs struct {
-	MemoryBytes pulumi.IntInput `pulumi:"memoryBytes"`
-	Vcpu        pulumi.IntInput `pulumi:"vcpu"`
-}
-
-func (GetContainerDedicatedHostResourceCapacityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostResourceCapacityArgs) ToGetContainerDedicatedHostResourceCapacityOutput() GetContainerDedicatedHostResourceCapacityOutput {
-	return i.ToGetContainerDedicatedHostResourceCapacityOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostResourceCapacityArgs) ToGetContainerDedicatedHostResourceCapacityOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceCapacityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostResourceCapacityOutput)
-}
-
-// GetContainerDedicatedHostResourceCapacityArrayInput is an input type that accepts GetContainerDedicatedHostResourceCapacityArray and GetContainerDedicatedHostResourceCapacityArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostResourceCapacityArrayInput` via:
-//
-//	GetContainerDedicatedHostResourceCapacityArray{ GetContainerDedicatedHostResourceCapacityArgs{...} }
-type GetContainerDedicatedHostResourceCapacityArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostResourceCapacityArrayOutput() GetContainerDedicatedHostResourceCapacityArrayOutput
-	ToGetContainerDedicatedHostResourceCapacityArrayOutputWithContext(context.Context) GetContainerDedicatedHostResourceCapacityArrayOutput
-}
-
-type GetContainerDedicatedHostResourceCapacityArray []GetContainerDedicatedHostResourceCapacityInput
-
-func (GetContainerDedicatedHostResourceCapacityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostResourceCapacityArray) ToGetContainerDedicatedHostResourceCapacityArrayOutput() GetContainerDedicatedHostResourceCapacityArrayOutput {
-	return i.ToGetContainerDedicatedHostResourceCapacityArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostResourceCapacityArray) ToGetContainerDedicatedHostResourceCapacityArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceCapacityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostResourceCapacityArrayOutput)
-}
-
-type GetContainerDedicatedHostResourceCapacityOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostResourceCapacityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostResourceCapacityOutput) ToGetContainerDedicatedHostResourceCapacityOutput() GetContainerDedicatedHostResourceCapacityOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceCapacityOutput) ToGetContainerDedicatedHostResourceCapacityOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceCapacityOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceCapacityOutput) MemoryBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostResourceCapacity) int { return v.MemoryBytes }).(pulumi.IntOutput)
-}
-
-func (o GetContainerDedicatedHostResourceCapacityOutput) Vcpu() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostResourceCapacity) int { return v.Vcpu }).(pulumi.IntOutput)
-}
-
-type GetContainerDedicatedHostResourceCapacityArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostResourceCapacityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostResourceCapacityArrayOutput) ToGetContainerDedicatedHostResourceCapacityArrayOutput() GetContainerDedicatedHostResourceCapacityArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceCapacityArrayOutput) ToGetContainerDedicatedHostResourceCapacityArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceCapacityArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceCapacityArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostResourceCapacityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostResourceCapacity {
-		return vs[0].([]GetContainerDedicatedHostResourceCapacity)[vs[1].(int)]
-	}).(GetContainerDedicatedHostResourceCapacityOutput)
-}
-
-type GetContainerDedicatedHostResourceConsumed struct {
-	MemoryBytes int `pulumi:"memoryBytes"`
-	Vcpu        int `pulumi:"vcpu"`
-}
-
-// GetContainerDedicatedHostResourceConsumedInput is an input type that accepts GetContainerDedicatedHostResourceConsumedArgs and GetContainerDedicatedHostResourceConsumedOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostResourceConsumedInput` via:
-//
-//	GetContainerDedicatedHostResourceConsumedArgs{...}
-type GetContainerDedicatedHostResourceConsumedInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostResourceConsumedOutput() GetContainerDedicatedHostResourceConsumedOutput
-	ToGetContainerDedicatedHostResourceConsumedOutputWithContext(context.Context) GetContainerDedicatedHostResourceConsumedOutput
-}
-
-type GetContainerDedicatedHostResourceConsumedArgs struct {
-	MemoryBytes pulumi.IntInput `pulumi:"memoryBytes"`
-	Vcpu        pulumi.IntInput `pulumi:"vcpu"`
-}
-
-func (GetContainerDedicatedHostResourceConsumedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostResourceConsumedArgs) ToGetContainerDedicatedHostResourceConsumedOutput() GetContainerDedicatedHostResourceConsumedOutput {
-	return i.ToGetContainerDedicatedHostResourceConsumedOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostResourceConsumedArgs) ToGetContainerDedicatedHostResourceConsumedOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceConsumedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostResourceConsumedOutput)
-}
-
-// GetContainerDedicatedHostResourceConsumedArrayInput is an input type that accepts GetContainerDedicatedHostResourceConsumedArray and GetContainerDedicatedHostResourceConsumedArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostResourceConsumedArrayInput` via:
-//
-//	GetContainerDedicatedHostResourceConsumedArray{ GetContainerDedicatedHostResourceConsumedArgs{...} }
-type GetContainerDedicatedHostResourceConsumedArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostResourceConsumedArrayOutput() GetContainerDedicatedHostResourceConsumedArrayOutput
-	ToGetContainerDedicatedHostResourceConsumedArrayOutputWithContext(context.Context) GetContainerDedicatedHostResourceConsumedArrayOutput
-}
-
-type GetContainerDedicatedHostResourceConsumedArray []GetContainerDedicatedHostResourceConsumedInput
-
-func (GetContainerDedicatedHostResourceConsumedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostResourceConsumedArray) ToGetContainerDedicatedHostResourceConsumedArrayOutput() GetContainerDedicatedHostResourceConsumedArrayOutput {
-	return i.ToGetContainerDedicatedHostResourceConsumedArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostResourceConsumedArray) ToGetContainerDedicatedHostResourceConsumedArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceConsumedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostResourceConsumedArrayOutput)
-}
-
-type GetContainerDedicatedHostResourceConsumedOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostResourceConsumedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostResourceConsumedOutput) ToGetContainerDedicatedHostResourceConsumedOutput() GetContainerDedicatedHostResourceConsumedOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceConsumedOutput) ToGetContainerDedicatedHostResourceConsumedOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceConsumedOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceConsumedOutput) MemoryBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostResourceConsumed) int { return v.MemoryBytes }).(pulumi.IntOutput)
-}
-
-func (o GetContainerDedicatedHostResourceConsumedOutput) Vcpu() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostResourceConsumed) int { return v.Vcpu }).(pulumi.IntOutput)
-}
-
-type GetContainerDedicatedHostResourceConsumedArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostResourceConsumedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostResourceConsumedArrayOutput) ToGetContainerDedicatedHostResourceConsumedArrayOutput() GetContainerDedicatedHostResourceConsumedArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceConsumedArrayOutput) ToGetContainerDedicatedHostResourceConsumedArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostResourceConsumedArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostResourceConsumedArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostResourceConsumedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostResourceConsumed {
-		return vs[0].([]GetContainerDedicatedHostResourceConsumed)[vs[1].(int)]
-	}).(GetContainerDedicatedHostResourceConsumedOutput)
-}
-
-type GetContainerDedicatedHostWorker struct {
-	ClusterId    string `pulumi:"clusterId"`
-	Flavor       string `pulumi:"flavor"`
-	WorkerId     string `pulumi:"workerId"`
-	WorkerPoolId string `pulumi:"workerPoolId"`
-}
-
-// GetContainerDedicatedHostWorkerInput is an input type that accepts GetContainerDedicatedHostWorkerArgs and GetContainerDedicatedHostWorkerOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostWorkerInput` via:
-//
-//	GetContainerDedicatedHostWorkerArgs{...}
-type GetContainerDedicatedHostWorkerInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostWorkerOutput() GetContainerDedicatedHostWorkerOutput
-	ToGetContainerDedicatedHostWorkerOutputWithContext(context.Context) GetContainerDedicatedHostWorkerOutput
-}
-
-type GetContainerDedicatedHostWorkerArgs struct {
-	ClusterId    pulumi.StringInput `pulumi:"clusterId"`
-	Flavor       pulumi.StringInput `pulumi:"flavor"`
-	WorkerId     pulumi.StringInput `pulumi:"workerId"`
-	WorkerPoolId pulumi.StringInput `pulumi:"workerPoolId"`
-}
-
-func (GetContainerDedicatedHostWorkerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostWorkerArgs) ToGetContainerDedicatedHostWorkerOutput() GetContainerDedicatedHostWorkerOutput {
-	return i.ToGetContainerDedicatedHostWorkerOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostWorkerArgs) ToGetContainerDedicatedHostWorkerOutputWithContext(ctx context.Context) GetContainerDedicatedHostWorkerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostWorkerOutput)
-}
-
-// GetContainerDedicatedHostWorkerArrayInput is an input type that accepts GetContainerDedicatedHostWorkerArray and GetContainerDedicatedHostWorkerArrayOutput values.
-// You can construct a concrete instance of `GetContainerDedicatedHostWorkerArrayInput` via:
-//
-//	GetContainerDedicatedHostWorkerArray{ GetContainerDedicatedHostWorkerArgs{...} }
-type GetContainerDedicatedHostWorkerArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerDedicatedHostWorkerArrayOutput() GetContainerDedicatedHostWorkerArrayOutput
-	ToGetContainerDedicatedHostWorkerArrayOutputWithContext(context.Context) GetContainerDedicatedHostWorkerArrayOutput
-}
-
-type GetContainerDedicatedHostWorkerArray []GetContainerDedicatedHostWorkerInput
-
-func (GetContainerDedicatedHostWorkerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (i GetContainerDedicatedHostWorkerArray) ToGetContainerDedicatedHostWorkerArrayOutput() GetContainerDedicatedHostWorkerArrayOutput {
-	return i.ToGetContainerDedicatedHostWorkerArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerDedicatedHostWorkerArray) ToGetContainerDedicatedHostWorkerArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostWorkerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerDedicatedHostWorkerArrayOutput)
-}
-
-type GetContainerDedicatedHostWorkerOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostWorkerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostWorkerOutput) ToGetContainerDedicatedHostWorkerOutput() GetContainerDedicatedHostWorkerOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostWorkerOutput) ToGetContainerDedicatedHostWorkerOutputWithContext(ctx context.Context) GetContainerDedicatedHostWorkerOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostWorkerOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostWorker) string { return v.ClusterId }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostWorkerOutput) Flavor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostWorker) string { return v.Flavor }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostWorkerOutput) WorkerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostWorker) string { return v.WorkerId }).(pulumi.StringOutput)
-}
-
-func (o GetContainerDedicatedHostWorkerOutput) WorkerPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerDedicatedHostWorker) string { return v.WorkerPoolId }).(pulumi.StringOutput)
-}
-
-type GetContainerDedicatedHostWorkerArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerDedicatedHostWorkerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (o GetContainerDedicatedHostWorkerArrayOutput) ToGetContainerDedicatedHostWorkerArrayOutput() GetContainerDedicatedHostWorkerArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostWorkerArrayOutput) ToGetContainerDedicatedHostWorkerArrayOutputWithContext(ctx context.Context) GetContainerDedicatedHostWorkerArrayOutput {
-	return o
-}
-
-func (o GetContainerDedicatedHostWorkerArrayOutput) Index(i pulumi.IntInput) GetContainerDedicatedHostWorkerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerDedicatedHostWorker {
-		return vs[0].([]GetContainerDedicatedHostWorker)[vs[1].(int)]
-	}).(GetContainerDedicatedHostWorkerOutput)
-}
-
-type GetContainerIngressSecretOpaqueField struct {
-	// Secret CRN corresponding to the field
-	Crn string `pulumi:"crn"`
-	// Field expires on date
-	ExpiresOn string `pulumi:"expiresOn"`
-	// Field last updated timestamp
-	LastUpdatedTimestamp string `pulumi:"lastUpdatedTimestamp"`
-	// Field name
-	Name string `pulumi:"name"`
-}
-
-// GetContainerIngressSecretOpaqueFieldInput is an input type that accepts GetContainerIngressSecretOpaqueFieldArgs and GetContainerIngressSecretOpaqueFieldOutput values.
-// You can construct a concrete instance of `GetContainerIngressSecretOpaqueFieldInput` via:
-//
-//	GetContainerIngressSecretOpaqueFieldArgs{...}
-type GetContainerIngressSecretOpaqueFieldInput interface {
-	pulumi.Input
-
-	ToGetContainerIngressSecretOpaqueFieldOutput() GetContainerIngressSecretOpaqueFieldOutput
-	ToGetContainerIngressSecretOpaqueFieldOutputWithContext(context.Context) GetContainerIngressSecretOpaqueFieldOutput
-}
-
-type GetContainerIngressSecretOpaqueFieldArgs struct {
-	// Secret CRN corresponding to the field
-	Crn pulumi.StringInput `pulumi:"crn"`
-	// Field expires on date
-	ExpiresOn pulumi.StringInput `pulumi:"expiresOn"`
-	// Field last updated timestamp
-	LastUpdatedTimestamp pulumi.StringInput `pulumi:"lastUpdatedTimestamp"`
-	// Field name
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetContainerIngressSecretOpaqueFieldArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (i GetContainerIngressSecretOpaqueFieldArgs) ToGetContainerIngressSecretOpaqueFieldOutput() GetContainerIngressSecretOpaqueFieldOutput {
-	return i.ToGetContainerIngressSecretOpaqueFieldOutputWithContext(context.Background())
-}
-
-func (i GetContainerIngressSecretOpaqueFieldArgs) ToGetContainerIngressSecretOpaqueFieldOutputWithContext(ctx context.Context) GetContainerIngressSecretOpaqueFieldOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerIngressSecretOpaqueFieldOutput)
-}
-
-// GetContainerIngressSecretOpaqueFieldArrayInput is an input type that accepts GetContainerIngressSecretOpaqueFieldArray and GetContainerIngressSecretOpaqueFieldArrayOutput values.
-// You can construct a concrete instance of `GetContainerIngressSecretOpaqueFieldArrayInput` via:
-//
-//	GetContainerIngressSecretOpaqueFieldArray{ GetContainerIngressSecretOpaqueFieldArgs{...} }
-type GetContainerIngressSecretOpaqueFieldArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerIngressSecretOpaqueFieldArrayOutput() GetContainerIngressSecretOpaqueFieldArrayOutput
-	ToGetContainerIngressSecretOpaqueFieldArrayOutputWithContext(context.Context) GetContainerIngressSecretOpaqueFieldArrayOutput
-}
-
-type GetContainerIngressSecretOpaqueFieldArray []GetContainerIngressSecretOpaqueFieldInput
-
-func (GetContainerIngressSecretOpaqueFieldArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (i GetContainerIngressSecretOpaqueFieldArray) ToGetContainerIngressSecretOpaqueFieldArrayOutput() GetContainerIngressSecretOpaqueFieldArrayOutput {
-	return i.ToGetContainerIngressSecretOpaqueFieldArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerIngressSecretOpaqueFieldArray) ToGetContainerIngressSecretOpaqueFieldArrayOutputWithContext(ctx context.Context) GetContainerIngressSecretOpaqueFieldArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerIngressSecretOpaqueFieldArrayOutput)
-}
-
-type GetContainerIngressSecretOpaqueFieldOutput struct{ *pulumi.OutputState }
-
-func (GetContainerIngressSecretOpaqueFieldOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (o GetContainerIngressSecretOpaqueFieldOutput) ToGetContainerIngressSecretOpaqueFieldOutput() GetContainerIngressSecretOpaqueFieldOutput {
-	return o
-}
-
-func (o GetContainerIngressSecretOpaqueFieldOutput) ToGetContainerIngressSecretOpaqueFieldOutputWithContext(ctx context.Context) GetContainerIngressSecretOpaqueFieldOutput {
-	return o
-}
-
-// Secret CRN corresponding to the field
-func (o GetContainerIngressSecretOpaqueFieldOutput) Crn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerIngressSecretOpaqueField) string { return v.Crn }).(pulumi.StringOutput)
-}
-
-// Field expires on date
-func (o GetContainerIngressSecretOpaqueFieldOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerIngressSecretOpaqueField) string { return v.ExpiresOn }).(pulumi.StringOutput)
-}
-
-// Field last updated timestamp
-func (o GetContainerIngressSecretOpaqueFieldOutput) LastUpdatedTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerIngressSecretOpaqueField) string { return v.LastUpdatedTimestamp }).(pulumi.StringOutput)
-}
-
-// Field name
-func (o GetContainerIngressSecretOpaqueFieldOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerIngressSecretOpaqueField) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type GetContainerIngressSecretOpaqueFieldArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerIngressSecretOpaqueFieldArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (o GetContainerIngressSecretOpaqueFieldArrayOutput) ToGetContainerIngressSecretOpaqueFieldArrayOutput() GetContainerIngressSecretOpaqueFieldArrayOutput {
-	return o
-}
-
-func (o GetContainerIngressSecretOpaqueFieldArrayOutput) ToGetContainerIngressSecretOpaqueFieldArrayOutputWithContext(ctx context.Context) GetContainerIngressSecretOpaqueFieldArrayOutput {
-	return o
-}
-
-func (o GetContainerIngressSecretOpaqueFieldArrayOutput) Index(i pulumi.IntInput) GetContainerIngressSecretOpaqueFieldOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerIngressSecretOpaqueField {
-		return vs[0].([]GetContainerIngressSecretOpaqueField)[vs[1].(int)]
-	}).(GetContainerIngressSecretOpaqueFieldOutput)
-}
-
-type GetContainerNlbDnsNlbConfig struct {
-	// Cluster Id.
-	Cluster string `pulumi:"cluster"`
-	// Type of DNS.
-	DnsType string `pulumi:"dnsType"`
-	// Host Name of load Balancer.
-	LbHostname string `pulumi:"lbHostname"`
-	// NLB IPs.
-	NlbIps []string `pulumi:"nlbIps"`
-	// NLB Sub-Domain.
-	NlbSubDomain string `pulumi:"nlbSubDomain"`
-	// Name of the secret.
-	SecretName string `pulumi:"secretName"`
-	// Namespace of Secret.
-	SecretNamespace string `pulumi:"secretNamespace"`
-	// Status of Secret.
-	SecretStatus string `pulumi:"secretStatus"`
-	// Nlb Type.
-	Type string `pulumi:"type"`
-}
-
-// GetContainerNlbDnsNlbConfigInput is an input type that accepts GetContainerNlbDnsNlbConfigArgs and GetContainerNlbDnsNlbConfigOutput values.
-// You can construct a concrete instance of `GetContainerNlbDnsNlbConfigInput` via:
-//
-//	GetContainerNlbDnsNlbConfigArgs{...}
-type GetContainerNlbDnsNlbConfigInput interface {
-	pulumi.Input
-
-	ToGetContainerNlbDnsNlbConfigOutput() GetContainerNlbDnsNlbConfigOutput
-	ToGetContainerNlbDnsNlbConfigOutputWithContext(context.Context) GetContainerNlbDnsNlbConfigOutput
-}
-
-type GetContainerNlbDnsNlbConfigArgs struct {
-	// Cluster Id.
-	Cluster pulumi.StringInput `pulumi:"cluster"`
-	// Type of DNS.
-	DnsType pulumi.StringInput `pulumi:"dnsType"`
-	// Host Name of load Balancer.
-	LbHostname pulumi.StringInput `pulumi:"lbHostname"`
-	// NLB IPs.
-	NlbIps pulumi.StringArrayInput `pulumi:"nlbIps"`
-	// NLB Sub-Domain.
-	NlbSubDomain pulumi.StringInput `pulumi:"nlbSubDomain"`
-	// Name of the secret.
-	SecretName pulumi.StringInput `pulumi:"secretName"`
-	// Namespace of Secret.
-	SecretNamespace pulumi.StringInput `pulumi:"secretNamespace"`
-	// Status of Secret.
-	SecretStatus pulumi.StringInput `pulumi:"secretStatus"`
-	// Nlb Type.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetContainerNlbDnsNlbConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerNlbDnsNlbConfig)(nil)).Elem()
-}
-
-func (i GetContainerNlbDnsNlbConfigArgs) ToGetContainerNlbDnsNlbConfigOutput() GetContainerNlbDnsNlbConfigOutput {
-	return i.ToGetContainerNlbDnsNlbConfigOutputWithContext(context.Background())
-}
-
-func (i GetContainerNlbDnsNlbConfigArgs) ToGetContainerNlbDnsNlbConfigOutputWithContext(ctx context.Context) GetContainerNlbDnsNlbConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerNlbDnsNlbConfigOutput)
-}
-
-// GetContainerNlbDnsNlbConfigArrayInput is an input type that accepts GetContainerNlbDnsNlbConfigArray and GetContainerNlbDnsNlbConfigArrayOutput values.
-// You can construct a concrete instance of `GetContainerNlbDnsNlbConfigArrayInput` via:
-//
-//	GetContainerNlbDnsNlbConfigArray{ GetContainerNlbDnsNlbConfigArgs{...} }
-type GetContainerNlbDnsNlbConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerNlbDnsNlbConfigArrayOutput() GetContainerNlbDnsNlbConfigArrayOutput
-	ToGetContainerNlbDnsNlbConfigArrayOutputWithContext(context.Context) GetContainerNlbDnsNlbConfigArrayOutput
-}
-
-type GetContainerNlbDnsNlbConfigArray []GetContainerNlbDnsNlbConfigInput
-
-func (GetContainerNlbDnsNlbConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerNlbDnsNlbConfig)(nil)).Elem()
-}
-
-func (i GetContainerNlbDnsNlbConfigArray) ToGetContainerNlbDnsNlbConfigArrayOutput() GetContainerNlbDnsNlbConfigArrayOutput {
-	return i.ToGetContainerNlbDnsNlbConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerNlbDnsNlbConfigArray) ToGetContainerNlbDnsNlbConfigArrayOutputWithContext(ctx context.Context) GetContainerNlbDnsNlbConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerNlbDnsNlbConfigArrayOutput)
-}
-
-type GetContainerNlbDnsNlbConfigOutput struct{ *pulumi.OutputState }
-
-func (GetContainerNlbDnsNlbConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerNlbDnsNlbConfig)(nil)).Elem()
-}
-
-func (o GetContainerNlbDnsNlbConfigOutput) ToGetContainerNlbDnsNlbConfigOutput() GetContainerNlbDnsNlbConfigOutput {
-	return o
-}
-
-func (o GetContainerNlbDnsNlbConfigOutput) ToGetContainerNlbDnsNlbConfigOutputWithContext(ctx context.Context) GetContainerNlbDnsNlbConfigOutput {
-	return o
-}
-
-// Cluster Id.
-func (o GetContainerNlbDnsNlbConfigOutput) Cluster() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.Cluster }).(pulumi.StringOutput)
-}
-
-// Type of DNS.
-func (o GetContainerNlbDnsNlbConfigOutput) DnsType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.DnsType }).(pulumi.StringOutput)
-}
-
-// Host Name of load Balancer.
-func (o GetContainerNlbDnsNlbConfigOutput) LbHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.LbHostname }).(pulumi.StringOutput)
-}
-
-// NLB IPs.
-func (o GetContainerNlbDnsNlbConfigOutput) NlbIps() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) []string { return v.NlbIps }).(pulumi.StringArrayOutput)
-}
-
-// NLB Sub-Domain.
-func (o GetContainerNlbDnsNlbConfigOutput) NlbSubDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.NlbSubDomain }).(pulumi.StringOutput)
-}
-
-// Name of the secret.
-func (o GetContainerNlbDnsNlbConfigOutput) SecretName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.SecretName }).(pulumi.StringOutput)
-}
-
-// Namespace of Secret.
-func (o GetContainerNlbDnsNlbConfigOutput) SecretNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.SecretNamespace }).(pulumi.StringOutput)
-}
-
-// Status of Secret.
-func (o GetContainerNlbDnsNlbConfigOutput) SecretStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.SecretStatus }).(pulumi.StringOutput)
-}
-
-// Nlb Type.
-func (o GetContainerNlbDnsNlbConfigOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerNlbDnsNlbConfig) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetContainerNlbDnsNlbConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerNlbDnsNlbConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerNlbDnsNlbConfig)(nil)).Elem()
-}
-
-func (o GetContainerNlbDnsNlbConfigArrayOutput) ToGetContainerNlbDnsNlbConfigArrayOutput() GetContainerNlbDnsNlbConfigArrayOutput {
-	return o
-}
-
-func (o GetContainerNlbDnsNlbConfigArrayOutput) ToGetContainerNlbDnsNlbConfigArrayOutputWithContext(ctx context.Context) GetContainerNlbDnsNlbConfigArrayOutput {
-	return o
-}
-
-func (o GetContainerNlbDnsNlbConfigArrayOutput) Index(i pulumi.IntInput) GetContainerNlbDnsNlbConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerNlbDnsNlbConfig {
-		return vs[0].([]GetContainerNlbDnsNlbConfig)[vs[1].(int)]
-	}).(GetContainerNlbDnsNlbConfigOutput)
-}
-
-type GetContainerVpcClusterAlb struct {
-	AlbType              string `pulumi:"albType"`
-	DisableDeployment    bool   `pulumi:"disableDeployment"`
-	Enable               bool   `pulumi:"enable"`
-	Id                   string `pulumi:"id"`
-	LoadBalancerHostname string `pulumi:"loadBalancerHostname"`
-	Name                 string `pulumi:"name"`
-	Resize               bool   `pulumi:"resize"`
-	State                string `pulumi:"state"`
-}
-
-// GetContainerVpcClusterAlbInput is an input type that accepts GetContainerVpcClusterAlbArgs and GetContainerVpcClusterAlbOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterAlbInput` via:
-//
-//	GetContainerVpcClusterAlbArgs{...}
-type GetContainerVpcClusterAlbInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterAlbOutput() GetContainerVpcClusterAlbOutput
-	ToGetContainerVpcClusterAlbOutputWithContext(context.Context) GetContainerVpcClusterAlbOutput
-}
-
-type GetContainerVpcClusterAlbArgs struct {
-	AlbType              pulumi.StringInput `pulumi:"albType"`
-	DisableDeployment    pulumi.BoolInput   `pulumi:"disableDeployment"`
-	Enable               pulumi.BoolInput   `pulumi:"enable"`
-	Id                   pulumi.StringInput `pulumi:"id"`
-	LoadBalancerHostname pulumi.StringInput `pulumi:"loadBalancerHostname"`
-	Name                 pulumi.StringInput `pulumi:"name"`
-	Resize               pulumi.BoolInput   `pulumi:"resize"`
-	State                pulumi.StringInput `pulumi:"state"`
-}
-
-func (GetContainerVpcClusterAlbArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterAlbArgs) ToGetContainerVpcClusterAlbOutput() GetContainerVpcClusterAlbOutput {
-	return i.ToGetContainerVpcClusterAlbOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterAlbArgs) ToGetContainerVpcClusterAlbOutputWithContext(ctx context.Context) GetContainerVpcClusterAlbOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterAlbOutput)
-}
-
-// GetContainerVpcClusterAlbArrayInput is an input type that accepts GetContainerVpcClusterAlbArray and GetContainerVpcClusterAlbArrayOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterAlbArrayInput` via:
-//
-//	GetContainerVpcClusterAlbArray{ GetContainerVpcClusterAlbArgs{...} }
-type GetContainerVpcClusterAlbArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterAlbArrayOutput() GetContainerVpcClusterAlbArrayOutput
-	ToGetContainerVpcClusterAlbArrayOutputWithContext(context.Context) GetContainerVpcClusterAlbArrayOutput
-}
-
-type GetContainerVpcClusterAlbArray []GetContainerVpcClusterAlbInput
-
-func (GetContainerVpcClusterAlbArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterAlbArray) ToGetContainerVpcClusterAlbArrayOutput() GetContainerVpcClusterAlbArrayOutput {
-	return i.ToGetContainerVpcClusterAlbArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterAlbArray) ToGetContainerVpcClusterAlbArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterAlbArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterAlbArrayOutput)
-}
-
-type GetContainerVpcClusterAlbOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterAlbOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterAlbOutput) ToGetContainerVpcClusterAlbOutput() GetContainerVpcClusterAlbOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterAlbOutput) ToGetContainerVpcClusterAlbOutputWithContext(ctx context.Context) GetContainerVpcClusterAlbOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterAlbOutput) AlbType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) string { return v.AlbType }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterAlbOutput) DisableDeployment() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) bool { return v.DisableDeployment }).(pulumi.BoolOutput)
-}
-
-func (o GetContainerVpcClusterAlbOutput) Enable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) bool { return v.Enable }).(pulumi.BoolOutput)
-}
-
-func (o GetContainerVpcClusterAlbOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterAlbOutput) LoadBalancerHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) string { return v.LoadBalancerHostname }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterAlbOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterAlbOutput) Resize() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) bool { return v.Resize }).(pulumi.BoolOutput)
-}
-
-func (o GetContainerVpcClusterAlbOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterAlb) string { return v.State }).(pulumi.StringOutput)
-}
-
-type GetContainerVpcClusterAlbArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterAlbArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterAlbArrayOutput) ToGetContainerVpcClusterAlbArrayOutput() GetContainerVpcClusterAlbArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterAlbArrayOutput) ToGetContainerVpcClusterAlbArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterAlbArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterAlbArrayOutput) Index(i pulumi.IntInput) GetContainerVpcClusterAlbOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerVpcClusterAlb {
-		return vs[0].([]GetContainerVpcClusterAlb)[vs[1].(int)]
-	}).(GetContainerVpcClusterAlbOutput)
-}
-
-type GetContainerVpcClusterWorkerNetworkInterface struct {
-	Cidr      string `pulumi:"cidr"`
-	IpAddress string `pulumi:"ipAddress"`
-	SubnetId  string `pulumi:"subnetId"`
-}
-
-// GetContainerVpcClusterWorkerNetworkInterfaceInput is an input type that accepts GetContainerVpcClusterWorkerNetworkInterfaceArgs and GetContainerVpcClusterWorkerNetworkInterfaceOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerNetworkInterfaceInput` via:
-//
-//	GetContainerVpcClusterWorkerNetworkInterfaceArgs{...}
-type GetContainerVpcClusterWorkerNetworkInterfaceInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerNetworkInterfaceOutput() GetContainerVpcClusterWorkerNetworkInterfaceOutput
-	ToGetContainerVpcClusterWorkerNetworkInterfaceOutputWithContext(context.Context) GetContainerVpcClusterWorkerNetworkInterfaceOutput
-}
-
-type GetContainerVpcClusterWorkerNetworkInterfaceArgs struct {
-	Cidr      pulumi.StringInput `pulumi:"cidr"`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	SubnetId  pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetContainerVpcClusterWorkerNetworkInterfaceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerNetworkInterface)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerNetworkInterfaceArgs) ToGetContainerVpcClusterWorkerNetworkInterfaceOutput() GetContainerVpcClusterWorkerNetworkInterfaceOutput {
-	return i.ToGetContainerVpcClusterWorkerNetworkInterfaceOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerNetworkInterfaceArgs) ToGetContainerVpcClusterWorkerNetworkInterfaceOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerNetworkInterfaceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerNetworkInterfaceOutput)
-}
-
-// GetContainerVpcClusterWorkerNetworkInterfaceArrayInput is an input type that accepts GetContainerVpcClusterWorkerNetworkInterfaceArray and GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerNetworkInterfaceArrayInput` via:
-//
-//	GetContainerVpcClusterWorkerNetworkInterfaceArray{ GetContainerVpcClusterWorkerNetworkInterfaceArgs{...} }
-type GetContainerVpcClusterWorkerNetworkInterfaceArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerNetworkInterfaceArrayOutput() GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput
-	ToGetContainerVpcClusterWorkerNetworkInterfaceArrayOutputWithContext(context.Context) GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput
-}
-
-type GetContainerVpcClusterWorkerNetworkInterfaceArray []GetContainerVpcClusterWorkerNetworkInterfaceInput
-
-func (GetContainerVpcClusterWorkerNetworkInterfaceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerNetworkInterface)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerNetworkInterfaceArray) ToGetContainerVpcClusterWorkerNetworkInterfaceArrayOutput() GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput {
-	return i.ToGetContainerVpcClusterWorkerNetworkInterfaceArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerNetworkInterfaceArray) ToGetContainerVpcClusterWorkerNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput)
-}
-
-type GetContainerVpcClusterWorkerNetworkInterfaceOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerNetworkInterfaceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerNetworkInterface)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceOutput) ToGetContainerVpcClusterWorkerNetworkInterfaceOutput() GetContainerVpcClusterWorkerNetworkInterfaceOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceOutput) ToGetContainerVpcClusterWorkerNetworkInterfaceOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerNetworkInterfaceOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceOutput) Cidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerNetworkInterface) string { return v.Cidr }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerNetworkInterface) string { return v.IpAddress }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerNetworkInterface)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput) ToGetContainerVpcClusterWorkerNetworkInterfaceArrayOutput() GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput) ToGetContainerVpcClusterWorkerNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetContainerVpcClusterWorkerNetworkInterfaceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerVpcClusterWorkerNetworkInterface {
-		return vs[0].([]GetContainerVpcClusterWorkerNetworkInterface)[vs[1].(int)]
-	}).(GetContainerVpcClusterWorkerNetworkInterfaceOutput)
-}
-
-type GetContainerVpcClusterWorkerPool struct {
-	Flavor     string            `pulumi:"flavor"`
-	HostPoolId string            `pulumi:"hostPoolId"`
-	Id         string            `pulumi:"id"`
-	Isolation  string            `pulumi:"isolation"`
-	Labels     map[string]string `pulumi:"labels"`
-	Name       string            `pulumi:"name"`
-	// The operating system of the workers in the worker pool
-	OperatingSystem string `pulumi:"operatingSystem"`
-	// The optional secondary storage configuration of the workers in the worker pool.
-	SecondaryStorages []GetContainerVpcClusterWorkerPoolSecondaryStorage `pulumi:"secondaryStorages"`
-	State             string                                             `pulumi:"state"`
-	WorkerCount       int                                                `pulumi:"workerCount"`
-	Zones             []GetContainerVpcClusterWorkerPoolZone             `pulumi:"zones"`
-}
-
-// GetContainerVpcClusterWorkerPoolInput is an input type that accepts GetContainerVpcClusterWorkerPoolArgs and GetContainerVpcClusterWorkerPoolOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerPoolInput` via:
-//
-//	GetContainerVpcClusterWorkerPoolArgs{...}
-type GetContainerVpcClusterWorkerPoolInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerPoolOutput() GetContainerVpcClusterWorkerPoolOutput
-	ToGetContainerVpcClusterWorkerPoolOutputWithContext(context.Context) GetContainerVpcClusterWorkerPoolOutput
-}
-
-type GetContainerVpcClusterWorkerPoolArgs struct {
-	Flavor     pulumi.StringInput    `pulumi:"flavor"`
-	HostPoolId pulumi.StringInput    `pulumi:"hostPoolId"`
-	Id         pulumi.StringInput    `pulumi:"id"`
-	Isolation  pulumi.StringInput    `pulumi:"isolation"`
-	Labels     pulumi.StringMapInput `pulumi:"labels"`
-	Name       pulumi.StringInput    `pulumi:"name"`
-	// The operating system of the workers in the worker pool
-	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
-	// The optional secondary storage configuration of the workers in the worker pool.
-	SecondaryStorages GetContainerVpcClusterWorkerPoolSecondaryStorageArrayInput `pulumi:"secondaryStorages"`
-	State             pulumi.StringInput                                         `pulumi:"state"`
-	WorkerCount       pulumi.IntInput                                            `pulumi:"workerCount"`
-	Zones             GetContainerVpcClusterWorkerPoolZoneArrayInput             `pulumi:"zones"`
-}
-
-func (GetContainerVpcClusterWorkerPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPool)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerPoolArgs) ToGetContainerVpcClusterWorkerPoolOutput() GetContainerVpcClusterWorkerPoolOutput {
-	return i.ToGetContainerVpcClusterWorkerPoolOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerPoolArgs) ToGetContainerVpcClusterWorkerPoolOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerPoolOutput)
-}
-
-// GetContainerVpcClusterWorkerPoolArrayInput is an input type that accepts GetContainerVpcClusterWorkerPoolArray and GetContainerVpcClusterWorkerPoolArrayOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerPoolArrayInput` via:
-//
-//	GetContainerVpcClusterWorkerPoolArray{ GetContainerVpcClusterWorkerPoolArgs{...} }
-type GetContainerVpcClusterWorkerPoolArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerPoolArrayOutput() GetContainerVpcClusterWorkerPoolArrayOutput
-	ToGetContainerVpcClusterWorkerPoolArrayOutputWithContext(context.Context) GetContainerVpcClusterWorkerPoolArrayOutput
-}
-
-type GetContainerVpcClusterWorkerPoolArray []GetContainerVpcClusterWorkerPoolInput
-
-func (GetContainerVpcClusterWorkerPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerPool)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerPoolArray) ToGetContainerVpcClusterWorkerPoolArrayOutput() GetContainerVpcClusterWorkerPoolArrayOutput {
-	return i.ToGetContainerVpcClusterWorkerPoolArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerPoolArray) ToGetContainerVpcClusterWorkerPoolArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerPoolArrayOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPool)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) ToGetContainerVpcClusterWorkerPoolOutput() GetContainerVpcClusterWorkerPoolOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) ToGetContainerVpcClusterWorkerPoolOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) Flavor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) string { return v.Flavor }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) HostPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) string { return v.HostPoolId }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) Isolation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) string { return v.Isolation }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) Labels() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) map[string]string { return v.Labels }).(pulumi.StringMapOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The operating system of the workers in the worker pool
-func (o GetContainerVpcClusterWorkerPoolOutput) OperatingSystem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) string { return v.OperatingSystem }).(pulumi.StringOutput)
-}
-
-// The optional secondary storage configuration of the workers in the worker pool.
-func (o GetContainerVpcClusterWorkerPoolOutput) SecondaryStorages() GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) []GetContainerVpcClusterWorkerPoolSecondaryStorage {
-		return v.SecondaryStorages
-	}).(GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) string { return v.State }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) WorkerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) int { return v.WorkerCount }).(pulumi.IntOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolOutput) Zones() GetContainerVpcClusterWorkerPoolZoneArrayOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPool) []GetContainerVpcClusterWorkerPoolZone { return v.Zones }).(GetContainerVpcClusterWorkerPoolZoneArrayOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerPool)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerPoolArrayOutput) ToGetContainerVpcClusterWorkerPoolArrayOutput() GetContainerVpcClusterWorkerPoolArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolArrayOutput) ToGetContainerVpcClusterWorkerPoolArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolArrayOutput) Index(i pulumi.IntInput) GetContainerVpcClusterWorkerPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerVpcClusterWorkerPool {
-		return vs[0].([]GetContainerVpcClusterWorkerPool)[vs[1].(int)]
-	}).(GetContainerVpcClusterWorkerPoolOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolSecondaryStorage struct {
-	Count             int    `pulumi:"count"`
-	DeviceType        string `pulumi:"deviceType"`
-	Name              string `pulumi:"name"`
-	Profile           string `pulumi:"profile"`
-	RaidConfiguration string `pulumi:"raidConfiguration"`
-	Size              int    `pulumi:"size"`
-}
-
-// GetContainerVpcClusterWorkerPoolSecondaryStorageInput is an input type that accepts GetContainerVpcClusterWorkerPoolSecondaryStorageArgs and GetContainerVpcClusterWorkerPoolSecondaryStorageOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerPoolSecondaryStorageInput` via:
-//
-//	GetContainerVpcClusterWorkerPoolSecondaryStorageArgs{...}
-type GetContainerVpcClusterWorkerPoolSecondaryStorageInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerPoolSecondaryStorageOutput() GetContainerVpcClusterWorkerPoolSecondaryStorageOutput
-	ToGetContainerVpcClusterWorkerPoolSecondaryStorageOutputWithContext(context.Context) GetContainerVpcClusterWorkerPoolSecondaryStorageOutput
-}
-
-type GetContainerVpcClusterWorkerPoolSecondaryStorageArgs struct {
-	Count             pulumi.IntInput    `pulumi:"count"`
-	DeviceType        pulumi.StringInput `pulumi:"deviceType"`
-	Name              pulumi.StringInput `pulumi:"name"`
-	Profile           pulumi.StringInput `pulumi:"profile"`
-	RaidConfiguration pulumi.StringInput `pulumi:"raidConfiguration"`
-	Size              pulumi.IntInput    `pulumi:"size"`
-}
-
-func (GetContainerVpcClusterWorkerPoolSecondaryStorageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerPoolSecondaryStorageArgs) ToGetContainerVpcClusterWorkerPoolSecondaryStorageOutput() GetContainerVpcClusterWorkerPoolSecondaryStorageOutput {
-	return i.ToGetContainerVpcClusterWorkerPoolSecondaryStorageOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerPoolSecondaryStorageArgs) ToGetContainerVpcClusterWorkerPoolSecondaryStorageOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolSecondaryStorageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerPoolSecondaryStorageOutput)
-}
-
-// GetContainerVpcClusterWorkerPoolSecondaryStorageArrayInput is an input type that accepts GetContainerVpcClusterWorkerPoolSecondaryStorageArray and GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerPoolSecondaryStorageArrayInput` via:
-//
-//	GetContainerVpcClusterWorkerPoolSecondaryStorageArray{ GetContainerVpcClusterWorkerPoolSecondaryStorageArgs{...} }
-type GetContainerVpcClusterWorkerPoolSecondaryStorageArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput() GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput
-	ToGetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutputWithContext(context.Context) GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput
-}
-
-type GetContainerVpcClusterWorkerPoolSecondaryStorageArray []GetContainerVpcClusterWorkerPoolSecondaryStorageInput
-
-func (GetContainerVpcClusterWorkerPoolSecondaryStorageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerPoolSecondaryStorageArray) ToGetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput() GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput {
-	return i.ToGetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerPoolSecondaryStorageArray) ToGetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolSecondaryStorageOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) ToGetContainerVpcClusterWorkerPoolSecondaryStorageOutput() GetContainerVpcClusterWorkerPoolSecondaryStorageOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) ToGetContainerVpcClusterWorkerPoolSecondaryStorageOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolSecondaryStorageOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolSecondaryStorage) int { return v.Count }).(pulumi.IntOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) DeviceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolSecondaryStorage) string { return v.DeviceType }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolSecondaryStorage) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) Profile() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolSecondaryStorage) string { return v.Profile }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) RaidConfiguration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolSecondaryStorage) string { return v.RaidConfiguration }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolSecondaryStorage) int { return v.Size }).(pulumi.IntOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput) ToGetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput() GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput) ToGetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput) Index(i pulumi.IntInput) GetContainerVpcClusterWorkerPoolSecondaryStorageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerVpcClusterWorkerPoolSecondaryStorage {
-		return vs[0].([]GetContainerVpcClusterWorkerPoolSecondaryStorage)[vs[1].(int)]
-	}).(GetContainerVpcClusterWorkerPoolSecondaryStorageOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolZone struct {
-	Name     string `pulumi:"name"`
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetContainerVpcClusterWorkerPoolZoneInput is an input type that accepts GetContainerVpcClusterWorkerPoolZoneArgs and GetContainerVpcClusterWorkerPoolZoneOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerPoolZoneInput` via:
-//
-//	GetContainerVpcClusterWorkerPoolZoneArgs{...}
-type GetContainerVpcClusterWorkerPoolZoneInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerPoolZoneOutput() GetContainerVpcClusterWorkerPoolZoneOutput
-	ToGetContainerVpcClusterWorkerPoolZoneOutputWithContext(context.Context) GetContainerVpcClusterWorkerPoolZoneOutput
-}
-
-type GetContainerVpcClusterWorkerPoolZoneArgs struct {
-	Name     pulumi.StringInput `pulumi:"name"`
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetContainerVpcClusterWorkerPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerPoolZoneArgs) ToGetContainerVpcClusterWorkerPoolZoneOutput() GetContainerVpcClusterWorkerPoolZoneOutput {
-	return i.ToGetContainerVpcClusterWorkerPoolZoneOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerPoolZoneArgs) ToGetContainerVpcClusterWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerPoolZoneOutput)
-}
-
-// GetContainerVpcClusterWorkerPoolZoneArrayInput is an input type that accepts GetContainerVpcClusterWorkerPoolZoneArray and GetContainerVpcClusterWorkerPoolZoneArrayOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerPoolZoneArrayInput` via:
-//
-//	GetContainerVpcClusterWorkerPoolZoneArray{ GetContainerVpcClusterWorkerPoolZoneArgs{...} }
-type GetContainerVpcClusterWorkerPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerPoolZoneArrayOutput() GetContainerVpcClusterWorkerPoolZoneArrayOutput
-	ToGetContainerVpcClusterWorkerPoolZoneArrayOutputWithContext(context.Context) GetContainerVpcClusterWorkerPoolZoneArrayOutput
-}
-
-type GetContainerVpcClusterWorkerPoolZoneArray []GetContainerVpcClusterWorkerPoolZoneInput
-
-func (GetContainerVpcClusterWorkerPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerPoolZoneArray) ToGetContainerVpcClusterWorkerPoolZoneArrayOutput() GetContainerVpcClusterWorkerPoolZoneArrayOutput {
-	return i.ToGetContainerVpcClusterWorkerPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerPoolZoneArray) ToGetContainerVpcClusterWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerPoolZoneArrayOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneOutput) ToGetContainerVpcClusterWorkerPoolZoneOutput() GetContainerVpcClusterWorkerPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneOutput) ToGetContainerVpcClusterWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolZone) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolZone) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneArrayOutput) ToGetContainerVpcClusterWorkerPoolZoneArrayOutput() GetContainerVpcClusterWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneArrayOutput) ToGetContainerVpcClusterWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneArrayOutput) Index(i pulumi.IntInput) GetContainerVpcClusterWorkerPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerVpcClusterWorkerPoolZone {
-		return vs[0].([]GetContainerVpcClusterWorkerPoolZone)[vs[1].(int)]
-	}).(GetContainerVpcClusterWorkerPoolZoneOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolZoneSubnet struct {
-	Id      string `pulumi:"id"`
-	Primary bool   `pulumi:"primary"`
-}
-
-// GetContainerVpcClusterWorkerPoolZoneSubnetInput is an input type that accepts GetContainerVpcClusterWorkerPoolZoneSubnetArgs and GetContainerVpcClusterWorkerPoolZoneSubnetOutput values.
-// You can construct a concrete instance of `GetContainerVpcClusterWorkerPoolZoneSubnetInput` via:
-//
-//	GetContainerVpcClusterWorkerPoolZoneSubnetArgs{...}
-type GetContainerVpcClusterWorkerPoolZoneSubnetInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcClusterWorkerPoolZoneSubnetOutput() GetContainerVpcClusterWorkerPoolZoneSubnetOutput
-	ToGetContainerVpcClusterWorkerPoolZoneSubnetOutputWithContext(context.Context) GetContainerVpcClusterWorkerPoolZoneSubnetOutput
-}
-
-type GetContainerVpcClusterWorkerPoolZoneSubnetArgs struct {
-	Id      pulumi.StringInput `pulumi:"id"`
-	Primary pulumi.BoolInput   `pulumi:"primary"`
-}
-
-func (GetContainerVpcClusterWorkerPoolZoneSubnetArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPoolZoneSubnet)(nil)).Elem()
-}
-
-func (i GetContainerVpcClusterWorkerPoolZoneSubnetArgs) ToGetContainerVpcClusterWorkerPoolZoneSubnetOutput() GetContainerVpcClusterWorkerPoolZoneSubnetOutput {
-	return i.ToGetContainerVpcClusterWorkerPoolZoneSubnetOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcClusterWorkerPoolZoneSubnetArgs) ToGetContainerVpcClusterWorkerPoolZoneSubnetOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolZoneSubnetOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcClusterWorkerPoolZoneSubnetOutput)
-}
-
-type GetContainerVpcClusterWorkerPoolZoneSubnetOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcClusterWorkerPoolZoneSubnetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcClusterWorkerPoolZoneSubnet)(nil)).Elem()
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneSubnetOutput) ToGetContainerVpcClusterWorkerPoolZoneSubnetOutput() GetContainerVpcClusterWorkerPoolZoneSubnetOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneSubnetOutput) ToGetContainerVpcClusterWorkerPoolZoneSubnetOutputWithContext(ctx context.Context) GetContainerVpcClusterWorkerPoolZoneSubnetOutput {
-	return o
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneSubnetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolZoneSubnet) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcClusterWorkerPoolZoneSubnetOutput) Primary() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerVpcClusterWorkerPoolZoneSubnet) bool { return v.Primary }).(pulumi.BoolOutput)
-}
-
-type GetContainerVpcWorkerPoolSecondaryStorage struct {
-	Count             int    `pulumi:"count"`
-	DeviceType        string `pulumi:"deviceType"`
-	Name              string `pulumi:"name"`
-	Profile           string `pulumi:"profile"`
-	RaidConfiguration string `pulumi:"raidConfiguration"`
-	Size              int    `pulumi:"size"`
-}
-
-// GetContainerVpcWorkerPoolSecondaryStorageInput is an input type that accepts GetContainerVpcWorkerPoolSecondaryStorageArgs and GetContainerVpcWorkerPoolSecondaryStorageOutput values.
-// You can construct a concrete instance of `GetContainerVpcWorkerPoolSecondaryStorageInput` via:
-//
-//	GetContainerVpcWorkerPoolSecondaryStorageArgs{...}
-type GetContainerVpcWorkerPoolSecondaryStorageInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcWorkerPoolSecondaryStorageOutput() GetContainerVpcWorkerPoolSecondaryStorageOutput
-	ToGetContainerVpcWorkerPoolSecondaryStorageOutputWithContext(context.Context) GetContainerVpcWorkerPoolSecondaryStorageOutput
-}
-
-type GetContainerVpcWorkerPoolSecondaryStorageArgs struct {
-	Count             pulumi.IntInput    `pulumi:"count"`
-	DeviceType        pulumi.StringInput `pulumi:"deviceType"`
-	Name              pulumi.StringInput `pulumi:"name"`
-	Profile           pulumi.StringInput `pulumi:"profile"`
-	RaidConfiguration pulumi.StringInput `pulumi:"raidConfiguration"`
-	Size              pulumi.IntInput    `pulumi:"size"`
-}
-
-func (GetContainerVpcWorkerPoolSecondaryStorageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (i GetContainerVpcWorkerPoolSecondaryStorageArgs) ToGetContainerVpcWorkerPoolSecondaryStorageOutput() GetContainerVpcWorkerPoolSecondaryStorageOutput {
-	return i.ToGetContainerVpcWorkerPoolSecondaryStorageOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcWorkerPoolSecondaryStorageArgs) ToGetContainerVpcWorkerPoolSecondaryStorageOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolSecondaryStorageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcWorkerPoolSecondaryStorageOutput)
-}
-
-// GetContainerVpcWorkerPoolSecondaryStorageArrayInput is an input type that accepts GetContainerVpcWorkerPoolSecondaryStorageArray and GetContainerVpcWorkerPoolSecondaryStorageArrayOutput values.
-// You can construct a concrete instance of `GetContainerVpcWorkerPoolSecondaryStorageArrayInput` via:
-//
-//	GetContainerVpcWorkerPoolSecondaryStorageArray{ GetContainerVpcWorkerPoolSecondaryStorageArgs{...} }
-type GetContainerVpcWorkerPoolSecondaryStorageArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcWorkerPoolSecondaryStorageArrayOutput() GetContainerVpcWorkerPoolSecondaryStorageArrayOutput
-	ToGetContainerVpcWorkerPoolSecondaryStorageArrayOutputWithContext(context.Context) GetContainerVpcWorkerPoolSecondaryStorageArrayOutput
-}
-
-type GetContainerVpcWorkerPoolSecondaryStorageArray []GetContainerVpcWorkerPoolSecondaryStorageInput
-
-func (GetContainerVpcWorkerPoolSecondaryStorageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (i GetContainerVpcWorkerPoolSecondaryStorageArray) ToGetContainerVpcWorkerPoolSecondaryStorageArrayOutput() GetContainerVpcWorkerPoolSecondaryStorageArrayOutput {
-	return i.ToGetContainerVpcWorkerPoolSecondaryStorageArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcWorkerPoolSecondaryStorageArray) ToGetContainerVpcWorkerPoolSecondaryStorageArrayOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolSecondaryStorageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcWorkerPoolSecondaryStorageArrayOutput)
-}
-
-type GetContainerVpcWorkerPoolSecondaryStorageOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcWorkerPoolSecondaryStorageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) ToGetContainerVpcWorkerPoolSecondaryStorageOutput() GetContainerVpcWorkerPoolSecondaryStorageOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) ToGetContainerVpcWorkerPoolSecondaryStorageOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolSecondaryStorageOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolSecondaryStorage) int { return v.Count }).(pulumi.IntOutput)
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) DeviceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolSecondaryStorage) string { return v.DeviceType }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolSecondaryStorage) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) Profile() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolSecondaryStorage) string { return v.Profile }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) RaidConfiguration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolSecondaryStorage) string { return v.RaidConfiguration }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolSecondaryStorage) int { return v.Size }).(pulumi.IntOutput)
-}
-
-type GetContainerVpcWorkerPoolSecondaryStorageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcWorkerPoolSecondaryStorageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcWorkerPoolSecondaryStorage)(nil)).Elem()
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageArrayOutput) ToGetContainerVpcWorkerPoolSecondaryStorageArrayOutput() GetContainerVpcWorkerPoolSecondaryStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageArrayOutput) ToGetContainerVpcWorkerPoolSecondaryStorageArrayOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolSecondaryStorageArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolSecondaryStorageArrayOutput) Index(i pulumi.IntInput) GetContainerVpcWorkerPoolSecondaryStorageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerVpcWorkerPoolSecondaryStorage {
-		return vs[0].([]GetContainerVpcWorkerPoolSecondaryStorage)[vs[1].(int)]
-	}).(GetContainerVpcWorkerPoolSecondaryStorageOutput)
-}
-
-type GetContainerVpcWorkerPoolZone struct {
-	Name     string `pulumi:"name"`
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetContainerVpcWorkerPoolZoneInput is an input type that accepts GetContainerVpcWorkerPoolZoneArgs and GetContainerVpcWorkerPoolZoneOutput values.
-// You can construct a concrete instance of `GetContainerVpcWorkerPoolZoneInput` via:
-//
-//	GetContainerVpcWorkerPoolZoneArgs{...}
-type GetContainerVpcWorkerPoolZoneInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcWorkerPoolZoneOutput() GetContainerVpcWorkerPoolZoneOutput
-	ToGetContainerVpcWorkerPoolZoneOutputWithContext(context.Context) GetContainerVpcWorkerPoolZoneOutput
-}
-
-type GetContainerVpcWorkerPoolZoneArgs struct {
-	Name     pulumi.StringInput `pulumi:"name"`
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetContainerVpcWorkerPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerVpcWorkerPoolZoneArgs) ToGetContainerVpcWorkerPoolZoneOutput() GetContainerVpcWorkerPoolZoneOutput {
-	return i.ToGetContainerVpcWorkerPoolZoneOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcWorkerPoolZoneArgs) ToGetContainerVpcWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcWorkerPoolZoneOutput)
-}
-
-// GetContainerVpcWorkerPoolZoneArrayInput is an input type that accepts GetContainerVpcWorkerPoolZoneArray and GetContainerVpcWorkerPoolZoneArrayOutput values.
-// You can construct a concrete instance of `GetContainerVpcWorkerPoolZoneArrayInput` via:
-//
-//	GetContainerVpcWorkerPoolZoneArray{ GetContainerVpcWorkerPoolZoneArgs{...} }
-type GetContainerVpcWorkerPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerVpcWorkerPoolZoneArrayOutput() GetContainerVpcWorkerPoolZoneArrayOutput
-	ToGetContainerVpcWorkerPoolZoneArrayOutputWithContext(context.Context) GetContainerVpcWorkerPoolZoneArrayOutput
-}
-
-type GetContainerVpcWorkerPoolZoneArray []GetContainerVpcWorkerPoolZoneInput
-
-func (GetContainerVpcWorkerPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerVpcWorkerPoolZoneArray) ToGetContainerVpcWorkerPoolZoneArrayOutput() GetContainerVpcWorkerPoolZoneArrayOutput {
-	return i.ToGetContainerVpcWorkerPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerVpcWorkerPoolZoneArray) ToGetContainerVpcWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerVpcWorkerPoolZoneArrayOutput)
-}
-
-type GetContainerVpcWorkerPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcWorkerPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerVpcWorkerPoolZoneOutput) ToGetContainerVpcWorkerPoolZoneOutput() GetContainerVpcWorkerPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolZoneOutput) ToGetContainerVpcWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolZoneOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolZone) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetContainerVpcWorkerPoolZoneOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerVpcWorkerPoolZone) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetContainerVpcWorkerPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerVpcWorkerPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerVpcWorkerPoolZoneArrayOutput) ToGetContainerVpcWorkerPoolZoneArrayOutput() GetContainerVpcWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolZoneArrayOutput) ToGetContainerVpcWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerVpcWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerVpcWorkerPoolZoneArrayOutput) Index(i pulumi.IntInput) GetContainerVpcWorkerPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerVpcWorkerPoolZone {
-		return vs[0].([]GetContainerVpcWorkerPoolZone)[vs[1].(int)]
-	}).(GetContainerVpcWorkerPoolZoneOutput)
-}
-
-type GetContainerWorkerPoolZone struct {
-	// worker pool zone private vlan
-	PrivateVlan string `pulumi:"privateVlan"`
-	// worker pool zone public vlan
-	PublicVlan string `pulumi:"publicVlan"`
-	// worker pool zone worker count
-	WorkerCount int `pulumi:"workerCount"`
-	// worker pool zone name
-	Zone string `pulumi:"zone"`
-}
-
-// GetContainerWorkerPoolZoneInput is an input type that accepts GetContainerWorkerPoolZoneArgs and GetContainerWorkerPoolZoneOutput values.
-// You can construct a concrete instance of `GetContainerWorkerPoolZoneInput` via:
-//
-//	GetContainerWorkerPoolZoneArgs{...}
-type GetContainerWorkerPoolZoneInput interface {
-	pulumi.Input
-
-	ToGetContainerWorkerPoolZoneOutput() GetContainerWorkerPoolZoneOutput
-	ToGetContainerWorkerPoolZoneOutputWithContext(context.Context) GetContainerWorkerPoolZoneOutput
-}
-
-type GetContainerWorkerPoolZoneArgs struct {
-	// worker pool zone private vlan
-	PrivateVlan pulumi.StringInput `pulumi:"privateVlan"`
-	// worker pool zone public vlan
-	PublicVlan pulumi.StringInput `pulumi:"publicVlan"`
-	// worker pool zone worker count
-	WorkerCount pulumi.IntInput `pulumi:"workerCount"`
-	// worker pool zone name
-	Zone pulumi.StringInput `pulumi:"zone"`
-}
-
-func (GetContainerWorkerPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerWorkerPoolZoneArgs) ToGetContainerWorkerPoolZoneOutput() GetContainerWorkerPoolZoneOutput {
-	return i.ToGetContainerWorkerPoolZoneOutputWithContext(context.Background())
-}
-
-func (i GetContainerWorkerPoolZoneArgs) ToGetContainerWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerWorkerPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerWorkerPoolZoneOutput)
-}
-
-// GetContainerWorkerPoolZoneArrayInput is an input type that accepts GetContainerWorkerPoolZoneArray and GetContainerWorkerPoolZoneArrayOutput values.
-// You can construct a concrete instance of `GetContainerWorkerPoolZoneArrayInput` via:
-//
-//	GetContainerWorkerPoolZoneArray{ GetContainerWorkerPoolZoneArgs{...} }
-type GetContainerWorkerPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetContainerWorkerPoolZoneArrayOutput() GetContainerWorkerPoolZoneArrayOutput
-	ToGetContainerWorkerPoolZoneArrayOutputWithContext(context.Context) GetContainerWorkerPoolZoneArrayOutput
-}
-
-type GetContainerWorkerPoolZoneArray []GetContainerWorkerPoolZoneInput
-
-func (GetContainerWorkerPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (i GetContainerWorkerPoolZoneArray) ToGetContainerWorkerPoolZoneArrayOutput() GetContainerWorkerPoolZoneArrayOutput {
-	return i.ToGetContainerWorkerPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetContainerWorkerPoolZoneArray) ToGetContainerWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerWorkerPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetContainerWorkerPoolZoneArrayOutput)
-}
-
-type GetContainerWorkerPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (GetContainerWorkerPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerWorkerPoolZoneOutput) ToGetContainerWorkerPoolZoneOutput() GetContainerWorkerPoolZoneOutput {
-	return o
-}
-
-func (o GetContainerWorkerPoolZoneOutput) ToGetContainerWorkerPoolZoneOutputWithContext(ctx context.Context) GetContainerWorkerPoolZoneOutput {
-	return o
-}
-
-// worker pool zone private vlan
-func (o GetContainerWorkerPoolZoneOutput) PrivateVlan() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerWorkerPoolZone) string { return v.PrivateVlan }).(pulumi.StringOutput)
-}
-
-// worker pool zone public vlan
-func (o GetContainerWorkerPoolZoneOutput) PublicVlan() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerWorkerPoolZone) string { return v.PublicVlan }).(pulumi.StringOutput)
-}
-
-// worker pool zone worker count
-func (o GetContainerWorkerPoolZoneOutput) WorkerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerWorkerPoolZone) int { return v.WorkerCount }).(pulumi.IntOutput)
-}
-
-// worker pool zone name
-func (o GetContainerWorkerPoolZoneOutput) Zone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerWorkerPoolZone) string { return v.Zone }).(pulumi.StringOutput)
-}
-
-type GetContainerWorkerPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetContainerWorkerPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (o GetContainerWorkerPoolZoneArrayOutput) ToGetContainerWorkerPoolZoneArrayOutput() GetContainerWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerWorkerPoolZoneArrayOutput) ToGetContainerWorkerPoolZoneArrayOutputWithContext(ctx context.Context) GetContainerWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o GetContainerWorkerPoolZoneArrayOutput) Index(i pulumi.IntInput) GetContainerWorkerPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerWorkerPoolZone {
-		return vs[0].([]GetContainerWorkerPoolZone)[vs[1].(int)]
-	}).(GetContainerWorkerPoolZoneOutput)
 }
 
 type GetCosBucketAbortIncompleteMultipartUploadDay struct {
@@ -10615,2015 +10540,6 @@ func (o GetCosBucketWebsiteConfigurationRoutingRuleRedirectArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCosBucketWebsiteConfigurationRoutingRuleRedirect {
 		return vs[0].([]GetCosBucketWebsiteConfigurationRoutingRuleRedirect)[vs[1].(int)]
 	}).(GetCosBucketWebsiteConfigurationRoutingRuleRedirectOutput)
-}
-
-type GetDnsCustomResolverForwardingRulesRule struct {
-	// Descriptive text of the forwarding rule.
-	Description string `pulumi:"description"`
-	// The upstream DNS servers will be forwarded to.
-	ForwardTos []string `pulumi:"forwardTos"`
-	// The matching zone or hostname.
-	Match string `pulumi:"match"`
-	// Identifier of the forwarding rule.
-	RuleId string `pulumi:"ruleId"`
-	// Type of the forwarding rule.
-	Type string `pulumi:"type"`
-	// An array of views used by forwarding rules.
-	Views []GetDnsCustomResolverForwardingRulesRuleView `pulumi:"views"`
-}
-
-// GetDnsCustomResolverForwardingRulesRuleInput is an input type that accepts GetDnsCustomResolverForwardingRulesRuleArgs and GetDnsCustomResolverForwardingRulesRuleOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolverForwardingRulesRuleInput` via:
-//
-//	GetDnsCustomResolverForwardingRulesRuleArgs{...}
-type GetDnsCustomResolverForwardingRulesRuleInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolverForwardingRulesRuleOutput() GetDnsCustomResolverForwardingRulesRuleOutput
-	ToGetDnsCustomResolverForwardingRulesRuleOutputWithContext(context.Context) GetDnsCustomResolverForwardingRulesRuleOutput
-}
-
-type GetDnsCustomResolverForwardingRulesRuleArgs struct {
-	// Descriptive text of the forwarding rule.
-	Description pulumi.StringInput `pulumi:"description"`
-	// The upstream DNS servers will be forwarded to.
-	ForwardTos pulumi.StringArrayInput `pulumi:"forwardTos"`
-	// The matching zone or hostname.
-	Match pulumi.StringInput `pulumi:"match"`
-	// Identifier of the forwarding rule.
-	RuleId pulumi.StringInput `pulumi:"ruleId"`
-	// Type of the forwarding rule.
-	Type pulumi.StringInput `pulumi:"type"`
-	// An array of views used by forwarding rules.
-	Views GetDnsCustomResolverForwardingRulesRuleViewArrayInput `pulumi:"views"`
-}
-
-func (GetDnsCustomResolverForwardingRulesRuleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRule)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleArgs) ToGetDnsCustomResolverForwardingRulesRuleOutput() GetDnsCustomResolverForwardingRulesRuleOutput {
-	return i.ToGetDnsCustomResolverForwardingRulesRuleOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleArgs) ToGetDnsCustomResolverForwardingRulesRuleOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolverForwardingRulesRuleOutput)
-}
-
-// GetDnsCustomResolverForwardingRulesRuleArrayInput is an input type that accepts GetDnsCustomResolverForwardingRulesRuleArray and GetDnsCustomResolverForwardingRulesRuleArrayOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolverForwardingRulesRuleArrayInput` via:
-//
-//	GetDnsCustomResolverForwardingRulesRuleArray{ GetDnsCustomResolverForwardingRulesRuleArgs{...} }
-type GetDnsCustomResolverForwardingRulesRuleArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolverForwardingRulesRuleArrayOutput() GetDnsCustomResolverForwardingRulesRuleArrayOutput
-	ToGetDnsCustomResolverForwardingRulesRuleArrayOutputWithContext(context.Context) GetDnsCustomResolverForwardingRulesRuleArrayOutput
-}
-
-type GetDnsCustomResolverForwardingRulesRuleArray []GetDnsCustomResolverForwardingRulesRuleInput
-
-func (GetDnsCustomResolverForwardingRulesRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolverForwardingRulesRule)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleArray) ToGetDnsCustomResolverForwardingRulesRuleArrayOutput() GetDnsCustomResolverForwardingRulesRuleArrayOutput {
-	return i.ToGetDnsCustomResolverForwardingRulesRuleArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleArray) ToGetDnsCustomResolverForwardingRulesRuleArrayOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolverForwardingRulesRuleArrayOutput)
-}
-
-type GetDnsCustomResolverForwardingRulesRuleOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolverForwardingRulesRuleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRule)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) ToGetDnsCustomResolverForwardingRulesRuleOutput() GetDnsCustomResolverForwardingRulesRuleOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) ToGetDnsCustomResolverForwardingRulesRuleOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleOutput {
-	return o
-}
-
-// Descriptive text of the forwarding rule.
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRule) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// The upstream DNS servers will be forwarded to.
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) ForwardTos() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRule) []string { return v.ForwardTos }).(pulumi.StringArrayOutput)
-}
-
-// The matching zone or hostname.
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) Match() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRule) string { return v.Match }).(pulumi.StringOutput)
-}
-
-// Identifier of the forwarding rule.
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) RuleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRule) string { return v.RuleId }).(pulumi.StringOutput)
-}
-
-// Type of the forwarding rule.
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRule) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// An array of views used by forwarding rules.
-func (o GetDnsCustomResolverForwardingRulesRuleOutput) Views() GetDnsCustomResolverForwardingRulesRuleViewArrayOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRule) []GetDnsCustomResolverForwardingRulesRuleView {
-		return v.Views
-	}).(GetDnsCustomResolverForwardingRulesRuleViewArrayOutput)
-}
-
-type GetDnsCustomResolverForwardingRulesRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolverForwardingRulesRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolverForwardingRulesRule)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleArrayOutput) ToGetDnsCustomResolverForwardingRulesRuleArrayOutput() GetDnsCustomResolverForwardingRulesRuleArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleArrayOutput) ToGetDnsCustomResolverForwardingRulesRuleArrayOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleArrayOutput) Index(i pulumi.IntInput) GetDnsCustomResolverForwardingRulesRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsCustomResolverForwardingRulesRule {
-		return vs[0].([]GetDnsCustomResolverForwardingRulesRule)[vs[1].(int)]
-	}).(GetDnsCustomResolverForwardingRulesRuleOutput)
-}
-
-type GetDnsCustomResolverForwardingRulesRuleView struct {
-	// Description of the view.
-	Description string `pulumi:"description"`
-	// Expression of the view.
-	Expression string `pulumi:"expression"`
-	// The upstream DNS servers that the matching DNS queries will be forwarded to.
-	ForwardTos []string `pulumi:"forwardTos"`
-	// Unique name of the view.
-	Name string `pulumi:"name"`
-}
-
-// GetDnsCustomResolverForwardingRulesRuleViewInput is an input type that accepts GetDnsCustomResolverForwardingRulesRuleViewArgs and GetDnsCustomResolverForwardingRulesRuleViewOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolverForwardingRulesRuleViewInput` via:
-//
-//	GetDnsCustomResolverForwardingRulesRuleViewArgs{...}
-type GetDnsCustomResolverForwardingRulesRuleViewInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolverForwardingRulesRuleViewOutput() GetDnsCustomResolverForwardingRulesRuleViewOutput
-	ToGetDnsCustomResolverForwardingRulesRuleViewOutputWithContext(context.Context) GetDnsCustomResolverForwardingRulesRuleViewOutput
-}
-
-type GetDnsCustomResolverForwardingRulesRuleViewArgs struct {
-	// Description of the view.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Expression of the view.
-	Expression pulumi.StringInput `pulumi:"expression"`
-	// The upstream DNS servers that the matching DNS queries will be forwarded to.
-	ForwardTos pulumi.StringArrayInput `pulumi:"forwardTos"`
-	// Unique name of the view.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetDnsCustomResolverForwardingRulesRuleViewArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRuleView)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleViewArgs) ToGetDnsCustomResolverForwardingRulesRuleViewOutput() GetDnsCustomResolverForwardingRulesRuleViewOutput {
-	return i.ToGetDnsCustomResolverForwardingRulesRuleViewOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleViewArgs) ToGetDnsCustomResolverForwardingRulesRuleViewOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleViewOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolverForwardingRulesRuleViewOutput)
-}
-
-// GetDnsCustomResolverForwardingRulesRuleViewArrayInput is an input type that accepts GetDnsCustomResolverForwardingRulesRuleViewArray and GetDnsCustomResolverForwardingRulesRuleViewArrayOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolverForwardingRulesRuleViewArrayInput` via:
-//
-//	GetDnsCustomResolverForwardingRulesRuleViewArray{ GetDnsCustomResolverForwardingRulesRuleViewArgs{...} }
-type GetDnsCustomResolverForwardingRulesRuleViewArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolverForwardingRulesRuleViewArrayOutput() GetDnsCustomResolverForwardingRulesRuleViewArrayOutput
-	ToGetDnsCustomResolverForwardingRulesRuleViewArrayOutputWithContext(context.Context) GetDnsCustomResolverForwardingRulesRuleViewArrayOutput
-}
-
-type GetDnsCustomResolverForwardingRulesRuleViewArray []GetDnsCustomResolverForwardingRulesRuleViewInput
-
-func (GetDnsCustomResolverForwardingRulesRuleViewArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolverForwardingRulesRuleView)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleViewArray) ToGetDnsCustomResolverForwardingRulesRuleViewArrayOutput() GetDnsCustomResolverForwardingRulesRuleViewArrayOutput {
-	return i.ToGetDnsCustomResolverForwardingRulesRuleViewArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolverForwardingRulesRuleViewArray) ToGetDnsCustomResolverForwardingRulesRuleViewArrayOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleViewArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolverForwardingRulesRuleViewArrayOutput)
-}
-
-type GetDnsCustomResolverForwardingRulesRuleViewOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolverForwardingRulesRuleViewOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRuleView)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleViewOutput) ToGetDnsCustomResolverForwardingRulesRuleViewOutput() GetDnsCustomResolverForwardingRulesRuleViewOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleViewOutput) ToGetDnsCustomResolverForwardingRulesRuleViewOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleViewOutput {
-	return o
-}
-
-// Description of the view.
-func (o GetDnsCustomResolverForwardingRulesRuleViewOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRuleView) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Expression of the view.
-func (o GetDnsCustomResolverForwardingRulesRuleViewOutput) Expression() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRuleView) string { return v.Expression }).(pulumi.StringOutput)
-}
-
-// The upstream DNS servers that the matching DNS queries will be forwarded to.
-func (o GetDnsCustomResolverForwardingRulesRuleViewOutput) ForwardTos() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRuleView) []string { return v.ForwardTos }).(pulumi.StringArrayOutput)
-}
-
-// Unique name of the view.
-func (o GetDnsCustomResolverForwardingRulesRuleViewOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverForwardingRulesRuleView) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type GetDnsCustomResolverForwardingRulesRuleViewArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolverForwardingRulesRuleViewArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolverForwardingRulesRuleView)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleViewArrayOutput) ToGetDnsCustomResolverForwardingRulesRuleViewArrayOutput() GetDnsCustomResolverForwardingRulesRuleViewArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleViewArrayOutput) ToGetDnsCustomResolverForwardingRulesRuleViewArrayOutputWithContext(ctx context.Context) GetDnsCustomResolverForwardingRulesRuleViewArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverForwardingRulesRuleViewArrayOutput) Index(i pulumi.IntInput) GetDnsCustomResolverForwardingRulesRuleViewOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsCustomResolverForwardingRulesRuleView {
-		return vs[0].([]GetDnsCustomResolverForwardingRulesRuleView)[vs[1].(int)]
-	}).(GetDnsCustomResolverForwardingRulesRuleViewOutput)
-}
-
-type GetDnsCustomResolverSecondaryZonesSecondaryZone struct {
-	// Time when a secondary zone is created
-	CreatedOn string `pulumi:"createdOn"`
-	// Descriptive text of the secondary zone.
-	Description string `pulumi:"description"`
-	// Enable/Disable the secondary zone.
-	Enabled bool `pulumi:"enabled"`
-	// The recent time when a secondary zone is modified
-	ModifiedOn string `pulumi:"modifiedOn"`
-	// The unique identifier of the Secondary Zone
-	SecondaryZoneId string `pulumi:"secondaryZoneId"`
-	// The addresses of DNS servers where the secondary zone data is transferred from.
-	TransferFroms []string `pulumi:"transferFroms"`
-	// The name of the zone.
-	Zone string `pulumi:"zone"`
-}
-
-// GetDnsCustomResolverSecondaryZonesSecondaryZoneInput is an input type that accepts GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs and GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolverSecondaryZonesSecondaryZoneInput` via:
-//
-//	GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs{...}
-type GetDnsCustomResolverSecondaryZonesSecondaryZoneInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolverSecondaryZonesSecondaryZoneOutput() GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput
-	ToGetDnsCustomResolverSecondaryZonesSecondaryZoneOutputWithContext(context.Context) GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput
-}
-
-type GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs struct {
-	// Time when a secondary zone is created
-	CreatedOn pulumi.StringInput `pulumi:"createdOn"`
-	// Descriptive text of the secondary zone.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Enable/Disable the secondary zone.
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// The recent time when a secondary zone is modified
-	ModifiedOn pulumi.StringInput `pulumi:"modifiedOn"`
-	// The unique identifier of the Secondary Zone
-	SecondaryZoneId pulumi.StringInput `pulumi:"secondaryZoneId"`
-	// The addresses of DNS servers where the secondary zone data is transferred from.
-	TransferFroms pulumi.StringArrayInput `pulumi:"transferFroms"`
-	// The name of the zone.
-	Zone pulumi.StringInput `pulumi:"zone"`
-}
-
-func (GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolverSecondaryZonesSecondaryZone)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneOutput() GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput {
-	return i.ToGetDnsCustomResolverSecondaryZonesSecondaryZoneOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneOutputWithContext(ctx context.Context) GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput)
-}
-
-// GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayInput is an input type that accepts GetDnsCustomResolverSecondaryZonesSecondaryZoneArray and GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayInput` via:
-//
-//	GetDnsCustomResolverSecondaryZonesSecondaryZoneArray{ GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs{...} }
-type GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput() GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput
-	ToGetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutputWithContext(context.Context) GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput
-}
-
-type GetDnsCustomResolverSecondaryZonesSecondaryZoneArray []GetDnsCustomResolverSecondaryZonesSecondaryZoneInput
-
-func (GetDnsCustomResolverSecondaryZonesSecondaryZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolverSecondaryZonesSecondaryZone)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolverSecondaryZonesSecondaryZoneArray) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput() GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput {
-	return i.ToGetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolverSecondaryZonesSecondaryZoneArray) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutputWithContext(ctx context.Context) GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput)
-}
-
-type GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolverSecondaryZonesSecondaryZone)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneOutput() GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneOutputWithContext(ctx context.Context) GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput {
-	return o
-}
-
-// Time when a secondary zone is created
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) CreatedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverSecondaryZonesSecondaryZone) string { return v.CreatedOn }).(pulumi.StringOutput)
-}
-
-// Descriptive text of the secondary zone.
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverSecondaryZonesSecondaryZone) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Enable/Disable the secondary zone.
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverSecondaryZonesSecondaryZone) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// The recent time when a secondary zone is modified
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) ModifiedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverSecondaryZonesSecondaryZone) string { return v.ModifiedOn }).(pulumi.StringOutput)
-}
-
-// The unique identifier of the Secondary Zone
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) SecondaryZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverSecondaryZonesSecondaryZone) string { return v.SecondaryZoneId }).(pulumi.StringOutput)
-}
-
-// The addresses of DNS servers where the secondary zone data is transferred from.
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) TransferFroms() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverSecondaryZonesSecondaryZone) []string { return v.TransferFroms }).(pulumi.StringArrayOutput)
-}
-
-// The name of the zone.
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput) Zone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolverSecondaryZonesSecondaryZone) string { return v.Zone }).(pulumi.StringOutput)
-}
-
-type GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolverSecondaryZonesSecondaryZone)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput() GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput) ToGetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutputWithContext(ctx context.Context) GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput) Index(i pulumi.IntInput) GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsCustomResolverSecondaryZonesSecondaryZone {
-		return vs[0].([]GetDnsCustomResolverSecondaryZonesSecondaryZone)[vs[1].(int)]
-	}).(GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput)
-}
-
-type GetDnsCustomResolversCustomResolver struct {
-	// Whether a disruptive update is allowed for the custom resolver
-	AllowDisruptiveUpdates bool `pulumi:"allowDisruptiveUpdates"`
-	// Identifier of the custom resolver
-	CustomResolverId string `pulumi:"customResolverId"`
-	Description      string `pulumi:"description"`
-	Enabled          bool   `pulumi:"enabled"`
-	Health           string `pulumi:"health"`
-	// Locations on which the custom resolver will be running
-	Locations []GetDnsCustomResolversCustomResolverLocation `pulumi:"locations"`
-	// Name of the custom resolver
-	Name string `pulumi:"name"`
-	// The profile name of the custom resolver.
-	Profile string `pulumi:"profile"`
-}
-
-// GetDnsCustomResolversCustomResolverInput is an input type that accepts GetDnsCustomResolversCustomResolverArgs and GetDnsCustomResolversCustomResolverOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolversCustomResolverInput` via:
-//
-//	GetDnsCustomResolversCustomResolverArgs{...}
-type GetDnsCustomResolversCustomResolverInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolversCustomResolverOutput() GetDnsCustomResolversCustomResolverOutput
-	ToGetDnsCustomResolversCustomResolverOutputWithContext(context.Context) GetDnsCustomResolversCustomResolverOutput
-}
-
-type GetDnsCustomResolversCustomResolverArgs struct {
-	// Whether a disruptive update is allowed for the custom resolver
-	AllowDisruptiveUpdates pulumi.BoolInput `pulumi:"allowDisruptiveUpdates"`
-	// Identifier of the custom resolver
-	CustomResolverId pulumi.StringInput `pulumi:"customResolverId"`
-	Description      pulumi.StringInput `pulumi:"description"`
-	Enabled          pulumi.BoolInput   `pulumi:"enabled"`
-	Health           pulumi.StringInput `pulumi:"health"`
-	// Locations on which the custom resolver will be running
-	Locations GetDnsCustomResolversCustomResolverLocationArrayInput `pulumi:"locations"`
-	// Name of the custom resolver
-	Name pulumi.StringInput `pulumi:"name"`
-	// The profile name of the custom resolver.
-	Profile pulumi.StringInput `pulumi:"profile"`
-}
-
-func (GetDnsCustomResolversCustomResolverArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolversCustomResolver)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolversCustomResolverArgs) ToGetDnsCustomResolversCustomResolverOutput() GetDnsCustomResolversCustomResolverOutput {
-	return i.ToGetDnsCustomResolversCustomResolverOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolversCustomResolverArgs) ToGetDnsCustomResolversCustomResolverOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolversCustomResolverOutput)
-}
-
-// GetDnsCustomResolversCustomResolverArrayInput is an input type that accepts GetDnsCustomResolversCustomResolverArray and GetDnsCustomResolversCustomResolverArrayOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolversCustomResolverArrayInput` via:
-//
-//	GetDnsCustomResolversCustomResolverArray{ GetDnsCustomResolversCustomResolverArgs{...} }
-type GetDnsCustomResolversCustomResolverArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolversCustomResolverArrayOutput() GetDnsCustomResolversCustomResolverArrayOutput
-	ToGetDnsCustomResolversCustomResolverArrayOutputWithContext(context.Context) GetDnsCustomResolversCustomResolverArrayOutput
-}
-
-type GetDnsCustomResolversCustomResolverArray []GetDnsCustomResolversCustomResolverInput
-
-func (GetDnsCustomResolversCustomResolverArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolversCustomResolver)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolversCustomResolverArray) ToGetDnsCustomResolversCustomResolverArrayOutput() GetDnsCustomResolversCustomResolverArrayOutput {
-	return i.ToGetDnsCustomResolversCustomResolverArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolversCustomResolverArray) ToGetDnsCustomResolversCustomResolverArrayOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolversCustomResolverArrayOutput)
-}
-
-type GetDnsCustomResolversCustomResolverOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolversCustomResolverOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolversCustomResolver)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolversCustomResolverOutput) ToGetDnsCustomResolversCustomResolverOutput() GetDnsCustomResolversCustomResolverOutput {
-	return o
-}
-
-func (o GetDnsCustomResolversCustomResolverOutput) ToGetDnsCustomResolversCustomResolverOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverOutput {
-	return o
-}
-
-// Whether a disruptive update is allowed for the custom resolver
-func (o GetDnsCustomResolversCustomResolverOutput) AllowDisruptiveUpdates() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) bool { return v.AllowDisruptiveUpdates }).(pulumi.BoolOutput)
-}
-
-// Identifier of the custom resolver
-func (o GetDnsCustomResolversCustomResolverOutput) CustomResolverId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) string { return v.CustomResolverId }).(pulumi.StringOutput)
-}
-
-func (o GetDnsCustomResolversCustomResolverOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) string { return v.Description }).(pulumi.StringOutput)
-}
-
-func (o GetDnsCustomResolversCustomResolverOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetDnsCustomResolversCustomResolverOutput) Health() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) string { return v.Health }).(pulumi.StringOutput)
-}
-
-// Locations on which the custom resolver will be running
-func (o GetDnsCustomResolversCustomResolverOutput) Locations() GetDnsCustomResolversCustomResolverLocationArrayOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) []GetDnsCustomResolversCustomResolverLocation {
-		return v.Locations
-	}).(GetDnsCustomResolversCustomResolverLocationArrayOutput)
-}
-
-// Name of the custom resolver
-func (o GetDnsCustomResolversCustomResolverOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The profile name of the custom resolver.
-func (o GetDnsCustomResolversCustomResolverOutput) Profile() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolver) string { return v.Profile }).(pulumi.StringOutput)
-}
-
-type GetDnsCustomResolversCustomResolverArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolversCustomResolverArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolversCustomResolver)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolversCustomResolverArrayOutput) ToGetDnsCustomResolversCustomResolverArrayOutput() GetDnsCustomResolversCustomResolverArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolversCustomResolverArrayOutput) ToGetDnsCustomResolversCustomResolverArrayOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolversCustomResolverArrayOutput) Index(i pulumi.IntInput) GetDnsCustomResolversCustomResolverOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsCustomResolversCustomResolver {
-		return vs[0].([]GetDnsCustomResolversCustomResolver)[vs[1].(int)]
-	}).(GetDnsCustomResolversCustomResolverOutput)
-}
-
-type GetDnsCustomResolversCustomResolverLocation struct {
-	DnsServerIp string `pulumi:"dnsServerIp"`
-	Enabled     bool   `pulumi:"enabled"`
-	Healthy     bool   `pulumi:"healthy"`
-	// Identifier of the custom resolver
-	LocationId string `pulumi:"locationId"`
-	SubnetCrn  string `pulumi:"subnetCrn"`
-}
-
-// GetDnsCustomResolversCustomResolverLocationInput is an input type that accepts GetDnsCustomResolversCustomResolverLocationArgs and GetDnsCustomResolversCustomResolverLocationOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolversCustomResolverLocationInput` via:
-//
-//	GetDnsCustomResolversCustomResolverLocationArgs{...}
-type GetDnsCustomResolversCustomResolverLocationInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolversCustomResolverLocationOutput() GetDnsCustomResolversCustomResolverLocationOutput
-	ToGetDnsCustomResolversCustomResolverLocationOutputWithContext(context.Context) GetDnsCustomResolversCustomResolverLocationOutput
-}
-
-type GetDnsCustomResolversCustomResolverLocationArgs struct {
-	DnsServerIp pulumi.StringInput `pulumi:"dnsServerIp"`
-	Enabled     pulumi.BoolInput   `pulumi:"enabled"`
-	Healthy     pulumi.BoolInput   `pulumi:"healthy"`
-	// Identifier of the custom resolver
-	LocationId pulumi.StringInput `pulumi:"locationId"`
-	SubnetCrn  pulumi.StringInput `pulumi:"subnetCrn"`
-}
-
-func (GetDnsCustomResolversCustomResolverLocationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolversCustomResolverLocation)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolversCustomResolverLocationArgs) ToGetDnsCustomResolversCustomResolverLocationOutput() GetDnsCustomResolversCustomResolverLocationOutput {
-	return i.ToGetDnsCustomResolversCustomResolverLocationOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolversCustomResolverLocationArgs) ToGetDnsCustomResolversCustomResolverLocationOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverLocationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolversCustomResolverLocationOutput)
-}
-
-// GetDnsCustomResolversCustomResolverLocationArrayInput is an input type that accepts GetDnsCustomResolversCustomResolverLocationArray and GetDnsCustomResolversCustomResolverLocationArrayOutput values.
-// You can construct a concrete instance of `GetDnsCustomResolversCustomResolverLocationArrayInput` via:
-//
-//	GetDnsCustomResolversCustomResolverLocationArray{ GetDnsCustomResolversCustomResolverLocationArgs{...} }
-type GetDnsCustomResolversCustomResolverLocationArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsCustomResolversCustomResolverLocationArrayOutput() GetDnsCustomResolversCustomResolverLocationArrayOutput
-	ToGetDnsCustomResolversCustomResolverLocationArrayOutputWithContext(context.Context) GetDnsCustomResolversCustomResolverLocationArrayOutput
-}
-
-type GetDnsCustomResolversCustomResolverLocationArray []GetDnsCustomResolversCustomResolverLocationInput
-
-func (GetDnsCustomResolversCustomResolverLocationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolversCustomResolverLocation)(nil)).Elem()
-}
-
-func (i GetDnsCustomResolversCustomResolverLocationArray) ToGetDnsCustomResolversCustomResolverLocationArrayOutput() GetDnsCustomResolversCustomResolverLocationArrayOutput {
-	return i.ToGetDnsCustomResolversCustomResolverLocationArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsCustomResolversCustomResolverLocationArray) ToGetDnsCustomResolversCustomResolverLocationArrayOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverLocationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsCustomResolversCustomResolverLocationArrayOutput)
-}
-
-type GetDnsCustomResolversCustomResolverLocationOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolversCustomResolverLocationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsCustomResolversCustomResolverLocation)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationOutput) ToGetDnsCustomResolversCustomResolverLocationOutput() GetDnsCustomResolversCustomResolverLocationOutput {
-	return o
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationOutput) ToGetDnsCustomResolversCustomResolverLocationOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverLocationOutput {
-	return o
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationOutput) DnsServerIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolverLocation) string { return v.DnsServerIp }).(pulumi.StringOutput)
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolverLocation) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationOutput) Healthy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolverLocation) bool { return v.Healthy }).(pulumi.BoolOutput)
-}
-
-// Identifier of the custom resolver
-func (o GetDnsCustomResolversCustomResolverLocationOutput) LocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolverLocation) string { return v.LocationId }).(pulumi.StringOutput)
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationOutput) SubnetCrn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsCustomResolversCustomResolverLocation) string { return v.SubnetCrn }).(pulumi.StringOutput)
-}
-
-type GetDnsCustomResolversCustomResolverLocationArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsCustomResolversCustomResolverLocationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsCustomResolversCustomResolverLocation)(nil)).Elem()
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationArrayOutput) ToGetDnsCustomResolversCustomResolverLocationArrayOutput() GetDnsCustomResolversCustomResolverLocationArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationArrayOutput) ToGetDnsCustomResolversCustomResolverLocationArrayOutputWithContext(ctx context.Context) GetDnsCustomResolversCustomResolverLocationArrayOutput {
-	return o
-}
-
-func (o GetDnsCustomResolversCustomResolverLocationArrayOutput) Index(i pulumi.IntInput) GetDnsCustomResolversCustomResolverLocationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsCustomResolversCustomResolverLocation {
-		return vs[0].([]GetDnsCustomResolversCustomResolverLocation)[vs[1].(int)]
-	}).(GetDnsCustomResolversCustomResolverLocationOutput)
-}
-
-type GetDnsGlbMonitorsDnsGlbMonitor struct {
-	// Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTPS monitors.
-	AllowInsecure bool `pulumi:"allowInsecure"`
-	// GLB Monitor creation date
-	CreatedOn string `pulumi:"createdOn"`
-	// Descriptive text of the load balancer monitor
-	Description string `pulumi:"description"`
-	// A case-insensitive sub-string to look for in the response body
-	ExpectedBody string `pulumi:"expectedBody"`
-	// The expected HTTP response code or code range of the health check. This parameter is only valid for HTTP and HTTPS
-	ExpectedCodes string `pulumi:"expectedCodes"`
-	// The interval between each health check
-	Interval int `pulumi:"interval"`
-	// The method to use for the health check
-	Method string `pulumi:"method"`
-	// GLB Monitor Modification date
-	ModifiedOn string `pulumi:"modifiedOn"`
-	// Monitor Id
-	MonitorId string `pulumi:"monitorId"`
-	// The unique identifier of a service instance.
-	Name string `pulumi:"name"`
-	// The endpoint path to health check against
-	Path string `pulumi:"path"`
-	// Port number to connect to for the health check
-	Port int `pulumi:"port"`
-	// The number of retries to attempt in case of a timeout before marking the origin as unhealthy
-	Retries int `pulumi:"retries"`
-	// The timeout (in seconds) before marking the health check as failed
-	Timeout int `pulumi:"timeout"`
-	// The protocol to use for the health check
-	Type string `pulumi:"type"`
-}
-
-// GetDnsGlbMonitorsDnsGlbMonitorInput is an input type that accepts GetDnsGlbMonitorsDnsGlbMonitorArgs and GetDnsGlbMonitorsDnsGlbMonitorOutput values.
-// You can construct a concrete instance of `GetDnsGlbMonitorsDnsGlbMonitorInput` via:
-//
-//	GetDnsGlbMonitorsDnsGlbMonitorArgs{...}
-type GetDnsGlbMonitorsDnsGlbMonitorInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbMonitorsDnsGlbMonitorOutput() GetDnsGlbMonitorsDnsGlbMonitorOutput
-	ToGetDnsGlbMonitorsDnsGlbMonitorOutputWithContext(context.Context) GetDnsGlbMonitorsDnsGlbMonitorOutput
-}
-
-type GetDnsGlbMonitorsDnsGlbMonitorArgs struct {
-	// Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTPS monitors.
-	AllowInsecure pulumi.BoolInput `pulumi:"allowInsecure"`
-	// GLB Monitor creation date
-	CreatedOn pulumi.StringInput `pulumi:"createdOn"`
-	// Descriptive text of the load balancer monitor
-	Description pulumi.StringInput `pulumi:"description"`
-	// A case-insensitive sub-string to look for in the response body
-	ExpectedBody pulumi.StringInput `pulumi:"expectedBody"`
-	// The expected HTTP response code or code range of the health check. This parameter is only valid for HTTP and HTTPS
-	ExpectedCodes pulumi.StringInput `pulumi:"expectedCodes"`
-	// The interval between each health check
-	Interval pulumi.IntInput `pulumi:"interval"`
-	// The method to use for the health check
-	Method pulumi.StringInput `pulumi:"method"`
-	// GLB Monitor Modification date
-	ModifiedOn pulumi.StringInput `pulumi:"modifiedOn"`
-	// Monitor Id
-	MonitorId pulumi.StringInput `pulumi:"monitorId"`
-	// The unique identifier of a service instance.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The endpoint path to health check against
-	Path pulumi.StringInput `pulumi:"path"`
-	// Port number to connect to for the health check
-	Port pulumi.IntInput `pulumi:"port"`
-	// The number of retries to attempt in case of a timeout before marking the origin as unhealthy
-	Retries pulumi.IntInput `pulumi:"retries"`
-	// The timeout (in seconds) before marking the health check as failed
-	Timeout pulumi.IntInput `pulumi:"timeout"`
-	// The protocol to use for the health check
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetDnsGlbMonitorsDnsGlbMonitorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbMonitorsDnsGlbMonitor)(nil)).Elem()
-}
-
-func (i GetDnsGlbMonitorsDnsGlbMonitorArgs) ToGetDnsGlbMonitorsDnsGlbMonitorOutput() GetDnsGlbMonitorsDnsGlbMonitorOutput {
-	return i.ToGetDnsGlbMonitorsDnsGlbMonitorOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbMonitorsDnsGlbMonitorArgs) ToGetDnsGlbMonitorsDnsGlbMonitorOutputWithContext(ctx context.Context) GetDnsGlbMonitorsDnsGlbMonitorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbMonitorsDnsGlbMonitorOutput)
-}
-
-// GetDnsGlbMonitorsDnsGlbMonitorArrayInput is an input type that accepts GetDnsGlbMonitorsDnsGlbMonitorArray and GetDnsGlbMonitorsDnsGlbMonitorArrayOutput values.
-// You can construct a concrete instance of `GetDnsGlbMonitorsDnsGlbMonitorArrayInput` via:
-//
-//	GetDnsGlbMonitorsDnsGlbMonitorArray{ GetDnsGlbMonitorsDnsGlbMonitorArgs{...} }
-type GetDnsGlbMonitorsDnsGlbMonitorArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbMonitorsDnsGlbMonitorArrayOutput() GetDnsGlbMonitorsDnsGlbMonitorArrayOutput
-	ToGetDnsGlbMonitorsDnsGlbMonitorArrayOutputWithContext(context.Context) GetDnsGlbMonitorsDnsGlbMonitorArrayOutput
-}
-
-type GetDnsGlbMonitorsDnsGlbMonitorArray []GetDnsGlbMonitorsDnsGlbMonitorInput
-
-func (GetDnsGlbMonitorsDnsGlbMonitorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbMonitorsDnsGlbMonitor)(nil)).Elem()
-}
-
-func (i GetDnsGlbMonitorsDnsGlbMonitorArray) ToGetDnsGlbMonitorsDnsGlbMonitorArrayOutput() GetDnsGlbMonitorsDnsGlbMonitorArrayOutput {
-	return i.ToGetDnsGlbMonitorsDnsGlbMonitorArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbMonitorsDnsGlbMonitorArray) ToGetDnsGlbMonitorsDnsGlbMonitorArrayOutputWithContext(ctx context.Context) GetDnsGlbMonitorsDnsGlbMonitorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbMonitorsDnsGlbMonitorArrayOutput)
-}
-
-type GetDnsGlbMonitorsDnsGlbMonitorOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbMonitorsDnsGlbMonitorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbMonitorsDnsGlbMonitor)(nil)).Elem()
-}
-
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) ToGetDnsGlbMonitorsDnsGlbMonitorOutput() GetDnsGlbMonitorsDnsGlbMonitorOutput {
-	return o
-}
-
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) ToGetDnsGlbMonitorsDnsGlbMonitorOutputWithContext(ctx context.Context) GetDnsGlbMonitorsDnsGlbMonitorOutput {
-	return o
-}
-
-// Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTPS monitors.
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) AllowInsecure() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) bool { return v.AllowInsecure }).(pulumi.BoolOutput)
-}
-
-// GLB Monitor creation date
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) CreatedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.CreatedOn }).(pulumi.StringOutput)
-}
-
-// Descriptive text of the load balancer monitor
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// A case-insensitive sub-string to look for in the response body
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) ExpectedBody() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.ExpectedBody }).(pulumi.StringOutput)
-}
-
-// The expected HTTP response code or code range of the health check. This parameter is only valid for HTTP and HTTPS
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) ExpectedCodes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.ExpectedCodes }).(pulumi.StringOutput)
-}
-
-// The interval between each health check
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Interval() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) int { return v.Interval }).(pulumi.IntOutput)
-}
-
-// The method to use for the health check
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.Method }).(pulumi.StringOutput)
-}
-
-// GLB Monitor Modification date
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) ModifiedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.ModifiedOn }).(pulumi.StringOutput)
-}
-
-// Monitor Id
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) MonitorId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.MonitorId }).(pulumi.StringOutput)
-}
-
-// The unique identifier of a service instance.
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The endpoint path to health check against
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.Path }).(pulumi.StringOutput)
-}
-
-// Port number to connect to for the health check
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) int { return v.Port }).(pulumi.IntOutput)
-}
-
-// The number of retries to attempt in case of a timeout before marking the origin as unhealthy
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Retries() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) int { return v.Retries }).(pulumi.IntOutput)
-}
-
-// The timeout (in seconds) before marking the health check as failed
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Timeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) int { return v.Timeout }).(pulumi.IntOutput)
-}
-
-// The protocol to use for the health check
-func (o GetDnsGlbMonitorsDnsGlbMonitorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbMonitorsDnsGlbMonitor) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetDnsGlbMonitorsDnsGlbMonitorArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbMonitorsDnsGlbMonitorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbMonitorsDnsGlbMonitor)(nil)).Elem()
-}
-
-func (o GetDnsGlbMonitorsDnsGlbMonitorArrayOutput) ToGetDnsGlbMonitorsDnsGlbMonitorArrayOutput() GetDnsGlbMonitorsDnsGlbMonitorArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbMonitorsDnsGlbMonitorArrayOutput) ToGetDnsGlbMonitorsDnsGlbMonitorArrayOutputWithContext(ctx context.Context) GetDnsGlbMonitorsDnsGlbMonitorArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbMonitorsDnsGlbMonitorArrayOutput) Index(i pulumi.IntInput) GetDnsGlbMonitorsDnsGlbMonitorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsGlbMonitorsDnsGlbMonitor {
-		return vs[0].([]GetDnsGlbMonitorsDnsGlbMonitor)[vs[1].(int)]
-	}).(GetDnsGlbMonitorsDnsGlbMonitorOutput)
-}
-
-type GetDnsGlbPoolsDnsGlbPool struct {
-	// The time when a load balancer pool is created.
-	CreatedOn string `pulumi:"createdOn"`
-	// Descriptive text of the load balancer pool
-	Description string `pulumi:"description"`
-	// Whether the load balancer pool is enabled
-	Enabled bool `pulumi:"enabled"`
-	// Whether the load balancer pool is enabled
-	Health string `pulumi:"health"`
-	// Health check region of VSIs
-	HealthcheckRegion string `pulumi:"healthcheckRegion"`
-	// Health check subnet crn of VSIs
-	HealthcheckSubnets []string `pulumi:"healthcheckSubnets"`
-	// The minimum number of origins that must be healthy for this pool to serve traffic
-	HealthyOriginsThreshold int `pulumi:"healthyOriginsThreshold"`
-	// The recent time when a load balancer pool is modified.
-	ModifiedOn string `pulumi:"modifiedOn"`
-	// The ID of the load balancer monitor to be associated to this pool
-	Monitor string `pulumi:"monitor"`
-	// DNS record name
-	Name string `pulumi:"name"`
-	// The notification channel,It is a webhook url
-	NotificationChannel string `pulumi:"notificationChannel"`
-	// Origins info
-	Origins []GetDnsGlbPoolsDnsGlbPoolOrigin `pulumi:"origins"`
-	// DNS record id
-	PoolId string `pulumi:"poolId"`
-}
-
-// GetDnsGlbPoolsDnsGlbPoolInput is an input type that accepts GetDnsGlbPoolsDnsGlbPoolArgs and GetDnsGlbPoolsDnsGlbPoolOutput values.
-// You can construct a concrete instance of `GetDnsGlbPoolsDnsGlbPoolInput` via:
-//
-//	GetDnsGlbPoolsDnsGlbPoolArgs{...}
-type GetDnsGlbPoolsDnsGlbPoolInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbPoolsDnsGlbPoolOutput() GetDnsGlbPoolsDnsGlbPoolOutput
-	ToGetDnsGlbPoolsDnsGlbPoolOutputWithContext(context.Context) GetDnsGlbPoolsDnsGlbPoolOutput
-}
-
-type GetDnsGlbPoolsDnsGlbPoolArgs struct {
-	// The time when a load balancer pool is created.
-	CreatedOn pulumi.StringInput `pulumi:"createdOn"`
-	// Descriptive text of the load balancer pool
-	Description pulumi.StringInput `pulumi:"description"`
-	// Whether the load balancer pool is enabled
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// Whether the load balancer pool is enabled
-	Health pulumi.StringInput `pulumi:"health"`
-	// Health check region of VSIs
-	HealthcheckRegion pulumi.StringInput `pulumi:"healthcheckRegion"`
-	// Health check subnet crn of VSIs
-	HealthcheckSubnets pulumi.StringArrayInput `pulumi:"healthcheckSubnets"`
-	// The minimum number of origins that must be healthy for this pool to serve traffic
-	HealthyOriginsThreshold pulumi.IntInput `pulumi:"healthyOriginsThreshold"`
-	// The recent time when a load balancer pool is modified.
-	ModifiedOn pulumi.StringInput `pulumi:"modifiedOn"`
-	// The ID of the load balancer monitor to be associated to this pool
-	Monitor pulumi.StringInput `pulumi:"monitor"`
-	// DNS record name
-	Name pulumi.StringInput `pulumi:"name"`
-	// The notification channel,It is a webhook url
-	NotificationChannel pulumi.StringInput `pulumi:"notificationChannel"`
-	// Origins info
-	Origins GetDnsGlbPoolsDnsGlbPoolOriginArrayInput `pulumi:"origins"`
-	// DNS record id
-	PoolId pulumi.StringInput `pulumi:"poolId"`
-}
-
-func (GetDnsGlbPoolsDnsGlbPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPool)(nil)).Elem()
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolArgs) ToGetDnsGlbPoolsDnsGlbPoolOutput() GetDnsGlbPoolsDnsGlbPoolOutput {
-	return i.ToGetDnsGlbPoolsDnsGlbPoolOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolArgs) ToGetDnsGlbPoolsDnsGlbPoolOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbPoolsDnsGlbPoolOutput)
-}
-
-// GetDnsGlbPoolsDnsGlbPoolArrayInput is an input type that accepts GetDnsGlbPoolsDnsGlbPoolArray and GetDnsGlbPoolsDnsGlbPoolArrayOutput values.
-// You can construct a concrete instance of `GetDnsGlbPoolsDnsGlbPoolArrayInput` via:
-//
-//	GetDnsGlbPoolsDnsGlbPoolArray{ GetDnsGlbPoolsDnsGlbPoolArgs{...} }
-type GetDnsGlbPoolsDnsGlbPoolArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbPoolsDnsGlbPoolArrayOutput() GetDnsGlbPoolsDnsGlbPoolArrayOutput
-	ToGetDnsGlbPoolsDnsGlbPoolArrayOutputWithContext(context.Context) GetDnsGlbPoolsDnsGlbPoolArrayOutput
-}
-
-type GetDnsGlbPoolsDnsGlbPoolArray []GetDnsGlbPoolsDnsGlbPoolInput
-
-func (GetDnsGlbPoolsDnsGlbPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbPoolsDnsGlbPool)(nil)).Elem()
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolArray) ToGetDnsGlbPoolsDnsGlbPoolArrayOutput() GetDnsGlbPoolsDnsGlbPoolArrayOutput {
-	return i.ToGetDnsGlbPoolsDnsGlbPoolArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolArray) ToGetDnsGlbPoolsDnsGlbPoolArrayOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbPoolsDnsGlbPoolArrayOutput)
-}
-
-type GetDnsGlbPoolsDnsGlbPoolOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbPoolsDnsGlbPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPool)(nil)).Elem()
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) ToGetDnsGlbPoolsDnsGlbPoolOutput() GetDnsGlbPoolsDnsGlbPoolOutput {
-	return o
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) ToGetDnsGlbPoolsDnsGlbPoolOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolOutput {
-	return o
-}
-
-// The time when a load balancer pool is created.
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) CreatedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.CreatedOn }).(pulumi.StringOutput)
-}
-
-// Descriptive text of the load balancer pool
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Whether the load balancer pool is enabled
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// Whether the load balancer pool is enabled
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) Health() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.Health }).(pulumi.StringOutput)
-}
-
-// Health check region of VSIs
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) HealthcheckRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.HealthcheckRegion }).(pulumi.StringOutput)
-}
-
-// Health check subnet crn of VSIs
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) HealthcheckSubnets() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) []string { return v.HealthcheckSubnets }).(pulumi.StringArrayOutput)
-}
-
-// The minimum number of origins that must be healthy for this pool to serve traffic
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) HealthyOriginsThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) int { return v.HealthyOriginsThreshold }).(pulumi.IntOutput)
-}
-
-// The recent time when a load balancer pool is modified.
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) ModifiedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.ModifiedOn }).(pulumi.StringOutput)
-}
-
-// The ID of the load balancer monitor to be associated to this pool
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) Monitor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.Monitor }).(pulumi.StringOutput)
-}
-
-// DNS record name
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The notification channel,It is a webhook url
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) NotificationChannel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.NotificationChannel }).(pulumi.StringOutput)
-}
-
-// Origins info
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) Origins() GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) []GetDnsGlbPoolsDnsGlbPoolOrigin { return v.Origins }).(GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput)
-}
-
-// DNS record id
-func (o GetDnsGlbPoolsDnsGlbPoolOutput) PoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPool) string { return v.PoolId }).(pulumi.StringOutput)
-}
-
-type GetDnsGlbPoolsDnsGlbPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbPoolsDnsGlbPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbPoolsDnsGlbPool)(nil)).Elem()
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolArrayOutput) ToGetDnsGlbPoolsDnsGlbPoolArrayOutput() GetDnsGlbPoolsDnsGlbPoolArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolArrayOutput) ToGetDnsGlbPoolsDnsGlbPoolArrayOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolArrayOutput) Index(i pulumi.IntInput) GetDnsGlbPoolsDnsGlbPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsGlbPoolsDnsGlbPool {
-		return vs[0].([]GetDnsGlbPoolsDnsGlbPool)[vs[1].(int)]
-	}).(GetDnsGlbPoolsDnsGlbPoolOutput)
-}
-
-type GetDnsGlbPoolsDnsGlbPoolOrigin struct {
-	// The address of the origin server. It can be a hostname or an IP address.
-	Address string `pulumi:"address"`
-	// Description of the origin server.
-	Description string `pulumi:"description"`
-	// Whether the origin server is enabled.
-	Enabled bool `pulumi:"enabled"`
-	// Whether the health is `true` or `false`.
-	Health bool `pulumi:"health"`
-	// The Reason for health check failure
-	HealthFailureReason string `pulumi:"healthFailureReason"`
-	// The name of the origin server.
-	Name string `pulumi:"name"`
-}
-
-// GetDnsGlbPoolsDnsGlbPoolOriginInput is an input type that accepts GetDnsGlbPoolsDnsGlbPoolOriginArgs and GetDnsGlbPoolsDnsGlbPoolOriginOutput values.
-// You can construct a concrete instance of `GetDnsGlbPoolsDnsGlbPoolOriginInput` via:
-//
-//	GetDnsGlbPoolsDnsGlbPoolOriginArgs{...}
-type GetDnsGlbPoolsDnsGlbPoolOriginInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbPoolsDnsGlbPoolOriginOutput() GetDnsGlbPoolsDnsGlbPoolOriginOutput
-	ToGetDnsGlbPoolsDnsGlbPoolOriginOutputWithContext(context.Context) GetDnsGlbPoolsDnsGlbPoolOriginOutput
-}
-
-type GetDnsGlbPoolsDnsGlbPoolOriginArgs struct {
-	// The address of the origin server. It can be a hostname or an IP address.
-	Address pulumi.StringInput `pulumi:"address"`
-	// Description of the origin server.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Whether the origin server is enabled.
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// Whether the health is `true` or `false`.
-	Health pulumi.BoolInput `pulumi:"health"`
-	// The Reason for health check failure
-	HealthFailureReason pulumi.StringInput `pulumi:"healthFailureReason"`
-	// The name of the origin server.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetDnsGlbPoolsDnsGlbPoolOriginArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolOriginArgs) ToGetDnsGlbPoolsDnsGlbPoolOriginOutput() GetDnsGlbPoolsDnsGlbPoolOriginOutput {
-	return i.ToGetDnsGlbPoolsDnsGlbPoolOriginOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolOriginArgs) ToGetDnsGlbPoolsDnsGlbPoolOriginOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolOriginOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbPoolsDnsGlbPoolOriginOutput)
-}
-
-// GetDnsGlbPoolsDnsGlbPoolOriginArrayInput is an input type that accepts GetDnsGlbPoolsDnsGlbPoolOriginArray and GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput values.
-// You can construct a concrete instance of `GetDnsGlbPoolsDnsGlbPoolOriginArrayInput` via:
-//
-//	GetDnsGlbPoolsDnsGlbPoolOriginArray{ GetDnsGlbPoolsDnsGlbPoolOriginArgs{...} }
-type GetDnsGlbPoolsDnsGlbPoolOriginArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbPoolsDnsGlbPoolOriginArrayOutput() GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput
-	ToGetDnsGlbPoolsDnsGlbPoolOriginArrayOutputWithContext(context.Context) GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput
-}
-
-type GetDnsGlbPoolsDnsGlbPoolOriginArray []GetDnsGlbPoolsDnsGlbPoolOriginInput
-
-func (GetDnsGlbPoolsDnsGlbPoolOriginArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbPoolsDnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolOriginArray) ToGetDnsGlbPoolsDnsGlbPoolOriginArrayOutput() GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput {
-	return i.ToGetDnsGlbPoolsDnsGlbPoolOriginArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbPoolsDnsGlbPoolOriginArray) ToGetDnsGlbPoolsDnsGlbPoolOriginArrayOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput)
-}
-
-type GetDnsGlbPoolsDnsGlbPoolOriginOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbPoolsDnsGlbPoolOriginOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) ToGetDnsGlbPoolsDnsGlbPoolOriginOutput() GetDnsGlbPoolsDnsGlbPoolOriginOutput {
-	return o
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) ToGetDnsGlbPoolsDnsGlbPoolOriginOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolOriginOutput {
-	return o
-}
-
-// The address of the origin server. It can be a hostname or an IP address.
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) Address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPoolOrigin) string { return v.Address }).(pulumi.StringOutput)
-}
-
-// Description of the origin server.
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPoolOrigin) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Whether the origin server is enabled.
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPoolOrigin) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// Whether the health is `true` or `false`.
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) Health() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPoolOrigin) bool { return v.Health }).(pulumi.BoolOutput)
-}
-
-// The Reason for health check failure
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) HealthFailureReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPoolOrigin) string { return v.HealthFailureReason }).(pulumi.StringOutput)
-}
-
-// The name of the origin server.
-func (o GetDnsGlbPoolsDnsGlbPoolOriginOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbPoolsDnsGlbPoolOrigin) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbPoolsDnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput) ToGetDnsGlbPoolsDnsGlbPoolOriginArrayOutput() GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput) ToGetDnsGlbPoolsDnsGlbPoolOriginArrayOutputWithContext(ctx context.Context) GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput) Index(i pulumi.IntInput) GetDnsGlbPoolsDnsGlbPoolOriginOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsGlbPoolsDnsGlbPoolOrigin {
-		return vs[0].([]GetDnsGlbPoolsDnsGlbPoolOrigin)[vs[1].(int)]
-	}).(GetDnsGlbPoolsDnsGlbPoolOriginOutput)
-}
-
-type GetDnsGlbsDnsGlb struct {
-	// Map availability zones to pool ID's.
-	AzPools []GetDnsGlbsDnsGlbAzPool `pulumi:"azPools"`
-	// GLB Load Balancer creation date
-	CreatedOn string `pulumi:"createdOn"`
-	// A list of pool IDs ordered by their failover priority
-	DefaultPools []string `pulumi:"defaultPools"`
-	// Descriptive text of the load balancer
-	Description string `pulumi:"description"`
-	// Whether the load balancer is enabled
-	Enabled bool `pulumi:"enabled"`
-	// The pool ID to use when all other pools are detected as unhealthy
-	FallbackPool string `pulumi:"fallbackPool"`
-	// Load balancer Id
-	GlbId string `pulumi:"glbId"`
-	// Healthy state of the load balancer.
-	Health string `pulumi:"health"`
-	// GLB Load Balancer Modification date
-	ModifiedOn string `pulumi:"modifiedOn"`
-	// Name of the load balancer
-	Name string `pulumi:"name"`
-	// Time to live in second
-	Ttl int `pulumi:"ttl"`
-}
-
-// GetDnsGlbsDnsGlbInput is an input type that accepts GetDnsGlbsDnsGlbArgs and GetDnsGlbsDnsGlbOutput values.
-// You can construct a concrete instance of `GetDnsGlbsDnsGlbInput` via:
-//
-//	GetDnsGlbsDnsGlbArgs{...}
-type GetDnsGlbsDnsGlbInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbsDnsGlbOutput() GetDnsGlbsDnsGlbOutput
-	ToGetDnsGlbsDnsGlbOutputWithContext(context.Context) GetDnsGlbsDnsGlbOutput
-}
-
-type GetDnsGlbsDnsGlbArgs struct {
-	// Map availability zones to pool ID's.
-	AzPools GetDnsGlbsDnsGlbAzPoolArrayInput `pulumi:"azPools"`
-	// GLB Load Balancer creation date
-	CreatedOn pulumi.StringInput `pulumi:"createdOn"`
-	// A list of pool IDs ordered by their failover priority
-	DefaultPools pulumi.StringArrayInput `pulumi:"defaultPools"`
-	// Descriptive text of the load balancer
-	Description pulumi.StringInput `pulumi:"description"`
-	// Whether the load balancer is enabled
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// The pool ID to use when all other pools are detected as unhealthy
-	FallbackPool pulumi.StringInput `pulumi:"fallbackPool"`
-	// Load balancer Id
-	GlbId pulumi.StringInput `pulumi:"glbId"`
-	// Healthy state of the load balancer.
-	Health pulumi.StringInput `pulumi:"health"`
-	// GLB Load Balancer Modification date
-	ModifiedOn pulumi.StringInput `pulumi:"modifiedOn"`
-	// Name of the load balancer
-	Name pulumi.StringInput `pulumi:"name"`
-	// Time to live in second
-	Ttl pulumi.IntInput `pulumi:"ttl"`
-}
-
-func (GetDnsGlbsDnsGlbArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbsDnsGlb)(nil)).Elem()
-}
-
-func (i GetDnsGlbsDnsGlbArgs) ToGetDnsGlbsDnsGlbOutput() GetDnsGlbsDnsGlbOutput {
-	return i.ToGetDnsGlbsDnsGlbOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbsDnsGlbArgs) ToGetDnsGlbsDnsGlbOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbsDnsGlbOutput)
-}
-
-// GetDnsGlbsDnsGlbArrayInput is an input type that accepts GetDnsGlbsDnsGlbArray and GetDnsGlbsDnsGlbArrayOutput values.
-// You can construct a concrete instance of `GetDnsGlbsDnsGlbArrayInput` via:
-//
-//	GetDnsGlbsDnsGlbArray{ GetDnsGlbsDnsGlbArgs{...} }
-type GetDnsGlbsDnsGlbArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbsDnsGlbArrayOutput() GetDnsGlbsDnsGlbArrayOutput
-	ToGetDnsGlbsDnsGlbArrayOutputWithContext(context.Context) GetDnsGlbsDnsGlbArrayOutput
-}
-
-type GetDnsGlbsDnsGlbArray []GetDnsGlbsDnsGlbInput
-
-func (GetDnsGlbsDnsGlbArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbsDnsGlb)(nil)).Elem()
-}
-
-func (i GetDnsGlbsDnsGlbArray) ToGetDnsGlbsDnsGlbArrayOutput() GetDnsGlbsDnsGlbArrayOutput {
-	return i.ToGetDnsGlbsDnsGlbArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbsDnsGlbArray) ToGetDnsGlbsDnsGlbArrayOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbsDnsGlbArrayOutput)
-}
-
-type GetDnsGlbsDnsGlbOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbsDnsGlbOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbsDnsGlb)(nil)).Elem()
-}
-
-func (o GetDnsGlbsDnsGlbOutput) ToGetDnsGlbsDnsGlbOutput() GetDnsGlbsDnsGlbOutput {
-	return o
-}
-
-func (o GetDnsGlbsDnsGlbOutput) ToGetDnsGlbsDnsGlbOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbOutput {
-	return o
-}
-
-// Map availability zones to pool ID's.
-func (o GetDnsGlbsDnsGlbOutput) AzPools() GetDnsGlbsDnsGlbAzPoolArrayOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) []GetDnsGlbsDnsGlbAzPool { return v.AzPools }).(GetDnsGlbsDnsGlbAzPoolArrayOutput)
-}
-
-// GLB Load Balancer creation date
-func (o GetDnsGlbsDnsGlbOutput) CreatedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) string { return v.CreatedOn }).(pulumi.StringOutput)
-}
-
-// A list of pool IDs ordered by their failover priority
-func (o GetDnsGlbsDnsGlbOutput) DefaultPools() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) []string { return v.DefaultPools }).(pulumi.StringArrayOutput)
-}
-
-// Descriptive text of the load balancer
-func (o GetDnsGlbsDnsGlbOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Whether the load balancer is enabled
-func (o GetDnsGlbsDnsGlbOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// The pool ID to use when all other pools are detected as unhealthy
-func (o GetDnsGlbsDnsGlbOutput) FallbackPool() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) string { return v.FallbackPool }).(pulumi.StringOutput)
-}
-
-// Load balancer Id
-func (o GetDnsGlbsDnsGlbOutput) GlbId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) string { return v.GlbId }).(pulumi.StringOutput)
-}
-
-// Healthy state of the load balancer.
-func (o GetDnsGlbsDnsGlbOutput) Health() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) string { return v.Health }).(pulumi.StringOutput)
-}
-
-// GLB Load Balancer Modification date
-func (o GetDnsGlbsDnsGlbOutput) ModifiedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) string { return v.ModifiedOn }).(pulumi.StringOutput)
-}
-
-// Name of the load balancer
-func (o GetDnsGlbsDnsGlbOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// Time to live in second
-func (o GetDnsGlbsDnsGlbOutput) Ttl() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlb) int { return v.Ttl }).(pulumi.IntOutput)
-}
-
-type GetDnsGlbsDnsGlbArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbsDnsGlbArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbsDnsGlb)(nil)).Elem()
-}
-
-func (o GetDnsGlbsDnsGlbArrayOutput) ToGetDnsGlbsDnsGlbArrayOutput() GetDnsGlbsDnsGlbArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbsDnsGlbArrayOutput) ToGetDnsGlbsDnsGlbArrayOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbsDnsGlbArrayOutput) Index(i pulumi.IntInput) GetDnsGlbsDnsGlbOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsGlbsDnsGlb {
-		return vs[0].([]GetDnsGlbsDnsGlb)[vs[1].(int)]
-	}).(GetDnsGlbsDnsGlbOutput)
-}
-
-type GetDnsGlbsDnsGlbAzPool struct {
-	// Availability zone.
-	AvailabilityZone string `pulumi:"availabilityZone"`
-	// List of load balancer pools
-	Pools []string `pulumi:"pools"`
-}
-
-// GetDnsGlbsDnsGlbAzPoolInput is an input type that accepts GetDnsGlbsDnsGlbAzPoolArgs and GetDnsGlbsDnsGlbAzPoolOutput values.
-// You can construct a concrete instance of `GetDnsGlbsDnsGlbAzPoolInput` via:
-//
-//	GetDnsGlbsDnsGlbAzPoolArgs{...}
-type GetDnsGlbsDnsGlbAzPoolInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbsDnsGlbAzPoolOutput() GetDnsGlbsDnsGlbAzPoolOutput
-	ToGetDnsGlbsDnsGlbAzPoolOutputWithContext(context.Context) GetDnsGlbsDnsGlbAzPoolOutput
-}
-
-type GetDnsGlbsDnsGlbAzPoolArgs struct {
-	// Availability zone.
-	AvailabilityZone pulumi.StringInput `pulumi:"availabilityZone"`
-	// List of load balancer pools
-	Pools pulumi.StringArrayInput `pulumi:"pools"`
-}
-
-func (GetDnsGlbsDnsGlbAzPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbsDnsGlbAzPool)(nil)).Elem()
-}
-
-func (i GetDnsGlbsDnsGlbAzPoolArgs) ToGetDnsGlbsDnsGlbAzPoolOutput() GetDnsGlbsDnsGlbAzPoolOutput {
-	return i.ToGetDnsGlbsDnsGlbAzPoolOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbsDnsGlbAzPoolArgs) ToGetDnsGlbsDnsGlbAzPoolOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbAzPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbsDnsGlbAzPoolOutput)
-}
-
-// GetDnsGlbsDnsGlbAzPoolArrayInput is an input type that accepts GetDnsGlbsDnsGlbAzPoolArray and GetDnsGlbsDnsGlbAzPoolArrayOutput values.
-// You can construct a concrete instance of `GetDnsGlbsDnsGlbAzPoolArrayInput` via:
-//
-//	GetDnsGlbsDnsGlbAzPoolArray{ GetDnsGlbsDnsGlbAzPoolArgs{...} }
-type GetDnsGlbsDnsGlbAzPoolArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsGlbsDnsGlbAzPoolArrayOutput() GetDnsGlbsDnsGlbAzPoolArrayOutput
-	ToGetDnsGlbsDnsGlbAzPoolArrayOutputWithContext(context.Context) GetDnsGlbsDnsGlbAzPoolArrayOutput
-}
-
-type GetDnsGlbsDnsGlbAzPoolArray []GetDnsGlbsDnsGlbAzPoolInput
-
-func (GetDnsGlbsDnsGlbAzPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbsDnsGlbAzPool)(nil)).Elem()
-}
-
-func (i GetDnsGlbsDnsGlbAzPoolArray) ToGetDnsGlbsDnsGlbAzPoolArrayOutput() GetDnsGlbsDnsGlbAzPoolArrayOutput {
-	return i.ToGetDnsGlbsDnsGlbAzPoolArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsGlbsDnsGlbAzPoolArray) ToGetDnsGlbsDnsGlbAzPoolArrayOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbAzPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsGlbsDnsGlbAzPoolArrayOutput)
-}
-
-type GetDnsGlbsDnsGlbAzPoolOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbsDnsGlbAzPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsGlbsDnsGlbAzPool)(nil)).Elem()
-}
-
-func (o GetDnsGlbsDnsGlbAzPoolOutput) ToGetDnsGlbsDnsGlbAzPoolOutput() GetDnsGlbsDnsGlbAzPoolOutput {
-	return o
-}
-
-func (o GetDnsGlbsDnsGlbAzPoolOutput) ToGetDnsGlbsDnsGlbAzPoolOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbAzPoolOutput {
-	return o
-}
-
-// Availability zone.
-func (o GetDnsGlbsDnsGlbAzPoolOutput) AvailabilityZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlbAzPool) string { return v.AvailabilityZone }).(pulumi.StringOutput)
-}
-
-// List of load balancer pools
-func (o GetDnsGlbsDnsGlbAzPoolOutput) Pools() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDnsGlbsDnsGlbAzPool) []string { return v.Pools }).(pulumi.StringArrayOutput)
-}
-
-type GetDnsGlbsDnsGlbAzPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsGlbsDnsGlbAzPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsGlbsDnsGlbAzPool)(nil)).Elem()
-}
-
-func (o GetDnsGlbsDnsGlbAzPoolArrayOutput) ToGetDnsGlbsDnsGlbAzPoolArrayOutput() GetDnsGlbsDnsGlbAzPoolArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbsDnsGlbAzPoolArrayOutput) ToGetDnsGlbsDnsGlbAzPoolArrayOutputWithContext(ctx context.Context) GetDnsGlbsDnsGlbAzPoolArrayOutput {
-	return o
-}
-
-func (o GetDnsGlbsDnsGlbAzPoolArrayOutput) Index(i pulumi.IntInput) GetDnsGlbsDnsGlbAzPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsGlbsDnsGlbAzPool {
-		return vs[0].([]GetDnsGlbsDnsGlbAzPool)[vs[1].(int)]
-	}).(GetDnsGlbsDnsGlbAzPoolOutput)
-}
-
-type GetDnsPermittedNetworksDnsPermittedNetwork struct {
-	// Network creation date
-	CreatedOn string `pulumi:"createdOn"`
-	// Instance Id
-	InstanceId string `pulumi:"instanceId"`
-	// Network Modification date
-	ModifiedOn string `pulumi:"modifiedOn"`
-	// permitted network
-	PermittedNetwork map[string]string `pulumi:"permittedNetwork"`
-	// Network Id
-	PermittedNetworkId string `pulumi:"permittedNetworkId"`
-	// Network status
-	State string `pulumi:"state"`
-	// Network Type
-	Type string `pulumi:"type"`
-	// Zone Id
-	ZoneId string `pulumi:"zoneId"`
-}
-
-// GetDnsPermittedNetworksDnsPermittedNetworkInput is an input type that accepts GetDnsPermittedNetworksDnsPermittedNetworkArgs and GetDnsPermittedNetworksDnsPermittedNetworkOutput values.
-// You can construct a concrete instance of `GetDnsPermittedNetworksDnsPermittedNetworkInput` via:
-//
-//	GetDnsPermittedNetworksDnsPermittedNetworkArgs{...}
-type GetDnsPermittedNetworksDnsPermittedNetworkInput interface {
-	pulumi.Input
-
-	ToGetDnsPermittedNetworksDnsPermittedNetworkOutput() GetDnsPermittedNetworksDnsPermittedNetworkOutput
-	ToGetDnsPermittedNetworksDnsPermittedNetworkOutputWithContext(context.Context) GetDnsPermittedNetworksDnsPermittedNetworkOutput
-}
-
-type GetDnsPermittedNetworksDnsPermittedNetworkArgs struct {
-	// Network creation date
-	CreatedOn pulumi.StringInput `pulumi:"createdOn"`
-	// Instance Id
-	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// Network Modification date
-	ModifiedOn pulumi.StringInput `pulumi:"modifiedOn"`
-	// permitted network
-	PermittedNetwork pulumi.StringMapInput `pulumi:"permittedNetwork"`
-	// Network Id
-	PermittedNetworkId pulumi.StringInput `pulumi:"permittedNetworkId"`
-	// Network status
-	State pulumi.StringInput `pulumi:"state"`
-	// Network Type
-	Type pulumi.StringInput `pulumi:"type"`
-	// Zone Id
-	ZoneId pulumi.StringInput `pulumi:"zoneId"`
-}
-
-func (GetDnsPermittedNetworksDnsPermittedNetworkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsPermittedNetworksDnsPermittedNetwork)(nil)).Elem()
-}
-
-func (i GetDnsPermittedNetworksDnsPermittedNetworkArgs) ToGetDnsPermittedNetworksDnsPermittedNetworkOutput() GetDnsPermittedNetworksDnsPermittedNetworkOutput {
-	return i.ToGetDnsPermittedNetworksDnsPermittedNetworkOutputWithContext(context.Background())
-}
-
-func (i GetDnsPermittedNetworksDnsPermittedNetworkArgs) ToGetDnsPermittedNetworksDnsPermittedNetworkOutputWithContext(ctx context.Context) GetDnsPermittedNetworksDnsPermittedNetworkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsPermittedNetworksDnsPermittedNetworkOutput)
-}
-
-// GetDnsPermittedNetworksDnsPermittedNetworkArrayInput is an input type that accepts GetDnsPermittedNetworksDnsPermittedNetworkArray and GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput values.
-// You can construct a concrete instance of `GetDnsPermittedNetworksDnsPermittedNetworkArrayInput` via:
-//
-//	GetDnsPermittedNetworksDnsPermittedNetworkArray{ GetDnsPermittedNetworksDnsPermittedNetworkArgs{...} }
-type GetDnsPermittedNetworksDnsPermittedNetworkArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsPermittedNetworksDnsPermittedNetworkArrayOutput() GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput
-	ToGetDnsPermittedNetworksDnsPermittedNetworkArrayOutputWithContext(context.Context) GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput
-}
-
-type GetDnsPermittedNetworksDnsPermittedNetworkArray []GetDnsPermittedNetworksDnsPermittedNetworkInput
-
-func (GetDnsPermittedNetworksDnsPermittedNetworkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsPermittedNetworksDnsPermittedNetwork)(nil)).Elem()
-}
-
-func (i GetDnsPermittedNetworksDnsPermittedNetworkArray) ToGetDnsPermittedNetworksDnsPermittedNetworkArrayOutput() GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput {
-	return i.ToGetDnsPermittedNetworksDnsPermittedNetworkArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsPermittedNetworksDnsPermittedNetworkArray) ToGetDnsPermittedNetworksDnsPermittedNetworkArrayOutputWithContext(ctx context.Context) GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput)
-}
-
-type GetDnsPermittedNetworksDnsPermittedNetworkOutput struct{ *pulumi.OutputState }
-
-func (GetDnsPermittedNetworksDnsPermittedNetworkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsPermittedNetworksDnsPermittedNetwork)(nil)).Elem()
-}
-
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) ToGetDnsPermittedNetworksDnsPermittedNetworkOutput() GetDnsPermittedNetworksDnsPermittedNetworkOutput {
-	return o
-}
-
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) ToGetDnsPermittedNetworksDnsPermittedNetworkOutputWithContext(ctx context.Context) GetDnsPermittedNetworksDnsPermittedNetworkOutput {
-	return o
-}
-
-// Network creation date
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) CreatedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) string { return v.CreatedOn }).(pulumi.StringOutput)
-}
-
-// Instance Id
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) string { return v.InstanceId }).(pulumi.StringOutput)
-}
-
-// Network Modification date
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) ModifiedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) string { return v.ModifiedOn }).(pulumi.StringOutput)
-}
-
-// permitted network
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) PermittedNetwork() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) map[string]string { return v.PermittedNetwork }).(pulumi.StringMapOutput)
-}
-
-// Network Id
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) PermittedNetworkId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) string { return v.PermittedNetworkId }).(pulumi.StringOutput)
-}
-
-// Network status
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) string { return v.State }).(pulumi.StringOutput)
-}
-
-// Network Type
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// Zone Id
-func (o GetDnsPermittedNetworksDnsPermittedNetworkOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsPermittedNetworksDnsPermittedNetwork) string { return v.ZoneId }).(pulumi.StringOutput)
-}
-
-type GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsPermittedNetworksDnsPermittedNetwork)(nil)).Elem()
-}
-
-func (o GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput) ToGetDnsPermittedNetworksDnsPermittedNetworkArrayOutput() GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput {
-	return o
-}
-
-func (o GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput) ToGetDnsPermittedNetworksDnsPermittedNetworkArrayOutputWithContext(ctx context.Context) GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput {
-	return o
-}
-
-func (o GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput) Index(i pulumi.IntInput) GetDnsPermittedNetworksDnsPermittedNetworkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsPermittedNetworksDnsPermittedNetwork {
-		return vs[0].([]GetDnsPermittedNetworksDnsPermittedNetwork)[vs[1].(int)]
-	}).(GetDnsPermittedNetworksDnsPermittedNetworkOutput)
-}
-
-type GetDnsResourceRecordsDnsResourceRecord struct {
-	// DNS record id
-	Id string `pulumi:"id"`
-	// DNS record name
-	Name string `pulumi:"name"`
-	// DNS record Data
-	Rdata string `pulumi:"rdata"`
-	// DNS record TTL
-	Ttl int `pulumi:"ttl"`
-	// DNS record Type
-	Type string `pulumi:"type"`
-}
-
-// GetDnsResourceRecordsDnsResourceRecordInput is an input type that accepts GetDnsResourceRecordsDnsResourceRecordArgs and GetDnsResourceRecordsDnsResourceRecordOutput values.
-// You can construct a concrete instance of `GetDnsResourceRecordsDnsResourceRecordInput` via:
-//
-//	GetDnsResourceRecordsDnsResourceRecordArgs{...}
-type GetDnsResourceRecordsDnsResourceRecordInput interface {
-	pulumi.Input
-
-	ToGetDnsResourceRecordsDnsResourceRecordOutput() GetDnsResourceRecordsDnsResourceRecordOutput
-	ToGetDnsResourceRecordsDnsResourceRecordOutputWithContext(context.Context) GetDnsResourceRecordsDnsResourceRecordOutput
-}
-
-type GetDnsResourceRecordsDnsResourceRecordArgs struct {
-	// DNS record id
-	Id pulumi.StringInput `pulumi:"id"`
-	// DNS record name
-	Name pulumi.StringInput `pulumi:"name"`
-	// DNS record Data
-	Rdata pulumi.StringInput `pulumi:"rdata"`
-	// DNS record TTL
-	Ttl pulumi.IntInput `pulumi:"ttl"`
-	// DNS record Type
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetDnsResourceRecordsDnsResourceRecordArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsResourceRecordsDnsResourceRecord)(nil)).Elem()
-}
-
-func (i GetDnsResourceRecordsDnsResourceRecordArgs) ToGetDnsResourceRecordsDnsResourceRecordOutput() GetDnsResourceRecordsDnsResourceRecordOutput {
-	return i.ToGetDnsResourceRecordsDnsResourceRecordOutputWithContext(context.Background())
-}
-
-func (i GetDnsResourceRecordsDnsResourceRecordArgs) ToGetDnsResourceRecordsDnsResourceRecordOutputWithContext(ctx context.Context) GetDnsResourceRecordsDnsResourceRecordOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsResourceRecordsDnsResourceRecordOutput)
-}
-
-// GetDnsResourceRecordsDnsResourceRecordArrayInput is an input type that accepts GetDnsResourceRecordsDnsResourceRecordArray and GetDnsResourceRecordsDnsResourceRecordArrayOutput values.
-// You can construct a concrete instance of `GetDnsResourceRecordsDnsResourceRecordArrayInput` via:
-//
-//	GetDnsResourceRecordsDnsResourceRecordArray{ GetDnsResourceRecordsDnsResourceRecordArgs{...} }
-type GetDnsResourceRecordsDnsResourceRecordArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsResourceRecordsDnsResourceRecordArrayOutput() GetDnsResourceRecordsDnsResourceRecordArrayOutput
-	ToGetDnsResourceRecordsDnsResourceRecordArrayOutputWithContext(context.Context) GetDnsResourceRecordsDnsResourceRecordArrayOutput
-}
-
-type GetDnsResourceRecordsDnsResourceRecordArray []GetDnsResourceRecordsDnsResourceRecordInput
-
-func (GetDnsResourceRecordsDnsResourceRecordArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsResourceRecordsDnsResourceRecord)(nil)).Elem()
-}
-
-func (i GetDnsResourceRecordsDnsResourceRecordArray) ToGetDnsResourceRecordsDnsResourceRecordArrayOutput() GetDnsResourceRecordsDnsResourceRecordArrayOutput {
-	return i.ToGetDnsResourceRecordsDnsResourceRecordArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsResourceRecordsDnsResourceRecordArray) ToGetDnsResourceRecordsDnsResourceRecordArrayOutputWithContext(ctx context.Context) GetDnsResourceRecordsDnsResourceRecordArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsResourceRecordsDnsResourceRecordArrayOutput)
-}
-
-type GetDnsResourceRecordsDnsResourceRecordOutput struct{ *pulumi.OutputState }
-
-func (GetDnsResourceRecordsDnsResourceRecordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsResourceRecordsDnsResourceRecord)(nil)).Elem()
-}
-
-func (o GetDnsResourceRecordsDnsResourceRecordOutput) ToGetDnsResourceRecordsDnsResourceRecordOutput() GetDnsResourceRecordsDnsResourceRecordOutput {
-	return o
-}
-
-func (o GetDnsResourceRecordsDnsResourceRecordOutput) ToGetDnsResourceRecordsDnsResourceRecordOutputWithContext(ctx context.Context) GetDnsResourceRecordsDnsResourceRecordOutput {
-	return o
-}
-
-// DNS record id
-func (o GetDnsResourceRecordsDnsResourceRecordOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsResourceRecordsDnsResourceRecord) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// DNS record name
-func (o GetDnsResourceRecordsDnsResourceRecordOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsResourceRecordsDnsResourceRecord) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// DNS record Data
-func (o GetDnsResourceRecordsDnsResourceRecordOutput) Rdata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsResourceRecordsDnsResourceRecord) string { return v.Rdata }).(pulumi.StringOutput)
-}
-
-// DNS record TTL
-func (o GetDnsResourceRecordsDnsResourceRecordOutput) Ttl() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDnsResourceRecordsDnsResourceRecord) int { return v.Ttl }).(pulumi.IntOutput)
-}
-
-// DNS record Type
-func (o GetDnsResourceRecordsDnsResourceRecordOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsResourceRecordsDnsResourceRecord) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetDnsResourceRecordsDnsResourceRecordArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsResourceRecordsDnsResourceRecordArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsResourceRecordsDnsResourceRecord)(nil)).Elem()
-}
-
-func (o GetDnsResourceRecordsDnsResourceRecordArrayOutput) ToGetDnsResourceRecordsDnsResourceRecordArrayOutput() GetDnsResourceRecordsDnsResourceRecordArrayOutput {
-	return o
-}
-
-func (o GetDnsResourceRecordsDnsResourceRecordArrayOutput) ToGetDnsResourceRecordsDnsResourceRecordArrayOutputWithContext(ctx context.Context) GetDnsResourceRecordsDnsResourceRecordArrayOutput {
-	return o
-}
-
-func (o GetDnsResourceRecordsDnsResourceRecordArrayOutput) Index(i pulumi.IntInput) GetDnsResourceRecordsDnsResourceRecordOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsResourceRecordsDnsResourceRecord {
-		return vs[0].([]GetDnsResourceRecordsDnsResourceRecord)[vs[1].(int)]
-	}).(GetDnsResourceRecordsDnsResourceRecordOutput)
-}
-
-type GetDnsZonesDnsZone struct {
-	// Creation date
-	CreatedOn string `pulumi:"createdOn"`
-	// Zone description
-	Description string `pulumi:"description"`
-	// Instance ID
-	InstanceId string `pulumi:"instanceId"`
-	// Label
-	Label string `pulumi:"label"`
-	// Modification date
-	ModifiedOn string `pulumi:"modifiedOn"`
-	// Zone name
-	Name string `pulumi:"name"`
-	// Zone state
-	State string `pulumi:"state"`
-	// Zone ID
-	ZoneId string `pulumi:"zoneId"`
-}
-
-// GetDnsZonesDnsZoneInput is an input type that accepts GetDnsZonesDnsZoneArgs and GetDnsZonesDnsZoneOutput values.
-// You can construct a concrete instance of `GetDnsZonesDnsZoneInput` via:
-//
-//	GetDnsZonesDnsZoneArgs{...}
-type GetDnsZonesDnsZoneInput interface {
-	pulumi.Input
-
-	ToGetDnsZonesDnsZoneOutput() GetDnsZonesDnsZoneOutput
-	ToGetDnsZonesDnsZoneOutputWithContext(context.Context) GetDnsZonesDnsZoneOutput
-}
-
-type GetDnsZonesDnsZoneArgs struct {
-	// Creation date
-	CreatedOn pulumi.StringInput `pulumi:"createdOn"`
-	// Zone description
-	Description pulumi.StringInput `pulumi:"description"`
-	// Instance ID
-	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// Label
-	Label pulumi.StringInput `pulumi:"label"`
-	// Modification date
-	ModifiedOn pulumi.StringInput `pulumi:"modifiedOn"`
-	// Zone name
-	Name pulumi.StringInput `pulumi:"name"`
-	// Zone state
-	State pulumi.StringInput `pulumi:"state"`
-	// Zone ID
-	ZoneId pulumi.StringInput `pulumi:"zoneId"`
-}
-
-func (GetDnsZonesDnsZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsZonesDnsZone)(nil)).Elem()
-}
-
-func (i GetDnsZonesDnsZoneArgs) ToGetDnsZonesDnsZoneOutput() GetDnsZonesDnsZoneOutput {
-	return i.ToGetDnsZonesDnsZoneOutputWithContext(context.Background())
-}
-
-func (i GetDnsZonesDnsZoneArgs) ToGetDnsZonesDnsZoneOutputWithContext(ctx context.Context) GetDnsZonesDnsZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsZonesDnsZoneOutput)
-}
-
-// GetDnsZonesDnsZoneArrayInput is an input type that accepts GetDnsZonesDnsZoneArray and GetDnsZonesDnsZoneArrayOutput values.
-// You can construct a concrete instance of `GetDnsZonesDnsZoneArrayInput` via:
-//
-//	GetDnsZonesDnsZoneArray{ GetDnsZonesDnsZoneArgs{...} }
-type GetDnsZonesDnsZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetDnsZonesDnsZoneArrayOutput() GetDnsZonesDnsZoneArrayOutput
-	ToGetDnsZonesDnsZoneArrayOutputWithContext(context.Context) GetDnsZonesDnsZoneArrayOutput
-}
-
-type GetDnsZonesDnsZoneArray []GetDnsZonesDnsZoneInput
-
-func (GetDnsZonesDnsZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsZonesDnsZone)(nil)).Elem()
-}
-
-func (i GetDnsZonesDnsZoneArray) ToGetDnsZonesDnsZoneArrayOutput() GetDnsZonesDnsZoneArrayOutput {
-	return i.ToGetDnsZonesDnsZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetDnsZonesDnsZoneArray) ToGetDnsZonesDnsZoneArrayOutputWithContext(ctx context.Context) GetDnsZonesDnsZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDnsZonesDnsZoneArrayOutput)
-}
-
-type GetDnsZonesDnsZoneOutput struct{ *pulumi.OutputState }
-
-func (GetDnsZonesDnsZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDnsZonesDnsZone)(nil)).Elem()
-}
-
-func (o GetDnsZonesDnsZoneOutput) ToGetDnsZonesDnsZoneOutput() GetDnsZonesDnsZoneOutput {
-	return o
-}
-
-func (o GetDnsZonesDnsZoneOutput) ToGetDnsZonesDnsZoneOutputWithContext(ctx context.Context) GetDnsZonesDnsZoneOutput {
-	return o
-}
-
-// Creation date
-func (o GetDnsZonesDnsZoneOutput) CreatedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.CreatedOn }).(pulumi.StringOutput)
-}
-
-// Zone description
-func (o GetDnsZonesDnsZoneOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Instance ID
-func (o GetDnsZonesDnsZoneOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.InstanceId }).(pulumi.StringOutput)
-}
-
-// Label
-func (o GetDnsZonesDnsZoneOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.Label }).(pulumi.StringOutput)
-}
-
-// Modification date
-func (o GetDnsZonesDnsZoneOutput) ModifiedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.ModifiedOn }).(pulumi.StringOutput)
-}
-
-// Zone name
-func (o GetDnsZonesDnsZoneOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// Zone state
-func (o GetDnsZonesDnsZoneOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.State }).(pulumi.StringOutput)
-}
-
-// Zone ID
-func (o GetDnsZonesDnsZoneOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDnsZonesDnsZone) string { return v.ZoneId }).(pulumi.StringOutput)
-}
-
-type GetDnsZonesDnsZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDnsZonesDnsZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDnsZonesDnsZone)(nil)).Elem()
-}
-
-func (o GetDnsZonesDnsZoneArrayOutput) ToGetDnsZonesDnsZoneArrayOutput() GetDnsZonesDnsZoneArrayOutput {
-	return o
-}
-
-func (o GetDnsZonesDnsZoneArrayOutput) ToGetDnsZonesDnsZoneArrayOutputWithContext(ctx context.Context) GetDnsZonesDnsZoneArrayOutput {
-	return o
-}
-
-func (o GetDnsZonesDnsZoneArrayOutput) Index(i pulumi.IntInput) GetDnsZonesDnsZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDnsZonesDnsZone {
-		return vs[0].([]GetDnsZonesDnsZone)[vs[1].(int)]
-	}).(GetDnsZonesDnsZoneOutput)
 }
 
 type GetIamAccessGroupGroup struct {
@@ -62988,130 +60904,2583 @@ func (o GetIsDedicatedHostProfileVcpuCountArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetIsDedicatedHostProfileVcpuCountOutput)
 }
 
+type GetIsDedicatedHostProfileVcpuManufacturer struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The VCPU manufacturer for a dedicated host with this profile.
+	Value string `pulumi:"value"`
+}
+
+// GetIsDedicatedHostProfileVcpuManufacturerInput is an input type that accepts GetIsDedicatedHostProfileVcpuManufacturerArgs and GetIsDedicatedHostProfileVcpuManufacturerOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfileVcpuManufacturerInput` via:
+//
+//	GetIsDedicatedHostProfileVcpuManufacturerArgs{...}
+type GetIsDedicatedHostProfileVcpuManufacturerInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfileVcpuManufacturerOutput() GetIsDedicatedHostProfileVcpuManufacturerOutput
+	ToGetIsDedicatedHostProfileVcpuManufacturerOutputWithContext(context.Context) GetIsDedicatedHostProfileVcpuManufacturerOutput
+}
+
+type GetIsDedicatedHostProfileVcpuManufacturerArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The VCPU manufacturer for a dedicated host with this profile.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIsDedicatedHostProfileVcpuManufacturerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfileVcpuManufacturerOutput() GetIsDedicatedHostProfileVcpuManufacturerOutput {
+	return i.ToGetIsDedicatedHostProfileVcpuManufacturerOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfileVcpuManufacturerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfileVcpuManufacturerOutput)
+}
+
+// GetIsDedicatedHostProfileVcpuManufacturerArrayInput is an input type that accepts GetIsDedicatedHostProfileVcpuManufacturerArray and GetIsDedicatedHostProfileVcpuManufacturerArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfileVcpuManufacturerArrayInput` via:
+//
+//	GetIsDedicatedHostProfileVcpuManufacturerArray{ GetIsDedicatedHostProfileVcpuManufacturerArgs{...} }
+type GetIsDedicatedHostProfileVcpuManufacturerArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfileVcpuManufacturerArrayOutput
+	ToGetIsDedicatedHostProfileVcpuManufacturerArrayOutputWithContext(context.Context) GetIsDedicatedHostProfileVcpuManufacturerArrayOutput
+}
+
+type GetIsDedicatedHostProfileVcpuManufacturerArray []GetIsDedicatedHostProfileVcpuManufacturerInput
+
+func (GetIsDedicatedHostProfileVcpuManufacturerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfileVcpuManufacturerArrayOutput {
+	return i.ToGetIsDedicatedHostProfileVcpuManufacturerArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfileVcpuManufacturerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfileVcpuManufacturerArrayOutput)
+}
+
+type GetIsDedicatedHostProfileVcpuManufacturerOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfileVcpuManufacturerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfileVcpuManufacturerOutput() GetIsDedicatedHostProfileVcpuManufacturerOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfileVcpuManufacturerOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfileVcpuManufacturerOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfileVcpuManufacturer) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The VCPU manufacturer for a dedicated host with this profile.
+func (o GetIsDedicatedHostProfileVcpuManufacturerOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfileVcpuManufacturer) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostProfileVcpuManufacturerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfileVcpuManufacturerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfileVcpuManufacturerArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfileVcpuManufacturerArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfileVcpuManufacturerArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfileVcpuManufacturerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfileVcpuManufacturer {
+		return vs[0].([]GetIsDedicatedHostProfileVcpuManufacturer)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfileVcpuManufacturerOutput)
+}
+
+type GetIsDedicatedHostProfilesProfile struct {
+	// The product class this dedicated host profile belongs to.
+	Class string `pulumi:"class"`
+	// Collection of the dedicated host profile's disks.
+	Disks []GetIsDedicatedHostProfilesProfileDisk `pulumi:"disks"`
+	// The product family this dedicated host profile belongs toThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	Family string `pulumi:"family"`
+	// The URL for this dedicated host.
+	Href     string                                    `pulumi:"href"`
+	Memories []GetIsDedicatedHostProfilesProfileMemory `pulumi:"memories"`
+	// The globally unique name for this dedicated host profile.
+	Name         string                                         `pulumi:"name"`
+	SocketCounts []GetIsDedicatedHostProfilesProfileSocketCount `pulumi:"socketCounts"`
+	// The status of the dedicated host profile.
+	Status string `pulumi:"status"`
+	// Array of instance profiles that can be used by instances placed on dedicated hosts with this profile.
+	SupportedInstanceProfiles []GetIsDedicatedHostProfilesProfileSupportedInstanceProfile `pulumi:"supportedInstanceProfiles"`
+	VcpuArchitectures         []GetIsDedicatedHostProfilesProfileVcpuArchitecture         `pulumi:"vcpuArchitectures"`
+	VcpuCounts                []GetIsDedicatedHostProfilesProfileVcpuCount                `pulumi:"vcpuCounts"`
+	VcpuManufacturers         []GetIsDedicatedHostProfilesProfileVcpuManufacturer         `pulumi:"vcpuManufacturers"`
+}
+
+// GetIsDedicatedHostProfilesProfileInput is an input type that accepts GetIsDedicatedHostProfilesProfileArgs and GetIsDedicatedHostProfilesProfileOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileArgs{...}
+type GetIsDedicatedHostProfilesProfileInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileOutput() GetIsDedicatedHostProfilesProfileOutput
+	ToGetIsDedicatedHostProfilesProfileOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileOutput
+}
+
+type GetIsDedicatedHostProfilesProfileArgs struct {
+	// The product class this dedicated host profile belongs to.
+	Class pulumi.StringInput `pulumi:"class"`
+	// Collection of the dedicated host profile's disks.
+	Disks GetIsDedicatedHostProfilesProfileDiskArrayInput `pulumi:"disks"`
+	// The product family this dedicated host profile belongs toThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	Family pulumi.StringInput `pulumi:"family"`
+	// The URL for this dedicated host.
+	Href     pulumi.StringInput                                `pulumi:"href"`
+	Memories GetIsDedicatedHostProfilesProfileMemoryArrayInput `pulumi:"memories"`
+	// The globally unique name for this dedicated host profile.
+	Name         pulumi.StringInput                                     `pulumi:"name"`
+	SocketCounts GetIsDedicatedHostProfilesProfileSocketCountArrayInput `pulumi:"socketCounts"`
+	// The status of the dedicated host profile.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Array of instance profiles that can be used by instances placed on dedicated hosts with this profile.
+	SupportedInstanceProfiles GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayInput `pulumi:"supportedInstanceProfiles"`
+	VcpuArchitectures         GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayInput         `pulumi:"vcpuArchitectures"`
+	VcpuCounts                GetIsDedicatedHostProfilesProfileVcpuCountArrayInput                `pulumi:"vcpuCounts"`
+	VcpuManufacturers         GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput         `pulumi:"vcpuManufacturers"`
+}
+
+func (GetIsDedicatedHostProfilesProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileArgs) ToGetIsDedicatedHostProfilesProfileOutput() GetIsDedicatedHostProfilesProfileOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileArgs) ToGetIsDedicatedHostProfilesProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileArray and GetIsDedicatedHostProfilesProfileArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileArray{ GetIsDedicatedHostProfilesProfileArgs{...} }
+type GetIsDedicatedHostProfilesProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileArrayOutput() GetIsDedicatedHostProfilesProfileArrayOutput
+	ToGetIsDedicatedHostProfilesProfileArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileArray []GetIsDedicatedHostProfilesProfileInput
+
+func (GetIsDedicatedHostProfilesProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileArray) ToGetIsDedicatedHostProfilesProfileArrayOutput() GetIsDedicatedHostProfilesProfileArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileArray) ToGetIsDedicatedHostProfilesProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileOutput) ToGetIsDedicatedHostProfilesProfileOutput() GetIsDedicatedHostProfilesProfileOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileOutput) ToGetIsDedicatedHostProfilesProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileOutput {
+	return o
+}
+
+// The product class this dedicated host profile belongs to.
+func (o GetIsDedicatedHostProfilesProfileOutput) Class() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) string { return v.Class }).(pulumi.StringOutput)
+}
+
+// Collection of the dedicated host profile's disks.
+func (o GetIsDedicatedHostProfilesProfileOutput) Disks() GetIsDedicatedHostProfilesProfileDiskArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) []GetIsDedicatedHostProfilesProfileDisk { return v.Disks }).(GetIsDedicatedHostProfilesProfileDiskArrayOutput)
+}
+
+// The product family this dedicated host profile belongs toThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+func (o GetIsDedicatedHostProfilesProfileOutput) Family() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) string { return v.Family }).(pulumi.StringOutput)
+}
+
+// The URL for this dedicated host.
+func (o GetIsDedicatedHostProfilesProfileOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetIsDedicatedHostProfilesProfileOutput) Memories() GetIsDedicatedHostProfilesProfileMemoryArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) []GetIsDedicatedHostProfilesProfileMemory { return v.Memories }).(GetIsDedicatedHostProfilesProfileMemoryArrayOutput)
+}
+
+// The globally unique name for this dedicated host profile.
+func (o GetIsDedicatedHostProfilesProfileOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIsDedicatedHostProfilesProfileOutput) SocketCounts() GetIsDedicatedHostProfilesProfileSocketCountArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) []GetIsDedicatedHostProfilesProfileSocketCount {
+		return v.SocketCounts
+	}).(GetIsDedicatedHostProfilesProfileSocketCountArrayOutput)
+}
+
+// The status of the dedicated host profile.
+func (o GetIsDedicatedHostProfilesProfileOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Array of instance profiles that can be used by instances placed on dedicated hosts with this profile.
+func (o GetIsDedicatedHostProfilesProfileOutput) SupportedInstanceProfiles() GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) []GetIsDedicatedHostProfilesProfileSupportedInstanceProfile {
+		return v.SupportedInstanceProfiles
+	}).(GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput)
+}
+
+func (o GetIsDedicatedHostProfilesProfileOutput) VcpuArchitectures() GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) []GetIsDedicatedHostProfilesProfileVcpuArchitecture {
+		return v.VcpuArchitectures
+	}).(GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput)
+}
+
+func (o GetIsDedicatedHostProfilesProfileOutput) VcpuCounts() GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) []GetIsDedicatedHostProfilesProfileVcpuCount {
+		return v.VcpuCounts
+	}).(GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput)
+}
+
+func (o GetIsDedicatedHostProfilesProfileOutput) VcpuManufacturers() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfile) []GetIsDedicatedHostProfilesProfileVcpuManufacturer {
+		return v.VcpuManufacturers
+	}).(GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileArrayOutput) ToGetIsDedicatedHostProfilesProfileArrayOutput() GetIsDedicatedHostProfilesProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileArrayOutput) ToGetIsDedicatedHostProfilesProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfile {
+		return vs[0].([]GetIsDedicatedHostProfilesProfile)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDisk struct {
+	InterfaceTypes []GetIsDedicatedHostProfilesProfileDiskInterfaceType `pulumi:"interfaceTypes"`
+	// The number of disks of this type for a dedicated host with this profile.
+	Quantities []GetIsDedicatedHostProfilesProfileDiskQuantity `pulumi:"quantities"`
+	// The size of the disk in GB (gigabytes).
+	Sizes                           []GetIsDedicatedHostProfilesProfileDiskSize                           `pulumi:"sizes"`
+	SupportedInstanceInterfaceTypes []GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType `pulumi:"supportedInstanceInterfaceTypes"`
+}
+
+// GetIsDedicatedHostProfilesProfileDiskInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskArgs and GetIsDedicatedHostProfilesProfileDiskOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskArgs{...}
+type GetIsDedicatedHostProfilesProfileDiskInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskOutput() GetIsDedicatedHostProfilesProfileDiskOutput
+	ToGetIsDedicatedHostProfilesProfileDiskOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskArgs struct {
+	InterfaceTypes GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayInput `pulumi:"interfaceTypes"`
+	// The number of disks of this type for a dedicated host with this profile.
+	Quantities GetIsDedicatedHostProfilesProfileDiskQuantityArrayInput `pulumi:"quantities"`
+	// The size of the disk in GB (gigabytes).
+	Sizes                           GetIsDedicatedHostProfilesProfileDiskSizeArrayInput                           `pulumi:"sizes"`
+	SupportedInstanceInterfaceTypes GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayInput `pulumi:"supportedInstanceInterfaceTypes"`
+}
+
+func (GetIsDedicatedHostProfilesProfileDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDisk)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskArgs) ToGetIsDedicatedHostProfilesProfileDiskOutput() GetIsDedicatedHostProfilesProfileDiskOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskArgs) ToGetIsDedicatedHostProfilesProfileDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileDiskArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskArray and GetIsDedicatedHostProfilesProfileDiskArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskArray{ GetIsDedicatedHostProfilesProfileDiskArgs{...} }
+type GetIsDedicatedHostProfilesProfileDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskArrayOutput() GetIsDedicatedHostProfilesProfileDiskArrayOutput
+	ToGetIsDedicatedHostProfilesProfileDiskArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskArray []GetIsDedicatedHostProfilesProfileDiskInput
+
+func (GetIsDedicatedHostProfilesProfileDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDisk)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskArray) ToGetIsDedicatedHostProfilesProfileDiskArrayOutput() GetIsDedicatedHostProfilesProfileDiskArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskArray) ToGetIsDedicatedHostProfilesProfileDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDisk)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskOutput) ToGetIsDedicatedHostProfilesProfileDiskOutput() GetIsDedicatedHostProfilesProfileDiskOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskOutput) ToGetIsDedicatedHostProfilesProfileDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskOutput) InterfaceTypes() GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDisk) []GetIsDedicatedHostProfilesProfileDiskInterfaceType {
+		return v.InterfaceTypes
+	}).(GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput)
+}
+
+// The number of disks of this type for a dedicated host with this profile.
+func (o GetIsDedicatedHostProfilesProfileDiskOutput) Quantities() GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDisk) []GetIsDedicatedHostProfilesProfileDiskQuantity {
+		return v.Quantities
+	}).(GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput)
+}
+
+// The size of the disk in GB (gigabytes).
+func (o GetIsDedicatedHostProfilesProfileDiskOutput) Sizes() GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDisk) []GetIsDedicatedHostProfilesProfileDiskSize {
+		return v.Sizes
+	}).(GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput)
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskOutput) SupportedInstanceInterfaceTypes() GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDisk) []GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType {
+		return v.SupportedInstanceInterfaceTypes
+	}).(GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDisk)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskArrayOutput() GetIsDedicatedHostProfilesProfileDiskArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileDisk {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileDisk)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileDiskOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskInterfaceType struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The interface of the disk for a dedicated host with this profileThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	Value string `pulumi:"value"`
+}
+
+// GetIsDedicatedHostProfilesProfileDiskInterfaceTypeInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs and GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskInterfaceTypeInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs{...}
+type GetIsDedicatedHostProfilesProfileDiskInterfaceTypeInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput() GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput
+	ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The interface of the disk for a dedicated host with this profileThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskInterfaceType)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput() GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArray and GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArray{ GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs{...} }
+type GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput() GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput
+	ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArray []GetIsDedicatedHostProfilesProfileDiskInterfaceTypeInput
+
+func (GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskInterfaceType)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArray) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput() GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArray) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskInterfaceType)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput() GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskInterfaceType) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The interface of the disk for a dedicated host with this profileThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+func (o GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskInterfaceType) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskInterfaceType)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput() GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileDiskInterfaceType {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileDiskInterfaceType)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskQuantity struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The value for this profile field.
+	Value int `pulumi:"value"`
+}
+
+// GetIsDedicatedHostProfilesProfileDiskQuantityInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskQuantityArgs and GetIsDedicatedHostProfilesProfileDiskQuantityOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskQuantityInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskQuantityArgs{...}
+type GetIsDedicatedHostProfilesProfileDiskQuantityInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskQuantityOutput() GetIsDedicatedHostProfilesProfileDiskQuantityOutput
+	ToGetIsDedicatedHostProfilesProfileDiskQuantityOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskQuantityOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskQuantityArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value for this profile field.
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetIsDedicatedHostProfilesProfileDiskQuantityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskQuantity)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskQuantityArgs) ToGetIsDedicatedHostProfilesProfileDiskQuantityOutput() GetIsDedicatedHostProfilesProfileDiskQuantityOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskQuantityOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskQuantityArgs) ToGetIsDedicatedHostProfilesProfileDiskQuantityOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskQuantityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskQuantityOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileDiskQuantityArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskQuantityArray and GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskQuantityArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskQuantityArray{ GetIsDedicatedHostProfilesProfileDiskQuantityArgs{...} }
+type GetIsDedicatedHostProfilesProfileDiskQuantityArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput() GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput
+	ToGetIsDedicatedHostProfilesProfileDiskQuantityArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskQuantityArray []GetIsDedicatedHostProfilesProfileDiskQuantityInput
+
+func (GetIsDedicatedHostProfilesProfileDiskQuantityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskQuantity)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskQuantityArray) ToGetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput() GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskQuantityArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskQuantityArray) ToGetIsDedicatedHostProfilesProfileDiskQuantityArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskQuantityOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskQuantityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskQuantity)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskQuantityOutput) ToGetIsDedicatedHostProfilesProfileDiskQuantityOutput() GetIsDedicatedHostProfilesProfileDiskQuantityOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskQuantityOutput) ToGetIsDedicatedHostProfilesProfileDiskQuantityOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskQuantityOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileDiskQuantityOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskQuantity) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileDiskQuantityOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskQuantity) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskQuantity)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput() GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskQuantityArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileDiskQuantityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileDiskQuantity {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileDiskQuantity)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileDiskQuantityOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSize struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The size of the disk in GB (gigabytes).
+	Value int `pulumi:"value"`
+}
+
+// GetIsDedicatedHostProfilesProfileDiskSizeInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskSizeArgs and GetIsDedicatedHostProfilesProfileDiskSizeOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskSizeInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskSizeArgs{...}
+type GetIsDedicatedHostProfilesProfileDiskSizeInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskSizeOutput() GetIsDedicatedHostProfilesProfileDiskSizeOutput
+	ToGetIsDedicatedHostProfilesProfileDiskSizeOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskSizeOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSizeArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The size of the disk in GB (gigabytes).
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetIsDedicatedHostProfilesProfileDiskSizeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSize)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSizeArgs) ToGetIsDedicatedHostProfilesProfileDiskSizeOutput() GetIsDedicatedHostProfilesProfileDiskSizeOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskSizeOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSizeArgs) ToGetIsDedicatedHostProfilesProfileDiskSizeOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSizeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskSizeOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileDiskSizeArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskSizeArray and GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskSizeArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskSizeArray{ GetIsDedicatedHostProfilesProfileDiskSizeArgs{...} }
+type GetIsDedicatedHostProfilesProfileDiskSizeArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskSizeArrayOutput() GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput
+	ToGetIsDedicatedHostProfilesProfileDiskSizeArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSizeArray []GetIsDedicatedHostProfilesProfileDiskSizeInput
+
+func (GetIsDedicatedHostProfilesProfileDiskSizeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskSize)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSizeArray) ToGetIsDedicatedHostProfilesProfileDiskSizeArrayOutput() GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskSizeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSizeArray) ToGetIsDedicatedHostProfilesProfileDiskSizeArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSizeOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskSizeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSize)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSizeOutput) ToGetIsDedicatedHostProfilesProfileDiskSizeOutput() GetIsDedicatedHostProfilesProfileDiskSizeOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSizeOutput) ToGetIsDedicatedHostProfilesProfileDiskSizeOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSizeOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileDiskSizeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskSize) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The size of the disk in GB (gigabytes).
+func (o GetIsDedicatedHostProfilesProfileDiskSizeOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskSize) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskSize)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskSizeArrayOutput() GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskSizeArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileDiskSizeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileDiskSize {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileDiskSize)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileDiskSizeOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The instance disk interfaces supported for a dedicated host with this profile.
+	Values []string `pulumi:"values"`
+}
+
+// GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs and GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs{...}
+type GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput() GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput
+	ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The instance disk interfaces supported for a dedicated host with this profile.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput() GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArray and GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArray{ GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs{...} }
+type GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput() GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput
+	ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArray []GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeInput
+
+func (GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArray) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput() GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArray) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput() GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The instance disk interfaces supported for a dedicated host with this profile.
+func (o GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput() GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput) ToGetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceType)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileMemory struct {
+	// The default value for this profile field.
+	Default int `pulumi:"default"`
+	// The maximum value for this profile field.
+	Max int `pulumi:"max"`
+	// The minimum value for this profile field.
+	Min int `pulumi:"min"`
+	// The increment step value for this profile field.
+	Step int `pulumi:"step"`
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The value for this profile field.
+	Value int `pulumi:"value"`
+	// The permitted values for this profile field.
+	Values []int `pulumi:"values"`
+}
+
+// GetIsDedicatedHostProfilesProfileMemoryInput is an input type that accepts GetIsDedicatedHostProfilesProfileMemoryArgs and GetIsDedicatedHostProfilesProfileMemoryOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileMemoryInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileMemoryArgs{...}
+type GetIsDedicatedHostProfilesProfileMemoryInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileMemoryOutput() GetIsDedicatedHostProfilesProfileMemoryOutput
+	ToGetIsDedicatedHostProfilesProfileMemoryOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileMemoryOutput
+}
+
+type GetIsDedicatedHostProfilesProfileMemoryArgs struct {
+	// The default value for this profile field.
+	Default pulumi.IntInput `pulumi:"default"`
+	// The maximum value for this profile field.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum value for this profile field.
+	Min pulumi.IntInput `pulumi:"min"`
+	// The increment step value for this profile field.
+	Step pulumi.IntInput `pulumi:"step"`
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value for this profile field.
+	Value pulumi.IntInput `pulumi:"value"`
+	// The permitted values for this profile field.
+	Values pulumi.IntArrayInput `pulumi:"values"`
+}
+
+func (GetIsDedicatedHostProfilesProfileMemoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileMemory)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileMemoryArgs) ToGetIsDedicatedHostProfilesProfileMemoryOutput() GetIsDedicatedHostProfilesProfileMemoryOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileMemoryOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileMemoryArgs) ToGetIsDedicatedHostProfilesProfileMemoryOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileMemoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileMemoryOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileMemoryArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileMemoryArray and GetIsDedicatedHostProfilesProfileMemoryArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileMemoryArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileMemoryArray{ GetIsDedicatedHostProfilesProfileMemoryArgs{...} }
+type GetIsDedicatedHostProfilesProfileMemoryArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileMemoryArrayOutput() GetIsDedicatedHostProfilesProfileMemoryArrayOutput
+	ToGetIsDedicatedHostProfilesProfileMemoryArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileMemoryArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileMemoryArray []GetIsDedicatedHostProfilesProfileMemoryInput
+
+func (GetIsDedicatedHostProfilesProfileMemoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileMemory)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileMemoryArray) ToGetIsDedicatedHostProfilesProfileMemoryArrayOutput() GetIsDedicatedHostProfilesProfileMemoryArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileMemoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileMemoryArray) ToGetIsDedicatedHostProfilesProfileMemoryArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileMemoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileMemoryArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileMemoryOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileMemoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileMemory)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) ToGetIsDedicatedHostProfilesProfileMemoryOutput() GetIsDedicatedHostProfilesProfileMemoryOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) ToGetIsDedicatedHostProfilesProfileMemoryOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileMemoryOutput {
+	return o
+}
+
+// The default value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) Default() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileMemory) int { return v.Default }).(pulumi.IntOutput)
+}
+
+// The maximum value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileMemory) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileMemory) int { return v.Min }).(pulumi.IntOutput)
+}
+
+// The increment step value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) Step() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileMemory) int { return v.Step }).(pulumi.IntOutput)
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileMemory) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileMemory) int { return v.Value }).(pulumi.IntOutput)
+}
+
+// The permitted values for this profile field.
+func (o GetIsDedicatedHostProfilesProfileMemoryOutput) Values() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileMemory) []int { return v.Values }).(pulumi.IntArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileMemoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileMemoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileMemory)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileMemoryArrayOutput) ToGetIsDedicatedHostProfilesProfileMemoryArrayOutput() GetIsDedicatedHostProfilesProfileMemoryArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileMemoryArrayOutput) ToGetIsDedicatedHostProfilesProfileMemoryArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileMemoryArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileMemoryArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileMemoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileMemory {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileMemory)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileMemoryOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileSocketCount struct {
+	// The default value for this profile field.
+	Default int `pulumi:"default"`
+	// The maximum value for this profile field.
+	Max int `pulumi:"max"`
+	// The minimum value for this profile field.
+	Min int `pulumi:"min"`
+	// The increment step value for this profile field.
+	Step int `pulumi:"step"`
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The value for this profile field.
+	Value int `pulumi:"value"`
+	// The permitted values for this profile field.
+	Values []int `pulumi:"values"`
+}
+
+// GetIsDedicatedHostProfilesProfileSocketCountInput is an input type that accepts GetIsDedicatedHostProfilesProfileSocketCountArgs and GetIsDedicatedHostProfilesProfileSocketCountOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileSocketCountInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileSocketCountArgs{...}
+type GetIsDedicatedHostProfilesProfileSocketCountInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileSocketCountOutput() GetIsDedicatedHostProfilesProfileSocketCountOutput
+	ToGetIsDedicatedHostProfilesProfileSocketCountOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileSocketCountOutput
+}
+
+type GetIsDedicatedHostProfilesProfileSocketCountArgs struct {
+	// The default value for this profile field.
+	Default pulumi.IntInput `pulumi:"default"`
+	// The maximum value for this profile field.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum value for this profile field.
+	Min pulumi.IntInput `pulumi:"min"`
+	// The increment step value for this profile field.
+	Step pulumi.IntInput `pulumi:"step"`
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value for this profile field.
+	Value pulumi.IntInput `pulumi:"value"`
+	// The permitted values for this profile field.
+	Values pulumi.IntArrayInput `pulumi:"values"`
+}
+
+func (GetIsDedicatedHostProfilesProfileSocketCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSocketCount)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileSocketCountArgs) ToGetIsDedicatedHostProfilesProfileSocketCountOutput() GetIsDedicatedHostProfilesProfileSocketCountOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileSocketCountOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileSocketCountArgs) ToGetIsDedicatedHostProfilesProfileSocketCountOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSocketCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileSocketCountOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileSocketCountArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileSocketCountArray and GetIsDedicatedHostProfilesProfileSocketCountArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileSocketCountArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileSocketCountArray{ GetIsDedicatedHostProfilesProfileSocketCountArgs{...} }
+type GetIsDedicatedHostProfilesProfileSocketCountArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileSocketCountArrayOutput() GetIsDedicatedHostProfilesProfileSocketCountArrayOutput
+	ToGetIsDedicatedHostProfilesProfileSocketCountArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileSocketCountArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileSocketCountArray []GetIsDedicatedHostProfilesProfileSocketCountInput
+
+func (GetIsDedicatedHostProfilesProfileSocketCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileSocketCount)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileSocketCountArray) ToGetIsDedicatedHostProfilesProfileSocketCountArrayOutput() GetIsDedicatedHostProfilesProfileSocketCountArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileSocketCountArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileSocketCountArray) ToGetIsDedicatedHostProfilesProfileSocketCountArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSocketCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileSocketCountArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileSocketCountOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileSocketCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSocketCount)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) ToGetIsDedicatedHostProfilesProfileSocketCountOutput() GetIsDedicatedHostProfilesProfileSocketCountOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) ToGetIsDedicatedHostProfilesProfileSocketCountOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSocketCountOutput {
+	return o
+}
+
+// The default value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) Default() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSocketCount) int { return v.Default }).(pulumi.IntOutput)
+}
+
+// The maximum value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSocketCount) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSocketCount) int { return v.Min }).(pulumi.IntOutput)
+}
+
+// The increment step value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) Step() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSocketCount) int { return v.Step }).(pulumi.IntOutput)
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSocketCount) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSocketCount) int { return v.Value }).(pulumi.IntOutput)
+}
+
+// The permitted values for this profile field.
+func (o GetIsDedicatedHostProfilesProfileSocketCountOutput) Values() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSocketCount) []int { return v.Values }).(pulumi.IntArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileSocketCountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileSocketCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileSocketCount)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileSocketCountArrayOutput) ToGetIsDedicatedHostProfilesProfileSocketCountArrayOutput() GetIsDedicatedHostProfilesProfileSocketCountArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileSocketCountArrayOutput) ToGetIsDedicatedHostProfilesProfileSocketCountArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSocketCountArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileSocketCountArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileSocketCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileSocketCount {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileSocketCount)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileSocketCountOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileSupportedInstanceProfile struct {
+	// The URL for this virtual server instance profile.
+	Href string `pulumi:"href"`
+	// The globally unique name for this virtual server instance profile.
+	Name string `pulumi:"name"`
+}
+
+// GetIsDedicatedHostProfilesProfileSupportedInstanceProfileInput is an input type that accepts GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs and GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileSupportedInstanceProfileInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs{...}
+type GetIsDedicatedHostProfilesProfileSupportedInstanceProfileInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput() GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput
+	ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput
+}
+
+type GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs struct {
+	// The URL for this virtual server instance profile.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The globally unique name for this virtual server instance profile.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput() GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArray and GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArray{ GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs{...} }
+type GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput() GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput
+	ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArray []GetIsDedicatedHostProfilesProfileSupportedInstanceProfileInput
+
+func (GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArray) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput() GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArray) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput() GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput {
+	return o
+}
+
+// The URL for this virtual server instance profile.
+func (o GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSupportedInstanceProfile) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The globally unique name for this virtual server instance profile.
+func (o GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileSupportedInstanceProfile) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput() GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileSupportedInstanceProfile {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileSupportedInstanceProfile)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuArchitecture struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The VCPU architecture for a dedicated host with this profile.
+	Value string `pulumi:"value"`
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuArchitectureInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs and GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuArchitectureInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs{...}
+type GetIsDedicatedHostProfilesProfileVcpuArchitectureInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuArchitectureOutput() GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuArchitectureOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The VCPU architecture for a dedicated host with this profile.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuArchitecture)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureOutput() GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuArchitectureOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuArchitectureArray and GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuArchitectureArray{ GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs{...} }
+type GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput() GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuArchitectureArray []GetIsDedicatedHostProfilesProfileVcpuArchitectureInput
+
+func (GetIsDedicatedHostProfilesProfileVcpuArchitectureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuArchitecture)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuArchitectureArray) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput() GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuArchitectureArray) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuArchitecture)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureOutput() GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuArchitecture) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The VCPU architecture for a dedicated host with this profile.
+func (o GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuArchitecture) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuArchitecture)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput() GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileVcpuArchitecture {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileVcpuArchitecture)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuCount struct {
+	// The default value for this profile field.
+	Default int `pulumi:"default"`
+	// The maximum value for this profile field.
+	Max int `pulumi:"max"`
+	// The minimum value for this profile field.
+	Min int `pulumi:"min"`
+	// The increment step value for this profile field.
+	Step int `pulumi:"step"`
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// The value for this profile field.
+	Value int `pulumi:"value"`
+	// The permitted values for this profile field.
+	Values []int `pulumi:"values"`
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuCountInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuCountArgs and GetIsDedicatedHostProfilesProfileVcpuCountOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuCountInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuCountArgs{...}
+type GetIsDedicatedHostProfilesProfileVcpuCountInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuCountOutput() GetIsDedicatedHostProfilesProfileVcpuCountOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuCountOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuCountOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuCountArgs struct {
+	// The default value for this profile field.
+	Default pulumi.IntInput `pulumi:"default"`
+	// The maximum value for this profile field.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum value for this profile field.
+	Min pulumi.IntInput `pulumi:"min"`
+	// The increment step value for this profile field.
+	Step pulumi.IntInput `pulumi:"step"`
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value for this profile field.
+	Value pulumi.IntInput `pulumi:"value"`
+	// The permitted values for this profile field.
+	Values pulumi.IntArrayInput `pulumi:"values"`
+}
+
+func (GetIsDedicatedHostProfilesProfileVcpuCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuCount)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuCountArgs) ToGetIsDedicatedHostProfilesProfileVcpuCountOutput() GetIsDedicatedHostProfilesProfileVcpuCountOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuCountOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuCountArgs) ToGetIsDedicatedHostProfilesProfileVcpuCountOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuCountOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuCountArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuCountArray and GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuCountArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuCountArray{ GetIsDedicatedHostProfilesProfileVcpuCountArgs{...} }
+type GetIsDedicatedHostProfilesProfileVcpuCountArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuCountArrayOutput() GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuCountArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuCountArray []GetIsDedicatedHostProfilesProfileVcpuCountInput
+
+func (GetIsDedicatedHostProfilesProfileVcpuCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuCount)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuCountArray) ToGetIsDedicatedHostProfilesProfileVcpuCountArrayOutput() GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuCountArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuCountArray) ToGetIsDedicatedHostProfilesProfileVcpuCountArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuCountOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuCount)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) ToGetIsDedicatedHostProfilesProfileVcpuCountOutput() GetIsDedicatedHostProfilesProfileVcpuCountOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) ToGetIsDedicatedHostProfilesProfileVcpuCountOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuCountOutput {
+	return o
+}
+
+// The default value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) Default() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuCount) int { return v.Default }).(pulumi.IntOutput)
+}
+
+// The maximum value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuCount) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuCount) int { return v.Min }).(pulumi.IntOutput)
+}
+
+// The increment step value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) Step() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuCount) int { return v.Step }).(pulumi.IntOutput)
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuCount) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuCount) int { return v.Value }).(pulumi.IntOutput)
+}
+
+// The permitted values for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuCountOutput) Values() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuCount) []int { return v.Values }).(pulumi.IntArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuCount)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuCountArrayOutput() GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuCountArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileVcpuCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileVcpuCount {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileVcpuCount)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileVcpuCountOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturer struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// TThe VCPU manufacturer for a dedicated host with this profile.
+	Value string `pulumi:"value"`
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuManufacturerInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs and GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuManufacturerInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{...}
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// TThe VCPU manufacturer for a dedicated host with this profile.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuManufacturerArray and GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuManufacturerArray{ GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{...} }
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArray []GetIsDedicatedHostProfilesProfileVcpuManufacturerInput
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuManufacturer) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// TThe VCPU manufacturer for a dedicated host with this profile.
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuManufacturer) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileVcpuManufacturer {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileVcpuManufacturer)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput)
+}
+
+type GetIsDedicatedHostSupportedInstanceProfile struct {
+	// The URL for this virtual server instance profile.
+	Href string `pulumi:"href"`
+	// The globally unique name for this virtual server instance profile.
+	Name string `pulumi:"name"`
+}
+
+// GetIsDedicatedHostSupportedInstanceProfileInput is an input type that accepts GetIsDedicatedHostSupportedInstanceProfileArgs and GetIsDedicatedHostSupportedInstanceProfileOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostSupportedInstanceProfileInput` via:
+//
+//	GetIsDedicatedHostSupportedInstanceProfileArgs{...}
+type GetIsDedicatedHostSupportedInstanceProfileInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput
+	ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileArgs struct {
+	// The URL for this virtual server instance profile.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The globally unique name for this virtual server instance profile.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetIsDedicatedHostSupportedInstanceProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArgs) ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return i.ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArgs) ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostSupportedInstanceProfileOutput)
+}
+
+// GetIsDedicatedHostSupportedInstanceProfileArrayInput is an input type that accepts GetIsDedicatedHostSupportedInstanceProfileArray and GetIsDedicatedHostSupportedInstanceProfileArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostSupportedInstanceProfileArrayInput` via:
+//
+//	GetIsDedicatedHostSupportedInstanceProfileArray{ GetIsDedicatedHostSupportedInstanceProfileArgs{...} }
+type GetIsDedicatedHostSupportedInstanceProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput
+	ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileArray []GetIsDedicatedHostSupportedInstanceProfileInput
+
+func (GetIsDedicatedHostSupportedInstanceProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArray) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return i.ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArray) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostSupportedInstanceProfileArrayOutput)
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostSupportedInstanceProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return o
+}
+
+// The URL for this virtual server instance profile.
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostSupportedInstanceProfile) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The globally unique name for this virtual server instance profile.
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostSupportedInstanceProfile) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostSupportedInstanceProfile {
+		return vs[0].([]GetIsDedicatedHostSupportedInstanceProfile)[vs[1].(int)]
+	}).(GetIsDedicatedHostSupportedInstanceProfileOutput)
+}
+
+type GetIsDedicatedHostVcpus struct {
+	// The VCPU architecture.
+	Architecture string `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count int `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer string `pulumi:"manufacturer"`
+}
+
+// GetIsDedicatedHostVcpusInput is an input type that accepts GetIsDedicatedHostVcpusArgs and GetIsDedicatedHostVcpusOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostVcpusInput` via:
+//
+//	GetIsDedicatedHostVcpusArgs{...}
+type GetIsDedicatedHostVcpusInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput
+	ToGetIsDedicatedHostVcpusOutputWithContext(context.Context) GetIsDedicatedHostVcpusOutput
+}
+
+type GetIsDedicatedHostVcpusArgs struct {
+	// The VCPU architecture.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count pulumi.IntInput `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
+}
+
+func (GetIsDedicatedHostVcpusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostVcpusArgs) ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput {
+	return i.ToGetIsDedicatedHostVcpusOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostVcpusArgs) ToGetIsDedicatedHostVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostVcpusOutput)
+}
+
+// GetIsDedicatedHostVcpusArrayInput is an input type that accepts GetIsDedicatedHostVcpusArray and GetIsDedicatedHostVcpusArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostVcpusArrayInput` via:
+//
+//	GetIsDedicatedHostVcpusArray{ GetIsDedicatedHostVcpusArgs{...} }
+type GetIsDedicatedHostVcpusArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput
+	ToGetIsDedicatedHostVcpusArrayOutputWithContext(context.Context) GetIsDedicatedHostVcpusArrayOutput
+}
+
+type GetIsDedicatedHostVcpusArray []GetIsDedicatedHostVcpusInput
+
+func (GetIsDedicatedHostVcpusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostVcpusArray) ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput {
+	return i.ToGetIsDedicatedHostVcpusArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostVcpusArray) ToGetIsDedicatedHostVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostVcpusArrayOutput)
+}
+
+type GetIsDedicatedHostVcpusOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostVcpusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostVcpusOutput) ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostVcpusOutput) ToGetIsDedicatedHostVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusOutput {
+	return o
+}
+
+// The VCPU architecture.
+func (o GetIsDedicatedHostVcpusOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostVcpus) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// The number of VCPUs assigned.
+func (o GetIsDedicatedHostVcpusOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostVcpus) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// The VCPU manufacturer.
+func (o GetIsDedicatedHostVcpusOutput) Manufacturer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostVcpus) string { return v.Manufacturer }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostVcpusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostVcpusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostVcpusArrayOutput) ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostVcpusArrayOutput) ToGetIsDedicatedHostVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostVcpusArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostVcpusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostVcpus {
+		return vs[0].([]GetIsDedicatedHostVcpus)[vs[1].(int)]
+	}).(GetIsDedicatedHostVcpusOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHost struct {
+	// List of access tags
+	AccessTags []string `pulumi:"accessTags"`
+	// The amount of memory in gibibytes that is currently available for instances.
+	AvailableMemory int `pulumi:"availableMemory"`
+	// The available VCPU for the dedicated host.
+	AvailableVcpus []GetIsDedicatedHostsDedicatedHostAvailableVcpus `pulumi:"availableVcpus"`
+	// The date and time that the dedicated host was created.
+	CreatedAt string `pulumi:"createdAt"`
+	// The CRN for this dedicated host.
+	Crn string `pulumi:"crn"`
+	// Collection of the dedicated host's disks.
+	Disks []GetIsDedicatedHostsDedicatedHostDisk `pulumi:"disks"`
+	// The unique identifier of the dedicated host group this dedicated host is in.
+	HostGroup string `pulumi:"hostGroup"`
+	// The URL for this dedicated host.
+	Href string `pulumi:"href"`
+	// The unique identifier for this dedicated host.
+	Id string `pulumi:"id"`
+	// If set to true, instances can be placed on this dedicated host.
+	InstancePlacementEnabled bool `pulumi:"instancePlacementEnabled"`
+	// Array of instances that are allocated to this dedicated host.
+	Instances []GetIsDedicatedHostsDedicatedHostInstance `pulumi:"instances"`
+	// The lifecycle state of the dedicated host resource.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The total amount of memory in gibibytes for this host.
+	Memory int `pulumi:"memory"`
+	// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
+	Name string `pulumi:"name"`
+	// The dedicated host NUMA configuration
+	Numas []GetIsDedicatedHostsDedicatedHostNuma `pulumi:"numas"`
+	// The profile this dedicated host uses.
+	Profiles []GetIsDedicatedHostsDedicatedHostProfile `pulumi:"profiles"`
+	// Indicates whether this dedicated host is available for instance creation.
+	Provisionable bool `pulumi:"provisionable"`
+	// The unique identifier of the resource group for this dedicated host.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// The type of resource referenced.
+	ResourceType string `pulumi:"resourceType"`
+	// The total number of sockets for this host.
+	SocketCount int `pulumi:"socketCount"`
+	// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
+	State string `pulumi:"state"`
+	// Array of instance profiles that can be used by instances placed on this dedicated host.
+	SupportedInstanceProfiles []GetIsDedicatedHostsDedicatedHostSupportedInstanceProfile `pulumi:"supportedInstanceProfiles"`
+	// The total VCPU of the dedicated host.
+	Vcpus []GetIsDedicatedHostsDedicatedHostVcpus `pulumi:"vcpus"`
+	// The globally unique name of the zone this dedicated host resides in.
+	Zone string `pulumi:"zone"`
+}
+
+// GetIsDedicatedHostsDedicatedHostInput is an input type that accepts GetIsDedicatedHostsDedicatedHostArgs and GetIsDedicatedHostsDedicatedHostOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostArgs{...}
+type GetIsDedicatedHostsDedicatedHostInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput
+	ToGetIsDedicatedHostsDedicatedHostOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostArgs struct {
+	// List of access tags
+	AccessTags pulumi.StringArrayInput `pulumi:"accessTags"`
+	// The amount of memory in gibibytes that is currently available for instances.
+	AvailableMemory pulumi.IntInput `pulumi:"availableMemory"`
+	// The available VCPU for the dedicated host.
+	AvailableVcpus GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput `pulumi:"availableVcpus"`
+	// The date and time that the dedicated host was created.
+	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
+	// The CRN for this dedicated host.
+	Crn pulumi.StringInput `pulumi:"crn"`
+	// Collection of the dedicated host's disks.
+	Disks GetIsDedicatedHostsDedicatedHostDiskArrayInput `pulumi:"disks"`
+	// The unique identifier of the dedicated host group this dedicated host is in.
+	HostGroup pulumi.StringInput `pulumi:"hostGroup"`
+	// The URL for this dedicated host.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this dedicated host.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If set to true, instances can be placed on this dedicated host.
+	InstancePlacementEnabled pulumi.BoolInput `pulumi:"instancePlacementEnabled"`
+	// Array of instances that are allocated to this dedicated host.
+	Instances GetIsDedicatedHostsDedicatedHostInstanceArrayInput `pulumi:"instances"`
+	// The lifecycle state of the dedicated host resource.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The total amount of memory in gibibytes for this host.
+	Memory pulumi.IntInput `pulumi:"memory"`
+	// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The dedicated host NUMA configuration
+	Numas GetIsDedicatedHostsDedicatedHostNumaArrayInput `pulumi:"numas"`
+	// The profile this dedicated host uses.
+	Profiles GetIsDedicatedHostsDedicatedHostProfileArrayInput `pulumi:"profiles"`
+	// Indicates whether this dedicated host is available for instance creation.
+	Provisionable pulumi.BoolInput `pulumi:"provisionable"`
+	// The unique identifier of the resource group for this dedicated host.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// The type of resource referenced.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The total number of sockets for this host.
+	SocketCount pulumi.IntInput `pulumi:"socketCount"`
+	// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
+	State pulumi.StringInput `pulumi:"state"`
+	// Array of instance profiles that can be used by instances placed on this dedicated host.
+	SupportedInstanceProfiles GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayInput `pulumi:"supportedInstanceProfiles"`
+	// The total VCPU of the dedicated host.
+	Vcpus GetIsDedicatedHostsDedicatedHostVcpusArrayInput `pulumi:"vcpus"`
+	// The globally unique name of the zone this dedicated host resides in.
+	Zone pulumi.StringInput `pulumi:"zone"`
+}
+
+func (GetIsDedicatedHostsDedicatedHostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArgs) ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArgs) ToGetIsDedicatedHostsDedicatedHostOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostOutput)
+}
+
+// GetIsDedicatedHostsDedicatedHostArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostArray and GetIsDedicatedHostsDedicatedHostArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostArrayInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostArray{ GetIsDedicatedHostsDedicatedHostArgs{...} }
+type GetIsDedicatedHostsDedicatedHostArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput
+	ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostArray []GetIsDedicatedHostsDedicatedHostInput
+
+func (GetIsDedicatedHostsDedicatedHostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArray) ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArray) ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostOutput) ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostOutput) ToGetIsDedicatedHostsDedicatedHostOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostOutput {
+	return o
+}
+
+// List of access tags
+func (o GetIsDedicatedHostsDedicatedHostOutput) AccessTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []string { return v.AccessTags }).(pulumi.StringArrayOutput)
+}
+
+// The amount of memory in gibibytes that is currently available for instances.
+func (o GetIsDedicatedHostsDedicatedHostOutput) AvailableMemory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.AvailableMemory }).(pulumi.IntOutput)
+}
+
+// The available VCPU for the dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) AvailableVcpus() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostAvailableVcpus {
+		return v.AvailableVcpus
+	}).(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput)
+}
+
+// The date and time that the dedicated host was created.
+func (o GetIsDedicatedHostsDedicatedHostOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+// The CRN for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Crn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Crn }).(pulumi.StringOutput)
+}
+
+// Collection of the dedicated host's disks.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Disks() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostDisk { return v.Disks }).(GetIsDedicatedHostsDedicatedHostDiskArrayOutput)
+}
+
+// The unique identifier of the dedicated host group this dedicated host is in.
+func (o GetIsDedicatedHostsDedicatedHostOutput) HostGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.HostGroup }).(pulumi.StringOutput)
+}
+
+// The URL for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If set to true, instances can be placed on this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) InstancePlacementEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) bool { return v.InstancePlacementEnabled }).(pulumi.BoolOutput)
+}
+
+// Array of instances that are allocated to this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Instances() GetIsDedicatedHostsDedicatedHostInstanceArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostInstance {
+		return v.Instances
+	}).(GetIsDedicatedHostsDedicatedHostInstanceArrayOutput)
+}
+
+// The lifecycle state of the dedicated host resource.
+func (o GetIsDedicatedHostsDedicatedHostOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// The total amount of memory in gibibytes for this host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Memory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.Memory }).(pulumi.IntOutput)
+}
+
+// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The dedicated host NUMA configuration
+func (o GetIsDedicatedHostsDedicatedHostOutput) Numas() GetIsDedicatedHostsDedicatedHostNumaArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostNuma { return v.Numas }).(GetIsDedicatedHostsDedicatedHostNumaArrayOutput)
+}
+
+// The profile this dedicated host uses.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Profiles() GetIsDedicatedHostsDedicatedHostProfileArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostProfile { return v.Profiles }).(GetIsDedicatedHostsDedicatedHostProfileArrayOutput)
+}
+
+// Indicates whether this dedicated host is available for instance creation.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Provisionable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) bool { return v.Provisionable }).(pulumi.BoolOutput)
+}
+
+// The unique identifier of the resource group for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// The type of resource referenced.
+func (o GetIsDedicatedHostsDedicatedHostOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The total number of sockets for this host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) SocketCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.SocketCount }).(pulumi.IntOutput)
+}
+
+// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
+func (o GetIsDedicatedHostsDedicatedHostOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Array of instance profiles that can be used by instances placed on this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) SupportedInstanceProfiles() GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostSupportedInstanceProfile {
+		return v.SupportedInstanceProfiles
+	}).(GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayOutput)
+}
+
+// The total VCPU of the dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Vcpus() GetIsDedicatedHostsDedicatedHostVcpusArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostVcpus { return v.Vcpus }).(GetIsDedicatedHostsDedicatedHostVcpusArrayOutput)
+}
+
+// The globally unique name of the zone this dedicated host resides in.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Zone }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostArrayOutput) ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostArrayOutput) ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHost {
+		return vs[0].([]GetIsDedicatedHostsDedicatedHost)[vs[1].(int)]
+	}).(GetIsDedicatedHostsDedicatedHostOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpus struct {
+	// The VCPU architecture.
+	Architecture string `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count int `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer string `pulumi:"manufacturer"`
+}
+
+// GetIsDedicatedHostsDedicatedHostAvailableVcpusInput is an input type that accepts GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs and GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostAvailableVcpusInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{...}
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs struct {
+	// The VCPU architecture.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count pulumi.IntInput `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
+}
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput)
+}
+
+// GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostAvailableVcpusArray and GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostAvailableVcpusArray{ GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{...} }
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArray []GetIsDedicatedHostsDedicatedHostAvailableVcpusInput
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return o
+}
+
+// The VCPU architecture.
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// The number of VCPUs assigned.
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// The VCPU manufacturer.
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Manufacturer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) string { return v.Manufacturer }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHostAvailableVcpus {
+		return vs[0].([]GetIsDedicatedHostsDedicatedHostAvailableVcpus)[vs[1].(int)]
+	}).(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostDisk struct {
+	// The remaining space left for instance placement in GB (gigabytes).
+	Available int `pulumi:"available"`
+	// The date and time that the disk was created.
+	CreatedAt string `pulumi:"createdAt"`
+	// The URL for this disk.
+	Href string `pulumi:"href"`
+	// The unique identifier for this disk.
+	Id string `pulumi:"id"`
+	// Instance disks that are on this dedicated host disk.
+	InstanceDisks []GetIsDedicatedHostsDedicatedHostDiskInstanceDisk `pulumi:"instanceDisks"`
+	// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	InterfaceType string `pulumi:"interfaceType"`
+	// The lifecycle state of this dedicated host disk.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The user-defined or system-provided name for this disk.
+	Name string `pulumi:"name"`
+	// Indicates whether this dedicated host disk is available for instance disk creation.
+	Provisionable bool `pulumi:"provisionable"`
+	// The type of resource referenced.
+	ResourceType string `pulumi:"resourceType"`
+	// The size of the disk in GB (gigabytes).
+	Size int `pulumi:"size"`
+	// The instance disk interfaces supported for this dedicated host disk.
+	SupportedInstanceInterfaceTypes []string `pulumi:"supportedInstanceInterfaceTypes"`
+}
+
+// GetIsDedicatedHostsDedicatedHostDiskInput is an input type that accepts GetIsDedicatedHostsDedicatedHostDiskArgs and GetIsDedicatedHostsDedicatedHostDiskOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostDiskInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostDiskArgs{...}
+type GetIsDedicatedHostsDedicatedHostDiskInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput
+	ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskArgs struct {
+	// The remaining space left for instance placement in GB (gigabytes).
+	Available pulumi.IntInput `pulumi:"available"`
+	// The date and time that the disk was created.
+	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
+	// The URL for this disk.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this disk.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Instance disks that are on this dedicated host disk.
+	InstanceDisks GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayInput `pulumi:"instanceDisks"`
+	// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	InterfaceType pulumi.StringInput `pulumi:"interfaceType"`
+	// The lifecycle state of this dedicated host disk.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The user-defined or system-provided name for this disk.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Indicates whether this dedicated host disk is available for instance disk creation.
+	Provisionable pulumi.BoolInput `pulumi:"provisionable"`
+	// The type of resource referenced.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The size of the disk in GB (gigabytes).
+	Size pulumi.IntInput `pulumi:"size"`
+	// The instance disk interfaces supported for this dedicated host disk.
+	SupportedInstanceInterfaceTypes pulumi.StringArrayInput `pulumi:"supportedInstanceInterfaceTypes"`
+}
+
+func (GetIsDedicatedHostsDedicatedHostDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArgs) ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArgs) ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostDiskOutput)
+}
+
+// GetIsDedicatedHostsDedicatedHostDiskArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostDiskArray and GetIsDedicatedHostsDedicatedHostDiskArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostDiskArrayInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostDiskArray{ GetIsDedicatedHostsDedicatedHostDiskArgs{...} }
+type GetIsDedicatedHostsDedicatedHostDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput
+	ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskArray []GetIsDedicatedHostsDedicatedHostDiskInput
+
+func (GetIsDedicatedHostsDedicatedHostDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArray) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArray) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostDiskArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return o
+}
+
+// The remaining space left for instance placement in GB (gigabytes).
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Available() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) int { return v.Available }).(pulumi.IntOutput)
+}
+
+// The date and time that the disk was created.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+// The URL for this disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Instance disks that are on this dedicated host disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) InstanceDisks() GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) []GetIsDedicatedHostsDedicatedHostDiskInstanceDisk {
+		return v.InstanceDisks
+	}).(GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayOutput)
+}
+
+// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) InterfaceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.InterfaceType }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of this dedicated host disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// The user-defined or system-provided name for this disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Indicates whether this dedicated host disk is available for instance disk creation.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Provisionable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) bool { return v.Provisionable }).(pulumi.BoolOutput)
+}
+
+// The type of resource referenced.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The size of the disk in GB (gigabytes).
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// The instance disk interfaces supported for this dedicated host disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) SupportedInstanceInterfaceTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) []string { return v.SupportedInstanceInterfaceTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHostDisk {
+		return vs[0].([]GetIsDedicatedHostsDedicatedHostDisk)[vs[1].(int)]
+	}).(GetIsDedicatedHostsDedicatedHostDiskOutput)
+}
+
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcHealthReasonInput)(nil)).Elem(), IsVpcHealthReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcHealthReasonArrayInput)(nil)).Elem(), IsVpcHealthReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeInput)(nil)).Elem(), IsVpcPublicAddressRangeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeArrayInput)(nil)).Elem(), IsVpcPublicAddressRangeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeDeletedInput)(nil)).Elem(), IsVpcPublicAddressRangeDeletedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeDeletedArrayInput)(nil)).Elem(), IsVpcPublicAddressRangeDeletedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableResourceGroupInput)(nil)).Elem(), IsVpcRoutingTableResourceGroupArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableResourceGroupArrayInput)(nil)).Elem(), IsVpcRoutingTableResourceGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorArrayInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeletedInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorDeletedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeletedArrayInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorDeletedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableSubnetInput)(nil)).Elem(), IsVpcRoutingTableSubnetArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableSubnetArrayInput)(nil)).Elem(), IsVpcRoutingTableSubnetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupInput)(nil)).Elem(), IsVpcSecurityGroupArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupArrayInput)(nil)).Elem(), IsVpcSecurityGroupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupRuleInput)(nil)).Elem(), IsVpcSecurityGroupRuleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupRuleArrayInput)(nil)).Elem(), IsVpcSecurityGroupRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSubnetInput)(nil)).Elem(), IsVpcSubnetArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSubnetArrayInput)(nil)).Elem(), IsVpcSubnetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalInput)(nil)).Elem(), IsVpnGatewayConnectionLocalArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalPtrInput)(nil)).Elem(), IsVpnGatewayConnectionLocalArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentityInput)(nil)).Elem(), IsVpnGatewayConnectionLocalIkeIdentityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentityArrayInput)(nil)).Elem(), IsVpnGatewayConnectionLocalIkeIdentityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerInput)(nil)).Elem(), IsVpnGatewayConnectionPeerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerPtrInput)(nil)).Elem(), IsVpnGatewayConnectionPeerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentityInput)(nil)).Elem(), IsVpnGatewayConnectionPeerIkeIdentityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentityPtrInput)(nil)).Elem(), IsVpnGatewayConnectionPeerIkeIdentityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionStatusReasonInput)(nil)).Elem(), IsVpnGatewayConnectionStatusReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionStatusReasonArrayInput)(nil)).Elem(), IsVpnGatewayConnectionStatusReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionTunnelInput)(nil)).Elem(), IsVpnGatewayConnectionTunnelArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionTunnelArrayInput)(nil)).Elem(), IsVpnGatewayConnectionTunnelArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayHealthReasonInput)(nil)).Elem(), IsVpnGatewayHealthReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayHealthReasonArrayInput)(nil)).Elem(), IsVpnGatewayHealthReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayLifecycleReasonInput)(nil)).Elem(), IsVpnGatewayLifecycleReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayLifecycleReasonArrayInput)(nil)).Elem(), IsVpnGatewayLifecycleReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayMemberInput)(nil)).Elem(), IsVpnGatewayMemberArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayMemberArrayInput)(nil)).Elem(), IsVpnGatewayMemberArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcInput)(nil)).Elem(), IsVpnGatewayVpcArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcArrayInput)(nil)).Elem(), IsVpnGatewayVpcArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcDeletedInput)(nil)).Elem(), IsVpnGatewayVpcDeletedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcDeletedArrayInput)(nil)).Elem(), IsVpnGatewayVpcDeletedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerClientAuthenticationInput)(nil)).Elem(), IsVpnServerClientAuthenticationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerClientAuthenticationArrayInput)(nil)).Elem(), IsVpnServerClientAuthenticationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerHealthReasonInput)(nil)).Elem(), IsVpnServerHealthReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerHealthReasonArrayInput)(nil)).Elem(), IsVpnServerHealthReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerLifecycleReasonInput)(nil)).Elem(), IsVpnServerLifecycleReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerLifecycleReasonArrayInput)(nil)).Elem(), IsVpnServerLifecycleReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpInput)(nil)).Elem(), IsVpnServerPrivateIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpArrayInput)(nil)).Elem(), IsVpnServerPrivateIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpDeletedInput)(nil)).Elem(), IsVpnServerPrivateIpDeletedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpDeletedArrayInput)(nil)).Elem(), IsVpnServerPrivateIpDeletedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteHealthReasonInput)(nil)).Elem(), IsVpnServerRouteHealthReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteHealthReasonArrayInput)(nil)).Elem(), IsVpnServerRouteHealthReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteLifecycleReasonInput)(nil)).Elem(), IsVpnServerRouteLifecycleReasonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteLifecycleReasonArrayInput)(nil)).Elem(), IsVpnServerRouteLifecycleReasonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcInput)(nil)).Elem(), IsVpnServerVpcArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcArrayInput)(nil)).Elem(), IsVpnServerVpcArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcDeletedInput)(nil)).Elem(), IsVpnServerVpcDeletedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcDeletedArrayInput)(nil)).Elem(), IsVpnServerVpcDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostGroupPiHostInput)(nil)).Elem(), PiHostGroupPiHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostGroupPiHostArrayInput)(nil)).Elem(), PiHostGroupPiHostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostGroupPiSecondaryInput)(nil)).Elem(), PiHostGroupPiSecondaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostGroupPiSecondaryArrayInput)(nil)).Elem(), PiHostGroupPiSecondaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostPiHostInput)(nil)).Elem(), PiHostPiHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostPiHostPtrInput)(nil)).Elem(), PiHostPiHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiImagePiImageImportDetailsInput)(nil)).Elem(), PiImagePiImageImportDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiImagePiImageImportDetailsPtrInput)(nil)).Elem(), PiImagePiImageImportDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiInstancePiDeploymentTargetInput)(nil)).Elem(), PiInstancePiDeploymentTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiInstancePiDeploymentTargetPtrInput)(nil)).Elem(), PiInstancePiDeploymentTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiInstancePiNetworkInput)(nil)).Elem(), PiInstancePiNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiInstancePiNetworkArrayInput)(nil)).Elem(), PiInstancePiNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiInstancePiVirtualSerialNumberInput)(nil)).Elem(), PiInstancePiVirtualSerialNumberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiInstancePiVirtualSerialNumberPtrInput)(nil)).Elem(), PiInstancePiVirtualSerialNumberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkAddressGroupMemberTypeInput)(nil)).Elem(), PiNetworkAddressGroupMemberTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkAddressGroupMemberTypeArrayInput)(nil)).Elem(), PiNetworkAddressGroupMemberTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkAddressGroupMemberMemberInput)(nil)).Elem(), PiNetworkAddressGroupMemberMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkAddressGroupMemberMemberArrayInput)(nil)).Elem(), PiNetworkAddressGroupMemberMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkInterfaceInstanceInput)(nil)).Elem(), PiNetworkInterfaceInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkInterfaceInstanceArrayInput)(nil)).Elem(), PiNetworkInterfaceInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkNetworkAddressTranslationInput)(nil)).Elem(), PiNetworkNetworkAddressTranslationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkNetworkAddressTranslationArrayInput)(nil)).Elem(), PiNetworkNetworkAddressTranslationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPeerExportRouteFilterInput)(nil)).Elem(), PiNetworkPeerExportRouteFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPeerExportRouteFilterArrayInput)(nil)).Elem(), PiNetworkPeerExportRouteFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPeerImportRouteFilterInput)(nil)).Elem(), PiNetworkPeerImportRouteFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPeerImportRouteFilterArrayInput)(nil)).Elem(), PiNetworkPeerImportRouteFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPiIpaddressRangeInput)(nil)).Elem(), PiNetworkPiIpaddressRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPiIpaddressRangeArrayInput)(nil)).Elem(), PiNetworkPiIpaddressRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPiNetworkPeerInput)(nil)).Elem(), PiNetworkPiNetworkPeerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPiNetworkPeerPtrInput)(nil)).Elem(), PiNetworkPiNetworkPeerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPiNetworkPeerNetworkAddressTranslationInput)(nil)).Elem(), PiNetworkPiNetworkPeerNetworkAddressTranslationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkPiNetworkPeerNetworkAddressTranslationPtrInput)(nil)).Elem(), PiNetworkPiNetworkPeerNetworkAddressTranslationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberTypeInput)(nil)).Elem(), PiNetworkSecurityGroupMemberTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberTypeArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberMemberInput)(nil)).Elem(), PiNetworkSecurityGroupMemberMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberMemberArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleDestinationPortInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleDestinationPortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleDestinationPortArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleDestinationPortArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocolInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleProtocolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocolArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleProtocolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocolTcpFlagInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleRemoteInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleRemoteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleRemoteArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleRemoteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleSourcePortInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleSourcePortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupMemberRuleSourcePortArrayInput)(nil)).Elem(), PiNetworkSecurityGroupMemberRuleSourcePortArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleTypeInput)(nil)).Elem(), PiNetworkSecurityGroupRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleTypeArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleDestinationPortInput)(nil)).Elem(), PiNetworkSecurityGroupRuleDestinationPortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleDestinationPortArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleDestinationPortArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleMemberInput)(nil)).Elem(), PiNetworkSecurityGroupRuleMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleMemberArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPortInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiDestinationPortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPortPtrInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiDestinationPortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPortsInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiDestinationPortsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiDestinationPortsPtrInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiDestinationPortsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocolInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiProtocolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocolPtrInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiProtocolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocolTcpFlagInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiProtocolTcpFlagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiRemoteInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiRemoteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiRemotePtrInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiRemoteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePortInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiSourcePortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePortPtrInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiSourcePortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePortsInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiSourcePortsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRulePiSourcePortsPtrInput)(nil)).Elem(), PiNetworkSecurityGroupRulePiSourcePortsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocolInput)(nil)).Elem(), PiNetworkSecurityGroupRuleProtocolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocolArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleProtocolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocolTcpFlagInput)(nil)).Elem(), PiNetworkSecurityGroupRuleProtocolTcpFlagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleProtocolTcpFlagArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleProtocolTcpFlagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRemoteInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRemoteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRemoteArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRemoteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleDestinationPortInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleDestinationPortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleDestinationPortArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleDestinationPortArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocolInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleProtocolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocolArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleProtocolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocolTcpFlagInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleRemoteInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleRemoteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleRemoteArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleRemoteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleSourcePortInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleSourcePortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleRuleSourcePortArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleRuleSourcePortArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleSourcePortInput)(nil)).Elem(), PiNetworkSecurityGroupRuleSourcePortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiNetworkSecurityGroupRuleSourcePortArrayInput)(nil)).Elem(), PiNetworkSecurityGroupRuleSourcePortArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiSharedProcessorPoolInstanceInput)(nil)).Elem(), PiSharedProcessorPoolInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiSharedProcessorPoolInstanceArrayInput)(nil)).Elem(), PiSharedProcessorPoolInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeCloneCloneVolumeInput)(nil)).Elem(), PiVolumeCloneCloneVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeCloneCloneVolumeArrayInput)(nil)).Elem(), PiVolumeCloneCloneVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionPtrInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionResetInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionResetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionResetPtrInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionResetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStartInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionStartArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStartPtrInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionStartArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStopInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionStopArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupActionPiVolumeGroupActionStopPtrInput)(nil)).Elem(), PiVolumeGroupActionPiVolumeGroupActionStopArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupStatusDescriptionErrorInput)(nil)).Elem(), PiVolumeGroupStatusDescriptionErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeGroupStatusDescriptionErrorArrayInput)(nil)).Elem(), PiVolumeGroupStatusDescriptionErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolumeInput)(nil)).Elem(), PiVolumeOnboardingPiOnboardingVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolumeArrayInput)(nil)).Elem(), PiVolumeOnboardingPiOnboardingVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeInput)(nil)).Elem(), PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayInput)(nil)).Elem(), PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeOnboardingResultsVolumeOnboardingFailureInput)(nil)).Elem(), PiVolumeOnboardingResultsVolumeOnboardingFailureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiVolumeOnboardingResultsVolumeOnboardingFailureArrayInput)(nil)).Elem(), PiVolumeOnboardingResultsVolumeOnboardingFailureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResourceInstancePlanHistoryInput)(nil)).Elem(), ResourceInstancePlanHistoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResourceInstancePlanHistoryArrayInput)(nil)).Elem(), ResourceInstancePlanHistoryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputePlacementGroupVirtualGuestInput)(nil)).Elem(), GetComputePlacementGroupVirtualGuestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputePlacementGroupVirtualGuestArrayInput)(nil)).Elem(), GetComputePlacementGroupVirtualGuestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeReservedCapacityVirtualGuestInput)(nil)).Elem(), GetComputeReservedCapacityVirtualGuestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeReservedCapacityVirtualGuestArrayInput)(nil)).Elem(), GetComputeReservedCapacityVirtualGuestArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerAddonsAddonInput)(nil)).Elem(), GetContainerAddonsAddonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerAddonsAddonArrayInput)(nil)).Elem(), GetContainerAddonsAddonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterAlbInput)(nil)).Elem(), GetContainerClusterAlbArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterAlbArrayInput)(nil)).Elem(), GetContainerClusterAlbArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterBoundedServiceInput)(nil)).Elem(), GetContainerClusterBoundedServiceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterBoundedServiceArrayInput)(nil)).Elem(), GetContainerClusterBoundedServiceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterVlanInput)(nil)).Elem(), GetContainerClusterVlanArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterVlanArrayInput)(nil)).Elem(), GetContainerClusterVlanArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterVlanSubnetInput)(nil)).Elem(), GetContainerClusterVlanSubnetArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterVlanSubnetArrayInput)(nil)).Elem(), GetContainerClusterVlanSubnetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterWorkerPoolInput)(nil)).Elem(), GetContainerClusterWorkerPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterWorkerPoolArrayInput)(nil)).Elem(), GetContainerClusterWorkerPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterWorkerPoolZoneInput)(nil)).Elem(), GetContainerClusterWorkerPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerClusterWorkerPoolZoneArrayInput)(nil)).Elem(), GetContainerClusterWorkerPoolZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostFlavorInstanceStorageInput)(nil)).Elem(), GetContainerDedicatedHostFlavorInstanceStorageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostFlavorInstanceStorageArrayInput)(nil)).Elem(), GetContainerDedicatedHostFlavorInstanceStorageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavorInput)(nil)).Elem(), GetContainerDedicatedHostFlavorsHostFlavorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavorArrayInput)(nil)).Elem(), GetContainerDedicatedHostFlavorsHostFlavorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageInput)(nil)).Elem(), GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayInput)(nil)).Elem(), GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostLifeCycleInput)(nil)).Elem(), GetContainerDedicatedHostLifeCycleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostLifeCycleArrayInput)(nil)).Elem(), GetContainerDedicatedHostLifeCycleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostPoolWorkerPoolInput)(nil)).Elem(), GetContainerDedicatedHostPoolWorkerPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostPoolWorkerPoolArrayInput)(nil)).Elem(), GetContainerDedicatedHostPoolWorkerPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostPoolZoneInput)(nil)).Elem(), GetContainerDedicatedHostPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostPoolZoneArrayInput)(nil)).Elem(), GetContainerDedicatedHostPoolZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostPoolZoneCapacityInput)(nil)).Elem(), GetContainerDedicatedHostPoolZoneCapacityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostPoolZoneCapacityArrayInput)(nil)).Elem(), GetContainerDedicatedHostPoolZoneCapacityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostResourceInput)(nil)).Elem(), GetContainerDedicatedHostResourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostResourceArrayInput)(nil)).Elem(), GetContainerDedicatedHostResourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostResourceCapacityInput)(nil)).Elem(), GetContainerDedicatedHostResourceCapacityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostResourceCapacityArrayInput)(nil)).Elem(), GetContainerDedicatedHostResourceCapacityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostResourceConsumedInput)(nil)).Elem(), GetContainerDedicatedHostResourceConsumedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostResourceConsumedArrayInput)(nil)).Elem(), GetContainerDedicatedHostResourceConsumedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostWorkerInput)(nil)).Elem(), GetContainerDedicatedHostWorkerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerDedicatedHostWorkerArrayInput)(nil)).Elem(), GetContainerDedicatedHostWorkerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerIngressSecretOpaqueFieldInput)(nil)).Elem(), GetContainerIngressSecretOpaqueFieldArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerIngressSecretOpaqueFieldArrayInput)(nil)).Elem(), GetContainerIngressSecretOpaqueFieldArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerNlbDnsNlbConfigInput)(nil)).Elem(), GetContainerNlbDnsNlbConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerNlbDnsNlbConfigArrayInput)(nil)).Elem(), GetContainerNlbDnsNlbConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterAlbInput)(nil)).Elem(), GetContainerVpcClusterAlbArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterAlbArrayInput)(nil)).Elem(), GetContainerVpcClusterAlbArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerNetworkInterfaceInput)(nil)).Elem(), GetContainerVpcClusterWorkerNetworkInterfaceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerNetworkInterfaceArrayInput)(nil)).Elem(), GetContainerVpcClusterWorkerNetworkInterfaceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerPoolInput)(nil)).Elem(), GetContainerVpcClusterWorkerPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerPoolArrayInput)(nil)).Elem(), GetContainerVpcClusterWorkerPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerPoolSecondaryStorageInput)(nil)).Elem(), GetContainerVpcClusterWorkerPoolSecondaryStorageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerPoolSecondaryStorageArrayInput)(nil)).Elem(), GetContainerVpcClusterWorkerPoolSecondaryStorageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerPoolZoneInput)(nil)).Elem(), GetContainerVpcClusterWorkerPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerPoolZoneArrayInput)(nil)).Elem(), GetContainerVpcClusterWorkerPoolZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcClusterWorkerPoolZoneSubnetInput)(nil)).Elem(), GetContainerVpcClusterWorkerPoolZoneSubnetArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcWorkerPoolSecondaryStorageInput)(nil)).Elem(), GetContainerVpcWorkerPoolSecondaryStorageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcWorkerPoolSecondaryStorageArrayInput)(nil)).Elem(), GetContainerVpcWorkerPoolSecondaryStorageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcWorkerPoolZoneInput)(nil)).Elem(), GetContainerVpcWorkerPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerVpcWorkerPoolZoneArrayInput)(nil)).Elem(), GetContainerVpcWorkerPoolZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerWorkerPoolZoneInput)(nil)).Elem(), GetContainerWorkerPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetContainerWorkerPoolZoneArrayInput)(nil)).Elem(), GetContainerWorkerPoolZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCosBucketAbortIncompleteMultipartUploadDayInput)(nil)).Elem(), GetCosBucketAbortIncompleteMultipartUploadDayArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCosBucketAbortIncompleteMultipartUploadDayArrayInput)(nil)).Elem(), GetCosBucketAbortIncompleteMultipartUploadDayArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCosBucketActivityTrackingInput)(nil)).Elem(), GetCosBucketActivityTrackingArgs{})
@@ -63168,32 +63537,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCosBucketWebsiteConfigurationRoutingRuleConditionArrayInput)(nil)).Elem(), GetCosBucketWebsiteConfigurationRoutingRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCosBucketWebsiteConfigurationRoutingRuleRedirectInput)(nil)).Elem(), GetCosBucketWebsiteConfigurationRoutingRuleRedirectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCosBucketWebsiteConfigurationRoutingRuleRedirectArrayInput)(nil)).Elem(), GetCosBucketWebsiteConfigurationRoutingRuleRedirectArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRuleInput)(nil)).Elem(), GetDnsCustomResolverForwardingRulesRuleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRuleArrayInput)(nil)).Elem(), GetDnsCustomResolverForwardingRulesRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRuleViewInput)(nil)).Elem(), GetDnsCustomResolverForwardingRulesRuleViewArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolverForwardingRulesRuleViewArrayInput)(nil)).Elem(), GetDnsCustomResolverForwardingRulesRuleViewArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolverSecondaryZonesSecondaryZoneInput)(nil)).Elem(), GetDnsCustomResolverSecondaryZonesSecondaryZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayInput)(nil)).Elem(), GetDnsCustomResolverSecondaryZonesSecondaryZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolversCustomResolverInput)(nil)).Elem(), GetDnsCustomResolversCustomResolverArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolversCustomResolverArrayInput)(nil)).Elem(), GetDnsCustomResolversCustomResolverArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolversCustomResolverLocationInput)(nil)).Elem(), GetDnsCustomResolversCustomResolverLocationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsCustomResolversCustomResolverLocationArrayInput)(nil)).Elem(), GetDnsCustomResolversCustomResolverLocationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbMonitorsDnsGlbMonitorInput)(nil)).Elem(), GetDnsGlbMonitorsDnsGlbMonitorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbMonitorsDnsGlbMonitorArrayInput)(nil)).Elem(), GetDnsGlbMonitorsDnsGlbMonitorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPoolInput)(nil)).Elem(), GetDnsGlbPoolsDnsGlbPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPoolArrayInput)(nil)).Elem(), GetDnsGlbPoolsDnsGlbPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPoolOriginInput)(nil)).Elem(), GetDnsGlbPoolsDnsGlbPoolOriginArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbPoolsDnsGlbPoolOriginArrayInput)(nil)).Elem(), GetDnsGlbPoolsDnsGlbPoolOriginArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbsDnsGlbInput)(nil)).Elem(), GetDnsGlbsDnsGlbArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbsDnsGlbArrayInput)(nil)).Elem(), GetDnsGlbsDnsGlbArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbsDnsGlbAzPoolInput)(nil)).Elem(), GetDnsGlbsDnsGlbAzPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsGlbsDnsGlbAzPoolArrayInput)(nil)).Elem(), GetDnsGlbsDnsGlbAzPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsPermittedNetworksDnsPermittedNetworkInput)(nil)).Elem(), GetDnsPermittedNetworksDnsPermittedNetworkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsPermittedNetworksDnsPermittedNetworkArrayInput)(nil)).Elem(), GetDnsPermittedNetworksDnsPermittedNetworkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsResourceRecordsDnsResourceRecordInput)(nil)).Elem(), GetDnsResourceRecordsDnsResourceRecordArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsResourceRecordsDnsResourceRecordArrayInput)(nil)).Elem(), GetDnsResourceRecordsDnsResourceRecordArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsZonesDnsZoneInput)(nil)).Elem(), GetDnsZonesDnsZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsZonesDnsZoneArrayInput)(nil)).Elem(), GetDnsZonesDnsZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamAccessGroupGroupInput)(nil)).Elem(), GetIamAccessGroupGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamAccessGroupGroupArrayInput)(nil)).Elem(), GetIamAccessGroupGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamAccessGroupGroupRuleInput)(nil)).Elem(), GetIamAccessGroupGroupRuleArgs{})
@@ -63988,129 +64331,156 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfileVcpuArchitectureArrayInput)(nil)).Elem(), GetIsDedicatedHostProfileVcpuArchitectureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfileVcpuCountInput)(nil)).Elem(), GetIsDedicatedHostProfileVcpuCountArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfileVcpuCountArrayInput)(nil)).Elem(), GetIsDedicatedHostProfileVcpuCountArray{})
-	pulumi.RegisterOutputType(IsVpcHealthReasonOutput{})
-	pulumi.RegisterOutputType(IsVpcHealthReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcPublicAddressRangeOutput{})
-	pulumi.RegisterOutputType(IsVpcPublicAddressRangeArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcPublicAddressRangeDeletedOutput{})
-	pulumi.RegisterOutputType(IsVpcPublicAddressRangeDeletedArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableResourceGroupOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableResourceGroupArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorDeletedOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorDeletedArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableSubnetOutput{})
-	pulumi.RegisterOutputType(IsVpcRoutingTableSubnetArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcSecurityGroupOutput{})
-	pulumi.RegisterOutputType(IsVpcSecurityGroupArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcSecurityGroupRuleOutput{})
-	pulumi.RegisterOutputType(IsVpcSecurityGroupRuleArrayOutput{})
-	pulumi.RegisterOutputType(IsVpcSubnetOutput{})
-	pulumi.RegisterOutputType(IsVpcSubnetArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalPtrOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalIkeIdentityOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerPtrOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerIkeIdentityOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionStatusReasonOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionStatusReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionTunnelOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayConnectionTunnelArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayHealthReasonOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayHealthReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayLifecycleReasonOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayLifecycleReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayMemberOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayMemberArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayVpcOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayVpcArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayVpcDeletedOutput{})
-	pulumi.RegisterOutputType(IsVpnGatewayVpcDeletedArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerClientAuthenticationOutput{})
-	pulumi.RegisterOutputType(IsVpnServerClientAuthenticationArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerHealthReasonOutput{})
-	pulumi.RegisterOutputType(IsVpnServerHealthReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerLifecycleReasonOutput{})
-	pulumi.RegisterOutputType(IsVpnServerLifecycleReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerPrivateIpOutput{})
-	pulumi.RegisterOutputType(IsVpnServerPrivateIpArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerPrivateIpDeletedOutput{})
-	pulumi.RegisterOutputType(IsVpnServerPrivateIpDeletedArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerRouteHealthReasonOutput{})
-	pulumi.RegisterOutputType(IsVpnServerRouteHealthReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerRouteLifecycleReasonOutput{})
-	pulumi.RegisterOutputType(IsVpnServerRouteLifecycleReasonArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerVpcOutput{})
-	pulumi.RegisterOutputType(IsVpnServerVpcArrayOutput{})
-	pulumi.RegisterOutputType(IsVpnServerVpcDeletedOutput{})
-	pulumi.RegisterOutputType(IsVpnServerVpcDeletedArrayOutput{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfileVcpuManufacturerInput)(nil)).Elem(), GetIsDedicatedHostProfileVcpuManufacturerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfileVcpuManufacturerArrayInput)(nil)).Elem(), GetIsDedicatedHostProfileVcpuManufacturerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskInterfaceTypeInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskQuantityInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskQuantityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskQuantityArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskQuantityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSizeInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskSizeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSizeArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskSizeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileMemoryInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileMemoryArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileMemoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSocketCountInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileSocketCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSocketCountArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileSocketCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSupportedInstanceProfileInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuArchitectureInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuArchitectureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuArchitectureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuCountInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuCountArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturerInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuManufacturerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfileInput)(nil)).Elem(), GetIsDedicatedHostSupportedInstanceProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfileArrayInput)(nil)).Elem(), GetIsDedicatedHostSupportedInstanceProfileArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostVcpusInput)(nil)).Elem(), GetIsDedicatedHostVcpusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostVcpusArrayInput)(nil)).Elem(), GetIsDedicatedHostVcpusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpusInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostAvailableVcpusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskArray{})
+	pulumi.RegisterOutputType(PiHostGroupPiHostOutput{})
+	pulumi.RegisterOutputType(PiHostGroupPiHostArrayOutput{})
+	pulumi.RegisterOutputType(PiHostGroupPiSecondaryOutput{})
+	pulumi.RegisterOutputType(PiHostGroupPiSecondaryArrayOutput{})
+	pulumi.RegisterOutputType(PiHostPiHostOutput{})
+	pulumi.RegisterOutputType(PiHostPiHostPtrOutput{})
+	pulumi.RegisterOutputType(PiImagePiImageImportDetailsOutput{})
+	pulumi.RegisterOutputType(PiImagePiImageImportDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PiInstancePiDeploymentTargetOutput{})
+	pulumi.RegisterOutputType(PiInstancePiDeploymentTargetPtrOutput{})
+	pulumi.RegisterOutputType(PiInstancePiNetworkOutput{})
+	pulumi.RegisterOutputType(PiInstancePiNetworkArrayOutput{})
+	pulumi.RegisterOutputType(PiInstancePiVirtualSerialNumberOutput{})
+	pulumi.RegisterOutputType(PiInstancePiVirtualSerialNumberPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkAddressGroupMemberTypeOutput{})
+	pulumi.RegisterOutputType(PiNetworkAddressGroupMemberTypeArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkAddressGroupMemberMemberOutput{})
+	pulumi.RegisterOutputType(PiNetworkAddressGroupMemberMemberArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkInterfaceInstanceOutput{})
+	pulumi.RegisterOutputType(PiNetworkInterfaceInstanceArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkNetworkAddressTranslationOutput{})
+	pulumi.RegisterOutputType(PiNetworkNetworkAddressTranslationArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkPeerExportRouteFilterOutput{})
+	pulumi.RegisterOutputType(PiNetworkPeerExportRouteFilterArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkPeerImportRouteFilterOutput{})
+	pulumi.RegisterOutputType(PiNetworkPeerImportRouteFilterArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkPiIpaddressRangeOutput{})
+	pulumi.RegisterOutputType(PiNetworkPiIpaddressRangeArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkPiNetworkPeerOutput{})
+	pulumi.RegisterOutputType(PiNetworkPiNetworkPeerPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkPiNetworkPeerNetworkAddressTranslationOutput{})
+	pulumi.RegisterOutputType(PiNetworkPiNetworkPeerNetworkAddressTranslationPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberTypeOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberTypeArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberMemberOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberMemberArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleDestinationPortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleDestinationPortArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleProtocolOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleProtocolArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleProtocolTcpFlagOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleRemoteOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleRemoteArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleSourcePortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupMemberRuleSourcePortArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleTypeOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleTypeArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleDestinationPortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleDestinationPortArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleMemberOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleMemberArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiDestinationPortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiDestinationPortPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiDestinationPortsOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiDestinationPortsPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiProtocolOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiProtocolPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiProtocolTcpFlagOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiProtocolTcpFlagArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiRemoteOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiRemotePtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiSourcePortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiSourcePortPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiSourcePortsOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRulePiSourcePortsPtrOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleProtocolOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleProtocolArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleProtocolTcpFlagOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleProtocolTcpFlagArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRemoteOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRemoteArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleDestinationPortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleDestinationPortArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleProtocolOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleProtocolArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleProtocolTcpFlagOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleRemoteOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleRemoteArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleSourcePortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleRuleSourcePortArrayOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleSourcePortOutput{})
+	pulumi.RegisterOutputType(PiNetworkSecurityGroupRuleSourcePortArrayOutput{})
+	pulumi.RegisterOutputType(PiSharedProcessorPoolInstanceOutput{})
+	pulumi.RegisterOutputType(PiSharedProcessorPoolInstanceArrayOutput{})
+	pulumi.RegisterOutputType(PiVolumeCloneCloneVolumeOutput{})
+	pulumi.RegisterOutputType(PiVolumeCloneCloneVolumeArrayOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionPtrOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionResetOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionResetPtrOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionStartOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionStartPtrOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionStopOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupActionPiVolumeGroupActionStopPtrOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupStatusDescriptionErrorOutput{})
+	pulumi.RegisterOutputType(PiVolumeGroupStatusDescriptionErrorArrayOutput{})
+	pulumi.RegisterOutputType(PiVolumeOnboardingPiOnboardingVolumeOutput{})
+	pulumi.RegisterOutputType(PiVolumeOnboardingPiOnboardingVolumeArrayOutput{})
+	pulumi.RegisterOutputType(PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeOutput{})
+	pulumi.RegisterOutputType(PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArrayOutput{})
+	pulumi.RegisterOutputType(PiVolumeOnboardingResultsVolumeOnboardingFailureOutput{})
+	pulumi.RegisterOutputType(PiVolumeOnboardingResultsVolumeOnboardingFailureArrayOutput{})
 	pulumi.RegisterOutputType(ResourceInstancePlanHistoryOutput{})
 	pulumi.RegisterOutputType(ResourceInstancePlanHistoryArrayOutput{})
 	pulumi.RegisterOutputType(GetComputePlacementGroupVirtualGuestOutput{})
 	pulumi.RegisterOutputType(GetComputePlacementGroupVirtualGuestArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeReservedCapacityVirtualGuestOutput{})
 	pulumi.RegisterOutputType(GetComputeReservedCapacityVirtualGuestArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerAddonsAddonOutput{})
-	pulumi.RegisterOutputType(GetContainerAddonsAddonArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterAlbOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterAlbArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterBoundedServiceOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterBoundedServiceArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterVlanOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterVlanArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterVlanSubnetOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterVlanSubnetArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterWorkerPoolOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterWorkerPoolArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterWorkerPoolZoneOutput{})
-	pulumi.RegisterOutputType(GetContainerClusterWorkerPoolZoneArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostFlavorInstanceStorageOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostFlavorInstanceStorageArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostFlavorsHostFlavorOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostFlavorsHostFlavorArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostFlavorsHostFlavorInstanceStorageArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostLifeCycleOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostLifeCycleArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostPoolWorkerPoolOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostPoolWorkerPoolArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostPoolZoneOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostPoolZoneArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostPoolZoneCapacityOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostPoolZoneCapacityArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostResourceOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostResourceArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostResourceCapacityOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostResourceCapacityArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostResourceConsumedOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostResourceConsumedArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostWorkerOutput{})
-	pulumi.RegisterOutputType(GetContainerDedicatedHostWorkerArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerIngressSecretOpaqueFieldOutput{})
-	pulumi.RegisterOutputType(GetContainerIngressSecretOpaqueFieldArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerNlbDnsNlbConfigOutput{})
-	pulumi.RegisterOutputType(GetContainerNlbDnsNlbConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterAlbOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterAlbArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerNetworkInterfaceOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerNetworkInterfaceArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerPoolOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerPoolArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerPoolSecondaryStorageOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerPoolSecondaryStorageArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerPoolZoneOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerPoolZoneArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcClusterWorkerPoolZoneSubnetOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcWorkerPoolSecondaryStorageOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcWorkerPoolSecondaryStorageArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcWorkerPoolZoneOutput{})
-	pulumi.RegisterOutputType(GetContainerVpcWorkerPoolZoneArrayOutput{})
-	pulumi.RegisterOutputType(GetContainerWorkerPoolZoneOutput{})
-	pulumi.RegisterOutputType(GetContainerWorkerPoolZoneArrayOutput{})
 	pulumi.RegisterOutputType(GetCosBucketAbortIncompleteMultipartUploadDayOutput{})
 	pulumi.RegisterOutputType(GetCosBucketAbortIncompleteMultipartUploadDayArrayOutput{})
 	pulumi.RegisterOutputType(GetCosBucketActivityTrackingOutput{})
@@ -64167,32 +64537,6 @@ func init() {
 	pulumi.RegisterOutputType(GetCosBucketWebsiteConfigurationRoutingRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetCosBucketWebsiteConfigurationRoutingRuleRedirectOutput{})
 	pulumi.RegisterOutputType(GetCosBucketWebsiteConfigurationRoutingRuleRedirectArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolverForwardingRulesRuleOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolverForwardingRulesRuleArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolverForwardingRulesRuleViewOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolverForwardingRulesRuleViewArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolverSecondaryZonesSecondaryZoneOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolverSecondaryZonesSecondaryZoneArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolversCustomResolverOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolversCustomResolverArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolversCustomResolverLocationOutput{})
-	pulumi.RegisterOutputType(GetDnsCustomResolversCustomResolverLocationArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbMonitorsDnsGlbMonitorOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbMonitorsDnsGlbMonitorArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbPoolsDnsGlbPoolOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbPoolsDnsGlbPoolArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbPoolsDnsGlbPoolOriginOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbPoolsDnsGlbPoolOriginArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbsDnsGlbOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbsDnsGlbArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbsDnsGlbAzPoolOutput{})
-	pulumi.RegisterOutputType(GetDnsGlbsDnsGlbAzPoolArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsPermittedNetworksDnsPermittedNetworkOutput{})
-	pulumi.RegisterOutputType(GetDnsPermittedNetworksDnsPermittedNetworkArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsResourceRecordsDnsResourceRecordOutput{})
-	pulumi.RegisterOutputType(GetDnsResourceRecordsDnsResourceRecordArrayOutput{})
-	pulumi.RegisterOutputType(GetDnsZonesDnsZoneOutput{})
-	pulumi.RegisterOutputType(GetDnsZonesDnsZoneArrayOutput{})
 	pulumi.RegisterOutputType(GetIamAccessGroupGroupOutput{})
 	pulumi.RegisterOutputType(GetIamAccessGroupGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetIamAccessGroupGroupRuleOutput{})
@@ -64987,4 +65331,40 @@ func init() {
 	pulumi.RegisterOutputType(GetIsDedicatedHostProfileVcpuArchitectureArrayOutput{})
 	pulumi.RegisterOutputType(GetIsDedicatedHostProfileVcpuCountOutput{})
 	pulumi.RegisterOutputType(GetIsDedicatedHostProfileVcpuCountArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfileVcpuManufacturerOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfileVcpuManufacturerArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskInterfaceTypeOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskInterfaceTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskQuantityOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskQuantityArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskSizeOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskSizeArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileDiskSupportedInstanceInterfaceTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileMemoryOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileMemoryArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileSocketCountOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileSocketCountArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileSupportedInstanceProfileOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileSupportedInstanceProfileArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuArchitectureOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuArchitectureArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuCountOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuCountArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostSupportedInstanceProfileOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostSupportedInstanceProfileArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostVcpusOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostVcpusArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskArrayOutput{})
 }

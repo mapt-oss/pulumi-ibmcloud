@@ -18,28 +18,6 @@ from .compute_ssh_key import *
 from .compute_ssl_certificate import *
 from .compute_user import *
 from .compute_vm_instance import *
-from .container_addons import *
-from .container_alb import *
-from .container_alb_cert import *
-from .container_alb_create import *
-from .container_api_key_reset import *
-from .container_bind_service import *
-from .container_cluster import *
-from .container_cluster_feature import *
-from .container_dedicated_host import *
-from .container_dedicated_host_pool import *
-from .container_ingress_instance import *
-from .container_ingress_secret_opaque import *
-from .container_ingress_secret_tls import *
-from .container_nlb_dns import *
-from .container_storage_attachment import *
-from .container_vpc_alb import *
-from .container_vpc_alb_create import *
-from .container_vpc_cluster import *
-from .container_vpc_worker import *
-from .container_vpc_worker_pool import *
-from .container_worker_pool import *
-from .container_worker_pool_zone_attachment import *
 from .cos_backup_policy import *
 from .cos_backup_vault import *
 from .cos_bucket import *
@@ -48,67 +26,16 @@ from .cos_bucket_object import *
 from .cos_bucket_object_lock_configuration import *
 from .cos_bucket_replication_rule import *
 from .cos_bucket_website_configuration import *
-from .dns_custom_resolver import *
-from .dns_custom_resolver_forwarding_rule import *
-from .dns_custom_resolver_secondary_zone import *
-from .dns_domain import *
-from .dns_domain_registration_nameservers import *
-from .dns_glb import *
-from .dns_glb_monitor import *
-from .dns_glb_pool import *
-from .dns_linked_zone import *
-from .dns_permitted_network import *
-from .dns_record import *
-from .dns_resource_record import *
-from .dns_reverse_record import *
-from .dns_secondary import *
-from .dns_zone import *
 from .get_compute_bare_metal import *
 from .get_compute_image_template import *
 from .get_compute_placement_group import *
 from .get_compute_reserved_capacity import *
 from .get_compute_ssh_key import *
 from .get_compute_vm_instance import *
-from .get_container_addons import *
-from .get_container_alb import *
-from .get_container_alb_cert import *
-from .get_container_bind_service import *
-from .get_container_cluster import *
-from .get_container_cluster_config import *
-from .get_container_cluster_versions import *
-from .get_container_cluster_worker import *
-from .get_container_dedicated_host import *
-from .get_container_dedicated_host_flavor import *
-from .get_container_dedicated_host_flavors import *
-from .get_container_dedicated_host_pool import *
-from .get_container_ingress_instance import *
-from .get_container_ingress_secret_opaque import *
-from .get_container_ingress_secret_tls import *
-from .get_container_nlb_dns import *
-from .get_container_storage_attachment import *
-from .get_container_vpc_alb import *
-from .get_container_vpc_cluster import *
-from .get_container_vpc_cluster_alb import *
-from .get_container_vpc_cluster_worker import *
-from .get_container_vpc_cluster_worker_pool import *
-from .get_container_vpc_worker_pool import *
-from .get_container_worker_pool import *
 from .get_cos_backup_policy import *
 from .get_cos_backup_vault import *
 from .get_cos_bucket import *
 from .get_cos_bucket_object import *
-from .get_dns_custom_resolver_forwarding_rules import *
-from .get_dns_custom_resolver_secondary_zones import *
-from .get_dns_custom_resolvers import *
-from .get_dns_domain import *
-from .get_dns_domain_registration import *
-from .get_dns_glb_monitors import *
-from .get_dns_glb_pools import *
-from .get_dns_glbs import *
-from .get_dns_permitted_networks import *
-from .get_dns_resource_records import *
-from .get_dns_secondary import *
-from .get_dns_zones import *
 from .get_iam_access_group import *
 from .get_iam_access_group_policy import *
 from .get_iam_access_group_template_assignment import *
@@ -337,6 +264,85 @@ from .get_is_vpn_server_routes import *
 from .get_is_vpn_servers import *
 from .get_is_zone import *
 from .get_is_zones import *
+from .get_pi_available_hosts import *
+from .get_pi_catalog_images import *
+from .get_pi_cloud_connection import *
+from .get_pi_cloud_connections import *
+from .get_pi_cloud_instance import *
+from .get_pi_console_languages import *
+from .get_pi_datacenter import *
+from .get_pi_datacenters import *
+from .get_pi_dhcp import *
+from .get_pi_dhcps import *
+from .get_pi_disaster_recovery_location import *
+from .get_pi_disaster_recovery_locations import *
+from .get_pi_host import *
+from .get_pi_host_group import *
+from .get_pi_host_groups import *
+from .get_pi_hosts import *
+from .get_pi_image import *
+from .get_pi_images import *
+from .get_pi_instance import *
+from .get_pi_instance_ip import *
+from .get_pi_instance_snapshot import *
+from .get_pi_instance_snapshots import *
+from .get_pi_instance_volumes import *
+from .get_pi_instances import *
+from .get_pi_key import *
+from .get_pi_keys import *
+from .get_pi_network import *
+from .get_pi_network_address_group import *
+from .get_pi_network_address_groups import *
+from .get_pi_network_interface import *
+from .get_pi_network_interfaces import *
+from .get_pi_network_peer import *
+from .get_pi_network_peer_interfaces import *
+from .get_pi_network_peer_route_filter import *
+from .get_pi_network_peers import *
+from .get_pi_network_port import *
+from .get_pi_network_security_group import *
+from .get_pi_network_security_groups import *
+from .get_pi_networks import *
+from .get_pi_placement_group import *
+from .get_pi_placement_groups import *
+from .get_pi_public_network import *
+from .get_pi_pvm_snapshots import *
+from .get_pi_route import *
+from .get_pi_route_report import *
+from .get_pi_routes import *
+from .get_pi_sap_profile import *
+from .get_pi_sap_profiles import *
+from .get_pi_shared_processor_pool import *
+from .get_pi_shared_processor_pools import *
+from .get_pi_software_tiers import *
+from .get_pi_spp_placement_group import *
+from .get_pi_spp_placement_groups import *
+from .get_pi_storage_pool_capacity import *
+from .get_pi_storage_pools_capacity import *
+from .get_pi_storage_tiers import *
+from .get_pi_storage_type_capacity import *
+from .get_pi_storage_types_capacity import *
+from .get_pi_system_pools import *
+from .get_pi_tenant import *
+from .get_pi_virtual_serial_number import *
+from .get_pi_virtual_serial_numbers import *
+from .get_pi_volume import *
+from .get_pi_volume_clone import *
+from .get_pi_volume_flash_copy_mappings import *
+from .get_pi_volume_group import *
+from .get_pi_volume_group_details import *
+from .get_pi_volume_group_remote_copy_relationships import *
+from .get_pi_volume_group_storage_details import *
+from .get_pi_volume_groups import *
+from .get_pi_volume_groups_details import *
+from .get_pi_volume_onboarding import *
+from .get_pi_volume_onboardings import *
+from .get_pi_volume_remote_copy_relationship import *
+from .get_pi_volume_snapshot import *
+from .get_pi_volume_snapshots import *
+from .get_pi_volumes import *
+from .get_pi_workspace import *
+from .get_pi_workspaces import *
 from .get_resource_group import *
 from .get_resource_instance import *
 from .get_resource_key import *
@@ -469,6 +475,46 @@ from .is_vpn_gateway_connection import *
 from .is_vpn_server import *
 from .is_vpn_server_client import *
 from .is_vpn_server_route import *
+from .pi_capture import *
+from .pi_cloud_connection import *
+from .pi_cloud_connection_network_attach import *
+from .pi_console_language import *
+from .pi_dhcp import *
+from .pi_host import *
+from .pi_host_group import *
+from .pi_ike_policy import *
+from .pi_image import *
+from .pi_image_export import *
+from .pi_instance import *
+from .pi_instance_action import *
+from .pi_instance_snapshot import *
+from .pi_ipsec_policy import *
+from .pi_key import *
+from .pi_network import *
+from .pi_network_address_group import *
+from .pi_network_address_group_member import *
+from .pi_network_interface import *
+from .pi_network_peer import *
+from .pi_network_peer_route_filter import *
+from .pi_network_port_attach import *
+from .pi_network_security_group import *
+from .pi_network_security_group_action import *
+from .pi_network_security_group_member import *
+from .pi_network_security_group_rule import *
+from .pi_placement_group import *
+from .pi_route import *
+from .pi_shared_processor_pool import *
+from .pi_snapshot import *
+from .pi_spp_placement_group import *
+from .pi_virtual_serial_number import *
+from .pi_volume import *
+from .pi_volume_attach import *
+from .pi_volume_clone import *
+from .pi_volume_group import *
+from .pi_volume_group_action import *
+from .pi_volume_onboarding import *
+from .pi_vpn_connection import *
+from .pi_workspace import *
 from .provider import *
 from .resource_group import *
 from .resource_instance import *
@@ -585,182 +631,6 @@ _utilities.register(
  },
  {
   "pkg": "ibmcloud",
-  "mod": "index/containerAddons",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerAddons:ContainerAddons": "ContainerAddons"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerAlb",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerAlb:ContainerAlb": "ContainerAlb"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerAlbCert",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerAlbCert:ContainerAlbCert": "ContainerAlbCert"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerAlbCreate",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerAlbCreate:ContainerAlbCreate": "ContainerAlbCreate"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerApiKeyReset",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerApiKeyReset:ContainerApiKeyReset": "ContainerApiKeyReset"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerBindService",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerBindService:ContainerBindService": "ContainerBindService"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerCluster",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerCluster:ContainerCluster": "ContainerCluster"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerClusterFeature",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerClusterFeature:ContainerClusterFeature": "ContainerClusterFeature"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerDedicatedHost",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerDedicatedHost:ContainerDedicatedHost": "ContainerDedicatedHost"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerDedicatedHostPool",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerDedicatedHostPool:ContainerDedicatedHostPool": "ContainerDedicatedHostPool"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerIngressInstance",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerIngressInstance:ContainerIngressInstance": "ContainerIngressInstance"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerIngressSecretOpaque",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerIngressSecretOpaque:ContainerIngressSecretOpaque": "ContainerIngressSecretOpaque"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerIngressSecretTls",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerIngressSecretTls:ContainerIngressSecretTls": "ContainerIngressSecretTls"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerNlbDns",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerNlbDns:ContainerNlbDns": "ContainerNlbDns"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerStorageAttachment",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerStorageAttachment:ContainerStorageAttachment": "ContainerStorageAttachment"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerVpcAlb",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerVpcAlb:ContainerVpcAlb": "ContainerVpcAlb"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerVpcAlbCreate",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerVpcAlbCreate:ContainerVpcAlbCreate": "ContainerVpcAlbCreate"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerVpcCluster",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerVpcCluster:ContainerVpcCluster": "ContainerVpcCluster"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerVpcWorker",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerVpcWorker:ContainerVpcWorker": "ContainerVpcWorker"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerVpcWorkerPool",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerVpcWorkerPool:ContainerVpcWorkerPool": "ContainerVpcWorkerPool"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerWorkerPool",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerWorkerPool:ContainerWorkerPool": "ContainerWorkerPool"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/containerWorkerPoolZoneAttachment",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/containerWorkerPoolZoneAttachment:ContainerWorkerPoolZoneAttachment": "ContainerWorkerPoolZoneAttachment"
-  }
- },
- {
-  "pkg": "ibmcloud",
   "mod": "index/cosBackupPolicy",
   "fqn": "pulumi_ibmcloud",
   "classes": {
@@ -821,126 +691,6 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/cosBucketWebsiteConfiguration:CosBucketWebsiteConfiguration": "CosBucketWebsiteConfiguration"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsCustomResolver",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsCustomResolver:DnsCustomResolver": "DnsCustomResolver"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsCustomResolverForwardingRule",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsCustomResolverForwardingRule:DnsCustomResolverForwardingRule": "DnsCustomResolverForwardingRule"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsCustomResolverSecondaryZone",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsCustomResolverSecondaryZone:DnsCustomResolverSecondaryZone": "DnsCustomResolverSecondaryZone"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsDomain",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsDomain:DnsDomain": "DnsDomain"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsDomainRegistrationNameservers",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsDomainRegistrationNameservers:DnsDomainRegistrationNameservers": "DnsDomainRegistrationNameservers"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsGlb",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsGlb:DnsGlb": "DnsGlb"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsGlbMonitor",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsGlbMonitor:DnsGlbMonitor": "DnsGlbMonitor"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsGlbPool",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsGlbPool:DnsGlbPool": "DnsGlbPool"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsLinkedZone",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsLinkedZone:DnsLinkedZone": "DnsLinkedZone"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsPermittedNetwork",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsPermittedNetwork:DnsPermittedNetwork": "DnsPermittedNetwork"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsRecord",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsRecord:DnsRecord": "DnsRecord"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsResourceRecord",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsResourceRecord:DnsResourceRecord": "DnsResourceRecord"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsReverseRecord",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsReverseRecord:DnsReverseRecord": "DnsReverseRecord"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsSecondary",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsSecondary:DnsSecondary": "DnsSecondary"
-  }
- },
- {
-  "pkg": "ibmcloud",
-  "mod": "index/dnsZone",
-  "fqn": "pulumi_ibmcloud",
-  "classes": {
-   "ibmcloud:index/dnsZone:DnsZone": "DnsZone"
   }
  },
  {
@@ -1957,6 +1707,326 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/isVpnServerRoute:IsVpnServerRoute": "IsVpnServerRoute"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piCapture",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piCapture:PiCapture": "PiCapture"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piCloudConnection",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piCloudConnection:PiCloudConnection": "PiCloudConnection"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piCloudConnectionNetworkAttach",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piCloudConnectionNetworkAttach:PiCloudConnectionNetworkAttach": "PiCloudConnectionNetworkAttach"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piConsoleLanguage",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piConsoleLanguage:PiConsoleLanguage": "PiConsoleLanguage"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piDhcp",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piDhcp:PiDhcp": "PiDhcp"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piHost",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piHost:PiHost": "PiHost"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piHostGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piHostGroup:PiHostGroup": "PiHostGroup"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piIkePolicy",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piIkePolicy:PiIkePolicy": "PiIkePolicy"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piImage",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piImage:PiImage": "PiImage"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piImageExport",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piImageExport:PiImageExport": "PiImageExport"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piInstance",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piInstance:PiInstance": "PiInstance"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piInstanceAction",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piInstanceAction:PiInstanceAction": "PiInstanceAction"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piInstanceSnapshot",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piInstanceSnapshot:PiInstanceSnapshot": "PiInstanceSnapshot"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piIpsecPolicy",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piIpsecPolicy:PiIpsecPolicy": "PiIpsecPolicy"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piKey",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piKey:PiKey": "PiKey"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetwork",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetwork:PiNetwork": "PiNetwork"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkAddressGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkAddressGroup:PiNetworkAddressGroup": "PiNetworkAddressGroup"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkAddressGroupMember",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkAddressGroupMember:PiNetworkAddressGroupMember": "PiNetworkAddressGroupMember"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkInterface",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkInterface:PiNetworkInterface": "PiNetworkInterface"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkPeer",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkPeer:PiNetworkPeer": "PiNetworkPeer"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkPeerRouteFilter",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkPeerRouteFilter:PiNetworkPeerRouteFilter": "PiNetworkPeerRouteFilter"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkPortAttach",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkPortAttach:PiNetworkPortAttach": "PiNetworkPortAttach"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkSecurityGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkSecurityGroup:PiNetworkSecurityGroup": "PiNetworkSecurityGroup"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkSecurityGroupAction",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkSecurityGroupAction:PiNetworkSecurityGroupAction": "PiNetworkSecurityGroupAction"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkSecurityGroupMember",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkSecurityGroupMember:PiNetworkSecurityGroupMember": "PiNetworkSecurityGroupMember"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piNetworkSecurityGroupRule",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piNetworkSecurityGroupRule:PiNetworkSecurityGroupRule": "PiNetworkSecurityGroupRule"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piPlacementGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piPlacementGroup:PiPlacementGroup": "PiPlacementGroup"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piRoute",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piRoute:PiRoute": "PiRoute"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piSharedProcessorPool",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piSharedProcessorPool:PiSharedProcessorPool": "PiSharedProcessorPool"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piSnapshot",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piSnapshot:PiSnapshot": "PiSnapshot"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piSppPlacementGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piSppPlacementGroup:PiSppPlacementGroup": "PiSppPlacementGroup"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVirtualSerialNumber",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVirtualSerialNumber:PiVirtualSerialNumber": "PiVirtualSerialNumber"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVolume",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVolume:PiVolume": "PiVolume"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVolumeAttach",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVolumeAttach:PiVolumeAttach": "PiVolumeAttach"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVolumeClone",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVolumeClone:PiVolumeClone": "PiVolumeClone"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVolumeGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVolumeGroup:PiVolumeGroup": "PiVolumeGroup"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVolumeGroupAction",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVolumeGroupAction:PiVolumeGroupAction": "PiVolumeGroupAction"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVolumeOnboarding",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVolumeOnboarding:PiVolumeOnboarding": "PiVolumeOnboarding"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piVpnConnection",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piVpnConnection:PiVpnConnection": "PiVpnConnection"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piWorkspace",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piWorkspace:PiWorkspace": "PiWorkspace"
   }
  },
  {

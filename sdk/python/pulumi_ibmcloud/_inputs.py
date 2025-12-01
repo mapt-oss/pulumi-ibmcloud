@@ -27,56 +27,6 @@ __all__ = [
     'ComputeBareMetalStorageGroupArgsDict',
     'ComputeVmInstanceBulkVmArgs',
     'ComputeVmInstanceBulkVmArgsDict',
-    'ContainerAddonsAddonArgs',
-    'ContainerAddonsAddonArgsDict',
-    'ContainerClusterAlbArgs',
-    'ContainerClusterAlbArgsDict',
-    'ContainerClusterKmsConfigArgs',
-    'ContainerClusterKmsConfigArgsDict',
-    'ContainerClusterTaintArgs',
-    'ContainerClusterTaintArgsDict',
-    'ContainerClusterWebhookArgs',
-    'ContainerClusterWebhookArgsDict',
-    'ContainerClusterWorkerPoolArgs',
-    'ContainerClusterWorkerPoolArgsDict',
-    'ContainerClusterWorkerPoolZoneArgs',
-    'ContainerClusterWorkerPoolZoneArgsDict',
-    'ContainerClusterWorkersInfoArgs',
-    'ContainerClusterWorkersInfoArgsDict',
-    'ContainerDedicatedHostLifeCycleArgs',
-    'ContainerDedicatedHostLifeCycleArgsDict',
-    'ContainerDedicatedHostPoolWorkerPoolArgs',
-    'ContainerDedicatedHostPoolWorkerPoolArgsDict',
-    'ContainerDedicatedHostPoolZoneArgs',
-    'ContainerDedicatedHostPoolZoneArgsDict',
-    'ContainerDedicatedHostPoolZoneCapacityArgs',
-    'ContainerDedicatedHostPoolZoneCapacityArgsDict',
-    'ContainerDedicatedHostResourceArgs',
-    'ContainerDedicatedHostResourceArgsDict',
-    'ContainerDedicatedHostResourceCapacityArgs',
-    'ContainerDedicatedHostResourceCapacityArgsDict',
-    'ContainerDedicatedHostResourceConsumedArgs',
-    'ContainerDedicatedHostResourceConsumedArgsDict',
-    'ContainerDedicatedHostWorkerArgs',
-    'ContainerDedicatedHostWorkerArgsDict',
-    'ContainerIngressSecretOpaqueFieldArgs',
-    'ContainerIngressSecretOpaqueFieldArgsDict',
-    'ContainerVpcClusterAlbArgs',
-    'ContainerVpcClusterAlbArgsDict',
-    'ContainerVpcClusterKmsConfigArgs',
-    'ContainerVpcClusterKmsConfigArgsDict',
-    'ContainerVpcClusterTaintArgs',
-    'ContainerVpcClusterTaintArgsDict',
-    'ContainerVpcClusterZoneArgs',
-    'ContainerVpcClusterZoneArgsDict',
-    'ContainerVpcWorkerPoolTaintArgs',
-    'ContainerVpcWorkerPoolTaintArgsDict',
-    'ContainerVpcWorkerPoolZoneArgs',
-    'ContainerVpcWorkerPoolZoneArgsDict',
-    'ContainerWorkerPoolTaintArgs',
-    'ContainerWorkerPoolTaintArgsDict',
-    'ContainerWorkerPoolZoneArgs',
-    'ContainerWorkerPoolZoneArgsDict',
     'CosBucketAbortIncompleteMultipartUploadDayArgs',
     'CosBucketAbortIncompleteMultipartUploadDayArgsDict',
     'CosBucketActivityTrackingArgs',
@@ -133,20 +83,6 @@ __all__ = [
     'CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleConditionArgsDict',
     'CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirectArgs',
     'CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirectArgsDict',
-    'DnsCustomResolverForwardingRuleViewArgs',
-    'DnsCustomResolverForwardingRuleViewArgsDict',
-    'DnsCustomResolverLocationArgs',
-    'DnsCustomResolverLocationArgsDict',
-    'DnsCustomResolverRuleArgs',
-    'DnsCustomResolverRuleArgsDict',
-    'DnsCustomResolverRuleViewArgs',
-    'DnsCustomResolverRuleViewArgsDict',
-    'DnsGlbAzPoolArgs',
-    'DnsGlbAzPoolArgsDict',
-    'DnsGlbMonitorHeaderArgs',
-    'DnsGlbMonitorHeaderArgsDict',
-    'DnsGlbPoolOriginArgs',
-    'DnsGlbPoolOriginArgsDict',
     'IamAccessGroupDynamicRuleConditionArgs',
     'IamAccessGroupDynamicRuleConditionArgsDict',
     'IamAccessGroupMembersMemberArgs',
@@ -1075,6 +1011,118 @@ __all__ = [
     'IsVpnServerVpcArgsDict',
     'IsVpnServerVpcDeletedArgs',
     'IsVpnServerVpcDeletedArgsDict',
+    'PiDhcpLeaseArgs',
+    'PiDhcpLeaseArgsDict',
+    'PiHostCapacityArgs',
+    'PiHostCapacityArgsDict',
+    'PiHostGroupPiHostArgs',
+    'PiHostGroupPiHostArgsDict',
+    'PiHostGroupPiSecondaryArgs',
+    'PiHostGroupPiSecondaryArgsDict',
+    'PiHostPiHostArgs',
+    'PiHostPiHostArgsDict',
+    'PiImagePiImageImportDetailsArgs',
+    'PiImagePiImageImportDetailsArgsDict',
+    'PiInstancePiDeploymentTargetArgs',
+    'PiInstancePiDeploymentTargetArgsDict',
+    'PiInstancePiNetworkArgs',
+    'PiInstancePiNetworkArgsDict',
+    'PiInstancePiVirtualSerialNumberArgs',
+    'PiInstancePiVirtualSerialNumberArgsDict',
+    'PiNetworkAddressGroupMemberArgs',
+    'PiNetworkAddressGroupMemberArgsDict',
+    'PiNetworkAddressGroupMemberMemberArgs',
+    'PiNetworkAddressGroupMemberMemberArgsDict',
+    'PiNetworkInterfaceInstanceArgs',
+    'PiNetworkInterfaceInstanceArgsDict',
+    'PiNetworkNetworkAddressTranslationArgs',
+    'PiNetworkNetworkAddressTranslationArgsDict',
+    'PiNetworkPeerExportRouteFilterArgs',
+    'PiNetworkPeerExportRouteFilterArgsDict',
+    'PiNetworkPeerImportRouteFilterArgs',
+    'PiNetworkPeerImportRouteFilterArgsDict',
+    'PiNetworkPiIpaddressRangeArgs',
+    'PiNetworkPiIpaddressRangeArgsDict',
+    'PiNetworkPiNetworkPeerArgs',
+    'PiNetworkPiNetworkPeerArgsDict',
+    'PiNetworkPiNetworkPeerNetworkAddressTranslationArgs',
+    'PiNetworkPiNetworkPeerNetworkAddressTranslationArgsDict',
+    'PiNetworkSecurityGroupMemberArgs',
+    'PiNetworkSecurityGroupMemberArgsDict',
+    'PiNetworkSecurityGroupMemberMemberArgs',
+    'PiNetworkSecurityGroupMemberMemberArgsDict',
+    'PiNetworkSecurityGroupMemberRuleArgs',
+    'PiNetworkSecurityGroupMemberRuleArgsDict',
+    'PiNetworkSecurityGroupMemberRuleDestinationPortArgs',
+    'PiNetworkSecurityGroupMemberRuleDestinationPortArgsDict',
+    'PiNetworkSecurityGroupMemberRuleProtocolArgs',
+    'PiNetworkSecurityGroupMemberRuleProtocolArgsDict',
+    'PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs',
+    'PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgsDict',
+    'PiNetworkSecurityGroupMemberRuleRemoteArgs',
+    'PiNetworkSecurityGroupMemberRuleRemoteArgsDict',
+    'PiNetworkSecurityGroupMemberRuleSourcePortArgs',
+    'PiNetworkSecurityGroupMemberRuleSourcePortArgsDict',
+    'PiNetworkSecurityGroupRuleArgs',
+    'PiNetworkSecurityGroupRuleArgsDict',
+    'PiNetworkSecurityGroupRuleDestinationPortArgs',
+    'PiNetworkSecurityGroupRuleDestinationPortArgsDict',
+    'PiNetworkSecurityGroupRuleMemberArgs',
+    'PiNetworkSecurityGroupRuleMemberArgsDict',
+    'PiNetworkSecurityGroupRulePiDestinationPortArgs',
+    'PiNetworkSecurityGroupRulePiDestinationPortArgsDict',
+    'PiNetworkSecurityGroupRulePiDestinationPortsArgs',
+    'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict',
+    'PiNetworkSecurityGroupRulePiProtocolArgs',
+    'PiNetworkSecurityGroupRulePiProtocolArgsDict',
+    'PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs',
+    'PiNetworkSecurityGroupRulePiProtocolTcpFlagArgsDict',
+    'PiNetworkSecurityGroupRulePiRemoteArgs',
+    'PiNetworkSecurityGroupRulePiRemoteArgsDict',
+    'PiNetworkSecurityGroupRulePiSourcePortArgs',
+    'PiNetworkSecurityGroupRulePiSourcePortArgsDict',
+    'PiNetworkSecurityGroupRulePiSourcePortsArgs',
+    'PiNetworkSecurityGroupRulePiSourcePortsArgsDict',
+    'PiNetworkSecurityGroupRuleProtocolArgs',
+    'PiNetworkSecurityGroupRuleProtocolArgsDict',
+    'PiNetworkSecurityGroupRuleProtocolTcpFlagArgs',
+    'PiNetworkSecurityGroupRuleProtocolTcpFlagArgsDict',
+    'PiNetworkSecurityGroupRuleRemoteArgs',
+    'PiNetworkSecurityGroupRuleRemoteArgsDict',
+    'PiNetworkSecurityGroupRuleRuleArgs',
+    'PiNetworkSecurityGroupRuleRuleArgsDict',
+    'PiNetworkSecurityGroupRuleRuleDestinationPortArgs',
+    'PiNetworkSecurityGroupRuleRuleDestinationPortArgsDict',
+    'PiNetworkSecurityGroupRuleRuleProtocolArgs',
+    'PiNetworkSecurityGroupRuleRuleProtocolArgsDict',
+    'PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs',
+    'PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgsDict',
+    'PiNetworkSecurityGroupRuleRuleRemoteArgs',
+    'PiNetworkSecurityGroupRuleRuleRemoteArgsDict',
+    'PiNetworkSecurityGroupRuleRuleSourcePortArgs',
+    'PiNetworkSecurityGroupRuleRuleSourcePortArgsDict',
+    'PiNetworkSecurityGroupRuleSourcePortArgs',
+    'PiNetworkSecurityGroupRuleSourcePortArgsDict',
+    'PiSharedProcessorPoolInstanceArgs',
+    'PiSharedProcessorPoolInstanceArgsDict',
+    'PiVolumeCloneCloneVolumeArgs',
+    'PiVolumeCloneCloneVolumeArgsDict',
+    'PiVolumeGroupActionPiVolumeGroupActionArgs',
+    'PiVolumeGroupActionPiVolumeGroupActionArgsDict',
+    'PiVolumeGroupActionPiVolumeGroupActionResetArgs',
+    'PiVolumeGroupActionPiVolumeGroupActionResetArgsDict',
+    'PiVolumeGroupActionPiVolumeGroupActionStartArgs',
+    'PiVolumeGroupActionPiVolumeGroupActionStartArgsDict',
+    'PiVolumeGroupActionPiVolumeGroupActionStopArgs',
+    'PiVolumeGroupActionPiVolumeGroupActionStopArgsDict',
+    'PiVolumeGroupStatusDescriptionErrorArgs',
+    'PiVolumeGroupStatusDescriptionErrorArgsDict',
+    'PiVolumeOnboardingPiOnboardingVolumeArgs',
+    'PiVolumeOnboardingPiOnboardingVolumeArgsDict',
+    'PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs',
+    'PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgsDict',
+    'PiVolumeOnboardingResultsVolumeOnboardingFailureArgs',
+    'PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict',
     'ResourceInstancePlanHistoryArgs',
     'ResourceInstancePlanHistoryArgsDict',
     'GetIsReservationCapacityArgs',
@@ -2203,1910 +2251,6 @@ class ComputeVmInstanceBulkVmArgs:
     @hostname.setter
     def hostname(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "hostname", value)
-
-
-if not MYPY:
-    class ContainerAddonsAddonArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        The addon name such as 'istio'.
-        """
-        allowed_upgrade_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The versions that the addon can be upgraded to
-        """
-        deprecated: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Determines if this addon version is deprecated
-        """
-        health_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The health state for this addon, a short indication (e.g. critical, pending)
-        """
-        health_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The health status for this addon, provides a description of the state (e.g. error message)
-        """
-        min_kube_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The minimum kubernetes version for this addon.
-        """
-        min_ocp_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The minimum OpenShift version for this addon.
-        """
-        options: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The add-on options
-        """
-        parameters_json: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Add-On parameters to pass in a JSON string format.
-        """
-        supported_kube_range: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The supported kubernetes version range for this addon.
-        """
-        target_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The addon target version.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The addon version, omit the version if you wish to use the default version.
-        """
-        vlan_spanning_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        VLAN spanning required for multi-zone clusters
-        """
-elif False:
-    ContainerAddonsAddonArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerAddonsAddonArgs:
-    def __init__(__self__, *,
-                 name: pulumi.Input[_builtins.str],
-                 allowed_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 deprecated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 min_kube_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 min_ocp_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 options: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_kube_range: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_spanning_required: Optional[pulumi.Input[_builtins.bool]] = None):
-        """
-        :param pulumi.Input[_builtins.str] name: The addon name such as 'istio'.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_upgrade_versions: The versions that the addon can be upgraded to
-        :param pulumi.Input[_builtins.bool] deprecated: Determines if this addon version is deprecated
-        :param pulumi.Input[_builtins.str] health_state: The health state for this addon, a short indication (e.g. critical, pending)
-        :param pulumi.Input[_builtins.str] health_status: The health status for this addon, provides a description of the state (e.g. error message)
-        :param pulumi.Input[_builtins.str] min_kube_version: The minimum kubernetes version for this addon.
-        :param pulumi.Input[_builtins.str] min_ocp_version: The minimum OpenShift version for this addon.
-        :param pulumi.Input[_builtins.str] options: The add-on options
-        :param pulumi.Input[_builtins.str] parameters_json: Add-On parameters to pass in a JSON string format.
-        :param pulumi.Input[_builtins.str] supported_kube_range: The supported kubernetes version range for this addon.
-        :param pulumi.Input[_builtins.str] target_version: The addon target version.
-        :param pulumi.Input[_builtins.str] version: The addon version, omit the version if you wish to use the default version.
-        :param pulumi.Input[_builtins.bool] vlan_spanning_required: VLAN spanning required for multi-zone clusters
-        """
-        pulumi.set(__self__, "name", name)
-        if allowed_upgrade_versions is not None:
-            pulumi.set(__self__, "allowed_upgrade_versions", allowed_upgrade_versions)
-        if deprecated is not None:
-            pulumi.set(__self__, "deprecated", deprecated)
-        if health_state is not None:
-            pulumi.set(__self__, "health_state", health_state)
-        if health_status is not None:
-            pulumi.set(__self__, "health_status", health_status)
-        if min_kube_version is not None:
-            pulumi.set(__self__, "min_kube_version", min_kube_version)
-        if min_ocp_version is not None:
-            pulumi.set(__self__, "min_ocp_version", min_ocp_version)
-        if options is not None:
-            pulumi.set(__self__, "options", options)
-        if parameters_json is not None:
-            pulumi.set(__self__, "parameters_json", parameters_json)
-        if supported_kube_range is not None:
-            pulumi.set(__self__, "supported_kube_range", supported_kube_range)
-        if target_version is not None:
-            pulumi.set(__self__, "target_version", target_version)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
-        if vlan_spanning_required is not None:
-            pulumi.set(__self__, "vlan_spanning_required", vlan_spanning_required)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
-        """
-        The addon name such as 'istio'.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="allowedUpgradeVersions")
-    def allowed_upgrade_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
-        """
-        The versions that the addon can be upgraded to
-        """
-        return pulumi.get(self, "allowed_upgrade_versions")
-
-    @allowed_upgrade_versions.setter
-    def allowed_upgrade_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
-        pulumi.set(self, "allowed_upgrade_versions", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def deprecated(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        Determines if this addon version is deprecated
-        """
-        return pulumi.get(self, "deprecated")
-
-    @deprecated.setter
-    def deprecated(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "deprecated", value)
-
-    @_builtins.property
-    @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The health state for this addon, a short indication (e.g. critical, pending)
-        """
-        return pulumi.get(self, "health_state")
-
-    @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "health_state", value)
-
-    @_builtins.property
-    @pulumi.getter(name="healthStatus")
-    def health_status(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The health status for this addon, provides a description of the state (e.g. error message)
-        """
-        return pulumi.get(self, "health_status")
-
-    @health_status.setter
-    def health_status(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "health_status", value)
-
-    @_builtins.property
-    @pulumi.getter(name="minKubeVersion")
-    def min_kube_version(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The minimum kubernetes version for this addon.
-        """
-        return pulumi.get(self, "min_kube_version")
-
-    @min_kube_version.setter
-    def min_kube_version(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "min_kube_version", value)
-
-    @_builtins.property
-    @pulumi.getter(name="minOcpVersion")
-    def min_ocp_version(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The minimum OpenShift version for this addon.
-        """
-        return pulumi.get(self, "min_ocp_version")
-
-    @min_ocp_version.setter
-    def min_ocp_version(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "min_ocp_version", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The add-on options
-        """
-        return pulumi.get(self, "options")
-
-    @options.setter
-    def options(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "options", value)
-
-    @_builtins.property
-    @pulumi.getter(name="parametersJson")
-    def parameters_json(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Add-On parameters to pass in a JSON string format.
-        """
-        return pulumi.get(self, "parameters_json")
-
-    @parameters_json.setter
-    def parameters_json(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "parameters_json", value)
-
-    @_builtins.property
-    @pulumi.getter(name="supportedKubeRange")
-    def supported_kube_range(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The supported kubernetes version range for this addon.
-        """
-        return pulumi.get(self, "supported_kube_range")
-
-    @supported_kube_range.setter
-    def supported_kube_range(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "supported_kube_range", value)
-
-    @_builtins.property
-    @pulumi.getter(name="targetVersion")
-    def target_version(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The addon target version.
-        """
-        return pulumi.get(self, "target_version")
-
-    @target_version.setter
-    def target_version(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "target_version", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The addon version, omit the version if you wish to use the default version.
-        """
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "version", value)
-
-    @_builtins.property
-    @pulumi.getter(name="vlanSpanningRequired")
-    def vlan_spanning_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        VLAN spanning required for multi-zone clusters
-        """
-        return pulumi.get(self, "vlan_spanning_required")
-
-    @vlan_spanning_required.setter
-    def vlan_spanning_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "vlan_spanning_required", value)
-
-
-if not MYPY:
-    class ContainerClusterAlbArgsDict(TypedDict):
-        alb_ip: NotRequired[pulumi.Input[_builtins.str]]
-        alb_type: NotRequired[pulumi.Input[_builtins.str]]
-        disable_deployment: NotRequired[pulumi.Input[_builtins.bool]]
-        enable: NotRequired[pulumi.Input[_builtins.bool]]
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        num_of_instances: NotRequired[pulumi.Input[_builtins.str]]
-        resize: NotRequired[pulumi.Input[_builtins.bool]]
-        state: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerClusterAlbArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerClusterAlbArgs:
-    def __init__(__self__, *,
-                 alb_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 alb_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_of_instances: Optional[pulumi.Input[_builtins.str]] = None,
-                 resize: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
-        if alb_ip is not None:
-            pulumi.set(__self__, "alb_ip", alb_ip)
-        if alb_type is not None:
-            pulumi.set(__self__, "alb_type", alb_type)
-        if disable_deployment is not None:
-            pulumi.set(__self__, "disable_deployment", disable_deployment)
-        if enable is not None:
-            pulumi.set(__self__, "enable", enable)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-        if num_of_instances is not None:
-            pulumi.set(__self__, "num_of_instances", num_of_instances)
-        if resize is not None:
-            pulumi.set(__self__, "resize", resize)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-
-    @_builtins.property
-    @pulumi.getter(name="albIp")
-    def alb_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "alb_ip")
-
-    @alb_ip.setter
-    def alb_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "alb_ip", value)
-
-    @_builtins.property
-    @pulumi.getter(name="albType")
-    def alb_type(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "alb_type")
-
-    @alb_type.setter
-    def alb_type(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "alb_type", value)
-
-    @_builtins.property
-    @pulumi.getter(name="disableDeployment")
-    def disable_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        return pulumi.get(self, "disable_deployment")
-
-    @disable_deployment.setter
-    def disable_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "disable_deployment", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def enable(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        return pulumi.get(self, "enable")
-
-    @enable.setter
-    def enable(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "enable", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "id", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="numOfInstances")
-    def num_of_instances(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "num_of_instances")
-
-    @num_of_instances.setter
-    def num_of_instances(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "num_of_instances", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def resize(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        return pulumi.get(self, "resize")
-
-    @resize.setter
-    def resize(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "resize", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "state")
-
-    @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "state", value)
-
-
-if not MYPY:
-    class ContainerClusterKmsConfigArgsDict(TypedDict):
-        crk_id: pulumi.Input[_builtins.str]
-        """
-        ID of the customer root key.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        ID of the KMS instance to use to encrypt the cluster.
-        """
-        account_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Account ID of KMS instance holder - if not provided, defaults to the account in use
-        """
-        private_endpoint: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specify this option to use the KMS public service endpoint.
-        """
-elif False:
-    ContainerClusterKmsConfigArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerClusterKmsConfigArgs:
-    def __init__(__self__, *,
-                 crk_id: pulumi.Input[_builtins.str],
-                 instance_id: pulumi.Input[_builtins.str],
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint: Optional[pulumi.Input[_builtins.bool]] = None):
-        """
-        :param pulumi.Input[_builtins.str] crk_id: ID of the customer root key.
-        :param pulumi.Input[_builtins.str] instance_id: ID of the KMS instance to use to encrypt the cluster.
-        :param pulumi.Input[_builtins.str] account_id: Account ID of KMS instance holder - if not provided, defaults to the account in use
-        :param pulumi.Input[_builtins.bool] private_endpoint: Specify this option to use the KMS public service endpoint.
-        """
-        pulumi.set(__self__, "crk_id", crk_id)
-        pulumi.set(__self__, "instance_id", instance_id)
-        if account_id is not None:
-            pulumi.set(__self__, "account_id", account_id)
-        if private_endpoint is not None:
-            pulumi.set(__self__, "private_endpoint", private_endpoint)
-
-    @_builtins.property
-    @pulumi.getter(name="crkId")
-    def crk_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        ID of the customer root key.
-        """
-        return pulumi.get(self, "crk_id")
-
-    @crk_id.setter
-    def crk_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "crk_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="instanceId")
-    def instance_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        ID of the KMS instance to use to encrypt the cluster.
-        """
-        return pulumi.get(self, "instance_id")
-
-    @instance_id.setter
-    def instance_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "instance_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Account ID of KMS instance holder - if not provided, defaults to the account in use
-        """
-        return pulumi.get(self, "account_id")
-
-    @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "account_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="privateEndpoint")
-    def private_endpoint(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        Specify this option to use the KMS public service endpoint.
-        """
-        return pulumi.get(self, "private_endpoint")
-
-    @private_endpoint.setter
-    def private_endpoint(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "private_endpoint", value)
-
-
-if not MYPY:
-    class ContainerClusterTaintArgsDict(TypedDict):
-        effect: pulumi.Input[_builtins.str]
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        key: pulumi.Input[_builtins.str]
-        """
-        Key for taint
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        Value for taint.
-        """
-elif False:
-    ContainerClusterTaintArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerClusterTaintArgs:
-    def __init__(__self__, *,
-                 effect: pulumi.Input[_builtins.str],
-                 key: pulumi.Input[_builtins.str],
-                 value: pulumi.Input[_builtins.str]):
-        """
-        :param pulumi.Input[_builtins.str] effect: Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        :param pulumi.Input[_builtins.str] key: Key for taint
-        :param pulumi.Input[_builtins.str] value: Value for taint.
-        """
-        pulumi.set(__self__, "effect", effect)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def effect(self) -> pulumi.Input[_builtins.str]:
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        return pulumi.get(self, "effect")
-
-    @effect.setter
-    def effect(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "effect", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def key(self) -> pulumi.Input[_builtins.str]:
-        """
-        Key for taint
-        """
-        return pulumi.get(self, "key")
-
-    @key.setter
-    def key(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "key", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[_builtins.str]:
-        """
-        Value for taint.
-        """
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "value", value)
-
-
-if not MYPY:
-    class ContainerClusterWebhookArgsDict(TypedDict):
-        level: pulumi.Input[_builtins.str]
-        type: pulumi.Input[_builtins.str]
-        url: pulumi.Input[_builtins.str]
-elif False:
-    ContainerClusterWebhookArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerClusterWebhookArgs:
-    def __init__(__self__, *,
-                 level: pulumi.Input[_builtins.str],
-                 type: pulumi.Input[_builtins.str],
-                 url: pulumi.Input[_builtins.str]):
-        pulumi.set(__self__, "level", level)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
-
-    @_builtins.property
-    @pulumi.getter
-    def level(self) -> pulumi.Input[_builtins.str]:
-        return pulumi.get(self, "level")
-
-    @level.setter
-    def level(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "level", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def type(self) -> pulumi.Input[_builtins.str]:
-        return pulumi.get(self, "type")
-
-    @type.setter
-    def type(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "type", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def url(self) -> pulumi.Input[_builtins.str]:
-        return pulumi.get(self, "url")
-
-    @url.setter
-    def url(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "url", value)
-
-
-if not MYPY:
-    class ContainerClusterWorkerPoolArgsDict(TypedDict):
-        hardware: NotRequired[pulumi.Input[_builtins.str]]
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        labels: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        machine_type: NotRequired[pulumi.Input[_builtins.str]]
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        size_per_zone: NotRequired[pulumi.Input[_builtins.int]]
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        zones: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerClusterWorkerPoolZoneArgsDict']]]]
-elif False:
-    ContainerClusterWorkerPoolArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerClusterWorkerPoolArgs:
-    def __init__(__self__, *,
-                 hardware: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 labels: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_per_zone: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 zones: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerClusterWorkerPoolZoneArgs']]]] = None):
-        if hardware is not None:
-            pulumi.set(__self__, "hardware", hardware)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
-        if labels is not None:
-            pulumi.set(__self__, "labels", labels)
-        if machine_type is not None:
-            pulumi.set(__self__, "machine_type", machine_type)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-        if size_per_zone is not None:
-            pulumi.set(__self__, "size_per_zone", size_per_zone)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-        if zones is not None:
-            pulumi.set(__self__, "zones", zones)
-
-    @_builtins.property
-    @pulumi.getter
-    def hardware(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "hardware")
-
-    @hardware.setter
-    def hardware(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "hardware", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "id", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
-        return pulumi.get(self, "labels")
-
-    @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
-        pulumi.set(self, "labels", value)
-
-    @_builtins.property
-    @pulumi.getter(name="machineType")
-    def machine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "machine_type")
-
-    @machine_type.setter
-    def machine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "machine_type", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="sizePerZone")
-    def size_per_zone(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "size_per_zone")
-
-    @size_per_zone.setter
-    def size_per_zone(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "size_per_zone", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "state")
-
-    @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "state", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerClusterWorkerPoolZoneArgs']]]]:
-        return pulumi.get(self, "zones")
-
-    @zones.setter
-    def zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerClusterWorkerPoolZoneArgs']]]]):
-        pulumi.set(self, "zones", value)
-
-
-if not MYPY:
-    class ContainerClusterWorkerPoolZoneArgsDict(TypedDict):
-        private_vlan: NotRequired[pulumi.Input[_builtins.str]]
-        public_vlan: NotRequired[pulumi.Input[_builtins.str]]
-        worker_count: NotRequired[pulumi.Input[_builtins.int]]
-        zone: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerClusterWorkerPoolZoneArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerClusterWorkerPoolZoneArgs:
-    def __init__(__self__, *,
-                 private_vlan: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_vlan: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
-        if private_vlan is not None:
-            pulumi.set(__self__, "private_vlan", private_vlan)
-        if public_vlan is not None:
-            pulumi.set(__self__, "public_vlan", public_vlan)
-        if worker_count is not None:
-            pulumi.set(__self__, "worker_count", worker_count)
-        if zone is not None:
-            pulumi.set(__self__, "zone", zone)
-
-    @_builtins.property
-    @pulumi.getter(name="privateVlan")
-    def private_vlan(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "private_vlan")
-
-    @private_vlan.setter
-    def private_vlan(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "private_vlan", value)
-
-    @_builtins.property
-    @pulumi.getter(name="publicVlan")
-    def public_vlan(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "public_vlan")
-
-    @public_vlan.setter
-    def public_vlan(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "public_vlan", value)
-
-    @_builtins.property
-    @pulumi.getter(name="workerCount")
-    def worker_count(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "worker_count")
-
-    @worker_count.setter
-    def worker_count(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "worker_count", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "zone")
-
-    @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "zone", value)
-
-
-if not MYPY:
-    class ContainerClusterWorkersInfoArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        pool_name: NotRequired[pulumi.Input[_builtins.str]]
-        version: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerClusterWorkersInfoArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerClusterWorkersInfoArgs:
-    def __init__(__self__, *,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pool_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
-        if id is not None:
-            pulumi.set(__self__, "id", id)
-        if pool_name is not None:
-            pulumi.set(__self__, "pool_name", pool_name)
-        if version is not None:
-            pulumi.set(__self__, "version", version)
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="poolName")
-    def pool_name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "pool_name")
-
-    @pool_name.setter
-    def pool_name(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "pool_name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "version")
-
-    @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "version", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostLifeCycleArgsDict(TypedDict):
-        actual_state: NotRequired[pulumi.Input[_builtins.str]]
-        desired_state: NotRequired[pulumi.Input[_builtins.str]]
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        message_date: NotRequired[pulumi.Input[_builtins.str]]
-        message_details: NotRequired[pulumi.Input[_builtins.str]]
-        message_details_date: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerDedicatedHostLifeCycleArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostLifeCycleArgs:
-    def __init__(__self__, *,
-                 actual_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 desired_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_details_date: Optional[pulumi.Input[_builtins.str]] = None):
-        if actual_state is not None:
-            pulumi.set(__self__, "actual_state", actual_state)
-        if desired_state is not None:
-            pulumi.set(__self__, "desired_state", desired_state)
-        if message is not None:
-            pulumi.set(__self__, "message", message)
-        if message_date is not None:
-            pulumi.set(__self__, "message_date", message_date)
-        if message_details is not None:
-            pulumi.set(__self__, "message_details", message_details)
-        if message_details_date is not None:
-            pulumi.set(__self__, "message_details_date", message_details_date)
-
-    @_builtins.property
-    @pulumi.getter(name="actualState")
-    def actual_state(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "actual_state")
-
-    @actual_state.setter
-    def actual_state(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "actual_state", value)
-
-    @_builtins.property
-    @pulumi.getter(name="desiredState")
-    def desired_state(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "desired_state")
-
-    @desired_state.setter
-    def desired_state(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "desired_state", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "message")
-
-    @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "message", value)
-
-    @_builtins.property
-    @pulumi.getter(name="messageDate")
-    def message_date(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "message_date")
-
-    @message_date.setter
-    def message_date(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "message_date", value)
-
-    @_builtins.property
-    @pulumi.getter(name="messageDetails")
-    def message_details(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "message_details")
-
-    @message_details.setter
-    def message_details(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "message_details", value)
-
-    @_builtins.property
-    @pulumi.getter(name="messageDetailsDate")
-    def message_details_date(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "message_details_date")
-
-    @message_details_date.setter
-    def message_details_date(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "message_details_date", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostPoolWorkerPoolArgsDict(TypedDict):
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        worker_pool_id: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerDedicatedHostPoolWorkerPoolArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostPoolWorkerPoolArgs:
-    def __init__(__self__, *,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_pool_id: Optional[pulumi.Input[_builtins.str]] = None):
-        if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
-        if worker_pool_id is not None:
-            pulumi.set(__self__, "worker_pool_id", worker_pool_id)
-
-    @_builtins.property
-    @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "cluster_id")
-
-    @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "cluster_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="workerPoolId")
-    def worker_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "worker_pool_id")
-
-    @worker_pool_id.setter
-    def worker_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "worker_pool_id", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostPoolZoneArgsDict(TypedDict):
-        capacities: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostPoolZoneCapacityArgsDict']]]]
-        host_count: NotRequired[pulumi.Input[_builtins.int]]
-        zone: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerDedicatedHostPoolZoneArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostPoolZoneArgs:
-    def __init__(__self__, *,
-                 capacities: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostPoolZoneCapacityArgs']]]] = None,
-                 host_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
-        if capacities is not None:
-            pulumi.set(__self__, "capacities", capacities)
-        if host_count is not None:
-            pulumi.set(__self__, "host_count", host_count)
-        if zone is not None:
-            pulumi.set(__self__, "zone", zone)
-
-    @_builtins.property
-    @pulumi.getter
-    def capacities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostPoolZoneCapacityArgs']]]]:
-        return pulumi.get(self, "capacities")
-
-    @capacities.setter
-    def capacities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostPoolZoneCapacityArgs']]]]):
-        pulumi.set(self, "capacities", value)
-
-    @_builtins.property
-    @pulumi.getter(name="hostCount")
-    def host_count(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "host_count")
-
-    @host_count.setter
-    def host_count(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "host_count", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "zone")
-
-    @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "zone", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostPoolZoneCapacityArgsDict(TypedDict):
-        memory_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        vcpu: NotRequired[pulumi.Input[_builtins.int]]
-elif False:
-    ContainerDedicatedHostPoolZoneCapacityArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostPoolZoneCapacityArgs:
-    def __init__(__self__, *,
-                 memory_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 vcpu: Optional[pulumi.Input[_builtins.int]] = None):
-        if memory_bytes is not None:
-            pulumi.set(__self__, "memory_bytes", memory_bytes)
-        if vcpu is not None:
-            pulumi.set(__self__, "vcpu", vcpu)
-
-    @_builtins.property
-    @pulumi.getter(name="memoryBytes")
-    def memory_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "memory_bytes")
-
-    @memory_bytes.setter
-    def memory_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "memory_bytes", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def vcpu(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "vcpu")
-
-    @vcpu.setter
-    def vcpu(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "vcpu", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostResourceArgsDict(TypedDict):
-        capacities: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceCapacityArgsDict']]]]
-        consumeds: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceConsumedArgsDict']]]]
-elif False:
-    ContainerDedicatedHostResourceArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostResourceArgs:
-    def __init__(__self__, *,
-                 capacities: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceCapacityArgs']]]] = None,
-                 consumeds: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceConsumedArgs']]]] = None):
-        if capacities is not None:
-            pulumi.set(__self__, "capacities", capacities)
-        if consumeds is not None:
-            pulumi.set(__self__, "consumeds", consumeds)
-
-    @_builtins.property
-    @pulumi.getter
-    def capacities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceCapacityArgs']]]]:
-        return pulumi.get(self, "capacities")
-
-    @capacities.setter
-    def capacities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceCapacityArgs']]]]):
-        pulumi.set(self, "capacities", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def consumeds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceConsumedArgs']]]]:
-        return pulumi.get(self, "consumeds")
-
-    @consumeds.setter
-    def consumeds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerDedicatedHostResourceConsumedArgs']]]]):
-        pulumi.set(self, "consumeds", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostResourceCapacityArgsDict(TypedDict):
-        memory_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        vcpu: NotRequired[pulumi.Input[_builtins.int]]
-elif False:
-    ContainerDedicatedHostResourceCapacityArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostResourceCapacityArgs:
-    def __init__(__self__, *,
-                 memory_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 vcpu: Optional[pulumi.Input[_builtins.int]] = None):
-        if memory_bytes is not None:
-            pulumi.set(__self__, "memory_bytes", memory_bytes)
-        if vcpu is not None:
-            pulumi.set(__self__, "vcpu", vcpu)
-
-    @_builtins.property
-    @pulumi.getter(name="memoryBytes")
-    def memory_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "memory_bytes")
-
-    @memory_bytes.setter
-    def memory_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "memory_bytes", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def vcpu(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "vcpu")
-
-    @vcpu.setter
-    def vcpu(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "vcpu", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostResourceConsumedArgsDict(TypedDict):
-        memory_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        vcpu: NotRequired[pulumi.Input[_builtins.int]]
-elif False:
-    ContainerDedicatedHostResourceConsumedArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostResourceConsumedArgs:
-    def __init__(__self__, *,
-                 memory_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 vcpu: Optional[pulumi.Input[_builtins.int]] = None):
-        if memory_bytes is not None:
-            pulumi.set(__self__, "memory_bytes", memory_bytes)
-        if vcpu is not None:
-            pulumi.set(__self__, "vcpu", vcpu)
-
-    @_builtins.property
-    @pulumi.getter(name="memoryBytes")
-    def memory_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "memory_bytes")
-
-    @memory_bytes.setter
-    def memory_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "memory_bytes", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def vcpu(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "vcpu")
-
-    @vcpu.setter
-    def vcpu(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "vcpu", value)
-
-
-if not MYPY:
-    class ContainerDedicatedHostWorkerArgsDict(TypedDict):
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        flavor: NotRequired[pulumi.Input[_builtins.str]]
-        worker_id: NotRequired[pulumi.Input[_builtins.str]]
-        worker_pool_id: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerDedicatedHostWorkerArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerDedicatedHostWorkerArgs:
-    def __init__(__self__, *,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 flavor: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_pool_id: Optional[pulumi.Input[_builtins.str]] = None):
-        if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
-        if flavor is not None:
-            pulumi.set(__self__, "flavor", flavor)
-        if worker_id is not None:
-            pulumi.set(__self__, "worker_id", worker_id)
-        if worker_pool_id is not None:
-            pulumi.set(__self__, "worker_pool_id", worker_pool_id)
-
-    @_builtins.property
-    @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "cluster_id")
-
-    @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "cluster_id", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def flavor(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "flavor")
-
-    @flavor.setter
-    def flavor(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "flavor", value)
-
-    @_builtins.property
-    @pulumi.getter(name="workerId")
-    def worker_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "worker_id")
-
-    @worker_id.setter
-    def worker_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "worker_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="workerPoolId")
-    def worker_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "worker_pool_id")
-
-    @worker_pool_id.setter
-    def worker_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "worker_pool_id", value)
-
-
-if not MYPY:
-    class ContainerIngressSecretOpaqueFieldArgsDict(TypedDict):
-        crn: pulumi.Input[_builtins.str]
-        """
-        Secret CRN corresponding to the field
-        """
-        expires_on: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Field expires on date
-        """
-        field_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The requested field name
-        """
-        last_updated_timestamp: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Field last updated timestamp
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The computed field name
-        """
-elif False:
-    ContainerIngressSecretOpaqueFieldArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerIngressSecretOpaqueFieldArgs:
-    def __init__(__self__, *,
-                 crn: pulumi.Input[_builtins.str],
-                 expires_on: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] crn: Secret CRN corresponding to the field
-        :param pulumi.Input[_builtins.str] expires_on: Field expires on date
-        :param pulumi.Input[_builtins.str] field_name: The requested field name
-        :param pulumi.Input[_builtins.str] last_updated_timestamp: Field last updated timestamp
-        :param pulumi.Input[_builtins.str] name: The computed field name
-        """
-        pulumi.set(__self__, "crn", crn)
-        if expires_on is not None:
-            pulumi.set(__self__, "expires_on", expires_on)
-        if field_name is not None:
-            pulumi.set(__self__, "field_name", field_name)
-        if last_updated_timestamp is not None:
-            pulumi.set(__self__, "last_updated_timestamp", last_updated_timestamp)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-
-    @_builtins.property
-    @pulumi.getter
-    def crn(self) -> pulumi.Input[_builtins.str]:
-        """
-        Secret CRN corresponding to the field
-        """
-        return pulumi.get(self, "crn")
-
-    @crn.setter
-    def crn(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "crn", value)
-
-    @_builtins.property
-    @pulumi.getter(name="expiresOn")
-    def expires_on(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Field expires on date
-        """
-        return pulumi.get(self, "expires_on")
-
-    @expires_on.setter
-    def expires_on(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "expires_on", value)
-
-    @_builtins.property
-    @pulumi.getter(name="fieldName")
-    def field_name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The requested field name
-        """
-        return pulumi.get(self, "field_name")
-
-    @field_name.setter
-    def field_name(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "field_name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="lastUpdatedTimestamp")
-    def last_updated_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Field last updated timestamp
-        """
-        return pulumi.get(self, "last_updated_timestamp")
-
-    @last_updated_timestamp.setter
-    def last_updated_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "last_updated_timestamp", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The computed field name
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "name", value)
-
-
-if not MYPY:
-    class ContainerVpcClusterAlbArgsDict(TypedDict):
-        alb_type: NotRequired[pulumi.Input[_builtins.str]]
-        disable_deployment: NotRequired[pulumi.Input[_builtins.bool]]
-        enable: NotRequired[pulumi.Input[_builtins.bool]]
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        load_balancer_hostname: NotRequired[pulumi.Input[_builtins.str]]
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        resize: NotRequired[pulumi.Input[_builtins.bool]]
-        state: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerVpcClusterAlbArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerVpcClusterAlbArgs:
-    def __init__(__self__, *,
-                 alb_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 disable_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resize: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
-        if alb_type is not None:
-            pulumi.set(__self__, "alb_type", alb_type)
-        if disable_deployment is not None:
-            pulumi.set(__self__, "disable_deployment", disable_deployment)
-        if enable is not None:
-            pulumi.set(__self__, "enable", enable)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
-        if load_balancer_hostname is not None:
-            pulumi.set(__self__, "load_balancer_hostname", load_balancer_hostname)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-        if resize is not None:
-            pulumi.set(__self__, "resize", resize)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-
-    @_builtins.property
-    @pulumi.getter(name="albType")
-    def alb_type(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "alb_type")
-
-    @alb_type.setter
-    def alb_type(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "alb_type", value)
-
-    @_builtins.property
-    @pulumi.getter(name="disableDeployment")
-    def disable_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        return pulumi.get(self, "disable_deployment")
-
-    @disable_deployment.setter
-    def disable_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "disable_deployment", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def enable(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        return pulumi.get(self, "enable")
-
-    @enable.setter
-    def enable(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "enable", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="loadBalancerHostname")
-    def load_balancer_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "load_balancer_hostname")
-
-    @load_balancer_hostname.setter
-    def load_balancer_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "load_balancer_hostname", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def resize(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        return pulumi.get(self, "resize")
-
-    @resize.setter
-    def resize(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "resize", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "state")
-
-    @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "state", value)
-
-
-if not MYPY:
-    class ContainerVpcClusterKmsConfigArgsDict(TypedDict):
-        crk_id: pulumi.Input[_builtins.str]
-        """
-        ID of the customer root key.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        ID of the KMS instance to use to encrypt the cluster.
-        """
-        account_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Account ID of KMS instance holder - if not provided, defaults to the account in use
-        """
-        private_endpoint: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specify this option to use the KMS public service endpoint.
-        """
-        wait_for_apply: NotRequired[pulumi.Input[_builtins.bool]]
-elif False:
-    ContainerVpcClusterKmsConfigArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerVpcClusterKmsConfigArgs:
-    def __init__(__self__, *,
-                 crk_id: pulumi.Input[_builtins.str],
-                 instance_id: pulumi.Input[_builtins.str],
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint: Optional[pulumi.Input[_builtins.bool]] = None,
-                 wait_for_apply: Optional[pulumi.Input[_builtins.bool]] = None):
-        """
-        :param pulumi.Input[_builtins.str] crk_id: ID of the customer root key.
-        :param pulumi.Input[_builtins.str] instance_id: ID of the KMS instance to use to encrypt the cluster.
-        :param pulumi.Input[_builtins.str] account_id: Account ID of KMS instance holder - if not provided, defaults to the account in use
-        :param pulumi.Input[_builtins.bool] private_endpoint: Specify this option to use the KMS public service endpoint.
-        """
-        pulumi.set(__self__, "crk_id", crk_id)
-        pulumi.set(__self__, "instance_id", instance_id)
-        if account_id is not None:
-            pulumi.set(__self__, "account_id", account_id)
-        if private_endpoint is not None:
-            pulumi.set(__self__, "private_endpoint", private_endpoint)
-        if wait_for_apply is not None:
-            pulumi.set(__self__, "wait_for_apply", wait_for_apply)
-
-    @_builtins.property
-    @pulumi.getter(name="crkId")
-    def crk_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        ID of the customer root key.
-        """
-        return pulumi.get(self, "crk_id")
-
-    @crk_id.setter
-    def crk_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "crk_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="instanceId")
-    def instance_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        ID of the KMS instance to use to encrypt the cluster.
-        """
-        return pulumi.get(self, "instance_id")
-
-    @instance_id.setter
-    def instance_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "instance_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Account ID of KMS instance holder - if not provided, defaults to the account in use
-        """
-        return pulumi.get(self, "account_id")
-
-    @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "account_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="privateEndpoint")
-    def private_endpoint(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        Specify this option to use the KMS public service endpoint.
-        """
-        return pulumi.get(self, "private_endpoint")
-
-    @private_endpoint.setter
-    def private_endpoint(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "private_endpoint", value)
-
-    @_builtins.property
-    @pulumi.getter(name="waitForApply")
-    def wait_for_apply(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        return pulumi.get(self, "wait_for_apply")
-
-    @wait_for_apply.setter
-    def wait_for_apply(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "wait_for_apply", value)
-
-
-if not MYPY:
-    class ContainerVpcClusterTaintArgsDict(TypedDict):
-        effect: pulumi.Input[_builtins.str]
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        key: pulumi.Input[_builtins.str]
-        """
-        Key for taint
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        Value for taint.
-        """
-elif False:
-    ContainerVpcClusterTaintArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerVpcClusterTaintArgs:
-    def __init__(__self__, *,
-                 effect: pulumi.Input[_builtins.str],
-                 key: pulumi.Input[_builtins.str],
-                 value: pulumi.Input[_builtins.str]):
-        """
-        :param pulumi.Input[_builtins.str] effect: Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        :param pulumi.Input[_builtins.str] key: Key for taint
-        :param pulumi.Input[_builtins.str] value: Value for taint.
-        """
-        pulumi.set(__self__, "effect", effect)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def effect(self) -> pulumi.Input[_builtins.str]:
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        return pulumi.get(self, "effect")
-
-    @effect.setter
-    def effect(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "effect", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def key(self) -> pulumi.Input[_builtins.str]:
-        """
-        Key for taint
-        """
-        return pulumi.get(self, "key")
-
-    @key.setter
-    def key(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "key", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[_builtins.str]:
-        """
-        Value for taint.
-        """
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "value", value)
-
-
-if not MYPY:
-    class ContainerVpcClusterZoneArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        Zone for the worker pool in a multizone cluster
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The VPC subnet to assign the cluster
-        """
-elif False:
-    ContainerVpcClusterZoneArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerVpcClusterZoneArgs:
-    def __init__(__self__, *,
-                 name: pulumi.Input[_builtins.str],
-                 subnet_id: pulumi.Input[_builtins.str]):
-        """
-        :param pulumi.Input[_builtins.str] name: Zone for the worker pool in a multizone cluster
-        :param pulumi.Input[_builtins.str] subnet_id: The VPC subnet to assign the cluster
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
-        """
-        Zone for the worker pool in a multizone cluster
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        The VPC subnet to assign the cluster
-        """
-        return pulumi.get(self, "subnet_id")
-
-    @subnet_id.setter
-    def subnet_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "subnet_id", value)
-
-
-if not MYPY:
-    class ContainerVpcWorkerPoolTaintArgsDict(TypedDict):
-        effect: pulumi.Input[_builtins.str]
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        key: pulumi.Input[_builtins.str]
-        """
-        Key for taint
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        Value for taint.
-        """
-elif False:
-    ContainerVpcWorkerPoolTaintArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerVpcWorkerPoolTaintArgs:
-    def __init__(__self__, *,
-                 effect: pulumi.Input[_builtins.str],
-                 key: pulumi.Input[_builtins.str],
-                 value: pulumi.Input[_builtins.str]):
-        """
-        :param pulumi.Input[_builtins.str] effect: Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        :param pulumi.Input[_builtins.str] key: Key for taint
-        :param pulumi.Input[_builtins.str] value: Value for taint.
-        """
-        pulumi.set(__self__, "effect", effect)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def effect(self) -> pulumi.Input[_builtins.str]:
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        return pulumi.get(self, "effect")
-
-    @effect.setter
-    def effect(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "effect", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def key(self) -> pulumi.Input[_builtins.str]:
-        """
-        Key for taint
-        """
-        return pulumi.get(self, "key")
-
-    @key.setter
-    def key(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "key", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[_builtins.str]:
-        """
-        Value for taint.
-        """
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "value", value)
-
-
-if not MYPY:
-    class ContainerVpcWorkerPoolZoneArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        zone name
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        subnet ID
-        """
-elif False:
-    ContainerVpcWorkerPoolZoneArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerVpcWorkerPoolZoneArgs:
-    def __init__(__self__, *,
-                 name: pulumi.Input[_builtins.str],
-                 subnet_id: pulumi.Input[_builtins.str]):
-        """
-        :param pulumi.Input[_builtins.str] name: zone name
-        :param pulumi.Input[_builtins.str] subnet_id: subnet ID
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
-        """
-        zone name
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        subnet ID
-        """
-        return pulumi.get(self, "subnet_id")
-
-    @subnet_id.setter
-    def subnet_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "subnet_id", value)
-
-
-if not MYPY:
-    class ContainerWorkerPoolTaintArgsDict(TypedDict):
-        effect: pulumi.Input[_builtins.str]
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        key: pulumi.Input[_builtins.str]
-        """
-        Key for taint
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        Value for taint.
-        """
-elif False:
-    ContainerWorkerPoolTaintArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerWorkerPoolTaintArgs:
-    def __init__(__self__, *,
-                 effect: pulumi.Input[_builtins.str],
-                 key: pulumi.Input[_builtins.str],
-                 value: pulumi.Input[_builtins.str]):
-        """
-        :param pulumi.Input[_builtins.str] effect: Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        :param pulumi.Input[_builtins.str] key: Key for taint
-        :param pulumi.Input[_builtins.str] value: Value for taint.
-        """
-        pulumi.set(__self__, "effect", effect)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def effect(self) -> pulumi.Input[_builtins.str]:
-        """
-        Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-        """
-        return pulumi.get(self, "effect")
-
-    @effect.setter
-    def effect(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "effect", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def key(self) -> pulumi.Input[_builtins.str]:
-        """
-        Key for taint
-        """
-        return pulumi.get(self, "key")
-
-    @key.setter
-    def key(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "key", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[_builtins.str]:
-        """
-        Value for taint.
-        """
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "value", value)
-
-
-if not MYPY:
-    class ContainerWorkerPoolZoneArgsDict(TypedDict):
-        private_vlan: NotRequired[pulumi.Input[_builtins.str]]
-        public_vlan: NotRequired[pulumi.Input[_builtins.str]]
-        worker_count: NotRequired[pulumi.Input[_builtins.int]]
-        zone: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ContainerWorkerPoolZoneArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class ContainerWorkerPoolZoneArgs:
-    def __init__(__self__, *,
-                 private_vlan: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_vlan: Optional[pulumi.Input[_builtins.str]] = None,
-                 worker_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
-        if private_vlan is not None:
-            pulumi.set(__self__, "private_vlan", private_vlan)
-        if public_vlan is not None:
-            pulumi.set(__self__, "public_vlan", public_vlan)
-        if worker_count is not None:
-            pulumi.set(__self__, "worker_count", worker_count)
-        if zone is not None:
-            pulumi.set(__self__, "zone", zone)
-
-    @_builtins.property
-    @pulumi.getter(name="privateVlan")
-    def private_vlan(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "private_vlan")
-
-    @private_vlan.setter
-    def private_vlan(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "private_vlan", value)
-
-    @_builtins.property
-    @pulumi.getter(name="publicVlan")
-    def public_vlan(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "public_vlan")
-
-    @public_vlan.setter
-    def public_vlan(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "public_vlan", value)
-
-    @_builtins.property
-    @pulumi.getter(name="workerCount")
-    def worker_count(self) -> Optional[pulumi.Input[_builtins.int]]:
-        return pulumi.get(self, "worker_count")
-
-    @worker_count.setter
-    def worker_count(self, value: Optional[pulumi.Input[_builtins.int]]):
-        pulumi.set(self, "worker_count", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "zone")
-
-    @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "zone", value)
 
 
 if not MYPY:
@@ -5923,656 +4067,6 @@ class CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirectArgs:
     @replace_key_with.setter
     def replace_key_with(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "replace_key_with", value)
-
-
-if not MYPY:
-    class DnsCustomResolverForwardingRuleViewArgsDict(TypedDict):
-        expression: pulumi.Input[_builtins.str]
-        """
-        Expression of the view.
-        """
-        forward_tos: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The upstream DNS servers that the matching DNS queries will be forwarded to.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        Unique name of the view.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Description of the view.
-        """
-elif False:
-    DnsCustomResolverForwardingRuleViewArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class DnsCustomResolverForwardingRuleViewArgs:
-    def __init__(__self__, *,
-                 expression: pulumi.Input[_builtins.str],
-                 forward_tos: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 name: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] expression: Expression of the view.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] forward_tos: The upstream DNS servers that the matching DNS queries will be forwarded to.
-        :param pulumi.Input[_builtins.str] name: Unique name of the view.
-        :param pulumi.Input[_builtins.str] description: Description of the view.
-        """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "forward_tos", forward_tos)
-        pulumi.set(__self__, "name", name)
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-
-    @_builtins.property
-    @pulumi.getter
-    def expression(self) -> pulumi.Input[_builtins.str]:
-        """
-        Expression of the view.
-        """
-        return pulumi.get(self, "expression")
-
-    @expression.setter
-    def expression(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "expression", value)
-
-    @_builtins.property
-    @pulumi.getter(name="forwardTos")
-    def forward_tos(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
-        """
-        The upstream DNS servers that the matching DNS queries will be forwarded to.
-        """
-        return pulumi.get(self, "forward_tos")
-
-    @forward_tos.setter
-    def forward_tos(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "forward_tos", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
-        """
-        Unique name of the view.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Description of the view.
-        """
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "description", value)
-
-
-if not MYPY:
-    class DnsCustomResolverLocationArgsDict(TypedDict):
-        subnet_crn: pulumi.Input[_builtins.str]
-        """
-        Subnet CRN
-        """
-        dns_server_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ip address of this dns server
-        """
-        enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the location is enabled for the custom resolver
-        """
-        healthy: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the DNS server in this location is healthy or not.
-        """
-        location_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Location ID
-        """
-elif False:
-    DnsCustomResolverLocationArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class DnsCustomResolverLocationArgs:
-    def __init__(__self__, *,
-                 subnet_crn: pulumi.Input[_builtins.str],
-                 dns_server_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 healthy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 location_id: Optional[pulumi.Input[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] subnet_crn: Subnet CRN
-        :param pulumi.Input[_builtins.str] dns_server_ip: The ip address of this dns server
-        :param pulumi.Input[_builtins.bool] enabled: Whether the location is enabled for the custom resolver
-        :param pulumi.Input[_builtins.bool] healthy: Whether the DNS server in this location is healthy or not.
-        :param pulumi.Input[_builtins.str] location_id: Location ID
-        """
-        pulumi.set(__self__, "subnet_crn", subnet_crn)
-        if dns_server_ip is not None:
-            pulumi.set(__self__, "dns_server_ip", dns_server_ip)
-        if enabled is not None:
-            pulumi.set(__self__, "enabled", enabled)
-        if healthy is not None:
-            pulumi.set(__self__, "healthy", healthy)
-        if location_id is not None:
-            pulumi.set(__self__, "location_id", location_id)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetCrn")
-    def subnet_crn(self) -> pulumi.Input[_builtins.str]:
-        """
-        Subnet CRN
-        """
-        return pulumi.get(self, "subnet_crn")
-
-    @subnet_crn.setter
-    def subnet_crn(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "subnet_crn", value)
-
-    @_builtins.property
-    @pulumi.getter(name="dnsServerIp")
-    def dns_server_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The ip address of this dns server
-        """
-        return pulumi.get(self, "dns_server_ip")
-
-    @dns_server_ip.setter
-    def dns_server_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "dns_server_ip", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        Whether the location is enabled for the custom resolver
-        """
-        return pulumi.get(self, "enabled")
-
-    @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "enabled", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def healthy(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        Whether the DNS server in this location is healthy or not.
-        """
-        return pulumi.get(self, "healthy")
-
-    @healthy.setter
-    def healthy(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "healthy", value)
-
-    @_builtins.property
-    @pulumi.getter(name="locationId")
-    def location_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Location ID
-        """
-        return pulumi.get(self, "location_id")
-
-    @location_id.setter
-    def location_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "location_id", value)
-
-
-if not MYPY:
-    class DnsCustomResolverRuleArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Descriptive text of the forwarding rule.
-        """
-        forward_tos: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The upstream DNS servers will be forwarded to.
-        """
-        match: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The matching zone or hostname.
-        """
-        rule_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifier of the forwarding rule.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the forwarding rule.
-        """
-        views: NotRequired[pulumi.Input[Sequence[pulumi.Input['DnsCustomResolverRuleViewArgsDict']]]]
-        """
-        An array of views used by forwarding rules.
-        """
-elif False:
-    DnsCustomResolverRuleArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class DnsCustomResolverRuleArgs:
-    def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 forward_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 views: Optional[pulumi.Input[Sequence[pulumi.Input['DnsCustomResolverRuleViewArgs']]]] = None):
-        """
-        :param pulumi.Input[_builtins.str] description: Descriptive text of the forwarding rule.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] forward_tos: The upstream DNS servers will be forwarded to.
-        :param pulumi.Input[_builtins.str] match: The matching zone or hostname.
-        :param pulumi.Input[_builtins.str] rule_id: Identifier of the forwarding rule.
-        :param pulumi.Input[_builtins.str] type: Type of the forwarding rule.
-        :param pulumi.Input[Sequence[pulumi.Input['DnsCustomResolverRuleViewArgs']]] views: An array of views used by forwarding rules.
-        """
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if forward_tos is not None:
-            pulumi.set(__self__, "forward_tos", forward_tos)
-        if match is not None:
-            pulumi.set(__self__, "match", match)
-        if rule_id is not None:
-            pulumi.set(__self__, "rule_id", rule_id)
-        if type is not None:
-            pulumi.set(__self__, "type", type)
-        if views is not None:
-            pulumi.set(__self__, "views", views)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Descriptive text of the forwarding rule.
-        """
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "description", value)
-
-    @_builtins.property
-    @pulumi.getter(name="forwardTos")
-    def forward_tos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
-        """
-        The upstream DNS servers will be forwarded to.
-        """
-        return pulumi.get(self, "forward_tos")
-
-    @forward_tos.setter
-    def forward_tos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
-        pulumi.set(self, "forward_tos", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def match(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The matching zone or hostname.
-        """
-        return pulumi.get(self, "match")
-
-    @match.setter
-    def match(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "match", value)
-
-    @_builtins.property
-    @pulumi.getter(name="ruleId")
-    def rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Identifier of the forwarding rule.
-        """
-        return pulumi.get(self, "rule_id")
-
-    @rule_id.setter
-    def rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "rule_id", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Type of the forwarding rule.
-        """
-        return pulumi.get(self, "type")
-
-    @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "type", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DnsCustomResolverRuleViewArgs']]]]:
-        """
-        An array of views used by forwarding rules.
-        """
-        return pulumi.get(self, "views")
-
-    @views.setter
-    def views(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DnsCustomResolverRuleViewArgs']]]]):
-        pulumi.set(self, "views", value)
-
-
-if not MYPY:
-    class DnsCustomResolverRuleViewArgsDict(TypedDict):
-        expression: pulumi.Input[_builtins.str]
-        """
-        Expression of the view.
-        """
-        forward_tos: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The upstream DNS servers that the matching DNS queries will be forwarded to.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        Unique name of the view.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Description of the view.
-        """
-elif False:
-    DnsCustomResolverRuleViewArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class DnsCustomResolverRuleViewArgs:
-    def __init__(__self__, *,
-                 expression: pulumi.Input[_builtins.str],
-                 forward_tos: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 name: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] expression: Expression of the view.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] forward_tos: The upstream DNS servers that the matching DNS queries will be forwarded to.
-        :param pulumi.Input[_builtins.str] name: Unique name of the view.
-        :param pulumi.Input[_builtins.str] description: Description of the view.
-        """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "forward_tos", forward_tos)
-        pulumi.set(__self__, "name", name)
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-
-    @_builtins.property
-    @pulumi.getter
-    def expression(self) -> pulumi.Input[_builtins.str]:
-        """
-        Expression of the view.
-        """
-        return pulumi.get(self, "expression")
-
-    @expression.setter
-    def expression(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "expression", value)
-
-    @_builtins.property
-    @pulumi.getter(name="forwardTos")
-    def forward_tos(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
-        """
-        The upstream DNS servers that the matching DNS queries will be forwarded to.
-        """
-        return pulumi.get(self, "forward_tos")
-
-    @forward_tos.setter
-    def forward_tos(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "forward_tos", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
-        """
-        Unique name of the view.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Description of the view.
-        """
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "description", value)
-
-
-if not MYPY:
-    class DnsGlbAzPoolArgsDict(TypedDict):
-        availability_zone: pulumi.Input[_builtins.str]
-        """
-        Availability zone.
-        """
-        pools: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        List of load balancer pools
-        """
-elif False:
-    DnsGlbAzPoolArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class DnsGlbAzPoolArgs:
-    def __init__(__self__, *,
-                 availability_zone: pulumi.Input[_builtins.str],
-                 pools: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        """
-        :param pulumi.Input[_builtins.str] availability_zone: Availability zone.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pools: List of load balancer pools
-        """
-        pulumi.set(__self__, "availability_zone", availability_zone)
-        pulumi.set(__self__, "pools", pools)
-
-    @_builtins.property
-    @pulumi.getter(name="availabilityZone")
-    def availability_zone(self) -> pulumi.Input[_builtins.str]:
-        """
-        Availability zone.
-        """
-        return pulumi.get(self, "availability_zone")
-
-    @availability_zone.setter
-    def availability_zone(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "availability_zone", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def pools(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
-        """
-        List of load balancer pools
-        """
-        return pulumi.get(self, "pools")
-
-    @pools.setter
-    def pools(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "pools", value)
-
-
-if not MYPY:
-    class DnsGlbMonitorHeaderArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        The name of HTTP request header
-        """
-        values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The value of HTTP request header
-        """
-elif False:
-    DnsGlbMonitorHeaderArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class DnsGlbMonitorHeaderArgs:
-    def __init__(__self__, *,
-                 name: pulumi.Input[_builtins.str],
-                 values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        """
-        :param pulumi.Input[_builtins.str] name: The name of HTTP request header
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: The value of HTTP request header
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
-        """
-        The name of HTTP request header
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def values(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
-        """
-        The value of HTTP request header
-        """
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "values", value)
-
-
-if not MYPY:
-    class DnsGlbPoolOriginArgsDict(TypedDict):
-        address: pulumi.Input[_builtins.str]
-        """
-        The address of the origin server. It can be a hostname or an IP address.
-        """
-        enabled: pulumi.Input[_builtins.bool]
-        """
-        Whether the origin server is enabled.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        The name of the origin server.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Description of the origin server.
-        """
-        health: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the health is `true` or `false`.
-        """
-        health_failure_reason: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Reason for health check failure
-        """
-elif False:
-    DnsGlbPoolOriginArgsDict: TypeAlias = Mapping[str, Any]
-
-@pulumi.input_type
-class DnsGlbPoolOriginArgs:
-    def __init__(__self__, *,
-                 address: pulumi.Input[_builtins.str],
-                 enabled: pulumi.Input[_builtins.bool],
-                 name: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 health: Optional[pulumi.Input[_builtins.bool]] = None,
-                 health_failure_reason: Optional[pulumi.Input[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] address: The address of the origin server. It can be a hostname or an IP address.
-        :param pulumi.Input[_builtins.bool] enabled: Whether the origin server is enabled.
-        :param pulumi.Input[_builtins.str] name: The name of the origin server.
-        :param pulumi.Input[_builtins.str] description: Description of the origin server.
-        :param pulumi.Input[_builtins.bool] health: Whether the health is `true` or `false`.
-        :param pulumi.Input[_builtins.str] health_failure_reason: The Reason for health check failure
-        """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "name", name)
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if health is not None:
-            pulumi.set(__self__, "health", health)
-        if health_failure_reason is not None:
-            pulumi.set(__self__, "health_failure_reason", health_failure_reason)
-
-    @_builtins.property
-    @pulumi.getter
-    def address(self) -> pulumi.Input[_builtins.str]:
-        """
-        The address of the origin server. It can be a hostname or an IP address.
-        """
-        return pulumi.get(self, "address")
-
-    @address.setter
-    def address(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "address", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def enabled(self) -> pulumi.Input[_builtins.bool]:
-        """
-        Whether the origin server is enabled.
-        """
-        return pulumi.get(self, "enabled")
-
-    @enabled.setter
-    def enabled(self, value: pulumi.Input[_builtins.bool]):
-        pulumi.set(self, "enabled", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
-        """
-        The name of the origin server.
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Description of the origin server.
-        """
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "description", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def health(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        Whether the health is `true` or `false`.
-        """
-        return pulumi.get(self, "health")
-
-    @health.setter
-    def health(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "health", value)
-
-    @_builtins.property
-    @pulumi.getter(name="healthFailureReason")
-    def health_failure_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The Reason for health check failure
-        """
-        return pulumi.get(self, "health_failure_reason")
-
-    @health_failure_reason.setter
-    def health_failure_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "health_failure_reason", value)
 
 
 if not MYPY:
@@ -46243,6 +43737,4033 @@ class IsVpnServerVpcDeletedArgs:
     @more_info.setter
     def more_info(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "more_info", value)
+
+
+if not MYPY:
+    class PiDhcpLeaseArgsDict(TypedDict):
+        instance_ip: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The IP of the PVM Instance
+        """
+        instance_mac: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The MAC Address of the PVM Instance
+        """
+elif False:
+    PiDhcpLeaseArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiDhcpLeaseArgs:
+    def __init__(__self__, *,
+                 instance_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_mac: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] instance_ip: The IP of the PVM Instance
+        :param pulumi.Input[_builtins.str] instance_mac: The MAC Address of the PVM Instance
+        """
+        if instance_ip is not None:
+            pulumi.set(__self__, "instance_ip", instance_ip)
+        if instance_mac is not None:
+            pulumi.set(__self__, "instance_mac", instance_mac)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceIp")
+    def instance_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The IP of the PVM Instance
+        """
+        return pulumi.get(self, "instance_ip")
+
+    @instance_ip.setter
+    def instance_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "instance_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceMac")
+    def instance_mac(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The MAC Address of the PVM Instance
+        """
+        return pulumi.get(self, "instance_mac")
+
+    @instance_mac.setter
+    def instance_mac(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "instance_mac", value)
+
+
+if not MYPY:
+    class PiHostCapacityArgsDict(TypedDict):
+        available_cores: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Number of cores currently available.
+        """
+        available_memory: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Amount of memory currently available (in GB).
+        """
+        reserved_core: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Number of cores reserved for system use.
+        """
+        reserved_memory: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Amount of memory reserved for system use (in GB).
+        """
+        total_core: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Total number of cores of the host.
+        """
+        total_memory: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Total amount of memory of the host (in GB).
+        """
+        used_core: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Number of cores in use on the host.
+        """
+        used_memory: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        Amount of memory used on the host (in GB).
+        """
+elif False:
+    PiHostCapacityArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiHostCapacityArgs:
+    def __init__(__self__, *,
+                 available_cores: Optional[pulumi.Input[_builtins.float]] = None,
+                 available_memory: Optional[pulumi.Input[_builtins.float]] = None,
+                 reserved_core: Optional[pulumi.Input[_builtins.float]] = None,
+                 reserved_memory: Optional[pulumi.Input[_builtins.float]] = None,
+                 total_core: Optional[pulumi.Input[_builtins.float]] = None,
+                 total_memory: Optional[pulumi.Input[_builtins.float]] = None,
+                 used_core: Optional[pulumi.Input[_builtins.float]] = None,
+                 used_memory: Optional[pulumi.Input[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] available_cores: Number of cores currently available.
+        :param pulumi.Input[_builtins.float] available_memory: Amount of memory currently available (in GB).
+        :param pulumi.Input[_builtins.float] reserved_core: Number of cores reserved for system use.
+        :param pulumi.Input[_builtins.float] reserved_memory: Amount of memory reserved for system use (in GB).
+        :param pulumi.Input[_builtins.float] total_core: Total number of cores of the host.
+        :param pulumi.Input[_builtins.float] total_memory: Total amount of memory of the host (in GB).
+        :param pulumi.Input[_builtins.float] used_core: Number of cores in use on the host.
+        :param pulumi.Input[_builtins.float] used_memory: Amount of memory used on the host (in GB).
+        """
+        if available_cores is not None:
+            pulumi.set(__self__, "available_cores", available_cores)
+        if available_memory is not None:
+            pulumi.set(__self__, "available_memory", available_memory)
+        if reserved_core is not None:
+            pulumi.set(__self__, "reserved_core", reserved_core)
+        if reserved_memory is not None:
+            pulumi.set(__self__, "reserved_memory", reserved_memory)
+        if total_core is not None:
+            pulumi.set(__self__, "total_core", total_core)
+        if total_memory is not None:
+            pulumi.set(__self__, "total_memory", total_memory)
+        if used_core is not None:
+            pulumi.set(__self__, "used_core", used_core)
+        if used_memory is not None:
+            pulumi.set(__self__, "used_memory", used_memory)
+
+    @_builtins.property
+    @pulumi.getter(name="availableCores")
+    def available_cores(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Number of cores currently available.
+        """
+        return pulumi.get(self, "available_cores")
+
+    @available_cores.setter
+    def available_cores(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "available_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableMemory")
+    def available_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Amount of memory currently available (in GB).
+        """
+        return pulumi.get(self, "available_memory")
+
+    @available_memory.setter
+    def available_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "available_memory", value)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedCore")
+    def reserved_core(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Number of cores reserved for system use.
+        """
+        return pulumi.get(self, "reserved_core")
+
+    @reserved_core.setter
+    def reserved_core(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "reserved_core", value)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedMemory")
+    def reserved_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Amount of memory reserved for system use (in GB).
+        """
+        return pulumi.get(self, "reserved_memory")
+
+    @reserved_memory.setter
+    def reserved_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "reserved_memory", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalCore")
+    def total_core(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Total number of cores of the host.
+        """
+        return pulumi.get(self, "total_core")
+
+    @total_core.setter
+    def total_core(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "total_core", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMemory")
+    def total_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Total amount of memory of the host (in GB).
+        """
+        return pulumi.get(self, "total_memory")
+
+    @total_memory.setter
+    def total_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "total_memory", value)
+
+    @_builtins.property
+    @pulumi.getter(name="usedCore")
+    def used_core(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Number of cores in use on the host.
+        """
+        return pulumi.get(self, "used_core")
+
+    @used_core.setter
+    def used_core(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "used_core", value)
+
+    @_builtins.property
+    @pulumi.getter(name="usedMemory")
+    def used_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Amount of memory used on the host (in GB).
+        """
+        return pulumi.get(self, "used_memory")
+
+    @used_memory.setter
+    def used_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "used_memory", value)
+
+
+if not MYPY:
+    class PiHostGroupPiHostArgsDict(TypedDict):
+        display_name: pulumi.Input[_builtins.str]
+        """
+        Name of the host chosen by the user.
+        """
+        sys_type: pulumi.Input[_builtins.str]
+        """
+        System type.
+        """
+        user_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of user tags attached to the resource.
+        """
+elif False:
+    PiHostGroupPiHostArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiHostGroupPiHostArgs:
+    def __init__(__self__, *,
+                 display_name: pulumi.Input[_builtins.str],
+                 sys_type: pulumi.Input[_builtins.str],
+                 user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] display_name: Name of the host chosen by the user.
+        :param pulumi.Input[_builtins.str] sys_type: System type.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] user_tags: List of user tags attached to the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "sys_type", sys_type)
+        if user_tags is not None:
+            pulumi.set(__self__, "user_tags", user_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the host chosen by the user.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sysType")
+    def sys_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        System type.
+        """
+        return pulumi.get(self, "sys_type")
+
+    @sys_type.setter
+    def sys_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "sys_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userTags")
+    def user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of user tags attached to the resource.
+        """
+        return pulumi.get(self, "user_tags")
+
+    @user_tags.setter
+    def user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "user_tags", value)
+
+
+if not MYPY:
+    class PiHostGroupPiSecondaryArgsDict(TypedDict):
+        workspace: pulumi.Input[_builtins.str]
+        """
+        ID of the workspace to share the host group with.
+        """
+        name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Name of the host group to create in the secondary workspace.
+        """
+elif False:
+    PiHostGroupPiSecondaryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiHostGroupPiSecondaryArgs:
+    def __init__(__self__, *,
+                 workspace: pulumi.Input[_builtins.str],
+                 name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] workspace: ID of the workspace to share the host group with.
+        :param pulumi.Input[_builtins.str] name: Name of the host group to create in the secondary workspace.
+        """
+        pulumi.set(__self__, "workspace", workspace)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def workspace(self) -> pulumi.Input[_builtins.str]:
+        """
+        ID of the workspace to share the host group with.
+        """
+        return pulumi.get(self, "workspace")
+
+    @workspace.setter
+    def workspace(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "workspace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the host group to create in the secondary workspace.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+if not MYPY:
+    class PiHostPiHostArgsDict(TypedDict):
+        display_name: pulumi.Input[_builtins.str]
+        """
+        Name of the host chosen by the user.
+        """
+        sys_type: pulumi.Input[_builtins.str]
+        """
+        System type.
+        """
+        user_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of user tags attached to the resource.
+        """
+elif False:
+    PiHostPiHostArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiHostPiHostArgs:
+    def __init__(__self__, *,
+                 display_name: pulumi.Input[_builtins.str],
+                 sys_type: pulumi.Input[_builtins.str],
+                 user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] display_name: Name of the host chosen by the user.
+        :param pulumi.Input[_builtins.str] sys_type: System type.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] user_tags: List of user tags attached to the resource.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "sys_type", sys_type)
+        if user_tags is not None:
+            pulumi.set(__self__, "user_tags", user_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the host chosen by the user.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sysType")
+    def sys_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        System type.
+        """
+        return pulumi.get(self, "sys_type")
+
+    @sys_type.setter
+    def sys_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "sys_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userTags")
+    def user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of user tags attached to the resource.
+        """
+        return pulumi.get(self, "user_tags")
+
+    @user_tags.setter
+    def user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "user_tags", value)
+
+
+if not MYPY:
+    class PiImagePiImageImportDetailsArgsDict(TypedDict):
+        license_type: pulumi.Input[_builtins.str]
+        """
+        Origin of the license of the product.
+        """
+        product: pulumi.Input[_builtins.str]
+        """
+        Product within the image.
+        """
+        vendor: pulumi.Input[_builtins.str]
+        """
+        Vendor supporting the product.
+        """
+elif False:
+    PiImagePiImageImportDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiImagePiImageImportDetailsArgs:
+    def __init__(__self__, *,
+                 license_type: pulumi.Input[_builtins.str],
+                 product: pulumi.Input[_builtins.str],
+                 vendor: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] license_type: Origin of the license of the product.
+        :param pulumi.Input[_builtins.str] product: Product within the image.
+        :param pulumi.Input[_builtins.str] vendor: Vendor supporting the product.
+        """
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "product", product)
+        pulumi.set(__self__, "vendor", vendor)
+
+    @_builtins.property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Origin of the license of the product.
+        """
+        return pulumi.get(self, "license_type")
+
+    @license_type.setter
+    def license_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "license_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def product(self) -> pulumi.Input[_builtins.str]:
+        """
+        Product within the image.
+        """
+        return pulumi.get(self, "product")
+
+    @product.setter
+    def product(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "product", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vendor(self) -> pulumi.Input[_builtins.str]:
+        """
+        Vendor supporting the product.
+        """
+        return pulumi.get(self, "vendor")
+
+    @vendor.setter
+    def vendor(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "vendor", value)
+
+
+if not MYPY:
+    class PiInstancePiDeploymentTargetArgsDict(TypedDict):
+        id: pulumi.Input[_builtins.str]
+        """
+        The uuid of the host group or host.
+        """
+        type: pulumi.Input[_builtins.str]
+        """
+        The deployment target type. Supported values are `host` and `hostGroup`.
+        """
+elif False:
+    PiInstancePiDeploymentTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiInstancePiDeploymentTargetArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] id: The uuid of the host group or host.
+        :param pulumi.Input[_builtins.str] type: The deployment target type. Supported values are `host` and `hostGroup`.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The uuid of the host group or host.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The deployment target type. Supported values are `host` and `hostGroup`.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiInstancePiNetworkArgsDict(TypedDict):
+        network_id: pulumi.Input[_builtins.str]
+        external_ip: NotRequired[pulumi.Input[_builtins.str]]
+        ip_address: NotRequired[pulumi.Input[_builtins.str]]
+        mac_address: NotRequired[pulumi.Input[_builtins.str]]
+        network_interface_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        ID of the network interface.
+        """
+        network_name: NotRequired[pulumi.Input[_builtins.str]]
+        network_security_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+        """
+        network_security_groups_hreves: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Links to the network security groups that the network interface is a member of.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    PiInstancePiNetworkArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiInstancePiNetworkArgs:
+    def __init__(__self__, *,
+                 network_id: pulumi.Input[_builtins.str],
+                 external_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 network_security_groups_hreves: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] network_interface_id: ID of the network interface.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_groups_hreves: Links to the network security groups that the network interface is a member of.
+        """
+        pulumi.set(__self__, "network_id", network_id)
+        if external_ip is not None:
+            pulumi.set(__self__, "external_ip", external_ip)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if mac_address is not None:
+            pulumi.set(__self__, "mac_address", mac_address)
+        if network_interface_id is not None:
+            pulumi.set(__self__, "network_interface_id", network_interface_id)
+        if network_name is not None:
+            pulumi.set(__self__, "network_name", network_name)
+        if network_security_group_ids is not None:
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if network_security_groups_hreves is not None:
+            pulumi.set(__self__, "network_security_groups_hreves", network_security_groups_hreves)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="networkId")
+    def network_id(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "network_id")
+
+    @network_id.setter
+    def network_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "network_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="externalIp")
+    def external_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "external_ip")
+
+    @external_ip.setter
+    def external_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "external_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "mac_address")
+
+    @mac_address.setter
+    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mac_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        ID of the network interface.
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @network_interface_id.setter
+    def network_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_interface_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkName")
+    def network_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "network_name")
+
+    @network_name.setter
+    def network_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+        """
+        return pulumi.get(self, "network_security_group_ids")
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "network_security_group_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkSecurityGroupsHreves")
+    def network_security_groups_hreves(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Links to the network security groups that the network interface is a member of.
+        """
+        return pulumi.get(self, "network_security_groups_hreves")
+
+    @network_security_groups_hreves.setter
+    def network_security_groups_hreves(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "network_security_groups_hreves", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiInstancePiVirtualSerialNumberArgsDict(TypedDict):
+        serial: pulumi.Input[_builtins.str]
+        """
+        Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+        """
+        description: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Description of the Virtual Serial Number
+        """
+        software_tier: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Software tier. Enum: ["P05", "P10", "P20", "P30"].
+        """
+elif False:
+    PiInstancePiVirtualSerialNumberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiInstancePiVirtualSerialNumberArgs:
+    def __init__(__self__, *,
+                 serial: pulumi.Input[_builtins.str],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 software_tier: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] serial: Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+        :param pulumi.Input[_builtins.str] description: Description of the Virtual Serial Number
+        :param pulumi.Input[_builtins.str] software_tier: Software tier. Enum: ["P05", "P10", "P20", "P30"].
+        """
+        pulumi.set(__self__, "serial", serial)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if software_tier is not None:
+            pulumi.set(__self__, "software_tier", software_tier)
+
+    @_builtins.property
+    @pulumi.getter
+    def serial(self) -> pulumi.Input[_builtins.str]:
+        """
+        Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+        """
+        return pulumi.get(self, "serial")
+
+    @serial.setter
+    def serial(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "serial", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Description of the Virtual Serial Number
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="softwareTier")
+    def software_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Software tier. Enum: ["P05", "P10", "P20", "P30"].
+        """
+        return pulumi.get(self, "software_tier")
+
+    @software_tier.setter
+    def software_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "software_tier", value)
+
+
+if not MYPY:
+    class PiNetworkAddressGroupMemberArgsDict(TypedDict):
+        cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The IP addresses in CIDR notation for example 192.168.1.5/32.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the Network Address Group member IP addresses.
+        """
+elif False:
+    PiNetworkAddressGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkAddressGroupMemberArgs:
+    def __init__(__self__, *,
+                 cidr: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cidr: The IP addresses in CIDR notation for example 192.168.1.5/32.
+        :param pulumi.Input[_builtins.str] id: The id of the Network Address Group member IP addresses.
+        """
+        if cidr is not None:
+            pulumi.set(__self__, "cidr", cidr)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The IP addresses in CIDR notation for example 192.168.1.5/32.
+        """
+        return pulumi.get(self, "cidr")
+
+    @cidr.setter
+    def cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cidr", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the Network Address Group member IP addresses.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
+if not MYPY:
+    class PiNetworkAddressGroupMemberMemberArgsDict(TypedDict):
+        cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The IP addresses in CIDR notation for example 192.168.1.5/32.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the Network Address Group member IP addresses.
+        """
+elif False:
+    PiNetworkAddressGroupMemberMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkAddressGroupMemberMemberArgs:
+    def __init__(__self__, *,
+                 cidr: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cidr: The IP addresses in CIDR notation for example 192.168.1.5/32.
+        :param pulumi.Input[_builtins.str] id: The id of the Network Address Group member IP addresses.
+        """
+        if cidr is not None:
+            pulumi.set(__self__, "cidr", cidr)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The IP addresses in CIDR notation for example 192.168.1.5/32.
+        """
+        return pulumi.get(self, "cidr")
+
+    @cidr.setter
+    def cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cidr", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the Network Address Group member IP addresses.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
+if not MYPY:
+    class PiNetworkInterfaceInstanceArgsDict(TypedDict):
+        href: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Link to instance resource.
+        """
+        instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The attached instance ID.
+        """
+elif False:
+    PiNetworkInterfaceInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkInterfaceInstanceArgs:
+    def __init__(__self__, *,
+                 href: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: Link to instance resource.
+        :param pulumi.Input[_builtins.str] instance_id: The attached instance ID.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Link to instance resource.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The attached instance ID.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
+
+if not MYPY:
+    class PiNetworkNetworkAddressTranslationArgsDict(TypedDict):
+        source_ip: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+        """
+elif False:
+    PiNetworkNetworkAddressTranslationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkNetworkAddressTranslationArgs:
+    def __init__(__self__, *,
+                 source_ip: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] source_ip: source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+        """
+        if source_ip is not None:
+            warnings.warn("""This field is deprecated""", DeprecationWarning)
+            pulumi.log.warn("""source_ip is deprecated: This field is deprecated""")
+        if source_ip is not None:
+            pulumi.set(__self__, "source_ip", source_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceIp")
+    @_utilities.deprecated("""This field is deprecated""")
+    def source_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+        """
+        return pulumi.get(self, "source_ip")
+
+    @source_ip.setter
+    def source_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_ip", value)
+
+
+if not MYPY:
+    class PiNetworkPeerExportRouteFilterArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Action of the filter.
+        """
+        creation_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Time stamp for create route filter.
+        """
+        direction: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Direction of the filter.
+        """
+        error: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Error description.
+        """
+        ge: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The minimum matching length of the prefix-set.
+        """
+        index: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Priority or order of the filter.
+        """
+        le: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The maximum matching length of the prefix-set.
+        """
+        prefix: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        IP prefix representing an address and mask length of the prefix-set.
+        """
+        route_filter_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Route filter ID.
+        """
+        state: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Status of the route filter.
+        """
+elif False:
+    PiNetworkPeerExportRouteFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkPeerExportRouteFilterArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 direction: Optional[pulumi.Input[_builtins.str]] = None,
+                 error: Optional[pulumi.Input[_builtins.str]] = None,
+                 ge: Optional[pulumi.Input[_builtins.int]] = None,
+                 index: Optional[pulumi.Input[_builtins.int]] = None,
+                 le: Optional[pulumi.Input[_builtins.int]] = None,
+                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 route_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: Action of the filter.
+        :param pulumi.Input[_builtins.str] creation_date: Time stamp for create route filter.
+        :param pulumi.Input[_builtins.str] direction: Direction of the filter.
+        :param pulumi.Input[_builtins.str] error: Error description.
+        :param pulumi.Input[_builtins.int] ge: The minimum matching length of the prefix-set.
+        :param pulumi.Input[_builtins.int] index: Priority or order of the filter.
+        :param pulumi.Input[_builtins.int] le: The maximum matching length of the prefix-set.
+        :param pulumi.Input[_builtins.str] prefix: IP prefix representing an address and mask length of the prefix-set.
+        :param pulumi.Input[_builtins.str] route_filter_id: Route filter ID.
+        :param pulumi.Input[_builtins.str] state: Status of the route filter.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if creation_date is not None:
+            pulumi.set(__self__, "creation_date", creation_date)
+        if direction is not None:
+            pulumi.set(__self__, "direction", direction)
+        if error is not None:
+            pulumi.set(__self__, "error", error)
+        if ge is not None:
+            pulumi.set(__self__, "ge", ge)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
+        if le is not None:
+            pulumi.set(__self__, "le", le)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if route_filter_id is not None:
+            pulumi.set(__self__, "route_filter_id", route_filter_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Action of the filter.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="creationDate")
+    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time stamp for create route filter.
+        """
+        return pulumi.get(self, "creation_date")
+
+    @creation_date.setter
+    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "creation_date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def direction(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Direction of the filter.
+        """
+        return pulumi.get(self, "direction")
+
+    @direction.setter
+    def direction(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "direction", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def error(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Error description.
+        """
+        return pulumi.get(self, "error")
+
+    @error.setter
+    def error(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "error", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ge(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The minimum matching length of the prefix-set.
+        """
+        return pulumi.get(self, "ge")
+
+    @ge.setter
+    def ge(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ge", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def index(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Priority or order of the filter.
+        """
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "index", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def le(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The maximum matching length of the prefix-set.
+        """
+        return pulumi.get(self, "le")
+
+    @le.setter
+    def le(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "le", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        IP prefix representing an address and mask length of the prefix-set.
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
+    @_builtins.property
+    @pulumi.getter(name="routeFilterId")
+    def route_filter_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Route filter ID.
+        """
+        return pulumi.get(self, "route_filter_id")
+
+    @route_filter_id.setter
+    def route_filter_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "route_filter_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of the route filter.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+if not MYPY:
+    class PiNetworkPeerImportRouteFilterArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Action of the filter.
+        """
+        creation_date: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Time stamp for create route filter.
+        """
+        direction: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Direction of the filter.
+        """
+        error: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Error description.
+        """
+        ge: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The minimum matching length of the prefix-set.
+        """
+        index: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Priority or order of the filter.
+        """
+        le: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The maximum matching length of the prefix-set.
+        """
+        prefix: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        IP prefix representing an address and mask length of the prefix-set.
+        """
+        route_filter_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Route filter ID.
+        """
+        state: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Status of the route filter.
+        """
+elif False:
+    PiNetworkPeerImportRouteFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkPeerImportRouteFilterArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
+                 direction: Optional[pulumi.Input[_builtins.str]] = None,
+                 error: Optional[pulumi.Input[_builtins.str]] = None,
+                 ge: Optional[pulumi.Input[_builtins.int]] = None,
+                 index: Optional[pulumi.Input[_builtins.int]] = None,
+                 le: Optional[pulumi.Input[_builtins.int]] = None,
+                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 route_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: Action of the filter.
+        :param pulumi.Input[_builtins.str] creation_date: Time stamp for create route filter.
+        :param pulumi.Input[_builtins.str] direction: Direction of the filter.
+        :param pulumi.Input[_builtins.str] error: Error description.
+        :param pulumi.Input[_builtins.int] ge: The minimum matching length of the prefix-set.
+        :param pulumi.Input[_builtins.int] index: Priority or order of the filter.
+        :param pulumi.Input[_builtins.int] le: The maximum matching length of the prefix-set.
+        :param pulumi.Input[_builtins.str] prefix: IP prefix representing an address and mask length of the prefix-set.
+        :param pulumi.Input[_builtins.str] route_filter_id: Route filter ID.
+        :param pulumi.Input[_builtins.str] state: Status of the route filter.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if creation_date is not None:
+            pulumi.set(__self__, "creation_date", creation_date)
+        if direction is not None:
+            pulumi.set(__self__, "direction", direction)
+        if error is not None:
+            pulumi.set(__self__, "error", error)
+        if ge is not None:
+            pulumi.set(__self__, "ge", ge)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
+        if le is not None:
+            pulumi.set(__self__, "le", le)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if route_filter_id is not None:
+            pulumi.set(__self__, "route_filter_id", route_filter_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Action of the filter.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="creationDate")
+    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time stamp for create route filter.
+        """
+        return pulumi.get(self, "creation_date")
+
+    @creation_date.setter
+    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "creation_date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def direction(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Direction of the filter.
+        """
+        return pulumi.get(self, "direction")
+
+    @direction.setter
+    def direction(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "direction", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def error(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Error description.
+        """
+        return pulumi.get(self, "error")
+
+    @error.setter
+    def error(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "error", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ge(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The minimum matching length of the prefix-set.
+        """
+        return pulumi.get(self, "ge")
+
+    @ge.setter
+    def ge(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ge", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def index(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Priority or order of the filter.
+        """
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "index", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def le(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The maximum matching length of the prefix-set.
+        """
+        return pulumi.get(self, "le")
+
+    @le.setter
+    def le(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "le", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        IP prefix representing an address and mask length of the prefix-set.
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
+    @_builtins.property
+    @pulumi.getter(name="routeFilterId")
+    def route_filter_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Route filter ID.
+        """
+        return pulumi.get(self, "route_filter_id")
+
+    @route_filter_id.setter
+    def route_filter_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "route_filter_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of the route filter.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+if not MYPY:
+    class PiNetworkPiIpaddressRangeArgsDict(TypedDict):
+        pi_ending_ip_address: pulumi.Input[_builtins.str]
+        """
+        The ending ip address.
+        """
+        pi_starting_ip_address: pulumi.Input[_builtins.str]
+        """
+        The staring ip address.
+        """
+elif False:
+    PiNetworkPiIpaddressRangeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkPiIpaddressRangeArgs:
+    def __init__(__self__, *,
+                 pi_ending_ip_address: pulumi.Input[_builtins.str],
+                 pi_starting_ip_address: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] pi_ending_ip_address: The ending ip address.
+        :param pulumi.Input[_builtins.str] pi_starting_ip_address: The staring ip address.
+        """
+        pulumi.set(__self__, "pi_ending_ip_address", pi_ending_ip_address)
+        pulumi.set(__self__, "pi_starting_ip_address", pi_starting_ip_address)
+
+    @_builtins.property
+    @pulumi.getter(name="piEndingIpAddress")
+    def pi_ending_ip_address(self) -> pulumi.Input[_builtins.str]:
+        """
+        The ending ip address.
+        """
+        return pulumi.get(self, "pi_ending_ip_address")
+
+    @pi_ending_ip_address.setter
+    def pi_ending_ip_address(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "pi_ending_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="piStartingIpAddress")
+    def pi_starting_ip_address(self) -> pulumi.Input[_builtins.str]:
+        """
+        The staring ip address.
+        """
+        return pulumi.get(self, "pi_starting_ip_address")
+
+    @pi_starting_ip_address.setter
+    def pi_starting_ip_address(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "pi_starting_ip_address", value)
+
+
+if not MYPY:
+    class PiNetworkPiNetworkPeerArgsDict(TypedDict):
+        id: pulumi.Input[_builtins.str]
+        """
+        ID of the network peer.
+        """
+        network_address_translation: NotRequired[pulumi.Input['PiNetworkPiNetworkPeerNetworkAddressTranslationArgsDict']]
+        """
+        Contains the network address translation Details.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Type of the network peer.
+        """
+elif False:
+    PiNetworkPiNetworkPeerArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkPiNetworkPeerArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str],
+                 network_address_translation: Optional[pulumi.Input['PiNetworkPiNetworkPeerNetworkAddressTranslationArgs']] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: ID of the network peer.
+        :param pulumi.Input['PiNetworkPiNetworkPeerNetworkAddressTranslationArgs'] network_address_translation: Contains the network address translation Details.
+        :param pulumi.Input[_builtins.str] type: Type of the network peer.
+        """
+        if id is not None:
+            warnings.warn("""This field is deprecated""", DeprecationWarning)
+            pulumi.log.warn("""id is deprecated: This field is deprecated""")
+        pulumi.set(__self__, "id", id)
+        if network_address_translation is not None:
+            warnings.warn("""This field is deprecated""", DeprecationWarning)
+            pulumi.log.warn("""network_address_translation is deprecated: This field is deprecated""")
+        if network_address_translation is not None:
+            pulumi.set(__self__, "network_address_translation", network_address_translation)
+        if type is not None:
+            warnings.warn("""This field is deprecated""", DeprecationWarning)
+            pulumi.log.warn("""type is deprecated: This field is deprecated""")
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""This field is deprecated""")
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        ID of the network peer.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkAddressTranslation")
+    @_utilities.deprecated("""This field is deprecated""")
+    def network_address_translation(self) -> Optional[pulumi.Input['PiNetworkPiNetworkPeerNetworkAddressTranslationArgs']]:
+        """
+        Contains the network address translation Details.
+        """
+        return pulumi.get(self, "network_address_translation")
+
+    @network_address_translation.setter
+    def network_address_translation(self, value: Optional[pulumi.Input['PiNetworkPiNetworkPeerNetworkAddressTranslationArgs']]):
+        pulumi.set(self, "network_address_translation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""This field is deprecated""")
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Type of the network peer.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkPiNetworkPeerNetworkAddressTranslationArgsDict(TypedDict):
+        source_ip: pulumi.Input[_builtins.str]
+        """
+        source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+        """
+elif False:
+    PiNetworkPiNetworkPeerNetworkAddressTranslationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkPiNetworkPeerNetworkAddressTranslationArgs:
+    def __init__(__self__, *,
+                 source_ip: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] source_ip: source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+        """
+        if source_ip is not None:
+            warnings.warn("""This field is deprecated""", DeprecationWarning)
+            pulumi.log.warn("""source_ip is deprecated: This field is deprecated""")
+        pulumi.set(__self__, "source_ip", source_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceIp")
+    @_utilities.deprecated("""This field is deprecated""")
+    def source_ip(self) -> pulumi.Input[_builtins.str]:
+        """
+        source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+        """
+        return pulumi.get(self, "source_ip")
+
+    @source_ip.setter
+    def source_ip(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source_ip", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the member in a network security group.
+        """
+        mac_address: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The mac address of a network interface included if the type is network-interface.
+        """
+        network_interface_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The network ID of a network interface included if the type is network-interface.
+        """
+        target: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of member.
+        """
+elif False:
+    PiNetworkSecurityGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The ID of the member in a network security group.
+        :param pulumi.Input[_builtins.str] mac_address: The mac address of a network interface included if the type is network-interface.
+        :param pulumi.Input[_builtins.str] network_interface_id: The network ID of a network interface included if the type is network-interface.
+        :param pulumi.Input[_builtins.str] target: If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        :param pulumi.Input[_builtins.str] type: The type of member.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if mac_address is not None:
+            pulumi.set(__self__, "mac_address", mac_address)
+        if network_interface_id is not None:
+            pulumi.set(__self__, "network_interface_id", network_interface_id)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the member in a network security group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The mac address of a network interface included if the type is network-interface.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @mac_address.setter
+    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mac_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The network ID of a network interface included if the type is network-interface.
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @network_interface_id.setter
+    def network_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_interface_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of member.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberMemberArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the member in a network security group.
+        """
+        mac_address: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The mac address of a network interface included if the type is network-interface.
+        """
+        network_interface_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The network ID of a network interface included if the type is network-interface.
+        """
+        target: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of member.
+        """
+elif False:
+    PiNetworkSecurityGroupMemberMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberMemberArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The ID of the member in a network security group.
+        :param pulumi.Input[_builtins.str] mac_address: The mac address of a network interface included if the type is network-interface.
+        :param pulumi.Input[_builtins.str] network_interface_id: The network ID of a network interface included if the type is network-interface.
+        :param pulumi.Input[_builtins.str] target: If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        :param pulumi.Input[_builtins.str] type: The type of member.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if mac_address is not None:
+            pulumi.set(__self__, "mac_address", mac_address)
+        if network_interface_id is not None:
+            pulumi.set(__self__, "network_interface_id", network_interface_id)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the member in a network security group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The mac address of a network interface included if the type is network-interface.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @mac_address.setter
+    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mac_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The network ID of a network interface included if the type is network-interface.
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @network_interface_id.setter
+    def network_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_interface_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of member.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberRuleArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The action to take if the rule matches network traffic.
+        """
+        destination_ports: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleDestinationPortArgsDict']]]]
+        """
+        The list of destination port.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the rule in a network security group.
+        """
+        protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolArgsDict']]]]
+        """
+        The list of protocol.
+        """
+        remotes: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleRemoteArgsDict']]]]
+        """
+        List of remote.
+        """
+        source_ports: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleSourcePortArgsDict']]]]
+        """
+        List of source port
+        """
+elif False:
+    PiNetworkSecurityGroupMemberRuleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberRuleArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 destination_ports: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleDestinationPortArgs']]]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 protocols: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolArgs']]]] = None,
+                 remotes: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleRemoteArgs']]]] = None,
+                 source_ports: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleSourcePortArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: The action to take if the rule matches network traffic.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleDestinationPortArgs']]] destination_ports: The list of destination port.
+        :param pulumi.Input[_builtins.str] id: The ID of the rule in a network security group.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolArgs']]] protocols: The list of protocol.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleRemoteArgs']]] remotes: List of remote.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleSourcePortArgs']]] source_ports: List of source port
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if destination_ports is not None:
+            pulumi.set(__self__, "destination_ports", destination_ports)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if protocols is not None:
+            pulumi.set(__self__, "protocols", protocols)
+        if remotes is not None:
+            pulumi.set(__self__, "remotes", remotes)
+        if source_ports is not None:
+            pulumi.set(__self__, "source_ports", source_ports)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The action to take if the rule matches network traffic.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPorts")
+    def destination_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleDestinationPortArgs']]]]:
+        """
+        The list of destination port.
+        """
+        return pulumi.get(self, "destination_ports")
+
+    @destination_ports.setter
+    def destination_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleDestinationPortArgs']]]]):
+        pulumi.set(self, "destination_ports", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the rule in a network security group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolArgs']]]]:
+        """
+        The list of protocol.
+        """
+        return pulumi.get(self, "protocols")
+
+    @protocols.setter
+    def protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolArgs']]]]):
+        pulumi.set(self, "protocols", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def remotes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleRemoteArgs']]]]:
+        """
+        List of remote.
+        """
+        return pulumi.get(self, "remotes")
+
+    @remotes.setter
+    def remotes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleRemoteArgs']]]]):
+        pulumi.set(self, "remotes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePorts")
+    def source_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleSourcePortArgs']]]]:
+        """
+        List of source port
+        """
+        return pulumi.get(self, "source_ports")
+
+    @source_ports.setter
+    def source_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleSourcePortArgs']]]]):
+        pulumi.set(self, "source_ports", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberRuleDestinationPortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupMemberRuleDestinationPortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberRuleDestinationPortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberRuleProtocolArgsDict(TypedDict):
+        icmp_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        tcp_flags: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgsDict']]]]
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The protocol of the network traffic.
+        """
+elif False:
+    PiNetworkSecurityGroupMemberRuleProtocolArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberRuleProtocolArgs:
+    def __init__(__self__, *,
+                 icmp_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 tcp_flags: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs']]]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] icmp_type: IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs']]] tcp_flags: If tcp type, the list of TCP flags and if not present then all flags are matched.
+        :param pulumi.Input[_builtins.str] type: The protocol of the network traffic.
+        """
+        if icmp_type is not None:
+            pulumi.set(__self__, "icmp_type", icmp_type)
+        if tcp_flags is not None:
+            pulumi.set(__self__, "tcp_flags", tcp_flags)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="icmpType")
+    def icmp_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        return pulumi.get(self, "icmp_type")
+
+    @icmp_type.setter
+    def icmp_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "icmp_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tcpFlags")
+    def tcp_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs']]]]:
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        return pulumi.get(self, "tcp_flags")
+
+    @tcp_flags.setter
+    def tcp_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs']]]]):
+        pulumi.set(self, "tcp_flags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protocol of the network traffic.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgsDict(TypedDict):
+        flag: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        TCP flag.
+        """
+elif False:
+    PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberRuleProtocolTcpFlagArgs:
+    def __init__(__self__, *,
+                 flag: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] flag: TCP flag.
+        """
+        if flag is not None:
+            pulumi.set(__self__, "flag", flag)
+
+    @_builtins.property
+    @pulumi.getter
+    def flag(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        TCP flag.
+        """
+        return pulumi.get(self, "flag")
+
+    @flag.setter
+    def flag(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "flag", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberRuleRemoteArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of remote group the rules apply to.
+        """
+elif False:
+    PiNetworkSecurityGroupMemberRuleRemoteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberRuleRemoteArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+        :param pulumi.Input[_builtins.str] type: The type of remote group the rules apply to.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of remote group the rules apply to.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupMemberRuleSourcePortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupMemberRuleSourcePortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupMemberRuleSourcePortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The action to take if the rule matches network traffic.
+        """
+        destination_ports: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleDestinationPortArgsDict']]]]
+        """
+        The list of destination port.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the rule in a network security group.
+        """
+        protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolArgsDict']]]]
+        """
+        The list of protocol.
+        """
+        remotes: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRemoteArgsDict']]]]
+        """
+        List of remote.
+        """
+        source_ports: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleSourcePortArgsDict']]]]
+        """
+        ist of source port
+        """
+elif False:
+    PiNetworkSecurityGroupRuleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 destination_ports: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleDestinationPortArgs']]]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 protocols: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolArgs']]]] = None,
+                 remotes: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRemoteArgs']]]] = None,
+                 source_ports: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleSourcePortArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: The action to take if the rule matches network traffic.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleDestinationPortArgs']]] destination_ports: The list of destination port.
+        :param pulumi.Input[_builtins.str] id: The ID of the rule in a network security group.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolArgs']]] protocols: The list of protocol.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRemoteArgs']]] remotes: List of remote.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleSourcePortArgs']]] source_ports: ist of source port
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if destination_ports is not None:
+            pulumi.set(__self__, "destination_ports", destination_ports)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if protocols is not None:
+            pulumi.set(__self__, "protocols", protocols)
+        if remotes is not None:
+            pulumi.set(__self__, "remotes", remotes)
+        if source_ports is not None:
+            pulumi.set(__self__, "source_ports", source_ports)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The action to take if the rule matches network traffic.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPorts")
+    def destination_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleDestinationPortArgs']]]]:
+        """
+        The list of destination port.
+        """
+        return pulumi.get(self, "destination_ports")
+
+    @destination_ports.setter
+    def destination_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleDestinationPortArgs']]]]):
+        pulumi.set(self, "destination_ports", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the rule in a network security group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolArgs']]]]:
+        """
+        The list of protocol.
+        """
+        return pulumi.get(self, "protocols")
+
+    @protocols.setter
+    def protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolArgs']]]]):
+        pulumi.set(self, "protocols", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def remotes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRemoteArgs']]]]:
+        """
+        List of remote.
+        """
+        return pulumi.get(self, "remotes")
+
+    @remotes.setter
+    def remotes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRemoteArgs']]]]):
+        pulumi.set(self, "remotes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePorts")
+    def source_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleSourcePortArgs']]]]:
+        """
+        ist of source port
+        """
+        return pulumi.get(self, "source_ports")
+
+    @source_ports.setter
+    def source_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleSourcePortArgs']]]]):
+        pulumi.set(self, "source_ports", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleDestinationPortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleDestinationPortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleDestinationPortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleMemberArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the member in a network security group.
+        """
+        mac_address: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The mac address of a network interface included if the type is network-interface.
+        """
+        network_interface_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The network ID of a network interface included if the type is network-interface.
+        """
+        target: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of member.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleMemberArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The ID of the member in a network security group.
+        :param pulumi.Input[_builtins.str] mac_address: The mac address of a network interface included if the type is network-interface.
+        :param pulumi.Input[_builtins.str] network_interface_id: The network ID of a network interface included if the type is network-interface.
+        :param pulumi.Input[_builtins.str] target: If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        :param pulumi.Input[_builtins.str] type: The type of member.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if mac_address is not None:
+            pulumi.set(__self__, "mac_address", mac_address)
+        if network_interface_id is not None:
+            pulumi.set(__self__, "network_interface_id", network_interface_id)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the member in a network security group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The mac address of a network interface included if the type is network-interface.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @mac_address.setter
+    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mac_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The network ID of a network interface included if the type is network-interface.
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @network_interface_id.setter
+    def network_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_interface_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of member.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRulePiDestinationPortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRulePiDestinationPortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRulePiDestinationPortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRulePiDestinationPortsArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRulePiDestinationPortsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRulePiDestinationPortsArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRulePiProtocolArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        """
+        The protocol of the network traffic.
+        """
+        icmp_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        tcp_flags: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolTcpFlagArgsDict']]]]
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+elif False:
+    PiNetworkSecurityGroupRulePiProtocolArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRulePiProtocolArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 icmp_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 tcp_flags: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: The protocol of the network traffic.
+        :param pulumi.Input[_builtins.str] icmp_type: If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs']]] tcp_flags: If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        pulumi.set(__self__, "type", type)
+        if icmp_type is not None:
+            pulumi.set(__self__, "icmp_type", icmp_type)
+        if tcp_flags is not None:
+            pulumi.set(__self__, "tcp_flags", tcp_flags)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The protocol of the network traffic.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="icmpType")
+    def icmp_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        return pulumi.get(self, "icmp_type")
+
+    @icmp_type.setter
+    def icmp_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "icmp_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tcpFlags")
+    def tcp_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs']]]]:
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        return pulumi.get(self, "tcp_flags")
+
+    @tcp_flags.setter
+    def tcp_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs']]]]):
+        pulumi.set(self, "tcp_flags", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRulePiProtocolTcpFlagArgsDict(TypedDict):
+        flag: pulumi.Input[_builtins.str]
+        """
+        TCP flag.
+        """
+elif False:
+    PiNetworkSecurityGroupRulePiProtocolTcpFlagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRulePiProtocolTcpFlagArgs:
+    def __init__(__self__, *,
+                 flag: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] flag: TCP flag.
+        """
+        pulumi.set(__self__, "flag", flag)
+
+    @_builtins.property
+    @pulumi.getter
+    def flag(self) -> pulumi.Input[_builtins.str]:
+        """
+        TCP flag.
+        """
+        return pulumi.get(self, "flag")
+
+    @flag.setter
+    def flag(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "flag", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRulePiRemoteArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+        """
+elif False:
+    PiNetworkSecurityGroupRulePiRemoteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRulePiRemoteArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+        :param pulumi.Input[_builtins.str] type: The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRulePiSourcePortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRulePiSourcePortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRulePiSourcePortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRulePiSourcePortsArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRulePiSourcePortsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRulePiSourcePortsArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleProtocolArgsDict(TypedDict):
+        icmp_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        tcp_flags: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolTcpFlagArgsDict']]]]
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The protocol of the network traffic.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleProtocolArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleProtocolArgs:
+    def __init__(__self__, *,
+                 icmp_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 tcp_flags: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolTcpFlagArgs']]]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] icmp_type: If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolTcpFlagArgs']]] tcp_flags: If tcp type, the list of TCP flags and if not present then all flags are matched.
+        :param pulumi.Input[_builtins.str] type: The protocol of the network traffic.
+        """
+        if icmp_type is not None:
+            pulumi.set(__self__, "icmp_type", icmp_type)
+        if tcp_flags is not None:
+            pulumi.set(__self__, "tcp_flags", tcp_flags)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="icmpType")
+    def icmp_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        return pulumi.get(self, "icmp_type")
+
+    @icmp_type.setter
+    def icmp_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "icmp_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tcpFlags")
+    def tcp_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolTcpFlagArgs']]]]:
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        return pulumi.get(self, "tcp_flags")
+
+    @tcp_flags.setter
+    def tcp_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleProtocolTcpFlagArgs']]]]):
+        pulumi.set(self, "tcp_flags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protocol of the network traffic.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleProtocolTcpFlagArgsDict(TypedDict):
+        flag: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        TCP flag.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleProtocolTcpFlagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleProtocolTcpFlagArgs:
+    def __init__(__self__, *,
+                 flag: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] flag: TCP flag.
+        """
+        if flag is not None:
+            pulumi.set(__self__, "flag", flag)
+
+    @_builtins.property
+    @pulumi.getter
+    def flag(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        TCP flag.
+        """
+        return pulumi.get(self, "flag")
+
+    @flag.setter
+    def flag(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "flag", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleRemoteArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of remote group the rules apply to.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleRemoteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleRemoteArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+        :param pulumi.Input[_builtins.str] type: The type of remote group the rules apply to.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of remote group the rules apply to.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleRuleArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The action to take if the rule matches network traffic.
+        """
+        destination_ports: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleDestinationPortArgsDict']]]]
+        """
+        Destination port ranges.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the rule in a network security group.
+        """
+        protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolArgsDict']]]]
+        """
+        The list of protocol.
+        """
+        remotes: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleRemoteArgsDict']]]]
+        """
+        List of remote.
+        """
+        source_ports: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleSourcePortArgsDict']]]]
+        """
+        Source port ranges.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleRuleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleRuleArgs:
+    def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
+                 destination_ports: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleDestinationPortArgs']]]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 protocols: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolArgs']]]] = None,
+                 remotes: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleRemoteArgs']]]] = None,
+                 source_ports: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleSourcePortArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: The action to take if the rule matches network traffic.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleDestinationPortArgs']]] destination_ports: Destination port ranges.
+        :param pulumi.Input[_builtins.str] id: The ID of the rule in a network security group.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolArgs']]] protocols: The list of protocol.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleRemoteArgs']]] remotes: List of remote.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleSourcePortArgs']]] source_ports: Source port ranges.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if destination_ports is not None:
+            pulumi.set(__self__, "destination_ports", destination_ports)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if protocols is not None:
+            pulumi.set(__self__, "protocols", protocols)
+        if remotes is not None:
+            pulumi.set(__self__, "remotes", remotes)
+        if source_ports is not None:
+            pulumi.set(__self__, "source_ports", source_ports)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The action to take if the rule matches network traffic.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPorts")
+    def destination_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleDestinationPortArgs']]]]:
+        """
+        Destination port ranges.
+        """
+        return pulumi.get(self, "destination_ports")
+
+    @destination_ports.setter
+    def destination_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleDestinationPortArgs']]]]):
+        pulumi.set(self, "destination_ports", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the rule in a network security group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolArgs']]]]:
+        """
+        The list of protocol.
+        """
+        return pulumi.get(self, "protocols")
+
+    @protocols.setter
+    def protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolArgs']]]]):
+        pulumi.set(self, "protocols", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def remotes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleRemoteArgs']]]]:
+        """
+        List of remote.
+        """
+        return pulumi.get(self, "remotes")
+
+    @remotes.setter
+    def remotes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleRemoteArgs']]]]):
+        pulumi.set(self, "remotes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePorts")
+    def source_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleSourcePortArgs']]]]:
+        """
+        Source port ranges.
+        """
+        return pulumi.get(self, "source_ports")
+
+    @source_ports.setter
+    def source_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleSourcePortArgs']]]]):
+        pulumi.set(self, "source_ports", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleRuleDestinationPortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleRuleDestinationPortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleRuleDestinationPortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleRuleProtocolArgsDict(TypedDict):
+        icmp_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        tcp_flags: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgsDict']]]]
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The protocol of the network traffic.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleRuleProtocolArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleRuleProtocolArgs:
+    def __init__(__self__, *,
+                 icmp_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 tcp_flags: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs']]]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] icmp_type: If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs']]] tcp_flags: If tcp type, the list of TCP flags and if not present then all flags are matched.
+        :param pulumi.Input[_builtins.str] type: The protocol of the network traffic.
+        """
+        if icmp_type is not None:
+            pulumi.set(__self__, "icmp_type", icmp_type)
+        if tcp_flags is not None:
+            pulumi.set(__self__, "tcp_flags", tcp_flags)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="icmpType")
+    def icmp_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+        """
+        return pulumi.get(self, "icmp_type")
+
+    @icmp_type.setter
+    def icmp_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "icmp_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tcpFlags")
+    def tcp_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs']]]]:
+        """
+        If tcp type, the list of TCP flags and if not present then all flags are matched.
+        """
+        return pulumi.get(self, "tcp_flags")
+
+    @tcp_flags.setter
+    def tcp_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs']]]]):
+        pulumi.set(self, "tcp_flags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protocol of the network traffic.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgsDict(TypedDict):
+        flag: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        TCP flag.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleRuleProtocolTcpFlagArgs:
+    def __init__(__self__, *,
+                 flag: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] flag: TCP flag.
+        """
+        if flag is not None:
+            pulumi.set(__self__, "flag", flag)
+
+    @_builtins.property
+    @pulumi.getter
+    def flag(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        TCP flag.
+        """
+        return pulumi.get(self, "flag")
+
+    @flag.setter
+    def flag(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "flag", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleRuleRemoteArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of remote group the rules apply to.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleRuleRemoteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleRuleRemoteArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+        :param pulumi.Input[_builtins.str] type: The type of remote group the rules apply to.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of remote group the rules apply to.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleRuleSourcePortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleRuleSourcePortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleRuleSourcePortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.float]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.float] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiNetworkSecurityGroupRuleSourcePortArgsDict(TypedDict):
+        maximum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        minimum: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+elif False:
+    PiNetworkSecurityGroupRuleSourcePortArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiNetworkSecurityGroupRuleSourcePortArgs:
+    def __init__(__self__, *,
+                 maximum: Optional[pulumi.Input[_builtins.int]] = None,
+                 minimum: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] maximum: The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        :param pulumi.Input[_builtins.int] minimum: The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @_builtins.property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "maximum", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class PiSharedProcessorPoolInstanceArgsDict(TypedDict):
+        availability_zone: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Availability zone for the server instances.
+        """
+        cpus: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The amount of cpus for the server instance.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The server instance ID.
+        """
+        memory: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The amount of memory for the server instance.
+        """
+        name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The server instance name.
+        """
+        status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Status of the instance.
+        """
+        uncapped: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Identifies if uncapped or not.
+        """
+        vcpus: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        The amout of vcpus for the server instance.
+        """
+elif False:
+    PiSharedProcessorPoolInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiSharedProcessorPoolInstanceArgs:
+    def __init__(__self__, *,
+                 availability_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 cpus: Optional[pulumi.Input[_builtins.int]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 memory: Optional[pulumi.Input[_builtins.int]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 uncapped: Optional[pulumi.Input[_builtins.bool]] = None,
+                 vcpus: Optional[pulumi.Input[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.str] availability_zone: Availability zone for the server instances.
+        :param pulumi.Input[_builtins.int] cpus: The amount of cpus for the server instance.
+        :param pulumi.Input[_builtins.str] id: The server instance ID.
+        :param pulumi.Input[_builtins.int] memory: The amount of memory for the server instance.
+        :param pulumi.Input[_builtins.str] name: The server instance name.
+        :param pulumi.Input[_builtins.str] status: Status of the instance.
+        :param pulumi.Input[_builtins.bool] uncapped: Identifies if uncapped or not.
+        :param pulumi.Input[_builtins.float] vcpus: The amout of vcpus for the server instance.
+        """
+        if availability_zone is not None:
+            pulumi.set(__self__, "availability_zone", availability_zone)
+        if cpus is not None:
+            pulumi.set(__self__, "cpus", cpus)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if uncapped is not None:
+            pulumi.set(__self__, "uncapped", uncapped)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Availability zone for the server instances.
+        """
+        return pulumi.get(self, "availability_zone")
+
+    @availability_zone.setter
+    def availability_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "availability_zone", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def cpus(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The amount of cpus for the server instance.
+        """
+        return pulumi.get(self, "cpus")
+
+    @cpus.setter
+    def cpus(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "cpus", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The server instance ID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The amount of memory for the server instance.
+        """
+        return pulumi.get(self, "memory")
+
+    @memory.setter
+    def memory(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "memory", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The server instance name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of the instance.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def uncapped(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Identifies if uncapped or not.
+        """
+        return pulumi.get(self, "uncapped")
+
+    @uncapped.setter
+    def uncapped(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "uncapped", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The amout of vcpus for the server instance.
+        """
+        return pulumi.get(self, "vcpus")
+
+    @vcpus.setter
+    def vcpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "vcpus", value)
+
+
+if not MYPY:
+    class PiVolumeCloneCloneVolumeArgsDict(TypedDict):
+        clone_volume_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the newly cloned volume.
+        """
+        source_volume_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The ID of the source volume.
+        """
+elif False:
+    PiVolumeCloneCloneVolumeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeCloneCloneVolumeArgs:
+    def __init__(__self__, *,
+                 clone_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_volume_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] clone_volume_id: The ID of the newly cloned volume.
+        :param pulumi.Input[_builtins.str] source_volume_id: The ID of the source volume.
+        """
+        if clone_volume_id is not None:
+            pulumi.set(__self__, "clone_volume_id", clone_volume_id)
+        if source_volume_id is not None:
+            pulumi.set(__self__, "source_volume_id", source_volume_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloneVolumeId")
+    def clone_volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the newly cloned volume.
+        """
+        return pulumi.get(self, "clone_volume_id")
+
+    @clone_volume_id.setter
+    def clone_volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "clone_volume_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceVolumeId")
+    def source_volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the source volume.
+        """
+        return pulumi.get(self, "source_volume_id")
+
+    @source_volume_id.setter
+    def source_volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_volume_id", value)
+
+
+if not MYPY:
+    class PiVolumeGroupActionPiVolumeGroupActionArgsDict(TypedDict):
+        reset: NotRequired[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionResetArgsDict']]
+        """
+        Performs reset action on the volume group to update its status value.
+        """
+        start: NotRequired[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStartArgsDict']]
+        """
+        Performs start action on a volume group.
+        """
+        stop: NotRequired[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStopArgsDict']]
+        """
+        Performs stop action on a volume group.
+        """
+elif False:
+    PiVolumeGroupActionPiVolumeGroupActionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeGroupActionPiVolumeGroupActionArgs:
+    def __init__(__self__, *,
+                 reset: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionResetArgs']] = None,
+                 start: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStartArgs']] = None,
+                 stop: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStopArgs']] = None):
+        """
+        :param pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionResetArgs'] reset: Performs reset action on the volume group to update its status value.
+        :param pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStartArgs'] start: Performs start action on a volume group.
+        :param pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStopArgs'] stop: Performs stop action on a volume group.
+        """
+        if reset is not None:
+            pulumi.set(__self__, "reset", reset)
+        if start is not None:
+            pulumi.set(__self__, "start", start)
+        if stop is not None:
+            pulumi.set(__self__, "stop", stop)
+
+    @_builtins.property
+    @pulumi.getter
+    def reset(self) -> Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionResetArgs']]:
+        """
+        Performs reset action on the volume group to update its status value.
+        """
+        return pulumi.get(self, "reset")
+
+    @reset.setter
+    def reset(self, value: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionResetArgs']]):
+        pulumi.set(self, "reset", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def start(self) -> Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStartArgs']]:
+        """
+        Performs start action on a volume group.
+        """
+        return pulumi.get(self, "start")
+
+    @start.setter
+    def start(self, value: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStartArgs']]):
+        pulumi.set(self, "start", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def stop(self) -> Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStopArgs']]:
+        """
+        Performs stop action on a volume group.
+        """
+        return pulumi.get(self, "stop")
+
+    @stop.setter
+    def stop(self, value: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionStopArgs']]):
+        pulumi.set(self, "stop", value)
+
+
+if not MYPY:
+    class PiVolumeGroupActionPiVolumeGroupActionResetArgsDict(TypedDict):
+        status: pulumi.Input[_builtins.str]
+        """
+        New status to be set for a volume group.
+        """
+elif False:
+    PiVolumeGroupActionPiVolumeGroupActionResetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeGroupActionPiVolumeGroupActionResetArgs:
+    def __init__(__self__, *,
+                 status: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] status: New status to be set for a volume group.
+        """
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[_builtins.str]:
+        """
+        New status to be set for a volume group.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "status", value)
+
+
+if not MYPY:
+    class PiVolumeGroupActionPiVolumeGroupActionStartArgsDict(TypedDict):
+        source: pulumi.Input[_builtins.str]
+        """
+        Indicates the source of the action `master` or `aux`.
+        """
+elif False:
+    PiVolumeGroupActionPiVolumeGroupActionStartArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeGroupActionPiVolumeGroupActionStartArgs:
+    def __init__(__self__, *,
+                 source: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] source: Indicates the source of the action `master` or `aux`.
+        """
+        pulumi.set(__self__, "source", source)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[_builtins.str]:
+        """
+        Indicates the source of the action `master` or `aux`.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source", value)
+
+
+if not MYPY:
+    class PiVolumeGroupActionPiVolumeGroupActionStopArgsDict(TypedDict):
+        access: pulumi.Input[_builtins.bool]
+        """
+        Indicates the access mode of aux volumes.
+        """
+elif False:
+    PiVolumeGroupActionPiVolumeGroupActionStopArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeGroupActionPiVolumeGroupActionStopArgs:
+    def __init__(__self__, *,
+                 access: pulumi.Input[_builtins.bool]):
+        """
+        :param pulumi.Input[_builtins.bool] access: Indicates the access mode of aux volumes.
+        """
+        pulumi.set(__self__, "access", access)
+
+    @_builtins.property
+    @pulumi.getter
+    def access(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Indicates the access mode of aux volumes.
+        """
+        return pulumi.get(self, "access")
+
+    @access.setter
+    def access(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "access", value)
+
+
+if not MYPY:
+    class PiVolumeGroupStatusDescriptionErrorArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The volume group error key.
+        """
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The failure message providing more details about the error key.
+        """
+        volume_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+        """
+elif False:
+    PiVolumeGroupStatusDescriptionErrorArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeGroupStatusDescriptionErrorArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The volume group error key.
+        :param pulumi.Input[_builtins.str] message: The failure message providing more details about the error key.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] volume_ids: List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if volume_ids is not None:
+            pulumi.set(__self__, "volume_ids", volume_ids)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The volume group error key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The failure message providing more details about the error key.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeIds")
+    def volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+        """
+        return pulumi.get(self, "volume_ids")
+
+    @volume_ids.setter
+    def volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "volume_ids", value)
+
+
+if not MYPY:
+    class PiVolumeOnboardingPiOnboardingVolumeArgsDict(TypedDict):
+        pi_source_crn: pulumi.Input[_builtins.str]
+        """
+        The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+        """
+        pi_auxiliary_volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgsDict']]]]
+        """
+        List auxiliary volumes.
+        """
+elif False:
+    PiVolumeOnboardingPiOnboardingVolumeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeOnboardingPiOnboardingVolumeArgs:
+    def __init__(__self__, *,
+                 pi_source_crn: pulumi.Input[_builtins.str],
+                 pi_auxiliary_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] pi_source_crn: The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+        :param pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs']]] pi_auxiliary_volumes: List auxiliary volumes.
+        """
+        pulumi.set(__self__, "pi_source_crn", pi_source_crn)
+        if pi_auxiliary_volumes is not None:
+            pulumi.set(__self__, "pi_auxiliary_volumes", pi_auxiliary_volumes)
+
+    @_builtins.property
+    @pulumi.getter(name="piSourceCrn")
+    def pi_source_crn(self) -> pulumi.Input[_builtins.str]:
+        """
+        The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+        """
+        return pulumi.get(self, "pi_source_crn")
+
+    @pi_source_crn.setter
+    def pi_source_crn(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "pi_source_crn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="piAuxiliaryVolumes")
+    def pi_auxiliary_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs']]]]:
+        """
+        List auxiliary volumes.
+        """
+        return pulumi.get(self, "pi_auxiliary_volumes")
+
+    @pi_auxiliary_volumes.setter
+    def pi_auxiliary_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs']]]]):
+        pulumi.set(self, "pi_auxiliary_volumes", value)
+
+
+if not MYPY:
+    class PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgsDict(TypedDict):
+        pi_auxiliary_volume_name: pulumi.Input[_builtins.str]
+        """
+        The auxiliary volume name.
+        """
+        pi_display_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The display name of auxiliary volume which is to be onboarded.
+        """
+elif False:
+    PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolumeArgs:
+    def __init__(__self__, *,
+                 pi_auxiliary_volume_name: pulumi.Input[_builtins.str],
+                 pi_display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] pi_auxiliary_volume_name: The auxiliary volume name.
+        :param pulumi.Input[_builtins.str] pi_display_name: The display name of auxiliary volume which is to be onboarded.
+        """
+        pulumi.set(__self__, "pi_auxiliary_volume_name", pi_auxiliary_volume_name)
+        if pi_display_name is not None:
+            pulumi.set(__self__, "pi_display_name", pi_display_name)
+
+    @_builtins.property
+    @pulumi.getter(name="piAuxiliaryVolumeName")
+    def pi_auxiliary_volume_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The auxiliary volume name.
+        """
+        return pulumi.get(self, "pi_auxiliary_volume_name")
+
+    @pi_auxiliary_volume_name.setter
+    def pi_auxiliary_volume_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "pi_auxiliary_volume_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="piDisplayName")
+    def pi_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The display name of auxiliary volume which is to be onboarded.
+        """
+        return pulumi.get(self, "pi_display_name")
+
+    @pi_display_name.setter
+    def pi_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "pi_display_name", value)
+
+
+if not MYPY:
+    class PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict(TypedDict):
+        failure_message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The failure reason for the volumes which have failed to be onboarded
+        """
+        volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of volumes which have failed to be onboarded
+        """
+elif False:
+    PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PiVolumeOnboardingResultsVolumeOnboardingFailureArgs:
+    def __init__(__self__, *,
+                 failure_message: Optional[pulumi.Input[_builtins.str]] = None,
+                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] failure_message: The failure reason for the volumes which have failed to be onboarded
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] volumes: List of volumes which have failed to be onboarded
+        """
+        if failure_message is not None:
+            pulumi.set(__self__, "failure_message", failure_message)
+        if volumes is not None:
+            pulumi.set(__self__, "volumes", volumes)
+
+    @_builtins.property
+    @pulumi.getter(name="failureMessage")
+    def failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The failure reason for the volumes which have failed to be onboarded
+        """
+        return pulumi.get(self, "failure_message")
+
+    @failure_message.setter
+    def failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "failure_message", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of volumes which have failed to be onboarded
+        """
+        return pulumi.get(self, "volumes")
+
+    @volumes.setter
+    def volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "volumes", value)
 
 
 if not MYPY:

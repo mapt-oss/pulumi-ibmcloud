@@ -180,13 +180,14 @@ func Provider() tfbridge.ProviderInfo {
 
 	// Create a list of resource keys to keep based on prefixes
 	keepPrefixes := []string{
-		"ibm_is_",        // VPC Infrastructure
-		"ibm_resource_",  // Resource Groups
-		"ibm_compute_",   // Compute
-		"ibm_cos_",       // Cloud Object Storage
-		"ibm_container_", // Kubernetes
-		"ibm_dns_",       // DNS
-		"ibm_iam_",       // IAM
+		"ibm_is_",       // VPC Infrastructure
+		"ibm_resource_", // Resource Groups
+		"ibm_compute_",  // Compute
+		"ibm_pi_",       // Power Systems (PowerVS)
+		"ibm_cos_",      // Cloud Object Storage
+		// "ibm_container_", // Kubernetes
+		// "ibm_dns_",       // DNS
+		"ibm_iam_", // IAM
 		// Add more as needed - see resource_filter.go for full list
 	}
 

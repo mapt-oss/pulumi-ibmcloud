@@ -65,116 +65,6 @@ export type ComputeVmInstance = import("./computeVmInstance").ComputeVmInstance;
 export const ComputeVmInstance: typeof import("./computeVmInstance").ComputeVmInstance = null as any;
 utilities.lazyLoad(exports, ["ComputeVmInstance"], () => require("./computeVmInstance"));
 
-export { ContainerAddonsArgs, ContainerAddonsState } from "./containerAddons";
-export type ContainerAddons = import("./containerAddons").ContainerAddons;
-export const ContainerAddons: typeof import("./containerAddons").ContainerAddons = null as any;
-utilities.lazyLoad(exports, ["ContainerAddons"], () => require("./containerAddons"));
-
-export { ContainerAlbArgs, ContainerAlbState } from "./containerAlb";
-export type ContainerAlb = import("./containerAlb").ContainerAlb;
-export const ContainerAlb: typeof import("./containerAlb").ContainerAlb = null as any;
-utilities.lazyLoad(exports, ["ContainerAlb"], () => require("./containerAlb"));
-
-export { ContainerAlbCertArgs, ContainerAlbCertState } from "./containerAlbCert";
-export type ContainerAlbCert = import("./containerAlbCert").ContainerAlbCert;
-export const ContainerAlbCert: typeof import("./containerAlbCert").ContainerAlbCert = null as any;
-utilities.lazyLoad(exports, ["ContainerAlbCert"], () => require("./containerAlbCert"));
-
-export { ContainerAlbCreateArgs, ContainerAlbCreateState } from "./containerAlbCreate";
-export type ContainerAlbCreate = import("./containerAlbCreate").ContainerAlbCreate;
-export const ContainerAlbCreate: typeof import("./containerAlbCreate").ContainerAlbCreate = null as any;
-utilities.lazyLoad(exports, ["ContainerAlbCreate"], () => require("./containerAlbCreate"));
-
-export { ContainerApiKeyResetArgs, ContainerApiKeyResetState } from "./containerApiKeyReset";
-export type ContainerApiKeyReset = import("./containerApiKeyReset").ContainerApiKeyReset;
-export const ContainerApiKeyReset: typeof import("./containerApiKeyReset").ContainerApiKeyReset = null as any;
-utilities.lazyLoad(exports, ["ContainerApiKeyReset"], () => require("./containerApiKeyReset"));
-
-export { ContainerBindServiceArgs, ContainerBindServiceState } from "./containerBindService";
-export type ContainerBindService = import("./containerBindService").ContainerBindService;
-export const ContainerBindService: typeof import("./containerBindService").ContainerBindService = null as any;
-utilities.lazyLoad(exports, ["ContainerBindService"], () => require("./containerBindService"));
-
-export { ContainerClusterArgs, ContainerClusterState } from "./containerCluster";
-export type ContainerCluster = import("./containerCluster").ContainerCluster;
-export const ContainerCluster: typeof import("./containerCluster").ContainerCluster = null as any;
-utilities.lazyLoad(exports, ["ContainerCluster"], () => require("./containerCluster"));
-
-export { ContainerClusterFeatureArgs, ContainerClusterFeatureState } from "./containerClusterFeature";
-export type ContainerClusterFeature = import("./containerClusterFeature").ContainerClusterFeature;
-export const ContainerClusterFeature: typeof import("./containerClusterFeature").ContainerClusterFeature = null as any;
-utilities.lazyLoad(exports, ["ContainerClusterFeature"], () => require("./containerClusterFeature"));
-
-export { ContainerDedicatedHostArgs, ContainerDedicatedHostState } from "./containerDedicatedHost";
-export type ContainerDedicatedHost = import("./containerDedicatedHost").ContainerDedicatedHost;
-export const ContainerDedicatedHost: typeof import("./containerDedicatedHost").ContainerDedicatedHost = null as any;
-utilities.lazyLoad(exports, ["ContainerDedicatedHost"], () => require("./containerDedicatedHost"));
-
-export { ContainerDedicatedHostPoolArgs, ContainerDedicatedHostPoolState } from "./containerDedicatedHostPool";
-export type ContainerDedicatedHostPool = import("./containerDedicatedHostPool").ContainerDedicatedHostPool;
-export const ContainerDedicatedHostPool: typeof import("./containerDedicatedHostPool").ContainerDedicatedHostPool = null as any;
-utilities.lazyLoad(exports, ["ContainerDedicatedHostPool"], () => require("./containerDedicatedHostPool"));
-
-export { ContainerIngressInstanceArgs, ContainerIngressInstanceState } from "./containerIngressInstance";
-export type ContainerIngressInstance = import("./containerIngressInstance").ContainerIngressInstance;
-export const ContainerIngressInstance: typeof import("./containerIngressInstance").ContainerIngressInstance = null as any;
-utilities.lazyLoad(exports, ["ContainerIngressInstance"], () => require("./containerIngressInstance"));
-
-export { ContainerIngressSecretOpaqueArgs, ContainerIngressSecretOpaqueState } from "./containerIngressSecretOpaque";
-export type ContainerIngressSecretOpaque = import("./containerIngressSecretOpaque").ContainerIngressSecretOpaque;
-export const ContainerIngressSecretOpaque: typeof import("./containerIngressSecretOpaque").ContainerIngressSecretOpaque = null as any;
-utilities.lazyLoad(exports, ["ContainerIngressSecretOpaque"], () => require("./containerIngressSecretOpaque"));
-
-export { ContainerIngressSecretTlsArgs, ContainerIngressSecretTlsState } from "./containerIngressSecretTls";
-export type ContainerIngressSecretTls = import("./containerIngressSecretTls").ContainerIngressSecretTls;
-export const ContainerIngressSecretTls: typeof import("./containerIngressSecretTls").ContainerIngressSecretTls = null as any;
-utilities.lazyLoad(exports, ["ContainerIngressSecretTls"], () => require("./containerIngressSecretTls"));
-
-export { ContainerNlbDnsArgs, ContainerNlbDnsState } from "./containerNlbDns";
-export type ContainerNlbDns = import("./containerNlbDns").ContainerNlbDns;
-export const ContainerNlbDns: typeof import("./containerNlbDns").ContainerNlbDns = null as any;
-utilities.lazyLoad(exports, ["ContainerNlbDns"], () => require("./containerNlbDns"));
-
-export { ContainerStorageAttachmentArgs, ContainerStorageAttachmentState } from "./containerStorageAttachment";
-export type ContainerStorageAttachment = import("./containerStorageAttachment").ContainerStorageAttachment;
-export const ContainerStorageAttachment: typeof import("./containerStorageAttachment").ContainerStorageAttachment = null as any;
-utilities.lazyLoad(exports, ["ContainerStorageAttachment"], () => require("./containerStorageAttachment"));
-
-export { ContainerVpcAlbArgs, ContainerVpcAlbState } from "./containerVpcAlb";
-export type ContainerVpcAlb = import("./containerVpcAlb").ContainerVpcAlb;
-export const ContainerVpcAlb: typeof import("./containerVpcAlb").ContainerVpcAlb = null as any;
-utilities.lazyLoad(exports, ["ContainerVpcAlb"], () => require("./containerVpcAlb"));
-
-export { ContainerVpcAlbCreateArgs, ContainerVpcAlbCreateState } from "./containerVpcAlbCreate";
-export type ContainerVpcAlbCreate = import("./containerVpcAlbCreate").ContainerVpcAlbCreate;
-export const ContainerVpcAlbCreate: typeof import("./containerVpcAlbCreate").ContainerVpcAlbCreate = null as any;
-utilities.lazyLoad(exports, ["ContainerVpcAlbCreate"], () => require("./containerVpcAlbCreate"));
-
-export { ContainerVpcClusterArgs, ContainerVpcClusterState } from "./containerVpcCluster";
-export type ContainerVpcCluster = import("./containerVpcCluster").ContainerVpcCluster;
-export const ContainerVpcCluster: typeof import("./containerVpcCluster").ContainerVpcCluster = null as any;
-utilities.lazyLoad(exports, ["ContainerVpcCluster"], () => require("./containerVpcCluster"));
-
-export { ContainerVpcWorkerArgs, ContainerVpcWorkerState } from "./containerVpcWorker";
-export type ContainerVpcWorker = import("./containerVpcWorker").ContainerVpcWorker;
-export const ContainerVpcWorker: typeof import("./containerVpcWorker").ContainerVpcWorker = null as any;
-utilities.lazyLoad(exports, ["ContainerVpcWorker"], () => require("./containerVpcWorker"));
-
-export { ContainerVpcWorkerPoolArgs, ContainerVpcWorkerPoolState } from "./containerVpcWorkerPool";
-export type ContainerVpcWorkerPool = import("./containerVpcWorkerPool").ContainerVpcWorkerPool;
-export const ContainerVpcWorkerPool: typeof import("./containerVpcWorkerPool").ContainerVpcWorkerPool = null as any;
-utilities.lazyLoad(exports, ["ContainerVpcWorkerPool"], () => require("./containerVpcWorkerPool"));
-
-export { ContainerWorkerPoolArgs, ContainerWorkerPoolState } from "./containerWorkerPool";
-export type ContainerWorkerPool = import("./containerWorkerPool").ContainerWorkerPool;
-export const ContainerWorkerPool: typeof import("./containerWorkerPool").ContainerWorkerPool = null as any;
-utilities.lazyLoad(exports, ["ContainerWorkerPool"], () => require("./containerWorkerPool"));
-
-export { ContainerWorkerPoolZoneAttachmentArgs, ContainerWorkerPoolZoneAttachmentState } from "./containerWorkerPoolZoneAttachment";
-export type ContainerWorkerPoolZoneAttachment = import("./containerWorkerPoolZoneAttachment").ContainerWorkerPoolZoneAttachment;
-export const ContainerWorkerPoolZoneAttachment: typeof import("./containerWorkerPoolZoneAttachment").ContainerWorkerPoolZoneAttachment = null as any;
-utilities.lazyLoad(exports, ["ContainerWorkerPoolZoneAttachment"], () => require("./containerWorkerPoolZoneAttachment"));
-
 export { CosBackupPolicyArgs, CosBackupPolicyState } from "./cosBackupPolicy";
 export type CosBackupPolicy = import("./cosBackupPolicy").CosBackupPolicy;
 export const CosBackupPolicy: typeof import("./cosBackupPolicy").CosBackupPolicy = null as any;
@@ -215,81 +105,6 @@ export type CosBucketWebsiteConfiguration = import("./cosBucketWebsiteConfigurat
 export const CosBucketWebsiteConfiguration: typeof import("./cosBucketWebsiteConfiguration").CosBucketWebsiteConfiguration = null as any;
 utilities.lazyLoad(exports, ["CosBucketWebsiteConfiguration"], () => require("./cosBucketWebsiteConfiguration"));
 
-export { DnsCustomResolverArgs, DnsCustomResolverState } from "./dnsCustomResolver";
-export type DnsCustomResolver = import("./dnsCustomResolver").DnsCustomResolver;
-export const DnsCustomResolver: typeof import("./dnsCustomResolver").DnsCustomResolver = null as any;
-utilities.lazyLoad(exports, ["DnsCustomResolver"], () => require("./dnsCustomResolver"));
-
-export { DnsCustomResolverForwardingRuleArgs, DnsCustomResolverForwardingRuleState } from "./dnsCustomResolverForwardingRule";
-export type DnsCustomResolverForwardingRule = import("./dnsCustomResolverForwardingRule").DnsCustomResolverForwardingRule;
-export const DnsCustomResolverForwardingRule: typeof import("./dnsCustomResolverForwardingRule").DnsCustomResolverForwardingRule = null as any;
-utilities.lazyLoad(exports, ["DnsCustomResolverForwardingRule"], () => require("./dnsCustomResolverForwardingRule"));
-
-export { DnsCustomResolverSecondaryZoneArgs, DnsCustomResolverSecondaryZoneState } from "./dnsCustomResolverSecondaryZone";
-export type DnsCustomResolverSecondaryZone = import("./dnsCustomResolverSecondaryZone").DnsCustomResolverSecondaryZone;
-export const DnsCustomResolverSecondaryZone: typeof import("./dnsCustomResolverSecondaryZone").DnsCustomResolverSecondaryZone = null as any;
-utilities.lazyLoad(exports, ["DnsCustomResolverSecondaryZone"], () => require("./dnsCustomResolverSecondaryZone"));
-
-export { DnsDomainArgs, DnsDomainState } from "./dnsDomain";
-export type DnsDomain = import("./dnsDomain").DnsDomain;
-export const DnsDomain: typeof import("./dnsDomain").DnsDomain = null as any;
-utilities.lazyLoad(exports, ["DnsDomain"], () => require("./dnsDomain"));
-
-export { DnsDomainRegistrationNameserversArgs, DnsDomainRegistrationNameserversState } from "./dnsDomainRegistrationNameservers";
-export type DnsDomainRegistrationNameservers = import("./dnsDomainRegistrationNameservers").DnsDomainRegistrationNameservers;
-export const DnsDomainRegistrationNameservers: typeof import("./dnsDomainRegistrationNameservers").DnsDomainRegistrationNameservers = null as any;
-utilities.lazyLoad(exports, ["DnsDomainRegistrationNameservers"], () => require("./dnsDomainRegistrationNameservers"));
-
-export { DnsGlbArgs, DnsGlbState } from "./dnsGlb";
-export type DnsGlb = import("./dnsGlb").DnsGlb;
-export const DnsGlb: typeof import("./dnsGlb").DnsGlb = null as any;
-utilities.lazyLoad(exports, ["DnsGlb"], () => require("./dnsGlb"));
-
-export { DnsGlbMonitorArgs, DnsGlbMonitorState } from "./dnsGlbMonitor";
-export type DnsGlbMonitor = import("./dnsGlbMonitor").DnsGlbMonitor;
-export const DnsGlbMonitor: typeof import("./dnsGlbMonitor").DnsGlbMonitor = null as any;
-utilities.lazyLoad(exports, ["DnsGlbMonitor"], () => require("./dnsGlbMonitor"));
-
-export { DnsGlbPoolArgs, DnsGlbPoolState } from "./dnsGlbPool";
-export type DnsGlbPool = import("./dnsGlbPool").DnsGlbPool;
-export const DnsGlbPool: typeof import("./dnsGlbPool").DnsGlbPool = null as any;
-utilities.lazyLoad(exports, ["DnsGlbPool"], () => require("./dnsGlbPool"));
-
-export { DnsLinkedZoneArgs, DnsLinkedZoneState } from "./dnsLinkedZone";
-export type DnsLinkedZone = import("./dnsLinkedZone").DnsLinkedZone;
-export const DnsLinkedZone: typeof import("./dnsLinkedZone").DnsLinkedZone = null as any;
-utilities.lazyLoad(exports, ["DnsLinkedZone"], () => require("./dnsLinkedZone"));
-
-export { DnsPermittedNetworkArgs, DnsPermittedNetworkState } from "./dnsPermittedNetwork";
-export type DnsPermittedNetwork = import("./dnsPermittedNetwork").DnsPermittedNetwork;
-export const DnsPermittedNetwork: typeof import("./dnsPermittedNetwork").DnsPermittedNetwork = null as any;
-utilities.lazyLoad(exports, ["DnsPermittedNetwork"], () => require("./dnsPermittedNetwork"));
-
-export { DnsRecordArgs, DnsRecordState } from "./dnsRecord";
-export type DnsRecord = import("./dnsRecord").DnsRecord;
-export const DnsRecord: typeof import("./dnsRecord").DnsRecord = null as any;
-utilities.lazyLoad(exports, ["DnsRecord"], () => require("./dnsRecord"));
-
-export { DnsResourceRecordArgs, DnsResourceRecordState } from "./dnsResourceRecord";
-export type DnsResourceRecord = import("./dnsResourceRecord").DnsResourceRecord;
-export const DnsResourceRecord: typeof import("./dnsResourceRecord").DnsResourceRecord = null as any;
-utilities.lazyLoad(exports, ["DnsResourceRecord"], () => require("./dnsResourceRecord"));
-
-export { DnsReverseRecordArgs, DnsReverseRecordState } from "./dnsReverseRecord";
-export type DnsReverseRecord = import("./dnsReverseRecord").DnsReverseRecord;
-export const DnsReverseRecord: typeof import("./dnsReverseRecord").DnsReverseRecord = null as any;
-utilities.lazyLoad(exports, ["DnsReverseRecord"], () => require("./dnsReverseRecord"));
-
-export { DnsSecondaryArgs, DnsSecondaryState } from "./dnsSecondary";
-export type DnsSecondary = import("./dnsSecondary").DnsSecondary;
-export const DnsSecondary: typeof import("./dnsSecondary").DnsSecondary = null as any;
-utilities.lazyLoad(exports, ["DnsSecondary"], () => require("./dnsSecondary"));
-
-export { DnsZoneArgs, DnsZoneState } from "./dnsZone";
-export type DnsZone = import("./dnsZone").DnsZone;
-export const DnsZone: typeof import("./dnsZone").DnsZone = null as any;
-utilities.lazyLoad(exports, ["DnsZone"], () => require("./dnsZone"));
-
 export { GetComputeBareMetalArgs, GetComputeBareMetalResult, GetComputeBareMetalOutputArgs } from "./getComputeBareMetal";
 export const getComputeBareMetal: typeof import("./getComputeBareMetal").getComputeBareMetal = null as any;
 export const getComputeBareMetalOutput: typeof import("./getComputeBareMetal").getComputeBareMetalOutput = null as any;
@@ -320,126 +135,6 @@ export const getComputeVmInstance: typeof import("./getComputeVmInstance").getCo
 export const getComputeVmInstanceOutput: typeof import("./getComputeVmInstance").getComputeVmInstanceOutput = null as any;
 utilities.lazyLoad(exports, ["getComputeVmInstance","getComputeVmInstanceOutput"], () => require("./getComputeVmInstance"));
 
-export { GetContainerAddonsArgs, GetContainerAddonsResult, GetContainerAddonsOutputArgs } from "./getContainerAddons";
-export const getContainerAddons: typeof import("./getContainerAddons").getContainerAddons = null as any;
-export const getContainerAddonsOutput: typeof import("./getContainerAddons").getContainerAddonsOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerAddons","getContainerAddonsOutput"], () => require("./getContainerAddons"));
-
-export { GetContainerAlbArgs, GetContainerAlbResult, GetContainerAlbOutputArgs } from "./getContainerAlb";
-export const getContainerAlb: typeof import("./getContainerAlb").getContainerAlb = null as any;
-export const getContainerAlbOutput: typeof import("./getContainerAlb").getContainerAlbOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerAlb","getContainerAlbOutput"], () => require("./getContainerAlb"));
-
-export { GetContainerAlbCertArgs, GetContainerAlbCertResult, GetContainerAlbCertOutputArgs } from "./getContainerAlbCert";
-export const getContainerAlbCert: typeof import("./getContainerAlbCert").getContainerAlbCert = null as any;
-export const getContainerAlbCertOutput: typeof import("./getContainerAlbCert").getContainerAlbCertOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerAlbCert","getContainerAlbCertOutput"], () => require("./getContainerAlbCert"));
-
-export { GetContainerBindServiceArgs, GetContainerBindServiceResult, GetContainerBindServiceOutputArgs } from "./getContainerBindService";
-export const getContainerBindService: typeof import("./getContainerBindService").getContainerBindService = null as any;
-export const getContainerBindServiceOutput: typeof import("./getContainerBindService").getContainerBindServiceOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerBindService","getContainerBindServiceOutput"], () => require("./getContainerBindService"));
-
-export { GetContainerClusterArgs, GetContainerClusterResult, GetContainerClusterOutputArgs } from "./getContainerCluster";
-export const getContainerCluster: typeof import("./getContainerCluster").getContainerCluster = null as any;
-export const getContainerClusterOutput: typeof import("./getContainerCluster").getContainerClusterOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerCluster","getContainerClusterOutput"], () => require("./getContainerCluster"));
-
-export { GetContainerClusterConfigArgs, GetContainerClusterConfigResult, GetContainerClusterConfigOutputArgs } from "./getContainerClusterConfig";
-export const getContainerClusterConfig: typeof import("./getContainerClusterConfig").getContainerClusterConfig = null as any;
-export const getContainerClusterConfigOutput: typeof import("./getContainerClusterConfig").getContainerClusterConfigOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerClusterConfig","getContainerClusterConfigOutput"], () => require("./getContainerClusterConfig"));
-
-export { GetContainerClusterVersionsArgs, GetContainerClusterVersionsResult, GetContainerClusterVersionsOutputArgs } from "./getContainerClusterVersions";
-export const getContainerClusterVersions: typeof import("./getContainerClusterVersions").getContainerClusterVersions = null as any;
-export const getContainerClusterVersionsOutput: typeof import("./getContainerClusterVersions").getContainerClusterVersionsOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerClusterVersions","getContainerClusterVersionsOutput"], () => require("./getContainerClusterVersions"));
-
-export { GetContainerClusterWorkerArgs, GetContainerClusterWorkerResult, GetContainerClusterWorkerOutputArgs } from "./getContainerClusterWorker";
-export const getContainerClusterWorker: typeof import("./getContainerClusterWorker").getContainerClusterWorker = null as any;
-export const getContainerClusterWorkerOutput: typeof import("./getContainerClusterWorker").getContainerClusterWorkerOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerClusterWorker","getContainerClusterWorkerOutput"], () => require("./getContainerClusterWorker"));
-
-export { GetContainerDedicatedHostArgs, GetContainerDedicatedHostResult, GetContainerDedicatedHostOutputArgs } from "./getContainerDedicatedHost";
-export const getContainerDedicatedHost: typeof import("./getContainerDedicatedHost").getContainerDedicatedHost = null as any;
-export const getContainerDedicatedHostOutput: typeof import("./getContainerDedicatedHost").getContainerDedicatedHostOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerDedicatedHost","getContainerDedicatedHostOutput"], () => require("./getContainerDedicatedHost"));
-
-export { GetContainerDedicatedHostFlavorArgs, GetContainerDedicatedHostFlavorResult, GetContainerDedicatedHostFlavorOutputArgs } from "./getContainerDedicatedHostFlavor";
-export const getContainerDedicatedHostFlavor: typeof import("./getContainerDedicatedHostFlavor").getContainerDedicatedHostFlavor = null as any;
-export const getContainerDedicatedHostFlavorOutput: typeof import("./getContainerDedicatedHostFlavor").getContainerDedicatedHostFlavorOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerDedicatedHostFlavor","getContainerDedicatedHostFlavorOutput"], () => require("./getContainerDedicatedHostFlavor"));
-
-export { GetContainerDedicatedHostFlavorsArgs, GetContainerDedicatedHostFlavorsResult, GetContainerDedicatedHostFlavorsOutputArgs } from "./getContainerDedicatedHostFlavors";
-export const getContainerDedicatedHostFlavors: typeof import("./getContainerDedicatedHostFlavors").getContainerDedicatedHostFlavors = null as any;
-export const getContainerDedicatedHostFlavorsOutput: typeof import("./getContainerDedicatedHostFlavors").getContainerDedicatedHostFlavorsOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerDedicatedHostFlavors","getContainerDedicatedHostFlavorsOutput"], () => require("./getContainerDedicatedHostFlavors"));
-
-export { GetContainerDedicatedHostPoolArgs, GetContainerDedicatedHostPoolResult, GetContainerDedicatedHostPoolOutputArgs } from "./getContainerDedicatedHostPool";
-export const getContainerDedicatedHostPool: typeof import("./getContainerDedicatedHostPool").getContainerDedicatedHostPool = null as any;
-export const getContainerDedicatedHostPoolOutput: typeof import("./getContainerDedicatedHostPool").getContainerDedicatedHostPoolOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerDedicatedHostPool","getContainerDedicatedHostPoolOutput"], () => require("./getContainerDedicatedHostPool"));
-
-export { GetContainerIngressInstanceArgs, GetContainerIngressInstanceResult, GetContainerIngressInstanceOutputArgs } from "./getContainerIngressInstance";
-export const getContainerIngressInstance: typeof import("./getContainerIngressInstance").getContainerIngressInstance = null as any;
-export const getContainerIngressInstanceOutput: typeof import("./getContainerIngressInstance").getContainerIngressInstanceOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerIngressInstance","getContainerIngressInstanceOutput"], () => require("./getContainerIngressInstance"));
-
-export { GetContainerIngressSecretOpaqueArgs, GetContainerIngressSecretOpaqueResult, GetContainerIngressSecretOpaqueOutputArgs } from "./getContainerIngressSecretOpaque";
-export const getContainerIngressSecretOpaque: typeof import("./getContainerIngressSecretOpaque").getContainerIngressSecretOpaque = null as any;
-export const getContainerIngressSecretOpaqueOutput: typeof import("./getContainerIngressSecretOpaque").getContainerIngressSecretOpaqueOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerIngressSecretOpaque","getContainerIngressSecretOpaqueOutput"], () => require("./getContainerIngressSecretOpaque"));
-
-export { GetContainerIngressSecretTlsArgs, GetContainerIngressSecretTlsResult, GetContainerIngressSecretTlsOutputArgs } from "./getContainerIngressSecretTls";
-export const getContainerIngressSecretTls: typeof import("./getContainerIngressSecretTls").getContainerIngressSecretTls = null as any;
-export const getContainerIngressSecretTlsOutput: typeof import("./getContainerIngressSecretTls").getContainerIngressSecretTlsOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerIngressSecretTls","getContainerIngressSecretTlsOutput"], () => require("./getContainerIngressSecretTls"));
-
-export { GetContainerNlbDnsArgs, GetContainerNlbDnsResult, GetContainerNlbDnsOutputArgs } from "./getContainerNlbDns";
-export const getContainerNlbDns: typeof import("./getContainerNlbDns").getContainerNlbDns = null as any;
-export const getContainerNlbDnsOutput: typeof import("./getContainerNlbDns").getContainerNlbDnsOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerNlbDns","getContainerNlbDnsOutput"], () => require("./getContainerNlbDns"));
-
-export { GetContainerStorageAttachmentArgs, GetContainerStorageAttachmentResult, GetContainerStorageAttachmentOutputArgs } from "./getContainerStorageAttachment";
-export const getContainerStorageAttachment: typeof import("./getContainerStorageAttachment").getContainerStorageAttachment = null as any;
-export const getContainerStorageAttachmentOutput: typeof import("./getContainerStorageAttachment").getContainerStorageAttachmentOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerStorageAttachment","getContainerStorageAttachmentOutput"], () => require("./getContainerStorageAttachment"));
-
-export { GetContainerVpcAlbArgs, GetContainerVpcAlbResult, GetContainerVpcAlbOutputArgs } from "./getContainerVpcAlb";
-export const getContainerVpcAlb: typeof import("./getContainerVpcAlb").getContainerVpcAlb = null as any;
-export const getContainerVpcAlbOutput: typeof import("./getContainerVpcAlb").getContainerVpcAlbOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerVpcAlb","getContainerVpcAlbOutput"], () => require("./getContainerVpcAlb"));
-
-export { GetContainerVpcClusterArgs, GetContainerVpcClusterResult, GetContainerVpcClusterOutputArgs } from "./getContainerVpcCluster";
-export const getContainerVpcCluster: typeof import("./getContainerVpcCluster").getContainerVpcCluster = null as any;
-export const getContainerVpcClusterOutput: typeof import("./getContainerVpcCluster").getContainerVpcClusterOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerVpcCluster","getContainerVpcClusterOutput"], () => require("./getContainerVpcCluster"));
-
-export { GetContainerVpcClusterAlbArgs, GetContainerVpcClusterAlbResult, GetContainerVpcClusterAlbOutputArgs } from "./getContainerVpcClusterAlb";
-export const getContainerVpcClusterAlb: typeof import("./getContainerVpcClusterAlb").getContainerVpcClusterAlb = null as any;
-export const getContainerVpcClusterAlbOutput: typeof import("./getContainerVpcClusterAlb").getContainerVpcClusterAlbOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerVpcClusterAlb","getContainerVpcClusterAlbOutput"], () => require("./getContainerVpcClusterAlb"));
-
-export { GetContainerVpcClusterWorkerArgs, GetContainerVpcClusterWorkerResult, GetContainerVpcClusterWorkerOutputArgs } from "./getContainerVpcClusterWorker";
-export const getContainerVpcClusterWorker: typeof import("./getContainerVpcClusterWorker").getContainerVpcClusterWorker = null as any;
-export const getContainerVpcClusterWorkerOutput: typeof import("./getContainerVpcClusterWorker").getContainerVpcClusterWorkerOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerVpcClusterWorker","getContainerVpcClusterWorkerOutput"], () => require("./getContainerVpcClusterWorker"));
-
-export { GetContainerVpcClusterWorkerPoolArgs, GetContainerVpcClusterWorkerPoolResult, GetContainerVpcClusterWorkerPoolOutputArgs } from "./getContainerVpcClusterWorkerPool";
-export const getContainerVpcClusterWorkerPool: typeof import("./getContainerVpcClusterWorkerPool").getContainerVpcClusterWorkerPool = null as any;
-export const getContainerVpcClusterWorkerPoolOutput: typeof import("./getContainerVpcClusterWorkerPool").getContainerVpcClusterWorkerPoolOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerVpcClusterWorkerPool","getContainerVpcClusterWorkerPoolOutput"], () => require("./getContainerVpcClusterWorkerPool"));
-
-export { GetContainerVpcWorkerPoolArgs, GetContainerVpcWorkerPoolResult, GetContainerVpcWorkerPoolOutputArgs } from "./getContainerVpcWorkerPool";
-export const getContainerVpcWorkerPool: typeof import("./getContainerVpcWorkerPool").getContainerVpcWorkerPool = null as any;
-export const getContainerVpcWorkerPoolOutput: typeof import("./getContainerVpcWorkerPool").getContainerVpcWorkerPoolOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerVpcWorkerPool","getContainerVpcWorkerPoolOutput"], () => require("./getContainerVpcWorkerPool"));
-
-export { GetContainerWorkerPoolArgs, GetContainerWorkerPoolResult, GetContainerWorkerPoolOutputArgs } from "./getContainerWorkerPool";
-export const getContainerWorkerPool: typeof import("./getContainerWorkerPool").getContainerWorkerPool = null as any;
-export const getContainerWorkerPoolOutput: typeof import("./getContainerWorkerPool").getContainerWorkerPoolOutput = null as any;
-utilities.lazyLoad(exports, ["getContainerWorkerPool","getContainerWorkerPoolOutput"], () => require("./getContainerWorkerPool"));
-
 export { GetCosBackupPolicyArgs, GetCosBackupPolicyResult, GetCosBackupPolicyOutputArgs } from "./getCosBackupPolicy";
 export const getCosBackupPolicy: typeof import("./getCosBackupPolicy").getCosBackupPolicy = null as any;
 export const getCosBackupPolicyOutput: typeof import("./getCosBackupPolicy").getCosBackupPolicyOutput = null as any;
@@ -459,66 +154,6 @@ export { GetCosBucketObjectArgs, GetCosBucketObjectResult, GetCosBucketObjectOut
 export const getCosBucketObject: typeof import("./getCosBucketObject").getCosBucketObject = null as any;
 export const getCosBucketObjectOutput: typeof import("./getCosBucketObject").getCosBucketObjectOutput = null as any;
 utilities.lazyLoad(exports, ["getCosBucketObject","getCosBucketObjectOutput"], () => require("./getCosBucketObject"));
-
-export { GetDnsCustomResolverForwardingRulesArgs, GetDnsCustomResolverForwardingRulesResult, GetDnsCustomResolverForwardingRulesOutputArgs } from "./getDnsCustomResolverForwardingRules";
-export const getDnsCustomResolverForwardingRules: typeof import("./getDnsCustomResolverForwardingRules").getDnsCustomResolverForwardingRules = null as any;
-export const getDnsCustomResolverForwardingRulesOutput: typeof import("./getDnsCustomResolverForwardingRules").getDnsCustomResolverForwardingRulesOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsCustomResolverForwardingRules","getDnsCustomResolverForwardingRulesOutput"], () => require("./getDnsCustomResolverForwardingRules"));
-
-export { GetDnsCustomResolverSecondaryZonesArgs, GetDnsCustomResolverSecondaryZonesResult, GetDnsCustomResolverSecondaryZonesOutputArgs } from "./getDnsCustomResolverSecondaryZones";
-export const getDnsCustomResolverSecondaryZones: typeof import("./getDnsCustomResolverSecondaryZones").getDnsCustomResolverSecondaryZones = null as any;
-export const getDnsCustomResolverSecondaryZonesOutput: typeof import("./getDnsCustomResolverSecondaryZones").getDnsCustomResolverSecondaryZonesOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsCustomResolverSecondaryZones","getDnsCustomResolverSecondaryZonesOutput"], () => require("./getDnsCustomResolverSecondaryZones"));
-
-export { GetDnsCustomResolversArgs, GetDnsCustomResolversResult, GetDnsCustomResolversOutputArgs } from "./getDnsCustomResolvers";
-export const getDnsCustomResolvers: typeof import("./getDnsCustomResolvers").getDnsCustomResolvers = null as any;
-export const getDnsCustomResolversOutput: typeof import("./getDnsCustomResolvers").getDnsCustomResolversOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsCustomResolvers","getDnsCustomResolversOutput"], () => require("./getDnsCustomResolvers"));
-
-export { GetDnsDomainArgs, GetDnsDomainResult, GetDnsDomainOutputArgs } from "./getDnsDomain";
-export const getDnsDomain: typeof import("./getDnsDomain").getDnsDomain = null as any;
-export const getDnsDomainOutput: typeof import("./getDnsDomain").getDnsDomainOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsDomain","getDnsDomainOutput"], () => require("./getDnsDomain"));
-
-export { GetDnsDomainRegistrationArgs, GetDnsDomainRegistrationResult, GetDnsDomainRegistrationOutputArgs } from "./getDnsDomainRegistration";
-export const getDnsDomainRegistration: typeof import("./getDnsDomainRegistration").getDnsDomainRegistration = null as any;
-export const getDnsDomainRegistrationOutput: typeof import("./getDnsDomainRegistration").getDnsDomainRegistrationOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsDomainRegistration","getDnsDomainRegistrationOutput"], () => require("./getDnsDomainRegistration"));
-
-export { GetDnsGlbMonitorsArgs, GetDnsGlbMonitorsResult, GetDnsGlbMonitorsOutputArgs } from "./getDnsGlbMonitors";
-export const getDnsGlbMonitors: typeof import("./getDnsGlbMonitors").getDnsGlbMonitors = null as any;
-export const getDnsGlbMonitorsOutput: typeof import("./getDnsGlbMonitors").getDnsGlbMonitorsOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsGlbMonitors","getDnsGlbMonitorsOutput"], () => require("./getDnsGlbMonitors"));
-
-export { GetDnsGlbPoolsArgs, GetDnsGlbPoolsResult, GetDnsGlbPoolsOutputArgs } from "./getDnsGlbPools";
-export const getDnsGlbPools: typeof import("./getDnsGlbPools").getDnsGlbPools = null as any;
-export const getDnsGlbPoolsOutput: typeof import("./getDnsGlbPools").getDnsGlbPoolsOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsGlbPools","getDnsGlbPoolsOutput"], () => require("./getDnsGlbPools"));
-
-export { GetDnsGlbsArgs, GetDnsGlbsResult, GetDnsGlbsOutputArgs } from "./getDnsGlbs";
-export const getDnsGlbs: typeof import("./getDnsGlbs").getDnsGlbs = null as any;
-export const getDnsGlbsOutput: typeof import("./getDnsGlbs").getDnsGlbsOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsGlbs","getDnsGlbsOutput"], () => require("./getDnsGlbs"));
-
-export { GetDnsPermittedNetworksArgs, GetDnsPermittedNetworksResult, GetDnsPermittedNetworksOutputArgs } from "./getDnsPermittedNetworks";
-export const getDnsPermittedNetworks: typeof import("./getDnsPermittedNetworks").getDnsPermittedNetworks = null as any;
-export const getDnsPermittedNetworksOutput: typeof import("./getDnsPermittedNetworks").getDnsPermittedNetworksOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsPermittedNetworks","getDnsPermittedNetworksOutput"], () => require("./getDnsPermittedNetworks"));
-
-export { GetDnsResourceRecordsArgs, GetDnsResourceRecordsResult, GetDnsResourceRecordsOutputArgs } from "./getDnsResourceRecords";
-export const getDnsResourceRecords: typeof import("./getDnsResourceRecords").getDnsResourceRecords = null as any;
-export const getDnsResourceRecordsOutput: typeof import("./getDnsResourceRecords").getDnsResourceRecordsOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsResourceRecords","getDnsResourceRecordsOutput"], () => require("./getDnsResourceRecords"));
-
-export { GetDnsSecondaryArgs, GetDnsSecondaryResult, GetDnsSecondaryOutputArgs } from "./getDnsSecondary";
-export const getDnsSecondary: typeof import("./getDnsSecondary").getDnsSecondary = null as any;
-export const getDnsSecondaryOutput: typeof import("./getDnsSecondary").getDnsSecondaryOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsSecondary","getDnsSecondaryOutput"], () => require("./getDnsSecondary"));
-
-export { GetDnsZonesArgs, GetDnsZonesResult, GetDnsZonesOutputArgs } from "./getDnsZones";
-export const getDnsZones: typeof import("./getDnsZones").getDnsZones = null as any;
-export const getDnsZonesOutput: typeof import("./getDnsZones").getDnsZonesOutput = null as any;
-utilities.lazyLoad(exports, ["getDnsZones","getDnsZonesOutput"], () => require("./getDnsZones"));
 
 export { GetIamAccessGroupArgs, GetIamAccessGroupResult, GetIamAccessGroupOutputArgs } from "./getIamAccessGroup";
 export const getIamAccessGroup: typeof import("./getIamAccessGroup").getIamAccessGroup = null as any;
@@ -1660,6 +1295,401 @@ export const getIsZones: typeof import("./getIsZones").getIsZones = null as any;
 export const getIsZonesOutput: typeof import("./getIsZones").getIsZonesOutput = null as any;
 utilities.lazyLoad(exports, ["getIsZones","getIsZonesOutput"], () => require("./getIsZones"));
 
+export { GetPiAvailableHostsArgs, GetPiAvailableHostsResult, GetPiAvailableHostsOutputArgs } from "./getPiAvailableHosts";
+export const getPiAvailableHosts: typeof import("./getPiAvailableHosts").getPiAvailableHosts = null as any;
+export const getPiAvailableHostsOutput: typeof import("./getPiAvailableHosts").getPiAvailableHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiAvailableHosts","getPiAvailableHostsOutput"], () => require("./getPiAvailableHosts"));
+
+export { GetPiCatalogImagesArgs, GetPiCatalogImagesResult, GetPiCatalogImagesOutputArgs } from "./getPiCatalogImages";
+export const getPiCatalogImages: typeof import("./getPiCatalogImages").getPiCatalogImages = null as any;
+export const getPiCatalogImagesOutput: typeof import("./getPiCatalogImages").getPiCatalogImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiCatalogImages","getPiCatalogImagesOutput"], () => require("./getPiCatalogImages"));
+
+export { GetPiCloudConnectionArgs, GetPiCloudConnectionResult, GetPiCloudConnectionOutputArgs } from "./getPiCloudConnection";
+export const getPiCloudConnection: typeof import("./getPiCloudConnection").getPiCloudConnection = null as any;
+export const getPiCloudConnectionOutput: typeof import("./getPiCloudConnection").getPiCloudConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getPiCloudConnection","getPiCloudConnectionOutput"], () => require("./getPiCloudConnection"));
+
+export { GetPiCloudConnectionsArgs, GetPiCloudConnectionsResult, GetPiCloudConnectionsOutputArgs } from "./getPiCloudConnections";
+export const getPiCloudConnections: typeof import("./getPiCloudConnections").getPiCloudConnections = null as any;
+export const getPiCloudConnectionsOutput: typeof import("./getPiCloudConnections").getPiCloudConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiCloudConnections","getPiCloudConnectionsOutput"], () => require("./getPiCloudConnections"));
+
+export { GetPiCloudInstanceArgs, GetPiCloudInstanceResult, GetPiCloudInstanceOutputArgs } from "./getPiCloudInstance";
+export const getPiCloudInstance: typeof import("./getPiCloudInstance").getPiCloudInstance = null as any;
+export const getPiCloudInstanceOutput: typeof import("./getPiCloudInstance").getPiCloudInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getPiCloudInstance","getPiCloudInstanceOutput"], () => require("./getPiCloudInstance"));
+
+export { GetPiConsoleLanguagesArgs, GetPiConsoleLanguagesResult, GetPiConsoleLanguagesOutputArgs } from "./getPiConsoleLanguages";
+export const getPiConsoleLanguages: typeof import("./getPiConsoleLanguages").getPiConsoleLanguages = null as any;
+export const getPiConsoleLanguagesOutput: typeof import("./getPiConsoleLanguages").getPiConsoleLanguagesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiConsoleLanguages","getPiConsoleLanguagesOutput"], () => require("./getPiConsoleLanguages"));
+
+export { GetPiDatacenterArgs, GetPiDatacenterResult, GetPiDatacenterOutputArgs } from "./getPiDatacenter";
+export const getPiDatacenter: typeof import("./getPiDatacenter").getPiDatacenter = null as any;
+export const getPiDatacenterOutput: typeof import("./getPiDatacenter").getPiDatacenterOutput = null as any;
+utilities.lazyLoad(exports, ["getPiDatacenter","getPiDatacenterOutput"], () => require("./getPiDatacenter"));
+
+export { GetPiDatacentersArgs, GetPiDatacentersResult, GetPiDatacentersOutputArgs } from "./getPiDatacenters";
+export const getPiDatacenters: typeof import("./getPiDatacenters").getPiDatacenters = null as any;
+export const getPiDatacentersOutput: typeof import("./getPiDatacenters").getPiDatacentersOutput = null as any;
+utilities.lazyLoad(exports, ["getPiDatacenters","getPiDatacentersOutput"], () => require("./getPiDatacenters"));
+
+export { GetPiDhcpArgs, GetPiDhcpResult, GetPiDhcpOutputArgs } from "./getPiDhcp";
+export const getPiDhcp: typeof import("./getPiDhcp").getPiDhcp = null as any;
+export const getPiDhcpOutput: typeof import("./getPiDhcp").getPiDhcpOutput = null as any;
+utilities.lazyLoad(exports, ["getPiDhcp","getPiDhcpOutput"], () => require("./getPiDhcp"));
+
+export { GetPiDhcpsArgs, GetPiDhcpsResult, GetPiDhcpsOutputArgs } from "./getPiDhcps";
+export const getPiDhcps: typeof import("./getPiDhcps").getPiDhcps = null as any;
+export const getPiDhcpsOutput: typeof import("./getPiDhcps").getPiDhcpsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiDhcps","getPiDhcpsOutput"], () => require("./getPiDhcps"));
+
+export { GetPiDisasterRecoveryLocationArgs, GetPiDisasterRecoveryLocationResult, GetPiDisasterRecoveryLocationOutputArgs } from "./getPiDisasterRecoveryLocation";
+export const getPiDisasterRecoveryLocation: typeof import("./getPiDisasterRecoveryLocation").getPiDisasterRecoveryLocation = null as any;
+export const getPiDisasterRecoveryLocationOutput: typeof import("./getPiDisasterRecoveryLocation").getPiDisasterRecoveryLocationOutput = null as any;
+utilities.lazyLoad(exports, ["getPiDisasterRecoveryLocation","getPiDisasterRecoveryLocationOutput"], () => require("./getPiDisasterRecoveryLocation"));
+
+export { GetPiDisasterRecoveryLocationsResult } from "./getPiDisasterRecoveryLocations";
+export const getPiDisasterRecoveryLocations: typeof import("./getPiDisasterRecoveryLocations").getPiDisasterRecoveryLocations = null as any;
+export const getPiDisasterRecoveryLocationsOutput: typeof import("./getPiDisasterRecoveryLocations").getPiDisasterRecoveryLocationsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiDisasterRecoveryLocations","getPiDisasterRecoveryLocationsOutput"], () => require("./getPiDisasterRecoveryLocations"));
+
+export { GetPiHostArgs, GetPiHostResult, GetPiHostOutputArgs } from "./getPiHost";
+export const getPiHost: typeof import("./getPiHost").getPiHost = null as any;
+export const getPiHostOutput: typeof import("./getPiHost").getPiHostOutput = null as any;
+utilities.lazyLoad(exports, ["getPiHost","getPiHostOutput"], () => require("./getPiHost"));
+
+export { GetPiHostGroupArgs, GetPiHostGroupResult, GetPiHostGroupOutputArgs } from "./getPiHostGroup";
+export const getPiHostGroup: typeof import("./getPiHostGroup").getPiHostGroup = null as any;
+export const getPiHostGroupOutput: typeof import("./getPiHostGroup").getPiHostGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getPiHostGroup","getPiHostGroupOutput"], () => require("./getPiHostGroup"));
+
+export { GetPiHostGroupsArgs, GetPiHostGroupsResult, GetPiHostGroupsOutputArgs } from "./getPiHostGroups";
+export const getPiHostGroups: typeof import("./getPiHostGroups").getPiHostGroups = null as any;
+export const getPiHostGroupsOutput: typeof import("./getPiHostGroups").getPiHostGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiHostGroups","getPiHostGroupsOutput"], () => require("./getPiHostGroups"));
+
+export { GetPiHostsArgs, GetPiHostsResult, GetPiHostsOutputArgs } from "./getPiHosts";
+export const getPiHosts: typeof import("./getPiHosts").getPiHosts = null as any;
+export const getPiHostsOutput: typeof import("./getPiHosts").getPiHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiHosts","getPiHostsOutput"], () => require("./getPiHosts"));
+
+export { GetPiImageArgs, GetPiImageResult, GetPiImageOutputArgs } from "./getPiImage";
+export const getPiImage: typeof import("./getPiImage").getPiImage = null as any;
+export const getPiImageOutput: typeof import("./getPiImage").getPiImageOutput = null as any;
+utilities.lazyLoad(exports, ["getPiImage","getPiImageOutput"], () => require("./getPiImage"));
+
+export { GetPiImagesArgs, GetPiImagesResult, GetPiImagesOutputArgs } from "./getPiImages";
+export const getPiImages: typeof import("./getPiImages").getPiImages = null as any;
+export const getPiImagesOutput: typeof import("./getPiImages").getPiImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiImages","getPiImagesOutput"], () => require("./getPiImages"));
+
+export { GetPiInstanceArgs, GetPiInstanceResult, GetPiInstanceOutputArgs } from "./getPiInstance";
+export const getPiInstance: typeof import("./getPiInstance").getPiInstance = null as any;
+export const getPiInstanceOutput: typeof import("./getPiInstance").getPiInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstance","getPiInstanceOutput"], () => require("./getPiInstance"));
+
+export { GetPiInstanceIpArgs, GetPiInstanceIpResult, GetPiInstanceIpOutputArgs } from "./getPiInstanceIp";
+export const getPiInstanceIp: typeof import("./getPiInstanceIp").getPiInstanceIp = null as any;
+export const getPiInstanceIpOutput: typeof import("./getPiInstanceIp").getPiInstanceIpOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceIp","getPiInstanceIpOutput"], () => require("./getPiInstanceIp"));
+
+export { GetPiInstanceSnapshotArgs, GetPiInstanceSnapshotResult, GetPiInstanceSnapshotOutputArgs } from "./getPiInstanceSnapshot";
+export const getPiInstanceSnapshot: typeof import("./getPiInstanceSnapshot").getPiInstanceSnapshot = null as any;
+export const getPiInstanceSnapshotOutput: typeof import("./getPiInstanceSnapshot").getPiInstanceSnapshotOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceSnapshot","getPiInstanceSnapshotOutput"], () => require("./getPiInstanceSnapshot"));
+
+export { GetPiInstanceSnapshotsArgs, GetPiInstanceSnapshotsResult, GetPiInstanceSnapshotsOutputArgs } from "./getPiInstanceSnapshots";
+export const getPiInstanceSnapshots: typeof import("./getPiInstanceSnapshots").getPiInstanceSnapshots = null as any;
+export const getPiInstanceSnapshotsOutput: typeof import("./getPiInstanceSnapshots").getPiInstanceSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceSnapshots","getPiInstanceSnapshotsOutput"], () => require("./getPiInstanceSnapshots"));
+
+export { GetPiInstanceVolumesArgs, GetPiInstanceVolumesResult, GetPiInstanceVolumesOutputArgs } from "./getPiInstanceVolumes";
+export const getPiInstanceVolumes: typeof import("./getPiInstanceVolumes").getPiInstanceVolumes = null as any;
+export const getPiInstanceVolumesOutput: typeof import("./getPiInstanceVolumes").getPiInstanceVolumesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceVolumes","getPiInstanceVolumesOutput"], () => require("./getPiInstanceVolumes"));
+
+export { GetPiInstancesArgs, GetPiInstancesResult, GetPiInstancesOutputArgs } from "./getPiInstances";
+export const getPiInstances: typeof import("./getPiInstances").getPiInstances = null as any;
+export const getPiInstancesOutput: typeof import("./getPiInstances").getPiInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstances","getPiInstancesOutput"], () => require("./getPiInstances"));
+
+export { GetPiKeyArgs, GetPiKeyResult, GetPiKeyOutputArgs } from "./getPiKey";
+export const getPiKey: typeof import("./getPiKey").getPiKey = null as any;
+export const getPiKeyOutput: typeof import("./getPiKey").getPiKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getPiKey","getPiKeyOutput"], () => require("./getPiKey"));
+
+export { GetPiKeysArgs, GetPiKeysResult, GetPiKeysOutputArgs } from "./getPiKeys";
+export const getPiKeys: typeof import("./getPiKeys").getPiKeys = null as any;
+export const getPiKeysOutput: typeof import("./getPiKeys").getPiKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getPiKeys","getPiKeysOutput"], () => require("./getPiKeys"));
+
+export { GetPiNetworkArgs, GetPiNetworkResult, GetPiNetworkOutputArgs } from "./getPiNetwork";
+export const getPiNetwork: typeof import("./getPiNetwork").getPiNetwork = null as any;
+export const getPiNetworkOutput: typeof import("./getPiNetwork").getPiNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetwork","getPiNetworkOutput"], () => require("./getPiNetwork"));
+
+export { GetPiNetworkAddressGroupArgs, GetPiNetworkAddressGroupResult, GetPiNetworkAddressGroupOutputArgs } from "./getPiNetworkAddressGroup";
+export const getPiNetworkAddressGroup: typeof import("./getPiNetworkAddressGroup").getPiNetworkAddressGroup = null as any;
+export const getPiNetworkAddressGroupOutput: typeof import("./getPiNetworkAddressGroup").getPiNetworkAddressGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkAddressGroup","getPiNetworkAddressGroupOutput"], () => require("./getPiNetworkAddressGroup"));
+
+export { GetPiNetworkAddressGroupsArgs, GetPiNetworkAddressGroupsResult, GetPiNetworkAddressGroupsOutputArgs } from "./getPiNetworkAddressGroups";
+export const getPiNetworkAddressGroups: typeof import("./getPiNetworkAddressGroups").getPiNetworkAddressGroups = null as any;
+export const getPiNetworkAddressGroupsOutput: typeof import("./getPiNetworkAddressGroups").getPiNetworkAddressGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkAddressGroups","getPiNetworkAddressGroupsOutput"], () => require("./getPiNetworkAddressGroups"));
+
+export { GetPiNetworkInterfaceArgs, GetPiNetworkInterfaceResult, GetPiNetworkInterfaceOutputArgs } from "./getPiNetworkInterface";
+export const getPiNetworkInterface: typeof import("./getPiNetworkInterface").getPiNetworkInterface = null as any;
+export const getPiNetworkInterfaceOutput: typeof import("./getPiNetworkInterface").getPiNetworkInterfaceOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkInterface","getPiNetworkInterfaceOutput"], () => require("./getPiNetworkInterface"));
+
+export { GetPiNetworkInterfacesArgs, GetPiNetworkInterfacesResult, GetPiNetworkInterfacesOutputArgs } from "./getPiNetworkInterfaces";
+export const getPiNetworkInterfaces: typeof import("./getPiNetworkInterfaces").getPiNetworkInterfaces = null as any;
+export const getPiNetworkInterfacesOutput: typeof import("./getPiNetworkInterfaces").getPiNetworkInterfacesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkInterfaces","getPiNetworkInterfacesOutput"], () => require("./getPiNetworkInterfaces"));
+
+export { GetPiNetworkPeerArgs, GetPiNetworkPeerResult, GetPiNetworkPeerOutputArgs } from "./getPiNetworkPeer";
+export const getPiNetworkPeer: typeof import("./getPiNetworkPeer").getPiNetworkPeer = null as any;
+export const getPiNetworkPeerOutput: typeof import("./getPiNetworkPeer").getPiNetworkPeerOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkPeer","getPiNetworkPeerOutput"], () => require("./getPiNetworkPeer"));
+
+export { GetPiNetworkPeerInterfacesArgs, GetPiNetworkPeerInterfacesResult, GetPiNetworkPeerInterfacesOutputArgs } from "./getPiNetworkPeerInterfaces";
+export const getPiNetworkPeerInterfaces: typeof import("./getPiNetworkPeerInterfaces").getPiNetworkPeerInterfaces = null as any;
+export const getPiNetworkPeerInterfacesOutput: typeof import("./getPiNetworkPeerInterfaces").getPiNetworkPeerInterfacesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkPeerInterfaces","getPiNetworkPeerInterfacesOutput"], () => require("./getPiNetworkPeerInterfaces"));
+
+export { GetPiNetworkPeerRouteFilterArgs, GetPiNetworkPeerRouteFilterResult, GetPiNetworkPeerRouteFilterOutputArgs } from "./getPiNetworkPeerRouteFilter";
+export const getPiNetworkPeerRouteFilter: typeof import("./getPiNetworkPeerRouteFilter").getPiNetworkPeerRouteFilter = null as any;
+export const getPiNetworkPeerRouteFilterOutput: typeof import("./getPiNetworkPeerRouteFilter").getPiNetworkPeerRouteFilterOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkPeerRouteFilter","getPiNetworkPeerRouteFilterOutput"], () => require("./getPiNetworkPeerRouteFilter"));
+
+export { GetPiNetworkPeersArgs, GetPiNetworkPeersResult, GetPiNetworkPeersOutputArgs } from "./getPiNetworkPeers";
+export const getPiNetworkPeers: typeof import("./getPiNetworkPeers").getPiNetworkPeers = null as any;
+export const getPiNetworkPeersOutput: typeof import("./getPiNetworkPeers").getPiNetworkPeersOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkPeers","getPiNetworkPeersOutput"], () => require("./getPiNetworkPeers"));
+
+export { GetPiNetworkPortArgs, GetPiNetworkPortResult, GetPiNetworkPortOutputArgs } from "./getPiNetworkPort";
+export const getPiNetworkPort: typeof import("./getPiNetworkPort").getPiNetworkPort = null as any;
+export const getPiNetworkPortOutput: typeof import("./getPiNetworkPort").getPiNetworkPortOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkPort","getPiNetworkPortOutput"], () => require("./getPiNetworkPort"));
+
+export { GetPiNetworkSecurityGroupArgs, GetPiNetworkSecurityGroupResult, GetPiNetworkSecurityGroupOutputArgs } from "./getPiNetworkSecurityGroup";
+export const getPiNetworkSecurityGroup: typeof import("./getPiNetworkSecurityGroup").getPiNetworkSecurityGroup = null as any;
+export const getPiNetworkSecurityGroupOutput: typeof import("./getPiNetworkSecurityGroup").getPiNetworkSecurityGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkSecurityGroup","getPiNetworkSecurityGroupOutput"], () => require("./getPiNetworkSecurityGroup"));
+
+export { GetPiNetworkSecurityGroupsArgs, GetPiNetworkSecurityGroupsResult, GetPiNetworkSecurityGroupsOutputArgs } from "./getPiNetworkSecurityGroups";
+export const getPiNetworkSecurityGroups: typeof import("./getPiNetworkSecurityGroups").getPiNetworkSecurityGroups = null as any;
+export const getPiNetworkSecurityGroupsOutput: typeof import("./getPiNetworkSecurityGroups").getPiNetworkSecurityGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworkSecurityGroups","getPiNetworkSecurityGroupsOutput"], () => require("./getPiNetworkSecurityGroups"));
+
+export { GetPiNetworksArgs, GetPiNetworksResult, GetPiNetworksOutputArgs } from "./getPiNetworks";
+export const getPiNetworks: typeof import("./getPiNetworks").getPiNetworks = null as any;
+export const getPiNetworksOutput: typeof import("./getPiNetworks").getPiNetworksOutput = null as any;
+utilities.lazyLoad(exports, ["getPiNetworks","getPiNetworksOutput"], () => require("./getPiNetworks"));
+
+export { GetPiPlacementGroupArgs, GetPiPlacementGroupResult, GetPiPlacementGroupOutputArgs } from "./getPiPlacementGroup";
+export const getPiPlacementGroup: typeof import("./getPiPlacementGroup").getPiPlacementGroup = null as any;
+export const getPiPlacementGroupOutput: typeof import("./getPiPlacementGroup").getPiPlacementGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getPiPlacementGroup","getPiPlacementGroupOutput"], () => require("./getPiPlacementGroup"));
+
+export { GetPiPlacementGroupsArgs, GetPiPlacementGroupsResult, GetPiPlacementGroupsOutputArgs } from "./getPiPlacementGroups";
+export const getPiPlacementGroups: typeof import("./getPiPlacementGroups").getPiPlacementGroups = null as any;
+export const getPiPlacementGroupsOutput: typeof import("./getPiPlacementGroups").getPiPlacementGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiPlacementGroups","getPiPlacementGroupsOutput"], () => require("./getPiPlacementGroups"));
+
+export { GetPiPublicNetworkArgs, GetPiPublicNetworkResult, GetPiPublicNetworkOutputArgs } from "./getPiPublicNetwork";
+export const getPiPublicNetwork: typeof import("./getPiPublicNetwork").getPiPublicNetwork = null as any;
+export const getPiPublicNetworkOutput: typeof import("./getPiPublicNetwork").getPiPublicNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getPiPublicNetwork","getPiPublicNetworkOutput"], () => require("./getPiPublicNetwork"));
+
+export { GetPiPvmSnapshotsArgs, GetPiPvmSnapshotsResult, GetPiPvmSnapshotsOutputArgs } from "./getPiPvmSnapshots";
+export const getPiPvmSnapshots: typeof import("./getPiPvmSnapshots").getPiPvmSnapshots = null as any;
+export const getPiPvmSnapshotsOutput: typeof import("./getPiPvmSnapshots").getPiPvmSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiPvmSnapshots","getPiPvmSnapshotsOutput"], () => require("./getPiPvmSnapshots"));
+
+export { GetPiRouteArgs, GetPiRouteResult, GetPiRouteOutputArgs } from "./getPiRoute";
+export const getPiRoute: typeof import("./getPiRoute").getPiRoute = null as any;
+export const getPiRouteOutput: typeof import("./getPiRoute").getPiRouteOutput = null as any;
+utilities.lazyLoad(exports, ["getPiRoute","getPiRouteOutput"], () => require("./getPiRoute"));
+
+export { GetPiRouteReportArgs, GetPiRouteReportResult, GetPiRouteReportOutputArgs } from "./getPiRouteReport";
+export const getPiRouteReport: typeof import("./getPiRouteReport").getPiRouteReport = null as any;
+export const getPiRouteReportOutput: typeof import("./getPiRouteReport").getPiRouteReportOutput = null as any;
+utilities.lazyLoad(exports, ["getPiRouteReport","getPiRouteReportOutput"], () => require("./getPiRouteReport"));
+
+export { GetPiRoutesArgs, GetPiRoutesResult, GetPiRoutesOutputArgs } from "./getPiRoutes";
+export const getPiRoutes: typeof import("./getPiRoutes").getPiRoutes = null as any;
+export const getPiRoutesOutput: typeof import("./getPiRoutes").getPiRoutesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiRoutes","getPiRoutesOutput"], () => require("./getPiRoutes"));
+
+export { GetPiSapProfileArgs, GetPiSapProfileResult, GetPiSapProfileOutputArgs } from "./getPiSapProfile";
+export const getPiSapProfile: typeof import("./getPiSapProfile").getPiSapProfile = null as any;
+export const getPiSapProfileOutput: typeof import("./getPiSapProfile").getPiSapProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSapProfile","getPiSapProfileOutput"], () => require("./getPiSapProfile"));
+
+export { GetPiSapProfilesArgs, GetPiSapProfilesResult, GetPiSapProfilesOutputArgs } from "./getPiSapProfiles";
+export const getPiSapProfiles: typeof import("./getPiSapProfiles").getPiSapProfiles = null as any;
+export const getPiSapProfilesOutput: typeof import("./getPiSapProfiles").getPiSapProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSapProfiles","getPiSapProfilesOutput"], () => require("./getPiSapProfiles"));
+
+export { GetPiSharedProcessorPoolArgs, GetPiSharedProcessorPoolResult, GetPiSharedProcessorPoolOutputArgs } from "./getPiSharedProcessorPool";
+export const getPiSharedProcessorPool: typeof import("./getPiSharedProcessorPool").getPiSharedProcessorPool = null as any;
+export const getPiSharedProcessorPoolOutput: typeof import("./getPiSharedProcessorPool").getPiSharedProcessorPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSharedProcessorPool","getPiSharedProcessorPoolOutput"], () => require("./getPiSharedProcessorPool"));
+
+export { GetPiSharedProcessorPoolsArgs, GetPiSharedProcessorPoolsResult, GetPiSharedProcessorPoolsOutputArgs } from "./getPiSharedProcessorPools";
+export const getPiSharedProcessorPools: typeof import("./getPiSharedProcessorPools").getPiSharedProcessorPools = null as any;
+export const getPiSharedProcessorPoolsOutput: typeof import("./getPiSharedProcessorPools").getPiSharedProcessorPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSharedProcessorPools","getPiSharedProcessorPoolsOutput"], () => require("./getPiSharedProcessorPools"));
+
+export { GetPiSoftwareTiersArgs, GetPiSoftwareTiersResult, GetPiSoftwareTiersOutputArgs } from "./getPiSoftwareTiers";
+export const getPiSoftwareTiers: typeof import("./getPiSoftwareTiers").getPiSoftwareTiers = null as any;
+export const getPiSoftwareTiersOutput: typeof import("./getPiSoftwareTiers").getPiSoftwareTiersOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSoftwareTiers","getPiSoftwareTiersOutput"], () => require("./getPiSoftwareTiers"));
+
+export { GetPiSppPlacementGroupArgs, GetPiSppPlacementGroupResult, GetPiSppPlacementGroupOutputArgs } from "./getPiSppPlacementGroup";
+export const getPiSppPlacementGroup: typeof import("./getPiSppPlacementGroup").getPiSppPlacementGroup = null as any;
+export const getPiSppPlacementGroupOutput: typeof import("./getPiSppPlacementGroup").getPiSppPlacementGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSppPlacementGroup","getPiSppPlacementGroupOutput"], () => require("./getPiSppPlacementGroup"));
+
+export { GetPiSppPlacementGroupsArgs, GetPiSppPlacementGroupsResult, GetPiSppPlacementGroupsOutputArgs } from "./getPiSppPlacementGroups";
+export const getPiSppPlacementGroups: typeof import("./getPiSppPlacementGroups").getPiSppPlacementGroups = null as any;
+export const getPiSppPlacementGroupsOutput: typeof import("./getPiSppPlacementGroups").getPiSppPlacementGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSppPlacementGroups","getPiSppPlacementGroupsOutput"], () => require("./getPiSppPlacementGroups"));
+
+export { GetPiStoragePoolCapacityArgs, GetPiStoragePoolCapacityResult, GetPiStoragePoolCapacityOutputArgs } from "./getPiStoragePoolCapacity";
+export const getPiStoragePoolCapacity: typeof import("./getPiStoragePoolCapacity").getPiStoragePoolCapacity = null as any;
+export const getPiStoragePoolCapacityOutput: typeof import("./getPiStoragePoolCapacity").getPiStoragePoolCapacityOutput = null as any;
+utilities.lazyLoad(exports, ["getPiStoragePoolCapacity","getPiStoragePoolCapacityOutput"], () => require("./getPiStoragePoolCapacity"));
+
+export { GetPiStoragePoolsCapacityArgs, GetPiStoragePoolsCapacityResult, GetPiStoragePoolsCapacityOutputArgs } from "./getPiStoragePoolsCapacity";
+export const getPiStoragePoolsCapacity: typeof import("./getPiStoragePoolsCapacity").getPiStoragePoolsCapacity = null as any;
+export const getPiStoragePoolsCapacityOutput: typeof import("./getPiStoragePoolsCapacity").getPiStoragePoolsCapacityOutput = null as any;
+utilities.lazyLoad(exports, ["getPiStoragePoolsCapacity","getPiStoragePoolsCapacityOutput"], () => require("./getPiStoragePoolsCapacity"));
+
+export { GetPiStorageTiersArgs, GetPiStorageTiersResult, GetPiStorageTiersOutputArgs } from "./getPiStorageTiers";
+export const getPiStorageTiers: typeof import("./getPiStorageTiers").getPiStorageTiers = null as any;
+export const getPiStorageTiersOutput: typeof import("./getPiStorageTiers").getPiStorageTiersOutput = null as any;
+utilities.lazyLoad(exports, ["getPiStorageTiers","getPiStorageTiersOutput"], () => require("./getPiStorageTiers"));
+
+export { GetPiStorageTypeCapacityArgs, GetPiStorageTypeCapacityResult, GetPiStorageTypeCapacityOutputArgs } from "./getPiStorageTypeCapacity";
+export const getPiStorageTypeCapacity: typeof import("./getPiStorageTypeCapacity").getPiStorageTypeCapacity = null as any;
+export const getPiStorageTypeCapacityOutput: typeof import("./getPiStorageTypeCapacity").getPiStorageTypeCapacityOutput = null as any;
+utilities.lazyLoad(exports, ["getPiStorageTypeCapacity","getPiStorageTypeCapacityOutput"], () => require("./getPiStorageTypeCapacity"));
+
+export { GetPiStorageTypesCapacityArgs, GetPiStorageTypesCapacityResult, GetPiStorageTypesCapacityOutputArgs } from "./getPiStorageTypesCapacity";
+export const getPiStorageTypesCapacity: typeof import("./getPiStorageTypesCapacity").getPiStorageTypesCapacity = null as any;
+export const getPiStorageTypesCapacityOutput: typeof import("./getPiStorageTypesCapacity").getPiStorageTypesCapacityOutput = null as any;
+utilities.lazyLoad(exports, ["getPiStorageTypesCapacity","getPiStorageTypesCapacityOutput"], () => require("./getPiStorageTypesCapacity"));
+
+export { GetPiSystemPoolsArgs, GetPiSystemPoolsResult, GetPiSystemPoolsOutputArgs } from "./getPiSystemPools";
+export const getPiSystemPools: typeof import("./getPiSystemPools").getPiSystemPools = null as any;
+export const getPiSystemPoolsOutput: typeof import("./getPiSystemPools").getPiSystemPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiSystemPools","getPiSystemPoolsOutput"], () => require("./getPiSystemPools"));
+
+export { GetPiTenantArgs, GetPiTenantResult, GetPiTenantOutputArgs } from "./getPiTenant";
+export const getPiTenant: typeof import("./getPiTenant").getPiTenant = null as any;
+export const getPiTenantOutput: typeof import("./getPiTenant").getPiTenantOutput = null as any;
+utilities.lazyLoad(exports, ["getPiTenant","getPiTenantOutput"], () => require("./getPiTenant"));
+
+export { GetPiVirtualSerialNumberArgs, GetPiVirtualSerialNumberResult, GetPiVirtualSerialNumberOutputArgs } from "./getPiVirtualSerialNumber";
+export const getPiVirtualSerialNumber: typeof import("./getPiVirtualSerialNumber").getPiVirtualSerialNumber = null as any;
+export const getPiVirtualSerialNumberOutput: typeof import("./getPiVirtualSerialNumber").getPiVirtualSerialNumberOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVirtualSerialNumber","getPiVirtualSerialNumberOutput"], () => require("./getPiVirtualSerialNumber"));
+
+export { GetPiVirtualSerialNumbersArgs, GetPiVirtualSerialNumbersResult, GetPiVirtualSerialNumbersOutputArgs } from "./getPiVirtualSerialNumbers";
+export const getPiVirtualSerialNumbers: typeof import("./getPiVirtualSerialNumbers").getPiVirtualSerialNumbers = null as any;
+export const getPiVirtualSerialNumbersOutput: typeof import("./getPiVirtualSerialNumbers").getPiVirtualSerialNumbersOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVirtualSerialNumbers","getPiVirtualSerialNumbersOutput"], () => require("./getPiVirtualSerialNumbers"));
+
+export { GetPiVolumeArgs, GetPiVolumeResult, GetPiVolumeOutputArgs } from "./getPiVolume";
+export const getPiVolume: typeof import("./getPiVolume").getPiVolume = null as any;
+export const getPiVolumeOutput: typeof import("./getPiVolume").getPiVolumeOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolume","getPiVolumeOutput"], () => require("./getPiVolume"));
+
+export { GetPiVolumeCloneArgs, GetPiVolumeCloneResult, GetPiVolumeCloneOutputArgs } from "./getPiVolumeClone";
+export const getPiVolumeClone: typeof import("./getPiVolumeClone").getPiVolumeClone = null as any;
+export const getPiVolumeCloneOutput: typeof import("./getPiVolumeClone").getPiVolumeCloneOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeClone","getPiVolumeCloneOutput"], () => require("./getPiVolumeClone"));
+
+export { GetPiVolumeFlashCopyMappingsArgs, GetPiVolumeFlashCopyMappingsResult, GetPiVolumeFlashCopyMappingsOutputArgs } from "./getPiVolumeFlashCopyMappings";
+export const getPiVolumeFlashCopyMappings: typeof import("./getPiVolumeFlashCopyMappings").getPiVolumeFlashCopyMappings = null as any;
+export const getPiVolumeFlashCopyMappingsOutput: typeof import("./getPiVolumeFlashCopyMappings").getPiVolumeFlashCopyMappingsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeFlashCopyMappings","getPiVolumeFlashCopyMappingsOutput"], () => require("./getPiVolumeFlashCopyMappings"));
+
+export { GetPiVolumeGroupArgs, GetPiVolumeGroupResult, GetPiVolumeGroupOutputArgs } from "./getPiVolumeGroup";
+export const getPiVolumeGroup: typeof import("./getPiVolumeGroup").getPiVolumeGroup = null as any;
+export const getPiVolumeGroupOutput: typeof import("./getPiVolumeGroup").getPiVolumeGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeGroup","getPiVolumeGroupOutput"], () => require("./getPiVolumeGroup"));
+
+export { GetPiVolumeGroupDetailsArgs, GetPiVolumeGroupDetailsResult, GetPiVolumeGroupDetailsOutputArgs } from "./getPiVolumeGroupDetails";
+export const getPiVolumeGroupDetails: typeof import("./getPiVolumeGroupDetails").getPiVolumeGroupDetails = null as any;
+export const getPiVolumeGroupDetailsOutput: typeof import("./getPiVolumeGroupDetails").getPiVolumeGroupDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeGroupDetails","getPiVolumeGroupDetailsOutput"], () => require("./getPiVolumeGroupDetails"));
+
+export { GetPiVolumeGroupRemoteCopyRelationshipsArgs, GetPiVolumeGroupRemoteCopyRelationshipsResult, GetPiVolumeGroupRemoteCopyRelationshipsOutputArgs } from "./getPiVolumeGroupRemoteCopyRelationships";
+export const getPiVolumeGroupRemoteCopyRelationships: typeof import("./getPiVolumeGroupRemoteCopyRelationships").getPiVolumeGroupRemoteCopyRelationships = null as any;
+export const getPiVolumeGroupRemoteCopyRelationshipsOutput: typeof import("./getPiVolumeGroupRemoteCopyRelationships").getPiVolumeGroupRemoteCopyRelationshipsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeGroupRemoteCopyRelationships","getPiVolumeGroupRemoteCopyRelationshipsOutput"], () => require("./getPiVolumeGroupRemoteCopyRelationships"));
+
+export { GetPiVolumeGroupStorageDetailsArgs, GetPiVolumeGroupStorageDetailsResult, GetPiVolumeGroupStorageDetailsOutputArgs } from "./getPiVolumeGroupStorageDetails";
+export const getPiVolumeGroupStorageDetails: typeof import("./getPiVolumeGroupStorageDetails").getPiVolumeGroupStorageDetails = null as any;
+export const getPiVolumeGroupStorageDetailsOutput: typeof import("./getPiVolumeGroupStorageDetails").getPiVolumeGroupStorageDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeGroupStorageDetails","getPiVolumeGroupStorageDetailsOutput"], () => require("./getPiVolumeGroupStorageDetails"));
+
+export { GetPiVolumeGroupsArgs, GetPiVolumeGroupsResult, GetPiVolumeGroupsOutputArgs } from "./getPiVolumeGroups";
+export const getPiVolumeGroups: typeof import("./getPiVolumeGroups").getPiVolumeGroups = null as any;
+export const getPiVolumeGroupsOutput: typeof import("./getPiVolumeGroups").getPiVolumeGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeGroups","getPiVolumeGroupsOutput"], () => require("./getPiVolumeGroups"));
+
+export { GetPiVolumeGroupsDetailsArgs, GetPiVolumeGroupsDetailsResult, GetPiVolumeGroupsDetailsOutputArgs } from "./getPiVolumeGroupsDetails";
+export const getPiVolumeGroupsDetails: typeof import("./getPiVolumeGroupsDetails").getPiVolumeGroupsDetails = null as any;
+export const getPiVolumeGroupsDetailsOutput: typeof import("./getPiVolumeGroupsDetails").getPiVolumeGroupsDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeGroupsDetails","getPiVolumeGroupsDetailsOutput"], () => require("./getPiVolumeGroupsDetails"));
+
+export { GetPiVolumeOnboardingArgs, GetPiVolumeOnboardingResult, GetPiVolumeOnboardingOutputArgs } from "./getPiVolumeOnboarding";
+export const getPiVolumeOnboarding: typeof import("./getPiVolumeOnboarding").getPiVolumeOnboarding = null as any;
+export const getPiVolumeOnboardingOutput: typeof import("./getPiVolumeOnboarding").getPiVolumeOnboardingOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeOnboarding","getPiVolumeOnboardingOutput"], () => require("./getPiVolumeOnboarding"));
+
+export { GetPiVolumeOnboardingsArgs, GetPiVolumeOnboardingsResult, GetPiVolumeOnboardingsOutputArgs } from "./getPiVolumeOnboardings";
+export const getPiVolumeOnboardings: typeof import("./getPiVolumeOnboardings").getPiVolumeOnboardings = null as any;
+export const getPiVolumeOnboardingsOutput: typeof import("./getPiVolumeOnboardings").getPiVolumeOnboardingsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeOnboardings","getPiVolumeOnboardingsOutput"], () => require("./getPiVolumeOnboardings"));
+
+export { GetPiVolumeRemoteCopyRelationshipArgs, GetPiVolumeRemoteCopyRelationshipResult, GetPiVolumeRemoteCopyRelationshipOutputArgs } from "./getPiVolumeRemoteCopyRelationship";
+export const getPiVolumeRemoteCopyRelationship: typeof import("./getPiVolumeRemoteCopyRelationship").getPiVolumeRemoteCopyRelationship = null as any;
+export const getPiVolumeRemoteCopyRelationshipOutput: typeof import("./getPiVolumeRemoteCopyRelationship").getPiVolumeRemoteCopyRelationshipOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeRemoteCopyRelationship","getPiVolumeRemoteCopyRelationshipOutput"], () => require("./getPiVolumeRemoteCopyRelationship"));
+
+export { GetPiVolumeSnapshotArgs, GetPiVolumeSnapshotResult, GetPiVolumeSnapshotOutputArgs } from "./getPiVolumeSnapshot";
+export const getPiVolumeSnapshot: typeof import("./getPiVolumeSnapshot").getPiVolumeSnapshot = null as any;
+export const getPiVolumeSnapshotOutput: typeof import("./getPiVolumeSnapshot").getPiVolumeSnapshotOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeSnapshot","getPiVolumeSnapshotOutput"], () => require("./getPiVolumeSnapshot"));
+
+export { GetPiVolumeSnapshotsArgs, GetPiVolumeSnapshotsResult, GetPiVolumeSnapshotsOutputArgs } from "./getPiVolumeSnapshots";
+export const getPiVolumeSnapshots: typeof import("./getPiVolumeSnapshots").getPiVolumeSnapshots = null as any;
+export const getPiVolumeSnapshotsOutput: typeof import("./getPiVolumeSnapshots").getPiVolumeSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumeSnapshots","getPiVolumeSnapshotsOutput"], () => require("./getPiVolumeSnapshots"));
+
+export { GetPiVolumesArgs, GetPiVolumesResult, GetPiVolumesOutputArgs } from "./getPiVolumes";
+export const getPiVolumes: typeof import("./getPiVolumes").getPiVolumes = null as any;
+export const getPiVolumesOutput: typeof import("./getPiVolumes").getPiVolumesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiVolumes","getPiVolumesOutput"], () => require("./getPiVolumes"));
+
+export { GetPiWorkspaceArgs, GetPiWorkspaceResult, GetPiWorkspaceOutputArgs } from "./getPiWorkspace";
+export const getPiWorkspace: typeof import("./getPiWorkspace").getPiWorkspace = null as any;
+export const getPiWorkspaceOutput: typeof import("./getPiWorkspace").getPiWorkspaceOutput = null as any;
+utilities.lazyLoad(exports, ["getPiWorkspace","getPiWorkspaceOutput"], () => require("./getPiWorkspace"));
+
+export { GetPiWorkspacesArgs, GetPiWorkspacesResult, GetPiWorkspacesOutputArgs } from "./getPiWorkspaces";
+export const getPiWorkspaces: typeof import("./getPiWorkspaces").getPiWorkspaces = null as any;
+export const getPiWorkspacesOutput: typeof import("./getPiWorkspaces").getPiWorkspacesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiWorkspaces","getPiWorkspacesOutput"], () => require("./getPiWorkspaces"));
+
 export { GetResourceGroupArgs, GetResourceGroupResult, GetResourceGroupOutputArgs } from "./getResourceGroup";
 export const getResourceGroup: typeof import("./getResourceGroup").getResourceGroup = null as any;
 export const getResourceGroupOutput: typeof import("./getResourceGroup").getResourceGroupOutput = null as any;
@@ -2320,6 +2350,206 @@ export type IsVpnServerRoute = import("./isVpnServerRoute").IsVpnServerRoute;
 export const IsVpnServerRoute: typeof import("./isVpnServerRoute").IsVpnServerRoute = null as any;
 utilities.lazyLoad(exports, ["IsVpnServerRoute"], () => require("./isVpnServerRoute"));
 
+export { PiCaptureArgs, PiCaptureState } from "./piCapture";
+export type PiCapture = import("./piCapture").PiCapture;
+export const PiCapture: typeof import("./piCapture").PiCapture = null as any;
+utilities.lazyLoad(exports, ["PiCapture"], () => require("./piCapture"));
+
+export { PiCloudConnectionArgs, PiCloudConnectionState } from "./piCloudConnection";
+export type PiCloudConnection = import("./piCloudConnection").PiCloudConnection;
+export const PiCloudConnection: typeof import("./piCloudConnection").PiCloudConnection = null as any;
+utilities.lazyLoad(exports, ["PiCloudConnection"], () => require("./piCloudConnection"));
+
+export { PiCloudConnectionNetworkAttachArgs, PiCloudConnectionNetworkAttachState } from "./piCloudConnectionNetworkAttach";
+export type PiCloudConnectionNetworkAttach = import("./piCloudConnectionNetworkAttach").PiCloudConnectionNetworkAttach;
+export const PiCloudConnectionNetworkAttach: typeof import("./piCloudConnectionNetworkAttach").PiCloudConnectionNetworkAttach = null as any;
+utilities.lazyLoad(exports, ["PiCloudConnectionNetworkAttach"], () => require("./piCloudConnectionNetworkAttach"));
+
+export { PiConsoleLanguageArgs, PiConsoleLanguageState } from "./piConsoleLanguage";
+export type PiConsoleLanguage = import("./piConsoleLanguage").PiConsoleLanguage;
+export const PiConsoleLanguage: typeof import("./piConsoleLanguage").PiConsoleLanguage = null as any;
+utilities.lazyLoad(exports, ["PiConsoleLanguage"], () => require("./piConsoleLanguage"));
+
+export { PiDhcpArgs, PiDhcpState } from "./piDhcp";
+export type PiDhcp = import("./piDhcp").PiDhcp;
+export const PiDhcp: typeof import("./piDhcp").PiDhcp = null as any;
+utilities.lazyLoad(exports, ["PiDhcp"], () => require("./piDhcp"));
+
+export { PiHostArgs, PiHostState } from "./piHost";
+export type PiHost = import("./piHost").PiHost;
+export const PiHost: typeof import("./piHost").PiHost = null as any;
+utilities.lazyLoad(exports, ["PiHost"], () => require("./piHost"));
+
+export { PiHostGroupArgs, PiHostGroupState } from "./piHostGroup";
+export type PiHostGroup = import("./piHostGroup").PiHostGroup;
+export const PiHostGroup: typeof import("./piHostGroup").PiHostGroup = null as any;
+utilities.lazyLoad(exports, ["PiHostGroup"], () => require("./piHostGroup"));
+
+export { PiIkePolicyArgs, PiIkePolicyState } from "./piIkePolicy";
+export type PiIkePolicy = import("./piIkePolicy").PiIkePolicy;
+export const PiIkePolicy: typeof import("./piIkePolicy").PiIkePolicy = null as any;
+utilities.lazyLoad(exports, ["PiIkePolicy"], () => require("./piIkePolicy"));
+
+export { PiImageArgs, PiImageState } from "./piImage";
+export type PiImage = import("./piImage").PiImage;
+export const PiImage: typeof import("./piImage").PiImage = null as any;
+utilities.lazyLoad(exports, ["PiImage"], () => require("./piImage"));
+
+export { PiImageExportArgs, PiImageExportState } from "./piImageExport";
+export type PiImageExport = import("./piImageExport").PiImageExport;
+export const PiImageExport: typeof import("./piImageExport").PiImageExport = null as any;
+utilities.lazyLoad(exports, ["PiImageExport"], () => require("./piImageExport"));
+
+export { PiInstanceArgs, PiInstanceState } from "./piInstance";
+export type PiInstance = import("./piInstance").PiInstance;
+export const PiInstance: typeof import("./piInstance").PiInstance = null as any;
+utilities.lazyLoad(exports, ["PiInstance"], () => require("./piInstance"));
+
+export { PiInstanceActionArgs, PiInstanceActionState } from "./piInstanceAction";
+export type PiInstanceAction = import("./piInstanceAction").PiInstanceAction;
+export const PiInstanceAction: typeof import("./piInstanceAction").PiInstanceAction = null as any;
+utilities.lazyLoad(exports, ["PiInstanceAction"], () => require("./piInstanceAction"));
+
+export { PiInstanceSnapshotArgs, PiInstanceSnapshotState } from "./piInstanceSnapshot";
+export type PiInstanceSnapshot = import("./piInstanceSnapshot").PiInstanceSnapshot;
+export const PiInstanceSnapshot: typeof import("./piInstanceSnapshot").PiInstanceSnapshot = null as any;
+utilities.lazyLoad(exports, ["PiInstanceSnapshot"], () => require("./piInstanceSnapshot"));
+
+export { PiIpsecPolicyArgs, PiIpsecPolicyState } from "./piIpsecPolicy";
+export type PiIpsecPolicy = import("./piIpsecPolicy").PiIpsecPolicy;
+export const PiIpsecPolicy: typeof import("./piIpsecPolicy").PiIpsecPolicy = null as any;
+utilities.lazyLoad(exports, ["PiIpsecPolicy"], () => require("./piIpsecPolicy"));
+
+export { PiKeyArgs, PiKeyState } from "./piKey";
+export type PiKey = import("./piKey").PiKey;
+export const PiKey: typeof import("./piKey").PiKey = null as any;
+utilities.lazyLoad(exports, ["PiKey"], () => require("./piKey"));
+
+export { PiNetworkArgs, PiNetworkState } from "./piNetwork";
+export type PiNetwork = import("./piNetwork").PiNetwork;
+export const PiNetwork: typeof import("./piNetwork").PiNetwork = null as any;
+utilities.lazyLoad(exports, ["PiNetwork"], () => require("./piNetwork"));
+
+export { PiNetworkAddressGroupArgs, PiNetworkAddressGroupState } from "./piNetworkAddressGroup";
+export type PiNetworkAddressGroup = import("./piNetworkAddressGroup").PiNetworkAddressGroup;
+export const PiNetworkAddressGroup: typeof import("./piNetworkAddressGroup").PiNetworkAddressGroup = null as any;
+utilities.lazyLoad(exports, ["PiNetworkAddressGroup"], () => require("./piNetworkAddressGroup"));
+
+export { PiNetworkAddressGroupMemberArgs, PiNetworkAddressGroupMemberState } from "./piNetworkAddressGroupMember";
+export type PiNetworkAddressGroupMember = import("./piNetworkAddressGroupMember").PiNetworkAddressGroupMember;
+export const PiNetworkAddressGroupMember: typeof import("./piNetworkAddressGroupMember").PiNetworkAddressGroupMember = null as any;
+utilities.lazyLoad(exports, ["PiNetworkAddressGroupMember"], () => require("./piNetworkAddressGroupMember"));
+
+export { PiNetworkInterfaceArgs, PiNetworkInterfaceState } from "./piNetworkInterface";
+export type PiNetworkInterface = import("./piNetworkInterface").PiNetworkInterface;
+export const PiNetworkInterface: typeof import("./piNetworkInterface").PiNetworkInterface = null as any;
+utilities.lazyLoad(exports, ["PiNetworkInterface"], () => require("./piNetworkInterface"));
+
+export { PiNetworkPeerArgs, PiNetworkPeerState } from "./piNetworkPeer";
+export type PiNetworkPeer = import("./piNetworkPeer").PiNetworkPeer;
+export const PiNetworkPeer: typeof import("./piNetworkPeer").PiNetworkPeer = null as any;
+utilities.lazyLoad(exports, ["PiNetworkPeer"], () => require("./piNetworkPeer"));
+
+export { PiNetworkPeerRouteFilterArgs, PiNetworkPeerRouteFilterState } from "./piNetworkPeerRouteFilter";
+export type PiNetworkPeerRouteFilter = import("./piNetworkPeerRouteFilter").PiNetworkPeerRouteFilter;
+export const PiNetworkPeerRouteFilter: typeof import("./piNetworkPeerRouteFilter").PiNetworkPeerRouteFilter = null as any;
+utilities.lazyLoad(exports, ["PiNetworkPeerRouteFilter"], () => require("./piNetworkPeerRouteFilter"));
+
+export { PiNetworkPortAttachArgs, PiNetworkPortAttachState } from "./piNetworkPortAttach";
+export type PiNetworkPortAttach = import("./piNetworkPortAttach").PiNetworkPortAttach;
+export const PiNetworkPortAttach: typeof import("./piNetworkPortAttach").PiNetworkPortAttach = null as any;
+utilities.lazyLoad(exports, ["PiNetworkPortAttach"], () => require("./piNetworkPortAttach"));
+
+export { PiNetworkSecurityGroupArgs, PiNetworkSecurityGroupState } from "./piNetworkSecurityGroup";
+export type PiNetworkSecurityGroup = import("./piNetworkSecurityGroup").PiNetworkSecurityGroup;
+export const PiNetworkSecurityGroup: typeof import("./piNetworkSecurityGroup").PiNetworkSecurityGroup = null as any;
+utilities.lazyLoad(exports, ["PiNetworkSecurityGroup"], () => require("./piNetworkSecurityGroup"));
+
+export { PiNetworkSecurityGroupActionArgs, PiNetworkSecurityGroupActionState } from "./piNetworkSecurityGroupAction";
+export type PiNetworkSecurityGroupAction = import("./piNetworkSecurityGroupAction").PiNetworkSecurityGroupAction;
+export const PiNetworkSecurityGroupAction: typeof import("./piNetworkSecurityGroupAction").PiNetworkSecurityGroupAction = null as any;
+utilities.lazyLoad(exports, ["PiNetworkSecurityGroupAction"], () => require("./piNetworkSecurityGroupAction"));
+
+export { PiNetworkSecurityGroupMemberArgs, PiNetworkSecurityGroupMemberState } from "./piNetworkSecurityGroupMember";
+export type PiNetworkSecurityGroupMember = import("./piNetworkSecurityGroupMember").PiNetworkSecurityGroupMember;
+export const PiNetworkSecurityGroupMember: typeof import("./piNetworkSecurityGroupMember").PiNetworkSecurityGroupMember = null as any;
+utilities.lazyLoad(exports, ["PiNetworkSecurityGroupMember"], () => require("./piNetworkSecurityGroupMember"));
+
+export { PiNetworkSecurityGroupRuleArgs, PiNetworkSecurityGroupRuleState } from "./piNetworkSecurityGroupRule";
+export type PiNetworkSecurityGroupRule = import("./piNetworkSecurityGroupRule").PiNetworkSecurityGroupRule;
+export const PiNetworkSecurityGroupRule: typeof import("./piNetworkSecurityGroupRule").PiNetworkSecurityGroupRule = null as any;
+utilities.lazyLoad(exports, ["PiNetworkSecurityGroupRule"], () => require("./piNetworkSecurityGroupRule"));
+
+export { PiPlacementGroupArgs, PiPlacementGroupState } from "./piPlacementGroup";
+export type PiPlacementGroup = import("./piPlacementGroup").PiPlacementGroup;
+export const PiPlacementGroup: typeof import("./piPlacementGroup").PiPlacementGroup = null as any;
+utilities.lazyLoad(exports, ["PiPlacementGroup"], () => require("./piPlacementGroup"));
+
+export { PiRouteArgs, PiRouteState } from "./piRoute";
+export type PiRoute = import("./piRoute").PiRoute;
+export const PiRoute: typeof import("./piRoute").PiRoute = null as any;
+utilities.lazyLoad(exports, ["PiRoute"], () => require("./piRoute"));
+
+export { PiSharedProcessorPoolArgs, PiSharedProcessorPoolState } from "./piSharedProcessorPool";
+export type PiSharedProcessorPool = import("./piSharedProcessorPool").PiSharedProcessorPool;
+export const PiSharedProcessorPool: typeof import("./piSharedProcessorPool").PiSharedProcessorPool = null as any;
+utilities.lazyLoad(exports, ["PiSharedProcessorPool"], () => require("./piSharedProcessorPool"));
+
+export { PiSnapshotArgs, PiSnapshotState } from "./piSnapshot";
+export type PiSnapshot = import("./piSnapshot").PiSnapshot;
+export const PiSnapshot: typeof import("./piSnapshot").PiSnapshot = null as any;
+utilities.lazyLoad(exports, ["PiSnapshot"], () => require("./piSnapshot"));
+
+export { PiSppPlacementGroupArgs, PiSppPlacementGroupState } from "./piSppPlacementGroup";
+export type PiSppPlacementGroup = import("./piSppPlacementGroup").PiSppPlacementGroup;
+export const PiSppPlacementGroup: typeof import("./piSppPlacementGroup").PiSppPlacementGroup = null as any;
+utilities.lazyLoad(exports, ["PiSppPlacementGroup"], () => require("./piSppPlacementGroup"));
+
+export { PiVirtualSerialNumberArgs, PiVirtualSerialNumberState } from "./piVirtualSerialNumber";
+export type PiVirtualSerialNumber = import("./piVirtualSerialNumber").PiVirtualSerialNumber;
+export const PiVirtualSerialNumber: typeof import("./piVirtualSerialNumber").PiVirtualSerialNumber = null as any;
+utilities.lazyLoad(exports, ["PiVirtualSerialNumber"], () => require("./piVirtualSerialNumber"));
+
+export { PiVolumeArgs, PiVolumeState } from "./piVolume";
+export type PiVolume = import("./piVolume").PiVolume;
+export const PiVolume: typeof import("./piVolume").PiVolume = null as any;
+utilities.lazyLoad(exports, ["PiVolume"], () => require("./piVolume"));
+
+export { PiVolumeAttachArgs, PiVolumeAttachState } from "./piVolumeAttach";
+export type PiVolumeAttach = import("./piVolumeAttach").PiVolumeAttach;
+export const PiVolumeAttach: typeof import("./piVolumeAttach").PiVolumeAttach = null as any;
+utilities.lazyLoad(exports, ["PiVolumeAttach"], () => require("./piVolumeAttach"));
+
+export { PiVolumeCloneArgs, PiVolumeCloneState } from "./piVolumeClone";
+export type PiVolumeClone = import("./piVolumeClone").PiVolumeClone;
+export const PiVolumeClone: typeof import("./piVolumeClone").PiVolumeClone = null as any;
+utilities.lazyLoad(exports, ["PiVolumeClone"], () => require("./piVolumeClone"));
+
+export { PiVolumeGroupArgs, PiVolumeGroupState } from "./piVolumeGroup";
+export type PiVolumeGroup = import("./piVolumeGroup").PiVolumeGroup;
+export const PiVolumeGroup: typeof import("./piVolumeGroup").PiVolumeGroup = null as any;
+utilities.lazyLoad(exports, ["PiVolumeGroup"], () => require("./piVolumeGroup"));
+
+export { PiVolumeGroupActionArgs, PiVolumeGroupActionState } from "./piVolumeGroupAction";
+export type PiVolumeGroupAction = import("./piVolumeGroupAction").PiVolumeGroupAction;
+export const PiVolumeGroupAction: typeof import("./piVolumeGroupAction").PiVolumeGroupAction = null as any;
+utilities.lazyLoad(exports, ["PiVolumeGroupAction"], () => require("./piVolumeGroupAction"));
+
+export { PiVolumeOnboardingArgs, PiVolumeOnboardingState } from "./piVolumeOnboarding";
+export type PiVolumeOnboarding = import("./piVolumeOnboarding").PiVolumeOnboarding;
+export const PiVolumeOnboarding: typeof import("./piVolumeOnboarding").PiVolumeOnboarding = null as any;
+utilities.lazyLoad(exports, ["PiVolumeOnboarding"], () => require("./piVolumeOnboarding"));
+
+export { PiVpnConnectionArgs, PiVpnConnectionState } from "./piVpnConnection";
+export type PiVpnConnection = import("./piVpnConnection").PiVpnConnection;
+export const PiVpnConnection: typeof import("./piVpnConnection").PiVpnConnection = null as any;
+utilities.lazyLoad(exports, ["PiVpnConnection"], () => require("./piVpnConnection"));
+
+export { PiWorkspaceArgs, PiWorkspaceState } from "./piWorkspace";
+export type PiWorkspace = import("./piWorkspace").PiWorkspace;
+export const PiWorkspace: typeof import("./piWorkspace").PiWorkspace = null as any;
+utilities.lazyLoad(exports, ["PiWorkspace"], () => require("./piWorkspace"));
+
 export * from "./provider";
 import { Provider } from "./provider";
 
@@ -2381,50 +2611,6 @@ const _module = {
                 return new ComputeUser(name, <any>undefined, { urn })
             case "ibmcloud:index/computeVmInstance:ComputeVmInstance":
                 return new ComputeVmInstance(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerAddons:ContainerAddons":
-                return new ContainerAddons(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerAlb:ContainerAlb":
-                return new ContainerAlb(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerAlbCert:ContainerAlbCert":
-                return new ContainerAlbCert(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerAlbCreate:ContainerAlbCreate":
-                return new ContainerAlbCreate(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerApiKeyReset:ContainerApiKeyReset":
-                return new ContainerApiKeyReset(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerBindService:ContainerBindService":
-                return new ContainerBindService(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerCluster:ContainerCluster":
-                return new ContainerCluster(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerClusterFeature:ContainerClusterFeature":
-                return new ContainerClusterFeature(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerDedicatedHost:ContainerDedicatedHost":
-                return new ContainerDedicatedHost(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerDedicatedHostPool:ContainerDedicatedHostPool":
-                return new ContainerDedicatedHostPool(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerIngressInstance:ContainerIngressInstance":
-                return new ContainerIngressInstance(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerIngressSecretOpaque:ContainerIngressSecretOpaque":
-                return new ContainerIngressSecretOpaque(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerIngressSecretTls:ContainerIngressSecretTls":
-                return new ContainerIngressSecretTls(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerNlbDns:ContainerNlbDns":
-                return new ContainerNlbDns(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerStorageAttachment:ContainerStorageAttachment":
-                return new ContainerStorageAttachment(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerVpcAlb:ContainerVpcAlb":
-                return new ContainerVpcAlb(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerVpcAlbCreate:ContainerVpcAlbCreate":
-                return new ContainerVpcAlbCreate(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerVpcCluster:ContainerVpcCluster":
-                return new ContainerVpcCluster(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerVpcWorker:ContainerVpcWorker":
-                return new ContainerVpcWorker(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerVpcWorkerPool:ContainerVpcWorkerPool":
-                return new ContainerVpcWorkerPool(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerWorkerPool:ContainerWorkerPool":
-                return new ContainerWorkerPool(name, <any>undefined, { urn })
-            case "ibmcloud:index/containerWorkerPoolZoneAttachment:ContainerWorkerPoolZoneAttachment":
-                return new ContainerWorkerPoolZoneAttachment(name, <any>undefined, { urn })
             case "ibmcloud:index/cosBackupPolicy:CosBackupPolicy":
                 return new CosBackupPolicy(name, <any>undefined, { urn })
             case "ibmcloud:index/cosBackupVault:CosBackupVault":
@@ -2441,36 +2627,6 @@ const _module = {
                 return new CosBucketReplicationRule(name, <any>undefined, { urn })
             case "ibmcloud:index/cosBucketWebsiteConfiguration:CosBucketWebsiteConfiguration":
                 return new CosBucketWebsiteConfiguration(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsCustomResolver:DnsCustomResolver":
-                return new DnsCustomResolver(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsCustomResolverForwardingRule:DnsCustomResolverForwardingRule":
-                return new DnsCustomResolverForwardingRule(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsCustomResolverSecondaryZone:DnsCustomResolverSecondaryZone":
-                return new DnsCustomResolverSecondaryZone(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsDomain:DnsDomain":
-                return new DnsDomain(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsDomainRegistrationNameservers:DnsDomainRegistrationNameservers":
-                return new DnsDomainRegistrationNameservers(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsGlb:DnsGlb":
-                return new DnsGlb(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsGlbMonitor:DnsGlbMonitor":
-                return new DnsGlbMonitor(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsGlbPool:DnsGlbPool":
-                return new DnsGlbPool(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsLinkedZone:DnsLinkedZone":
-                return new DnsLinkedZone(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsPermittedNetwork:DnsPermittedNetwork":
-                return new DnsPermittedNetwork(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsRecord:DnsRecord":
-                return new DnsRecord(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsResourceRecord:DnsResourceRecord":
-                return new DnsResourceRecord(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsReverseRecord:DnsReverseRecord":
-                return new DnsReverseRecord(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsSecondary:DnsSecondary":
-                return new DnsSecondary(name, <any>undefined, { urn })
-            case "ibmcloud:index/dnsZone:DnsZone":
-                return new DnsZone(name, <any>undefined, { urn })
             case "ibmcloud:index/iamAccessGroup:IamAccessGroup":
                 return new IamAccessGroup(name, <any>undefined, { urn })
             case "ibmcloud:index/iamAccessGroupAccountSettings:IamAccessGroupAccountSettings":
@@ -2725,6 +2881,86 @@ const _module = {
                 return new IsVpnServerClient(name, <any>undefined, { urn })
             case "ibmcloud:index/isVpnServerRoute:IsVpnServerRoute":
                 return new IsVpnServerRoute(name, <any>undefined, { urn })
+            case "ibmcloud:index/piCapture:PiCapture":
+                return new PiCapture(name, <any>undefined, { urn })
+            case "ibmcloud:index/piCloudConnection:PiCloudConnection":
+                return new PiCloudConnection(name, <any>undefined, { urn })
+            case "ibmcloud:index/piCloudConnectionNetworkAttach:PiCloudConnectionNetworkAttach":
+                return new PiCloudConnectionNetworkAttach(name, <any>undefined, { urn })
+            case "ibmcloud:index/piConsoleLanguage:PiConsoleLanguage":
+                return new PiConsoleLanguage(name, <any>undefined, { urn })
+            case "ibmcloud:index/piDhcp:PiDhcp":
+                return new PiDhcp(name, <any>undefined, { urn })
+            case "ibmcloud:index/piHost:PiHost":
+                return new PiHost(name, <any>undefined, { urn })
+            case "ibmcloud:index/piHostGroup:PiHostGroup":
+                return new PiHostGroup(name, <any>undefined, { urn })
+            case "ibmcloud:index/piIkePolicy:PiIkePolicy":
+                return new PiIkePolicy(name, <any>undefined, { urn })
+            case "ibmcloud:index/piImage:PiImage":
+                return new PiImage(name, <any>undefined, { urn })
+            case "ibmcloud:index/piImageExport:PiImageExport":
+                return new PiImageExport(name, <any>undefined, { urn })
+            case "ibmcloud:index/piInstance:PiInstance":
+                return new PiInstance(name, <any>undefined, { urn })
+            case "ibmcloud:index/piInstanceAction:PiInstanceAction":
+                return new PiInstanceAction(name, <any>undefined, { urn })
+            case "ibmcloud:index/piInstanceSnapshot:PiInstanceSnapshot":
+                return new PiInstanceSnapshot(name, <any>undefined, { urn })
+            case "ibmcloud:index/piIpsecPolicy:PiIpsecPolicy":
+                return new PiIpsecPolicy(name, <any>undefined, { urn })
+            case "ibmcloud:index/piKey:PiKey":
+                return new PiKey(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetwork:PiNetwork":
+                return new PiNetwork(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkAddressGroup:PiNetworkAddressGroup":
+                return new PiNetworkAddressGroup(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkAddressGroupMember:PiNetworkAddressGroupMember":
+                return new PiNetworkAddressGroupMember(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkInterface:PiNetworkInterface":
+                return new PiNetworkInterface(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkPeer:PiNetworkPeer":
+                return new PiNetworkPeer(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkPeerRouteFilter:PiNetworkPeerRouteFilter":
+                return new PiNetworkPeerRouteFilter(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkPortAttach:PiNetworkPortAttach":
+                return new PiNetworkPortAttach(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkSecurityGroup:PiNetworkSecurityGroup":
+                return new PiNetworkSecurityGroup(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkSecurityGroupAction:PiNetworkSecurityGroupAction":
+                return new PiNetworkSecurityGroupAction(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkSecurityGroupMember:PiNetworkSecurityGroupMember":
+                return new PiNetworkSecurityGroupMember(name, <any>undefined, { urn })
+            case "ibmcloud:index/piNetworkSecurityGroupRule:PiNetworkSecurityGroupRule":
+                return new PiNetworkSecurityGroupRule(name, <any>undefined, { urn })
+            case "ibmcloud:index/piPlacementGroup:PiPlacementGroup":
+                return new PiPlacementGroup(name, <any>undefined, { urn })
+            case "ibmcloud:index/piRoute:PiRoute":
+                return new PiRoute(name, <any>undefined, { urn })
+            case "ibmcloud:index/piSharedProcessorPool:PiSharedProcessorPool":
+                return new PiSharedProcessorPool(name, <any>undefined, { urn })
+            case "ibmcloud:index/piSnapshot:PiSnapshot":
+                return new PiSnapshot(name, <any>undefined, { urn })
+            case "ibmcloud:index/piSppPlacementGroup:PiSppPlacementGroup":
+                return new PiSppPlacementGroup(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVirtualSerialNumber:PiVirtualSerialNumber":
+                return new PiVirtualSerialNumber(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVolume:PiVolume":
+                return new PiVolume(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVolumeAttach:PiVolumeAttach":
+                return new PiVolumeAttach(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVolumeClone:PiVolumeClone":
+                return new PiVolumeClone(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVolumeGroup:PiVolumeGroup":
+                return new PiVolumeGroup(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVolumeGroupAction:PiVolumeGroupAction":
+                return new PiVolumeGroupAction(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVolumeOnboarding:PiVolumeOnboarding":
+                return new PiVolumeOnboarding(name, <any>undefined, { urn })
+            case "ibmcloud:index/piVpnConnection:PiVpnConnection":
+                return new PiVpnConnection(name, <any>undefined, { urn })
+            case "ibmcloud:index/piWorkspace:PiWorkspace":
+                return new PiWorkspace(name, <any>undefined, { urn })
             case "ibmcloud:index/resourceGroup:ResourceGroup":
                 return new ResourceGroup(name, <any>undefined, { urn })
             case "ibmcloud:index/resourceInstance:ResourceInstance":
@@ -2750,28 +2986,6 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/computeSshKey", _module
 pulumi.runtime.registerResourceModule("ibmcloud", "index/computeSslCertificate", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/computeUser", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/computeVmInstance", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerAddons", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerAlb", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerAlbCert", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerAlbCreate", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerApiKeyReset", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerBindService", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerCluster", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerClusterFeature", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerDedicatedHost", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerDedicatedHostPool", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerIngressInstance", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerIngressSecretOpaque", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerIngressSecretTls", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerNlbDns", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerStorageAttachment", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerVpcAlb", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerVpcAlbCreate", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerVpcCluster", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerVpcWorker", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerVpcWorkerPool", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerWorkerPool", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/containerWorkerPoolZoneAttachment", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/cosBackupPolicy", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/cosBackupVault", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/cosBucket", _module)
@@ -2780,21 +2994,6 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/cosBucketObject", _modu
 pulumi.runtime.registerResourceModule("ibmcloud", "index/cosBucketObjectLockConfiguration", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/cosBucketReplicationRule", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/cosBucketWebsiteConfiguration", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsCustomResolver", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsCustomResolverForwardingRule", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsCustomResolverSecondaryZone", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsDomain", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsDomainRegistrationNameservers", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsGlb", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsGlbMonitor", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsGlbPool", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsLinkedZone", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsPermittedNetwork", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsRecord", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsResourceRecord", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsReverseRecord", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsSecondary", _module)
-pulumi.runtime.registerResourceModule("ibmcloud", "index/dnsZone", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamAccessGroup", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamAccessGroupAccountSettings", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamAccessGroupDynamicRule", _module)
@@ -2922,6 +3121,46 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnGatewayConnection"
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnServer", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnServerClient", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnServerRoute", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piCapture", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piCloudConnection", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piCloudConnectionNetworkAttach", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piConsoleLanguage", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piDhcp", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piHost", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piHostGroup", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piIkePolicy", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piImage", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piImageExport", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piInstance", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piInstanceAction", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piInstanceSnapshot", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piIpsecPolicy", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piKey", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetwork", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkAddressGroup", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkAddressGroupMember", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkInterface", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkPeer", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkPeerRouteFilter", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkPortAttach", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkSecurityGroup", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkSecurityGroupAction", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkSecurityGroupMember", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetworkSecurityGroupRule", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piPlacementGroup", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piRoute", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piSharedProcessorPool", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piSnapshot", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piSppPlacementGroup", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVirtualSerialNumber", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVolume", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVolumeAttach", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVolumeClone", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVolumeGroup", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVolumeGroupAction", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVolumeOnboarding", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piVpnConnection", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piWorkspace", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceGroup", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceInstance", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceKey", _module)

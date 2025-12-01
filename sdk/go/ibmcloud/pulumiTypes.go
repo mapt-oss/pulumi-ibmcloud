@@ -1031,3111 +1031,6 @@ func (o ComputeVmInstanceBulkVmArrayOutput) Index(i pulumi.IntInput) ComputeVmIn
 	}).(ComputeVmInstanceBulkVmOutput)
 }
 
-type ContainerAddonsAddon struct {
-	// The versions that the addon can be upgraded to
-	AllowedUpgradeVersions []string `pulumi:"allowedUpgradeVersions"`
-	// Determines if this addon version is deprecated
-	Deprecated *bool `pulumi:"deprecated"`
-	// The health state for this addon, a short indication (e.g. critical, pending)
-	HealthState *string `pulumi:"healthState"`
-	// The health status for this addon, provides a description of the state (e.g. error message)
-	HealthStatus *string `pulumi:"healthStatus"`
-	// The minimum kubernetes version for this addon.
-	MinKubeVersion *string `pulumi:"minKubeVersion"`
-	// The minimum OpenShift version for this addon.
-	MinOcpVersion *string `pulumi:"minOcpVersion"`
-	// The addon name such as 'istio'.
-	Name string `pulumi:"name"`
-	// The add-on options
-	Options *string `pulumi:"options"`
-	// Add-On parameters to pass in a JSON string format.
-	ParametersJson *string `pulumi:"parametersJson"`
-	// The supported kubernetes version range for this addon.
-	SupportedKubeRange *string `pulumi:"supportedKubeRange"`
-	// The addon target version.
-	TargetVersion *string `pulumi:"targetVersion"`
-	// The addon version, omit the version if you wish to use the default version.
-	Version *string `pulumi:"version"`
-	// VLAN spanning required for multi-zone clusters
-	VlanSpanningRequired *bool `pulumi:"vlanSpanningRequired"`
-}
-
-// ContainerAddonsAddonInput is an input type that accepts ContainerAddonsAddonArgs and ContainerAddonsAddonOutput values.
-// You can construct a concrete instance of `ContainerAddonsAddonInput` via:
-//
-//	ContainerAddonsAddonArgs{...}
-type ContainerAddonsAddonInput interface {
-	pulumi.Input
-
-	ToContainerAddonsAddonOutput() ContainerAddonsAddonOutput
-	ToContainerAddonsAddonOutputWithContext(context.Context) ContainerAddonsAddonOutput
-}
-
-type ContainerAddonsAddonArgs struct {
-	// The versions that the addon can be upgraded to
-	AllowedUpgradeVersions pulumi.StringArrayInput `pulumi:"allowedUpgradeVersions"`
-	// Determines if this addon version is deprecated
-	Deprecated pulumi.BoolPtrInput `pulumi:"deprecated"`
-	// The health state for this addon, a short indication (e.g. critical, pending)
-	HealthState pulumi.StringPtrInput `pulumi:"healthState"`
-	// The health status for this addon, provides a description of the state (e.g. error message)
-	HealthStatus pulumi.StringPtrInput `pulumi:"healthStatus"`
-	// The minimum kubernetes version for this addon.
-	MinKubeVersion pulumi.StringPtrInput `pulumi:"minKubeVersion"`
-	// The minimum OpenShift version for this addon.
-	MinOcpVersion pulumi.StringPtrInput `pulumi:"minOcpVersion"`
-	// The addon name such as 'istio'.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The add-on options
-	Options pulumi.StringPtrInput `pulumi:"options"`
-	// Add-On parameters to pass in a JSON string format.
-	ParametersJson pulumi.StringPtrInput `pulumi:"parametersJson"`
-	// The supported kubernetes version range for this addon.
-	SupportedKubeRange pulumi.StringPtrInput `pulumi:"supportedKubeRange"`
-	// The addon target version.
-	TargetVersion pulumi.StringPtrInput `pulumi:"targetVersion"`
-	// The addon version, omit the version if you wish to use the default version.
-	Version pulumi.StringPtrInput `pulumi:"version"`
-	// VLAN spanning required for multi-zone clusters
-	VlanSpanningRequired pulumi.BoolPtrInput `pulumi:"vlanSpanningRequired"`
-}
-
-func (ContainerAddonsAddonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerAddonsAddon)(nil)).Elem()
-}
-
-func (i ContainerAddonsAddonArgs) ToContainerAddonsAddonOutput() ContainerAddonsAddonOutput {
-	return i.ToContainerAddonsAddonOutputWithContext(context.Background())
-}
-
-func (i ContainerAddonsAddonArgs) ToContainerAddonsAddonOutputWithContext(ctx context.Context) ContainerAddonsAddonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAddonsAddonOutput)
-}
-
-// ContainerAddonsAddonArrayInput is an input type that accepts ContainerAddonsAddonArray and ContainerAddonsAddonArrayOutput values.
-// You can construct a concrete instance of `ContainerAddonsAddonArrayInput` via:
-//
-//	ContainerAddonsAddonArray{ ContainerAddonsAddonArgs{...} }
-type ContainerAddonsAddonArrayInput interface {
-	pulumi.Input
-
-	ToContainerAddonsAddonArrayOutput() ContainerAddonsAddonArrayOutput
-	ToContainerAddonsAddonArrayOutputWithContext(context.Context) ContainerAddonsAddonArrayOutput
-}
-
-type ContainerAddonsAddonArray []ContainerAddonsAddonInput
-
-func (ContainerAddonsAddonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerAddonsAddon)(nil)).Elem()
-}
-
-func (i ContainerAddonsAddonArray) ToContainerAddonsAddonArrayOutput() ContainerAddonsAddonArrayOutput {
-	return i.ToContainerAddonsAddonArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerAddonsAddonArray) ToContainerAddonsAddonArrayOutputWithContext(ctx context.Context) ContainerAddonsAddonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerAddonsAddonArrayOutput)
-}
-
-type ContainerAddonsAddonOutput struct{ *pulumi.OutputState }
-
-func (ContainerAddonsAddonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerAddonsAddon)(nil)).Elem()
-}
-
-func (o ContainerAddonsAddonOutput) ToContainerAddonsAddonOutput() ContainerAddonsAddonOutput {
-	return o
-}
-
-func (o ContainerAddonsAddonOutput) ToContainerAddonsAddonOutputWithContext(ctx context.Context) ContainerAddonsAddonOutput {
-	return o
-}
-
-// The versions that the addon can be upgraded to
-func (o ContainerAddonsAddonOutput) AllowedUpgradeVersions() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) []string { return v.AllowedUpgradeVersions }).(pulumi.StringArrayOutput)
-}
-
-// Determines if this addon version is deprecated
-func (o ContainerAddonsAddonOutput) Deprecated() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *bool { return v.Deprecated }).(pulumi.BoolPtrOutput)
-}
-
-// The health state for this addon, a short indication (e.g. critical, pending)
-func (o ContainerAddonsAddonOutput) HealthState() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.HealthState }).(pulumi.StringPtrOutput)
-}
-
-// The health status for this addon, provides a description of the state (e.g. error message)
-func (o ContainerAddonsAddonOutput) HealthStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.HealthStatus }).(pulumi.StringPtrOutput)
-}
-
-// The minimum kubernetes version for this addon.
-func (o ContainerAddonsAddonOutput) MinKubeVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.MinKubeVersion }).(pulumi.StringPtrOutput)
-}
-
-// The minimum OpenShift version for this addon.
-func (o ContainerAddonsAddonOutput) MinOcpVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.MinOcpVersion }).(pulumi.StringPtrOutput)
-}
-
-// The addon name such as 'istio'.
-func (o ContainerAddonsAddonOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The add-on options
-func (o ContainerAddonsAddonOutput) Options() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.Options }).(pulumi.StringPtrOutput)
-}
-
-// Add-On parameters to pass in a JSON string format.
-func (o ContainerAddonsAddonOutput) ParametersJson() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.ParametersJson }).(pulumi.StringPtrOutput)
-}
-
-// The supported kubernetes version range for this addon.
-func (o ContainerAddonsAddonOutput) SupportedKubeRange() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.SupportedKubeRange }).(pulumi.StringPtrOutput)
-}
-
-// The addon target version.
-func (o ContainerAddonsAddonOutput) TargetVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.TargetVersion }).(pulumi.StringPtrOutput)
-}
-
-// The addon version, omit the version if you wish to use the default version.
-func (o ContainerAddonsAddonOutput) Version() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *string { return v.Version }).(pulumi.StringPtrOutput)
-}
-
-// VLAN spanning required for multi-zone clusters
-func (o ContainerAddonsAddonOutput) VlanSpanningRequired() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerAddonsAddon) *bool { return v.VlanSpanningRequired }).(pulumi.BoolPtrOutput)
-}
-
-type ContainerAddonsAddonArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerAddonsAddonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerAddonsAddon)(nil)).Elem()
-}
-
-func (o ContainerAddonsAddonArrayOutput) ToContainerAddonsAddonArrayOutput() ContainerAddonsAddonArrayOutput {
-	return o
-}
-
-func (o ContainerAddonsAddonArrayOutput) ToContainerAddonsAddonArrayOutputWithContext(ctx context.Context) ContainerAddonsAddonArrayOutput {
-	return o
-}
-
-func (o ContainerAddonsAddonArrayOutput) Index(i pulumi.IntInput) ContainerAddonsAddonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerAddonsAddon {
-		return vs[0].([]ContainerAddonsAddon)[vs[1].(int)]
-	}).(ContainerAddonsAddonOutput)
-}
-
-type ContainerClusterAlb struct {
-	AlbIp             *string `pulumi:"albIp"`
-	AlbType           *string `pulumi:"albType"`
-	DisableDeployment *bool   `pulumi:"disableDeployment"`
-	Enable            *bool   `pulumi:"enable"`
-	Id                *string `pulumi:"id"`
-	Name              *string `pulumi:"name"`
-	NumOfInstances    *string `pulumi:"numOfInstances"`
-	Resize            *bool   `pulumi:"resize"`
-	State             *string `pulumi:"state"`
-}
-
-// ContainerClusterAlbInput is an input type that accepts ContainerClusterAlbArgs and ContainerClusterAlbOutput values.
-// You can construct a concrete instance of `ContainerClusterAlbInput` via:
-//
-//	ContainerClusterAlbArgs{...}
-type ContainerClusterAlbInput interface {
-	pulumi.Input
-
-	ToContainerClusterAlbOutput() ContainerClusterAlbOutput
-	ToContainerClusterAlbOutputWithContext(context.Context) ContainerClusterAlbOutput
-}
-
-type ContainerClusterAlbArgs struct {
-	AlbIp             pulumi.StringPtrInput `pulumi:"albIp"`
-	AlbType           pulumi.StringPtrInput `pulumi:"albType"`
-	DisableDeployment pulumi.BoolPtrInput   `pulumi:"disableDeployment"`
-	Enable            pulumi.BoolPtrInput   `pulumi:"enable"`
-	Id                pulumi.StringPtrInput `pulumi:"id"`
-	Name              pulumi.StringPtrInput `pulumi:"name"`
-	NumOfInstances    pulumi.StringPtrInput `pulumi:"numOfInstances"`
-	Resize            pulumi.BoolPtrInput   `pulumi:"resize"`
-	State             pulumi.StringPtrInput `pulumi:"state"`
-}
-
-func (ContainerClusterAlbArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterAlb)(nil)).Elem()
-}
-
-func (i ContainerClusterAlbArgs) ToContainerClusterAlbOutput() ContainerClusterAlbOutput {
-	return i.ToContainerClusterAlbOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterAlbArgs) ToContainerClusterAlbOutputWithContext(ctx context.Context) ContainerClusterAlbOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterAlbOutput)
-}
-
-// ContainerClusterAlbArrayInput is an input type that accepts ContainerClusterAlbArray and ContainerClusterAlbArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterAlbArrayInput` via:
-//
-//	ContainerClusterAlbArray{ ContainerClusterAlbArgs{...} }
-type ContainerClusterAlbArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterAlbArrayOutput() ContainerClusterAlbArrayOutput
-	ToContainerClusterAlbArrayOutputWithContext(context.Context) ContainerClusterAlbArrayOutput
-}
-
-type ContainerClusterAlbArray []ContainerClusterAlbInput
-
-func (ContainerClusterAlbArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterAlb)(nil)).Elem()
-}
-
-func (i ContainerClusterAlbArray) ToContainerClusterAlbArrayOutput() ContainerClusterAlbArrayOutput {
-	return i.ToContainerClusterAlbArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterAlbArray) ToContainerClusterAlbArrayOutputWithContext(ctx context.Context) ContainerClusterAlbArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterAlbArrayOutput)
-}
-
-type ContainerClusterAlbOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterAlbOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterAlb)(nil)).Elem()
-}
-
-func (o ContainerClusterAlbOutput) ToContainerClusterAlbOutput() ContainerClusterAlbOutput {
-	return o
-}
-
-func (o ContainerClusterAlbOutput) ToContainerClusterAlbOutputWithContext(ctx context.Context) ContainerClusterAlbOutput {
-	return o
-}
-
-func (o ContainerClusterAlbOutput) AlbIp() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *string { return v.AlbIp }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) AlbType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *string { return v.AlbType }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) DisableDeployment() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *bool { return v.DisableDeployment }).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) Enable() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) NumOfInstances() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *string { return v.NumOfInstances }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) Resize() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *bool { return v.Resize }).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerClusterAlbOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterAlb) *string { return v.State }).(pulumi.StringPtrOutput)
-}
-
-type ContainerClusterAlbArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterAlbArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterAlb)(nil)).Elem()
-}
-
-func (o ContainerClusterAlbArrayOutput) ToContainerClusterAlbArrayOutput() ContainerClusterAlbArrayOutput {
-	return o
-}
-
-func (o ContainerClusterAlbArrayOutput) ToContainerClusterAlbArrayOutputWithContext(ctx context.Context) ContainerClusterAlbArrayOutput {
-	return o
-}
-
-func (o ContainerClusterAlbArrayOutput) Index(i pulumi.IntInput) ContainerClusterAlbOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerClusterAlb {
-		return vs[0].([]ContainerClusterAlb)[vs[1].(int)]
-	}).(ContainerClusterAlbOutput)
-}
-
-type ContainerClusterKmsConfig struct {
-	// Account ID of KMS instance holder - if not provided, defaults to the account in use
-	AccountId *string `pulumi:"accountId"`
-	// ID of the customer root key.
-	CrkId string `pulumi:"crkId"`
-	// ID of the KMS instance to use to encrypt the cluster.
-	InstanceId string `pulumi:"instanceId"`
-	// Specify this option to use the KMS public service endpoint.
-	PrivateEndpoint *bool `pulumi:"privateEndpoint"`
-}
-
-// ContainerClusterKmsConfigInput is an input type that accepts ContainerClusterKmsConfigArgs and ContainerClusterKmsConfigOutput values.
-// You can construct a concrete instance of `ContainerClusterKmsConfigInput` via:
-//
-//	ContainerClusterKmsConfigArgs{...}
-type ContainerClusterKmsConfigInput interface {
-	pulumi.Input
-
-	ToContainerClusterKmsConfigOutput() ContainerClusterKmsConfigOutput
-	ToContainerClusterKmsConfigOutputWithContext(context.Context) ContainerClusterKmsConfigOutput
-}
-
-type ContainerClusterKmsConfigArgs struct {
-	// Account ID of KMS instance holder - if not provided, defaults to the account in use
-	AccountId pulumi.StringPtrInput `pulumi:"accountId"`
-	// ID of the customer root key.
-	CrkId pulumi.StringInput `pulumi:"crkId"`
-	// ID of the KMS instance to use to encrypt the cluster.
-	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// Specify this option to use the KMS public service endpoint.
-	PrivateEndpoint pulumi.BoolPtrInput `pulumi:"privateEndpoint"`
-}
-
-func (ContainerClusterKmsConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterKmsConfig)(nil)).Elem()
-}
-
-func (i ContainerClusterKmsConfigArgs) ToContainerClusterKmsConfigOutput() ContainerClusterKmsConfigOutput {
-	return i.ToContainerClusterKmsConfigOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterKmsConfigArgs) ToContainerClusterKmsConfigOutputWithContext(ctx context.Context) ContainerClusterKmsConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterKmsConfigOutput)
-}
-
-func (i ContainerClusterKmsConfigArgs) ToContainerClusterKmsConfigPtrOutput() ContainerClusterKmsConfigPtrOutput {
-	return i.ToContainerClusterKmsConfigPtrOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterKmsConfigArgs) ToContainerClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerClusterKmsConfigPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterKmsConfigOutput).ToContainerClusterKmsConfigPtrOutputWithContext(ctx)
-}
-
-// ContainerClusterKmsConfigPtrInput is an input type that accepts ContainerClusterKmsConfigArgs, ContainerClusterKmsConfigPtr and ContainerClusterKmsConfigPtrOutput values.
-// You can construct a concrete instance of `ContainerClusterKmsConfigPtrInput` via:
-//
-//	        ContainerClusterKmsConfigArgs{...}
-//
-//	or:
-//
-//	        nil
-type ContainerClusterKmsConfigPtrInput interface {
-	pulumi.Input
-
-	ToContainerClusterKmsConfigPtrOutput() ContainerClusterKmsConfigPtrOutput
-	ToContainerClusterKmsConfigPtrOutputWithContext(context.Context) ContainerClusterKmsConfigPtrOutput
-}
-
-type containerClusterKmsConfigPtrType ContainerClusterKmsConfigArgs
-
-func ContainerClusterKmsConfigPtr(v *ContainerClusterKmsConfigArgs) ContainerClusterKmsConfigPtrInput {
-	return (*containerClusterKmsConfigPtrType)(v)
-}
-
-func (*containerClusterKmsConfigPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ContainerClusterKmsConfig)(nil)).Elem()
-}
-
-func (i *containerClusterKmsConfigPtrType) ToContainerClusterKmsConfigPtrOutput() ContainerClusterKmsConfigPtrOutput {
-	return i.ToContainerClusterKmsConfigPtrOutputWithContext(context.Background())
-}
-
-func (i *containerClusterKmsConfigPtrType) ToContainerClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerClusterKmsConfigPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterKmsConfigPtrOutput)
-}
-
-type ContainerClusterKmsConfigOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterKmsConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterKmsConfig)(nil)).Elem()
-}
-
-func (o ContainerClusterKmsConfigOutput) ToContainerClusterKmsConfigOutput() ContainerClusterKmsConfigOutput {
-	return o
-}
-
-func (o ContainerClusterKmsConfigOutput) ToContainerClusterKmsConfigOutputWithContext(ctx context.Context) ContainerClusterKmsConfigOutput {
-	return o
-}
-
-func (o ContainerClusterKmsConfigOutput) ToContainerClusterKmsConfigPtrOutput() ContainerClusterKmsConfigPtrOutput {
-	return o.ToContainerClusterKmsConfigPtrOutputWithContext(context.Background())
-}
-
-func (o ContainerClusterKmsConfigOutput) ToContainerClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerClusterKmsConfigPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerClusterKmsConfig) *ContainerClusterKmsConfig {
-		return &v
-	}).(ContainerClusterKmsConfigPtrOutput)
-}
-
-// Account ID of KMS instance holder - if not provided, defaults to the account in use
-func (o ContainerClusterKmsConfigOutput) AccountId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterKmsConfig) *string { return v.AccountId }).(pulumi.StringPtrOutput)
-}
-
-// ID of the customer root key.
-func (o ContainerClusterKmsConfigOutput) CrkId() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterKmsConfig) string { return v.CrkId }).(pulumi.StringOutput)
-}
-
-// ID of the KMS instance to use to encrypt the cluster.
-func (o ContainerClusterKmsConfigOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterKmsConfig) string { return v.InstanceId }).(pulumi.StringOutput)
-}
-
-// Specify this option to use the KMS public service endpoint.
-func (o ContainerClusterKmsConfigOutput) PrivateEndpoint() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerClusterKmsConfig) *bool { return v.PrivateEndpoint }).(pulumi.BoolPtrOutput)
-}
-
-type ContainerClusterKmsConfigPtrOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterKmsConfigPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ContainerClusterKmsConfig)(nil)).Elem()
-}
-
-func (o ContainerClusterKmsConfigPtrOutput) ToContainerClusterKmsConfigPtrOutput() ContainerClusterKmsConfigPtrOutput {
-	return o
-}
-
-func (o ContainerClusterKmsConfigPtrOutput) ToContainerClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerClusterKmsConfigPtrOutput {
-	return o
-}
-
-func (o ContainerClusterKmsConfigPtrOutput) Elem() ContainerClusterKmsConfigOutput {
-	return o.ApplyT(func(v *ContainerClusterKmsConfig) ContainerClusterKmsConfig {
-		if v != nil {
-			return *v
-		}
-		var ret ContainerClusterKmsConfig
-		return ret
-	}).(ContainerClusterKmsConfigOutput)
-}
-
-// Account ID of KMS instance holder - if not provided, defaults to the account in use
-func (o ContainerClusterKmsConfigPtrOutput) AccountId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ContainerClusterKmsConfig) *string {
-		if v == nil {
-			return nil
-		}
-		return v.AccountId
-	}).(pulumi.StringPtrOutput)
-}
-
-// ID of the customer root key.
-func (o ContainerClusterKmsConfigPtrOutput) CrkId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ContainerClusterKmsConfig) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.CrkId
-	}).(pulumi.StringPtrOutput)
-}
-
-// ID of the KMS instance to use to encrypt the cluster.
-func (o ContainerClusterKmsConfigPtrOutput) InstanceId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ContainerClusterKmsConfig) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.InstanceId
-	}).(pulumi.StringPtrOutput)
-}
-
-// Specify this option to use the KMS public service endpoint.
-func (o ContainerClusterKmsConfigPtrOutput) PrivateEndpoint() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *ContainerClusterKmsConfig) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.PrivateEndpoint
-	}).(pulumi.BoolPtrOutput)
-}
-
-type ContainerClusterTaint struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect string `pulumi:"effect"`
-	// Key for taint
-	Key string `pulumi:"key"`
-	// Value for taint.
-	Value string `pulumi:"value"`
-}
-
-// ContainerClusterTaintInput is an input type that accepts ContainerClusterTaintArgs and ContainerClusterTaintOutput values.
-// You can construct a concrete instance of `ContainerClusterTaintInput` via:
-//
-//	ContainerClusterTaintArgs{...}
-type ContainerClusterTaintInput interface {
-	pulumi.Input
-
-	ToContainerClusterTaintOutput() ContainerClusterTaintOutput
-	ToContainerClusterTaintOutputWithContext(context.Context) ContainerClusterTaintOutput
-}
-
-type ContainerClusterTaintArgs struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect pulumi.StringInput `pulumi:"effect"`
-	// Key for taint
-	Key pulumi.StringInput `pulumi:"key"`
-	// Value for taint.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (ContainerClusterTaintArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterTaint)(nil)).Elem()
-}
-
-func (i ContainerClusterTaintArgs) ToContainerClusterTaintOutput() ContainerClusterTaintOutput {
-	return i.ToContainerClusterTaintOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterTaintArgs) ToContainerClusterTaintOutputWithContext(ctx context.Context) ContainerClusterTaintOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterTaintOutput)
-}
-
-// ContainerClusterTaintArrayInput is an input type that accepts ContainerClusterTaintArray and ContainerClusterTaintArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterTaintArrayInput` via:
-//
-//	ContainerClusterTaintArray{ ContainerClusterTaintArgs{...} }
-type ContainerClusterTaintArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterTaintArrayOutput() ContainerClusterTaintArrayOutput
-	ToContainerClusterTaintArrayOutputWithContext(context.Context) ContainerClusterTaintArrayOutput
-}
-
-type ContainerClusterTaintArray []ContainerClusterTaintInput
-
-func (ContainerClusterTaintArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterTaint)(nil)).Elem()
-}
-
-func (i ContainerClusterTaintArray) ToContainerClusterTaintArrayOutput() ContainerClusterTaintArrayOutput {
-	return i.ToContainerClusterTaintArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterTaintArray) ToContainerClusterTaintArrayOutputWithContext(ctx context.Context) ContainerClusterTaintArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterTaintArrayOutput)
-}
-
-type ContainerClusterTaintOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterTaintOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterTaint)(nil)).Elem()
-}
-
-func (o ContainerClusterTaintOutput) ToContainerClusterTaintOutput() ContainerClusterTaintOutput {
-	return o
-}
-
-func (o ContainerClusterTaintOutput) ToContainerClusterTaintOutputWithContext(ctx context.Context) ContainerClusterTaintOutput {
-	return o
-}
-
-// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-func (o ContainerClusterTaintOutput) Effect() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterTaint) string { return v.Effect }).(pulumi.StringOutput)
-}
-
-// Key for taint
-func (o ContainerClusterTaintOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterTaint) string { return v.Key }).(pulumi.StringOutput)
-}
-
-// Value for taint.
-func (o ContainerClusterTaintOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterTaint) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type ContainerClusterTaintArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterTaintArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterTaint)(nil)).Elem()
-}
-
-func (o ContainerClusterTaintArrayOutput) ToContainerClusterTaintArrayOutput() ContainerClusterTaintArrayOutput {
-	return o
-}
-
-func (o ContainerClusterTaintArrayOutput) ToContainerClusterTaintArrayOutputWithContext(ctx context.Context) ContainerClusterTaintArrayOutput {
-	return o
-}
-
-func (o ContainerClusterTaintArrayOutput) Index(i pulumi.IntInput) ContainerClusterTaintOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerClusterTaint {
-		return vs[0].([]ContainerClusterTaint)[vs[1].(int)]
-	}).(ContainerClusterTaintOutput)
-}
-
-type ContainerClusterWebhook struct {
-	Level string `pulumi:"level"`
-	Type  string `pulumi:"type"`
-	Url   string `pulumi:"url"`
-}
-
-// ContainerClusterWebhookInput is an input type that accepts ContainerClusterWebhookArgs and ContainerClusterWebhookOutput values.
-// You can construct a concrete instance of `ContainerClusterWebhookInput` via:
-//
-//	ContainerClusterWebhookArgs{...}
-type ContainerClusterWebhookInput interface {
-	pulumi.Input
-
-	ToContainerClusterWebhookOutput() ContainerClusterWebhookOutput
-	ToContainerClusterWebhookOutputWithContext(context.Context) ContainerClusterWebhookOutput
-}
-
-type ContainerClusterWebhookArgs struct {
-	Level pulumi.StringInput `pulumi:"level"`
-	Type  pulumi.StringInput `pulumi:"type"`
-	Url   pulumi.StringInput `pulumi:"url"`
-}
-
-func (ContainerClusterWebhookArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWebhook)(nil)).Elem()
-}
-
-func (i ContainerClusterWebhookArgs) ToContainerClusterWebhookOutput() ContainerClusterWebhookOutput {
-	return i.ToContainerClusterWebhookOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWebhookArgs) ToContainerClusterWebhookOutputWithContext(ctx context.Context) ContainerClusterWebhookOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWebhookOutput)
-}
-
-// ContainerClusterWebhookArrayInput is an input type that accepts ContainerClusterWebhookArray and ContainerClusterWebhookArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterWebhookArrayInput` via:
-//
-//	ContainerClusterWebhookArray{ ContainerClusterWebhookArgs{...} }
-type ContainerClusterWebhookArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterWebhookArrayOutput() ContainerClusterWebhookArrayOutput
-	ToContainerClusterWebhookArrayOutputWithContext(context.Context) ContainerClusterWebhookArrayOutput
-}
-
-type ContainerClusterWebhookArray []ContainerClusterWebhookInput
-
-func (ContainerClusterWebhookArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWebhook)(nil)).Elem()
-}
-
-func (i ContainerClusterWebhookArray) ToContainerClusterWebhookArrayOutput() ContainerClusterWebhookArrayOutput {
-	return i.ToContainerClusterWebhookArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWebhookArray) ToContainerClusterWebhookArrayOutputWithContext(ctx context.Context) ContainerClusterWebhookArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWebhookArrayOutput)
-}
-
-type ContainerClusterWebhookOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWebhookOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWebhook)(nil)).Elem()
-}
-
-func (o ContainerClusterWebhookOutput) ToContainerClusterWebhookOutput() ContainerClusterWebhookOutput {
-	return o
-}
-
-func (o ContainerClusterWebhookOutput) ToContainerClusterWebhookOutputWithContext(ctx context.Context) ContainerClusterWebhookOutput {
-	return o
-}
-
-func (o ContainerClusterWebhookOutput) Level() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterWebhook) string { return v.Level }).(pulumi.StringOutput)
-}
-
-func (o ContainerClusterWebhookOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterWebhook) string { return v.Type }).(pulumi.StringOutput)
-}
-
-func (o ContainerClusterWebhookOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerClusterWebhook) string { return v.Url }).(pulumi.StringOutput)
-}
-
-type ContainerClusterWebhookArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWebhookArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWebhook)(nil)).Elem()
-}
-
-func (o ContainerClusterWebhookArrayOutput) ToContainerClusterWebhookArrayOutput() ContainerClusterWebhookArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWebhookArrayOutput) ToContainerClusterWebhookArrayOutputWithContext(ctx context.Context) ContainerClusterWebhookArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWebhookArrayOutput) Index(i pulumi.IntInput) ContainerClusterWebhookOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerClusterWebhook {
-		return vs[0].([]ContainerClusterWebhook)[vs[1].(int)]
-	}).(ContainerClusterWebhookOutput)
-}
-
-type ContainerClusterWorkerPool struct {
-	Hardware    *string                          `pulumi:"hardware"`
-	Id          *string                          `pulumi:"id"`
-	Labels      map[string]string                `pulumi:"labels"`
-	MachineType *string                          `pulumi:"machineType"`
-	Name        *string                          `pulumi:"name"`
-	SizePerZone *int                             `pulumi:"sizePerZone"`
-	State       *string                          `pulumi:"state"`
-	Zones       []ContainerClusterWorkerPoolZone `pulumi:"zones"`
-}
-
-// ContainerClusterWorkerPoolInput is an input type that accepts ContainerClusterWorkerPoolArgs and ContainerClusterWorkerPoolOutput values.
-// You can construct a concrete instance of `ContainerClusterWorkerPoolInput` via:
-//
-//	ContainerClusterWorkerPoolArgs{...}
-type ContainerClusterWorkerPoolInput interface {
-	pulumi.Input
-
-	ToContainerClusterWorkerPoolOutput() ContainerClusterWorkerPoolOutput
-	ToContainerClusterWorkerPoolOutputWithContext(context.Context) ContainerClusterWorkerPoolOutput
-}
-
-type ContainerClusterWorkerPoolArgs struct {
-	Hardware    pulumi.StringPtrInput                    `pulumi:"hardware"`
-	Id          pulumi.StringPtrInput                    `pulumi:"id"`
-	Labels      pulumi.StringMapInput                    `pulumi:"labels"`
-	MachineType pulumi.StringPtrInput                    `pulumi:"machineType"`
-	Name        pulumi.StringPtrInput                    `pulumi:"name"`
-	SizePerZone pulumi.IntPtrInput                       `pulumi:"sizePerZone"`
-	State       pulumi.StringPtrInput                    `pulumi:"state"`
-	Zones       ContainerClusterWorkerPoolZoneArrayInput `pulumi:"zones"`
-}
-
-func (ContainerClusterWorkerPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerClusterWorkerPoolArgs) ToContainerClusterWorkerPoolOutput() ContainerClusterWorkerPoolOutput {
-	return i.ToContainerClusterWorkerPoolOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWorkerPoolArgs) ToContainerClusterWorkerPoolOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWorkerPoolOutput)
-}
-
-// ContainerClusterWorkerPoolArrayInput is an input type that accepts ContainerClusterWorkerPoolArray and ContainerClusterWorkerPoolArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterWorkerPoolArrayInput` via:
-//
-//	ContainerClusterWorkerPoolArray{ ContainerClusterWorkerPoolArgs{...} }
-type ContainerClusterWorkerPoolArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterWorkerPoolArrayOutput() ContainerClusterWorkerPoolArrayOutput
-	ToContainerClusterWorkerPoolArrayOutputWithContext(context.Context) ContainerClusterWorkerPoolArrayOutput
-}
-
-type ContainerClusterWorkerPoolArray []ContainerClusterWorkerPoolInput
-
-func (ContainerClusterWorkerPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerClusterWorkerPoolArray) ToContainerClusterWorkerPoolArrayOutput() ContainerClusterWorkerPoolArrayOutput {
-	return i.ToContainerClusterWorkerPoolArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWorkerPoolArray) ToContainerClusterWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWorkerPoolArrayOutput)
-}
-
-type ContainerClusterWorkerPoolOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWorkerPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerClusterWorkerPoolOutput) ToContainerClusterWorkerPoolOutput() ContainerClusterWorkerPoolOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolOutput) ToContainerClusterWorkerPoolOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolOutput) Hardware() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) *string { return v.Hardware }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolOutput) Labels() pulumi.StringMapOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) map[string]string { return v.Labels }).(pulumi.StringMapOutput)
-}
-
-func (o ContainerClusterWorkerPoolOutput) MachineType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) *string { return v.MachineType }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolOutput) SizePerZone() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) *int { return v.SizePerZone }).(pulumi.IntPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) *string { return v.State }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolOutput) Zones() ContainerClusterWorkerPoolZoneArrayOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPool) []ContainerClusterWorkerPoolZone { return v.Zones }).(ContainerClusterWorkerPoolZoneArrayOutput)
-}
-
-type ContainerClusterWorkerPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWorkerPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerClusterWorkerPoolArrayOutput) ToContainerClusterWorkerPoolArrayOutput() ContainerClusterWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolArrayOutput) ToContainerClusterWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolArrayOutput) Index(i pulumi.IntInput) ContainerClusterWorkerPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerClusterWorkerPool {
-		return vs[0].([]ContainerClusterWorkerPool)[vs[1].(int)]
-	}).(ContainerClusterWorkerPoolOutput)
-}
-
-type ContainerClusterWorkerPoolZone struct {
-	PrivateVlan *string `pulumi:"privateVlan"`
-	PublicVlan  *string `pulumi:"publicVlan"`
-	WorkerCount *int    `pulumi:"workerCount"`
-	Zone        *string `pulumi:"zone"`
-}
-
-// ContainerClusterWorkerPoolZoneInput is an input type that accepts ContainerClusterWorkerPoolZoneArgs and ContainerClusterWorkerPoolZoneOutput values.
-// You can construct a concrete instance of `ContainerClusterWorkerPoolZoneInput` via:
-//
-//	ContainerClusterWorkerPoolZoneArgs{...}
-type ContainerClusterWorkerPoolZoneInput interface {
-	pulumi.Input
-
-	ToContainerClusterWorkerPoolZoneOutput() ContainerClusterWorkerPoolZoneOutput
-	ToContainerClusterWorkerPoolZoneOutputWithContext(context.Context) ContainerClusterWorkerPoolZoneOutput
-}
-
-type ContainerClusterWorkerPoolZoneArgs struct {
-	PrivateVlan pulumi.StringPtrInput `pulumi:"privateVlan"`
-	PublicVlan  pulumi.StringPtrInput `pulumi:"publicVlan"`
-	WorkerCount pulumi.IntPtrInput    `pulumi:"workerCount"`
-	Zone        pulumi.StringPtrInput `pulumi:"zone"`
-}
-
-func (ContainerClusterWorkerPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (i ContainerClusterWorkerPoolZoneArgs) ToContainerClusterWorkerPoolZoneOutput() ContainerClusterWorkerPoolZoneOutput {
-	return i.ToContainerClusterWorkerPoolZoneOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWorkerPoolZoneArgs) ToContainerClusterWorkerPoolZoneOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWorkerPoolZoneOutput)
-}
-
-// ContainerClusterWorkerPoolZoneArrayInput is an input type that accepts ContainerClusterWorkerPoolZoneArray and ContainerClusterWorkerPoolZoneArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterWorkerPoolZoneArrayInput` via:
-//
-//	ContainerClusterWorkerPoolZoneArray{ ContainerClusterWorkerPoolZoneArgs{...} }
-type ContainerClusterWorkerPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterWorkerPoolZoneArrayOutput() ContainerClusterWorkerPoolZoneArrayOutput
-	ToContainerClusterWorkerPoolZoneArrayOutputWithContext(context.Context) ContainerClusterWorkerPoolZoneArrayOutput
-}
-
-type ContainerClusterWorkerPoolZoneArray []ContainerClusterWorkerPoolZoneInput
-
-func (ContainerClusterWorkerPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (i ContainerClusterWorkerPoolZoneArray) ToContainerClusterWorkerPoolZoneArrayOutput() ContainerClusterWorkerPoolZoneArrayOutput {
-	return i.ToContainerClusterWorkerPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWorkerPoolZoneArray) ToContainerClusterWorkerPoolZoneArrayOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWorkerPoolZoneArrayOutput)
-}
-
-type ContainerClusterWorkerPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWorkerPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (o ContainerClusterWorkerPoolZoneOutput) ToContainerClusterWorkerPoolZoneOutput() ContainerClusterWorkerPoolZoneOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolZoneOutput) ToContainerClusterWorkerPoolZoneOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolZoneOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolZoneOutput) PrivateVlan() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPoolZone) *string { return v.PrivateVlan }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolZoneOutput) PublicVlan() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPoolZone) *string { return v.PublicVlan }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolZoneOutput) WorkerCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPoolZone) *int { return v.WorkerCount }).(pulumi.IntPtrOutput)
-}
-
-func (o ContainerClusterWorkerPoolZoneOutput) Zone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkerPoolZone) *string { return v.Zone }).(pulumi.StringPtrOutput)
-}
-
-type ContainerClusterWorkerPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWorkerPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWorkerPoolZone)(nil)).Elem()
-}
-
-func (o ContainerClusterWorkerPoolZoneArrayOutput) ToContainerClusterWorkerPoolZoneArrayOutput() ContainerClusterWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolZoneArrayOutput) ToContainerClusterWorkerPoolZoneArrayOutputWithContext(ctx context.Context) ContainerClusterWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWorkerPoolZoneArrayOutput) Index(i pulumi.IntInput) ContainerClusterWorkerPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerClusterWorkerPoolZone {
-		return vs[0].([]ContainerClusterWorkerPoolZone)[vs[1].(int)]
-	}).(ContainerClusterWorkerPoolZoneOutput)
-}
-
-type ContainerClusterWorkersInfo struct {
-	Id       *string `pulumi:"id"`
-	PoolName *string `pulumi:"poolName"`
-	Version  *string `pulumi:"version"`
-}
-
-// ContainerClusterWorkersInfoInput is an input type that accepts ContainerClusterWorkersInfoArgs and ContainerClusterWorkersInfoOutput values.
-// You can construct a concrete instance of `ContainerClusterWorkersInfoInput` via:
-//
-//	ContainerClusterWorkersInfoArgs{...}
-type ContainerClusterWorkersInfoInput interface {
-	pulumi.Input
-
-	ToContainerClusterWorkersInfoOutput() ContainerClusterWorkersInfoOutput
-	ToContainerClusterWorkersInfoOutputWithContext(context.Context) ContainerClusterWorkersInfoOutput
-}
-
-type ContainerClusterWorkersInfoArgs struct {
-	Id       pulumi.StringPtrInput `pulumi:"id"`
-	PoolName pulumi.StringPtrInput `pulumi:"poolName"`
-	Version  pulumi.StringPtrInput `pulumi:"version"`
-}
-
-func (ContainerClusterWorkersInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWorkersInfo)(nil)).Elem()
-}
-
-func (i ContainerClusterWorkersInfoArgs) ToContainerClusterWorkersInfoOutput() ContainerClusterWorkersInfoOutput {
-	return i.ToContainerClusterWorkersInfoOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWorkersInfoArgs) ToContainerClusterWorkersInfoOutputWithContext(ctx context.Context) ContainerClusterWorkersInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWorkersInfoOutput)
-}
-
-// ContainerClusterWorkersInfoArrayInput is an input type that accepts ContainerClusterWorkersInfoArray and ContainerClusterWorkersInfoArrayOutput values.
-// You can construct a concrete instance of `ContainerClusterWorkersInfoArrayInput` via:
-//
-//	ContainerClusterWorkersInfoArray{ ContainerClusterWorkersInfoArgs{...} }
-type ContainerClusterWorkersInfoArrayInput interface {
-	pulumi.Input
-
-	ToContainerClusterWorkersInfoArrayOutput() ContainerClusterWorkersInfoArrayOutput
-	ToContainerClusterWorkersInfoArrayOutputWithContext(context.Context) ContainerClusterWorkersInfoArrayOutput
-}
-
-type ContainerClusterWorkersInfoArray []ContainerClusterWorkersInfoInput
-
-func (ContainerClusterWorkersInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWorkersInfo)(nil)).Elem()
-}
-
-func (i ContainerClusterWorkersInfoArray) ToContainerClusterWorkersInfoArrayOutput() ContainerClusterWorkersInfoArrayOutput {
-	return i.ToContainerClusterWorkersInfoArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerClusterWorkersInfoArray) ToContainerClusterWorkersInfoArrayOutputWithContext(ctx context.Context) ContainerClusterWorkersInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerClusterWorkersInfoArrayOutput)
-}
-
-type ContainerClusterWorkersInfoOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWorkersInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerClusterWorkersInfo)(nil)).Elem()
-}
-
-func (o ContainerClusterWorkersInfoOutput) ToContainerClusterWorkersInfoOutput() ContainerClusterWorkersInfoOutput {
-	return o
-}
-
-func (o ContainerClusterWorkersInfoOutput) ToContainerClusterWorkersInfoOutputWithContext(ctx context.Context) ContainerClusterWorkersInfoOutput {
-	return o
-}
-
-func (o ContainerClusterWorkersInfoOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkersInfo) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkersInfoOutput) PoolName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkersInfo) *string { return v.PoolName }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerClusterWorkersInfoOutput) Version() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerClusterWorkersInfo) *string { return v.Version }).(pulumi.StringPtrOutput)
-}
-
-type ContainerClusterWorkersInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerClusterWorkersInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerClusterWorkersInfo)(nil)).Elem()
-}
-
-func (o ContainerClusterWorkersInfoArrayOutput) ToContainerClusterWorkersInfoArrayOutput() ContainerClusterWorkersInfoArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWorkersInfoArrayOutput) ToContainerClusterWorkersInfoArrayOutputWithContext(ctx context.Context) ContainerClusterWorkersInfoArrayOutput {
-	return o
-}
-
-func (o ContainerClusterWorkersInfoArrayOutput) Index(i pulumi.IntInput) ContainerClusterWorkersInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerClusterWorkersInfo {
-		return vs[0].([]ContainerClusterWorkersInfo)[vs[1].(int)]
-	}).(ContainerClusterWorkersInfoOutput)
-}
-
-type ContainerDedicatedHostLifeCycle struct {
-	ActualState        *string `pulumi:"actualState"`
-	DesiredState       *string `pulumi:"desiredState"`
-	Message            *string `pulumi:"message"`
-	MessageDate        *string `pulumi:"messageDate"`
-	MessageDetails     *string `pulumi:"messageDetails"`
-	MessageDetailsDate *string `pulumi:"messageDetailsDate"`
-}
-
-// ContainerDedicatedHostLifeCycleInput is an input type that accepts ContainerDedicatedHostLifeCycleArgs and ContainerDedicatedHostLifeCycleOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostLifeCycleInput` via:
-//
-//	ContainerDedicatedHostLifeCycleArgs{...}
-type ContainerDedicatedHostLifeCycleInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostLifeCycleOutput() ContainerDedicatedHostLifeCycleOutput
-	ToContainerDedicatedHostLifeCycleOutputWithContext(context.Context) ContainerDedicatedHostLifeCycleOutput
-}
-
-type ContainerDedicatedHostLifeCycleArgs struct {
-	ActualState        pulumi.StringPtrInput `pulumi:"actualState"`
-	DesiredState       pulumi.StringPtrInput `pulumi:"desiredState"`
-	Message            pulumi.StringPtrInput `pulumi:"message"`
-	MessageDate        pulumi.StringPtrInput `pulumi:"messageDate"`
-	MessageDetails     pulumi.StringPtrInput `pulumi:"messageDetails"`
-	MessageDetailsDate pulumi.StringPtrInput `pulumi:"messageDetailsDate"`
-}
-
-func (ContainerDedicatedHostLifeCycleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostLifeCycleArgs) ToContainerDedicatedHostLifeCycleOutput() ContainerDedicatedHostLifeCycleOutput {
-	return i.ToContainerDedicatedHostLifeCycleOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostLifeCycleArgs) ToContainerDedicatedHostLifeCycleOutputWithContext(ctx context.Context) ContainerDedicatedHostLifeCycleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostLifeCycleOutput)
-}
-
-// ContainerDedicatedHostLifeCycleArrayInput is an input type that accepts ContainerDedicatedHostLifeCycleArray and ContainerDedicatedHostLifeCycleArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostLifeCycleArrayInput` via:
-//
-//	ContainerDedicatedHostLifeCycleArray{ ContainerDedicatedHostLifeCycleArgs{...} }
-type ContainerDedicatedHostLifeCycleArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostLifeCycleArrayOutput() ContainerDedicatedHostLifeCycleArrayOutput
-	ToContainerDedicatedHostLifeCycleArrayOutputWithContext(context.Context) ContainerDedicatedHostLifeCycleArrayOutput
-}
-
-type ContainerDedicatedHostLifeCycleArray []ContainerDedicatedHostLifeCycleInput
-
-func (ContainerDedicatedHostLifeCycleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostLifeCycleArray) ToContainerDedicatedHostLifeCycleArrayOutput() ContainerDedicatedHostLifeCycleArrayOutput {
-	return i.ToContainerDedicatedHostLifeCycleArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostLifeCycleArray) ToContainerDedicatedHostLifeCycleArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostLifeCycleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostLifeCycleArrayOutput)
-}
-
-type ContainerDedicatedHostLifeCycleOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostLifeCycleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) ToContainerDedicatedHostLifeCycleOutput() ContainerDedicatedHostLifeCycleOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) ToContainerDedicatedHostLifeCycleOutputWithContext(ctx context.Context) ContainerDedicatedHostLifeCycleOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) ActualState() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostLifeCycle) *string { return v.ActualState }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) DesiredState() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostLifeCycle) *string { return v.DesiredState }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostLifeCycle) *string { return v.Message }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) MessageDate() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostLifeCycle) *string { return v.MessageDate }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) MessageDetails() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostLifeCycle) *string { return v.MessageDetails }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostLifeCycleOutput) MessageDetailsDate() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostLifeCycle) *string { return v.MessageDetailsDate }).(pulumi.StringPtrOutput)
-}
-
-type ContainerDedicatedHostLifeCycleArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostLifeCycleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostLifeCycle)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostLifeCycleArrayOutput) ToContainerDedicatedHostLifeCycleArrayOutput() ContainerDedicatedHostLifeCycleArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostLifeCycleArrayOutput) ToContainerDedicatedHostLifeCycleArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostLifeCycleArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostLifeCycleArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostLifeCycleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostLifeCycle {
-		return vs[0].([]ContainerDedicatedHostLifeCycle)[vs[1].(int)]
-	}).(ContainerDedicatedHostLifeCycleOutput)
-}
-
-type ContainerDedicatedHostPoolWorkerPool struct {
-	ClusterId    *string `pulumi:"clusterId"`
-	WorkerPoolId *string `pulumi:"workerPoolId"`
-}
-
-// ContainerDedicatedHostPoolWorkerPoolInput is an input type that accepts ContainerDedicatedHostPoolWorkerPoolArgs and ContainerDedicatedHostPoolWorkerPoolOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostPoolWorkerPoolInput` via:
-//
-//	ContainerDedicatedHostPoolWorkerPoolArgs{...}
-type ContainerDedicatedHostPoolWorkerPoolInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostPoolWorkerPoolOutput() ContainerDedicatedHostPoolWorkerPoolOutput
-	ToContainerDedicatedHostPoolWorkerPoolOutputWithContext(context.Context) ContainerDedicatedHostPoolWorkerPoolOutput
-}
-
-type ContainerDedicatedHostPoolWorkerPoolArgs struct {
-	ClusterId    pulumi.StringPtrInput `pulumi:"clusterId"`
-	WorkerPoolId pulumi.StringPtrInput `pulumi:"workerPoolId"`
-}
-
-func (ContainerDedicatedHostPoolWorkerPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostPoolWorkerPoolArgs) ToContainerDedicatedHostPoolWorkerPoolOutput() ContainerDedicatedHostPoolWorkerPoolOutput {
-	return i.ToContainerDedicatedHostPoolWorkerPoolOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostPoolWorkerPoolArgs) ToContainerDedicatedHostPoolWorkerPoolOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolWorkerPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostPoolWorkerPoolOutput)
-}
-
-// ContainerDedicatedHostPoolWorkerPoolArrayInput is an input type that accepts ContainerDedicatedHostPoolWorkerPoolArray and ContainerDedicatedHostPoolWorkerPoolArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostPoolWorkerPoolArrayInput` via:
-//
-//	ContainerDedicatedHostPoolWorkerPoolArray{ ContainerDedicatedHostPoolWorkerPoolArgs{...} }
-type ContainerDedicatedHostPoolWorkerPoolArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostPoolWorkerPoolArrayOutput() ContainerDedicatedHostPoolWorkerPoolArrayOutput
-	ToContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(context.Context) ContainerDedicatedHostPoolWorkerPoolArrayOutput
-}
-
-type ContainerDedicatedHostPoolWorkerPoolArray []ContainerDedicatedHostPoolWorkerPoolInput
-
-func (ContainerDedicatedHostPoolWorkerPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostPoolWorkerPoolArray) ToContainerDedicatedHostPoolWorkerPoolArrayOutput() ContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return i.ToContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostPoolWorkerPoolArray) ToContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostPoolWorkerPoolArrayOutput)
-}
-
-type ContainerDedicatedHostPoolWorkerPoolOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostPoolWorkerPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostPoolWorkerPoolOutput) ToContainerDedicatedHostPoolWorkerPoolOutput() ContainerDedicatedHostPoolWorkerPoolOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolWorkerPoolOutput) ToContainerDedicatedHostPoolWorkerPoolOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolWorkerPoolOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolWorkerPoolOutput) ClusterId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostPoolWorkerPool) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostPoolWorkerPoolOutput) WorkerPoolId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostPoolWorkerPool) *string { return v.WorkerPoolId }).(pulumi.StringPtrOutput)
-}
-
-type ContainerDedicatedHostPoolWorkerPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostPoolWorkerPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostPoolWorkerPool)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostPoolWorkerPoolArrayOutput) ToContainerDedicatedHostPoolWorkerPoolArrayOutput() ContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolWorkerPoolArrayOutput) ToContainerDedicatedHostPoolWorkerPoolArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolWorkerPoolArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolWorkerPoolArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostPoolWorkerPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostPoolWorkerPool {
-		return vs[0].([]ContainerDedicatedHostPoolWorkerPool)[vs[1].(int)]
-	}).(ContainerDedicatedHostPoolWorkerPoolOutput)
-}
-
-type ContainerDedicatedHostPoolZone struct {
-	Capacities []ContainerDedicatedHostPoolZoneCapacity `pulumi:"capacities"`
-	HostCount  *int                                     `pulumi:"hostCount"`
-	Zone       *string                                  `pulumi:"zone"`
-}
-
-// ContainerDedicatedHostPoolZoneInput is an input type that accepts ContainerDedicatedHostPoolZoneArgs and ContainerDedicatedHostPoolZoneOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostPoolZoneInput` via:
-//
-//	ContainerDedicatedHostPoolZoneArgs{...}
-type ContainerDedicatedHostPoolZoneInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostPoolZoneOutput() ContainerDedicatedHostPoolZoneOutput
-	ToContainerDedicatedHostPoolZoneOutputWithContext(context.Context) ContainerDedicatedHostPoolZoneOutput
-}
-
-type ContainerDedicatedHostPoolZoneArgs struct {
-	Capacities ContainerDedicatedHostPoolZoneCapacityArrayInput `pulumi:"capacities"`
-	HostCount  pulumi.IntPtrInput                               `pulumi:"hostCount"`
-	Zone       pulumi.StringPtrInput                            `pulumi:"zone"`
-}
-
-func (ContainerDedicatedHostPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostPoolZoneArgs) ToContainerDedicatedHostPoolZoneOutput() ContainerDedicatedHostPoolZoneOutput {
-	return i.ToContainerDedicatedHostPoolZoneOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostPoolZoneArgs) ToContainerDedicatedHostPoolZoneOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostPoolZoneOutput)
-}
-
-// ContainerDedicatedHostPoolZoneArrayInput is an input type that accepts ContainerDedicatedHostPoolZoneArray and ContainerDedicatedHostPoolZoneArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostPoolZoneArrayInput` via:
-//
-//	ContainerDedicatedHostPoolZoneArray{ ContainerDedicatedHostPoolZoneArgs{...} }
-type ContainerDedicatedHostPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostPoolZoneArrayOutput() ContainerDedicatedHostPoolZoneArrayOutput
-	ToContainerDedicatedHostPoolZoneArrayOutputWithContext(context.Context) ContainerDedicatedHostPoolZoneArrayOutput
-}
-
-type ContainerDedicatedHostPoolZoneArray []ContainerDedicatedHostPoolZoneInput
-
-func (ContainerDedicatedHostPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostPoolZoneArray) ToContainerDedicatedHostPoolZoneArrayOutput() ContainerDedicatedHostPoolZoneArrayOutput {
-	return i.ToContainerDedicatedHostPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostPoolZoneArray) ToContainerDedicatedHostPoolZoneArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostPoolZoneArrayOutput)
-}
-
-type ContainerDedicatedHostPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostPoolZoneOutput) ToContainerDedicatedHostPoolZoneOutput() ContainerDedicatedHostPoolZoneOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneOutput) ToContainerDedicatedHostPoolZoneOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneOutput) Capacities() ContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostPoolZone) []ContainerDedicatedHostPoolZoneCapacity { return v.Capacities }).(ContainerDedicatedHostPoolZoneCapacityArrayOutput)
-}
-
-func (o ContainerDedicatedHostPoolZoneOutput) HostCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostPoolZone) *int { return v.HostCount }).(pulumi.IntPtrOutput)
-}
-
-func (o ContainerDedicatedHostPoolZoneOutput) Zone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostPoolZone) *string { return v.Zone }).(pulumi.StringPtrOutput)
-}
-
-type ContainerDedicatedHostPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostPoolZone)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostPoolZoneArrayOutput) ToContainerDedicatedHostPoolZoneArrayOutput() ContainerDedicatedHostPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneArrayOutput) ToContainerDedicatedHostPoolZoneArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostPoolZone {
-		return vs[0].([]ContainerDedicatedHostPoolZone)[vs[1].(int)]
-	}).(ContainerDedicatedHostPoolZoneOutput)
-}
-
-type ContainerDedicatedHostPoolZoneCapacity struct {
-	MemoryBytes *int `pulumi:"memoryBytes"`
-	Vcpu        *int `pulumi:"vcpu"`
-}
-
-// ContainerDedicatedHostPoolZoneCapacityInput is an input type that accepts ContainerDedicatedHostPoolZoneCapacityArgs and ContainerDedicatedHostPoolZoneCapacityOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostPoolZoneCapacityInput` via:
-//
-//	ContainerDedicatedHostPoolZoneCapacityArgs{...}
-type ContainerDedicatedHostPoolZoneCapacityInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostPoolZoneCapacityOutput() ContainerDedicatedHostPoolZoneCapacityOutput
-	ToContainerDedicatedHostPoolZoneCapacityOutputWithContext(context.Context) ContainerDedicatedHostPoolZoneCapacityOutput
-}
-
-type ContainerDedicatedHostPoolZoneCapacityArgs struct {
-	MemoryBytes pulumi.IntPtrInput `pulumi:"memoryBytes"`
-	Vcpu        pulumi.IntPtrInput `pulumi:"vcpu"`
-}
-
-func (ContainerDedicatedHostPoolZoneCapacityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostPoolZoneCapacityArgs) ToContainerDedicatedHostPoolZoneCapacityOutput() ContainerDedicatedHostPoolZoneCapacityOutput {
-	return i.ToContainerDedicatedHostPoolZoneCapacityOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostPoolZoneCapacityArgs) ToContainerDedicatedHostPoolZoneCapacityOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneCapacityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostPoolZoneCapacityOutput)
-}
-
-// ContainerDedicatedHostPoolZoneCapacityArrayInput is an input type that accepts ContainerDedicatedHostPoolZoneCapacityArray and ContainerDedicatedHostPoolZoneCapacityArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostPoolZoneCapacityArrayInput` via:
-//
-//	ContainerDedicatedHostPoolZoneCapacityArray{ ContainerDedicatedHostPoolZoneCapacityArgs{...} }
-type ContainerDedicatedHostPoolZoneCapacityArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostPoolZoneCapacityArrayOutput() ContainerDedicatedHostPoolZoneCapacityArrayOutput
-	ToContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(context.Context) ContainerDedicatedHostPoolZoneCapacityArrayOutput
-}
-
-type ContainerDedicatedHostPoolZoneCapacityArray []ContainerDedicatedHostPoolZoneCapacityInput
-
-func (ContainerDedicatedHostPoolZoneCapacityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostPoolZoneCapacityArray) ToContainerDedicatedHostPoolZoneCapacityArrayOutput() ContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return i.ToContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostPoolZoneCapacityArray) ToContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostPoolZoneCapacityArrayOutput)
-}
-
-type ContainerDedicatedHostPoolZoneCapacityOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostPoolZoneCapacityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostPoolZoneCapacityOutput) ToContainerDedicatedHostPoolZoneCapacityOutput() ContainerDedicatedHostPoolZoneCapacityOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneCapacityOutput) ToContainerDedicatedHostPoolZoneCapacityOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneCapacityOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneCapacityOutput) MemoryBytes() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostPoolZoneCapacity) *int { return v.MemoryBytes }).(pulumi.IntPtrOutput)
-}
-
-func (o ContainerDedicatedHostPoolZoneCapacityOutput) Vcpu() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostPoolZoneCapacity) *int { return v.Vcpu }).(pulumi.IntPtrOutput)
-}
-
-type ContainerDedicatedHostPoolZoneCapacityArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostPoolZoneCapacityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostPoolZoneCapacity)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostPoolZoneCapacityArrayOutput) ToContainerDedicatedHostPoolZoneCapacityArrayOutput() ContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneCapacityArrayOutput) ToContainerDedicatedHostPoolZoneCapacityArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostPoolZoneCapacityArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostPoolZoneCapacityArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostPoolZoneCapacityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostPoolZoneCapacity {
-		return vs[0].([]ContainerDedicatedHostPoolZoneCapacity)[vs[1].(int)]
-	}).(ContainerDedicatedHostPoolZoneCapacityOutput)
-}
-
-type ContainerDedicatedHostResource struct {
-	Capacities []ContainerDedicatedHostResourceCapacity `pulumi:"capacities"`
-	Consumeds  []ContainerDedicatedHostResourceConsumed `pulumi:"consumeds"`
-}
-
-// ContainerDedicatedHostResourceInput is an input type that accepts ContainerDedicatedHostResourceArgs and ContainerDedicatedHostResourceOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostResourceInput` via:
-//
-//	ContainerDedicatedHostResourceArgs{...}
-type ContainerDedicatedHostResourceInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostResourceOutput() ContainerDedicatedHostResourceOutput
-	ToContainerDedicatedHostResourceOutputWithContext(context.Context) ContainerDedicatedHostResourceOutput
-}
-
-type ContainerDedicatedHostResourceArgs struct {
-	Capacities ContainerDedicatedHostResourceCapacityArrayInput `pulumi:"capacities"`
-	Consumeds  ContainerDedicatedHostResourceConsumedArrayInput `pulumi:"consumeds"`
-}
-
-func (ContainerDedicatedHostResourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostResourceArgs) ToContainerDedicatedHostResourceOutput() ContainerDedicatedHostResourceOutput {
-	return i.ToContainerDedicatedHostResourceOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostResourceArgs) ToContainerDedicatedHostResourceOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostResourceOutput)
-}
-
-// ContainerDedicatedHostResourceArrayInput is an input type that accepts ContainerDedicatedHostResourceArray and ContainerDedicatedHostResourceArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostResourceArrayInput` via:
-//
-//	ContainerDedicatedHostResourceArray{ ContainerDedicatedHostResourceArgs{...} }
-type ContainerDedicatedHostResourceArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostResourceArrayOutput() ContainerDedicatedHostResourceArrayOutput
-	ToContainerDedicatedHostResourceArrayOutputWithContext(context.Context) ContainerDedicatedHostResourceArrayOutput
-}
-
-type ContainerDedicatedHostResourceArray []ContainerDedicatedHostResourceInput
-
-func (ContainerDedicatedHostResourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostResourceArray) ToContainerDedicatedHostResourceArrayOutput() ContainerDedicatedHostResourceArrayOutput {
-	return i.ToContainerDedicatedHostResourceArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostResourceArray) ToContainerDedicatedHostResourceArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostResourceArrayOutput)
-}
-
-type ContainerDedicatedHostResourceOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostResourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostResourceOutput) ToContainerDedicatedHostResourceOutput() ContainerDedicatedHostResourceOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceOutput) ToContainerDedicatedHostResourceOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceOutput) Capacities() ContainerDedicatedHostResourceCapacityArrayOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostResource) []ContainerDedicatedHostResourceCapacity { return v.Capacities }).(ContainerDedicatedHostResourceCapacityArrayOutput)
-}
-
-func (o ContainerDedicatedHostResourceOutput) Consumeds() ContainerDedicatedHostResourceConsumedArrayOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostResource) []ContainerDedicatedHostResourceConsumed { return v.Consumeds }).(ContainerDedicatedHostResourceConsumedArrayOutput)
-}
-
-type ContainerDedicatedHostResourceArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostResourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostResource)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostResourceArrayOutput) ToContainerDedicatedHostResourceArrayOutput() ContainerDedicatedHostResourceArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceArrayOutput) ToContainerDedicatedHostResourceArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostResourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostResource {
-		return vs[0].([]ContainerDedicatedHostResource)[vs[1].(int)]
-	}).(ContainerDedicatedHostResourceOutput)
-}
-
-type ContainerDedicatedHostResourceCapacity struct {
-	MemoryBytes *int `pulumi:"memoryBytes"`
-	Vcpu        *int `pulumi:"vcpu"`
-}
-
-// ContainerDedicatedHostResourceCapacityInput is an input type that accepts ContainerDedicatedHostResourceCapacityArgs and ContainerDedicatedHostResourceCapacityOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostResourceCapacityInput` via:
-//
-//	ContainerDedicatedHostResourceCapacityArgs{...}
-type ContainerDedicatedHostResourceCapacityInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostResourceCapacityOutput() ContainerDedicatedHostResourceCapacityOutput
-	ToContainerDedicatedHostResourceCapacityOutputWithContext(context.Context) ContainerDedicatedHostResourceCapacityOutput
-}
-
-type ContainerDedicatedHostResourceCapacityArgs struct {
-	MemoryBytes pulumi.IntPtrInput `pulumi:"memoryBytes"`
-	Vcpu        pulumi.IntPtrInput `pulumi:"vcpu"`
-}
-
-func (ContainerDedicatedHostResourceCapacityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostResourceCapacityArgs) ToContainerDedicatedHostResourceCapacityOutput() ContainerDedicatedHostResourceCapacityOutput {
-	return i.ToContainerDedicatedHostResourceCapacityOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostResourceCapacityArgs) ToContainerDedicatedHostResourceCapacityOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceCapacityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostResourceCapacityOutput)
-}
-
-// ContainerDedicatedHostResourceCapacityArrayInput is an input type that accepts ContainerDedicatedHostResourceCapacityArray and ContainerDedicatedHostResourceCapacityArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostResourceCapacityArrayInput` via:
-//
-//	ContainerDedicatedHostResourceCapacityArray{ ContainerDedicatedHostResourceCapacityArgs{...} }
-type ContainerDedicatedHostResourceCapacityArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostResourceCapacityArrayOutput() ContainerDedicatedHostResourceCapacityArrayOutput
-	ToContainerDedicatedHostResourceCapacityArrayOutputWithContext(context.Context) ContainerDedicatedHostResourceCapacityArrayOutput
-}
-
-type ContainerDedicatedHostResourceCapacityArray []ContainerDedicatedHostResourceCapacityInput
-
-func (ContainerDedicatedHostResourceCapacityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostResourceCapacityArray) ToContainerDedicatedHostResourceCapacityArrayOutput() ContainerDedicatedHostResourceCapacityArrayOutput {
-	return i.ToContainerDedicatedHostResourceCapacityArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostResourceCapacityArray) ToContainerDedicatedHostResourceCapacityArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceCapacityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostResourceCapacityArrayOutput)
-}
-
-type ContainerDedicatedHostResourceCapacityOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostResourceCapacityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostResourceCapacityOutput) ToContainerDedicatedHostResourceCapacityOutput() ContainerDedicatedHostResourceCapacityOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceCapacityOutput) ToContainerDedicatedHostResourceCapacityOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceCapacityOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceCapacityOutput) MemoryBytes() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostResourceCapacity) *int { return v.MemoryBytes }).(pulumi.IntPtrOutput)
-}
-
-func (o ContainerDedicatedHostResourceCapacityOutput) Vcpu() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostResourceCapacity) *int { return v.Vcpu }).(pulumi.IntPtrOutput)
-}
-
-type ContainerDedicatedHostResourceCapacityArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostResourceCapacityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostResourceCapacity)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostResourceCapacityArrayOutput) ToContainerDedicatedHostResourceCapacityArrayOutput() ContainerDedicatedHostResourceCapacityArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceCapacityArrayOutput) ToContainerDedicatedHostResourceCapacityArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceCapacityArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceCapacityArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostResourceCapacityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostResourceCapacity {
-		return vs[0].([]ContainerDedicatedHostResourceCapacity)[vs[1].(int)]
-	}).(ContainerDedicatedHostResourceCapacityOutput)
-}
-
-type ContainerDedicatedHostResourceConsumed struct {
-	MemoryBytes *int `pulumi:"memoryBytes"`
-	Vcpu        *int `pulumi:"vcpu"`
-}
-
-// ContainerDedicatedHostResourceConsumedInput is an input type that accepts ContainerDedicatedHostResourceConsumedArgs and ContainerDedicatedHostResourceConsumedOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostResourceConsumedInput` via:
-//
-//	ContainerDedicatedHostResourceConsumedArgs{...}
-type ContainerDedicatedHostResourceConsumedInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostResourceConsumedOutput() ContainerDedicatedHostResourceConsumedOutput
-	ToContainerDedicatedHostResourceConsumedOutputWithContext(context.Context) ContainerDedicatedHostResourceConsumedOutput
-}
-
-type ContainerDedicatedHostResourceConsumedArgs struct {
-	MemoryBytes pulumi.IntPtrInput `pulumi:"memoryBytes"`
-	Vcpu        pulumi.IntPtrInput `pulumi:"vcpu"`
-}
-
-func (ContainerDedicatedHostResourceConsumedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostResourceConsumedArgs) ToContainerDedicatedHostResourceConsumedOutput() ContainerDedicatedHostResourceConsumedOutput {
-	return i.ToContainerDedicatedHostResourceConsumedOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostResourceConsumedArgs) ToContainerDedicatedHostResourceConsumedOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceConsumedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostResourceConsumedOutput)
-}
-
-// ContainerDedicatedHostResourceConsumedArrayInput is an input type that accepts ContainerDedicatedHostResourceConsumedArray and ContainerDedicatedHostResourceConsumedArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostResourceConsumedArrayInput` via:
-//
-//	ContainerDedicatedHostResourceConsumedArray{ ContainerDedicatedHostResourceConsumedArgs{...} }
-type ContainerDedicatedHostResourceConsumedArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostResourceConsumedArrayOutput() ContainerDedicatedHostResourceConsumedArrayOutput
-	ToContainerDedicatedHostResourceConsumedArrayOutputWithContext(context.Context) ContainerDedicatedHostResourceConsumedArrayOutput
-}
-
-type ContainerDedicatedHostResourceConsumedArray []ContainerDedicatedHostResourceConsumedInput
-
-func (ContainerDedicatedHostResourceConsumedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostResourceConsumedArray) ToContainerDedicatedHostResourceConsumedArrayOutput() ContainerDedicatedHostResourceConsumedArrayOutput {
-	return i.ToContainerDedicatedHostResourceConsumedArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostResourceConsumedArray) ToContainerDedicatedHostResourceConsumedArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceConsumedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostResourceConsumedArrayOutput)
-}
-
-type ContainerDedicatedHostResourceConsumedOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostResourceConsumedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostResourceConsumedOutput) ToContainerDedicatedHostResourceConsumedOutput() ContainerDedicatedHostResourceConsumedOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceConsumedOutput) ToContainerDedicatedHostResourceConsumedOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceConsumedOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceConsumedOutput) MemoryBytes() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostResourceConsumed) *int { return v.MemoryBytes }).(pulumi.IntPtrOutput)
-}
-
-func (o ContainerDedicatedHostResourceConsumedOutput) Vcpu() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostResourceConsumed) *int { return v.Vcpu }).(pulumi.IntPtrOutput)
-}
-
-type ContainerDedicatedHostResourceConsumedArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostResourceConsumedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostResourceConsumed)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostResourceConsumedArrayOutput) ToContainerDedicatedHostResourceConsumedArrayOutput() ContainerDedicatedHostResourceConsumedArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceConsumedArrayOutput) ToContainerDedicatedHostResourceConsumedArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostResourceConsumedArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostResourceConsumedArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostResourceConsumedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostResourceConsumed {
-		return vs[0].([]ContainerDedicatedHostResourceConsumed)[vs[1].(int)]
-	}).(ContainerDedicatedHostResourceConsumedOutput)
-}
-
-type ContainerDedicatedHostWorker struct {
-	ClusterId    *string `pulumi:"clusterId"`
-	Flavor       *string `pulumi:"flavor"`
-	WorkerId     *string `pulumi:"workerId"`
-	WorkerPoolId *string `pulumi:"workerPoolId"`
-}
-
-// ContainerDedicatedHostWorkerInput is an input type that accepts ContainerDedicatedHostWorkerArgs and ContainerDedicatedHostWorkerOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostWorkerInput` via:
-//
-//	ContainerDedicatedHostWorkerArgs{...}
-type ContainerDedicatedHostWorkerInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostWorkerOutput() ContainerDedicatedHostWorkerOutput
-	ToContainerDedicatedHostWorkerOutputWithContext(context.Context) ContainerDedicatedHostWorkerOutput
-}
-
-type ContainerDedicatedHostWorkerArgs struct {
-	ClusterId    pulumi.StringPtrInput `pulumi:"clusterId"`
-	Flavor       pulumi.StringPtrInput `pulumi:"flavor"`
-	WorkerId     pulumi.StringPtrInput `pulumi:"workerId"`
-	WorkerPoolId pulumi.StringPtrInput `pulumi:"workerPoolId"`
-}
-
-func (ContainerDedicatedHostWorkerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostWorkerArgs) ToContainerDedicatedHostWorkerOutput() ContainerDedicatedHostWorkerOutput {
-	return i.ToContainerDedicatedHostWorkerOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostWorkerArgs) ToContainerDedicatedHostWorkerOutputWithContext(ctx context.Context) ContainerDedicatedHostWorkerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostWorkerOutput)
-}
-
-// ContainerDedicatedHostWorkerArrayInput is an input type that accepts ContainerDedicatedHostWorkerArray and ContainerDedicatedHostWorkerArrayOutput values.
-// You can construct a concrete instance of `ContainerDedicatedHostWorkerArrayInput` via:
-//
-//	ContainerDedicatedHostWorkerArray{ ContainerDedicatedHostWorkerArgs{...} }
-type ContainerDedicatedHostWorkerArrayInput interface {
-	pulumi.Input
-
-	ToContainerDedicatedHostWorkerArrayOutput() ContainerDedicatedHostWorkerArrayOutput
-	ToContainerDedicatedHostWorkerArrayOutputWithContext(context.Context) ContainerDedicatedHostWorkerArrayOutput
-}
-
-type ContainerDedicatedHostWorkerArray []ContainerDedicatedHostWorkerInput
-
-func (ContainerDedicatedHostWorkerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (i ContainerDedicatedHostWorkerArray) ToContainerDedicatedHostWorkerArrayOutput() ContainerDedicatedHostWorkerArrayOutput {
-	return i.ToContainerDedicatedHostWorkerArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerDedicatedHostWorkerArray) ToContainerDedicatedHostWorkerArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostWorkerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerDedicatedHostWorkerArrayOutput)
-}
-
-type ContainerDedicatedHostWorkerOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostWorkerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostWorkerOutput) ToContainerDedicatedHostWorkerOutput() ContainerDedicatedHostWorkerOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostWorkerOutput) ToContainerDedicatedHostWorkerOutputWithContext(ctx context.Context) ContainerDedicatedHostWorkerOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostWorkerOutput) ClusterId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostWorker) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostWorkerOutput) Flavor() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostWorker) *string { return v.Flavor }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostWorkerOutput) WorkerId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostWorker) *string { return v.WorkerId }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerDedicatedHostWorkerOutput) WorkerPoolId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerDedicatedHostWorker) *string { return v.WorkerPoolId }).(pulumi.StringPtrOutput)
-}
-
-type ContainerDedicatedHostWorkerArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerDedicatedHostWorkerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerDedicatedHostWorker)(nil)).Elem()
-}
-
-func (o ContainerDedicatedHostWorkerArrayOutput) ToContainerDedicatedHostWorkerArrayOutput() ContainerDedicatedHostWorkerArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostWorkerArrayOutput) ToContainerDedicatedHostWorkerArrayOutputWithContext(ctx context.Context) ContainerDedicatedHostWorkerArrayOutput {
-	return o
-}
-
-func (o ContainerDedicatedHostWorkerArrayOutput) Index(i pulumi.IntInput) ContainerDedicatedHostWorkerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerDedicatedHostWorker {
-		return vs[0].([]ContainerDedicatedHostWorker)[vs[1].(int)]
-	}).(ContainerDedicatedHostWorkerOutput)
-}
-
-type ContainerIngressSecretOpaqueField struct {
-	// Secret CRN corresponding to the field
-	Crn string `pulumi:"crn"`
-	// Field expires on date
-	ExpiresOn *string `pulumi:"expiresOn"`
-	// The requested field name
-	FieldName *string `pulumi:"fieldName"`
-	// Field last updated timestamp
-	LastUpdatedTimestamp *string `pulumi:"lastUpdatedTimestamp"`
-	// The computed field name
-	Name *string `pulumi:"name"`
-}
-
-// ContainerIngressSecretOpaqueFieldInput is an input type that accepts ContainerIngressSecretOpaqueFieldArgs and ContainerIngressSecretOpaqueFieldOutput values.
-// You can construct a concrete instance of `ContainerIngressSecretOpaqueFieldInput` via:
-//
-//	ContainerIngressSecretOpaqueFieldArgs{...}
-type ContainerIngressSecretOpaqueFieldInput interface {
-	pulumi.Input
-
-	ToContainerIngressSecretOpaqueFieldOutput() ContainerIngressSecretOpaqueFieldOutput
-	ToContainerIngressSecretOpaqueFieldOutputWithContext(context.Context) ContainerIngressSecretOpaqueFieldOutput
-}
-
-type ContainerIngressSecretOpaqueFieldArgs struct {
-	// Secret CRN corresponding to the field
-	Crn pulumi.StringInput `pulumi:"crn"`
-	// Field expires on date
-	ExpiresOn pulumi.StringPtrInput `pulumi:"expiresOn"`
-	// The requested field name
-	FieldName pulumi.StringPtrInput `pulumi:"fieldName"`
-	// Field last updated timestamp
-	LastUpdatedTimestamp pulumi.StringPtrInput `pulumi:"lastUpdatedTimestamp"`
-	// The computed field name
-	Name pulumi.StringPtrInput `pulumi:"name"`
-}
-
-func (ContainerIngressSecretOpaqueFieldArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (i ContainerIngressSecretOpaqueFieldArgs) ToContainerIngressSecretOpaqueFieldOutput() ContainerIngressSecretOpaqueFieldOutput {
-	return i.ToContainerIngressSecretOpaqueFieldOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressSecretOpaqueFieldArgs) ToContainerIngressSecretOpaqueFieldOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueFieldOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretOpaqueFieldOutput)
-}
-
-// ContainerIngressSecretOpaqueFieldArrayInput is an input type that accepts ContainerIngressSecretOpaqueFieldArray and ContainerIngressSecretOpaqueFieldArrayOutput values.
-// You can construct a concrete instance of `ContainerIngressSecretOpaqueFieldArrayInput` via:
-//
-//	ContainerIngressSecretOpaqueFieldArray{ ContainerIngressSecretOpaqueFieldArgs{...} }
-type ContainerIngressSecretOpaqueFieldArrayInput interface {
-	pulumi.Input
-
-	ToContainerIngressSecretOpaqueFieldArrayOutput() ContainerIngressSecretOpaqueFieldArrayOutput
-	ToContainerIngressSecretOpaqueFieldArrayOutputWithContext(context.Context) ContainerIngressSecretOpaqueFieldArrayOutput
-}
-
-type ContainerIngressSecretOpaqueFieldArray []ContainerIngressSecretOpaqueFieldInput
-
-func (ContainerIngressSecretOpaqueFieldArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (i ContainerIngressSecretOpaqueFieldArray) ToContainerIngressSecretOpaqueFieldArrayOutput() ContainerIngressSecretOpaqueFieldArrayOutput {
-	return i.ToContainerIngressSecretOpaqueFieldArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerIngressSecretOpaqueFieldArray) ToContainerIngressSecretOpaqueFieldArrayOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueFieldArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerIngressSecretOpaqueFieldArrayOutput)
-}
-
-type ContainerIngressSecretOpaqueFieldOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressSecretOpaqueFieldOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (o ContainerIngressSecretOpaqueFieldOutput) ToContainerIngressSecretOpaqueFieldOutput() ContainerIngressSecretOpaqueFieldOutput {
-	return o
-}
-
-func (o ContainerIngressSecretOpaqueFieldOutput) ToContainerIngressSecretOpaqueFieldOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueFieldOutput {
-	return o
-}
-
-// Secret CRN corresponding to the field
-func (o ContainerIngressSecretOpaqueFieldOutput) Crn() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerIngressSecretOpaqueField) string { return v.Crn }).(pulumi.StringOutput)
-}
-
-// Field expires on date
-func (o ContainerIngressSecretOpaqueFieldOutput) ExpiresOn() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerIngressSecretOpaqueField) *string { return v.ExpiresOn }).(pulumi.StringPtrOutput)
-}
-
-// The requested field name
-func (o ContainerIngressSecretOpaqueFieldOutput) FieldName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerIngressSecretOpaqueField) *string { return v.FieldName }).(pulumi.StringPtrOutput)
-}
-
-// Field last updated timestamp
-func (o ContainerIngressSecretOpaqueFieldOutput) LastUpdatedTimestamp() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerIngressSecretOpaqueField) *string { return v.LastUpdatedTimestamp }).(pulumi.StringPtrOutput)
-}
-
-// The computed field name
-func (o ContainerIngressSecretOpaqueFieldOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerIngressSecretOpaqueField) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-type ContainerIngressSecretOpaqueFieldArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerIngressSecretOpaqueFieldArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerIngressSecretOpaqueField)(nil)).Elem()
-}
-
-func (o ContainerIngressSecretOpaqueFieldArrayOutput) ToContainerIngressSecretOpaqueFieldArrayOutput() ContainerIngressSecretOpaqueFieldArrayOutput {
-	return o
-}
-
-func (o ContainerIngressSecretOpaqueFieldArrayOutput) ToContainerIngressSecretOpaqueFieldArrayOutputWithContext(ctx context.Context) ContainerIngressSecretOpaqueFieldArrayOutput {
-	return o
-}
-
-func (o ContainerIngressSecretOpaqueFieldArrayOutput) Index(i pulumi.IntInput) ContainerIngressSecretOpaqueFieldOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerIngressSecretOpaqueField {
-		return vs[0].([]ContainerIngressSecretOpaqueField)[vs[1].(int)]
-	}).(ContainerIngressSecretOpaqueFieldOutput)
-}
-
-type ContainerVpcClusterAlb struct {
-	AlbType              *string `pulumi:"albType"`
-	DisableDeployment    *bool   `pulumi:"disableDeployment"`
-	Enable               *bool   `pulumi:"enable"`
-	Id                   *string `pulumi:"id"`
-	LoadBalancerHostname *string `pulumi:"loadBalancerHostname"`
-	Name                 *string `pulumi:"name"`
-	Resize               *bool   `pulumi:"resize"`
-	State                *string `pulumi:"state"`
-}
-
-// ContainerVpcClusterAlbInput is an input type that accepts ContainerVpcClusterAlbArgs and ContainerVpcClusterAlbOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterAlbInput` via:
-//
-//	ContainerVpcClusterAlbArgs{...}
-type ContainerVpcClusterAlbInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterAlbOutput() ContainerVpcClusterAlbOutput
-	ToContainerVpcClusterAlbOutputWithContext(context.Context) ContainerVpcClusterAlbOutput
-}
-
-type ContainerVpcClusterAlbArgs struct {
-	AlbType              pulumi.StringPtrInput `pulumi:"albType"`
-	DisableDeployment    pulumi.BoolPtrInput   `pulumi:"disableDeployment"`
-	Enable               pulumi.BoolPtrInput   `pulumi:"enable"`
-	Id                   pulumi.StringPtrInput `pulumi:"id"`
-	LoadBalancerHostname pulumi.StringPtrInput `pulumi:"loadBalancerHostname"`
-	Name                 pulumi.StringPtrInput `pulumi:"name"`
-	Resize               pulumi.BoolPtrInput   `pulumi:"resize"`
-	State                pulumi.StringPtrInput `pulumi:"state"`
-}
-
-func (ContainerVpcClusterAlbArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterAlbArgs) ToContainerVpcClusterAlbOutput() ContainerVpcClusterAlbOutput {
-	return i.ToContainerVpcClusterAlbOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterAlbArgs) ToContainerVpcClusterAlbOutputWithContext(ctx context.Context) ContainerVpcClusterAlbOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterAlbOutput)
-}
-
-// ContainerVpcClusterAlbArrayInput is an input type that accepts ContainerVpcClusterAlbArray and ContainerVpcClusterAlbArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterAlbArrayInput` via:
-//
-//	ContainerVpcClusterAlbArray{ ContainerVpcClusterAlbArgs{...} }
-type ContainerVpcClusterAlbArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterAlbArrayOutput() ContainerVpcClusterAlbArrayOutput
-	ToContainerVpcClusterAlbArrayOutputWithContext(context.Context) ContainerVpcClusterAlbArrayOutput
-}
-
-type ContainerVpcClusterAlbArray []ContainerVpcClusterAlbInput
-
-func (ContainerVpcClusterAlbArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterAlbArray) ToContainerVpcClusterAlbArrayOutput() ContainerVpcClusterAlbArrayOutput {
-	return i.ToContainerVpcClusterAlbArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterAlbArray) ToContainerVpcClusterAlbArrayOutputWithContext(ctx context.Context) ContainerVpcClusterAlbArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterAlbArrayOutput)
-}
-
-type ContainerVpcClusterAlbOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterAlbOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterAlbOutput) ToContainerVpcClusterAlbOutput() ContainerVpcClusterAlbOutput {
-	return o
-}
-
-func (o ContainerVpcClusterAlbOutput) ToContainerVpcClusterAlbOutputWithContext(ctx context.Context) ContainerVpcClusterAlbOutput {
-	return o
-}
-
-func (o ContainerVpcClusterAlbOutput) AlbType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *string { return v.AlbType }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerVpcClusterAlbOutput) DisableDeployment() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *bool { return v.DisableDeployment }).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerVpcClusterAlbOutput) Enable() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerVpcClusterAlbOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerVpcClusterAlbOutput) LoadBalancerHostname() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *string { return v.LoadBalancerHostname }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerVpcClusterAlbOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerVpcClusterAlbOutput) Resize() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *bool { return v.Resize }).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerVpcClusterAlbOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterAlb) *string { return v.State }).(pulumi.StringPtrOutput)
-}
-
-type ContainerVpcClusterAlbArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterAlbArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcClusterAlb)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterAlbArrayOutput) ToContainerVpcClusterAlbArrayOutput() ContainerVpcClusterAlbArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterAlbArrayOutput) ToContainerVpcClusterAlbArrayOutputWithContext(ctx context.Context) ContainerVpcClusterAlbArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterAlbArrayOutput) Index(i pulumi.IntInput) ContainerVpcClusterAlbOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerVpcClusterAlb {
-		return vs[0].([]ContainerVpcClusterAlb)[vs[1].(int)]
-	}).(ContainerVpcClusterAlbOutput)
-}
-
-type ContainerVpcClusterKmsConfig struct {
-	// Account ID of KMS instance holder - if not provided, defaults to the account in use
-	AccountId *string `pulumi:"accountId"`
-	// ID of the customer root key.
-	CrkId string `pulumi:"crkId"`
-	// ID of the KMS instance to use to encrypt the cluster.
-	InstanceId string `pulumi:"instanceId"`
-	// Specify this option to use the KMS public service endpoint.
-	PrivateEndpoint *bool `pulumi:"privateEndpoint"`
-	WaitForApply    *bool `pulumi:"waitForApply"`
-}
-
-// ContainerVpcClusterKmsConfigInput is an input type that accepts ContainerVpcClusterKmsConfigArgs and ContainerVpcClusterKmsConfigOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterKmsConfigInput` via:
-//
-//	ContainerVpcClusterKmsConfigArgs{...}
-type ContainerVpcClusterKmsConfigInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterKmsConfigOutput() ContainerVpcClusterKmsConfigOutput
-	ToContainerVpcClusterKmsConfigOutputWithContext(context.Context) ContainerVpcClusterKmsConfigOutput
-}
-
-type ContainerVpcClusterKmsConfigArgs struct {
-	// Account ID of KMS instance holder - if not provided, defaults to the account in use
-	AccountId pulumi.StringPtrInput `pulumi:"accountId"`
-	// ID of the customer root key.
-	CrkId pulumi.StringInput `pulumi:"crkId"`
-	// ID of the KMS instance to use to encrypt the cluster.
-	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// Specify this option to use the KMS public service endpoint.
-	PrivateEndpoint pulumi.BoolPtrInput `pulumi:"privateEndpoint"`
-	WaitForApply    pulumi.BoolPtrInput `pulumi:"waitForApply"`
-}
-
-func (ContainerVpcClusterKmsConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterKmsConfig)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterKmsConfigArgs) ToContainerVpcClusterKmsConfigOutput() ContainerVpcClusterKmsConfigOutput {
-	return i.ToContainerVpcClusterKmsConfigOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterKmsConfigArgs) ToContainerVpcClusterKmsConfigOutputWithContext(ctx context.Context) ContainerVpcClusterKmsConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterKmsConfigOutput)
-}
-
-func (i ContainerVpcClusterKmsConfigArgs) ToContainerVpcClusterKmsConfigPtrOutput() ContainerVpcClusterKmsConfigPtrOutput {
-	return i.ToContainerVpcClusterKmsConfigPtrOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterKmsConfigArgs) ToContainerVpcClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerVpcClusterKmsConfigPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterKmsConfigOutput).ToContainerVpcClusterKmsConfigPtrOutputWithContext(ctx)
-}
-
-// ContainerVpcClusterKmsConfigPtrInput is an input type that accepts ContainerVpcClusterKmsConfigArgs, ContainerVpcClusterKmsConfigPtr and ContainerVpcClusterKmsConfigPtrOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterKmsConfigPtrInput` via:
-//
-//	        ContainerVpcClusterKmsConfigArgs{...}
-//
-//	or:
-//
-//	        nil
-type ContainerVpcClusterKmsConfigPtrInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterKmsConfigPtrOutput() ContainerVpcClusterKmsConfigPtrOutput
-	ToContainerVpcClusterKmsConfigPtrOutputWithContext(context.Context) ContainerVpcClusterKmsConfigPtrOutput
-}
-
-type containerVpcClusterKmsConfigPtrType ContainerVpcClusterKmsConfigArgs
-
-func ContainerVpcClusterKmsConfigPtr(v *ContainerVpcClusterKmsConfigArgs) ContainerVpcClusterKmsConfigPtrInput {
-	return (*containerVpcClusterKmsConfigPtrType)(v)
-}
-
-func (*containerVpcClusterKmsConfigPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ContainerVpcClusterKmsConfig)(nil)).Elem()
-}
-
-func (i *containerVpcClusterKmsConfigPtrType) ToContainerVpcClusterKmsConfigPtrOutput() ContainerVpcClusterKmsConfigPtrOutput {
-	return i.ToContainerVpcClusterKmsConfigPtrOutputWithContext(context.Background())
-}
-
-func (i *containerVpcClusterKmsConfigPtrType) ToContainerVpcClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerVpcClusterKmsConfigPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterKmsConfigPtrOutput)
-}
-
-type ContainerVpcClusterKmsConfigOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterKmsConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterKmsConfig)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterKmsConfigOutput) ToContainerVpcClusterKmsConfigOutput() ContainerVpcClusterKmsConfigOutput {
-	return o
-}
-
-func (o ContainerVpcClusterKmsConfigOutput) ToContainerVpcClusterKmsConfigOutputWithContext(ctx context.Context) ContainerVpcClusterKmsConfigOutput {
-	return o
-}
-
-func (o ContainerVpcClusterKmsConfigOutput) ToContainerVpcClusterKmsConfigPtrOutput() ContainerVpcClusterKmsConfigPtrOutput {
-	return o.ToContainerVpcClusterKmsConfigPtrOutputWithContext(context.Background())
-}
-
-func (o ContainerVpcClusterKmsConfigOutput) ToContainerVpcClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerVpcClusterKmsConfigPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerVpcClusterKmsConfig) *ContainerVpcClusterKmsConfig {
-		return &v
-	}).(ContainerVpcClusterKmsConfigPtrOutput)
-}
-
-// Account ID of KMS instance holder - if not provided, defaults to the account in use
-func (o ContainerVpcClusterKmsConfigOutput) AccountId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterKmsConfig) *string { return v.AccountId }).(pulumi.StringPtrOutput)
-}
-
-// ID of the customer root key.
-func (o ContainerVpcClusterKmsConfigOutput) CrkId() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcClusterKmsConfig) string { return v.CrkId }).(pulumi.StringOutput)
-}
-
-// ID of the KMS instance to use to encrypt the cluster.
-func (o ContainerVpcClusterKmsConfigOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcClusterKmsConfig) string { return v.InstanceId }).(pulumi.StringOutput)
-}
-
-// Specify this option to use the KMS public service endpoint.
-func (o ContainerVpcClusterKmsConfigOutput) PrivateEndpoint() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterKmsConfig) *bool { return v.PrivateEndpoint }).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerVpcClusterKmsConfigOutput) WaitForApply() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ContainerVpcClusterKmsConfig) *bool { return v.WaitForApply }).(pulumi.BoolPtrOutput)
-}
-
-type ContainerVpcClusterKmsConfigPtrOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterKmsConfigPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ContainerVpcClusterKmsConfig)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterKmsConfigPtrOutput) ToContainerVpcClusterKmsConfigPtrOutput() ContainerVpcClusterKmsConfigPtrOutput {
-	return o
-}
-
-func (o ContainerVpcClusterKmsConfigPtrOutput) ToContainerVpcClusterKmsConfigPtrOutputWithContext(ctx context.Context) ContainerVpcClusterKmsConfigPtrOutput {
-	return o
-}
-
-func (o ContainerVpcClusterKmsConfigPtrOutput) Elem() ContainerVpcClusterKmsConfigOutput {
-	return o.ApplyT(func(v *ContainerVpcClusterKmsConfig) ContainerVpcClusterKmsConfig {
-		if v != nil {
-			return *v
-		}
-		var ret ContainerVpcClusterKmsConfig
-		return ret
-	}).(ContainerVpcClusterKmsConfigOutput)
-}
-
-// Account ID of KMS instance holder - if not provided, defaults to the account in use
-func (o ContainerVpcClusterKmsConfigPtrOutput) AccountId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ContainerVpcClusterKmsConfig) *string {
-		if v == nil {
-			return nil
-		}
-		return v.AccountId
-	}).(pulumi.StringPtrOutput)
-}
-
-// ID of the customer root key.
-func (o ContainerVpcClusterKmsConfigPtrOutput) CrkId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ContainerVpcClusterKmsConfig) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.CrkId
-	}).(pulumi.StringPtrOutput)
-}
-
-// ID of the KMS instance to use to encrypt the cluster.
-func (o ContainerVpcClusterKmsConfigPtrOutput) InstanceId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ContainerVpcClusterKmsConfig) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.InstanceId
-	}).(pulumi.StringPtrOutput)
-}
-
-// Specify this option to use the KMS public service endpoint.
-func (o ContainerVpcClusterKmsConfigPtrOutput) PrivateEndpoint() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *ContainerVpcClusterKmsConfig) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.PrivateEndpoint
-	}).(pulumi.BoolPtrOutput)
-}
-
-func (o ContainerVpcClusterKmsConfigPtrOutput) WaitForApply() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *ContainerVpcClusterKmsConfig) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.WaitForApply
-	}).(pulumi.BoolPtrOutput)
-}
-
-type ContainerVpcClusterTaint struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect string `pulumi:"effect"`
-	// Key for taint
-	Key string `pulumi:"key"`
-	// Value for taint.
-	Value string `pulumi:"value"`
-}
-
-// ContainerVpcClusterTaintInput is an input type that accepts ContainerVpcClusterTaintArgs and ContainerVpcClusterTaintOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterTaintInput` via:
-//
-//	ContainerVpcClusterTaintArgs{...}
-type ContainerVpcClusterTaintInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterTaintOutput() ContainerVpcClusterTaintOutput
-	ToContainerVpcClusterTaintOutputWithContext(context.Context) ContainerVpcClusterTaintOutput
-}
-
-type ContainerVpcClusterTaintArgs struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect pulumi.StringInput `pulumi:"effect"`
-	// Key for taint
-	Key pulumi.StringInput `pulumi:"key"`
-	// Value for taint.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (ContainerVpcClusterTaintArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterTaint)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterTaintArgs) ToContainerVpcClusterTaintOutput() ContainerVpcClusterTaintOutput {
-	return i.ToContainerVpcClusterTaintOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterTaintArgs) ToContainerVpcClusterTaintOutputWithContext(ctx context.Context) ContainerVpcClusterTaintOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterTaintOutput)
-}
-
-// ContainerVpcClusterTaintArrayInput is an input type that accepts ContainerVpcClusterTaintArray and ContainerVpcClusterTaintArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterTaintArrayInput` via:
-//
-//	ContainerVpcClusterTaintArray{ ContainerVpcClusterTaintArgs{...} }
-type ContainerVpcClusterTaintArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterTaintArrayOutput() ContainerVpcClusterTaintArrayOutput
-	ToContainerVpcClusterTaintArrayOutputWithContext(context.Context) ContainerVpcClusterTaintArrayOutput
-}
-
-type ContainerVpcClusterTaintArray []ContainerVpcClusterTaintInput
-
-func (ContainerVpcClusterTaintArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcClusterTaint)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterTaintArray) ToContainerVpcClusterTaintArrayOutput() ContainerVpcClusterTaintArrayOutput {
-	return i.ToContainerVpcClusterTaintArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterTaintArray) ToContainerVpcClusterTaintArrayOutputWithContext(ctx context.Context) ContainerVpcClusterTaintArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterTaintArrayOutput)
-}
-
-type ContainerVpcClusterTaintOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterTaintOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterTaint)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterTaintOutput) ToContainerVpcClusterTaintOutput() ContainerVpcClusterTaintOutput {
-	return o
-}
-
-func (o ContainerVpcClusterTaintOutput) ToContainerVpcClusterTaintOutputWithContext(ctx context.Context) ContainerVpcClusterTaintOutput {
-	return o
-}
-
-// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-func (o ContainerVpcClusterTaintOutput) Effect() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcClusterTaint) string { return v.Effect }).(pulumi.StringOutput)
-}
-
-// Key for taint
-func (o ContainerVpcClusterTaintOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcClusterTaint) string { return v.Key }).(pulumi.StringOutput)
-}
-
-// Value for taint.
-func (o ContainerVpcClusterTaintOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcClusterTaint) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type ContainerVpcClusterTaintArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterTaintArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcClusterTaint)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterTaintArrayOutput) ToContainerVpcClusterTaintArrayOutput() ContainerVpcClusterTaintArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterTaintArrayOutput) ToContainerVpcClusterTaintArrayOutputWithContext(ctx context.Context) ContainerVpcClusterTaintArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterTaintArrayOutput) Index(i pulumi.IntInput) ContainerVpcClusterTaintOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerVpcClusterTaint {
-		return vs[0].([]ContainerVpcClusterTaint)[vs[1].(int)]
-	}).(ContainerVpcClusterTaintOutput)
-}
-
-type ContainerVpcClusterZone struct {
-	// Zone for the worker pool in a multizone cluster
-	Name string `pulumi:"name"`
-	// The VPC subnet to assign the cluster
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// ContainerVpcClusterZoneInput is an input type that accepts ContainerVpcClusterZoneArgs and ContainerVpcClusterZoneOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterZoneInput` via:
-//
-//	ContainerVpcClusterZoneArgs{...}
-type ContainerVpcClusterZoneInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterZoneOutput() ContainerVpcClusterZoneOutput
-	ToContainerVpcClusterZoneOutputWithContext(context.Context) ContainerVpcClusterZoneOutput
-}
-
-type ContainerVpcClusterZoneArgs struct {
-	// Zone for the worker pool in a multizone cluster
-	Name pulumi.StringInput `pulumi:"name"`
-	// The VPC subnet to assign the cluster
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (ContainerVpcClusterZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterZone)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterZoneArgs) ToContainerVpcClusterZoneOutput() ContainerVpcClusterZoneOutput {
-	return i.ToContainerVpcClusterZoneOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterZoneArgs) ToContainerVpcClusterZoneOutputWithContext(ctx context.Context) ContainerVpcClusterZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterZoneOutput)
-}
-
-// ContainerVpcClusterZoneArrayInput is an input type that accepts ContainerVpcClusterZoneArray and ContainerVpcClusterZoneArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcClusterZoneArrayInput` via:
-//
-//	ContainerVpcClusterZoneArray{ ContainerVpcClusterZoneArgs{...} }
-type ContainerVpcClusterZoneArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcClusterZoneArrayOutput() ContainerVpcClusterZoneArrayOutput
-	ToContainerVpcClusterZoneArrayOutputWithContext(context.Context) ContainerVpcClusterZoneArrayOutput
-}
-
-type ContainerVpcClusterZoneArray []ContainerVpcClusterZoneInput
-
-func (ContainerVpcClusterZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcClusterZone)(nil)).Elem()
-}
-
-func (i ContainerVpcClusterZoneArray) ToContainerVpcClusterZoneArrayOutput() ContainerVpcClusterZoneArrayOutput {
-	return i.ToContainerVpcClusterZoneArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcClusterZoneArray) ToContainerVpcClusterZoneArrayOutputWithContext(ctx context.Context) ContainerVpcClusterZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcClusterZoneArrayOutput)
-}
-
-type ContainerVpcClusterZoneOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcClusterZone)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterZoneOutput) ToContainerVpcClusterZoneOutput() ContainerVpcClusterZoneOutput {
-	return o
-}
-
-func (o ContainerVpcClusterZoneOutput) ToContainerVpcClusterZoneOutputWithContext(ctx context.Context) ContainerVpcClusterZoneOutput {
-	return o
-}
-
-// Zone for the worker pool in a multizone cluster
-func (o ContainerVpcClusterZoneOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcClusterZone) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The VPC subnet to assign the cluster
-func (o ContainerVpcClusterZoneOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcClusterZone) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type ContainerVpcClusterZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcClusterZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcClusterZone)(nil)).Elem()
-}
-
-func (o ContainerVpcClusterZoneArrayOutput) ToContainerVpcClusterZoneArrayOutput() ContainerVpcClusterZoneArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterZoneArrayOutput) ToContainerVpcClusterZoneArrayOutputWithContext(ctx context.Context) ContainerVpcClusterZoneArrayOutput {
-	return o
-}
-
-func (o ContainerVpcClusterZoneArrayOutput) Index(i pulumi.IntInput) ContainerVpcClusterZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerVpcClusterZone {
-		return vs[0].([]ContainerVpcClusterZone)[vs[1].(int)]
-	}).(ContainerVpcClusterZoneOutput)
-}
-
-type ContainerVpcWorkerPoolTaint struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect string `pulumi:"effect"`
-	// Key for taint
-	Key string `pulumi:"key"`
-	// Value for taint.
-	Value string `pulumi:"value"`
-}
-
-// ContainerVpcWorkerPoolTaintInput is an input type that accepts ContainerVpcWorkerPoolTaintArgs and ContainerVpcWorkerPoolTaintOutput values.
-// You can construct a concrete instance of `ContainerVpcWorkerPoolTaintInput` via:
-//
-//	ContainerVpcWorkerPoolTaintArgs{...}
-type ContainerVpcWorkerPoolTaintInput interface {
-	pulumi.Input
-
-	ToContainerVpcWorkerPoolTaintOutput() ContainerVpcWorkerPoolTaintOutput
-	ToContainerVpcWorkerPoolTaintOutputWithContext(context.Context) ContainerVpcWorkerPoolTaintOutput
-}
-
-type ContainerVpcWorkerPoolTaintArgs struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect pulumi.StringInput `pulumi:"effect"`
-	// Key for taint
-	Key pulumi.StringInput `pulumi:"key"`
-	// Value for taint.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (ContainerVpcWorkerPoolTaintArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcWorkerPoolTaint)(nil)).Elem()
-}
-
-func (i ContainerVpcWorkerPoolTaintArgs) ToContainerVpcWorkerPoolTaintOutput() ContainerVpcWorkerPoolTaintOutput {
-	return i.ToContainerVpcWorkerPoolTaintOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcWorkerPoolTaintArgs) ToContainerVpcWorkerPoolTaintOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolTaintOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcWorkerPoolTaintOutput)
-}
-
-// ContainerVpcWorkerPoolTaintArrayInput is an input type that accepts ContainerVpcWorkerPoolTaintArray and ContainerVpcWorkerPoolTaintArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcWorkerPoolTaintArrayInput` via:
-//
-//	ContainerVpcWorkerPoolTaintArray{ ContainerVpcWorkerPoolTaintArgs{...} }
-type ContainerVpcWorkerPoolTaintArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcWorkerPoolTaintArrayOutput() ContainerVpcWorkerPoolTaintArrayOutput
-	ToContainerVpcWorkerPoolTaintArrayOutputWithContext(context.Context) ContainerVpcWorkerPoolTaintArrayOutput
-}
-
-type ContainerVpcWorkerPoolTaintArray []ContainerVpcWorkerPoolTaintInput
-
-func (ContainerVpcWorkerPoolTaintArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcWorkerPoolTaint)(nil)).Elem()
-}
-
-func (i ContainerVpcWorkerPoolTaintArray) ToContainerVpcWorkerPoolTaintArrayOutput() ContainerVpcWorkerPoolTaintArrayOutput {
-	return i.ToContainerVpcWorkerPoolTaintArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcWorkerPoolTaintArray) ToContainerVpcWorkerPoolTaintArrayOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolTaintArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcWorkerPoolTaintArrayOutput)
-}
-
-type ContainerVpcWorkerPoolTaintOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcWorkerPoolTaintOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcWorkerPoolTaint)(nil)).Elem()
-}
-
-func (o ContainerVpcWorkerPoolTaintOutput) ToContainerVpcWorkerPoolTaintOutput() ContainerVpcWorkerPoolTaintOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolTaintOutput) ToContainerVpcWorkerPoolTaintOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolTaintOutput {
-	return o
-}
-
-// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-func (o ContainerVpcWorkerPoolTaintOutput) Effect() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcWorkerPoolTaint) string { return v.Effect }).(pulumi.StringOutput)
-}
-
-// Key for taint
-func (o ContainerVpcWorkerPoolTaintOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcWorkerPoolTaint) string { return v.Key }).(pulumi.StringOutput)
-}
-
-// Value for taint.
-func (o ContainerVpcWorkerPoolTaintOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcWorkerPoolTaint) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type ContainerVpcWorkerPoolTaintArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcWorkerPoolTaintArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcWorkerPoolTaint)(nil)).Elem()
-}
-
-func (o ContainerVpcWorkerPoolTaintArrayOutput) ToContainerVpcWorkerPoolTaintArrayOutput() ContainerVpcWorkerPoolTaintArrayOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolTaintArrayOutput) ToContainerVpcWorkerPoolTaintArrayOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolTaintArrayOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolTaintArrayOutput) Index(i pulumi.IntInput) ContainerVpcWorkerPoolTaintOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerVpcWorkerPoolTaint {
-		return vs[0].([]ContainerVpcWorkerPoolTaint)[vs[1].(int)]
-	}).(ContainerVpcWorkerPoolTaintOutput)
-}
-
-type ContainerVpcWorkerPoolZone struct {
-	// zone name
-	Name string `pulumi:"name"`
-	// subnet ID
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// ContainerVpcWorkerPoolZoneInput is an input type that accepts ContainerVpcWorkerPoolZoneArgs and ContainerVpcWorkerPoolZoneOutput values.
-// You can construct a concrete instance of `ContainerVpcWorkerPoolZoneInput` via:
-//
-//	ContainerVpcWorkerPoolZoneArgs{...}
-type ContainerVpcWorkerPoolZoneInput interface {
-	pulumi.Input
-
-	ToContainerVpcWorkerPoolZoneOutput() ContainerVpcWorkerPoolZoneOutput
-	ToContainerVpcWorkerPoolZoneOutputWithContext(context.Context) ContainerVpcWorkerPoolZoneOutput
-}
-
-type ContainerVpcWorkerPoolZoneArgs struct {
-	// zone name
-	Name pulumi.StringInput `pulumi:"name"`
-	// subnet ID
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (ContainerVpcWorkerPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (i ContainerVpcWorkerPoolZoneArgs) ToContainerVpcWorkerPoolZoneOutput() ContainerVpcWorkerPoolZoneOutput {
-	return i.ToContainerVpcWorkerPoolZoneOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcWorkerPoolZoneArgs) ToContainerVpcWorkerPoolZoneOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcWorkerPoolZoneOutput)
-}
-
-// ContainerVpcWorkerPoolZoneArrayInput is an input type that accepts ContainerVpcWorkerPoolZoneArray and ContainerVpcWorkerPoolZoneArrayOutput values.
-// You can construct a concrete instance of `ContainerVpcWorkerPoolZoneArrayInput` via:
-//
-//	ContainerVpcWorkerPoolZoneArray{ ContainerVpcWorkerPoolZoneArgs{...} }
-type ContainerVpcWorkerPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToContainerVpcWorkerPoolZoneArrayOutput() ContainerVpcWorkerPoolZoneArrayOutput
-	ToContainerVpcWorkerPoolZoneArrayOutputWithContext(context.Context) ContainerVpcWorkerPoolZoneArrayOutput
-}
-
-type ContainerVpcWorkerPoolZoneArray []ContainerVpcWorkerPoolZoneInput
-
-func (ContainerVpcWorkerPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (i ContainerVpcWorkerPoolZoneArray) ToContainerVpcWorkerPoolZoneArrayOutput() ContainerVpcWorkerPoolZoneArrayOutput {
-	return i.ToContainerVpcWorkerPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerVpcWorkerPoolZoneArray) ToContainerVpcWorkerPoolZoneArrayOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerVpcWorkerPoolZoneArrayOutput)
-}
-
-type ContainerVpcWorkerPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcWorkerPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (o ContainerVpcWorkerPoolZoneOutput) ToContainerVpcWorkerPoolZoneOutput() ContainerVpcWorkerPoolZoneOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolZoneOutput) ToContainerVpcWorkerPoolZoneOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolZoneOutput {
-	return o
-}
-
-// zone name
-func (o ContainerVpcWorkerPoolZoneOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcWorkerPoolZone) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// subnet ID
-func (o ContainerVpcWorkerPoolZoneOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerVpcWorkerPoolZone) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type ContainerVpcWorkerPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerVpcWorkerPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerVpcWorkerPoolZone)(nil)).Elem()
-}
-
-func (o ContainerVpcWorkerPoolZoneArrayOutput) ToContainerVpcWorkerPoolZoneArrayOutput() ContainerVpcWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolZoneArrayOutput) ToContainerVpcWorkerPoolZoneArrayOutputWithContext(ctx context.Context) ContainerVpcWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerVpcWorkerPoolZoneArrayOutput) Index(i pulumi.IntInput) ContainerVpcWorkerPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerVpcWorkerPoolZone {
-		return vs[0].([]ContainerVpcWorkerPoolZone)[vs[1].(int)]
-	}).(ContainerVpcWorkerPoolZoneOutput)
-}
-
-type ContainerWorkerPoolTaint struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect string `pulumi:"effect"`
-	// Key for taint
-	Key string `pulumi:"key"`
-	// Value for taint.
-	Value string `pulumi:"value"`
-}
-
-// ContainerWorkerPoolTaintInput is an input type that accepts ContainerWorkerPoolTaintArgs and ContainerWorkerPoolTaintOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolTaintInput` via:
-//
-//	ContainerWorkerPoolTaintArgs{...}
-type ContainerWorkerPoolTaintInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolTaintOutput() ContainerWorkerPoolTaintOutput
-	ToContainerWorkerPoolTaintOutputWithContext(context.Context) ContainerWorkerPoolTaintOutput
-}
-
-type ContainerWorkerPoolTaintArgs struct {
-	// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-	Effect pulumi.StringInput `pulumi:"effect"`
-	// Key for taint
-	Key pulumi.StringInput `pulumi:"key"`
-	// Value for taint.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (ContainerWorkerPoolTaintArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerWorkerPoolTaint)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolTaintArgs) ToContainerWorkerPoolTaintOutput() ContainerWorkerPoolTaintOutput {
-	return i.ToContainerWorkerPoolTaintOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolTaintArgs) ToContainerWorkerPoolTaintOutputWithContext(ctx context.Context) ContainerWorkerPoolTaintOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolTaintOutput)
-}
-
-// ContainerWorkerPoolTaintArrayInput is an input type that accepts ContainerWorkerPoolTaintArray and ContainerWorkerPoolTaintArrayOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolTaintArrayInput` via:
-//
-//	ContainerWorkerPoolTaintArray{ ContainerWorkerPoolTaintArgs{...} }
-type ContainerWorkerPoolTaintArrayInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolTaintArrayOutput() ContainerWorkerPoolTaintArrayOutput
-	ToContainerWorkerPoolTaintArrayOutputWithContext(context.Context) ContainerWorkerPoolTaintArrayOutput
-}
-
-type ContainerWorkerPoolTaintArray []ContainerWorkerPoolTaintInput
-
-func (ContainerWorkerPoolTaintArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerWorkerPoolTaint)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolTaintArray) ToContainerWorkerPoolTaintArrayOutput() ContainerWorkerPoolTaintArrayOutput {
-	return i.ToContainerWorkerPoolTaintArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolTaintArray) ToContainerWorkerPoolTaintArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolTaintArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolTaintArrayOutput)
-}
-
-type ContainerWorkerPoolTaintOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolTaintOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerWorkerPoolTaint)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolTaintOutput) ToContainerWorkerPoolTaintOutput() ContainerWorkerPoolTaintOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolTaintOutput) ToContainerWorkerPoolTaintOutputWithContext(ctx context.Context) ContainerWorkerPoolTaintOutput {
-	return o
-}
-
-// Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-func (o ContainerWorkerPoolTaintOutput) Effect() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerWorkerPoolTaint) string { return v.Effect }).(pulumi.StringOutput)
-}
-
-// Key for taint
-func (o ContainerWorkerPoolTaintOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerWorkerPoolTaint) string { return v.Key }).(pulumi.StringOutput)
-}
-
-// Value for taint.
-func (o ContainerWorkerPoolTaintOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v ContainerWorkerPoolTaint) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type ContainerWorkerPoolTaintArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolTaintArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerWorkerPoolTaint)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolTaintArrayOutput) ToContainerWorkerPoolTaintArrayOutput() ContainerWorkerPoolTaintArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolTaintArrayOutput) ToContainerWorkerPoolTaintArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolTaintArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolTaintArrayOutput) Index(i pulumi.IntInput) ContainerWorkerPoolTaintOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerWorkerPoolTaint {
-		return vs[0].([]ContainerWorkerPoolTaint)[vs[1].(int)]
-	}).(ContainerWorkerPoolTaintOutput)
-}
-
-type ContainerWorkerPoolZone struct {
-	PrivateVlan *string `pulumi:"privateVlan"`
-	PublicVlan  *string `pulumi:"publicVlan"`
-	WorkerCount *int    `pulumi:"workerCount"`
-	Zone        *string `pulumi:"zone"`
-}
-
-// ContainerWorkerPoolZoneInput is an input type that accepts ContainerWorkerPoolZoneArgs and ContainerWorkerPoolZoneOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolZoneInput` via:
-//
-//	ContainerWorkerPoolZoneArgs{...}
-type ContainerWorkerPoolZoneInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolZoneOutput() ContainerWorkerPoolZoneOutput
-	ToContainerWorkerPoolZoneOutputWithContext(context.Context) ContainerWorkerPoolZoneOutput
-}
-
-type ContainerWorkerPoolZoneArgs struct {
-	PrivateVlan pulumi.StringPtrInput `pulumi:"privateVlan"`
-	PublicVlan  pulumi.StringPtrInput `pulumi:"publicVlan"`
-	WorkerCount pulumi.IntPtrInput    `pulumi:"workerCount"`
-	Zone        pulumi.StringPtrInput `pulumi:"zone"`
-}
-
-func (ContainerWorkerPoolZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolZoneArgs) ToContainerWorkerPoolZoneOutput() ContainerWorkerPoolZoneOutput {
-	return i.ToContainerWorkerPoolZoneOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolZoneArgs) ToContainerWorkerPoolZoneOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolZoneOutput)
-}
-
-// ContainerWorkerPoolZoneArrayInput is an input type that accepts ContainerWorkerPoolZoneArray and ContainerWorkerPoolZoneArrayOutput values.
-// You can construct a concrete instance of `ContainerWorkerPoolZoneArrayInput` via:
-//
-//	ContainerWorkerPoolZoneArray{ ContainerWorkerPoolZoneArgs{...} }
-type ContainerWorkerPoolZoneArrayInput interface {
-	pulumi.Input
-
-	ToContainerWorkerPoolZoneArrayOutput() ContainerWorkerPoolZoneArrayOutput
-	ToContainerWorkerPoolZoneArrayOutputWithContext(context.Context) ContainerWorkerPoolZoneArrayOutput
-}
-
-type ContainerWorkerPoolZoneArray []ContainerWorkerPoolZoneInput
-
-func (ContainerWorkerPoolZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (i ContainerWorkerPoolZoneArray) ToContainerWorkerPoolZoneArrayOutput() ContainerWorkerPoolZoneArrayOutput {
-	return i.ToContainerWorkerPoolZoneArrayOutputWithContext(context.Background())
-}
-
-func (i ContainerWorkerPoolZoneArray) ToContainerWorkerPoolZoneArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ContainerWorkerPoolZoneArrayOutput)
-}
-
-type ContainerWorkerPoolZoneOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolZoneOutput) ToContainerWorkerPoolZoneOutput() ContainerWorkerPoolZoneOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneOutput) ToContainerWorkerPoolZoneOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneOutput) PrivateVlan() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerWorkerPoolZone) *string { return v.PrivateVlan }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerWorkerPoolZoneOutput) PublicVlan() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerWorkerPoolZone) *string { return v.PublicVlan }).(pulumi.StringPtrOutput)
-}
-
-func (o ContainerWorkerPoolZoneOutput) WorkerCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v ContainerWorkerPoolZone) *int { return v.WorkerCount }).(pulumi.IntPtrOutput)
-}
-
-func (o ContainerWorkerPoolZoneOutput) Zone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ContainerWorkerPoolZone) *string { return v.Zone }).(pulumi.StringPtrOutput)
-}
-
-type ContainerWorkerPoolZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (ContainerWorkerPoolZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ContainerWorkerPoolZone)(nil)).Elem()
-}
-
-func (o ContainerWorkerPoolZoneArrayOutput) ToContainerWorkerPoolZoneArrayOutput() ContainerWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneArrayOutput) ToContainerWorkerPoolZoneArrayOutputWithContext(ctx context.Context) ContainerWorkerPoolZoneArrayOutput {
-	return o
-}
-
-func (o ContainerWorkerPoolZoneArrayOutput) Index(i pulumi.IntInput) ContainerWorkerPoolZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerWorkerPoolZone {
-		return vs[0].([]ContainerWorkerPoolZone)[vs[1].(int)]
-	}).(ContainerWorkerPoolZoneOutput)
-}
-
 type CosBucketAbortIncompleteMultipartUploadDay struct {
 	// Specifies the number of days when the specific rule action takes effect.
 	DaysAfterInitiation *int `pulumi:"daysAfterInitiation"`
@@ -8354,883 +5249,6 @@ func (o CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirectOutp
 	return o.ApplyT(func(v CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirect) *string {
 		return v.ReplaceKeyWith
 	}).(pulumi.StringPtrOutput)
-}
-
-type DnsCustomResolverForwardingRuleView struct {
-	// Description of the view.
-	Description *string `pulumi:"description"`
-	// Expression of the view.
-	Expression string `pulumi:"expression"`
-	// The upstream DNS servers that the matching DNS queries will be forwarded to.
-	ForwardTos []string `pulumi:"forwardTos"`
-	// Unique name of the view.
-	Name string `pulumi:"name"`
-}
-
-// DnsCustomResolverForwardingRuleViewInput is an input type that accepts DnsCustomResolverForwardingRuleViewArgs and DnsCustomResolverForwardingRuleViewOutput values.
-// You can construct a concrete instance of `DnsCustomResolverForwardingRuleViewInput` via:
-//
-//	DnsCustomResolverForwardingRuleViewArgs{...}
-type DnsCustomResolverForwardingRuleViewInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverForwardingRuleViewOutput() DnsCustomResolverForwardingRuleViewOutput
-	ToDnsCustomResolverForwardingRuleViewOutputWithContext(context.Context) DnsCustomResolverForwardingRuleViewOutput
-}
-
-type DnsCustomResolverForwardingRuleViewArgs struct {
-	// Description of the view.
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Expression of the view.
-	Expression pulumi.StringInput `pulumi:"expression"`
-	// The upstream DNS servers that the matching DNS queries will be forwarded to.
-	ForwardTos pulumi.StringArrayInput `pulumi:"forwardTos"`
-	// Unique name of the view.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (DnsCustomResolverForwardingRuleViewArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverForwardingRuleView)(nil)).Elem()
-}
-
-func (i DnsCustomResolverForwardingRuleViewArgs) ToDnsCustomResolverForwardingRuleViewOutput() DnsCustomResolverForwardingRuleViewOutput {
-	return i.ToDnsCustomResolverForwardingRuleViewOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverForwardingRuleViewArgs) ToDnsCustomResolverForwardingRuleViewOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleViewOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverForwardingRuleViewOutput)
-}
-
-// DnsCustomResolverForwardingRuleViewArrayInput is an input type that accepts DnsCustomResolverForwardingRuleViewArray and DnsCustomResolverForwardingRuleViewArrayOutput values.
-// You can construct a concrete instance of `DnsCustomResolverForwardingRuleViewArrayInput` via:
-//
-//	DnsCustomResolverForwardingRuleViewArray{ DnsCustomResolverForwardingRuleViewArgs{...} }
-type DnsCustomResolverForwardingRuleViewArrayInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverForwardingRuleViewArrayOutput() DnsCustomResolverForwardingRuleViewArrayOutput
-	ToDnsCustomResolverForwardingRuleViewArrayOutputWithContext(context.Context) DnsCustomResolverForwardingRuleViewArrayOutput
-}
-
-type DnsCustomResolverForwardingRuleViewArray []DnsCustomResolverForwardingRuleViewInput
-
-func (DnsCustomResolverForwardingRuleViewArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverForwardingRuleView)(nil)).Elem()
-}
-
-func (i DnsCustomResolverForwardingRuleViewArray) ToDnsCustomResolverForwardingRuleViewArrayOutput() DnsCustomResolverForwardingRuleViewArrayOutput {
-	return i.ToDnsCustomResolverForwardingRuleViewArrayOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverForwardingRuleViewArray) ToDnsCustomResolverForwardingRuleViewArrayOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleViewArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverForwardingRuleViewArrayOutput)
-}
-
-type DnsCustomResolverForwardingRuleViewOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverForwardingRuleViewOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverForwardingRuleView)(nil)).Elem()
-}
-
-func (o DnsCustomResolverForwardingRuleViewOutput) ToDnsCustomResolverForwardingRuleViewOutput() DnsCustomResolverForwardingRuleViewOutput {
-	return o
-}
-
-func (o DnsCustomResolverForwardingRuleViewOutput) ToDnsCustomResolverForwardingRuleViewOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleViewOutput {
-	return o
-}
-
-// Description of the view.
-func (o DnsCustomResolverForwardingRuleViewOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverForwardingRuleView) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-// Expression of the view.
-func (o DnsCustomResolverForwardingRuleViewOutput) Expression() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsCustomResolverForwardingRuleView) string { return v.Expression }).(pulumi.StringOutput)
-}
-
-// The upstream DNS servers that the matching DNS queries will be forwarded to.
-func (o DnsCustomResolverForwardingRuleViewOutput) ForwardTos() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v DnsCustomResolverForwardingRuleView) []string { return v.ForwardTos }).(pulumi.StringArrayOutput)
-}
-
-// Unique name of the view.
-func (o DnsCustomResolverForwardingRuleViewOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsCustomResolverForwardingRuleView) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type DnsCustomResolverForwardingRuleViewArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverForwardingRuleViewArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverForwardingRuleView)(nil)).Elem()
-}
-
-func (o DnsCustomResolverForwardingRuleViewArrayOutput) ToDnsCustomResolverForwardingRuleViewArrayOutput() DnsCustomResolverForwardingRuleViewArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverForwardingRuleViewArrayOutput) ToDnsCustomResolverForwardingRuleViewArrayOutputWithContext(ctx context.Context) DnsCustomResolverForwardingRuleViewArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverForwardingRuleViewArrayOutput) Index(i pulumi.IntInput) DnsCustomResolverForwardingRuleViewOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsCustomResolverForwardingRuleView {
-		return vs[0].([]DnsCustomResolverForwardingRuleView)[vs[1].(int)]
-	}).(DnsCustomResolverForwardingRuleViewOutput)
-}
-
-type DnsCustomResolverLocation struct {
-	// The ip address of this dns server
-	DnsServerIp *string `pulumi:"dnsServerIp"`
-	// Whether the location is enabled for the custom resolver
-	Enabled *bool `pulumi:"enabled"`
-	// Whether the DNS server in this location is healthy or not.
-	Healthy *bool `pulumi:"healthy"`
-	// Location ID
-	LocationId *string `pulumi:"locationId"`
-	// Subnet CRN
-	SubnetCrn string `pulumi:"subnetCrn"`
-}
-
-// DnsCustomResolverLocationInput is an input type that accepts DnsCustomResolverLocationArgs and DnsCustomResolverLocationOutput values.
-// You can construct a concrete instance of `DnsCustomResolverLocationInput` via:
-//
-//	DnsCustomResolverLocationArgs{...}
-type DnsCustomResolverLocationInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverLocationOutput() DnsCustomResolverLocationOutput
-	ToDnsCustomResolverLocationOutputWithContext(context.Context) DnsCustomResolverLocationOutput
-}
-
-type DnsCustomResolverLocationArgs struct {
-	// The ip address of this dns server
-	DnsServerIp pulumi.StringPtrInput `pulumi:"dnsServerIp"`
-	// Whether the location is enabled for the custom resolver
-	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// Whether the DNS server in this location is healthy or not.
-	Healthy pulumi.BoolPtrInput `pulumi:"healthy"`
-	// Location ID
-	LocationId pulumi.StringPtrInput `pulumi:"locationId"`
-	// Subnet CRN
-	SubnetCrn pulumi.StringInput `pulumi:"subnetCrn"`
-}
-
-func (DnsCustomResolverLocationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverLocation)(nil)).Elem()
-}
-
-func (i DnsCustomResolverLocationArgs) ToDnsCustomResolverLocationOutput() DnsCustomResolverLocationOutput {
-	return i.ToDnsCustomResolverLocationOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverLocationArgs) ToDnsCustomResolverLocationOutputWithContext(ctx context.Context) DnsCustomResolverLocationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverLocationOutput)
-}
-
-// DnsCustomResolverLocationArrayInput is an input type that accepts DnsCustomResolverLocationArray and DnsCustomResolverLocationArrayOutput values.
-// You can construct a concrete instance of `DnsCustomResolverLocationArrayInput` via:
-//
-//	DnsCustomResolverLocationArray{ DnsCustomResolverLocationArgs{...} }
-type DnsCustomResolverLocationArrayInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverLocationArrayOutput() DnsCustomResolverLocationArrayOutput
-	ToDnsCustomResolverLocationArrayOutputWithContext(context.Context) DnsCustomResolverLocationArrayOutput
-}
-
-type DnsCustomResolverLocationArray []DnsCustomResolverLocationInput
-
-func (DnsCustomResolverLocationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverLocation)(nil)).Elem()
-}
-
-func (i DnsCustomResolverLocationArray) ToDnsCustomResolverLocationArrayOutput() DnsCustomResolverLocationArrayOutput {
-	return i.ToDnsCustomResolverLocationArrayOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverLocationArray) ToDnsCustomResolverLocationArrayOutputWithContext(ctx context.Context) DnsCustomResolverLocationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverLocationArrayOutput)
-}
-
-type DnsCustomResolverLocationOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverLocationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverLocation)(nil)).Elem()
-}
-
-func (o DnsCustomResolverLocationOutput) ToDnsCustomResolverLocationOutput() DnsCustomResolverLocationOutput {
-	return o
-}
-
-func (o DnsCustomResolverLocationOutput) ToDnsCustomResolverLocationOutputWithContext(ctx context.Context) DnsCustomResolverLocationOutput {
-	return o
-}
-
-// The ip address of this dns server
-func (o DnsCustomResolverLocationOutput) DnsServerIp() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverLocation) *string { return v.DnsServerIp }).(pulumi.StringPtrOutput)
-}
-
-// Whether the location is enabled for the custom resolver
-func (o DnsCustomResolverLocationOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverLocation) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
-}
-
-// Whether the DNS server in this location is healthy or not.
-func (o DnsCustomResolverLocationOutput) Healthy() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverLocation) *bool { return v.Healthy }).(pulumi.BoolPtrOutput)
-}
-
-// Location ID
-func (o DnsCustomResolverLocationOutput) LocationId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverLocation) *string { return v.LocationId }).(pulumi.StringPtrOutput)
-}
-
-// Subnet CRN
-func (o DnsCustomResolverLocationOutput) SubnetCrn() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsCustomResolverLocation) string { return v.SubnetCrn }).(pulumi.StringOutput)
-}
-
-type DnsCustomResolverLocationArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverLocationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverLocation)(nil)).Elem()
-}
-
-func (o DnsCustomResolverLocationArrayOutput) ToDnsCustomResolverLocationArrayOutput() DnsCustomResolverLocationArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverLocationArrayOutput) ToDnsCustomResolverLocationArrayOutputWithContext(ctx context.Context) DnsCustomResolverLocationArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverLocationArrayOutput) Index(i pulumi.IntInput) DnsCustomResolverLocationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsCustomResolverLocation {
-		return vs[0].([]DnsCustomResolverLocation)[vs[1].(int)]
-	}).(DnsCustomResolverLocationOutput)
-}
-
-type DnsCustomResolverRule struct {
-	// Descriptive text of the forwarding rule.
-	Description *string `pulumi:"description"`
-	// The upstream DNS servers will be forwarded to.
-	ForwardTos []string `pulumi:"forwardTos"`
-	// The matching zone or hostname.
-	Match *string `pulumi:"match"`
-	// Identifier of the forwarding rule.
-	RuleId *string `pulumi:"ruleId"`
-	// Type of the forwarding rule.
-	Type *string `pulumi:"type"`
-	// An array of views used by forwarding rules.
-	Views []DnsCustomResolverRuleView `pulumi:"views"`
-}
-
-// DnsCustomResolverRuleInput is an input type that accepts DnsCustomResolverRuleArgs and DnsCustomResolverRuleOutput values.
-// You can construct a concrete instance of `DnsCustomResolverRuleInput` via:
-//
-//	DnsCustomResolverRuleArgs{...}
-type DnsCustomResolverRuleInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverRuleOutput() DnsCustomResolverRuleOutput
-	ToDnsCustomResolverRuleOutputWithContext(context.Context) DnsCustomResolverRuleOutput
-}
-
-type DnsCustomResolverRuleArgs struct {
-	// Descriptive text of the forwarding rule.
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	// The upstream DNS servers will be forwarded to.
-	ForwardTos pulumi.StringArrayInput `pulumi:"forwardTos"`
-	// The matching zone or hostname.
-	Match pulumi.StringPtrInput `pulumi:"match"`
-	// Identifier of the forwarding rule.
-	RuleId pulumi.StringPtrInput `pulumi:"ruleId"`
-	// Type of the forwarding rule.
-	Type pulumi.StringPtrInput `pulumi:"type"`
-	// An array of views used by forwarding rules.
-	Views DnsCustomResolverRuleViewArrayInput `pulumi:"views"`
-}
-
-func (DnsCustomResolverRuleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverRule)(nil)).Elem()
-}
-
-func (i DnsCustomResolverRuleArgs) ToDnsCustomResolverRuleOutput() DnsCustomResolverRuleOutput {
-	return i.ToDnsCustomResolverRuleOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverRuleArgs) ToDnsCustomResolverRuleOutputWithContext(ctx context.Context) DnsCustomResolverRuleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverRuleOutput)
-}
-
-// DnsCustomResolverRuleArrayInput is an input type that accepts DnsCustomResolverRuleArray and DnsCustomResolverRuleArrayOutput values.
-// You can construct a concrete instance of `DnsCustomResolverRuleArrayInput` via:
-//
-//	DnsCustomResolverRuleArray{ DnsCustomResolverRuleArgs{...} }
-type DnsCustomResolverRuleArrayInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverRuleArrayOutput() DnsCustomResolverRuleArrayOutput
-	ToDnsCustomResolverRuleArrayOutputWithContext(context.Context) DnsCustomResolverRuleArrayOutput
-}
-
-type DnsCustomResolverRuleArray []DnsCustomResolverRuleInput
-
-func (DnsCustomResolverRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverRule)(nil)).Elem()
-}
-
-func (i DnsCustomResolverRuleArray) ToDnsCustomResolverRuleArrayOutput() DnsCustomResolverRuleArrayOutput {
-	return i.ToDnsCustomResolverRuleArrayOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverRuleArray) ToDnsCustomResolverRuleArrayOutputWithContext(ctx context.Context) DnsCustomResolverRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverRuleArrayOutput)
-}
-
-type DnsCustomResolverRuleOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverRuleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverRule)(nil)).Elem()
-}
-
-func (o DnsCustomResolverRuleOutput) ToDnsCustomResolverRuleOutput() DnsCustomResolverRuleOutput {
-	return o
-}
-
-func (o DnsCustomResolverRuleOutput) ToDnsCustomResolverRuleOutputWithContext(ctx context.Context) DnsCustomResolverRuleOutput {
-	return o
-}
-
-// Descriptive text of the forwarding rule.
-func (o DnsCustomResolverRuleOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverRule) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-// The upstream DNS servers will be forwarded to.
-func (o DnsCustomResolverRuleOutput) ForwardTos() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v DnsCustomResolverRule) []string { return v.ForwardTos }).(pulumi.StringArrayOutput)
-}
-
-// The matching zone or hostname.
-func (o DnsCustomResolverRuleOutput) Match() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverRule) *string { return v.Match }).(pulumi.StringPtrOutput)
-}
-
-// Identifier of the forwarding rule.
-func (o DnsCustomResolverRuleOutput) RuleId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverRule) *string { return v.RuleId }).(pulumi.StringPtrOutput)
-}
-
-// Type of the forwarding rule.
-func (o DnsCustomResolverRuleOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverRule) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-// An array of views used by forwarding rules.
-func (o DnsCustomResolverRuleOutput) Views() DnsCustomResolverRuleViewArrayOutput {
-	return o.ApplyT(func(v DnsCustomResolverRule) []DnsCustomResolverRuleView { return v.Views }).(DnsCustomResolverRuleViewArrayOutput)
-}
-
-type DnsCustomResolverRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverRule)(nil)).Elem()
-}
-
-func (o DnsCustomResolverRuleArrayOutput) ToDnsCustomResolverRuleArrayOutput() DnsCustomResolverRuleArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverRuleArrayOutput) ToDnsCustomResolverRuleArrayOutputWithContext(ctx context.Context) DnsCustomResolverRuleArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverRuleArrayOutput) Index(i pulumi.IntInput) DnsCustomResolverRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsCustomResolverRule {
-		return vs[0].([]DnsCustomResolverRule)[vs[1].(int)]
-	}).(DnsCustomResolverRuleOutput)
-}
-
-type DnsCustomResolverRuleView struct {
-	// Description of the view.
-	Description *string `pulumi:"description"`
-	// Expression of the view.
-	Expression string `pulumi:"expression"`
-	// The upstream DNS servers that the matching DNS queries will be forwarded to.
-	ForwardTos []string `pulumi:"forwardTos"`
-	// Unique name of the view.
-	Name string `pulumi:"name"`
-}
-
-// DnsCustomResolverRuleViewInput is an input type that accepts DnsCustomResolverRuleViewArgs and DnsCustomResolverRuleViewOutput values.
-// You can construct a concrete instance of `DnsCustomResolverRuleViewInput` via:
-//
-//	DnsCustomResolverRuleViewArgs{...}
-type DnsCustomResolverRuleViewInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverRuleViewOutput() DnsCustomResolverRuleViewOutput
-	ToDnsCustomResolverRuleViewOutputWithContext(context.Context) DnsCustomResolverRuleViewOutput
-}
-
-type DnsCustomResolverRuleViewArgs struct {
-	// Description of the view.
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Expression of the view.
-	Expression pulumi.StringInput `pulumi:"expression"`
-	// The upstream DNS servers that the matching DNS queries will be forwarded to.
-	ForwardTos pulumi.StringArrayInput `pulumi:"forwardTos"`
-	// Unique name of the view.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (DnsCustomResolverRuleViewArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverRuleView)(nil)).Elem()
-}
-
-func (i DnsCustomResolverRuleViewArgs) ToDnsCustomResolverRuleViewOutput() DnsCustomResolverRuleViewOutput {
-	return i.ToDnsCustomResolverRuleViewOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverRuleViewArgs) ToDnsCustomResolverRuleViewOutputWithContext(ctx context.Context) DnsCustomResolverRuleViewOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverRuleViewOutput)
-}
-
-// DnsCustomResolverRuleViewArrayInput is an input type that accepts DnsCustomResolverRuleViewArray and DnsCustomResolverRuleViewArrayOutput values.
-// You can construct a concrete instance of `DnsCustomResolverRuleViewArrayInput` via:
-//
-//	DnsCustomResolverRuleViewArray{ DnsCustomResolverRuleViewArgs{...} }
-type DnsCustomResolverRuleViewArrayInput interface {
-	pulumi.Input
-
-	ToDnsCustomResolverRuleViewArrayOutput() DnsCustomResolverRuleViewArrayOutput
-	ToDnsCustomResolverRuleViewArrayOutputWithContext(context.Context) DnsCustomResolverRuleViewArrayOutput
-}
-
-type DnsCustomResolverRuleViewArray []DnsCustomResolverRuleViewInput
-
-func (DnsCustomResolverRuleViewArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverRuleView)(nil)).Elem()
-}
-
-func (i DnsCustomResolverRuleViewArray) ToDnsCustomResolverRuleViewArrayOutput() DnsCustomResolverRuleViewArrayOutput {
-	return i.ToDnsCustomResolverRuleViewArrayOutputWithContext(context.Background())
-}
-
-func (i DnsCustomResolverRuleViewArray) ToDnsCustomResolverRuleViewArrayOutputWithContext(ctx context.Context) DnsCustomResolverRuleViewArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsCustomResolverRuleViewArrayOutput)
-}
-
-type DnsCustomResolverRuleViewOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverRuleViewOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsCustomResolverRuleView)(nil)).Elem()
-}
-
-func (o DnsCustomResolverRuleViewOutput) ToDnsCustomResolverRuleViewOutput() DnsCustomResolverRuleViewOutput {
-	return o
-}
-
-func (o DnsCustomResolverRuleViewOutput) ToDnsCustomResolverRuleViewOutputWithContext(ctx context.Context) DnsCustomResolverRuleViewOutput {
-	return o
-}
-
-// Description of the view.
-func (o DnsCustomResolverRuleViewOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsCustomResolverRuleView) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-// Expression of the view.
-func (o DnsCustomResolverRuleViewOutput) Expression() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsCustomResolverRuleView) string { return v.Expression }).(pulumi.StringOutput)
-}
-
-// The upstream DNS servers that the matching DNS queries will be forwarded to.
-func (o DnsCustomResolverRuleViewOutput) ForwardTos() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v DnsCustomResolverRuleView) []string { return v.ForwardTos }).(pulumi.StringArrayOutput)
-}
-
-// Unique name of the view.
-func (o DnsCustomResolverRuleViewOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsCustomResolverRuleView) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type DnsCustomResolverRuleViewArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsCustomResolverRuleViewArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsCustomResolverRuleView)(nil)).Elem()
-}
-
-func (o DnsCustomResolverRuleViewArrayOutput) ToDnsCustomResolverRuleViewArrayOutput() DnsCustomResolverRuleViewArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverRuleViewArrayOutput) ToDnsCustomResolverRuleViewArrayOutputWithContext(ctx context.Context) DnsCustomResolverRuleViewArrayOutput {
-	return o
-}
-
-func (o DnsCustomResolverRuleViewArrayOutput) Index(i pulumi.IntInput) DnsCustomResolverRuleViewOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsCustomResolverRuleView {
-		return vs[0].([]DnsCustomResolverRuleView)[vs[1].(int)]
-	}).(DnsCustomResolverRuleViewOutput)
-}
-
-type DnsGlbAzPool struct {
-	// Availability zone.
-	AvailabilityZone string `pulumi:"availabilityZone"`
-	// List of load balancer pools
-	Pools []string `pulumi:"pools"`
-}
-
-// DnsGlbAzPoolInput is an input type that accepts DnsGlbAzPoolArgs and DnsGlbAzPoolOutput values.
-// You can construct a concrete instance of `DnsGlbAzPoolInput` via:
-//
-//	DnsGlbAzPoolArgs{...}
-type DnsGlbAzPoolInput interface {
-	pulumi.Input
-
-	ToDnsGlbAzPoolOutput() DnsGlbAzPoolOutput
-	ToDnsGlbAzPoolOutputWithContext(context.Context) DnsGlbAzPoolOutput
-}
-
-type DnsGlbAzPoolArgs struct {
-	// Availability zone.
-	AvailabilityZone pulumi.StringInput `pulumi:"availabilityZone"`
-	// List of load balancer pools
-	Pools pulumi.StringArrayInput `pulumi:"pools"`
-}
-
-func (DnsGlbAzPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsGlbAzPool)(nil)).Elem()
-}
-
-func (i DnsGlbAzPoolArgs) ToDnsGlbAzPoolOutput() DnsGlbAzPoolOutput {
-	return i.ToDnsGlbAzPoolOutputWithContext(context.Background())
-}
-
-func (i DnsGlbAzPoolArgs) ToDnsGlbAzPoolOutputWithContext(ctx context.Context) DnsGlbAzPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbAzPoolOutput)
-}
-
-// DnsGlbAzPoolArrayInput is an input type that accepts DnsGlbAzPoolArray and DnsGlbAzPoolArrayOutput values.
-// You can construct a concrete instance of `DnsGlbAzPoolArrayInput` via:
-//
-//	DnsGlbAzPoolArray{ DnsGlbAzPoolArgs{...} }
-type DnsGlbAzPoolArrayInput interface {
-	pulumi.Input
-
-	ToDnsGlbAzPoolArrayOutput() DnsGlbAzPoolArrayOutput
-	ToDnsGlbAzPoolArrayOutputWithContext(context.Context) DnsGlbAzPoolArrayOutput
-}
-
-type DnsGlbAzPoolArray []DnsGlbAzPoolInput
-
-func (DnsGlbAzPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsGlbAzPool)(nil)).Elem()
-}
-
-func (i DnsGlbAzPoolArray) ToDnsGlbAzPoolArrayOutput() DnsGlbAzPoolArrayOutput {
-	return i.ToDnsGlbAzPoolArrayOutputWithContext(context.Background())
-}
-
-func (i DnsGlbAzPoolArray) ToDnsGlbAzPoolArrayOutputWithContext(ctx context.Context) DnsGlbAzPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbAzPoolArrayOutput)
-}
-
-type DnsGlbAzPoolOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbAzPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsGlbAzPool)(nil)).Elem()
-}
-
-func (o DnsGlbAzPoolOutput) ToDnsGlbAzPoolOutput() DnsGlbAzPoolOutput {
-	return o
-}
-
-func (o DnsGlbAzPoolOutput) ToDnsGlbAzPoolOutputWithContext(ctx context.Context) DnsGlbAzPoolOutput {
-	return o
-}
-
-// Availability zone.
-func (o DnsGlbAzPoolOutput) AvailabilityZone() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsGlbAzPool) string { return v.AvailabilityZone }).(pulumi.StringOutput)
-}
-
-// List of load balancer pools
-func (o DnsGlbAzPoolOutput) Pools() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v DnsGlbAzPool) []string { return v.Pools }).(pulumi.StringArrayOutput)
-}
-
-type DnsGlbAzPoolArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbAzPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsGlbAzPool)(nil)).Elem()
-}
-
-func (o DnsGlbAzPoolArrayOutput) ToDnsGlbAzPoolArrayOutput() DnsGlbAzPoolArrayOutput {
-	return o
-}
-
-func (o DnsGlbAzPoolArrayOutput) ToDnsGlbAzPoolArrayOutputWithContext(ctx context.Context) DnsGlbAzPoolArrayOutput {
-	return o
-}
-
-func (o DnsGlbAzPoolArrayOutput) Index(i pulumi.IntInput) DnsGlbAzPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsGlbAzPool {
-		return vs[0].([]DnsGlbAzPool)[vs[1].(int)]
-	}).(DnsGlbAzPoolOutput)
-}
-
-type DnsGlbMonitorHeader struct {
-	// The name of HTTP request header
-	Name string `pulumi:"name"`
-	// The value of HTTP request header
-	Values []string `pulumi:"values"`
-}
-
-// DnsGlbMonitorHeaderInput is an input type that accepts DnsGlbMonitorHeaderArgs and DnsGlbMonitorHeaderOutput values.
-// You can construct a concrete instance of `DnsGlbMonitorHeaderInput` via:
-//
-//	DnsGlbMonitorHeaderArgs{...}
-type DnsGlbMonitorHeaderInput interface {
-	pulumi.Input
-
-	ToDnsGlbMonitorHeaderOutput() DnsGlbMonitorHeaderOutput
-	ToDnsGlbMonitorHeaderOutputWithContext(context.Context) DnsGlbMonitorHeaderOutput
-}
-
-type DnsGlbMonitorHeaderArgs struct {
-	// The name of HTTP request header
-	Name pulumi.StringInput `pulumi:"name"`
-	// The value of HTTP request header
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (DnsGlbMonitorHeaderArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsGlbMonitorHeader)(nil)).Elem()
-}
-
-func (i DnsGlbMonitorHeaderArgs) ToDnsGlbMonitorHeaderOutput() DnsGlbMonitorHeaderOutput {
-	return i.ToDnsGlbMonitorHeaderOutputWithContext(context.Background())
-}
-
-func (i DnsGlbMonitorHeaderArgs) ToDnsGlbMonitorHeaderOutputWithContext(ctx context.Context) DnsGlbMonitorHeaderOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbMonitorHeaderOutput)
-}
-
-// DnsGlbMonitorHeaderArrayInput is an input type that accepts DnsGlbMonitorHeaderArray and DnsGlbMonitorHeaderArrayOutput values.
-// You can construct a concrete instance of `DnsGlbMonitorHeaderArrayInput` via:
-//
-//	DnsGlbMonitorHeaderArray{ DnsGlbMonitorHeaderArgs{...} }
-type DnsGlbMonitorHeaderArrayInput interface {
-	pulumi.Input
-
-	ToDnsGlbMonitorHeaderArrayOutput() DnsGlbMonitorHeaderArrayOutput
-	ToDnsGlbMonitorHeaderArrayOutputWithContext(context.Context) DnsGlbMonitorHeaderArrayOutput
-}
-
-type DnsGlbMonitorHeaderArray []DnsGlbMonitorHeaderInput
-
-func (DnsGlbMonitorHeaderArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsGlbMonitorHeader)(nil)).Elem()
-}
-
-func (i DnsGlbMonitorHeaderArray) ToDnsGlbMonitorHeaderArrayOutput() DnsGlbMonitorHeaderArrayOutput {
-	return i.ToDnsGlbMonitorHeaderArrayOutputWithContext(context.Background())
-}
-
-func (i DnsGlbMonitorHeaderArray) ToDnsGlbMonitorHeaderArrayOutputWithContext(ctx context.Context) DnsGlbMonitorHeaderArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbMonitorHeaderArrayOutput)
-}
-
-type DnsGlbMonitorHeaderOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbMonitorHeaderOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsGlbMonitorHeader)(nil)).Elem()
-}
-
-func (o DnsGlbMonitorHeaderOutput) ToDnsGlbMonitorHeaderOutput() DnsGlbMonitorHeaderOutput {
-	return o
-}
-
-func (o DnsGlbMonitorHeaderOutput) ToDnsGlbMonitorHeaderOutputWithContext(ctx context.Context) DnsGlbMonitorHeaderOutput {
-	return o
-}
-
-// The name of HTTP request header
-func (o DnsGlbMonitorHeaderOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsGlbMonitorHeader) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The value of HTTP request header
-func (o DnsGlbMonitorHeaderOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v DnsGlbMonitorHeader) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type DnsGlbMonitorHeaderArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbMonitorHeaderArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsGlbMonitorHeader)(nil)).Elem()
-}
-
-func (o DnsGlbMonitorHeaderArrayOutput) ToDnsGlbMonitorHeaderArrayOutput() DnsGlbMonitorHeaderArrayOutput {
-	return o
-}
-
-func (o DnsGlbMonitorHeaderArrayOutput) ToDnsGlbMonitorHeaderArrayOutputWithContext(ctx context.Context) DnsGlbMonitorHeaderArrayOutput {
-	return o
-}
-
-func (o DnsGlbMonitorHeaderArrayOutput) Index(i pulumi.IntInput) DnsGlbMonitorHeaderOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsGlbMonitorHeader {
-		return vs[0].([]DnsGlbMonitorHeader)[vs[1].(int)]
-	}).(DnsGlbMonitorHeaderOutput)
-}
-
-type DnsGlbPoolOrigin struct {
-	// The address of the origin server. It can be a hostname or an IP address.
-	Address string `pulumi:"address"`
-	// Description of the origin server.
-	Description *string `pulumi:"description"`
-	// Whether the origin server is enabled.
-	Enabled bool `pulumi:"enabled"`
-	// Whether the health is `true` or `false`.
-	Health *bool `pulumi:"health"`
-	// The Reason for health check failure
-	HealthFailureReason *string `pulumi:"healthFailureReason"`
-	// The name of the origin server.
-	Name string `pulumi:"name"`
-}
-
-// DnsGlbPoolOriginInput is an input type that accepts DnsGlbPoolOriginArgs and DnsGlbPoolOriginOutput values.
-// You can construct a concrete instance of `DnsGlbPoolOriginInput` via:
-//
-//	DnsGlbPoolOriginArgs{...}
-type DnsGlbPoolOriginInput interface {
-	pulumi.Input
-
-	ToDnsGlbPoolOriginOutput() DnsGlbPoolOriginOutput
-	ToDnsGlbPoolOriginOutputWithContext(context.Context) DnsGlbPoolOriginOutput
-}
-
-type DnsGlbPoolOriginArgs struct {
-	// The address of the origin server. It can be a hostname or an IP address.
-	Address pulumi.StringInput `pulumi:"address"`
-	// Description of the origin server.
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Whether the origin server is enabled.
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// Whether the health is `true` or `false`.
-	Health pulumi.BoolPtrInput `pulumi:"health"`
-	// The Reason for health check failure
-	HealthFailureReason pulumi.StringPtrInput `pulumi:"healthFailureReason"`
-	// The name of the origin server.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (DnsGlbPoolOriginArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (i DnsGlbPoolOriginArgs) ToDnsGlbPoolOriginOutput() DnsGlbPoolOriginOutput {
-	return i.ToDnsGlbPoolOriginOutputWithContext(context.Background())
-}
-
-func (i DnsGlbPoolOriginArgs) ToDnsGlbPoolOriginOutputWithContext(ctx context.Context) DnsGlbPoolOriginOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbPoolOriginOutput)
-}
-
-// DnsGlbPoolOriginArrayInput is an input type that accepts DnsGlbPoolOriginArray and DnsGlbPoolOriginArrayOutput values.
-// You can construct a concrete instance of `DnsGlbPoolOriginArrayInput` via:
-//
-//	DnsGlbPoolOriginArray{ DnsGlbPoolOriginArgs{...} }
-type DnsGlbPoolOriginArrayInput interface {
-	pulumi.Input
-
-	ToDnsGlbPoolOriginArrayOutput() DnsGlbPoolOriginArrayOutput
-	ToDnsGlbPoolOriginArrayOutputWithContext(context.Context) DnsGlbPoolOriginArrayOutput
-}
-
-type DnsGlbPoolOriginArray []DnsGlbPoolOriginInput
-
-func (DnsGlbPoolOriginArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (i DnsGlbPoolOriginArray) ToDnsGlbPoolOriginArrayOutput() DnsGlbPoolOriginArrayOutput {
-	return i.ToDnsGlbPoolOriginArrayOutputWithContext(context.Background())
-}
-
-func (i DnsGlbPoolOriginArray) ToDnsGlbPoolOriginArrayOutputWithContext(ctx context.Context) DnsGlbPoolOriginArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsGlbPoolOriginArrayOutput)
-}
-
-type DnsGlbPoolOriginOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbPoolOriginOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (o DnsGlbPoolOriginOutput) ToDnsGlbPoolOriginOutput() DnsGlbPoolOriginOutput {
-	return o
-}
-
-func (o DnsGlbPoolOriginOutput) ToDnsGlbPoolOriginOutputWithContext(ctx context.Context) DnsGlbPoolOriginOutput {
-	return o
-}
-
-// The address of the origin server. It can be a hostname or an IP address.
-func (o DnsGlbPoolOriginOutput) Address() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsGlbPoolOrigin) string { return v.Address }).(pulumi.StringOutput)
-}
-
-// Description of the origin server.
-func (o DnsGlbPoolOriginOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsGlbPoolOrigin) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-// Whether the origin server is enabled.
-func (o DnsGlbPoolOriginOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v DnsGlbPoolOrigin) bool { return v.Enabled }).(pulumi.BoolOutput)
-}
-
-// Whether the health is `true` or `false`.
-func (o DnsGlbPoolOriginOutput) Health() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v DnsGlbPoolOrigin) *bool { return v.Health }).(pulumi.BoolPtrOutput)
-}
-
-// The Reason for health check failure
-func (o DnsGlbPoolOriginOutput) HealthFailureReason() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DnsGlbPoolOrigin) *string { return v.HealthFailureReason }).(pulumi.StringPtrOutput)
-}
-
-// The name of the origin server.
-func (o DnsGlbPoolOriginOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v DnsGlbPoolOrigin) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type DnsGlbPoolOriginArrayOutput struct{ *pulumi.OutputState }
-
-func (DnsGlbPoolOriginArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DnsGlbPoolOrigin)(nil)).Elem()
-}
-
-func (o DnsGlbPoolOriginArrayOutput) ToDnsGlbPoolOriginArrayOutput() DnsGlbPoolOriginArrayOutput {
-	return o
-}
-
-func (o DnsGlbPoolOriginArrayOutput) ToDnsGlbPoolOriginArrayOutputWithContext(ctx context.Context) DnsGlbPoolOriginArrayOutput {
-	return o
-}
-
-func (o DnsGlbPoolOriginArrayOutput) Index(i pulumi.IntInput) DnsGlbPoolOriginOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsGlbPoolOrigin {
-		return vs[0].([]DnsGlbPoolOrigin)[vs[1].(int)]
-	}).(DnsGlbPoolOriginOutput)
 }
 
 type IamAccessGroupDynamicRuleCondition struct {
@@ -72147,6 +68165,3977 @@ func (o IsVpcDnsResolverServerArrayOutput) Index(i pulumi.IntInput) IsVpcDnsReso
 	}).(IsVpcDnsResolverServerOutput)
 }
 
+type IsVpcHealthReason struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code *string `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message *string `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpcHealthReasonInput is an input type that accepts IsVpcHealthReasonArgs and IsVpcHealthReasonOutput values.
+// You can construct a concrete instance of `IsVpcHealthReasonInput` via:
+//
+//	IsVpcHealthReasonArgs{...}
+type IsVpcHealthReasonInput interface {
+	pulumi.Input
+
+	ToIsVpcHealthReasonOutput() IsVpcHealthReasonOutput
+	ToIsVpcHealthReasonOutputWithContext(context.Context) IsVpcHealthReasonOutput
+}
+
+type IsVpcHealthReasonArgs struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpcHealthReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcHealthReason)(nil)).Elem()
+}
+
+func (i IsVpcHealthReasonArgs) ToIsVpcHealthReasonOutput() IsVpcHealthReasonOutput {
+	return i.ToIsVpcHealthReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpcHealthReasonArgs) ToIsVpcHealthReasonOutputWithContext(ctx context.Context) IsVpcHealthReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcHealthReasonOutput)
+}
+
+// IsVpcHealthReasonArrayInput is an input type that accepts IsVpcHealthReasonArray and IsVpcHealthReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpcHealthReasonArrayInput` via:
+//
+//	IsVpcHealthReasonArray{ IsVpcHealthReasonArgs{...} }
+type IsVpcHealthReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcHealthReasonArrayOutput() IsVpcHealthReasonArrayOutput
+	ToIsVpcHealthReasonArrayOutputWithContext(context.Context) IsVpcHealthReasonArrayOutput
+}
+
+type IsVpcHealthReasonArray []IsVpcHealthReasonInput
+
+func (IsVpcHealthReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcHealthReason)(nil)).Elem()
+}
+
+func (i IsVpcHealthReasonArray) ToIsVpcHealthReasonArrayOutput() IsVpcHealthReasonArrayOutput {
+	return i.ToIsVpcHealthReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcHealthReasonArray) ToIsVpcHealthReasonArrayOutputWithContext(ctx context.Context) IsVpcHealthReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcHealthReasonArrayOutput)
+}
+
+type IsVpcHealthReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpcHealthReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcHealthReason)(nil)).Elem()
+}
+
+func (o IsVpcHealthReasonOutput) ToIsVpcHealthReasonOutput() IsVpcHealthReasonOutput {
+	return o
+}
+
+func (o IsVpcHealthReasonOutput) ToIsVpcHealthReasonOutputWithContext(ctx context.Context) IsVpcHealthReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the reason for this health state.
+func (o IsVpcHealthReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the reason for this health state.
+func (o IsVpcHealthReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about the reason for this health state.
+func (o IsVpcHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcHealthReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcHealthReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcHealthReason)(nil)).Elem()
+}
+
+func (o IsVpcHealthReasonArrayOutput) ToIsVpcHealthReasonArrayOutput() IsVpcHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpcHealthReasonArrayOutput) ToIsVpcHealthReasonArrayOutputWithContext(ctx context.Context) IsVpcHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpcHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpcHealthReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcHealthReason {
+		return vs[0].([]IsVpcHealthReason)[vs[1].(int)]
+	}).(IsVpcHealthReasonOutput)
+}
+
+type IsVpcPublicAddressRange struct {
+	// The CRN for this public address range.
+	Crn *string `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+	Deleteds []IsVpcPublicAddressRangeDeleted `pulumi:"deleteds"`
+	// The URL for this public address range.
+	Href *string `pulumi:"href"`
+	// The unique identifier for this public address range.
+	Id *string `pulumi:"id"`
+	// The name for this public address range. The name is unique across all public address ranges in the region.
+	Name *string `pulumi:"name"`
+	// The resource type.
+	ResourceType *string `pulumi:"resourceType"`
+}
+
+// IsVpcPublicAddressRangeInput is an input type that accepts IsVpcPublicAddressRangeArgs and IsVpcPublicAddressRangeOutput values.
+// You can construct a concrete instance of `IsVpcPublicAddressRangeInput` via:
+//
+//	IsVpcPublicAddressRangeArgs{...}
+type IsVpcPublicAddressRangeInput interface {
+	pulumi.Input
+
+	ToIsVpcPublicAddressRangeOutput() IsVpcPublicAddressRangeOutput
+	ToIsVpcPublicAddressRangeOutputWithContext(context.Context) IsVpcPublicAddressRangeOutput
+}
+
+type IsVpcPublicAddressRangeArgs struct {
+	// The CRN for this public address range.
+	Crn pulumi.StringPtrInput `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+	Deleteds IsVpcPublicAddressRangeDeletedArrayInput `pulumi:"deleteds"`
+	// The URL for this public address range.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// The unique identifier for this public address range.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The name for this public address range. The name is unique across all public address ranges in the region.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The resource type.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+}
+
+func (IsVpcPublicAddressRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcPublicAddressRange)(nil)).Elem()
+}
+
+func (i IsVpcPublicAddressRangeArgs) ToIsVpcPublicAddressRangeOutput() IsVpcPublicAddressRangeOutput {
+	return i.ToIsVpcPublicAddressRangeOutputWithContext(context.Background())
+}
+
+func (i IsVpcPublicAddressRangeArgs) ToIsVpcPublicAddressRangeOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeOutput)
+}
+
+// IsVpcPublicAddressRangeArrayInput is an input type that accepts IsVpcPublicAddressRangeArray and IsVpcPublicAddressRangeArrayOutput values.
+// You can construct a concrete instance of `IsVpcPublicAddressRangeArrayInput` via:
+//
+//	IsVpcPublicAddressRangeArray{ IsVpcPublicAddressRangeArgs{...} }
+type IsVpcPublicAddressRangeArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcPublicAddressRangeArrayOutput() IsVpcPublicAddressRangeArrayOutput
+	ToIsVpcPublicAddressRangeArrayOutputWithContext(context.Context) IsVpcPublicAddressRangeArrayOutput
+}
+
+type IsVpcPublicAddressRangeArray []IsVpcPublicAddressRangeInput
+
+func (IsVpcPublicAddressRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcPublicAddressRange)(nil)).Elem()
+}
+
+func (i IsVpcPublicAddressRangeArray) ToIsVpcPublicAddressRangeArrayOutput() IsVpcPublicAddressRangeArrayOutput {
+	return i.ToIsVpcPublicAddressRangeArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcPublicAddressRangeArray) ToIsVpcPublicAddressRangeArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeArrayOutput)
+}
+
+type IsVpcPublicAddressRangeOutput struct{ *pulumi.OutputState }
+
+func (IsVpcPublicAddressRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcPublicAddressRange)(nil)).Elem()
+}
+
+func (o IsVpcPublicAddressRangeOutput) ToIsVpcPublicAddressRangeOutput() IsVpcPublicAddressRangeOutput {
+	return o
+}
+
+func (o IsVpcPublicAddressRangeOutput) ToIsVpcPublicAddressRangeOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeOutput {
+	return o
+}
+
+// The CRN for this public address range.
+func (o IsVpcPublicAddressRangeOutput) Crn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Crn }).(pulumi.StringPtrOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+func (o IsVpcPublicAddressRangeOutput) Deleteds() IsVpcPublicAddressRangeDeletedArrayOutput {
+	return o.ApplyT(func(v IsVpcPublicAddressRange) []IsVpcPublicAddressRangeDeleted { return v.Deleteds }).(IsVpcPublicAddressRangeDeletedArrayOutput)
+}
+
+// The URL for this public address range.
+func (o IsVpcPublicAddressRangeOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier for this public address range.
+func (o IsVpcPublicAddressRangeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The name for this public address range. The name is unique across all public address ranges in the region.
+func (o IsVpcPublicAddressRangeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The resource type.
+func (o IsVpcPublicAddressRangeOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcPublicAddressRange) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcPublicAddressRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcPublicAddressRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcPublicAddressRange)(nil)).Elem()
+}
+
+func (o IsVpcPublicAddressRangeArrayOutput) ToIsVpcPublicAddressRangeArrayOutput() IsVpcPublicAddressRangeArrayOutput {
+	return o
+}
+
+func (o IsVpcPublicAddressRangeArrayOutput) ToIsVpcPublicAddressRangeArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeArrayOutput {
+	return o
+}
+
+func (o IsVpcPublicAddressRangeArrayOutput) Index(i pulumi.IntInput) IsVpcPublicAddressRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcPublicAddressRange {
+		return vs[0].([]IsVpcPublicAddressRange)[vs[1].(int)]
+	}).(IsVpcPublicAddressRangeOutput)
+}
+
+type IsVpcPublicAddressRangeDeleted struct {
+	// Link to documentation about deleted resources.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpcPublicAddressRangeDeletedInput is an input type that accepts IsVpcPublicAddressRangeDeletedArgs and IsVpcPublicAddressRangeDeletedOutput values.
+// You can construct a concrete instance of `IsVpcPublicAddressRangeDeletedInput` via:
+//
+//	IsVpcPublicAddressRangeDeletedArgs{...}
+type IsVpcPublicAddressRangeDeletedInput interface {
+	pulumi.Input
+
+	ToIsVpcPublicAddressRangeDeletedOutput() IsVpcPublicAddressRangeDeletedOutput
+	ToIsVpcPublicAddressRangeDeletedOutputWithContext(context.Context) IsVpcPublicAddressRangeDeletedOutput
+}
+
+type IsVpcPublicAddressRangeDeletedArgs struct {
+	// Link to documentation about deleted resources.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpcPublicAddressRangeDeletedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcPublicAddressRangeDeleted)(nil)).Elem()
+}
+
+func (i IsVpcPublicAddressRangeDeletedArgs) ToIsVpcPublicAddressRangeDeletedOutput() IsVpcPublicAddressRangeDeletedOutput {
+	return i.ToIsVpcPublicAddressRangeDeletedOutputWithContext(context.Background())
+}
+
+func (i IsVpcPublicAddressRangeDeletedArgs) ToIsVpcPublicAddressRangeDeletedOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeDeletedOutput)
+}
+
+// IsVpcPublicAddressRangeDeletedArrayInput is an input type that accepts IsVpcPublicAddressRangeDeletedArray and IsVpcPublicAddressRangeDeletedArrayOutput values.
+// You can construct a concrete instance of `IsVpcPublicAddressRangeDeletedArrayInput` via:
+//
+//	IsVpcPublicAddressRangeDeletedArray{ IsVpcPublicAddressRangeDeletedArgs{...} }
+type IsVpcPublicAddressRangeDeletedArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcPublicAddressRangeDeletedArrayOutput() IsVpcPublicAddressRangeDeletedArrayOutput
+	ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(context.Context) IsVpcPublicAddressRangeDeletedArrayOutput
+}
+
+type IsVpcPublicAddressRangeDeletedArray []IsVpcPublicAddressRangeDeletedInput
+
+func (IsVpcPublicAddressRangeDeletedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcPublicAddressRangeDeleted)(nil)).Elem()
+}
+
+func (i IsVpcPublicAddressRangeDeletedArray) ToIsVpcPublicAddressRangeDeletedArrayOutput() IsVpcPublicAddressRangeDeletedArrayOutput {
+	return i.ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcPublicAddressRangeDeletedArray) ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcPublicAddressRangeDeletedArrayOutput)
+}
+
+type IsVpcPublicAddressRangeDeletedOutput struct{ *pulumi.OutputState }
+
+func (IsVpcPublicAddressRangeDeletedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcPublicAddressRangeDeleted)(nil)).Elem()
+}
+
+func (o IsVpcPublicAddressRangeDeletedOutput) ToIsVpcPublicAddressRangeDeletedOutput() IsVpcPublicAddressRangeDeletedOutput {
+	return o
+}
+
+func (o IsVpcPublicAddressRangeDeletedOutput) ToIsVpcPublicAddressRangeDeletedOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedOutput {
+	return o
+}
+
+// Link to documentation about deleted resources.
+func (o IsVpcPublicAddressRangeDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcPublicAddressRangeDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcPublicAddressRangeDeletedArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcPublicAddressRangeDeletedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcPublicAddressRangeDeleted)(nil)).Elem()
+}
+
+func (o IsVpcPublicAddressRangeDeletedArrayOutput) ToIsVpcPublicAddressRangeDeletedArrayOutput() IsVpcPublicAddressRangeDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpcPublicAddressRangeDeletedArrayOutput) ToIsVpcPublicAddressRangeDeletedArrayOutputWithContext(ctx context.Context) IsVpcPublicAddressRangeDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpcPublicAddressRangeDeletedArrayOutput) Index(i pulumi.IntInput) IsVpcPublicAddressRangeDeletedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcPublicAddressRangeDeleted {
+		return vs[0].([]IsVpcPublicAddressRangeDeleted)[vs[1].(int)]
+	}).(IsVpcPublicAddressRangeDeletedOutput)
+}
+
+type IsVpcRoutingTableResourceGroup struct {
+	// The URL for this resource group.
+	Href *string `pulumi:"href"`
+	// The unique identifier for this resource group.
+	Id *string `pulumi:"id"`
+	// The user-defined name for this resource group.
+	Name *string `pulumi:"name"`
+}
+
+// IsVpcRoutingTableResourceGroupInput is an input type that accepts IsVpcRoutingTableResourceGroupArgs and IsVpcRoutingTableResourceGroupOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableResourceGroupInput` via:
+//
+//	IsVpcRoutingTableResourceGroupArgs{...}
+type IsVpcRoutingTableResourceGroupInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableResourceGroupOutput() IsVpcRoutingTableResourceGroupOutput
+	ToIsVpcRoutingTableResourceGroupOutputWithContext(context.Context) IsVpcRoutingTableResourceGroupOutput
+}
+
+type IsVpcRoutingTableResourceGroupArgs struct {
+	// The URL for this resource group.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// The unique identifier for this resource group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The user-defined name for this resource group.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (IsVpcRoutingTableResourceGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableResourceGroup)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableResourceGroupArgs) ToIsVpcRoutingTableResourceGroupOutput() IsVpcRoutingTableResourceGroupOutput {
+	return i.ToIsVpcRoutingTableResourceGroupOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableResourceGroupArgs) ToIsVpcRoutingTableResourceGroupOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableResourceGroupOutput)
+}
+
+// IsVpcRoutingTableResourceGroupArrayInput is an input type that accepts IsVpcRoutingTableResourceGroupArray and IsVpcRoutingTableResourceGroupArrayOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableResourceGroupArrayInput` via:
+//
+//	IsVpcRoutingTableResourceGroupArray{ IsVpcRoutingTableResourceGroupArgs{...} }
+type IsVpcRoutingTableResourceGroupArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableResourceGroupArrayOutput() IsVpcRoutingTableResourceGroupArrayOutput
+	ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(context.Context) IsVpcRoutingTableResourceGroupArrayOutput
+}
+
+type IsVpcRoutingTableResourceGroupArray []IsVpcRoutingTableResourceGroupInput
+
+func (IsVpcRoutingTableResourceGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableResourceGroup)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableResourceGroupArray) ToIsVpcRoutingTableResourceGroupArrayOutput() IsVpcRoutingTableResourceGroupArrayOutput {
+	return i.ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableResourceGroupArray) ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableResourceGroupArrayOutput)
+}
+
+type IsVpcRoutingTableResourceGroupOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableResourceGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableResourceGroup)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableResourceGroupOutput) ToIsVpcRoutingTableResourceGroupOutput() IsVpcRoutingTableResourceGroupOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableResourceGroupOutput) ToIsVpcRoutingTableResourceGroupOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupOutput {
+	return o
+}
+
+// The URL for this resource group.
+func (o IsVpcRoutingTableResourceGroupOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableResourceGroup) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier for this resource group.
+func (o IsVpcRoutingTableResourceGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableResourceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The user-defined name for this resource group.
+func (o IsVpcRoutingTableResourceGroupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableResourceGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcRoutingTableResourceGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableResourceGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableResourceGroup)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableResourceGroupArrayOutput) ToIsVpcRoutingTableResourceGroupArrayOutput() IsVpcRoutingTableResourceGroupArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableResourceGroupArrayOutput) ToIsVpcRoutingTableResourceGroupArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableResourceGroupArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableResourceGroupArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableResourceGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableResourceGroup {
+		return vs[0].([]IsVpcRoutingTableResourceGroup)[vs[1].(int)]
+	}).(IsVpcRoutingTableResourceGroupOutput)
+}
+
+type IsVpcRoutingTableRouteCreator struct {
+	// The VPN gateway's CRN.
+	Crn *string `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds []IsVpcRoutingTableRouteCreatorDeleted `pulumi:"deleteds"`
+	// The VPN gateway's canonical URL.
+	Href *string `pulumi:"href"`
+	// The unique identifier for this VPN gateway.
+	Id *string `pulumi:"id"`
+	// The user-defined name for this VPN gateway.
+	Name *string `pulumi:"name"`
+	// The resource type.
+	ResourceType *string `pulumi:"resourceType"`
+}
+
+// IsVpcRoutingTableRouteCreatorInput is an input type that accepts IsVpcRoutingTableRouteCreatorArgs and IsVpcRoutingTableRouteCreatorOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorInput` via:
+//
+//	IsVpcRoutingTableRouteCreatorArgs{...}
+type IsVpcRoutingTableRouteCreatorInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableRouteCreatorOutput() IsVpcRoutingTableRouteCreatorOutput
+	ToIsVpcRoutingTableRouteCreatorOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorOutput
+}
+
+type IsVpcRoutingTableRouteCreatorArgs struct {
+	// The VPN gateway's CRN.
+	Crn pulumi.StringPtrInput `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds IsVpcRoutingTableRouteCreatorDeletedArrayInput `pulumi:"deleteds"`
+	// The VPN gateway's canonical URL.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// The unique identifier for this VPN gateway.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The user-defined name for this VPN gateway.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The resource type.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+}
+
+func (IsVpcRoutingTableRouteCreatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableRouteCreator)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableRouteCreatorArgs) ToIsVpcRoutingTableRouteCreatorOutput() IsVpcRoutingTableRouteCreatorOutput {
+	return i.ToIsVpcRoutingTableRouteCreatorOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableRouteCreatorArgs) ToIsVpcRoutingTableRouteCreatorOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorOutput)
+}
+
+// IsVpcRoutingTableRouteCreatorArrayInput is an input type that accepts IsVpcRoutingTableRouteCreatorArray and IsVpcRoutingTableRouteCreatorArrayOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorArrayInput` via:
+//
+//	IsVpcRoutingTableRouteCreatorArray{ IsVpcRoutingTableRouteCreatorArgs{...} }
+type IsVpcRoutingTableRouteCreatorArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableRouteCreatorArrayOutput() IsVpcRoutingTableRouteCreatorArrayOutput
+	ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorArrayOutput
+}
+
+type IsVpcRoutingTableRouteCreatorArray []IsVpcRoutingTableRouteCreatorInput
+
+func (IsVpcRoutingTableRouteCreatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreator)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableRouteCreatorArray) ToIsVpcRoutingTableRouteCreatorArrayOutput() IsVpcRoutingTableRouteCreatorArrayOutput {
+	return i.ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableRouteCreatorArray) ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorArrayOutput)
+}
+
+type IsVpcRoutingTableRouteCreatorOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableRouteCreatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableRouteCreator)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableRouteCreatorOutput) ToIsVpcRoutingTableRouteCreatorOutput() IsVpcRoutingTableRouteCreatorOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableRouteCreatorOutput) ToIsVpcRoutingTableRouteCreatorOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorOutput {
+	return o
+}
+
+// The VPN gateway's CRN.
+func (o IsVpcRoutingTableRouteCreatorOutput) Crn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Crn }).(pulumi.StringPtrOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+func (o IsVpcRoutingTableRouteCreatorOutput) Deleteds() IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) []IsVpcRoutingTableRouteCreatorDeleted { return v.Deleteds }).(IsVpcRoutingTableRouteCreatorDeletedArrayOutput)
+}
+
+// The VPN gateway's canonical URL.
+func (o IsVpcRoutingTableRouteCreatorOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier for this VPN gateway.
+func (o IsVpcRoutingTableRouteCreatorOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The user-defined name for this VPN gateway.
+func (o IsVpcRoutingTableRouteCreatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The resource type.
+func (o IsVpcRoutingTableRouteCreatorOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableRouteCreator) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcRoutingTableRouteCreatorArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableRouteCreatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreator)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableRouteCreatorArrayOutput) ToIsVpcRoutingTableRouteCreatorArrayOutput() IsVpcRoutingTableRouteCreatorArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableRouteCreatorArrayOutput) ToIsVpcRoutingTableRouteCreatorArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableRouteCreatorArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableRouteCreatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableRouteCreator {
+		return vs[0].([]IsVpcRoutingTableRouteCreator)[vs[1].(int)]
+	}).(IsVpcRoutingTableRouteCreatorOutput)
+}
+
+type IsVpcRoutingTableRouteCreatorDeleted struct {
+	// Link to documentation about deleted resources.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpcRoutingTableRouteCreatorDeletedInput is an input type that accepts IsVpcRoutingTableRouteCreatorDeletedArgs and IsVpcRoutingTableRouteCreatorDeletedOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorDeletedInput` via:
+//
+//	IsVpcRoutingTableRouteCreatorDeletedArgs{...}
+type IsVpcRoutingTableRouteCreatorDeletedInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableRouteCreatorDeletedOutput() IsVpcRoutingTableRouteCreatorDeletedOutput
+	ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorDeletedOutput
+}
+
+type IsVpcRoutingTableRouteCreatorDeletedArgs struct {
+	// Link to documentation about deleted resources.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpcRoutingTableRouteCreatorDeletedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableRouteCreatorDeletedArgs) ToIsVpcRoutingTableRouteCreatorDeletedOutput() IsVpcRoutingTableRouteCreatorDeletedOutput {
+	return i.ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableRouteCreatorDeletedArgs) ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorDeletedOutput)
+}
+
+// IsVpcRoutingTableRouteCreatorDeletedArrayInput is an input type that accepts IsVpcRoutingTableRouteCreatorDeletedArray and IsVpcRoutingTableRouteCreatorDeletedArrayOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableRouteCreatorDeletedArrayInput` via:
+//
+//	IsVpcRoutingTableRouteCreatorDeletedArray{ IsVpcRoutingTableRouteCreatorDeletedArgs{...} }
+type IsVpcRoutingTableRouteCreatorDeletedArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableRouteCreatorDeletedArrayOutput() IsVpcRoutingTableRouteCreatorDeletedArrayOutput
+	ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(context.Context) IsVpcRoutingTableRouteCreatorDeletedArrayOutput
+}
+
+type IsVpcRoutingTableRouteCreatorDeletedArray []IsVpcRoutingTableRouteCreatorDeletedInput
+
+func (IsVpcRoutingTableRouteCreatorDeletedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableRouteCreatorDeletedArray) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutput() IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
+	return i.ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableRouteCreatorDeletedArray) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableRouteCreatorDeletedArrayOutput)
+}
+
+type IsVpcRoutingTableRouteCreatorDeletedOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableRouteCreatorDeletedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableRouteCreatorDeletedOutput) ToIsVpcRoutingTableRouteCreatorDeletedOutput() IsVpcRoutingTableRouteCreatorDeletedOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableRouteCreatorDeletedOutput) ToIsVpcRoutingTableRouteCreatorDeletedOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedOutput {
+	return o
+}
+
+// Link to documentation about deleted resources.
+func (o IsVpcRoutingTableRouteCreatorDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableRouteCreatorDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcRoutingTableRouteCreatorDeletedArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableRouteCreatorDeletedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableRouteCreatorDeleted)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableRouteCreatorDeletedArrayOutput) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutput() IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableRouteCreatorDeletedArrayOutput) ToIsVpcRoutingTableRouteCreatorDeletedArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableRouteCreatorDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableRouteCreatorDeletedArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableRouteCreatorDeletedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableRouteCreatorDeleted {
+		return vs[0].([]IsVpcRoutingTableRouteCreatorDeleted)[vs[1].(int)]
+	}).(IsVpcRoutingTableRouteCreatorDeletedOutput)
+}
+
+type IsVpcRoutingTableSubnet struct {
+	// Subnet ID
+	Id *string `pulumi:"id"`
+	// Subnet name
+	Name *string `pulumi:"name"`
+}
+
+// IsVpcRoutingTableSubnetInput is an input type that accepts IsVpcRoutingTableSubnetArgs and IsVpcRoutingTableSubnetOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableSubnetInput` via:
+//
+//	IsVpcRoutingTableSubnetArgs{...}
+type IsVpcRoutingTableSubnetInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableSubnetOutput() IsVpcRoutingTableSubnetOutput
+	ToIsVpcRoutingTableSubnetOutputWithContext(context.Context) IsVpcRoutingTableSubnetOutput
+}
+
+type IsVpcRoutingTableSubnetArgs struct {
+	// Subnet ID
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Subnet name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (IsVpcRoutingTableSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableSubnet)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableSubnetArgs) ToIsVpcRoutingTableSubnetOutput() IsVpcRoutingTableSubnetOutput {
+	return i.ToIsVpcRoutingTableSubnetOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableSubnetArgs) ToIsVpcRoutingTableSubnetOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableSubnetOutput)
+}
+
+// IsVpcRoutingTableSubnetArrayInput is an input type that accepts IsVpcRoutingTableSubnetArray and IsVpcRoutingTableSubnetArrayOutput values.
+// You can construct a concrete instance of `IsVpcRoutingTableSubnetArrayInput` via:
+//
+//	IsVpcRoutingTableSubnetArray{ IsVpcRoutingTableSubnetArgs{...} }
+type IsVpcRoutingTableSubnetArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcRoutingTableSubnetArrayOutput() IsVpcRoutingTableSubnetArrayOutput
+	ToIsVpcRoutingTableSubnetArrayOutputWithContext(context.Context) IsVpcRoutingTableSubnetArrayOutput
+}
+
+type IsVpcRoutingTableSubnetArray []IsVpcRoutingTableSubnetInput
+
+func (IsVpcRoutingTableSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableSubnet)(nil)).Elem()
+}
+
+func (i IsVpcRoutingTableSubnetArray) ToIsVpcRoutingTableSubnetArrayOutput() IsVpcRoutingTableSubnetArrayOutput {
+	return i.ToIsVpcRoutingTableSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcRoutingTableSubnetArray) ToIsVpcRoutingTableSubnetArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcRoutingTableSubnetArrayOutput)
+}
+
+type IsVpcRoutingTableSubnetOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcRoutingTableSubnet)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableSubnetOutput) ToIsVpcRoutingTableSubnetOutput() IsVpcRoutingTableSubnetOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableSubnetOutput) ToIsVpcRoutingTableSubnetOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetOutput {
+	return o
+}
+
+// Subnet ID
+func (o IsVpcRoutingTableSubnetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableSubnet) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Subnet name
+func (o IsVpcRoutingTableSubnetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcRoutingTableSubnet) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcRoutingTableSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcRoutingTableSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcRoutingTableSubnet)(nil)).Elem()
+}
+
+func (o IsVpcRoutingTableSubnetArrayOutput) ToIsVpcRoutingTableSubnetArrayOutput() IsVpcRoutingTableSubnetArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableSubnetArrayOutput) ToIsVpcRoutingTableSubnetArrayOutputWithContext(ctx context.Context) IsVpcRoutingTableSubnetArrayOutput {
+	return o
+}
+
+func (o IsVpcRoutingTableSubnetArrayOutput) Index(i pulumi.IntInput) IsVpcRoutingTableSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcRoutingTableSubnet {
+		return vs[0].([]IsVpcRoutingTableSubnet)[vs[1].(int)]
+	}).(IsVpcRoutingTableSubnetOutput)
+}
+
+type IsVpcSecurityGroup struct {
+	// Security group id
+	GroupId *string `pulumi:"groupId"`
+	// Security group name
+	GroupName *string `pulumi:"groupName"`
+	// Security Rules
+	Rules []IsVpcSecurityGroupRule `pulumi:"rules"`
+}
+
+// IsVpcSecurityGroupInput is an input type that accepts IsVpcSecurityGroupArgs and IsVpcSecurityGroupOutput values.
+// You can construct a concrete instance of `IsVpcSecurityGroupInput` via:
+//
+//	IsVpcSecurityGroupArgs{...}
+type IsVpcSecurityGroupInput interface {
+	pulumi.Input
+
+	ToIsVpcSecurityGroupOutput() IsVpcSecurityGroupOutput
+	ToIsVpcSecurityGroupOutputWithContext(context.Context) IsVpcSecurityGroupOutput
+}
+
+type IsVpcSecurityGroupArgs struct {
+	// Security group id
+	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
+	// Security group name
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+	// Security Rules
+	Rules IsVpcSecurityGroupRuleArrayInput `pulumi:"rules"`
+}
+
+func (IsVpcSecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcSecurityGroup)(nil)).Elem()
+}
+
+func (i IsVpcSecurityGroupArgs) ToIsVpcSecurityGroupOutput() IsVpcSecurityGroupOutput {
+	return i.ToIsVpcSecurityGroupOutputWithContext(context.Background())
+}
+
+func (i IsVpcSecurityGroupArgs) ToIsVpcSecurityGroupOutputWithContext(ctx context.Context) IsVpcSecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupOutput)
+}
+
+// IsVpcSecurityGroupArrayInput is an input type that accepts IsVpcSecurityGroupArray and IsVpcSecurityGroupArrayOutput values.
+// You can construct a concrete instance of `IsVpcSecurityGroupArrayInput` via:
+//
+//	IsVpcSecurityGroupArray{ IsVpcSecurityGroupArgs{...} }
+type IsVpcSecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcSecurityGroupArrayOutput() IsVpcSecurityGroupArrayOutput
+	ToIsVpcSecurityGroupArrayOutputWithContext(context.Context) IsVpcSecurityGroupArrayOutput
+}
+
+type IsVpcSecurityGroupArray []IsVpcSecurityGroupInput
+
+func (IsVpcSecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcSecurityGroup)(nil)).Elem()
+}
+
+func (i IsVpcSecurityGroupArray) ToIsVpcSecurityGroupArrayOutput() IsVpcSecurityGroupArrayOutput {
+	return i.ToIsVpcSecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcSecurityGroupArray) ToIsVpcSecurityGroupArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupArrayOutput)
+}
+
+type IsVpcSecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (IsVpcSecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcSecurityGroup)(nil)).Elem()
+}
+
+func (o IsVpcSecurityGroupOutput) ToIsVpcSecurityGroupOutput() IsVpcSecurityGroupOutput {
+	return o
+}
+
+func (o IsVpcSecurityGroupOutput) ToIsVpcSecurityGroupOutputWithContext(ctx context.Context) IsVpcSecurityGroupOutput {
+	return o
+}
+
+// Security group id
+func (o IsVpcSecurityGroupOutput) GroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroup) *string { return v.GroupId }).(pulumi.StringPtrOutput)
+}
+
+// Security group name
+func (o IsVpcSecurityGroupOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroup) *string { return v.GroupName }).(pulumi.StringPtrOutput)
+}
+
+// Security Rules
+func (o IsVpcSecurityGroupOutput) Rules() IsVpcSecurityGroupRuleArrayOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroup) []IsVpcSecurityGroupRule { return v.Rules }).(IsVpcSecurityGroupRuleArrayOutput)
+}
+
+type IsVpcSecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcSecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcSecurityGroup)(nil)).Elem()
+}
+
+func (o IsVpcSecurityGroupArrayOutput) ToIsVpcSecurityGroupArrayOutput() IsVpcSecurityGroupArrayOutput {
+	return o
+}
+
+func (o IsVpcSecurityGroupArrayOutput) ToIsVpcSecurityGroupArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupArrayOutput {
+	return o
+}
+
+func (o IsVpcSecurityGroupArrayOutput) Index(i pulumi.IntInput) IsVpcSecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcSecurityGroup {
+		return vs[0].([]IsVpcSecurityGroup)[vs[1].(int)]
+	}).(IsVpcSecurityGroupOutput)
+}
+
+type IsVpcSecurityGroupRule struct {
+	Code *int `pulumi:"code"`
+	// Direction of traffic to enforce, either inbound or outbound
+	Direction *string `pulumi:"direction"`
+	// IP version: ipv4
+	IpVersion *string `pulumi:"ipVersion"`
+	PortMax   *int    `pulumi:"portMax"`
+	PortMin   *int    `pulumi:"portMin"`
+	Protocol  *string `pulumi:"protocol"`
+	// Security group id: an IP address, a CIDR block, or a single security group identifier
+	Remote *string `pulumi:"remote"`
+	// Rule ID
+	RuleId *string `pulumi:"ruleId"`
+	Type   *int    `pulumi:"type"`
+}
+
+// IsVpcSecurityGroupRuleInput is an input type that accepts IsVpcSecurityGroupRuleArgs and IsVpcSecurityGroupRuleOutput values.
+// You can construct a concrete instance of `IsVpcSecurityGroupRuleInput` via:
+//
+//	IsVpcSecurityGroupRuleArgs{...}
+type IsVpcSecurityGroupRuleInput interface {
+	pulumi.Input
+
+	ToIsVpcSecurityGroupRuleOutput() IsVpcSecurityGroupRuleOutput
+	ToIsVpcSecurityGroupRuleOutputWithContext(context.Context) IsVpcSecurityGroupRuleOutput
+}
+
+type IsVpcSecurityGroupRuleArgs struct {
+	Code pulumi.IntPtrInput `pulumi:"code"`
+	// Direction of traffic to enforce, either inbound or outbound
+	Direction pulumi.StringPtrInput `pulumi:"direction"`
+	// IP version: ipv4
+	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
+	PortMax   pulumi.IntPtrInput    `pulumi:"portMax"`
+	PortMin   pulumi.IntPtrInput    `pulumi:"portMin"`
+	Protocol  pulumi.StringPtrInput `pulumi:"protocol"`
+	// Security group id: an IP address, a CIDR block, or a single security group identifier
+	Remote pulumi.StringPtrInput `pulumi:"remote"`
+	// Rule ID
+	RuleId pulumi.StringPtrInput `pulumi:"ruleId"`
+	Type   pulumi.IntPtrInput    `pulumi:"type"`
+}
+
+func (IsVpcSecurityGroupRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcSecurityGroupRule)(nil)).Elem()
+}
+
+func (i IsVpcSecurityGroupRuleArgs) ToIsVpcSecurityGroupRuleOutput() IsVpcSecurityGroupRuleOutput {
+	return i.ToIsVpcSecurityGroupRuleOutputWithContext(context.Background())
+}
+
+func (i IsVpcSecurityGroupRuleArgs) ToIsVpcSecurityGroupRuleOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupRuleOutput)
+}
+
+// IsVpcSecurityGroupRuleArrayInput is an input type that accepts IsVpcSecurityGroupRuleArray and IsVpcSecurityGroupRuleArrayOutput values.
+// You can construct a concrete instance of `IsVpcSecurityGroupRuleArrayInput` via:
+//
+//	IsVpcSecurityGroupRuleArray{ IsVpcSecurityGroupRuleArgs{...} }
+type IsVpcSecurityGroupRuleArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcSecurityGroupRuleArrayOutput() IsVpcSecurityGroupRuleArrayOutput
+	ToIsVpcSecurityGroupRuleArrayOutputWithContext(context.Context) IsVpcSecurityGroupRuleArrayOutput
+}
+
+type IsVpcSecurityGroupRuleArray []IsVpcSecurityGroupRuleInput
+
+func (IsVpcSecurityGroupRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcSecurityGroupRule)(nil)).Elem()
+}
+
+func (i IsVpcSecurityGroupRuleArray) ToIsVpcSecurityGroupRuleArrayOutput() IsVpcSecurityGroupRuleArrayOutput {
+	return i.ToIsVpcSecurityGroupRuleArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcSecurityGroupRuleArray) ToIsVpcSecurityGroupRuleArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSecurityGroupRuleArrayOutput)
+}
+
+type IsVpcSecurityGroupRuleOutput struct{ *pulumi.OutputState }
+
+func (IsVpcSecurityGroupRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcSecurityGroupRule)(nil)).Elem()
+}
+
+func (o IsVpcSecurityGroupRuleOutput) ToIsVpcSecurityGroupRuleOutput() IsVpcSecurityGroupRuleOutput {
+	return o
+}
+
+func (o IsVpcSecurityGroupRuleOutput) ToIsVpcSecurityGroupRuleOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleOutput {
+	return o
+}
+
+func (o IsVpcSecurityGroupRuleOutput) Code() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.Code }).(pulumi.IntPtrOutput)
+}
+
+// Direction of traffic to enforce, either inbound or outbound
+func (o IsVpcSecurityGroupRuleOutput) Direction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.Direction }).(pulumi.StringPtrOutput)
+}
+
+// IP version: ipv4
+func (o IsVpcSecurityGroupRuleOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
+}
+
+func (o IsVpcSecurityGroupRuleOutput) PortMax() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.PortMax }).(pulumi.IntPtrOutput)
+}
+
+func (o IsVpcSecurityGroupRuleOutput) PortMin() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.PortMin }).(pulumi.IntPtrOutput)
+}
+
+func (o IsVpcSecurityGroupRuleOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// Security group id: an IP address, a CIDR block, or a single security group identifier
+func (o IsVpcSecurityGroupRuleOutput) Remote() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.Remote }).(pulumi.StringPtrOutput)
+}
+
+// Rule ID
+func (o IsVpcSecurityGroupRuleOutput) RuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *string { return v.RuleId }).(pulumi.StringPtrOutput)
+}
+
+func (o IsVpcSecurityGroupRuleOutput) Type() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IsVpcSecurityGroupRule) *int { return v.Type }).(pulumi.IntPtrOutput)
+}
+
+type IsVpcSecurityGroupRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcSecurityGroupRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcSecurityGroupRule)(nil)).Elem()
+}
+
+func (o IsVpcSecurityGroupRuleArrayOutput) ToIsVpcSecurityGroupRuleArrayOutput() IsVpcSecurityGroupRuleArrayOutput {
+	return o
+}
+
+func (o IsVpcSecurityGroupRuleArrayOutput) ToIsVpcSecurityGroupRuleArrayOutputWithContext(ctx context.Context) IsVpcSecurityGroupRuleArrayOutput {
+	return o
+}
+
+func (o IsVpcSecurityGroupRuleArrayOutput) Index(i pulumi.IntInput) IsVpcSecurityGroupRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcSecurityGroupRule {
+		return vs[0].([]IsVpcSecurityGroupRule)[vs[1].(int)]
+	}).(IsVpcSecurityGroupRuleOutput)
+}
+
+type IsVpcSubnet struct {
+	// Available IPv4 address count in the subnet
+	AvailableIpv4AddressCount *int `pulumi:"availableIpv4AddressCount"`
+	// subnet ID
+	Id *string `pulumi:"id"`
+	// subent name
+	Name *string `pulumi:"name"`
+	// subnet status
+	Status *string `pulumi:"status"`
+	// Total IPv4 address count in the subnet
+	TotalIpv4AddressCount *int `pulumi:"totalIpv4AddressCount"`
+	// subnet location
+	Zone *string `pulumi:"zone"`
+}
+
+// IsVpcSubnetInput is an input type that accepts IsVpcSubnetArgs and IsVpcSubnetOutput values.
+// You can construct a concrete instance of `IsVpcSubnetInput` via:
+//
+//	IsVpcSubnetArgs{...}
+type IsVpcSubnetInput interface {
+	pulumi.Input
+
+	ToIsVpcSubnetOutput() IsVpcSubnetOutput
+	ToIsVpcSubnetOutputWithContext(context.Context) IsVpcSubnetOutput
+}
+
+type IsVpcSubnetArgs struct {
+	// Available IPv4 address count in the subnet
+	AvailableIpv4AddressCount pulumi.IntPtrInput `pulumi:"availableIpv4AddressCount"`
+	// subnet ID
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// subent name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// subnet status
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Total IPv4 address count in the subnet
+	TotalIpv4AddressCount pulumi.IntPtrInput `pulumi:"totalIpv4AddressCount"`
+	// subnet location
+	Zone pulumi.StringPtrInput `pulumi:"zone"`
+}
+
+func (IsVpcSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcSubnet)(nil)).Elem()
+}
+
+func (i IsVpcSubnetArgs) ToIsVpcSubnetOutput() IsVpcSubnetOutput {
+	return i.ToIsVpcSubnetOutputWithContext(context.Background())
+}
+
+func (i IsVpcSubnetArgs) ToIsVpcSubnetOutputWithContext(ctx context.Context) IsVpcSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSubnetOutput)
+}
+
+// IsVpcSubnetArrayInput is an input type that accepts IsVpcSubnetArray and IsVpcSubnetArrayOutput values.
+// You can construct a concrete instance of `IsVpcSubnetArrayInput` via:
+//
+//	IsVpcSubnetArray{ IsVpcSubnetArgs{...} }
+type IsVpcSubnetArrayInput interface {
+	pulumi.Input
+
+	ToIsVpcSubnetArrayOutput() IsVpcSubnetArrayOutput
+	ToIsVpcSubnetArrayOutputWithContext(context.Context) IsVpcSubnetArrayOutput
+}
+
+type IsVpcSubnetArray []IsVpcSubnetInput
+
+func (IsVpcSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcSubnet)(nil)).Elem()
+}
+
+func (i IsVpcSubnetArray) ToIsVpcSubnetArrayOutput() IsVpcSubnetArrayOutput {
+	return i.ToIsVpcSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpcSubnetArray) ToIsVpcSubnetArrayOutputWithContext(ctx context.Context) IsVpcSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpcSubnetArrayOutput)
+}
+
+type IsVpcSubnetOutput struct{ *pulumi.OutputState }
+
+func (IsVpcSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpcSubnet)(nil)).Elem()
+}
+
+func (o IsVpcSubnetOutput) ToIsVpcSubnetOutput() IsVpcSubnetOutput {
+	return o
+}
+
+func (o IsVpcSubnetOutput) ToIsVpcSubnetOutputWithContext(ctx context.Context) IsVpcSubnetOutput {
+	return o
+}
+
+// Available IPv4 address count in the subnet
+func (o IsVpcSubnetOutput) AvailableIpv4AddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IsVpcSubnet) *int { return v.AvailableIpv4AddressCount }).(pulumi.IntPtrOutput)
+}
+
+// subnet ID
+func (o IsVpcSubnetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// subent name
+func (o IsVpcSubnetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// subnet status
+func (o IsVpcSubnetOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Total IPv4 address count in the subnet
+func (o IsVpcSubnetOutput) TotalIpv4AddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IsVpcSubnet) *int { return v.TotalIpv4AddressCount }).(pulumi.IntPtrOutput)
+}
+
+// subnet location
+func (o IsVpcSubnetOutput) Zone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpcSubnet) *string { return v.Zone }).(pulumi.StringPtrOutput)
+}
+
+type IsVpcSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpcSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpcSubnet)(nil)).Elem()
+}
+
+func (o IsVpcSubnetArrayOutput) ToIsVpcSubnetArrayOutput() IsVpcSubnetArrayOutput {
+	return o
+}
+
+func (o IsVpcSubnetArrayOutput) ToIsVpcSubnetArrayOutputWithContext(ctx context.Context) IsVpcSubnetArrayOutput {
+	return o
+}
+
+func (o IsVpcSubnetArrayOutput) Index(i pulumi.IntInput) IsVpcSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpcSubnet {
+		return vs[0].([]IsVpcSubnet)[vs[1].(int)]
+	}).(IsVpcSubnetOutput)
+}
+
+type IsVpnGatewayConnectionLocal struct {
+	// VPN gateway connection local CIDRs
+	Cidrs []string `pulumi:"cidrs"`
+	// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
+	IkeIdentities []IsVpnGatewayConnectionLocalIkeIdentity `pulumi:"ikeIdentities"`
+}
+
+// IsVpnGatewayConnectionLocalInput is an input type that accepts IsVpnGatewayConnectionLocalArgs and IsVpnGatewayConnectionLocalOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionLocalInput` via:
+//
+//	IsVpnGatewayConnectionLocalArgs{...}
+type IsVpnGatewayConnectionLocalInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionLocalOutput() IsVpnGatewayConnectionLocalOutput
+	ToIsVpnGatewayConnectionLocalOutputWithContext(context.Context) IsVpnGatewayConnectionLocalOutput
+}
+
+type IsVpnGatewayConnectionLocalArgs struct {
+	// VPN gateway connection local CIDRs
+	Cidrs pulumi.StringArrayInput `pulumi:"cidrs"`
+	// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
+	IkeIdentities IsVpnGatewayConnectionLocalIkeIdentityArrayInput `pulumi:"ikeIdentities"`
+}
+
+func (IsVpnGatewayConnectionLocalArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionLocal)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalOutput() IsVpnGatewayConnectionLocalOutput {
+	return i.ToIsVpnGatewayConnectionLocalOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalOutput)
+}
+
+func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
+	return i.ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionLocalArgs) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalOutput).ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx)
+}
+
+// IsVpnGatewayConnectionLocalPtrInput is an input type that accepts IsVpnGatewayConnectionLocalArgs, IsVpnGatewayConnectionLocalPtr and IsVpnGatewayConnectionLocalPtrOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionLocalPtrInput` via:
+//
+//	        IsVpnGatewayConnectionLocalArgs{...}
+//
+//	or:
+//
+//	        nil
+type IsVpnGatewayConnectionLocalPtrInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput
+	ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Context) IsVpnGatewayConnectionLocalPtrOutput
+}
+
+type isVpnGatewayConnectionLocalPtrType IsVpnGatewayConnectionLocalArgs
+
+func IsVpnGatewayConnectionLocalPtr(v *IsVpnGatewayConnectionLocalArgs) IsVpnGatewayConnectionLocalPtrInput {
+	return (*isVpnGatewayConnectionLocalPtrType)(v)
+}
+
+func (*isVpnGatewayConnectionLocalPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IsVpnGatewayConnectionLocal)(nil)).Elem()
+}
+
+func (i *isVpnGatewayConnectionLocalPtrType) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
+	return i.ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Background())
+}
+
+func (i *isVpnGatewayConnectionLocalPtrType) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalPtrOutput)
+}
+
+type IsVpnGatewayConnectionLocalOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionLocalOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionLocal)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalOutput() IsVpnGatewayConnectionLocalOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
+	return o.ToIsVpnGatewayConnectionLocalPtrOutputWithContext(context.Background())
+}
+
+func (o IsVpnGatewayConnectionLocalOutput) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IsVpnGatewayConnectionLocal) *IsVpnGatewayConnectionLocal {
+		return &v
+	}).(IsVpnGatewayConnectionLocalPtrOutput)
+}
+
+// VPN gateway connection local CIDRs
+func (o IsVpnGatewayConnectionLocalOutput) Cidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionLocal) []string { return v.Cidrs }).(pulumi.StringArrayOutput)
+}
+
+// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
+func (o IsVpnGatewayConnectionLocalOutput) IkeIdentities() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionLocal) []IsVpnGatewayConnectionLocalIkeIdentity { return v.IkeIdentities }).(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput)
+}
+
+type IsVpnGatewayConnectionLocalPtrOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionLocalPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IsVpnGatewayConnectionLocal)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionLocalPtrOutput) ToIsVpnGatewayConnectionLocalPtrOutput() IsVpnGatewayConnectionLocalPtrOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionLocalPtrOutput) ToIsVpnGatewayConnectionLocalPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalPtrOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionLocalPtrOutput) Elem() IsVpnGatewayConnectionLocalOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionLocal) IsVpnGatewayConnectionLocal {
+		if v != nil {
+			return *v
+		}
+		var ret IsVpnGatewayConnectionLocal
+		return ret
+	}).(IsVpnGatewayConnectionLocalOutput)
+}
+
+// VPN gateway connection local CIDRs
+func (o IsVpnGatewayConnectionLocalPtrOutput) Cidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionLocal) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cidrs
+	}).(pulumi.StringArrayOutput)
+}
+
+// The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
+func (o IsVpnGatewayConnectionLocalPtrOutput) IkeIdentities() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionLocal) []IsVpnGatewayConnectionLocalIkeIdentity {
+		if v == nil {
+			return nil
+		}
+		return v.IkeIdentities
+	}).(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput)
+}
+
+type IsVpnGatewayConnectionLocalIkeIdentity struct {
+	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+	Type string `pulumi:"type"`
+	// The IKE identity FQDN value.
+	Value *string `pulumi:"value"`
+}
+
+// IsVpnGatewayConnectionLocalIkeIdentityInput is an input type that accepts IsVpnGatewayConnectionLocalIkeIdentityArgs and IsVpnGatewayConnectionLocalIkeIdentityOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionLocalIkeIdentityInput` via:
+//
+//	IsVpnGatewayConnectionLocalIkeIdentityArgs{...}
+type IsVpnGatewayConnectionLocalIkeIdentityInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionLocalIkeIdentityOutput() IsVpnGatewayConnectionLocalIkeIdentityOutput
+	ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(context.Context) IsVpnGatewayConnectionLocalIkeIdentityOutput
+}
+
+type IsVpnGatewayConnectionLocalIkeIdentityArgs struct {
+	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The IKE identity FQDN value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IsVpnGatewayConnectionLocalIkeIdentityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionLocalIkeIdentityArgs) ToIsVpnGatewayConnectionLocalIkeIdentityOutput() IsVpnGatewayConnectionLocalIkeIdentityOutput {
+	return i.ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionLocalIkeIdentityArgs) ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalIkeIdentityOutput)
+}
+
+// IsVpnGatewayConnectionLocalIkeIdentityArrayInput is an input type that accepts IsVpnGatewayConnectionLocalIkeIdentityArray and IsVpnGatewayConnectionLocalIkeIdentityArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionLocalIkeIdentityArrayInput` via:
+//
+//	IsVpnGatewayConnectionLocalIkeIdentityArray{ IsVpnGatewayConnectionLocalIkeIdentityArgs{...} }
+type IsVpnGatewayConnectionLocalIkeIdentityArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutput() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput
+	ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(context.Context) IsVpnGatewayConnectionLocalIkeIdentityArrayOutput
+}
+
+type IsVpnGatewayConnectionLocalIkeIdentityArray []IsVpnGatewayConnectionLocalIkeIdentityInput
+
+func (IsVpnGatewayConnectionLocalIkeIdentityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionLocalIkeIdentityArray) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutput() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
+	return i.ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionLocalIkeIdentityArray) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput)
+}
+
+type IsVpnGatewayConnectionLocalIkeIdentityOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionLocalIkeIdentityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) ToIsVpnGatewayConnectionLocalIkeIdentityOutput() IsVpnGatewayConnectionLocalIkeIdentityOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) ToIsVpnGatewayConnectionLocalIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityOutput {
+	return o
+}
+
+// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionLocalIkeIdentity) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The IKE identity FQDN value.
+func (o IsVpnGatewayConnectionLocalIkeIdentityOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionLocalIkeIdentity) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayConnectionLocalIkeIdentityArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayConnectionLocalIkeIdentity)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutput() IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) ToIsVpnGatewayConnectionLocalIkeIdentityArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionLocalIkeIdentityArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionLocalIkeIdentityArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayConnectionLocalIkeIdentityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayConnectionLocalIkeIdentity {
+		return vs[0].([]IsVpnGatewayConnectionLocalIkeIdentity)[vs[1].(int)]
+	}).(IsVpnGatewayConnectionLocalIkeIdentityOutput)
+}
+
+type IsVpnGatewayConnectionPeer struct {
+	// The IP address of the peer VPN gateway for this connection.
+	Address *string `pulumi:"address"`
+	// VPN gateway connection peer CIDRs
+	Cidrs []string `pulumi:"cidrs"`
+	// The FQDN of the peer VPN gateway for this connection.
+	Fqdn *string `pulumi:"fqdn"`
+	// The peer IKE identity.
+	IkeIdentity *IsVpnGatewayConnectionPeerIkeIdentity `pulumi:"ikeIdentity"`
+	// Indicates whether `peer.address` or `peer.fqdn` is used.
+	Type *string `pulumi:"type"`
+}
+
+// IsVpnGatewayConnectionPeerInput is an input type that accepts IsVpnGatewayConnectionPeerArgs and IsVpnGatewayConnectionPeerOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionPeerInput` via:
+//
+//	IsVpnGatewayConnectionPeerArgs{...}
+type IsVpnGatewayConnectionPeerInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionPeerOutput() IsVpnGatewayConnectionPeerOutput
+	ToIsVpnGatewayConnectionPeerOutputWithContext(context.Context) IsVpnGatewayConnectionPeerOutput
+}
+
+type IsVpnGatewayConnectionPeerArgs struct {
+	// The IP address of the peer VPN gateway for this connection.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// VPN gateway connection peer CIDRs
+	Cidrs pulumi.StringArrayInput `pulumi:"cidrs"`
+	// The FQDN of the peer VPN gateway for this connection.
+	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
+	// The peer IKE identity.
+	IkeIdentity IsVpnGatewayConnectionPeerIkeIdentityPtrInput `pulumi:"ikeIdentity"`
+	// Indicates whether `peer.address` or `peer.fqdn` is used.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (IsVpnGatewayConnectionPeerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionPeer)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerOutput() IsVpnGatewayConnectionPeerOutput {
+	return i.ToIsVpnGatewayConnectionPeerOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerOutput)
+}
+
+func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
+	return i.ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionPeerArgs) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerOutput).ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx)
+}
+
+// IsVpnGatewayConnectionPeerPtrInput is an input type that accepts IsVpnGatewayConnectionPeerArgs, IsVpnGatewayConnectionPeerPtr and IsVpnGatewayConnectionPeerPtrOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionPeerPtrInput` via:
+//
+//	        IsVpnGatewayConnectionPeerArgs{...}
+//
+//	or:
+//
+//	        nil
+type IsVpnGatewayConnectionPeerPtrInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput
+	ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Context) IsVpnGatewayConnectionPeerPtrOutput
+}
+
+type isVpnGatewayConnectionPeerPtrType IsVpnGatewayConnectionPeerArgs
+
+func IsVpnGatewayConnectionPeerPtr(v *IsVpnGatewayConnectionPeerArgs) IsVpnGatewayConnectionPeerPtrInput {
+	return (*isVpnGatewayConnectionPeerPtrType)(v)
+}
+
+func (*isVpnGatewayConnectionPeerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IsVpnGatewayConnectionPeer)(nil)).Elem()
+}
+
+func (i *isVpnGatewayConnectionPeerPtrType) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
+	return i.ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Background())
+}
+
+func (i *isVpnGatewayConnectionPeerPtrType) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerPtrOutput)
+}
+
+type IsVpnGatewayConnectionPeerOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionPeerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionPeer)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerOutput() IsVpnGatewayConnectionPeerOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
+	return o.ToIsVpnGatewayConnectionPeerPtrOutputWithContext(context.Background())
+}
+
+func (o IsVpnGatewayConnectionPeerOutput) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IsVpnGatewayConnectionPeer) *IsVpnGatewayConnectionPeer {
+		return &v
+	}).(IsVpnGatewayConnectionPeerPtrOutput)
+}
+
+// The IP address of the peer VPN gateway for this connection.
+func (o IsVpnGatewayConnectionPeerOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// VPN gateway connection peer CIDRs
+func (o IsVpnGatewayConnectionPeerOutput) Cidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) []string { return v.Cidrs }).(pulumi.StringArrayOutput)
+}
+
+// The FQDN of the peer VPN gateway for this connection.
+func (o IsVpnGatewayConnectionPeerOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
+}
+
+// The peer IKE identity.
+func (o IsVpnGatewayConnectionPeerOutput) IkeIdentity() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *IsVpnGatewayConnectionPeerIkeIdentity { return v.IkeIdentity }).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
+}
+
+// Indicates whether `peer.address` or `peer.fqdn` is used.
+func (o IsVpnGatewayConnectionPeerOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionPeer) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayConnectionPeerPtrOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionPeerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IsVpnGatewayConnectionPeer)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionPeerPtrOutput) ToIsVpnGatewayConnectionPeerPtrOutput() IsVpnGatewayConnectionPeerPtrOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerPtrOutput) ToIsVpnGatewayConnectionPeerPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerPtrOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerPtrOutput) Elem() IsVpnGatewayConnectionPeerOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) IsVpnGatewayConnectionPeer {
+		if v != nil {
+			return *v
+		}
+		var ret IsVpnGatewayConnectionPeer
+		return ret
+	}).(IsVpnGatewayConnectionPeerOutput)
+}
+
+// The IP address of the peer VPN gateway for this connection.
+func (o IsVpnGatewayConnectionPeerPtrOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Address
+	}).(pulumi.StringPtrOutput)
+}
+
+// VPN gateway connection peer CIDRs
+func (o IsVpnGatewayConnectionPeerPtrOutput) Cidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cidrs
+	}).(pulumi.StringArrayOutput)
+}
+
+// The FQDN of the peer VPN gateway for this connection.
+func (o IsVpnGatewayConnectionPeerPtrOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Fqdn
+	}).(pulumi.StringPtrOutput)
+}
+
+// The peer IKE identity.
+func (o IsVpnGatewayConnectionPeerPtrOutput) IkeIdentity() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *IsVpnGatewayConnectionPeerIkeIdentity {
+		if v == nil {
+			return nil
+		}
+		return v.IkeIdentity
+	}).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
+}
+
+// Indicates whether `peer.address` or `peer.fqdn` is used.
+func (o IsVpnGatewayConnectionPeerPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeer) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayConnectionPeerIkeIdentity struct {
+	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+	Type string `pulumi:"type"`
+	// The IKE identity FQDN value.
+	Value *string `pulumi:"value"`
+}
+
+// IsVpnGatewayConnectionPeerIkeIdentityInput is an input type that accepts IsVpnGatewayConnectionPeerIkeIdentityArgs and IsVpnGatewayConnectionPeerIkeIdentityOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionPeerIkeIdentityInput` via:
+//
+//	IsVpnGatewayConnectionPeerIkeIdentityArgs{...}
+type IsVpnGatewayConnectionPeerIkeIdentityInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionPeerIkeIdentityOutput() IsVpnGatewayConnectionPeerIkeIdentityOutput
+	ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(context.Context) IsVpnGatewayConnectionPeerIkeIdentityOutput
+}
+
+type IsVpnGatewayConnectionPeerIkeIdentityArgs struct {
+	// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The IKE identity FQDN value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IsVpnGatewayConnectionPeerIkeIdentityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityOutput() IsVpnGatewayConnectionPeerIkeIdentityOutput {
+	return i.ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerIkeIdentityOutput)
+}
+
+func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return i.ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionPeerIkeIdentityArgs) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerIkeIdentityOutput).ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx)
+}
+
+// IsVpnGatewayConnectionPeerIkeIdentityPtrInput is an input type that accepts IsVpnGatewayConnectionPeerIkeIdentityArgs, IsVpnGatewayConnectionPeerIkeIdentityPtr and IsVpnGatewayConnectionPeerIkeIdentityPtrOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionPeerIkeIdentityPtrInput` via:
+//
+//	        IsVpnGatewayConnectionPeerIkeIdentityArgs{...}
+//
+//	or:
+//
+//	        nil
+type IsVpnGatewayConnectionPeerIkeIdentityPtrInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput
+	ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput
+}
+
+type isVpnGatewayConnectionPeerIkeIdentityPtrType IsVpnGatewayConnectionPeerIkeIdentityArgs
+
+func IsVpnGatewayConnectionPeerIkeIdentityPtr(v *IsVpnGatewayConnectionPeerIkeIdentityArgs) IsVpnGatewayConnectionPeerIkeIdentityPtrInput {
+	return (*isVpnGatewayConnectionPeerIkeIdentityPtrType)(v)
+}
+
+func (*isVpnGatewayConnectionPeerIkeIdentityPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+}
+
+func (i *isVpnGatewayConnectionPeerIkeIdentityPtrType) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return i.ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Background())
+}
+
+func (i *isVpnGatewayConnectionPeerIkeIdentityPtrType) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
+}
+
+type IsVpnGatewayConnectionPeerIkeIdentityOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionPeerIkeIdentityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityOutput() IsVpnGatewayConnectionPeerIkeIdentityOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return o.ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(context.Background())
+}
+
+func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IsVpnGatewayConnectionPeerIkeIdentity) *IsVpnGatewayConnectionPeerIkeIdentity {
+		return &v
+	}).(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput)
+}
+
+// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionPeerIkeIdentity) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The IKE identity FQDN value.
+func (o IsVpnGatewayConnectionPeerIkeIdentityOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionPeerIkeIdentity) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayConnectionPeerIkeIdentityPtrOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IsVpnGatewayConnectionPeerIkeIdentity)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutput() IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) ToIsVpnGatewayConnectionPeerIkeIdentityPtrOutputWithContext(ctx context.Context) IsVpnGatewayConnectionPeerIkeIdentityPtrOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) Elem() IsVpnGatewayConnectionPeerIkeIdentityOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeerIkeIdentity) IsVpnGatewayConnectionPeerIkeIdentity {
+		if v != nil {
+			return *v
+		}
+		var ret IsVpnGatewayConnectionPeerIkeIdentity
+		return ret
+	}).(IsVpnGatewayConnectionPeerIkeIdentityOutput)
+}
+
+// The IKE identity type.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the backup policy on which the unexpected property value was encountered.
+func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeerIkeIdentity) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// The IKE identity FQDN value.
+func (o IsVpnGatewayConnectionPeerIkeIdentityPtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IsVpnGatewayConnectionPeerIkeIdentity) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayConnectionStatusReason struct {
+	// A snake case string succinctly identifying the status reason.
+	Code *string `pulumi:"code"`
+	// An explanation of the status reason.
+	Message *string `pulumi:"message"`
+	// Link to documentation about this status reason.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnGatewayConnectionStatusReasonInput is an input type that accepts IsVpnGatewayConnectionStatusReasonArgs and IsVpnGatewayConnectionStatusReasonOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionStatusReasonInput` via:
+//
+//	IsVpnGatewayConnectionStatusReasonArgs{...}
+type IsVpnGatewayConnectionStatusReasonInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionStatusReasonOutput() IsVpnGatewayConnectionStatusReasonOutput
+	ToIsVpnGatewayConnectionStatusReasonOutputWithContext(context.Context) IsVpnGatewayConnectionStatusReasonOutput
+}
+
+type IsVpnGatewayConnectionStatusReasonArgs struct {
+	// A snake case string succinctly identifying the status reason.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the status reason.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about this status reason.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnGatewayConnectionStatusReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionStatusReason)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionStatusReasonArgs) ToIsVpnGatewayConnectionStatusReasonOutput() IsVpnGatewayConnectionStatusReasonOutput {
+	return i.ToIsVpnGatewayConnectionStatusReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionStatusReasonArgs) ToIsVpnGatewayConnectionStatusReasonOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionStatusReasonOutput)
+}
+
+// IsVpnGatewayConnectionStatusReasonArrayInput is an input type that accepts IsVpnGatewayConnectionStatusReasonArray and IsVpnGatewayConnectionStatusReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionStatusReasonArrayInput` via:
+//
+//	IsVpnGatewayConnectionStatusReasonArray{ IsVpnGatewayConnectionStatusReasonArgs{...} }
+type IsVpnGatewayConnectionStatusReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionStatusReasonArrayOutput() IsVpnGatewayConnectionStatusReasonArrayOutput
+	ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(context.Context) IsVpnGatewayConnectionStatusReasonArrayOutput
+}
+
+type IsVpnGatewayConnectionStatusReasonArray []IsVpnGatewayConnectionStatusReasonInput
+
+func (IsVpnGatewayConnectionStatusReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayConnectionStatusReason)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionStatusReasonArray) ToIsVpnGatewayConnectionStatusReasonArrayOutput() IsVpnGatewayConnectionStatusReasonArrayOutput {
+	return i.ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionStatusReasonArray) ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionStatusReasonArrayOutput)
+}
+
+type IsVpnGatewayConnectionStatusReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionStatusReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionStatusReason)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionStatusReasonOutput) ToIsVpnGatewayConnectionStatusReasonOutput() IsVpnGatewayConnectionStatusReasonOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionStatusReasonOutput) ToIsVpnGatewayConnectionStatusReasonOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the status reason.
+func (o IsVpnGatewayConnectionStatusReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionStatusReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the status reason.
+func (o IsVpnGatewayConnectionStatusReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionStatusReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about this status reason.
+func (o IsVpnGatewayConnectionStatusReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionStatusReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayConnectionStatusReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionStatusReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayConnectionStatusReason)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionStatusReasonArrayOutput) ToIsVpnGatewayConnectionStatusReasonArrayOutput() IsVpnGatewayConnectionStatusReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionStatusReasonArrayOutput) ToIsVpnGatewayConnectionStatusReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionStatusReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionStatusReasonArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayConnectionStatusReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayConnectionStatusReason {
+		return vs[0].([]IsVpnGatewayConnectionStatusReason)[vs[1].(int)]
+	}).(IsVpnGatewayConnectionStatusReasonOutput)
+}
+
+type IsVpnGatewayConnectionTunnel struct {
+	// The IP address of the VPN gateway member in which the tunnel resides
+	Address *string `pulumi:"address"`
+	// The status of the VPN Tunnel
+	Status *string `pulumi:"status"`
+}
+
+// IsVpnGatewayConnectionTunnelInput is an input type that accepts IsVpnGatewayConnectionTunnelArgs and IsVpnGatewayConnectionTunnelOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionTunnelInput` via:
+//
+//	IsVpnGatewayConnectionTunnelArgs{...}
+type IsVpnGatewayConnectionTunnelInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionTunnelOutput() IsVpnGatewayConnectionTunnelOutput
+	ToIsVpnGatewayConnectionTunnelOutputWithContext(context.Context) IsVpnGatewayConnectionTunnelOutput
+}
+
+type IsVpnGatewayConnectionTunnelArgs struct {
+	// The IP address of the VPN gateway member in which the tunnel resides
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// The status of the VPN Tunnel
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (IsVpnGatewayConnectionTunnelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionTunnelArgs) ToIsVpnGatewayConnectionTunnelOutput() IsVpnGatewayConnectionTunnelOutput {
+	return i.ToIsVpnGatewayConnectionTunnelOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionTunnelArgs) ToIsVpnGatewayConnectionTunnelOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionTunnelOutput)
+}
+
+// IsVpnGatewayConnectionTunnelArrayInput is an input type that accepts IsVpnGatewayConnectionTunnelArray and IsVpnGatewayConnectionTunnelArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayConnectionTunnelArrayInput` via:
+//
+//	IsVpnGatewayConnectionTunnelArray{ IsVpnGatewayConnectionTunnelArgs{...} }
+type IsVpnGatewayConnectionTunnelArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayConnectionTunnelArrayOutput() IsVpnGatewayConnectionTunnelArrayOutput
+	ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(context.Context) IsVpnGatewayConnectionTunnelArrayOutput
+}
+
+type IsVpnGatewayConnectionTunnelArray []IsVpnGatewayConnectionTunnelInput
+
+func (IsVpnGatewayConnectionTunnelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (i IsVpnGatewayConnectionTunnelArray) ToIsVpnGatewayConnectionTunnelArrayOutput() IsVpnGatewayConnectionTunnelArrayOutput {
+	return i.ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayConnectionTunnelArray) ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayConnectionTunnelArrayOutput)
+}
+
+type IsVpnGatewayConnectionTunnelOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionTunnelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionTunnelOutput) ToIsVpnGatewayConnectionTunnelOutput() IsVpnGatewayConnectionTunnelOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionTunnelOutput) ToIsVpnGatewayConnectionTunnelOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelOutput {
+	return o
+}
+
+// The IP address of the VPN gateway member in which the tunnel resides
+func (o IsVpnGatewayConnectionTunnelOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionTunnel) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// The status of the VPN Tunnel
+func (o IsVpnGatewayConnectionTunnelOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayConnectionTunnel) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayConnectionTunnelArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayConnectionTunnelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayConnectionTunnel)(nil)).Elem()
+}
+
+func (o IsVpnGatewayConnectionTunnelArrayOutput) ToIsVpnGatewayConnectionTunnelArrayOutput() IsVpnGatewayConnectionTunnelArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionTunnelArrayOutput) ToIsVpnGatewayConnectionTunnelArrayOutputWithContext(ctx context.Context) IsVpnGatewayConnectionTunnelArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayConnectionTunnelArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayConnectionTunnelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayConnectionTunnel {
+		return vs[0].([]IsVpnGatewayConnectionTunnel)[vs[1].(int)]
+	}).(IsVpnGatewayConnectionTunnelOutput)
+}
+
+type IsVpnGatewayHealthReason struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code *string `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message *string `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnGatewayHealthReasonInput is an input type that accepts IsVpnGatewayHealthReasonArgs and IsVpnGatewayHealthReasonOutput values.
+// You can construct a concrete instance of `IsVpnGatewayHealthReasonInput` via:
+//
+//	IsVpnGatewayHealthReasonArgs{...}
+type IsVpnGatewayHealthReasonInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayHealthReasonOutput() IsVpnGatewayHealthReasonOutput
+	ToIsVpnGatewayHealthReasonOutputWithContext(context.Context) IsVpnGatewayHealthReasonOutput
+}
+
+type IsVpnGatewayHealthReasonArgs struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnGatewayHealthReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayHealthReason)(nil)).Elem()
+}
+
+func (i IsVpnGatewayHealthReasonArgs) ToIsVpnGatewayHealthReasonOutput() IsVpnGatewayHealthReasonOutput {
+	return i.ToIsVpnGatewayHealthReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayHealthReasonArgs) ToIsVpnGatewayHealthReasonOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayHealthReasonOutput)
+}
+
+// IsVpnGatewayHealthReasonArrayInput is an input type that accepts IsVpnGatewayHealthReasonArray and IsVpnGatewayHealthReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayHealthReasonArrayInput` via:
+//
+//	IsVpnGatewayHealthReasonArray{ IsVpnGatewayHealthReasonArgs{...} }
+type IsVpnGatewayHealthReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayHealthReasonArrayOutput() IsVpnGatewayHealthReasonArrayOutput
+	ToIsVpnGatewayHealthReasonArrayOutputWithContext(context.Context) IsVpnGatewayHealthReasonArrayOutput
+}
+
+type IsVpnGatewayHealthReasonArray []IsVpnGatewayHealthReasonInput
+
+func (IsVpnGatewayHealthReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayHealthReason)(nil)).Elem()
+}
+
+func (i IsVpnGatewayHealthReasonArray) ToIsVpnGatewayHealthReasonArrayOutput() IsVpnGatewayHealthReasonArrayOutput {
+	return i.ToIsVpnGatewayHealthReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayHealthReasonArray) ToIsVpnGatewayHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayHealthReasonArrayOutput)
+}
+
+type IsVpnGatewayHealthReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayHealthReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayHealthReason)(nil)).Elem()
+}
+
+func (o IsVpnGatewayHealthReasonOutput) ToIsVpnGatewayHealthReasonOutput() IsVpnGatewayHealthReasonOutput {
+	return o
+}
+
+func (o IsVpnGatewayHealthReasonOutput) ToIsVpnGatewayHealthReasonOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the reason for this health state.
+func (o IsVpnGatewayHealthReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the reason for this health state.
+func (o IsVpnGatewayHealthReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about the reason for this health state.
+func (o IsVpnGatewayHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayHealthReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayHealthReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayHealthReason)(nil)).Elem()
+}
+
+func (o IsVpnGatewayHealthReasonArrayOutput) ToIsVpnGatewayHealthReasonArrayOutput() IsVpnGatewayHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayHealthReasonArrayOutput) ToIsVpnGatewayHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayHealthReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayHealthReason {
+		return vs[0].([]IsVpnGatewayHealthReason)[vs[1].(int)]
+	}).(IsVpnGatewayHealthReasonOutput)
+}
+
+type IsVpnGatewayLifecycleReason struct {
+	// A snake case string succinctly identifying the reason for this lifecycle state.
+	Code *string `pulumi:"code"`
+	// An explanation of the reason for this lifecycle state.
+	Message *string `pulumi:"message"`
+	// Link to documentation about the reason for this lifecycle state.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnGatewayLifecycleReasonInput is an input type that accepts IsVpnGatewayLifecycleReasonArgs and IsVpnGatewayLifecycleReasonOutput values.
+// You can construct a concrete instance of `IsVpnGatewayLifecycleReasonInput` via:
+//
+//	IsVpnGatewayLifecycleReasonArgs{...}
+type IsVpnGatewayLifecycleReasonInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayLifecycleReasonOutput() IsVpnGatewayLifecycleReasonOutput
+	ToIsVpnGatewayLifecycleReasonOutputWithContext(context.Context) IsVpnGatewayLifecycleReasonOutput
+}
+
+type IsVpnGatewayLifecycleReasonArgs struct {
+	// A snake case string succinctly identifying the reason for this lifecycle state.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the reason for this lifecycle state.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about the reason for this lifecycle state.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnGatewayLifecycleReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayLifecycleReason)(nil)).Elem()
+}
+
+func (i IsVpnGatewayLifecycleReasonArgs) ToIsVpnGatewayLifecycleReasonOutput() IsVpnGatewayLifecycleReasonOutput {
+	return i.ToIsVpnGatewayLifecycleReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayLifecycleReasonArgs) ToIsVpnGatewayLifecycleReasonOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayLifecycleReasonOutput)
+}
+
+// IsVpnGatewayLifecycleReasonArrayInput is an input type that accepts IsVpnGatewayLifecycleReasonArray and IsVpnGatewayLifecycleReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayLifecycleReasonArrayInput` via:
+//
+//	IsVpnGatewayLifecycleReasonArray{ IsVpnGatewayLifecycleReasonArgs{...} }
+type IsVpnGatewayLifecycleReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayLifecycleReasonArrayOutput() IsVpnGatewayLifecycleReasonArrayOutput
+	ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(context.Context) IsVpnGatewayLifecycleReasonArrayOutput
+}
+
+type IsVpnGatewayLifecycleReasonArray []IsVpnGatewayLifecycleReasonInput
+
+func (IsVpnGatewayLifecycleReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayLifecycleReason)(nil)).Elem()
+}
+
+func (i IsVpnGatewayLifecycleReasonArray) ToIsVpnGatewayLifecycleReasonArrayOutput() IsVpnGatewayLifecycleReasonArrayOutput {
+	return i.ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayLifecycleReasonArray) ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayLifecycleReasonArrayOutput)
+}
+
+type IsVpnGatewayLifecycleReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayLifecycleReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayLifecycleReason)(nil)).Elem()
+}
+
+func (o IsVpnGatewayLifecycleReasonOutput) ToIsVpnGatewayLifecycleReasonOutput() IsVpnGatewayLifecycleReasonOutput {
+	return o
+}
+
+func (o IsVpnGatewayLifecycleReasonOutput) ToIsVpnGatewayLifecycleReasonOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the reason for this lifecycle state.
+func (o IsVpnGatewayLifecycleReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayLifecycleReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the reason for this lifecycle state.
+func (o IsVpnGatewayLifecycleReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayLifecycleReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about the reason for this lifecycle state.
+func (o IsVpnGatewayLifecycleReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayLifecycleReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayLifecycleReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayLifecycleReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayLifecycleReason)(nil)).Elem()
+}
+
+func (o IsVpnGatewayLifecycleReasonArrayOutput) ToIsVpnGatewayLifecycleReasonArrayOutput() IsVpnGatewayLifecycleReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayLifecycleReasonArrayOutput) ToIsVpnGatewayLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnGatewayLifecycleReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayLifecycleReasonArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayLifecycleReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayLifecycleReason {
+		return vs[0].([]IsVpnGatewayLifecycleReason)[vs[1].(int)]
+	}).(IsVpnGatewayLifecycleReasonOutput)
+}
+
+type IsVpnGatewayMember struct {
+	// The public IP address assigned to the VPN gateway member
+	Address *string `pulumi:"address"`
+	// The private IP address assigned to the VPN gateway member
+	PrivateAddress *string `pulumi:"privateAddress"`
+	// The high availability role assigned to the VPN gateway member
+	Role *string `pulumi:"role"`
+	// The status of the VPN gateway member
+	Status *string `pulumi:"status"`
+}
+
+// IsVpnGatewayMemberInput is an input type that accepts IsVpnGatewayMemberArgs and IsVpnGatewayMemberOutput values.
+// You can construct a concrete instance of `IsVpnGatewayMemberInput` via:
+//
+//	IsVpnGatewayMemberArgs{...}
+type IsVpnGatewayMemberInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayMemberOutput() IsVpnGatewayMemberOutput
+	ToIsVpnGatewayMemberOutputWithContext(context.Context) IsVpnGatewayMemberOutput
+}
+
+type IsVpnGatewayMemberArgs struct {
+	// The public IP address assigned to the VPN gateway member
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// The private IP address assigned to the VPN gateway member
+	PrivateAddress pulumi.StringPtrInput `pulumi:"privateAddress"`
+	// The high availability role assigned to the VPN gateway member
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The status of the VPN gateway member
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (IsVpnGatewayMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayMember)(nil)).Elem()
+}
+
+func (i IsVpnGatewayMemberArgs) ToIsVpnGatewayMemberOutput() IsVpnGatewayMemberOutput {
+	return i.ToIsVpnGatewayMemberOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayMemberArgs) ToIsVpnGatewayMemberOutputWithContext(ctx context.Context) IsVpnGatewayMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayMemberOutput)
+}
+
+// IsVpnGatewayMemberArrayInput is an input type that accepts IsVpnGatewayMemberArray and IsVpnGatewayMemberArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayMemberArrayInput` via:
+//
+//	IsVpnGatewayMemberArray{ IsVpnGatewayMemberArgs{...} }
+type IsVpnGatewayMemberArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayMemberArrayOutput() IsVpnGatewayMemberArrayOutput
+	ToIsVpnGatewayMemberArrayOutputWithContext(context.Context) IsVpnGatewayMemberArrayOutput
+}
+
+type IsVpnGatewayMemberArray []IsVpnGatewayMemberInput
+
+func (IsVpnGatewayMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayMember)(nil)).Elem()
+}
+
+func (i IsVpnGatewayMemberArray) ToIsVpnGatewayMemberArrayOutput() IsVpnGatewayMemberArrayOutput {
+	return i.ToIsVpnGatewayMemberArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayMemberArray) ToIsVpnGatewayMemberArrayOutputWithContext(ctx context.Context) IsVpnGatewayMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayMemberArrayOutput)
+}
+
+type IsVpnGatewayMemberOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayMember)(nil)).Elem()
+}
+
+func (o IsVpnGatewayMemberOutput) ToIsVpnGatewayMemberOutput() IsVpnGatewayMemberOutput {
+	return o
+}
+
+func (o IsVpnGatewayMemberOutput) ToIsVpnGatewayMemberOutputWithContext(ctx context.Context) IsVpnGatewayMemberOutput {
+	return o
+}
+
+// The public IP address assigned to the VPN gateway member
+func (o IsVpnGatewayMemberOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// The private IP address assigned to the VPN gateway member
+func (o IsVpnGatewayMemberOutput) PrivateAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.PrivateAddress }).(pulumi.StringPtrOutput)
+}
+
+// The high availability role assigned to the VPN gateway member
+func (o IsVpnGatewayMemberOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.Role }).(pulumi.StringPtrOutput)
+}
+
+// The status of the VPN gateway member
+func (o IsVpnGatewayMemberOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayMember) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayMember)(nil)).Elem()
+}
+
+func (o IsVpnGatewayMemberArrayOutput) ToIsVpnGatewayMemberArrayOutput() IsVpnGatewayMemberArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayMemberArrayOutput) ToIsVpnGatewayMemberArrayOutputWithContext(ctx context.Context) IsVpnGatewayMemberArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayMemberArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayMember {
+		return vs[0].([]IsVpnGatewayMember)[vs[1].(int)]
+	}).(IsVpnGatewayMemberOutput)
+}
+
+type IsVpnGatewayVpc struct {
+	// The CRN for this VPC.
+	Crn *string `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds []IsVpnGatewayVpcDeleted `pulumi:"deleteds"`
+	// The URL for this VPC.
+	Href *string `pulumi:"href"`
+	// The unique identifier for this VPC.
+	Id *string `pulumi:"id"`
+	// The unique user-defined name for this VPC.
+	Name *string `pulumi:"name"`
+}
+
+// IsVpnGatewayVpcInput is an input type that accepts IsVpnGatewayVpcArgs and IsVpnGatewayVpcOutput values.
+// You can construct a concrete instance of `IsVpnGatewayVpcInput` via:
+//
+//	IsVpnGatewayVpcArgs{...}
+type IsVpnGatewayVpcInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayVpcOutput() IsVpnGatewayVpcOutput
+	ToIsVpnGatewayVpcOutputWithContext(context.Context) IsVpnGatewayVpcOutput
+}
+
+type IsVpnGatewayVpcArgs struct {
+	// The CRN for this VPC.
+	Crn pulumi.StringPtrInput `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds IsVpnGatewayVpcDeletedArrayInput `pulumi:"deleteds"`
+	// The URL for this VPC.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// The unique identifier for this VPC.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The unique user-defined name for this VPC.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (IsVpnGatewayVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayVpc)(nil)).Elem()
+}
+
+func (i IsVpnGatewayVpcArgs) ToIsVpnGatewayVpcOutput() IsVpnGatewayVpcOutput {
+	return i.ToIsVpnGatewayVpcOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayVpcArgs) ToIsVpnGatewayVpcOutputWithContext(ctx context.Context) IsVpnGatewayVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcOutput)
+}
+
+// IsVpnGatewayVpcArrayInput is an input type that accepts IsVpnGatewayVpcArray and IsVpnGatewayVpcArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayVpcArrayInput` via:
+//
+//	IsVpnGatewayVpcArray{ IsVpnGatewayVpcArgs{...} }
+type IsVpnGatewayVpcArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayVpcArrayOutput() IsVpnGatewayVpcArrayOutput
+	ToIsVpnGatewayVpcArrayOutputWithContext(context.Context) IsVpnGatewayVpcArrayOutput
+}
+
+type IsVpnGatewayVpcArray []IsVpnGatewayVpcInput
+
+func (IsVpnGatewayVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayVpc)(nil)).Elem()
+}
+
+func (i IsVpnGatewayVpcArray) ToIsVpnGatewayVpcArrayOutput() IsVpnGatewayVpcArrayOutput {
+	return i.ToIsVpnGatewayVpcArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayVpcArray) ToIsVpnGatewayVpcArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcArrayOutput)
+}
+
+type IsVpnGatewayVpcOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayVpc)(nil)).Elem()
+}
+
+func (o IsVpnGatewayVpcOutput) ToIsVpnGatewayVpcOutput() IsVpnGatewayVpcOutput {
+	return o
+}
+
+func (o IsVpnGatewayVpcOutput) ToIsVpnGatewayVpcOutputWithContext(ctx context.Context) IsVpnGatewayVpcOutput {
+	return o
+}
+
+// The CRN for this VPC.
+func (o IsVpnGatewayVpcOutput) Crn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Crn }).(pulumi.StringPtrOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+func (o IsVpnGatewayVpcOutput) Deleteds() IsVpnGatewayVpcDeletedArrayOutput {
+	return o.ApplyT(func(v IsVpnGatewayVpc) []IsVpnGatewayVpcDeleted { return v.Deleteds }).(IsVpnGatewayVpcDeletedArrayOutput)
+}
+
+// The URL for this VPC.
+func (o IsVpnGatewayVpcOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier for this VPC.
+func (o IsVpnGatewayVpcOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The unique user-defined name for this VPC.
+func (o IsVpnGatewayVpcOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayVpc) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayVpc)(nil)).Elem()
+}
+
+func (o IsVpnGatewayVpcArrayOutput) ToIsVpnGatewayVpcArrayOutput() IsVpnGatewayVpcArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayVpcArrayOutput) ToIsVpnGatewayVpcArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayVpcArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayVpc {
+		return vs[0].([]IsVpnGatewayVpc)[vs[1].(int)]
+	}).(IsVpnGatewayVpcOutput)
+}
+
+type IsVpnGatewayVpcDeleted struct {
+	// Link to documentation about deleted resources.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnGatewayVpcDeletedInput is an input type that accepts IsVpnGatewayVpcDeletedArgs and IsVpnGatewayVpcDeletedOutput values.
+// You can construct a concrete instance of `IsVpnGatewayVpcDeletedInput` via:
+//
+//	IsVpnGatewayVpcDeletedArgs{...}
+type IsVpnGatewayVpcDeletedInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayVpcDeletedOutput() IsVpnGatewayVpcDeletedOutput
+	ToIsVpnGatewayVpcDeletedOutputWithContext(context.Context) IsVpnGatewayVpcDeletedOutput
+}
+
+type IsVpnGatewayVpcDeletedArgs struct {
+	// Link to documentation about deleted resources.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnGatewayVpcDeletedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayVpcDeleted)(nil)).Elem()
+}
+
+func (i IsVpnGatewayVpcDeletedArgs) ToIsVpnGatewayVpcDeletedOutput() IsVpnGatewayVpcDeletedOutput {
+	return i.ToIsVpnGatewayVpcDeletedOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayVpcDeletedArgs) ToIsVpnGatewayVpcDeletedOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcDeletedOutput)
+}
+
+// IsVpnGatewayVpcDeletedArrayInput is an input type that accepts IsVpnGatewayVpcDeletedArray and IsVpnGatewayVpcDeletedArrayOutput values.
+// You can construct a concrete instance of `IsVpnGatewayVpcDeletedArrayInput` via:
+//
+//	IsVpnGatewayVpcDeletedArray{ IsVpnGatewayVpcDeletedArgs{...} }
+type IsVpnGatewayVpcDeletedArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnGatewayVpcDeletedArrayOutput() IsVpnGatewayVpcDeletedArrayOutput
+	ToIsVpnGatewayVpcDeletedArrayOutputWithContext(context.Context) IsVpnGatewayVpcDeletedArrayOutput
+}
+
+type IsVpnGatewayVpcDeletedArray []IsVpnGatewayVpcDeletedInput
+
+func (IsVpnGatewayVpcDeletedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayVpcDeleted)(nil)).Elem()
+}
+
+func (i IsVpnGatewayVpcDeletedArray) ToIsVpnGatewayVpcDeletedArrayOutput() IsVpnGatewayVpcDeletedArrayOutput {
+	return i.ToIsVpnGatewayVpcDeletedArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnGatewayVpcDeletedArray) ToIsVpnGatewayVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnGatewayVpcDeletedArrayOutput)
+}
+
+type IsVpnGatewayVpcDeletedOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayVpcDeletedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnGatewayVpcDeleted)(nil)).Elem()
+}
+
+func (o IsVpnGatewayVpcDeletedOutput) ToIsVpnGatewayVpcDeletedOutput() IsVpnGatewayVpcDeletedOutput {
+	return o
+}
+
+func (o IsVpnGatewayVpcDeletedOutput) ToIsVpnGatewayVpcDeletedOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedOutput {
+	return o
+}
+
+// Link to documentation about deleted resources.
+func (o IsVpnGatewayVpcDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnGatewayVpcDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnGatewayVpcDeletedArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnGatewayVpcDeletedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnGatewayVpcDeleted)(nil)).Elem()
+}
+
+func (o IsVpnGatewayVpcDeletedArrayOutput) ToIsVpnGatewayVpcDeletedArrayOutput() IsVpnGatewayVpcDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayVpcDeletedArrayOutput) ToIsVpnGatewayVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnGatewayVpcDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpnGatewayVpcDeletedArrayOutput) Index(i pulumi.IntInput) IsVpnGatewayVpcDeletedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnGatewayVpcDeleted {
+		return vs[0].([]IsVpnGatewayVpcDeleted)[vs[1].(int)]
+	}).(IsVpnGatewayVpcDeletedOutput)
+}
+
+type IsVpnServerClientAuthentication struct {
+	// The crn of certificate instance to use for the VPN client certificate authority (CA).
+	ClientCaCrn *string `pulumi:"clientCaCrn"`
+	// The type of identity provider to be used by the VPN client.- `iam`: IBM identity and access managementThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the route on which the unexpected property value was encountered.
+	IdentityProvider *string `pulumi:"identityProvider"`
+	// The type of authentication.
+	Method string `pulumi:"method"`
+}
+
+// IsVpnServerClientAuthenticationInput is an input type that accepts IsVpnServerClientAuthenticationArgs and IsVpnServerClientAuthenticationOutput values.
+// You can construct a concrete instance of `IsVpnServerClientAuthenticationInput` via:
+//
+//	IsVpnServerClientAuthenticationArgs{...}
+type IsVpnServerClientAuthenticationInput interface {
+	pulumi.Input
+
+	ToIsVpnServerClientAuthenticationOutput() IsVpnServerClientAuthenticationOutput
+	ToIsVpnServerClientAuthenticationOutputWithContext(context.Context) IsVpnServerClientAuthenticationOutput
+}
+
+type IsVpnServerClientAuthenticationArgs struct {
+	// The crn of certificate instance to use for the VPN client certificate authority (CA).
+	ClientCaCrn pulumi.StringPtrInput `pulumi:"clientCaCrn"`
+	// The type of identity provider to be used by the VPN client.- `iam`: IBM identity and access managementThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the route on which the unexpected property value was encountered.
+	IdentityProvider pulumi.StringPtrInput `pulumi:"identityProvider"`
+	// The type of authentication.
+	Method pulumi.StringInput `pulumi:"method"`
+}
+
+func (IsVpnServerClientAuthenticationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerClientAuthentication)(nil)).Elem()
+}
+
+func (i IsVpnServerClientAuthenticationArgs) ToIsVpnServerClientAuthenticationOutput() IsVpnServerClientAuthenticationOutput {
+	return i.ToIsVpnServerClientAuthenticationOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerClientAuthenticationArgs) ToIsVpnServerClientAuthenticationOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerClientAuthenticationOutput)
+}
+
+// IsVpnServerClientAuthenticationArrayInput is an input type that accepts IsVpnServerClientAuthenticationArray and IsVpnServerClientAuthenticationArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerClientAuthenticationArrayInput` via:
+//
+//	IsVpnServerClientAuthenticationArray{ IsVpnServerClientAuthenticationArgs{...} }
+type IsVpnServerClientAuthenticationArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerClientAuthenticationArrayOutput() IsVpnServerClientAuthenticationArrayOutput
+	ToIsVpnServerClientAuthenticationArrayOutputWithContext(context.Context) IsVpnServerClientAuthenticationArrayOutput
+}
+
+type IsVpnServerClientAuthenticationArray []IsVpnServerClientAuthenticationInput
+
+func (IsVpnServerClientAuthenticationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerClientAuthentication)(nil)).Elem()
+}
+
+func (i IsVpnServerClientAuthenticationArray) ToIsVpnServerClientAuthenticationArrayOutput() IsVpnServerClientAuthenticationArrayOutput {
+	return i.ToIsVpnServerClientAuthenticationArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerClientAuthenticationArray) ToIsVpnServerClientAuthenticationArrayOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerClientAuthenticationArrayOutput)
+}
+
+type IsVpnServerClientAuthenticationOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerClientAuthenticationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerClientAuthentication)(nil)).Elem()
+}
+
+func (o IsVpnServerClientAuthenticationOutput) ToIsVpnServerClientAuthenticationOutput() IsVpnServerClientAuthenticationOutput {
+	return o
+}
+
+func (o IsVpnServerClientAuthenticationOutput) ToIsVpnServerClientAuthenticationOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationOutput {
+	return o
+}
+
+// The crn of certificate instance to use for the VPN client certificate authority (CA).
+func (o IsVpnServerClientAuthenticationOutput) ClientCaCrn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerClientAuthentication) *string { return v.ClientCaCrn }).(pulumi.StringPtrOutput)
+}
+
+// The type of identity provider to be used by the VPN client.- `iam`: IBM identity and access managementThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the route on which the unexpected property value was encountered.
+func (o IsVpnServerClientAuthenticationOutput) IdentityProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerClientAuthentication) *string { return v.IdentityProvider }).(pulumi.StringPtrOutput)
+}
+
+// The type of authentication.
+func (o IsVpnServerClientAuthenticationOutput) Method() pulumi.StringOutput {
+	return o.ApplyT(func(v IsVpnServerClientAuthentication) string { return v.Method }).(pulumi.StringOutput)
+}
+
+type IsVpnServerClientAuthenticationArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerClientAuthenticationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerClientAuthentication)(nil)).Elem()
+}
+
+func (o IsVpnServerClientAuthenticationArrayOutput) ToIsVpnServerClientAuthenticationArrayOutput() IsVpnServerClientAuthenticationArrayOutput {
+	return o
+}
+
+func (o IsVpnServerClientAuthenticationArrayOutput) ToIsVpnServerClientAuthenticationArrayOutputWithContext(ctx context.Context) IsVpnServerClientAuthenticationArrayOutput {
+	return o
+}
+
+func (o IsVpnServerClientAuthenticationArrayOutput) Index(i pulumi.IntInput) IsVpnServerClientAuthenticationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerClientAuthentication {
+		return vs[0].([]IsVpnServerClientAuthentication)[vs[1].(int)]
+	}).(IsVpnServerClientAuthenticationOutput)
+}
+
+type IsVpnServerHealthReason struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code *string `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message *string `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnServerHealthReasonInput is an input type that accepts IsVpnServerHealthReasonArgs and IsVpnServerHealthReasonOutput values.
+// You can construct a concrete instance of `IsVpnServerHealthReasonInput` via:
+//
+//	IsVpnServerHealthReasonArgs{...}
+type IsVpnServerHealthReasonInput interface {
+	pulumi.Input
+
+	ToIsVpnServerHealthReasonOutput() IsVpnServerHealthReasonOutput
+	ToIsVpnServerHealthReasonOutputWithContext(context.Context) IsVpnServerHealthReasonOutput
+}
+
+type IsVpnServerHealthReasonArgs struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnServerHealthReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerHealthReason)(nil)).Elem()
+}
+
+func (i IsVpnServerHealthReasonArgs) ToIsVpnServerHealthReasonOutput() IsVpnServerHealthReasonOutput {
+	return i.ToIsVpnServerHealthReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerHealthReasonArgs) ToIsVpnServerHealthReasonOutputWithContext(ctx context.Context) IsVpnServerHealthReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerHealthReasonOutput)
+}
+
+// IsVpnServerHealthReasonArrayInput is an input type that accepts IsVpnServerHealthReasonArray and IsVpnServerHealthReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerHealthReasonArrayInput` via:
+//
+//	IsVpnServerHealthReasonArray{ IsVpnServerHealthReasonArgs{...} }
+type IsVpnServerHealthReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerHealthReasonArrayOutput() IsVpnServerHealthReasonArrayOutput
+	ToIsVpnServerHealthReasonArrayOutputWithContext(context.Context) IsVpnServerHealthReasonArrayOutput
+}
+
+type IsVpnServerHealthReasonArray []IsVpnServerHealthReasonInput
+
+func (IsVpnServerHealthReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerHealthReason)(nil)).Elem()
+}
+
+func (i IsVpnServerHealthReasonArray) ToIsVpnServerHealthReasonArrayOutput() IsVpnServerHealthReasonArrayOutput {
+	return i.ToIsVpnServerHealthReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerHealthReasonArray) ToIsVpnServerHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerHealthReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerHealthReasonArrayOutput)
+}
+
+type IsVpnServerHealthReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerHealthReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerHealthReason)(nil)).Elem()
+}
+
+func (o IsVpnServerHealthReasonOutput) ToIsVpnServerHealthReasonOutput() IsVpnServerHealthReasonOutput {
+	return o
+}
+
+func (o IsVpnServerHealthReasonOutput) ToIsVpnServerHealthReasonOutputWithContext(ctx context.Context) IsVpnServerHealthReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the reason for this health state.
+func (o IsVpnServerHealthReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the reason for this health state.
+func (o IsVpnServerHealthReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about the reason for this health state.
+func (o IsVpnServerHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerHealthReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerHealthReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerHealthReason)(nil)).Elem()
+}
+
+func (o IsVpnServerHealthReasonArrayOutput) ToIsVpnServerHealthReasonArrayOutput() IsVpnServerHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerHealthReasonArrayOutput) ToIsVpnServerHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerHealthReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerHealthReason {
+		return vs[0].([]IsVpnServerHealthReason)[vs[1].(int)]
+	}).(IsVpnServerHealthReasonOutput)
+}
+
+type IsVpnServerLifecycleReason struct {
+	// A snake case string succinctly identifying the reason for this lifecycle state.
+	Code *string `pulumi:"code"`
+	// An explanation of the reason for this lifecycle state.
+	Message *string `pulumi:"message"`
+	// Link to documentation about the reason for this lifecycle state.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnServerLifecycleReasonInput is an input type that accepts IsVpnServerLifecycleReasonArgs and IsVpnServerLifecycleReasonOutput values.
+// You can construct a concrete instance of `IsVpnServerLifecycleReasonInput` via:
+//
+//	IsVpnServerLifecycleReasonArgs{...}
+type IsVpnServerLifecycleReasonInput interface {
+	pulumi.Input
+
+	ToIsVpnServerLifecycleReasonOutput() IsVpnServerLifecycleReasonOutput
+	ToIsVpnServerLifecycleReasonOutputWithContext(context.Context) IsVpnServerLifecycleReasonOutput
+}
+
+type IsVpnServerLifecycleReasonArgs struct {
+	// A snake case string succinctly identifying the reason for this lifecycle state.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the reason for this lifecycle state.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about the reason for this lifecycle state.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnServerLifecycleReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerLifecycleReason)(nil)).Elem()
+}
+
+func (i IsVpnServerLifecycleReasonArgs) ToIsVpnServerLifecycleReasonOutput() IsVpnServerLifecycleReasonOutput {
+	return i.ToIsVpnServerLifecycleReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerLifecycleReasonArgs) ToIsVpnServerLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerLifecycleReasonOutput)
+}
+
+// IsVpnServerLifecycleReasonArrayInput is an input type that accepts IsVpnServerLifecycleReasonArray and IsVpnServerLifecycleReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerLifecycleReasonArrayInput` via:
+//
+//	IsVpnServerLifecycleReasonArray{ IsVpnServerLifecycleReasonArgs{...} }
+type IsVpnServerLifecycleReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerLifecycleReasonArrayOutput() IsVpnServerLifecycleReasonArrayOutput
+	ToIsVpnServerLifecycleReasonArrayOutputWithContext(context.Context) IsVpnServerLifecycleReasonArrayOutput
+}
+
+type IsVpnServerLifecycleReasonArray []IsVpnServerLifecycleReasonInput
+
+func (IsVpnServerLifecycleReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerLifecycleReason)(nil)).Elem()
+}
+
+func (i IsVpnServerLifecycleReasonArray) ToIsVpnServerLifecycleReasonArrayOutput() IsVpnServerLifecycleReasonArrayOutput {
+	return i.ToIsVpnServerLifecycleReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerLifecycleReasonArray) ToIsVpnServerLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerLifecycleReasonArrayOutput)
+}
+
+type IsVpnServerLifecycleReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerLifecycleReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerLifecycleReason)(nil)).Elem()
+}
+
+func (o IsVpnServerLifecycleReasonOutput) ToIsVpnServerLifecycleReasonOutput() IsVpnServerLifecycleReasonOutput {
+	return o
+}
+
+func (o IsVpnServerLifecycleReasonOutput) ToIsVpnServerLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the reason for this lifecycle state.
+func (o IsVpnServerLifecycleReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerLifecycleReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the reason for this lifecycle state.
+func (o IsVpnServerLifecycleReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerLifecycleReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about the reason for this lifecycle state.
+func (o IsVpnServerLifecycleReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerLifecycleReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerLifecycleReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerLifecycleReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerLifecycleReason)(nil)).Elem()
+}
+
+func (o IsVpnServerLifecycleReasonArrayOutput) ToIsVpnServerLifecycleReasonArrayOutput() IsVpnServerLifecycleReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerLifecycleReasonArrayOutput) ToIsVpnServerLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerLifecycleReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerLifecycleReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerLifecycleReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerLifecycleReason {
+		return vs[0].([]IsVpnServerLifecycleReason)[vs[1].(int)]
+	}).(IsVpnServerLifecycleReasonOutput)
+}
+
+type IsVpnServerPrivateIp struct {
+	// The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
+	Address *string `pulumi:"address"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds []IsVpnServerPrivateIpDeleted `pulumi:"deleteds"`
+	// The URL for this reserved IP.
+	Href *string `pulumi:"href"`
+	// The unique identifier for this reserved IP.
+	Id *string `pulumi:"id"`
+	// The user-defined or system-provided name for this reserved IP.
+	Name *string `pulumi:"name"`
+	// The resource type.
+	ResourceType *string `pulumi:"resourceType"`
+}
+
+// IsVpnServerPrivateIpInput is an input type that accepts IsVpnServerPrivateIpArgs and IsVpnServerPrivateIpOutput values.
+// You can construct a concrete instance of `IsVpnServerPrivateIpInput` via:
+//
+//	IsVpnServerPrivateIpArgs{...}
+type IsVpnServerPrivateIpInput interface {
+	pulumi.Input
+
+	ToIsVpnServerPrivateIpOutput() IsVpnServerPrivateIpOutput
+	ToIsVpnServerPrivateIpOutputWithContext(context.Context) IsVpnServerPrivateIpOutput
+}
+
+type IsVpnServerPrivateIpArgs struct {
+	// The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds IsVpnServerPrivateIpDeletedArrayInput `pulumi:"deleteds"`
+	// The URL for this reserved IP.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// The unique identifier for this reserved IP.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The user-defined or system-provided name for this reserved IP.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The resource type.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+}
+
+func (IsVpnServerPrivateIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerPrivateIp)(nil)).Elem()
+}
+
+func (i IsVpnServerPrivateIpArgs) ToIsVpnServerPrivateIpOutput() IsVpnServerPrivateIpOutput {
+	return i.ToIsVpnServerPrivateIpOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerPrivateIpArgs) ToIsVpnServerPrivateIpOutputWithContext(ctx context.Context) IsVpnServerPrivateIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpOutput)
+}
+
+// IsVpnServerPrivateIpArrayInput is an input type that accepts IsVpnServerPrivateIpArray and IsVpnServerPrivateIpArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerPrivateIpArrayInput` via:
+//
+//	IsVpnServerPrivateIpArray{ IsVpnServerPrivateIpArgs{...} }
+type IsVpnServerPrivateIpArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerPrivateIpArrayOutput() IsVpnServerPrivateIpArrayOutput
+	ToIsVpnServerPrivateIpArrayOutputWithContext(context.Context) IsVpnServerPrivateIpArrayOutput
+}
+
+type IsVpnServerPrivateIpArray []IsVpnServerPrivateIpInput
+
+func (IsVpnServerPrivateIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerPrivateIp)(nil)).Elem()
+}
+
+func (i IsVpnServerPrivateIpArray) ToIsVpnServerPrivateIpArrayOutput() IsVpnServerPrivateIpArrayOutput {
+	return i.ToIsVpnServerPrivateIpArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerPrivateIpArray) ToIsVpnServerPrivateIpArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpArrayOutput)
+}
+
+type IsVpnServerPrivateIpOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerPrivateIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerPrivateIp)(nil)).Elem()
+}
+
+func (o IsVpnServerPrivateIpOutput) ToIsVpnServerPrivateIpOutput() IsVpnServerPrivateIpOutput {
+	return o
+}
+
+func (o IsVpnServerPrivateIpOutput) ToIsVpnServerPrivateIpOutputWithContext(ctx context.Context) IsVpnServerPrivateIpOutput {
+	return o
+}
+
+// The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
+func (o IsVpnServerPrivateIpOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+func (o IsVpnServerPrivateIpOutput) Deleteds() IsVpnServerPrivateIpDeletedArrayOutput {
+	return o.ApplyT(func(v IsVpnServerPrivateIp) []IsVpnServerPrivateIpDeleted { return v.Deleteds }).(IsVpnServerPrivateIpDeletedArrayOutput)
+}
+
+// The URL for this reserved IP.
+func (o IsVpnServerPrivateIpOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier for this reserved IP.
+func (o IsVpnServerPrivateIpOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The user-defined or system-provided name for this reserved IP.
+func (o IsVpnServerPrivateIpOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The resource type.
+func (o IsVpnServerPrivateIpOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerPrivateIp) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerPrivateIpArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerPrivateIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerPrivateIp)(nil)).Elem()
+}
+
+func (o IsVpnServerPrivateIpArrayOutput) ToIsVpnServerPrivateIpArrayOutput() IsVpnServerPrivateIpArrayOutput {
+	return o
+}
+
+func (o IsVpnServerPrivateIpArrayOutput) ToIsVpnServerPrivateIpArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpArrayOutput {
+	return o
+}
+
+func (o IsVpnServerPrivateIpArrayOutput) Index(i pulumi.IntInput) IsVpnServerPrivateIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerPrivateIp {
+		return vs[0].([]IsVpnServerPrivateIp)[vs[1].(int)]
+	}).(IsVpnServerPrivateIpOutput)
+}
+
+type IsVpnServerPrivateIpDeleted struct {
+	// Link to documentation about deleted resources.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnServerPrivateIpDeletedInput is an input type that accepts IsVpnServerPrivateIpDeletedArgs and IsVpnServerPrivateIpDeletedOutput values.
+// You can construct a concrete instance of `IsVpnServerPrivateIpDeletedInput` via:
+//
+//	IsVpnServerPrivateIpDeletedArgs{...}
+type IsVpnServerPrivateIpDeletedInput interface {
+	pulumi.Input
+
+	ToIsVpnServerPrivateIpDeletedOutput() IsVpnServerPrivateIpDeletedOutput
+	ToIsVpnServerPrivateIpDeletedOutputWithContext(context.Context) IsVpnServerPrivateIpDeletedOutput
+}
+
+type IsVpnServerPrivateIpDeletedArgs struct {
+	// Link to documentation about deleted resources.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnServerPrivateIpDeletedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerPrivateIpDeleted)(nil)).Elem()
+}
+
+func (i IsVpnServerPrivateIpDeletedArgs) ToIsVpnServerPrivateIpDeletedOutput() IsVpnServerPrivateIpDeletedOutput {
+	return i.ToIsVpnServerPrivateIpDeletedOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerPrivateIpDeletedArgs) ToIsVpnServerPrivateIpDeletedOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpDeletedOutput)
+}
+
+// IsVpnServerPrivateIpDeletedArrayInput is an input type that accepts IsVpnServerPrivateIpDeletedArray and IsVpnServerPrivateIpDeletedArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerPrivateIpDeletedArrayInput` via:
+//
+//	IsVpnServerPrivateIpDeletedArray{ IsVpnServerPrivateIpDeletedArgs{...} }
+type IsVpnServerPrivateIpDeletedArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerPrivateIpDeletedArrayOutput() IsVpnServerPrivateIpDeletedArrayOutput
+	ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(context.Context) IsVpnServerPrivateIpDeletedArrayOutput
+}
+
+type IsVpnServerPrivateIpDeletedArray []IsVpnServerPrivateIpDeletedInput
+
+func (IsVpnServerPrivateIpDeletedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerPrivateIpDeleted)(nil)).Elem()
+}
+
+func (i IsVpnServerPrivateIpDeletedArray) ToIsVpnServerPrivateIpDeletedArrayOutput() IsVpnServerPrivateIpDeletedArrayOutput {
+	return i.ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerPrivateIpDeletedArray) ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerPrivateIpDeletedArrayOutput)
+}
+
+type IsVpnServerPrivateIpDeletedOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerPrivateIpDeletedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerPrivateIpDeleted)(nil)).Elem()
+}
+
+func (o IsVpnServerPrivateIpDeletedOutput) ToIsVpnServerPrivateIpDeletedOutput() IsVpnServerPrivateIpDeletedOutput {
+	return o
+}
+
+func (o IsVpnServerPrivateIpDeletedOutput) ToIsVpnServerPrivateIpDeletedOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedOutput {
+	return o
+}
+
+// Link to documentation about deleted resources.
+func (o IsVpnServerPrivateIpDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerPrivateIpDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerPrivateIpDeletedArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerPrivateIpDeletedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerPrivateIpDeleted)(nil)).Elem()
+}
+
+func (o IsVpnServerPrivateIpDeletedArrayOutput) ToIsVpnServerPrivateIpDeletedArrayOutput() IsVpnServerPrivateIpDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpnServerPrivateIpDeletedArrayOutput) ToIsVpnServerPrivateIpDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerPrivateIpDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpnServerPrivateIpDeletedArrayOutput) Index(i pulumi.IntInput) IsVpnServerPrivateIpDeletedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerPrivateIpDeleted {
+		return vs[0].([]IsVpnServerPrivateIpDeleted)[vs[1].(int)]
+	}).(IsVpnServerPrivateIpDeletedOutput)
+}
+
+type IsVpnServerRouteHealthReason struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code *string `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message *string `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnServerRouteHealthReasonInput is an input type that accepts IsVpnServerRouteHealthReasonArgs and IsVpnServerRouteHealthReasonOutput values.
+// You can construct a concrete instance of `IsVpnServerRouteHealthReasonInput` via:
+//
+//	IsVpnServerRouteHealthReasonArgs{...}
+type IsVpnServerRouteHealthReasonInput interface {
+	pulumi.Input
+
+	ToIsVpnServerRouteHealthReasonOutput() IsVpnServerRouteHealthReasonOutput
+	ToIsVpnServerRouteHealthReasonOutputWithContext(context.Context) IsVpnServerRouteHealthReasonOutput
+}
+
+type IsVpnServerRouteHealthReasonArgs struct {
+	// A snake case string succinctly identifying the reason for this health state.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the reason for this health state.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about the reason for this health state.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnServerRouteHealthReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerRouteHealthReason)(nil)).Elem()
+}
+
+func (i IsVpnServerRouteHealthReasonArgs) ToIsVpnServerRouteHealthReasonOutput() IsVpnServerRouteHealthReasonOutput {
+	return i.ToIsVpnServerRouteHealthReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerRouteHealthReasonArgs) ToIsVpnServerRouteHealthReasonOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteHealthReasonOutput)
+}
+
+// IsVpnServerRouteHealthReasonArrayInput is an input type that accepts IsVpnServerRouteHealthReasonArray and IsVpnServerRouteHealthReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerRouteHealthReasonArrayInput` via:
+//
+//	IsVpnServerRouteHealthReasonArray{ IsVpnServerRouteHealthReasonArgs{...} }
+type IsVpnServerRouteHealthReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerRouteHealthReasonArrayOutput() IsVpnServerRouteHealthReasonArrayOutput
+	ToIsVpnServerRouteHealthReasonArrayOutputWithContext(context.Context) IsVpnServerRouteHealthReasonArrayOutput
+}
+
+type IsVpnServerRouteHealthReasonArray []IsVpnServerRouteHealthReasonInput
+
+func (IsVpnServerRouteHealthReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerRouteHealthReason)(nil)).Elem()
+}
+
+func (i IsVpnServerRouteHealthReasonArray) ToIsVpnServerRouteHealthReasonArrayOutput() IsVpnServerRouteHealthReasonArrayOutput {
+	return i.ToIsVpnServerRouteHealthReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerRouteHealthReasonArray) ToIsVpnServerRouteHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteHealthReasonArrayOutput)
+}
+
+type IsVpnServerRouteHealthReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerRouteHealthReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerRouteHealthReason)(nil)).Elem()
+}
+
+func (o IsVpnServerRouteHealthReasonOutput) ToIsVpnServerRouteHealthReasonOutput() IsVpnServerRouteHealthReasonOutput {
+	return o
+}
+
+func (o IsVpnServerRouteHealthReasonOutput) ToIsVpnServerRouteHealthReasonOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the reason for this health state.
+func (o IsVpnServerRouteHealthReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerRouteHealthReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the reason for this health state.
+func (o IsVpnServerRouteHealthReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerRouteHealthReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about the reason for this health state.
+func (o IsVpnServerRouteHealthReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerRouteHealthReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerRouteHealthReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerRouteHealthReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerRouteHealthReason)(nil)).Elem()
+}
+
+func (o IsVpnServerRouteHealthReasonArrayOutput) ToIsVpnServerRouteHealthReasonArrayOutput() IsVpnServerRouteHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerRouteHealthReasonArrayOutput) ToIsVpnServerRouteHealthReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteHealthReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerRouteHealthReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerRouteHealthReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerRouteHealthReason {
+		return vs[0].([]IsVpnServerRouteHealthReason)[vs[1].(int)]
+	}).(IsVpnServerRouteHealthReasonOutput)
+}
+
+type IsVpnServerRouteLifecycleReason struct {
+	// A snake case string succinctly identifying the reason for this lifecycle state.
+	Code *string `pulumi:"code"`
+	// An explanation of the reason for this lifecycle state.
+	Message *string `pulumi:"message"`
+	// Link to documentation about the reason for this lifecycle state.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnServerRouteLifecycleReasonInput is an input type that accepts IsVpnServerRouteLifecycleReasonArgs and IsVpnServerRouteLifecycleReasonOutput values.
+// You can construct a concrete instance of `IsVpnServerRouteLifecycleReasonInput` via:
+//
+//	IsVpnServerRouteLifecycleReasonArgs{...}
+type IsVpnServerRouteLifecycleReasonInput interface {
+	pulumi.Input
+
+	ToIsVpnServerRouteLifecycleReasonOutput() IsVpnServerRouteLifecycleReasonOutput
+	ToIsVpnServerRouteLifecycleReasonOutputWithContext(context.Context) IsVpnServerRouteLifecycleReasonOutput
+}
+
+type IsVpnServerRouteLifecycleReasonArgs struct {
+	// A snake case string succinctly identifying the reason for this lifecycle state.
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// An explanation of the reason for this lifecycle state.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Link to documentation about the reason for this lifecycle state.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnServerRouteLifecycleReasonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerRouteLifecycleReason)(nil)).Elem()
+}
+
+func (i IsVpnServerRouteLifecycleReasonArgs) ToIsVpnServerRouteLifecycleReasonOutput() IsVpnServerRouteLifecycleReasonOutput {
+	return i.ToIsVpnServerRouteLifecycleReasonOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerRouteLifecycleReasonArgs) ToIsVpnServerRouteLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteLifecycleReasonOutput)
+}
+
+// IsVpnServerRouteLifecycleReasonArrayInput is an input type that accepts IsVpnServerRouteLifecycleReasonArray and IsVpnServerRouteLifecycleReasonArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerRouteLifecycleReasonArrayInput` via:
+//
+//	IsVpnServerRouteLifecycleReasonArray{ IsVpnServerRouteLifecycleReasonArgs{...} }
+type IsVpnServerRouteLifecycleReasonArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerRouteLifecycleReasonArrayOutput() IsVpnServerRouteLifecycleReasonArrayOutput
+	ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(context.Context) IsVpnServerRouteLifecycleReasonArrayOutput
+}
+
+type IsVpnServerRouteLifecycleReasonArray []IsVpnServerRouteLifecycleReasonInput
+
+func (IsVpnServerRouteLifecycleReasonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerRouteLifecycleReason)(nil)).Elem()
+}
+
+func (i IsVpnServerRouteLifecycleReasonArray) ToIsVpnServerRouteLifecycleReasonArrayOutput() IsVpnServerRouteLifecycleReasonArrayOutput {
+	return i.ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerRouteLifecycleReasonArray) ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerRouteLifecycleReasonArrayOutput)
+}
+
+type IsVpnServerRouteLifecycleReasonOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerRouteLifecycleReasonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerRouteLifecycleReason)(nil)).Elem()
+}
+
+func (o IsVpnServerRouteLifecycleReasonOutput) ToIsVpnServerRouteLifecycleReasonOutput() IsVpnServerRouteLifecycleReasonOutput {
+	return o
+}
+
+func (o IsVpnServerRouteLifecycleReasonOutput) ToIsVpnServerRouteLifecycleReasonOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonOutput {
+	return o
+}
+
+// A snake case string succinctly identifying the reason for this lifecycle state.
+func (o IsVpnServerRouteLifecycleReasonOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerRouteLifecycleReason) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// An explanation of the reason for this lifecycle state.
+func (o IsVpnServerRouteLifecycleReasonOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerRouteLifecycleReason) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Link to documentation about the reason for this lifecycle state.
+func (o IsVpnServerRouteLifecycleReasonOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerRouteLifecycleReason) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerRouteLifecycleReasonArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerRouteLifecycleReasonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerRouteLifecycleReason)(nil)).Elem()
+}
+
+func (o IsVpnServerRouteLifecycleReasonArrayOutput) ToIsVpnServerRouteLifecycleReasonArrayOutput() IsVpnServerRouteLifecycleReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerRouteLifecycleReasonArrayOutput) ToIsVpnServerRouteLifecycleReasonArrayOutputWithContext(ctx context.Context) IsVpnServerRouteLifecycleReasonArrayOutput {
+	return o
+}
+
+func (o IsVpnServerRouteLifecycleReasonArrayOutput) Index(i pulumi.IntInput) IsVpnServerRouteLifecycleReasonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerRouteLifecycleReason {
+		return vs[0].([]IsVpnServerRouteLifecycleReason)[vs[1].(int)]
+	}).(IsVpnServerRouteLifecycleReasonOutput)
+}
+
+type IsVpnServerVpc struct {
+	// The CRN for this VPC.
+	Crn *string `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds []IsVpnServerVpcDeleted `pulumi:"deleteds"`
+	// The URL for this VPC.
+	Href *string `pulumi:"href"`
+	// The unique identifier for this VPC.
+	Id *string `pulumi:"id"`
+	// The unique user-defined name for this VPC.
+	Name *string `pulumi:"name"`
+}
+
+// IsVpnServerVpcInput is an input type that accepts IsVpnServerVpcArgs and IsVpnServerVpcOutput values.
+// You can construct a concrete instance of `IsVpnServerVpcInput` via:
+//
+//	IsVpnServerVpcArgs{...}
+type IsVpnServerVpcInput interface {
+	pulumi.Input
+
+	ToIsVpnServerVpcOutput() IsVpnServerVpcOutput
+	ToIsVpnServerVpcOutputWithContext(context.Context) IsVpnServerVpcOutput
+}
+
+type IsVpnServerVpcArgs struct {
+	// The CRN for this VPC.
+	Crn pulumi.StringPtrInput `pulumi:"crn"`
+	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+	Deleteds IsVpnServerVpcDeletedArrayInput `pulumi:"deleteds"`
+	// The URL for this VPC.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// The unique identifier for this VPC.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The unique user-defined name for this VPC.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (IsVpnServerVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerVpc)(nil)).Elem()
+}
+
+func (i IsVpnServerVpcArgs) ToIsVpnServerVpcOutput() IsVpnServerVpcOutput {
+	return i.ToIsVpnServerVpcOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerVpcArgs) ToIsVpnServerVpcOutputWithContext(ctx context.Context) IsVpnServerVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcOutput)
+}
+
+// IsVpnServerVpcArrayInput is an input type that accepts IsVpnServerVpcArray and IsVpnServerVpcArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerVpcArrayInput` via:
+//
+//	IsVpnServerVpcArray{ IsVpnServerVpcArgs{...} }
+type IsVpnServerVpcArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerVpcArrayOutput() IsVpnServerVpcArrayOutput
+	ToIsVpnServerVpcArrayOutputWithContext(context.Context) IsVpnServerVpcArrayOutput
+}
+
+type IsVpnServerVpcArray []IsVpnServerVpcInput
+
+func (IsVpnServerVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerVpc)(nil)).Elem()
+}
+
+func (i IsVpnServerVpcArray) ToIsVpnServerVpcArrayOutput() IsVpnServerVpcArrayOutput {
+	return i.ToIsVpnServerVpcArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerVpcArray) ToIsVpnServerVpcArrayOutputWithContext(ctx context.Context) IsVpnServerVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcArrayOutput)
+}
+
+type IsVpnServerVpcOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerVpc)(nil)).Elem()
+}
+
+func (o IsVpnServerVpcOutput) ToIsVpnServerVpcOutput() IsVpnServerVpcOutput {
+	return o
+}
+
+func (o IsVpnServerVpcOutput) ToIsVpnServerVpcOutputWithContext(ctx context.Context) IsVpnServerVpcOutput {
+	return o
+}
+
+// The CRN for this VPC.
+func (o IsVpnServerVpcOutput) Crn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Crn }).(pulumi.StringPtrOutput)
+}
+
+// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+func (o IsVpnServerVpcOutput) Deleteds() IsVpnServerVpcDeletedArrayOutput {
+	return o.ApplyT(func(v IsVpnServerVpc) []IsVpnServerVpcDeleted { return v.Deleteds }).(IsVpnServerVpcDeletedArrayOutput)
+}
+
+// The URL for this VPC.
+func (o IsVpnServerVpcOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier for this VPC.
+func (o IsVpnServerVpcOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The unique user-defined name for this VPC.
+func (o IsVpnServerVpcOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerVpc) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerVpc)(nil)).Elem()
+}
+
+func (o IsVpnServerVpcArrayOutput) ToIsVpnServerVpcArrayOutput() IsVpnServerVpcArrayOutput {
+	return o
+}
+
+func (o IsVpnServerVpcArrayOutput) ToIsVpnServerVpcArrayOutputWithContext(ctx context.Context) IsVpnServerVpcArrayOutput {
+	return o
+}
+
+func (o IsVpnServerVpcArrayOutput) Index(i pulumi.IntInput) IsVpnServerVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerVpc {
+		return vs[0].([]IsVpnServerVpc)[vs[1].(int)]
+	}).(IsVpnServerVpcOutput)
+}
+
+type IsVpnServerVpcDeleted struct {
+	// Link to documentation about deleted resources.
+	MoreInfo *string `pulumi:"moreInfo"`
+}
+
+// IsVpnServerVpcDeletedInput is an input type that accepts IsVpnServerVpcDeletedArgs and IsVpnServerVpcDeletedOutput values.
+// You can construct a concrete instance of `IsVpnServerVpcDeletedInput` via:
+//
+//	IsVpnServerVpcDeletedArgs{...}
+type IsVpnServerVpcDeletedInput interface {
+	pulumi.Input
+
+	ToIsVpnServerVpcDeletedOutput() IsVpnServerVpcDeletedOutput
+	ToIsVpnServerVpcDeletedOutputWithContext(context.Context) IsVpnServerVpcDeletedOutput
+}
+
+type IsVpnServerVpcDeletedArgs struct {
+	// Link to documentation about deleted resources.
+	MoreInfo pulumi.StringPtrInput `pulumi:"moreInfo"`
+}
+
+func (IsVpnServerVpcDeletedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerVpcDeleted)(nil)).Elem()
+}
+
+func (i IsVpnServerVpcDeletedArgs) ToIsVpnServerVpcDeletedOutput() IsVpnServerVpcDeletedOutput {
+	return i.ToIsVpnServerVpcDeletedOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerVpcDeletedArgs) ToIsVpnServerVpcDeletedOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcDeletedOutput)
+}
+
+// IsVpnServerVpcDeletedArrayInput is an input type that accepts IsVpnServerVpcDeletedArray and IsVpnServerVpcDeletedArrayOutput values.
+// You can construct a concrete instance of `IsVpnServerVpcDeletedArrayInput` via:
+//
+//	IsVpnServerVpcDeletedArray{ IsVpnServerVpcDeletedArgs{...} }
+type IsVpnServerVpcDeletedArrayInput interface {
+	pulumi.Input
+
+	ToIsVpnServerVpcDeletedArrayOutput() IsVpnServerVpcDeletedArrayOutput
+	ToIsVpnServerVpcDeletedArrayOutputWithContext(context.Context) IsVpnServerVpcDeletedArrayOutput
+}
+
+type IsVpnServerVpcDeletedArray []IsVpnServerVpcDeletedInput
+
+func (IsVpnServerVpcDeletedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerVpcDeleted)(nil)).Elem()
+}
+
+func (i IsVpnServerVpcDeletedArray) ToIsVpnServerVpcDeletedArrayOutput() IsVpnServerVpcDeletedArrayOutput {
+	return i.ToIsVpnServerVpcDeletedArrayOutputWithContext(context.Background())
+}
+
+func (i IsVpnServerVpcDeletedArray) ToIsVpnServerVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IsVpnServerVpcDeletedArrayOutput)
+}
+
+type IsVpnServerVpcDeletedOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerVpcDeletedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IsVpnServerVpcDeleted)(nil)).Elem()
+}
+
+func (o IsVpnServerVpcDeletedOutput) ToIsVpnServerVpcDeletedOutput() IsVpnServerVpcDeletedOutput {
+	return o
+}
+
+func (o IsVpnServerVpcDeletedOutput) ToIsVpnServerVpcDeletedOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedOutput {
+	return o
+}
+
+// Link to documentation about deleted resources.
+func (o IsVpnServerVpcDeletedOutput) MoreInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IsVpnServerVpcDeleted) *string { return v.MoreInfo }).(pulumi.StringPtrOutput)
+}
+
+type IsVpnServerVpcDeletedArrayOutput struct{ *pulumi.OutputState }
+
+func (IsVpnServerVpcDeletedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IsVpnServerVpcDeleted)(nil)).Elem()
+}
+
+func (o IsVpnServerVpcDeletedArrayOutput) ToIsVpnServerVpcDeletedArrayOutput() IsVpnServerVpcDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpnServerVpcDeletedArrayOutput) ToIsVpnServerVpcDeletedArrayOutputWithContext(ctx context.Context) IsVpnServerVpcDeletedArrayOutput {
+	return o
+}
+
+func (o IsVpnServerVpcDeletedArrayOutput) Index(i pulumi.IntInput) IsVpnServerVpcDeletedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IsVpnServerVpcDeleted {
+		return vs[0].([]IsVpnServerVpcDeleted)[vs[1].(int)]
+	}).(IsVpnServerVpcDeletedOutput)
+}
+
+type PiDhcpLease struct {
+	// The IP of the PVM Instance
+	InstanceIp *string `pulumi:"instanceIp"`
+	// The MAC Address of the PVM Instance
+	InstanceMac *string `pulumi:"instanceMac"`
+}
+
+// PiDhcpLeaseInput is an input type that accepts PiDhcpLeaseArgs and PiDhcpLeaseOutput values.
+// You can construct a concrete instance of `PiDhcpLeaseInput` via:
+//
+//	PiDhcpLeaseArgs{...}
+type PiDhcpLeaseInput interface {
+	pulumi.Input
+
+	ToPiDhcpLeaseOutput() PiDhcpLeaseOutput
+	ToPiDhcpLeaseOutputWithContext(context.Context) PiDhcpLeaseOutput
+}
+
+type PiDhcpLeaseArgs struct {
+	// The IP of the PVM Instance
+	InstanceIp pulumi.StringPtrInput `pulumi:"instanceIp"`
+	// The MAC Address of the PVM Instance
+	InstanceMac pulumi.StringPtrInput `pulumi:"instanceMac"`
+}
+
+func (PiDhcpLeaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiDhcpLease)(nil)).Elem()
+}
+
+func (i PiDhcpLeaseArgs) ToPiDhcpLeaseOutput() PiDhcpLeaseOutput {
+	return i.ToPiDhcpLeaseOutputWithContext(context.Background())
+}
+
+func (i PiDhcpLeaseArgs) ToPiDhcpLeaseOutputWithContext(ctx context.Context) PiDhcpLeaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiDhcpLeaseOutput)
+}
+
+// PiDhcpLeaseArrayInput is an input type that accepts PiDhcpLeaseArray and PiDhcpLeaseArrayOutput values.
+// You can construct a concrete instance of `PiDhcpLeaseArrayInput` via:
+//
+//	PiDhcpLeaseArray{ PiDhcpLeaseArgs{...} }
+type PiDhcpLeaseArrayInput interface {
+	pulumi.Input
+
+	ToPiDhcpLeaseArrayOutput() PiDhcpLeaseArrayOutput
+	ToPiDhcpLeaseArrayOutputWithContext(context.Context) PiDhcpLeaseArrayOutput
+}
+
+type PiDhcpLeaseArray []PiDhcpLeaseInput
+
+func (PiDhcpLeaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiDhcpLease)(nil)).Elem()
+}
+
+func (i PiDhcpLeaseArray) ToPiDhcpLeaseArrayOutput() PiDhcpLeaseArrayOutput {
+	return i.ToPiDhcpLeaseArrayOutputWithContext(context.Background())
+}
+
+func (i PiDhcpLeaseArray) ToPiDhcpLeaseArrayOutputWithContext(ctx context.Context) PiDhcpLeaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiDhcpLeaseArrayOutput)
+}
+
+type PiDhcpLeaseOutput struct{ *pulumi.OutputState }
+
+func (PiDhcpLeaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiDhcpLease)(nil)).Elem()
+}
+
+func (o PiDhcpLeaseOutput) ToPiDhcpLeaseOutput() PiDhcpLeaseOutput {
+	return o
+}
+
+func (o PiDhcpLeaseOutput) ToPiDhcpLeaseOutputWithContext(ctx context.Context) PiDhcpLeaseOutput {
+	return o
+}
+
+// The IP of the PVM Instance
+func (o PiDhcpLeaseOutput) InstanceIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiDhcpLease) *string { return v.InstanceIp }).(pulumi.StringPtrOutput)
+}
+
+// The MAC Address of the PVM Instance
+func (o PiDhcpLeaseOutput) InstanceMac() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PiDhcpLease) *string { return v.InstanceMac }).(pulumi.StringPtrOutput)
+}
+
+type PiDhcpLeaseArrayOutput struct{ *pulumi.OutputState }
+
+func (PiDhcpLeaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiDhcpLease)(nil)).Elem()
+}
+
+func (o PiDhcpLeaseArrayOutput) ToPiDhcpLeaseArrayOutput() PiDhcpLeaseArrayOutput {
+	return o
+}
+
+func (o PiDhcpLeaseArrayOutput) ToPiDhcpLeaseArrayOutputWithContext(ctx context.Context) PiDhcpLeaseArrayOutput {
+	return o
+}
+
+func (o PiDhcpLeaseArrayOutput) Index(i pulumi.IntInput) PiDhcpLeaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiDhcpLease {
+		return vs[0].([]PiDhcpLease)[vs[1].(int)]
+	}).(PiDhcpLeaseOutput)
+}
+
+type PiHostCapacity struct {
+	// Number of cores currently available.
+	AvailableCores *float64 `pulumi:"availableCores"`
+	// Amount of memory currently available (in GB).
+	AvailableMemory *float64 `pulumi:"availableMemory"`
+	// Number of cores reserved for system use.
+	ReservedCore *float64 `pulumi:"reservedCore"`
+	// Amount of memory reserved for system use (in GB).
+	ReservedMemory *float64 `pulumi:"reservedMemory"`
+	// Total number of cores of the host.
+	TotalCore *float64 `pulumi:"totalCore"`
+	// Total amount of memory of the host (in GB).
+	TotalMemory *float64 `pulumi:"totalMemory"`
+	// Number of cores in use on the host.
+	UsedCore *float64 `pulumi:"usedCore"`
+	// Amount of memory used on the host (in GB).
+	UsedMemory *float64 `pulumi:"usedMemory"`
+}
+
+// PiHostCapacityInput is an input type that accepts PiHostCapacityArgs and PiHostCapacityOutput values.
+// You can construct a concrete instance of `PiHostCapacityInput` via:
+//
+//	PiHostCapacityArgs{...}
+type PiHostCapacityInput interface {
+	pulumi.Input
+
+	ToPiHostCapacityOutput() PiHostCapacityOutput
+	ToPiHostCapacityOutputWithContext(context.Context) PiHostCapacityOutput
+}
+
+type PiHostCapacityArgs struct {
+	// Number of cores currently available.
+	AvailableCores pulumi.Float64PtrInput `pulumi:"availableCores"`
+	// Amount of memory currently available (in GB).
+	AvailableMemory pulumi.Float64PtrInput `pulumi:"availableMemory"`
+	// Number of cores reserved for system use.
+	ReservedCore pulumi.Float64PtrInput `pulumi:"reservedCore"`
+	// Amount of memory reserved for system use (in GB).
+	ReservedMemory pulumi.Float64PtrInput `pulumi:"reservedMemory"`
+	// Total number of cores of the host.
+	TotalCore pulumi.Float64PtrInput `pulumi:"totalCore"`
+	// Total amount of memory of the host (in GB).
+	TotalMemory pulumi.Float64PtrInput `pulumi:"totalMemory"`
+	// Number of cores in use on the host.
+	UsedCore pulumi.Float64PtrInput `pulumi:"usedCore"`
+	// Amount of memory used on the host (in GB).
+	UsedMemory pulumi.Float64PtrInput `pulumi:"usedMemory"`
+}
+
+func (PiHostCapacityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostCapacity)(nil)).Elem()
+}
+
+func (i PiHostCapacityArgs) ToPiHostCapacityOutput() PiHostCapacityOutput {
+	return i.ToPiHostCapacityOutputWithContext(context.Background())
+}
+
+func (i PiHostCapacityArgs) ToPiHostCapacityOutputWithContext(ctx context.Context) PiHostCapacityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostCapacityOutput)
+}
+
+// PiHostCapacityArrayInput is an input type that accepts PiHostCapacityArray and PiHostCapacityArrayOutput values.
+// You can construct a concrete instance of `PiHostCapacityArrayInput` via:
+//
+//	PiHostCapacityArray{ PiHostCapacityArgs{...} }
+type PiHostCapacityArrayInput interface {
+	pulumi.Input
+
+	ToPiHostCapacityArrayOutput() PiHostCapacityArrayOutput
+	ToPiHostCapacityArrayOutputWithContext(context.Context) PiHostCapacityArrayOutput
+}
+
+type PiHostCapacityArray []PiHostCapacityInput
+
+func (PiHostCapacityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiHostCapacity)(nil)).Elem()
+}
+
+func (i PiHostCapacityArray) ToPiHostCapacityArrayOutput() PiHostCapacityArrayOutput {
+	return i.ToPiHostCapacityArrayOutputWithContext(context.Background())
+}
+
+func (i PiHostCapacityArray) ToPiHostCapacityArrayOutputWithContext(ctx context.Context) PiHostCapacityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PiHostCapacityArrayOutput)
+}
+
+type PiHostCapacityOutput struct{ *pulumi.OutputState }
+
+func (PiHostCapacityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PiHostCapacity)(nil)).Elem()
+}
+
+func (o PiHostCapacityOutput) ToPiHostCapacityOutput() PiHostCapacityOutput {
+	return o
+}
+
+func (o PiHostCapacityOutput) ToPiHostCapacityOutputWithContext(ctx context.Context) PiHostCapacityOutput {
+	return o
+}
+
+// Number of cores currently available.
+func (o PiHostCapacityOutput) AvailableCores() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.AvailableCores }).(pulumi.Float64PtrOutput)
+}
+
+// Amount of memory currently available (in GB).
+func (o PiHostCapacityOutput) AvailableMemory() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.AvailableMemory }).(pulumi.Float64PtrOutput)
+}
+
+// Number of cores reserved for system use.
+func (o PiHostCapacityOutput) ReservedCore() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.ReservedCore }).(pulumi.Float64PtrOutput)
+}
+
+// Amount of memory reserved for system use (in GB).
+func (o PiHostCapacityOutput) ReservedMemory() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.ReservedMemory }).(pulumi.Float64PtrOutput)
+}
+
+// Total number of cores of the host.
+func (o PiHostCapacityOutput) TotalCore() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.TotalCore }).(pulumi.Float64PtrOutput)
+}
+
+// Total amount of memory of the host (in GB).
+func (o PiHostCapacityOutput) TotalMemory() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.TotalMemory }).(pulumi.Float64PtrOutput)
+}
+
+// Number of cores in use on the host.
+func (o PiHostCapacityOutput) UsedCore() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.UsedCore }).(pulumi.Float64PtrOutput)
+}
+
+// Amount of memory used on the host (in GB).
+func (o PiHostCapacityOutput) UsedMemory() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PiHostCapacity) *float64 { return v.UsedMemory }).(pulumi.Float64PtrOutput)
+}
+
+type PiHostCapacityArrayOutput struct{ *pulumi.OutputState }
+
+func (PiHostCapacityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PiHostCapacity)(nil)).Elem()
+}
+
+func (o PiHostCapacityArrayOutput) ToPiHostCapacityArrayOutput() PiHostCapacityArrayOutput {
+	return o
+}
+
+func (o PiHostCapacityArrayOutput) ToPiHostCapacityArrayOutputWithContext(ctx context.Context) PiHostCapacityArrayOutput {
+	return o
+}
+
+func (o PiHostCapacityArrayOutput) Index(i pulumi.IntInput) PiHostCapacityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PiHostCapacity {
+		return vs[0].([]PiHostCapacity)[vs[1].(int)]
+	}).(PiHostCapacityOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscaleGroupVirtualGuestMemberTemplateInput)(nil)).Elem(), ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeAutoscaleGroupVirtualGuestMemberTemplateArrayInput)(nil)).Elem(), ComputeAutoscaleGroupVirtualGuestMemberTemplateArray{})
@@ -72160,56 +72149,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeBareMetalStorageGroupArrayInput)(nil)).Elem(), ComputeBareMetalStorageGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeVmInstanceBulkVmInput)(nil)).Elem(), ComputeVmInstanceBulkVmArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeVmInstanceBulkVmArrayInput)(nil)).Elem(), ComputeVmInstanceBulkVmArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAddonsAddonInput)(nil)).Elem(), ContainerAddonsAddonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerAddonsAddonArrayInput)(nil)).Elem(), ContainerAddonsAddonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterAlbInput)(nil)).Elem(), ContainerClusterAlbArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterAlbArrayInput)(nil)).Elem(), ContainerClusterAlbArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterKmsConfigInput)(nil)).Elem(), ContainerClusterKmsConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterKmsConfigPtrInput)(nil)).Elem(), ContainerClusterKmsConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterTaintInput)(nil)).Elem(), ContainerClusterTaintArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterTaintArrayInput)(nil)).Elem(), ContainerClusterTaintArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWebhookInput)(nil)).Elem(), ContainerClusterWebhookArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWebhookArrayInput)(nil)).Elem(), ContainerClusterWebhookArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWorkerPoolInput)(nil)).Elem(), ContainerClusterWorkerPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWorkerPoolArrayInput)(nil)).Elem(), ContainerClusterWorkerPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWorkerPoolZoneInput)(nil)).Elem(), ContainerClusterWorkerPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWorkerPoolZoneArrayInput)(nil)).Elem(), ContainerClusterWorkerPoolZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWorkersInfoInput)(nil)).Elem(), ContainerClusterWorkersInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerClusterWorkersInfoArrayInput)(nil)).Elem(), ContainerClusterWorkersInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostLifeCycleInput)(nil)).Elem(), ContainerDedicatedHostLifeCycleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostLifeCycleArrayInput)(nil)).Elem(), ContainerDedicatedHostLifeCycleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostPoolWorkerPoolInput)(nil)).Elem(), ContainerDedicatedHostPoolWorkerPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostPoolWorkerPoolArrayInput)(nil)).Elem(), ContainerDedicatedHostPoolWorkerPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostPoolZoneInput)(nil)).Elem(), ContainerDedicatedHostPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostPoolZoneArrayInput)(nil)).Elem(), ContainerDedicatedHostPoolZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostPoolZoneCapacityInput)(nil)).Elem(), ContainerDedicatedHostPoolZoneCapacityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostPoolZoneCapacityArrayInput)(nil)).Elem(), ContainerDedicatedHostPoolZoneCapacityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostResourceInput)(nil)).Elem(), ContainerDedicatedHostResourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostResourceArrayInput)(nil)).Elem(), ContainerDedicatedHostResourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostResourceCapacityInput)(nil)).Elem(), ContainerDedicatedHostResourceCapacityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostResourceCapacityArrayInput)(nil)).Elem(), ContainerDedicatedHostResourceCapacityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostResourceConsumedInput)(nil)).Elem(), ContainerDedicatedHostResourceConsumedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostResourceConsumedArrayInput)(nil)).Elem(), ContainerDedicatedHostResourceConsumedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostWorkerInput)(nil)).Elem(), ContainerDedicatedHostWorkerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerDedicatedHostWorkerArrayInput)(nil)).Elem(), ContainerDedicatedHostWorkerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretOpaqueFieldInput)(nil)).Elem(), ContainerIngressSecretOpaqueFieldArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerIngressSecretOpaqueFieldArrayInput)(nil)).Elem(), ContainerIngressSecretOpaqueFieldArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterAlbInput)(nil)).Elem(), ContainerVpcClusterAlbArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterAlbArrayInput)(nil)).Elem(), ContainerVpcClusterAlbArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterKmsConfigInput)(nil)).Elem(), ContainerVpcClusterKmsConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterKmsConfigPtrInput)(nil)).Elem(), ContainerVpcClusterKmsConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterTaintInput)(nil)).Elem(), ContainerVpcClusterTaintArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterTaintArrayInput)(nil)).Elem(), ContainerVpcClusterTaintArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterZoneInput)(nil)).Elem(), ContainerVpcClusterZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcClusterZoneArrayInput)(nil)).Elem(), ContainerVpcClusterZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcWorkerPoolTaintInput)(nil)).Elem(), ContainerVpcWorkerPoolTaintArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcWorkerPoolTaintArrayInput)(nil)).Elem(), ContainerVpcWorkerPoolTaintArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcWorkerPoolZoneInput)(nil)).Elem(), ContainerVpcWorkerPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerVpcWorkerPoolZoneArrayInput)(nil)).Elem(), ContainerVpcWorkerPoolZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolTaintInput)(nil)).Elem(), ContainerWorkerPoolTaintArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolTaintArrayInput)(nil)).Elem(), ContainerWorkerPoolTaintArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolZoneInput)(nil)).Elem(), ContainerWorkerPoolZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ContainerWorkerPoolZoneArrayInput)(nil)).Elem(), ContainerWorkerPoolZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketAbortIncompleteMultipartUploadDayInput)(nil)).Elem(), CosBucketAbortIncompleteMultipartUploadDayArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketAbortIncompleteMultipartUploadDayArrayInput)(nil)).Elem(), CosBucketAbortIncompleteMultipartUploadDayArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketActivityTrackingInput)(nil)).Elem(), CosBucketActivityTrackingArgs{})
@@ -72264,20 +72203,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleConditionInput)(nil)).Elem(), CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleConditionPtrInput)(nil)).Elem(), CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirectInput)(nil)).Elem(), CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirectArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverForwardingRuleViewInput)(nil)).Elem(), DnsCustomResolverForwardingRuleViewArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverForwardingRuleViewArrayInput)(nil)).Elem(), DnsCustomResolverForwardingRuleViewArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverLocationInput)(nil)).Elem(), DnsCustomResolverLocationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverLocationArrayInput)(nil)).Elem(), DnsCustomResolverLocationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverRuleInput)(nil)).Elem(), DnsCustomResolverRuleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverRuleArrayInput)(nil)).Elem(), DnsCustomResolverRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverRuleViewInput)(nil)).Elem(), DnsCustomResolverRuleViewArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsCustomResolverRuleViewArrayInput)(nil)).Elem(), DnsCustomResolverRuleViewArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbAzPoolInput)(nil)).Elem(), DnsGlbAzPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbAzPoolArrayInput)(nil)).Elem(), DnsGlbAzPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbMonitorHeaderInput)(nil)).Elem(), DnsGlbMonitorHeaderArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbMonitorHeaderArrayInput)(nil)).Elem(), DnsGlbMonitorHeaderArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbPoolOriginInput)(nil)).Elem(), DnsGlbPoolOriginArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsGlbPoolOriginArrayInput)(nil)).Elem(), DnsGlbPoolOriginArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupDynamicRuleConditionInput)(nil)).Elem(), IamAccessGroupDynamicRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupDynamicRuleConditionArrayInput)(nil)).Elem(), IamAccessGroupDynamicRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IamAccessGroupMembersMemberInput)(nil)).Elem(), IamAccessGroupMembersMemberArgs{})
@@ -73147,6 +73072,70 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcDnsResolverManualServerArrayInput)(nil)).Elem(), IsVpcDnsResolverManualServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcDnsResolverServerInput)(nil)).Elem(), IsVpcDnsResolverServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcDnsResolverServerArrayInput)(nil)).Elem(), IsVpcDnsResolverServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcHealthReasonInput)(nil)).Elem(), IsVpcHealthReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcHealthReasonArrayInput)(nil)).Elem(), IsVpcHealthReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeInput)(nil)).Elem(), IsVpcPublicAddressRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeArrayInput)(nil)).Elem(), IsVpcPublicAddressRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeDeletedInput)(nil)).Elem(), IsVpcPublicAddressRangeDeletedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcPublicAddressRangeDeletedArrayInput)(nil)).Elem(), IsVpcPublicAddressRangeDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableResourceGroupInput)(nil)).Elem(), IsVpcRoutingTableResourceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableResourceGroupArrayInput)(nil)).Elem(), IsVpcRoutingTableResourceGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorArrayInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeletedInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorDeletedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableRouteCreatorDeletedArrayInput)(nil)).Elem(), IsVpcRoutingTableRouteCreatorDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableSubnetInput)(nil)).Elem(), IsVpcRoutingTableSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcRoutingTableSubnetArrayInput)(nil)).Elem(), IsVpcRoutingTableSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupInput)(nil)).Elem(), IsVpcSecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupArrayInput)(nil)).Elem(), IsVpcSecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupRuleInput)(nil)).Elem(), IsVpcSecurityGroupRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSecurityGroupRuleArrayInput)(nil)).Elem(), IsVpcSecurityGroupRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSubnetInput)(nil)).Elem(), IsVpcSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpcSubnetArrayInput)(nil)).Elem(), IsVpcSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalInput)(nil)).Elem(), IsVpnGatewayConnectionLocalArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalPtrInput)(nil)).Elem(), IsVpnGatewayConnectionLocalArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentityInput)(nil)).Elem(), IsVpnGatewayConnectionLocalIkeIdentityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionLocalIkeIdentityArrayInput)(nil)).Elem(), IsVpnGatewayConnectionLocalIkeIdentityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerInput)(nil)).Elem(), IsVpnGatewayConnectionPeerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerPtrInput)(nil)).Elem(), IsVpnGatewayConnectionPeerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentityInput)(nil)).Elem(), IsVpnGatewayConnectionPeerIkeIdentityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionPeerIkeIdentityPtrInput)(nil)).Elem(), IsVpnGatewayConnectionPeerIkeIdentityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionStatusReasonInput)(nil)).Elem(), IsVpnGatewayConnectionStatusReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionStatusReasonArrayInput)(nil)).Elem(), IsVpnGatewayConnectionStatusReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionTunnelInput)(nil)).Elem(), IsVpnGatewayConnectionTunnelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayConnectionTunnelArrayInput)(nil)).Elem(), IsVpnGatewayConnectionTunnelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayHealthReasonInput)(nil)).Elem(), IsVpnGatewayHealthReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayHealthReasonArrayInput)(nil)).Elem(), IsVpnGatewayHealthReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayLifecycleReasonInput)(nil)).Elem(), IsVpnGatewayLifecycleReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayLifecycleReasonArrayInput)(nil)).Elem(), IsVpnGatewayLifecycleReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayMemberInput)(nil)).Elem(), IsVpnGatewayMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayMemberArrayInput)(nil)).Elem(), IsVpnGatewayMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcInput)(nil)).Elem(), IsVpnGatewayVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcArrayInput)(nil)).Elem(), IsVpnGatewayVpcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcDeletedInput)(nil)).Elem(), IsVpnGatewayVpcDeletedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnGatewayVpcDeletedArrayInput)(nil)).Elem(), IsVpnGatewayVpcDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerClientAuthenticationInput)(nil)).Elem(), IsVpnServerClientAuthenticationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerClientAuthenticationArrayInput)(nil)).Elem(), IsVpnServerClientAuthenticationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerHealthReasonInput)(nil)).Elem(), IsVpnServerHealthReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerHealthReasonArrayInput)(nil)).Elem(), IsVpnServerHealthReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerLifecycleReasonInput)(nil)).Elem(), IsVpnServerLifecycleReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerLifecycleReasonArrayInput)(nil)).Elem(), IsVpnServerLifecycleReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpInput)(nil)).Elem(), IsVpnServerPrivateIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpArrayInput)(nil)).Elem(), IsVpnServerPrivateIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpDeletedInput)(nil)).Elem(), IsVpnServerPrivateIpDeletedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerPrivateIpDeletedArrayInput)(nil)).Elem(), IsVpnServerPrivateIpDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteHealthReasonInput)(nil)).Elem(), IsVpnServerRouteHealthReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteHealthReasonArrayInput)(nil)).Elem(), IsVpnServerRouteHealthReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteLifecycleReasonInput)(nil)).Elem(), IsVpnServerRouteLifecycleReasonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerRouteLifecycleReasonArrayInput)(nil)).Elem(), IsVpnServerRouteLifecycleReasonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcInput)(nil)).Elem(), IsVpnServerVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcArrayInput)(nil)).Elem(), IsVpnServerVpcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcDeletedInput)(nil)).Elem(), IsVpnServerVpcDeletedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IsVpnServerVpcDeletedArrayInput)(nil)).Elem(), IsVpnServerVpcDeletedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiDhcpLeaseInput)(nil)).Elem(), PiDhcpLeaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiDhcpLeaseArrayInput)(nil)).Elem(), PiDhcpLeaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostCapacityInput)(nil)).Elem(), PiHostCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PiHostCapacityArrayInput)(nil)).Elem(), PiHostCapacityArray{})
 	pulumi.RegisterOutputType(ComputeAutoscaleGroupVirtualGuestMemberTemplateOutput{})
 	pulumi.RegisterOutputType(ComputeAutoscaleGroupVirtualGuestMemberTemplateArrayOutput{})
 	pulumi.RegisterOutputType(ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVmOutput{})
@@ -73159,56 +73148,6 @@ func init() {
 	pulumi.RegisterOutputType(ComputeBareMetalStorageGroupArrayOutput{})
 	pulumi.RegisterOutputType(ComputeVmInstanceBulkVmOutput{})
 	pulumi.RegisterOutputType(ComputeVmInstanceBulkVmArrayOutput{})
-	pulumi.RegisterOutputType(ContainerAddonsAddonOutput{})
-	pulumi.RegisterOutputType(ContainerAddonsAddonArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterAlbOutput{})
-	pulumi.RegisterOutputType(ContainerClusterAlbArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterKmsConfigOutput{})
-	pulumi.RegisterOutputType(ContainerClusterKmsConfigPtrOutput{})
-	pulumi.RegisterOutputType(ContainerClusterTaintOutput{})
-	pulumi.RegisterOutputType(ContainerClusterTaintArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWebhookOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWebhookArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWorkerPoolOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWorkerPoolArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWorkerPoolZoneOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWorkerPoolZoneArrayOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWorkersInfoOutput{})
-	pulumi.RegisterOutputType(ContainerClusterWorkersInfoArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostLifeCycleOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostLifeCycleArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostPoolWorkerPoolOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostPoolWorkerPoolArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostPoolZoneOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostPoolZoneArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostPoolZoneCapacityOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostPoolZoneCapacityArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostResourceOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostResourceArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostResourceCapacityOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostResourceCapacityArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostResourceConsumedOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostResourceConsumedArrayOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostWorkerOutput{})
-	pulumi.RegisterOutputType(ContainerDedicatedHostWorkerArrayOutput{})
-	pulumi.RegisterOutputType(ContainerIngressSecretOpaqueFieldOutput{})
-	pulumi.RegisterOutputType(ContainerIngressSecretOpaqueFieldArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterAlbOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterAlbArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterKmsConfigOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterKmsConfigPtrOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterTaintOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterTaintArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterZoneOutput{})
-	pulumi.RegisterOutputType(ContainerVpcClusterZoneArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcWorkerPoolTaintOutput{})
-	pulumi.RegisterOutputType(ContainerVpcWorkerPoolTaintArrayOutput{})
-	pulumi.RegisterOutputType(ContainerVpcWorkerPoolZoneOutput{})
-	pulumi.RegisterOutputType(ContainerVpcWorkerPoolZoneArrayOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolTaintOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolTaintArrayOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolZoneOutput{})
-	pulumi.RegisterOutputType(ContainerWorkerPoolZoneArrayOutput{})
 	pulumi.RegisterOutputType(CosBucketAbortIncompleteMultipartUploadDayOutput{})
 	pulumi.RegisterOutputType(CosBucketAbortIncompleteMultipartUploadDayArrayOutput{})
 	pulumi.RegisterOutputType(CosBucketActivityTrackingOutput{})
@@ -73263,20 +73202,6 @@ func init() {
 	pulumi.RegisterOutputType(CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleConditionOutput{})
 	pulumi.RegisterOutputType(CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleConditionPtrOutput{})
 	pulumi.RegisterOutputType(CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirectOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverForwardingRuleViewOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverForwardingRuleViewArrayOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverLocationOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverLocationArrayOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverRuleOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverRuleArrayOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverRuleViewOutput{})
-	pulumi.RegisterOutputType(DnsCustomResolverRuleViewArrayOutput{})
-	pulumi.RegisterOutputType(DnsGlbAzPoolOutput{})
-	pulumi.RegisterOutputType(DnsGlbAzPoolArrayOutput{})
-	pulumi.RegisterOutputType(DnsGlbMonitorHeaderOutput{})
-	pulumi.RegisterOutputType(DnsGlbMonitorHeaderArrayOutput{})
-	pulumi.RegisterOutputType(DnsGlbPoolOriginOutput{})
-	pulumi.RegisterOutputType(DnsGlbPoolOriginArrayOutput{})
 	pulumi.RegisterOutputType(IamAccessGroupDynamicRuleConditionOutput{})
 	pulumi.RegisterOutputType(IamAccessGroupDynamicRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(IamAccessGroupMembersMemberOutput{})
@@ -74146,4 +74071,68 @@ func init() {
 	pulumi.RegisterOutputType(IsVpcDnsResolverManualServerArrayOutput{})
 	pulumi.RegisterOutputType(IsVpcDnsResolverServerOutput{})
 	pulumi.RegisterOutputType(IsVpcDnsResolverServerArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcHealthReasonOutput{})
+	pulumi.RegisterOutputType(IsVpcHealthReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcPublicAddressRangeOutput{})
+	pulumi.RegisterOutputType(IsVpcPublicAddressRangeArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcPublicAddressRangeDeletedOutput{})
+	pulumi.RegisterOutputType(IsVpcPublicAddressRangeDeletedArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableResourceGroupOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableResourceGroupArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorDeletedOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableRouteCreatorDeletedArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableSubnetOutput{})
+	pulumi.RegisterOutputType(IsVpcRoutingTableSubnetArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcSecurityGroupOutput{})
+	pulumi.RegisterOutputType(IsVpcSecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcSecurityGroupRuleOutput{})
+	pulumi.RegisterOutputType(IsVpcSecurityGroupRuleArrayOutput{})
+	pulumi.RegisterOutputType(IsVpcSubnetOutput{})
+	pulumi.RegisterOutputType(IsVpcSubnetArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalPtrOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalIkeIdentityOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionLocalIkeIdentityArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerPtrOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerIkeIdentityOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionPeerIkeIdentityPtrOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionStatusReasonOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionStatusReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionTunnelOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayConnectionTunnelArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayHealthReasonOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayHealthReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayLifecycleReasonOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayLifecycleReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayMemberOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayMemberArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayVpcOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayVpcArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayVpcDeletedOutput{})
+	pulumi.RegisterOutputType(IsVpnGatewayVpcDeletedArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerClientAuthenticationOutput{})
+	pulumi.RegisterOutputType(IsVpnServerClientAuthenticationArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerHealthReasonOutput{})
+	pulumi.RegisterOutputType(IsVpnServerHealthReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerLifecycleReasonOutput{})
+	pulumi.RegisterOutputType(IsVpnServerLifecycleReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerPrivateIpOutput{})
+	pulumi.RegisterOutputType(IsVpnServerPrivateIpArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerPrivateIpDeletedOutput{})
+	pulumi.RegisterOutputType(IsVpnServerPrivateIpDeletedArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerRouteHealthReasonOutput{})
+	pulumi.RegisterOutputType(IsVpnServerRouteHealthReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerRouteLifecycleReasonOutput{})
+	pulumi.RegisterOutputType(IsVpnServerRouteLifecycleReasonArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerVpcOutput{})
+	pulumi.RegisterOutputType(IsVpnServerVpcArrayOutput{})
+	pulumi.RegisterOutputType(IsVpnServerVpcDeletedOutput{})
+	pulumi.RegisterOutputType(IsVpnServerVpcDeletedArrayOutput{})
+	pulumi.RegisterOutputType(PiDhcpLeaseOutput{})
+	pulumi.RegisterOutputType(PiDhcpLeaseArrayOutput{})
+	pulumi.RegisterOutputType(PiHostCapacityOutput{})
+	pulumi.RegisterOutputType(PiHostCapacityArrayOutput{})
 }
