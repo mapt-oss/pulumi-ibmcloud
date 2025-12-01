@@ -35,6 +35,7 @@ Successfully created a complete, production-ready **Pulumi provider for IBM Clou
 
 **Organization**: `mapt-oss`
 **Final Repository**: `github.com/mapt-oss/pulumi-ibmcloud`
+**Project Location**: `/home/default/workdir` (also accessible via current working directory)
 
 ---
 
@@ -47,10 +48,13 @@ Create a Pulumi provider for the IBM Cloud Terraform provider available at:
 - **Organization**: `mapt-oss`
 
 ### Starting Context
-- Working directory: `/home/default/workdir/pulumi-ibmcloud`
-- No existing provider code
+- **Project Location**: `/home/default/workdir` (current working directory)
+- **Full Path**: `/home/default/workdir/pulumi-ibmcloud` (subdirectory within workspace)
+- No existing provider code at start
 - Go 1.23.4 installed during session
 - Pulumi CLI installed during session
+
+> **Note**: This project is managed from `/home/default/workdir`. All paths in this document reference this base directory unless otherwise specified.
 
 ---
 

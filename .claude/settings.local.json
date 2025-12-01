@@ -41,7 +41,15 @@
       "Bash(jq:*)",
       "WebFetch(domain:registry.terraform.io)",
       "Bash(GOFLAGS=\"-mod=mod\" go build:*)",
-      "Bash(/home/default/workdir/bin/pulumi-tfgen-ibmcloud go:*)"
+      "Bash(/home/default/workdir/bin/pulumi-tfgen-ibmcloud go:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/get-version.sh:*)",
+      "Bash(git describe:*)",
+      "Bash(bash:*)",
+      "Bash(git checkout:*)",
+      "Bash(make:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
