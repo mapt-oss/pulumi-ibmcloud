@@ -3,7 +3,6 @@
         "resources": {
             "ibm_compute_autoscale_group": {
                 "current": "ibmcloud:index/computeAutoscaleGroup:ComputeAutoscaleGroup",
-                "majorVersion": 1,
                 "fields": {
                     "network_vlan_ids": {
                         "maxItemsOne": false
@@ -52,7 +51,6 @@
             },
             "ibm_compute_autoscale_policy": {
                 "current": "ibmcloud:index/computeAutoscalePolicy:ComputeAutoscalePolicy",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -71,7 +69,6 @@
             },
             "ibm_compute_bare_metal": {
                 "current": "ibmcloud:index/computeBareMetal:ComputeBareMetal",
-                "majorVersion": 1,
                 "fields": {
                     "block_storage_ids": {
                         "maxItemsOne": false
@@ -105,7 +102,6 @@
             },
             "ibm_compute_dedicated_host": {
                 "current": "ibmcloud:index/computeDedicatedHost:ComputeDedicatedHost",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -114,7 +110,6 @@
             },
             "ibm_compute_monitor": {
                 "current": "ibmcloud:index/computeMonitor:ComputeMonitor",
-                "majorVersion": 1,
                 "fields": {
                     "notified_users": {
                         "maxItemsOne": false
@@ -126,7 +121,6 @@
             },
             "ibm_compute_placement_group": {
                 "current": "ibmcloud:index/computePlacementGroup:ComputePlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -135,7 +129,6 @@
             },
             "ibm_compute_provisioning_hook": {
                 "current": "ibmcloud:index/computeProvisioningHook:ComputeProvisioningHook",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -144,7 +137,6 @@
             },
             "ibm_compute_reserved_capacity": {
                 "current": "ibmcloud:index/computeReservedCapacity:ComputeReservedCapacity",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -153,7 +145,6 @@
             },
             "ibm_compute_ssh_key": {
                 "current": "ibmcloud:index/computeSshKey:ComputeSshKey",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -162,7 +153,6 @@
             },
             "ibm_compute_ssl_certificate": {
                 "current": "ibmcloud:index/computeSslCertificate:ComputeSslCertificate",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -171,7 +161,6 @@
             },
             "ibm_compute_user": {
                 "current": "ibmcloud:index/computeUser:ComputeUser",
-                "majorVersion": 1,
                 "fields": {
                     "permissions": {
                         "maxItemsOne": false
@@ -183,7 +172,6 @@
             },
             "ibm_compute_vm_instance": {
                 "current": "ibmcloud:index/computeVmInstance:ComputeVmInstance",
-                "majorVersion": 1,
                 "fields": {
                     "block_storage_ids": {
                         "maxItemsOne": false
@@ -218,16 +206,13 @@
                 }
             },
             "ibm_cos_backup_policy": {
-                "current": "ibmcloud:index/cosBackupPolicy:CosBackupPolicy",
-                "majorVersion": 1
+                "current": "ibmcloud:index/cosBackupPolicy:CosBackupPolicy"
             },
             "ibm_cos_backup_vault": {
-                "current": "ibmcloud:index/cosBackupVault:CosBackupVault",
-                "majorVersion": 1
+                "current": "ibmcloud:index/cosBackupVault:CosBackupVault"
             },
             "ibm_cos_bucket": {
                 "current": "ibmcloud:index/cosBucket:CosBucket",
-                "majorVersion": 1,
                 "fields": {
                     "abort_incomplete_multipart_upload_days": {
                         "maxItemsOne": false
@@ -260,7 +245,6 @@
             },
             "ibm_cos_bucket_lifecycle_configuration": {
                 "current": "ibmcloud:index/cosBucketLifecycleConfiguration:CosBucketLifecycleConfiguration",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_rule": {
                         "maxItemsOne": false,
@@ -304,12 +288,10 @@
                 }
             },
             "ibm_cos_bucket_object": {
-                "current": "ibmcloud:index/cosBucketObject:CosBucketObject",
-                "majorVersion": 1
+                "current": "ibmcloud:index/cosBucketObject:CosBucketObject"
             },
             "ibm_cos_bucket_object_lock_configuration": {
                 "current": "ibmcloud:index/cosBucketObjectLockConfiguration:CosBucketObjectLockConfiguration",
-                "majorVersion": 1,
                 "fields": {
                     "object_lock_configuration": {
                         "maxItemsOne": true,
@@ -332,7 +314,6 @@
             },
             "ibm_cos_bucket_replication_rule": {
                 "current": "ibmcloud:index/cosBucketReplicationRule:CosBucketReplicationRule",
-                "majorVersion": 1,
                 "fields": {
                     "replication_rule": {
                         "maxItemsOne": false
@@ -341,7 +322,6 @@
             },
             "ibm_cos_bucket_website_configuration": {
                 "current": "ibmcloud:index/cosBucketWebsiteConfiguration:CosBucketWebsiteConfiguration",
-                "majorVersion": 1,
                 "fields": {
                     "website_configuration": {
                         "maxItemsOne": true,
@@ -376,7 +356,6 @@
             },
             "ibm_iam_access_group": {
                 "current": "ibmcloud:index/iamAccessGroup:IamAccessGroup",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -384,12 +363,10 @@
                 }
             },
             "ibm_iam_access_group_account_settings": {
-                "current": "ibmcloud:index/iamAccessGroupAccountSettings:IamAccessGroupAccountSettings",
-                "majorVersion": 1
+                "current": "ibmcloud:index/iamAccessGroupAccountSettings:IamAccessGroupAccountSettings"
             },
             "ibm_iam_access_group_dynamic_rule": {
                 "current": "ibmcloud:index/iamAccessGroupDynamicRule:IamAccessGroupDynamicRule",
-                "majorVersion": 1,
                 "fields": {
                     "conditions": {
                         "maxItemsOne": false
@@ -398,7 +375,6 @@
             },
             "ibm_iam_access_group_members": {
                 "current": "ibmcloud:index/iamAccessGroupMembers:IamAccessGroupMembers",
-                "majorVersion": 1,
                 "fields": {
                     "iam_profile_ids": {
                         "maxItemsOne": false
@@ -416,7 +392,6 @@
             },
             "ibm_iam_access_group_policy": {
                 "current": "ibmcloud:index/iamAccessGroupPolicy:IamAccessGroupPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "resource_attributes": {
                         "maxItemsOne": false
@@ -457,7 +432,6 @@
             },
             "ibm_iam_access_group_template": {
                 "current": "ibmcloud:index/iamAccessGroupTemplate:IamAccessGroupTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "group": {
                         "maxItemsOne": true,
@@ -521,12 +495,10 @@
                 }
             },
             "ibm_iam_access_group_template_assignment": {
-                "current": "ibmcloud:index/iamAccessGroupTemplateAssignment:IamAccessGroupTemplateAssignment",
-                "majorVersion": 1
+                "current": "ibmcloud:index/iamAccessGroupTemplateAssignment:IamAccessGroupTemplateAssignment"
             },
             "ibm_iam_access_group_template_version": {
                 "current": "ibmcloud:index/iamAccessGroupTemplateVersion:IamAccessGroupTemplateVersion",
-                "majorVersion": 1,
                 "fields": {
                     "group": {
                         "maxItemsOne": true,
@@ -590,12 +562,10 @@
                 }
             },
             "ibm_iam_access_tag": {
-                "current": "ibmcloud:index/iamAccessTag:IamAccessTag",
-                "majorVersion": 1
+                "current": "ibmcloud:index/iamAccessTag:IamAccessTag"
             },
             "ibm_iam_account_settings": {
                 "current": "ibmcloud:index/iamAccountSettings:IamAccountSettings",
-                "majorVersion": 1,
                 "fields": {
                     "history": {
                         "maxItemsOne": false,
@@ -624,7 +594,6 @@
             },
             "ibm_iam_account_settings_external_interaction": {
                 "current": "ibmcloud:index/iamAccountSettingsExternalInteraction:IamAccountSettingsExternalInteraction",
-                "majorVersion": 1,
                 "fields": {
                     "external_account_identity_interaction": {
                         "maxItemsOne": true,
@@ -674,7 +643,6 @@
             },
             "ibm_iam_account_settings_template": {
                 "current": "ibmcloud:index/iamAccountSettingsTemplate:IamAccountSettingsTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "account_settings": {
                         "maxItemsOne": true,
@@ -717,7 +685,6 @@
             },
             "ibm_iam_account_settings_template_assignment": {
                 "current": "ibmcloud:index/iamAccountSettingsTemplateAssignment:IamAccountSettingsTemplateAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "context": {
                         "maxItemsOne": false
@@ -756,7 +723,6 @@
             },
             "ibm_iam_action_control_assignment": {
                 "current": "ibmcloud:index/iamActionControlAssignment:IamActionControlAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "resources": {
                         "maxItemsOne": false,
@@ -806,7 +772,6 @@
             },
             "ibm_iam_action_control_template": {
                 "current": "ibmcloud:index/iamActionControlTemplate:IamActionControlTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "action_control": {
                         "maxItemsOne": false,
@@ -822,7 +787,6 @@
             },
             "ibm_iam_action_control_template_version": {
                 "current": "ibmcloud:index/iamActionControlTemplateVersion:IamActionControlTemplateVersion",
-                "majorVersion": 1,
                 "fields": {
                     "action_control": {
                         "maxItemsOne": false,
@@ -837,12 +801,10 @@
                 }
             },
             "ibm_iam_api_key": {
-                "current": "ibmcloud:index/iamApiKey:IamApiKey",
-                "majorVersion": 1
+                "current": "ibmcloud:index/iamApiKey:IamApiKey"
             },
             "ibm_iam_authorization_policy": {
                 "current": "ibmcloud:index/iamAuthorizationPolicy:IamAuthorizationPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "resource_attributes": {
                         "maxItemsOne": false
@@ -856,12 +818,10 @@
                 }
             },
             "ibm_iam_authorization_policy_detach": {
-                "current": "ibmcloud:index/iamAuthorizationPolicyDetach:IamAuthorizationPolicyDetach",
-                "majorVersion": 1
+                "current": "ibmcloud:index/iamAuthorizationPolicyDetach:IamAuthorizationPolicyDetach"
             },
             "ibm_iam_custom_role": {
                 "current": "ibmcloud:index/iamCustomRole:IamCustomRole",
-                "majorVersion": 1,
                 "fields": {
                     "actions": {
                         "maxItemsOne": false
@@ -870,7 +830,6 @@
             },
             "ibm_iam_policy_assignment": {
                 "current": "ibmcloud:index/iamPolicyAssignment:IamPolicyAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "resources": {
                         "maxItemsOne": false,
@@ -920,7 +879,6 @@
             },
             "ibm_iam_policy_template": {
                 "current": "ibmcloud:index/iamPolicyTemplate:IamPolicyTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "policy": {
                         "maxItemsOne": true,
@@ -979,7 +937,6 @@
             },
             "ibm_iam_policy_template_version": {
                 "current": "ibmcloud:index/iamPolicyTemplateVersion:IamPolicyTemplateVersion",
-                "majorVersion": 1,
                 "fields": {
                     "policy": {
                         "maxItemsOne": true,
@@ -1037,12 +994,10 @@
                 }
             },
             "ibm_iam_service_api_key": {
-                "current": "ibmcloud:index/iamServiceApiKey:IamServiceApiKey",
-                "majorVersion": 1
+                "current": "ibmcloud:index/iamServiceApiKey:IamServiceApiKey"
             },
             "ibm_iam_service_id": {
                 "current": "ibmcloud:index/iamServiceId:IamServiceId",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -1051,7 +1006,6 @@
             },
             "ibm_iam_service_policy": {
                 "current": "ibmcloud:index/iamServicePolicy:IamServicePolicy",
-                "majorVersion": 1,
                 "fields": {
                     "resource_attributes": {
                         "maxItemsOne": false
@@ -1092,7 +1046,6 @@
             },
             "ibm_iam_trusted_profile": {
                 "current": "ibmcloud:index/iamTrustedProfile:IamTrustedProfile",
-                "majorVersion": 1,
                 "fields": {
                     "history": {
                         "maxItemsOne": false,
@@ -1108,7 +1061,6 @@
             },
             "ibm_iam_trusted_profile_claim_rule": {
                 "current": "ibmcloud:index/iamTrustedProfileClaimRule:IamTrustedProfileClaimRule",
-                "majorVersion": 1,
                 "fields": {
                     "conditions": {
                         "maxItemsOne": false
@@ -1117,7 +1069,6 @@
             },
             "ibm_iam_trusted_profile_identities": {
                 "current": "ibmcloud:index/iamTrustedProfileIdentities:IamTrustedProfileIdentities",
-                "majorVersion": 1,
                 "fields": {
                     "identities": {
                         "maxItemsOne": false,
@@ -1133,7 +1084,6 @@
             },
             "ibm_iam_trusted_profile_identity": {
                 "current": "ibmcloud:index/iamTrustedProfileIdentity:IamTrustedProfileIdentity",
-                "majorVersion": 1,
                 "fields": {
                     "accounts": {
                         "maxItemsOne": false
@@ -1142,7 +1092,6 @@
             },
             "ibm_iam_trusted_profile_link": {
                 "current": "ibmcloud:index/iamTrustedProfileLink:IamTrustedProfileLink",
-                "majorVersion": 1,
                 "fields": {
                     "link": {
                         "maxItemsOne": true
@@ -1151,7 +1100,6 @@
             },
             "ibm_iam_trusted_profile_policy": {
                 "current": "ibmcloud:index/iamTrustedProfilePolicy:IamTrustedProfilePolicy",
-                "majorVersion": 1,
                 "fields": {
                     "resource_attributes": {
                         "maxItemsOne": false
@@ -1192,7 +1140,6 @@
             },
             "ibm_iam_trusted_profile_template": {
                 "current": "ibmcloud:index/iamTrustedProfileTemplate:IamTrustedProfileTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "history": {
                         "maxItemsOne": false,
@@ -1238,7 +1185,6 @@
             },
             "ibm_iam_trusted_profile_template_assignment": {
                 "current": "ibmcloud:index/iamTrustedProfileTemplateAssignment:IamTrustedProfileTemplateAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "context": {
                         "maxItemsOne": false
@@ -1290,7 +1236,6 @@
             },
             "ibm_iam_user_invite": {
                 "current": "ibmcloud:index/iamUserInvite:IamUserInvite",
-                "majorVersion": 1,
                 "fields": {
                     "access_groups": {
                         "maxItemsOne": false
@@ -1385,7 +1330,6 @@
             },
             "ibm_iam_user_policy": {
                 "current": "ibmcloud:index/iamUserPolicy:IamUserPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "resource_attributes": {
                         "maxItemsOne": false
@@ -1426,7 +1370,6 @@
             },
             "ibm_iam_user_settings": {
                 "current": "ibmcloud:index/iamUserSettings:IamUserSettings",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_ip_addresses": {
                         "maxItemsOne": false
@@ -1435,7 +1378,6 @@
             },
             "ibm_is_backup_policy": {
                 "current": "ibmcloud:index/isBackupPolicy:IsBackupPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "health_reasons": {
                         "maxItemsOne": false
@@ -1456,7 +1398,6 @@
             },
             "ibm_is_backup_policy_plan": {
                 "current": "ibmcloud:index/isBackupPolicyPlan:IsBackupPolicyPlan",
-                "majorVersion": 1,
                 "fields": {
                     "attach_user_tags": {
                         "maxItemsOne": false
@@ -1481,7 +1422,6 @@
             },
             "ibm_is_bare_metal_server": {
                 "current": "ibmcloud:index/isBareMetalServer:IsBareMetalServer",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -1683,7 +1623,6 @@
             },
             "ibm_is_bare_metal_server_action": {
                 "current": "ibmcloud:index/isBareMetalServerAction:IsBareMetalServerAction",
-                "majorVersion": 1,
                 "fields": {
                     "status_reasons": {
                         "maxItemsOne": false
@@ -1692,7 +1631,6 @@
             },
             "ibm_is_bare_metal_server_disk": {
                 "current": "ibmcloud:index/isBareMetalServerDisk:IsBareMetalServerDisk",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_use": {
                         "maxItemsOne": false
@@ -1701,7 +1639,6 @@
             },
             "ibm_is_bare_metal_server_initialization": {
                 "current": "ibmcloud:index/isBareMetalServerInitialization:IsBareMetalServerInitialization",
-                "majorVersion": 1,
                 "fields": {
                     "default_trusted_profile": {
                         "maxItemsOne": true,
@@ -1720,7 +1657,6 @@
             },
             "ibm_is_bare_metal_server_network_attachment": {
                 "current": "ibmcloud:index/isBareMetalServerNetworkAttachment:IsBareMetalServerNetworkAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_vlans": {
                         "maxItemsOne": false
@@ -1759,7 +1695,6 @@
             },
             "ibm_is_bare_metal_server_network_interface": {
                 "current": "ibmcloud:index/isBareMetalServerNetworkInterface:IsBareMetalServerNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_vlans": {
                         "maxItemsOne": false
@@ -1777,7 +1712,6 @@
             },
             "ibm_is_bare_metal_server_network_interface_allow_float": {
                 "current": "ibmcloud:index/isBareMetalServerNetworkInterfaceAllowFloat:IsBareMetalServerNetworkInterfaceAllowFloat",
-                "majorVersion": 1,
                 "fields": {
                     "floating_ips": {
                         "maxItemsOne": false
@@ -1791,12 +1725,10 @@
                 }
             },
             "ibm_is_bare_metal_server_network_interface_floating_ip": {
-                "current": "ibmcloud:index/isBareMetalServerNetworkInterfaceFloatingIp:IsBareMetalServerNetworkInterfaceFloatingIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isBareMetalServerNetworkInterfaceFloatingIp:IsBareMetalServerNetworkInterfaceFloatingIp"
             },
             "ibm_is_cluster_network": {
                 "current": "ibmcloud:index/isClusterNetwork:IsClusterNetwork",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -1818,7 +1750,6 @@
             },
             "ibm_is_cluster_network_interface": {
                 "current": "ibmcloud:index/isClusterNetworkInterface:IsClusterNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -1863,7 +1794,6 @@
             },
             "ibm_is_cluster_network_subnet": {
                 "current": "ibmcloud:index/isClusterNetworkSubnet:IsClusterNetworkSubnet",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -1872,7 +1802,6 @@
             },
             "ibm_is_cluster_network_subnet_reserved_ip": {
                 "current": "ibmcloud:index/isClusterNetworkSubnetReservedIp:IsClusterNetworkSubnetReservedIp",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -1891,7 +1820,6 @@
             },
             "ibm_is_dedicated_host": {
                 "current": "ibmcloud:index/isDedicatedHost:IsDedicatedHost",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -1949,7 +1877,6 @@
             },
             "ibm_is_dedicated_host_disk_management": {
                 "current": "ibmcloud:index/isDedicatedHostDiskManagement:IsDedicatedHostDiskManagement",
-                "majorVersion": 1,
                 "fields": {
                     "disks": {
                         "maxItemsOne": false
@@ -1958,7 +1885,6 @@
             },
             "ibm_is_dedicated_host_group": {
                 "current": "ibmcloud:index/isDedicatedHostGroup:IsDedicatedHostGroup",
-                "majorVersion": 1,
                 "fields": {
                     "dedicated_hosts": {
                         "maxItemsOne": false,
@@ -1977,7 +1903,6 @@
             },
             "ibm_is_floating_ip": {
                 "current": "ibmcloud:index/isFloatingIp:IsFloatingIp",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2002,7 +1927,6 @@
             },
             "ibm_is_flow_log": {
                 "current": "ibmcloud:index/isFlowLog:IsFlowLog",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2014,7 +1938,6 @@
             },
             "ibm_is_ike_policy": {
                 "current": "ibmcloud:index/isIkePolicy:IsIkePolicy",
-                "majorVersion": 1,
                 "fields": {
                     "vpn_connections": {
                         "maxItemsOne": false
@@ -2023,7 +1946,6 @@
             },
             "ibm_is_image": {
                 "current": "ibmcloud:index/isImage:IsImage",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2038,7 +1960,6 @@
             },
             "ibm_is_image_deprecate": {
                 "current": "ibmcloud:index/isImageDeprecate:IsImageDeprecate",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2050,7 +1971,6 @@
             },
             "ibm_is_image_export_job": {
                 "current": "ibmcloud:index/isImageExportJob:IsImageExportJob",
-                "majorVersion": 1,
                 "fields": {
                     "status_reasons": {
                         "maxItemsOne": false
@@ -2065,7 +1985,6 @@
             },
             "ibm_is_image_obsolete": {
                 "current": "ibmcloud:index/isImageObsolete:IsImageObsolete",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2077,7 +1996,6 @@
             },
             "ibm_is_instance": {
                 "current": "ibmcloud:index/isInstance:IsInstance",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2348,7 +2266,6 @@
             },
             "ibm_is_instance_action": {
                 "current": "ibmcloud:index/isInstanceAction:IsInstanceAction",
-                "majorVersion": 1,
                 "fields": {
                     "status_reasons": {
                         "maxItemsOne": false
@@ -2357,7 +2274,6 @@
             },
             "ibm_is_instance_cluster_network_attachment": {
                 "current": "ibmcloud:index/isInstanceClusterNetworkAttachment:IsInstanceClusterNetworkAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "before": {
                         "maxItemsOne": true
@@ -2399,7 +2315,6 @@
             },
             "ibm_is_instance_disk_management": {
                 "current": "ibmcloud:index/isInstanceDiskManagement:IsInstanceDiskManagement",
-                "majorVersion": 1,
                 "fields": {
                     "disks": {
                         "maxItemsOne": false
@@ -2408,7 +2323,6 @@
             },
             "ibm_is_instance_group": {
                 "current": "ibmcloud:index/isInstanceGroup:IsInstanceGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2426,7 +2340,6 @@
             },
             "ibm_is_instance_group_manager": {
                 "current": "ibmcloud:index/isInstanceGroupManager:IsInstanceGroupManager",
-                "majorVersion": 1,
                 "fields": {
                     "actions": {
                         "maxItemsOne": false
@@ -2437,16 +2350,13 @@
                 }
             },
             "ibm_is_instance_group_manager_action": {
-                "current": "ibmcloud:index/isInstanceGroupManagerAction:IsInstanceGroupManagerAction",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isInstanceGroupManagerAction:IsInstanceGroupManagerAction"
             },
             "ibm_is_instance_group_manager_policy": {
-                "current": "ibmcloud:index/isInstanceGroupManagerPolicy:IsInstanceGroupManagerPolicy",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isInstanceGroupManagerPolicy:IsInstanceGroupManagerPolicy"
             },
             "ibm_is_instance_group_membership": {
                 "current": "ibmcloud:index/isInstanceGroupMembership:IsInstanceGroupMembership",
-                "majorVersion": 1,
                 "fields": {
                     "instance": {
                         "maxItemsOne": false
@@ -2458,7 +2368,6 @@
             },
             "ibm_is_instance_network_attachment": {
                 "current": "ibmcloud:index/isInstanceNetworkAttachment:IsInstanceNetworkAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "virtual_network_interface": {
                         "maxItemsOne": true,
@@ -2494,7 +2403,6 @@
             },
             "ibm_is_instance_network_interface": {
                 "current": "ibmcloud:index/isInstanceNetworkInterface:IsInstanceNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "floating_ips": {
                         "maxItemsOne": false,
@@ -2515,12 +2423,10 @@
                 }
             },
             "ibm_is_instance_network_interface_floating_ip": {
-                "current": "ibmcloud:index/isInstanceNetworkInterfaceFloatingIp:IsInstanceNetworkInterfaceFloatingIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isInstanceNetworkInterfaceFloatingIp:IsInstanceNetworkInterfaceFloatingIp"
             },
             "ibm_is_instance_template": {
                 "current": "ibmcloud:index/isInstanceTemplate:IsInstanceTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "boot_volume": {
                         "maxItemsOne": true,
@@ -2714,7 +2620,6 @@
             },
             "ibm_is_instance_volume_attachment": {
                 "current": "ibmcloud:index/isInstanceVolumeAttachment:IsInstanceVolumeAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_use": {
                         "maxItemsOne": true
@@ -2726,7 +2631,6 @@
             },
             "ibm_is_ipsec_policy": {
                 "current": "ibmcloud:index/isIpsecPolicy:IsIpsecPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "vpn_connections": {
                         "maxItemsOne": false
@@ -2735,7 +2639,6 @@
             },
             "ibm_is_lb": {
                 "current": "ibmcloud:index/isLb:IsLb",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2778,7 +2681,6 @@
             },
             "ibm_is_lb_listener": {
                 "current": "ibmcloud:index/isLbListener:IsLbListener",
-                "majorVersion": 1,
                 "fields": {
                     "https_redirect": {
                         "maxItemsOne": true,
@@ -2801,7 +2703,6 @@
             },
             "ibm_is_lb_listener_policy": {
                 "current": "ibmcloud:index/isLbListenerPolicy:IsLbListenerPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "rules": {
                         "maxItemsOne": false
@@ -2829,12 +2730,10 @@
                 }
             },
             "ibm_is_lb_listener_policy_rule": {
-                "current": "ibmcloud:index/isLbListenerPolicyRule:IsLbListenerPolicyRule",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isLbListenerPolicyRule:IsLbListenerPolicyRule"
             },
             "ibm_is_lb_pool": {
                 "current": "ibmcloud:index/isLbPool:IsLbPool",
-                "majorVersion": 1,
                 "fields": {
                     "failsafe_policy": {
                         "maxItemsOne": true,
@@ -2856,12 +2755,10 @@
                 }
             },
             "ibm_is_lb_pool_member": {
-                "current": "ibmcloud:index/isLbPoolMember:IsLbPoolMember",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isLbPoolMember:IsLbPoolMember"
             },
             "ibm_is_network_acl": {
                 "current": "ibmcloud:index/isNetworkAcl:IsNetworkAcl",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2889,7 +2786,6 @@
             },
             "ibm_is_network_acl_rule": {
                 "current": "ibmcloud:index/isNetworkAclRule:IsNetworkAclRule",
-                "majorVersion": 1,
                 "fields": {
                     "icmp": {
                         "maxItemsOne": true
@@ -2904,7 +2800,6 @@
             },
             "ibm_is_placement_group": {
                 "current": "ibmcloud:index/isPlacementGroup:IsPlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2916,7 +2811,6 @@
             },
             "ibm_is_private_path_service_gateway": {
                 "current": "ibmcloud:index/isPrivatePathServiceGateway:IsPrivatePathServiceGateway",
-                "majorVersion": 1,
                 "fields": {
                     "service_endpoints": {
                         "maxItemsOne": false
@@ -2924,24 +2818,19 @@
                 }
             },
             "ibm_is_private_path_service_gateway_account_policy": {
-                "current": "ibmcloud:index/isPrivatePathServiceGatewayAccountPolicy:IsPrivatePathServiceGatewayAccountPolicy",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isPrivatePathServiceGatewayAccountPolicy:IsPrivatePathServiceGatewayAccountPolicy"
             },
             "ibm_is_private_path_service_gateway_endpoint_gateway_binding_operations": {
-                "current": "ibmcloud:index/isPrivatePathServiceGatewayEndpointGatewayBindingOperations:IsPrivatePathServiceGatewayEndpointGatewayBindingOperations",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isPrivatePathServiceGatewayEndpointGatewayBindingOperations:IsPrivatePathServiceGatewayEndpointGatewayBindingOperations"
             },
             "ibm_is_private_path_service_gateway_operations": {
-                "current": "ibmcloud:index/isPrivatePathServiceGatewayOperations:IsPrivatePathServiceGatewayOperations",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isPrivatePathServiceGatewayOperations:IsPrivatePathServiceGatewayOperations"
             },
             "ibm_is_private_path_service_gateway_revoke_account": {
-                "current": "ibmcloud:index/isPrivatePathServiceGatewayRevokeAccount:IsPrivatePathServiceGatewayRevokeAccount",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isPrivatePathServiceGatewayRevokeAccount:IsPrivatePathServiceGatewayRevokeAccount"
             },
             "ibm_is_public_address_range": {
                 "current": "ibmcloud:index/isPublicAddressRange:IsPublicAddressRange",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2976,7 +2865,6 @@
             },
             "ibm_is_public_gateway": {
                 "current": "ibmcloud:index/isPublicGateway:IsPublicGateway",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -2988,7 +2876,6 @@
             },
             "ibm_is_reservation": {
                 "current": "ibmcloud:index/isReservation:IsReservation",
-                "majorVersion": 1,
                 "fields": {
                     "capacity": {
                         "maxItemsOne": true
@@ -3009,7 +2896,6 @@
             },
             "ibm_is_reservation_activate": {
                 "current": "ibmcloud:index/isReservationActivate:IsReservationActivate",
-                "majorVersion": 1,
                 "fields": {
                     "capacity": {
                         "maxItemsOne": false
@@ -3030,7 +2916,6 @@
             },
             "ibm_is_security_group": {
                 "current": "ibmcloud:index/isSecurityGroup:IsSecurityGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3045,7 +2930,6 @@
             },
             "ibm_is_security_group_rule": {
                 "current": "ibmcloud:index/isSecurityGroupRule:IsSecurityGroupRule",
-                "majorVersion": 1,
                 "fields": {
                     "icmp": {
                         "maxItemsOne": true
@@ -3059,12 +2943,10 @@
                 }
             },
             "ibm_is_security_group_target": {
-                "current": "ibmcloud:index/isSecurityGroupTarget:IsSecurityGroupTarget",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isSecurityGroupTarget:IsSecurityGroupTarget"
             },
             "ibm_is_share": {
                 "current": "ibmcloud:index/isShare:IsShare",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3195,12 +3077,10 @@
                 }
             },
             "ibm_is_share_delete_accessor_binding": {
-                "current": "ibmcloud:index/isShareDeleteAccessorBinding:IsShareDeleteAccessorBinding",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isShareDeleteAccessorBinding:IsShareDeleteAccessorBinding"
             },
             "ibm_is_share_mount_target": {
                 "current": "ibmcloud:index/isShareMountTarget:IsShareMountTarget",
-                "majorVersion": 1,
                 "fields": {
                     "virtual_network_interface": {
                         "maxItemsOne": true,
@@ -3218,12 +3098,10 @@
                 }
             },
             "ibm_is_share_replica_operations": {
-                "current": "ibmcloud:index/isShareReplicaOperations:IsShareReplicaOperations",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isShareReplicaOperations:IsShareReplicaOperations"
             },
             "ibm_is_share_snapshot": {
                 "current": "ibmcloud:index/isShareSnapshot:IsShareSnapshot",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3264,7 +3142,6 @@
             },
             "ibm_is_snapshot": {
                 "current": "ibmcloud:index/isSnapshot:IsSnapshot",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3341,7 +3218,6 @@
             },
             "ibm_is_snapshot_consistency_group": {
                 "current": "ibmcloud:index/isSnapshotConsistencyGroup:IsSnapshotConsistencyGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3392,7 +3268,6 @@
             },
             "ibm_is_ssh_key": {
                 "current": "ibmcloud:index/isSshKey:IsSshKey",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3404,7 +3279,6 @@
             },
             "ibm_is_subnet": {
                 "current": "ibmcloud:index/isSubnet:IsSubnet",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3416,7 +3290,6 @@
             },
             "ibm_is_subnet_network_acl_attachment": {
                 "current": "ibmcloud:index/isSubnetNetworkAclAttachment:IsSubnetNetworkAclAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "rules": {
                         "maxItemsOne": false,
@@ -3437,20 +3310,16 @@
                 }
             },
             "ibm_is_subnet_public_gateway_attachment": {
-                "current": "ibmcloud:index/isSubnetPublicGatewayAttachment:IsSubnetPublicGatewayAttachment",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isSubnetPublicGatewayAttachment:IsSubnetPublicGatewayAttachment"
             },
             "ibm_is_subnet_reserved_ip": {
-                "current": "ibmcloud:index/isSubnetReservedIp:IsSubnetReservedIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isSubnetReservedIp:IsSubnetReservedIp"
             },
             "ibm_is_subnet_reserved_ip_patch": {
-                "current": "ibmcloud:index/isSubnetReservedIpPatch:IsSubnetReservedIpPatch",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isSubnetReservedIpPatch:IsSubnetReservedIpPatch"
             },
             "ibm_is_subnet_routing_table_attachment": {
                 "current": "ibmcloud:index/isSubnetRoutingTableAttachment:IsSubnetRoutingTableAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "resource_group": {
                         "maxItemsOne": false
@@ -3465,7 +3334,6 @@
             },
             "ibm_is_virtual_endpoint_gateway": {
                 "current": "ibmcloud:index/isVirtualEndpointGateway:IsVirtualEndpointGateway",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3492,7 +3360,6 @@
             },
             "ibm_is_virtual_endpoint_gateway_ip": {
                 "current": "ibmcloud:index/isVirtualEndpointGatewayIp:IsVirtualEndpointGatewayIp",
-                "majorVersion": 1,
                 "fields": {
                     "target": {
                         "maxItemsOne": false
@@ -3501,7 +3368,6 @@
             },
             "ibm_is_virtual_network_interface": {
                 "current": "ibmcloud:index/isVirtualNetworkInterface:IsVirtualNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3556,7 +3422,6 @@
             },
             "ibm_is_virtual_network_interface_floating_ip": {
                 "current": "ibmcloud:index/isVirtualNetworkInterfaceFloatingIp:IsVirtualNetworkInterfaceFloatingIp",
-                "majorVersion": 1,
                 "fields": {
                     "deleted": {
                         "maxItemsOne": false
@@ -3564,12 +3429,10 @@
                 }
             },
             "ibm_is_virtual_network_interface_ip": {
-                "current": "ibmcloud:index/isVirtualNetworkInterfaceIp:IsVirtualNetworkInterfaceIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isVirtualNetworkInterfaceIp:IsVirtualNetworkInterfaceIp"
             },
             "ibm_is_volume": {
                 "current": "ibmcloud:index/isVolume:IsVolume",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3609,7 +3472,6 @@
             },
             "ibm_is_vpc": {
                 "current": "ibmcloud:index/isVpc:IsVpc",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3669,12 +3531,10 @@
                 }
             },
             "ibm_is_vpc_address_prefix": {
-                "current": "ibmcloud:index/isVpcAddressPrefix:IsVpcAddressPrefix",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isVpcAddressPrefix:IsVpcAddressPrefix"
             },
             "ibm_is_vpc_dns_resolution_binding": {
                 "current": "ibmcloud:index/isVpcDnsResolutionBinding:IsVpcDnsResolutionBinding",
-                "majorVersion": 1,
                 "fields": {
                     "endpoint_gateways": {
                         "maxItemsOne": false,
@@ -3723,7 +3583,6 @@
             },
             "ibm_is_vpc_routing_table": {
                 "current": "ibmcloud:index/isVpcRoutingTable:IsVpcRoutingTable",
-                "majorVersion": 1,
                 "fields": {
                     "accept_routes_from_resource_type": {
                         "maxItemsOne": false
@@ -3747,7 +3606,6 @@
             },
             "ibm_is_vpc_routing_table_route": {
                 "current": "ibmcloud:index/isVpcRoutingTableRoute:IsVpcRoutingTableRoute",
-                "majorVersion": 1,
                 "fields": {
                     "creator": {
                         "maxItemsOne": false,
@@ -3763,7 +3621,6 @@
             },
             "ibm_is_vpn_gateway": {
                 "current": "ibmcloud:index/isVpnGateway:IsVpnGateway",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3794,7 +3651,6 @@
             },
             "ibm_is_vpn_gateway_connection": {
                 "current": "ibmcloud:index/isVpnGatewayConnection:IsVpnGatewayConnection",
-                "majorVersion": 1,
                 "fields": {
                     "local": {
                         "maxItemsOne": true,
@@ -3838,7 +3694,6 @@
             },
             "ibm_is_vpn_server": {
                 "current": "ibmcloud:index/isVpnServer:IsVpnServer",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -3887,12 +3742,10 @@
                 }
             },
             "ibm_is_vpn_server_client": {
-                "current": "ibmcloud:index/isVpnServerClient:IsVpnServerClient",
-                "majorVersion": 1
+                "current": "ibmcloud:index/isVpnServerClient:IsVpnServerClient"
             },
             "ibm_is_vpn_server_route": {
                 "current": "ibmcloud:index/isVpnServerRoute:IsVpnServerRoute",
-                "majorVersion": 1,
                 "fields": {
                     "health_reasons": {
                         "maxItemsOne": false
@@ -3904,7 +3757,6 @@
             },
             "ibm_pi_capture": {
                 "current": "ibmcloud:index/piCapture:PiCapture",
-                "majorVersion": 1,
                 "fields": {
                     "pi_capture_volume_ids": {
                         "maxItemsOne": false
@@ -3916,7 +3768,6 @@
             },
             "ibm_pi_cloud_connection": {
                 "current": "ibmcloud:index/piCloudConnection:PiCloudConnection",
-                "majorVersion": 1,
                 "fields": {
                     "pi_cloud_connection_networks": {
                         "maxItemsOne": false
@@ -3927,16 +3778,13 @@
                 }
             },
             "ibm_pi_cloud_connection_network_attach": {
-                "current": "ibmcloud:index/piCloudConnectionNetworkAttach:PiCloudConnectionNetworkAttach",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piCloudConnectionNetworkAttach:PiCloudConnectionNetworkAttach"
             },
             "ibm_pi_console_language": {
-                "current": "ibmcloud:index/piConsoleLanguage:PiConsoleLanguage",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piConsoleLanguage:PiConsoleLanguage"
             },
             "ibm_pi_dhcp": {
                 "current": "ibmcloud:index/piDhcp:PiDhcp",
-                "majorVersion": 1,
                 "fields": {
                     "leases": {
                         "maxItemsOne": false
@@ -3945,7 +3793,6 @@
             },
             "ibm_pi_host": {
                 "current": "ibmcloud:index/piHost:PiHost",
-                "majorVersion": 1,
                 "fields": {
                     "capacity": {
                         "maxItemsOne": false
@@ -3967,7 +3814,6 @@
             },
             "ibm_pi_host_group": {
                 "current": "ibmcloud:index/piHostGroup:PiHostGroup",
-                "majorVersion": 1,
                 "fields": {
                     "hosts": {
                         "maxItemsOne": false
@@ -3991,12 +3837,10 @@
                 }
             },
             "ibm_pi_ike_policy": {
-                "current": "ibmcloud:index/piIkePolicy:PiIkePolicy",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piIkePolicy:PiIkePolicy"
             },
             "ibm_pi_image": {
                 "current": "ibmcloud:index/piImage:PiImage",
-                "majorVersion": 1,
                 "fields": {
                     "pi_anti_affinity_instances": {
                         "maxItemsOne": false
@@ -4013,12 +3857,10 @@
                 }
             },
             "ibm_pi_image_export": {
-                "current": "ibmcloud:index/piImageExport:PiImageExport",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piImageExport:PiImageExport"
             },
             "ibm_pi_instance": {
                 "current": "ibmcloud:index/piInstance:PiInstance",
-                "majorVersion": 1,
                 "fields": {
                     "pi_anti_affinity_instances": {
                         "maxItemsOne": false
@@ -4057,12 +3899,10 @@
                 }
             },
             "ibm_pi_instance_action": {
-                "current": "ibmcloud:index/piInstanceAction:PiInstanceAction",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piInstanceAction:PiInstanceAction"
             },
             "ibm_pi_instance_snapshot": {
                 "current": "ibmcloud:index/piInstanceSnapshot:PiInstanceSnapshot",
-                "majorVersion": 1,
                 "fields": {
                     "pi_user_tags": {
                         "maxItemsOne": false
@@ -4073,16 +3913,13 @@
                 }
             },
             "ibm_pi_ipsec_policy": {
-                "current": "ibmcloud:index/piIpsecPolicy:PiIpsecPolicy",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piIpsecPolicy:PiIpsecPolicy"
             },
             "ibm_pi_key": {
-                "current": "ibmcloud:index/piKey:PiKey",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piKey:PiKey"
             },
             "ibm_pi_network": {
                 "current": "ibmcloud:index/piNetwork:PiNetwork",
-                "majorVersion": 1,
                 "fields": {
                     "network_address_translation": {
                         "maxItemsOne": false
@@ -4110,7 +3947,6 @@
             },
             "ibm_pi_network_address_group": {
                 "current": "ibmcloud:index/piNetworkAddressGroup:PiNetworkAddressGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -4122,7 +3958,6 @@
             },
             "ibm_pi_network_address_group_member": {
                 "current": "ibmcloud:index/piNetworkAddressGroupMember:PiNetworkAddressGroupMember",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -4134,7 +3969,6 @@
             },
             "ibm_pi_network_interface": {
                 "current": "ibmcloud:index/piNetworkInterface:PiNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "instance": {
                         "maxItemsOne": false
@@ -4149,7 +3983,6 @@
             },
             "ibm_pi_network_peer": {
                 "current": "ibmcloud:index/piNetworkPeer:PiNetworkPeer",
-                "majorVersion": 1,
                 "fields": {
                     "export_route_filters": {
                         "maxItemsOne": false
@@ -4160,12 +3993,10 @@
                 }
             },
             "ibm_pi_network_peer_route_filter": {
-                "current": "ibmcloud:index/piNetworkPeerRouteFilter:PiNetworkPeerRouteFilter",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piNetworkPeerRouteFilter:PiNetworkPeerRouteFilter"
             },
             "ibm_pi_network_port_attach": {
                 "current": "ibmcloud:index/piNetworkPortAttach:PiNetworkPortAttach",
-                "majorVersion": 1,
                 "fields": {
                     "pi_user_tags": {
                         "maxItemsOne": false
@@ -4174,7 +4005,6 @@
             },
             "ibm_pi_network_security_group": {
                 "current": "ibmcloud:index/piNetworkSecurityGroup:PiNetworkSecurityGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -4211,12 +4041,10 @@
                 }
             },
             "ibm_pi_network_security_group_action": {
-                "current": "ibmcloud:index/piNetworkSecurityGroupAction:PiNetworkSecurityGroupAction",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piNetworkSecurityGroupAction:PiNetworkSecurityGroupAction"
             },
             "ibm_pi_network_security_group_member": {
                 "current": "ibmcloud:index/piNetworkSecurityGroupMember:PiNetworkSecurityGroupMember",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -4254,7 +4082,6 @@
             },
             "ibm_pi_network_security_group_rule": {
                 "current": "ibmcloud:index/piNetworkSecurityGroupRule:PiNetworkSecurityGroupRule",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -4317,7 +4144,6 @@
             },
             "ibm_pi_placement_group": {
                 "current": "ibmcloud:index/piPlacementGroup:PiPlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -4329,7 +4155,6 @@
             },
             "ibm_pi_route": {
                 "current": "ibmcloud:index/piRoute:PiRoute",
-                "majorVersion": 1,
                 "fields": {
                     "pi_user_tags": {
                         "maxItemsOne": false
@@ -4338,7 +4163,6 @@
             },
             "ibm_pi_shared_processor_pool": {
                 "current": "ibmcloud:index/piSharedProcessorPool:PiSharedProcessorPool",
-                "majorVersion": 1,
                 "fields": {
                     "instances": {
                         "maxItemsOne": false
@@ -4356,7 +4180,6 @@
             },
             "ibm_pi_snapshot": {
                 "current": "ibmcloud:index/piSnapshot:PiSnapshot",
-                "majorVersion": 1,
                 "fields": {
                     "pi_user_tags": {
                         "maxItemsOne": false
@@ -4368,7 +4191,6 @@
             },
             "ibm_pi_spp_placement_group": {
                 "current": "ibmcloud:index/piSppPlacementGroup:PiSppPlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -4379,12 +4201,10 @@
                 }
             },
             "ibm_pi_virtual_serial_number": {
-                "current": "ibmcloud:index/piVirtualSerialNumber:PiVirtualSerialNumber",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piVirtualSerialNumber:PiVirtualSerialNumber"
             },
             "ibm_pi_volume": {
                 "current": "ibmcloud:index/piVolume:PiVolume",
-                "majorVersion": 1,
                 "fields": {
                     "pi_anti_affinity_instances": {
                         "maxItemsOne": false
@@ -4404,12 +4224,10 @@
                 }
             },
             "ibm_pi_volume_attach": {
-                "current": "ibmcloud:index/piVolumeAttach:PiVolumeAttach",
-                "majorVersion": 1
+                "current": "ibmcloud:index/piVolumeAttach:PiVolumeAttach"
             },
             "ibm_pi_volume_clone": {
                 "current": "ibmcloud:index/piVolumeClone:PiVolumeClone",
-                "majorVersion": 1,
                 "fields": {
                     "clone_volumes": {
                         "maxItemsOne": false
@@ -4424,7 +4242,6 @@
             },
             "ibm_pi_volume_group": {
                 "current": "ibmcloud:index/piVolumeGroup:PiVolumeGroup",
-                "majorVersion": 1,
                 "fields": {
                     "pi_volume_ids": {
                         "maxItemsOne": false
@@ -4446,7 +4263,6 @@
             },
             "ibm_pi_volume_group_action": {
                 "current": "ibmcloud:index/piVolumeGroupAction:PiVolumeGroupAction",
-                "majorVersion": 1,
                 "fields": {
                     "pi_volume_group_action": {
                         "maxItemsOne": true,
@@ -4468,7 +4284,6 @@
             },
             "ibm_pi_volume_onboarding": {
                 "current": "ibmcloud:index/piVolumeOnboarding:PiVolumeOnboarding",
-                "majorVersion": 1,
                 "fields": {
                     "input_volumes": {
                         "maxItemsOne": false
@@ -4500,7 +4315,6 @@
             },
             "ibm_pi_vpn_connection": {
                 "current": "ibmcloud:index/piVpnConnection:PiVpnConnection",
-                "majorVersion": 1,
                 "fields": {
                     "pi_networks": {
                         "maxItemsOne": false
@@ -4512,7 +4326,6 @@
             },
             "ibm_pi_workspace": {
                 "current": "ibmcloud:index/piWorkspace:PiWorkspace",
-                "majorVersion": 1,
                 "fields": {
                     "pi_user_tags": {
                         "maxItemsOne": false
@@ -4521,7 +4334,6 @@
             },
             "ibm_resource_group": {
                 "current": "ibmcloud:index/resourceGroup:ResourceGroup",
-                "majorVersion": 1,
                 "fields": {
                     "resource_linkages": {
                         "maxItemsOne": false
@@ -4533,7 +4345,6 @@
             },
             "ibm_resource_instance": {
                 "current": "ibmcloud:index/resourceInstance:ResourceInstance",
-                "majorVersion": 1,
                 "fields": {
                     "plan_history": {
                         "maxItemsOne": false
@@ -4545,7 +4356,6 @@
             },
             "ibm_resource_key": {
                 "current": "ibmcloud:index/resourceKey:ResourceKey",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -4554,7 +4364,6 @@
             },
             "ibm_resource_tag": {
                 "current": "ibmcloud:index/resourceTag:ResourceTag",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -4563,7 +4372,6 @@
             },
             "ibm_tg_connection": {
                 "current": "ibmcloud:index/tgConnection:TgConnection",
-                "majorVersion": 1,
                 "fields": {
                     "tunnels": {
                         "maxItemsOne": false
@@ -4571,20 +4379,16 @@
                 }
             },
             "ibm_tg_connection_action": {
-                "current": "ibmcloud:index/tgConnectionAction:TgConnectionAction",
-                "majorVersion": 1
+                "current": "ibmcloud:index/tgConnectionAction:TgConnectionAction"
             },
             "ibm_tg_connection_prefix_filter": {
-                "current": "ibmcloud:index/tgConnectionPrefixFilter:TgConnectionPrefixFilter",
-                "majorVersion": 1
+                "current": "ibmcloud:index/tgConnectionPrefixFilter:TgConnectionPrefixFilter"
             },
             "ibm_tg_connection_rgre_tunnel": {
-                "current": "ibmcloud:index/tgConnectionRgreTunnel:TgConnectionRgreTunnel",
-                "majorVersion": 1
+                "current": "ibmcloud:index/tgConnectionRgreTunnel:TgConnectionRgreTunnel"
             },
             "ibm_tg_gateway": {
                 "current": "ibmcloud:index/tgGateway:TgGateway",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -4593,7 +4397,6 @@
             },
             "ibm_tg_route_report": {
                 "current": "ibmcloud:index/tgRouteReport:TgRouteReport",
-                "majorVersion": 1,
                 "fields": {
                     "connections": {
                         "maxItemsOne": false,
@@ -4624,7 +4427,6 @@
         "datasources": {
             "ibm_compute_bare_metal": {
                 "current": "ibmcloud:index/getComputeBareMetal:getComputeBareMetal",
-                "majorVersion": 1,
                 "fields": {
                     "block_storage_ids": {
                         "maxItemsOne": false
@@ -4641,12 +4443,10 @@
                 }
             },
             "ibm_compute_image_template": {
-                "current": "ibmcloud:index/getComputeImageTemplate:getComputeImageTemplate",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getComputeImageTemplate:getComputeImageTemplate"
             },
             "ibm_compute_placement_group": {
                 "current": "ibmcloud:index/getComputePlacementGroup:getComputePlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "virtual_guests": {
                         "maxItemsOne": false
@@ -4655,7 +4455,6 @@
             },
             "ibm_compute_reserved_capacity": {
                 "current": "ibmcloud:index/getComputeReservedCapacity:getComputeReservedCapacity",
-                "majorVersion": 1,
                 "fields": {
                     "virtual_guests": {
                         "maxItemsOne": false
@@ -4663,12 +4462,10 @@
                 }
             },
             "ibm_compute_ssh_key": {
-                "current": "ibmcloud:index/getComputeSshKey:getComputeSshKey",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getComputeSshKey:getComputeSshKey"
             },
             "ibm_compute_vm_instance": {
                 "current": "ibmcloud:index/getComputeVmInstance:getComputeVmInstance",
-                "majorVersion": 1,
                 "fields": {
                     "secondary_ip_addresses": {
                         "maxItemsOne": false
@@ -4676,16 +4473,13 @@
                 }
             },
             "ibm_cos_backup_policy": {
-                "current": "ibmcloud:index/getCosBackupPolicy:getCosBackupPolicy",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getCosBackupPolicy:getCosBackupPolicy"
             },
             "ibm_cos_backup_vault": {
-                "current": "ibmcloud:index/getCosBackupVault:getCosBackupVault",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getCosBackupVault:getCosBackupVault"
             },
             "ibm_cos_bucket": {
                 "current": "ibmcloud:index/getCosBucket:getCosBucket",
-                "majorVersion": 1,
                 "fields": {
                     "abort_incomplete_multipart_upload_days": {
                         "maxItemsOne": false
@@ -4805,12 +4599,10 @@
                 }
             },
             "ibm_cos_bucket_object": {
-                "current": "ibmcloud:index/getCosBucketObject:getCosBucketObject",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getCosBucketObject:getCosBucketObject"
             },
             "ibm_iam_access_group": {
                 "current": "ibmcloud:index/getIamAccessGroup:getIamAccessGroup",
-                "majorVersion": 1,
                 "fields": {
                     "groups": {
                         "maxItemsOne": false,
@@ -4842,7 +4634,6 @@
             },
             "ibm_iam_access_group_policy": {
                 "current": "ibmcloud:index/getIamAccessGroupPolicy:getIamAccessGroupPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "policies": {
                         "maxItemsOne": false,
@@ -4897,7 +4688,6 @@
             },
             "ibm_iam_access_group_template_assignment": {
                 "current": "ibmcloud:index/getIamAccessGroupTemplateAssignment:getIamAccessGroupTemplateAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "assignments": {
                         "maxItemsOne": false
@@ -4912,7 +4702,6 @@
             },
             "ibm_iam_access_group_template_versions": {
                 "current": "ibmcloud:index/getIamAccessGroupTemplateVersions:getIamAccessGroupTemplateVersions",
-                "majorVersion": 1,
                 "fields": {
                     "first": {
                         "maxItemsOne": false
@@ -4992,12 +4781,10 @@
                 }
             },
             "ibm_iam_access_tag": {
-                "current": "ibmcloud:index/getIamAccessTag:getIamAccessTag",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIamAccessTag:getIamAccessTag"
             },
             "ibm_iam_account_settings": {
                 "current": "ibmcloud:index/getIamAccountSettings:getIamAccountSettings",
-                "majorVersion": 1,
                 "fields": {
                     "history": {
                         "maxItemsOne": false,
@@ -5026,7 +4813,6 @@
             },
             "ibm_iam_account_settings_external_interaction": {
                 "current": "ibmcloud:index/getIamAccountSettingsExternalInteraction:getIamAccountSettingsExternalInteraction",
-                "majorVersion": 1,
                 "fields": {
                     "external_account_identity_interaction": {
                         "maxItemsOne": false,
@@ -5076,7 +4862,6 @@
             },
             "ibm_iam_account_settings_template": {
                 "current": "ibmcloud:index/getIamAccountSettingsTemplate:getIamAccountSettingsTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "account_settings": {
                         "maxItemsOne": false,
@@ -5119,7 +4904,6 @@
             },
             "ibm_iam_account_settings_template_assignment": {
                 "current": "ibmcloud:index/getIamAccountSettingsTemplateAssignment:getIamAccountSettingsTemplateAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "context": {
                         "maxItemsOne": false
@@ -5158,7 +4942,6 @@
             },
             "ibm_iam_action_control_assignment": {
                 "current": "ibmcloud:index/getIamActionControlAssignment:getIamActionControlAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "resources": {
                         "maxItemsOne": false,
@@ -5214,7 +4997,6 @@
             },
             "ibm_iam_action_control_assignments": {
                 "current": "ibmcloud:index/getIamActionControlAssignments:getIamActionControlAssignments",
-                "majorVersion": 1,
                 "fields": {
                     "assignments": {
                         "maxItemsOne": false,
@@ -5277,7 +5059,6 @@
             },
             "ibm_iam_action_control_template": {
                 "current": "ibmcloud:index/getIamActionControlTemplate:getIamActionControlTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "action_control_templates": {
                         "maxItemsOne": false,
@@ -5300,7 +5081,6 @@
             },
             "ibm_iam_action_control_template_version": {
                 "current": "ibmcloud:index/getIamActionControlTemplateVersion:getIamActionControlTemplateVersion",
-                "majorVersion": 1,
                 "fields": {
                     "action_control": {
                         "maxItemsOne": false,
@@ -5315,16 +5095,13 @@
                 }
             },
             "ibm_iam_api_key": {
-                "current": "ibmcloud:index/getIamApiKey:getIamApiKey",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIamApiKey:getIamApiKey"
             },
             "ibm_iam_auth_token": {
-                "current": "ibmcloud:index/getIamAuthToken:getIamAuthToken",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIamAuthToken:getIamAuthToken"
             },
             "ibm_iam_authorization_policies": {
                 "current": "ibmcloud:index/getIamAuthorizationPolicies:getIamAuthorizationPolicies",
-                "majorVersion": 1,
                 "fields": {
                     "policies": {
                         "maxItemsOne": false,
@@ -5340,7 +5117,6 @@
             },
             "ibm_iam_effective_account_settings": {
                 "current": "ibmcloud:index/getIamEffectiveAccountSettings:getIamEffectiveAccountSettings",
-                "majorVersion": 1,
                 "fields": {
                     "account": {
                         "maxItemsOne": false,
@@ -5413,7 +5189,6 @@
             },
             "ibm_iam_policy_assignment": {
                 "current": "ibmcloud:index/getIamPolicyAssignment:getIamPolicyAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "resources": {
                         "maxItemsOne": false,
@@ -5460,7 +5235,6 @@
             },
             "ibm_iam_policy_assignments": {
                 "current": "ibmcloud:index/getIamPolicyAssignments:getIamPolicyAssignments",
-                "majorVersion": 1,
                 "fields": {
                     "assignments": {
                         "maxItemsOne": false,
@@ -5514,7 +5288,6 @@
             },
             "ibm_iam_policy_template": {
                 "current": "ibmcloud:index/getIamPolicyTemplate:getIamPolicyTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "policy_templates": {
                         "maxItemsOne": false,
@@ -5570,7 +5343,6 @@
             },
             "ibm_iam_policy_template_version": {
                 "current": "ibmcloud:index/getIamPolicyTemplateVersion:getIamPolicyTemplateVersion",
-                "majorVersion": 1,
                 "fields": {
                     "policy": {
                         "maxItemsOne": false,
@@ -5619,7 +5391,6 @@
             },
             "ibm_iam_role_actions": {
                 "current": "ibmcloud:index/getIamRoleActions:getIamRoleActions",
-                "majorVersion": 1,
                 "fields": {
                     "manager": {
                         "maxItemsOne": false
@@ -5637,7 +5408,6 @@
             },
             "ibm_iam_roles": {
                 "current": "ibmcloud:index/getIamRoles:getIamRoles",
-                "majorVersion": 1,
                 "fields": {
                     "roles": {
                         "maxItemsOne": false
@@ -5646,7 +5416,6 @@
             },
             "ibm_iam_service_id": {
                 "current": "ibmcloud:index/getIamServiceId:getIamServiceId",
-                "majorVersion": 1,
                 "fields": {
                     "service_ids": {
                         "maxItemsOne": false
@@ -5655,7 +5424,6 @@
             },
             "ibm_iam_service_policy": {
                 "current": "ibmcloud:index/getIamServicePolicy:getIamServicePolicy",
-                "majorVersion": 1,
                 "fields": {
                     "policies": {
                         "maxItemsOne": false,
@@ -5697,7 +5465,6 @@
             },
             "ibm_iam_trusted_profile": {
                 "current": "ibmcloud:index/getIamTrustedProfile:getIamTrustedProfile",
-                "majorVersion": 1,
                 "fields": {
                     "history": {
                         "maxItemsOne": false,
@@ -5713,7 +5480,6 @@
             },
             "ibm_iam_trusted_profile_claim_rule": {
                 "current": "ibmcloud:index/getIamTrustedProfileClaimRule:getIamTrustedProfileClaimRule",
-                "majorVersion": 1,
                 "fields": {
                     "conditions": {
                         "maxItemsOne": false
@@ -5722,7 +5488,6 @@
             },
             "ibm_iam_trusted_profile_claim_rules": {
                 "current": "ibmcloud:index/getIamTrustedProfileClaimRules:getIamTrustedProfileClaimRules",
-                "majorVersion": 1,
                 "fields": {
                     "rules": {
                         "maxItemsOne": false,
@@ -5738,7 +5503,6 @@
             },
             "ibm_iam_trusted_profile_identities": {
                 "current": "ibmcloud:index/getIamTrustedProfileIdentities:getIamTrustedProfileIdentities",
-                "majorVersion": 1,
                 "fields": {
                     "identities": {
                         "maxItemsOne": false,
@@ -5754,7 +5518,6 @@
             },
             "ibm_iam_trusted_profile_identity": {
                 "current": "ibmcloud:index/getIamTrustedProfileIdentity:getIamTrustedProfileIdentity",
-                "majorVersion": 1,
                 "fields": {
                     "accounts": {
                         "maxItemsOne": false
@@ -5763,7 +5526,6 @@
             },
             "ibm_iam_trusted_profile_link": {
                 "current": "ibmcloud:index/getIamTrustedProfileLink:getIamTrustedProfileLink",
-                "majorVersion": 1,
                 "fields": {
                     "link": {
                         "maxItemsOne": false
@@ -5772,7 +5534,6 @@
             },
             "ibm_iam_trusted_profile_links": {
                 "current": "ibmcloud:index/getIamTrustedProfileLinks:getIamTrustedProfileLinks",
-                "majorVersion": 1,
                 "fields": {
                     "links": {
                         "maxItemsOne": false,
@@ -5788,7 +5549,6 @@
             },
             "ibm_iam_trusted_profile_policy": {
                 "current": "ibmcloud:index/getIamTrustedProfilePolicy:getIamTrustedProfilePolicy",
-                "majorVersion": 1,
                 "fields": {
                     "policies": {
                         "maxItemsOne": false,
@@ -5846,7 +5606,6 @@
             },
             "ibm_iam_trusted_profile_template": {
                 "current": "ibmcloud:index/getIamTrustedProfileTemplate:getIamTrustedProfileTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "history": {
                         "maxItemsOne": false,
@@ -5892,7 +5651,6 @@
             },
             "ibm_iam_trusted_profile_template_assignment": {
                 "current": "ibmcloud:index/getIamTrustedProfileTemplateAssignment:getIamTrustedProfileTemplateAssignment",
-                "majorVersion": 1,
                 "fields": {
                     "context": {
                         "maxItemsOne": false
@@ -5944,7 +5702,6 @@
             },
             "ibm_iam_trusted_profiles": {
                 "current": "ibmcloud:index/getIamTrustedProfiles:getIamTrustedProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -5967,7 +5724,6 @@
             },
             "ibm_iam_user_mfa_enrollments": {
                 "current": "ibmcloud:index/getIamUserMfaEnrollments:getIamUserMfaEnrollments",
-                "majorVersion": 1,
                 "fields": {
                     "account_based_mfa": {
                         "maxItemsOne": false,
@@ -5992,7 +5748,6 @@
             },
             "ibm_iam_user_policy": {
                 "current": "ibmcloud:index/getIamUserPolicy:getIamUserPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "policies": {
                         "maxItemsOne": false,
@@ -6034,7 +5789,6 @@
             },
             "ibm_iam_user_profile": {
                 "current": "ibmcloud:index/getIamUserProfile:getIamUserProfile",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_ip_addresses": {
                         "maxItemsOne": false
@@ -6043,7 +5797,6 @@
             },
             "ibm_iam_users": {
                 "current": "ibmcloud:index/getIamUsers:getIamUsers",
-                "majorVersion": 1,
                 "fields": {
                     "users": {
                         "maxItemsOne": false
@@ -6052,7 +5805,6 @@
             },
             "ibm_is_backup_policies": {
                 "current": "ibmcloud:index/getIsBackupPolicies:getIsBackupPolicies",
-                "majorVersion": 1,
                 "fields": {
                     "backup_policies": {
                         "maxItemsOne": false,
@@ -6093,7 +5845,6 @@
             },
             "ibm_is_backup_policy": {
                 "current": "ibmcloud:index/getIsBackupPolicy:getIsBackupPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "health_reasons": {
                         "maxItemsOne": false
@@ -6127,7 +5878,6 @@
             },
             "ibm_is_backup_policy_job": {
                 "current": "ibmcloud:index/getIsBackupPolicyJob:getIsBackupPolicyJob",
-                "majorVersion": 1,
                 "fields": {
                     "backup_policy_plan": {
                         "maxItemsOne": false,
@@ -6205,7 +5955,6 @@
             },
             "ibm_is_backup_policy_jobs": {
                 "current": "ibmcloud:index/getIsBackupPolicyJobs:getIsBackupPolicyJobs",
-                "majorVersion": 1,
                 "fields": {
                     "jobs": {
                         "maxItemsOne": false,
@@ -6296,7 +6045,6 @@
             },
             "ibm_is_backup_policy_plan": {
                 "current": "ibmcloud:index/getIsBackupPolicyPlan:getIsBackupPolicyPlan",
-                "majorVersion": 1,
                 "fields": {
                     "attach_user_tags": {
                         "maxItemsOne": false
@@ -6321,7 +6069,6 @@
             },
             "ibm_is_backup_policy_plans": {
                 "current": "ibmcloud:index/getIsBackupPolicyPlans:getIsBackupPolicyPlans",
-                "majorVersion": 1,
                 "fields": {
                     "plans": {
                         "maxItemsOne": false,
@@ -6353,7 +6100,6 @@
             },
             "ibm_is_bare_metal_server": {
                 "current": "ibmcloud:index/getIsBareMetalServer:getIsBareMetalServer",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -6519,7 +6265,6 @@
             },
             "ibm_is_bare_metal_server_disk": {
                 "current": "ibmcloud:index/getIsBareMetalServerDisk:getIsBareMetalServerDisk",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_use": {
                         "maxItemsOne": false
@@ -6528,7 +6273,6 @@
             },
             "ibm_is_bare_metal_server_disks": {
                 "current": "ibmcloud:index/getIsBareMetalServerDisks:getIsBareMetalServerDisks",
-                "majorVersion": 1,
                 "fields": {
                     "disks": {
                         "maxItemsOne": false,
@@ -6544,7 +6288,6 @@
             },
             "ibm_is_bare_metal_server_initialization": {
                 "current": "ibmcloud:index/getIsBareMetalServerInitialization:getIsBareMetalServerInitialization",
-                "majorVersion": 1,
                 "fields": {
                     "default_trusted_profile": {
                         "maxItemsOne": false,
@@ -6566,7 +6309,6 @@
             },
             "ibm_is_bare_metal_server_network_attachment": {
                 "current": "ibmcloud:index/getIsBareMetalServerNetworkAttachment:getIsBareMetalServerNetworkAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_vlans": {
                         "maxItemsOne": false
@@ -6598,7 +6340,6 @@
             },
             "ibm_is_bare_metal_server_network_attachments": {
                 "current": "ibmcloud:index/getIsBareMetalServerNetworkAttachments:getIsBareMetalServerNetworkAttachments",
-                "majorVersion": 1,
                 "fields": {
                     "network_attachments": {
                         "maxItemsOne": false,
@@ -6637,7 +6378,6 @@
             },
             "ibm_is_bare_metal_server_network_interface": {
                 "current": "ibmcloud:index/getIsBareMetalServerNetworkInterface:getIsBareMetalServerNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_vlans": {
                         "maxItemsOne": false
@@ -6654,12 +6394,10 @@
                 }
             },
             "ibm_is_bare_metal_server_network_interface_floating_ip": {
-                "current": "ibmcloud:index/getIsBareMetalServerNetworkInterfaceFloatingIp:getIsBareMetalServerNetworkInterfaceFloatingIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsBareMetalServerNetworkInterfaceFloatingIp:getIsBareMetalServerNetworkInterfaceFloatingIp"
             },
             "ibm_is_bare_metal_server_network_interface_floating_ips": {
                 "current": "ibmcloud:index/getIsBareMetalServerNetworkInterfaceFloatingIps:getIsBareMetalServerNetworkInterfaceFloatingIps",
-                "majorVersion": 1,
                 "fields": {
                     "floating_ips": {
                         "maxItemsOne": false
@@ -6667,12 +6405,10 @@
                 }
             },
             "ibm_is_bare_metal_server_network_interface_reserved_ip": {
-                "current": "ibmcloud:index/getIsBareMetalServerNetworkInterfaceReservedIp:getIsBareMetalServerNetworkInterfaceReservedIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsBareMetalServerNetworkInterfaceReservedIp:getIsBareMetalServerNetworkInterfaceReservedIp"
             },
             "ibm_is_bare_metal_server_network_interface_reserved_ips": {
                 "current": "ibmcloud:index/getIsBareMetalServerNetworkInterfaceReservedIps:getIsBareMetalServerNetworkInterfaceReservedIps",
-                "majorVersion": 1,
                 "fields": {
                     "reserved_ips": {
                         "maxItemsOne": false
@@ -6681,7 +6417,6 @@
             },
             "ibm_is_bare_metal_server_network_interfaces": {
                 "current": "ibmcloud:index/getIsBareMetalServerNetworkInterfaces:getIsBareMetalServerNetworkInterfaces",
-                "majorVersion": 1,
                 "fields": {
                     "network_interfaces": {
                         "maxItemsOne": false,
@@ -6706,7 +6441,6 @@
             },
             "ibm_is_bare_metal_server_profile": {
                 "current": "ibmcloud:index/getIsBareMetalServerProfile:getIsBareMetalServerProfile",
-                "majorVersion": 1,
                 "fields": {
                     "bandwidth": {
                         "maxItemsOne": false,
@@ -6806,7 +6540,6 @@
             },
             "ibm_is_bare_metal_server_profiles": {
                 "current": "ibmcloud:index/getIsBareMetalServerProfiles:getIsBareMetalServerProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -6903,7 +6636,6 @@
             },
             "ibm_is_bare_metal_servers": {
                 "current": "ibmcloud:index/getIsBareMetalServers:getIsBareMetalServers",
-                "majorVersion": 1,
                 "fields": {
                     "servers": {
                         "maxItemsOne": false,
@@ -7076,7 +6808,6 @@
             },
             "ibm_is_cluster_network": {
                 "current": "ibmcloud:index/getIsClusterNetwork:getIsClusterNetwork",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -7107,7 +6838,6 @@
             },
             "ibm_is_cluster_network_interface": {
                 "current": "ibmcloud:index/getIsClusterNetworkInterface:getIsClusterNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -7152,7 +6882,6 @@
             },
             "ibm_is_cluster_network_interfaces": {
                 "current": "ibmcloud:index/getIsClusterNetworkInterfaces:getIsClusterNetworkInterfaces",
-                "majorVersion": 1,
                 "fields": {
                     "interfaces": {
                         "maxItemsOne": false,
@@ -7204,7 +6933,6 @@
             },
             "ibm_is_cluster_network_profile": {
                 "current": "ibmcloud:index/getIsClusterNetworkProfile:getIsClusterNetworkProfile",
-                "majorVersion": 1,
                 "fields": {
                     "supported_instance_profiles": {
                         "maxItemsOne": false
@@ -7216,7 +6944,6 @@
             },
             "ibm_is_cluster_network_profiles": {
                 "current": "ibmcloud:index/getIsClusterNetworkProfiles:getIsClusterNetworkProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -7235,7 +6962,6 @@
             },
             "ibm_is_cluster_network_subnet": {
                 "current": "ibmcloud:index/getIsClusterNetworkSubnet:getIsClusterNetworkSubnet",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -7244,7 +6970,6 @@
             },
             "ibm_is_cluster_network_subnet_reserved_ip": {
                 "current": "ibmcloud:index/getIsClusterNetworkSubnetReservedIp:getIsClusterNetworkSubnetReservedIp",
-                "majorVersion": 1,
                 "fields": {
                     "lifecycle_reasons": {
                         "maxItemsOne": false
@@ -7263,7 +6988,6 @@
             },
             "ibm_is_cluster_network_subnet_reserved_ips": {
                 "current": "ibmcloud:index/getIsClusterNetworkSubnetReservedIps:getIsClusterNetworkSubnetReservedIps",
-                "majorVersion": 1,
                 "fields": {
                     "reserved_ips": {
                         "maxItemsOne": false,
@@ -7289,7 +7013,6 @@
             },
             "ibm_is_cluster_network_subnets": {
                 "current": "ibmcloud:index/getIsClusterNetworkSubnets:getIsClusterNetworkSubnets",
-                "majorVersion": 1,
                 "fields": {
                     "subnets": {
                         "maxItemsOne": false,
@@ -7305,7 +7028,6 @@
             },
             "ibm_is_cluster_networks": {
                 "current": "ibmcloud:index/getIsClusterNetworks:getIsClusterNetworks",
-                "majorVersion": 1,
                 "fields": {
                     "cluster_networks": {
                         "maxItemsOne": false,
@@ -7343,7 +7065,6 @@
             },
             "ibm_is_dedicated_host": {
                 "current": "ibmcloud:index/getIsDedicatedHost:getIsDedicatedHost",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -7404,7 +7125,6 @@
             },
             "ibm_is_dedicated_host_disk": {
                 "current": "ibmcloud:index/getIsDedicatedHostDisk:getIsDedicatedHostDisk",
-                "majorVersion": 1,
                 "fields": {
                     "instance_disks": {
                         "maxItemsOne": false,
@@ -7423,7 +7143,6 @@
             },
             "ibm_is_dedicated_host_disks": {
                 "current": "ibmcloud:index/getIsDedicatedHostDisks:getIsDedicatedHostDisks",
-                "majorVersion": 1,
                 "fields": {
                     "disks": {
                         "maxItemsOne": false,
@@ -7449,7 +7168,6 @@
             },
             "ibm_is_dedicated_host_group": {
                 "current": "ibmcloud:index/getIsDedicatedHostGroup:getIsDedicatedHostGroup",
-                "majorVersion": 1,
                 "fields": {
                     "dedicated_hosts": {
                         "maxItemsOne": false,
@@ -7468,7 +7186,6 @@
             },
             "ibm_is_dedicated_host_groups": {
                 "current": "ibmcloud:index/getIsDedicatedHostGroups:getIsDedicatedHostGroups",
-                "majorVersion": 1,
                 "fields": {
                     "host_groups": {
                         "maxItemsOne": false,
@@ -7494,7 +7211,6 @@
             },
             "ibm_is_dedicated_host_profile": {
                 "current": "ibmcloud:index/getIsDedicatedHostProfile:getIsDedicatedHostProfile",
-                "majorVersion": 1,
                 "fields": {
                     "disks": {
                         "maxItemsOne": false,
@@ -7565,7 +7281,6 @@
             },
             "ibm_is_dedicated_host_profiles": {
                 "current": "ibmcloud:index/getIsDedicatedHostProfiles:getIsDedicatedHostProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -7643,7 +7358,6 @@
             },
             "ibm_is_dedicated_hosts": {
                 "current": "ibmcloud:index/getIsDedicatedHosts:getIsDedicatedHosts",
-                "majorVersion": 1,
                 "fields": {
                     "dedicated_hosts": {
                         "maxItemsOne": false,
@@ -7711,7 +7425,6 @@
             },
             "ibm_is_endpoint_gateway_targets": {
                 "current": "ibmcloud:index/getIsEndpointGatewayTargets:getIsEndpointGatewayTargets",
-                "majorVersion": 1,
                 "fields": {
                     "resources": {
                         "maxItemsOne": false,
@@ -7727,7 +7440,6 @@
             },
             "ibm_is_floating_ip": {
                 "current": "ibmcloud:index/getIsFloatingIp:getIsFloatingIp",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -7752,7 +7464,6 @@
             },
             "ibm_is_floating_ips": {
                 "current": "ibmcloud:index/getIsFloatingIps:getIsFloatingIps",
-                "majorVersion": 1,
                 "fields": {
                     "floating_ips": {
                         "maxItemsOne": false,
@@ -7787,7 +7498,6 @@
             },
             "ibm_is_flow_log": {
                 "current": "ibmcloud:index/getIsFlowLog:getIsFlowLog",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -7822,7 +7532,6 @@
             },
             "ibm_is_flow_logs": {
                 "current": "ibmcloud:index/getIsFlowLogs:getIsFlowLogs",
-                "majorVersion": 1,
                 "fields": {
                     "flow_log_collectors": {
                         "maxItemsOne": false,
@@ -7841,7 +7550,6 @@
             },
             "ibm_is_ike_policies": {
                 "current": "ibmcloud:index/getIsIkePolicies:getIsIkePolicies",
-                "majorVersion": 1,
                 "fields": {
                     "ike_policies": {
                         "maxItemsOne": false,
@@ -7867,7 +7575,6 @@
             },
             "ibm_is_ike_policy": {
                 "current": "ibmcloud:index/getIsIkePolicy:getIsIkePolicy",
-                "majorVersion": 1,
                 "fields": {
                     "connections": {
                         "maxItemsOne": false,
@@ -7886,7 +7593,6 @@
             },
             "ibm_is_image": {
                 "current": "ibmcloud:index/getIsImage:getIsImage",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -7927,7 +7633,6 @@
             },
             "ibm_is_image_bare_metal_server_profiles": {
                 "current": "ibmcloud:index/getIsImageBareMetalServerProfiles:getIsImageBareMetalServerProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "bare_metal_server_profiles": {
                         "maxItemsOne": false
@@ -7936,7 +7641,6 @@
             },
             "ibm_is_image_export_job": {
                 "current": "ibmcloud:index/getIsImageExportJob:getIsImageExportJob",
-                "majorVersion": 1,
                 "fields": {
                     "status_reasons": {
                         "maxItemsOne": false
@@ -7951,7 +7655,6 @@
             },
             "ibm_is_image_export_jobs": {
                 "current": "ibmcloud:index/getIsImageExportJobs:getIsImageExportJobs",
-                "majorVersion": 1,
                 "fields": {
                     "export_jobs": {
                         "maxItemsOne": false,
@@ -7973,7 +7676,6 @@
             },
             "ibm_is_image_instance_profiles": {
                 "current": "ibmcloud:index/getIsImageInstanceProfiles:getIsImageInstanceProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "instance_profiles": {
                         "maxItemsOne": false
@@ -7982,7 +7684,6 @@
             },
             "ibm_is_images": {
                 "current": "ibmcloud:index/getIsImages:getIsImages",
-                "majorVersion": 1,
                 "fields": {
                     "images": {
                         "maxItemsOne": false,
@@ -8040,7 +7741,6 @@
             },
             "ibm_is_instance": {
                 "current": "ibmcloud:index/getIsInstance:getIsInstance",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -8237,7 +7937,6 @@
             },
             "ibm_is_instance_cluster_network_attachment": {
                 "current": "ibmcloud:index/getIsInstanceClusterNetworkAttachment:getIsInstanceClusterNetworkAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "before": {
                         "maxItemsOne": false
@@ -8279,7 +7978,6 @@
             },
             "ibm_is_instance_cluster_network_attachments": {
                 "current": "ibmcloud:index/getIsInstanceClusterNetworkAttachments:getIsInstanceClusterNetworkAttachments",
-                "majorVersion": 1,
                 "fields": {
                     "cluster_network_attachments": {
                         "maxItemsOne": false,
@@ -8327,12 +8025,10 @@
                 }
             },
             "ibm_is_instance_disk": {
-                "current": "ibmcloud:index/getIsInstanceDisk:getIsInstanceDisk",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsInstanceDisk:getIsInstanceDisk"
             },
             "ibm_is_instance_disks": {
                 "current": "ibmcloud:index/getIsInstanceDisks:getIsInstanceDisks",
-                "majorVersion": 1,
                 "fields": {
                     "disks": {
                         "maxItemsOne": false
@@ -8341,7 +8037,6 @@
             },
             "ibm_is_instance_group": {
                 "current": "ibmcloud:index/getIsInstanceGroup:getIsInstanceGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -8356,7 +8051,6 @@
             },
             "ibm_is_instance_group_manager": {
                 "current": "ibmcloud:index/getIsInstanceGroupManager:getIsInstanceGroupManager",
-                "majorVersion": 1,
                 "fields": {
                     "actions": {
                         "maxItemsOne": false
@@ -8367,12 +8061,10 @@
                 }
             },
             "ibm_is_instance_group_manager_action": {
-                "current": "ibmcloud:index/getIsInstanceGroupManagerAction:getIsInstanceGroupManagerAction",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsInstanceGroupManagerAction:getIsInstanceGroupManagerAction"
             },
             "ibm_is_instance_group_manager_actions": {
                 "current": "ibmcloud:index/getIsInstanceGroupManagerActions:getIsInstanceGroupManagerActions",
-                "majorVersion": 1,
                 "fields": {
                     "instance_group_manager_actions": {
                         "maxItemsOne": false
@@ -8381,7 +8073,6 @@
             },
             "ibm_is_instance_group_manager_policies": {
                 "current": "ibmcloud:index/getIsInstanceGroupManagerPolicies:getIsInstanceGroupManagerPolicies",
-                "majorVersion": 1,
                 "fields": {
                     "instance_group_manager_policies": {
                         "maxItemsOne": false
@@ -8389,12 +8080,10 @@
                 }
             },
             "ibm_is_instance_group_manager_policy": {
-                "current": "ibmcloud:index/getIsInstanceGroupManagerPolicy:getIsInstanceGroupManagerPolicy",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsInstanceGroupManagerPolicy:getIsInstanceGroupManagerPolicy"
             },
             "ibm_is_instance_group_managers": {
                 "current": "ibmcloud:index/getIsInstanceGroupManagers:getIsInstanceGroupManagers",
-                "majorVersion": 1,
                 "fields": {
                     "instance_group_managers": {
                         "maxItemsOne": false,
@@ -8413,7 +8102,6 @@
             },
             "ibm_is_instance_group_membership": {
                 "current": "ibmcloud:index/getIsInstanceGroupMembership:getIsInstanceGroupMembership",
-                "majorVersion": 1,
                 "fields": {
                     "instance": {
                         "maxItemsOne": false
@@ -8425,7 +8113,6 @@
             },
             "ibm_is_instance_group_memberships": {
                 "current": "ibmcloud:index/getIsInstanceGroupMemberships:getIsInstanceGroupMemberships",
-                "majorVersion": 1,
                 "fields": {
                     "memberships": {
                         "maxItemsOne": false,
@@ -8444,7 +8131,6 @@
             },
             "ibm_is_instance_groups": {
                 "current": "ibmcloud:index/getIsInstanceGroups:getIsInstanceGroups",
-                "majorVersion": 1,
                 "fields": {
                     "instance_groups": {
                         "maxItemsOne": false,
@@ -8513,7 +8199,6 @@
             },
             "ibm_is_instance_network_attachment": {
                 "current": "ibmcloud:index/getIsInstanceNetworkAttachment:getIsInstanceNetworkAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "primary_ip": {
                         "maxItemsOne": false,
@@ -8542,7 +8227,6 @@
             },
             "ibm_is_instance_network_attachments": {
                 "current": "ibmcloud:index/getIsInstanceNetworkAttachments:getIsInstanceNetworkAttachments",
-                "majorVersion": 1,
                 "fields": {
                     "network_attachments": {
                         "maxItemsOne": false,
@@ -8578,7 +8262,6 @@
             },
             "ibm_is_instance_network_interface": {
                 "current": "ibmcloud:index/getIsInstanceNetworkInterface:getIsInstanceNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "floating_ips": {
                         "maxItemsOne": false,
@@ -8616,12 +8299,10 @@
                 }
             },
             "ibm_is_instance_network_interface_reserved_ip": {
-                "current": "ibmcloud:index/getIsInstanceNetworkInterfaceReservedIp:getIsInstanceNetworkInterfaceReservedIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsInstanceNetworkInterfaceReservedIp:getIsInstanceNetworkInterfaceReservedIp"
             },
             "ibm_is_instance_network_interface_reserved_ips": {
                 "current": "ibmcloud:index/getIsInstanceNetworkInterfaceReservedIps:getIsInstanceNetworkInterfaceReservedIps",
-                "majorVersion": 1,
                 "fields": {
                     "reserved_ips": {
                         "maxItemsOne": false
@@ -8630,7 +8311,6 @@
             },
             "ibm_is_instance_network_interfaces": {
                 "current": "ibmcloud:index/getIsInstanceNetworkInterfaces:getIsInstanceNetworkInterfaces",
-                "majorVersion": 1,
                 "fields": {
                     "network_interfaces": {
                         "maxItemsOne": false,
@@ -8676,7 +8356,6 @@
             },
             "ibm_is_instance_profile": {
                 "current": "ibmcloud:index/getIsInstanceProfile:getIsInstanceProfile",
-                "majorVersion": 1,
                 "fields": {
                     "architecture_values": {
                         "maxItemsOne": false
@@ -8873,7 +8552,6 @@
             },
             "ibm_is_instance_profiles": {
                 "current": "ibmcloud:index/getIsInstanceProfiles:getIsInstanceProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -9077,7 +8755,6 @@
             },
             "ibm_is_instance_template": {
                 "current": "ibmcloud:index/getIsInstanceTemplate:getIsInstanceTemplate",
-                "majorVersion": 1,
                 "fields": {
                     "boot_volume_attachment": {
                         "maxItemsOne": false,
@@ -9238,7 +8915,6 @@
             },
             "ibm_is_instance_templates": {
                 "current": "ibmcloud:index/getIsInstanceTemplates:getIsInstanceTemplates",
-                "majorVersion": 1,
                 "fields": {
                     "templates": {
                         "maxItemsOne": false,
@@ -9406,7 +9082,6 @@
             },
             "ibm_is_instance_volume_attachment": {
                 "current": "ibmcloud:index/getIsInstanceVolumeAttachment:getIsInstanceVolumeAttachment",
-                "majorVersion": 1,
                 "fields": {
                     "volume_reference": {
                         "maxItemsOne": false
@@ -9415,7 +9090,6 @@
             },
             "ibm_is_instance_volume_attachments": {
                 "current": "ibmcloud:index/getIsInstanceVolumeAttachments:getIsInstanceVolumeAttachments",
-                "majorVersion": 1,
                 "fields": {
                     "volume_attachments": {
                         "maxItemsOne": false,
@@ -9431,7 +9105,6 @@
             },
             "ibm_is_instances": {
                 "current": "ibmcloud:index/getIsInstances:getIsInstances",
-                "majorVersion": 1,
                 "fields": {
                     "instances": {
                         "maxItemsOne": false,
@@ -9629,7 +9302,6 @@
             },
             "ibm_is_ipsec_policies": {
                 "current": "ibmcloud:index/getIsIpsecPolicies:getIsIpsecPolicies",
-                "majorVersion": 1,
                 "fields": {
                     "ipsec_policies": {
                         "maxItemsOne": false,
@@ -9655,7 +9327,6 @@
             },
             "ibm_is_ipsec_policy": {
                 "current": "ibmcloud:index/getIsIpsecPolicy:getIsIpsecPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "connections": {
                         "maxItemsOne": false,
@@ -9674,7 +9345,6 @@
             },
             "ibm_is_lb": {
                 "current": "ibmcloud:index/getIsLb:getIsLb",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -9730,7 +9400,6 @@
             },
             "ibm_is_lb_listener": {
                 "current": "ibmcloud:index/getIsLbListener:getIsLbListener",
-                "majorVersion": 1,
                 "fields": {
                     "certificate_instance": {
                         "maxItemsOne": false
@@ -9776,7 +9445,6 @@
             },
             "ibm_is_lb_listener_policies": {
                 "current": "ibmcloud:index/getIsLbListenerPolicies:getIsLbListenerPolicies",
-                "majorVersion": 1,
                 "fields": {
                     "policies": {
                         "maxItemsOne": false,
@@ -9819,7 +9487,6 @@
             },
             "ibm_is_lb_listener_policy": {
                 "current": "ibmcloud:index/getIsLbListenerPolicy:getIsLbListenerPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "rules": {
                         "maxItemsOne": false,
@@ -9854,12 +9521,10 @@
                 }
             },
             "ibm_is_lb_listener_policy_rule": {
-                "current": "ibmcloud:index/getIsLbListenerPolicyRule:getIsLbListenerPolicyRule",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsLbListenerPolicyRule:getIsLbListenerPolicyRule"
             },
             "ibm_is_lb_listener_policy_rules": {
                 "current": "ibmcloud:index/getIsLbListenerPolicyRules:getIsLbListenerPolicyRules",
-                "majorVersion": 1,
                 "fields": {
                     "rules": {
                         "maxItemsOne": false
@@ -9868,7 +9533,6 @@
             },
             "ibm_is_lb_listeners": {
                 "current": "ibmcloud:index/getIsLbListeners:getIsLbListeners",
-                "majorVersion": 1,
                 "fields": {
                     "listeners": {
                         "maxItemsOne": false,
@@ -9921,7 +9585,6 @@
             },
             "ibm_is_lb_pool": {
                 "current": "ibmcloud:index/getIsLbPool:getIsLbPool",
-                "majorVersion": 1,
                 "fields": {
                     "failsafe_policy": {
                         "maxItemsOne": false,
@@ -9970,7 +9633,6 @@
             },
             "ibm_is_lb_pool_member": {
                 "current": "ibmcloud:index/getIsLbPoolMember:getIsLbPoolMember",
-                "majorVersion": 1,
                 "fields": {
                     "target": {
                         "maxItemsOne": false,
@@ -9986,7 +9648,6 @@
             },
             "ibm_is_lb_pool_members": {
                 "current": "ibmcloud:index/getIsLbPoolMembers:getIsLbPoolMembers",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false,
@@ -10009,7 +9670,6 @@
             },
             "ibm_is_lb_pools": {
                 "current": "ibmcloud:index/getIsLbPools:getIsLbPools",
-                "majorVersion": 1,
                 "fields": {
                     "pools": {
                         "maxItemsOne": false,
@@ -10065,7 +9725,6 @@
             },
             "ibm_is_lb_profile": {
                 "current": "ibmcloud:index/getIsLbProfile:getIsLbProfile",
-                "majorVersion": 1,
                 "fields": {
                     "access_modes": {
                         "maxItemsOne": false,
@@ -10104,7 +9763,6 @@
             },
             "ibm_is_lb_profiles": {
                 "current": "ibmcloud:index/getIsLbProfiles:getIsLbProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "lb_profiles": {
                         "maxItemsOne": false,
@@ -10159,7 +9817,6 @@
             },
             "ibm_is_lbs": {
                 "current": "ibmcloud:index/getIsLbs:getIsLbs",
-                "majorVersion": 1,
                 "fields": {
                     "load_balancers": {
                         "maxItemsOne": false,
@@ -10212,7 +9869,6 @@
             },
             "ibm_is_network_acl": {
                 "current": "ibmcloud:index/getIsNetworkAcl:getIsNetworkAcl",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -10270,7 +9926,6 @@
             },
             "ibm_is_network_acl_rule": {
                 "current": "ibmcloud:index/getIsNetworkAclRule:getIsNetworkAclRule",
-                "majorVersion": 1,
                 "fields": {
                     "icmp": {
                         "maxItemsOne": false
@@ -10285,7 +9940,6 @@
             },
             "ibm_is_network_acl_rules": {
                 "current": "ibmcloud:index/getIsNetworkAclRules:getIsNetworkAclRules",
-                "majorVersion": 1,
                 "fields": {
                     "rules": {
                         "maxItemsOne": false,
@@ -10307,7 +9961,6 @@
             },
             "ibm_is_network_acls": {
                 "current": "ibmcloud:index/getIsNetworkAcls:getIsNetworkAcls",
-                "majorVersion": 1,
                 "fields": {
                     "network_acls": {
                         "maxItemsOne": false,
@@ -10371,12 +10024,10 @@
                 }
             },
             "ibm_is_operating_system": {
-                "current": "ibmcloud:index/getIsOperatingSystem:getIsOperatingSystem",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsOperatingSystem:getIsOperatingSystem"
             },
             "ibm_is_operating_systems": {
                 "current": "ibmcloud:index/getIsOperatingSystems:getIsOperatingSystems",
-                "majorVersion": 1,
                 "fields": {
                     "operating_systems": {
                         "maxItemsOne": false
@@ -10385,7 +10036,6 @@
             },
             "ibm_is_placement_group": {
                 "current": "ibmcloud:index/getIsPlacementGroup:getIsPlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -10400,7 +10050,6 @@
             },
             "ibm_is_placement_groups": {
                 "current": "ibmcloud:index/getIsPlacementGroups:getIsPlacementGroups",
-                "majorVersion": 1,
                 "fields": {
                     "placement_groups": {
                         "maxItemsOne": false,
@@ -10422,7 +10071,6 @@
             },
             "ibm_is_private_path_service_gateway": {
                 "current": "ibmcloud:index/getIsPrivatePathServiceGateway:getIsPrivatePathServiceGateway",
-                "majorVersion": 1,
                 "fields": {
                     "load_balancer": {
                         "maxItemsOne": false,
@@ -10457,7 +10105,6 @@
             },
             "ibm_is_private_path_service_gateway_account_policies": {
                 "current": "ibmcloud:index/getIsPrivatePathServiceGatewayAccountPolicies:getIsPrivatePathServiceGatewayAccountPolicies",
-                "majorVersion": 1,
                 "fields": {
                     "account_policies": {
                         "maxItemsOne": false,
@@ -10473,7 +10120,6 @@
             },
             "ibm_is_private_path_service_gateway_account_policy": {
                 "current": "ibmcloud:index/getIsPrivatePathServiceGatewayAccountPolicy:getIsPrivatePathServiceGatewayAccountPolicy",
-                "majorVersion": 1,
                 "fields": {
                     "account": {
                         "maxItemsOne": false
@@ -10482,7 +10128,6 @@
             },
             "ibm_is_private_path_service_gateway_endpoint_gateway_binding": {
                 "current": "ibmcloud:index/getIsPrivatePathServiceGatewayEndpointGatewayBinding:getIsPrivatePathServiceGatewayEndpointGatewayBinding",
-                "majorVersion": 1,
                 "fields": {
                     "account": {
                         "maxItemsOne": false
@@ -10491,7 +10136,6 @@
             },
             "ibm_is_private_path_service_gateway_endpoint_gateway_bindings": {
                 "current": "ibmcloud:index/getIsPrivatePathServiceGatewayEndpointGatewayBindings:getIsPrivatePathServiceGatewayEndpointGatewayBindings",
-                "majorVersion": 1,
                 "fields": {
                     "endpoint_gateway_bindings": {
                         "maxItemsOne": false,
@@ -10507,7 +10151,6 @@
             },
             "ibm_is_private_path_service_gateways": {
                 "current": "ibmcloud:index/getIsPrivatePathServiceGateways:getIsPrivatePathServiceGateways",
-                "majorVersion": 1,
                 "fields": {
                     "private_path_service_gateways": {
                         "maxItemsOne": false,
@@ -10549,7 +10192,6 @@
             },
             "ibm_is_public_address_range": {
                 "current": "ibmcloud:index/getIsPublicAddressRange:getIsPublicAddressRange",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -10584,7 +10226,6 @@
             },
             "ibm_is_public_address_ranges": {
                 "current": "ibmcloud:index/getIsPublicAddressRanges:getIsPublicAddressRanges",
-                "majorVersion": 1,
                 "fields": {
                     "public_address_ranges": {
                         "maxItemsOne": false,
@@ -10626,7 +10267,6 @@
             },
             "ibm_is_public_gateway": {
                 "current": "ibmcloud:index/getIsPublicGateway:getIsPublicGateway",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -10638,7 +10278,6 @@
             },
             "ibm_is_public_gateways": {
                 "current": "ibmcloud:index/getIsPublicGateways:getIsPublicGateways",
-                "majorVersion": 1,
                 "fields": {
                     "public_gateways": {
                         "maxItemsOne": false,
@@ -10656,12 +10295,10 @@
                 }
             },
             "ibm_is_region": {
-                "current": "ibmcloud:index/getIsRegion:getIsRegion",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsRegion:getIsRegion"
             },
             "ibm_is_regions": {
                 "current": "ibmcloud:index/getIsRegions:getIsRegions",
-                "majorVersion": 1,
                 "fields": {
                     "regions": {
                         "maxItemsOne": false
@@ -10670,7 +10307,6 @@
             },
             "ibm_is_reservation": {
                 "current": "ibmcloud:index/getIsReservation:getIsReservation",
-                "majorVersion": 1,
                 "fields": {
                     "capacity": {
                         "maxItemsOne": false
@@ -10691,7 +10327,6 @@
             },
             "ibm_is_reservations": {
                 "current": "ibmcloud:index/getIsReservations:getIsReservations",
-                "majorVersion": 1,
                 "fields": {
                     "reservations": {
                         "maxItemsOne": false,
@@ -10719,7 +10354,6 @@
             },
             "ibm_is_security_group": {
                 "current": "ibmcloud:index/getIsSecurityGroup:getIsSecurityGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -10741,7 +10375,6 @@
             },
             "ibm_is_security_group_rule": {
                 "current": "ibmcloud:index/getIsSecurityGroupRule:getIsSecurityGroupRule",
-                "majorVersion": 1,
                 "fields": {
                     "local": {
                         "maxItemsOne": false
@@ -10760,7 +10393,6 @@
             },
             "ibm_is_security_group_rules": {
                 "current": "ibmcloud:index/getIsSecurityGroupRules:getIsSecurityGroupRules",
-                "majorVersion": 1,
                 "fields": {
                     "rules": {
                         "maxItemsOne": false,
@@ -10785,12 +10417,10 @@
                 }
             },
             "ibm_is_security_group_target": {
-                "current": "ibmcloud:index/getIsSecurityGroupTarget:getIsSecurityGroupTarget",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsSecurityGroupTarget:getIsSecurityGroupTarget"
             },
             "ibm_is_security_group_targets": {
                 "current": "ibmcloud:index/getIsSecurityGroupTargets:getIsSecurityGroupTargets",
-                "majorVersion": 1,
                 "fields": {
                     "targets": {
                         "maxItemsOne": false
@@ -10799,7 +10429,6 @@
             },
             "ibm_is_security_groups": {
                 "current": "ibmcloud:index/getIsSecurityGroups:getIsSecurityGroups",
-                "majorVersion": 1,
                 "fields": {
                     "security_groups": {
                         "maxItemsOne": false,
@@ -10858,7 +10487,6 @@
             },
             "ibm_is_share": {
                 "current": "ibmcloud:index/getIsShare:getIsShare",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -10968,7 +10596,6 @@
             },
             "ibm_is_share_accessor_binding": {
                 "current": "ibmcloud:index/getIsShareAccessorBinding:getIsShareAccessorBinding",
-                "majorVersion": 1,
                 "fields": {
                     "accessor": {
                         "maxItemsOne": false,
@@ -10997,7 +10624,6 @@
             },
             "ibm_is_share_accessor_bindings": {
                 "current": "ibmcloud:index/getIsShareAccessorBindings:getIsShareAccessorBindings",
-                "majorVersion": 1,
                 "fields": {
                     "accessor_bindings": {
                         "maxItemsOne": false,
@@ -11033,7 +10659,6 @@
             },
             "ibm_is_share_mount_target": {
                 "current": "ibmcloud:index/getIsShareMountTarget:getIsShareMountTarget",
-                "majorVersion": 1,
                 "fields": {
                     "primary_ip": {
                         "maxItemsOne": false,
@@ -11079,7 +10704,6 @@
             },
             "ibm_is_share_mount_targets": {
                 "current": "ibmcloud:index/getIsShareMountTargets:getIsShareMountTargets",
-                "majorVersion": 1,
                 "fields": {
                     "mount_targets": {
                         "maxItemsOne": false,
@@ -11132,7 +10756,6 @@
             },
             "ibm_is_share_profile": {
                 "current": "ibmcloud:index/getIsShareProfile:getIsShareProfile",
-                "majorVersion": 1,
                 "fields": {
                     "allowed_access_protocols": {
                         "maxItemsOne": false,
@@ -11197,7 +10820,6 @@
             },
             "ibm_is_share_profiles": {
                 "current": "ibmcloud:index/getIsShareProfiles:getIsShareProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -11276,7 +10898,6 @@
             },
             "ibm_is_share_snapshot": {
                 "current": "ibmcloud:index/getIsShareSnapshot:getIsShareSnapshot",
-                "majorVersion": 1,
                 "fields": {
                     "backup_policy_plan": {
                         "maxItemsOne": false,
@@ -11317,7 +10938,6 @@
             },
             "ibm_is_share_snapshots": {
                 "current": "ibmcloud:index/getIsShareSnapshots:getIsShareSnapshots",
-                "majorVersion": 1,
                 "fields": {
                     "snapshots": {
                         "maxItemsOne": false,
@@ -11365,7 +10985,6 @@
             },
             "ibm_is_shares": {
                 "current": "ibmcloud:index/getIsShares:getIsShares",
-                "majorVersion": 1,
                 "fields": {
                     "shares": {
                         "maxItemsOne": false,
@@ -11472,7 +11091,6 @@
             },
             "ibm_is_snapshot": {
                 "current": "ibmcloud:index/getIsSnapshot:getIsSnapshot",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -11548,12 +11166,10 @@
                 }
             },
             "ibm_is_snapshot_clone": {
-                "current": "ibmcloud:index/getIsSnapshotClone:getIsSnapshotClone",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsSnapshotClone:getIsSnapshotClone"
             },
             "ibm_is_snapshot_clones": {
                 "current": "ibmcloud:index/getIsSnapshotClones:getIsSnapshotClones",
-                "majorVersion": 1,
                 "fields": {
                     "clones": {
                         "maxItemsOne": false
@@ -11562,7 +11178,6 @@
             },
             "ibm_is_snapshot_consistency_group": {
                 "current": "ibmcloud:index/getIsSnapshotConsistencyGroup:getIsSnapshotConsistencyGroup",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -11606,7 +11221,6 @@
             },
             "ibm_is_snapshot_consistency_groups": {
                 "current": "ibmcloud:index/getIsSnapshotConsistencyGroups:getIsSnapshotConsistencyGroups",
-                "majorVersion": 1,
                 "fields": {
                     "snapshot_consistency_groups": {
                         "maxItemsOne": false,
@@ -11654,7 +11268,6 @@
             },
             "ibm_is_snapshot_instance_profiles": {
                 "current": "ibmcloud:index/getIsSnapshotInstanceProfiles:getIsSnapshotInstanceProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "instance_profiles": {
                         "maxItemsOne": false
@@ -11663,7 +11276,6 @@
             },
             "ibm_is_snapshots": {
                 "current": "ibmcloud:index/getIsSnapshots:getIsSnapshots",
-                "majorVersion": 1,
                 "fields": {
                     "snapshots": {
                         "maxItemsOne": false,
@@ -11746,12 +11358,10 @@
                 }
             },
             "ibm_is_source_share": {
-                "current": "ibmcloud:index/getIsSourceShare:getIsSourceShare",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsSourceShare:getIsSourceShare"
             },
             "ibm_is_ssh_key": {
                 "current": "ibmcloud:index/getIsSshKey:getIsSshKey",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -11763,7 +11373,6 @@
             },
             "ibm_is_ssh_keys": {
                 "current": "ibmcloud:index/getIsSshKeys:getIsSshKeys",
-                "majorVersion": 1,
                 "fields": {
                     "keys": {
                         "maxItemsOne": false,
@@ -11785,7 +11394,6 @@
             },
             "ibm_is_subnet": {
                 "current": "ibmcloud:index/getIsSubnet:getIsSubnet",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -11807,7 +11415,6 @@
             },
             "ibm_is_subnet_reserved_ip": {
                 "current": "ibmcloud:index/getIsSubnetReservedIp:getIsSubnetReservedIp",
-                "majorVersion": 1,
                 "fields": {
                     "target_reference": {
                         "maxItemsOne": false,
@@ -11823,7 +11430,6 @@
             },
             "ibm_is_subnet_reserved_ips": {
                 "current": "ibmcloud:index/getIsSubnetReservedIps:getIsSubnetReservedIps",
-                "majorVersion": 1,
                 "fields": {
                     "reserved_ips": {
                         "maxItemsOne": false,
@@ -11846,7 +11452,6 @@
             },
             "ibm_is_subnets": {
                 "current": "ibmcloud:index/getIsSubnets:getIsSubnets",
-                "majorVersion": 1,
                 "fields": {
                     "subnets": {
                         "maxItemsOne": false,
@@ -11869,7 +11474,6 @@
             },
             "ibm_is_virtual_endpoint_gateway": {
                 "current": "ibmcloud:index/getIsVirtualEndpointGateway:getIsVirtualEndpointGateway",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -11896,7 +11500,6 @@
             },
             "ibm_is_virtual_endpoint_gateway_ips": {
                 "current": "ibmcloud:index/getIsVirtualEndpointGatewayIps:getIsVirtualEndpointGatewayIps",
-                "majorVersion": 1,
                 "fields": {
                     "ips": {
                         "maxItemsOne": false,
@@ -11912,7 +11515,6 @@
             },
             "ibm_is_virtual_endpoint_gateways": {
                 "current": "ibmcloud:index/getIsVirtualEndpointGateways:getIsVirtualEndpointGateways",
-                "majorVersion": 1,
                 "fields": {
                     "virtual_endpoint_gateways": {
                         "maxItemsOne": false,
@@ -11946,7 +11548,6 @@
             },
             "ibm_is_virtual_network_interface": {
                 "current": "ibmcloud:index/getIsVirtualNetworkInterface:getIsVirtualNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -12024,7 +11625,6 @@
             },
             "ibm_is_virtual_network_interface_floating_ip": {
                 "current": "ibmcloud:index/getIsVirtualNetworkInterfaceFloatingIp:getIsVirtualNetworkInterfaceFloatingIp",
-                "majorVersion": 1,
                 "fields": {
                     "deleted": {
                         "maxItemsOne": false
@@ -12033,7 +11633,6 @@
             },
             "ibm_is_virtual_network_interface_floating_ips": {
                 "current": "ibmcloud:index/getIsVirtualNetworkInterfaceFloatingIps:getIsVirtualNetworkInterfaceFloatingIps",
-                "majorVersion": 1,
                 "fields": {
                     "floating_ips": {
                         "maxItemsOne": false,
@@ -12048,12 +11647,10 @@
                 }
             },
             "ibm_is_virtual_network_interface_ip": {
-                "current": "ibmcloud:index/getIsVirtualNetworkInterfaceIp:getIsVirtualNetworkInterfaceIp",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsVirtualNetworkInterfaceIp:getIsVirtualNetworkInterfaceIp"
             },
             "ibm_is_virtual_network_interface_ips": {
                 "current": "ibmcloud:index/getIsVirtualNetworkInterfaceIps:getIsVirtualNetworkInterfaceIps",
-                "majorVersion": 1,
                 "fields": {
                     "reserved_ips": {
                         "maxItemsOne": false
@@ -12062,7 +11659,6 @@
             },
             "ibm_is_virtual_network_interfaces": {
                 "current": "ibmcloud:index/getIsVirtualNetworkInterfaces:getIsVirtualNetworkInterfaces",
-                "majorVersion": 1,
                 "fields": {
                     "virtual_network_interfaces": {
                         "maxItemsOne": false,
@@ -12147,7 +11743,6 @@
             },
             "ibm_is_volume": {
                 "current": "ibmcloud:index/getIsVolume:getIsVolume",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -12187,7 +11782,6 @@
             },
             "ibm_is_volume_instance_profiles": {
                 "current": "ibmcloud:index/getIsVolumeInstanceProfiles:getIsVolumeInstanceProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "instance_profiles": {
                         "maxItemsOne": false
@@ -12196,7 +11790,6 @@
             },
             "ibm_is_volume_profile": {
                 "current": "ibmcloud:index/getIsVolumeProfile:getIsVolumeProfile",
-                "majorVersion": 1,
                 "fields": {
                     "adjustable_capacity_states": {
                         "maxItemsOne": false,
@@ -12252,7 +11845,6 @@
             },
             "ibm_is_volume_profiles": {
                 "current": "ibmcloud:index/getIsVolumeProfiles:getIsVolumeProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -12315,7 +11907,6 @@
             },
             "ibm_is_volumes": {
                 "current": "ibmcloud:index/getIsVolumes:getIsVolumes",
-                "majorVersion": 1,
                 "fields": {
                     "volumes": {
                         "maxItemsOne": false,
@@ -12417,7 +12008,6 @@
             },
             "ibm_is_vpc": {
                 "current": "ibmcloud:index/getIsVpc:getIsVpc",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -12498,7 +12088,6 @@
             },
             "ibm_is_vpc_address_prefix": {
                 "current": "ibmcloud:index/getIsVpcAddressPrefix:getIsVpcAddressPrefix",
-                "majorVersion": 1,
                 "fields": {
                     "zone": {
                         "maxItemsOne": false
@@ -12507,7 +12096,6 @@
             },
             "ibm_is_vpc_address_prefixes": {
                 "current": "ibmcloud:index/getIsVpcAddressPrefixes:getIsVpcAddressPrefixes",
-                "majorVersion": 1,
                 "fields": {
                     "address_prefixes": {
                         "maxItemsOne": false,
@@ -12523,7 +12111,6 @@
             },
             "ibm_is_vpc_default_routing_table": {
                 "current": "ibmcloud:index/getIsVpcDefaultRoutingTable:getIsVpcDefaultRoutingTable",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -12544,7 +12131,6 @@
             },
             "ibm_is_vpc_dns_resolution_binding": {
                 "current": "ibmcloud:index/getIsVpcDnsResolutionBinding:getIsVpcDnsResolutionBinding",
-                "majorVersion": 1,
                 "fields": {
                     "endpoint_gateways": {
                         "maxItemsOne": false,
@@ -12593,7 +12179,6 @@
             },
             "ibm_is_vpc_dns_resolution_bindings": {
                 "current": "ibmcloud:index/getIsVpcDnsResolutionBindings:getIsVpcDnsResolutionBindings",
-                "majorVersion": 1,
                 "fields": {
                     "dns_resolution_bindings": {
                         "maxItemsOne": false,
@@ -12649,7 +12234,6 @@
             },
             "ibm_is_vpc_routing_table": {
                 "current": "ibmcloud:index/getIsVpcRoutingTable:getIsVpcRoutingTable",
-                "majorVersion": 1,
                 "fields": {
                     "accept_routes_from": {
                         "maxItemsOne": false
@@ -12690,7 +12274,6 @@
             },
             "ibm_is_vpc_routing_table_route": {
                 "current": "ibmcloud:index/getIsVpcRoutingTableRoute:getIsVpcRoutingTableRoute",
-                "majorVersion": 1,
                 "fields": {
                     "creator": {
                         "maxItemsOne": false,
@@ -12719,7 +12302,6 @@
             },
             "ibm_is_vpc_routing_table_routes": {
                 "current": "ibmcloud:index/getIsVpcRoutingTableRoutes:getIsVpcRoutingTableRoutes",
-                "majorVersion": 1,
                 "fields": {
                     "routes": {
                         "maxItemsOne": false,
@@ -12742,7 +12324,6 @@
             },
             "ibm_is_vpc_routing_tables": {
                 "current": "ibmcloud:index/getIsVpcRoutingTables:getIsVpcRoutingTables",
-                "majorVersion": 1,
                 "fields": {
                     "routing_tables": {
                         "maxItemsOne": false,
@@ -12776,7 +12357,6 @@
             },
             "ibm_is_vpcs": {
                 "current": "ibmcloud:index/getIsVpcs:getIsVpcs",
-                "majorVersion": 1,
                 "fields": {
                     "vpcs": {
                         "maxItemsOne": false,
@@ -12864,7 +12444,6 @@
             },
             "ibm_is_vpn_gateway": {
                 "current": "ibmcloud:index/getIsVpnGateway:getIsVpnGateway",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -12918,7 +12497,6 @@
             },
             "ibm_is_vpn_gateway_connection": {
                 "current": "ibmcloud:index/getIsVpnGatewayConnection:getIsVpnGatewayConnection",
-                "majorVersion": 1,
                 "fields": {
                     "dead_peer_detection": {
                         "maxItemsOne": false
@@ -12985,7 +12563,6 @@
             },
             "ibm_is_vpn_gateway_connection_local_cidrs": {
                 "current": "ibmcloud:index/getIsVpnGatewayConnectionLocalCidrs:getIsVpnGatewayConnectionLocalCidrs",
-                "majorVersion": 1,
                 "fields": {
                     "cidrs": {
                         "maxItemsOne": false
@@ -12994,7 +12571,6 @@
             },
             "ibm_is_vpn_gateway_connection_peer_cidrs": {
                 "current": "ibmcloud:index/getIsVpnGatewayConnectionPeerCidrs:getIsVpnGatewayConnectionPeerCidrs",
-                "majorVersion": 1,
                 "fields": {
                     "cidrs": {
                         "maxItemsOne": false
@@ -13003,7 +12579,6 @@
             },
             "ibm_is_vpn_gateway_connections": {
                 "current": "ibmcloud:index/getIsVpnGatewayConnections:getIsVpnGatewayConnections",
-                "majorVersion": 1,
                 "fields": {
                     "connections": {
                         "maxItemsOne": false,
@@ -13054,7 +12629,6 @@
             },
             "ibm_is_vpn_gateways": {
                 "current": "ibmcloud:index/getIsVpnGateways:getIsVpnGateways",
-                "majorVersion": 1,
                 "fields": {
                     "vpn_gateways": {
                         "maxItemsOne": false,
@@ -13092,7 +12666,6 @@
             },
             "ibm_is_vpn_server": {
                 "current": "ibmcloud:index/getIsVpnServer:getIsVpnServer",
-                "majorVersion": 1,
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
@@ -13159,7 +12732,6 @@
             },
             "ibm_is_vpn_server_client": {
                 "current": "ibmcloud:index/getIsVpnServerClient:getIsVpnServerClient",
-                "majorVersion": 1,
                 "fields": {
                     "client_ip": {
                         "maxItemsOne": false
@@ -13170,12 +12742,10 @@
                 }
             },
             "ibm_is_vpn_server_client_configuration": {
-                "current": "ibmcloud:index/getIsVpnServerClientConfiguration:getIsVpnServerClientConfiguration",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsVpnServerClientConfiguration:getIsVpnServerClientConfiguration"
             },
             "ibm_is_vpn_server_clients": {
                 "current": "ibmcloud:index/getIsVpnServerClients:getIsVpnServerClients",
-                "majorVersion": 1,
                 "fields": {
                     "clients": {
                         "maxItemsOne": false,
@@ -13194,7 +12764,6 @@
             },
             "ibm_is_vpn_server_route": {
                 "current": "ibmcloud:index/getIsVpnServerRoute:getIsVpnServerRoute",
-                "majorVersion": 1,
                 "fields": {
                     "health_reasons": {
                         "maxItemsOne": false
@@ -13206,7 +12775,6 @@
             },
             "ibm_is_vpn_server_routes": {
                 "current": "ibmcloud:index/getIsVpnServerRoutes:getIsVpnServerRoutes",
-                "majorVersion": 1,
                 "fields": {
                     "routes": {
                         "maxItemsOne": false,
@@ -13225,7 +12793,6 @@
             },
             "ibm_is_vpn_servers": {
                 "current": "ibmcloud:index/getIsVpnServers:getIsVpnServers",
-                "majorVersion": 1,
                 "fields": {
                     "vpn_servers": {
                         "maxItemsOne": false,
@@ -13298,12 +12865,10 @@
                 }
             },
             "ibm_is_zone": {
-                "current": "ibmcloud:index/getIsZone:getIsZone",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getIsZone:getIsZone"
             },
             "ibm_is_zones": {
                 "current": "ibmcloud:index/getIsZones:getIsZones",
-                "majorVersion": 1,
                 "fields": {
                     "zone_info": {
                         "maxItemsOne": false
@@ -13315,7 +12880,6 @@
             },
             "ibm_pi_available_hosts": {
                 "current": "ibmcloud:index/getPiAvailableHosts:getPiAvailableHosts",
-                "majorVersion": 1,
                 "fields": {
                     "available_hosts": {
                         "maxItemsOne": false
@@ -13324,7 +12888,6 @@
             },
             "ibm_pi_catalog_images": {
                 "current": "ibmcloud:index/getPiCatalogImages:getPiCatalogImages",
-                "majorVersion": 1,
                 "fields": {
                     "images": {
                         "maxItemsOne": false
@@ -13333,7 +12896,6 @@
             },
             "ibm_pi_cloud_connection": {
                 "current": "ibmcloud:index/getPiCloudConnection:getPiCloudConnection",
-                "majorVersion": 1,
                 "fields": {
                     "networks": {
                         "maxItemsOne": false
@@ -13345,7 +12907,6 @@
             },
             "ibm_pi_cloud_connections": {
                 "current": "ibmcloud:index/getPiCloudConnections:getPiCloudConnections",
-                "majorVersion": 1,
                 "fields": {
                     "connections": {
                         "maxItemsOne": false,
@@ -13364,7 +12925,6 @@
             },
             "ibm_pi_cloud_instance": {
                 "current": "ibmcloud:index/getPiCloudInstance:getPiCloudInstance",
-                "majorVersion": 1,
                 "fields": {
                     "capabilities": {
                         "maxItemsOne": false
@@ -13376,7 +12936,6 @@
             },
             "ibm_pi_console_languages": {
                 "current": "ibmcloud:index/getPiConsoleLanguages:getPiConsoleLanguages",
-                "majorVersion": 1,
                 "fields": {
                     "console_languages": {
                         "maxItemsOne": false
@@ -13385,7 +12944,6 @@
             },
             "ibm_pi_datacenter": {
                 "current": "ibmcloud:index/getPiDatacenter:getPiDatacenter",
-                "majorVersion": 1,
                 "fields": {
                     "capability_details": {
                         "maxItemsOne": false,
@@ -13438,7 +12996,6 @@
             },
             "ibm_pi_datacenters": {
                 "current": "ibmcloud:index/getPiDatacenters:getPiDatacenters",
-                "majorVersion": 1,
                 "fields": {
                     "datacenters": {
                         "maxItemsOne": false,
@@ -13498,7 +13055,6 @@
             },
             "ibm_pi_dhcp": {
                 "current": "ibmcloud:index/getPiDhcp:getPiDhcp",
-                "majorVersion": 1,
                 "fields": {
                     "leases": {
                         "maxItemsOne": false
@@ -13507,7 +13063,6 @@
             },
             "ibm_pi_dhcps": {
                 "current": "ibmcloud:index/getPiDhcps:getPiDhcps",
-                "majorVersion": 1,
                 "fields": {
                     "servers": {
                         "maxItemsOne": false
@@ -13516,7 +13071,6 @@
             },
             "ibm_pi_disaster_recovery_location": {
                 "current": "ibmcloud:index/getPiDisasterRecoveryLocation:getPiDisasterRecoveryLocation",
-                "majorVersion": 1,
                 "fields": {
                     "replication_sites": {
                         "maxItemsOne": false,
@@ -13532,7 +13086,6 @@
             },
             "ibm_pi_disaster_recovery_locations": {
                 "current": "ibmcloud:index/getPiDisasterRecoveryLocations:getPiDisasterRecoveryLocations",
-                "majorVersion": 1,
                 "fields": {
                     "disaster_recovery_locations": {
                         "maxItemsOne": false,
@@ -13555,7 +13108,6 @@
             },
             "ibm_pi_host": {
                 "current": "ibmcloud:index/getPiHost:getPiHost",
-                "majorVersion": 1,
                 "fields": {
                     "capacity": {
                         "maxItemsOne": false
@@ -13567,7 +13119,6 @@
             },
             "ibm_pi_host_group": {
                 "current": "ibmcloud:index/getPiHostGroup:getPiHostGroup",
-                "majorVersion": 1,
                 "fields": {
                     "hosts": {
                         "maxItemsOne": false
@@ -13579,7 +13130,6 @@
             },
             "ibm_pi_host_groups": {
                 "current": "ibmcloud:index/getPiHostGroups:getPiHostGroups",
-                "majorVersion": 1,
                 "fields": {
                     "host_groups": {
                         "maxItemsOne": false,
@@ -13598,7 +13148,6 @@
             },
             "ibm_pi_hosts": {
                 "current": "ibmcloud:index/getPiHosts:getPiHosts",
-                "majorVersion": 1,
                 "fields": {
                     "hosts": {
                         "maxItemsOne": false,
@@ -13617,7 +13166,6 @@
             },
             "ibm_pi_image": {
                 "current": "ibmcloud:index/getPiImage:getPiImage",
-                "majorVersion": 1,
                 "fields": {
                     "user_tags": {
                         "maxItemsOne": false
@@ -13626,7 +13174,6 @@
             },
             "ibm_pi_images": {
                 "current": "ibmcloud:index/getPiImages:getPiImages",
-                "majorVersion": 1,
                 "fields": {
                     "image_info": {
                         "maxItemsOne": false,
@@ -13642,7 +13189,6 @@
             },
             "ibm_pi_instance": {
                 "current": "ibmcloud:index/getPiInstance:getPiInstance",
-                "majorVersion": 1,
                 "fields": {
                     "networks": {
                         "maxItemsOne": false,
@@ -13670,7 +13216,6 @@
             },
             "ibm_pi_instance_ip": {
                 "current": "ibmcloud:index/getPiInstanceIp:getPiInstanceIp",
-                "majorVersion": 1,
                 "fields": {
                     "network_security_group_ids": {
                         "maxItemsOne": false
@@ -13682,7 +13227,6 @@
             },
             "ibm_pi_instance_snapshot": {
                 "current": "ibmcloud:index/getPiInstanceSnapshot:getPiInstanceSnapshot",
-                "majorVersion": 1,
                 "fields": {
                     "user_tags": {
                         "maxItemsOne": false
@@ -13691,7 +13235,6 @@
             },
             "ibm_pi_instance_snapshots": {
                 "current": "ibmcloud:index/getPiInstanceSnapshots:getPiInstanceSnapshots",
-                "majorVersion": 1,
                 "fields": {
                     "instance_snapshots": {
                         "maxItemsOne": false,
@@ -13707,7 +13250,6 @@
             },
             "ibm_pi_instance_volumes": {
                 "current": "ibmcloud:index/getPiInstanceVolumes:getPiInstanceVolumes",
-                "majorVersion": 1,
                 "fields": {
                     "instance_volumes": {
                         "maxItemsOne": false,
@@ -13726,7 +13268,6 @@
             },
             "ibm_pi_instances": {
                 "current": "ibmcloud:index/getPiInstances:getPiInstances",
-                "majorVersion": 1,
                 "fields": {
                     "pvm_instances": {
                         "maxItemsOne": false,
@@ -13757,12 +13298,10 @@
                 }
             },
             "ibm_pi_key": {
-                "current": "ibmcloud:index/getPiKey:getPiKey",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getPiKey:getPiKey"
             },
             "ibm_pi_keys": {
                 "current": "ibmcloud:index/getPiKeys:getPiKeys",
-                "majorVersion": 1,
                 "fields": {
                     "keys": {
                         "maxItemsOne": false
@@ -13771,7 +13310,6 @@
             },
             "ibm_pi_network": {
                 "current": "ibmcloud:index/getPiNetwork:getPiNetwork",
-                "majorVersion": 1,
                 "fields": {
                     "dns": {
                         "maxItemsOne": false
@@ -13786,7 +13324,6 @@
             },
             "ibm_pi_network_address_group": {
                 "current": "ibmcloud:index/getPiNetworkAddressGroup:getPiNetworkAddressGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -13798,7 +13335,6 @@
             },
             "ibm_pi_network_address_groups": {
                 "current": "ibmcloud:index/getPiNetworkAddressGroups:getPiNetworkAddressGroups",
-                "majorVersion": 1,
                 "fields": {
                     "network_address_groups": {
                         "maxItemsOne": false,
@@ -13817,7 +13353,6 @@
             },
             "ibm_pi_network_interface": {
                 "current": "ibmcloud:index/getPiNetworkInterface:getPiNetworkInterface",
-                "majorVersion": 1,
                 "fields": {
                     "instance": {
                         "maxItemsOne": false
@@ -13832,7 +13367,6 @@
             },
             "ibm_pi_network_interfaces": {
                 "current": "ibmcloud:index/getPiNetworkInterfaces:getPiNetworkInterfaces",
-                "majorVersion": 1,
                 "fields": {
                     "interfaces": {
                         "maxItemsOne": false,
@@ -13854,7 +13388,6 @@
             },
             "ibm_pi_network_peer": {
                 "current": "ibmcloud:index/getPiNetworkPeer:getPiNetworkPeer",
-                "majorVersion": 1,
                 "fields": {
                     "export_route_filters": {
                         "maxItemsOne": false
@@ -13866,7 +13399,6 @@
             },
             "ibm_pi_network_peer_interfaces": {
                 "current": "ibmcloud:index/getPiNetworkPeerInterfaces:getPiNetworkPeerInterfaces",
-                "majorVersion": 1,
                 "fields": {
                     "peer_interfaces": {
                         "maxItemsOne": false
@@ -13874,12 +13406,10 @@
                 }
             },
             "ibm_pi_network_peer_route_filter": {
-                "current": "ibmcloud:index/getPiNetworkPeerRouteFilter:getPiNetworkPeerRouteFilter",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getPiNetworkPeerRouteFilter:getPiNetworkPeerRouteFilter"
             },
             "ibm_pi_network_peers": {
                 "current": "ibmcloud:index/getPiNetworkPeers:getPiNetworkPeers",
-                "majorVersion": 1,
                 "fields": {
                     "network_peers": {
                         "maxItemsOne": false,
@@ -13898,7 +13428,6 @@
             },
             "ibm_pi_network_port": {
                 "current": "ibmcloud:index/getPiNetworkPort:getPiNetworkPort",
-                "majorVersion": 1,
                 "fields": {
                     "network_ports": {
                         "maxItemsOne": false
@@ -13907,7 +13436,6 @@
             },
             "ibm_pi_network_security_group": {
                 "current": "ibmcloud:index/getPiNetworkSecurityGroup:getPiNetworkSecurityGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -13945,7 +13473,6 @@
             },
             "ibm_pi_network_security_groups": {
                 "current": "ibmcloud:index/getPiNetworkSecurityGroups:getPiNetworkSecurityGroups",
-                "majorVersion": 1,
                 "fields": {
                     "network_security_groups": {
                         "maxItemsOne": false,
@@ -13990,7 +13517,6 @@
             },
             "ibm_pi_networks": {
                 "current": "ibmcloud:index/getPiNetworks:getPiNetworks",
-                "majorVersion": 1,
                 "fields": {
                     "networks": {
                         "maxItemsOne": false,
@@ -14006,7 +13532,6 @@
             },
             "ibm_pi_placement_group": {
                 "current": "ibmcloud:index/getPiPlacementGroup:getPiPlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -14018,7 +13543,6 @@
             },
             "ibm_pi_placement_groups": {
                 "current": "ibmcloud:index/getPiPlacementGroups:getPiPlacementGroups",
-                "majorVersion": 1,
                 "fields": {
                     "placement_groups": {
                         "maxItemsOne": false,
@@ -14036,12 +13560,10 @@
                 }
             },
             "ibm_pi_public_network": {
-                "current": "ibmcloud:index/getPiPublicNetwork:getPiPublicNetwork",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getPiPublicNetwork:getPiPublicNetwork"
             },
             "ibm_pi_pvm_snapshots": {
                 "current": "ibmcloud:index/getPiPvmSnapshots:getPiPvmSnapshots",
-                "majorVersion": 1,
                 "fields": {
                     "pvm_snapshots": {
                         "maxItemsOne": false,
@@ -14057,7 +13579,6 @@
             },
             "ibm_pi_route": {
                 "current": "ibmcloud:index/getPiRoute:getPiRoute",
-                "majorVersion": 1,
                 "fields": {
                     "user_tags": {
                         "maxItemsOne": false
@@ -14066,7 +13587,6 @@
             },
             "ibm_pi_route_report": {
                 "current": "ibmcloud:index/getPiRouteReport:getPiRouteReport",
-                "majorVersion": 1,
                 "fields": {
                     "routes": {
                         "maxItemsOne": false
@@ -14075,7 +13595,6 @@
             },
             "ibm_pi_routes": {
                 "current": "ibmcloud:index/getPiRoutes:getPiRoutes",
-                "majorVersion": 1,
                 "fields": {
                     "routes": {
                         "maxItemsOne": false,
@@ -14091,7 +13610,6 @@
             },
             "ibm_pi_sap_profile": {
                 "current": "ibmcloud:index/getPiSapProfile:getPiSapProfile",
-                "majorVersion": 1,
                 "fields": {
                     "supported_systems": {
                         "maxItemsOne": false
@@ -14103,7 +13621,6 @@
             },
             "ibm_pi_sap_profiles": {
                 "current": "ibmcloud:index/getPiSapProfiles:getPiSapProfiles",
-                "majorVersion": 1,
                 "fields": {
                     "profiles": {
                         "maxItemsOne": false,
@@ -14122,7 +13639,6 @@
             },
             "ibm_pi_shared_processor_pool": {
                 "current": "ibmcloud:index/getPiSharedProcessorPool:getPiSharedProcessorPool",
-                "majorVersion": 1,
                 "fields": {
                     "instances": {
                         "maxItemsOne": false
@@ -14134,7 +13650,6 @@
             },
             "ibm_pi_shared_processor_pools": {
                 "current": "ibmcloud:index/getPiSharedProcessorPools:getPiSharedProcessorPools",
-                "majorVersion": 1,
                 "fields": {
                     "shared_processor_pools": {
                         "maxItemsOne": false,
@@ -14150,7 +13665,6 @@
             },
             "ibm_pi_software_tiers": {
                 "current": "ibmcloud:index/getPiSoftwareTiers:getPiSoftwareTiers",
-                "majorVersion": 1,
                 "fields": {
                     "supported_software_tiers": {
                         "maxItemsOne": false,
@@ -14166,7 +13680,6 @@
             },
             "ibm_pi_spp_placement_group": {
                 "current": "ibmcloud:index/getPiSppPlacementGroup:getPiSppPlacementGroup",
-                "majorVersion": 1,
                 "fields": {
                     "members": {
                         "maxItemsOne": false
@@ -14178,7 +13691,6 @@
             },
             "ibm_pi_spp_placement_groups": {
                 "current": "ibmcloud:index/getPiSppPlacementGroups:getPiSppPlacementGroups",
-                "majorVersion": 1,
                 "fields": {
                     "spp_placement_groups": {
                         "maxItemsOne": false,
@@ -14196,12 +13708,10 @@
                 }
             },
             "ibm_pi_storage_pool_capacity": {
-                "current": "ibmcloud:index/getPiStoragePoolCapacity:getPiStoragePoolCapacity",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getPiStoragePoolCapacity:getPiStoragePoolCapacity"
             },
             "ibm_pi_storage_pools_capacity": {
                 "current": "ibmcloud:index/getPiStoragePoolsCapacity:getPiStoragePoolsCapacity",
-                "majorVersion": 1,
                 "fields": {
                     "storage_pools_capacity": {
                         "maxItemsOne": false
@@ -14210,7 +13720,6 @@
             },
             "ibm_pi_storage_tiers": {
                 "current": "ibmcloud:index/getPiStorageTiers:getPiStorageTiers",
-                "majorVersion": 1,
                 "fields": {
                     "region_storage_tiers": {
                         "maxItemsOne": false
@@ -14219,7 +13728,6 @@
             },
             "ibm_pi_storage_type_capacity": {
                 "current": "ibmcloud:index/getPiStorageTypeCapacity:getPiStorageTypeCapacity",
-                "majorVersion": 1,
                 "fields": {
                     "storage_pools_capacity": {
                         "maxItemsOne": false
@@ -14228,7 +13736,6 @@
             },
             "ibm_pi_storage_types_capacity": {
                 "current": "ibmcloud:index/getPiStorageTypesCapacity:getPiStorageTypesCapacity",
-                "majorVersion": 1,
                 "fields": {
                     "storage_types_capacity": {
                         "maxItemsOne": false,
@@ -14244,7 +13751,6 @@
             },
             "ibm_pi_system_pools": {
                 "current": "ibmcloud:index/getPiSystemPools:getPiSystemPools",
-                "majorVersion": 1,
                 "fields": {
                     "system_pools": {
                         "maxItemsOne": false,
@@ -14260,7 +13766,6 @@
             },
             "ibm_pi_tenant": {
                 "current": "ibmcloud:index/getPiTenant:getPiTenant",
-                "majorVersion": 1,
                 "fields": {
                     "cloud_instances": {
                         "maxItemsOne": false
@@ -14268,12 +13773,10 @@
                 }
             },
             "ibm_pi_virtual_serial_number": {
-                "current": "ibmcloud:index/getPiVirtualSerialNumber:getPiVirtualSerialNumber",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getPiVirtualSerialNumber:getPiVirtualSerialNumber"
             },
             "ibm_pi_virtual_serial_numbers": {
                 "current": "ibmcloud:index/getPiVirtualSerialNumbers:getPiVirtualSerialNumbers",
-                "majorVersion": 1,
                 "fields": {
                     "virtual_serial_numbers": {
                         "maxItemsOne": false
@@ -14282,7 +13785,6 @@
             },
             "ibm_pi_volume": {
                 "current": "ibmcloud:index/getPiVolume:getPiVolume",
-                "majorVersion": 1,
                 "fields": {
                     "replication_sites": {
                         "maxItemsOne": false
@@ -14294,7 +13796,6 @@
             },
             "ibm_pi_volume_clone": {
                 "current": "ibmcloud:index/getPiVolumeClone:getPiVolumeClone",
-                "majorVersion": 1,
                 "fields": {
                     "clone_volumes": {
                         "maxItemsOne": false
@@ -14303,7 +13804,6 @@
             },
             "ibm_pi_volume_flash_copy_mappings": {
                 "current": "ibmcloud:index/getPiVolumeFlashCopyMappings:getPiVolumeFlashCopyMappings",
-                "majorVersion": 1,
                 "fields": {
                     "flash_copy_mappings": {
                         "maxItemsOne": false
@@ -14312,7 +13812,6 @@
             },
             "ibm_pi_volume_group": {
                 "current": "ibmcloud:index/getPiVolumeGroup:getPiVolumeGroup",
-                "majorVersion": 1,
                 "fields": {
                     "replication_sites": {
                         "maxItemsOne": false
@@ -14331,7 +13830,6 @@
             },
             "ibm_pi_volume_group_details": {
                 "current": "ibmcloud:index/getPiVolumeGroupDetails:getPiVolumeGroupDetails",
-                "majorVersion": 1,
                 "fields": {
                     "replication_sites": {
                         "maxItemsOne": false
@@ -14353,7 +13851,6 @@
             },
             "ibm_pi_volume_group_remote_copy_relationships": {
                 "current": "ibmcloud:index/getPiVolumeGroupRemoteCopyRelationships:getPiVolumeGroupRemoteCopyRelationships",
-                "majorVersion": 1,
                 "fields": {
                     "remote_copy_relationships": {
                         "maxItemsOne": false
@@ -14362,7 +13859,6 @@
             },
             "ibm_pi_volume_group_storage_details": {
                 "current": "ibmcloud:index/getPiVolumeGroupStorageDetails:getPiVolumeGroupStorageDetails",
-                "majorVersion": 1,
                 "fields": {
                     "remote_copy_relationship_names": {
                         "maxItemsOne": false
@@ -14371,7 +13867,6 @@
             },
             "ibm_pi_volume_groups": {
                 "current": "ibmcloud:index/getPiVolumeGroups:getPiVolumeGroups",
-                "majorVersion": 1,
                 "fields": {
                     "volume_groups": {
                         "maxItemsOne": false,
@@ -14397,7 +13892,6 @@
             },
             "ibm_pi_volume_groups_details": {
                 "current": "ibmcloud:index/getPiVolumeGroupsDetails:getPiVolumeGroupsDetails",
-                "majorVersion": 1,
                 "fields": {
                     "volume_groups": {
                         "maxItemsOne": false,
@@ -14426,7 +13920,6 @@
             },
             "ibm_pi_volume_onboarding": {
                 "current": "ibmcloud:index/getPiVolumeOnboarding:getPiVolumeOnboarding",
-                "majorVersion": 1,
                 "fields": {
                     "input_volumes": {
                         "maxItemsOne": false
@@ -14448,7 +13941,6 @@
             },
             "ibm_pi_volume_onboardings": {
                 "current": "ibmcloud:index/getPiVolumeOnboardings:getPiVolumeOnboardings",
-                "majorVersion": 1,
                 "fields": {
                     "onboardings": {
                         "maxItemsOne": false,
@@ -14463,16 +13955,13 @@
                 }
             },
             "ibm_pi_volume_remote_copy_relationship": {
-                "current": "ibmcloud:index/getPiVolumeRemoteCopyRelationship:getPiVolumeRemoteCopyRelationship",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getPiVolumeRemoteCopyRelationship:getPiVolumeRemoteCopyRelationship"
             },
             "ibm_pi_volume_snapshot": {
-                "current": "ibmcloud:index/getPiVolumeSnapshot:getPiVolumeSnapshot",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getPiVolumeSnapshot:getPiVolumeSnapshot"
             },
             "ibm_pi_volume_snapshots": {
                 "current": "ibmcloud:index/getPiVolumeSnapshots:getPiVolumeSnapshots",
-                "majorVersion": 1,
                 "fields": {
                     "volume_snapshots": {
                         "maxItemsOne": false
@@ -14481,7 +13970,6 @@
             },
             "ibm_pi_volumes": {
                 "current": "ibmcloud:index/getPiVolumes:getPiVolumes",
-                "majorVersion": 1,
                 "fields": {
                     "volumes": {
                         "maxItemsOne": false,
@@ -14500,7 +13988,6 @@
             },
             "ibm_pi_workspace": {
                 "current": "ibmcloud:index/getPiWorkspace:getPiWorkspace",
-                "majorVersion": 1,
                 "fields": {
                     "pi_workspace_details": {
                         "maxItemsOne": false,
@@ -14519,7 +14006,6 @@
             },
             "ibm_pi_workspaces": {
                 "current": "ibmcloud:index/getPiWorkspaces:getPiWorkspaces",
-                "majorVersion": 1,
                 "fields": {
                     "workspaces": {
                         "maxItemsOne": false,
@@ -14545,7 +14031,6 @@
             },
             "ibm_resource_group": {
                 "current": "ibmcloud:index/getResourceGroup:getResourceGroup",
-                "majorVersion": 1,
                 "fields": {
                     "resource_linkages": {
                         "maxItemsOne": false
@@ -14554,7 +14039,6 @@
             },
             "ibm_resource_instance": {
                 "current": "ibmcloud:index/getResourceInstance:getResourceInstance",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -14562,16 +14046,13 @@
                 }
             },
             "ibm_resource_key": {
-                "current": "ibmcloud:index/getResourceKey:getResourceKey",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getResourceKey:getResourceKey"
             },
             "ibm_resource_quota": {
-                "current": "ibmcloud:index/getResourceQuota:getResourceQuota",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getResourceQuota:getResourceQuota"
             },
             "ibm_resource_tag": {
                 "current": "ibmcloud:index/getResourceTag:getResourceTag",
-                "majorVersion": 1,
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -14579,12 +14060,10 @@
                 }
             },
             "ibm_tg_connection_prefix_filter": {
-                "current": "ibmcloud:index/getTgConnectionPrefixFilter:getTgConnectionPrefixFilter",
-                "majorVersion": 1
+                "current": "ibmcloud:index/getTgConnectionPrefixFilter:getTgConnectionPrefixFilter"
             },
             "ibm_tg_connection_prefix_filters": {
                 "current": "ibmcloud:index/getTgConnectionPrefixFilters:getTgConnectionPrefixFilters",
-                "majorVersion": 1,
                 "fields": {
                     "prefix_filters": {
                         "maxItemsOne": false
@@ -14593,7 +14072,6 @@
             },
             "ibm_tg_gateway": {
                 "current": "ibmcloud:index/getTgGateway:getTgGateway",
-                "majorVersion": 1,
                 "fields": {
                     "connections": {
                         "maxItemsOne": false,
@@ -14609,7 +14087,6 @@
             },
             "ibm_tg_gateways": {
                 "current": "ibmcloud:index/getTgGateways:getTgGateways",
-                "majorVersion": 1,
                 "fields": {
                     "transit_gateways": {
                         "maxItemsOne": false
@@ -14618,7 +14095,6 @@
             },
             "ibm_tg_location": {
                 "current": "ibmcloud:index/getTgLocation:getTgLocation",
-                "majorVersion": 1,
                 "fields": {
                     "local_connection_locations": {
                         "maxItemsOne": false
@@ -14627,7 +14103,6 @@
             },
             "ibm_tg_locations": {
                 "current": "ibmcloud:index/getTgLocations:getTgLocations",
-                "majorVersion": 1,
                 "fields": {
                     "locations": {
                         "maxItemsOne": false
@@ -14636,7 +14111,6 @@
             },
             "ibm_tg_route_report": {
                 "current": "ibmcloud:index/getTgRouteReport:getTgRouteReport",
-                "majorVersion": 1,
                 "fields": {
                     "connections": {
                         "maxItemsOne": false,
@@ -14665,7 +14139,6 @@
             },
             "ibm_tg_route_reports": {
                 "current": "ibmcloud:index/getTgRouteReports:getTgRouteReports",
-                "majorVersion": 1,
                 "fields": {
                     "route_reports": {
                         "maxItemsOne": false,

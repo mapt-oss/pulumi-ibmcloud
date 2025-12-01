@@ -28667,6 +28667,254 @@ export interface GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouter {
     type: string;
 }
 
+export interface GetTgConnectionPrefixFiltersPrefixFilter {
+    /**
+     * Whether to permit or deny the prefix filter
+     */
+    action: string;
+    /**
+     * Identifier of prefix filter that handles ordering
+     */
+    before: string;
+    /**
+     * The date and time that this prefix filter was created
+     */
+    createdAt: string;
+    /**
+     * IP Prefix GE
+     */
+    ge: number;
+    id: string;
+    /**
+     * IP Prefix LE
+     */
+    le: number;
+    /**
+     * IP Prefix
+     */
+    prefix: string;
+    /**
+     * The date and time that this prefix filter was last updated
+     */
+    updatedAt: string;
+}
+
+export interface GetTgGatewayConnection {
+    baseConnectionId: string;
+    baseNetworkType: string;
+    createdAt: string;
+    /**
+     * Whether to permit or deny the prefix filter
+     */
+    defaultPrefixFilter: string;
+    id: string;
+    localBgpAsn: number;
+    localGatewayIp: string;
+    localTunnelIp: string;
+    mtu: number;
+    name: string;
+    /**
+     * The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.
+     */
+    networkAccountId: string;
+    networkId: string;
+    networkType: string;
+    remoteBgpAsn: number;
+    remoteGatewayIp: string;
+    remoteTunnelIp: string;
+    status: string;
+    /**
+     * List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
+     */
+    tunnels: outputs.GetTgGatewayConnectionTunnel[];
+    updatedAt: string;
+    zone: string;
+}
+
+export interface GetTgGatewayConnectionTunnel {
+    /**
+     * The date and time that this connection was created
+     */
+    createdAt: string;
+    /**
+     * The local network BGP ASN.
+     */
+    localBgpAsn: number;
+    /**
+     * The local gateway IP address.
+     */
+    localGatewayIp: string;
+    /**
+     * The local tunnel IP address.
+     */
+    localTunnelIp: string;
+    mtu: number;
+    /**
+     * The user-defined name for this  rGRE tunnel.
+     */
+    name: string;
+    /**
+     * The remote network BGP ASN.
+     */
+    remoteBgpAsn: number;
+    /**
+     * The remote gateway IP address.
+     */
+    remoteGatewayIp: string;
+    /**
+     * The remote tunnel IP address.
+     */
+    remoteTunnelIp: string;
+    /**
+     * What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+     */
+    status: string;
+    /**
+     * The Transit Gateway Connection identifier
+     */
+    tunnelId: string;
+    /**
+     * The date and time that this connection was last updated
+     */
+    updatedAt: string;
+    /**
+     * Location of GRE tunnel.
+     */
+    zone: string;
+}
+
+export interface GetTgGatewaysTransitGateway {
+    createdAt: string;
+    crn: string;
+    global: boolean;
+    greEnhancedRoutePropagation: boolean;
+    id: string;
+    location: string;
+    name: string;
+    resourceGroup: string;
+    status: string;
+    updatedAt: string;
+}
+
+export interface GetTgLocationLocalConnectionLocation {
+    /**
+     * A descriptive display name for the location.
+     */
+    displayName: string;
+    /**
+     * Name of the Location.
+     */
+    name: string;
+    /**
+     * The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+     */
+    type: string;
+}
+
+export interface GetTgLocationsLocation {
+    /**
+     * The geographical location of this location, used for billing purposes.
+     */
+    billingLocation: string;
+    /**
+     * Name of the Location.
+     */
+    name: string;
+    /**
+     * The type of the location, determining is this a multi-zone region, a single data center, or a point of presence.
+     */
+    type: string;
+}
+
+export interface GetTgRouteReportConnection {
+    /**
+     * Collection of transit gateway connection's bgps
+     */
+    bgps: outputs.GetTgRouteReportConnectionBgp[];
+    id: string;
+    name: string;
+    /**
+     * Collection of transit gateway connection's used routes
+     */
+    routes: outputs.GetTgRouteReportConnectionRoute[];
+    type: string;
+}
+
+export interface GetTgRouteReportConnectionBgp {
+    asPath: string;
+    isUsed: boolean;
+    localPreference: string;
+    prefix: string;
+}
+
+export interface GetTgRouteReportConnectionRoute {
+    prefix: string;
+}
+
+export interface GetTgRouteReportOverlappingRoute {
+    /**
+     * Collection of transit gateway overlapping route's details
+     */
+    routes: outputs.GetTgRouteReportOverlappingRouteRoute[];
+}
+
+export interface GetTgRouteReportOverlappingRouteRoute {
+    connectionId: string;
+    prefix: string;
+}
+
+export interface GetTgRouteReportsRouteReport {
+    /**
+     * Collection of transit gateway connections
+     */
+    connections: outputs.GetTgRouteReportsRouteReportConnection[];
+    createdAt: string;
+    id: string;
+    /**
+     * Collection of transit gateway overlapping routes
+     */
+    overlappingRoutes: outputs.GetTgRouteReportsRouteReportOverlappingRoute[];
+    status: string;
+    updatedAt: string;
+}
+
+export interface GetTgRouteReportsRouteReportConnection {
+    /**
+     * Collection of transit gateway connection's bgps
+     */
+    bgps: outputs.GetTgRouteReportsRouteReportConnectionBgp[];
+    id: string;
+    name: string;
+    /**
+     * Collection of transit gateway connection's used routes
+     */
+    routes: outputs.GetTgRouteReportsRouteReportConnectionRoute[];
+    type: string;
+}
+
+export interface GetTgRouteReportsRouteReportConnectionBgp {
+    asPath: string;
+    isUsed: boolean;
+    localPreference: string;
+    prefix: string;
+}
+
+export interface GetTgRouteReportsRouteReportConnectionRoute {
+    prefix: string;
+}
+
+export interface GetTgRouteReportsRouteReportOverlappingRoute {
+    /**
+     * Collection of transit gateway overlapping route's details
+     */
+    routes: outputs.GetTgRouteReportsRouteReportOverlappingRouteRoute[];
+}
+
+export interface GetTgRouteReportsRouteReportOverlappingRouteRoute {
+    connectionId: string;
+    prefix: string;
+}
+
 export interface IamAccessGroupDynamicRuleCondition {
     claim: string;
     operator: string;
@@ -37594,5 +37842,94 @@ export interface PiVolumeOnboardingResultsVolumeOnboardingFailure {
 export interface ResourceInstancePlanHistory {
     resourcePlanId: string;
     startDate: string;
+}
+
+export interface TgConnectionTunnel {
+    /**
+     * The date and time that this connection was created
+     */
+    createdAt: string;
+    /**
+     * The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    localBgpAsn: number;
+    /**
+     * The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    localGatewayIp: string;
+    /**
+     * The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    localTunnelIp: string;
+    mtu: number;
+    /**
+     * The user-defined name for this tunnel connection.
+     */
+    name: string;
+    /**
+     * The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    remoteBgpAsn: number;
+    /**
+     * The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    remoteGatewayIp: string;
+    /**
+     * The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    remoteTunnelIp: string;
+    /**
+     * What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
+     */
+    status: string;
+    /**
+     * The Transit Gateway Connection tunnel identifier
+     */
+    tunnelId: string;
+    /**
+     * The date and time that this connection was last updated
+     */
+    updatedAt: string;
+    /**
+     * Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     */
+    zone: string;
+}
+
+export interface TgRouteReportConnection {
+    /**
+     * Collection of transit gateway connection's bgps
+     */
+    bgps: outputs.TgRouteReportConnectionBgp[];
+    id: string;
+    name: string;
+    /**
+     * Collection of transit gateway connection's used routes
+     */
+    routes: outputs.TgRouteReportConnectionRoute[];
+    type: string;
+}
+
+export interface TgRouteReportConnectionBgp {
+    asPath: string;
+    isUsed: boolean;
+    localPreference: string;
+    prefix: string;
+}
+
+export interface TgRouteReportConnectionRoute {
+    prefix: string;
+}
+
+export interface TgRouteReportOverlappingRoute {
+    /**
+     * Collection of transit gateway overlapping route's details
+     */
+    routes: outputs.TgRouteReportOverlappingRouteRoute[];
+}
+
+export interface TgRouteReportOverlappingRouteRoute {
+    connectionId: string;
+    prefix: string;
 }
 
