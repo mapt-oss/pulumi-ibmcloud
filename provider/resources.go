@@ -185,6 +185,7 @@ func Provider() tfbridge.ProviderInfo {
 		"ibm_compute_",  // Compute
 		"ibm_pi_",       // Power Systems (PowerVS)
 		"ibm_cos_",      // Cloud Object Storage
+		"ibm_tg_",       // Transit Gateway
 		// "ibm_container_", // Kubernetes
 		// "ibm_dns_",       // DNS
 		"ibm_iam_", // IAM

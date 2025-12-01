@@ -13,6 +13,956 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetIsDedicatedHostProfilesProfileVcpuManufacturer struct {
+	// The type for this profile field.
+	Type string `pulumi:"type"`
+	// TThe VCPU manufacturer for a dedicated host with this profile.
+	Value string `pulumi:"value"`
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuManufacturerInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs and GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuManufacturerInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{...}
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs struct {
+	// The type for this profile field.
+	Type pulumi.StringInput `pulumi:"type"`
+	// TThe VCPU manufacturer for a dedicated host with this profile.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput)
+}
+
+// GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput is an input type that accepts GetIsDedicatedHostProfilesProfileVcpuManufacturerArray and GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput` via:
+//
+//	GetIsDedicatedHostProfilesProfileVcpuManufacturerArray{ GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{...} }
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput
+	ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArray []GetIsDedicatedHostProfilesProfileVcpuManufacturerInput
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return i.ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostProfilesProfileVcpuManufacturerArray) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return o
+}
+
+// The type for this profile field.
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuManufacturer) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// TThe VCPU manufacturer for a dedicated host with this profile.
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostProfilesProfileVcpuManufacturer) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostProfilesProfileVcpuManufacturer)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput() GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) ToGetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostProfilesProfileVcpuManufacturer {
+		return vs[0].([]GetIsDedicatedHostProfilesProfileVcpuManufacturer)[vs[1].(int)]
+	}).(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput)
+}
+
+type GetIsDedicatedHostSupportedInstanceProfile struct {
+	// The URL for this virtual server instance profile.
+	Href string `pulumi:"href"`
+	// The globally unique name for this virtual server instance profile.
+	Name string `pulumi:"name"`
+}
+
+// GetIsDedicatedHostSupportedInstanceProfileInput is an input type that accepts GetIsDedicatedHostSupportedInstanceProfileArgs and GetIsDedicatedHostSupportedInstanceProfileOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostSupportedInstanceProfileInput` via:
+//
+//	GetIsDedicatedHostSupportedInstanceProfileArgs{...}
+type GetIsDedicatedHostSupportedInstanceProfileInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput
+	ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileArgs struct {
+	// The URL for this virtual server instance profile.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The globally unique name for this virtual server instance profile.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetIsDedicatedHostSupportedInstanceProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArgs) ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return i.ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArgs) ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostSupportedInstanceProfileOutput)
+}
+
+// GetIsDedicatedHostSupportedInstanceProfileArrayInput is an input type that accepts GetIsDedicatedHostSupportedInstanceProfileArray and GetIsDedicatedHostSupportedInstanceProfileArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostSupportedInstanceProfileArrayInput` via:
+//
+//	GetIsDedicatedHostSupportedInstanceProfileArray{ GetIsDedicatedHostSupportedInstanceProfileArgs{...} }
+type GetIsDedicatedHostSupportedInstanceProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput
+	ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileArray []GetIsDedicatedHostSupportedInstanceProfileInput
+
+func (GetIsDedicatedHostSupportedInstanceProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArray) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return i.ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostSupportedInstanceProfileArray) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostSupportedInstanceProfileArrayOutput)
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostSupportedInstanceProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) ToGetIsDedicatedHostSupportedInstanceProfileOutput() GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) ToGetIsDedicatedHostSupportedInstanceProfileOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return o
+}
+
+// The URL for this virtual server instance profile.
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostSupportedInstanceProfile) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The globally unique name for this virtual server instance profile.
+func (o GetIsDedicatedHostSupportedInstanceProfileOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostSupportedInstanceProfile) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostSupportedInstanceProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostSupportedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutput() GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) ToGetIsDedicatedHostSupportedInstanceProfileArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostSupportedInstanceProfileArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostSupportedInstanceProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostSupportedInstanceProfile {
+		return vs[0].([]GetIsDedicatedHostSupportedInstanceProfile)[vs[1].(int)]
+	}).(GetIsDedicatedHostSupportedInstanceProfileOutput)
+}
+
+type GetIsDedicatedHostVcpus struct {
+	// The VCPU architecture.
+	Architecture string `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count int `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer string `pulumi:"manufacturer"`
+}
+
+// GetIsDedicatedHostVcpusInput is an input type that accepts GetIsDedicatedHostVcpusArgs and GetIsDedicatedHostVcpusOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostVcpusInput` via:
+//
+//	GetIsDedicatedHostVcpusArgs{...}
+type GetIsDedicatedHostVcpusInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput
+	ToGetIsDedicatedHostVcpusOutputWithContext(context.Context) GetIsDedicatedHostVcpusOutput
+}
+
+type GetIsDedicatedHostVcpusArgs struct {
+	// The VCPU architecture.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count pulumi.IntInput `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
+}
+
+func (GetIsDedicatedHostVcpusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostVcpusArgs) ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput {
+	return i.ToGetIsDedicatedHostVcpusOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostVcpusArgs) ToGetIsDedicatedHostVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostVcpusOutput)
+}
+
+// GetIsDedicatedHostVcpusArrayInput is an input type that accepts GetIsDedicatedHostVcpusArray and GetIsDedicatedHostVcpusArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostVcpusArrayInput` via:
+//
+//	GetIsDedicatedHostVcpusArray{ GetIsDedicatedHostVcpusArgs{...} }
+type GetIsDedicatedHostVcpusArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput
+	ToGetIsDedicatedHostVcpusArrayOutputWithContext(context.Context) GetIsDedicatedHostVcpusArrayOutput
+}
+
+type GetIsDedicatedHostVcpusArray []GetIsDedicatedHostVcpusInput
+
+func (GetIsDedicatedHostVcpusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostVcpusArray) ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput {
+	return i.ToGetIsDedicatedHostVcpusArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostVcpusArray) ToGetIsDedicatedHostVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostVcpusArrayOutput)
+}
+
+type GetIsDedicatedHostVcpusOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostVcpusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostVcpusOutput) ToGetIsDedicatedHostVcpusOutput() GetIsDedicatedHostVcpusOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostVcpusOutput) ToGetIsDedicatedHostVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusOutput {
+	return o
+}
+
+// The VCPU architecture.
+func (o GetIsDedicatedHostVcpusOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostVcpus) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// The number of VCPUs assigned.
+func (o GetIsDedicatedHostVcpusOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostVcpus) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// The VCPU manufacturer.
+func (o GetIsDedicatedHostVcpusOutput) Manufacturer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostVcpus) string { return v.Manufacturer }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostVcpusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostVcpusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostVcpusArrayOutput) ToGetIsDedicatedHostVcpusArrayOutput() GetIsDedicatedHostVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostVcpusArrayOutput) ToGetIsDedicatedHostVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostVcpusArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostVcpusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostVcpus {
+		return vs[0].([]GetIsDedicatedHostVcpus)[vs[1].(int)]
+	}).(GetIsDedicatedHostVcpusOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHost struct {
+	// List of access tags
+	AccessTags []string `pulumi:"accessTags"`
+	// The amount of memory in gibibytes that is currently available for instances.
+	AvailableMemory int `pulumi:"availableMemory"`
+	// The available VCPU for the dedicated host.
+	AvailableVcpus []GetIsDedicatedHostsDedicatedHostAvailableVcpus `pulumi:"availableVcpus"`
+	// The date and time that the dedicated host was created.
+	CreatedAt string `pulumi:"createdAt"`
+	// The CRN for this dedicated host.
+	Crn string `pulumi:"crn"`
+	// Collection of the dedicated host's disks.
+	Disks []GetIsDedicatedHostsDedicatedHostDisk `pulumi:"disks"`
+	// The unique identifier of the dedicated host group this dedicated host is in.
+	HostGroup string `pulumi:"hostGroup"`
+	// The URL for this dedicated host.
+	Href string `pulumi:"href"`
+	// The unique identifier for this dedicated host.
+	Id string `pulumi:"id"`
+	// If set to true, instances can be placed on this dedicated host.
+	InstancePlacementEnabled bool `pulumi:"instancePlacementEnabled"`
+	// Array of instances that are allocated to this dedicated host.
+	Instances []GetIsDedicatedHostsDedicatedHostInstance `pulumi:"instances"`
+	// The lifecycle state of the dedicated host resource.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The total amount of memory in gibibytes for this host.
+	Memory int `pulumi:"memory"`
+	// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
+	Name string `pulumi:"name"`
+	// The dedicated host NUMA configuration
+	Numas []GetIsDedicatedHostsDedicatedHostNuma `pulumi:"numas"`
+	// The profile this dedicated host uses.
+	Profiles []GetIsDedicatedHostsDedicatedHostProfile `pulumi:"profiles"`
+	// Indicates whether this dedicated host is available for instance creation.
+	Provisionable bool `pulumi:"provisionable"`
+	// The unique identifier of the resource group for this dedicated host.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// The type of resource referenced.
+	ResourceType string `pulumi:"resourceType"`
+	// The total number of sockets for this host.
+	SocketCount int `pulumi:"socketCount"`
+	// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
+	State string `pulumi:"state"`
+	// Array of instance profiles that can be used by instances placed on this dedicated host.
+	SupportedInstanceProfiles []GetIsDedicatedHostsDedicatedHostSupportedInstanceProfile `pulumi:"supportedInstanceProfiles"`
+	// The total VCPU of the dedicated host.
+	Vcpus []GetIsDedicatedHostsDedicatedHostVcpus `pulumi:"vcpus"`
+	// The globally unique name of the zone this dedicated host resides in.
+	Zone string `pulumi:"zone"`
+}
+
+// GetIsDedicatedHostsDedicatedHostInput is an input type that accepts GetIsDedicatedHostsDedicatedHostArgs and GetIsDedicatedHostsDedicatedHostOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostArgs{...}
+type GetIsDedicatedHostsDedicatedHostInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput
+	ToGetIsDedicatedHostsDedicatedHostOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostArgs struct {
+	// List of access tags
+	AccessTags pulumi.StringArrayInput `pulumi:"accessTags"`
+	// The amount of memory in gibibytes that is currently available for instances.
+	AvailableMemory pulumi.IntInput `pulumi:"availableMemory"`
+	// The available VCPU for the dedicated host.
+	AvailableVcpus GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput `pulumi:"availableVcpus"`
+	// The date and time that the dedicated host was created.
+	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
+	// The CRN for this dedicated host.
+	Crn pulumi.StringInput `pulumi:"crn"`
+	// Collection of the dedicated host's disks.
+	Disks GetIsDedicatedHostsDedicatedHostDiskArrayInput `pulumi:"disks"`
+	// The unique identifier of the dedicated host group this dedicated host is in.
+	HostGroup pulumi.StringInput `pulumi:"hostGroup"`
+	// The URL for this dedicated host.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this dedicated host.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If set to true, instances can be placed on this dedicated host.
+	InstancePlacementEnabled pulumi.BoolInput `pulumi:"instancePlacementEnabled"`
+	// Array of instances that are allocated to this dedicated host.
+	Instances GetIsDedicatedHostsDedicatedHostInstanceArrayInput `pulumi:"instances"`
+	// The lifecycle state of the dedicated host resource.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The total amount of memory in gibibytes for this host.
+	Memory pulumi.IntInput `pulumi:"memory"`
+	// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The dedicated host NUMA configuration
+	Numas GetIsDedicatedHostsDedicatedHostNumaArrayInput `pulumi:"numas"`
+	// The profile this dedicated host uses.
+	Profiles GetIsDedicatedHostsDedicatedHostProfileArrayInput `pulumi:"profiles"`
+	// Indicates whether this dedicated host is available for instance creation.
+	Provisionable pulumi.BoolInput `pulumi:"provisionable"`
+	// The unique identifier of the resource group for this dedicated host.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// The type of resource referenced.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The total number of sockets for this host.
+	SocketCount pulumi.IntInput `pulumi:"socketCount"`
+	// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
+	State pulumi.StringInput `pulumi:"state"`
+	// Array of instance profiles that can be used by instances placed on this dedicated host.
+	SupportedInstanceProfiles GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayInput `pulumi:"supportedInstanceProfiles"`
+	// The total VCPU of the dedicated host.
+	Vcpus GetIsDedicatedHostsDedicatedHostVcpusArrayInput `pulumi:"vcpus"`
+	// The globally unique name of the zone this dedicated host resides in.
+	Zone pulumi.StringInput `pulumi:"zone"`
+}
+
+func (GetIsDedicatedHostsDedicatedHostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArgs) ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArgs) ToGetIsDedicatedHostsDedicatedHostOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostOutput)
+}
+
+// GetIsDedicatedHostsDedicatedHostArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostArray and GetIsDedicatedHostsDedicatedHostArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostArrayInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostArray{ GetIsDedicatedHostsDedicatedHostArgs{...} }
+type GetIsDedicatedHostsDedicatedHostArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput
+	ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostArray []GetIsDedicatedHostsDedicatedHostInput
+
+func (GetIsDedicatedHostsDedicatedHostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArray) ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostArray) ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostOutput) ToGetIsDedicatedHostsDedicatedHostOutput() GetIsDedicatedHostsDedicatedHostOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostOutput) ToGetIsDedicatedHostsDedicatedHostOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostOutput {
+	return o
+}
+
+// List of access tags
+func (o GetIsDedicatedHostsDedicatedHostOutput) AccessTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []string { return v.AccessTags }).(pulumi.StringArrayOutput)
+}
+
+// The amount of memory in gibibytes that is currently available for instances.
+func (o GetIsDedicatedHostsDedicatedHostOutput) AvailableMemory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.AvailableMemory }).(pulumi.IntOutput)
+}
+
+// The available VCPU for the dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) AvailableVcpus() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostAvailableVcpus {
+		return v.AvailableVcpus
+	}).(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput)
+}
+
+// The date and time that the dedicated host was created.
+func (o GetIsDedicatedHostsDedicatedHostOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+// The CRN for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Crn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Crn }).(pulumi.StringOutput)
+}
+
+// Collection of the dedicated host's disks.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Disks() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostDisk { return v.Disks }).(GetIsDedicatedHostsDedicatedHostDiskArrayOutput)
+}
+
+// The unique identifier of the dedicated host group this dedicated host is in.
+func (o GetIsDedicatedHostsDedicatedHostOutput) HostGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.HostGroup }).(pulumi.StringOutput)
+}
+
+// The URL for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If set to true, instances can be placed on this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) InstancePlacementEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) bool { return v.InstancePlacementEnabled }).(pulumi.BoolOutput)
+}
+
+// Array of instances that are allocated to this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Instances() GetIsDedicatedHostsDedicatedHostInstanceArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostInstance {
+		return v.Instances
+	}).(GetIsDedicatedHostsDedicatedHostInstanceArrayOutput)
+}
+
+// The lifecycle state of the dedicated host resource.
+func (o GetIsDedicatedHostsDedicatedHostOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// The total amount of memory in gibibytes for this host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Memory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.Memory }).(pulumi.IntOutput)
+}
+
+// The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The dedicated host NUMA configuration
+func (o GetIsDedicatedHostsDedicatedHostOutput) Numas() GetIsDedicatedHostsDedicatedHostNumaArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostNuma { return v.Numas }).(GetIsDedicatedHostsDedicatedHostNumaArrayOutput)
+}
+
+// The profile this dedicated host uses.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Profiles() GetIsDedicatedHostsDedicatedHostProfileArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostProfile { return v.Profiles }).(GetIsDedicatedHostsDedicatedHostProfileArrayOutput)
+}
+
+// Indicates whether this dedicated host is available for instance creation.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Provisionable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) bool { return v.Provisionable }).(pulumi.BoolOutput)
+}
+
+// The unique identifier of the resource group for this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// The type of resource referenced.
+func (o GetIsDedicatedHostsDedicatedHostOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The total number of sockets for this host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) SocketCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) int { return v.SocketCount }).(pulumi.IntOutput)
+}
+
+// The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
+func (o GetIsDedicatedHostsDedicatedHostOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Array of instance profiles that can be used by instances placed on this dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) SupportedInstanceProfiles() GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostSupportedInstanceProfile {
+		return v.SupportedInstanceProfiles
+	}).(GetIsDedicatedHostsDedicatedHostSupportedInstanceProfileArrayOutput)
+}
+
+// The total VCPU of the dedicated host.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Vcpus() GetIsDedicatedHostsDedicatedHostVcpusArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) []GetIsDedicatedHostsDedicatedHostVcpus { return v.Vcpus }).(GetIsDedicatedHostsDedicatedHostVcpusArrayOutput)
+}
+
+// The globally unique name of the zone this dedicated host resides in.
+func (o GetIsDedicatedHostsDedicatedHostOutput) Zone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHost) string { return v.Zone }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHost)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostArrayOutput) ToGetIsDedicatedHostsDedicatedHostArrayOutput() GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostArrayOutput) ToGetIsDedicatedHostsDedicatedHostArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHost {
+		return vs[0].([]GetIsDedicatedHostsDedicatedHost)[vs[1].(int)]
+	}).(GetIsDedicatedHostsDedicatedHostOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpus struct {
+	// The VCPU architecture.
+	Architecture string `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count int `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer string `pulumi:"manufacturer"`
+}
+
+// GetIsDedicatedHostsDedicatedHostAvailableVcpusInput is an input type that accepts GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs and GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostAvailableVcpusInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{...}
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs struct {
+	// The VCPU architecture.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// The number of VCPUs assigned.
+	Count pulumi.IntInput `pulumi:"count"`
+	// The VCPU manufacturer.
+	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
+}
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput)
+}
+
+// GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostAvailableVcpusArray and GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostAvailableVcpusArray{ GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{...} }
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput
+	ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArray []GetIsDedicatedHostsDedicatedHostAvailableVcpusInput
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostAvailableVcpusArray) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return o
+}
+
+// The VCPU architecture.
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// The number of VCPUs assigned.
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// The VCPU manufacturer.
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput) Manufacturer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostAvailableVcpus) string { return v.Manufacturer }).(pulumi.StringOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostAvailableVcpus)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput() GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) ToGetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHostAvailableVcpus {
+		return vs[0].([]GetIsDedicatedHostsDedicatedHostAvailableVcpus)[vs[1].(int)]
+	}).(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostDisk struct {
+	// The remaining space left for instance placement in GB (gigabytes).
+	Available int `pulumi:"available"`
+	// The date and time that the disk was created.
+	CreatedAt string `pulumi:"createdAt"`
+	// The URL for this disk.
+	Href string `pulumi:"href"`
+	// The unique identifier for this disk.
+	Id string `pulumi:"id"`
+	// Instance disks that are on this dedicated host disk.
+	InstanceDisks []GetIsDedicatedHostsDedicatedHostDiskInstanceDisk `pulumi:"instanceDisks"`
+	// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	InterfaceType string `pulumi:"interfaceType"`
+	// The lifecycle state of this dedicated host disk.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The user-defined or system-provided name for this disk.
+	Name string `pulumi:"name"`
+	// Indicates whether this dedicated host disk is available for instance disk creation.
+	Provisionable bool `pulumi:"provisionable"`
+	// The type of resource referenced.
+	ResourceType string `pulumi:"resourceType"`
+	// The size of the disk in GB (gigabytes).
+	Size int `pulumi:"size"`
+	// The instance disk interfaces supported for this dedicated host disk.
+	SupportedInstanceInterfaceTypes []string `pulumi:"supportedInstanceInterfaceTypes"`
+}
+
+// GetIsDedicatedHostsDedicatedHostDiskInput is an input type that accepts GetIsDedicatedHostsDedicatedHostDiskArgs and GetIsDedicatedHostsDedicatedHostDiskOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostDiskInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostDiskArgs{...}
+type GetIsDedicatedHostsDedicatedHostDiskInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput
+	ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskArgs struct {
+	// The remaining space left for instance placement in GB (gigabytes).
+	Available pulumi.IntInput `pulumi:"available"`
+	// The date and time that the disk was created.
+	CreatedAt pulumi.StringInput `pulumi:"createdAt"`
+	// The URL for this disk.
+	Href pulumi.StringInput `pulumi:"href"`
+	// The unique identifier for this disk.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Instance disks that are on this dedicated host disk.
+	InstanceDisks GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayInput `pulumi:"instanceDisks"`
+	// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+	InterfaceType pulumi.StringInput `pulumi:"interfaceType"`
+	// The lifecycle state of this dedicated host disk.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The user-defined or system-provided name for this disk.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Indicates whether this dedicated host disk is available for instance disk creation.
+	Provisionable pulumi.BoolInput `pulumi:"provisionable"`
+	// The type of resource referenced.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The size of the disk in GB (gigabytes).
+	Size pulumi.IntInput `pulumi:"size"`
+	// The instance disk interfaces supported for this dedicated host disk.
+	SupportedInstanceInterfaceTypes pulumi.StringArrayInput `pulumi:"supportedInstanceInterfaceTypes"`
+}
+
+func (GetIsDedicatedHostsDedicatedHostDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArgs) ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArgs) ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostDiskOutput)
+}
+
+// GetIsDedicatedHostsDedicatedHostDiskArrayInput is an input type that accepts GetIsDedicatedHostsDedicatedHostDiskArray and GetIsDedicatedHostsDedicatedHostDiskArrayOutput values.
+// You can construct a concrete instance of `GetIsDedicatedHostsDedicatedHostDiskArrayInput` via:
+//
+//	GetIsDedicatedHostsDedicatedHostDiskArray{ GetIsDedicatedHostsDedicatedHostDiskArgs{...} }
+type GetIsDedicatedHostsDedicatedHostDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput
+	ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskArray []GetIsDedicatedHostsDedicatedHostDiskInput
+
+func (GetIsDedicatedHostsDedicatedHostDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArray) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return i.ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetIsDedicatedHostsDedicatedHostDiskArray) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIsDedicatedHostsDedicatedHostDiskArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ToGetIsDedicatedHostsDedicatedHostDiskOutput() GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ToGetIsDedicatedHostsDedicatedHostDiskOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return o
+}
+
+// The remaining space left for instance placement in GB (gigabytes).
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Available() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) int { return v.Available }).(pulumi.IntOutput)
+}
+
+// The date and time that the disk was created.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) CreatedAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.CreatedAt }).(pulumi.StringOutput)
+}
+
+// The URL for this disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// The unique identifier for this disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Instance disks that are on this dedicated host disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) InstanceDisks() GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) []GetIsDedicatedHostsDedicatedHostDiskInstanceDisk {
+		return v.InstanceDisks
+	}).(GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayOutput)
+}
+
+// The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) InterfaceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.InterfaceType }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of this dedicated host disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// The user-defined or system-provided name for this disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Indicates whether this dedicated host disk is available for instance disk creation.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Provisionable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) bool { return v.Provisionable }).(pulumi.BoolOutput)
+}
+
+// The type of resource referenced.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The size of the disk in GB (gigabytes).
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// The instance disk interfaces supported for this dedicated host disk.
+func (o GetIsDedicatedHostsDedicatedHostDiskOutput) SupportedInstanceInterfaceTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIsDedicatedHostsDedicatedHostDisk) []string { return v.SupportedInstanceInterfaceTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetIsDedicatedHostsDedicatedHostDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIsDedicatedHostsDedicatedHostDisk)(nil)).Elem()
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutput() GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) ToGetIsDedicatedHostsDedicatedHostDiskArrayOutputWithContext(ctx context.Context) GetIsDedicatedHostsDedicatedHostDiskArrayOutput {
+	return o
+}
+
+func (o GetIsDedicatedHostsDedicatedHostDiskArrayOutput) Index(i pulumi.IntInput) GetIsDedicatedHostsDedicatedHostDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsDedicatedHostsDedicatedHostDisk {
+		return vs[0].([]GetIsDedicatedHostsDedicatedHostDisk)[vs[1].(int)]
+	}).(GetIsDedicatedHostsDedicatedHostDiskOutput)
+}
+
 type GetIsDedicatedHostsDedicatedHostDiskInstanceDisk struct {
 	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
 	Deleteds []GetIsDedicatedHostsDedicatedHostDiskInstanceDiskDeleted `pulumi:"deleteds"`
@@ -63259,748 +64209,19 @@ func (o GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedArrayOutput) Index(i pu
 	}).(GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedOutput)
 }
 
-type GetIsSecurityGroupsSecurityGroupTarget struct {
-	// The load balancer's CRN.
-	Crn string `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds []GetIsSecurityGroupsSecurityGroupTargetDeleted `pulumi:"deleteds"`
-	// The URL for this network interface.
-	Href string `pulumi:"href"`
-	// The unique identifier for this network interface.
-	Id string `pulumi:"id"`
-	// The user-defined name for this network interface.
-	Name string `pulumi:"name"`
-	// The resource type.
-	ResourceType string `pulumi:"resourceType"`
-}
-
-// GetIsSecurityGroupsSecurityGroupTargetInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetArgs and GetIsSecurityGroupsSecurityGroupTargetOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupTargetArgs{...}
-type GetIsSecurityGroupsSecurityGroupTargetInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupTargetOutput() GetIsSecurityGroupsSecurityGroupTargetOutput
-	ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetArgs struct {
-	// The load balancer's CRN.
-	Crn pulumi.StringInput `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput `pulumi:"deleteds"`
-	// The URL for this network interface.
-	Href pulumi.StringInput `pulumi:"href"`
-	// The unique identifier for this network interface.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The user-defined name for this network interface.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The resource type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-}
-
-func (GetIsSecurityGroupsSecurityGroupTargetArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetArgs) ToGetIsSecurityGroupsSecurityGroupTargetOutput() GetIsSecurityGroupsSecurityGroupTargetOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetArgs) ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetOutput)
-}
-
-// GetIsSecurityGroupsSecurityGroupTargetArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetArray and GetIsSecurityGroupsSecurityGroupTargetArrayOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetArrayInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupTargetArray{ GetIsSecurityGroupsSecurityGroupTargetArgs{...} }
-type GetIsSecurityGroupsSecurityGroupTargetArrayInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupTargetArrayOutput() GetIsSecurityGroupsSecurityGroupTargetArrayOutput
-	ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetArrayOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetArray []GetIsSecurityGroupsSecurityGroupTargetInput
-
-func (GetIsSecurityGroupsSecurityGroupTargetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetArray) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutput() GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetArray) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetArrayOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupTargetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) ToGetIsSecurityGroupsSecurityGroupTargetOutput() GetIsSecurityGroupsSecurityGroupTargetOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) ToGetIsSecurityGroupsSecurityGroupTargetOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetOutput {
-	return o
-}
-
-// The load balancer's CRN.
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Crn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Crn }).(pulumi.StringOutput)
-}
-
-// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Deleteds() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) []GetIsSecurityGroupsSecurityGroupTargetDeleted {
-		return v.Deleteds
-	}).(GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput)
-}
-
-// The URL for this network interface.
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// The unique identifier for this network interface.
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The user-defined name for this network interface.
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The resource type.
-func (o GetIsSecurityGroupsSecurityGroupTargetOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTarget) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupTargetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTarget)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutput() GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupTargetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupTarget {
-		return vs[0].([]GetIsSecurityGroupsSecurityGroupTarget)[vs[1].(int)]
-	}).(GetIsSecurityGroupsSecurityGroupTargetOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetDeleted struct {
-	// Link to documentation about deleted resources.
-	MoreInfo string `pulumi:"moreInfo"`
-}
-
-// GetIsSecurityGroupsSecurityGroupTargetDeletedInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetDeletedArgs and GetIsSecurityGroupsSecurityGroupTargetDeletedOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetDeletedInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupTargetDeletedArgs{...}
-type GetIsSecurityGroupsSecurityGroupTargetDeletedInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedOutput
-	ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetDeletedArgs struct {
-	// Link to documentation about deleted resources.
-	MoreInfo pulumi.StringInput `pulumi:"moreInfo"`
-}
-
-func (GetIsSecurityGroupsSecurityGroupTargetDeletedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArgs) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArgs) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetDeletedOutput)
-}
-
-// GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupTargetDeletedArray and GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupTargetDeletedArray{ GetIsSecurityGroupsSecurityGroupTargetDeletedArgs{...} }
-type GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput
-	ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetDeletedArray []GetIsSecurityGroupsSecurityGroupTargetDeletedInput
-
-func (GetIsSecurityGroupsSecurityGroupTargetDeletedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArray) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupTargetDeletedArray) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetDeletedOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
-	return o
-}
-
-// Link to documentation about deleted resources.
-func (o GetIsSecurityGroupsSecurityGroupTargetDeletedOutput) MoreInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupTargetDeleted) string { return v.MoreInfo }).(pulumi.StringOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupTargetDeleted)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupTargetDeletedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupTargetDeleted {
-		return vs[0].([]GetIsSecurityGroupsSecurityGroupTargetDeleted)[vs[1].(int)]
-	}).(GetIsSecurityGroupsSecurityGroupTargetDeletedOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupVpc struct {
-	// The CRN for this VPC.
-	Crn string `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds []GetIsSecurityGroupsSecurityGroupVpcDeleted `pulumi:"deleteds"`
-	// The URL for this VPC.
-	Href string `pulumi:"href"`
-	// The unique identifier for this VPC.
-	Id string `pulumi:"id"`
-	// The unique user-defined name for this VPC.
-	Name string `pulumi:"name"`
-}
-
-// GetIsSecurityGroupsSecurityGroupVpcInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcArgs and GetIsSecurityGroupsSecurityGroupVpcOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupVpcArgs{...}
-type GetIsSecurityGroupsSecurityGroupVpcInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupVpcOutput() GetIsSecurityGroupsSecurityGroupVpcOutput
-	ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcArgs struct {
-	// The CRN for this VPC.
-	Crn pulumi.StringInput `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-	Deleteds GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput `pulumi:"deleteds"`
-	// The URL for this VPC.
-	Href pulumi.StringInput `pulumi:"href"`
-	// The unique identifier for this VPC.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The unique user-defined name for this VPC.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetIsSecurityGroupsSecurityGroupVpcArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcArgs) ToGetIsSecurityGroupsSecurityGroupVpcOutput() GetIsSecurityGroupsSecurityGroupVpcOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcArgs) ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcOutput)
-}
-
-// GetIsSecurityGroupsSecurityGroupVpcArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcArray and GetIsSecurityGroupsSecurityGroupVpcArrayOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcArrayInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupVpcArray{ GetIsSecurityGroupsSecurityGroupVpcArgs{...} }
-type GetIsSecurityGroupsSecurityGroupVpcArrayInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupVpcArrayOutput() GetIsSecurityGroupsSecurityGroupVpcArrayOutput
-	ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcArrayOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcArray []GetIsSecurityGroupsSecurityGroupVpcInput
-
-func (GetIsSecurityGroupsSecurityGroupVpcArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcArray) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutput() GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcArray) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcArrayOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupVpcOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcOutput) ToGetIsSecurityGroupsSecurityGroupVpcOutput() GetIsSecurityGroupsSecurityGroupVpcOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcOutput) ToGetIsSecurityGroupsSecurityGroupVpcOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcOutput {
-	return o
-}
-
-// The CRN for this VPC.
-func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Crn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Crn }).(pulumi.StringOutput)
-}
-
-// If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
-func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Deleteds() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) []GetIsSecurityGroupsSecurityGroupVpcDeleted {
-		return v.Deleteds
-	}).(GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput)
-}
-
-// The URL for this VPC.
-func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// The unique identifier for this VPC.
-func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The unique user-defined name for this VPC.
-func (o GetIsSecurityGroupsSecurityGroupVpcOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpc) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupVpcArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpc)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutput() GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupVpcOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupVpc {
-		return vs[0].([]GetIsSecurityGroupsSecurityGroupVpc)[vs[1].(int)]
-	}).(GetIsSecurityGroupsSecurityGroupVpcOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcDeleted struct {
-	// Link to documentation about deleted resources.
-	MoreInfo string `pulumi:"moreInfo"`
-}
-
-// GetIsSecurityGroupsSecurityGroupVpcDeletedInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcDeletedArgs and GetIsSecurityGroupsSecurityGroupVpcDeletedOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcDeletedInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupVpcDeletedArgs{...}
-type GetIsSecurityGroupsSecurityGroupVpcDeletedInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedOutput
-	ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcDeletedArgs struct {
-	// Link to documentation about deleted resources.
-	MoreInfo pulumi.StringInput `pulumi:"moreInfo"`
-}
-
-func (GetIsSecurityGroupsSecurityGroupVpcDeletedArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArgs) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArgs) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcDeletedOutput)
-}
-
-// GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput is an input type that accepts GetIsSecurityGroupsSecurityGroupVpcDeletedArray and GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput values.
-// You can construct a concrete instance of `GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput` via:
-//
-//	GetIsSecurityGroupsSecurityGroupVpcDeletedArray{ GetIsSecurityGroupsSecurityGroupVpcDeletedArgs{...} }
-type GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput interface {
-	pulumi.Input
-
-	ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput
-	ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcDeletedArray []GetIsSecurityGroupsSecurityGroupVpcDeletedInput
-
-func (GetIsSecurityGroupsSecurityGroupVpcDeletedArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArray) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
-	return i.ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsSecurityGroupsSecurityGroupVpcDeletedArray) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcDeletedOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
-	return o
-}
-
-// Link to documentation about deleted resources.
-func (o GetIsSecurityGroupsSecurityGroupVpcDeletedOutput) MoreInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsSecurityGroupsSecurityGroupVpcDeleted) string { return v.MoreInfo }).(pulumi.StringOutput)
-}
-
-type GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsSecurityGroupsSecurityGroupVpcDeleted)(nil)).Elem()
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput() GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) ToGetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutputWithContext(ctx context.Context) GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput {
-	return o
-}
-
-func (o GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput) Index(i pulumi.IntInput) GetIsSecurityGroupsSecurityGroupVpcDeletedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsSecurityGroupsSecurityGroupVpcDeleted {
-		return vs[0].([]GetIsSecurityGroupsSecurityGroupVpcDeleted)[vs[1].(int)]
-	}).(GetIsSecurityGroupsSecurityGroupVpcDeletedOutput)
-}
-
-type GetIsShareAccessorBinding struct {
-	// The URL for this share accessor binding.
-	Href string `pulumi:"href"`
-	// The unique identifier for this share accessor binding.
-	Id string `pulumi:"id"`
-	// The resource type.
-	ResourceType string `pulumi:"resourceType"`
-}
-
-// GetIsShareAccessorBindingInput is an input type that accepts GetIsShareAccessorBindingArgs and GetIsShareAccessorBindingOutput values.
-// You can construct a concrete instance of `GetIsShareAccessorBindingInput` via:
-//
-//	GetIsShareAccessorBindingArgs{...}
-type GetIsShareAccessorBindingInput interface {
-	pulumi.Input
-
-	ToGetIsShareAccessorBindingOutput() GetIsShareAccessorBindingOutput
-	ToGetIsShareAccessorBindingOutputWithContext(context.Context) GetIsShareAccessorBindingOutput
-}
-
-type GetIsShareAccessorBindingArgs struct {
-	// The URL for this share accessor binding.
-	Href pulumi.StringInput `pulumi:"href"`
-	// The unique identifier for this share accessor binding.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The resource type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-}
-
-func (GetIsShareAccessorBindingArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsShareAccessorBinding)(nil)).Elem()
-}
-
-func (i GetIsShareAccessorBindingArgs) ToGetIsShareAccessorBindingOutput() GetIsShareAccessorBindingOutput {
-	return i.ToGetIsShareAccessorBindingOutputWithContext(context.Background())
-}
-
-func (i GetIsShareAccessorBindingArgs) ToGetIsShareAccessorBindingOutputWithContext(ctx context.Context) GetIsShareAccessorBindingOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingOutput)
-}
-
-// GetIsShareAccessorBindingArrayInput is an input type that accepts GetIsShareAccessorBindingArray and GetIsShareAccessorBindingArrayOutput values.
-// You can construct a concrete instance of `GetIsShareAccessorBindingArrayInput` via:
-//
-//	GetIsShareAccessorBindingArray{ GetIsShareAccessorBindingArgs{...} }
-type GetIsShareAccessorBindingArrayInput interface {
-	pulumi.Input
-
-	ToGetIsShareAccessorBindingArrayOutput() GetIsShareAccessorBindingArrayOutput
-	ToGetIsShareAccessorBindingArrayOutputWithContext(context.Context) GetIsShareAccessorBindingArrayOutput
-}
-
-type GetIsShareAccessorBindingArray []GetIsShareAccessorBindingInput
-
-func (GetIsShareAccessorBindingArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsShareAccessorBinding)(nil)).Elem()
-}
-
-func (i GetIsShareAccessorBindingArray) ToGetIsShareAccessorBindingArrayOutput() GetIsShareAccessorBindingArrayOutput {
-	return i.ToGetIsShareAccessorBindingArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsShareAccessorBindingArray) ToGetIsShareAccessorBindingArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingArrayOutput)
-}
-
-type GetIsShareAccessorBindingOutput struct{ *pulumi.OutputState }
-
-func (GetIsShareAccessorBindingOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsShareAccessorBinding)(nil)).Elem()
-}
-
-func (o GetIsShareAccessorBindingOutput) ToGetIsShareAccessorBindingOutput() GetIsShareAccessorBindingOutput {
-	return o
-}
-
-func (o GetIsShareAccessorBindingOutput) ToGetIsShareAccessorBindingOutputWithContext(ctx context.Context) GetIsShareAccessorBindingOutput {
-	return o
-}
-
-// The URL for this share accessor binding.
-func (o GetIsShareAccessorBindingOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBinding) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// The unique identifier for this share accessor binding.
-func (o GetIsShareAccessorBindingOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBinding) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The resource type.
-func (o GetIsShareAccessorBindingOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBinding) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-type GetIsShareAccessorBindingArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsShareAccessorBindingArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsShareAccessorBinding)(nil)).Elem()
-}
-
-func (o GetIsShareAccessorBindingArrayOutput) ToGetIsShareAccessorBindingArrayOutput() GetIsShareAccessorBindingArrayOutput {
-	return o
-}
-
-func (o GetIsShareAccessorBindingArrayOutput) ToGetIsShareAccessorBindingArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingArrayOutput {
-	return o
-}
-
-func (o GetIsShareAccessorBindingArrayOutput) Index(i pulumi.IntInput) GetIsShareAccessorBindingOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsShareAccessorBinding {
-		return vs[0].([]GetIsShareAccessorBinding)[vs[1].(int)]
-	}).(GetIsShareAccessorBindingOutput)
-}
-
-type GetIsShareAccessorBindingAccessor struct {
-	// The CRN for this file share.
-	Crn string `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
-	Deleteds []GetIsShareAccessorBindingAccessorDeleted `pulumi:"deleteds"`
-	// The URL for this file share.
-	Href string `pulumi:"href"`
-	// The unique identifier for this file share.
-	Id string `pulumi:"id"`
-	// The name for this share. The name is unique across all shares in the region.
-	Name string `pulumi:"name"`
-	// If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
-	Remotes []GetIsShareAccessorBindingAccessorRemote `pulumi:"remotes"`
-	// The resource type.
-	ResourceType string `pulumi:"resourceType"`
-}
-
-// GetIsShareAccessorBindingAccessorInput is an input type that accepts GetIsShareAccessorBindingAccessorArgs and GetIsShareAccessorBindingAccessorOutput values.
-// You can construct a concrete instance of `GetIsShareAccessorBindingAccessorInput` via:
-//
-//	GetIsShareAccessorBindingAccessorArgs{...}
-type GetIsShareAccessorBindingAccessorInput interface {
-	pulumi.Input
-
-	ToGetIsShareAccessorBindingAccessorOutput() GetIsShareAccessorBindingAccessorOutput
-	ToGetIsShareAccessorBindingAccessorOutputWithContext(context.Context) GetIsShareAccessorBindingAccessorOutput
-}
-
-type GetIsShareAccessorBindingAccessorArgs struct {
-	// The CRN for this file share.
-	Crn pulumi.StringInput `pulumi:"crn"`
-	// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
-	Deleteds GetIsShareAccessorBindingAccessorDeletedArrayInput `pulumi:"deleteds"`
-	// The URL for this file share.
-	Href pulumi.StringInput `pulumi:"href"`
-	// The unique identifier for this file share.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The name for this share. The name is unique across all shares in the region.
-	Name pulumi.StringInput `pulumi:"name"`
-	// If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
-	Remotes GetIsShareAccessorBindingAccessorRemoteArrayInput `pulumi:"remotes"`
-	// The resource type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-}
-
-func (GetIsShareAccessorBindingAccessorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsShareAccessorBindingAccessor)(nil)).Elem()
-}
-
-func (i GetIsShareAccessorBindingAccessorArgs) ToGetIsShareAccessorBindingAccessorOutput() GetIsShareAccessorBindingAccessorOutput {
-	return i.ToGetIsShareAccessorBindingAccessorOutputWithContext(context.Background())
-}
-
-func (i GetIsShareAccessorBindingAccessorArgs) ToGetIsShareAccessorBindingAccessorOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingAccessorOutput)
-}
-
-// GetIsShareAccessorBindingAccessorArrayInput is an input type that accepts GetIsShareAccessorBindingAccessorArray and GetIsShareAccessorBindingAccessorArrayOutput values.
-// You can construct a concrete instance of `GetIsShareAccessorBindingAccessorArrayInput` via:
-//
-//	GetIsShareAccessorBindingAccessorArray{ GetIsShareAccessorBindingAccessorArgs{...} }
-type GetIsShareAccessorBindingAccessorArrayInput interface {
-	pulumi.Input
-
-	ToGetIsShareAccessorBindingAccessorArrayOutput() GetIsShareAccessorBindingAccessorArrayOutput
-	ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(context.Context) GetIsShareAccessorBindingAccessorArrayOutput
-}
-
-type GetIsShareAccessorBindingAccessorArray []GetIsShareAccessorBindingAccessorInput
-
-func (GetIsShareAccessorBindingAccessorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsShareAccessorBindingAccessor)(nil)).Elem()
-}
-
-func (i GetIsShareAccessorBindingAccessorArray) ToGetIsShareAccessorBindingAccessorArrayOutput() GetIsShareAccessorBindingAccessorArrayOutput {
-	return i.ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(context.Background())
-}
-
-func (i GetIsShareAccessorBindingAccessorArray) ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIsShareAccessorBindingAccessorArrayOutput)
-}
-
-type GetIsShareAccessorBindingAccessorOutput struct{ *pulumi.OutputState }
-
-func (GetIsShareAccessorBindingAccessorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIsShareAccessorBindingAccessor)(nil)).Elem()
-}
-
-func (o GetIsShareAccessorBindingAccessorOutput) ToGetIsShareAccessorBindingAccessorOutput() GetIsShareAccessorBindingAccessorOutput {
-	return o
-}
-
-func (o GetIsShareAccessorBindingAccessorOutput) ToGetIsShareAccessorBindingAccessorOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorOutput {
-	return o
-}
-
-// The CRN for this file share.
-func (o GetIsShareAccessorBindingAccessorOutput) Crn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Crn }).(pulumi.StringOutput)
-}
-
-// If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
-func (o GetIsShareAccessorBindingAccessorOutput) Deleteds() GetIsShareAccessorBindingAccessorDeletedArrayOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) []GetIsShareAccessorBindingAccessorDeleted {
-		return v.Deleteds
-	}).(GetIsShareAccessorBindingAccessorDeletedArrayOutput)
-}
-
-// The URL for this file share.
-func (o GetIsShareAccessorBindingAccessorOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// The unique identifier for this file share.
-func (o GetIsShareAccessorBindingAccessorOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The name for this share. The name is unique across all shares in the region.
-func (o GetIsShareAccessorBindingAccessorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
-func (o GetIsShareAccessorBindingAccessorOutput) Remotes() GetIsShareAccessorBindingAccessorRemoteArrayOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) []GetIsShareAccessorBindingAccessorRemote { return v.Remotes }).(GetIsShareAccessorBindingAccessorRemoteArrayOutput)
-}
-
-// The resource type.
-func (o GetIsShareAccessorBindingAccessorOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIsShareAccessorBindingAccessor) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-type GetIsShareAccessorBindingAccessorArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIsShareAccessorBindingAccessorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIsShareAccessorBindingAccessor)(nil)).Elem()
-}
-
-func (o GetIsShareAccessorBindingAccessorArrayOutput) ToGetIsShareAccessorBindingAccessorArrayOutput() GetIsShareAccessorBindingAccessorArrayOutput {
-	return o
-}
-
-func (o GetIsShareAccessorBindingAccessorArrayOutput) ToGetIsShareAccessorBindingAccessorArrayOutputWithContext(ctx context.Context) GetIsShareAccessorBindingAccessorArrayOutput {
-	return o
-}
-
-func (o GetIsShareAccessorBindingAccessorArrayOutput) Index(i pulumi.IntInput) GetIsShareAccessorBindingAccessorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIsShareAccessorBindingAccessor {
-		return vs[0].([]GetIsShareAccessorBindingAccessor)[vs[1].(int)]
-	}).(GetIsShareAccessorBindingAccessorOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturerInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuManufacturerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayInput)(nil)).Elem(), GetIsDedicatedHostProfilesProfileVcpuManufacturerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfileInput)(nil)).Elem(), GetIsDedicatedHostSupportedInstanceProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostSupportedInstanceProfileArrayInput)(nil)).Elem(), GetIsDedicatedHostSupportedInstanceProfileArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostVcpusInput)(nil)).Elem(), GetIsDedicatedHostVcpusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostVcpusArrayInput)(nil)).Elem(), GetIsDedicatedHostVcpusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpusInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostAvailableVcpusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostAvailableVcpusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskInstanceDiskInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsDedicatedHostsDedicatedHostDiskInstanceDiskDeletedInput)(nil)).Elem(), GetIsDedicatedHostsDedicatedHostDiskInstanceDiskDeletedArgs{})
@@ -64989,18 +65210,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupRuleRemoteArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupRuleRemoteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeletedInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetDeletedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupTargetDeletedArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupTargetDeletedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeletedInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcDeletedArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsSecurityGroupsSecurityGroupVpcDeletedArrayInput)(nil)).Elem(), GetIsSecurityGroupsSecurityGroupVpcDeletedArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingInput)(nil)).Elem(), GetIsShareAccessorBindingArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingArrayInput)(nil)).Elem(), GetIsShareAccessorBindingArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingAccessorInput)(nil)).Elem(), GetIsShareAccessorBindingAccessorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIsShareAccessorBindingAccessorArrayInput)(nil)).Elem(), GetIsShareAccessorBindingAccessorArray{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuManufacturerOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostProfilesProfileVcpuManufacturerArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostSupportedInstanceProfileOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostSupportedInstanceProfileArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostVcpusOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostVcpusArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostAvailableVcpusOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostAvailableVcpusArrayOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskOutput{})
+	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskArrayOutput{})
 	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskInstanceDiskOutput{})
 	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskInstanceDiskArrayOutput{})
 	pulumi.RegisterOutputType(GetIsDedicatedHostsDedicatedHostDiskInstanceDiskDeletedOutput{})
@@ -65989,16 +66210,4 @@ func init() {
 	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupRuleRemoteArrayOutput{})
 	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedOutput{})
 	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupRuleRemoteDeletedArrayOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetArrayOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetDeletedOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupTargetDeletedArrayOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcArrayOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcDeletedOutput{})
-	pulumi.RegisterOutputType(GetIsSecurityGroupsSecurityGroupVpcDeletedArrayOutput{})
-	pulumi.RegisterOutputType(GetIsShareAccessorBindingOutput{})
-	pulumi.RegisterOutputType(GetIsShareAccessorBindingArrayOutput{})
-	pulumi.RegisterOutputType(GetIsShareAccessorBindingAccessorOutput{})
-	pulumi.RegisterOutputType(GetIsShareAccessorBindingAccessorArrayOutput{})
 }

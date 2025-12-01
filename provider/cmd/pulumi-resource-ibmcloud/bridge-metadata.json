@@ -4560,6 +4560,65 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "ibm_tg_connection": {
+                "current": "ibmcloud:index/tgConnection:TgConnection",
+                "majorVersion": 1,
+                "fields": {
+                    "tunnels": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_tg_connection_action": {
+                "current": "ibmcloud:index/tgConnectionAction:TgConnectionAction",
+                "majorVersion": 1
+            },
+            "ibm_tg_connection_prefix_filter": {
+                "current": "ibmcloud:index/tgConnectionPrefixFilter:TgConnectionPrefixFilter",
+                "majorVersion": 1
+            },
+            "ibm_tg_connection_rgre_tunnel": {
+                "current": "ibmcloud:index/tgConnectionRgreTunnel:TgConnectionRgreTunnel",
+                "majorVersion": 1
+            },
+            "ibm_tg_gateway": {
+                "current": "ibmcloud:index/tgGateway:TgGateway",
+                "majorVersion": 1,
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_tg_route_report": {
+                "current": "ibmcloud:index/tgRouteReport:TgRouteReport",
+                "majorVersion": 1,
+                "fields": {
+                    "connections": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "bgps": {
+                                    "maxItemsOne": false
+                                },
+                                "routes": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "overlapping_routes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "routes": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "datasources": {
@@ -14516,6 +14575,127 @@
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_tg_connection_prefix_filter": {
+                "current": "ibmcloud:index/getTgConnectionPrefixFilter:getTgConnectionPrefixFilter",
+                "majorVersion": 1
+            },
+            "ibm_tg_connection_prefix_filters": {
+                "current": "ibmcloud:index/getTgConnectionPrefixFilters:getTgConnectionPrefixFilters",
+                "majorVersion": 1,
+                "fields": {
+                    "prefix_filters": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_tg_gateway": {
+                "current": "ibmcloud:index/getTgGateway:getTgGateway",
+                "majorVersion": 1,
+                "fields": {
+                    "connections": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "tunnels": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_tg_gateways": {
+                "current": "ibmcloud:index/getTgGateways:getTgGateways",
+                "majorVersion": 1,
+                "fields": {
+                    "transit_gateways": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_tg_location": {
+                "current": "ibmcloud:index/getTgLocation:getTgLocation",
+                "majorVersion": 1,
+                "fields": {
+                    "local_connection_locations": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_tg_locations": {
+                "current": "ibmcloud:index/getTgLocations:getTgLocations",
+                "majorVersion": 1,
+                "fields": {
+                    "locations": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_tg_route_report": {
+                "current": "ibmcloud:index/getTgRouteReport:getTgRouteReport",
+                "majorVersion": 1,
+                "fields": {
+                    "connections": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "bgps": {
+                                    "maxItemsOne": false
+                                },
+                                "routes": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "overlapping_routes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "routes": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_tg_route_reports": {
+                "current": "ibmcloud:index/getTgRouteReports:getTgRouteReports",
+                "majorVersion": 1,
+                "fields": {
+                    "route_reports": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "connections": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "bgps": {
+                                                "maxItemsOne": false
+                                            },
+                                            "routes": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "overlapping_routes": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "routes": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

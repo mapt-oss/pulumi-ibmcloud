@@ -403,6 +403,18 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ResourceKey{}
 	case "ibmcloud:index/resourceTag:ResourceTag":
 		r = &ResourceTag{}
+	case "ibmcloud:index/tgConnection:TgConnection":
+		r = &TgConnection{}
+	case "ibmcloud:index/tgConnectionAction:TgConnectionAction":
+		r = &TgConnectionAction{}
+	case "ibmcloud:index/tgConnectionPrefixFilter:TgConnectionPrefixFilter":
+		r = &TgConnectionPrefixFilter{}
+	case "ibmcloud:index/tgConnectionRgreTunnel:TgConnectionRgreTunnel":
+		r = &TgConnectionRgreTunnel{}
+	case "ibmcloud:index/tgGateway:TgGateway":
+		r = &TgGateway{}
+	case "ibmcloud:index/tgRouteReport:TgRouteReport":
+		r = &TgRouteReport{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -1387,6 +1399,36 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"ibmcloud",
 		"index/resourceTag",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/tgConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/tgConnectionAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/tgConnectionPrefixFilter",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/tgConnectionRgreTunnel",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/tgGateway",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/tgRouteReport",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(
