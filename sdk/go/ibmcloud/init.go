@@ -45,50 +45,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ComputeUser{}
 	case "ibmcloud:index/computeVmInstance:ComputeVmInstance":
 		r = &ComputeVmInstance{}
-	case "ibmcloud:index/containerAddons:ContainerAddons":
-		r = &ContainerAddons{}
-	case "ibmcloud:index/containerAlb:ContainerAlb":
-		r = &ContainerAlb{}
-	case "ibmcloud:index/containerAlbCert:ContainerAlbCert":
-		r = &ContainerAlbCert{}
-	case "ibmcloud:index/containerAlbCreate:ContainerAlbCreate":
-		r = &ContainerAlbCreate{}
-	case "ibmcloud:index/containerApiKeyReset:ContainerApiKeyReset":
-		r = &ContainerApiKeyReset{}
-	case "ibmcloud:index/containerBindService:ContainerBindService":
-		r = &ContainerBindService{}
-	case "ibmcloud:index/containerCluster:ContainerCluster":
-		r = &ContainerCluster{}
-	case "ibmcloud:index/containerClusterFeature:ContainerClusterFeature":
-		r = &ContainerClusterFeature{}
-	case "ibmcloud:index/containerDedicatedHost:ContainerDedicatedHost":
-		r = &ContainerDedicatedHost{}
-	case "ibmcloud:index/containerDedicatedHostPool:ContainerDedicatedHostPool":
-		r = &ContainerDedicatedHostPool{}
-	case "ibmcloud:index/containerIngressInstance:ContainerIngressInstance":
-		r = &ContainerIngressInstance{}
-	case "ibmcloud:index/containerIngressSecretOpaque:ContainerIngressSecretOpaque":
-		r = &ContainerIngressSecretOpaque{}
-	case "ibmcloud:index/containerIngressSecretTls:ContainerIngressSecretTls":
-		r = &ContainerIngressSecretTls{}
-	case "ibmcloud:index/containerNlbDns:ContainerNlbDns":
-		r = &ContainerNlbDns{}
-	case "ibmcloud:index/containerStorageAttachment:ContainerStorageAttachment":
-		r = &ContainerStorageAttachment{}
-	case "ibmcloud:index/containerVpcAlb:ContainerVpcAlb":
-		r = &ContainerVpcAlb{}
-	case "ibmcloud:index/containerVpcAlbCreate:ContainerVpcAlbCreate":
-		r = &ContainerVpcAlbCreate{}
-	case "ibmcloud:index/containerVpcCluster:ContainerVpcCluster":
-		r = &ContainerVpcCluster{}
-	case "ibmcloud:index/containerVpcWorker:ContainerVpcWorker":
-		r = &ContainerVpcWorker{}
-	case "ibmcloud:index/containerVpcWorkerPool:ContainerVpcWorkerPool":
-		r = &ContainerVpcWorkerPool{}
-	case "ibmcloud:index/containerWorkerPool:ContainerWorkerPool":
-		r = &ContainerWorkerPool{}
-	case "ibmcloud:index/containerWorkerPoolZoneAttachment:ContainerWorkerPoolZoneAttachment":
-		r = &ContainerWorkerPoolZoneAttachment{}
 	case "ibmcloud:index/cosBackupPolicy:CosBackupPolicy":
 		r = &CosBackupPolicy{}
 	case "ibmcloud:index/cosBackupVault:CosBackupVault":
@@ -105,36 +61,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CosBucketReplicationRule{}
 	case "ibmcloud:index/cosBucketWebsiteConfiguration:CosBucketWebsiteConfiguration":
 		r = &CosBucketWebsiteConfiguration{}
-	case "ibmcloud:index/dnsCustomResolver:DnsCustomResolver":
-		r = &DnsCustomResolver{}
-	case "ibmcloud:index/dnsCustomResolverForwardingRule:DnsCustomResolverForwardingRule":
-		r = &DnsCustomResolverForwardingRule{}
-	case "ibmcloud:index/dnsCustomResolverSecondaryZone:DnsCustomResolverSecondaryZone":
-		r = &DnsCustomResolverSecondaryZone{}
-	case "ibmcloud:index/dnsDomain:DnsDomain":
-		r = &DnsDomain{}
-	case "ibmcloud:index/dnsDomainRegistrationNameservers:DnsDomainRegistrationNameservers":
-		r = &DnsDomainRegistrationNameservers{}
-	case "ibmcloud:index/dnsGlb:DnsGlb":
-		r = &DnsGlb{}
-	case "ibmcloud:index/dnsGlbMonitor:DnsGlbMonitor":
-		r = &DnsGlbMonitor{}
-	case "ibmcloud:index/dnsGlbPool:DnsGlbPool":
-		r = &DnsGlbPool{}
-	case "ibmcloud:index/dnsLinkedZone:DnsLinkedZone":
-		r = &DnsLinkedZone{}
-	case "ibmcloud:index/dnsPermittedNetwork:DnsPermittedNetwork":
-		r = &DnsPermittedNetwork{}
-	case "ibmcloud:index/dnsRecord:DnsRecord":
-		r = &DnsRecord{}
-	case "ibmcloud:index/dnsResourceRecord:DnsResourceRecord":
-		r = &DnsResourceRecord{}
-	case "ibmcloud:index/dnsReverseRecord:DnsReverseRecord":
-		r = &DnsReverseRecord{}
-	case "ibmcloud:index/dnsSecondary:DnsSecondary":
-		r = &DnsSecondary{}
-	case "ibmcloud:index/dnsZone:DnsZone":
-		r = &DnsZone{}
 	case "ibmcloud:index/iamAccessGroup:IamAccessGroup":
 		r = &IamAccessGroup{}
 	case "ibmcloud:index/iamAccessGroupAccountSettings:IamAccessGroupAccountSettings":
@@ -389,6 +315,86 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IsVpnServerClient{}
 	case "ibmcloud:index/isVpnServerRoute:IsVpnServerRoute":
 		r = &IsVpnServerRoute{}
+	case "ibmcloud:index/piCapture:PiCapture":
+		r = &PiCapture{}
+	case "ibmcloud:index/piCloudConnection:PiCloudConnection":
+		r = &PiCloudConnection{}
+	case "ibmcloud:index/piCloudConnectionNetworkAttach:PiCloudConnectionNetworkAttach":
+		r = &PiCloudConnectionNetworkAttach{}
+	case "ibmcloud:index/piConsoleLanguage:PiConsoleLanguage":
+		r = &PiConsoleLanguage{}
+	case "ibmcloud:index/piDhcp:PiDhcp":
+		r = &PiDhcp{}
+	case "ibmcloud:index/piHost:PiHost":
+		r = &PiHost{}
+	case "ibmcloud:index/piHostGroup:PiHostGroup":
+		r = &PiHostGroup{}
+	case "ibmcloud:index/piIkePolicy:PiIkePolicy":
+		r = &PiIkePolicy{}
+	case "ibmcloud:index/piImage:PiImage":
+		r = &PiImage{}
+	case "ibmcloud:index/piImageExport:PiImageExport":
+		r = &PiImageExport{}
+	case "ibmcloud:index/piInstance:PiInstance":
+		r = &PiInstance{}
+	case "ibmcloud:index/piInstanceAction:PiInstanceAction":
+		r = &PiInstanceAction{}
+	case "ibmcloud:index/piInstanceSnapshot:PiInstanceSnapshot":
+		r = &PiInstanceSnapshot{}
+	case "ibmcloud:index/piIpsecPolicy:PiIpsecPolicy":
+		r = &PiIpsecPolicy{}
+	case "ibmcloud:index/piKey:PiKey":
+		r = &PiKey{}
+	case "ibmcloud:index/piNetwork:PiNetwork":
+		r = &PiNetwork{}
+	case "ibmcloud:index/piNetworkAddressGroup:PiNetworkAddressGroup":
+		r = &PiNetworkAddressGroup{}
+	case "ibmcloud:index/piNetworkAddressGroupMember:PiNetworkAddressGroupMember":
+		r = &PiNetworkAddressGroupMember{}
+	case "ibmcloud:index/piNetworkInterface:PiNetworkInterface":
+		r = &PiNetworkInterface{}
+	case "ibmcloud:index/piNetworkPeer:PiNetworkPeer":
+		r = &PiNetworkPeer{}
+	case "ibmcloud:index/piNetworkPeerRouteFilter:PiNetworkPeerRouteFilter":
+		r = &PiNetworkPeerRouteFilter{}
+	case "ibmcloud:index/piNetworkPortAttach:PiNetworkPortAttach":
+		r = &PiNetworkPortAttach{}
+	case "ibmcloud:index/piNetworkSecurityGroup:PiNetworkSecurityGroup":
+		r = &PiNetworkSecurityGroup{}
+	case "ibmcloud:index/piNetworkSecurityGroupAction:PiNetworkSecurityGroupAction":
+		r = &PiNetworkSecurityGroupAction{}
+	case "ibmcloud:index/piNetworkSecurityGroupMember:PiNetworkSecurityGroupMember":
+		r = &PiNetworkSecurityGroupMember{}
+	case "ibmcloud:index/piNetworkSecurityGroupRule:PiNetworkSecurityGroupRule":
+		r = &PiNetworkSecurityGroupRule{}
+	case "ibmcloud:index/piPlacementGroup:PiPlacementGroup":
+		r = &PiPlacementGroup{}
+	case "ibmcloud:index/piRoute:PiRoute":
+		r = &PiRoute{}
+	case "ibmcloud:index/piSharedProcessorPool:PiSharedProcessorPool":
+		r = &PiSharedProcessorPool{}
+	case "ibmcloud:index/piSnapshot:PiSnapshot":
+		r = &PiSnapshot{}
+	case "ibmcloud:index/piSppPlacementGroup:PiSppPlacementGroup":
+		r = &PiSppPlacementGroup{}
+	case "ibmcloud:index/piVirtualSerialNumber:PiVirtualSerialNumber":
+		r = &PiVirtualSerialNumber{}
+	case "ibmcloud:index/piVolume:PiVolume":
+		r = &PiVolume{}
+	case "ibmcloud:index/piVolumeAttach:PiVolumeAttach":
+		r = &PiVolumeAttach{}
+	case "ibmcloud:index/piVolumeClone:PiVolumeClone":
+		r = &PiVolumeClone{}
+	case "ibmcloud:index/piVolumeGroup:PiVolumeGroup":
+		r = &PiVolumeGroup{}
+	case "ibmcloud:index/piVolumeGroupAction:PiVolumeGroupAction":
+		r = &PiVolumeGroupAction{}
+	case "ibmcloud:index/piVolumeOnboarding:PiVolumeOnboarding":
+		r = &PiVolumeOnboarding{}
+	case "ibmcloud:index/piVpnConnection:PiVpnConnection":
+		r = &PiVpnConnection{}
+	case "ibmcloud:index/piWorkspace:PiWorkspace":
+		r = &PiWorkspace{}
 	case "ibmcloud:index/resourceGroup:ResourceGroup":
 		r = &ResourceGroup{}
 	case "ibmcloud:index/resourceInstance:ResourceInstance":
@@ -490,116 +496,6 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"ibmcloud",
-		"index/containerAddons",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerAlb",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerAlbCert",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerAlbCreate",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerApiKeyReset",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerBindService",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerCluster",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerClusterFeature",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerDedicatedHost",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerDedicatedHostPool",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerIngressInstance",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerIngressSecretOpaque",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerIngressSecretTls",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerNlbDns",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerStorageAttachment",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerVpcAlb",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerVpcAlbCreate",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerVpcCluster",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerVpcWorker",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerVpcWorkerPool",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerWorkerPool",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/containerWorkerPoolZoneAttachment",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
 		"index/cosBackupPolicy",
 		&module{version},
 	)
@@ -636,81 +532,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"ibmcloud",
 		"index/cosBucketWebsiteConfiguration",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsCustomResolver",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsCustomResolverForwardingRule",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsCustomResolverSecondaryZone",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsDomain",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsDomainRegistrationNameservers",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsGlb",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsGlbMonitor",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsGlbPool",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsLinkedZone",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsPermittedNetwork",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsRecord",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsResourceRecord",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsReverseRecord",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsSecondary",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"ibmcloud",
-		"index/dnsZone",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1346,6 +1167,206 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"ibmcloud",
 		"index/isVpnServerRoute",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piCapture",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piCloudConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piCloudConnectionNetworkAttach",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piConsoleLanguage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piDhcp",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piHost",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piHostGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piIkePolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piImage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piImageExport",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piInstanceAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piInstanceSnapshot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piIpsecPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetwork",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkAddressGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkAddressGroupMember",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkInterface",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkPeer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkPeerRouteFilter",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkPortAttach",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkSecurityGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkSecurityGroupAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkSecurityGroupMember",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piNetworkSecurityGroupRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piPlacementGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piRoute",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piSharedProcessorPool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piSnapshot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piSppPlacementGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVirtualSerialNumber",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVolume",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVolumeAttach",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVolumeClone",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVolumeGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVolumeGroupAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVolumeOnboarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piVpnConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"ibmcloud",
+		"index/piWorkspace",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

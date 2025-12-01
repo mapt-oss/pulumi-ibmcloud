@@ -134,312 +134,6 @@ export interface ComputeVmInstanceBulkVm {
     hostname: string;
 }
 
-export interface ContainerAddonsAddon {
-    /**
-     * The versions that the addon can be upgraded to
-     */
-    allowedUpgradeVersions: string[];
-    /**
-     * Determines if this addon version is deprecated
-     */
-    deprecated: boolean;
-    /**
-     * The health state for this addon, a short indication (e.g. critical, pending)
-     */
-    healthState: string;
-    /**
-     * The health status for this addon, provides a description of the state (e.g. error message)
-     */
-    healthStatus: string;
-    /**
-     * The minimum kubernetes version for this addon.
-     */
-    minKubeVersion: string;
-    /**
-     * The minimum OpenShift version for this addon.
-     */
-    minOcpVersion: string;
-    /**
-     * The addon name such as 'istio'.
-     */
-    name: string;
-    /**
-     * The add-on options
-     */
-    options: string;
-    /**
-     * Add-On parameters to pass in a JSON string format.
-     */
-    parametersJson?: string;
-    /**
-     * The supported kubernetes version range for this addon.
-     */
-    supportedKubeRange: string;
-    /**
-     * The addon target version.
-     */
-    targetVersion: string;
-    /**
-     * The addon version, omit the version if you wish to use the default version.
-     */
-    version: string;
-    /**
-     * VLAN spanning required for multi-zone clusters
-     */
-    vlanSpanningRequired: boolean;
-}
-
-export interface ContainerClusterAlb {
-    albIp: string;
-    albType: string;
-    disableDeployment: boolean;
-    enable: boolean;
-    id: string;
-    name: string;
-    numOfInstances: string;
-    resize: boolean;
-    state: string;
-}
-
-export interface ContainerClusterKmsConfig {
-    /**
-     * Account ID of KMS instance holder - if not provided, defaults to the account in use
-     */
-    accountId?: string;
-    /**
-     * ID of the customer root key.
-     */
-    crkId: string;
-    /**
-     * ID of the KMS instance to use to encrypt the cluster.
-     */
-    instanceId: string;
-    /**
-     * Specify this option to use the KMS public service endpoint.
-     */
-    privateEndpoint?: boolean;
-}
-
-export interface ContainerClusterTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: string;
-    /**
-     * Key for taint
-     */
-    key: string;
-    /**
-     * Value for taint.
-     */
-    value: string;
-}
-
-export interface ContainerClusterWebhook {
-    level: string;
-    type: string;
-    url: string;
-}
-
-export interface ContainerClusterWorkerPool {
-    hardware: string;
-    id: string;
-    labels: {[key: string]: string};
-    machineType: string;
-    name: string;
-    sizePerZone: number;
-    state: string;
-    zones: outputs.ContainerClusterWorkerPoolZone[];
-}
-
-export interface ContainerClusterWorkerPoolZone {
-    privateVlan: string;
-    publicVlan: string;
-    workerCount: number;
-    zone: string;
-}
-
-export interface ContainerClusterWorkersInfo {
-    id: string;
-    poolName: string;
-    version: string;
-}
-
-export interface ContainerDedicatedHostLifeCycle {
-    actualState: string;
-    desiredState: string;
-    message: string;
-    messageDate: string;
-    messageDetails: string;
-    messageDetailsDate: string;
-}
-
-export interface ContainerDedicatedHostPoolWorkerPool {
-    clusterId: string;
-    workerPoolId: string;
-}
-
-export interface ContainerDedicatedHostPoolZone {
-    capacities: outputs.ContainerDedicatedHostPoolZoneCapacity[];
-    hostCount: number;
-    zone: string;
-}
-
-export interface ContainerDedicatedHostPoolZoneCapacity {
-    memoryBytes: number;
-    vcpu: number;
-}
-
-export interface ContainerDedicatedHostResource {
-    capacities: outputs.ContainerDedicatedHostResourceCapacity[];
-    consumeds: outputs.ContainerDedicatedHostResourceConsumed[];
-}
-
-export interface ContainerDedicatedHostResourceCapacity {
-    memoryBytes: number;
-    vcpu: number;
-}
-
-export interface ContainerDedicatedHostResourceConsumed {
-    memoryBytes: number;
-    vcpu: number;
-}
-
-export interface ContainerDedicatedHostWorker {
-    clusterId: string;
-    flavor: string;
-    workerId: string;
-    workerPoolId: string;
-}
-
-export interface ContainerIngressSecretOpaqueField {
-    /**
-     * Secret CRN corresponding to the field
-     */
-    crn: string;
-    /**
-     * Field expires on date
-     */
-    expiresOn: string;
-    /**
-     * The requested field name
-     */
-    fieldName?: string;
-    /**
-     * Field last updated timestamp
-     */
-    lastUpdatedTimestamp: string;
-    /**
-     * The computed field name
-     */
-    name: string;
-}
-
-export interface ContainerVpcClusterAlb {
-    albType: string;
-    disableDeployment: boolean;
-    enable: boolean;
-    id: string;
-    loadBalancerHostname: string;
-    name: string;
-    resize: boolean;
-    state: string;
-}
-
-export interface ContainerVpcClusterKmsConfig {
-    /**
-     * Account ID of KMS instance holder - if not provided, defaults to the account in use
-     */
-    accountId?: string;
-    /**
-     * ID of the customer root key.
-     */
-    crkId: string;
-    /**
-     * ID of the KMS instance to use to encrypt the cluster.
-     */
-    instanceId: string;
-    /**
-     * Specify this option to use the KMS public service endpoint.
-     */
-    privateEndpoint?: boolean;
-    waitForApply?: boolean;
-}
-
-export interface ContainerVpcClusterTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: string;
-    /**
-     * Key for taint
-     */
-    key: string;
-    /**
-     * Value for taint.
-     */
-    value: string;
-}
-
-export interface ContainerVpcClusterZone {
-    /**
-     * Zone for the worker pool in a multizone cluster
-     */
-    name: string;
-    /**
-     * The VPC subnet to assign the cluster
-     */
-    subnetId: string;
-}
-
-export interface ContainerVpcWorkerPoolTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: string;
-    /**
-     * Key for taint
-     */
-    key: string;
-    /**
-     * Value for taint.
-     */
-    value: string;
-}
-
-export interface ContainerVpcWorkerPoolZone {
-    /**
-     * zone name
-     */
-    name: string;
-    /**
-     * subnet ID
-     */
-    subnetId: string;
-}
-
-export interface ContainerWorkerPoolTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: string;
-    /**
-     * Key for taint
-     */
-    key: string;
-    /**
-     * Value for taint.
-     */
-    value: string;
-}
-
-export interface ContainerWorkerPoolZone {
-    privateVlan: string;
-    publicVlan: string;
-    workerCount: number;
-    zone: string;
-}
-
 export interface CosBucketAbortIncompleteMultipartUploadDay {
     /**
      * Specifies the number of days when the specific rule action takes effect.
@@ -777,143 +471,6 @@ export interface CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRed
     replaceKeyWith?: string;
 }
 
-export interface DnsCustomResolverForwardingRuleView {
-    /**
-     * Description of the view.
-     */
-    description?: string;
-    /**
-     * Expression of the view.
-     */
-    expression: string;
-    /**
-     * The upstream DNS servers that the matching DNS queries will be forwarded to.
-     */
-    forwardTos: string[];
-    /**
-     * Unique name of the view.
-     */
-    name: string;
-}
-
-export interface DnsCustomResolverLocation {
-    /**
-     * The ip address of this dns server
-     */
-    dnsServerIp: string;
-    /**
-     * Whether the location is enabled for the custom resolver
-     */
-    enabled?: boolean;
-    /**
-     * Whether the DNS server in this location is healthy or not.
-     */
-    healthy: boolean;
-    /**
-     * Location ID
-     */
-    locationId: string;
-    /**
-     * Subnet CRN
-     */
-    subnetCrn: string;
-}
-
-export interface DnsCustomResolverRule {
-    /**
-     * Descriptive text of the forwarding rule.
-     */
-    description: string;
-    /**
-     * The upstream DNS servers will be forwarded to.
-     */
-    forwardTos: string[];
-    /**
-     * The matching zone or hostname.
-     */
-    match: string;
-    /**
-     * Identifier of the forwarding rule.
-     */
-    ruleId: string;
-    /**
-     * Type of the forwarding rule.
-     */
-    type: string;
-    /**
-     * An array of views used by forwarding rules.
-     */
-    views?: outputs.DnsCustomResolverRuleView[];
-}
-
-export interface DnsCustomResolverRuleView {
-    /**
-     * Description of the view.
-     */
-    description?: string;
-    /**
-     * Expression of the view.
-     */
-    expression: string;
-    /**
-     * The upstream DNS servers that the matching DNS queries will be forwarded to.
-     */
-    forwardTos: string[];
-    /**
-     * Unique name of the view.
-     */
-    name: string;
-}
-
-export interface DnsGlbAzPool {
-    /**
-     * Availability zone.
-     */
-    availabilityZone: string;
-    /**
-     * List of load balancer pools
-     */
-    pools: string[];
-}
-
-export interface DnsGlbMonitorHeader {
-    /**
-     * The name of HTTP request header
-     */
-    name: string;
-    /**
-     * The value of HTTP request header
-     */
-    values: string[];
-}
-
-export interface DnsGlbPoolOrigin {
-    /**
-     * The address of the origin server. It can be a hostname or an IP address.
-     */
-    address: string;
-    /**
-     * Description of the origin server.
-     */
-    description?: string;
-    /**
-     * Whether the origin server is enabled.
-     */
-    enabled: boolean;
-    /**
-     * Whether the health is `true` or `false`.
-     */
-    health: boolean;
-    /**
-     * The Reason for health check failure
-     */
-    healthFailureReason: string;
-    /**
-     * The name of the origin server.
-     */
-    name: string;
-}
-
 export interface GetComputePlacementGroupVirtualGuest {
     domain: string;
     hostname: string;
@@ -924,333 +481,6 @@ export interface GetComputeReservedCapacityVirtualGuest {
     domain: string;
     hostname: string;
     id: number;
-}
-
-export interface GetContainerAddonsAddon {
-    /**
-     * The versions that the addon can be upgraded to
-     */
-    allowedUpgradeVersions: string[];
-    /**
-     * Determines if this addon version is deprecated
-     */
-    deprecated: boolean;
-    /**
-     * The health state for this addon, a short indication (e.g. critical, pending)
-     */
-    healthState: string;
-    /**
-     * The health status for this addon, provides a description of the state (e.g. error message)
-     */
-    healthStatus: string;
-    /**
-     * The minimum kubernetes version for this addon.
-     */
-    minKubeVersion: string;
-    /**
-     * The minimum OpenShift version for this addon.
-     */
-    minOcpVersion: string;
-    /**
-     * The addon name such as 'istio'.
-     */
-    name: string;
-    /**
-     * The supported kubernetes version range for this addon.
-     */
-    supportedKubeRange: string;
-    /**
-     * The addon target version.
-     */
-    targetVersion: string;
-    /**
-     * The addon version, omit the version if you wish to use the default version.
-     */
-    version: string;
-    /**
-     * VLAN spanning required for multi-zone clusters
-     */
-    vlanSpanningRequired: boolean;
-}
-
-export interface GetContainerClusterAlb {
-    albIp: string;
-    albType: string;
-    disableDeployment: boolean;
-    enable: boolean;
-    id: string;
-    name: string;
-    numOfInstances: string;
-    resize: boolean;
-    state: string;
-}
-
-export interface GetContainerClusterBoundedService {
-    namespace: string;
-    serviceId: string;
-    serviceKeyName: string;
-    serviceName: string;
-}
-
-export interface GetContainerClusterVlan {
-    id: string;
-    subnets: outputs.GetContainerClusterVlanSubnet[];
-}
-
-export interface GetContainerClusterVlanSubnet {
-    cidr: string;
-    id: string;
-    ips: string[];
-    isByoip: boolean;
-    isPublic: boolean;
-}
-
-export interface GetContainerClusterWorkerPool {
-    hardware: string;
-    id: string;
-    labels: {[key: string]: string};
-    machineType: string;
-    name: string;
-    sizePerZone: number;
-    state: string;
-    zones: outputs.GetContainerClusterWorkerPoolZone[];
-}
-
-export interface GetContainerClusterWorkerPoolZone {
-    privateVlan: string;
-    publicVlan: string;
-    workerCount: number;
-    zone: string;
-}
-
-export interface GetContainerDedicatedHostFlavorInstanceStorage {
-    count: number;
-    size: number;
-}
-
-export interface GetContainerDedicatedHostFlavorsHostFlavor {
-    /**
-     * Describes if the dedicated host flavor is deprecated
-     */
-    deprecated: boolean;
-    /**
-     * The class of the dedicated host flavor
-     */
-    flavorClass: string;
-    /**
-     * The id of the dedicated host flavor
-     */
-    hostFlavorId: string;
-    /**
-     * The instance storage of the dedicated host flavor
-     */
-    instanceStorages: outputs.GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage[];
-    /**
-     * The maximum available memory in the dedicated host flavor
-     */
-    maxMemory: number;
-    /**
-     * The maximum available vcpus in the dedicated host flavor
-     */
-    maxVcpus: number;
-    /**
-     * The region of the dedicated host flavor
-     */
-    region: string;
-}
-
-export interface GetContainerDedicatedHostFlavorsHostFlavorInstanceStorage {
-    count: number;
-    size: number;
-}
-
-export interface GetContainerDedicatedHostLifeCycle {
-    actualState: string;
-    desiredState: string;
-    message: string;
-    messageDate: string;
-    messageDetails: string;
-    messageDetailsDate: string;
-}
-
-export interface GetContainerDedicatedHostPoolWorkerPool {
-    clusterId: string;
-    workerPoolId: string;
-}
-
-export interface GetContainerDedicatedHostPoolZone {
-    capacities: outputs.GetContainerDedicatedHostPoolZoneCapacity[];
-    hostCount: number;
-    zone: string;
-}
-
-export interface GetContainerDedicatedHostPoolZoneCapacity {
-    memoryBytes: number;
-    vcpu: number;
-}
-
-export interface GetContainerDedicatedHostResource {
-    capacities: outputs.GetContainerDedicatedHostResourceCapacity[];
-    consumeds: outputs.GetContainerDedicatedHostResourceConsumed[];
-}
-
-export interface GetContainerDedicatedHostResourceCapacity {
-    memoryBytes: number;
-    vcpu: number;
-}
-
-export interface GetContainerDedicatedHostResourceConsumed {
-    memoryBytes: number;
-    vcpu: number;
-}
-
-export interface GetContainerDedicatedHostWorker {
-    clusterId: string;
-    flavor: string;
-    workerId: string;
-    workerPoolId: string;
-}
-
-export interface GetContainerIngressSecretOpaqueField {
-    /**
-     * Secret CRN corresponding to the field
-     */
-    crn: string;
-    /**
-     * Field expires on date
-     */
-    expiresOn: string;
-    /**
-     * Field last updated timestamp
-     */
-    lastUpdatedTimestamp: string;
-    /**
-     * Field name
-     */
-    name: string;
-}
-
-export interface GetContainerNlbDnsNlbConfig {
-    /**
-     * Cluster Id.
-     */
-    cluster: string;
-    /**
-     * Type of DNS.
-     */
-    dnsType: string;
-    /**
-     * Host Name of load Balancer.
-     */
-    lbHostname: string;
-    /**
-     * NLB IPs.
-     */
-    nlbIps: string[];
-    /**
-     * NLB Sub-Domain.
-     */
-    nlbSubDomain: string;
-    /**
-     * Name of the secret.
-     */
-    secretName: string;
-    /**
-     * Namespace of Secret.
-     */
-    secretNamespace: string;
-    /**
-     * Status of Secret.
-     */
-    secretStatus: string;
-    /**
-     * Nlb Type.
-     */
-    type: string;
-}
-
-export interface GetContainerVpcClusterAlb {
-    albType: string;
-    disableDeployment: boolean;
-    enable: boolean;
-    id: string;
-    loadBalancerHostname: string;
-    name: string;
-    resize: boolean;
-    state: string;
-}
-
-export interface GetContainerVpcClusterWorkerNetworkInterface {
-    cidr: string;
-    ipAddress: string;
-    subnetId: string;
-}
-
-export interface GetContainerVpcClusterWorkerPool {
-    flavor: string;
-    hostPoolId: string;
-    id: string;
-    isolation: string;
-    labels: {[key: string]: string};
-    name: string;
-    /**
-     * The operating system of the workers in the worker pool
-     */
-    operatingSystem: string;
-    /**
-     * The optional secondary storage configuration of the workers in the worker pool.
-     */
-    secondaryStorages: outputs.GetContainerVpcClusterWorkerPoolSecondaryStorage[];
-    state: string;
-    workerCount: number;
-    zones: outputs.GetContainerVpcClusterWorkerPoolZone[];
-}
-
-export interface GetContainerVpcClusterWorkerPoolSecondaryStorage {
-    count: number;
-    deviceType: string;
-    name: string;
-    profile: string;
-    raidConfiguration: string;
-    size: number;
-}
-
-export interface GetContainerVpcClusterWorkerPoolZone {
-    name: string;
-    subnetId: string;
-}
-
-export interface GetContainerVpcWorkerPoolSecondaryStorage {
-    count: number;
-    deviceType: string;
-    name: string;
-    profile: string;
-    raidConfiguration: string;
-    size: number;
-}
-
-export interface GetContainerVpcWorkerPoolZone {
-    name: string;
-    subnetId: string;
-}
-
-export interface GetContainerWorkerPoolZone {
-    /**
-     * worker pool zone private vlan
-     */
-    privateVlan: string;
-    /**
-     * worker pool zone public vlan
-     */
-    publicVlan: string;
-    /**
-     * worker pool zone worker count
-     */
-    workerCount: number;
-    /**
-     * worker pool zone name
-     */
-    zone: string;
 }
 
 export interface GetCosBucketAbortIncompleteMultipartUploadDay {
@@ -1564,416 +794,6 @@ export interface GetCosBucketWebsiteConfigurationRoutingRuleRedirect {
      * The object key to be used in the Location header that is returned in the response.
      */
     replaceKeyWith: string;
-}
-
-export interface GetDnsCustomResolverForwardingRulesRule {
-    /**
-     * Descriptive text of the forwarding rule.
-     */
-    description: string;
-    /**
-     * The upstream DNS servers will be forwarded to.
-     */
-    forwardTos: string[];
-    /**
-     * The matching zone or hostname.
-     */
-    match: string;
-    /**
-     * Identifier of the forwarding rule.
-     */
-    ruleId: string;
-    /**
-     * Type of the forwarding rule.
-     */
-    type: string;
-    /**
-     * An array of views used by forwarding rules.
-     */
-    views: outputs.GetDnsCustomResolverForwardingRulesRuleView[];
-}
-
-export interface GetDnsCustomResolverForwardingRulesRuleView {
-    /**
-     * Description of the view.
-     */
-    description: string;
-    /**
-     * Expression of the view.
-     */
-    expression: string;
-    /**
-     * The upstream DNS servers that the matching DNS queries will be forwarded to.
-     */
-    forwardTos: string[];
-    /**
-     * Unique name of the view.
-     */
-    name: string;
-}
-
-export interface GetDnsCustomResolverSecondaryZonesSecondaryZone {
-    /**
-     * Time when a secondary zone is created
-     */
-    createdOn: string;
-    /**
-     * Descriptive text of the secondary zone.
-     */
-    description: string;
-    /**
-     * Enable/Disable the secondary zone.
-     */
-    enabled: boolean;
-    /**
-     * The recent time when a secondary zone is modified
-     */
-    modifiedOn: string;
-    /**
-     * The unique identifier of the Secondary Zone
-     */
-    secondaryZoneId: string;
-    /**
-     * The addresses of DNS servers where the secondary zone data is transferred from.
-     */
-    transferFroms: string[];
-    /**
-     * The name of the zone.
-     */
-    zone: string;
-}
-
-export interface GetDnsCustomResolversCustomResolver {
-    /**
-     * Whether a disruptive update is allowed for the custom resolver
-     */
-    allowDisruptiveUpdates: boolean;
-    /**
-     * Identifier of the custom resolver
-     */
-    customResolverId: string;
-    description: string;
-    enabled: boolean;
-    health: string;
-    /**
-     * Locations on which the custom resolver will be running
-     */
-    locations: outputs.GetDnsCustomResolversCustomResolverLocation[];
-    /**
-     * Name of the custom resolver
-     */
-    name: string;
-    /**
-     * The profile name of the custom resolver.
-     */
-    profile: string;
-}
-
-export interface GetDnsCustomResolversCustomResolverLocation {
-    dnsServerIp: string;
-    enabled: boolean;
-    healthy: boolean;
-    /**
-     * Identifier of the custom resolver
-     */
-    locationId: string;
-    subnetCrn: string;
-}
-
-export interface GetDnsGlbMonitorsDnsGlbMonitor {
-    /**
-     * Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTPS monitors.
-     */
-    allowInsecure: boolean;
-    /**
-     * GLB Monitor creation date
-     */
-    createdOn: string;
-    /**
-     * Descriptive text of the load balancer monitor
-     */
-    description: string;
-    /**
-     * A case-insensitive sub-string to look for in the response body
-     */
-    expectedBody: string;
-    /**
-     * The expected HTTP response code or code range of the health check. This parameter is only valid for HTTP and HTTPS
-     */
-    expectedCodes: string;
-    /**
-     * The interval between each health check
-     */
-    interval: number;
-    /**
-     * The method to use for the health check
-     */
-    method: string;
-    /**
-     * GLB Monitor Modification date
-     */
-    modifiedOn: string;
-    /**
-     * Monitor Id
-     */
-    monitorId: string;
-    /**
-     * The unique identifier of a service instance.
-     */
-    name: string;
-    /**
-     * The endpoint path to health check against
-     */
-    path: string;
-    /**
-     * Port number to connect to for the health check
-     */
-    port: number;
-    /**
-     * The number of retries to attempt in case of a timeout before marking the origin as unhealthy
-     */
-    retries: number;
-    /**
-     * The timeout (in seconds) before marking the health check as failed
-     */
-    timeout: number;
-    /**
-     * The protocol to use for the health check
-     */
-    type: string;
-}
-
-export interface GetDnsGlbPoolsDnsGlbPool {
-    /**
-     * The time when a load balancer pool is created.
-     */
-    createdOn: string;
-    /**
-     * Descriptive text of the load balancer pool
-     */
-    description: string;
-    /**
-     * Whether the load balancer pool is enabled
-     */
-    enabled: boolean;
-    /**
-     * Whether the load balancer pool is enabled
-     */
-    health: string;
-    /**
-     * Health check region of VSIs
-     */
-    healthcheckRegion: string;
-    /**
-     * Health check subnet crn of VSIs
-     */
-    healthcheckSubnets: string[];
-    /**
-     * The minimum number of origins that must be healthy for this pool to serve traffic
-     */
-    healthyOriginsThreshold: number;
-    /**
-     * The recent time when a load balancer pool is modified.
-     */
-    modifiedOn: string;
-    /**
-     * The ID of the load balancer monitor to be associated to this pool
-     */
-    monitor: string;
-    /**
-     * DNS record name
-     */
-    name: string;
-    /**
-     * The notification channel,It is a webhook url
-     */
-    notificationChannel: string;
-    /**
-     * Origins info
-     */
-    origins: outputs.GetDnsGlbPoolsDnsGlbPoolOrigin[];
-    /**
-     * DNS record id
-     */
-    poolId: string;
-}
-
-export interface GetDnsGlbPoolsDnsGlbPoolOrigin {
-    /**
-     * The address of the origin server. It can be a hostname or an IP address.
-     */
-    address: string;
-    /**
-     * Description of the origin server.
-     */
-    description: string;
-    /**
-     * Whether the origin server is enabled.
-     */
-    enabled: boolean;
-    /**
-     * Whether the health is `true` or `false`.
-     */
-    health: boolean;
-    /**
-     * The Reason for health check failure
-     */
-    healthFailureReason: string;
-    /**
-     * The name of the origin server.
-     */
-    name: string;
-}
-
-export interface GetDnsGlbsDnsGlb {
-    /**
-     * Map availability zones to pool ID's.
-     */
-    azPools: outputs.GetDnsGlbsDnsGlbAzPool[];
-    /**
-     * GLB Load Balancer creation date
-     */
-    createdOn: string;
-    /**
-     * A list of pool IDs ordered by their failover priority
-     */
-    defaultPools: string[];
-    /**
-     * Descriptive text of the load balancer
-     */
-    description: string;
-    /**
-     * Whether the load balancer is enabled
-     */
-    enabled: boolean;
-    /**
-     * The pool ID to use when all other pools are detected as unhealthy
-     */
-    fallbackPool: string;
-    /**
-     * Load balancer Id
-     */
-    glbId: string;
-    /**
-     * Healthy state of the load balancer.
-     */
-    health: string;
-    /**
-     * GLB Load Balancer Modification date
-     */
-    modifiedOn: string;
-    /**
-     * Name of the load balancer
-     */
-    name: string;
-    /**
-     * Time to live in second
-     */
-    ttl: number;
-}
-
-export interface GetDnsGlbsDnsGlbAzPool {
-    /**
-     * Availability zone.
-     */
-    availabilityZone: string;
-    /**
-     * List of load balancer pools
-     */
-    pools: string[];
-}
-
-export interface GetDnsPermittedNetworksDnsPermittedNetwork {
-    /**
-     * Network creation date
-     */
-    createdOn: string;
-    /**
-     * Instance Id
-     */
-    instanceId: string;
-    /**
-     * Network Modification date
-     */
-    modifiedOn: string;
-    /**
-     * permitted network
-     */
-    permittedNetwork: {[key: string]: string};
-    /**
-     * Network Id
-     */
-    permittedNetworkId: string;
-    /**
-     * Network status
-     */
-    state: string;
-    /**
-     * Network Type
-     */
-    type: string;
-    /**
-     * Zone Id
-     */
-    zoneId: string;
-}
-
-export interface GetDnsResourceRecordsDnsResourceRecord {
-    /**
-     * DNS record id
-     */
-    id: string;
-    /**
-     * DNS record name
-     */
-    name: string;
-    /**
-     * DNS record Data
-     */
-    rdata: string;
-    /**
-     * DNS record TTL
-     */
-    ttl: number;
-    /**
-     * DNS record Type
-     */
-    type: string;
-}
-
-export interface GetDnsZonesDnsZone {
-    /**
-     * Creation date
-     */
-    createdOn: string;
-    /**
-     * Zone description
-     */
-    description: string;
-    /**
-     * Instance ID
-     */
-    instanceId: string;
-    /**
-     * Label
-     */
-    label: string;
-    /**
-     * Modification date
-     */
-    modifiedOn: string;
-    /**
-     * Zone name
-     */
-    name: string;
-    /**
-     * Zone state
-     */
-    state: string;
-    /**
-     * Zone ID
-     */
-    zoneId: string;
 }
 
 export interface GetIamAccessGroupGroup {
@@ -27086,6 +25906,2767 @@ export interface GetIsZonesZoneInfo {
     universalName: string;
 }
 
+export interface GetPiAvailableHostsAvailableHost {
+    /**
+     * Core capacity of the host.
+     */
+    availableCores: number;
+    /**
+     * Memory capacity of the host (in GB).
+     */
+    availableMemory: number;
+    /**
+     * How many hosts of such type/capacities are available.
+     */
+    count: number;
+    /**
+     * System type.
+     */
+    sysType: string;
+}
+
+export interface GetPiCatalogImagesImage {
+    /**
+     * The CPU architecture that the image is designed for.
+     */
+    architecture: string;
+    /**
+     * The container format.
+     */
+    containerFormat: string;
+    /**
+     * Date of image creation
+     */
+    creationDate: string;
+    /**
+     * CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The description of an image.
+     */
+    description: string;
+    /**
+     * The disk format.
+     */
+    diskFormat: string;
+    /**
+     * The Endianness order.
+     */
+    endianness: string;
+    /**
+     * The href of an image.
+     */
+    href: string;
+    /**
+     * Hypervisor type.
+     */
+    hypervisorType: string;
+    /**
+     * The unique identifier of an image.
+     */
+    imageId: string;
+    /**
+     * The identifier of this image type.
+     */
+    imageType: string;
+    /**
+     * The last updated date of an image.
+     */
+    lastUpdateDate: string;
+    /**
+     * The name of the image.
+     */
+    name: string;
+    /**
+     * Operating System.
+     */
+    operatingSystem: string;
+    /**
+     * The state of an Operating System.
+     */
+    state: string;
+    /**
+     * Storage pool where image resides.
+     */
+    storagePool: string;
+    /**
+     * The storage type of an image.
+     */
+    storageType: string;
+}
+
+export interface GetPiCloudConnectionsConnection {
+    /**
+     * Enable classic endpoint destination.
+     */
+    classicEnabled: boolean;
+    /**
+     * The unique identifier of the cloud connection.
+     */
+    cloudConnectionId: string;
+    /**
+     * Type of service the gateway is attached to.
+     */
+    connectionMode: string;
+    /**
+     * Enable global routing for this cloud connection.
+     */
+    globalRouting: boolean;
+    /**
+     * GRE destination IP address.
+     */
+    greDestinationAddress: string;
+    /**
+     * GRE auto-assigned source IP address.
+     */
+    greSourceAddress: string;
+    /**
+     * IBM IP address.
+     */
+    ibmIpAddress: string;
+    /**
+     * Enable metering for this cloud connection.
+     */
+    metered: boolean;
+    /**
+     * Name of the cloud connection.
+     */
+    name: string;
+    /**
+     * Set of Networks attached to this cloud connection.
+     */
+    networks: string[];
+    /**
+     * Port.
+     */
+    port: string;
+    /**
+     * Speed of the cloud connection (speed in megabits per second).
+     */
+    speed: number;
+    /**
+     * Link status.
+     */
+    status: string;
+    /**
+     * User IP address.
+     */
+    userIpAddress: string;
+    /**
+     * Set of VPCs attached to this cloud connection.
+     */
+    vpcCrns: string[];
+    /**
+     * Enable VPC for this cloud connection.
+     */
+    vpcEnabled: boolean;
+}
+
+export interface GetPiCloudInstancePvmInstance {
+    /**
+     * Date of PVM instance creation.
+     */
+    creationDate: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * Link to Cloud Instance resource.
+     */
+    href: string;
+    /**
+     * PVM Instance ID.
+     */
+    id: string;
+    /**
+     * Name of the server.
+     */
+    name: string;
+    /**
+     * The status of the instance.
+     */
+    status: string;
+    /**
+     * System type used to host the instance.
+     */
+    systype: string;
+}
+
+export interface GetPiConsoleLanguagesConsoleLanguage {
+    /**
+     * Language code.
+     */
+    code: string;
+    /**
+     * Language description.
+     */
+    language: string;
+}
+
+export interface GetPiDatacenterCapabilityDetail {
+    /**
+     * Disaster Recovery Information.
+     */
+    disasterRecoveries: outputs.GetPiDatacenterCapabilityDetailDisasterRecovery[];
+    /**
+     * Datacenter System Types Information.
+     */
+    supportedSystems: outputs.GetPiDatacenterCapabilityDetailSupportedSystem[];
+}
+
+export interface GetPiDatacenterCapabilityDetailDisasterRecovery {
+    /**
+     * Asynchronous Replication Target Information.
+     */
+    asynchronousReplications: outputs.GetPiDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplication[];
+    /**
+     * Synchronous Replication Target Information.
+     */
+    synchronousReplications: outputs.GetPiDatacenterCapabilityDetailDisasterRecoverySynchronousReplication[];
+}
+
+export interface GetPiDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplication {
+    /**
+     * Service Enabled.
+     */
+    enabled: boolean;
+    /**
+     * List of all replication targets.
+     */
+    targetLocations: outputs.GetPiDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplicationTargetLocation[];
+}
+
+export interface GetPiDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplicationTargetLocation {
+    /**
+     * regionZone of replication site.
+     */
+    region: string;
+    /**
+     * the replication site is active / down.
+     */
+    status: string;
+}
+
+export interface GetPiDatacenterCapabilityDetailDisasterRecoverySynchronousReplication {
+    /**
+     * Service Enabled.
+     */
+    enabled: boolean;
+    /**
+     * List of all replication targets.
+     */
+    targetLocations: outputs.GetPiDatacenterCapabilityDetailDisasterRecoverySynchronousReplicationTargetLocation[];
+}
+
+export interface GetPiDatacenterCapabilityDetailDisasterRecoverySynchronousReplicationTargetLocation {
+    /**
+     * regionZone of replication site.
+     */
+    region: string;
+    /**
+     * the replication site is active / down.
+     */
+    status: string;
+}
+
+export interface GetPiDatacenterCapabilityDetailSupportedSystem {
+    /**
+     * List of all available dedicated host types.
+     */
+    dedicateds: string[];
+    /**
+     * List of all available host types.
+     */
+    generals: string[];
+}
+
+export interface GetPiDatacentersDatacenter {
+    /**
+     * Additional Datacenter Capability Details.
+     */
+    capabilityDetails: outputs.GetPiDatacentersDatacenterCapabilityDetail[];
+    /**
+     * Datacenter Capabilities
+     */
+    piDatacenterCapabilities: {[key: string]: boolean};
+    /**
+     * Datacenter href
+     */
+    piDatacenterHref: string;
+    /**
+     * Datacenter location
+     */
+    piDatacenterLocation: {[key: string]: string};
+    /**
+     * Datacenter status
+     */
+    piDatacenterStatus: string;
+    /**
+     * Datacenter type
+     */
+    piDatacenterType: string;
+}
+
+export interface GetPiDatacentersDatacenterCapabilityDetail {
+    /**
+     * Disaster Recovery Information.
+     */
+    disasterRecoveries: outputs.GetPiDatacentersDatacenterCapabilityDetailDisasterRecovery[];
+    /**
+     * Datacenter System Types Information.
+     */
+    supportedSystems: outputs.GetPiDatacentersDatacenterCapabilityDetailSupportedSystem[];
+}
+
+export interface GetPiDatacentersDatacenterCapabilityDetailDisasterRecovery {
+    /**
+     * Asynchronous Replication Target Information.
+     */
+    asynchronousReplications: outputs.GetPiDatacentersDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplication[];
+    /**
+     * Synchronous Replication Target Information.
+     */
+    synchronousReplications: outputs.GetPiDatacentersDatacenterCapabilityDetailDisasterRecoverySynchronousReplication[];
+}
+
+export interface GetPiDatacentersDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplication {
+    /**
+     * Service Enabled.
+     */
+    enabled: boolean;
+    /**
+     * List of all replication targets.
+     */
+    targetLocations: outputs.GetPiDatacentersDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplicationTargetLocation[];
+}
+
+export interface GetPiDatacentersDatacenterCapabilityDetailDisasterRecoveryAsynchronousReplicationTargetLocation {
+    /**
+     * regionZone of replication site.
+     */
+    region: string;
+    /**
+     * the replication site is active / down.
+     */
+    status: string;
+}
+
+export interface GetPiDatacentersDatacenterCapabilityDetailDisasterRecoverySynchronousReplication {
+    /**
+     * Service Enabled.
+     */
+    enabled: boolean;
+    /**
+     * List of all replication targets.
+     */
+    targetLocations: outputs.GetPiDatacentersDatacenterCapabilityDetailDisasterRecoverySynchronousReplicationTargetLocation[];
+}
+
+export interface GetPiDatacentersDatacenterCapabilityDetailDisasterRecoverySynchronousReplicationTargetLocation {
+    /**
+     * regionZone of replication site.
+     */
+    region: string;
+    /**
+     * the replication site is active / down.
+     */
+    status: string;
+}
+
+export interface GetPiDatacentersDatacenterCapabilityDetailSupportedSystem {
+    /**
+     * List of all available dedicated host types.
+     */
+    dedicateds: string[];
+    /**
+     * List of all available host types.
+     */
+    generals: string[];
+}
+
+export interface GetPiDhcpLease {
+    /**
+     * IP of the PVM Instance.
+     */
+    instanceIp: string;
+    /**
+     * MAC Address of the PVM Instance.
+     */
+    instanceMac: string;
+}
+
+export interface GetPiDhcpsServer {
+    /**
+     * ID of the DHCP Server.
+     */
+    dhcpId: string;
+    /**
+     * ID of the DHCP Server private network.
+     */
+    networkId: string;
+    /**
+     * Name of the DHCP Server private network.
+     */
+    networkName: string;
+    /**
+     * Status of the DHCP Server.
+     */
+    status: string;
+}
+
+export interface GetPiDisasterRecoveryLocationReplicationSite {
+    /**
+     * Indicates the location is active or not, true if location is active , otherwise it is false.
+     */
+    isActive: boolean;
+    /**
+     * The region zone of the location.
+     */
+    location: string;
+    /**
+     * List of replication pool map.
+     */
+    replicationPoolMaps: outputs.GetPiDisasterRecoveryLocationReplicationSiteReplicationPoolMap[];
+}
+
+export interface GetPiDisasterRecoveryLocationReplicationSiteReplicationPoolMap {
+    /**
+     * Remote pool.
+     */
+    remotePool: string;
+    /**
+     * Volume pool.
+     */
+    volumePool: string;
+}
+
+export interface GetPiDisasterRecoveryLocationsDisasterRecoveryLocation {
+    /**
+     * The region zone of a site.
+     */
+    location: string;
+    /**
+     * List of Replication Sites.
+     */
+    replicationSites: outputs.GetPiDisasterRecoveryLocationsDisasterRecoveryLocationReplicationSite[];
+}
+
+export interface GetPiDisasterRecoveryLocationsDisasterRecoveryLocationReplicationSite {
+    /**
+     * Indicates the location is active or not, true if location is active, otherwise it is false.
+     */
+    isActive: boolean;
+    /**
+     * The region zone of the location.
+     */
+    location: string;
+    /**
+     * List of replication pool map.
+     */
+    replicationPoolMaps: outputs.GetPiDisasterRecoveryLocationsDisasterRecoveryLocationReplicationSiteReplicationPoolMap[];
+}
+
+export interface GetPiDisasterRecoveryLocationsDisasterRecoveryLocationReplicationSiteReplicationPoolMap {
+    /**
+     * Remote pool.
+     */
+    remotePool: string;
+    /**
+     * Volume pool.
+     */
+    volumePool: string;
+}
+
+export interface GetPiHostCapacity {
+    /**
+     * Number of cores currently available.
+     */
+    availableCores: number;
+    /**
+     * Amount of memory currently available (in GB).
+     */
+    availableMemory: number;
+    /**
+     * Number of cores reserved for system use.
+     */
+    reservedCore: number;
+    /**
+     * Amount of memory reserved for system use (in GB).
+     */
+    reservedMemory: number;
+    /**
+     * Total number of cores of the host.
+     */
+    totalCore: number;
+    /**
+     * Total amount of memory of the host (in GB).
+     */
+    totalMemory: number;
+    /**
+     * Number of cores in use on the host.
+     */
+    usedCore: number;
+    /**
+     * Amount of memory used on the host (in GB).
+     */
+    usedMemory: number;
+}
+
+export interface GetPiHostGroupsHostGroup {
+    /**
+     * Date/Time of host group creation.
+     */
+    creationDate: string;
+    /**
+     * List of hosts.
+     */
+    hosts: string[];
+    /**
+     * Host group ID.
+     */
+    id: string;
+    /**
+     * Name of the host group.
+     */
+    name: string;
+    /**
+     * ID of the workspace owning the host group.
+     */
+    primary: string;
+    /**
+     * IDs of workspaces the host group has been shared with.
+     */
+    secondaries: string[];
+}
+
+export interface GetPiHostsHost {
+    capacities: outputs.GetPiHostsHostCapacity[];
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * Name of the host (chosen by the user).
+     */
+    displayName: string;
+    /**
+     * Link to host group resource.
+     */
+    hostGroup: {[key: string]: string};
+    /**
+     * Host ID.
+     */
+    hostId: string;
+    /**
+     * Current physical ID of the host.
+     */
+    hostReference: number;
+    /**
+     * State of the host (up/down).
+     */
+    state: string;
+    /**
+     * Status of the host (enabled/disabled).
+     */
+    status: string;
+    /**
+     * System type.
+     */
+    sysType: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiHostsHostCapacity {
+    /**
+     * Number of cores currently available.
+     */
+    availableCores: number;
+    /**
+     * Amount of memory currently available (in GB).
+     */
+    availableMemory: number;
+    /**
+     * Number of cores reserved for system use.
+     */
+    reservedCore: number;
+    /**
+     * Amount of memory reserved for system use (in GB).
+     */
+    reservedMemory: number;
+    /**
+     * Total number of cores of the host.
+     */
+    totalCore: number;
+    /**
+     * Total amount of memory of the host (in GB).
+     */
+    totalMemory: number;
+    /**
+     * Number of cores in use on the host.
+     */
+    usedCore: number;
+    /**
+     * Amount of memory used on the host (in GB).
+     */
+    usedMemory: number;
+}
+
+export interface GetPiImagesImageInfo {
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The hyper link of an image.
+     */
+    href: string;
+    /**
+     * The unique identifier of an image.
+     */
+    id: string;
+    /**
+     * The identifier of this image type.
+     */
+    imageType: string;
+    /**
+     * The name of an image.
+     */
+    name: string;
+    /**
+     * Checksum of the image.
+     */
+    sourceChecksum: string;
+    /**
+     * The state of an image.
+     */
+    state: string;
+    /**
+     * Storage pool where image resides.
+     */
+    storagePool: string;
+    /**
+     * The storage type of an image.
+     */
+    storageType: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiInstanceNetwork {
+    /**
+     * The external IP address of the instance.
+     */
+    externalIp: string;
+    /**
+     * The IP address of the instance.
+     */
+    ip: string;
+    /**
+     * The MAC address of the instance.
+     */
+    macAddress: string;
+    /**
+     * The network ID of the instance.
+     */
+    networkId: string;
+    /**
+     * ID of the network interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * The network name of the instance.
+     */
+    networkName: string;
+    /**
+     * IDs of the network necurity groups that the network interface is a member of.
+     */
+    networkSecurityGroupIds: string[];
+    /**
+     * Links to the network security groups that the network interface is a member of.
+     */
+    networkSecurityGroupsHreves: string[];
+    /**
+     * The type of the network.
+     */
+    type: string;
+}
+
+export interface GetPiInstanceSnapshotsInstanceSnapshot {
+    /**
+     * Action performed on the instance snapshot.
+     */
+    action: string;
+    /**
+     * Date of snapshot creation.
+     */
+    creationDate: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The description of the snapshot.
+     */
+    description: string;
+    /**
+     * The unique identifier of the Power Systems Virtual Machine instance snapshot.
+     */
+    id: string;
+    /**
+     * Date of last update.
+     */
+    lastUpdatedDate: string;
+    /**
+     * The name of the Power Systems Virtual Machine instance snapshot.
+     */
+    name: string;
+    /**
+     * The snapshot completion percentage.
+     */
+    percentComplete: number;
+    /**
+     * The status of the Power Virtual Machine instance snapshot.
+     */
+    status: string;
+    /**
+     * Detailed information for the last PVM instance snapshot action.
+     */
+    statusDetail: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+    /**
+     * A map of volume snapshots included in the Power Virtual Machine instance snapshot.
+     */
+    volumeSnapshots: {[key: string]: string};
+}
+
+export interface GetPiInstanceVirtualSerialNumber {
+    /**
+     * Description of the Virtual Serial Number
+     */
+    description: string;
+    /**
+     * Virtual serial number.
+     */
+    serial: string;
+    /**
+     * Software tier.
+     */
+    softwareTier: string;
+}
+
+export interface GetPiInstanceVolumesInstanceVolume {
+    /**
+     * Indicates if the volume is boot capable.
+     */
+    bootable: boolean;
+    /**
+     * Date volume was created.
+     */
+    creationDate: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The freeze time of remote copy.
+     */
+    freezeTime: string;
+    /**
+     * The hyper link of the volume.
+     */
+    href: string;
+    /**
+     * The unique identifier of the volume.
+     */
+    id: string;
+    /**
+     * The last updated date of the volume.
+     */
+    lastUpdateDate: string;
+    /**
+     * The name of the volume.
+     */
+    name: string;
+    /**
+     * Volume pool, name of storage pool where the volume is located.
+     */
+    pool: string;
+    /**
+     * Indicates if the volume should be replication enabled or not.
+     */
+    replicationEnabled: boolean;
+    /**
+     * List of replication sites for volume replication.
+     */
+    replicationSites: string[];
+    /**
+     * Indicates if the volume is shareable between VMs.
+     */
+    shreable: boolean;
+    /**
+     * The size of this volume in GB.
+     */
+    size: number;
+    /**
+     * The state of the volume.
+     */
+    state: string;
+    /**
+     * The disk type that is used for this volume.
+     */
+    type: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiInstancesPvmInstance {
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The dedicated host ID where the shared processor pool resides.
+     */
+    dedicatedHostId: string;
+    /**
+     * Effective processor compatibility mode.
+     */
+    effectiveProcessorCompatibilityMode: string;
+    /**
+     * Fault information.
+     */
+    fault: {[key: string]: string};
+    /**
+     * The health of the instance.
+     */
+    healthStatus: string;
+    /**
+     * The VTL license repository capacity TB value.
+     */
+    licenseRepositoryCapacity: number;
+    /**
+     * The maximum number of virtual cores that can be assigned without rebooting the instance.
+     */
+    maxVirtualCores: number;
+    /**
+     * The maximum amount of memory that can be allocated to the instance without shutting down or rebooting the LPAR.
+     */
+    maxmem: number;
+    /**
+     * The maximum number of processors that can be allocated to the instance without shutting down or rebooting the LPAR.
+     */
+    maxproc: number;
+    /**
+     * The amount of memory that is allocated to the instance.
+     */
+    memory: number;
+    /**
+     * The minimum number of virtual cores that can be assigned without rebooting the instance.
+     */
+    minVirtualCores: number;
+    /**
+     * The minimum amount of memory that must be allocated to the instance.
+     */
+    minmem: number;
+    /**
+     * The minimum number of processors that must be allocated to the instance.
+     */
+    minproc: number;
+    networks: outputs.GetPiInstancesPvmInstanceNetwork[];
+    /**
+     * The pinning policy of the instance.
+     */
+    pinPolicy: string;
+    /**
+     * The ID of the placement group that the instance is a member.
+     */
+    placementGroupId: string;
+    /**
+     * Preferred processor compatibility mode.
+     */
+    preferredProcessorCompatibilityMode: string;
+    /**
+     * The number of processors that are allocated to the instance.
+     */
+    processors: number;
+    /**
+     * The procurement type of the instance. Supported values are shared and dedicated.
+     */
+    proctype: string;
+    /**
+     * The unique identifier of the instance.
+     */
+    pvmInstanceId: string;
+    /**
+     * The name of the instance.
+     */
+    serverName: string;
+    /**
+     * The name of the shared processor pool for the instance.
+     */
+    sharedProcessorPool: string;
+    /**
+     * The ID of the shared processor pool for the instance.
+     */
+    sharedProcessorPoolId: string;
+    /**
+     * The status of the instance.
+     */
+    status: string;
+    /**
+     * The storage connection type.
+     */
+    storageConnection: string;
+    /**
+     * The storage Pool where server is deployed.
+     */
+    storagePool: string;
+    /**
+     * Indicates if all volumes attached to the server must reside in the same storage pool.
+     */
+    storagePoolAffinity: boolean;
+    /**
+     * The storage type where server is deployed.
+     */
+    storageType: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+    /**
+     * The virtual cores that are assigned to the instance.
+     */
+    virtualCoresAssigned: number;
+    /**
+     * Virtual Serial Number information
+     */
+    virtualSerialNumbers: outputs.GetPiInstancesPvmInstanceVirtualSerialNumber[];
+}
+
+export interface GetPiInstancesPvmInstanceNetwork {
+    /**
+     * The external IP address of the instance.
+     */
+    externalIp: string;
+    /**
+     * The IP address of the instance.
+     */
+    ip: string;
+    /**
+     * The MAC address of the instance.
+     */
+    macAddress: string;
+    /**
+     * The network ID of the instance.
+     */
+    networkId: string;
+    /**
+     * ID of the network interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * The network name of the instance.
+     */
+    networkName: string;
+    /**
+     * IDs of the network necurity groups that the network interface is a member of.
+     */
+    networkSecurityGroupIds: string[];
+    /**
+     * Links to the network security groups that the network interface is a member of.
+     */
+    networkSecurityGroupsHreves: string[];
+    /**
+     * The type of the network.
+     */
+    type: string;
+}
+
+export interface GetPiInstancesPvmInstanceVirtualSerialNumber {
+    /**
+     * Description of the Virtual Serial Number
+     */
+    description: string;
+    /**
+     * Virtual serial number.
+     */
+    serial: string;
+    /**
+     * Software tier.
+     */
+    softwareTier: string;
+}
+
+export interface GetPiKeysKey {
+    /**
+     * Date of SSH key creation.
+     */
+    creationDate: string;
+    /**
+     * Description of the ssh key.
+     */
+    description: string;
+    /**
+     * User defined name for the SSH key.
+     */
+    name: string;
+    /**
+     * Indicates if the current workspace owns the ssh key or not.
+     */
+    primaryWorkspace: boolean;
+    /**
+     * SSH RSA key.
+     */
+    sshKey: string;
+    /**
+     * Unique ID of SSH key.
+     */
+    sshKeyId: string;
+    /**
+     * Visibility of the ssh key.
+     */
+    visibility: string;
+}
+
+export interface GetPiNetworkAddressGroupMember {
+    /**
+     * The IP addresses in CIDR notation for example 192.168.1.5/32.
+     */
+    cidr: string;
+    /**
+     * The id of the Network Address Group member IP addresses.
+     */
+    id: string;
+}
+
+export interface GetPiNetworkAddressGroupsNetworkAddressGroup {
+    /**
+     * The Network Address Group's crn.
+     */
+    crn: string;
+    /**
+     * The id of the Network Address Group.
+     */
+    id: string;
+    /**
+     * The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
+     */
+    members: outputs.GetPiNetworkAddressGroupsNetworkAddressGroupMember[];
+    /**
+     * The name of the Network Address Group.
+     */
+    name: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiNetworkAddressGroupsNetworkAddressGroupMember {
+    /**
+     * The IP addresses in CIDR notation for example 192.168.1.5/32.
+     */
+    cidr: string;
+    /**
+     * The id of the Network Address Group member IP addresses.
+     */
+    id: string;
+}
+
+export interface GetPiNetworkInterfaceInstance {
+    /**
+     * Link to instance resource.
+     */
+    href: string;
+    /**
+     * The attached instance ID.
+     */
+    instanceId: string;
+}
+
+export interface GetPiNetworkInterfacesInterface {
+    /**
+     * The network interface's crn.
+     */
+    crn: string;
+    /**
+     * The unique network interface ID.
+     */
+    id: string;
+    /**
+     * The attached instance to this network interface.
+     */
+    instances: outputs.GetPiNetworkInterfacesInterfaceInstance[];
+    /**
+     * The ip address of this network interface.
+     */
+    ipAddress: string;
+    /**
+     * The mac address of the network interface.
+     */
+    macAddress: string;
+    /**
+     * Name of the network interface (not unique or indexable).
+     */
+    name: string;
+    /**
+     * ID of the network security group the network interface will be added to.
+     *
+     * @deprecated Deprecated, use networkSecurityGroupIds instead.
+     */
+    networkSecurityGroupId: string;
+    /**
+     * List of network security groups that the network interface is a member of.
+     */
+    networkSecurityGroupIds: string[];
+    /**
+     * The status of the network interface.
+     */
+    status: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiNetworkInterfacesInterfaceInstance {
+    /**
+     * Link to instance resource.
+     */
+    href: string;
+    /**
+     * The attached instance ID.
+     */
+    instanceId: string;
+}
+
+export interface GetPiNetworkNetworkAddressTranslation {
+    /**
+     * source IP address.
+     */
+    sourceIp: string;
+}
+
+export interface GetPiNetworkPeerExportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action: string;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate: string;
+    /**
+     * Direction of the filter.
+     */
+    direction: string;
+    /**
+     * Error description.
+     */
+    error: string;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge: number;
+    /**
+     * Priority or order of the filter.
+     */
+    index: number;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le: number;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix: string;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId: string;
+    /**
+     * Status of the route filter.
+     */
+    state: string;
+}
+
+export interface GetPiNetworkPeerImportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action: string;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate: string;
+    /**
+     * Direction of the filter.
+     */
+    direction: string;
+    /**
+     * Error description.
+     */
+    error: string;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge: number;
+    /**
+     * Priority or order of the filter.
+     */
+    index: number;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le: number;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix: string;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId: string;
+    /**
+     * Status of the route filter.
+     */
+    state: string;
+}
+
+export interface GetPiNetworkPeerInterfacesPeerInterface {
+    /**
+     * Device ID of the peer interface.
+     */
+    deviceId: string;
+    /**
+     * Peer interface name.
+     */
+    name: string;
+    /**
+     * Peer interface ID.
+     */
+    peerInterfaceId: string;
+    /**
+     * Type of peer interface.
+     */
+    peerType: string;
+    /**
+     * Port ID of the peer interface.
+     */
+    portId: string;
+}
+
+export interface GetPiNetworkPeersNetworkPeer {
+    /**
+     * Time stamp for create network peer.
+     */
+    creationDate: string;
+    /**
+     * ASN number at customer network side.
+     */
+    customerAsn: number;
+    /**
+     * IP address used for configuring customer network interface with network subnet mask.
+     */
+    customerCidr: string;
+    /**
+     * Default action for export route filter.
+     */
+    defaultExportRouteFilter: string;
+    /**
+     * Default action for import route filter.
+     */
+    defaultImportRouteFilter: string;
+    /**
+     * [Deprecated] Description of the network peer.
+     */
+    description: string;
+    /**
+     * Error description.
+     */
+    error: string;
+    /**
+     * List of export route filters.
+     */
+    exportRouteFilters: outputs.GetPiNetworkPeersNetworkPeerExportRouteFilter[];
+    /**
+     * ASN number at IBM PowerVS side.
+     */
+    ibmAsn: number;
+    /**
+     * IP address used for configuring IBM network interface with network subnet mask.
+     */
+    ibmCidr: string;
+    /**
+     * ID of the network peer.
+     */
+    id: string;
+    /**
+     * List of import route filters.
+     */
+    importRouteFilters: outputs.GetPiNetworkPeersNetworkPeerImportRouteFilter[];
+    /**
+     * User defined name.
+     */
+    name: string;
+    /**
+     * Peer interface id.
+     */
+    peerInterfaceId: string;
+    /**
+     * Status of the network peer.
+     */
+    state: string;
+    /**
+     * Type of the peer network.
+     */
+    type: string;
+    /**
+     * Time stamp for update network peer.
+     */
+    updatedDate: string;
+    /**
+     * A vlan configured at the customer network.
+     */
+    vlan: number;
+}
+
+export interface GetPiNetworkPeersNetworkPeerExportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action: string;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate: string;
+    /**
+     * Direction of the filter.
+     */
+    direction: string;
+    /**
+     * Error description.
+     */
+    error: string;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge: number;
+    /**
+     * Priority or order of the filter.
+     */
+    index: number;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le: number;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix: string;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId: string;
+    /**
+     * Status of the route filter.
+     */
+    state: string;
+}
+
+export interface GetPiNetworkPeersNetworkPeerImportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action: string;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate: string;
+    /**
+     * Direction of the filter.
+     */
+    direction: string;
+    /**
+     * Error description.
+     */
+    error: string;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge: number;
+    /**
+     * Priority or order of the filter.
+     */
+    index: number;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le: number;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix: string;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId: string;
+    /**
+     * Status of the route filter.
+     */
+    state: string;
+}
+
+export interface GetPiNetworkPortNetworkPort {
+    /**
+     * The description for the network port.
+     */
+    description: string;
+    /**
+     * Network port href.
+     */
+    href: string;
+    /**
+     * The IP address of the port.
+     */
+    ipaddress: string;
+    /**
+     * The MAC address of the port.
+     */
+    macAddress: string;
+    /**
+     * The MAC address of the port.
+     *
+     * @deprecated Deprecated, use macAddress instead
+     */
+    macaddress: string;
+    /**
+     * The ID of the port.
+     */
+    portid: string;
+    /**
+     * The public IP associated with the port.
+     */
+    publicIp: string;
+    /**
+     * The status of the port.
+     */
+    status: string;
+}
+
+export interface GetPiNetworkSecurityGroupMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id: string;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress: string;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target: string;
+    /**
+     * The type of member.
+     */
+    type: string;
+}
+
+export interface GetPiNetworkSecurityGroupRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action: string;
+    /**
+     * The list of destination port.
+     */
+    destinationPorts: outputs.GetPiNetworkSecurityGroupRuleDestinationPort[];
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id: string;
+    /**
+     * The list of protocol.
+     */
+    protocols: outputs.GetPiNetworkSecurityGroupRuleProtocol[];
+    /**
+     * List of remote.
+     */
+    remotes: outputs.GetPiNetworkSecurityGroupRuleRemote[];
+    /**
+     * List of source port
+     */
+    sourcePorts: outputs.GetPiNetworkSecurityGroupRuleSourcePort[];
+}
+
+export interface GetPiNetworkSecurityGroupRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface GetPiNetworkSecurityGroupRuleProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType: string;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags: outputs.GetPiNetworkSecurityGroupRuleProtocolTcpFlag[];
+    /**
+     * The protocol of the network traffic.
+     */
+    type: string;
+}
+
+export interface GetPiNetworkSecurityGroupRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag: string;
+}
+
+export interface GetPiNetworkSecurityGroupRuleRemote {
+    /**
+     * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id: string;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type: string;
+}
+
+export interface GetPiNetworkSecurityGroupRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroup {
+    /**
+     * The network security group's crn.
+     */
+    crn: string;
+    /**
+     * Indicates if the network security group is the default network security group in the workspace.
+     */
+    default: boolean;
+    /**
+     * The ID of the network security group.
+     */
+    id: string;
+    /**
+     * The list of IPv4 addresses and, or network interfaces in the network security group.
+     */
+    members: outputs.GetPiNetworkSecurityGroupsNetworkSecurityGroupMember[];
+    /**
+     * The name of the network security group.
+     */
+    name: string;
+    /**
+     * The list of rules in the network security group.
+     */
+    rules: outputs.GetPiNetworkSecurityGroupsNetworkSecurityGroupRule[];
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroupMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id: string;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress: string;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target: string;
+    /**
+     * The type of member.
+     */
+    type: string;
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroupRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action: string;
+    /**
+     * The list of destination port.
+     */
+    destinationPorts: outputs.GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleDestinationPort[];
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id: string;
+    /**
+     * The list of protocol.
+     */
+    protocols: outputs.GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleProtocol[];
+    /**
+     * List of remote.
+     */
+    remotes: outputs.GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleRemote[];
+    /**
+     * List of source port
+     */
+    sourcePorts: outputs.GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleSourcePort[];
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType: string;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags: outputs.GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleProtocolTcpFlag[];
+    /**
+     * The protocol of the network traffic.
+     */
+    type: string;
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag: string;
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleRemote {
+    /**
+     * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id: string;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type: string;
+}
+
+export interface GetPiNetworkSecurityGroupsNetworkSecurityGroupRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface GetPiNetworksNetwork {
+    /**
+     * Indicates if the network is advertised.
+     */
+    advertise: string;
+    /**
+     * Indicates if ARP Broadcast is enabled.
+     */
+    arpBroadcast: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * Indicates if the network DHCP Managed.
+     */
+    dhcpManaged: boolean;
+    /**
+     * The hyper link of a network.
+     */
+    href: string;
+    /**
+     * Maximum Transmission Unit option of the network.
+     */
+    mtu: number;
+    /**
+     * The name of a network.
+     */
+    name: string;
+    /**
+     * The unique identifier of a network.
+     */
+    networkId: string;
+    /**
+     * Network Peer ID.
+     *
+     * @deprecated This field is deprecated
+     */
+    peerId: string;
+    /**
+     * The type of network.
+     */
+    type: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+    /**
+     * The VLAN ID that the network is connected to.
+     */
+    vlanId: number;
+}
+
+export interface GetPiPlacementGroupsPlacementGroup {
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The ID of the placement group.
+     */
+    id: string;
+    /**
+     * List of server instances IDs that are members of the placement group.
+     */
+    members: string[];
+    /**
+     * The name of the placement group.
+     */
+    name: string;
+    /**
+     * The value of the group's affinity policy. Valid values are affinity and anti-affinity.
+     */
+    policy: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiPvmSnapshotsPvmSnapshot {
+    /**
+     * Action performed on the instance snapshot.
+     */
+    action: string;
+    /**
+     * Date of snapshot creation.
+     */
+    creationDate: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The description of the snapshot.
+     */
+    description: string;
+    /**
+     * The unique identifier of the Power Virtual Machine instance snapshot.
+     */
+    id: string;
+    /**
+     * Date of last update.
+     */
+    lastUpdatedDate: string;
+    /**
+     * The name of the Power Virtual Machine instance snapshot.
+     */
+    name: string;
+    /**
+     * The snapshot completion percentage.
+     */
+    percentComplete: number;
+    /**
+     * The status of the Power Virtual Machine instance snapshot.
+     */
+    status: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+    /**
+     * A map of volume snapshots included in the Power Virtual Machine instance snapshot.
+     */
+    volumeSnapshots: {[key: string]: string};
+}
+
+export interface GetPiRouteReportRoute {
+    /**
+     * The destination CIDR.
+     */
+    destination: string;
+    /**
+     * The route type.
+     */
+    type: string;
+}
+
+export interface GetPiRoutesRoute {
+    /**
+     * The route action.
+     */
+    action: string;
+    /**
+     * Indicates if the route is advertised.
+     */
+    advertise: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The route destination.
+     */
+    destination: string;
+    /**
+     * The destination type.
+     */
+    destinationType: string;
+    /**
+     * Indicates if the route should be enabled in the fabric.
+     */
+    enabled: boolean;
+    /**
+     * Name of the route.
+     */
+    name: string;
+    /**
+     * The next hop in the route.
+     */
+    nextHop: string;
+    /**
+     * The next hop type.
+     */
+    nextHopType: string;
+    /**
+     * Unique ID of the route.
+     */
+    routeId: string;
+    /**
+     * The state of the route.
+     */
+    state: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiSapProfilesProfile {
+    /**
+     * Has certification been performed on profile.
+     */
+    certified: boolean;
+    /**
+     * Amount of cores.
+     */
+    cores: number;
+    /**
+     * System to use if not provided
+     */
+    defaultSystem: string;
+    /**
+     * Requires full system for deployment.
+     */
+    fullSystemProfile: boolean;
+    /**
+     * Amount of memory (in GB).
+     */
+    memory: number;
+    /**
+     * SAP Profile ID.
+     */
+    profileId: string;
+    /**
+     * SAP Application Performance Standard
+     */
+    saps: number;
+    /**
+     * List of supported systems.
+     */
+    supportedSystems: string[];
+    /**
+     * Type of profile.
+     */
+    type: string;
+    /**
+     * Workload Type.
+     */
+    workloadTypes: string[];
+}
+
+export interface GetPiSharedProcessorPoolInstance {
+    /**
+     * Availability zone for the server instances.
+     */
+    availabilityZone: string;
+    /**
+     * The amount of cpus for the server instance.
+     */
+    cpus: number;
+    /**
+     * The server instance ID.
+     */
+    id: string;
+    /**
+     * The amount of memory for the server instance.
+     */
+    memory: number;
+    /**
+     * The server instance name.
+     */
+    name: string;
+    /**
+     * Status of the instance.
+     */
+    status: string;
+    /**
+     * Identifies if uncapped or not.
+     */
+    uncapped: boolean;
+    /**
+     * The amout of vcpus for the server instance.
+     */
+    vcpus: number;
+}
+
+export interface GetPiSharedProcessorPoolsSharedProcessorPool {
+    /**
+     * The allocated cores in the shared processor pool.
+     */
+    allocatedCores: number;
+    /**
+     * The available cores in the shared processor pool.
+     */
+    availableCores: number;
+    /**
+     * Date of shared processor pool creation.
+     */
+    creationDate: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The dedicated host ID where the shared processor pool resides.
+     */
+    dedicatedHostId: string;
+    /**
+     * The host ID where the shared processor pool resides.
+     */
+    hostId: number;
+    /**
+     * The name of the shared processor pool.
+     */
+    name: string;
+    /**
+     * The amount of reserved cores for the shared processor pool.
+     */
+    reservedCores: number;
+    /**
+     * The shared processor pool's unique ID.
+     */
+    sharedProcessorPoolId: string;
+    /**
+     * The status of the shared processor pool.
+     */
+    status: string;
+    /**
+     * The status details of the shared processor pool.
+     */
+    statusDetail: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiSoftwareTiersSupportedSoftwareTier {
+    /**
+     * Software tier.
+     */
+    softwareTier: string;
+    /**
+     * List of supported systems.
+     */
+    supportedSystems: any[];
+}
+
+export interface GetPiSppPlacementGroupsSppPlacementGroup {
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The list of shared processor pool IDs that are members of the shared processor pool placement group.
+     */
+    members: string[];
+    /**
+     * User defined name for the shared processor pool placement group.
+     */
+    name: string;
+    /**
+     * The value of the group's affinity policy. Valid values are affinity and anti-affinity.
+     */
+    policy: string;
+    /**
+     * The ID of the shared processor pool placement group.
+     */
+    sppPlacementGroupId: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface GetPiStoragePoolsCapacityStoragePoolsCapacity {
+    /**
+     * Maximum allocation storage size (GB).
+     */
+    maxAllocationSize: number;
+    /**
+     * The pool name.
+     */
+    poolName: string;
+    /**
+     * Replication status of the storage pool.
+     */
+    replicationEnabled: boolean;
+    /**
+     * Storage type of the storage pool.
+     */
+    storageType: string;
+    /**
+     * Total pool capacity (GB).
+     */
+    totalCapacity: number;
+}
+
+export interface GetPiStorageTiersRegionStorageTier {
+    /**
+     * Description of the storage tier label.
+     */
+    description: string;
+    /**
+     * Name of the storage tier.
+     */
+    name: string;
+    /**
+     * State of the storage tier (active or inactive).
+     */
+    state: string;
+}
+
+export interface GetPiStorageTypeCapacityStoragePoolsCapacity {
+    /**
+     * Maximum allocation storage size (GB).
+     */
+    maxAllocationSize: number;
+    /**
+     * The pool name
+     */
+    poolName: string;
+    /**
+     * Storage type of the storage pool.
+     */
+    storageType: string;
+    /**
+     * Total pool capacity (GB).
+     */
+    totalCapacity: number;
+}
+
+export interface GetPiStorageTypesCapacityStorageTypesCapacity {
+    /**
+     * Maximum storage allocation.
+     */
+    maxStorageAllocation: {[key: string]: string};
+    /**
+     * List of storage types capacity.
+     */
+    storagePoolsCapacities: outputs.GetPiStorageTypesCapacityStorageTypesCapacityStoragePoolsCapacity[];
+    /**
+     * The storage type.
+     */
+    storageType: string;
+}
+
+export interface GetPiStorageTypesCapacityStorageTypesCapacityStoragePoolsCapacity {
+    /**
+     * Maximum allocation storage size (GB).
+     */
+    maxAllocationSize: number;
+    /**
+     * The pool name.
+     */
+    poolName: string;
+    /**
+     * Storage type of the storage pool.
+     */
+    storageType: string;
+    /**
+     * Total pool capacity (GB).
+     */
+    totalCapacity: number;
+}
+
+export interface GetPiSystemPoolsSystemPool {
+    /**
+     * Advertised capacity cores and memory (GB).
+     */
+    capacity: {[key: string]: string};
+    /**
+     * Processor to Memory (GB) Ratio.
+     */
+    coreMemoryRatio: number;
+    /**
+     * Maximum configurable cores and memory (GB) (aggregated from all hosts).
+     */
+    maxAvailable: {[key: string]: string};
+    /**
+     * Maximum configurable cores available combined with available memory of that host.
+     */
+    maxCoresAvailable: {[key: string]: string};
+    /**
+     * Maximum configurable memory available combined with available cores of that host.
+     */
+    maxMemoryAvailable: {[key: string]: string};
+    /**
+     * The min-max-default allocation percentage of shared core per vCPU.
+     */
+    sharedCoreRatio: {[key: string]: string};
+    /**
+     * The system pool name
+     */
+    systemPoolName: string;
+    /**
+     * The Datacenter list of servers and their available resources.
+     */
+    systems: outputs.GetPiSystemPoolsSystemPoolSystem[];
+    /**
+     * Type of system hardware.
+     */
+    type: string;
+}
+
+export interface GetPiSystemPoolsSystemPoolSystem {
+    /**
+     * The host available Processor units.
+     */
+    cores: string;
+    /**
+     * The host identifier.
+     */
+    id: string;
+    /**
+     * The host available RAM memory in GiB.
+     */
+    memory: string;
+}
+
+export interface GetPiTenantCloudInstance {
+    /**
+     * The unique identifier of the cloud instance.
+     */
+    cloudInstanceId: string;
+    /**
+     * The region of the cloud instance.
+     */
+    region: string;
+}
+
+export interface GetPiVirtualSerialNumbersVirtualSerialNumber {
+    /**
+     * Description of virtual serial number.
+     */
+    description: string;
+    /**
+     * ID of PVM instance virtual serial number is attached to.
+     */
+    instanceId: string;
+    /**
+     * Virtual Serial Number.
+     */
+    serial: string;
+    /**
+     * Software tier for virtual serial number.
+     */
+    softwareTier: string;
+}
+
+export interface GetPiVolumeCloneCloneVolume {
+    /**
+     * The ID of the newly cloned volume.
+     */
+    cloneVolumeId: string;
+    /**
+     * The ID of the source volume.
+     */
+    sourceVolumeId: string;
+}
+
+export interface GetPiVolumeFlashCopyMappingsFlashCopyMapping {
+    /**
+     * The rate of flash copy operation of a volume.
+     */
+    copyRate: number;
+    /**
+     * The flash copy name of the volume.
+     */
+    flashCopyName: string;
+    /**
+     * The progress of flash copy operation.
+     */
+    progress: number;
+    /**
+     * The name of the source volume.
+     */
+    sourceVolumeName: string;
+    /**
+     * The start time of flash copy operation.
+     */
+    startTime: string;
+    /**
+     * The copy status of a volume.
+     */
+    status: string;
+    /**
+     * The name of the target volume.
+     */
+    targetVolumeName: string;
+}
+
+export interface GetPiVolumeGroupDetailsStatusDescriptionError {
+    /**
+     * The volume group error key.
+     */
+    key: string;
+    /**
+     * The failure message providing more details about the error key.
+     */
+    message: string;
+    /**
+     * List of volume IDs, which failed to be added/removed to/from the volume group, with the given error.
+     */
+    volumeIds: string[];
+}
+
+export interface GetPiVolumeGroupRemoteCopyRelationshipsRemoteCopyRelationship {
+    /**
+     * The name of the volume that is acting as the auxiliary change volume for the relationship.
+     */
+    auxiliaryChangedVolumeName: string;
+    /**
+     * The auxiliary volume name at storage host level.
+     */
+    auxiliaryVolumeName: string;
+    /**
+     * The consistency group name if volume is a part of volume group.
+     */
+    consistencyGroupName: string;
+    /**
+     * The copy type.
+     */
+    copyType: string;
+    /**
+     * The type of cycling mode used.
+     */
+    cyclingMode: string;
+    /**
+     * The freeze time of remote copy relationship.
+     */
+    freezeTime: string;
+    /**
+     * The name of the volume that is acting as the master change volume for the relationship.
+     */
+    masterChangedVolumeName: string;
+    /**
+     * The master volume name at storage host level.
+     */
+    masterVolumeName: string;
+    /**
+     * The remote copy relationship name.
+     */
+    name: string;
+    /**
+     * Indicates whether master/aux volume is playing the primary role.
+     */
+    primaryRole: string;
+    /**
+     * The relationship progress.
+     */
+    progress: number;
+    /**
+     * The remote copy relationship ID.
+     */
+    remoteCopyId: string;
+    /**
+     * The relationship state.
+     */
+    state: string;
+    /**
+     * Indicates whether the relationship is synchronized.
+     */
+    synchronized: string;
+}
+
+export interface GetPiVolumeGroupStatusDescriptionError {
+    /**
+     * The volume group error key.
+     */
+    key: string;
+    /**
+     * The failure message providing more details about the error key.
+     */
+    message: string;
+    /**
+     * List of volume IDs, which failed to be added/removed to/from the volume group, with the given error.
+     */
+    volumeIds: string[];
+}
+
+export interface GetPiVolumeGroupsDetailsVolumeGroup {
+    /**
+     * Indicates if the volume is auxiliary or not.
+     */
+    auxiliary: boolean;
+    /**
+     * The name of consistency group at storage controller level.
+     */
+    consistencyGroupName: string;
+    /**
+     * The unique identifier of the volume group.
+     */
+    id: string;
+    /**
+     * Indicates the replication sites of the volume group.
+     */
+    replicationSites: string[];
+    /**
+     * The replication status of volume group.
+     */
+    replicationStatus: string;
+    /**
+     * The status of the volume group.
+     */
+    status: string;
+    /**
+     * The status details of the volume group.
+     */
+    statusDescriptionErrors: outputs.GetPiVolumeGroupsDetailsVolumeGroupStatusDescriptionError[];
+    /**
+     * Indicates the storage pool of the volume group
+     */
+    storagePool: string;
+    /**
+     * The name of the volume group.
+     */
+    volumeGroupName: string;
+    /**
+     * List of volume IDs, member of volume group.
+     */
+    volumeIds: string[];
+}
+
+export interface GetPiVolumeGroupsDetailsVolumeGroupStatusDescriptionError {
+    /**
+     * The volume group error key.
+     */
+    key: string;
+    /**
+     * The failure message providing more details about the error key.
+     */
+    message: string;
+    /**
+     * List of volume IDs, which failed to be added/removed to/from the volume group, with the given error.
+     */
+    volumeIds: string[];
+}
+
+export interface GetPiVolumeGroupsVolumeGroup {
+    /**
+     * Indicates if the volume is auxiliary or not.
+     */
+    auxiliary: boolean;
+    /**
+     * The name of consistency group at storage controller level.
+     */
+    consistencyGroupName: string;
+    /**
+     * The unique identifier of the volume group.
+     */
+    id: string;
+    /**
+     * Indicates the replication sites of the volume group.
+     */
+    replicationSites: string[];
+    /**
+     * The replication status of volume group.
+     */
+    replicationStatus: string;
+    /**
+     * The status of the volume group.
+     */
+    status: string;
+    /**
+     * The status details of the volume group.
+     */
+    statusDescriptionErrors: outputs.GetPiVolumeGroupsVolumeGroupStatusDescriptionError[];
+    /**
+     * Indicates the storage pool of the volume group
+     */
+    storagePool: string;
+    /**
+     * The name of the volume group.
+     */
+    volumeGroupName: string;
+}
+
+export interface GetPiVolumeGroupsVolumeGroupStatusDescriptionError {
+    /**
+     * The volume group error key.
+     */
+    key: string;
+    /**
+     * The failure message providing more details about the error key.
+     */
+    message: string;
+    /**
+     * List of volume IDs, which failed to be added/removed to/from the volume group, with the given error.
+     */
+    volumeIds: string[];
+}
+
+export interface GetPiVolumeOnboardingResultsVolumeOnboardingFailure {
+    /**
+     * The failure reason for the volumes which have failed to be onboarded.
+     */
+    failureMessage: string;
+    /**
+     * List of volumes which have failed to be onboarded.
+     */
+    volumes: string[];
+}
+
+export interface GetPiVolumeOnboardingsOnboarding {
+    /**
+     * The description of the volume onboarding operation.
+     */
+    description: string;
+    /**
+     * The type of cycling mode used.
+     */
+    id: string;
+    /**
+     * List of volumes requested to be onboarded.
+     */
+    inputVolumes: string[];
+    /**
+     * The status of volume onboarding operation.
+     */
+    status: string;
+}
+
+export interface GetPiVolumeSnapshotsVolumeSnapshot {
+    /**
+     * The date and time when the volume snapshot was created.
+     */
+    creationDate: string;
+    /**
+     * The CRN of the volume snapshot.
+     *
+     * @deprecated This field is deprecated.
+     */
+    crn: string;
+    /**
+     * The snapshot UUID.
+     */
+    id: string;
+    /**
+     * The volume snapshot name.
+     */
+    name: string;
+    /**
+     * The size of the volume snapshot, in gibibytes (GiB).
+     */
+    size: number;
+    /**
+     * The status for the volume snapshot.
+     */
+    status: string;
+    /**
+     * The date and time when the volume snapshot was last updated.
+     */
+    updatedDate: string;
+    /**
+     * The volume UUID associated with the snapshot.
+     */
+    volumeId: string;
+}
+
+export interface GetPiVolumesVolume {
+    /**
+     * Indicates if the volume is auxiliary or not.
+     */
+    auxiliary: boolean;
+    /**
+     * The auxiliary volume name.
+     */
+    auxiliaryVolumeName: string;
+    /**
+     * Indicates if the volume is boot capable.
+     */
+    bootable: boolean;
+    /**
+     * Consistency group name if volume is a part of volume group.
+     */
+    consistencyGroupName: string;
+    /**
+     * Date volume was created.
+     */
+    creationDate: string;
+    /**
+     * The CRN of this resource.
+     */
+    crn: string;
+    /**
+     * The disk type that is used for the volume.
+     */
+    diskType: string;
+    /**
+     * The freeze time of remote copy.
+     */
+    freezeTime: string;
+    /**
+     * The volume group id in which the volume belongs.
+     */
+    groupId: string;
+    /**
+     * The unique identifier of the volume.
+     */
+    id: string;
+    /**
+     * Amount of iops assigned to the volume
+     */
+    ioThrottleRate: string;
+    /**
+     * The last updated date of the volume.
+     */
+    lastUpdateDate: string;
+    /**
+     * The master volume name.
+     */
+    masterVolumeName: string;
+    /**
+     * Mirroring state for replication enabled volume.
+     */
+    mirroringState: string;
+    /**
+     * The name of the volume.
+     */
+    name: string;
+    /**
+     * Indicates if the volume does not exist on storage controller.
+     */
+    outOfBandDeleted: boolean;
+    /**
+     * Indicates whether master/auxiliary volume is playing the primary role.
+     */
+    primaryRole: string;
+    /**
+     * Indicates if the volume should be replication enabled or not.
+     */
+    replicationEnabled: boolean;
+    /**
+     * List of replication sites for volume replication.
+     */
+    replicationSites: string[];
+    /**
+     * The replication status of the volume.
+     */
+    replicationStatus: string;
+    /**
+     * The replication type of the volume, metro or global.
+     */
+    replicationType: string;
+    /**
+     * Indicates if the volume is shareable between VMs.
+     */
+    shreable: boolean;
+    /**
+     * The size of the volume in GB.
+     */
+    size: number;
+    /**
+     * The state of the volume.
+     */
+    state: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+    /**
+     * The name of storage pool where the volume is located.
+     */
+    volumePool: string;
+    /**
+     * The name of storage template used to create the volume.
+     */
+    volumeType: string;
+    /**
+     * The world wide name of the volume.
+     */
+    wwn: string;
+}
+
+export interface GetPiWorkspacePiWorkspaceDetail {
+    /**
+     * Workspace creation date.
+     */
+    creationDate: string;
+    /**
+     * The Workspace crn.
+     */
+    crn: string;
+    /**
+     * Network security groups configuration.
+     */
+    networkSecurityGroups: outputs.GetPiWorkspacePiWorkspaceDetailNetworkSecurityGroup[];
+    powerEdgeRouters: outputs.GetPiWorkspacePiWorkspaceDetailPowerEdgeRouter[];
+}
+
+export interface GetPiWorkspacePiWorkspaceDetailNetworkSecurityGroup {
+    /**
+     * The state of a Network Security Groups configuration.
+     */
+    state: string;
+}
+
+export interface GetPiWorkspacePiWorkspaceDetailPowerEdgeRouter {
+    /**
+     * The migration status of a Power Edge Router.
+     */
+    migrationStatus: string;
+    /**
+     * The state of a Power Edge Router.
+     */
+    state: string;
+    /**
+     * The Power Edge Router type.
+     */
+    type: string;
+}
+
+export interface GetPiWorkspacesWorkspace {
+    /**
+     * Workspace Capabilities.
+     */
+    piWorkspaceCapabilities: {[key: string]: boolean};
+    piWorkspaceDetails: outputs.GetPiWorkspacesWorkspacePiWorkspaceDetail[];
+    /**
+     * Workspace ID.
+     */
+    piWorkspaceId: string;
+    /**
+     * Workspace location.
+     */
+    piWorkspaceLocation: {[key: string]: string};
+    /**
+     * Workspace name.
+     */
+    piWorkspaceName: string;
+    /**
+     * Workspace status, active, critical, failed, provisioning.
+     */
+    piWorkspaceStatus: string;
+    /**
+     * Workspace type, off-premises or on-premises.
+     */
+    piWorkspaceType: string;
+}
+
+export interface GetPiWorkspacesWorkspacePiWorkspaceDetail {
+    /**
+     * Workspace creation date.
+     */
+    creationDate: string;
+    /**
+     * The Workspace crn.
+     */
+    crn: string;
+    /**
+     * Network security groups configuration.
+     */
+    networkSecurityGroups: outputs.GetPiWorkspacesWorkspacePiWorkspaceDetailNetworkSecurityGroup[];
+    powerEdgeRouters: outputs.GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouter[];
+}
+
+export interface GetPiWorkspacesWorkspacePiWorkspaceDetailNetworkSecurityGroup {
+    /**
+     * The state of a Network Security Groups configuration.
+     */
+    state: string;
+}
+
+export interface GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouter {
+    /**
+     * The migration status of a Power Edge Router.
+     */
+    migrationStatus: string;
+    /**
+     * The state of a Power Edge Router.
+     */
+    state: string;
+    /**
+     * The Power Edge Router type.
+     */
+    type: string;
+}
+
 export interface IamAccessGroupDynamicRuleCondition {
     claim: string;
     operator: string;
@@ -35168,6 +36749,846 @@ export interface IsVpnServerVpcDeleted {
      * Link to documentation about deleted resources.
      */
     moreInfo: string;
+}
+
+export interface PiDhcpLease {
+    /**
+     * The IP of the PVM Instance
+     */
+    instanceIp: string;
+    /**
+     * The MAC Address of the PVM Instance
+     */
+    instanceMac: string;
+}
+
+export interface PiHostCapacity {
+    /**
+     * Number of cores currently available.
+     */
+    availableCores: number;
+    /**
+     * Amount of memory currently available (in GB).
+     */
+    availableMemory: number;
+    /**
+     * Number of cores reserved for system use.
+     */
+    reservedCore: number;
+    /**
+     * Amount of memory reserved for system use (in GB).
+     */
+    reservedMemory: number;
+    /**
+     * Total number of cores of the host.
+     */
+    totalCore: number;
+    /**
+     * Total amount of memory of the host (in GB).
+     */
+    totalMemory: number;
+    /**
+     * Number of cores in use on the host.
+     */
+    usedCore: number;
+    /**
+     * Amount of memory used on the host (in GB).
+     */
+    usedMemory: number;
+}
+
+export interface PiHostGroupPiHost {
+    /**
+     * Name of the host chosen by the user.
+     */
+    displayName: string;
+    /**
+     * System type.
+     */
+    sysType: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags?: string[];
+}
+
+export interface PiHostGroupPiSecondary {
+    /**
+     * Name of the host group to create in the secondary workspace.
+     */
+    name?: string;
+    /**
+     * ID of the workspace to share the host group with.
+     */
+    workspace: string;
+}
+
+export interface PiHostPiHost {
+    /**
+     * Name of the host chosen by the user.
+     */
+    displayName: string;
+    /**
+     * System type.
+     */
+    sysType: string;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags: string[];
+}
+
+export interface PiImagePiImageImportDetails {
+    /**
+     * Origin of the license of the product.
+     */
+    licenseType: string;
+    /**
+     * Product within the image.
+     */
+    product: string;
+    /**
+     * Vendor supporting the product.
+     */
+    vendor: string;
+}
+
+export interface PiInstancePiDeploymentTarget {
+    /**
+     * The uuid of the host group or host.
+     */
+    id: string;
+    /**
+     * The deployment target type. Supported values are `host` and `hostGroup`.
+     */
+    type: string;
+}
+
+export interface PiInstancePiNetwork {
+    externalIp: string;
+    ipAddress: string;
+    macAddress: string;
+    networkId: string;
+    /**
+     * ID of the network interface.
+     */
+    networkInterfaceId: string;
+    networkName: string;
+    /**
+     * Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+     */
+    networkSecurityGroupIds: string[];
+    /**
+     * Links to the network security groups that the network interface is a member of.
+     */
+    networkSecurityGroupsHreves: string[];
+    type: string;
+}
+
+export interface PiInstancePiVirtualSerialNumber {
+    /**
+     * Description of the Virtual Serial Number
+     */
+    description?: string;
+    /**
+     * Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+     */
+    serial: string;
+    /**
+     * Software tier. Enum: ["P05", "P10", "P20", "P30"].
+     */
+    softwareTier: string;
+}
+
+export interface PiNetworkAddressGroupMember {
+    /**
+     * The IP addresses in CIDR notation for example 192.168.1.5/32.
+     */
+    cidr: string;
+    /**
+     * The id of the Network Address Group member IP addresses.
+     */
+    id: string;
+}
+
+export interface PiNetworkAddressGroupMemberMember {
+    /**
+     * The IP addresses in CIDR notation for example 192.168.1.5/32.
+     */
+    cidr: string;
+    /**
+     * The id of the Network Address Group member IP addresses.
+     */
+    id: string;
+}
+
+export interface PiNetworkInterfaceInstance {
+    /**
+     * Link to instance resource.
+     */
+    href: string;
+    /**
+     * The attached instance ID.
+     */
+    instanceId: string;
+}
+
+export interface PiNetworkNetworkAddressTranslation {
+    /**
+     * source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+     *
+     * @deprecated This field is deprecated
+     */
+    sourceIp: string;
+}
+
+export interface PiNetworkPeerExportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action: string;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate: string;
+    /**
+     * Direction of the filter.
+     */
+    direction: string;
+    /**
+     * Error description.
+     */
+    error: string;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge: number;
+    /**
+     * Priority or order of the filter.
+     */
+    index: number;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le: number;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix: string;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId: string;
+    /**
+     * Status of the route filter.
+     */
+    state: string;
+}
+
+export interface PiNetworkPeerImportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action: string;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate: string;
+    /**
+     * Direction of the filter.
+     */
+    direction: string;
+    /**
+     * Error description.
+     */
+    error: string;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge: number;
+    /**
+     * Priority or order of the filter.
+     */
+    index: number;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le: number;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix: string;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId: string;
+    /**
+     * Status of the route filter.
+     */
+    state: string;
+}
+
+export interface PiNetworkPiIpaddressRange {
+    /**
+     * The ending ip address.
+     */
+    piEndingIpAddress: string;
+    /**
+     * The staring ip address.
+     */
+    piStartingIpAddress: string;
+}
+
+export interface PiNetworkPiNetworkPeer {
+    /**
+     * ID of the network peer.
+     *
+     * @deprecated This field is deprecated
+     */
+    id: string;
+    /**
+     * Contains the network address translation Details.
+     *
+     * @deprecated This field is deprecated
+     */
+    networkAddressTranslation?: outputs.PiNetworkPiNetworkPeerNetworkAddressTranslation;
+    /**
+     * Type of the network peer.
+     *
+     * @deprecated This field is deprecated
+     */
+    type?: string;
+}
+
+export interface PiNetworkPiNetworkPeerNetworkAddressTranslation {
+    /**
+     * source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+     *
+     * @deprecated This field is deprecated
+     */
+    sourceIp: string;
+}
+
+export interface PiNetworkSecurityGroupMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id: string;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress: string;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target: string;
+    /**
+     * The type of member.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupMemberMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id: string;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress: string;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target: string;
+    /**
+     * The type of member.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupMemberRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action: string;
+    /**
+     * The list of destination port.
+     */
+    destinationPorts: outputs.PiNetworkSecurityGroupMemberRuleDestinationPort[];
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id: string;
+    /**
+     * The list of protocol.
+     */
+    protocols: outputs.PiNetworkSecurityGroupMemberRuleProtocol[];
+    /**
+     * List of remote.
+     */
+    remotes: outputs.PiNetworkSecurityGroupMemberRuleRemote[];
+    /**
+     * List of source port
+     */
+    sourcePorts: outputs.PiNetworkSecurityGroupMemberRuleSourcePort[];
+}
+
+export interface PiNetworkSecurityGroupMemberRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleProtocol {
+    /**
+     * IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType: string;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags: outputs.PiNetworkSecurityGroupMemberRuleProtocolTcpFlag[];
+    /**
+     * The protocol of the network traffic.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag: string;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleRemote {
+    /**
+     * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id: string;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface PiNetworkSecurityGroupRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action: string;
+    /**
+     * The list of destination port.
+     */
+    destinationPorts: outputs.PiNetworkSecurityGroupRuleDestinationPort[];
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id: string;
+    /**
+     * The list of protocol.
+     */
+    protocols: outputs.PiNetworkSecurityGroupRuleProtocol[];
+    /**
+     * List of remote.
+     */
+    remotes: outputs.PiNetworkSecurityGroupRuleRemote[];
+    /**
+     * ist of source port
+     */
+    sourcePorts: outputs.PiNetworkSecurityGroupRuleSourcePort[];
+}
+
+export interface PiNetworkSecurityGroupRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface PiNetworkSecurityGroupRuleMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id: string;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress: string;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target: string;
+    /**
+     * The type of member.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupRulePiDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: number;
+}
+
+export interface PiNetworkSecurityGroupRulePiDestinationPorts {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: number;
+}
+
+export interface PiNetworkSecurityGroupRulePiProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType?: string;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags?: outputs.PiNetworkSecurityGroupRulePiProtocolTcpFlag[];
+    /**
+     * The protocol of the network traffic.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupRulePiProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag: string;
+}
+
+export interface PiNetworkSecurityGroupRulePiRemote {
+    /**
+     * The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id?: string;
+    /**
+     * The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+     */
+    type?: string;
+}
+
+export interface PiNetworkSecurityGroupRulePiSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: number;
+}
+
+export interface PiNetworkSecurityGroupRulePiSourcePorts {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: number;
+}
+
+export interface PiNetworkSecurityGroupRuleProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType: string;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags: outputs.PiNetworkSecurityGroupRuleProtocolTcpFlag[];
+    /**
+     * The protocol of the network traffic.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag: string;
+}
+
+export interface PiNetworkSecurityGroupRuleRemote {
+    /**
+     * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id: string;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupRuleRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action: string;
+    /**
+     * Destination port ranges.
+     */
+    destinationPorts: outputs.PiNetworkSecurityGroupRuleRuleDestinationPort[];
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id: string;
+    /**
+     * The list of protocol.
+     */
+    protocols: outputs.PiNetworkSecurityGroupRuleRuleProtocol[];
+    /**
+     * List of remote.
+     */
+    remotes: outputs.PiNetworkSecurityGroupRuleRuleRemote[];
+    /**
+     * Source port ranges.
+     */
+    sourcePorts: outputs.PiNetworkSecurityGroupRuleRuleSourcePort[];
+}
+
+export interface PiNetworkSecurityGroupRuleRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType: string;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags: outputs.PiNetworkSecurityGroupRuleRuleProtocolTcpFlag[];
+    /**
+     * The protocol of the network traffic.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag: string;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleRemote {
+    /**
+     * The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id: string;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type: string;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface PiNetworkSecurityGroupRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum: number;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum: number;
+}
+
+export interface PiSharedProcessorPoolInstance {
+    /**
+     * Availability zone for the server instances.
+     */
+    availabilityZone: string;
+    /**
+     * The amount of cpus for the server instance.
+     */
+    cpus: number;
+    /**
+     * The server instance ID.
+     */
+    id: string;
+    /**
+     * The amount of memory for the server instance.
+     */
+    memory: number;
+    /**
+     * The server instance name.
+     */
+    name: string;
+    /**
+     * Status of the instance.
+     */
+    status: string;
+    /**
+     * Identifies if uncapped or not.
+     */
+    uncapped: boolean;
+    /**
+     * The amout of vcpus for the server instance.
+     */
+    vcpus: number;
+}
+
+export interface PiVolumeCloneCloneVolume {
+    /**
+     * The ID of the newly cloned volume.
+     */
+    cloneVolumeId: string;
+    /**
+     * The ID of the source volume.
+     */
+    sourceVolumeId: string;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupAction {
+    /**
+     * Performs reset action on the volume group to update its status value.
+     */
+    reset?: outputs.PiVolumeGroupActionPiVolumeGroupActionReset;
+    /**
+     * Performs start action on a volume group.
+     */
+    start?: outputs.PiVolumeGroupActionPiVolumeGroupActionStart;
+    /**
+     * Performs stop action on a volume group.
+     */
+    stop?: outputs.PiVolumeGroupActionPiVolumeGroupActionStop;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupActionReset {
+    /**
+     * New status to be set for a volume group.
+     */
+    status: string;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupActionStart {
+    /**
+     * Indicates the source of the action `master` or `aux`.
+     */
+    source: string;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupActionStop {
+    /**
+     * Indicates the access mode of aux volumes.
+     */
+    access: boolean;
+}
+
+export interface PiVolumeGroupStatusDescriptionError {
+    /**
+     * The volume group error key.
+     */
+    key: string;
+    /**
+     * The failure message providing more details about the error key.
+     */
+    message: string;
+    /**
+     * List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+     */
+    volumeIds: string[];
+}
+
+export interface PiVolumeOnboardingPiOnboardingVolume {
+    /**
+     * List auxiliary volumes.
+     */
+    piAuxiliaryVolumes?: outputs.PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume[];
+    /**
+     * The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+     */
+    piSourceCrn: string;
+}
+
+export interface PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume {
+    /**
+     * The auxiliary volume name.
+     */
+    piAuxiliaryVolumeName: string;
+    /**
+     * The display name of auxiliary volume which is to be onboarded.
+     */
+    piDisplayName?: string;
+}
+
+export interface PiVolumeOnboardingResultsVolumeOnboardingFailure {
+    /**
+     * The failure reason for the volumes which have failed to be onboarded
+     */
+    failureMessage: string;
+    /**
+     * List of volumes which have failed to be onboarded
+     */
+    volumes: string[];
 }
 
 export interface ResourceInstancePlanHistory {

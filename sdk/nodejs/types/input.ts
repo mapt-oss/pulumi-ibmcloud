@@ -134,312 +134,6 @@ export interface ComputeVmInstanceBulkVm {
     hostname: pulumi.Input<string>;
 }
 
-export interface ContainerAddonsAddon {
-    /**
-     * The versions that the addon can be upgraded to
-     */
-    allowedUpgradeVersions?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Determines if this addon version is deprecated
-     */
-    deprecated?: pulumi.Input<boolean>;
-    /**
-     * The health state for this addon, a short indication (e.g. critical, pending)
-     */
-    healthState?: pulumi.Input<string>;
-    /**
-     * The health status for this addon, provides a description of the state (e.g. error message)
-     */
-    healthStatus?: pulumi.Input<string>;
-    /**
-     * The minimum kubernetes version for this addon.
-     */
-    minKubeVersion?: pulumi.Input<string>;
-    /**
-     * The minimum OpenShift version for this addon.
-     */
-    minOcpVersion?: pulumi.Input<string>;
-    /**
-     * The addon name such as 'istio'.
-     */
-    name: pulumi.Input<string>;
-    /**
-     * The add-on options
-     */
-    options?: pulumi.Input<string>;
-    /**
-     * Add-On parameters to pass in a JSON string format.
-     */
-    parametersJson?: pulumi.Input<string>;
-    /**
-     * The supported kubernetes version range for this addon.
-     */
-    supportedKubeRange?: pulumi.Input<string>;
-    /**
-     * The addon target version.
-     */
-    targetVersion?: pulumi.Input<string>;
-    /**
-     * The addon version, omit the version if you wish to use the default version.
-     */
-    version?: pulumi.Input<string>;
-    /**
-     * VLAN spanning required for multi-zone clusters
-     */
-    vlanSpanningRequired?: pulumi.Input<boolean>;
-}
-
-export interface ContainerClusterAlb {
-    albIp?: pulumi.Input<string>;
-    albType?: pulumi.Input<string>;
-    disableDeployment?: pulumi.Input<boolean>;
-    enable?: pulumi.Input<boolean>;
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    numOfInstances?: pulumi.Input<string>;
-    resize?: pulumi.Input<boolean>;
-    state?: pulumi.Input<string>;
-}
-
-export interface ContainerClusterKmsConfig {
-    /**
-     * Account ID of KMS instance holder - if not provided, defaults to the account in use
-     */
-    accountId?: pulumi.Input<string>;
-    /**
-     * ID of the customer root key.
-     */
-    crkId: pulumi.Input<string>;
-    /**
-     * ID of the KMS instance to use to encrypt the cluster.
-     */
-    instanceId: pulumi.Input<string>;
-    /**
-     * Specify this option to use the KMS public service endpoint.
-     */
-    privateEndpoint?: pulumi.Input<boolean>;
-}
-
-export interface ContainerClusterTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: pulumi.Input<string>;
-    /**
-     * Key for taint
-     */
-    key: pulumi.Input<string>;
-    /**
-     * Value for taint.
-     */
-    value: pulumi.Input<string>;
-}
-
-export interface ContainerClusterWebhook {
-    level: pulumi.Input<string>;
-    type: pulumi.Input<string>;
-    url: pulumi.Input<string>;
-}
-
-export interface ContainerClusterWorkerPool {
-    hardware?: pulumi.Input<string>;
-    id?: pulumi.Input<string>;
-    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    machineType?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    sizePerZone?: pulumi.Input<number>;
-    state?: pulumi.Input<string>;
-    zones?: pulumi.Input<pulumi.Input<inputs.ContainerClusterWorkerPoolZone>[]>;
-}
-
-export interface ContainerClusterWorkerPoolZone {
-    privateVlan?: pulumi.Input<string>;
-    publicVlan?: pulumi.Input<string>;
-    workerCount?: pulumi.Input<number>;
-    zone?: pulumi.Input<string>;
-}
-
-export interface ContainerClusterWorkersInfo {
-    id?: pulumi.Input<string>;
-    poolName?: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
-}
-
-export interface ContainerDedicatedHostLifeCycle {
-    actualState?: pulumi.Input<string>;
-    desiredState?: pulumi.Input<string>;
-    message?: pulumi.Input<string>;
-    messageDate?: pulumi.Input<string>;
-    messageDetails?: pulumi.Input<string>;
-    messageDetailsDate?: pulumi.Input<string>;
-}
-
-export interface ContainerDedicatedHostPoolWorkerPool {
-    clusterId?: pulumi.Input<string>;
-    workerPoolId?: pulumi.Input<string>;
-}
-
-export interface ContainerDedicatedHostPoolZone {
-    capacities?: pulumi.Input<pulumi.Input<inputs.ContainerDedicatedHostPoolZoneCapacity>[]>;
-    hostCount?: pulumi.Input<number>;
-    zone?: pulumi.Input<string>;
-}
-
-export interface ContainerDedicatedHostPoolZoneCapacity {
-    memoryBytes?: pulumi.Input<number>;
-    vcpu?: pulumi.Input<number>;
-}
-
-export interface ContainerDedicatedHostResource {
-    capacities?: pulumi.Input<pulumi.Input<inputs.ContainerDedicatedHostResourceCapacity>[]>;
-    consumeds?: pulumi.Input<pulumi.Input<inputs.ContainerDedicatedHostResourceConsumed>[]>;
-}
-
-export interface ContainerDedicatedHostResourceCapacity {
-    memoryBytes?: pulumi.Input<number>;
-    vcpu?: pulumi.Input<number>;
-}
-
-export interface ContainerDedicatedHostResourceConsumed {
-    memoryBytes?: pulumi.Input<number>;
-    vcpu?: pulumi.Input<number>;
-}
-
-export interface ContainerDedicatedHostWorker {
-    clusterId?: pulumi.Input<string>;
-    flavor?: pulumi.Input<string>;
-    workerId?: pulumi.Input<string>;
-    workerPoolId?: pulumi.Input<string>;
-}
-
-export interface ContainerIngressSecretOpaqueField {
-    /**
-     * Secret CRN corresponding to the field
-     */
-    crn: pulumi.Input<string>;
-    /**
-     * Field expires on date
-     */
-    expiresOn?: pulumi.Input<string>;
-    /**
-     * The requested field name
-     */
-    fieldName?: pulumi.Input<string>;
-    /**
-     * Field last updated timestamp
-     */
-    lastUpdatedTimestamp?: pulumi.Input<string>;
-    /**
-     * The computed field name
-     */
-    name?: pulumi.Input<string>;
-}
-
-export interface ContainerVpcClusterAlb {
-    albType?: pulumi.Input<string>;
-    disableDeployment?: pulumi.Input<boolean>;
-    enable?: pulumi.Input<boolean>;
-    id?: pulumi.Input<string>;
-    loadBalancerHostname?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    resize?: pulumi.Input<boolean>;
-    state?: pulumi.Input<string>;
-}
-
-export interface ContainerVpcClusterKmsConfig {
-    /**
-     * Account ID of KMS instance holder - if not provided, defaults to the account in use
-     */
-    accountId?: pulumi.Input<string>;
-    /**
-     * ID of the customer root key.
-     */
-    crkId: pulumi.Input<string>;
-    /**
-     * ID of the KMS instance to use to encrypt the cluster.
-     */
-    instanceId: pulumi.Input<string>;
-    /**
-     * Specify this option to use the KMS public service endpoint.
-     */
-    privateEndpoint?: pulumi.Input<boolean>;
-    waitForApply?: pulumi.Input<boolean>;
-}
-
-export interface ContainerVpcClusterTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: pulumi.Input<string>;
-    /**
-     * Key for taint
-     */
-    key: pulumi.Input<string>;
-    /**
-     * Value for taint.
-     */
-    value: pulumi.Input<string>;
-}
-
-export interface ContainerVpcClusterZone {
-    /**
-     * Zone for the worker pool in a multizone cluster
-     */
-    name: pulumi.Input<string>;
-    /**
-     * The VPC subnet to assign the cluster
-     */
-    subnetId: pulumi.Input<string>;
-}
-
-export interface ContainerVpcWorkerPoolTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: pulumi.Input<string>;
-    /**
-     * Key for taint
-     */
-    key: pulumi.Input<string>;
-    /**
-     * Value for taint.
-     */
-    value: pulumi.Input<string>;
-}
-
-export interface ContainerVpcWorkerPoolZone {
-    /**
-     * zone name
-     */
-    name: pulumi.Input<string>;
-    /**
-     * subnet ID
-     */
-    subnetId: pulumi.Input<string>;
-}
-
-export interface ContainerWorkerPoolTaint {
-    /**
-     * Effect for taint. Accepted values are NoSchedule, PreferNoSchedule and NoExecute.
-     */
-    effect: pulumi.Input<string>;
-    /**
-     * Key for taint
-     */
-    key: pulumi.Input<string>;
-    /**
-     * Value for taint.
-     */
-    value: pulumi.Input<string>;
-}
-
-export interface ContainerWorkerPoolZone {
-    privateVlan?: pulumi.Input<string>;
-    publicVlan?: pulumi.Input<string>;
-    workerCount?: pulumi.Input<number>;
-    zone?: pulumi.Input<string>;
-}
-
 export interface CosBucketAbortIncompleteMultipartUploadDay {
     /**
      * Specifies the number of days when the specific rule action takes effect.
@@ -775,143 +469,6 @@ export interface CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRed
      * The object key to be used in the Location header that is returned in the response.
      */
     replaceKeyWith?: pulumi.Input<string>;
-}
-
-export interface DnsCustomResolverForwardingRuleView {
-    /**
-     * Description of the view.
-     */
-    description?: pulumi.Input<string>;
-    /**
-     * Expression of the view.
-     */
-    expression: pulumi.Input<string>;
-    /**
-     * The upstream DNS servers that the matching DNS queries will be forwarded to.
-     */
-    forwardTos: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Unique name of the view.
-     */
-    name: pulumi.Input<string>;
-}
-
-export interface DnsCustomResolverLocation {
-    /**
-     * The ip address of this dns server
-     */
-    dnsServerIp?: pulumi.Input<string>;
-    /**
-     * Whether the location is enabled for the custom resolver
-     */
-    enabled?: pulumi.Input<boolean>;
-    /**
-     * Whether the DNS server in this location is healthy or not.
-     */
-    healthy?: pulumi.Input<boolean>;
-    /**
-     * Location ID
-     */
-    locationId?: pulumi.Input<string>;
-    /**
-     * Subnet CRN
-     */
-    subnetCrn: pulumi.Input<string>;
-}
-
-export interface DnsCustomResolverRule {
-    /**
-     * Descriptive text of the forwarding rule.
-     */
-    description?: pulumi.Input<string>;
-    /**
-     * The upstream DNS servers will be forwarded to.
-     */
-    forwardTos?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The matching zone or hostname.
-     */
-    match?: pulumi.Input<string>;
-    /**
-     * Identifier of the forwarding rule.
-     */
-    ruleId?: pulumi.Input<string>;
-    /**
-     * Type of the forwarding rule.
-     */
-    type?: pulumi.Input<string>;
-    /**
-     * An array of views used by forwarding rules.
-     */
-    views?: pulumi.Input<pulumi.Input<inputs.DnsCustomResolverRuleView>[]>;
-}
-
-export interface DnsCustomResolverRuleView {
-    /**
-     * Description of the view.
-     */
-    description?: pulumi.Input<string>;
-    /**
-     * Expression of the view.
-     */
-    expression: pulumi.Input<string>;
-    /**
-     * The upstream DNS servers that the matching DNS queries will be forwarded to.
-     */
-    forwardTos: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Unique name of the view.
-     */
-    name: pulumi.Input<string>;
-}
-
-export interface DnsGlbAzPool {
-    /**
-     * Availability zone.
-     */
-    availabilityZone: pulumi.Input<string>;
-    /**
-     * List of load balancer pools
-     */
-    pools: pulumi.Input<pulumi.Input<string>[]>;
-}
-
-export interface DnsGlbMonitorHeader {
-    /**
-     * The name of HTTP request header
-     */
-    name: pulumi.Input<string>;
-    /**
-     * The value of HTTP request header
-     */
-    values: pulumi.Input<pulumi.Input<string>[]>;
-}
-
-export interface DnsGlbPoolOrigin {
-    /**
-     * The address of the origin server. It can be a hostname or an IP address.
-     */
-    address: pulumi.Input<string>;
-    /**
-     * Description of the origin server.
-     */
-    description?: pulumi.Input<string>;
-    /**
-     * Whether the origin server is enabled.
-     */
-    enabled: pulumi.Input<boolean>;
-    /**
-     * Whether the health is `true` or `false`.
-     */
-    health?: pulumi.Input<boolean>;
-    /**
-     * The Reason for health check failure
-     */
-    healthFailureReason?: pulumi.Input<string>;
-    /**
-     * The name of the origin server.
-     */
-    name: pulumi.Input<string>;
 }
 
 export interface GetIsReservationCapacity {
@@ -9184,6 +8741,846 @@ export interface IsVpnServerVpcDeleted {
      * Link to documentation about deleted resources.
      */
     moreInfo?: pulumi.Input<string>;
+}
+
+export interface PiDhcpLease {
+    /**
+     * The IP of the PVM Instance
+     */
+    instanceIp?: pulumi.Input<string>;
+    /**
+     * The MAC Address of the PVM Instance
+     */
+    instanceMac?: pulumi.Input<string>;
+}
+
+export interface PiHostCapacity {
+    /**
+     * Number of cores currently available.
+     */
+    availableCores?: pulumi.Input<number>;
+    /**
+     * Amount of memory currently available (in GB).
+     */
+    availableMemory?: pulumi.Input<number>;
+    /**
+     * Number of cores reserved for system use.
+     */
+    reservedCore?: pulumi.Input<number>;
+    /**
+     * Amount of memory reserved for system use (in GB).
+     */
+    reservedMemory?: pulumi.Input<number>;
+    /**
+     * Total number of cores of the host.
+     */
+    totalCore?: pulumi.Input<number>;
+    /**
+     * Total amount of memory of the host (in GB).
+     */
+    totalMemory?: pulumi.Input<number>;
+    /**
+     * Number of cores in use on the host.
+     */
+    usedCore?: pulumi.Input<number>;
+    /**
+     * Amount of memory used on the host (in GB).
+     */
+    usedMemory?: pulumi.Input<number>;
+}
+
+export interface PiHostGroupPiHost {
+    /**
+     * Name of the host chosen by the user.
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * System type.
+     */
+    sysType: pulumi.Input<string>;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface PiHostGroupPiSecondary {
+    /**
+     * Name of the host group to create in the secondary workspace.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * ID of the workspace to share the host group with.
+     */
+    workspace: pulumi.Input<string>;
+}
+
+export interface PiHostPiHost {
+    /**
+     * Name of the host chosen by the user.
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * System type.
+     */
+    sysType: pulumi.Input<string>;
+    /**
+     * List of user tags attached to the resource.
+     */
+    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface PiImagePiImageImportDetails {
+    /**
+     * Origin of the license of the product.
+     */
+    licenseType: pulumi.Input<string>;
+    /**
+     * Product within the image.
+     */
+    product: pulumi.Input<string>;
+    /**
+     * Vendor supporting the product.
+     */
+    vendor: pulumi.Input<string>;
+}
+
+export interface PiInstancePiDeploymentTarget {
+    /**
+     * The uuid of the host group or host.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * The deployment target type. Supported values are `host` and `hostGroup`.
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface PiInstancePiNetwork {
+    externalIp?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string>;
+    networkId: pulumi.Input<string>;
+    /**
+     * ID of the network interface.
+     */
+    networkInterfaceId?: pulumi.Input<string>;
+    networkName?: pulumi.Input<string>;
+    /**
+     * Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
+     */
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Links to the network security groups that the network interface is a member of.
+     */
+    networkSecurityGroupsHreves?: pulumi.Input<pulumi.Input<string>[]>;
+    type?: pulumi.Input<string>;
+}
+
+export interface PiInstancePiVirtualSerialNumber {
+    /**
+     * Description of the Virtual Serial Number
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
+     */
+    serial: pulumi.Input<string>;
+    /**
+     * Software tier. Enum: ["P05", "P10", "P20", "P30"].
+     */
+    softwareTier?: pulumi.Input<string>;
+}
+
+export interface PiNetworkAddressGroupMember {
+    /**
+     * The IP addresses in CIDR notation for example 192.168.1.5/32.
+     */
+    cidr?: pulumi.Input<string>;
+    /**
+     * The id of the Network Address Group member IP addresses.
+     */
+    id?: pulumi.Input<string>;
+}
+
+export interface PiNetworkAddressGroupMemberMember {
+    /**
+     * The IP addresses in CIDR notation for example 192.168.1.5/32.
+     */
+    cidr?: pulumi.Input<string>;
+    /**
+     * The id of the Network Address Group member IP addresses.
+     */
+    id?: pulumi.Input<string>;
+}
+
+export interface PiNetworkInterfaceInstance {
+    /**
+     * Link to instance resource.
+     */
+    href?: pulumi.Input<string>;
+    /**
+     * The attached instance ID.
+     */
+    instanceId?: pulumi.Input<string>;
+}
+
+export interface PiNetworkNetworkAddressTranslation {
+    /**
+     * source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+     *
+     * @deprecated This field is deprecated
+     */
+    sourceIp?: pulumi.Input<string>;
+}
+
+export interface PiNetworkPeerExportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate?: pulumi.Input<string>;
+    /**
+     * Direction of the filter.
+     */
+    direction?: pulumi.Input<string>;
+    /**
+     * Error description.
+     */
+    error?: pulumi.Input<string>;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge?: pulumi.Input<number>;
+    /**
+     * Priority or order of the filter.
+     */
+    index?: pulumi.Input<number>;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le?: pulumi.Input<number>;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix?: pulumi.Input<string>;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId?: pulumi.Input<string>;
+    /**
+     * Status of the route filter.
+     */
+    state?: pulumi.Input<string>;
+}
+
+export interface PiNetworkPeerImportRouteFilter {
+    /**
+     * Action of the filter.
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * Time stamp for create route filter.
+     */
+    creationDate?: pulumi.Input<string>;
+    /**
+     * Direction of the filter.
+     */
+    direction?: pulumi.Input<string>;
+    /**
+     * Error description.
+     */
+    error?: pulumi.Input<string>;
+    /**
+     * The minimum matching length of the prefix-set.
+     */
+    ge?: pulumi.Input<number>;
+    /**
+     * Priority or order of the filter.
+     */
+    index?: pulumi.Input<number>;
+    /**
+     * The maximum matching length of the prefix-set.
+     */
+    le?: pulumi.Input<number>;
+    /**
+     * IP prefix representing an address and mask length of the prefix-set.
+     */
+    prefix?: pulumi.Input<string>;
+    /**
+     * Route filter ID.
+     */
+    routeFilterId?: pulumi.Input<string>;
+    /**
+     * Status of the route filter.
+     */
+    state?: pulumi.Input<string>;
+}
+
+export interface PiNetworkPiIpaddressRange {
+    /**
+     * The ending ip address.
+     */
+    piEndingIpAddress: pulumi.Input<string>;
+    /**
+     * The staring ip address.
+     */
+    piStartingIpAddress: pulumi.Input<string>;
+}
+
+export interface PiNetworkPiNetworkPeer {
+    /**
+     * ID of the network peer.
+     *
+     * @deprecated This field is deprecated
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Contains the network address translation Details.
+     *
+     * @deprecated This field is deprecated
+     */
+    networkAddressTranslation?: pulumi.Input<inputs.PiNetworkPiNetworkPeerNetworkAddressTranslation>;
+    /**
+     * Type of the network peer.
+     *
+     * @deprecated This field is deprecated
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkPiNetworkPeerNetworkAddressTranslation {
+    /**
+     * source IP address, required if network peer type is L3BGP or L3STATIC and if NAT is enabled.
+     *
+     * @deprecated This field is deprecated
+     */
+    sourceIp: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress?: pulumi.Input<string>;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId?: pulumi.Input<string>;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target?: pulumi.Input<string>;
+    /**
+     * The type of member.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupMemberMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress?: pulumi.Input<string>;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId?: pulumi.Input<string>;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target?: pulumi.Input<string>;
+    /**
+     * The type of member.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupMemberRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * The list of destination port.
+     */
+    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleDestinationPort>[]>;
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The list of protocol.
+     */
+    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleProtocol>[]>;
+    /**
+     * List of remote.
+     */
+    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleRemote>[]>;
+    /**
+     * List of source port
+     */
+    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleSourcePort>[]>;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleProtocol {
+    /**
+     * IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType?: pulumi.Input<string>;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleProtocolTcpFlag>[]>;
+    /**
+     * The protocol of the network traffic.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleRemote {
+    /**
+     * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupMemberRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * The list of destination port.
+     */
+    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleDestinationPort>[]>;
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The list of protocol.
+     */
+    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleProtocol>[]>;
+    /**
+     * List of remote.
+     */
+    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRemote>[]>;
+    /**
+     * ist of source port
+     */
+    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleSourcePort>[]>;
+}
+
+export interface PiNetworkSecurityGroupRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRuleMember {
+    /**
+     * The ID of the member in a network security group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The mac address of a network interface included if the type is network-interface.
+     */
+    macAddress?: pulumi.Input<string>;
+    /**
+     * The network ID of a network interface included if the type is network-interface.
+     */
+    networkInterfaceId?: pulumi.Input<string>;
+    /**
+     * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
+     */
+    target?: pulumi.Input<string>;
+    /**
+     * The type of member.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRulePiDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRulePiDestinationPorts {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRulePiProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType?: pulumi.Input<string>;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRulePiProtocolTcpFlag>[]>;
+    /**
+     * The protocol of the network traffic.
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRulePiProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRulePiRemote {
+    /**
+     * The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRulePiSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRulePiSourcePorts {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRuleProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType?: pulumi.Input<string>;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleProtocolTcpFlag>[]>;
+    /**
+     * The protocol of the network traffic.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRuleRemote {
+    /**
+     * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRuleRule {
+    /**
+     * The action to take if the rule matches network traffic.
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * Destination port ranges.
+     */
+    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleDestinationPort>[]>;
+    /**
+     * The ID of the rule in a network security group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The list of protocol.
+     */
+    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleProtocol>[]>;
+    /**
+     * List of remote.
+     */
+    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleRemote>[]>;
+    /**
+     * Source port ranges.
+     */
+    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleSourcePort>[]>;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleDestinationPort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleProtocol {
+    /**
+     * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
+     */
+    icmpType?: pulumi.Input<string>;
+    /**
+     * If tcp type, the list of TCP flags and if not present then all flags are matched.
+     */
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleProtocolTcpFlag>[]>;
+    /**
+     * The protocol of the network traffic.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleProtocolTcpFlag {
+    /**
+     * TCP flag.
+     */
+    flag?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleRemote {
+    /**
+     * The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The type of remote group the rules apply to.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PiNetworkSecurityGroupRuleRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiNetworkSecurityGroupRuleSourcePort {
+    /**
+     * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
+     */
+    maximum?: pulumi.Input<number>;
+    /**
+     * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
+     */
+    minimum?: pulumi.Input<number>;
+}
+
+export interface PiSharedProcessorPoolInstance {
+    /**
+     * Availability zone for the server instances.
+     */
+    availabilityZone?: pulumi.Input<string>;
+    /**
+     * The amount of cpus for the server instance.
+     */
+    cpus?: pulumi.Input<number>;
+    /**
+     * The server instance ID.
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * The amount of memory for the server instance.
+     */
+    memory?: pulumi.Input<number>;
+    /**
+     * The server instance name.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * Status of the instance.
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * Identifies if uncapped or not.
+     */
+    uncapped?: pulumi.Input<boolean>;
+    /**
+     * The amout of vcpus for the server instance.
+     */
+    vcpus?: pulumi.Input<number>;
+}
+
+export interface PiVolumeCloneCloneVolume {
+    /**
+     * The ID of the newly cloned volume.
+     */
+    cloneVolumeId?: pulumi.Input<string>;
+    /**
+     * The ID of the source volume.
+     */
+    sourceVolumeId?: pulumi.Input<string>;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupAction {
+    /**
+     * Performs reset action on the volume group to update its status value.
+     */
+    reset?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionReset>;
+    /**
+     * Performs start action on a volume group.
+     */
+    start?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionStart>;
+    /**
+     * Performs stop action on a volume group.
+     */
+    stop?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionStop>;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupActionReset {
+    /**
+     * New status to be set for a volume group.
+     */
+    status: pulumi.Input<string>;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupActionStart {
+    /**
+     * Indicates the source of the action `master` or `aux`.
+     */
+    source: pulumi.Input<string>;
+}
+
+export interface PiVolumeGroupActionPiVolumeGroupActionStop {
+    /**
+     * Indicates the access mode of aux volumes.
+     */
+    access: pulumi.Input<boolean>;
+}
+
+export interface PiVolumeGroupStatusDescriptionError {
+    /**
+     * The volume group error key.
+     */
+    key?: pulumi.Input<string>;
+    /**
+     * The failure message providing more details about the error key.
+     */
+    message?: pulumi.Input<string>;
+    /**
+     * List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
+     */
+    volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface PiVolumeOnboardingPiOnboardingVolume {
+    /**
+     * List auxiliary volumes.
+     */
+    piAuxiliaryVolumes?: pulumi.Input<pulumi.Input<inputs.PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume>[]>;
+    /**
+     * The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+     */
+    piSourceCrn: pulumi.Input<string>;
+}
+
+export interface PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume {
+    /**
+     * The auxiliary volume name.
+     */
+    piAuxiliaryVolumeName: pulumi.Input<string>;
+    /**
+     * The display name of auxiliary volume which is to be onboarded.
+     */
+    piDisplayName?: pulumi.Input<string>;
+}
+
+export interface PiVolumeOnboardingResultsVolumeOnboardingFailure {
+    /**
+     * The failure reason for the volumes which have failed to be onboarded
+     */
+    failureMessage?: pulumi.Input<string>;
+    /**
+     * List of volumes which have failed to be onboarded
+     */
+    volumes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface ResourceInstancePlanHistory {

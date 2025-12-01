@@ -33,7 +33,11 @@
       "Bash(GOFLAGS=\"-mod=mod\" $HOME/go/bin/go build:*)",
       "Bash(GOFLAGS=\"-mod=mod\" $HOME/go/bin/go build -o ../bin/pulumi-resource-ibmcloud -ldflags \"-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=1.0.0-alpha.0+dev\" ./cmd/pulumi-resource-ibmcloud)",
       "Bash($HOME/go/bin/gofmt -w resource_filter.go)",
-      "Bash($HOME/go/bin/gofmt:*)"
+      "Bash($HOME/go/bin/gofmt:*)",
+      "Bash($HOME/go/bin/go:*)",
+      "Bash(GOFLAGS=\"-mod=mod\" $HOME/go/bin/go build -o ../bin/pulumi-tfgen-ibmcloud -ldflags \"-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=1.0.0-alpha.0+dev\" ./cmd/pulumi-tfgen-ibmcloud)",
+      "Bash(export:*)",
+      "Bash(pulumi:*)"
     ],
     "deny": [],
     "ask": []
