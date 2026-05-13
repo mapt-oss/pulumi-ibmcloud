@@ -19,6 +19,9 @@ on:
 
 env:
   PROVIDER_NAME: ibmcloud
+  GONOSUMDB: "github.com/IBM-Cloud/terraform-provider-ibm"
+  GONOPROXY: "github.com/IBM-Cloud/terraform-provider-ibm"
+  GOFLAGS: "-mod=mod"
 
 jobs:
   build-provider:
@@ -31,18 +34,13 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
+          go-version: '1.25'
           cache-dependency-path: provider/go.sum
-
-      - name: Install dependencies
-        run: |
-          cd provider
-          go mod download
 
       - name: Build tfgen
         run: |
           cd provider
-          GOFLAGS="-mod=mod" go build \
+          go build \
             -o ../bin/pulumi-tfgen-ibmcloud \
             -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=dev" \
             github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-tfgen-ibmcloud
@@ -50,7 +48,7 @@ jobs:
       - name: Build provider
         run: |
           cd provider
-          GOFLAGS="-mod=mod" go build \
+          go build \
             -o ../bin/pulumi-resource-ibmcloud \
             -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=dev" \
             github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-resource-ibmcloud
@@ -71,13 +69,13 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
+          go-version: '1.25'
           cache-dependency-path: provider/go.sum
 
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v7
         with:
-          version: latest
+          version: v2.12.2
           working-directory: provider
           args: --timeout=20m
 
@@ -91,7 +89,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
+          go-version: '1.25'
           cache-dependency-path: provider/go.sum
 
       - name: Run tests

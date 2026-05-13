@@ -1,0 +1,3 @@
+name: ibmcloud
+description: A Pulumi resource provider for ibmcloud.
+language: schema

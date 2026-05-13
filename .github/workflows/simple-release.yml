@@ -15,6 +15,9 @@ on:
 
 env:
   PROVIDER_NAME: ibmcloud
+  GONOSUMDB: "github.com/IBM-Cloud/terraform-provider-ibm"
+  GONOPROXY: "github.com/IBM-Cloud/terraform-provider-ibm"
+  GOFLAGS: "-mod=mod"
 
 jobs:
   build-provider:
@@ -31,7 +34,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
+          go-version: '1.25'
           cache-dependency-path: provider/go.sum
 
       - name: Extract version from tag
@@ -51,13 +54,14 @@ jobs:
           GOARCH: ${{ matrix.goarch }}
           VERSION: ${{ steps.version.outputs.version_no_v }}
         run: |
+          mkdir -p bin
           cd provider
           BINARY_NAME="pulumi-resource-${PROVIDER_NAME}"
           if [ "$GOOS" == "windows" ]; then
             BINARY_NAME="${BINARY_NAME}.exe"
           fi
 
-          GOFLAGS="-mod=mod" go build \
+          go build \
             -o "../bin/${BINARY_NAME}" \
             -ldflags "-X github.com/mapt-oss/pulumi-ibmcloud/provider/pkg/version.Version=${VERSION}" \
             github.com/mapt-oss/pulumi-ibmcloud/provider/cmd/pulumi-resource-ibmcloud
@@ -116,11 +120,11 @@ jobs:
         run: |
           cd artifacts
           # Move all files from subdirectories to current directory
-          find . -type f -exec mv {} . \;
+          find . -mindepth 2 -type f -exec mv {} . \;
           # Remove empty directories
-          find . -type d -empty -delete
-          # Calculate checksums
-          sha256sum *.tar.gz *.zip > checksums.txt
+          find . -mindepth 1 -type d -empty -delete
+          # Calculate checksums for all archives
+          find . -maxdepth 1 -type f \( -name "*.tar.gz" -o -name "*.zip" \) | sort | xargs sha256sum > checksums.txt
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
@@ -165,9 +169,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Create and push SDK tag for Go module versioning
-          echo "Creating SDK tag: sdk/${VERSION}"
-          git tag -a "sdk/${VERSION}" -m "SDK release ${VERSION}"
-          git push origin "sdk/${VERSION}"
+          SDK_TAG="sdk/${VERSION}"
 
-          echo "✅ Created SDK tag: sdk/${VERSION}"
+          if git rev-parse "${SDK_TAG}" >/dev/null 2>&1; then
+            echo "SDK tag ${SDK_TAG} already exists, skipping"
+          else
+            echo "Creating SDK tag: ${SDK_TAG}"
+            git tag -a "${SDK_TAG}" -m "SDK release ${VERSION}"
+            git push origin "${SDK_TAG}"
+            echo "✅ Created SDK tag: ${SDK_TAG}"
+          fi

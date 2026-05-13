@@ -1,3 +1,4 @@
+// Package ibmcloud contains the IBM Cloud Pulumi provider bridge configuration.
 package ibmcloud
 
 import (

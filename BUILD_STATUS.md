@@ -5,7 +5,7 @@
 ### 1. Provider Configuration ✅
 - **Organization**: `mapt-oss`
 - **Repository**: `github.com/mapt-oss/pulumi-ibmcloud`
-- **Upstream Provider**: IBM Cloud Terraform Provider v1.85.0
+- **Upstream Provider**: IBM Cloud Terraform Provider v2.1.0
 - **GitHub Org**: `IBM-Cloud`
 
 ### 2. Dependencies Resolved ✅
