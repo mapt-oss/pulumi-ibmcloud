@@ -5,7 +5,7 @@
   keywords = ["ibmcloud", "ibm", "category/cloud"]
   readme = "README.md"
   requires-python = ">=3.9"
-  version = "0.0.9"
+  version = "0.0.12"
   [project.license]
     text = "Apache-2.0"
   [project.urls]
