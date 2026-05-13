@@ -54,7 +54,9 @@
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(x['path']\\) for x in d.get\\('tree',[]\\) if 'java' in x['path'].lower\\(\\) and x['path'].endswith\\('.go'\\)]\")",
       "WebFetch(domain:proxy.golang.org)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:golangci-lint.run)"
+      "WebFetch(domain:golangci-lint.run)",
+      "Bash(python3 *)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": [],
     "ask": []
