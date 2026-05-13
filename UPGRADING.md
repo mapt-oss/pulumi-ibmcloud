@@ -159,7 +159,7 @@ go mod tidy
 | Pulumi Provider | Terraform Provider | Go Version | Pulumi CLI |
 |-----------------|-------------------|------------|------------|
 | v1.0.0          | v1.85.0           | 1.23.4     | 3.208.0    |
-| (future)        | (future)          | 1.23+      | 3.200+     |
+| v1.1.0          | v2.1.0            | 1.25.2     | 3.200+     |
 
 ## Breaking Changes to Watch For
 

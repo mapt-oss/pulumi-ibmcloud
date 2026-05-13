@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Package main is the entry point for the pulumi-tfgen-ibmcloud schema and SDK generator.
 package main
 
 import (
