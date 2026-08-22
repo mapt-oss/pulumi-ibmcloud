@@ -4,58 +4,58 @@ go 1.25.9
 
 replace (
 	github.com/hashicorp/consul/api v1.1.0 => github.com/hashicorp/consul/api v1.30.0
-	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20260318212141-5525259d096b
-	github.com/hashicorp/vault => github.com/hashicorp/vault v1.18.2
-	github.com/hashicorp/vault/api/auth/approle => github.com/hashicorp/vault/api/auth/approle v0.8.0
+	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 717b4eff435b
+	github.com/hashicorp/vault => github.com/hashicorp/vault v1.21.4
+	github.com/hashicorp/vault/api/auth/approle => github.com/hashicorp/vault/api/auth/approle v0.12.0
 	// Match IBM Cloud provider's replacements to avoid conflicts
 	github.com/portworx/sched-ops v0.0.0-20200831185134-3e8010dc7056 => github.com/portworx/sched-ops v0.20.4-openstorage-rc3
 	// Bridge v3.128.0 requires these exact language SDK versions (all using old pcl API).
 	// MVS would otherwise pull them up to versions using the new API (v3.232.0+), breaking the build.
-	github.com/pulumi/pulumi-dotnet/pulumi-language-dotnet/v3 => github.com/pulumi/pulumi-dotnet/pulumi-language-dotnet/v3 v3.102.0
-	github.com/pulumi/pulumi-java => github.com/pulumi/pulumi-java v1.25.0
-	github.com/pulumi/pulumi-yaml => github.com/pulumi/pulumi-yaml v1.30.1
-	github.com/pulumi/pulumi/pkg/v3 => github.com/pulumi/pulumi/pkg/v3 v3.228.0
-	github.com/pulumi/pulumi/sdk/v3 => github.com/pulumi/pulumi/sdk/v3 v3.228.0
+	github.com/pulumi/pulumi-dotnet/pulumi-language-dotnet/v3 => github.com/pulumi/pulumi-dotnet/pulumi-language-dotnet/v3 v3.112.1
+	github.com/pulumi/pulumi-java => github.com/pulumi/pulumi-java v1.36.1
+	github.com/pulumi/pulumi-yaml => github.com/pulumi/pulumi-yaml v1.38.3
+	github.com/pulumi/pulumi/pkg/v3 => github.com/pulumi/pulumi/pkg/v3 v3.259.0
+	github.com/pulumi/pulumi/sdk/v3 => github.com/pulumi/pulumi/sdk/v3 v3.259.0
 	github.com/softlayer/softlayer-go v1.0.3 => github.com/IBM-Cloud/softlayer-go v1.0.5-tf
 	// Fix kubernetes dependency issues - align all to v0.33.4
-	k8s.io/api => k8s.io/api v0.33.4
-	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.33.4
-	k8s.io/apimachinery => k8s.io/apimachinery v0.33.4
-	k8s.io/apiserver => k8s.io/apiserver v0.33.4
-	k8s.io/cli-runtime => k8s.io/cli-runtime v0.33.4
-	k8s.io/client-go => k8s.io/client-go v0.33.4
-	k8s.io/cloud-provider => k8s.io/cloud-provider v0.33.4
-	k8s.io/cluster-bootstrap => k8s.io/cluster-bootstrap v0.33.4
-	k8s.io/code-generator => k8s.io/code-generator v0.33.4
-	k8s.io/component-base => k8s.io/component-base v0.33.4
-	k8s.io/component-helpers => k8s.io/component-helpers v0.33.4
-	k8s.io/controller-manager => k8s.io/controller-manager v0.33.4
-	k8s.io/cri-api => k8s.io/cri-api v0.33.4
-	k8s.io/cri-client => k8s.io/cri-client v0.33.4
-	k8s.io/csi-translation-lib => k8s.io/csi-translation-lib v0.33.4
-	k8s.io/dynamic-resource-allocation => k8s.io/dynamic-resource-allocation v0.33.4
-	k8s.io/endpointslice => k8s.io/endpointslice v0.33.4
-	k8s.io/kms => k8s.io/kms v0.33.4
-	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.33.4
-	k8s.io/kube-controller-manager => k8s.io/kube-controller-manager v0.33.4
-	k8s.io/kube-proxy => k8s.io/kube-proxy v0.33.4
-	k8s.io/kube-scheduler => k8s.io/kube-scheduler v0.33.4
-	k8s.io/kubectl => k8s.io/kubectl v0.33.4
-	k8s.io/kubelet => k8s.io/kubelet v0.33.4
-	k8s.io/kubernetes => k8s.io/kubernetes v1.33.4
+	k8s.io/api => k8s.io/api v0.36.4
+	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.36.4
+	k8s.io/apimachinery => k8s.io/apimachinery v0.36.4
+	k8s.io/apiserver => k8s.io/apiserver v0.36.4
+	k8s.io/cli-runtime => k8s.io/cli-runtime v0.36.4
+	k8s.io/client-go => k8s.io/client-go v0.36.4
+	k8s.io/cloud-provider => k8s.io/cloud-provider v0.36.4
+	k8s.io/cluster-bootstrap => k8s.io/cluster-bootstrap v0.36.4
+	k8s.io/code-generator => k8s.io/code-generator v0.36.4
+	k8s.io/component-base => k8s.io/component-base v0.36.4
+	k8s.io/component-helpers => k8s.io/component-helpers v0.36.4
+	k8s.io/controller-manager => k8s.io/controller-manager v0.36.4
+	k8s.io/cri-api => k8s.io/cri-api v0.36.4
+	k8s.io/cri-client => k8s.io/cri-client v0.36.4
+	k8s.io/csi-translation-lib => k8s.io/csi-translation-lib v0.36.4
+	k8s.io/dynamic-resource-allocation => k8s.io/dynamic-resource-allocation v0.36.4
+	k8s.io/endpointslice => k8s.io/endpointslice v0.36.4
+	k8s.io/kms => k8s.io/kms v0.36.4
+	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.36.4
+	k8s.io/kube-controller-manager => k8s.io/kube-controller-manager v0.36.4
+	k8s.io/kube-proxy => k8s.io/kube-proxy v0.36.4
+	k8s.io/kube-scheduler => k8s.io/kube-scheduler v0.36.4
+	k8s.io/kubectl => k8s.io/kubectl v0.36.4
+	k8s.io/kubelet => k8s.io/kubelet v0.36.4
+	k8s.io/kubernetes => k8s.io/kubernetes v1.36.4
 	k8s.io/legacy-cloud-providers => k8s.io/legacy-cloud-providers v0.33.4
-	k8s.io/metrics => k8s.io/metrics v0.33.4
-	k8s.io/mount-utils => k8s.io/mount-utils v0.33.4
-	k8s.io/pod-security-admission => k8s.io/pod-security-admission v0.33.4
-	k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.33.4
-	k8s.io/sample-cli-plugin => k8s.io/sample-cli-plugin v0.33.4
-	k8s.io/sample-controller => k8s.io/sample-controller v0.33.4
+	k8s.io/metrics => k8s.io/metrics v0.36.4
+	k8s.io/mount-utils => k8s.io/mount-utils v0.36.4
+	k8s.io/pod-security-admission => k8s.io/pod-security-admission v0.36.4
+	k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.36.4
+	k8s.io/sample-cli-plugin => k8s.io/sample-cli-plugin v0.36.4
+	k8s.io/sample-controller => k8s.io/sample-controller v0.36.4
 )
 
 require (
 	github.com/IBM-Cloud/terraform-provider-ibm v2.1.0+incompatible
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.40.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.128.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.137.0
 )
 
 // Exclude problematic kubernetes modules as IBM provider does

@@ -29,12 +29,12 @@ jobs:
         goarch: [amd64, arm64]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v7
         with:
-          go-version: '1.25'
+          go-version: '1.27'
           cache-dependency-path: provider/go.sum
 
       - name: Extract version from tag
@@ -85,7 +85,7 @@ jobs:
           fi
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.goos }}-${{ matrix.goarch }}
           path: bin/${{ steps.package.outputs.archive }}
@@ -99,7 +99,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Extract version from tag
         id: version
@@ -112,7 +112,7 @@ jobs:
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: artifacts
 
@@ -127,7 +127,7 @@ jobs:
           find . -maxdepth 1 -type f \( -name "*.tar.gz" -o -name "*.zip" \) | sort | xargs sha256sum > checksums.txt
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.version.outputs.version }}
           name: ${{ steps.version.outputs.version }}
@@ -147,7 +147,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
