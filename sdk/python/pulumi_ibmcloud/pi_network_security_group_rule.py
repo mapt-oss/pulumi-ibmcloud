@@ -23,16 +23,17 @@ class PiNetworkSecurityGroupRuleInitArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_network_security_group_id: pulumi.Input[_builtins.str],
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_port: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortArgs']] = None,
-                 pi_destination_ports: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortsArgs']] = None,
-                 pi_network_security_group_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_protocol: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolArgs']] = None,
-                 pi_remote: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiRemoteArgs']] = None,
-                 pi_source_port: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortArgs']] = None,
-                 pi_source_ports: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortsArgs']] = None):
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_port: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortArgs']] = None,
+                 pi_destination_ports: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortsArgs']] = None,
+                 pi_network_security_group_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_protocol: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiProtocolArgs']] = None,
+                 pi_remote: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiRemoteArgs']] = None,
+                 pi_source_port: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortArgs']] = None,
+                 pi_source_ports: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortsArgs']] = None):
         """
         The set of arguments for constructing a PiNetworkSecurityGroupRule resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_network_security_group_id: The unique identifier of the network security group.
         :param pulumi.Input[_builtins.str] pi_action: The action to take if the rule matches network traffic.
@@ -95,125 +96,126 @@ class PiNetworkSecurityGroupRuleInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action to take if the rule matches network traffic.
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piDestinationPort")
-    def pi_destination_port(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortArgs']]:
+    def pi_destination_port(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortArgs']]:
         """
         Destination port ranges.
         """
         return pulumi.get(self, "pi_destination_port")
 
     @pi_destination_port.setter
-    def pi_destination_port(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortArgs']]):
+    def pi_destination_port(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortArgs']]):
         pulumi.set(self, "pi_destination_port", value)
 
     @_builtins.property
     @pulumi.getter(name="piDestinationPorts")
     @_utilities.deprecated("""This field is deprecated. Please use 'pi_destination_port' instead.""")
-    def pi_destination_ports(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]:
+    def pi_destination_ports(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]:
         """
         Destination port ranges.
         """
         return pulumi.get(self, "pi_destination_ports")
 
     @pi_destination_ports.setter
-    def pi_destination_ports(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]):
+    def pi_destination_ports(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]):
         pulumi.set(self, "pi_destination_ports", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkSecurityGroupRuleId")
-    def pi_network_security_group_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_security_group_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network security group rule id to remove.
         """
         return pulumi.get(self, "pi_network_security_group_rule_id")
 
     @pi_network_security_group_rule_id.setter
-    def pi_network_security_group_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_security_group_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_security_group_rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piProtocol")
-    def pi_protocol(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolArgs']]:
+    def pi_protocol(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiProtocolArgs']]:
         """
         The protocol of the network traffic.
         """
         return pulumi.get(self, "pi_protocol")
 
     @pi_protocol.setter
-    def pi_protocol(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolArgs']]):
+    def pi_protocol(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiProtocolArgs']]):
         pulumi.set(self, "pi_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="piRemote")
-    def pi_remote(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiRemoteArgs']]:
+    def pi_remote(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiRemoteArgs']]:
         """
         The protocol of the network traffic.
         """
         return pulumi.get(self, "pi_remote")
 
     @pi_remote.setter
-    def pi_remote(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiRemoteArgs']]):
+    def pi_remote(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiRemoteArgs']]):
         pulumi.set(self, "pi_remote", value)
 
     @_builtins.property
     @pulumi.getter(name="piSourcePort")
-    def pi_source_port(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortArgs']]:
+    def pi_source_port(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortArgs']]:
         """
         Source port ranges.
         """
         return pulumi.get(self, "pi_source_port")
 
     @pi_source_port.setter
-    def pi_source_port(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortArgs']]):
+    def pi_source_port(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortArgs']]):
         pulumi.set(self, "pi_source_port", value)
 
     @_builtins.property
     @pulumi.getter(name="piSourcePorts")
     @_utilities.deprecated("""This field is deprecated. 'Please use pi_source_port' instead.""")
-    def pi_source_ports(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortsArgs']]:
+    def pi_source_ports(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortsArgs']]:
         """
         Source port ranges.
         """
         return pulumi.get(self, "pi_source_ports")
 
     @pi_source_ports.setter
-    def pi_source_ports(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortsArgs']]):
+    def pi_source_ports(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortsArgs']]):
         pulumi.set(self, "pi_source_ports", value)
 
 
 @pulumi.input_type
 class _PiNetworkSecurityGroupRuleState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleMemberArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_port: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortArgs']] = None,
-                 pi_destination_ports: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortsArgs']] = None,
-                 pi_network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_security_group_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_protocol: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolArgs']] = None,
-                 pi_remote: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiRemoteArgs']] = None,
-                 pi_source_port: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortArgs']] = None,
-                 pi_source_ports: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortsArgs']] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleArgs']]]] = None,
-                 user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleMemberArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_port: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortArgs']] = None,
+                 pi_destination_ports: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortsArgs']] = None,
+                 pi_network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_security_group_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_protocol: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiProtocolArgs']] = None,
+                 pi_remote: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiRemoteArgs']] = None,
+                 pi_source_port: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortArgs']] = None,
+                 pi_source_ports: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortsArgs']] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleArgs']]]] = None,
+                 user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiNetworkSecurityGroupRule resources.
+
         :param pulumi.Input[_builtins.str] crn: The network security group's crn.
         :param pulumi.Input[_builtins.bool] default: Indicates if the network security group is the default network security group in the workspace.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleMemberArgs']]] members: The list of IPv4 addresses and, or network interfaces in the network security group.
@@ -275,208 +277,208 @@ class _PiNetworkSecurityGroupRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network security group's crn.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the network security group is the default network security group in the workspace.
         """
         return pulumi.get(self, "default")
 
     @default.setter
-    def default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "default", value)
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleMemberArgs']]]]:
         """
         The list of IPv4 addresses and, or network interfaces in the network security group.
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the network security group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupId")
-    def network_security_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_security_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the network security group.
         """
         return pulumi.get(self, "network_security_group_id")
 
     @network_security_group_id.setter
-    def network_security_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_security_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_security_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action to take if the rule matches network traffic.
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDestinationPort")
-    def pi_destination_port(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortArgs']]:
+    def pi_destination_port(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortArgs']]:
         """
         Destination port ranges.
         """
         return pulumi.get(self, "pi_destination_port")
 
     @pi_destination_port.setter
-    def pi_destination_port(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortArgs']]):
+    def pi_destination_port(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortArgs']]):
         pulumi.set(self, "pi_destination_port", value)
 
     @_builtins.property
     @pulumi.getter(name="piDestinationPorts")
     @_utilities.deprecated("""This field is deprecated. Please use 'pi_destination_port' instead.""")
-    def pi_destination_ports(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]:
+    def pi_destination_ports(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]:
         """
         Destination port ranges.
         """
         return pulumi.get(self, "pi_destination_ports")
 
     @pi_destination_ports.setter
-    def pi_destination_ports(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]):
+    def pi_destination_ports(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiDestinationPortsArgs']]):
         pulumi.set(self, "pi_destination_ports", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkSecurityGroupId")
-    def pi_network_security_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_security_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the network security group.
         """
         return pulumi.get(self, "pi_network_security_group_id")
 
     @pi_network_security_group_id.setter
-    def pi_network_security_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_security_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_security_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkSecurityGroupRuleId")
-    def pi_network_security_group_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_security_group_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network security group rule id to remove.
         """
         return pulumi.get(self, "pi_network_security_group_rule_id")
 
     @pi_network_security_group_rule_id.setter
-    def pi_network_security_group_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_security_group_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_security_group_rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piProtocol")
-    def pi_protocol(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolArgs']]:
+    def pi_protocol(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiProtocolArgs']]:
         """
         The protocol of the network traffic.
         """
         return pulumi.get(self, "pi_protocol")
 
     @pi_protocol.setter
-    def pi_protocol(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiProtocolArgs']]):
+    def pi_protocol(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiProtocolArgs']]):
         pulumi.set(self, "pi_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="piRemote")
-    def pi_remote(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiRemoteArgs']]:
+    def pi_remote(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiRemoteArgs']]:
         """
         The protocol of the network traffic.
         """
         return pulumi.get(self, "pi_remote")
 
     @pi_remote.setter
-    def pi_remote(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiRemoteArgs']]):
+    def pi_remote(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiRemoteArgs']]):
         pulumi.set(self, "pi_remote", value)
 
     @_builtins.property
     @pulumi.getter(name="piSourcePort")
-    def pi_source_port(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortArgs']]:
+    def pi_source_port(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortArgs']]:
         """
         Source port ranges.
         """
         return pulumi.get(self, "pi_source_port")
 
     @pi_source_port.setter
-    def pi_source_port(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortArgs']]):
+    def pi_source_port(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortArgs']]):
         pulumi.set(self, "pi_source_port", value)
 
     @_builtins.property
     @pulumi.getter(name="piSourcePorts")
     @_utilities.deprecated("""This field is deprecated. 'Please use pi_source_port' instead.""")
-    def pi_source_ports(self) -> Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortsArgs']]:
+    def pi_source_ports(self) -> pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortsArgs']]:
         """
         Source port ranges.
         """
         return pulumi.get(self, "pi_source_ports")
 
     @pi_source_ports.setter
-    def pi_source_ports(self, value: Optional[pulumi.Input['PiNetworkSecurityGroupRulePiSourcePortsArgs']]):
+    def pi_source_ports(self, value: pulumi.Input[Optional['PiNetworkSecurityGroupRulePiSourcePortsArgs']]):
         pulumi.set(self, "pi_source_ports", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleArgs']]]]:
         """
         The list of rules in the network security group.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="userTags")
-    def user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "user_tags")
 
     @user_tags.setter
-    def user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "user_tags", value)
 
 
@@ -486,31 +488,32 @@ class PiNetworkSecurityGroupRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_port: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict']]] = None,
-                 pi_destination_ports: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict']]] = None,
-                 pi_network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_security_group_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_protocol: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict']]] = None,
-                 pi_remote: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict']]] = None,
-                 pi_source_port: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict']]] = None,
-                 pi_source_ports: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict']]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_port: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPort']]] = None,
+                 pi_destination_ports: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPorts']]] = None,
+                 pi_network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_security_group_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_protocol: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict', 'outputs.PiNetworkSecurityGroupRulePiProtocol']]] = None,
+                 pi_remote: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict', 'outputs.PiNetworkSecurityGroupRulePiRemote']]] = None,
+                 pi_source_port: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePort']]] = None,
+                 pi_source_ports: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePorts']]] = None,
                  __props__=None):
         """
         Create a PiNetworkSecurityGroupRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_action: The action to take if the rule matches network traffic.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict']] pi_destination_port: Destination port ranges.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict']] pi_destination_ports: Destination port ranges.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPort']] pi_destination_port: Destination port ranges.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPorts']] pi_destination_ports: Destination port ranges.
         :param pulumi.Input[_builtins.str] pi_network_security_group_id: The unique identifier of the network security group.
         :param pulumi.Input[_builtins.str] pi_network_security_group_rule_id: The network security group rule id to remove.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict']] pi_protocol: The protocol of the network traffic.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict']] pi_remote: The protocol of the network traffic.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict']] pi_source_port: Source port ranges.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict']] pi_source_ports: Source port ranges.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict', 'outputs.PiNetworkSecurityGroupRulePiProtocol']] pi_protocol: The protocol of the network traffic.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict', 'outputs.PiNetworkSecurityGroupRulePiRemote']] pi_remote: The protocol of the network traffic.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePort']] pi_source_port: Source port ranges.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePorts']] pi_source_ports: Source port ranges.
         """
         ...
     @overload
@@ -520,6 +523,7 @@ class PiNetworkSecurityGroupRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkSecurityGroupRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkSecurityGroupRuleInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -535,16 +539,16 @@ class PiNetworkSecurityGroupRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_port: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict']]] = None,
-                 pi_destination_ports: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict']]] = None,
-                 pi_network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_security_group_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_protocol: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict']]] = None,
-                 pi_remote: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict']]] = None,
-                 pi_source_port: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict']]] = None,
-                 pi_source_ports: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict']]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_port: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPort']]] = None,
+                 pi_destination_ports: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPorts']]] = None,
+                 pi_network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_security_group_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_protocol: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict', 'outputs.PiNetworkSecurityGroupRulePiProtocol']]] = None,
+                 pi_remote: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict', 'outputs.PiNetworkSecurityGroupRulePiRemote']]] = None,
+                 pi_source_port: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePort']]] = None,
+                 pi_source_ports: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePorts']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -585,23 +589,23 @@ class PiNetworkSecurityGroupRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            default: Optional[pulumi.Input[_builtins.bool]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleMemberArgs', 'PiNetworkSecurityGroupRuleMemberArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_destination_port: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict']]] = None,
-            pi_destination_ports: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict']]] = None,
-            pi_network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_network_security_group_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_protocol: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict']]] = None,
-            pi_remote: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict']]] = None,
-            pi_source_port: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict']]] = None,
-            pi_source_ports: Optional[pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict']]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleRuleArgs', 'PiNetworkSecurityGroupRuleRuleArgsDict']]]]] = None,
-            user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiNetworkSecurityGroupRule':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            default: pulumi.Input[Optional[_builtins.bool]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleMemberArgs', 'PiNetworkSecurityGroupRuleMemberArgsDict', 'outputs.PiNetworkSecurityGroupRuleMember']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_destination_port: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPort']]] = None,
+            pi_destination_ports: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPorts']]] = None,
+            pi_network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_network_security_group_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_protocol: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict', 'outputs.PiNetworkSecurityGroupRulePiProtocol']]] = None,
+            pi_remote: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict', 'outputs.PiNetworkSecurityGroupRulePiRemote']]] = None,
+            pi_source_port: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePort']]] = None,
+            pi_source_ports: pulumi.Input[Optional[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePorts']]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleRuleArgs', 'PiNetworkSecurityGroupRuleRuleArgsDict', 'outputs.PiNetworkSecurityGroupRuleRule']]]]] = None,
+            user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiNetworkSecurityGroupRule':
         """
         Get an existing PiNetworkSecurityGroupRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -611,20 +615,20 @@ class PiNetworkSecurityGroupRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] crn: The network security group's crn.
         :param pulumi.Input[_builtins.bool] default: Indicates if the network security group is the default network security group in the workspace.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleMemberArgs', 'PiNetworkSecurityGroupRuleMemberArgsDict']]]] members: The list of IPv4 addresses and, or network interfaces in the network security group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleMemberArgs', 'PiNetworkSecurityGroupRuleMemberArgsDict', 'outputs.PiNetworkSecurityGroupRuleMember']]]] members: The list of IPv4 addresses and, or network interfaces in the network security group.
         :param pulumi.Input[_builtins.str] name: The name of the network security group.
         :param pulumi.Input[_builtins.str] network_security_group_id: The unique identifier of the network security group.
         :param pulumi.Input[_builtins.str] pi_action: The action to take if the rule matches network traffic.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict']] pi_destination_port: Destination port ranges.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict']] pi_destination_ports: Destination port ranges.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortArgs', 'PiNetworkSecurityGroupRulePiDestinationPortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPort']] pi_destination_port: Destination port ranges.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiDestinationPortsArgs', 'PiNetworkSecurityGroupRulePiDestinationPortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiDestinationPorts']] pi_destination_ports: Destination port ranges.
         :param pulumi.Input[_builtins.str] pi_network_security_group_id: The unique identifier of the network security group.
         :param pulumi.Input[_builtins.str] pi_network_security_group_rule_id: The network security group rule id to remove.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict']] pi_protocol: The protocol of the network traffic.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict']] pi_remote: The protocol of the network traffic.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict']] pi_source_port: Source port ranges.
-        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict']] pi_source_ports: Source port ranges.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleRuleArgs', 'PiNetworkSecurityGroupRuleRuleArgsDict']]]] rules: The list of rules in the network security group.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiProtocolArgs', 'PiNetworkSecurityGroupRulePiProtocolArgsDict', 'outputs.PiNetworkSecurityGroupRulePiProtocol']] pi_protocol: The protocol of the network traffic.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiRemoteArgs', 'PiNetworkSecurityGroupRulePiRemoteArgsDict', 'outputs.PiNetworkSecurityGroupRulePiRemote']] pi_remote: The protocol of the network traffic.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortArgs', 'PiNetworkSecurityGroupRulePiSourcePortArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePort']] pi_source_port: Source port ranges.
+        :param pulumi.Input[Union['PiNetworkSecurityGroupRulePiSourcePortsArgs', 'PiNetworkSecurityGroupRulePiSourcePortsArgsDict', 'outputs.PiNetworkSecurityGroupRulePiSourcePorts']] pi_source_ports: Source port ranges.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleRuleArgs', 'PiNetworkSecurityGroupRuleRuleArgsDict', 'outputs.PiNetworkSecurityGroupRuleRule']]]] rules: The list of rules in the network security group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] user_tags: List of user tags attached to the resource.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

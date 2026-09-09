@@ -124,39 +124,39 @@ export interface IsBareMetalServerNetworkInterfaceFloatingIpState {
     /**
      * Floating IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Bare metal server identifier
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * Floating IP crn
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The floating ip identifier of the network interface associated with the bare metal server
      */
-    floatingIp?: pulumi.Input<string>;
+    floatingIp?: pulumi.Input<string | undefined>;
     /**
      * Name of the floating IP
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Bare metal server network interface identifier
      */
-    networkInterface?: pulumi.Input<string>;
+    networkInterface?: pulumi.Input<string | undefined>;
     /**
      * Floating IP status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Target info
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * Zone name
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**

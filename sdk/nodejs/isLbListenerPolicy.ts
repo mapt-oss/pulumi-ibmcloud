@@ -183,79 +183,79 @@ export interface IsLbListenerPolicyState {
     /**
      * Policy Action
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Listener Policy
      */
-    lb?: pulumi.Input<string>;
+    lb?: pulumi.Input<string | undefined>;
     /**
      * Listener ID
      */
-    listener?: pulumi.Input<string>;
+    listener?: pulumi.Input<string | undefined>;
     /**
      * Policy name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Listener Policy ID
      */
-    policyId?: pulumi.Input<string>;
+    policyId?: pulumi.Input<string | undefined>;
     /**
      * Listener Policy Priority
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * Listner Policy status
      */
-    provisioningStatus?: pulumi.Input<string>;
+    provisioningStatus?: pulumi.Input<string | undefined>;
     /**
      * The crn of the LB resource
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
     /**
      * Policy Rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyRule>[] | undefined>;
     /**
      * - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `httpsRedirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
      */
-    target?: pulumi.Input<inputs.IsLbListenerPolicyTarget>;
+    target?: pulumi.Input<inputs.IsLbListenerPolicyTarget | undefined>;
     /**
      * Listener Policy target HTTPS Status code.
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpStatusCode?: pulumi.Input<number>;
+    targetHttpStatusCode?: pulumi.Input<number | undefined>;
     /**
      * ID of the listener that will be set as http redirect target
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpsRedirectListener?: pulumi.Input<string>;
+    targetHttpsRedirectListener?: pulumi.Input<string | undefined>;
     /**
      * The HTTP status code to be returned in the redirect response
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpsRedirectStatusCode?: pulumi.Input<number>;
+    targetHttpsRedirectStatusCode?: pulumi.Input<number | undefined>;
     /**
      * Target URI where traffic will be redirected
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpsRedirectUri?: pulumi.Input<string>;
+    targetHttpsRedirectUri?: pulumi.Input<string | undefined>;
     /**
      * Listener Policy Target ID
      *
      * @deprecated Please use the argument 'target'
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Policy Target URL
      *
      * @deprecated Please use the argument 'target'
      */
-    targetUrl?: pulumi.Input<string>;
+    targetUrl?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -277,7 +277,7 @@ export interface IsLbListenerPolicyArgs {
     /**
      * Policy name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Listener Policy Priority
      */
@@ -285,45 +285,45 @@ export interface IsLbListenerPolicyArgs {
     /**
      * Policy Rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyRule>[] | undefined>;
     /**
      * - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `httpsRedirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
      */
-    target?: pulumi.Input<inputs.IsLbListenerPolicyTarget>;
+    target?: pulumi.Input<inputs.IsLbListenerPolicyTarget | undefined>;
     /**
      * Listener Policy target HTTPS Status code.
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpStatusCode?: pulumi.Input<number>;
+    targetHttpStatusCode?: pulumi.Input<number | undefined>;
     /**
      * ID of the listener that will be set as http redirect target
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpsRedirectListener?: pulumi.Input<string>;
+    targetHttpsRedirectListener?: pulumi.Input<string | undefined>;
     /**
      * The HTTP status code to be returned in the redirect response
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpsRedirectStatusCode?: pulumi.Input<number>;
+    targetHttpsRedirectStatusCode?: pulumi.Input<number | undefined>;
     /**
      * Target URI where traffic will be redirected
      *
      * @deprecated Please use the argument 'target'
      */
-    targetHttpsRedirectUri?: pulumi.Input<string>;
+    targetHttpsRedirectUri?: pulumi.Input<string | undefined>;
     /**
      * Listener Policy Target ID
      *
      * @deprecated Please use the argument 'target'
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Policy Target URL
      *
      * @deprecated Please use the argument 'target'
      */
-    targetUrl?: pulumi.Input<string>;
+    targetUrl?: pulumi.Input<string | undefined>;
 }

@@ -27,13 +27,16 @@ class GetIsLbListenerResult:
     """
     A collection of values returned by getIsLbListener.
     """
-    def __init__(__self__, accept_proxy_protocol=None, certificate_instances=None, connection_limit=None, created_at=None, default_pools=None, href=None, https_redirects=None, id=None, idle_connection_timeout=None, lb=None, listener_id=None, policies=None, port=None, port_max=None, port_min=None, protocol=None, provisioning_status=None):
+    def __init__(__self__, accept_proxy_protocol=None, certificate_instances=None, client_authentications=None, connection_limit=None, created_at=None, default_pools=None, href=None, https_redirects=None, id=None, idle_connection_timeout=None, lb=None, listener_id=None, policies=None, port=None, port_max=None, port_min=None, protocol=None, provisioning_status=None):
         if accept_proxy_protocol and not isinstance(accept_proxy_protocol, bool):
             raise TypeError("Expected argument 'accept_proxy_protocol' to be a bool")
         pulumi.set(__self__, "accept_proxy_protocol", accept_proxy_protocol)
         if certificate_instances and not isinstance(certificate_instances, list):
             raise TypeError("Expected argument 'certificate_instances' to be a list")
         pulumi.set(__self__, "certificate_instances", certificate_instances)
+        if client_authentications and not isinstance(client_authentications, list):
+            raise TypeError("Expected argument 'client_authentications' to be a list")
+        pulumi.set(__self__, "client_authentications", client_authentications)
         if connection_limit and not isinstance(connection_limit, int):
             raise TypeError("Expected argument 'connection_limit' to be a int")
         pulumi.set(__self__, "connection_limit", connection_limit)
@@ -89,6 +92,11 @@ class GetIsLbListenerResult:
     @pulumi.getter(name="certificateInstances")
     def certificate_instances(self) -> Sequence['outputs.GetIsLbListenerCertificateInstanceResult']:
         return pulumi.get(self, "certificate_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="clientAuthentications")
+    def client_authentications(self) -> Sequence['outputs.GetIsLbListenerClientAuthenticationResult']:
+        return pulumi.get(self, "client_authentications")
 
     @_builtins.property
     @pulumi.getter(name="connectionLimit")
@@ -177,6 +185,7 @@ class AwaitableGetIsLbListenerResult(GetIsLbListenerResult):
         return GetIsLbListenerResult(
             accept_proxy_protocol=self.accept_proxy_protocol,
             certificate_instances=self.certificate_instances,
+            client_authentications=self.client_authentications,
             connection_limit=self.connection_limit,
             created_at=self.created_at,
             default_pools=self.default_pools,
@@ -209,6 +218,7 @@ def get_is_lb_listener(lb: Optional[_builtins.str] = None,
     return AwaitableGetIsLbListenerResult(
         accept_proxy_protocol=pulumi.get(__ret__, 'accept_proxy_protocol'),
         certificate_instances=pulumi.get(__ret__, 'certificate_instances'),
+        client_authentications=pulumi.get(__ret__, 'client_authentications'),
         connection_limit=pulumi.get(__ret__, 'connection_limit'),
         created_at=pulumi.get(__ret__, 'created_at'),
         default_pools=pulumi.get(__ret__, 'default_pools'),
@@ -224,8 +234,8 @@ def get_is_lb_listener(lb: Optional[_builtins.str] = None,
         port_min=pulumi.get(__ret__, 'port_min'),
         protocol=pulumi.get(__ret__, 'protocol'),
         provisioning_status=pulumi.get(__ret__, 'provisioning_status'))
-def get_is_lb_listener_output(lb: Optional[pulumi.Input[_builtins.str]] = None,
-                              listener_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_lb_listener_output(lb: pulumi.Input[Optional[_builtins.str]] = None,
+                              listener_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsLbListenerResult]:
     """
     Use this data source to access information about an existing resource.
@@ -238,6 +248,7 @@ def get_is_lb_listener_output(lb: Optional[pulumi.Input[_builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetIsLbListenerResult(
         accept_proxy_protocol=pulumi.get(__response__, 'accept_proxy_protocol'),
         certificate_instances=pulumi.get(__response__, 'certificate_instances'),
+        client_authentications=pulumi.get(__response__, 'client_authentications'),
         connection_limit=pulumi.get(__response__, 'connection_limit'),
         created_at=pulumi.get(__response__, 'created_at'),
         default_pools=pulumi.get(__response__, 'default_pools'),

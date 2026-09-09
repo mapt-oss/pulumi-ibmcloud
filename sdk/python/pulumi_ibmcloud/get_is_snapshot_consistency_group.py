@@ -27,10 +27,13 @@ class GetIsSnapshotConsistencyGroupResult:
     """
     A collection of values returned by getIsSnapshotConsistencyGroup.
     """
-    def __init__(__self__, access_tags=None, backup_policy_plans=None, created_at=None, crn=None, delete_snapshots_on_delete=None, href=None, id=None, identifier=None, lifecycle_state=None, name=None, resource_groups=None, resource_type=None, service_tags=None, snapshots=None, tags=None):
+    def __init__(__self__, access_tags=None, backup_policy_jobs=None, backup_policy_plans=None, created_at=None, crn=None, delete_snapshots_on_delete=None, href=None, id=None, identifier=None, lifecycle_state=None, name=None, resource_groups=None, resource_type=None, service_tags=None, snapshots=None, tags=None):
         if access_tags and not isinstance(access_tags, list):
             raise TypeError("Expected argument 'access_tags' to be a list")
         pulumi.set(__self__, "access_tags", access_tags)
+        if backup_policy_jobs and not isinstance(backup_policy_jobs, list):
+            raise TypeError("Expected argument 'backup_policy_jobs' to be a list")
+        pulumi.set(__self__, "backup_policy_jobs", backup_policy_jobs)
         if backup_policy_plans and not isinstance(backup_policy_plans, list):
             raise TypeError("Expected argument 'backup_policy_plans' to be a list")
         pulumi.set(__self__, "backup_policy_plans", backup_policy_plans)
@@ -78,6 +81,11 @@ class GetIsSnapshotConsistencyGroupResult:
     @pulumi.getter(name="accessTags")
     def access_tags(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "access_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="backupPolicyJobs")
+    def backup_policy_jobs(self) -> Sequence['outputs.GetIsSnapshotConsistencyGroupBackupPolicyJobResult']:
+        return pulumi.get(self, "backup_policy_jobs")
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyPlans")
@@ -160,6 +168,7 @@ class AwaitableGetIsSnapshotConsistencyGroupResult(GetIsSnapshotConsistencyGroup
             yield self
         return GetIsSnapshotConsistencyGroupResult(
             access_tags=self.access_tags,
+            backup_policy_jobs=self.backup_policy_jobs,
             backup_policy_plans=self.backup_policy_plans,
             created_at=self.created_at,
             crn=self.crn,
@@ -194,6 +203,7 @@ def get_is_snapshot_consistency_group(access_tags: Optional[Sequence[_builtins.s
 
     return AwaitableGetIsSnapshotConsistencyGroupResult(
         access_tags=pulumi.get(__ret__, 'access_tags'),
+        backup_policy_jobs=pulumi.get(__ret__, 'backup_policy_jobs'),
         backup_policy_plans=pulumi.get(__ret__, 'backup_policy_plans'),
         created_at=pulumi.get(__ret__, 'created_at'),
         crn=pulumi.get(__ret__, 'crn'),
@@ -208,10 +218,10 @@ def get_is_snapshot_consistency_group(access_tags: Optional[Sequence[_builtins.s
         service_tags=pulumi.get(__ret__, 'service_tags'),
         snapshots=pulumi.get(__ret__, 'snapshots'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_is_snapshot_consistency_group_output(access_tags: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             tags: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_is_snapshot_consistency_group_output(access_tags: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             tags: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSnapshotConsistencyGroupResult]:
     """
     Use this data source to access information about an existing resource.
@@ -225,6 +235,7 @@ def get_is_snapshot_consistency_group_output(access_tags: Optional[pulumi.Input[
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsSnapshotConsistencyGroup:getIsSnapshotConsistencyGroup', __args__, opts=opts, typ=GetIsSnapshotConsistencyGroupResult)
     return __ret__.apply(lambda __response__: GetIsSnapshotConsistencyGroupResult(
         access_tags=pulumi.get(__response__, 'access_tags'),
+        backup_policy_jobs=pulumi.get(__response__, 'backup_policy_jobs'),
         backup_policy_plans=pulumi.get(__response__, 'backup_policy_plans'),
         created_at=pulumi.get(__response__, 'created_at'),
         crn=pulumi.get(__response__, 'crn'),

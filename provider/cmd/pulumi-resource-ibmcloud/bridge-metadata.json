@@ -805,6 +805,58 @@
                     }
                 }
             },
+            "ibm_iam_identity_preference": {
+                "current": "ibmcloud:index/iamIdentityPreference:IamIdentityPreference",
+                "fields": {
+                    "value_list_of_strings": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_iam_idp": {
+                "current": "ibmcloud:index/iamIdp:IamIdp",
+                "fields": {
+                    "properties": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "idp": {
+                                    "maxItemsOne": true
+                                },
+                                "sp": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "idp_initiated_urls": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "secrets": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "idp": {
+                                    "maxItemsOne": true
+                                },
+                                "sp": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "share_scope": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_iam_idp_account_setting": {
+                "current": "ibmcloud:index/iamIdpAccountSetting:IamIdpAccountSetting"
+            },
             "ibm_iam_policy_assignment": {
                 "current": "ibmcloud:index/iamPolicyAssignment:IamPolicyAssignment",
                 "fields": {
@@ -1109,9 +1161,15 @@
                     }
                 }
             },
+            "ibm_iam_serviceid_group": {
+                "current": "ibmcloud:index/iamServiceidGroup:IamServiceidGroup"
+            },
             "ibm_iam_trusted_profile": {
                 "current": "ibmcloud:index/iamTrustedProfile:IamTrustedProfile",
                 "fields": {
+                    "activity": {
+                        "maxItemsOne": false
+                    },
                     "history": {
                         "maxItemsOne": false,
                         "elem": {
@@ -1981,6 +2039,15 @@
             "ibm_is_ike_policy": {
                 "current": "ibmcloud:index/isIkePolicy:IsIkePolicy",
                 "fields": {
+                    "authentication_algorithms": {
+                        "maxItemsOne": false
+                    },
+                    "dh_groups": {
+                        "maxItemsOne": false
+                    },
+                    "encryption_algorithms": {
+                        "maxItemsOne": false
+                    },
                     "vpn_connections": {
                         "maxItemsOne": false
                     }
@@ -2285,6 +2352,16 @@
                             }
                         }
                     },
+                    "software_attachments": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "deleted": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
                     "status_reasons": {
                         "maxItemsOne": false
                     },
@@ -2482,6 +2559,94 @@
             },
             "ibm_is_instance_network_interface_floating_ip": {
                 "current": "ibmcloud:index/isInstanceNetworkInterfaceFloatingIp:IsInstanceNetworkInterfaceFloatingIp"
+            },
+            "ibm_is_instance_reinitialize": {
+                "current": "ibmcloud:index/isInstanceReinitialize:IsInstanceReinitialize",
+                "fields": {
+                    "boot_volume_attachment": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "volume": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "allowed_use": {
+                                                "maxItemsOne": true
+                                            },
+                                            "encryption_key": {
+                                                "maxItemsOne": true
+                                            },
+                                            "profile": {
+                                                "maxItemsOne": true
+                                            },
+                                            "source_snapshot": {
+                                                "maxItemsOne": true
+                                            },
+                                            "user_tags": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default_trusted_profile": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "target": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "keys": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_is_instance_software_attachment": {
+                "current": "ibmcloud:index/isInstanceSoftwareAttachment:IsInstanceSoftwareAttachment",
+                "fields": {
+                    "catalog_offering": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "plan": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "deleted": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "version": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "entitlement": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "licensed_software": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "lifecycle_reasons": {
+                        "maxItemsOne": false
+                    },
+                    "offering_instance": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "ibm_is_instance_template": {
                 "current": "ibmcloud:index/isInstanceTemplate:IsInstanceTemplate",
@@ -2699,6 +2864,15 @@
             "ibm_is_ipsec_policy": {
                 "current": "ibmcloud:index/isIpsecPolicy:IsIpsecPolicy",
                 "fields": {
+                    "authentication_algorithms": {
+                        "maxItemsOne": false
+                    },
+                    "encryption_algorithms": {
+                        "maxItemsOne": false
+                    },
+                    "pfs_groups": {
+                        "maxItemsOne": false
+                    },
                     "vpn_connections": {
                         "maxItemsOne": false
                     }
@@ -2749,6 +2923,9 @@
             "ibm_is_lb_listener": {
                 "current": "ibmcloud:index/isLbListener:IsLbListener",
                 "fields": {
+                    "client_authentication": {
+                        "maxItemsOne": true
+                    },
                     "https_redirect": {
                         "maxItemsOne": true,
                         "elem": {
@@ -2802,6 +2979,9 @@
             "ibm_is_lb_pool": {
                 "current": "ibmcloud:index/isLbPool:IsLbPool",
                 "fields": {
+                    "client_authentication": {
+                        "maxItemsOne": true
+                    },
                     "failsafe_policy": {
                         "maxItemsOne": true,
                         "elem": {
@@ -2818,6 +2998,36 @@
                                 }
                             }
                         }
+                    },
+                    "health_monitor": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "request": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "headers": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "codes": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "server_authentication": {
+                        "maxItemsOne": true
                     }
                 }
             },
@@ -2879,7 +3089,13 @@
             "ibm_is_private_path_service_gateway": {
                 "current": "ibmcloud:index/isPrivatePathServiceGateway:IsPrivatePathServiceGateway",
                 "fields": {
+                    "access_tags": {
+                        "maxItemsOne": false
+                    },
                     "service_endpoints": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
                         "maxItemsOne": false
                     }
                 }
@@ -3288,6 +3504,16 @@
                 "fields": {
                     "access_tags": {
                         "maxItemsOne": false
+                    },
+                    "backup_policy_job": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "deleted": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     },
                     "backup_policy_plan": {
                         "maxItemsOne": false,
@@ -3991,7 +4217,20 @@
                     "pi_anti_affinity_volumes": {
                         "maxItemsOne": false
                     },
+                    "pi_default_trusted_profile": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "target": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
                     "pi_deployment_target": {
+                        "maxItemsOne": true
+                    },
+                    "pi_metadata_service": {
                         "maxItemsOne": true
                     },
                     "pi_network": {
@@ -5347,6 +5586,60 @@
                     }
                 }
             },
+            "ibm_iam_identity_preference": {
+                "current": "ibmcloud:index/getIamIdentityPreference:getIamIdentityPreference",
+                "fields": {
+                    "value_list_of_strings": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_iam_identity_preferences": {
+                "current": "ibmcloud:index/getIamIdentityPreferences:getIamIdentityPreferences",
+                "fields": {
+                    "preferences": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "value_list_of_strings": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_iam_idp": {
+                "current": "ibmcloud:index/getIamIdp:getIamIdp",
+                "fields": {
+                    "share_scope": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_iam_idp_account_settings": {
+                "current": "ibmcloud:index/getIamIdpAccountSettings:getIamIdpAccountSettings",
+                "fields": {
+                    "idps": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_iam_idps": {
+                "current": "ibmcloud:index/getIamIdps:getIamIdps",
+                "fields": {
+                    "idps": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "share_scope": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "ibm_iam_policy_assignment": {
                 "current": "ibmcloud:index/getIamPolicyAssignment:getIamPolicyAssignment",
                 "fields": {
@@ -5793,9 +6086,15 @@
                     }
                 }
             },
+            "ibm_iam_serviceid_group": {
+                "current": "ibmcloud:index/getIamServiceidGroup:getIamServiceidGroup"
+            },
             "ibm_iam_trusted_profile": {
                 "current": "ibmcloud:index/getIamTrustedProfile:getIamTrustedProfile",
                 "fields": {
+                    "activity": {
+                        "maxItemsOne": false
+                    },
                     "history": {
                         "maxItemsOne": false,
                         "elem": {
@@ -6593,6 +6892,24 @@
                     }
                 }
             },
+            "ibm_is_bare_metal_server_capacities": {
+                "current": "ibmcloud:index/getIsBareMetalServerCapacities:getIsBareMetalServerCapacities",
+                "fields": {
+                    "capacities": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "profile": {
+                                    "maxItemsOne": false
+                                },
+                                "zone": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "ibm_is_bare_metal_server_disk": {
                 "current": "ibmcloud:index/getIsBareMetalServerDisk:getIsBareMetalServerDisk",
                 "fields": {
@@ -6865,6 +7182,9 @@
                     },
                     "virtual_network_interfaces_supported": {
                         "maxItemsOne": false
+                    },
+                    "zones": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -6957,6 +7277,9 @@
                                     }
                                 },
                                 "virtual_network_interfaces_supported": {
+                                    "maxItemsOne": false
+                                },
+                                "zones": {
                                     "maxItemsOne": false
                                 }
                             }
@@ -7885,6 +8208,9 @@
                         "maxItemsOne": false,
                         "elem": {
                             "fields": {
+                                "authentication_algorithms": {
+                                    "maxItemsOne": false
+                                },
                                 "connections": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -7894,6 +8220,12 @@
                                             }
                                         }
                                     }
+                                },
+                                "dh_groups": {
+                                    "maxItemsOne": false
+                                },
+                                "encryption_algorithms": {
+                                    "maxItemsOne": false
                                 },
                                 "resource_group": {
                                     "maxItemsOne": false
@@ -7906,6 +8238,9 @@
             "ibm_is_ike_policy": {
                 "current": "ibmcloud:index/getIsIkePolicy:getIsIkePolicy",
                 "fields": {
+                    "authentication_algorithms": {
+                        "maxItemsOne": false
+                    },
                     "connections": {
                         "maxItemsOne": false,
                         "elem": {
@@ -7915,6 +8250,12 @@
                                 }
                             }
                         }
+                    },
+                    "dh_groups": {
+                        "maxItemsOne": false
+                    },
+                    "encryption_algorithms": {
+                        "maxItemsOne": false
                     },
                     "resource_group": {
                         "maxItemsOne": false
@@ -8256,6 +8597,16 @@
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "software_attachments": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "deleted": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }
@@ -8881,6 +9232,26 @@
                     "supported_cluster_network_profiles": {
                         "maxItemsOne": false
                     },
+                    "supported_vcpu_count": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "threads_per_core": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
                     "total_volume_bandwidth": {
                         "maxItemsOne": false,
                         "elem": {
@@ -9117,6 +9488,26 @@
                                 "supported_cluster_network_profiles": {
                                     "maxItemsOne": false
                                 },
+                                "supported_vcpu_count": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "values": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "threads_per_core": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "values": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
                                 "total_volume_bandwidth": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -9167,6 +9558,95 @@
                                     }
                                 },
                                 "zones": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_is_instance_software_attachment": {
+                "current": "ibmcloud:index/getIsInstanceSoftwareAttachment:getIsInstanceSoftwareAttachment",
+                "fields": {
+                    "catalog_offering": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "plan": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "deleted": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "version": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "entitlement": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "licensed_software": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "lifecycle_reasons": {
+                        "maxItemsOne": false
+                    },
+                    "offering_instance": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_is_instance_software_attachments": {
+                "current": "ibmcloud:index/getIsInstanceSoftwareAttachments:getIsInstanceSoftwareAttachments",
+                "fields": {
+                    "software_attachments": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "catalog_offering": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "plan": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "deleted": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "version": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "entitlement": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "licensed_software": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "lifecycle_reasons": {
+                                    "maxItemsOne": false
+                                },
+                                "offering_instance": {
                                     "maxItemsOne": false
                                 }
                             }
@@ -9728,6 +10208,16 @@
                                         }
                                     }
                                 },
+                                "software_attachments": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "deleted": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
                                 "status_reasons": {
                                     "maxItemsOne": false
                                 },
@@ -9759,6 +10249,9 @@
                         "maxItemsOne": false,
                         "elem": {
                             "fields": {
+                                "authentication_algorithms": {
+                                    "maxItemsOne": false
+                                },
                                 "connections": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -9768,6 +10261,12 @@
                                             }
                                         }
                                     }
+                                },
+                                "encryption_algorithms": {
+                                    "maxItemsOne": false
+                                },
+                                "pfs_groups": {
+                                    "maxItemsOne": false
                                 },
                                 "resource_group": {
                                     "maxItemsOne": false
@@ -9780,6 +10279,9 @@
             "ibm_is_ipsec_policy": {
                 "current": "ibmcloud:index/getIsIpsecPolicy:getIsIpsecPolicy",
                 "fields": {
+                    "authentication_algorithms": {
+                        "maxItemsOne": false
+                    },
                     "connections": {
                         "maxItemsOne": false,
                         "elem": {
@@ -9789,6 +10291,12 @@
                                 }
                             }
                         }
+                    },
+                    "encryption_algorithms": {
+                        "maxItemsOne": false
+                    },
+                    "pfs_groups": {
+                        "maxItemsOne": false
                     },
                     "resource_group": {
                         "maxItemsOne": false
@@ -9855,6 +10363,16 @@
                 "fields": {
                     "certificate_instance": {
                         "maxItemsOne": false
+                    },
+                    "client_authentication": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "certificate_authority": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     },
                     "default_pool": {
                         "maxItemsOne": false,
@@ -9993,6 +10511,16 @@
                                 "certificate_instance": {
                                     "maxItemsOne": false
                                 },
+                                "client_authentication": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "certificate_authority": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
                                 "default_pool": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -10038,6 +10566,16 @@
             "ibm_is_lb_pool": {
                 "current": "ibmcloud:index/getIsLbPool:getIsLbPool",
                 "fields": {
+                    "client_authentication": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "certificate_instance": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
                     "failsafe_policy": {
                         "maxItemsOne": false,
                         "elem": {
@@ -10056,7 +10594,31 @@
                         }
                     },
                     "health_monitor": {
-                        "maxItemsOne": false
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "request": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "headers": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "codes": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     },
                     "instance_group": {
                         "maxItemsOne": false,
@@ -10073,6 +10635,16 @@
                         "elem": {
                             "fields": {
                                 "deleted": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "server_authentication": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "certificate_authority": {
                                     "maxItemsOne": false
                                 }
                             }
@@ -10127,6 +10699,16 @@
                         "maxItemsOne": false,
                         "elem": {
                             "fields": {
+                                "client_authentication": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "certificate_instance": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
                                 "failsafe_policy": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -10145,7 +10727,31 @@
                                     }
                                 },
                                 "health_monitor": {
-                                    "maxItemsOne": false
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "request": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "headers": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "response": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "codes": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 },
                                 "instance_group": {
                                     "maxItemsOne": false,
@@ -10162,6 +10768,16 @@
                                     "elem": {
                                         "fields": {
                                             "deleted": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "server_authentication": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "certificate_authority": {
                                                 "maxItemsOne": false
                                             }
                                         }
@@ -10188,6 +10804,9 @@
                             }
                         }
                     },
+                    "advanced_health_checks_supported": {
+                        "maxItemsOne": false
+                    },
                     "failsafe_policy_actions": {
                         "maxItemsOne": false,
                         "elem": {
@@ -10197,6 +10816,9 @@
                                 }
                             }
                         }
+                    },
+                    "fqdn_pool_members_supported": {
+                        "maxItemsOne": false
                     },
                     "targetable_load_balancer_profiles": {
                         "maxItemsOne": false
@@ -10230,6 +10852,9 @@
                                         }
                                     }
                                 },
+                                "advanced_health_checks_supported": {
+                                    "maxItemsOne": false
+                                },
                                 "availability": {
                                     "maxItemsOne": false
                                 },
@@ -10242,6 +10867,9 @@
                                             }
                                         }
                                     }
+                                },
+                                "fqdn_pool_members_supported": {
+                                    "maxItemsOne": false
                                 },
                                 "instance_groups_supported": {
                                     "maxItemsOne": false
@@ -11634,6 +12262,16 @@
                     "access_tags": {
                         "maxItemsOne": false
                     },
+                    "backup_policy_job": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "deleted": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
                     "backup_policy_plan": {
                         "maxItemsOne": false,
                         "elem": {
@@ -11680,6 +12318,16 @@
                             "fields": {
                                 "access_tags": {
                                     "maxItemsOne": false
+                                },
+                                "backup_policy_job": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "deleted": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
                                 },
                                 "backup_policy_plan": {
                                     "maxItemsOne": false,
@@ -13766,6 +14414,19 @@
             "ibm_pi_instance": {
                 "current": "ibmcloud:index/getPiInstance:getPiInstance",
                 "fields": {
+                    "default_trusted_profile": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "target": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "metadata_service": {
+                        "maxItemsOne": false
+                    },
                     "networks": {
                         "maxItemsOne": false,
                         "elem": {
@@ -13911,6 +14572,19 @@
                         "maxItemsOne": false,
                         "elem": {
                             "fields": {
+                                "default_trusted_profile": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "target": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "metadata_service": {
+                                    "maxItemsOne": false
+                                },
                                 "networks": {
                                     "maxItemsOne": false,
                                     "elem": {

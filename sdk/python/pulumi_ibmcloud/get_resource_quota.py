@@ -141,7 +141,7 @@ def get_resource_quota(name: Optional[_builtins.str] = None,
         total_app_memory=pulumi.get(__ret__, 'total_app_memory'),
         type=pulumi.get(__ret__, 'type'),
         vsi_limit=pulumi.get(__ret__, 'vsi_limit'))
-def get_resource_quota_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_resource_quota_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceQuotaResult]:
     """
     Use this data source to access information about an existing resource.

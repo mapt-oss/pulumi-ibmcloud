@@ -94,8 +94,8 @@ def get_pi_virtual_serial_numbers(pi_cloud_instance_id: Optional[_builtins.str] 
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pi_instance_id=pulumi.get(__ret__, 'pi_instance_id'),
         virtual_serial_numbers=pulumi.get(__ret__, 'virtual_serial_numbers'))
-def get_pi_virtual_serial_numbers_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         pi_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pi_virtual_serial_numbers_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         pi_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVirtualSerialNumbersResult]:
     """
     Use this data source to access information about an existing resource.

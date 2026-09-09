@@ -23,10 +23,11 @@ class PiNetworkAddressGroupArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_name: pulumi.Input[_builtins.str],
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiNetworkAddressGroup resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_name: The name of the Network Address Group.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]] members: The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
@@ -65,40 +66,41 @@ class PiNetworkAddressGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]:
         """
         The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags associated with this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiNetworkAddressGroupState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]] = None,
-                 network_address_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]] = None,
+                 network_address_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiNetworkAddressGroup resources.
+
         :param pulumi.Input[_builtins.str] crn: The Network Address Group's crn.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]] members: The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
         :param pulumi.Input[_builtins.str] network_address_group_id: The unique identifier of the network address group.
@@ -121,74 +123,74 @@ class _PiNetworkAddressGroupState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Network Address Group's crn.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]:
         """
         The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkAddressGroupMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAddressGroupId")
-    def network_address_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_address_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the network address group.
         """
         return pulumi.get(self, "network_address_group_id")
 
     @network_address_group_id.setter
-    def network_address_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_address_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_address_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Network Address Group.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags associated with this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
@@ -198,16 +200,17 @@ class PiNetworkAddressGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict']]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict', 'outputs.PiNetworkAddressGroupMember']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiNetworkAddressGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict']]]] members: The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict', 'outputs.PiNetworkAddressGroupMember']]]] members: The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_name: The name of the Network Address Group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags associated with this resource.
@@ -220,6 +223,7 @@ class PiNetworkAddressGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkAddressGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkAddressGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -235,10 +239,10 @@ class PiNetworkAddressGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict']]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict', 'outputs.PiNetworkAddressGroupMember']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -268,12 +272,12 @@ class PiNetworkAddressGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict']]]]] = None,
-            network_address_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiNetworkAddressGroup':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict', 'outputs.PiNetworkAddressGroupMember']]]]] = None,
+            network_address_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiNetworkAddressGroup':
         """
         Get an existing PiNetworkAddressGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -282,7 +286,7 @@ class PiNetworkAddressGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] crn: The Network Address Group's crn.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict']]]] members: The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkAddressGroupMemberArgs', 'PiNetworkAddressGroupMemberArgsDict', 'outputs.PiNetworkAddressGroupMember']]]] members: The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
         :param pulumi.Input[_builtins.str] network_address_group_id: The unique identifier of the network address group.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_name: The name of the Network Address Group.

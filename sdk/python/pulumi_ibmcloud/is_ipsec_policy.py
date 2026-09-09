@@ -21,128 +21,199 @@ __all__ = ['IsIpsecPolicyArgs', 'IsIpsecPolicy']
 @pulumi.input_type
 class IsIpsecPolicyArgs:
     def __init__(__self__, *,
-                 authentication_algorithm: pulumi.Input[_builtins.str],
-                 encryption_algorithm: pulumi.Input[_builtins.str],
-                 pfs: pulumi.Input[_builtins.str],
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsIpsecPolicy resource.
+
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication alorothm
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption algorithm
-        :param pulumi.Input[_builtins.str] pfs: PFS info
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] key_lifetime: IPSEC key lifetime
         :param pulumi.Input[_builtins.str] name: IPSEC name
+        :param pulumi.Input[_builtins.str] pfs: PFS info
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pfs_groups: The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
         :param pulumi.Input[_builtins.str] resource_group: Resource group info
         """
-        pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
-        pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
-        pulumi.set(__self__, "pfs", pfs)
+        if authentication_algorithm is not None:
+            warnings.warn("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""authentication_algorithm is deprecated: `authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+        if authentication_algorithm is not None:
+            pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
+        if authentication_algorithms is not None:
+            pulumi.set(__self__, "authentication_algorithms", authentication_algorithms)
+        if encryption_algorithm is not None:
+            warnings.warn("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""encryption_algorithm is deprecated: `encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
+        if encryption_algorithm is not None:
+            pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_algorithms is not None:
+            pulumi.set(__self__, "encryption_algorithms", encryption_algorithms)
         if key_lifetime is not None:
             pulumi.set(__self__, "key_lifetime", key_lifetime)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if pfs is not None:
+            warnings.warn("""`pfs` is deprecated in favor of `pfs_groups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfs_groups`. Use `pfs_groups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.""", DeprecationWarning)
+            pulumi.log.warn("""pfs is deprecated: `pfs` is deprecated in favor of `pfs_groups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfs_groups`. Use `pfs_groups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.""")
+        if pfs is not None:
+            pulumi.set(__self__, "pfs", pfs)
+        if pfs_groups is not None:
+            pulumi.set(__self__, "pfs_groups", pfs_groups)
         if resource_group is not None:
             pulumi.set(__self__, "resource_group", resource_group)
 
     @_builtins.property
     @pulumi.getter(name="authenticationAlgorithm")
-    def authentication_algorithm(self) -> pulumi.Input[_builtins.str]:
+    @_utilities.deprecated("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+    def authentication_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authentication alorothm
         """
         return pulumi.get(self, "authentication_algorithm")
 
     @authentication_algorithm.setter
-    def authentication_algorithm(self, value: pulumi.Input[_builtins.str]):
+    def authentication_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "authentication_algorithms")
+
+    @authentication_algorithms.setter
+    def authentication_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "authentication_algorithms", value)
+
+    @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
-    def encryption_algorithm(self) -> pulumi.Input[_builtins.str]:
+    @_utilities.deprecated("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
+    def encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Encryption algorithm
         """
         return pulumi.get(self, "encryption_algorithm")
 
     @encryption_algorithm.setter
-    def encryption_algorithm(self, value: pulumi.Input[_builtins.str]):
+    def encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_algorithm", value)
 
     @_builtins.property
-    @pulumi.getter
-    def pfs(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        PFS info
+        The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         """
-        return pulumi.get(self, "pfs")
+        return pulumi.get(self, "encryption_algorithms")
 
-    @pfs.setter
-    def pfs(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "pfs", value)
+    @encryption_algorithms.setter
+    def encryption_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_algorithms", value)
 
     @_builtins.property
     @pulumi.getter(name="keyLifetime")
-    def key_lifetime(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key_lifetime(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IPSEC key lifetime
         """
         return pulumi.get(self, "key_lifetime")
 
     @key_lifetime.setter
-    def key_lifetime(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key_lifetime(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key_lifetime", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPSEC name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""`pfs` is deprecated in favor of `pfs_groups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfs_groups`. Use `pfs_groups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.""")
+    def pfs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        PFS info
+        """
+        return pulumi.get(self, "pfs")
+
+    @pfs.setter
+    def pfs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pfs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pfsGroups")
+    def pfs_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
+        """
+        return pulumi.get(self, "pfs_groups")
+
+    @pfs_groups.setter
+    def pfs_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "pfs_groups", value)
+
+    @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group info
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
 @pulumi.input_type
 class _IsIpsecPolicyState:
     def __init__(__self__, *,
-                 authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 encapsulation_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pfs: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 transform_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpn_connections: Optional[pulumi.Input[Sequence[pulumi.Input['IsIpsecPolicyVpnConnectionArgs']]]] = None):
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 encapsulation_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 transform_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpn_connections: pulumi.Input[Optional[Sequence[pulumi.Input['IsIpsecPolicyVpnConnectionArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsIpsecPolicy resources.
+
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication alorothm
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.str] encapsulation_mode: IPSEC encapsulation mode
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption algorithm
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] key_lifetime: IPSEC key lifetime
         :param pulumi.Input[_builtins.str] name: IPSEC name
         :param pulumi.Input[_builtins.str] pfs: PFS info
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pfs_groups: The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
         :param pulumi.Input[_builtins.str] resource_controller_url: The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         :param pulumi.Input[_builtins.str] resource_crn: The crn of the resource
         :param pulumi.Input[_builtins.str] resource_group: Resource group info
@@ -151,17 +222,32 @@ class _IsIpsecPolicyState:
         :param pulumi.Input[_builtins.str] transform_protocol: IPSEC transform protocol
         """
         if authentication_algorithm is not None:
+            warnings.warn("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""authentication_algorithm is deprecated: `authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+        if authentication_algorithm is not None:
             pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
+        if authentication_algorithms is not None:
+            pulumi.set(__self__, "authentication_algorithms", authentication_algorithms)
         if encapsulation_mode is not None:
             pulumi.set(__self__, "encapsulation_mode", encapsulation_mode)
         if encryption_algorithm is not None:
+            warnings.warn("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""encryption_algorithm is deprecated: `encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
+        if encryption_algorithm is not None:
             pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_algorithms is not None:
+            pulumi.set(__self__, "encryption_algorithms", encryption_algorithms)
         if key_lifetime is not None:
             pulumi.set(__self__, "key_lifetime", key_lifetime)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if pfs is not None:
+            warnings.warn("""`pfs` is deprecated in favor of `pfs_groups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfs_groups`. Use `pfs_groups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.""", DeprecationWarning)
+            pulumi.log.warn("""pfs is deprecated: `pfs` is deprecated in favor of `pfs_groups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfs_groups`. Use `pfs_groups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.""")
+        if pfs is not None:
             pulumi.set(__self__, "pfs", pfs)
+        if pfs_groups is not None:
+            pulumi.set(__self__, "pfs_groups", pfs_groups)
         if resource_controller_url is not None:
             pulumi.set(__self__, "resource_controller_url", resource_controller_url)
         if resource_crn is not None:
@@ -179,155 +265,194 @@ class _IsIpsecPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="authenticationAlgorithm")
-    def authentication_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @_utilities.deprecated("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+    def authentication_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authentication alorothm
         """
         return pulumi.get(self, "authentication_algorithm")
 
     @authentication_algorithm.setter
-    def authentication_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "authentication_algorithms")
+
+    @authentication_algorithms.setter
+    def authentication_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "authentication_algorithms", value)
+
+    @_builtins.property
     @pulumi.getter(name="encapsulationMode")
-    def encapsulation_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encapsulation_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPSEC encapsulation mode
         """
         return pulumi.get(self, "encapsulation_mode")
 
     @encapsulation_mode.setter
-    def encapsulation_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encapsulation_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encapsulation_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
-    def encryption_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @_utilities.deprecated("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
+    def encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Encryption algorithm
         """
         return pulumi.get(self, "encryption_algorithm")
 
     @encryption_algorithm.setter
-    def encryption_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "encryption_algorithms")
+
+    @encryption_algorithms.setter
+    def encryption_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_algorithms", value)
+
+    @_builtins.property
     @pulumi.getter(name="keyLifetime")
-    def key_lifetime(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key_lifetime(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IPSEC key lifetime
         """
         return pulumi.get(self, "key_lifetime")
 
     @key_lifetime.setter
-    def key_lifetime(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key_lifetime(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key_lifetime", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPSEC name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def pfs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @_utilities.deprecated("""`pfs` is deprecated in favor of `pfs_groups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfs_groups`. Use `pfs_groups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.""")
+    def pfs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PFS info
         """
         return pulumi.get(self, "pfs")
 
     @pfs.setter
-    def pfs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pfs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pfs", value)
 
     @_builtins.property
+    @pulumi.getter(name="pfsGroups")
+    def pfs_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
+        """
+        return pulumi.get(self, "pfs_groups")
+
+    @pfs_groups.setter
+    def pfs_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "pfs_groups", value)
+
+    @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCrn")
-    def resource_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "resource_crn")
 
     @resource_crn.setter
-    def resource_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group info
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="transformProtocol")
-    def transform_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transform_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPSEC transform protocol
         """
         return pulumi.get(self, "transform_protocol")
 
     @transform_protocol.setter
-    def transform_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transform_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transform_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="vpnConnections")
-    def vpn_connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsIpsecPolicyVpnConnectionArgs']]]]:
+    def vpn_connections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsIpsecPolicyVpnConnectionArgs']]]]:
         return pulumi.get(self, "vpn_connections")
 
     @vpn_connections.setter
-    def vpn_connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsIpsecPolicyVpnConnectionArgs']]]]):
+    def vpn_connections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsIpsecPolicyVpnConnectionArgs']]]]):
         pulumi.set(self, "vpn_connections", value)
 
 
@@ -337,32 +462,40 @@ class IsIpsecPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pfs: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsIpsecPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication alorothm
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption algorithm
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] key_lifetime: IPSEC key lifetime
         :param pulumi.Input[_builtins.str] name: IPSEC name
         :param pulumi.Input[_builtins.str] pfs: PFS info
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pfs_groups: The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
         :param pulumi.Input[_builtins.str] resource_group: Resource group info
         """
         ...
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: IsIpsecPolicyArgs,
+                 args: Optional[IsIpsecPolicyArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsIpsecPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsIpsecPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -378,12 +511,15 @@ class IsIpsecPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pfs: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs: pulumi.Input[Optional[_builtins.str]] = None,
+                 pfs_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -393,17 +529,14 @@ class IsIpsecPolicy(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = IsIpsecPolicyArgs.__new__(IsIpsecPolicyArgs)
 
-            if authentication_algorithm is None and not opts.urn:
-                raise TypeError("Missing required property 'authentication_algorithm'")
             __props__.__dict__["authentication_algorithm"] = authentication_algorithm
-            if encryption_algorithm is None and not opts.urn:
-                raise TypeError("Missing required property 'encryption_algorithm'")
+            __props__.__dict__["authentication_algorithms"] = authentication_algorithms
             __props__.__dict__["encryption_algorithm"] = encryption_algorithm
+            __props__.__dict__["encryption_algorithms"] = encryption_algorithms
             __props__.__dict__["key_lifetime"] = key_lifetime
             __props__.__dict__["name"] = name
-            if pfs is None and not opts.urn:
-                raise TypeError("Missing required property 'pfs'")
             __props__.__dict__["pfs"] = pfs
+            __props__.__dict__["pfs_groups"] = pfs_groups
             __props__.__dict__["resource_group"] = resource_group
             __props__.__dict__["encapsulation_mode"] = None
             __props__.__dict__["resource_controller_url"] = None
@@ -422,19 +555,22 @@ class IsIpsecPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            encapsulation_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            pfs: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            transform_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            vpn_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsIpsecPolicyVpnConnectionArgs', 'IsIpsecPolicyVpnConnectionArgsDict']]]]] = None) -> 'IsIpsecPolicy':
+            authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            encapsulation_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            pfs: pulumi.Input[Optional[_builtins.str]] = None,
+            pfs_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            transform_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            vpn_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsIpsecPolicyVpnConnectionArgs', 'IsIpsecPolicyVpnConnectionArgsDict', 'outputs.IsIpsecPolicyVpnConnection']]]]] = None) -> 'IsIpsecPolicy':
         """
         Get an existing IsIpsecPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -443,11 +579,14 @@ class IsIpsecPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication alorothm
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.str] encapsulation_mode: IPSEC encapsulation mode
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption algorithm
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] key_lifetime: IPSEC key lifetime
         :param pulumi.Input[_builtins.str] name: IPSEC name
         :param pulumi.Input[_builtins.str] pfs: PFS info
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pfs_groups: The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
         :param pulumi.Input[_builtins.str] resource_controller_url: The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         :param pulumi.Input[_builtins.str] resource_crn: The crn of the resource
         :param pulumi.Input[_builtins.str] resource_group: Resource group info
@@ -460,11 +599,14 @@ class IsIpsecPolicy(pulumi.CustomResource):
         __props__ = _IsIpsecPolicyState.__new__(_IsIpsecPolicyState)
 
         __props__.__dict__["authentication_algorithm"] = authentication_algorithm
+        __props__.__dict__["authentication_algorithms"] = authentication_algorithms
         __props__.__dict__["encapsulation_mode"] = encapsulation_mode
         __props__.__dict__["encryption_algorithm"] = encryption_algorithm
+        __props__.__dict__["encryption_algorithms"] = encryption_algorithms
         __props__.__dict__["key_lifetime"] = key_lifetime
         __props__.__dict__["name"] = name
         __props__.__dict__["pfs"] = pfs
+        __props__.__dict__["pfs_groups"] = pfs_groups
         __props__.__dict__["resource_controller_url"] = resource_controller_url
         __props__.__dict__["resource_crn"] = resource_crn
         __props__.__dict__["resource_group"] = resource_group
@@ -476,11 +618,20 @@ class IsIpsecPolicy(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="authenticationAlgorithm")
+    @_utilities.deprecated("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
     def authentication_algorithm(self) -> pulumi.Output[_builtins.str]:
         """
         Authentication alorothm
         """
         return pulumi.get(self, "authentication_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "authentication_algorithms")
 
     @_builtins.property
     @pulumi.getter(name="encapsulationMode")
@@ -492,11 +643,20 @@ class IsIpsecPolicy(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
+    @_utilities.deprecated("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
     def encryption_algorithm(self) -> pulumi.Output[_builtins.str]:
         """
         Encryption algorithm
         """
         return pulumi.get(self, "encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "encryption_algorithms")
 
     @_builtins.property
     @pulumi.getter(name="keyLifetime")
@@ -516,11 +676,20 @@ class IsIpsecPolicy(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""`pfs` is deprecated in favor of `pfs_groups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfs_groups`. Use `pfs_groups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.""")
     def pfs(self) -> pulumi.Output[_builtins.str]:
         """
         PFS info
         """
         return pulumi.get(self, "pfs")
+
+    @_builtins.property
+    @pulumi.getter(name="pfsGroups")
+    def pfs_groups(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
+        """
+        return pulumi.get(self, "pfs_groups")
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")

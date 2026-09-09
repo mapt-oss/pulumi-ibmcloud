@@ -254,8 +254,8 @@ def get_is_private_path_service_gateway(private_path_service_gateway: Optional[_
         service_endpoints=pulumi.get(__ret__, 'service_endpoints'),
         vpcs=pulumi.get(__ret__, 'vpcs'),
         zonal_affinity=pulumi.get(__ret__, 'zonal_affinity'))
-def get_is_private_path_service_gateway_output(private_path_service_gateway: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               private_path_service_gateway_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_private_path_service_gateway_output(private_path_service_gateway: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               private_path_service_gateway_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsPrivatePathServiceGatewayResult]:
     """
     Use this data source to access information about an existing resource.

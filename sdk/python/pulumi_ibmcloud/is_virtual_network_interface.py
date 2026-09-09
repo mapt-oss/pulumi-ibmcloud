@@ -21,20 +21,21 @@ __all__ = ['IsVirtualNetworkInterfaceArgs', 'IsVirtualNetworkInterface']
 @pulumi.input_type
 class IsVirtualNetworkInterfaceArgs:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input['IsVirtualNetworkInterfacePrimaryIpArgs']] = None,
-                 protocol_state_filtering_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional['IsVirtualNetworkInterfacePrimaryIpArgs']] = None,
+                 protocol_state_filtering_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsVirtualNetworkInterface resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: Access management tags for the vni instance
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
         :param pulumi.Input[_builtins.bool] auto_delete: Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
@@ -75,175 +76,176 @@ class IsVirtualNetworkInterfaceArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Access management tags for the vni instance
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowIpSpoofing")
-    def allow_ip_spoofing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_ip_spoofing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
         """
         return pulumi.get(self, "allow_ip_spoofing")
 
     @allow_ip_spoofing.setter
-    def allow_ip_spoofing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_ip_spoofing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_ip_spoofing", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
-    def auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
         """
         return pulumi.get(self, "auto_delete")
 
     @auto_delete.setter
-    def auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="enableInfrastructureNat")
-    def enable_infrastructure_nat(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_infrastructure_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`:- The VPC infrastructure performs any needed NAT operations.- `floating_ips` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allow_ip_spoofing` must be `false`.- If the virtual network interface is attached:  - The target `resource_type` must be `bare_metal_server_network_attachment`.  - The target `interface_type` must not be `hipersocket`.
         """
         return pulumi.get(self, "enable_infrastructure_nat")
 
     @enable_infrastructure_nat.setter
-    def enable_infrastructure_nat(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_infrastructure_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_infrastructure_nat", value)
 
     @_builtins.property
     @pulumi.getter
-    def ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]:
+    def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]:
         """
         The reserved IPs bound to this virtual network interface.May be empty when `lifecycle_state` is `pending`.
         """
         return pulumi.get(self, "ips")
 
     @ips.setter
-    def ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]):
+    def ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]):
         pulumi.set(self, "ips", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsVirtualNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsVirtualNetworkInterfacePrimaryIpArgs']]:
         """
         The reserved IP for this virtual network interface.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsVirtualNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsVirtualNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="protocolStateFilteringMode")
-    def protocol_state_filtering_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol_state_filtering_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol state filtering mode used for this virtual network interface.
         """
         return pulumi.get(self, "protocol_state_filtering_mode")
 
     @protocol_state_filtering_mode.setter
-    def protocol_state_filtering_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol_state_filtering_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol_state_filtering_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group id for this virtual network interface.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The security groups for this virtual network interface.
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated subnet id.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         UserTags for the vni instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsVirtualNetworkInterfaceState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input['IsVirtualNetworkInterfacePrimaryIpArgs']] = None,
-                 protocol_state_filtering_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceTargetArgs']]]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceVpcArgs']]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional['IsVirtualNetworkInterfacePrimaryIpArgs']] = None,
+                 protocol_state_filtering_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceTargetArgs']]]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceVpcArgs']]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVirtualNetworkInterface resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: Access management tags for the vni instance
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
         :param pulumi.Input[_builtins.bool] auto_delete: Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
@@ -311,254 +313,254 @@ class _IsVirtualNetworkInterfaceState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Access management tags for the vni instance
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowIpSpoofing")
-    def allow_ip_spoofing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_ip_spoofing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
         """
         return pulumi.get(self, "allow_ip_spoofing")
 
     @allow_ip_spoofing.setter
-    def allow_ip_spoofing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_ip_spoofing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_ip_spoofing", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
-    def auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
         """
         return pulumi.get(self, "auto_delete")
 
     @auto_delete.setter
-    def auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the virtual network interface was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this virtual network interface.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="enableInfrastructureNat")
-    def enable_infrastructure_nat(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_infrastructure_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`:- The VPC infrastructure performs any needed NAT operations.- `floating_ips` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allow_ip_spoofing` must be `false`.- If the virtual network interface is attached:  - The target `resource_type` must be `bare_metal_server_network_attachment`.  - The target `interface_type` must not be `hipersocket`.
         """
         return pulumi.get(self, "enable_infrastructure_nat")
 
     @enable_infrastructure_nat.setter
-    def enable_infrastructure_nat(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_infrastructure_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_infrastructure_nat", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this virtual network interface.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]:
+    def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]:
         """
         The reserved IPs bound to this virtual network interface.May be empty when `lifecycle_state` is `pending`.
         """
         return pulumi.get(self, "ips")
 
     @ips.setter
-    def ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]):
+    def ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceIpArgs']]]]):
         pulumi.set(self, "ips", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the virtual network interface.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MAC address of the interface. Absent when the interface is not attached to a target.
         """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
-    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsVirtualNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsVirtualNetworkInterfacePrimaryIpArgs']]:
         """
         The reserved IP for this virtual network interface.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsVirtualNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsVirtualNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="protocolStateFilteringMode")
-    def protocol_state_filtering_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol_state_filtering_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol state filtering mode used for this virtual network interface.
         """
         return pulumi.get(self, "protocol_state_filtering_mode")
 
     @protocol_state_filtering_mode.setter
-    def protocol_state_filtering_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol_state_filtering_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol_state_filtering_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group id for this virtual network interface.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The security groups for this virtual network interface.
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated subnet id.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         UserTags for the vni instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceTargetArgs']]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceTargetArgs']]]]:
         """
         The target of this virtual network interface.If absent, this virtual network interface is not attached to a target.
         """
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceTargetArgs']]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceTargetArgs']]]]):
         pulumi.set(self, "targets", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceVpcArgs']]]]:
+    def vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceVpcArgs']]]]:
         """
         The VPC this virtual network interface resides in.
         """
         return pulumi.get(self, "vpcs")
 
     @vpcs.setter
-    def vpcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceVpcArgs']]]]):
+    def vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceVpcArgs']]]]):
         pulumi.set(self, "vpcs", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The zone name this virtual network interface resides in.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -568,30 +570,31 @@ class IsVirtualNetworkInterface(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 protocol_state_filtering_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict', 'outputs.IsVirtualNetworkInterfaceIp']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict', 'outputs.IsVirtualNetworkInterfacePrimaryIp']]] = None,
+                 protocol_state_filtering_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IsVirtualNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: Access management tags for the vni instance
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
         :param pulumi.Input[_builtins.bool] auto_delete: Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
         :param pulumi.Input[_builtins.bool] enable_infrastructure_nat: If `true`:- The VPC infrastructure performs any needed NAT operations.- `floating_ips` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allow_ip_spoofing` must be `false`.- If the virtual network interface is attached:  - The target `resource_type` must be `bare_metal_server_network_attachment`.  - The target `interface_type` must not be `hipersocket`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict']]]] ips: The reserved IPs bound to this virtual network interface.May be empty when `lifecycle_state` is `pending`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict', 'outputs.IsVirtualNetworkInterfaceIp']]]] ips: The reserved IPs bound to this virtual network interface.May be empty when `lifecycle_state` is `pending`.
         :param pulumi.Input[_builtins.str] name: The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
-        :param pulumi.Input[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict']] primary_ip: The reserved IP for this virtual network interface.
+        :param pulumi.Input[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict', 'outputs.IsVirtualNetworkInterfacePrimaryIp']] primary_ip: The reserved IP for this virtual network interface.
         :param pulumi.Input[_builtins.str] protocol_state_filtering_mode: The protocol state filtering mode used for this virtual network interface.
         :param pulumi.Input[_builtins.str] resource_group: The resource group id for this virtual network interface.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_groups: The security groups for this virtual network interface.
@@ -606,6 +609,7 @@ class IsVirtualNetworkInterface(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVirtualNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVirtualNetworkInterfaceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -621,18 +625,18 @@ class IsVirtualNetworkInterface(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 protocol_state_filtering_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict', 'outputs.IsVirtualNetworkInterfaceIp']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict', 'outputs.IsVirtualNetworkInterfacePrimaryIp']]] = None,
+                 protocol_state_filtering_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -673,27 +677,27 @@ class IsVirtualNetworkInterface(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_ip: Optional[pulumi.Input[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict']]] = None,
-            protocol_state_filtering_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceTargetArgs', 'IsVirtualNetworkInterfaceTargetArgsDict']]]]] = None,
-            vpcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceVpcArgs', 'IsVirtualNetworkInterfaceVpcArgsDict']]]]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVirtualNetworkInterface':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict', 'outputs.IsVirtualNetworkInterfaceIp']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_ip: pulumi.Input[Optional[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict', 'outputs.IsVirtualNetworkInterfacePrimaryIp']]] = None,
+            protocol_state_filtering_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceTargetArgs', 'IsVirtualNetworkInterfaceTargetArgsDict', 'outputs.IsVirtualNetworkInterfaceTarget']]]]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceVpcArgs', 'IsVirtualNetworkInterfaceVpcArgsDict', 'outputs.IsVirtualNetworkInterfaceVpc']]]]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVirtualNetworkInterface':
         """
         Get an existing IsVirtualNetworkInterface resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -708,19 +712,19 @@ class IsVirtualNetworkInterface(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] crn: The CRN for this virtual network interface.
         :param pulumi.Input[_builtins.bool] enable_infrastructure_nat: If `true`:- The VPC infrastructure performs any needed NAT operations.- `floating_ips` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allow_ip_spoofing` must be `false`.- If the virtual network interface is attached:  - The target `resource_type` must be `bare_metal_server_network_attachment`.  - The target `interface_type` must not be `hipersocket`.
         :param pulumi.Input[_builtins.str] href: The URL for this virtual network interface.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict']]]] ips: The reserved IPs bound to this virtual network interface.May be empty when `lifecycle_state` is `pending`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceIpArgs', 'IsVirtualNetworkInterfaceIpArgsDict', 'outputs.IsVirtualNetworkInterfaceIp']]]] ips: The reserved IPs bound to this virtual network interface.May be empty when `lifecycle_state` is `pending`.
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the virtual network interface.
         :param pulumi.Input[_builtins.str] mac_address: The MAC address of the interface. Absent when the interface is not attached to a target.
         :param pulumi.Input[_builtins.str] name: The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
-        :param pulumi.Input[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict']] primary_ip: The reserved IP for this virtual network interface.
+        :param pulumi.Input[Union['IsVirtualNetworkInterfacePrimaryIpArgs', 'IsVirtualNetworkInterfacePrimaryIpArgsDict', 'outputs.IsVirtualNetworkInterfacePrimaryIp']] primary_ip: The reserved IP for this virtual network interface.
         :param pulumi.Input[_builtins.str] protocol_state_filtering_mode: The protocol state filtering mode used for this virtual network interface.
         :param pulumi.Input[_builtins.str] resource_group: The resource group id for this virtual network interface.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_groups: The security groups for this virtual network interface.
         :param pulumi.Input[_builtins.str] subnet: The associated subnet id.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: UserTags for the vni instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceTargetArgs', 'IsVirtualNetworkInterfaceTargetArgsDict']]]] targets: The target of this virtual network interface.If absent, this virtual network interface is not attached to a target.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceVpcArgs', 'IsVirtualNetworkInterfaceVpcArgsDict']]]] vpcs: The VPC this virtual network interface resides in.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceTargetArgs', 'IsVirtualNetworkInterfaceTargetArgsDict', 'outputs.IsVirtualNetworkInterfaceTarget']]]] targets: The target of this virtual network interface.If absent, this virtual network interface is not attached to a target.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceVpcArgs', 'IsVirtualNetworkInterfaceVpcArgsDict', 'outputs.IsVirtualNetworkInterfaceVpc']]]] vpcs: The VPC this virtual network interface resides in.
         :param pulumi.Input[_builtins.str] zone: The zone name this virtual network interface resides in.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

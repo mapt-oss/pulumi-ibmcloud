@@ -82,7 +82,7 @@ def get_is_security_group_rules(security_group: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         rules=pulumi.get(__ret__, 'rules'),
         security_group=pulumi.get(__ret__, 'security_group'))
-def get_is_security_group_rules_output(security_group: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_security_group_rules_output(security_group: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSecurityGroupRulesResult]:
     """
     Use this data source to access information about an existing resource.

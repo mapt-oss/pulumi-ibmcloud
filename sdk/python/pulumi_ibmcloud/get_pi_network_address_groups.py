@@ -82,7 +82,7 @@ def get_pi_network_address_groups(pi_cloud_instance_id: Optional[_builtins.str] 
         id=pulumi.get(__ret__, 'id'),
         network_address_groups=pulumi.get(__ret__, 'network_address_groups'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'))
-def get_pi_network_address_groups_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_network_address_groups_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkAddressGroupsResult]:
     """
     Use this data source to access information about an existing resource.

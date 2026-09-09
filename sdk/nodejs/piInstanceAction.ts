@@ -112,31 +112,31 @@ export interface PiInstanceActionState {
     /**
      * The PVM's health status value
      */
-    healthStatus?: pulumi.Input<string>;
+    healthStatus?: pulumi.Input<string | undefined>;
     /**
      * PVM instance action type
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * PI Cloud instance id
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Set the health status of the PVM instance to connect it faster
      */
-    piHealthStatus?: pulumi.Input<string>;
+    piHealthStatus?: pulumi.Input<string | undefined>;
     /**
      * PVM instance ID
      */
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The progress of an operation
      */
-    progress?: pulumi.Input<number>;
+    progress?: pulumi.Input<number | undefined>;
     /**
      * The status of the PVM instance
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -154,7 +154,7 @@ export interface PiInstanceActionArgs {
     /**
      * Set the health status of the PVM instance to connect it faster
      */
-    piHealthStatus?: pulumi.Input<string>;
+    piHealthStatus?: pulumi.Input<string | undefined>;
     /**
      * PVM instance ID
      */

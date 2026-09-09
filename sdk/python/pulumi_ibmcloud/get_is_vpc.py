@@ -355,8 +355,8 @@ def get_is_vpc(identifier: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         subnets=pulumi.get(__ret__, 'subnets'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_is_vpc_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_vpc_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpcResult]:
     """
     Use this data source to access information about an existing resource.

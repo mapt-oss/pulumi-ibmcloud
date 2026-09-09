@@ -107,6 +107,10 @@ export class PiInstance extends pulumi.CustomResource {
      */
     declare public readonly piAffinityVolume: pulumi.Output<string | undefined>;
     /**
+     * Indicates if the server allows server to be restarted from remote
+     */
+    declare public readonly piAllowRemoteRestart: pulumi.Output<boolean>;
+    /**
      * List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityVolumes is not provided
      */
     declare public readonly piAntiAffinityInstances: pulumi.Output<string[] | undefined>;
@@ -122,6 +126,10 @@ export class PiInstance extends pulumi.CustomResource {
      * This is the Power Instance id that is assigned to the account
      */
     declare public readonly piCloudInstanceId: pulumi.Output<string>;
+    /**
+     * default IAM trusted profile to use for this virtual server instance.
+     */
+    declare public readonly piDefaultTrustedProfile: pulumi.Output<outputs.PiInstancePiDefaultTrustedProfile>;
     /**
      * The deployment of a dedicated host.
      */
@@ -159,13 +167,17 @@ export class PiInstance extends pulumi.CustomResource {
      */
     declare public readonly piKeyPairName: pulumi.Output<string | undefined>;
     /**
-     * The VTL license repository capacity TB value
+     * The VTL license repository capacity TiB value
      */
     declare public readonly piLicenseRepositoryCapacity: pulumi.Output<number>;
     /**
      * Memory size
      */
     declare public readonly piMemory: pulumi.Output<number>;
+    /**
+     * The metadata service configuration for the instance.
+     */
+    declare public readonly piMetadataService: pulumi.Output<outputs.PiInstancePiMetadataService>;
     /**
      * List of one or more networks to attach to the instance
      */
@@ -239,7 +251,7 @@ export class PiInstance extends pulumi.CustomResource {
      */
     declare public readonly piStorageType: pulumi.Output<string>;
     /**
-     * The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+     * The type of system on which to create the VM.
      */
     declare public readonly piSysType: pulumi.Output<string>;
     /**
@@ -267,6 +279,10 @@ export class PiInstance extends pulumi.CustomResource {
      */
     declare public readonly piVolumeIds: pulumi.Output<string[] | undefined>;
     /**
+     * List of one or more vPMEM volumes to attach to the instance.
+     */
+    declare public readonly piVpmemVolumes: pulumi.Output<outputs.PiInstancePiVpmemVolume[] | undefined>;
+    /**
      * PIN Policy of the Instance
      */
     declare public /*out*/ readonly pinPolicy: pulumi.Output<string>;
@@ -282,6 +298,10 @@ export class PiInstance extends pulumi.CustomResource {
      * PI instance status
      */
     declare public /*out*/ readonly status: pulumi.Output<string>;
+    /**
+     * List of vPMEM volumes.
+     */
+    declare public /*out*/ readonly vpmemVolumes: pulumi.Output<outputs.PiInstanceVpmemVolume[]>;
 
     /**
      * Create a PiInstance resource with the given unique name, arguments, and options.
@@ -314,10 +334,12 @@ export class PiInstance extends pulumi.CustomResource {
             resourceInputs["piAffinityInstance"] = state?.piAffinityInstance;
             resourceInputs["piAffinityPolicy"] = state?.piAffinityPolicy;
             resourceInputs["piAffinityVolume"] = state?.piAffinityVolume;
+            resourceInputs["piAllowRemoteRestart"] = state?.piAllowRemoteRestart;
             resourceInputs["piAntiAffinityInstances"] = state?.piAntiAffinityInstances;
             resourceInputs["piAntiAffinityVolumes"] = state?.piAntiAffinityVolumes;
             resourceInputs["piBootVolumeReplicationEnabled"] = state?.piBootVolumeReplicationEnabled;
             resourceInputs["piCloudInstanceId"] = state?.piCloudInstanceId;
+            resourceInputs["piDefaultTrustedProfile"] = state?.piDefaultTrustedProfile;
             resourceInputs["piDeploymentTarget"] = state?.piDeploymentTarget;
             resourceInputs["piDeploymentType"] = state?.piDeploymentType;
             resourceInputs["piHealthStatus"] = state?.piHealthStatus;
@@ -329,6 +351,7 @@ export class PiInstance extends pulumi.CustomResource {
             resourceInputs["piKeyPairName"] = state?.piKeyPairName;
             resourceInputs["piLicenseRepositoryCapacity"] = state?.piLicenseRepositoryCapacity;
             resourceInputs["piMemory"] = state?.piMemory;
+            resourceInputs["piMetadataService"] = state?.piMetadataService;
             resourceInputs["piNetworks"] = state?.piNetworks;
             resourceInputs["piPinPolicy"] = state?.piPinPolicy;
             resourceInputs["piPlacementGroupId"] = state?.piPlacementGroupId;
@@ -354,10 +377,12 @@ export class PiInstance extends pulumi.CustomResource {
             resourceInputs["piVirtualOpticalDevice"] = state?.piVirtualOpticalDevice;
             resourceInputs["piVirtualSerialNumber"] = state?.piVirtualSerialNumber;
             resourceInputs["piVolumeIds"] = state?.piVolumeIds;
+            resourceInputs["piVpmemVolumes"] = state?.piVpmemVolumes;
             resourceInputs["pinPolicy"] = state?.pinPolicy;
             resourceInputs["progress"] = state?.progress;
             resourceInputs["sharedProcessorPoolId"] = state?.sharedProcessorPoolId;
             resourceInputs["status"] = state?.status;
+            resourceInputs["vpmemVolumes"] = state?.vpmemVolumes;
         } else {
             const args = argsOrState as PiInstanceArgs | undefined;
             if (args?.piCloudInstanceId === undefined && !opts.urn) {
@@ -375,10 +400,12 @@ export class PiInstance extends pulumi.CustomResource {
             resourceInputs["piAffinityInstance"] = args?.piAffinityInstance;
             resourceInputs["piAffinityPolicy"] = args?.piAffinityPolicy;
             resourceInputs["piAffinityVolume"] = args?.piAffinityVolume;
+            resourceInputs["piAllowRemoteRestart"] = args?.piAllowRemoteRestart;
             resourceInputs["piAntiAffinityInstances"] = args?.piAntiAffinityInstances;
             resourceInputs["piAntiAffinityVolumes"] = args?.piAntiAffinityVolumes;
             resourceInputs["piBootVolumeReplicationEnabled"] = args?.piBootVolumeReplicationEnabled;
             resourceInputs["piCloudInstanceId"] = args?.piCloudInstanceId;
+            resourceInputs["piDefaultTrustedProfile"] = args?.piDefaultTrustedProfile;
             resourceInputs["piDeploymentTarget"] = args?.piDeploymentTarget;
             resourceInputs["piDeploymentType"] = args?.piDeploymentType;
             resourceInputs["piHealthStatus"] = args?.piHealthStatus;
@@ -390,6 +417,7 @@ export class PiInstance extends pulumi.CustomResource {
             resourceInputs["piKeyPairName"] = args?.piKeyPairName;
             resourceInputs["piLicenseRepositoryCapacity"] = args?.piLicenseRepositoryCapacity;
             resourceInputs["piMemory"] = args?.piMemory;
+            resourceInputs["piMetadataService"] = args?.piMetadataService;
             resourceInputs["piNetworks"] = args?.piNetworks;
             resourceInputs["piPinPolicy"] = args?.piPinPolicy;
             resourceInputs["piPlacementGroupId"] = args?.piPlacementGroupId;
@@ -415,6 +443,7 @@ export class PiInstance extends pulumi.CustomResource {
             resourceInputs["piVirtualOpticalDevice"] = args?.piVirtualOpticalDevice;
             resourceInputs["piVirtualSerialNumber"] = args?.piVirtualSerialNumber;
             resourceInputs["piVolumeIds"] = args?.piVolumeIds;
+            resourceInputs["piVpmemVolumes"] = args?.piVpmemVolumes;
             resourceInputs["crn"] = undefined /*out*/;
             resourceInputs["dedicatedHostId"] = undefined /*out*/;
             resourceInputs["effectiveProcessorCompatibilityMode"] = undefined /*out*/;
@@ -434,6 +463,7 @@ export class PiInstance extends pulumi.CustomResource {
             resourceInputs["progress"] = undefined /*out*/;
             resourceInputs["sharedProcessorPoolId"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
+            resourceInputs["vpmemVolumes"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PiInstance.__pulumiType, name, resourceInputs, opts);
@@ -447,251 +477,271 @@ export interface PiInstanceState {
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The dedicated host ID where the shared processor pool resides.
      */
-    dedicatedHostId?: pulumi.Input<string>;
+    dedicatedHostId?: pulumi.Input<string | undefined>;
     /**
      * Effective processor compatibility mode.
      */
-    effectiveProcessorCompatibilityMode?: pulumi.Input<string>;
+    effectiveProcessorCompatibilityMode?: pulumi.Input<string | undefined>;
     /**
      * Fault information.
      */
-    fault?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    fault?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * PI Instance health status
      */
-    healthStatus?: pulumi.Input<string>;
+    healthStatus?: pulumi.Input<string | undefined>;
     /**
      * IBM i Rational Dev Studio
      */
-    ibmiRds?: pulumi.Input<boolean>;
+    ibmiRds?: pulumi.Input<boolean | undefined>;
     /**
      * Instance ID
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * Maximum memory size
      */
-    maxMemory?: pulumi.Input<number>;
+    maxMemory?: pulumi.Input<number | undefined>;
     /**
      * Maximum number of processors
      */
-    maxProcessors?: pulumi.Input<number>;
+    maxProcessors?: pulumi.Input<number | undefined>;
     /**
      * Maximum Virtual Cores Assigned to the PVMInstance
      */
-    maxVirtualCores?: pulumi.Input<number>;
+    maxVirtualCores?: pulumi.Input<number | undefined>;
     /**
      * Minimum memory
      */
-    minMemory?: pulumi.Input<number>;
+    minMemory?: pulumi.Input<number | undefined>;
     /**
      * Minimum number of the CPUs
      */
-    minProcessors?: pulumi.Input<number>;
+    minProcessors?: pulumi.Input<number | undefined>;
     /**
      * Minimum Virtual Cores Assigned to the PVMInstance
      */
-    minVirtualCores?: pulumi.Input<number>;
+    minVirtualCores?: pulumi.Input<number | undefined>;
     /**
      * Operating System
      */
-    operatingSystem?: pulumi.Input<string>;
+    operatingSystem?: pulumi.Input<string | undefined>;
     /**
      * OS Type
      */
-    osType?: pulumi.Input<string>;
+    osType?: pulumi.Input<string | undefined>;
     /**
      * PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and piAffinityVolume is not provided
      */
-    piAffinityInstance?: pulumi.Input<string>;
+    piAffinityInstance?: pulumi.Input<string | undefined>;
     /**
      * Affinity policy for pvm instance being created; ignored if piStoragePool provided; for policy affinity requires one of piAffinityInstance or piAffinityVolume to be specified; for policy anti-affinity requires one of piAntiAffinityInstances or piAntiAffinityVolumes to be specified
      */
-    piAffinityPolicy?: pulumi.Input<string>;
+    piAffinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and piAffinityInstance is not provided
      */
-    piAffinityVolume?: pulumi.Input<string>;
+    piAffinityVolume?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates if the server allows server to be restarted from remote
+     */
+    piAllowRemoteRestart?: pulumi.Input<boolean | undefined>;
     /**
      * List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityVolumes is not provided
      */
-    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityInstances is not provided
      */
-    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates if the boot volume should be replication enabled or not.
      */
-    piBootVolumeReplicationEnabled?: pulumi.Input<boolean>;
+    piBootVolumeReplicationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * This is the Power Instance id that is assigned to the account
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
+    /**
+     * default IAM trusted profile to use for this virtual server instance.
+     */
+    piDefaultTrustedProfile?: pulumi.Input<inputs.PiInstancePiDefaultTrustedProfile | undefined>;
     /**
      * The deployment of a dedicated host.
      */
-    piDeploymentTarget?: pulumi.Input<inputs.PiInstancePiDeploymentTarget>;
+    piDeploymentTarget?: pulumi.Input<inputs.PiInstancePiDeploymentTarget | undefined>;
     /**
      * Custom Deployment Type Information
      */
-    piDeploymentType?: pulumi.Input<string>;
+    piDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * Allow the user to set the status of the lpar so that they can connect to it faster
      */
-    piHealthStatus?: pulumi.Input<string>;
+    piHealthStatus?: pulumi.Input<string | undefined>;
     /**
      * IBM i Cloud Storage Solution
      */
-    piIbmiCss?: pulumi.Input<boolean>;
+    piIbmiCss?: pulumi.Input<boolean | undefined>;
     /**
      * IBM i Power High Availability
      */
-    piIbmiPha?: pulumi.Input<boolean>;
+    piIbmiPha?: pulumi.Input<boolean | undefined>;
     /**
      * IBM i Rational Dev Studio Number of User Licenses
      */
-    piIbmiRdsUsers?: pulumi.Input<number>;
+    piIbmiRdsUsers?: pulumi.Input<number | undefined>;
     /**
      * PI instance image id
      */
-    piImageId?: pulumi.Input<string>;
+    piImageId?: pulumi.Input<string | undefined>;
     /**
      * PI Instance name
      */
-    piInstanceName?: pulumi.Input<string>;
+    piInstanceName?: pulumi.Input<string | undefined>;
     /**
      * SSH key name
      */
-    piKeyPairName?: pulumi.Input<string>;
+    piKeyPairName?: pulumi.Input<string | undefined>;
     /**
-     * The VTL license repository capacity TB value
+     * The VTL license repository capacity TiB value
      */
-    piLicenseRepositoryCapacity?: pulumi.Input<number>;
+    piLicenseRepositoryCapacity?: pulumi.Input<number | undefined>;
     /**
      * Memory size
      */
-    piMemory?: pulumi.Input<number>;
+    piMemory?: pulumi.Input<number | undefined>;
+    /**
+     * The metadata service configuration for the instance.
+     */
+    piMetadataService?: pulumi.Input<inputs.PiInstancePiMetadataService | undefined>;
     /**
      * List of one or more networks to attach to the instance
      */
-    piNetworks?: pulumi.Input<pulumi.Input<inputs.PiInstancePiNetwork>[]>;
+    piNetworks?: pulumi.Input<pulumi.Input<inputs.PiInstancePiNetwork>[] | undefined>;
     /**
      * Pin Policy of the instance
      */
-    piPinPolicy?: pulumi.Input<string>;
+    piPinPolicy?: pulumi.Input<string | undefined>;
     /**
      * Placement group ID
      */
-    piPlacementGroupId?: pulumi.Input<string>;
+    piPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * Preferred processor compatibility mode.
      */
-    piPreferredProcessorCompatibilityMode?: pulumi.Input<string>;
+    piPreferredProcessorCompatibilityMode?: pulumi.Input<string | undefined>;
     /**
      * Instance processor type
      */
-    piProcType?: pulumi.Input<string>;
+    piProcType?: pulumi.Input<string | undefined>;
     /**
      * Processors count
      */
-    piProcessors?: pulumi.Input<number>;
+    piProcessors?: pulumi.Input<number | undefined>;
     /**
      * PI Instance replicas count
      */
-    piReplicants?: pulumi.Input<number>;
+    piReplicants?: pulumi.Input<number | undefined>;
     /**
      * Replication policy for the PI Instance
      */
-    piReplicationPolicy?: pulumi.Input<string>;
+    piReplicationPolicy?: pulumi.Input<string | undefined>;
     /**
      * Replication scheme
      */
-    piReplicationScheme?: pulumi.Input<string>;
+    piReplicationScheme?: pulumi.Input<string | undefined>;
     /**
      * Indicates the replication sites of the boot volume.
      */
-    piReplicationSites?: pulumi.Input<pulumi.Input<string>[]>;
+    piReplicationSites?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether to retain virtual serial number when changed or deleted.
      */
-    piRetainVirtualSerialNumber?: pulumi.Input<boolean>;
+    piRetainVirtualSerialNumber?: pulumi.Input<boolean | undefined>;
     /**
      * Custom SAP Deployment Type Information
      */
-    piSapDeploymentType?: pulumi.Input<string>;
+    piSapDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * SAP Profile ID for the amount of cores and memory
      */
-    piSapProfileId?: pulumi.Input<string>;
+    piSapProfileId?: pulumi.Input<string | undefined>;
     /**
      * Shared Processor Pool the instance is deployed on
      */
-    piSharedProcessorPool?: pulumi.Input<string>;
+    piSharedProcessorPool?: pulumi.Input<string | undefined>;
     /**
      * Storage Connectivity Group for server deployment
      */
-    piStorageConnection?: pulumi.Input<string>;
+    piStorageConnection?: pulumi.Input<string | undefined>;
     /**
      * Storage Pool for server deployment; if provided then piStoragePoolAffinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
      */
-    piStoragePool?: pulumi.Input<string>;
+    piStoragePool?: pulumi.Input<string | undefined>;
     /**
      * Indicates if all volumes attached to the server must reside in the same storage pool
      */
-    piStoragePoolAffinity?: pulumi.Input<boolean>;
+    piStoragePoolAffinity?: pulumi.Input<boolean | undefined>;
     /**
      * Storage type for server deployment; if piStorageType is not provided the storage type will default to tier3
      */
-    piStorageType?: pulumi.Input<string>;
+    piStorageType?: pulumi.Input<string | undefined>;
     /**
-     * The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+     * The type of system on which to create the VM.
      */
-    piSysType?: pulumi.Input<string>;
+    piSysType?: pulumi.Input<string | undefined>;
     /**
      * Base64 encoded data to be passed in for invoking a cloud init script
      */
-    piUserData?: pulumi.Input<string>;
+    piUserData?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Virtual Cores Assigned to the PVMInstance
      */
-    piVirtualCoresAssigned?: pulumi.Input<number>;
+    piVirtualCoresAssigned?: pulumi.Input<number | undefined>;
     /**
      * Virtual Machine's Cloud Initialization Virtual Optical Device
      */
-    piVirtualOpticalDevice?: pulumi.Input<string>;
+    piVirtualOpticalDevice?: pulumi.Input<string | undefined>;
     /**
      * Virtual Serial Number information
      */
-    piVirtualSerialNumber?: pulumi.Input<inputs.PiInstancePiVirtualSerialNumber>;
+    piVirtualSerialNumber?: pulumi.Input<inputs.PiInstancePiVirtualSerialNumber | undefined>;
     /**
      * List of PI volumes
      */
-    piVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * List of one or more vPMEM volumes to attach to the instance.
+     */
+    piVpmemVolumes?: pulumi.Input<pulumi.Input<inputs.PiInstancePiVpmemVolume>[] | undefined>;
     /**
      * PIN Policy of the Instance
      */
-    pinPolicy?: pulumi.Input<string>;
+    pinPolicy?: pulumi.Input<string | undefined>;
     /**
      * Progress of the operation
      */
-    progress?: pulumi.Input<number>;
+    progress?: pulumi.Input<number | undefined>;
     /**
      * Shared Processor Pool ID the instance is deployed on
      */
-    sharedProcessorPoolId?: pulumi.Input<string>;
+    sharedProcessorPoolId?: pulumi.Input<string | undefined>;
     /**
      * PI instance status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
+    /**
+     * List of vPMEM volumes.
+     */
+    vpmemVolumes?: pulumi.Input<pulumi.Input<inputs.PiInstanceVpmemVolume>[] | undefined>;
 }
 
 /**
@@ -701,55 +751,63 @@ export interface PiInstanceArgs {
     /**
      * PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and piAffinityVolume is not provided
      */
-    piAffinityInstance?: pulumi.Input<string>;
+    piAffinityInstance?: pulumi.Input<string | undefined>;
     /**
      * Affinity policy for pvm instance being created; ignored if piStoragePool provided; for policy affinity requires one of piAffinityInstance or piAffinityVolume to be specified; for policy anti-affinity requires one of piAntiAffinityInstances or piAntiAffinityVolumes to be specified
      */
-    piAffinityPolicy?: pulumi.Input<string>;
+    piAffinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and piAffinityInstance is not provided
      */
-    piAffinityVolume?: pulumi.Input<string>;
+    piAffinityVolume?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates if the server allows server to be restarted from remote
+     */
+    piAllowRemoteRestart?: pulumi.Input<boolean | undefined>;
     /**
      * List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityVolumes is not provided
      */
-    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityInstances is not provided
      */
-    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates if the boot volume should be replication enabled or not.
      */
-    piBootVolumeReplicationEnabled?: pulumi.Input<boolean>;
+    piBootVolumeReplicationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * This is the Power Instance id that is assigned to the account
      */
     piCloudInstanceId: pulumi.Input<string>;
     /**
+     * default IAM trusted profile to use for this virtual server instance.
+     */
+    piDefaultTrustedProfile?: pulumi.Input<inputs.PiInstancePiDefaultTrustedProfile | undefined>;
+    /**
      * The deployment of a dedicated host.
      */
-    piDeploymentTarget?: pulumi.Input<inputs.PiInstancePiDeploymentTarget>;
+    piDeploymentTarget?: pulumi.Input<inputs.PiInstancePiDeploymentTarget | undefined>;
     /**
      * Custom Deployment Type Information
      */
-    piDeploymentType?: pulumi.Input<string>;
+    piDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * Allow the user to set the status of the lpar so that they can connect to it faster
      */
-    piHealthStatus?: pulumi.Input<string>;
+    piHealthStatus?: pulumi.Input<string | undefined>;
     /**
      * IBM i Cloud Storage Solution
      */
-    piIbmiCss?: pulumi.Input<boolean>;
+    piIbmiCss?: pulumi.Input<boolean | undefined>;
     /**
      * IBM i Power High Availability
      */
-    piIbmiPha?: pulumi.Input<boolean>;
+    piIbmiPha?: pulumi.Input<boolean | undefined>;
     /**
      * IBM i Rational Dev Studio Number of User Licenses
      */
-    piIbmiRdsUsers?: pulumi.Input<number>;
+    piIbmiRdsUsers?: pulumi.Input<number | undefined>;
     /**
      * PI instance image id
      */
@@ -761,15 +819,19 @@ export interface PiInstanceArgs {
     /**
      * SSH key name
      */
-    piKeyPairName?: pulumi.Input<string>;
+    piKeyPairName?: pulumi.Input<string | undefined>;
     /**
-     * The VTL license repository capacity TB value
+     * The VTL license repository capacity TiB value
      */
-    piLicenseRepositoryCapacity?: pulumi.Input<number>;
+    piLicenseRepositoryCapacity?: pulumi.Input<number | undefined>;
     /**
      * Memory size
      */
-    piMemory?: pulumi.Input<number>;
+    piMemory?: pulumi.Input<number | undefined>;
+    /**
+     * The metadata service configuration for the instance.
+     */
+    piMetadataService?: pulumi.Input<inputs.PiInstancePiMetadataService | undefined>;
     /**
      * List of one or more networks to attach to the instance
      */
@@ -777,97 +839,101 @@ export interface PiInstanceArgs {
     /**
      * Pin Policy of the instance
      */
-    piPinPolicy?: pulumi.Input<string>;
+    piPinPolicy?: pulumi.Input<string | undefined>;
     /**
      * Placement group ID
      */
-    piPlacementGroupId?: pulumi.Input<string>;
+    piPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * Preferred processor compatibility mode.
      */
-    piPreferredProcessorCompatibilityMode?: pulumi.Input<string>;
+    piPreferredProcessorCompatibilityMode?: pulumi.Input<string | undefined>;
     /**
      * Instance processor type
      */
-    piProcType?: pulumi.Input<string>;
+    piProcType?: pulumi.Input<string | undefined>;
     /**
      * Processors count
      */
-    piProcessors?: pulumi.Input<number>;
+    piProcessors?: pulumi.Input<number | undefined>;
     /**
      * PI Instance replicas count
      */
-    piReplicants?: pulumi.Input<number>;
+    piReplicants?: pulumi.Input<number | undefined>;
     /**
      * Replication policy for the PI Instance
      */
-    piReplicationPolicy?: pulumi.Input<string>;
+    piReplicationPolicy?: pulumi.Input<string | undefined>;
     /**
      * Replication scheme
      */
-    piReplicationScheme?: pulumi.Input<string>;
+    piReplicationScheme?: pulumi.Input<string | undefined>;
     /**
      * Indicates the replication sites of the boot volume.
      */
-    piReplicationSites?: pulumi.Input<pulumi.Input<string>[]>;
+    piReplicationSites?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether to retain virtual serial number when changed or deleted.
      */
-    piRetainVirtualSerialNumber?: pulumi.Input<boolean>;
+    piRetainVirtualSerialNumber?: pulumi.Input<boolean | undefined>;
     /**
      * Custom SAP Deployment Type Information
      */
-    piSapDeploymentType?: pulumi.Input<string>;
+    piSapDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * SAP Profile ID for the amount of cores and memory
      */
-    piSapProfileId?: pulumi.Input<string>;
+    piSapProfileId?: pulumi.Input<string | undefined>;
     /**
      * Shared Processor Pool the instance is deployed on
      */
-    piSharedProcessorPool?: pulumi.Input<string>;
+    piSharedProcessorPool?: pulumi.Input<string | undefined>;
     /**
      * Storage Connectivity Group for server deployment
      */
-    piStorageConnection?: pulumi.Input<string>;
+    piStorageConnection?: pulumi.Input<string | undefined>;
     /**
      * Storage Pool for server deployment; if provided then piStoragePoolAffinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
      */
-    piStoragePool?: pulumi.Input<string>;
+    piStoragePool?: pulumi.Input<string | undefined>;
     /**
      * Indicates if all volumes attached to the server must reside in the same storage pool
      */
-    piStoragePoolAffinity?: pulumi.Input<boolean>;
+    piStoragePoolAffinity?: pulumi.Input<boolean | undefined>;
     /**
      * Storage type for server deployment; if piStorageType is not provided the storage type will default to tier3
      */
-    piStorageType?: pulumi.Input<string>;
+    piStorageType?: pulumi.Input<string | undefined>;
     /**
-     * The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+     * The type of system on which to create the VM.
      */
-    piSysType?: pulumi.Input<string>;
+    piSysType?: pulumi.Input<string | undefined>;
     /**
      * Base64 encoded data to be passed in for invoking a cloud init script
      */
-    piUserData?: pulumi.Input<string>;
+    piUserData?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Virtual Cores Assigned to the PVMInstance
      */
-    piVirtualCoresAssigned?: pulumi.Input<number>;
+    piVirtualCoresAssigned?: pulumi.Input<number | undefined>;
     /**
      * Virtual Machine's Cloud Initialization Virtual Optical Device
      */
-    piVirtualOpticalDevice?: pulumi.Input<string>;
+    piVirtualOpticalDevice?: pulumi.Input<string | undefined>;
     /**
      * Virtual Serial Number information
      */
-    piVirtualSerialNumber?: pulumi.Input<inputs.PiInstancePiVirtualSerialNumber>;
+    piVirtualSerialNumber?: pulumi.Input<inputs.PiInstancePiVirtualSerialNumber | undefined>;
     /**
      * List of PI volumes
      */
-    piVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * List of one or more vPMEM volumes to attach to the instance.
+     */
+    piVpmemVolumes?: pulumi.Input<pulumi.Input<inputs.PiInstancePiVpmemVolume>[] | undefined>;
 }

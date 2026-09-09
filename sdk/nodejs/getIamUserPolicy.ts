@@ -51,6 +51,6 @@ export function getIamUserPolicyOutput(args: GetIamUserPolicyOutputArgs, opts?: 
  */
 export interface GetIamUserPolicyOutputArgs {
     ibmId: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
-    transactionId?: pulumi.Input<string>;
+    sort?: pulumi.Input<string | undefined>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

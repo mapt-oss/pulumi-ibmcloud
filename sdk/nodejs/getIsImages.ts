@@ -68,11 +68,11 @@ export function getIsImagesOutput(args?: GetIsImagesOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getIsImages.
  */
 export interface GetIsImagesOutputArgs {
-    catalogManaged?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
-    remoteAccountId?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    status?: pulumi.Input<string>;
-    userDataFormats?: pulumi.Input<pulumi.Input<string>[]>;
-    visibility?: pulumi.Input<string>;
+    catalogManaged?: pulumi.Input<boolean | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    remoteAccountId?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string | undefined>;
+    userDataFormats?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    visibility?: pulumi.Input<string | undefined>;
 }

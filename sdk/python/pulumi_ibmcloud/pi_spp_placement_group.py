@@ -22,9 +22,10 @@ class PiSppPlacementGroupArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_spp_placement_group_name: pulumi.Input[_builtins.str],
                  pi_spp_placement_group_policy: pulumi.Input[_builtins.str],
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiSppPlacementGroup resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
         :param pulumi.Input[_builtins.str] pi_spp_placement_group_name: Name of the SPP placement group
         :param pulumi.Input[_builtins.str] pi_spp_placement_group_policy: Policy of the SPP placement group
@@ -74,29 +75,30 @@ class PiSppPlacementGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiSppPlacementGroupState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_spp_placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_spp_placement_group_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 spp_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_spp_placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_spp_placement_group_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 spp_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiSppPlacementGroup resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN of the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] members: Member SPP IDs that are the SPP placement group members
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
@@ -122,86 +124,86 @@ class _PiSppPlacementGroupState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Member SPP IDs that are the SPP placement group members
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI cloud instance ID
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piSppPlacementGroupName")
-    def pi_spp_placement_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_spp_placement_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the SPP placement group
         """
         return pulumi.get(self, "pi_spp_placement_group_name")
 
     @pi_spp_placement_group_name.setter
-    def pi_spp_placement_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_spp_placement_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_spp_placement_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piSppPlacementGroupPolicy")
-    def pi_spp_placement_group_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_spp_placement_group_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Policy of the SPP placement group
         """
         return pulumi.get(self, "pi_spp_placement_group_policy")
 
     @pi_spp_placement_group_policy.setter
-    def pi_spp_placement_group_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_spp_placement_group_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_spp_placement_group_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="sppPlacementGroupId")
-    def spp_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def spp_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SPP placement group ID
         """
         return pulumi.get(self, "spp_placement_group_id")
 
     @spp_placement_group_id.setter
-    def spp_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def spp_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "spp_placement_group_id", value)
 
 
@@ -211,13 +213,14 @@ class PiSppPlacementGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_spp_placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_spp_placement_group_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_spp_placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_spp_placement_group_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiSppPlacementGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
@@ -233,6 +236,7 @@ class PiSppPlacementGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiSppPlacementGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiSppPlacementGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -248,10 +252,10 @@ class PiSppPlacementGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_spp_placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_spp_placement_group_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_spp_placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_spp_placement_group_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -284,13 +288,13 @@ class PiSppPlacementGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_spp_placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_spp_placement_group_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            spp_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiSppPlacementGroup':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_spp_placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_spp_placement_group_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            spp_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiSppPlacementGroup':
         """
         Get an existing PiSppPlacementGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

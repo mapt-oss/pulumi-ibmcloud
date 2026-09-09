@@ -125,9 +125,9 @@ def get_cos_backup_vault(backup_vault_name: Optional[_builtins.str] = None,
         metrics_monitoring_usage_metrics=pulumi.get(__ret__, 'metrics_monitoring_usage_metrics'),
         region=pulumi.get(__ret__, 'region'),
         service_instance_id=pulumi.get(__ret__, 'service_instance_id'))
-def get_cos_backup_vault_output(backup_vault_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                region: Optional[pulumi.Input[_builtins.str]] = None,
-                                service_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cos_backup_vault_output(backup_vault_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                region: pulumi.Input[Optional[_builtins.str]] = None,
+                                service_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCosBackupVaultResult]:
     """
     Use this data source to access information about an existing resource.

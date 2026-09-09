@@ -92,7 +92,7 @@ def get_is_instance_network_interfaces(instance_name: Optional[_builtins.str] = 
         instance_name=pulumi.get(__ret__, 'instance_name'),
         network_interfaces=pulumi.get(__ret__, 'network_interfaces'),
         total_count=pulumi.get(__ret__, 'total_count'))
-def get_is_instance_network_interfaces_output(instance_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_network_interfaces_output(instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceNetworkInterfacesResult]:
     """
     Use this data source to access information about an existing resource.

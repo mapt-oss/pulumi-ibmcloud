@@ -142,12 +142,12 @@ def get_is_backup_policy_jobs(backup_policy_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         target_snapshots_crns=pulumi.get(__ret__, 'target_snapshots_crns'),
         target_snapshots_ids=pulumi.get(__ret__, 'target_snapshots_ids'))
-def get_is_backup_policy_jobs_output(backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     backup_policy_plan_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     source_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     target_snapshots_crns: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                     target_snapshots_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_is_backup_policy_jobs_output(backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     backup_policy_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     source_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     target_snapshots_crns: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                     target_snapshots_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBackupPolicyJobsResult]:
     """
     Use this data source to access information about an existing resource.

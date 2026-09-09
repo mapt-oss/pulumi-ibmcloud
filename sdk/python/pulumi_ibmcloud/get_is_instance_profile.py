@@ -27,7 +27,7 @@ class GetIsInstanceProfileResult:
     """
     A collection of values returned by getIsInstanceProfile.
     """
-    def __init__(__self__, architecture=None, architecture_type=None, architecture_values=None, bandwidths=None, cluster_network_attachment_counts=None, confidential_compute_modes=None, disks=None, family=None, gpu_counts=None, gpu_manufacturers=None, gpu_memories=None, gpu_models=None, href=None, id=None, memories=None, name=None, network_attachment_counts=None, network_interface_counts=None, numa_counts=None, port_speeds=None, reservation_terms=None, secure_boot_modes=None, status=None, supported_cluster_network_profiles=None, total_volume_bandwidths=None, vcpu_architectures=None, vcpu_counts=None, vcpu_manufacturers=None, volume_bandwidth_qos_modes=None):
+    def __init__(__self__, architecture=None, architecture_type=None, architecture_values=None, availability_classes=None, bandwidths=None, cluster_network_attachment_counts=None, confidential_compute_modes=None, disks=None, family=None, gpu_counts=None, gpu_manufacturers=None, gpu_memories=None, gpu_models=None, href=None, id=None, memories=None, name=None, network_attachment_counts=None, network_bandwidth_modes=None, network_interface_counts=None, numa_counts=None, port_speeds=None, reservation_terms=None, secure_boot_modes=None, status=None, supported_cluster_network_profiles=None, supported_vcpu_counts=None, threads_per_cores=None, total_volume_bandwidths=None, vcpu_architectures=None, vcpu_burst_limits=None, vcpu_counts=None, vcpu_manufacturers=None, vcpu_percentages=None, volume_bandwidth_qos_modes=None, zones=None):
         if architecture and not isinstance(architecture, str):
             raise TypeError("Expected argument 'architecture' to be a str")
         pulumi.set(__self__, "architecture", architecture)
@@ -37,6 +37,9 @@ class GetIsInstanceProfileResult:
         if architecture_values and not isinstance(architecture_values, list):
             raise TypeError("Expected argument 'architecture_values' to be a list")
         pulumi.set(__self__, "architecture_values", architecture_values)
+        if availability_classes and not isinstance(availability_classes, list):
+            raise TypeError("Expected argument 'availability_classes' to be a list")
+        pulumi.set(__self__, "availability_classes", availability_classes)
         if bandwidths and not isinstance(bandwidths, list):
             raise TypeError("Expected argument 'bandwidths' to be a list")
         pulumi.set(__self__, "bandwidths", bandwidths)
@@ -79,6 +82,9 @@ class GetIsInstanceProfileResult:
         if network_attachment_counts and not isinstance(network_attachment_counts, list):
             raise TypeError("Expected argument 'network_attachment_counts' to be a list")
         pulumi.set(__self__, "network_attachment_counts", network_attachment_counts)
+        if network_bandwidth_modes and not isinstance(network_bandwidth_modes, list):
+            raise TypeError("Expected argument 'network_bandwidth_modes' to be a list")
+        pulumi.set(__self__, "network_bandwidth_modes", network_bandwidth_modes)
         if network_interface_counts and not isinstance(network_interface_counts, list):
             raise TypeError("Expected argument 'network_interface_counts' to be a list")
         pulumi.set(__self__, "network_interface_counts", network_interface_counts)
@@ -100,21 +106,36 @@ class GetIsInstanceProfileResult:
         if supported_cluster_network_profiles and not isinstance(supported_cluster_network_profiles, list):
             raise TypeError("Expected argument 'supported_cluster_network_profiles' to be a list")
         pulumi.set(__self__, "supported_cluster_network_profiles", supported_cluster_network_profiles)
+        if supported_vcpu_counts and not isinstance(supported_vcpu_counts, list):
+            raise TypeError("Expected argument 'supported_vcpu_counts' to be a list")
+        pulumi.set(__self__, "supported_vcpu_counts", supported_vcpu_counts)
+        if threads_per_cores and not isinstance(threads_per_cores, list):
+            raise TypeError("Expected argument 'threads_per_cores' to be a list")
+        pulumi.set(__self__, "threads_per_cores", threads_per_cores)
         if total_volume_bandwidths and not isinstance(total_volume_bandwidths, list):
             raise TypeError("Expected argument 'total_volume_bandwidths' to be a list")
         pulumi.set(__self__, "total_volume_bandwidths", total_volume_bandwidths)
         if vcpu_architectures and not isinstance(vcpu_architectures, list):
             raise TypeError("Expected argument 'vcpu_architectures' to be a list")
         pulumi.set(__self__, "vcpu_architectures", vcpu_architectures)
+        if vcpu_burst_limits and not isinstance(vcpu_burst_limits, list):
+            raise TypeError("Expected argument 'vcpu_burst_limits' to be a list")
+        pulumi.set(__self__, "vcpu_burst_limits", vcpu_burst_limits)
         if vcpu_counts and not isinstance(vcpu_counts, list):
             raise TypeError("Expected argument 'vcpu_counts' to be a list")
         pulumi.set(__self__, "vcpu_counts", vcpu_counts)
         if vcpu_manufacturers and not isinstance(vcpu_manufacturers, list):
             raise TypeError("Expected argument 'vcpu_manufacturers' to be a list")
         pulumi.set(__self__, "vcpu_manufacturers", vcpu_manufacturers)
+        if vcpu_percentages and not isinstance(vcpu_percentages, list):
+            raise TypeError("Expected argument 'vcpu_percentages' to be a list")
+        pulumi.set(__self__, "vcpu_percentages", vcpu_percentages)
         if volume_bandwidth_qos_modes and not isinstance(volume_bandwidth_qos_modes, list):
             raise TypeError("Expected argument 'volume_bandwidth_qos_modes' to be a list")
         pulumi.set(__self__, "volume_bandwidth_qos_modes", volume_bandwidth_qos_modes)
+        if zones and not isinstance(zones, list):
+            raise TypeError("Expected argument 'zones' to be a list")
+        pulumi.set(__self__, "zones", zones)
 
     @_builtins.property
     @pulumi.getter
@@ -130,6 +151,11 @@ class GetIsInstanceProfileResult:
     @pulumi.getter(name="architectureValues")
     def architecture_values(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "architecture_values")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityClasses")
+    def availability_classes(self) -> Sequence['outputs.GetIsInstanceProfileAvailabilityClassResult']:
+        return pulumi.get(self, "availability_classes")
 
     @_builtins.property
     @pulumi.getter
@@ -205,6 +231,11 @@ class GetIsInstanceProfileResult:
         return pulumi.get(self, "network_attachment_counts")
 
     @_builtins.property
+    @pulumi.getter(name="networkBandwidthModes")
+    def network_bandwidth_modes(self) -> Sequence['outputs.GetIsInstanceProfileNetworkBandwidthModeResult']:
+        return pulumi.get(self, "network_bandwidth_modes")
+
+    @_builtins.property
     @pulumi.getter(name="networkInterfaceCounts")
     def network_interface_counts(self) -> Sequence['outputs.GetIsInstanceProfileNetworkInterfaceCountResult']:
         return pulumi.get(self, "network_interface_counts")
@@ -240,6 +271,17 @@ class GetIsInstanceProfileResult:
         return pulumi.get(self, "supported_cluster_network_profiles")
 
     @_builtins.property
+    @pulumi.getter(name="supportedVcpuCounts")
+    @_utilities.deprecated("""The supported_vcpu_count attribute is deprecated and will be removed in a future release. Use vcpu_count instead, which exposes the same permitted values via its `values` sub-attribute when `type` is `enum`.""")
+    def supported_vcpu_counts(self) -> Sequence['outputs.GetIsInstanceProfileSupportedVcpuCountResult']:
+        return pulumi.get(self, "supported_vcpu_counts")
+
+    @_builtins.property
+    @pulumi.getter(name="threadsPerCores")
+    def threads_per_cores(self) -> Sequence['outputs.GetIsInstanceProfileThreadsPerCoreResult']:
+        return pulumi.get(self, "threads_per_cores")
+
+    @_builtins.property
     @pulumi.getter(name="totalVolumeBandwidths")
     def total_volume_bandwidths(self) -> Sequence['outputs.GetIsInstanceProfileTotalVolumeBandwidthResult']:
         return pulumi.get(self, "total_volume_bandwidths")
@@ -248,6 +290,11 @@ class GetIsInstanceProfileResult:
     @pulumi.getter(name="vcpuArchitectures")
     def vcpu_architectures(self) -> Sequence['outputs.GetIsInstanceProfileVcpuArchitectureResult']:
         return pulumi.get(self, "vcpu_architectures")
+
+    @_builtins.property
+    @pulumi.getter(name="vcpuBurstLimits")
+    def vcpu_burst_limits(self) -> Sequence['outputs.GetIsInstanceProfileVcpuBurstLimitResult']:
+        return pulumi.get(self, "vcpu_burst_limits")
 
     @_builtins.property
     @pulumi.getter(name="vcpuCounts")
@@ -260,9 +307,19 @@ class GetIsInstanceProfileResult:
         return pulumi.get(self, "vcpu_manufacturers")
 
     @_builtins.property
+    @pulumi.getter(name="vcpuPercentages")
+    def vcpu_percentages(self) -> Sequence['outputs.GetIsInstanceProfileVcpuPercentageResult']:
+        return pulumi.get(self, "vcpu_percentages")
+
+    @_builtins.property
     @pulumi.getter(name="volumeBandwidthQosModes")
     def volume_bandwidth_qos_modes(self) -> Sequence['outputs.GetIsInstanceProfileVolumeBandwidthQosModeResult']:
         return pulumi.get(self, "volume_bandwidth_qos_modes")
+
+    @_builtins.property
+    @pulumi.getter
+    def zones(self) -> Sequence['outputs.GetIsInstanceProfileZoneResult']:
+        return pulumi.get(self, "zones")
 
 
 class AwaitableGetIsInstanceProfileResult(GetIsInstanceProfileResult):
@@ -274,6 +331,7 @@ class AwaitableGetIsInstanceProfileResult(GetIsInstanceProfileResult):
             architecture=self.architecture,
             architecture_type=self.architecture_type,
             architecture_values=self.architecture_values,
+            availability_classes=self.availability_classes,
             bandwidths=self.bandwidths,
             cluster_network_attachment_counts=self.cluster_network_attachment_counts,
             confidential_compute_modes=self.confidential_compute_modes,
@@ -288,6 +346,7 @@ class AwaitableGetIsInstanceProfileResult(GetIsInstanceProfileResult):
             memories=self.memories,
             name=self.name,
             network_attachment_counts=self.network_attachment_counts,
+            network_bandwidth_modes=self.network_bandwidth_modes,
             network_interface_counts=self.network_interface_counts,
             numa_counts=self.numa_counts,
             port_speeds=self.port_speeds,
@@ -295,11 +354,16 @@ class AwaitableGetIsInstanceProfileResult(GetIsInstanceProfileResult):
             secure_boot_modes=self.secure_boot_modes,
             status=self.status,
             supported_cluster_network_profiles=self.supported_cluster_network_profiles,
+            supported_vcpu_counts=self.supported_vcpu_counts,
+            threads_per_cores=self.threads_per_cores,
             total_volume_bandwidths=self.total_volume_bandwidths,
             vcpu_architectures=self.vcpu_architectures,
+            vcpu_burst_limits=self.vcpu_burst_limits,
             vcpu_counts=self.vcpu_counts,
             vcpu_manufacturers=self.vcpu_manufacturers,
-            volume_bandwidth_qos_modes=self.volume_bandwidth_qos_modes)
+            vcpu_percentages=self.vcpu_percentages,
+            volume_bandwidth_qos_modes=self.volume_bandwidth_qos_modes,
+            zones=self.zones)
 
 
 def get_is_instance_profile(name: Optional[_builtins.str] = None,
@@ -316,6 +380,7 @@ def get_is_instance_profile(name: Optional[_builtins.str] = None,
         architecture=pulumi.get(__ret__, 'architecture'),
         architecture_type=pulumi.get(__ret__, 'architecture_type'),
         architecture_values=pulumi.get(__ret__, 'architecture_values'),
+        availability_classes=pulumi.get(__ret__, 'availability_classes'),
         bandwidths=pulumi.get(__ret__, 'bandwidths'),
         cluster_network_attachment_counts=pulumi.get(__ret__, 'cluster_network_attachment_counts'),
         confidential_compute_modes=pulumi.get(__ret__, 'confidential_compute_modes'),
@@ -330,6 +395,7 @@ def get_is_instance_profile(name: Optional[_builtins.str] = None,
         memories=pulumi.get(__ret__, 'memories'),
         name=pulumi.get(__ret__, 'name'),
         network_attachment_counts=pulumi.get(__ret__, 'network_attachment_counts'),
+        network_bandwidth_modes=pulumi.get(__ret__, 'network_bandwidth_modes'),
         network_interface_counts=pulumi.get(__ret__, 'network_interface_counts'),
         numa_counts=pulumi.get(__ret__, 'numa_counts'),
         port_speeds=pulumi.get(__ret__, 'port_speeds'),
@@ -337,12 +403,17 @@ def get_is_instance_profile(name: Optional[_builtins.str] = None,
         secure_boot_modes=pulumi.get(__ret__, 'secure_boot_modes'),
         status=pulumi.get(__ret__, 'status'),
         supported_cluster_network_profiles=pulumi.get(__ret__, 'supported_cluster_network_profiles'),
+        supported_vcpu_counts=pulumi.get(__ret__, 'supported_vcpu_counts'),
+        threads_per_cores=pulumi.get(__ret__, 'threads_per_cores'),
         total_volume_bandwidths=pulumi.get(__ret__, 'total_volume_bandwidths'),
         vcpu_architectures=pulumi.get(__ret__, 'vcpu_architectures'),
+        vcpu_burst_limits=pulumi.get(__ret__, 'vcpu_burst_limits'),
         vcpu_counts=pulumi.get(__ret__, 'vcpu_counts'),
         vcpu_manufacturers=pulumi.get(__ret__, 'vcpu_manufacturers'),
-        volume_bandwidth_qos_modes=pulumi.get(__ret__, 'volume_bandwidth_qos_modes'))
-def get_is_instance_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+        vcpu_percentages=pulumi.get(__ret__, 'vcpu_percentages'),
+        volume_bandwidth_qos_modes=pulumi.get(__ret__, 'volume_bandwidth_qos_modes'),
+        zones=pulumi.get(__ret__, 'zones'))
+def get_is_instance_profile_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceProfileResult]:
     """
     Use this data source to access information about an existing resource.
@@ -355,6 +426,7 @@ def get_is_instance_profile_output(name: Optional[pulumi.Input[_builtins.str]] =
         architecture=pulumi.get(__response__, 'architecture'),
         architecture_type=pulumi.get(__response__, 'architecture_type'),
         architecture_values=pulumi.get(__response__, 'architecture_values'),
+        availability_classes=pulumi.get(__response__, 'availability_classes'),
         bandwidths=pulumi.get(__response__, 'bandwidths'),
         cluster_network_attachment_counts=pulumi.get(__response__, 'cluster_network_attachment_counts'),
         confidential_compute_modes=pulumi.get(__response__, 'confidential_compute_modes'),
@@ -369,6 +441,7 @@ def get_is_instance_profile_output(name: Optional[pulumi.Input[_builtins.str]] =
         memories=pulumi.get(__response__, 'memories'),
         name=pulumi.get(__response__, 'name'),
         network_attachment_counts=pulumi.get(__response__, 'network_attachment_counts'),
+        network_bandwidth_modes=pulumi.get(__response__, 'network_bandwidth_modes'),
         network_interface_counts=pulumi.get(__response__, 'network_interface_counts'),
         numa_counts=pulumi.get(__response__, 'numa_counts'),
         port_speeds=pulumi.get(__response__, 'port_speeds'),
@@ -376,8 +449,13 @@ def get_is_instance_profile_output(name: Optional[pulumi.Input[_builtins.str]] =
         secure_boot_modes=pulumi.get(__response__, 'secure_boot_modes'),
         status=pulumi.get(__response__, 'status'),
         supported_cluster_network_profiles=pulumi.get(__response__, 'supported_cluster_network_profiles'),
+        supported_vcpu_counts=pulumi.get(__response__, 'supported_vcpu_counts'),
+        threads_per_cores=pulumi.get(__response__, 'threads_per_cores'),
         total_volume_bandwidths=pulumi.get(__response__, 'total_volume_bandwidths'),
         vcpu_architectures=pulumi.get(__response__, 'vcpu_architectures'),
+        vcpu_burst_limits=pulumi.get(__response__, 'vcpu_burst_limits'),
         vcpu_counts=pulumi.get(__response__, 'vcpu_counts'),
         vcpu_manufacturers=pulumi.get(__response__, 'vcpu_manufacturers'),
-        volume_bandwidth_qos_modes=pulumi.get(__response__, 'volume_bandwidth_qos_modes')))
+        vcpu_percentages=pulumi.get(__response__, 'vcpu_percentages'),
+        volume_bandwidth_qos_modes=pulumi.get(__response__, 'volume_bandwidth_qos_modes'),
+        zones=pulumi.get(__response__, 'zones')))

@@ -167,10 +167,10 @@ def get_resource_key(most_recent: Optional[_builtins.bool] = None,
         resource_instance_id=pulumi.get(__ret__, 'resource_instance_id'),
         role=pulumi.get(__ret__, 'role'),
         status=pulumi.get(__ret__, 'status'))
-def get_resource_key_output(most_recent: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                            name: Optional[pulumi.Input[_builtins.str]] = None,
-                            resource_alias_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            resource_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resource_key_output(most_recent: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                            name: pulumi.Input[Optional[_builtins.str]] = None,
+                            resource_alias_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            resource_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceKeyResult]:
     """
     Use this data source to access information about an existing resource.

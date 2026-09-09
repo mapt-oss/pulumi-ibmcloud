@@ -58,7 +58,7 @@ export function getIamAccountSettingsTemplateOutput(args: GetIamAccountSettingsT
  * A collection of arguments for invoking getIamAccountSettingsTemplate.
  */
 export interface GetIamAccountSettingsTemplateOutputArgs {
-    includeHistory?: pulumi.Input<boolean>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
     templateId: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

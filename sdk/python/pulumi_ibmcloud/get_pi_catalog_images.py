@@ -106,9 +106,9 @@ def get_pi_catalog_images(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         sap=pulumi.get(__ret__, 'sap'),
         vtl=pulumi.get(__ret__, 'vtl'))
-def get_pi_catalog_images_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 sap: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 vtl: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_pi_catalog_images_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 sap: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 vtl: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiCatalogImagesResult]:
     """
     Use this data source to access information about an existing resource.

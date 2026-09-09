@@ -117,27 +117,27 @@ export interface PiImageExportState {
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage access key; required for buckets with private access
      */
-    piImageAccessKey?: pulumi.Input<string>;
+    piImageAccessKey?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage bucket name; bucket-name[/optional/folder]
      */
-    piImageBucketName?: pulumi.Input<string>;
+    piImageBucketName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage region
      */
-    piImageBucketRegion?: pulumi.Input<string>;
+    piImageBucketRegion?: pulumi.Input<string | undefined>;
     /**
      * Instance image id
      */
-    piImageId?: pulumi.Input<string>;
+    piImageId?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage secret key; required for buckets with private access
      */
-    piImageSecretKey?: pulumi.Input<string>;
+    piImageSecretKey?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -54,5 +54,5 @@ export function getIsDedicatedHostProfileOutput(args?: GetIsDedicatedHostProfile
  * A collection of arguments for invoking getIsDedicatedHostProfile.
  */
 export interface GetIsDedicatedHostProfileOutputArgs {
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

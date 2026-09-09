@@ -141,51 +141,51 @@ export interface IamActionControlAssignmentState {
     /**
      * The account GUID that the action control assignments belong to.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * The UTC timestamp when the action control assignment was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The IAM ID of the entity that created the action control assignment.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * The href URL that links to the action control assignments API by action control assignment ID.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The UTC timestamp when the action control assignment was last modified.
      */
-    lastModifiedAt?: pulumi.Input<string>;
+    lastModifiedAt?: pulumi.Input<string | undefined>;
     /**
      * The IAM ID of the entity that last modified the action control assignment.
      */
-    lastModifiedById?: pulumi.Input<string>;
+    lastModifiedById?: pulumi.Input<string | undefined>;
     /**
      * The current operation of the action control assignment.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * Resources created when action control template is assigned.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResource>[] | undefined>;
     /**
      * The action control assignment status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * assignment target details
      */
-    target?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    target?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The policy template version.
      */
-    templateVersion?: pulumi.Input<string>;
+    templateVersion?: pulumi.Input<string | undefined>;
     /**
      * action control template details.
      */
-    templates?: pulumi.Input<inputs.IamActionControlAssignmentTemplates>;
+    templates?: pulumi.Input<inputs.IamActionControlAssignmentTemplates | undefined>;
 }
 
 /**
@@ -199,7 +199,7 @@ export interface IamActionControlAssignmentArgs {
     /**
      * The policy template version.
      */
-    templateVersion?: pulumi.Input<string>;
+    templateVersion?: pulumi.Input<string | undefined>;
     /**
      * action control template details.
      */

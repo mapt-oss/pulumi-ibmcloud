@@ -82,7 +82,7 @@ def get_iam_roles(service: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         roles=pulumi.get(__ret__, 'roles'),
         service=pulumi.get(__ret__, 'service'))
-def get_iam_roles_output(service: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_roles_output(service: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamRolesResult]:
     """
     Use this data source to access information about an existing resource.

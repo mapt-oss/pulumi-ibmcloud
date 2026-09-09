@@ -254,8 +254,8 @@ def get_is_bare_metal_server_network_interface(bare_metal_server: Optional[_buil
         subnet=pulumi.get(__ret__, 'subnet'),
         type=pulumi.get(__ret__, 'type'),
         vlan=pulumi.get(__ret__, 'vlan'))
-def get_is_bare_metal_server_network_interface_output(bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_bare_metal_server_network_interface_output(bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerNetworkInterfaceResult]:
     """
     Use this data source to access information about an existing resource.

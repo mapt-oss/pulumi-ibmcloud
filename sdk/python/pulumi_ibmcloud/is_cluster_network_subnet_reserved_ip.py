@@ -23,11 +23,12 @@ class IsClusterNetworkSubnetReservedIpArgs:
     def __init__(__self__, *,
                  cluster_network_id: pulumi.Input[_builtins.str],
                  cluster_network_subnet_id: pulumi.Input[_builtins.str],
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsClusterNetworkSubnetReservedIp resource.
+
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
         :param pulumi.Input[_builtins.str] cluster_network_subnet_id: The cluster network subnet identifier.
         :param pulumi.Input[_builtins.str] address: The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
@@ -69,60 +70,61 @@ class IsClusterNetworkSubnetReservedIpArgs:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
-    def auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this cluster network subnet reserved IP member will be automatically deleted when either `target` is deleted, or the cluster network subnet reserved IP is unbound.
         """
         return pulumi.get(self, "auto_delete")
 
     @auto_delete.setter
-    def auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network subnet reserved IP. The name is unique across all reserved IPs in a cluster network subnet.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsClusterNetworkSubnetReservedIpState:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_network_subnet_reserved_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpTargetArgs']]]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_network_subnet_reserved_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpTargetArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsClusterNetworkSubnetReservedIp resources.
+
         :param pulumi.Input[_builtins.str] address: The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
         :param pulumi.Input[_builtins.bool] auto_delete: Indicates whether this cluster network subnet reserved IP member will be automatically deleted when either `target` is deleted, or the cluster network subnet reserved IP is unbound.
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
@@ -133,7 +135,7 @@ class _IsClusterNetworkSubnetReservedIpState:
         :param pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs']]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the cluster network subnet reserved IP.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network subnet reserved IP. The name is unique across all reserved IPs in a cluster network subnet.
-        :param pulumi.Input[_builtins.str] owner: The owner of the cluster network subnet reserved IPThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] owner: The owner of the cluster network subnet reserved IPThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpTargetArgs']]] targets: The target this cluster network subnet reserved IP is bound to.If absent, this cluster network subnet reserved IP is provider-owned or unbound.
         """
@@ -168,167 +170,167 @@ class _IsClusterNetworkSubnetReservedIpState:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
-    def auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this cluster network subnet reserved IP member will be automatically deleted when either `target` is deleted, or the cluster network subnet reserved IP is unbound.
         """
         return pulumi.get(self, "auto_delete")
 
     @auto_delete.setter
-    def auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkId")
-    def cluster_network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster network identifier.
         """
         return pulumi.get(self, "cluster_network_id")
 
     @cluster_network_id.setter
-    def cluster_network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkSubnetId")
-    def cluster_network_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_network_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster network subnet identifier.
         """
         return pulumi.get(self, "cluster_network_subnet_id")
 
     @cluster_network_subnet_id.setter
-    def cluster_network_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_network_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_network_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkSubnetReservedIpId")
-    def cluster_network_subnet_reserved_ip_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_network_subnet_reserved_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this cluster network subnet reserved IP.
         """
         return pulumi.get(self, "cluster_network_subnet_reserved_ip_id")
 
     @cluster_network_subnet_reserved_ip_id.setter
-    def cluster_network_subnet_reserved_ip_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_network_subnet_reserved_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_network_subnet_reserved_ip_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the cluster network subnet reserved IP was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this cluster network subnet reserved IP.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs']]]]:
         """
         The reasons for the current `lifecycle_state` (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the cluster network subnet reserved IP.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network subnet reserved IP. The name is unique across all reserved IPs in a cluster network subnet.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The owner of the cluster network subnet reserved IPThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The owner of the cluster network subnet reserved IPThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpTargetArgs']]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpTargetArgs']]]]:
         """
         The target this cluster network subnet reserved IP is bound to.If absent, this cluster network subnet reserved IP is provider-owned or unbound.
         """
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpTargetArgs']]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetReservedIpTargetArgs']]]]):
         pulumi.set(self, "targets", value)
 
 
@@ -338,14 +340,15 @@ class IsClusterNetworkSubnetReservedIp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsClusterNetworkSubnetReservedIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address: The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
@@ -362,6 +365,7 @@ class IsClusterNetworkSubnetReservedIp(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsClusterNetworkSubnetReservedIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsClusterNetworkSubnetReservedIpArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -377,11 +381,11 @@ class IsClusterNetworkSubnetReservedIp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -419,20 +423,20 @@ class IsClusterNetworkSubnetReservedIp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_network_subnet_reserved_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs', 'IsClusterNetworkSubnetReservedIpLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpTargetArgs', 'IsClusterNetworkSubnetReservedIpTargetArgsDict']]]]] = None) -> 'IsClusterNetworkSubnetReservedIp':
+            address: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_network_subnet_reserved_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs', 'IsClusterNetworkSubnetReservedIpLifecycleReasonArgsDict', 'outputs.IsClusterNetworkSubnetReservedIpLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpTargetArgs', 'IsClusterNetworkSubnetReservedIpTargetArgsDict', 'outputs.IsClusterNetworkSubnetReservedIpTarget']]]]] = None) -> 'IsClusterNetworkSubnetReservedIp':
         """
         Get an existing IsClusterNetworkSubnetReservedIp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -447,12 +451,12 @@ class IsClusterNetworkSubnetReservedIp(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_network_subnet_reserved_ip_id: The unique identifier for this cluster network subnet reserved IP.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the cluster network subnet reserved IP was created.
         :param pulumi.Input[_builtins.str] href: The URL for this cluster network subnet reserved IP.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs', 'IsClusterNetworkSubnetReservedIpLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpLifecycleReasonArgs', 'IsClusterNetworkSubnetReservedIpLifecycleReasonArgsDict', 'outputs.IsClusterNetworkSubnetReservedIpLifecycleReason']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the cluster network subnet reserved IP.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network subnet reserved IP. The name is unique across all reserved IPs in a cluster network subnet.
-        :param pulumi.Input[_builtins.str] owner: The owner of the cluster network subnet reserved IPThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] owner: The owner of the cluster network subnet reserved IPThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpTargetArgs', 'IsClusterNetworkSubnetReservedIpTargetArgsDict']]]] targets: The target this cluster network subnet reserved IP is bound to.If absent, this cluster network subnet reserved IP is provider-owned or unbound.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetReservedIpTargetArgs', 'IsClusterNetworkSubnetReservedIpTargetArgsDict', 'outputs.IsClusterNetworkSubnetReservedIpTarget']]]] targets: The target this cluster network subnet reserved IP is bound to.If absent, this cluster network subnet reserved IP is provider-owned or unbound.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -563,7 +567,7 @@ class IsClusterNetworkSubnetReservedIp(pulumi.CustomResource):
     @pulumi.getter
     def owner(self) -> pulumi.Output[_builtins.str]:
         """
-        The owner of the cluster network subnet reserved IPThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The owner of the cluster network subnet reserved IPThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "owner")
 

@@ -39,6 +39,10 @@ export class PiNetworkInterface extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly crn: pulumi.Output<string>;
     /**
+     * The external ip address for pub-vlan networks.
+     */
+    declare public /*out*/ readonly externalIp: pulumi.Output<string>;
+    /**
      * The attached instance to this network interface.
      */
     declare public readonly instances: pulumi.Output<outputs.PiNetworkInterfaceInstance[]>;
@@ -111,6 +115,7 @@ export class PiNetworkInterface extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as PiNetworkInterfaceState | undefined;
             resourceInputs["crn"] = state?.crn;
+            resourceInputs["externalIp"] = state?.externalIp;
             resourceInputs["instances"] = state?.instances;
             resourceInputs["ipAddress"] = state?.ipAddress;
             resourceInputs["macAddress"] = state?.macAddress;
@@ -141,6 +146,7 @@ export class PiNetworkInterface extends pulumi.CustomResource {
             resourceInputs["piNetworkId"] = args?.piNetworkId;
             resourceInputs["piUserTags"] = args?.piUserTags;
             resourceInputs["crn"] = undefined /*out*/;
+            resourceInputs["externalIp"] = undefined /*out*/;
             resourceInputs["ipAddress"] = undefined /*out*/;
             resourceInputs["macAddress"] = undefined /*out*/;
             resourceInputs["name"] = undefined /*out*/;
@@ -161,65 +167,69 @@ export interface PiNetworkInterfaceState {
     /**
      * The network interface's crn.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * The external ip address for pub-vlan networks.
+     */
+    externalIp?: pulumi.Input<string | undefined>;
     /**
      * The attached instance to this network interface.
      */
-    instances?: pulumi.Input<pulumi.Input<inputs.PiNetworkInterfaceInstance>[]>;
+    instances?: pulumi.Input<pulumi.Input<inputs.PiNetworkInterfaceInstance>[] | undefined>;
     /**
      * The ip address of this network interface.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * The mac address of the network interface.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * Name of the network interface (not unique or indexable).
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the network interface.
      */
-    networkInterfaceId?: pulumi.Input<string>;
+    networkInterfaceId?: pulumi.Input<string | undefined>;
     /**
      * ID of the network security group the network interface will be added to.
      *
      * @deprecated Deprecated, use networkSecurityGroupIds instead.
      */
-    networkSecurityGroupId?: pulumi.Input<string>;
+    networkSecurityGroupId?: pulumi.Input<string | undefined>;
     /**
      * List of network security groups that the network interface is a member of.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * If supplied populated it attaches to the instance ID, if empty detaches from the instance ID.
      */
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The requested IP address of this network interface.
      */
-    piIpAddress?: pulumi.Input<string>;
+    piIpAddress?: pulumi.Input<string | undefined>;
     /**
      * Name of the network interface.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
     /**
      * Network ID.
      */
-    piNetworkId?: pulumi.Input<string>;
+    piNetworkId?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The status of the network interface.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -229,7 +239,7 @@ export interface PiNetworkInterfaceArgs {
     /**
      * The attached instance to this network interface.
      */
-    instances?: pulumi.Input<pulumi.Input<inputs.PiNetworkInterfaceInstance>[]>;
+    instances?: pulumi.Input<pulumi.Input<inputs.PiNetworkInterfaceInstance>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -237,15 +247,15 @@ export interface PiNetworkInterfaceArgs {
     /**
      * If supplied populated it attaches to the instance ID, if empty detaches from the instance ID.
      */
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The requested IP address of this network interface.
      */
-    piIpAddress?: pulumi.Input<string>;
+    piIpAddress?: pulumi.Input<string | undefined>;
     /**
      * Name of the network interface.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
     /**
      * Network ID.
      */
@@ -253,5 +263,5 @@ export interface PiNetworkInterfaceArgs {
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

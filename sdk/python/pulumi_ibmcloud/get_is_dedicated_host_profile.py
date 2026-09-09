@@ -182,7 +182,7 @@ def get_is_dedicated_host_profile(name: Optional[_builtins.str] = None,
         vcpu_architectures=pulumi.get(__ret__, 'vcpu_architectures'),
         vcpu_counts=pulumi.get(__ret__, 'vcpu_counts'),
         vcpu_manufacturers=pulumi.get(__ret__, 'vcpu_manufacturers'))
-def get_is_dedicated_host_profile_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_dedicated_host_profile_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsDedicatedHostProfileResult]:
     """
     Use this data source to access information about an existing resource.

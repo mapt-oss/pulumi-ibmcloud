@@ -82,7 +82,7 @@ def get_is_network_acls(resource_group: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         network_acls=pulumi.get(__ret__, 'network_acls'),
         resource_group=pulumi.get(__ret__, 'resource_group'))
-def get_is_network_acls_output(resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_network_acls_output(resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsNetworkAclsResult]:
     """
     Use this data source to access information about an existing resource.

@@ -79,11 +79,11 @@ export interface IsShareDeleteAccessorBindingState {
     /**
      * The accessor binding id
      */
-    accessorBinding?: pulumi.Input<string>;
+    accessorBinding?: pulumi.Input<string | undefined>;
     /**
      * The file share identifier.
      */
-    share?: pulumi.Input<string>;
+    share?: pulumi.Input<string | undefined>;
 }
 
 /**

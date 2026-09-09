@@ -21,19 +21,20 @@ __all__ = ['IsVpcArgs', 'IsVpc']
 @pulumi.input_type
 class IsVpcArgs:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 address_prefix_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 classic_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 default_network_acl_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_routing_table_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_security_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns: Optional[pulumi.Input['IsVpcDnsArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_sg_acl_rules: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 address_prefix_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 classic_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 default_network_acl_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_routing_table_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_security_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns: pulumi.Input[Optional['IsVpcDnsArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_sg_acl_rules: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsVpc resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] address_prefix_management: Address Prefix management value
         :param pulumi.Input[_builtins.bool] classic_access: Set to true if classic access needs to enabled to VPC
@@ -74,174 +75,175 @@ class IsVpcArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="addressPrefixManagement")
-    def address_prefix_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_prefix_management(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address Prefix management value
         """
         return pulumi.get(self, "address_prefix_management")
 
     @address_prefix_management.setter
-    def address_prefix_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_prefix_management(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_prefix_management", value)
 
     @_builtins.property
     @pulumi.getter(name="classicAccess")
     @_utilities.deprecated("""Classic access is deprecated""")
-    def classic_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def classic_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Set to true if classic access needs to enabled to VPC
         """
         return pulumi.get(self, "classic_access")
 
     @classic_access.setter
-    def classic_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def classic_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "classic_access", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultNetworkAclName")
-    def default_network_acl_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_network_acl_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default Network ACL name
         """
         return pulumi.get(self, "default_network_acl_name")
 
     @default_network_acl_name.setter
-    def default_network_acl_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_network_acl_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_network_acl_name", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRoutingTableName")
-    def default_routing_table_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_routing_table_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default routing table name
         """
         return pulumi.get(self, "default_routing_table_name")
 
     @default_routing_table_name.setter
-    def default_routing_table_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_routing_table_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_routing_table_name", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSecurityGroupName")
-    def default_security_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_security_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default security group name
         """
         return pulumi.get(self, "default_security_group_name")
 
     @default_security_group_name.setter
-    def default_security_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_security_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_security_group_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def dns(self) -> Optional[pulumi.Input['IsVpcDnsArgs']]:
+    def dns(self) -> pulumi.Input[Optional['IsVpcDnsArgs']]:
         """
         The DNS configuration for this VPC.
         """
         return pulumi.get(self, "dns")
 
     @dns.setter
-    def dns(self, value: Optional[pulumi.Input['IsVpcDnsArgs']]):
+    def dns(self, value: pulumi.Input[Optional['IsVpcDnsArgs']]):
         pulumi.set(self, "dns", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPC name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="noSgAclRules")
-    def no_sg_acl_rules(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_sg_acl_rules(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Delete all rules attached with default security group and default acl
         """
         return pulumi.get(self, "no_sg_acl_rules")
 
     @no_sg_acl_rules.setter
-    def no_sg_acl_rules(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_sg_acl_rules(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_sg_acl_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group info
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsVpcState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 address_prefix_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 classic_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 cse_source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcCseSourceAddressArgs']]]] = None,
-                 default_address_prefixes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 default_network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_network_acl_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_network_acl_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_routing_table_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_routing_table_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_security_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_security_group_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_security_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns: Optional[pulumi.Input['IsVpcDnsArgs']] = None,
-                 health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcHealthReasonArgs']]]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_sg_acl_rules: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public_address_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcPublicAddressRangeArgs']]]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcSecurityGroupArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcSubnetArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 address_prefix_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 classic_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 cse_source_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcCseSourceAddressArgs']]]] = None,
+                 default_address_prefixes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 default_network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_network_acl_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_network_acl_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_routing_table_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_routing_table_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_security_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_security_group_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_security_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns: pulumi.Input[Optional['IsVpcDnsArgs']] = None,
+                 health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcHealthReasonArgs']]]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_sg_acl_rules: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public_address_ranges: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcPublicAddressRangeArgs']]]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcSecurityGroupArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcSubnetArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IsVpc resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] address_prefix_management: Address Prefix management value
         :param pulumi.Input[_builtins.bool] classic_access: Set to true if classic access needs to enabled to VPC
@@ -339,366 +341,366 @@ class _IsVpcState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="addressPrefixManagement")
-    def address_prefix_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_prefix_management(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Address Prefix management value
         """
         return pulumi.get(self, "address_prefix_management")
 
     @address_prefix_management.setter
-    def address_prefix_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_prefix_management(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_prefix_management", value)
 
     @_builtins.property
     @pulumi.getter(name="classicAccess")
     @_utilities.deprecated("""Classic access is deprecated""")
-    def classic_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def classic_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Set to true if classic access needs to enabled to VPC
         """
         return pulumi.get(self, "classic_access")
 
     @classic_access.setter
-    def classic_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def classic_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "classic_access", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="cseSourceAddresses")
-    def cse_source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcCseSourceAddressArgs']]]]:
+    def cse_source_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcCseSourceAddressArgs']]]]:
         return pulumi.get(self, "cse_source_addresses")
 
     @cse_source_addresses.setter
-    def cse_source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcCseSourceAddressArgs']]]]):
+    def cse_source_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcCseSourceAddressArgs']]]]):
         pulumi.set(self, "cse_source_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultAddressPrefixes")
-    def default_address_prefixes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def default_address_prefixes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Default address prefixes for each zone.
         """
         return pulumi.get(self, "default_address_prefixes")
 
     @default_address_prefixes.setter
-    def default_address_prefixes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def default_address_prefixes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "default_address_prefixes", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultNetworkAcl")
-    def default_network_acl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_network_acl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default network ACL ID
         """
         return pulumi.get(self, "default_network_acl")
 
     @default_network_acl.setter
-    def default_network_acl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_network_acl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_network_acl", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultNetworkAclCrn")
-    def default_network_acl_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_network_acl_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default Network ACL CRN
         """
         return pulumi.get(self, "default_network_acl_crn")
 
     @default_network_acl_crn.setter
-    def default_network_acl_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_network_acl_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_network_acl_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultNetworkAclName")
-    def default_network_acl_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_network_acl_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default Network ACL name
         """
         return pulumi.get(self, "default_network_acl_name")
 
     @default_network_acl_name.setter
-    def default_network_acl_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_network_acl_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_network_acl_name", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRoutingTable")
-    def default_routing_table(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_routing_table(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default routing table associated with VPC
         """
         return pulumi.get(self, "default_routing_table")
 
     @default_routing_table.setter
-    def default_routing_table(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_routing_table(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_routing_table", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRoutingTableCrn")
-    def default_routing_table_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_routing_table_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default routing table CRN
         """
         return pulumi.get(self, "default_routing_table_crn")
 
     @default_routing_table_crn.setter
-    def default_routing_table_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_routing_table_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_routing_table_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRoutingTableName")
-    def default_routing_table_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_routing_table_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default routing table name
         """
         return pulumi.get(self, "default_routing_table_name")
 
     @default_routing_table_name.setter
-    def default_routing_table_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_routing_table_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_routing_table_name", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSecurityGroup")
-    def default_security_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_security_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group associated with VPC
         """
         return pulumi.get(self, "default_security_group")
 
     @default_security_group.setter
-    def default_security_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_security_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_security_group", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSecurityGroupCrn")
-    def default_security_group_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_security_group_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default security group CRN
         """
         return pulumi.get(self, "default_security_group_crn")
 
     @default_security_group_crn.setter
-    def default_security_group_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_security_group_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_security_group_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSecurityGroupName")
-    def default_security_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_security_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default security group name
         """
         return pulumi.get(self, "default_security_group_name")
 
     @default_security_group_name.setter
-    def default_security_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_security_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_security_group_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def dns(self) -> Optional[pulumi.Input['IsVpcDnsArgs']]:
+    def dns(self) -> pulumi.Input[Optional['IsVpcDnsArgs']]:
         """
         The DNS configuration for this VPC.
         """
         return pulumi.get(self, "dns")
 
     @dns.setter
-    def dns(self, value: Optional[pulumi.Input['IsVpcDnsArgs']]):
+    def dns(self, value: pulumi.Input[Optional['IsVpcDnsArgs']]):
         pulumi.set(self, "dns", value)
 
     @_builtins.property
     @pulumi.getter(name="healthReasons")
-    def health_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcHealthReasonArgs']]]]:
+    def health_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcHealthReasonArgs']]]]:
         """
         The reasons for the current `health_state` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
         """
         return pulumi.get(self, "health_reasons")
 
     @health_reasons.setter
-    def health_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcHealthReasonArgs']]]]):
+    def health_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcHealthReasonArgs']]]]):
         pulumi.set(self, "health_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The health of this resource.- `ok`: No abnormal behavior detected- `degraded`: Experiencing compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPC name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="noSgAclRules")
-    def no_sg_acl_rules(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_sg_acl_rules(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Delete all rules attached with default security group and default acl
         """
         return pulumi.get(self, "no_sg_acl_rules")
 
     @no_sg_acl_rules.setter
-    def no_sg_acl_rules(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_sg_acl_rules(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_sg_acl_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="publicAddressRanges")
-    def public_address_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcPublicAddressRangeArgs']]]]:
+    def public_address_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcPublicAddressRangeArgs']]]]:
         """
         The public address ranges attached to this VPC.
         """
         return pulumi.get(self, "public_address_ranges")
 
     @public_address_ranges.setter
-    def public_address_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcPublicAddressRangeArgs']]]]):
+    def public_address_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcPublicAddressRangeArgs']]]]):
         pulumi.set(self, "public_address_ranges", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCrn")
-    def resource_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "resource_crn")
 
     @resource_crn.setter
-    def resource_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group info
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceStatus")
-    def resource_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the resource
         """
         return pulumi.get(self, "resource_status")
 
     @resource_status.setter
-    def resource_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_status", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcSecurityGroupArgs']]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcSecurityGroupArgs']]]]:
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcSecurityGroupArgs']]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcSecurityGroupArgs']]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPC status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcSubnetArgs']]]]:
+    def subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcSubnetArgs']]]]:
         return pulumi.get(self, "subnets")
 
     @subnets.setter
-    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcSubnetArgs']]]]):
+    def subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcSubnetArgs']]]]):
         pulumi.set(self, "subnets", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
@@ -708,20 +710,21 @@ class IsVpc(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 address_prefix_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 classic_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 default_network_acl_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_routing_table_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_security_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns: Optional[pulumi.Input[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_sg_acl_rules: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 address_prefix_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 classic_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 default_network_acl_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_routing_table_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_security_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns: pulumi.Input[Optional[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict', 'outputs.IsVpcDns']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_sg_acl_rules: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IsVpc resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -730,7 +733,7 @@ class IsVpc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] default_network_acl_name: Default Network ACL name
         :param pulumi.Input[_builtins.str] default_routing_table_name: Default routing table name
         :param pulumi.Input[_builtins.str] default_security_group_name: Default security group name
-        :param pulumi.Input[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict']] dns: The DNS configuration for this VPC.
+        :param pulumi.Input[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict', 'outputs.IsVpcDns']] dns: The DNS configuration for this VPC.
         :param pulumi.Input[_builtins.str] name: VPC name
         :param pulumi.Input[_builtins.bool] no_sg_acl_rules: Delete all rules attached with default security group and default acl
         :param pulumi.Input[_builtins.str] resource_group: Resource group info
@@ -744,6 +747,7 @@ class IsVpc(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVpc resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVpcArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -759,17 +763,17 @@ class IsVpc(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 address_prefix_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 classic_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 default_network_acl_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_routing_table_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_security_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns: Optional[pulumi.Input[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_sg_acl_rules: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 address_prefix_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 classic_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 default_network_acl_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_routing_table_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_security_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns: pulumi.Input[Optional[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict', 'outputs.IsVpcDns']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_sg_acl_rules: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -820,37 +824,37 @@ class IsVpc(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            address_prefix_management: Optional[pulumi.Input[_builtins.str]] = None,
-            classic_access: Optional[pulumi.Input[_builtins.bool]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            cse_source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcCseSourceAddressArgs', 'IsVpcCseSourceAddressArgsDict']]]]] = None,
-            default_address_prefixes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            default_network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-            default_network_acl_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            default_network_acl_name: Optional[pulumi.Input[_builtins.str]] = None,
-            default_routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-            default_routing_table_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            default_routing_table_name: Optional[pulumi.Input[_builtins.str]] = None,
-            default_security_group: Optional[pulumi.Input[_builtins.str]] = None,
-            default_security_group_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            default_security_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dns: Optional[pulumi.Input[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict']]] = None,
-            health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcHealthReasonArgs', 'IsVpcHealthReasonArgsDict']]]]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            no_sg_acl_rules: Optional[pulumi.Input[_builtins.bool]] = None,
-            public_address_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcPublicAddressRangeArgs', 'IsVpcPublicAddressRangeArgsDict']]]]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-            security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcSecurityGroupArgs', 'IsVpcSecurityGroupArgsDict']]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcSubnetArgs', 'IsVpcSubnetArgsDict']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsVpc':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            address_prefix_management: pulumi.Input[Optional[_builtins.str]] = None,
+            classic_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            cse_source_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcCseSourceAddressArgs', 'IsVpcCseSourceAddressArgsDict', 'outputs.IsVpcCseSourceAddress']]]]] = None,
+            default_address_prefixes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            default_network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+            default_network_acl_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            default_network_acl_name: pulumi.Input[Optional[_builtins.str]] = None,
+            default_routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+            default_routing_table_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            default_routing_table_name: pulumi.Input[Optional[_builtins.str]] = None,
+            default_security_group: pulumi.Input[Optional[_builtins.str]] = None,
+            default_security_group_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            default_security_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns: pulumi.Input[Optional[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict', 'outputs.IsVpcDns']]] = None,
+            health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcHealthReasonArgs', 'IsVpcHealthReasonArgsDict', 'outputs.IsVpcHealthReason']]]]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            no_sg_acl_rules: pulumi.Input[Optional[_builtins.bool]] = None,
+            public_address_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcPublicAddressRangeArgs', 'IsVpcPublicAddressRangeArgsDict', 'outputs.IsVpcPublicAddressRange']]]]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+            security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcSecurityGroupArgs', 'IsVpcSecurityGroupArgsDict', 'outputs.IsVpcSecurityGroup']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcSubnetArgs', 'IsVpcSubnetArgsDict', 'outputs.IsVpcSubnet']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsVpc':
         """
         Get an existing IsVpc resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -872,12 +876,12 @@ class IsVpc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] default_security_group: Security group associated with VPC
         :param pulumi.Input[_builtins.str] default_security_group_crn: Default security group CRN
         :param pulumi.Input[_builtins.str] default_security_group_name: Default security group name
-        :param pulumi.Input[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict']] dns: The DNS configuration for this VPC.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcHealthReasonArgs', 'IsVpcHealthReasonArgsDict']]]] health_reasons: The reasons for the current `health_state` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
+        :param pulumi.Input[Union['IsVpcDnsArgs', 'IsVpcDnsArgsDict', 'outputs.IsVpcDns']] dns: The DNS configuration for this VPC.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcHealthReasonArgs', 'IsVpcHealthReasonArgsDict', 'outputs.IsVpcHealthReason']]]] health_reasons: The reasons for the current `health_state` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
         :param pulumi.Input[_builtins.str] health_state: The health of this resource.- `ok`: No abnormal behavior detected- `degraded`: Experiencing compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
         :param pulumi.Input[_builtins.str] name: VPC name
         :param pulumi.Input[_builtins.bool] no_sg_acl_rules: Delete all rules attached with default security group and default acl
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcPublicAddressRangeArgs', 'IsVpcPublicAddressRangeArgsDict']]]] public_address_ranges: The public address ranges attached to this VPC.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcPublicAddressRangeArgs', 'IsVpcPublicAddressRangeArgsDict', 'outputs.IsVpcPublicAddressRange']]]] public_address_ranges: The public address ranges attached to this VPC.
         :param pulumi.Input[_builtins.str] resource_controller_url: The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         :param pulumi.Input[_builtins.str] resource_crn: The crn of the resource
         :param pulumi.Input[_builtins.str] resource_group: Resource group info

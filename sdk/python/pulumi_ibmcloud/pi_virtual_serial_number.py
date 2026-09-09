@@ -21,12 +21,13 @@ class PiVirtualSerialNumberArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_serial: pulumi.Input[_builtins.str],
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_software_tier: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_software_tier: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiVirtualSerialNumber resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: This is the Power Instance id that is assigned to the account
         :param pulumi.Input[_builtins.str] pi_serial: Virtual serial number.
         :param pulumi.Input[_builtins.str] pi_description: Description of virtual serial number.
@@ -71,64 +72,65 @@ class PiVirtualSerialNumberArgs:
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of virtual serial number.
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceId")
-    def pi_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance to attach VSN to.
         """
         return pulumi.get(self, "pi_instance_id")
 
     @pi_instance_id.setter
-    def pi_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piRetainVirtualSerialNumber")
-    def pi_retain_virtual_serial_number(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_retain_virtual_serial_number(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to retain virtual serial number after unassigning from PVM instance during deletion.
         """
         return pulumi.get(self, "pi_retain_virtual_serial_number")
 
     @pi_retain_virtual_serial_number.setter
-    def pi_retain_virtual_serial_number(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_retain_virtual_serial_number(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_retain_virtual_serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="piSoftwareTier")
-    def pi_software_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_software_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Software tier for virtual serial number.
         """
         return pulumi.get(self, "pi_software_tier")
 
     @pi_software_tier.setter
-    def pi_software_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_software_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_software_tier", value)
 
 
 @pulumi.input_type
 class _PiVirtualSerialNumberState:
     def __init__(__self__, *,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_serial: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_software_tier: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_serial: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_software_tier: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVirtualSerialNumber resources.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: This is the Power Instance id that is assigned to the account
         :param pulumi.Input[_builtins.str] pi_description: Description of virtual serial number.
         :param pulumi.Input[_builtins.str] pi_instance_id: PVM Instance to attach VSN to.
@@ -151,74 +153,74 @@ class _PiVirtualSerialNumberState:
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the Power Instance id that is assigned to the account
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of virtual serial number.
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceId")
-    def pi_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance to attach VSN to.
         """
         return pulumi.get(self, "pi_instance_id")
 
     @pi_instance_id.setter
-    def pi_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piRetainVirtualSerialNumber")
-    def pi_retain_virtual_serial_number(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_retain_virtual_serial_number(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to retain virtual serial number after unassigning from PVM instance during deletion.
         """
         return pulumi.get(self, "pi_retain_virtual_serial_number")
 
     @pi_retain_virtual_serial_number.setter
-    def pi_retain_virtual_serial_number(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_retain_virtual_serial_number(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_retain_virtual_serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="piSerial")
-    def pi_serial(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_serial(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Virtual serial number.
         """
         return pulumi.get(self, "pi_serial")
 
     @pi_serial.setter
-    def pi_serial(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_serial(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_serial", value)
 
     @_builtins.property
     @pulumi.getter(name="piSoftwareTier")
-    def pi_software_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_software_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Software tier for virtual serial number.
         """
         return pulumi.get(self, "pi_software_tier")
 
     @pi_software_tier.setter
-    def pi_software_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_software_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_software_tier", value)
 
 
@@ -228,15 +230,16 @@ class PiVirtualSerialNumber(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_serial: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_software_tier: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_serial: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_software_tier: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiVirtualSerialNumber resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: This is the Power Instance id that is assigned to the account
@@ -254,6 +257,7 @@ class PiVirtualSerialNumber(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVirtualSerialNumber resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVirtualSerialNumberArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -269,12 +273,12 @@ class PiVirtualSerialNumber(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_serial: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_software_tier: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_serial: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_software_tier: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -304,12 +308,12 @@ class PiVirtualSerialNumber(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_serial: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_software_tier: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVirtualSerialNumber':
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_serial: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_software_tier: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVirtualSerialNumber':
         """
         Get an existing PiVirtualSerialNumber resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

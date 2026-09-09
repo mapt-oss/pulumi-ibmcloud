@@ -22,11 +22,12 @@ class PiSnapshotArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_instance_name: pulumi.Input[_builtins.str],
                  pi_snap_shot_name: pulumi.Input[_builtins.str],
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiSnapshot resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_instance_name: The name of the instance you want to take a snapshot of.
         :param pulumi.Input[_builtins.str] pi_snap_shot_name: The unique name of the snapshot.
@@ -82,58 +83,59 @@ class PiSnapshotArgs:
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the PVM instance snapshot.
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeIds")
-    def pi_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of volume IDs of the instance that will be part of the snapshot. If none are provided, then all the volumes of the instance will be part of the snapshot.
         """
         return pulumi.get(self, "pi_volume_ids")
 
     @pi_volume_ids.setter
-    def pi_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_volume_ids", value)
 
 
 @pulumi.input_type
 class _PiSnapshotState:
     def __init__(__self__, *,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_update_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_snap_shot_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_snapshots: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_update_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_snap_shot_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_snapshots: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiSnapshot resources.
+
         :param pulumi.Input[_builtins.str] creation_date: Creation date of the snapshot.
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
         :param pulumi.Input[_builtins.str] last_update_date: The last updated date of the snapshot.
@@ -174,146 +176,146 @@ class _PiSnapshotState:
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Creation date of the snapshot.
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateDate")
-    def last_update_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_update_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last updated date of the snapshot.
         """
         return pulumi.get(self, "last_update_date")
 
     @last_update_date.setter
-    def last_update_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_update_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_update_date", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the PVM instance snapshot.
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the instance you want to take a snapshot of.
         """
         return pulumi.get(self, "pi_instance_name")
 
     @pi_instance_name.setter
-    def pi_instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piSnapShotName")
-    def pi_snap_shot_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_snap_shot_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the snapshot.
         """
         return pulumi.get(self, "pi_snap_shot_name")
 
     @pi_snap_shot_name.setter
-    def pi_snap_shot_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_snap_shot_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_snap_shot_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeIds")
-    def pi_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of volume IDs of the instance that will be part of the snapshot. If none are provided, then all the volumes of the instance will be part of the snapshot.
         """
         return pulumi.get(self, "pi_volume_ids")
 
     @pi_volume_ids.setter
-    def pi_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_volume_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotId")
-    def snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the PVM instance snapshot.
         """
         return pulumi.get(self, "snapshot_id")
 
     @snapshot_id.setter
-    def snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the PVM instance snapshot.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeSnapshots")
-    def volume_snapshots(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def volume_snapshots(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A map of volume snapshots included in the PVM instance snapshot.
         """
         return pulumi.get(self, "volume_snapshots")
 
     @volume_snapshots.setter
-    def volume_snapshots(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def volume_snapshots(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "volume_snapshots", value)
 
 
@@ -323,15 +325,16 @@ class PiSnapshot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_snap_shot_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_snap_shot_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiSnapshot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -349,6 +352,7 @@ class PiSnapshot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiSnapshot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiSnapshotArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -364,12 +368,12 @@ class PiSnapshot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_snap_shot_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_snap_shot_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -407,18 +411,18 @@ class PiSnapshot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            last_update_date: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_snap_shot_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_snapshots: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'PiSnapshot':
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_date: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_snap_shot_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_snapshots: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'PiSnapshot':
         """
         Get an existing PiSnapshot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

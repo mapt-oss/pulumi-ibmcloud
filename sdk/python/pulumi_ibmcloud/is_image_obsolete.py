@@ -22,6 +22,7 @@ class IsImageObsoleteArgs:
                  image: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsImageObsolete resource.
+
         :param pulumi.Input[_builtins.str] image: Image identifier
         """
         pulumi.set(__self__, "image", image)
@@ -42,28 +43,29 @@ class IsImageObsoleteArgs:
 @pulumi.input_type
 class _IsImageObsoleteState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 checksum: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 deprecation_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 encrypted_data_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 file: Optional[pulumi.Input[_builtins.int]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 obsolescence_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 visibility: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 checksum: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 deprecation_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypted_data_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 file: pulumi.Input[Optional[_builtins.int]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 obsolescence_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 visibility: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsImageObsolete resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] checksum: The SHA256 checksum of this image
         :param pulumi.Input[_builtins.str] created_at: The date and time that the image was created
@@ -128,242 +130,242 @@ class _IsImageObsoleteState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def checksum(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def checksum(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SHA256 checksum of this image
         """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
-    def checksum(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def checksum(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "checksum", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the image was created
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="deprecationAt")
-    def deprecation_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deprecation_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The deprecation date and time (UTC) for this image. If absent, no deprecation date and time has been set.
         """
         return pulumi.get(self, "deprecation_at")
 
     @deprecation_at.setter
-    def deprecation_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deprecation_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deprecation_at", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptedDataKey")
-    def encrypted_data_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encrypted_data_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A base64-encoded, encrypted representation of the key that was used to encrypt the data for this image
         """
         return pulumi.get(self, "encrypted_data_key")
 
     @encrypted_data_key.setter
-    def encrypted_data_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encrypted_data_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encrypted_data_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def encryption(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of encryption used on the image
         """
         return pulumi.get(self, "encryption")
 
     @encryption.setter
-    def encryption(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the Key Protect Root Key or Hyper Protect Crypto Service Root Key for this resource
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def file(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def file(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Details for the stored image file
         """
         return pulumi.get(self, "file")
 
     @file.setter
-    def file(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def file(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "file", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image Href value
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image identifier
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="obsolescenceAt")
-    def obsolescence_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def obsolescence_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The obsolescence date and time (UTC) for this image. If absent, no obsolescence date and time has been set.
         """
         return pulumi.get(self, "obsolescence_at")
 
     @obsolescence_at.setter
-    def obsolescence_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def obsolescence_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "obsolescence_at", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystem")
-    def operating_system(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image Operating system
         """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
-    def operating_system(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group for this image
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum size (in gigabytes) of a volume onto which this image may be provisioned
         """
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceVolume")
-    def source_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image volume id
         """
         return pulumi.get(self, "source_volume")
 
     @source_volume.setter
-    def source_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_volume", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of this image
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags for the image
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def visibility(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def visibility(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether the image is publicly visible or private to the account
         """
         return pulumi.get(self, "visibility")
 
     @visibility.setter
-    def visibility(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def visibility(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "visibility", value)
 
 
@@ -373,10 +375,11 @@ class IsImageObsolete(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsImageObsolete resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] image: Image identifier
@@ -389,6 +392,7 @@ class IsImageObsolete(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsImageObsolete resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsImageObsoleteArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -404,7 +408,7 @@ class IsImageObsolete(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -446,26 +450,26 @@ class IsImageObsolete(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            checksum: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            deprecation_at: Optional[pulumi.Input[_builtins.str]] = None,
-            encrypted_data_key: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-            file: Optional[pulumi.Input[_builtins.int]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            obsolescence_at: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            size: Optional[pulumi.Input[_builtins.int]] = None,
-            source_volume: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            visibility: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsImageObsolete':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            checksum: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            deprecation_at: pulumi.Input[Optional[_builtins.str]] = None,
+            encrypted_data_key: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+            file: pulumi.Input[Optional[_builtins.int]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            obsolescence_at: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            size: pulumi.Input[Optional[_builtins.int]] = None,
+            source_volume: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            visibility: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsImageObsolete':
         """
         Get an existing IsImageObsolete resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

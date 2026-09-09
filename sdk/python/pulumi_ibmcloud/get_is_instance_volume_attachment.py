@@ -164,8 +164,8 @@ def get_is_instance_volume_attachment(instance: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         volume_attachment_id=pulumi.get(__ret__, 'volume_attachment_id'),
         volume_references=pulumi.get(__ret__, 'volume_references'))
-def get_is_instance_volume_attachment_output(instance: Optional[pulumi.Input[_builtins.str]] = None,
-                                             name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_volume_attachment_output(instance: pulumi.Input[Optional[_builtins.str]] = None,
+                                             name: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceVolumeAttachmentResult]:
     """
     Use this data source to access information about an existing resource.

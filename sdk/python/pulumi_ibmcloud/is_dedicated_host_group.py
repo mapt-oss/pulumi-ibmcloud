@@ -24,10 +24,11 @@ class IsDedicatedHostGroupArgs:
                  class_: pulumi.Input[_builtins.str],
                  family: pulumi.Input[_builtins.str],
                  zone: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsDedicatedHostGroup resource.
+
         :param pulumi.Input[_builtins.str] class_: The dedicated host profile class for hosts in this group.
         :param pulumi.Input[_builtins.str] family: The dedicated host profile family for hosts in this group.
         :param pulumi.Input[_builtins.str] zone: The globally unique name of the zone this dedicated host group will reside in.
@@ -80,45 +81,46 @@ class IsDedicatedHostGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this dedicated host group. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
 @pulumi.input_type
 class _IsDedicatedHostGroupState:
     def __init__(__self__, *,
-                 class_: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostGroupDedicatedHostArgs']]]] = None,
-                 family: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_instance_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostGroupSupportedInstanceProfileArgs']]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 class_: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_hosts: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostGroupDedicatedHostArgs']]]] = None,
+                 family: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_instance_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostGroupSupportedInstanceProfileArgs']]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsDedicatedHostGroup resources.
+
         :param pulumi.Input[_builtins.str] class_: The dedicated host profile class for hosts in this group.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the dedicated host group was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this dedicated host group.
@@ -156,134 +158,134 @@ class _IsDedicatedHostGroupState:
 
     @_builtins.property
     @pulumi.getter(name="class")
-    def class_(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def class_(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The dedicated host profile class for hosts in this group.
         """
         return pulumi.get(self, "class_")
 
     @class_.setter
-    def class_(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def class_(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "class_", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the dedicated host group was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this dedicated host group.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHosts")
-    def dedicated_hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostGroupDedicatedHostArgs']]]]:
+    def dedicated_hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostGroupDedicatedHostArgs']]]]:
         """
         The dedicated hosts that are in this dedicated host group.
         """
         return pulumi.get(self, "dedicated_hosts")
 
     @dedicated_hosts.setter
-    def dedicated_hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostGroupDedicatedHostArgs']]]]):
+    def dedicated_hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostGroupDedicatedHostArgs']]]]):
         pulumi.set(self, "dedicated_hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def family(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def family(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The dedicated host profile family for hosts in this group.
         """
         return pulumi.get(self, "family")
 
     @family.setter
-    def family(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def family(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "family", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this dedicated host group.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this dedicated host group. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of resource referenced.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedInstanceProfiles")
-    def supported_instance_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostGroupSupportedInstanceProfileArgs']]]]:
+    def supported_instance_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostGroupSupportedInstanceProfileArgs']]]]:
         """
         Array of instance profiles that can be used by instances placed on this dedicated host group.
         """
         return pulumi.get(self, "supported_instance_profiles")
 
     @supported_instance_profiles.setter
-    def supported_instance_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostGroupSupportedInstanceProfileArgs']]]]):
+    def supported_instance_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostGroupSupportedInstanceProfileArgs']]]]):
         pulumi.set(self, "supported_instance_profiles", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name of the zone this dedicated host group will reside in.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -293,14 +295,15 @@ class IsDedicatedHostGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 class_: Optional[pulumi.Input[_builtins.str]] = None,
-                 family: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 class_: pulumi.Input[Optional[_builtins.str]] = None,
+                 family: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsDedicatedHostGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] class_: The dedicated host profile class for hosts in this group.
@@ -317,6 +320,7 @@ class IsDedicatedHostGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsDedicatedHostGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsDedicatedHostGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -332,11 +336,11 @@ class IsDedicatedHostGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 class_: Optional[pulumi.Input[_builtins.str]] = None,
-                 family: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 class_: pulumi.Input[Optional[_builtins.str]] = None,
+                 family: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -373,17 +377,17 @@ class IsDedicatedHostGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            class_: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            dedicated_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostGroupDedicatedHostArgs', 'IsDedicatedHostGroupDedicatedHostArgsDict']]]]] = None,
-            family: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            supported_instance_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostGroupSupportedInstanceProfileArgs', 'IsDedicatedHostGroupSupportedInstanceProfileArgsDict']]]]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsDedicatedHostGroup':
+            class_: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            dedicated_hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostGroupDedicatedHostArgs', 'IsDedicatedHostGroupDedicatedHostArgsDict', 'outputs.IsDedicatedHostGroupDedicatedHost']]]]] = None,
+            family: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            supported_instance_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostGroupSupportedInstanceProfileArgs', 'IsDedicatedHostGroupSupportedInstanceProfileArgsDict', 'outputs.IsDedicatedHostGroupSupportedInstanceProfile']]]]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsDedicatedHostGroup':
         """
         Get an existing IsDedicatedHostGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -394,13 +398,13 @@ class IsDedicatedHostGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] class_: The dedicated host profile class for hosts in this group.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the dedicated host group was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this dedicated host group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostGroupDedicatedHostArgs', 'IsDedicatedHostGroupDedicatedHostArgsDict']]]] dedicated_hosts: The dedicated hosts that are in this dedicated host group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostGroupDedicatedHostArgs', 'IsDedicatedHostGroupDedicatedHostArgsDict', 'outputs.IsDedicatedHostGroupDedicatedHost']]]] dedicated_hosts: The dedicated hosts that are in this dedicated host group.
         :param pulumi.Input[_builtins.str] family: The dedicated host profile family for hosts in this group.
         :param pulumi.Input[_builtins.str] href: The URL for this dedicated host group.
         :param pulumi.Input[_builtins.str] name: The unique user-defined name for this dedicated host group. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         :param pulumi.Input[_builtins.str] resource_type: The type of resource referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostGroupSupportedInstanceProfileArgs', 'IsDedicatedHostGroupSupportedInstanceProfileArgsDict']]]] supported_instance_profiles: Array of instance profiles that can be used by instances placed on this dedicated host group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostGroupSupportedInstanceProfileArgs', 'IsDedicatedHostGroupSupportedInstanceProfileArgsDict', 'outputs.IsDedicatedHostGroupSupportedInstanceProfile']]]] supported_instance_profiles: Array of instance profiles that can be used by instances placed on this dedicated host group.
         :param pulumi.Input[_builtins.str] zone: The globally unique name of the zone this dedicated host group will reside in.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

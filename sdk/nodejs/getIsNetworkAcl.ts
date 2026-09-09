@@ -59,7 +59,7 @@ export function getIsNetworkAclOutput(args?: GetIsNetworkAclOutputArgs, opts?: p
  * A collection of arguments for invoking getIsNetworkAcl.
  */
 export interface GetIsNetworkAclOutputArgs {
-    name?: pulumi.Input<string>;
-    networkAcl?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    networkAcl?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

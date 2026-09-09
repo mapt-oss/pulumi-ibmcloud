@@ -396,9 +396,9 @@ def get_is_volume(identifier: Optional[_builtins.str] = None,
         storage_generation=pulumi.get(__ret__, 'storage_generation'),
         tags=pulumi.get(__ret__, 'tags'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_volume_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         zone: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_volume_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         zone: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVolumeResult]:
     """
     Use this data source to access information about an existing resource.

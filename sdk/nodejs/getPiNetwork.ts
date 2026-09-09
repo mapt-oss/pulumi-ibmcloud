@@ -37,6 +37,7 @@ export interface GetPiNetworkResult {
     readonly cidr: string;
     readonly crn: string;
     readonly dns: string[];
+    readonly enableDhcp: boolean;
     readonly gateway: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -75,9 +76,9 @@ export function getPiNetworkOutput(args: GetPiNetworkOutputArgs, opts?: pulumi.I
  */
 export interface GetPiNetworkOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piNetworkId?: pulumi.Input<string>;
+    piNetworkId?: pulumi.Input<string | undefined>;
     /**
      * @deprecated The piNetworkName field is deprecated. Please use piNetworkId instead
      */
-    piNetworkName?: pulumi.Input<string>;
+    piNetworkName?: pulumi.Input<string | undefined>;
 }

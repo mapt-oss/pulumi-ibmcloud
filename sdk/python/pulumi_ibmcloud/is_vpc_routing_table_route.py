@@ -26,12 +26,13 @@ class IsVpcRoutingTableRouteArgs:
                  routing_table: pulumi.Input[_builtins.str],
                  vpc: pulumi.Input[_builtins.str],
                  zone: pulumi.Input[_builtins.str],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 advertise: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 advertise: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a IsVpcRoutingTableRoute resource.
+
         :param pulumi.Input[_builtins.str] destination: The destination of the route.
         :param pulumi.Input[_builtins.str] next_hop: If action is deliver, the next hop that packets will be delivered to. For other action values, its address will be 0.0.0.0.
         :param pulumi.Input[_builtins.str] routing_table: The routing table identifier.
@@ -118,73 +119,74 @@ class IsVpcRoutingTableRouteArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action to perform with a packet matching the route.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def advertise(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def advertise(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this route will be advertised to the ingress sources specified by the `advertise_routes_to` routing table property.
         """
         return pulumi.get(self, "advertise")
 
     @advertise.setter
-    def advertise(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def advertise(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "advertise", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this route.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The route's priority. Smaller values have higher priority.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
 
 @pulumi.input_type
 class _IsVpcRoutingTableRouteState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 advertise: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 creators: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableRouteCreatorArgs']]]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 route_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 advertise: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 creators: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableRouteCreatorArgs']]]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 route_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVpcRoutingTableRoute resources.
+
         :param pulumi.Input[_builtins.str] action: The action to perform with a packet matching the route.
         :param pulumi.Input[_builtins.bool] advertise: Indicates whether this route will be advertised to the ingress sources specified by the `advertise_routes_to` routing table property.
         :param pulumi.Input[_builtins.str] created_at: Routing table route Created At
@@ -234,182 +236,182 @@ class _IsVpcRoutingTableRouteState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action to perform with a packet matching the route.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def advertise(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def advertise(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this route will be advertised to the ingress sources specified by the `advertise_routes_to` routing table property.
         """
         return pulumi.get(self, "advertise")
 
     @advertise.setter
-    def advertise(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def advertise(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "advertise", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing table route Created At
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def creators(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableRouteCreatorArgs']]]]:
+    def creators(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableRouteCreatorArgs']]]]:
         """
         If present, the resource that created the route. Routes with this property present cannot bedirectly deleted. All routes with an `origin` of `learned` or `service` will have thisproperty set, and future `origin` values may also have this property set.
         """
         return pulumi.get(self, "creators")
 
     @creators.setter
-    def creators(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableRouteCreatorArgs']]]]):
+    def creators(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableRouteCreatorArgs']]]]):
         pulumi.set(self, "creators", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination of the route.
         """
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing table route Href
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing table route Lifecycle State
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this route.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nextHop")
-    def next_hop(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_hop(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If action is deliver, the next hop that packets will be delivered to. For other action values, its address will be 0.0.0.0.
         """
         return pulumi.get(self, "next_hop")
 
     @next_hop.setter
-    def next_hop(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_hop(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_hop", value)
 
     @_builtins.property
     @pulumi.getter
-    def origin(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The origin of this route.
         """
         return pulumi.get(self, "origin")
 
     @origin.setter
-    def origin(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The route's priority. Smaller values have higher priority.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="routeId")
-    def route_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The routing table route identifier.
         """
         return pulumi.get(self, "route_id")
 
     @route_id.setter
-    def route_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_id", value)
 
     @_builtins.property
     @pulumi.getter(name="routingTable")
-    def routing_table(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_table(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The routing table identifier.
         """
         return pulumi.get(self, "routing_table")
 
     @routing_table.setter
-    def routing_table(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_table(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_table", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPC identifier.
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The zone to apply the route to. Traffic from subnets in this zone will be subject to this route.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -419,18 +421,19 @@ class IsVpcRoutingTableRoute(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 advertise: Optional[pulumi.Input[_builtins.bool]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 advertise: pulumi.Input[Optional[_builtins.bool]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVpcRoutingTableRoute resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: The action to perform with a packet matching the route.
@@ -451,6 +454,7 @@ class IsVpcRoutingTableRoute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVpcRoutingTableRoute resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVpcRoutingTableRouteArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -466,15 +470,15 @@ class IsVpcRoutingTableRoute(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 advertise: Optional[pulumi.Input[_builtins.bool]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 advertise: pulumi.Input[Optional[_builtins.bool]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -519,21 +523,21 @@ class IsVpcRoutingTableRoute(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            advertise: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            creators: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcRoutingTableRouteCreatorArgs', 'IsVpcRoutingTableRouteCreatorArgsDict']]]]] = None,
-            destination: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-            origin: Optional[pulumi.Input[_builtins.str]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            route_id: Optional[pulumi.Input[_builtins.str]] = None,
-            routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVpcRoutingTableRoute':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            advertise: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            creators: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcRoutingTableRouteCreatorArgs', 'IsVpcRoutingTableRouteCreatorArgsDict', 'outputs.IsVpcRoutingTableRouteCreator']]]]] = None,
+            destination: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+            origin: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            route_id: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVpcRoutingTableRoute':
         """
         Get an existing IsVpcRoutingTableRoute resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -544,7 +548,7 @@ class IsVpcRoutingTableRoute(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action: The action to perform with a packet matching the route.
         :param pulumi.Input[_builtins.bool] advertise: Indicates whether this route will be advertised to the ingress sources specified by the `advertise_routes_to` routing table property.
         :param pulumi.Input[_builtins.str] created_at: Routing table route Created At
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcRoutingTableRouteCreatorArgs', 'IsVpcRoutingTableRouteCreatorArgsDict']]]] creators: If present, the resource that created the route. Routes with this property present cannot bedirectly deleted. All routes with an `origin` of `learned` or `service` will have thisproperty set, and future `origin` values may also have this property set.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcRoutingTableRouteCreatorArgs', 'IsVpcRoutingTableRouteCreatorArgsDict', 'outputs.IsVpcRoutingTableRouteCreator']]]] creators: If present, the resource that created the route. Routes with this property present cannot bedirectly deleted. All routes with an `origin` of `learned` or `service` will have thisproperty set, and future `origin` values may also have this property set.
         :param pulumi.Input[_builtins.str] destination: The destination of the route.
         :param pulumi.Input[_builtins.str] href: Routing table route Href
         :param pulumi.Input[_builtins.str] lifecycle_state: Routing table route Lifecycle State

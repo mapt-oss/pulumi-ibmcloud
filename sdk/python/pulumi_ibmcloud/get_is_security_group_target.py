@@ -123,8 +123,8 @@ def get_is_security_group_target(name: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         security_group=pulumi.get(__ret__, 'security_group'),
         target=pulumi.get(__ret__, 'target'))
-def get_is_security_group_target_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                        security_group: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_security_group_target_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                        security_group: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSecurityGroupTargetResult]:
     """
     Use this data source to access information about an existing resource.

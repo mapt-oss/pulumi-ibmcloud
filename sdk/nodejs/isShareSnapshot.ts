@@ -91,7 +91,7 @@ export class IsShareSnapshot extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly shareSnapshot: pulumi.Output<string>;
     /**
-     * The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `statusReasons`)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `statusReasons`)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
@@ -174,75 +174,75 @@ export interface IsShareSnapshotState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * If present, the backup policy plan which created this share snapshot.
      */
-    backupPolicyPlans?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlan>[]>;
+    backupPolicyPlans?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlan>[] | undefined>;
     /**
      * The date and time the data capture for this share snapshot was completed.If absent, this snapshot's data has not yet been captured.
      */
-    capturedAt?: pulumi.Input<string>;
+    capturedAt?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the share snapshot was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this share snapshot.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The fingerprint for this snapshot.
      */
-    fingerprint?: pulumi.Input<string>;
+    fingerprint?: pulumi.Input<string | undefined>;
     /**
      * The URL for this share snapshot.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of this share snapshot.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The minimum size of a share created from this snapshot. When a snapshot is created, this will be set to the size of the `sourceShare`.
      */
-    minimumSize?: pulumi.Input<number>;
+    minimumSize?: pulumi.Input<number | undefined>;
     /**
      * The name for this share snapshot. The name is unique across all snapshots for the file share.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this file share.
      */
-    resourceGroups?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotResourceGroup>[]>;
+    resourceGroups?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotResourceGroup>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The file share identifier.
      */
-    share?: pulumi.Input<string>;
+    share?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this share snapshot.
      */
-    shareSnapshot?: pulumi.Input<string>;
+    shareSnapshot?: pulumi.Input<string | undefined>;
     /**
-     * The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `statusReasons`)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `statusReasons`)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current status (if any).
      */
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotStatusReason>[]>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotStatusReason>[] | undefined>;
     /**
      * The [user tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) associated with this share snapshot.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The zone this share snapshot resides in.
      */
-    zones?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotZone>[]>;
+    zones?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotZone>[] | undefined>;
 }
 
 /**
@@ -252,11 +252,11 @@ export interface IsShareSnapshotArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name for this share snapshot. The name is unique across all snapshots for the file share.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The file share identifier.
      */
@@ -264,5 +264,5 @@ export interface IsShareSnapshotArgs {
     /**
      * The [user tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) associated with this share snapshot.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

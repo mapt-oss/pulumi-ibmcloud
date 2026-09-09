@@ -238,10 +238,10 @@ def get_is_share_mount_target(mount_target: Optional[_builtins.str] = None,
         transit_encryption=pulumi.get(__ret__, 'transit_encryption'),
         virtual_network_interfaces=pulumi.get(__ret__, 'virtual_network_interfaces'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_is_share_mount_target_output(mount_target: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     mount_target_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     share: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     share_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_share_mount_target_output(mount_target: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     mount_target_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     share: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     share_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsShareMountTargetResult]:
     """
     Use this data source to access information about an existing resource.

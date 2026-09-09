@@ -118,35 +118,35 @@ export interface IsVpcAddressPrefixState {
     /**
      * The unique identifier of the address prefix
      */
-    addressPrefix?: pulumi.Input<string>;
+    addressPrefix?: pulumi.Input<string | undefined>;
     /**
      * CIDIR address prefix
      */
-    cidr?: pulumi.Input<string>;
+    cidr?: pulumi.Input<string | undefined>;
     /**
      * Boolean value, set to true if VPC instance have subnets
      */
-    hasSubnets?: pulumi.Input<boolean>;
+    hasSubnets?: pulumi.Input<boolean | undefined>;
     /**
      * Is default prefix for this zone in this VPC
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The crn of the VPC resource
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
     /**
      * VPC id
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * Zone name
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -160,11 +160,11 @@ export interface IsVpcAddressPrefixArgs {
     /**
      * Is default prefix for this zone in this VPC
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * VPC id
      */

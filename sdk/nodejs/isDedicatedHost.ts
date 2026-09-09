@@ -207,95 +207,95 @@ export interface IsDedicatedHostState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The amount of memory in gibibytes that is currently available for instances.
      */
-    availableMemory?: pulumi.Input<number>;
+    availableMemory?: pulumi.Input<number | undefined>;
     /**
      * The available VCPU for the dedicated host.
      */
-    availableVcpus?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostAvailableVcpus>[]>;
+    availableVcpus?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostAvailableVcpus>[] | undefined>;
     /**
      * The date and time that the dedicated host was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this dedicated host.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Collection of the dedicated host's disks.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDisk>[]>;
+    disks?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDisk>[] | undefined>;
     /**
      * The unique identifier of the dedicated host group for this dedicated host.
      */
-    hostGroup?: pulumi.Input<string>;
+    hostGroup?: pulumi.Input<string | undefined>;
     /**
      * The URL for this dedicated host.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * If set to true, instances can be placed on this dedicated host.
      */
-    instancePlacementEnabled?: pulumi.Input<boolean>;
+    instancePlacementEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Array of instances that are allocated to this dedicated host.
      */
-    instances?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostInstance>[]>;
+    instances?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostInstance>[] | undefined>;
     /**
      * The lifecycle state of the dedicated host resource.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The total amount of memory in gibibytes for this host.
      */
-    memory?: pulumi.Input<number>;
+    memory?: pulumi.Input<number | undefined>;
     /**
      * The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The dedicated host NUMA configuration
      */
-    numas?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostNuma>[]>;
+    numas?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostNuma>[] | undefined>;
     /**
      * The Globally unique name of the dedicated host profile to use for this dedicated host.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this dedicated host is available for instance creation.
      */
-    provisionable?: pulumi.Input<boolean>;
+    provisionable?: pulumi.Input<boolean | undefined>;
     /**
      * The unique identifier for the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The total number of sockets for this host.
      */
-    socketCount?: pulumi.Input<number>;
+    socketCount?: pulumi.Input<number | undefined>;
     /**
      * The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Array of instance profiles that can be used by instances placed on this dedicated host.
      */
-    supportedInstanceProfiles?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostSupportedInstanceProfile>[]>;
+    supportedInstanceProfiles?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostSupportedInstanceProfile>[] | undefined>;
     /**
      * The total VCPU of the dedicated host.
      */
-    vcpus?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostVcpus>[]>;
+    vcpus?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostVcpus>[] | undefined>;
     /**
      * The globally unique name of the zone this dedicated host resides in.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -305,7 +305,7 @@ export interface IsDedicatedHostArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier of the dedicated host group for this dedicated host.
      */
@@ -313,11 +313,11 @@ export interface IsDedicatedHostArgs {
     /**
      * If set to true, instances can be placed on this dedicated host.
      */
-    instancePlacementEnabled?: pulumi.Input<boolean>;
+    instancePlacementEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Globally unique name of the dedicated host profile to use for this dedicated host.
      */
@@ -325,5 +325,5 @@ export interface IsDedicatedHostArgs {
     /**
      * The unique identifier for the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

@@ -82,7 +82,7 @@ def get_pi_software_tiers(pi_cloud_instance_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         supported_software_tiers=pulumi.get(__ret__, 'supported_software_tiers'))
-def get_pi_software_tiers_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_software_tiers_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiSoftwareTiersResult]:
     """
     Use this data source to access information about an existing resource.

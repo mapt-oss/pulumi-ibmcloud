@@ -184,8 +184,8 @@ def get_is_cluster_network_subnet(cluster_network_id: Optional[_builtins.str] = 
         name=pulumi.get(__ret__, 'name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         total_ipv4_address_count=pulumi.get(__ret__, 'total_ipv4_address_count'))
-def get_is_cluster_network_subnet_output(cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_cluster_network_subnet_output(cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsClusterNetworkSubnetResult]:
     """
     Use this data source to access information about an existing resource.

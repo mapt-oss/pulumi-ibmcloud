@@ -58,7 +58,7 @@ export function getIsSshKeyOutput(args?: GetIsSshKeyOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getIsSshKey.
  */
 export interface GetIsSshKeyOutputArgs {
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

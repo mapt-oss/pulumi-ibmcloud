@@ -106,9 +106,9 @@ def get_pi_sap_profiles(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_family_filter=pulumi.get(__ret__, 'pi_family_filter'),
         pi_prefix_filter=pulumi.get(__ret__, 'pi_prefix_filter'),
         profiles=pulumi.get(__ret__, 'profiles'))
-def get_pi_sap_profiles_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               pi_family_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               pi_prefix_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pi_sap_profiles_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               pi_family_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               pi_prefix_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiSapProfilesResult]:
     """
     Use this data source to access information about an existing resource.

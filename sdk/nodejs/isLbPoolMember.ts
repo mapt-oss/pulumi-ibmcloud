@@ -65,6 +65,10 @@ export class IsLbPoolMember extends pulumi.CustomResource {
      */
     declare public readonly targetAddress: pulumi.Output<string>;
     /**
+     * The fully qualified domain name (FQDN) to target. The load balancer must have fqdnPoolMembersSupported set to true. Member health checks will fail if the FQDN cannot be resolved.
+     */
+    declare public readonly targetFqdn: pulumi.Output<string>;
+    /**
      * Load balancer pool member target id
      */
     declare public readonly targetId: pulumi.Output<string>;
@@ -94,6 +98,7 @@ export class IsLbPoolMember extends pulumi.CustomResource {
             resourceInputs["provisioningStatus"] = state?.provisioningStatus;
             resourceInputs["relatedCrn"] = state?.relatedCrn;
             resourceInputs["targetAddress"] = state?.targetAddress;
+            resourceInputs["targetFqdn"] = state?.targetFqdn;
             resourceInputs["targetId"] = state?.targetId;
             resourceInputs["weight"] = state?.weight;
         } else {
@@ -111,6 +116,7 @@ export class IsLbPoolMember extends pulumi.CustomResource {
             resourceInputs["pool"] = args?.pool;
             resourceInputs["port"] = args?.port;
             resourceInputs["targetAddress"] = args?.targetAddress;
+            resourceInputs["targetFqdn"] = args?.targetFqdn;
             resourceInputs["targetId"] = args?.targetId;
             resourceInputs["weight"] = args?.weight;
             resourceInputs["health"] = undefined /*out*/;
@@ -130,43 +136,47 @@ export interface IsLbPoolMemberState {
     /**
      * LB Pool member health
      */
-    health?: pulumi.Input<string>;
+    health?: pulumi.Input<string | undefined>;
     /**
      * LB pool member Href value
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Load balancer ID
      */
-    lb?: pulumi.Input<string>;
+    lb?: pulumi.Input<string | undefined>;
     /**
      * Loadblancer Poold ID
      */
-    pool?: pulumi.Input<string>;
+    pool?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Pool port
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * Load balancer Pool member provisioning status
      */
-    provisioningStatus?: pulumi.Input<string>;
+    provisioningStatus?: pulumi.Input<string | undefined>;
     /**
      * The crn of the LB resource
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
     /**
      * Load balancer pool member target address
      */
-    targetAddress?: pulumi.Input<string>;
+    targetAddress?: pulumi.Input<string | undefined>;
+    /**
+     * The fully qualified domain name (FQDN) to target. The load balancer must have fqdnPoolMembersSupported set to true. Member health checks will fail if the FQDN cannot be resolved.
+     */
+    targetFqdn?: pulumi.Input<string | undefined>;
     /**
      * Load balancer pool member target id
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Load balcner pool member weight
      */
-    weight?: pulumi.Input<number>;
+    weight?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -188,13 +198,17 @@ export interface IsLbPoolMemberArgs {
     /**
      * Load balancer pool member target address
      */
-    targetAddress?: pulumi.Input<string>;
+    targetAddress?: pulumi.Input<string | undefined>;
+    /**
+     * The fully qualified domain name (FQDN) to target. The load balancer must have fqdnPoolMembersSupported set to true. Member health checks will fail if the FQDN cannot be resolved.
+     */
+    targetFqdn?: pulumi.Input<string | undefined>;
     /**
      * Load balancer pool member target id
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Load balcner pool member weight
      */
-    weight?: pulumi.Input<number>;
+    weight?: pulumi.Input<number | undefined>;
 }

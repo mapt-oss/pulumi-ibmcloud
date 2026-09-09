@@ -82,7 +82,7 @@ def get_pi_shared_processor_pools(pi_cloud_instance_id: Optional[_builtins.str] 
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         shared_processor_pools=pulumi.get(__ret__, 'shared_processor_pools'))
-def get_pi_shared_processor_pools_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_shared_processor_pools_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiSharedProcessorPoolsResult]:
     """
     Use this data source to access information about an existing resource.

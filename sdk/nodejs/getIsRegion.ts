@@ -43,5 +43,5 @@ export function getIsRegionOutput(args?: GetIsRegionOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getIsRegion.
  */
 export interface GetIsRegionOutputArgs {
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

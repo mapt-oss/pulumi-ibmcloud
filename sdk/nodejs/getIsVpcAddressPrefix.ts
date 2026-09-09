@@ -62,8 +62,8 @@ export function getIsVpcAddressPrefixOutput(args?: GetIsVpcAddressPrefixOutputAr
  * A collection of arguments for invoking getIsVpcAddressPrefix.
  */
 export interface GetIsVpcAddressPrefixOutputArgs {
-    addressPrefix?: pulumi.Input<string>;
-    addressPrefixName?: pulumi.Input<string>;
-    vpc?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    addressPrefix?: pulumi.Input<string | undefined>;
+    addressPrefixName?: pulumi.Input<string | undefined>;
+    vpc?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

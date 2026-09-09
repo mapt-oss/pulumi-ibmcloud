@@ -121,7 +121,7 @@ export class PiVolume extends pulumi.CustomResource {
      */
     declare public readonly piVolumeShareable: pulumi.Output<boolean | undefined>;
     /**
-     * The size of the volume in GB.
+     * The size of the volume in GiB.
      */
     declare public readonly piVolumeSize: pulumi.Output<number>;
     /**
@@ -256,127 +256,127 @@ export interface PiVolumeState {
     /**
      * Indicates if the volume is auxiliary or not.
      */
-    auxiliary?: pulumi.Input<boolean>;
+    auxiliary?: pulumi.Input<boolean | undefined>;
     /**
      * The auxiliary volume name.
      */
-    auxiliaryVolumeName?: pulumi.Input<string>;
+    auxiliaryVolumeName?: pulumi.Input<string | undefined>;
     /**
      * The consistency group name if volume is a part of volume group.
      */
-    consistencyGroupName?: pulumi.Input<string>;
+    consistencyGroupName?: pulumi.Input<string | undefined>;
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the volume should be deleted when the server terminates.
      */
-    deleteOnTermination?: pulumi.Input<boolean>;
+    deleteOnTermination?: pulumi.Input<boolean | undefined>;
     /**
      * The volume group id to which volume belongs.
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Amount of iops assigned to the volume.
      */
-    ioThrottleRate?: pulumi.Input<string>;
+    ioThrottleRate?: pulumi.Input<string | undefined>;
     /**
      * Indicates master volume name
      */
-    masterVolumeName?: pulumi.Input<string>;
+    masterVolumeName?: pulumi.Input<string | undefined>;
     /**
      * Mirroring state for replication enabled volume
      */
-    mirroringState?: pulumi.Input<string>;
+    mirroringState?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the volume does not exist on storage controller.
      */
-    outOfBandDeleted?: pulumi.Input<boolean>;
+    outOfBandDeleted?: pulumi.Input<boolean | undefined>;
     /**
      * PVM Instance (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_volume' is not provided.
      */
-    piAffinityInstance?: pulumi.Input<string>;
+    piAffinityInstance?: pulumi.Input<string | undefined>;
     /**
      * Affinity policy for data volume being created; ignored if 'pi_volume_pool' provided; for policy 'affinity' requires one of 'pi_affinity_instance' or 'pi_affinity_volume' to be specified; for policy 'anti-affinity' requires one of 'pi_anti_affinity_instances' or 'pi_anti_affinity_volumes' to be specified; Allowable values: 'affinity', 'anti-affinity'.
      */
-    piAffinityPolicy?: pulumi.Input<string>;
+    piAffinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * Volume (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_instance' is not provided.
      */
-    piAffinityVolume?: pulumi.Input<string>;
+    piAffinityVolume?: pulumi.Input<string | undefined>;
     /**
      * List of pvmInstances to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_volumes' is not provided.
      */
-    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of volumes to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_instances' is not provided.
      */
-    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the volume should be replication enabled or not.
      */
-    piReplicationEnabled?: pulumi.Input<boolean>;
+    piReplicationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * List of replication sites for volume replication.
      */
-    piReplicationSites?: pulumi.Input<pulumi.Input<string>[]>;
+    piReplicationSites?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the volume.
      */
-    piVolumeName?: pulumi.Input<string>;
+    piVolumeName?: pulumi.Input<string | undefined>;
     /**
      * Volume pool where the volume will be created; if provided then 'pi_affinity_policy' values will be ignored.
      */
-    piVolumePool?: pulumi.Input<string>;
+    piVolumePool?: pulumi.Input<string | undefined>;
     /**
      * If set to true, the volume can be shared across Power Systems Virtual Server instances. If set to false, you can attach it only to one instance.
      */
-    piVolumeShareable?: pulumi.Input<boolean>;
+    piVolumeShareable?: pulumi.Input<boolean | undefined>;
     /**
-     * The size of the volume in GB.
+     * The size of the volume in GiB.
      */
-    piVolumeSize?: pulumi.Input<number>;
+    piVolumeSize?: pulumi.Input<number | undefined>;
     /**
      * Type of disk, if diskType is not provided the disk type will default to 'tier3'
      */
-    piVolumeType?: pulumi.Input<string>;
+    piVolumeType?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether 'master'/'auxiliary' volume is playing the primary role.
      */
-    primaryRole?: pulumi.Input<string>;
+    primaryRole?: pulumi.Input<string | undefined>;
     /**
      * List of replication sites for volume replication.
      */
-    replicationSites?: pulumi.Input<pulumi.Input<string>[]>;
+    replicationSites?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The replication status of the volume.
      */
-    replicationStatus?: pulumi.Input<string>;
+    replicationStatus?: pulumi.Input<string | undefined>;
     /**
      * The replication type of the volume 'metro' or 'global'.
      */
-    replicationType?: pulumi.Input<string>;
+    replicationType?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the volume.
      */
-    volumeId?: pulumi.Input<string>;
+    volumeId?: pulumi.Input<string | undefined>;
     /**
      * The status of the volume.
      */
-    volumeStatus?: pulumi.Input<string>;
+    volumeStatus?: pulumi.Input<string | undefined>;
     /**
      * The world wide name of the volume.
      */
-    wwn?: pulumi.Input<string>;
+    wwn?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -386,23 +386,23 @@ export interface PiVolumeArgs {
     /**
      * PVM Instance (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_volume' is not provided.
      */
-    piAffinityInstance?: pulumi.Input<string>;
+    piAffinityInstance?: pulumi.Input<string | undefined>;
     /**
      * Affinity policy for data volume being created; ignored if 'pi_volume_pool' provided; for policy 'affinity' requires one of 'pi_affinity_instance' or 'pi_affinity_volume' to be specified; for policy 'anti-affinity' requires one of 'pi_anti_affinity_instances' or 'pi_anti_affinity_volumes' to be specified; Allowable values: 'affinity', 'anti-affinity'.
      */
-    piAffinityPolicy?: pulumi.Input<string>;
+    piAffinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * Volume (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_instance' is not provided.
      */
-    piAffinityVolume?: pulumi.Input<string>;
+    piAffinityVolume?: pulumi.Input<string | undefined>;
     /**
      * List of pvmInstances to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_volumes' is not provided.
      */
-    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of volumes to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_instances' is not provided.
      */
-    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -410,15 +410,15 @@ export interface PiVolumeArgs {
     /**
      * Indicates if the volume should be replication enabled or not.
      */
-    piReplicationEnabled?: pulumi.Input<boolean>;
+    piReplicationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * List of replication sites for volume replication.
      */
-    piReplicationSites?: pulumi.Input<pulumi.Input<string>[]>;
+    piReplicationSites?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the volume.
      */
@@ -426,17 +426,17 @@ export interface PiVolumeArgs {
     /**
      * Volume pool where the volume will be created; if provided then 'pi_affinity_policy' values will be ignored.
      */
-    piVolumePool?: pulumi.Input<string>;
+    piVolumePool?: pulumi.Input<string | undefined>;
     /**
      * If set to true, the volume can be shared across Power Systems Virtual Server instances. If set to false, you can attach it only to one instance.
      */
-    piVolumeShareable?: pulumi.Input<boolean>;
+    piVolumeShareable?: pulumi.Input<boolean | undefined>;
     /**
-     * The size of the volume in GB.
+     * The size of the volume in GiB.
      */
     piVolumeSize: pulumi.Input<number>;
     /**
      * Type of disk, if diskType is not provided the disk type will default to 'tier3'
      */
-    piVolumeType?: pulumi.Input<string>;
+    piVolumeType?: pulumi.Input<string | undefined>;
 }

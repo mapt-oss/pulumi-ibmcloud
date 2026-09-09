@@ -81,8 +81,8 @@ export function getComputeBareMetalOutput(args?: GetComputeBareMetalOutputArgs, 
  * A collection of arguments for invoking getComputeBareMetal.
  */
 export interface GetComputeBareMetalOutputArgs {
-    domain?: pulumi.Input<string>;
-    globalIdentifier?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    mostRecent?: pulumi.Input<boolean>;
+    domain?: pulumi.Input<string | undefined>;
+    globalIdentifier?: pulumi.Input<string | undefined>;
+    hostname?: pulumi.Input<string | undefined>;
+    mostRecent?: pulumi.Input<boolean | undefined>;
 }

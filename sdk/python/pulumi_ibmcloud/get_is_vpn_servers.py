@@ -82,7 +82,7 @@ def get_is_vpn_servers(resource_group_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         resource_group_id=pulumi.get(__ret__, 'resource_group_id'),
         vpn_servers=pulumi.get(__ret__, 'vpn_servers'))
-def get_is_vpn_servers_output(resource_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_vpn_servers_output(resource_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpnServersResult]:
     """
     Use this data source to access information about an existing resource.

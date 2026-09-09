@@ -44,5 +44,5 @@ export function getIsLbProfilesOutput(args?: GetIsLbProfilesOutputArgs, opts?: p
  * A collection of arguments for invoking getIsLbProfiles.
  */
 export interface GetIsLbProfilesOutputArgs {
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

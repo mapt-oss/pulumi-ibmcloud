@@ -22,14 +22,15 @@ __all__ = ['IsBackupPolicyArgs', 'IsBackupPolicy']
 class IsBackupPolicyArgs:
     def __init__(__self__, *,
                  match_user_tags: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 included_contents: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input['IsBackupPolicyScopeArgs']] = None):
+                 included_contents: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional['IsBackupPolicyScopeArgs']] = None):
         """
         The set of arguments for constructing a IsBackupPolicy resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] match_user_tags: The user tags this backup policy applies to. Resources that have both a matching user tag and a matching type will be subject to the backup policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] included_contents: The included content for backups created using this policy
         :param pulumi.Input[_builtins.str] match_resource_type: A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
@@ -69,99 +70,100 @@ class IsBackupPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="includedContents")
-    def included_contents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def included_contents(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The included content for backups created using this policy
         """
         return pulumi.get(self, "included_contents")
 
     @included_contents.setter
-    def included_contents(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def included_contents(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "included_contents", value)
 
     @_builtins.property
     @pulumi.getter(name="matchResourceType")
-    def match_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
         """
         return pulumi.get(self, "match_resource_type")
 
     @match_resource_type.setter
-    def match_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="matchResourceTypes")
     @_utilities.deprecated("""match_resource_types is being deprecated. Use match_resource_type instead""")
-    def match_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def match_resource_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
         """
         return pulumi.get(self, "match_resource_types")
 
     @match_resource_types.setter
-    def match_resource_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def match_resource_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "match_resource_types", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this backup policy. Names must be unique within the region this backup policy resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input['IsBackupPolicyScopeArgs']]:
+    def scope(self) -> pulumi.Input[Optional['IsBackupPolicyScopeArgs']]:
         """
         The scope for this backup policy.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input['IsBackupPolicyScopeArgs']]):
+    def scope(self, value: pulumi.Input[Optional['IsBackupPolicyScopeArgs']]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _IsBackupPolicyState:
     def __init__(__self__, *,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyHealthReasonArgs']]]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 included_contents: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 last_job_completed_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input['IsBackupPolicyScopeArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyHealthReasonArgs']]]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 included_contents: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 last_job_completed_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional['IsBackupPolicyScopeArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsBackupPolicy resources.
+
         :param pulumi.Input[_builtins.str] created_at: The date and time that the backup policy was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this backup policy.
         :param pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyHealthReasonArgs']]] health_reasons: The reasons for the current health_state (if any).
@@ -216,192 +218,192 @@ class _IsBackupPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the backup policy was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this backup policy.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="healthReasons")
-    def health_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyHealthReasonArgs']]]]:
+    def health_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyHealthReasonArgs']]]]:
         """
         The reasons for the current health_state (if any).
         """
         return pulumi.get(self, "health_reasons")
 
     @health_reasons.setter
-    def health_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyHealthReasonArgs']]]]):
+    def health_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyHealthReasonArgs']]]]):
         pulumi.set(self, "health_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The health of this resource
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this backup policy.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="includedContents")
-    def included_contents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def included_contents(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The included content for backups created using this policy
         """
         return pulumi.get(self, "included_contents")
 
     @included_contents.setter
-    def included_contents(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def included_contents(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "included_contents", value)
 
     @_builtins.property
     @pulumi.getter(name="lastJobCompletedAt")
-    def last_job_completed_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_job_completed_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the most recent job for this backup policy completed.
         """
         return pulumi.get(self, "last_job_completed_at")
 
     @last_job_completed_at.setter
-    def last_job_completed_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_job_completed_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_job_completed_at", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the backup policy.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="matchResourceType")
-    def match_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def match_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
         """
         return pulumi.get(self, "match_resource_type")
 
     @match_resource_type.setter
-    def match_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def match_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "match_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="matchResourceTypes")
     @_utilities.deprecated("""match_resource_types is being deprecated. Use match_resource_type instead""")
-    def match_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def match_resource_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
         """
         return pulumi.get(self, "match_resource_types")
 
     @match_resource_types.setter
-    def match_resource_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def match_resource_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "match_resource_types", value)
 
     @_builtins.property
     @pulumi.getter(name="matchUserTags")
-    def match_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def match_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags this backup policy applies to. Resources that have both a matching user tag and a matching type will be subject to the backup policy.
         """
         return pulumi.get(self, "match_user_tags")
 
     @match_user_tags.setter
-    def match_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def match_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "match_user_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this backup policy. Names must be unique within the region this backup policy resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input['IsBackupPolicyScopeArgs']]:
+    def scope(self) -> pulumi.Input[Optional['IsBackupPolicyScopeArgs']]:
         """
         The scope for this backup policy.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input['IsBackupPolicyScopeArgs']]):
+    def scope(self, value: pulumi.Input[Optional['IsBackupPolicyScopeArgs']]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -411,16 +413,17 @@ class IsBackupPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 included_contents: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict']]] = None,
+                 included_contents: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict', 'outputs.IsBackupPolicyScope']]] = None,
                  __props__=None):
         """
         Create a IsBackupPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] included_contents: The included content for backups created using this policy
@@ -429,7 +432,7 @@ class IsBackupPolicy(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] match_user_tags: The user tags this backup policy applies to. Resources that have both a matching user tag and a matching type will be subject to the backup policy.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this backup policy. Names must be unique within the region this backup policy resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
-        :param pulumi.Input[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict']] scope: The scope for this backup policy.
+        :param pulumi.Input[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict', 'outputs.IsBackupPolicyScope']] scope: The scope for this backup policy.
         """
         ...
     @overload
@@ -439,6 +442,7 @@ class IsBackupPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBackupPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBackupPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -454,13 +458,13 @@ class IsBackupPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 included_contents: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 match_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 match_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict']]] = None,
+                 included_contents: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict', 'outputs.IsBackupPolicyScope']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -498,22 +502,22 @@ class IsBackupPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyHealthReasonArgs', 'IsBackupPolicyHealthReasonArgsDict']]]]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            included_contents: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            last_job_completed_at: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            match_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            match_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            match_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsBackupPolicy':
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBackupPolicyHealthReasonArgs', 'IsBackupPolicyHealthReasonArgsDict', 'outputs.IsBackupPolicyHealthReason']]]]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            included_contents: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            last_job_completed_at: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            match_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            match_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            match_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict', 'outputs.IsBackupPolicyScope']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsBackupPolicy':
         """
         Get an existing IsBackupPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -523,7 +527,7 @@ class IsBackupPolicy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the backup policy was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this backup policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyHealthReasonArgs', 'IsBackupPolicyHealthReasonArgsDict']]]] health_reasons: The reasons for the current health_state (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyHealthReasonArgs', 'IsBackupPolicyHealthReasonArgsDict', 'outputs.IsBackupPolicyHealthReason']]]] health_reasons: The reasons for the current health_state (if any).
         :param pulumi.Input[_builtins.str] health_state: The health of this resource
         :param pulumi.Input[_builtins.str] href: The URL for this backup policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] included_contents: The included content for backups created using this policy
@@ -535,7 +539,7 @@ class IsBackupPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The user-defined name for this backup policy. Names must be unique within the region this backup policy resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
-        :param pulumi.Input[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict']] scope: The scope for this backup policy.
+        :param pulumi.Input[Union['IsBackupPolicyScopeArgs', 'IsBackupPolicyScopeArgsDict', 'outputs.IsBackupPolicyScope']] scope: The scope for this backup policy.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

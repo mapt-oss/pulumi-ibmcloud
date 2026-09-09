@@ -22,12 +22,13 @@ __all__ = ['IamUserInviteArgs', 'IamUserInvite']
 class IamUserInviteArgs:
     def __init__(__self__, *,
                  users: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 access_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 classic_infra_roles: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]] = None,
-                 cloud_foundry_roles: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]] = None,
-                 iam_policies: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]] = None):
+                 access_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 classic_infra_roles: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]] = None,
+                 cloud_foundry_roles: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]] = None,
+                 iam_policies: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]] = None):
         """
         The set of arguments for constructing a IamUserInvite resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] users: List of ibm id or email of user
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_groups: access group ids to associate the inviting user
         """
@@ -55,56 +56,57 @@ class IamUserInviteArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessGroups")
-    def access_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         access group ids to associate the inviting user
         """
         return pulumi.get(self, "access_groups")
 
     @access_groups.setter
-    def access_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="classicInfraRoles")
-    def classic_infra_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]:
+    def classic_infra_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]:
         return pulumi.get(self, "classic_infra_roles")
 
     @classic_infra_roles.setter
-    def classic_infra_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]):
+    def classic_infra_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]):
         pulumi.set(self, "classic_infra_roles", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudFoundryRoles")
-    def cloud_foundry_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]:
+    def cloud_foundry_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]:
         return pulumi.get(self, "cloud_foundry_roles")
 
     @cloud_foundry_roles.setter
-    def cloud_foundry_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]):
+    def cloud_foundry_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]):
         pulumi.set(self, "cloud_foundry_roles", value)
 
     @_builtins.property
     @pulumi.getter(name="iamPolicies")
-    def iam_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]:
+    def iam_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]:
         return pulumi.get(self, "iam_policies")
 
     @iam_policies.setter
-    def iam_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]):
+    def iam_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]):
         pulumi.set(self, "iam_policies", value)
 
 
 @pulumi.input_type
 class _IamUserInviteState:
     def __init__(__self__, *,
-                 access_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 classic_infra_roles: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]] = None,
-                 cloud_foundry_roles: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]] = None,
-                 iam_policies: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]] = None,
-                 invited_users: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteInvitedUserArgs']]]] = None,
-                 number_of_invited_users: Optional[pulumi.Input[_builtins.int]] = None,
-                 users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 classic_infra_roles: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]] = None,
+                 cloud_foundry_roles: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]] = None,
+                 iam_policies: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]] = None,
+                 invited_users: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteInvitedUserArgs']]]] = None,
+                 number_of_invited_users: pulumi.Input[Optional[_builtins.int]] = None,
+                 users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IamUserInvite resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_groups: access group ids to associate the inviting user
         :param pulumi.Input[_builtins.int] number_of_invited_users: Number of users invited to an account
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] users: List of ibm id or email of user
@@ -126,74 +128,74 @@ class _IamUserInviteState:
 
     @_builtins.property
     @pulumi.getter(name="accessGroups")
-    def access_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         access group ids to associate the inviting user
         """
         return pulumi.get(self, "access_groups")
 
     @access_groups.setter
-    def access_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="classicInfraRoles")
-    def classic_infra_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]:
+    def classic_infra_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]:
         return pulumi.get(self, "classic_infra_roles")
 
     @classic_infra_roles.setter
-    def classic_infra_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]):
+    def classic_infra_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteClassicInfraRoleArgs']]]]):
         pulumi.set(self, "classic_infra_roles", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudFoundryRoles")
-    def cloud_foundry_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]:
+    def cloud_foundry_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]:
         return pulumi.get(self, "cloud_foundry_roles")
 
     @cloud_foundry_roles.setter
-    def cloud_foundry_roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]):
+    def cloud_foundry_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteCloudFoundryRoleArgs']]]]):
         pulumi.set(self, "cloud_foundry_roles", value)
 
     @_builtins.property
     @pulumi.getter(name="iamPolicies")
-    def iam_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]:
+    def iam_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]:
         return pulumi.get(self, "iam_policies")
 
     @iam_policies.setter
-    def iam_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]):
+    def iam_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteIamPolicyArgs']]]]):
         pulumi.set(self, "iam_policies", value)
 
     @_builtins.property
     @pulumi.getter(name="invitedUsers")
-    def invited_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteInvitedUserArgs']]]]:
+    def invited_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteInvitedUserArgs']]]]:
         return pulumi.get(self, "invited_users")
 
     @invited_users.setter
-    def invited_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamUserInviteInvitedUserArgs']]]]):
+    def invited_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamUserInviteInvitedUserArgs']]]]):
         pulumi.set(self, "invited_users", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfInvitedUsers")
-    def number_of_invited_users(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_invited_users(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of users invited to an account
         """
         return pulumi.get(self, "number_of_invited_users")
 
     @number_of_invited_users.setter
-    def number_of_invited_users(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_invited_users(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_invited_users", value)
 
     @_builtins.property
     @pulumi.getter
-    def users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of ibm id or email of user
         """
         return pulumi.get(self, "users")
 
     @users.setter
-    def users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "users", value)
 
 
@@ -203,14 +205,15 @@ class IamUserInvite(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 classic_infra_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteClassicInfraRoleArgs', 'IamUserInviteClassicInfraRoleArgsDict']]]]] = None,
-                 cloud_foundry_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteCloudFoundryRoleArgs', 'IamUserInviteCloudFoundryRoleArgsDict']]]]] = None,
-                 iam_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteIamPolicyArgs', 'IamUserInviteIamPolicyArgsDict']]]]] = None,
-                 users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 classic_infra_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteClassicInfraRoleArgs', 'IamUserInviteClassicInfraRoleArgsDict', 'outputs.IamUserInviteClassicInfraRole']]]]] = None,
+                 cloud_foundry_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteCloudFoundryRoleArgs', 'IamUserInviteCloudFoundryRoleArgsDict', 'outputs.IamUserInviteCloudFoundryRole']]]]] = None,
+                 iam_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteIamPolicyArgs', 'IamUserInviteIamPolicyArgsDict', 'outputs.IamUserInviteIamPolicy']]]]] = None,
+                 users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IamUserInvite resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_groups: access group ids to associate the inviting user
@@ -224,6 +227,7 @@ class IamUserInvite(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamUserInvite resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamUserInviteArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -239,11 +243,11 @@ class IamUserInvite(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 classic_infra_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteClassicInfraRoleArgs', 'IamUserInviteClassicInfraRoleArgsDict']]]]] = None,
-                 cloud_foundry_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteCloudFoundryRoleArgs', 'IamUserInviteCloudFoundryRoleArgsDict']]]]] = None,
-                 iam_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteIamPolicyArgs', 'IamUserInviteIamPolicyArgsDict']]]]] = None,
-                 users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 classic_infra_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteClassicInfraRoleArgs', 'IamUserInviteClassicInfraRoleArgsDict', 'outputs.IamUserInviteClassicInfraRole']]]]] = None,
+                 cloud_foundry_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteCloudFoundryRoleArgs', 'IamUserInviteCloudFoundryRoleArgsDict', 'outputs.IamUserInviteCloudFoundryRole']]]]] = None,
+                 iam_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteIamPolicyArgs', 'IamUserInviteIamPolicyArgsDict', 'outputs.IamUserInviteIamPolicy']]]]] = None,
+                 users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -272,13 +276,13 @@ class IamUserInvite(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            classic_infra_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteClassicInfraRoleArgs', 'IamUserInviteClassicInfraRoleArgsDict']]]]] = None,
-            cloud_foundry_roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteCloudFoundryRoleArgs', 'IamUserInviteCloudFoundryRoleArgsDict']]]]] = None,
-            iam_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteIamPolicyArgs', 'IamUserInviteIamPolicyArgsDict']]]]] = None,
-            invited_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamUserInviteInvitedUserArgs', 'IamUserInviteInvitedUserArgsDict']]]]] = None,
-            number_of_invited_users: Optional[pulumi.Input[_builtins.int]] = None,
-            users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IamUserInvite':
+            access_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            classic_infra_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteClassicInfraRoleArgs', 'IamUserInviteClassicInfraRoleArgsDict', 'outputs.IamUserInviteClassicInfraRole']]]]] = None,
+            cloud_foundry_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteCloudFoundryRoleArgs', 'IamUserInviteCloudFoundryRoleArgsDict', 'outputs.IamUserInviteCloudFoundryRole']]]]] = None,
+            iam_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteIamPolicyArgs', 'IamUserInviteIamPolicyArgsDict', 'outputs.IamUserInviteIamPolicy']]]]] = None,
+            invited_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamUserInviteInvitedUserArgs', 'IamUserInviteInvitedUserArgsDict', 'outputs.IamUserInviteInvitedUser']]]]] = None,
+            number_of_invited_users: pulumi.Input[Optional[_builtins.int]] = None,
+            users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IamUserInvite':
         """
         Get an existing IamUserInvite resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

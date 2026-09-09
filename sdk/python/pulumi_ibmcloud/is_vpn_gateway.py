@@ -22,15 +22,18 @@ __all__ = ['IsVpnGatewayArgs', 'IsVpnGateway']
 class IsVpnGatewayArgs:
     def __init__(__self__, *,
                  subnet: pulumi.Input[_builtins.str],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 local_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsVpnGateway resource.
+
         :param pulumi.Input[_builtins.str] subnet: VPNGateway subnet info
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
+        :param pulumi.Input[_builtins.int] local_asn: The local autonomous system number (ASN) for this VPN gateway and its connections.
         :param pulumi.Input[_builtins.str] mode: mode in VPN gateway(route/policy)
         :param pulumi.Input[_builtins.str] name: VPN Gateway instance name
         :param pulumi.Input[_builtins.str] resource_group: The resource group for this VPN gateway
@@ -39,6 +42,8 @@ class IsVpnGatewayArgs:
         pulumi.set(__self__, "subnet", subnet)
         if access_tags is not None:
             pulumi.set(__self__, "access_tags", access_tags)
+        if local_asn is not None:
+            pulumi.set(__self__, "local_asn", local_asn)
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
         if name is not None:
@@ -62,100 +67,117 @@ class IsVpnGatewayArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="localAsn")
+    def local_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The local autonomous system number (ASN) for this VPN gateway and its connections.
+        """
+        return pulumi.get(self, "local_asn")
+
+    @local_asn.setter
+    def local_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "local_asn", value)
+
+    @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         mode in VPN gateway(route/policy)
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN Gateway instance name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group for this VPN gateway
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         VPN Gateway tags list
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsVpnGatewayState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayHealthReasonArgs']]]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayMemberArgs']]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_address2: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip_address2: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayVpcArgs']]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 advertised_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayHealthReasonArgs']]]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayMemberArgs']]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_address2: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip_address2: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayVpcArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsVpnGateway resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] advertised_cidrs: The additional CIDRs advertised through any enabled routing protocol (for example, BGP). The routing protocol will advertise routes with these CIDRs and VPC prefixes as route destinations.
         :param pulumi.Input[_builtins.str] created_at: Created Time of the VPN Gateway
         :param pulumi.Input[_builtins.str] crn: The crn of the resource
         :param pulumi.Input[_builtins.str] health_state: The health of this resource.- `ok`: Healthy- `degraded`: Suffering from compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
         :param pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayLifecycleReasonArgs']]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the VPN route.
+        :param pulumi.Input[_builtins.int] local_asn: The local autonomous system number (ASN) for this VPN gateway and its connections.
         :param pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayMemberArgs']]] members: Collection of VPN gateway members
         :param pulumi.Input[_builtins.str] mode: mode in VPN gateway(route/policy)
         :param pulumi.Input[_builtins.str] name: VPN Gateway instance name
@@ -176,6 +198,8 @@ class _IsVpnGatewayState:
         """
         if access_tags is not None:
             pulumi.set(__self__, "access_tags", access_tags)
+        if advertised_cidrs is not None:
+            pulumi.set(__self__, "advertised_cidrs", advertised_cidrs)
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
         if crn is not None:
@@ -188,6 +212,8 @@ class _IsVpnGatewayState:
             pulumi.set(__self__, "lifecycle_reasons", lifecycle_reasons)
         if lifecycle_state is not None:
             pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        if local_asn is not None:
+            pulumi.set(__self__, "local_asn", local_asn)
         if members is not None:
             pulumi.set(__self__, "members", members)
         if mode is not None:
@@ -225,287 +251,311 @@ class _IsVpnGatewayState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="advertisedCidrs")
+    def advertised_cidrs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The additional CIDRs advertised through any enabled routing protocol (for example, BGP). The routing protocol will advertise routes with these CIDRs and VPC prefixes as route destinations.
+        """
+        return pulumi.get(self, "advertised_cidrs")
+
+    @advertised_cidrs.setter
+    def advertised_cidrs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "advertised_cidrs", value)
+
+    @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Created Time of the VPN Gateway
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="healthReasons")
-    def health_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayHealthReasonArgs']]]]:
+    def health_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayHealthReasonArgs']]]]:
         return pulumi.get(self, "health_reasons")
 
     @health_reasons.setter
-    def health_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayHealthReasonArgs']]]]):
+    def health_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayHealthReasonArgs']]]]):
         pulumi.set(self, "health_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The health of this resource.- `ok`: Healthy- `degraded`: Suffering from compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayLifecycleReasonArgs']]]]:
         """
         The reasons for the current lifecycle_state (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the VPN route.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
+    @pulumi.getter(name="localAsn")
+    def local_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The local autonomous system number (ASN) for this VPN gateway and its connections.
+        """
+        return pulumi.get(self, "local_asn")
+
+    @local_asn.setter
+    def local_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "local_asn", value)
+
+    @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayMemberArgs']]]]:
         """
         Collection of VPN gateway members
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         mode in VPN gateway(route/policy)
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN Gateway instance name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpAddress")
-    def private_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Private IP address assigned to the VPN gateway member.
         """
         return pulumi.get(self, "private_ip_address")
 
     @private_ip_address.setter
-    def private_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpAddress2")
-    def private_ip_address2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_address2(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Second Private IP address assigned to the VPN gateway member.
         """
         return pulumi.get(self, "private_ip_address2")
 
     @private_ip_address2.setter
-    def private_ip_address2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_address2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_address2", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIpAddress")
-    def public_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public IP address assigned to the VPN gateway member.
         """
         return pulumi.get(self, "public_ip_address")
 
     @public_ip_address.setter
-    def public_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIpAddress2")
-    def public_ip_address2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip_address2(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The second public IP address assigned to the VPN gateway member.
         """
         return pulumi.get(self, "public_ip_address2")
 
     @public_ip_address2.setter
-    def public_ip_address2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip_address2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip_address2", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCrn")
-    def resource_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "resource_crn")
 
     @resource_crn.setter
-    def resource_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group for this VPN gateway
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceStatus")
-    def resource_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the resource
         """
         return pulumi.get(self, "resource_status")
 
     @resource_status.setter
-    def resource_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the VPN gateway
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPNGateway subnet info
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         VPN Gateway tags list
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayVpcArgs']]]]:
+    def vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayVpcArgs']]]]:
         """
         VPC for the VPN Gateway
         """
         return pulumi.get(self, "vpcs")
 
     @vpcs.setter
-    def vpcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayVpcArgs']]]]):
+    def vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayVpcArgs']]]]):
         pulumi.set(self, "vpcs", value)
 
 
@@ -515,18 +565,21 @@ class IsVpnGateway(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 local_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IsVpnGateway resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
+        :param pulumi.Input[_builtins.int] local_asn: The local autonomous system number (ASN) for this VPN gateway and its connections.
         :param pulumi.Input[_builtins.str] mode: mode in VPN gateway(route/policy)
         :param pulumi.Input[_builtins.str] name: VPN Gateway instance name
         :param pulumi.Input[_builtins.str] resource_group: The resource group for this VPN gateway
@@ -541,6 +594,7 @@ class IsVpnGateway(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVpnGateway resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVpnGatewayArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -556,12 +610,13 @@ class IsVpnGateway(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 local_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -572,6 +627,7 @@ class IsVpnGateway(pulumi.CustomResource):
             __props__ = IsVpnGatewayArgs.__new__(IsVpnGatewayArgs)
 
             __props__.__dict__["access_tags"] = access_tags
+            __props__.__dict__["local_asn"] = local_asn
             __props__.__dict__["mode"] = mode
             __props__.__dict__["name"] = name
             __props__.__dict__["resource_group"] = resource_group
@@ -579,6 +635,7 @@ class IsVpnGateway(pulumi.CustomResource):
                 raise TypeError("Missing required property 'subnet'")
             __props__.__dict__["subnet"] = subnet
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["advertised_cidrs"] = None
             __props__.__dict__["created_at"] = None
             __props__.__dict__["crn"] = None
             __props__.__dict__["health_reasons"] = None
@@ -607,30 +664,32 @@ class IsVpnGateway(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayHealthReasonArgs', 'IsVpnGatewayHealthReasonArgsDict']]]]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayLifecycleReasonArgs', 'IsVpnGatewayLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayMemberArgs', 'IsVpnGatewayMemberArgsDict']]]]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip_address2: Optional[pulumi.Input[_builtins.str]] = None,
-            public_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            public_ip_address2: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vpcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayVpcArgs', 'IsVpnGatewayVpcArgsDict']]]]] = None) -> 'IsVpnGateway':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            advertised_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayHealthReasonArgs', 'IsVpnGatewayHealthReasonArgsDict', 'outputs.IsVpnGatewayHealthReason']]]]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayLifecycleReasonArgs', 'IsVpnGatewayLifecycleReasonArgsDict', 'outputs.IsVpnGatewayLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            local_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayMemberArgs', 'IsVpnGatewayMemberArgsDict', 'outputs.IsVpnGatewayMember']]]]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_address2: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ip_address2: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayVpcArgs', 'IsVpnGatewayVpcArgsDict', 'outputs.IsVpnGatewayVpc']]]]] = None) -> 'IsVpnGateway':
         """
         Get an existing IsVpnGateway resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -639,12 +698,14 @@ class IsVpnGateway(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] advertised_cidrs: The additional CIDRs advertised through any enabled routing protocol (for example, BGP). The routing protocol will advertise routes with these CIDRs and VPC prefixes as route destinations.
         :param pulumi.Input[_builtins.str] created_at: Created Time of the VPN Gateway
         :param pulumi.Input[_builtins.str] crn: The crn of the resource
         :param pulumi.Input[_builtins.str] health_state: The health of this resource.- `ok`: Healthy- `degraded`: Suffering from compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayLifecycleReasonArgs', 'IsVpnGatewayLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayLifecycleReasonArgs', 'IsVpnGatewayLifecycleReasonArgsDict', 'outputs.IsVpnGatewayLifecycleReason']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the VPN route.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayMemberArgs', 'IsVpnGatewayMemberArgsDict']]]] members: Collection of VPN gateway members
+        :param pulumi.Input[_builtins.int] local_asn: The local autonomous system number (ASN) for this VPN gateway and its connections.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayMemberArgs', 'IsVpnGatewayMemberArgsDict', 'outputs.IsVpnGatewayMember']]]] members: Collection of VPN gateway members
         :param pulumi.Input[_builtins.str] mode: mode in VPN gateway(route/policy)
         :param pulumi.Input[_builtins.str] name: VPN Gateway instance name
         :param pulumi.Input[_builtins.str] private_ip_address: The Private IP address assigned to the VPN gateway member.
@@ -660,19 +721,21 @@ class IsVpnGateway(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] status: The status of the VPN gateway
         :param pulumi.Input[_builtins.str] subnet: VPNGateway subnet info
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: VPN Gateway tags list
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayVpcArgs', 'IsVpnGatewayVpcArgsDict']]]] vpcs: VPC for the VPN Gateway
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayVpcArgs', 'IsVpnGatewayVpcArgsDict', 'outputs.IsVpnGatewayVpc']]]] vpcs: VPC for the VPN Gateway
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _IsVpnGatewayState.__new__(_IsVpnGatewayState)
 
         __props__.__dict__["access_tags"] = access_tags
+        __props__.__dict__["advertised_cidrs"] = advertised_cidrs
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["crn"] = crn
         __props__.__dict__["health_reasons"] = health_reasons
         __props__.__dict__["health_state"] = health_state
         __props__.__dict__["lifecycle_reasons"] = lifecycle_reasons
         __props__.__dict__["lifecycle_state"] = lifecycle_state
+        __props__.__dict__["local_asn"] = local_asn
         __props__.__dict__["members"] = members
         __props__.__dict__["mode"] = mode
         __props__.__dict__["name"] = name
@@ -699,6 +762,14 @@ class IsVpnGateway(pulumi.CustomResource):
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="advertisedCidrs")
+    def advertised_cidrs(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The additional CIDRs advertised through any enabled routing protocol (for example, BGP). The routing protocol will advertise routes with these CIDRs and VPC prefixes as route destinations.
+        """
+        return pulumi.get(self, "advertised_cidrs")
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -744,6 +815,14 @@ class IsVpnGateway(pulumi.CustomResource):
         The lifecycle state of the VPN route.
         """
         return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="localAsn")
+    def local_asn(self) -> pulumi.Output[_builtins.int]:
+        """
+        The local autonomous system number (ASN) for this VPN gateway and its connections.
+        """
+        return pulumi.get(self, "local_asn")
 
     @_builtins.property
     @pulumi.getter

@@ -64,10 +64,10 @@ export function getIsVolumesOutput(args?: GetIsVolumesOutputArgs, opts?: pulumi.
  * A collection of arguments for invoking getIsVolumes.
  */
 export interface GetIsVolumesOutputArgs {
-    attachmentState?: pulumi.Input<string>;
-    encryption?: pulumi.Input<string>;
-    operatingSystemArchitecture?: pulumi.Input<string>;
-    operatingSystemFamily?: pulumi.Input<string>;
-    volumeName?: pulumi.Input<string>;
-    zoneName?: pulumi.Input<string>;
+    attachmentState?: pulumi.Input<string | undefined>;
+    encryption?: pulumi.Input<string | undefined>;
+    operatingSystemArchitecture?: pulumi.Input<string | undefined>;
+    operatingSystemFamily?: pulumi.Input<string | undefined>;
+    volumeName?: pulumi.Input<string | undefined>;
+    zoneName?: pulumi.Input<string | undefined>;
 }

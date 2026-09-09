@@ -88,15 +88,15 @@ export interface IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsStat
     /**
      * Access polict to set for this endpoint gateway binding.
      */
-    accessPolicy?: pulumi.Input<string>;
+    accessPolicy?: pulumi.Input<string | undefined>;
     /**
      * The private path service gateway identifier.
      */
-    endpointGatewayBinding?: pulumi.Input<string>;
+    endpointGatewayBinding?: pulumi.Input<string | undefined>;
     /**
      * The private path service gateway identifier.
      */
-    privatePathServiceGateway?: pulumi.Input<string>;
+    privatePathServiceGateway?: pulumi.Input<string | undefined>;
 }
 
 /**

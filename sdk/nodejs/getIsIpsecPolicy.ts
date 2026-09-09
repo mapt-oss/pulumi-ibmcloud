@@ -28,10 +28,12 @@ export interface GetIsIpsecPolicyArgs {
  */
 export interface GetIsIpsecPolicyResult {
     readonly authenticationAlgorithm: string;
+    readonly authenticationAlgorithms: string[];
     readonly connections: outputs.GetIsIpsecPolicyConnection[];
     readonly createdAt: string;
     readonly encapsulationMode: string;
     readonly encryptionAlgorithm: string;
+    readonly encryptionAlgorithms: string[];
     readonly href: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -41,6 +43,7 @@ export interface GetIsIpsecPolicyResult {
     readonly keyLifetime: number;
     readonly name?: string;
     readonly pfs: string;
+    readonly pfsGroups: string[];
     readonly resourceGroups: outputs.GetIsIpsecPolicyResourceGroup[];
     readonly resourceType: string;
     readonly transformProtocol: string;
@@ -58,6 +61,6 @@ export function getIsIpsecPolicyOutput(args?: GetIsIpsecPolicyOutputArgs, opts?:
  * A collection of arguments for invoking getIsIpsecPolicy.
  */
 export interface GetIsIpsecPolicyOutputArgs {
-    ipsecPolicy?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    ipsecPolicy?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

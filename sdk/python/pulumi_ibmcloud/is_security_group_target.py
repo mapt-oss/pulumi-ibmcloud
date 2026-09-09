@@ -23,6 +23,7 @@ class IsSecurityGroupTargetArgs:
                  target: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsSecurityGroupTarget resource.
+
         :param pulumi.Input[_builtins.str] security_group: Security group id
         :param pulumi.Input[_builtins.str] target: security group target identifier
         """
@@ -57,13 +58,14 @@ class IsSecurityGroupTargetArgs:
 @pulumi.input_type
 class _IsSecurityGroupTargetState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsSecurityGroupTarget resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN for this Security group target
         :param pulumi.Input[_builtins.str] name: Security group target name
         :param pulumi.Input[_builtins.str] resource_type: Resource Type
@@ -83,62 +85,62 @@ class _IsSecurityGroupTargetState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this Security group target
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group target name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource Type
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroup")
-    def security_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group id
         """
         return pulumi.get(self, "security_group")
 
     @security_group.setter
-    def security_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         security group target identifier
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
 
@@ -148,11 +150,12 @@ class IsSecurityGroupTarget(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 security_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsSecurityGroupTarget resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] security_group: Security group id
@@ -166,6 +169,7 @@ class IsSecurityGroupTarget(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsSecurityGroupTarget resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsSecurityGroupTargetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -181,8 +185,8 @@ class IsSecurityGroupTarget(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 security_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -211,11 +215,11 @@ class IsSecurityGroupTarget(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            security_group: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsSecurityGroupTarget':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            security_group: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsSecurityGroupTarget':
         """
         Get an existing IsSecurityGroupTarget resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

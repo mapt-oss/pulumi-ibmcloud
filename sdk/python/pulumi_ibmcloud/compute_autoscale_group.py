@@ -27,14 +27,15 @@ class ComputeAutoscaleGroupArgs:
                  regional_group: pulumi.Input[_builtins.str],
                  termination_policy: pulumi.Input[_builtins.str],
                  virtual_guest_member_templates: pulumi.Input[Sequence[pulumi.Input['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs']]],
-                 health_check: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 virtual_server_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 health_check: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 virtual_server_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ComputeAutoscaleGroup resource.
+
         :param pulumi.Input[_builtins.int] cooldown: Cooldown value
         :param pulumi.Input[_builtins.int] maximum_member_count: Maximum member count
         :param pulumi.Input[_builtins.int] minimum_member_count: Minimum member count
@@ -140,91 +141,92 @@ class ComputeAutoscaleGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="healthCheck")
-    def health_check(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def health_check(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "health_check")
 
     @health_check.setter
-    def health_check(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def health_check(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "health_check", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkVlanIds")
-    def network_vlan_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def network_vlan_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         List of network VLAN ids
         """
         return pulumi.get(self, "network_vlan_ids")
 
     @network_vlan_ids.setter
-    def network_vlan_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def network_vlan_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "network_vlan_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Port number
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualServerId")
-    def virtual_server_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def virtual_server_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         virtual server ID
         """
         return pulumi.get(self, "virtual_server_id")
 
     @virtual_server_id.setter
-    def virtual_server_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def virtual_server_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "virtual_server_id", value)
 
 
 @pulumi.input_type
 class _ComputeAutoscaleGroupState:
     def __init__(__self__, *,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_check: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maximum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 minimum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 regional_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 termination_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_guest_member_templates: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs']]]] = None,
-                 virtual_server_id: Optional[pulumi.Input[_builtins.int]] = None):
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_check: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maximum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 minimum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 regional_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 termination_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_guest_member_templates: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs']]]] = None,
+                 virtual_server_id: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ComputeAutoscaleGroup resources.
+
         :param pulumi.Input[_builtins.int] cooldown: Cooldown value
         :param pulumi.Input[_builtins.int] maximum_member_count: Maximum member count
         :param pulumi.Input[_builtins.int] minimum_member_count: Minimum member count
@@ -264,143 +266,143 @@ class _ComputeAutoscaleGroupState:
 
     @_builtins.property
     @pulumi.getter
-    def cooldown(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cooldown(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Cooldown value
         """
         return pulumi.get(self, "cooldown")
 
     @cooldown.setter
-    def cooldown(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cooldown(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cooldown", value)
 
     @_builtins.property
     @pulumi.getter(name="healthCheck")
-    def health_check(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def health_check(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "health_check")
 
     @health_check.setter
-    def health_check(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def health_check(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "health_check", value)
 
     @_builtins.property
     @pulumi.getter(name="maximumMemberCount")
-    def maximum_member_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def maximum_member_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum member count
         """
         return pulumi.get(self, "maximum_member_count")
 
     @maximum_member_count.setter
-    def maximum_member_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def maximum_member_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "maximum_member_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumMemberCount")
-    def minimum_member_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def minimum_member_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Minimum member count
         """
         return pulumi.get(self, "minimum_member_count")
 
     @minimum_member_count.setter
-    def minimum_member_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def minimum_member_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "minimum_member_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkVlanIds")
-    def network_vlan_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def network_vlan_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         List of network VLAN ids
         """
         return pulumi.get(self, "network_vlan_ids")
 
     @network_vlan_ids.setter
-    def network_vlan_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def network_vlan_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "network_vlan_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Port number
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="regionalGroup")
-    def regional_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regional_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         regional group
         """
         return pulumi.get(self, "regional_group")
 
     @regional_group.setter
-    def regional_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regional_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regional_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="terminationPolicy")
-    def termination_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def termination_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Termination policy
         """
         return pulumi.get(self, "termination_policy")
 
     @termination_policy.setter
-    def termination_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def termination_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "termination_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualGuestMemberTemplates")
-    def virtual_guest_member_templates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs']]]]:
+    def virtual_guest_member_templates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs']]]]:
         """
         Virtual guest member template
         """
         return pulumi.get(self, "virtual_guest_member_templates")
 
     @virtual_guest_member_templates.setter
-    def virtual_guest_member_templates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs']]]]):
+    def virtual_guest_member_templates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs']]]]):
         pulumi.set(self, "virtual_guest_member_templates", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualServerId")
-    def virtual_server_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def virtual_server_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         virtual server ID
         """
         return pulumi.get(self, "virtual_server_id")
 
     @virtual_server_id.setter
-    def virtual_server_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def virtual_server_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "virtual_server_id", value)
 
 
@@ -410,21 +412,22 @@ class ComputeAutoscaleGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_check: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maximum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 minimum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 regional_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 termination_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_guest_member_templates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict']]]]] = None,
-                 virtual_server_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_check: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maximum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 minimum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 regional_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 termination_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_guest_member_templates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict', 'outputs.ComputeAutoscaleGroupVirtualGuestMemberTemplate']]]]] = None,
+                 virtual_server_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a ComputeAutoscaleGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] cooldown: Cooldown value
@@ -436,7 +439,7 @@ class ComputeAutoscaleGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] regional_group: regional group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of tags
         :param pulumi.Input[_builtins.str] termination_policy: Termination policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict']]]] virtual_guest_member_templates: Virtual guest member template
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict', 'outputs.ComputeAutoscaleGroupVirtualGuestMemberTemplate']]]] virtual_guest_member_templates: Virtual guest member template
         :param pulumi.Input[_builtins.int] virtual_server_id: virtual server ID
         """
         ...
@@ -447,6 +450,7 @@ class ComputeAutoscaleGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ComputeAutoscaleGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ComputeAutoscaleGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -462,18 +466,18 @@ class ComputeAutoscaleGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_check: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maximum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 minimum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 regional_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 termination_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_guest_member_templates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict']]]]] = None,
-                 virtual_server_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_check: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maximum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 minimum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 regional_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 termination_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_guest_member_templates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict', 'outputs.ComputeAutoscaleGroupVirtualGuestMemberTemplate']]]]] = None,
+                 virtual_server_id: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -517,18 +521,18 @@ class ComputeAutoscaleGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-            health_check: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            maximum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-            minimum_member_count: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            regional_group: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            termination_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_guest_member_templates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict']]]]] = None,
-            virtual_server_id: Optional[pulumi.Input[_builtins.int]] = None) -> 'ComputeAutoscaleGroup':
+            cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+            health_check: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            maximum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+            minimum_member_count: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            regional_group: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            termination_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_guest_member_templates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict', 'outputs.ComputeAutoscaleGroupVirtualGuestMemberTemplate']]]]] = None,
+            virtual_server_id: pulumi.Input[Optional[_builtins.int]] = None) -> 'ComputeAutoscaleGroup':
         """
         Get an existing ComputeAutoscaleGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -545,7 +549,7 @@ class ComputeAutoscaleGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] regional_group: regional group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of tags
         :param pulumi.Input[_builtins.str] termination_policy: Termination policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict']]]] virtual_guest_member_templates: Virtual guest member template
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs', 'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict', 'outputs.ComputeAutoscaleGroupVirtualGuestMemberTemplate']]]] virtual_guest_member_templates: Virtual guest member template
         :param pulumi.Input[_builtins.int] virtual_server_id: virtual server ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

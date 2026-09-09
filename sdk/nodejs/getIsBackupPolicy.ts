@@ -62,6 +62,6 @@ export function getIsBackupPolicyOutput(args?: GetIsBackupPolicyOutputArgs, opts
  * A collection of arguments for invoking getIsBackupPolicy.
  */
 export interface GetIsBackupPolicyOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

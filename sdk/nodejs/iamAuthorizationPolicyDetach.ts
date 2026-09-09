@@ -70,7 +70,7 @@ export interface IamAuthorizationPolicyDetachState {
     /**
      * Authorization policy ID
      */
-    authorizationPolicyId?: pulumi.Input<string>;
+    authorizationPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -56,7 +56,7 @@ export class IsClusterNetworkSubnet extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly href: pulumi.Output<string>;
     /**
-     * The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     declare public readonly ipVersion: pulumi.Output<string>;
     /**
@@ -141,52 +141,52 @@ export interface IsClusterNetworkSubnetState {
     /**
      * The number of IPv4 addresses in this cluster network subnet that are not in use, and have not been reserved by the user or the provider.
      */
-    availableIpv4AddressCount?: pulumi.Input<number>;
+    availableIpv4AddressCount?: pulumi.Input<number | undefined>;
     /**
      * The cluster network identifier.
      */
-    clusterNetworkId?: pulumi.Input<string>;
+    clusterNetworkId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network subnet.
      */
-    clusterNetworkSubnetId?: pulumi.Input<string>;
+    clusterNetworkSubnetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the cluster network subnet was created.
      */
-    createdAt?: pulumi.Input<string>;
-    etag?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * The URL for this cluster network subnet.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
-     * The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * The IPv4 range of this cluster network subnet, expressed in CIDR format.
      */
-    ipv4CidrBlock?: pulumi.Input<string>;
+    ipv4CidrBlock?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current `lifecycleState` (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the cluster network subnet.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The total number of IPv4 addresses in this cluster network subnet.Note: This is calculated as 2<sup>(32 - prefix length)</sup>. For example, the prefix length `/24` gives:<br> 2<sup>(32 - 24)</sup> = 2<sup>8</sup> = 256 addresses.
      */
-    totalIpv4AddressCount?: pulumi.Input<number>;
+    totalIpv4AddressCount?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -198,19 +198,19 @@ export interface IsClusterNetworkSubnetArgs {
      */
     clusterNetworkId: pulumi.Input<string>;
     /**
-     * The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * The IPv4 range of this cluster network subnet, expressed in CIDR format.
      */
-    ipv4CidrBlock?: pulumi.Input<string>;
+    ipv4CidrBlock?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The total number of IPv4 addresses in this cluster network subnet.Note: This is calculated as 2<sup>(32 - prefix length)</sup>. For example, the prefix length `/24` gives:<br> 2<sup>(32 - 24)</sup> = 2<sup>8</sup> = 256 addresses.
      */
-    totalIpv4AddressCount?: pulumi.Input<number>;
+    totalIpv4AddressCount?: pulumi.Input<number | undefined>;
 }

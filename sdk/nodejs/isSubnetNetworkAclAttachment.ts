@@ -108,28 +108,28 @@ export interface IsSubnetNetworkAclAttachmentState {
     /**
      * The crn for this Network ACL
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Network ACL name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of network ACL
      */
-    networkAcl?: pulumi.Input<string>;
+    networkAcl?: pulumi.Input<string | undefined>;
     /**
      * Resource group ID for the network ACL
      */
-    resourceGroup?: pulumi.Input<string>;
-    rules?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRule>[]>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRule>[] | undefined>;
     /**
      * The subnet identifier
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * Network ACL VPC
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 /**

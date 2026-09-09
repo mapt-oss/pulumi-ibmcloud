@@ -33,25 +33,40 @@ export class IamServiceId extends pulumi.CustomResource {
     }
 
     /**
-     * crn of the serviceID
+     * ID of the account.
+     */
+    declare public /*out*/ readonly accountId: pulumi.Output<string>;
+    /**
+     * If set contains a date time string of the creation date in ISO format.
+     */
+    declare public /*out*/ readonly createdAt: pulumi.Output<string>;
+    /**
+     * Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::serviceid:1234-5678-9012'.
      */
     declare public /*out*/ readonly crn: pulumi.Output<string>;
     /**
-     * Description of the serviceID
+     * The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
-     * The IAM ID of the serviceID
+     * Cloud wide identifier for identities of this service ID.
      */
     declare public /*out*/ readonly iamId: pulumi.Output<string>;
+    /**
+     * The service ID cannot be changed if set to true.
+     */
     declare public /*out*/ readonly locked: pulumi.Output<boolean>;
     /**
-     * Name of the serviceID
+     * If set contains a date time string of the last modification date in ISO format.
+     */
+    declare public /*out*/ readonly modifiedAt: pulumi.Output<string>;
+    /**
+     * Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
      */
     declare public readonly name: pulumi.Output<string>;
     declare public readonly tags: pulumi.Output<string[] | undefined>;
     /**
-     * version of the serviceID
+     * Version of the ServiceID object.
      */
     declare public /*out*/ readonly version: pulumi.Output<string>;
 
@@ -68,10 +83,13 @@ export class IamServiceId extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IamServiceIdState | undefined;
+            resourceInputs["accountId"] = state?.accountId;
+            resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["crn"] = state?.crn;
             resourceInputs["description"] = state?.description;
             resourceInputs["iamId"] = state?.iamId;
             resourceInputs["locked"] = state?.locked;
+            resourceInputs["modifiedAt"] = state?.modifiedAt;
             resourceInputs["name"] = state?.name;
             resourceInputs["tags"] = state?.tags;
             resourceInputs["version"] = state?.version;
@@ -80,9 +98,12 @@ export class IamServiceId extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["tags"] = args?.tags;
+            resourceInputs["accountId"] = undefined /*out*/;
+            resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["crn"] = undefined /*out*/;
             resourceInputs["iamId"] = undefined /*out*/;
             resourceInputs["locked"] = undefined /*out*/;
+            resourceInputs["modifiedAt"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -95,27 +116,42 @@ export class IamServiceId extends pulumi.CustomResource {
  */
 export interface IamServiceIdState {
     /**
-     * crn of the serviceID
+     * ID of the account.
      */
-    crn?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
-     * Description of the serviceID
+     * If set contains a date time string of the creation date in ISO format.
      */
-    description?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
-     * The IAM ID of the serviceID
+     * Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::serviceid:1234-5678-9012'.
      */
-    iamId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
+    crn?: pulumi.Input<string | undefined>;
     /**
-     * Name of the serviceID
+     * The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
      */
-    name?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * version of the serviceID
+     * Cloud wide identifier for identities of this service ID.
      */
-    version?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
+    /**
+     * The service ID cannot be changed if set to true.
+     */
+    locked?: pulumi.Input<boolean | undefined>;
+    /**
+     * If set contains a date time string of the last modification date in ISO format.
+     */
+    modifiedAt?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
+     */
+    name?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Version of the ServiceID object.
+     */
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -123,12 +159,12 @@ export interface IamServiceIdState {
  */
 export interface IamServiceIdArgs {
     /**
-     * Description of the serviceID
+     * The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * Name of the serviceID
+     * Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
      */
-    name?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    name?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

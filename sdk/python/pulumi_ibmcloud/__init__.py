@@ -53,14 +53,24 @@ from .get_iam_api_key import *
 from .get_iam_auth_token import *
 from .get_iam_authorization_policies import *
 from .get_iam_effective_account_settings import *
+from .get_iam_identity_preference import *
+from .get_iam_identity_preferences import *
+from .get_iam_idp import *
+from .get_iam_idp_account_settings import *
+from .get_iam_idps import *
 from .get_iam_policy_assignment import *
 from .get_iam_policy_assignments import *
 from .get_iam_policy_template import *
 from .get_iam_policy_template_version import *
 from .get_iam_role_actions import *
+from .get_iam_role_assignment import *
+from .get_iam_role_assignments import *
+from .get_iam_role_template import *
+from .get_iam_role_template_version import *
 from .get_iam_roles import *
 from .get_iam_service_id import *
 from .get_iam_service_policy import *
+from .get_iam_serviceid_group import *
 from .get_iam_trusted_profile import *
 from .get_iam_trusted_profile_claim_rule import *
 from .get_iam_trusted_profile_claim_rules import *
@@ -83,6 +93,7 @@ from .get_is_backup_policy_jobs import *
 from .get_is_backup_policy_plan import *
 from .get_is_backup_policy_plans import *
 from .get_is_bare_metal_server import *
+from .get_is_bare_metal_server_capacities import *
 from .get_is_bare_metal_server_disk import *
 from .get_is_bare_metal_server_disks import *
 from .get_is_bare_metal_server_initialization import *
@@ -151,6 +162,8 @@ from .get_is_instance_network_interface_reserved_ips import *
 from .get_is_instance_network_interfaces import *
 from .get_is_instance_profile import *
 from .get_is_instance_profiles import *
+from .get_is_instance_software_attachment import *
+from .get_is_instance_software_attachments import *
 from .get_is_instance_template import *
 from .get_is_instance_templates import *
 from .get_is_instance_volume_attachment import *
@@ -226,6 +239,8 @@ from .get_is_subnet_reserved_ips import *
 from .get_is_subnets import *
 from .get_is_virtual_endpoint_gateway import *
 from .get_is_virtual_endpoint_gateway_ips import *
+from .get_is_virtual_endpoint_gateway_resource_binding import *
+from .get_is_virtual_endpoint_gateway_resource_bindings import *
 from .get_is_virtual_endpoint_gateways import *
 from .get_is_virtual_network_interface import *
 from .get_is_virtual_network_interface_floating_ip import *
@@ -235,6 +250,8 @@ from .get_is_virtual_network_interface_ips import *
 from .get_is_virtual_network_interfaces import *
 from .get_is_volume import *
 from .get_is_volume_instance_profiles import *
+from .get_is_volume_job import *
+from .get_is_volume_jobs import *
 from .get_is_volume_profile import *
 from .get_is_volume_profiles import *
 from .get_is_volumes import *
@@ -250,10 +267,13 @@ from .get_is_vpc_routing_table_routes import *
 from .get_is_vpc_routing_tables import *
 from .get_is_vpcs import *
 from .get_is_vpn_gateway import *
+from .get_is_vpn_gateway_advertised_cidrs import *
 from .get_is_vpn_gateway_connection import *
 from .get_is_vpn_gateway_connection_local_cidrs import *
 from .get_is_vpn_gateway_connection_peer_cidrs import *
 from .get_is_vpn_gateway_connections import *
+from .get_is_vpn_gateway_service_connection import *
+from .get_is_vpn_gateway_service_connections import *
 from .get_is_vpn_gateways import *
 from .get_is_vpn_server import *
 from .get_is_vpn_server_client import *
@@ -284,9 +304,13 @@ from .get_pi_image import *
 from .get_pi_images import *
 from .get_pi_instance import *
 from .get_pi_instance_ip import *
+from .get_pi_instance_network import *
+from .get_pi_instance_networks import *
 from .get_pi_instance_snapshot import *
 from .get_pi_instance_snapshots import *
 from .get_pi_instance_volumes import *
+from .get_pi_instance_vpmem_volume import *
+from .get_pi_instance_vpmem_volumes import *
 from .get_pi_instances import *
 from .get_pi_key import *
 from .get_pi_keys import *
@@ -344,9 +368,11 @@ from .get_pi_volumes import *
 from .get_pi_workspace import *
 from .get_pi_workspaces import *
 from .get_resource_group import *
+from .get_resource_groups import *
 from .get_resource_instance import *
 from .get_resource_key import *
 from .get_resource_quota import *
+from .get_resource_reclamations import *
 from .get_resource_tag import *
 from .get_tg_connection_prefix_filter import *
 from .get_tg_connection_prefix_filters import *
@@ -376,12 +402,19 @@ from .iam_api_key import *
 from .iam_authorization_policy import *
 from .iam_authorization_policy_detach import *
 from .iam_custom_role import *
+from .iam_identity_preference import *
+from .iam_idp import *
+from .iam_idp_account_setting import *
 from .iam_policy_assignment import *
 from .iam_policy_template import *
 from .iam_policy_template_version import *
+from .iam_role_assignment import *
+from .iam_role_template import *
+from .iam_role_template_version import *
 from .iam_service_api_key import *
 from .iam_service_id import *
 from .iam_service_policy import *
+from .iam_serviceid_group import *
 from .iam_trusted_profile import *
 from .iam_trusted_profile_claim_rule import *
 from .iam_trusted_profile_identities import *
@@ -429,6 +462,8 @@ from .is_instance_group_membership import *
 from .is_instance_network_attachment import *
 from .is_instance_network_interface import *
 from .is_instance_network_interface_floating_ip import *
+from .is_instance_reinitialize import *
+from .is_instance_software_attachment import *
 from .is_instance_template import *
 from .is_instance_volume_attachment import *
 from .is_ipsec_policy import *
@@ -469,16 +504,20 @@ from .is_subnet_reserved_ip_patch import *
 from .is_subnet_routing_table_attachment import *
 from .is_virtual_endpoint_gateway import *
 from .is_virtual_endpoint_gateway_ip import *
+from .is_virtual_endpoint_gateway_resource_binding import *
 from .is_virtual_network_interface import *
 from .is_virtual_network_interface_floating_ip import *
 from .is_virtual_network_interface_ip import *
 from .is_volume import *
+from .is_volume_job import *
+from .is_volume_job_cancel import *
 from .is_vpc import *
 from .is_vpc_address_prefix import *
 from .is_vpc_dns_resolution_binding import *
 from .is_vpc_routing_table import *
 from .is_vpc_routing_table_route import *
 from .is_vpn_gateway import *
+from .is_vpn_gateway_advertised_cidr import *
 from .is_vpn_gateway_connection import *
 from .is_vpn_server import *
 from .is_vpn_server_client import *
@@ -496,6 +535,7 @@ from .pi_image_export import *
 from .pi_instance import *
 from .pi_instance_action import *
 from .pi_instance_snapshot import *
+from .pi_instance_vpmem_volumes import *
 from .pi_ipsec_policy import *
 from .pi_key import *
 from .pi_network import *
@@ -527,6 +567,7 @@ from .provider import *
 from .resource_group import *
 from .resource_instance import *
 from .resource_key import *
+from .resource_reclamation_delete import *
 from .resource_tag import *
 from .tg_connection import *
 from .tg_connection_action import *
@@ -869,6 +910,30 @@ _utilities.register(
  },
  {
   "pkg": "ibmcloud",
+  "mod": "index/iamIdentityPreference",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/iamIdentityPreference:IamIdentityPreference": "IamIdentityPreference"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/iamIdp",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/iamIdp:IamIdp": "IamIdp"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/iamIdpAccountSetting",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/iamIdpAccountSetting:IamIdpAccountSetting": "IamIdpAccountSetting"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
   "mod": "index/iamPolicyAssignment",
   "fqn": "pulumi_ibmcloud",
   "classes": {
@@ -893,6 +958,30 @@ _utilities.register(
  },
  {
   "pkg": "ibmcloud",
+  "mod": "index/iamRoleAssignment",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/iamRoleAssignment:IamRoleAssignment": "IamRoleAssignment"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/iamRoleTemplate",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/iamRoleTemplate:IamRoleTemplate": "IamRoleTemplate"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/iamRoleTemplateVersion",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/iamRoleTemplateVersion:IamRoleTemplateVersion": "IamRoleTemplateVersion"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
   "mod": "index/iamServiceApiKey",
   "fqn": "pulumi_ibmcloud",
   "classes": {
@@ -913,6 +1002,14 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/iamServicePolicy:IamServicePolicy": "IamServicePolicy"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/iamServiceidGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/iamServiceidGroup:IamServiceidGroup": "IamServiceidGroup"
   }
  },
  {
@@ -1293,6 +1390,22 @@ _utilities.register(
  },
  {
   "pkg": "ibmcloud",
+  "mod": "index/isInstanceReinitialize",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/isInstanceReinitialize:IsInstanceReinitialize": "IsInstanceReinitialize"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/isInstanceSoftwareAttachment",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/isInstanceSoftwareAttachment:IsInstanceSoftwareAttachment": "IsInstanceSoftwareAttachment"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
   "mod": "index/isInstanceTemplate",
   "fqn": "pulumi_ibmcloud",
   "classes": {
@@ -1613,6 +1726,14 @@ _utilities.register(
  },
  {
   "pkg": "ibmcloud",
+  "mod": "index/isVirtualEndpointGatewayResourceBinding",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/isVirtualEndpointGatewayResourceBinding:IsVirtualEndpointGatewayResourceBinding": "IsVirtualEndpointGatewayResourceBinding"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
   "mod": "index/isVirtualNetworkInterface",
   "fqn": "pulumi_ibmcloud",
   "classes": {
@@ -1641,6 +1762,22 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/isVolume:IsVolume": "IsVolume"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/isVolumeJob",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/isVolumeJob:IsVolumeJob": "IsVolumeJob"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/isVolumeJobCancel",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/isVolumeJobCancel:IsVolumeJobCancel": "IsVolumeJobCancel"
   }
  },
  {
@@ -1689,6 +1826,14 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/isVpnGateway:IsVpnGateway": "IsVpnGateway"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/isVpnGatewayAdvertisedCidr",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/isVpnGatewayAdvertisedCidr:IsVpnGatewayAdvertisedCidr": "IsVpnGatewayAdvertisedCidr"
   }
  },
  {
@@ -1825,6 +1970,14 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/piInstanceSnapshot:PiInstanceSnapshot": "PiInstanceSnapshot"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/piInstanceVpmemVolumes",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/piInstanceVpmemVolumes:PiInstanceVpmemVolumes": "PiInstanceVpmemVolumes"
   }
  },
  {
@@ -2065,6 +2218,14 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/resourceKey:ResourceKey": "ResourceKey"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/resourceReclamationDelete",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/resourceReclamationDelete:ResourceReclamationDelete": "ResourceReclamationDelete"
   }
  },
  {

@@ -23,10 +23,11 @@ class IsImageExportJobArgs:
     def __init__(__self__, *,
                  image: pulumi.Input[_builtins.str],
                  storage_bucket: pulumi.Input['IsImageExportJobStorageBucketArgs'],
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsImageExportJob resource.
+
         :param pulumi.Input[_builtins.str] image: The image identifier.
         :param pulumi.Input['IsImageExportJobStorageBucketArgs'] storage_bucket: The name of the Cloud Object Storage bucket to export the image to.
         :param pulumi.Input[_builtins.str] format: The format to use for the exported image. If the image is encrypted, only `qcow2` is supported.
@@ -65,49 +66,50 @@ class IsImageExportJobArgs:
 
     @_builtins.property
     @pulumi.getter
-    def format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The format to use for the exported image. If the image is encrypted, only `qcow2` is supported.
         """
         return pulumi.get(self, "format")
 
     @format.setter
-    def format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this image export job. Names must be unique within the image this export job resides in. If unspecified, the name will be a hyphenated list of randomly-selected words prefixed with the first 16 characters of the parent image name.The exported image object name in Cloud Object Storage (`storage_object.name` in the response) will be based on this name. The object name will be unique within the bucket.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsImageExportJobState:
     def __init__(__self__, *,
-                 completed_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 encrypted_data_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_export_job: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 started_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsImageExportJobStatusReasonArgs']]]] = None,
-                 storage_bucket: Optional[pulumi.Input['IsImageExportJobStorageBucketArgs']] = None,
-                 storage_href: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_objects: Optional[pulumi.Input[Sequence[pulumi.Input['IsImageExportJobStorageObjectArgs']]]] = None):
+                 completed_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 encrypted_data_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_export_job: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 started_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsImageExportJobStatusReasonArgs']]]] = None,
+                 storage_bucket: pulumi.Input[Optional['IsImageExportJobStorageBucketArgs']] = None,
+                 storage_href: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_objects: pulumi.Input[Optional[Sequence[pulumi.Input['IsImageExportJobStorageObjectArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsImageExportJob resources.
+
         :param pulumi.Input[_builtins.str] completed_at: The date and time that the image export job was completed.If absent, the export job has not yet completed.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the image export job was created.
         :param pulumi.Input[_builtins.str] encrypted_data_key: A base64-encoded, encrypted representation of the key that was used to encrypt the data for the exported image. This key can be unwrapped with the image's `encryption_key` root key using either Key Protect or Hyper Protect Crypto Service.If absent, the export job is for an unencrypted image.
@@ -157,182 +159,182 @@ class _IsImageExportJobState:
 
     @_builtins.property
     @pulumi.getter(name="completedAt")
-    def completed_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def completed_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the image export job was completed.If absent, the export job has not yet completed.
         """
         return pulumi.get(self, "completed_at")
 
     @completed_at.setter
-    def completed_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def completed_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "completed_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the image export job was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptedDataKey")
-    def encrypted_data_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encrypted_data_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A base64-encoded, encrypted representation of the key that was used to encrypt the data for the exported image. This key can be unwrapped with the image's `encryption_key` root key using either Key Protect or Hyper Protect Crypto Service.If absent, the export job is for an unencrypted image.
         """
         return pulumi.get(self, "encrypted_data_key")
 
     @encrypted_data_key.setter
-    def encrypted_data_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encrypted_data_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encrypted_data_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The format to use for the exported image. If the image is encrypted, only `qcow2` is supported.
         """
         return pulumi.get(self, "format")
 
     @format.setter
-    def format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this image export job.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The image identifier.
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="imageExportJob")
-    def image_export_job(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_export_job(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this image export job.
         """
         return pulumi.get(self, "image_export_job")
 
     @image_export_job.setter
-    def image_export_job(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_export_job(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_export_job", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this image export job. Names must be unique within the image this export job resides in. If unspecified, the name will be a hyphenated list of randomly-selected words prefixed with the first 16 characters of the parent image name.The exported image object name in Cloud Object Storage (`storage_object.name` in the response) will be based on this name. The object name will be unique within the bucket.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of resource referenced.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="startedAt")
-    def started_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def started_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the image export job started running.If absent, the export job has not yet started.
         """
         return pulumi.get(self, "started_at")
 
     @started_at.setter
-    def started_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def started_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "started_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of this image export job:- `deleting`: Export job is being deleted- `failed`: Export job could not be completed successfully- `queued`: Export job is queued- `running`: Export job is in progress- `succeeded`: Export job was completed successfullyThe exported image object is automatically deleted for `failed` jobs.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsImageExportJobStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsImageExportJobStatusReasonArgs']]]]:
         """
         The reasons for the current status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
         """
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsImageExportJobStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsImageExportJobStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="storageBucket")
-    def storage_bucket(self) -> Optional[pulumi.Input['IsImageExportJobStorageBucketArgs']]:
+    def storage_bucket(self) -> pulumi.Input[Optional['IsImageExportJobStorageBucketArgs']]:
         """
         The name of the Cloud Object Storage bucket to export the image to.
         """
         return pulumi.get(self, "storage_bucket")
 
     @storage_bucket.setter
-    def storage_bucket(self, value: Optional[pulumi.Input['IsImageExportJobStorageBucketArgs']]):
+    def storage_bucket(self, value: pulumi.Input[Optional['IsImageExportJobStorageBucketArgs']]):
         pulumi.set(self, "storage_bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="storageHref")
-    def storage_href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Cloud Object Storage location of the exported image object. The object at this location may not exist until the job is started, and will be incomplete while the job is running.After the job completes, the exported image object is not managed by the IBM VPC service, and may be removed or replaced with a different object by any user or service with IAM authorization to the bucket.
         """
         return pulumi.get(self, "storage_href")
 
     @storage_href.setter
-    def storage_href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_href", value)
 
     @_builtins.property
     @pulumi.getter(name="storageObjects")
-    def storage_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsImageExportJobStorageObjectArgs']]]]:
+    def storage_objects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsImageExportJobStorageObjectArgs']]]]:
         """
         The Cloud Object Storage object for the exported image. This object may not exist untilthe job is started, and will not be complete until the job completes.
         """
         return pulumi.get(self, "storage_objects")
 
     @storage_objects.setter
-    def storage_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsImageExportJobStorageObjectArgs']]]]):
+    def storage_objects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsImageExportJobStorageObjectArgs']]]]):
         pulumi.set(self, "storage_objects", value)
 
 
@@ -342,19 +344,20 @@ class IsImageExportJob(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_bucket: Optional[pulumi.Input[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict']]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_bucket: pulumi.Input[Optional[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict', 'outputs.IsImageExportJobStorageBucket']]] = None,
                  __props__=None):
         """
         Create a IsImageExportJob resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] format: The format to use for the exported image. If the image is encrypted, only `qcow2` is supported.
         :param pulumi.Input[_builtins.str] image: The image identifier.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this image export job. Names must be unique within the image this export job resides in. If unspecified, the name will be a hyphenated list of randomly-selected words prefixed with the first 16 characters of the parent image name.The exported image object name in Cloud Object Storage (`storage_object.name` in the response) will be based on this name. The object name will be unique within the bucket.
-        :param pulumi.Input[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict']] storage_bucket: The name of the Cloud Object Storage bucket to export the image to.
+        :param pulumi.Input[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict', 'outputs.IsImageExportJobStorageBucket']] storage_bucket: The name of the Cloud Object Storage bucket to export the image to.
         """
         ...
     @overload
@@ -364,6 +367,7 @@ class IsImageExportJob(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsImageExportJob resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsImageExportJobArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -379,10 +383,10 @@ class IsImageExportJob(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_bucket: Optional[pulumi.Input[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict']]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_bucket: pulumi.Input[Optional[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict', 'outputs.IsImageExportJobStorageBucket']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -421,21 +425,21 @@ class IsImageExportJob(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            completed_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            encrypted_data_key: Optional[pulumi.Input[_builtins.str]] = None,
-            format: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            image_export_job: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            started_at: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsImageExportJobStatusReasonArgs', 'IsImageExportJobStatusReasonArgsDict']]]]] = None,
-            storage_bucket: Optional[pulumi.Input[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict']]] = None,
-            storage_href: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsImageExportJobStorageObjectArgs', 'IsImageExportJobStorageObjectArgsDict']]]]] = None) -> 'IsImageExportJob':
+            completed_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            encrypted_data_key: pulumi.Input[Optional[_builtins.str]] = None,
+            format: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            image_export_job: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            started_at: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsImageExportJobStatusReasonArgs', 'IsImageExportJobStatusReasonArgsDict', 'outputs.IsImageExportJobStatusReason']]]]] = None,
+            storage_bucket: pulumi.Input[Optional[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict', 'outputs.IsImageExportJobStorageBucket']]] = None,
+            storage_href: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsImageExportJobStorageObjectArgs', 'IsImageExportJobStorageObjectArgsDict', 'outputs.IsImageExportJobStorageObject']]]]] = None) -> 'IsImageExportJob':
         """
         Get an existing IsImageExportJob resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -454,10 +458,10 @@ class IsImageExportJob(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: The type of resource referenced.
         :param pulumi.Input[_builtins.str] started_at: The date and time that the image export job started running.If absent, the export job has not yet started.
         :param pulumi.Input[_builtins.str] status: The status of this image export job:- `deleting`: Export job is being deleted- `failed`: Export job could not be completed successfully- `queued`: Export job is queued- `running`: Export job is in progress- `succeeded`: Export job was completed successfullyThe exported image object is automatically deleted for `failed` jobs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsImageExportJobStatusReasonArgs', 'IsImageExportJobStatusReasonArgsDict']]]] status_reasons: The reasons for the current status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
-        :param pulumi.Input[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict']] storage_bucket: The name of the Cloud Object Storage bucket to export the image to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsImageExportJobStatusReasonArgs', 'IsImageExportJobStatusReasonArgsDict', 'outputs.IsImageExportJobStatusReason']]]] status_reasons: The reasons for the current status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
+        :param pulumi.Input[Union['IsImageExportJobStorageBucketArgs', 'IsImageExportJobStorageBucketArgsDict', 'outputs.IsImageExportJobStorageBucket']] storage_bucket: The name of the Cloud Object Storage bucket to export the image to.
         :param pulumi.Input[_builtins.str] storage_href: The Cloud Object Storage location of the exported image object. The object at this location may not exist until the job is started, and will be incomplete while the job is running.After the job completes, the exported image object is not managed by the IBM VPC service, and may be removed or replaced with a different object by any user or service with IAM authorization to the bucket.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsImageExportJobStorageObjectArgs', 'IsImageExportJobStorageObjectArgsDict']]]] storage_objects: The Cloud Object Storage object for the exported image. This object may not exist untilthe job is started, and will not be complete until the job completes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsImageExportJobStorageObjectArgs', 'IsImageExportJobStorageObjectArgsDict', 'outputs.IsImageExportJobStorageObject']]]] storage_objects: The Cloud Object Storage object for the exported image. This object may not exist untilthe job is started, and will not be complete until the job completes.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

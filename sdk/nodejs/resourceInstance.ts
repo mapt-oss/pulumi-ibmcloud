@@ -343,184 +343,184 @@ export interface ResourceInstanceState {
     /**
      * An alpha-numeric value identifying the account ID.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * A boolean that dictates if the resource instance should be deleted (cleaned up) during the processing of a region instance delete call.
      */
-    allowCleanup?: pulumi.Input<boolean>;
+    allowCleanup?: pulumi.Input<boolean | undefined>;
     /**
      * The date when the instance was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who created the instance.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * CRN of resource instance
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Dashboard URL to access resource.
      */
-    dashboardUrl?: pulumi.Input<string>;
+    dashboardUrl?: pulumi.Input<string | undefined>;
     /**
      * The date when the instance was deleted.
      */
-    deletedAt?: pulumi.Input<string>;
+    deletedAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who deleted the instance.
      */
-    deletedBy?: pulumi.Input<string>;
+    deletedBy?: pulumi.Input<string | undefined>;
     /**
      * The extended metadata as a map associated with the resource instance.
      */
-    extensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    extensions?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Guid of resource instance
      */
-    guid?: pulumi.Input<string>;
+    guid?: pulumi.Input<string | undefined>;
     /**
      * The status of the last operation requested on the instance
      */
-    lastOperation?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    lastOperation?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The location where the instance available
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * A boolean that dictates if the resource instance should be deleted (cleaned up) during the processing of a region instance delete call.
      */
-    locked?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean | undefined>;
     /**
      * A name for the resource instance
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A boolean that dictates if the onetimeCredentials is true or false.
      */
-    onetimeCredentials?: pulumi.Input<boolean>;
+    onetimeCredentials?: pulumi.Input<boolean | undefined>;
     /**
      * Arbitrary parameters to pass. Must be a JSON object
      */
-    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Arbitrary parameters to pass in Json string format
      */
-    parametersJson?: pulumi.Input<string>;
+    parametersJson?: pulumi.Input<string | undefined>;
     /**
      * The plan type of the service
      */
-    plan?: pulumi.Input<string>;
+    plan?: pulumi.Input<string | undefined>;
     /**
      * The plan history of the instance.
      */
-    planHistories?: pulumi.Input<pulumi.Input<inputs.ResourceInstancePlanHistory>[]>;
+    planHistories?: pulumi.Input<pulumi.Input<inputs.ResourceInstancePlanHistory>[] | undefined>;
     /**
      * The relative path to the resource aliases for the instance.
      *
      * @deprecated Remove this attribute's configuration as it's no longer in use and the attribute will be removed in the upcoming major version of the provider 1.71.0.
      */
-    resourceAliasesUrl?: pulumi.Input<string>;
+    resourceAliasesUrl?: pulumi.Input<string | undefined>;
     /**
      * The relative path to the resource bindings for the instance.
      *
      * @deprecated Remove this attribute's configuration as it's no longer in use and the attribute will be removed in the upcoming major version of the provider 1.71.0.
      */
-    resourceBindingsUrl?: pulumi.Input<string>;
+    resourceBindingsUrl?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about the resource
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * The long ID (full CRN) of the resource group
      */
-    resourceGroupCrn?: pulumi.Input<string>;
+    resourceGroupCrn?: pulumi.Input<string | undefined>;
     /**
      * The resource group id
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The unique ID of the offering
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * The relative path to the resource keys for the instance.
      */
-    resourceKeysUrl?: pulumi.Input<string>;
+    resourceKeysUrl?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The unique ID of the plan associated with the offering
      */
-    resourcePlanId?: pulumi.Input<string>;
+    resourcePlanId?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * The date when the instance under reclamation was restored.
      */
-    restoredAt?: pulumi.Input<string>;
+    restoredAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who restored the instance back from reclamation.
      */
-    restoredBy?: pulumi.Input<string>;
+    restoredBy?: pulumi.Input<string | undefined>;
     /**
      * The date when the instance was scheduled for reclamation.
      */
-    scheduledReclaimAt?: pulumi.Input<string>;
+    scheduledReclaimAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who initiated the instance reclamation.
      */
-    scheduledReclaimBy?: pulumi.Input<string>;
+    scheduledReclaimBy?: pulumi.Input<string | undefined>;
     /**
      * The name of the service offering like cloud-object-storage, kms etc
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * Types of the service endpoints. Possible values are 'public', 'private', 'public-and-private'.
      */
-    serviceEndpoints?: pulumi.Input<string>;
+    serviceEndpoints?: pulumi.Input<string | undefined>;
     /**
      * The current state of the instance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Status of resource instance
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The sub-type of instance, e.g. cfaas .
      */
-    subType?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    subType?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The full deployment CRN as defined in the global catalog
      */
-    targetCrn?: pulumi.Input<string>;
+    targetCrn?: pulumi.Input<string | undefined>;
     /**
      * The type of the instance, e.g. service_instance.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The date when the instance was last updated.
      */
-    updateAt?: pulumi.Input<string>;
+    updateAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who updated the instance.
      */
-    updateBy?: pulumi.Input<string>;
+    updateBy?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -534,15 +534,15 @@ export interface ResourceInstanceArgs {
     /**
      * A name for the resource instance
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Arbitrary parameters to pass. Must be a JSON object
      */
-    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Arbitrary parameters to pass in Json string format
      */
-    parametersJson?: pulumi.Input<string>;
+    parametersJson?: pulumi.Input<string | undefined>;
     /**
      * The plan type of the service
      */
@@ -550,7 +550,7 @@ export interface ResourceInstanceArgs {
     /**
      * The resource group id
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The name of the service offering like cloud-object-storage, kms etc
      */
@@ -558,6 +558,6 @@ export interface ResourceInstanceArgs {
     /**
      * Types of the service endpoints. Possible values are 'public', 'private', 'public-and-private'.
      */
-    serviceEndpoints?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    serviceEndpoints?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

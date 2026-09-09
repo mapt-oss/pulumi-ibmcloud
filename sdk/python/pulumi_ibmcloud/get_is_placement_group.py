@@ -162,7 +162,7 @@ def get_is_placement_group(name: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         strategy=pulumi.get(__ret__, 'strategy'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_is_placement_group_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_placement_group_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsPlacementGroupResult]:
     """
     Use this data source to access information about an existing resource.

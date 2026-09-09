@@ -22,11 +22,12 @@ __all__ = ['IsClusterNetworkInterfaceArgs', 'IsClusterNetworkInterface']
 class IsClusterNetworkInterfaceArgs:
     def __init__(__self__, *,
                  cluster_network_id: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs']] = None,
-                 subnet: Optional[pulumi.Input['IsClusterNetworkInterfaceSubnetArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional['IsClusterNetworkInterfacePrimaryIpArgs']] = None,
+                 subnet: pulumi.Input[Optional['IsClusterNetworkInterfaceSubnetArgs']] = None):
         """
         The set of arguments for constructing a IsClusterNetworkInterface resource.
+
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
         :param pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs'] primary_ip: The cluster network subnet reserved IP for this cluster network interface.
@@ -54,64 +55,65 @@ class IsClusterNetworkInterfaceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsClusterNetworkInterfacePrimaryIpArgs']]:
         """
         The cluster network subnet reserved IP for this cluster network interface.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsClusterNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input['IsClusterNetworkInterfaceSubnetArgs']]:
+    def subnet(self) -> pulumi.Input[Optional['IsClusterNetworkInterfaceSubnetArgs']]:
         """
         The associated cluster network subnet. Required if `primary_ip` does not specify a clusternetwork subnet reserved IP identity.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input['IsClusterNetworkInterfaceSubnetArgs']]):
+    def subnet(self, value: pulumi.Input[Optional['IsClusterNetworkInterfaceSubnetArgs']]):
         pulumi.set(self, "subnet", value)
 
 
 @pulumi.input_type
 class _IsClusterNetworkInterfaceState:
     def __init__(__self__, *,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs']] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input['IsClusterNetworkInterfaceSubnetArgs']] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceVpcArgs']]]] = None,
-                 zones: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceZoneArgs']]]] = None):
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_network_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional['IsClusterNetworkInterfacePrimaryIpArgs']] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional['IsClusterNetworkInterfaceSubnetArgs']] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceVpcArgs']]]] = None,
+                 zones: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceZoneArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsClusterNetworkInterface resources.
+
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this cluster network interface. If `false`, source IP spoofing is prevented on this cluster network interface. If `true`, source IP spoofing is allowed on this cluster network interface.
         :param pulumi.Input[_builtins.bool] auto_delete: Indicates whether this cluster network interface will be automatically deleted when `target` is deleted.
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
@@ -126,7 +128,7 @@ class _IsClusterNetworkInterfaceState:
         :param pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs'] primary_ip: The cluster network subnet reserved IP for this cluster network interface.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input['IsClusterNetworkInterfaceSubnetArgs'] subnet: The associated cluster network subnet. Required if `primary_ip` does not specify a clusternetwork subnet reserved IP identity.
-        :param pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]] targets: The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]] targets: The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceVpcArgs']]] vpcs: The VPC this cluster network interface resides in.
         :param pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceZoneArgs']]] zones: The zone this cluster network interface resides in.
         """
@@ -169,215 +171,215 @@ class _IsClusterNetworkInterfaceState:
 
     @_builtins.property
     @pulumi.getter(name="allowIpSpoofing")
-    def allow_ip_spoofing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_ip_spoofing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether source IP spoofing is allowed on this cluster network interface. If `false`, source IP spoofing is prevented on this cluster network interface. If `true`, source IP spoofing is allowed on this cluster network interface.
         """
         return pulumi.get(self, "allow_ip_spoofing")
 
     @allow_ip_spoofing.setter
-    def allow_ip_spoofing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_ip_spoofing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_ip_spoofing", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
-    def auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this cluster network interface will be automatically deleted when `target` is deleted.
         """
         return pulumi.get(self, "auto_delete")
 
     @auto_delete.setter
-    def auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkId")
-    def cluster_network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster network identifier.
         """
         return pulumi.get(self, "cluster_network_id")
 
     @cluster_network_id.setter
-    def cluster_network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkInterfaceId")
-    def cluster_network_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_network_interface_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this cluster network interface.
         """
         return pulumi.get(self, "cluster_network_interface_id")
 
     @cluster_network_interface_id.setter
-    def cluster_network_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_network_interface_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_network_interface_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the cluster network interface was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="enableInfrastructureNat")
-    def enable_infrastructure_nat(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_infrastructure_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`:- The VPC infrastructure performs any needed NAT operations.- `floating_ips` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the virtual network interface,  allowing the workload to perform any needed NAT operations.
         """
         return pulumi.get(self, "enable_infrastructure_nat")
 
     @enable_infrastructure_nat.setter
-    def enable_infrastructure_nat(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_infrastructure_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_infrastructure_nat", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this cluster network interface.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceLifecycleReasonArgs']]]]:
         """
         The reasons for the current `lifecycle_state` (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the cluster network interface.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MAC address of the cluster network interface. May be absent if`lifecycle_state` is `pending`.
         """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
-    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsClusterNetworkInterfacePrimaryIpArgs']]:
         """
         The cluster network subnet reserved IP for this cluster network interface.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsClusterNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsClusterNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input['IsClusterNetworkInterfaceSubnetArgs']]:
+    def subnet(self) -> pulumi.Input[Optional['IsClusterNetworkInterfaceSubnetArgs']]:
         """
         The associated cluster network subnet. Required if `primary_ip` does not specify a clusternetwork subnet reserved IP identity.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input['IsClusterNetworkInterfaceSubnetArgs']]):
+    def subnet(self, value: pulumi.Input[Optional['IsClusterNetworkInterfaceSubnetArgs']]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]]]:
         """
-        The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceTargetArgs']]]]):
         pulumi.set(self, "targets", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceVpcArgs']]]]:
+    def vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceVpcArgs']]]]:
         """
         The VPC this cluster network interface resides in.
         """
         return pulumi.get(self, "vpcs")
 
     @vpcs.setter
-    def vpcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceVpcArgs']]]]):
+    def vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceVpcArgs']]]]):
         pulumi.set(self, "vpcs", value)
 
     @_builtins.property
     @pulumi.getter
-    def zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceZoneArgs']]]]:
+    def zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceZoneArgs']]]]:
         """
         The zone this cluster network interface resides in.
         """
         return pulumi.get(self, "zones")
 
     @zones.setter
-    def zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkInterfaceZoneArgs']]]]):
+    def zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkInterfaceZoneArgs']]]]):
         pulumi.set(self, "zones", value)
 
 
@@ -387,19 +389,20 @@ class IsClusterNetworkInterface(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 subnet: Optional[pulumi.Input[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict']]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict', 'outputs.IsClusterNetworkInterfacePrimaryIp']]] = None,
+                 subnet: pulumi.Input[Optional[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict', 'outputs.IsClusterNetworkInterfaceSubnet']]] = None,
                  __props__=None):
         """
         Create a IsClusterNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
-        :param pulumi.Input[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict']] primary_ip: The cluster network subnet reserved IP for this cluster network interface.
-        :param pulumi.Input[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict']] subnet: The associated cluster network subnet. Required if `primary_ip` does not specify a clusternetwork subnet reserved IP identity.
+        :param pulumi.Input[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict', 'outputs.IsClusterNetworkInterfacePrimaryIp']] primary_ip: The cluster network subnet reserved IP for this cluster network interface.
+        :param pulumi.Input[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict', 'outputs.IsClusterNetworkInterfaceSubnet']] subnet: The associated cluster network subnet. Required if `primary_ip` does not specify a clusternetwork subnet reserved IP identity.
         """
         ...
     @overload
@@ -409,6 +412,7 @@ class IsClusterNetworkInterface(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsClusterNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsClusterNetworkInterfaceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -424,10 +428,10 @@ class IsClusterNetworkInterface(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 subnet: Optional[pulumi.Input[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict']]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict', 'outputs.IsClusterNetworkInterfacePrimaryIp']]] = None,
+                 subnet: pulumi.Input[Optional[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict', 'outputs.IsClusterNetworkInterfaceSubnet']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -467,24 +471,24 @@ class IsClusterNetworkInterface(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceLifecycleReasonArgs', 'IsClusterNetworkInterfaceLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_ip: Optional[pulumi.Input[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict']]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet: Optional[pulumi.Input[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict']]] = None,
-            targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceTargetArgs', 'IsClusterNetworkInterfaceTargetArgsDict']]]]] = None,
-            vpcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceVpcArgs', 'IsClusterNetworkInterfaceVpcArgsDict']]]]] = None,
-            zones: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceZoneArgs', 'IsClusterNetworkInterfaceZoneArgsDict']]]]] = None) -> 'IsClusterNetworkInterface':
+            allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_network_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceLifecycleReasonArgs', 'IsClusterNetworkInterfaceLifecycleReasonArgsDict', 'outputs.IsClusterNetworkInterfaceLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_ip: pulumi.Input[Optional[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict', 'outputs.IsClusterNetworkInterfacePrimaryIp']]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet: pulumi.Input[Optional[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict', 'outputs.IsClusterNetworkInterfaceSubnet']]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceTargetArgs', 'IsClusterNetworkInterfaceTargetArgsDict', 'outputs.IsClusterNetworkInterfaceTarget']]]]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceVpcArgs', 'IsClusterNetworkInterfaceVpcArgsDict', 'outputs.IsClusterNetworkInterfaceVpc']]]]] = None,
+            zones: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceZoneArgs', 'IsClusterNetworkInterfaceZoneArgsDict', 'outputs.IsClusterNetworkInterfaceZone']]]]] = None) -> 'IsClusterNetworkInterface':
         """
         Get an existing IsClusterNetworkInterface resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -499,16 +503,16 @@ class IsClusterNetworkInterface(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_at: The date and time that the cluster network interface was created.
         :param pulumi.Input[_builtins.bool] enable_infrastructure_nat: If `true`:- The VPC infrastructure performs any needed NAT operations.- `floating_ips` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the virtual network interface,  allowing the workload to perform any needed NAT operations.
         :param pulumi.Input[_builtins.str] href: The URL for this cluster network interface.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceLifecycleReasonArgs', 'IsClusterNetworkInterfaceLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceLifecycleReasonArgs', 'IsClusterNetworkInterfaceLifecycleReasonArgsDict', 'outputs.IsClusterNetworkInterfaceLifecycleReason']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the cluster network interface.
         :param pulumi.Input[_builtins.str] mac_address: The MAC address of the cluster network interface. May be absent if`lifecycle_state` is `pending`.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
-        :param pulumi.Input[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict']] primary_ip: The cluster network subnet reserved IP for this cluster network interface.
+        :param pulumi.Input[Union['IsClusterNetworkInterfacePrimaryIpArgs', 'IsClusterNetworkInterfacePrimaryIpArgsDict', 'outputs.IsClusterNetworkInterfacePrimaryIp']] primary_ip: The cluster network subnet reserved IP for this cluster network interface.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
-        :param pulumi.Input[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict']] subnet: The associated cluster network subnet. Required if `primary_ip` does not specify a clusternetwork subnet reserved IP identity.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceTargetArgs', 'IsClusterNetworkInterfaceTargetArgsDict']]]] targets: The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceVpcArgs', 'IsClusterNetworkInterfaceVpcArgsDict']]]] vpcs: The VPC this cluster network interface resides in.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceZoneArgs', 'IsClusterNetworkInterfaceZoneArgsDict']]]] zones: The zone this cluster network interface resides in.
+        :param pulumi.Input[Union['IsClusterNetworkInterfaceSubnetArgs', 'IsClusterNetworkInterfaceSubnetArgsDict', 'outputs.IsClusterNetworkInterfaceSubnet']] subnet: The associated cluster network subnet. Required if `primary_ip` does not specify a clusternetwork subnet reserved IP identity.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceTargetArgs', 'IsClusterNetworkInterfaceTargetArgsDict', 'outputs.IsClusterNetworkInterfaceTarget']]]] targets: The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceVpcArgs', 'IsClusterNetworkInterfaceVpcArgsDict', 'outputs.IsClusterNetworkInterfaceVpc']]]] vpcs: The VPC this cluster network interface resides in.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkInterfaceZoneArgs', 'IsClusterNetworkInterfaceZoneArgsDict', 'outputs.IsClusterNetworkInterfaceZone']]]] zones: The zone this cluster network interface resides in.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -655,7 +659,7 @@ class IsClusterNetworkInterface(pulumi.CustomResource):
     @pulumi.getter
     def targets(self) -> pulumi.Output[Sequence['outputs.IsClusterNetworkInterfaceTarget']]:
         """
-        The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "targets")
 

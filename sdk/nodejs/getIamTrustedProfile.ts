@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
 export function getIamTrustedProfile(args: GetIamTrustedProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetIamTrustedProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getIamTrustedProfile:getIamTrustedProfile", {
+        "includeActivity": args.includeActivity,
         "profileId": args.profileId,
     }, opts);
 }
@@ -17,6 +18,7 @@ export function getIamTrustedProfile(args: GetIamTrustedProfileArgs, opts?: pulu
  * A collection of arguments for invoking getIamTrustedProfile.
  */
 export interface GetIamTrustedProfileArgs {
+    includeActivity?: boolean;
     profileId: string;
 }
 
@@ -25,10 +27,12 @@ export interface GetIamTrustedProfileArgs {
  */
 export interface GetIamTrustedProfileResult {
     readonly accountId: string;
+    readonly activities: outputs.GetIamTrustedProfileActivity[];
     readonly assignmentId: string;
     readonly createdAt: string;
     readonly crn: string;
     readonly description: string;
+    readonly email: string;
     readonly entityTag: string;
     readonly histories: outputs.GetIamTrustedProfileHistory[];
     readonly iamId: string;
@@ -38,6 +42,7 @@ export interface GetIamTrustedProfileResult {
     readonly id: string;
     readonly imsAccountId: number;
     readonly imsUserId: number;
+    readonly includeActivity?: boolean;
     readonly modifiedAt: string;
     readonly name: string;
     readonly profileId: string;
@@ -46,6 +51,7 @@ export interface GetIamTrustedProfileResult {
 export function getIamTrustedProfileOutput(args: GetIamTrustedProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamTrustedProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getIamTrustedProfile:getIamTrustedProfile", {
+        "includeActivity": args.includeActivity,
         "profileId": args.profileId,
     }, opts);
 }
@@ -54,5 +60,6 @@ export function getIamTrustedProfileOutput(args: GetIamTrustedProfileOutputArgs,
  * A collection of arguments for invoking getIamTrustedProfile.
  */
 export interface GetIamTrustedProfileOutputArgs {
+    includeActivity?: pulumi.Input<boolean | undefined>;
     profileId: pulumi.Input<string>;
 }

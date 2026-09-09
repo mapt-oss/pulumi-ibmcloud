@@ -190,11 +190,11 @@ def get_iam_access_group_template_assignment(status: Optional[_builtins.str] = N
         template_version=pulumi.get(__ret__, 'template_version'),
         total_count=pulumi.get(__ret__, 'total_count'),
         transaction_id=pulumi.get(__ret__, 'transaction_id'))
-def get_iam_access_group_template_assignment_output(status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    target: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    template_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    template_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    transaction_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_access_group_template_assignment_output(status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    target: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    template_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    template_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    transaction_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccessGroupTemplateAssignmentResult]:
     """
     Use this data source to access information about an existing resource.

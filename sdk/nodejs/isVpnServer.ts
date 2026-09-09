@@ -240,112 +240,112 @@ export interface IsVpnServerState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The crn of certificate instance for this VPN server.
      */
-    certificateCrn?: pulumi.Input<string>;
+    certificateCrn?: pulumi.Input<string | undefined>;
     /**
      * The methods used to authenticate VPN clients to this VPN server. VPN clients must authenticate against all provided methods.
      */
-    clientAuthentications?: pulumi.Input<pulumi.Input<inputs.IsVpnServerClientAuthentication>[]>;
+    clientAuthentications?: pulumi.Input<pulumi.Input<inputs.IsVpnServerClientAuthentication>[] | undefined>;
     /**
      * If set to `true`, disconnected VPN clients will be automatically deleted after the `clientAutoDeleteTimeout` time has passed.
      */
-    clientAutoDelete?: pulumi.Input<boolean>;
+    clientAutoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * Hours after which disconnected VPN clients will be automatically deleted. If `0`, disconnected VPN clients will be deleted immediately.
      */
-    clientAutoDeleteTimeout?: pulumi.Input<number>;
+    clientAutoDeleteTimeout?: pulumi.Input<number | undefined>;
     /**
      * The DNS server addresses that will be provided to VPN clients connected to this VPN server. The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    clientDnsServerIps?: pulumi.Input<pulumi.Input<string>[]>;
+    clientDnsServerIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The seconds a VPN client can be idle before this VPN server will disconnect it.   Specify `0` to prevent the server from disconnecting idle clients.
      */
-    clientIdleTimeout?: pulumi.Input<number>;
+    clientIdleTimeout?: pulumi.Input<number | undefined>;
     /**
      * The VPN client IPv4 address pool, expressed in CIDR format. The request must not overlap with any existing address prefixes in the VPC or any of the following reserved address ranges:  - `127.0.0.0/8` (IPv4 loopback addresses)  - `161.26.0.0/16` (IBM services)  - `166.8.0.0/14` (Cloud Service Endpoints)  - `169.254.0.0/16` (IPv4 link-local addresses)  - `224.0.0.0/4` (IPv4 multicast addresses)The prefix length of the client IP address pool's CIDR must be between`/9` (8,388,608 addresses) and `/22` (1024 addresses). A CIDR block that contains twice the number of IP addresses that are required to enable the maximum number of concurrent connections is recommended.
      */
-    clientIpPool?: pulumi.Input<string>;
+    clientIpPool?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the VPN server was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this VPN server.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the split tunneling is enabled on this VPN server.
      */
-    enableSplitTunneling?: pulumi.Input<boolean>;
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerHealthReason>[]>;
+    enableSplitTunneling?: pulumi.Input<boolean | undefined>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerHealthReason>[] | undefined>;
     /**
      * The health of this resource.- `ok`: Healthy- `degraded`: Suffering from compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * Fully qualified domain name assigned to this VPN server.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * The URL for this VPN server.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current lifecycleState (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the VPN server.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this VPN server. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the VPC this VPN server is serving.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The port number to use for this VPN server.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The reserved IPs bound to this VPN server.
      */
-    privateIps?: pulumi.Input<pulumi.Input<inputs.IsVpnServerPrivateIp>[]>;
+    privateIps?: pulumi.Input<pulumi.Input<inputs.IsVpnServerPrivateIp>[] | undefined>;
     /**
      * The transport protocol to use for this VPN server.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group. The resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this security group. The security groups to use for this VPN server. If unspecified, the VPC's default security group is used.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier for this subnet. The subnets to provision this VPN server in.  Use subnets in different zones for high availability.
      */
-    subnets?: pulumi.Input<pulumi.Input<string>[]>;
+    subnets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * VPN server user tags list
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The VPC this VPN server resides in.
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.IsVpnServerVpc>[]>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.IsVpnServerVpc>[] | undefined>;
     /**
      * The unique identifier for this VPN server.
      */
-    vpnServer?: pulumi.Input<string>;
+    vpnServer?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -355,7 +355,7 @@ export interface IsVpnServerArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The crn of certificate instance for this VPN server.
      */
@@ -367,11 +367,11 @@ export interface IsVpnServerArgs {
     /**
      * The DNS server addresses that will be provided to VPN clients connected to this VPN server. The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    clientDnsServerIps?: pulumi.Input<pulumi.Input<string>[]>;
+    clientDnsServerIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The seconds a VPN client can be idle before this VPN server will disconnect it.   Specify `0` to prevent the server from disconnecting idle clients.
      */
-    clientIdleTimeout?: pulumi.Input<number>;
+    clientIdleTimeout?: pulumi.Input<number | undefined>;
     /**
      * The VPN client IPv4 address pool, expressed in CIDR format. The request must not overlap with any existing address prefixes in the VPC or any of the following reserved address ranges:  - `127.0.0.0/8` (IPv4 loopback addresses)  - `161.26.0.0/16` (IBM services)  - `166.8.0.0/14` (Cloud Service Endpoints)  - `169.254.0.0/16` (IPv4 link-local addresses)  - `224.0.0.0/4` (IPv4 multicast addresses)The prefix length of the client IP address pool's CIDR must be between`/9` (8,388,608 addresses) and `/22` (1024 addresses). A CIDR block that contains twice the number of IP addresses that are required to enable the maximum number of concurrent connections is recommended.
      */
@@ -379,31 +379,31 @@ export interface IsVpnServerArgs {
     /**
      * Indicates whether the split tunneling is enabled on this VPN server.
      */
-    enableSplitTunneling?: pulumi.Input<boolean>;
+    enableSplitTunneling?: pulumi.Input<boolean | undefined>;
     /**
      * The user-defined name for this VPN server. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the VPC this VPN server is serving.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The port number to use for this VPN server.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The transport protocol to use for this VPN server.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group. The resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this security group. The security groups to use for this VPN server. If unspecified, the VPC's default security group is used.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier for this subnet. The subnets to provision this VPN server in.  Use subnets in different zones for high availability.
      */
@@ -411,5 +411,5 @@ export interface IsVpnServerArgs {
     /**
      * VPN server user tags list
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

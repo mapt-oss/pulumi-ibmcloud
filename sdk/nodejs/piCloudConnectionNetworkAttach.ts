@@ -88,15 +88,15 @@ export interface PiCloudConnectionNetworkAttachState {
     /**
      * Cloud Connection ID
      */
-    piCloudConnectionId?: pulumi.Input<string>;
+    piCloudConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Network ID to attach to this cloud connection
      */
-    piNetworkId?: pulumi.Input<string>;
+    piNetworkId?: pulumi.Input<string | undefined>;
 }
 
 /**

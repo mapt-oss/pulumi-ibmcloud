@@ -124,39 +124,39 @@ export interface IamCustomRoleState {
     /**
      * The actions of the role
      */
-    actions?: pulumi.Input<pulumi.Input<string>[]>;
+    actions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * crn of the Custom Role
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The description of the role
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Display Name of the Custom Role
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The name of the custom Role
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about the resource
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The Service Name
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -170,7 +170,7 @@ export interface IamCustomRoleArgs {
     /**
      * The description of the role
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Display Name of the Custom Role
      */
@@ -178,7 +178,7 @@ export interface IamCustomRoleArgs {
     /**
      * The name of the custom Role
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Service Name
      */

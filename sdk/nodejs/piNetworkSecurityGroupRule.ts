@@ -175,75 +175,75 @@ export interface PiNetworkSecurityGroupRuleState {
     /**
      * The network security group's crn.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the network security group is the default network security group in the workspace.
      */
-    default?: pulumi.Input<boolean>;
+    default?: pulumi.Input<boolean | undefined>;
     /**
      * The list of IPv4 addresses and, or network interfaces in the network security group.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleMember>[] | undefined>;
     /**
      * The name of the network security group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the network security group.
      */
-    networkSecurityGroupId?: pulumi.Input<string>;
+    networkSecurityGroupId?: pulumi.Input<string | undefined>;
     /**
      * The action to take if the rule matches network traffic.
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Destination port ranges.
      */
-    piDestinationPort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPort>;
+    piDestinationPort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPort | undefined>;
     /**
      * Destination port ranges.
      *
      * @deprecated This field is deprecated. Please use 'pi_destination_port' instead.
      */
-    piDestinationPorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPorts>;
+    piDestinationPorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPorts | undefined>;
     /**
      * The unique identifier of the network security group.
      */
-    piNetworkSecurityGroupId?: pulumi.Input<string>;
+    piNetworkSecurityGroupId?: pulumi.Input<string | undefined>;
     /**
      * The network security group rule id to remove.
      */
-    piNetworkSecurityGroupRuleId?: pulumi.Input<string>;
+    piNetworkSecurityGroupRuleId?: pulumi.Input<string | undefined>;
     /**
      * The protocol of the network traffic.
      */
-    piProtocol?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiProtocol>;
+    piProtocol?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiProtocol | undefined>;
     /**
      * The protocol of the network traffic.
      */
-    piRemote?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiRemote>;
+    piRemote?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiRemote | undefined>;
     /**
      * Source port ranges.
      */
-    piSourcePort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePort>;
+    piSourcePort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePort | undefined>;
     /**
      * Source port ranges.
      *
      * @deprecated This field is deprecated. 'Please use pi_source_port' instead.
      */
-    piSourcePorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePorts>;
+    piSourcePorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePorts | undefined>;
     /**
      * The list of rules in the network security group.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRule>[] | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -253,7 +253,7 @@ export interface PiNetworkSecurityGroupRuleArgs {
     /**
      * The action to take if the rule matches network traffic.
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -261,13 +261,13 @@ export interface PiNetworkSecurityGroupRuleArgs {
     /**
      * Destination port ranges.
      */
-    piDestinationPort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPort>;
+    piDestinationPort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPort | undefined>;
     /**
      * Destination port ranges.
      *
      * @deprecated This field is deprecated. Please use 'pi_destination_port' instead.
      */
-    piDestinationPorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPorts>;
+    piDestinationPorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiDestinationPorts | undefined>;
     /**
      * The unique identifier of the network security group.
      */
@@ -275,23 +275,23 @@ export interface PiNetworkSecurityGroupRuleArgs {
     /**
      * The network security group rule id to remove.
      */
-    piNetworkSecurityGroupRuleId?: pulumi.Input<string>;
+    piNetworkSecurityGroupRuleId?: pulumi.Input<string | undefined>;
     /**
      * The protocol of the network traffic.
      */
-    piProtocol?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiProtocol>;
+    piProtocol?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiProtocol | undefined>;
     /**
      * The protocol of the network traffic.
      */
-    piRemote?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiRemote>;
+    piRemote?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiRemote | undefined>;
     /**
      * Source port ranges.
      */
-    piSourcePort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePort>;
+    piSourcePort?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePort | undefined>;
     /**
      * Source port ranges.
      *
      * @deprecated This field is deprecated. 'Please use pi_source_port' instead.
      */
-    piSourcePorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePorts>;
+    piSourcePorts?: pulumi.Input<inputs.PiNetworkSecurityGroupRulePiSourcePorts | undefined>;
 }

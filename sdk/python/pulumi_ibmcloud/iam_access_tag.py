@@ -19,9 +19,10 @@ __all__ = ['IamAccessTagArgs', 'IamAccessTag']
 @pulumi.input_type
 class IamAccessTagArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamAccessTag resource.
+
         :param pulumi.Input[_builtins.str] name: Name of the access tag
         """
         if name is not None:
@@ -29,24 +30,25 @@ class IamAccessTagArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the access tag
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IamAccessTagState:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamAccessTag resources.
+
         :param pulumi.Input[_builtins.str] name: Name of the access tag
         :param pulumi.Input[_builtins.str] tag_type: Type of the tag(access)
         """
@@ -57,26 +59,26 @@ class _IamAccessTagState:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the access tag
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="tagType")
-    def tag_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tag_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the tag(access)
         """
         return pulumi.get(self, "tag_type")
 
     @tag_type.setter
-    def tag_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tag_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tag_type", value)
 
 
@@ -86,10 +88,11 @@ class IamAccessTag(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamAccessTag resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: Name of the access tag
@@ -102,6 +105,7 @@ class IamAccessTag(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccessTag resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccessTagArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -117,7 +121,7 @@ class IamAccessTag(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -139,8 +143,8 @@ class IamAccessTag(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            tag_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamAccessTag':
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamAccessTag':
         """
         Get an existing IamAccessTag resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

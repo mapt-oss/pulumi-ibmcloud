@@ -213,103 +213,103 @@ export interface IsSnapshotState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
      */
-    allowedUse?: pulumi.Input<inputs.IsSnapshotAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsSnapshotAllowedUse | undefined>;
     /**
      * If present, the backup policy plan which created this snapshot.
      */
-    backupPolicyPlans?: pulumi.Input<pulumi.Input<inputs.IsSnapshotBackupPolicyPlan>[]>;
+    backupPolicyPlans?: pulumi.Input<pulumi.Input<inputs.IsSnapshotBackupPolicyPlan>[] | undefined>;
     /**
      * Indicates if a boot volume attachment can be created with a volume created from this snapshot
      */
-    bootable?: pulumi.Input<boolean>;
+    bootable?: pulumi.Input<boolean | undefined>;
     /**
      * The catalog offering inherited from the snapshot's source. If a virtual server instance is provisioned with a sourceSnapshot specifying this snapshot, the virtual server instance will use this snapshot's catalog offering, including its pricing plan.
      */
-    catalogOfferings?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCatalogOffering>[]>;
+    catalogOfferings?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCatalogOffering>[] | undefined>;
     /**
      * Zones for creating the snapshot clone
      */
-    clones?: pulumi.Input<pulumi.Input<string>[]>;
+    clones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The copies of this snapshot in other regions.
      */
-    copies?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCopy>[]>;
+    copies?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCopy>[] | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Encryption type of the snapshot
      */
-    encryption?: pulumi.Input<string>;
+    encryption?: pulumi.Input<string | undefined>;
     /**
      * A reference to the root key used to wrap the data encryption key for the source volume.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * URL for the snapshot
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Snapshot lifecycle state
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * Minimum capacity of the snapshot
      */
-    minimumCapacity?: pulumi.Input<number>;
+    minimumCapacity?: pulumi.Input<number | undefined>;
     /**
      * Snapshot name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for the operating system included in this image
      */
-    operatingSystem?: pulumi.Input<string>;
+    operatingSystem?: pulumi.Input<string | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type of the snapshot
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The [service tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) prefixed with `is.snapshot:` associated with this snapshot.
      */
-    serviceTags?: pulumi.Input<pulumi.Input<string>[]>;
+    serviceTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The size of the snapshot
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * The snapshot consistency group which created this snapshot.
      */
-    snapshotConsistencyGroups?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSnapshotConsistencyGroup>[]>;
+    snapshotConsistencyGroups?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSnapshotConsistencyGroup>[] | undefined>;
     /**
      * If present, the image id from which the data on this volume was most directly provisioned.
      */
-    sourceImage?: pulumi.Input<string>;
+    sourceImage?: pulumi.Input<string | undefined>;
     /**
      * Source Snapshot CRN
      */
-    sourceSnapshotCrn?: pulumi.Input<string>;
+    sourceSnapshotCrn?: pulumi.Input<string | undefined>;
     /**
      * If present, the source snapshot this snapshot was created from.
      */
-    sourceSnapshots?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSourceSnapshot>[]>;
+    sourceSnapshots?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSourceSnapshot>[] | undefined>;
     /**
      * Snapshot source volume
      */
-    sourceVolume?: pulumi.Input<string>;
+    sourceVolume?: pulumi.Input<string | undefined>;
     /**
      * User Tags for the snapshot
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -319,37 +319,37 @@ export interface IsSnapshotArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
      */
-    allowedUse?: pulumi.Input<inputs.IsSnapshotAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsSnapshotAllowedUse | undefined>;
     /**
      * Zones for creating the snapshot clone
      */
-    clones?: pulumi.Input<pulumi.Input<string>[]>;
+    clones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A reference to the root key used to wrap the data encryption key for the source volume.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * Snapshot name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Source Snapshot CRN
      */
-    sourceSnapshotCrn?: pulumi.Input<string>;
+    sourceSnapshotCrn?: pulumi.Input<string | undefined>;
     /**
      * Snapshot source volume
      */
-    sourceVolume?: pulumi.Input<string>;
+    sourceVolume?: pulumi.Input<string | undefined>;
     /**
      * User Tags for the snapshot
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

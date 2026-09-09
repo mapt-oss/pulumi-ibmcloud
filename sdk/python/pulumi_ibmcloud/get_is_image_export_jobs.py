@@ -82,7 +82,7 @@ def get_is_image_export_jobs(image: Optional[_builtins.str] = None,
         export_jobs=pulumi.get(__ret__, 'export_jobs'),
         id=pulumi.get(__ret__, 'id'),
         image=pulumi.get(__ret__, 'image'))
-def get_is_image_export_jobs_output(image: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_image_export_jobs_output(image: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsImageExportJobsResult]:
     """
     Use this data source to access information about an existing resource.

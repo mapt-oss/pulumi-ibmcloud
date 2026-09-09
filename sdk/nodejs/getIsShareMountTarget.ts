@@ -68,8 +68,8 @@ export function getIsShareMountTargetOutput(args?: GetIsShareMountTargetOutputAr
  * A collection of arguments for invoking getIsShareMountTarget.
  */
 export interface GetIsShareMountTargetOutputArgs {
-    mountTarget?: pulumi.Input<string>;
-    mountTargetName?: pulumi.Input<string>;
-    share?: pulumi.Input<string>;
-    shareName?: pulumi.Input<string>;
+    mountTarget?: pulumi.Input<string | undefined>;
+    mountTargetName?: pulumi.Input<string | undefined>;
+    share?: pulumi.Input<string | undefined>;
+    shareName?: pulumi.Input<string | undefined>;
 }

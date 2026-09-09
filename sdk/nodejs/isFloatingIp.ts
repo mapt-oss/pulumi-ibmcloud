@@ -153,63 +153,63 @@ export interface IsFloatingIpState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Floating IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Name of the floating IP
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * Floating IP status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Floating IP tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Target info
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The target of this floating IP.
      */
-    targetLists?: pulumi.Input<pulumi.Input<inputs.IsFloatingIpTargetList>[]>;
+    targetLists?: pulumi.Input<pulumi.Input<inputs.IsFloatingIpTargetList>[] | undefined>;
     /**
      * Zone name
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -219,25 +219,25 @@ export interface IsFloatingIpArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name of the floating IP
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Floating IP tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Target info
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * Zone name
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }

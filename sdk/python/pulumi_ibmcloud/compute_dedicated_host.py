@@ -23,12 +23,13 @@ class ComputeDedicatedHostArgs:
                  domain: pulumi.Input[_builtins.str],
                  hostname: pulumi.Input[_builtins.str],
                  router_hostname: pulumi.Input[_builtins.str],
-                 flavor: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 flavor: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ComputeDedicatedHost resource.
+
         :param pulumi.Input[_builtins.str] datacenter: The data center in which the dedicatated host is to be provisioned.
         :param pulumi.Input[_builtins.str] domain: The domain of dedicatated host.
         :param pulumi.Input[_builtins.str] hostname: The host name of dedicatated host.
@@ -99,63 +100,64 @@ class ComputeDedicatedHostArgs:
 
     @_builtins.property
     @pulumi.getter
-    def flavor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def flavor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The flavor of the dedicatated host.
         """
         return pulumi.get(self, "flavor")
 
     @flavor.setter
-    def flavor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def flavor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "flavor", value)
 
     @_builtins.property
     @pulumi.getter(name="hourlyBilling")
-    def hourly_billing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hourly_billing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The billing type for the dedicatated host.
         """
         return pulumi.get(self, "hourly_billing")
 
     @hourly_billing.setter
-    def hourly_billing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hourly_billing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hourly_billing", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="waitTimeMinutes")
-    def wait_time_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_time_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "wait_time_minutes")
 
     @wait_time_minutes.setter
-    def wait_time_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_time_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_time_minutes", value)
 
 
 @pulumi.input_type
 class _ComputeDedicatedHostState:
     def __init__(__self__, *,
-                 cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 flavor: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 memory_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 router_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavor: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 memory_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 router_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ComputeDedicatedHost resources.
+
         :param pulumi.Input[_builtins.int] cpu_count: The capacity that the dedicated host's CPU allocation is restricted to.
         :param pulumi.Input[_builtins.str] datacenter: The data center in which the dedicatated host is to be provisioned.
         :param pulumi.Input[_builtins.int] disk_capacity: The capacity that the dedicated host's disk allocation is restricted to.
@@ -191,128 +193,128 @@ class _ComputeDedicatedHostState:
 
     @_builtins.property
     @pulumi.getter(name="cpuCount")
-    def cpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The capacity that the dedicated host's CPU allocation is restricted to.
         """
         return pulumi.get(self, "cpu_count")
 
     @cpu_count.setter
-    def cpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def datacenter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datacenter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data center in which the dedicatated host is to be provisioned.
         """
         return pulumi.get(self, "datacenter")
 
     @datacenter.setter
-    def datacenter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datacenter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datacenter", value)
 
     @_builtins.property
     @pulumi.getter(name="diskCapacity")
-    def disk_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def disk_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The capacity that the dedicated host's disk allocation is restricted to.
         """
         return pulumi.get(self, "disk_capacity")
 
     @disk_capacity.setter
-    def disk_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def disk_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "disk_capacity", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The domain of dedicatated host.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def flavor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def flavor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The flavor of the dedicatated host.
         """
         return pulumi.get(self, "flavor")
 
     @flavor.setter
-    def flavor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def flavor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "flavor", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of dedicatated host.
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="hourlyBilling")
-    def hourly_billing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hourly_billing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The billing type for the dedicatated host.
         """
         return pulumi.get(self, "hourly_billing")
 
     @hourly_billing.setter
-    def hourly_billing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hourly_billing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hourly_billing", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryCapacity")
-    def memory_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The capacity that the dedicated host's memory allocation is restricted to.
         """
         return pulumi.get(self, "memory_capacity")
 
     @memory_capacity.setter
-    def memory_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="routerHostname")
-    def router_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def router_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname of the primary router that the dedicated host is associated with.
         """
         return pulumi.get(self, "router_hostname")
 
     @router_hostname.setter
-    def router_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def router_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "router_hostname", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="waitTimeMinutes")
-    def wait_time_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_time_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "wait_time_minutes")
 
     @wait_time_minutes.setter
-    def wait_time_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_time_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_time_minutes", value)
 
 
@@ -322,17 +324,18 @@ class ComputeDedicatedHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 flavor: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 router_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavor: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 router_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a ComputeDedicatedHost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] datacenter: The data center in which the dedicatated host is to be provisioned.
@@ -350,6 +353,7 @@ class ComputeDedicatedHost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ComputeDedicatedHost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ComputeDedicatedHostArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -365,14 +369,14 @@ class ComputeDedicatedHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 flavor: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 router_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavor: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 router_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -411,17 +415,17 @@ class ComputeDedicatedHost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-            datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-            disk_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            flavor: Optional[pulumi.Input[_builtins.str]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-            memory_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-            router_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None) -> 'ComputeDedicatedHost':
+            cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            flavor: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+            memory_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+            router_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None) -> 'ComputeDedicatedHost':
         """
         Get an existing ComputeDedicatedHost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

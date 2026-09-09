@@ -27,10 +27,16 @@ class GetIsInstanceResult:
     """
     A collection of values returned by getIsInstance.
     """
-    def __init__(__self__, access_tags=None, availability_policy_host_failure=None, bandwidth=None, boot_volumes=None, catalog_offerings=None, cluster_network_attachments=None, cluster_networks=None, confidential_compute_mode=None, crn=None, disks=None, enable_secure_boot=None, gpus=None, health_reasons=None, health_state=None, id=None, image=None, keys=None, lifecycle_reasons=None, lifecycle_state=None, memory=None, metadata_service_enabled=None, metadata_services=None, name=None, network_attachments=None, network_interfaces=None, numa_count=None, passphrase=None, password=None, placement_targets=None, primary_network_attachments=None, primary_network_interfaces=None, private_key=None, profile=None, reservation_affinities=None, reservations=None, resource_controller_url=None, resource_crn=None, resource_group=None, resource_group_name=None, resource_name=None, resource_status=None, status=None, status_reasons=None, tags=None, total_network_bandwidth=None, total_volume_bandwidth=None, vcpus=None, volume_attachments=None, volume_bandwidth_qos_mode=None, volumes=None, vpc=None, zone=None):
+    def __init__(__self__, access_tags=None, availabilities=None, availability_policies=None, availability_policy_host_failure=None, bandwidth=None, boot_volumes=None, catalog_offerings=None, cluster_network_attachments=None, cluster_networks=None, confidential_compute_mode=None, crn=None, disks=None, enable_secure_boot=None, gpus=None, health_reasons=None, health_state=None, id=None, image=None, keys=None, lifecycle_reasons=None, lifecycle_state=None, memory=None, metadata_service_enabled=None, metadata_services=None, name=None, network_attachments=None, network_interfaces=None, numa_count=None, passphrase=None, password=None, placement_targets=None, primary_network_attachments=None, primary_network_interfaces=None, private_key=None, profile=None, reservation_affinities=None, reservations=None, resource_controller_url=None, resource_crn=None, resource_group=None, resource_group_name=None, resource_name=None, resource_status=None, software_attachments=None, status=None, status_reasons=None, tags=None, threads_per_core=None, total_network_bandwidth=None, total_volume_bandwidth=None, vcpus=None, volume_attachments=None, volume_bandwidth_qos_mode=None, volumes=None, vpc=None, zone=None):
         if access_tags and not isinstance(access_tags, list):
             raise TypeError("Expected argument 'access_tags' to be a list")
         pulumi.set(__self__, "access_tags", access_tags)
+        if availabilities and not isinstance(availabilities, list):
+            raise TypeError("Expected argument 'availabilities' to be a list")
+        pulumi.set(__self__, "availabilities", availabilities)
+        if availability_policies and not isinstance(availability_policies, list):
+            raise TypeError("Expected argument 'availability_policies' to be a list")
+        pulumi.set(__self__, "availability_policies", availability_policies)
         if availability_policy_host_failure and not isinstance(availability_policy_host_failure, str):
             raise TypeError("Expected argument 'availability_policy_host_failure' to be a str")
         pulumi.set(__self__, "availability_policy_host_failure", availability_policy_host_failure)
@@ -151,6 +157,9 @@ class GetIsInstanceResult:
         if resource_status and not isinstance(resource_status, str):
             raise TypeError("Expected argument 'resource_status' to be a str")
         pulumi.set(__self__, "resource_status", resource_status)
+        if software_attachments and not isinstance(software_attachments, list):
+            raise TypeError("Expected argument 'software_attachments' to be a list")
+        pulumi.set(__self__, "software_attachments", software_attachments)
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
@@ -160,6 +169,9 @@ class GetIsInstanceResult:
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
+        if threads_per_core and not isinstance(threads_per_core, int):
+            raise TypeError("Expected argument 'threads_per_core' to be a int")
+        pulumi.set(__self__, "threads_per_core", threads_per_core)
         if total_network_bandwidth and not isinstance(total_network_bandwidth, int):
             raise TypeError("Expected argument 'total_network_bandwidth' to be a int")
         pulumi.set(__self__, "total_network_bandwidth", total_network_bandwidth)
@@ -189,6 +201,16 @@ class GetIsInstanceResult:
     @pulumi.getter(name="accessTags")
     def access_tags(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "access_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def availabilities(self) -> Sequence['outputs.GetIsInstanceAvailabilityResult']:
+        return pulumi.get(self, "availabilities")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityPolicies")
+    def availability_policies(self) -> Sequence['outputs.GetIsInstanceAvailabilityPolicyResult']:
+        return pulumi.get(self, "availability_policies")
 
     @_builtins.property
     @pulumi.getter(name="availabilityPolicyHostFailure")
@@ -394,6 +416,11 @@ class GetIsInstanceResult:
         return pulumi.get(self, "resource_status")
 
     @_builtins.property
+    @pulumi.getter(name="softwareAttachments")
+    def software_attachments(self) -> Sequence['outputs.GetIsInstanceSoftwareAttachmentResult']:
+        return pulumi.get(self, "software_attachments")
+
+    @_builtins.property
     @pulumi.getter
     def status(self) -> _builtins.str:
         return pulumi.get(self, "status")
@@ -407,6 +434,11 @@ class GetIsInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="threadsPerCore")
+    def threads_per_core(self) -> _builtins.int:
+        return pulumi.get(self, "threads_per_core")
 
     @_builtins.property
     @pulumi.getter(name="totalNetworkBandwidth")
@@ -456,6 +488,8 @@ class AwaitableGetIsInstanceResult(GetIsInstanceResult):
             yield self
         return GetIsInstanceResult(
             access_tags=self.access_tags,
+            availabilities=self.availabilities,
+            availability_policies=self.availability_policies,
             availability_policy_host_failure=self.availability_policy_host_failure,
             bandwidth=self.bandwidth,
             boot_volumes=self.boot_volumes,
@@ -496,9 +530,11 @@ class AwaitableGetIsInstanceResult(GetIsInstanceResult):
             resource_group_name=self.resource_group_name,
             resource_name=self.resource_name,
             resource_status=self.resource_status,
+            software_attachments=self.software_attachments,
             status=self.status,
             status_reasons=self.status_reasons,
             tags=self.tags,
+            threads_per_core=self.threads_per_core,
             total_network_bandwidth=self.total_network_bandwidth,
             total_volume_bandwidth=self.total_volume_bandwidth,
             vcpus=self.vcpus,
@@ -525,6 +561,8 @@ def get_is_instance(name: Optional[_builtins.str] = None,
 
     return AwaitableGetIsInstanceResult(
         access_tags=pulumi.get(__ret__, 'access_tags'),
+        availabilities=pulumi.get(__ret__, 'availabilities'),
+        availability_policies=pulumi.get(__ret__, 'availability_policies'),
         availability_policy_host_failure=pulumi.get(__ret__, 'availability_policy_host_failure'),
         bandwidth=pulumi.get(__ret__, 'bandwidth'),
         boot_volumes=pulumi.get(__ret__, 'boot_volumes'),
@@ -565,9 +603,11 @@ def get_is_instance(name: Optional[_builtins.str] = None,
         resource_group_name=pulumi.get(__ret__, 'resource_group_name'),
         resource_name=pulumi.get(__ret__, 'resource_name'),
         resource_status=pulumi.get(__ret__, 'resource_status'),
+        software_attachments=pulumi.get(__ret__, 'software_attachments'),
         status=pulumi.get(__ret__, 'status'),
         status_reasons=pulumi.get(__ret__, 'status_reasons'),
         tags=pulumi.get(__ret__, 'tags'),
+        threads_per_core=pulumi.get(__ret__, 'threads_per_core'),
         total_network_bandwidth=pulumi.get(__ret__, 'total_network_bandwidth'),
         total_volume_bandwidth=pulumi.get(__ret__, 'total_volume_bandwidth'),
         vcpus=pulumi.get(__ret__, 'vcpus'),
@@ -576,9 +616,9 @@ def get_is_instance(name: Optional[_builtins.str] = None,
         volumes=pulumi.get(__ret__, 'volumes'),
         vpc=pulumi.get(__ret__, 'vpc'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_instance_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                           passphrase: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           private_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_instance_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                           passphrase: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           private_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceResult]:
     """
     Use this data source to access information about an existing resource.
@@ -591,6 +631,8 @@ def get_is_instance_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsInstance:getIsInstance', __args__, opts=opts, typ=GetIsInstanceResult)
     return __ret__.apply(lambda __response__: GetIsInstanceResult(
         access_tags=pulumi.get(__response__, 'access_tags'),
+        availabilities=pulumi.get(__response__, 'availabilities'),
+        availability_policies=pulumi.get(__response__, 'availability_policies'),
         availability_policy_host_failure=pulumi.get(__response__, 'availability_policy_host_failure'),
         bandwidth=pulumi.get(__response__, 'bandwidth'),
         boot_volumes=pulumi.get(__response__, 'boot_volumes'),
@@ -631,9 +673,11 @@ def get_is_instance_output(name: Optional[pulumi.Input[_builtins.str]] = None,
         resource_group_name=pulumi.get(__response__, 'resource_group_name'),
         resource_name=pulumi.get(__response__, 'resource_name'),
         resource_status=pulumi.get(__response__, 'resource_status'),
+        software_attachments=pulumi.get(__response__, 'software_attachments'),
         status=pulumi.get(__response__, 'status'),
         status_reasons=pulumi.get(__response__, 'status_reasons'),
         tags=pulumi.get(__response__, 'tags'),
+        threads_per_core=pulumi.get(__response__, 'threads_per_core'),
         total_network_bandwidth=pulumi.get(__response__, 'total_network_bandwidth'),
         total_volume_bandwidth=pulumi.get(__response__, 'total_volume_bandwidth'),
         vcpus=pulumi.get(__response__, 'vcpus'),

@@ -44,5 +44,5 @@ export function getIsPublicGatewaysOutput(args?: GetIsPublicGatewaysOutputArgs, 
  * A collection of arguments for invoking getIsPublicGateways.
  */
 export interface GetIsPublicGatewaysOutputArgs {
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

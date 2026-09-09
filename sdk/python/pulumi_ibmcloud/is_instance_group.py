@@ -21,16 +21,17 @@ class IsInstanceGroupArgs:
     def __init__(__self__, *,
                  instance_template: pulumi.Input[_builtins.str],
                  subnets: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 application_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsInstanceGroup resource.
+
         :param pulumi.Input[_builtins.str] instance_template: instance template ID
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnets: list of subnet IDs
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -87,121 +88,122 @@ class IsInstanceGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationPort")
-    def application_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def application_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Used by the instance group when scaling up instances to supply the port for the load balancer pool member.
         """
         return pulumi.get(self, "application_port")
 
     @application_port.setter
-    def application_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def application_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "application_port", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceCount")
-    def instance_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of instances in the instance group
         """
         return pulumi.get(self, "instance_count")
 
     @instance_count.setter
-    def instance_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_count", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancer")
-    def load_balancer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         load balancer ID
         """
         return pulumi.get(self, "load_balancer")
 
     @load_balancer.setter
-    def load_balancer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerPool")
-    def load_balancer_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         load balancer pool ID
         """
         return pulumi.get(self, "load_balancer_pool")
 
     @load_balancer_pool.setter
-    def load_balancer_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_pool", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this instance group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group ID
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags for instance group
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsInstanceGroupState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 application_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-                 instances: Optional[pulumi.Input[_builtins.int]] = None,
-                 load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 managers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 instances: pulumi.Input[Optional[_builtins.int]] = None,
+                 load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceGroup resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.int] application_port: Used by the instance group when scaling up instances to supply the port for the load balancer pool member.
         :param pulumi.Input[_builtins.str] crn: The CRN of this instance group
@@ -251,182 +253,182 @@ class _IsInstanceGroupState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationPort")
-    def application_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def application_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Used by the instance group when scaling up instances to supply the port for the load balancer pool member.
         """
         return pulumi.get(self, "application_port")
 
     @application_port.setter
-    def application_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def application_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "application_port", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this instance group
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceCount")
-    def instance_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of instances in the instance group
         """
         return pulumi.get(self, "instance_count")
 
     @instance_count.setter
-    def instance_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_count", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceTemplate")
-    def instance_template(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_template(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance template ID
         """
         return pulumi.get(self, "instance_template")
 
     @instance_template.setter
-    def instance_template(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_template(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_template", value)
 
     @_builtins.property
     @pulumi.getter
-    def instances(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instances(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         number of instances in the intances group
         """
         return pulumi.get(self, "instances")
 
     @instances.setter
-    def instances(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instances(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instances", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancer")
-    def load_balancer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         load balancer ID
         """
         return pulumi.get(self, "load_balancer")
 
     @load_balancer.setter
-    def load_balancer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerPool")
-    def load_balancer_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         load balancer pool ID
         """
         return pulumi.get(self, "load_balancer_pool")
 
     @load_balancer_pool.setter
-    def load_balancer_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_pool", value)
 
     @_builtins.property
     @pulumi.getter
-    def managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of Managers associated with instancegroup
         """
         return pulumi.get(self, "managers")
 
     @managers.setter
-    def managers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managers", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this instance group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group ID
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance group status - deleting, healthy, scaling, unhealthy
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of subnet IDs
         """
         return pulumi.get(self, "subnets")
 
     @subnets.setter
-    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "subnets", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags for instance group
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vpc instance
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
 
@@ -436,19 +438,20 @@ class IsInstanceGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 application_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IsInstanceGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -470,6 +473,7 @@ class IsInstanceGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -485,16 +489,16 @@ class IsInstanceGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 application_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -533,21 +537,21 @@ class IsInstanceGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            application_port: Optional[pulumi.Input[_builtins.int]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-            instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-            instances: Optional[pulumi.Input[_builtins.int]] = None,
-            load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-            load_balancer_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            managers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceGroup':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            application_port: pulumi.Input[Optional[_builtins.int]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+            instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+            instances: pulumi.Input[Optional[_builtins.int]] = None,
+            load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceGroup':
         """
         Get an existing IsInstanceGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -50,6 +50,6 @@ export function getComputeReservedCapacityOutput(args: GetComputeReservedCapacit
  * A collection of arguments for invoking getComputeReservedCapacity.
  */
 export interface GetComputeReservedCapacityOutputArgs {
-    mostRecent?: pulumi.Input<boolean>;
+    mostRecent?: pulumi.Input<boolean | undefined>;
     name: pulumi.Input<string>;
 }

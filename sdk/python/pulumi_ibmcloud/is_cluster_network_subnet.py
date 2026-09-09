@@ -22,14 +22,15 @@ __all__ = ['IsClusterNetworkSubnetArgs', 'IsClusterNetworkSubnet']
 class IsClusterNetworkSubnetArgs:
     def __init__(__self__, *,
                  cluster_network_id: pulumi.Input[_builtins.str],
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4_cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4_cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a IsClusterNetworkSubnet resource.
+
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
-        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] ipv4_cidr_block: The IPv4 range of this cluster network subnet, expressed in CIDR format.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
         :param pulumi.Input[_builtins.int] total_ipv4_address_count: The total number of IPv4 addresses in this cluster network subnet.Note: This is calculated as 2<sup>(32 - prefix length)</sup>. For example, the prefix length `/24` gives:<br> 2<sup>(32 - 24)</sup> = 2<sup>8</sup> = 256 addresses.
@@ -58,77 +59,78 @@ class IsClusterNetworkSubnetArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
-    def ip_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_version", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4CidrBlock")
-    def ipv4_cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4_cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv4 range of this cluster network subnet, expressed in CIDR format.
         """
         return pulumi.get(self, "ipv4_cidr_block")
 
     @ipv4_cidr_block.setter
-    def ipv4_cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4_cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4_cidr_block", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="totalIpv4AddressCount")
-    def total_ipv4_address_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_ipv4_address_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of IPv4 addresses in this cluster network subnet.Note: This is calculated as 2<sup>(32 - prefix length)</sup>. For example, the prefix length `/24` gives:<br> 2<sup>(32 - 24)</sup> = 2<sup>8</sup> = 256 addresses.
         """
         return pulumi.get(self, "total_ipv4_address_count")
 
     @total_ipv4_address_count.setter
-    def total_ipv4_address_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_ipv4_address_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_ipv4_address_count", value)
 
 
 @pulumi.input_type
 class _IsClusterNetworkSubnetState:
     def __init__(__self__, *,
-                 available_ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4_cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 available_ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4_cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IsClusterNetworkSubnet resources.
+
         :param pulumi.Input[_builtins.int] available_ipv4_address_count: The number of IPv4 addresses in this cluster network subnet that are not in use, and have not been reserved by the user or the provider.
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
         :param pulumi.Input[_builtins.str] cluster_network_subnet_id: The unique identifier for this cluster network subnet.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the cluster network subnet was created.
         :param pulumi.Input[_builtins.str] href: The URL for this cluster network subnet.
-        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] ipv4_cidr_block: The IPv4 range of this cluster network subnet, expressed in CIDR format.
         :param pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetLifecycleReasonArgs']]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the cluster network subnet.
@@ -165,155 +167,155 @@ class _IsClusterNetworkSubnetState:
 
     @_builtins.property
     @pulumi.getter(name="availableIpv4AddressCount")
-    def available_ipv4_address_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def available_ipv4_address_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of IPv4 addresses in this cluster network subnet that are not in use, and have not been reserved by the user or the provider.
         """
         return pulumi.get(self, "available_ipv4_address_count")
 
     @available_ipv4_address_count.setter
-    def available_ipv4_address_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def available_ipv4_address_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "available_ipv4_address_count", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkId")
-    def cluster_network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cluster network identifier.
         """
         return pulumi.get(self, "cluster_network_id")
 
     @cluster_network_id.setter
-    def cluster_network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkSubnetId")
-    def cluster_network_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_network_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this cluster network subnet.
         """
         return pulumi.get(self, "cluster_network_subnet_id")
 
     @cluster_network_subnet_id.setter
-    def cluster_network_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_network_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_network_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the cluster network subnet was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this cluster network subnet.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
-    def ip_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_version", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4CidrBlock")
-    def ipv4_cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4_cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv4 range of this cluster network subnet, expressed in CIDR format.
         """
         return pulumi.get(self, "ipv4_cidr_block")
 
     @ipv4_cidr_block.setter
-    def ipv4_cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4_cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4_cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetLifecycleReasonArgs']]]]:
         """
         The reasons for the current `lifecycle_state` (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkSubnetLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkSubnetLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the cluster network subnet.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="totalIpv4AddressCount")
-    def total_ipv4_address_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_ipv4_address_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of IPv4 addresses in this cluster network subnet.Note: This is calculated as 2<sup>(32 - prefix length)</sup>. For example, the prefix length `/24` gives:<br> 2<sup>(32 - 24)</sup> = 2<sup>8</sup> = 256 addresses.
         """
         return pulumi.get(self, "total_ipv4_address_count")
 
     @total_ipv4_address_count.setter
-    def total_ipv4_address_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_ipv4_address_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_ipv4_address_count", value)
 
 
@@ -323,18 +325,19 @@ class IsClusterNetworkSubnet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4_cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4_cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a IsClusterNetworkSubnet resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_network_id: The cluster network identifier.
-        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] ipv4_cidr_block: The IPv4 range of this cluster network subnet, expressed in CIDR format.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
         :param pulumi.Input[_builtins.int] total_ipv4_address_count: The total number of IPv4 addresses in this cluster network subnet.Note: This is calculated as 2<sup>(32 - prefix length)</sup>. For example, the prefix length `/24` gives:<br> 2<sup>(32 - 24)</sup> = 2<sup>8</sup> = 256 addresses.
@@ -347,6 +350,7 @@ class IsClusterNetworkSubnet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsClusterNetworkSubnet resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsClusterNetworkSubnetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -362,11 +366,11 @@ class IsClusterNetworkSubnet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4_cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4_cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -401,19 +405,19 @@ class IsClusterNetworkSubnet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            available_ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
-            cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv4_cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetLifecycleReasonArgs', 'IsClusterNetworkSubnetLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            total_ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None) -> 'IsClusterNetworkSubnet':
+            available_ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
+            cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4_cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetLifecycleReasonArgs', 'IsClusterNetworkSubnetLifecycleReasonArgsDict', 'outputs.IsClusterNetworkSubnetLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            total_ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None) -> 'IsClusterNetworkSubnet':
         """
         Get an existing IsClusterNetworkSubnet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -426,9 +430,9 @@ class IsClusterNetworkSubnet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_network_subnet_id: The unique identifier for this cluster network subnet.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the cluster network subnet was created.
         :param pulumi.Input[_builtins.str] href: The URL for this cluster network subnet.
-        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] ip_version: The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] ipv4_cidr_block: The IPv4 range of this cluster network subnet, expressed in CIDR format.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetLifecycleReasonArgs', 'IsClusterNetworkSubnetLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkSubnetLifecycleReasonArgs', 'IsClusterNetworkSubnetLifecycleReasonArgsDict', 'outputs.IsClusterNetworkSubnetLifecycleReason']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the cluster network subnet.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
@@ -502,7 +506,7 @@ class IsClusterNetworkSubnet(pulumi.CustomResource):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> pulumi.Output[_builtins.str]:
         """
-        The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "ip_version")
 

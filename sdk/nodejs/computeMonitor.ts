@@ -112,31 +112,31 @@ export interface ComputeMonitorState {
     /**
      * Guest ID
      */
-    guestId?: pulumi.Input<number>;
+    guestId?: pulumi.Input<number | undefined>;
     /**
      * IP Address
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * List of users notified
      */
-    notifiedUsers?: pulumi.Input<pulumi.Input<number>[]>;
+    notifiedUsers?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Query Type ID
      */
-    queryTypeId?: pulumi.Input<number>;
+    queryTypeId?: pulumi.Input<number | undefined>;
     /**
      * Response action ID
      */
-    responseActionId?: pulumi.Input<number>;
+    responseActionId?: pulumi.Input<number | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * wait cycles count
      */
-    waitCycles?: pulumi.Input<number>;
+    waitCycles?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -150,11 +150,11 @@ export interface ComputeMonitorArgs {
     /**
      * IP Address
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * List of users notified
      */
-    notifiedUsers?: pulumi.Input<pulumi.Input<number>[]>;
+    notifiedUsers?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Query Type ID
      */
@@ -166,9 +166,9 @@ export interface ComputeMonitorArgs {
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * wait cycles count
      */
-    waitCycles?: pulumi.Input<number>;
+    waitCycles?: pulumi.Input<number | undefined>;
 }

@@ -23,14 +23,15 @@ class IsInstanceNetworkInterfaceInitArgs:
     def __init__(__self__, *,
                  instance: pulumi.Input[_builtins.str],
                  subnet: pulumi.Input[_builtins.str],
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input['IsInstanceNetworkInterfacePrimaryIpArgs']] = None,
-                 primary_ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional['IsInstanceNetworkInterfacePrimaryIpArgs']] = None,
+                 primary_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsInstanceNetworkInterface resource.
+
         :param pulumi.Input[_builtins.str] instance: The unique identifier of the instance.
         :param pulumi.Input[_builtins.str] subnet: The unique identifier of the subnet.
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
@@ -83,96 +84,97 @@ class IsInstanceNetworkInterfaceInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowIpSpoofing")
-    def allow_ip_spoofing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_ip_spoofing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         """
         return pulumi.get(self, "allow_ip_spoofing")
 
     @allow_ip_spoofing.setter
-    def allow_ip_spoofing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_ip_spoofing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_ip_spoofing", value)
 
     @_builtins.property
     @pulumi.getter(name="floatingIp")
-    def floating_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def floating_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the floating IP to attach to this network interface
         """
         return pulumi.get(self, "floating_ip")
 
     @floating_ip.setter
-    def floating_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def floating_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "floating_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this network interface. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsInstanceNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsInstanceNetworkInterfacePrimaryIpArgs']]:
         """
         The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsInstanceNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsInstanceNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIpv4Address")
     @_utilities.deprecated("""primary_ipv4_address is deprecated and support will be removed. Use primary_ip instead""")
-    def primary_ipv4_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_ipv4_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The primary IPv4 address. If specified, it must be an available address on the network interface's subnet. If unspecified, an available address on the subnet will be automatically selected.
         """
         return pulumi.get(self, "primary_ipv4_address")
 
     @primary_ipv4_address.setter
-    def primary_ipv4_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_ipv4_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_ipv4_address", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
 
 @pulumi.input_type
 class _IsInstanceNetworkInterfaceState:
     def __init__(__self__, *,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 floating_ips: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceFloatingIpArgs']]]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_interface: Optional[pulumi.Input[_builtins.str]] = None,
-                 port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 primary_ip: Optional[pulumi.Input['IsInstanceNetworkInterfacePrimaryIpArgs']] = None,
-                 primary_ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceFloatingIpArgs']]]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_interface: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 primary_ip: pulumi.Input[Optional['IsInstanceNetworkInterfacePrimaryIpArgs']] = None,
+                 primary_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceNetworkInterface resources.
+
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the network interface was created.
         :param pulumi.Input[_builtins.str] floating_ip: The ID of the floating IP to attach to this network interface
@@ -227,192 +229,192 @@ class _IsInstanceNetworkInterfaceState:
 
     @_builtins.property
     @pulumi.getter(name="allowIpSpoofing")
-    def allow_ip_spoofing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_ip_spoofing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         """
         return pulumi.get(self, "allow_ip_spoofing")
 
     @allow_ip_spoofing.setter
-    def allow_ip_spoofing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_ip_spoofing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_ip_spoofing", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the network interface was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="floatingIp")
-    def floating_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def floating_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the floating IP to attach to this network interface
         """
         return pulumi.get(self, "floating_ip")
 
     @floating_ip.setter
-    def floating_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def floating_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "floating_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="floatingIps")
-    def floating_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceFloatingIpArgs']]]]:
+    def floating_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceFloatingIpArgs']]]]:
         """
         The floating IPs associated with this network interface.
         """
         return pulumi.get(self, "floating_ips")
 
     @floating_ips.setter
-    def floating_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceFloatingIpArgs']]]]):
+    def floating_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceFloatingIpArgs']]]]):
         pulumi.set(self, "floating_ips", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this network interface.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the instance.
         """
         return pulumi.get(self, "instance")
 
     @instance.setter
-    def instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this network interface. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterface")
-    def network_interface(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_interface(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique ID of this network interface
         """
         return pulumi.get(self, "network_interface")
 
     @network_interface.setter
-    def network_interface(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_interface(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_interface", value)
 
     @_builtins.property
     @pulumi.getter(name="portSpeed")
-    def port_speed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_speed(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network interface port speed in Mbps.
         """
         return pulumi.get(self, "port_speed")
 
     @port_speed.setter
-    def port_speed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_speed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_speed", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsInstanceNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsInstanceNetworkInterfacePrimaryIpArgs']]:
         """
         The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsInstanceNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsInstanceNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIpv4Address")
     @_utilities.deprecated("""primary_ipv4_address is deprecated and support will be removed. Use primary_ip instead""")
-    def primary_ipv4_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_ipv4_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The primary IPv4 address. If specified, it must be an available address on the network interface's subnet. If unspecified, an available address on the subnet will be automatically selected.
         """
         return pulumi.get(self, "primary_ipv4_address")
 
     @primary_ipv4_address.setter
-    def primary_ipv4_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_ipv4_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_ipv4_address", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the network interface.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the subnet.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of this network interface as it relates to an instance.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -422,24 +424,25 @@ class IsInstanceNetworkInterface(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 primary_ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict', 'outputs.IsInstanceNetworkInterfacePrimaryIp']]] = None,
+                 primary_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         :param pulumi.Input[_builtins.str] floating_ip: The ID of the floating IP to attach to this network interface
         :param pulumi.Input[_builtins.str] instance: The unique identifier of the instance.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this network interface. If unspecified, the name will be a hyphenated list of randomly-selected words.
-        :param pulumi.Input[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict']] primary_ip: The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
+        :param pulumi.Input[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict', 'outputs.IsInstanceNetworkInterfacePrimaryIp']] primary_ip: The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
         :param pulumi.Input[_builtins.str] primary_ipv4_address: The primary IPv4 address. If specified, it must be an available address on the network interface's subnet. If unspecified, an available address on the subnet will be automatically selected.
         :param pulumi.Input[_builtins.str] subnet: The unique identifier of the subnet.
         """
@@ -451,6 +454,7 @@ class IsInstanceNetworkInterface(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceNetworkInterfaceInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -466,14 +470,14 @@ class IsInstanceNetworkInterface(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 primary_ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict', 'outputs.IsInstanceNetworkInterfacePrimaryIp']]] = None,
+                 primary_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -513,22 +517,22 @@ class IsInstanceNetworkInterface(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            floating_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceFloatingIpArgs', 'IsInstanceNetworkInterfaceFloatingIpArgsDict']]]]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            instance: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_interface: Optional[pulumi.Input[_builtins.str]] = None,
-            port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-            primary_ip: Optional[pulumi.Input[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict']]] = None,
-            primary_ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceNetworkInterface':
+            allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceFloatingIpArgs', 'IsInstanceNetworkInterfaceFloatingIpArgsDict', 'outputs.IsInstanceNetworkInterfaceFloatingIp']]]]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            instance: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_interface: pulumi.Input[Optional[_builtins.str]] = None,
+            port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+            primary_ip: pulumi.Input[Optional[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict', 'outputs.IsInstanceNetworkInterfacePrimaryIp']]] = None,
+            primary_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceNetworkInterface':
         """
         Get an existing IsInstanceNetworkInterface resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -539,13 +543,13 @@ class IsInstanceNetworkInterface(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the network interface was created.
         :param pulumi.Input[_builtins.str] floating_ip: The ID of the floating IP to attach to this network interface
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceFloatingIpArgs', 'IsInstanceNetworkInterfaceFloatingIpArgsDict']]]] floating_ips: The floating IPs associated with this network interface.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceFloatingIpArgs', 'IsInstanceNetworkInterfaceFloatingIpArgsDict', 'outputs.IsInstanceNetworkInterfaceFloatingIp']]]] floating_ips: The floating IPs associated with this network interface.
         :param pulumi.Input[_builtins.str] href: The URL for this network interface.
         :param pulumi.Input[_builtins.str] instance: The unique identifier of the instance.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this network interface. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] network_interface: The globally unique ID of this network interface
         :param pulumi.Input[_builtins.int] port_speed: The network interface port speed in Mbps.
-        :param pulumi.Input[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict']] primary_ip: The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
+        :param pulumi.Input[Union['IsInstanceNetworkInterfacePrimaryIpArgs', 'IsInstanceNetworkInterfacePrimaryIpArgsDict', 'outputs.IsInstanceNetworkInterfacePrimaryIp']] primary_ip: The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
         :param pulumi.Input[_builtins.str] primary_ipv4_address: The primary IPv4 address. If specified, it must be an available address on the network interface's subnet. If unspecified, an available address on the subnet will be automatically selected.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.str] status: The status of the network interface.

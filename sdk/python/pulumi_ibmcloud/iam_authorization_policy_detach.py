@@ -22,6 +22,7 @@ class IamAuthorizationPolicyDetachArgs:
                  authorization_policy_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IamAuthorizationPolicyDetach resource.
+
         :param pulumi.Input[_builtins.str] authorization_policy_id: Authorization policy ID
         """
         pulumi.set(__self__, "authorization_policy_id", authorization_policy_id)
@@ -42,9 +43,10 @@ class IamAuthorizationPolicyDetachArgs:
 @pulumi.input_type
 class _IamAuthorizationPolicyDetachState:
     def __init__(__self__, *,
-                 authorization_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 authorization_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamAuthorizationPolicyDetach resources.
+
         :param pulumi.Input[_builtins.str] authorization_policy_id: Authorization policy ID
         """
         if authorization_policy_id is not None:
@@ -52,14 +54,14 @@ class _IamAuthorizationPolicyDetachState:
 
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyId")
-    def authorization_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authorization policy ID
         """
         return pulumi.get(self, "authorization_policy_id")
 
     @authorization_policy_id.setter
-    def authorization_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization_policy_id", value)
 
 
@@ -69,10 +71,11 @@ class IamAuthorizationPolicyDetach(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authorization_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 authorization_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamAuthorizationPolicyDetach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization_policy_id: Authorization policy ID
@@ -85,6 +88,7 @@ class IamAuthorizationPolicyDetach(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAuthorizationPolicyDetach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAuthorizationPolicyDetachArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -100,7 +104,7 @@ class IamAuthorizationPolicyDetach(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authorization_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 authorization_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -123,7 +127,7 @@ class IamAuthorizationPolicyDetach(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authorization_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamAuthorizationPolicyDetach':
+            authorization_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamAuthorizationPolicyDetach':
         """
         Get an existing IamAuthorizationPolicyDetach resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

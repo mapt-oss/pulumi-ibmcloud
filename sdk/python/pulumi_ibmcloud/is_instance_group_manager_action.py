@@ -21,15 +21,16 @@ class IsInstanceGroupManagerActionInitArgs:
     def __init__(__self__, *,
                  instance_group: pulumi.Input[_builtins.str],
                  instance_group_manager: pulumi.Input[_builtins.str],
-                 cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_manager: Optional[pulumi.Input[_builtins.str]] = None):
+                 cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_manager: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsInstanceGroupManagerAction resource.
+
         :param pulumi.Input[_builtins.str] instance_group: instance group ID
         :param pulumi.Input[_builtins.str] instance_group_manager: Instance group manager ID of type scheduled
         :param pulumi.Input[_builtins.str] cron_spec: The cron specification for a recurring scheduled action. Actions can be applied a maximum of one time within a 5 min period.
@@ -83,114 +84,115 @@ class IsInstanceGroupManagerActionInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="cronSpec")
-    def cron_spec(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cron_spec(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cron specification for a recurring scheduled action. Actions can be applied a maximum of one time within a 5 min period.
         """
         return pulumi.get(self, "cron_spec")
 
     @cron_spec.setter
-    def cron_spec(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cron_spec(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cron_spec", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMembershipCount")
-    def max_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of members in a managed instance group
         """
         return pulumi.get(self, "max_membership_count")
 
     @max_membership_count.setter
-    def max_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_membership_count", value)
 
     @_builtins.property
     @pulumi.getter(name="membershipCount")
-    def membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of members the instance group should have at the scheduled time.
         """
         return pulumi.get(self, "membership_count")
 
     @membership_count.setter
-    def membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "membership_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minMembershipCount")
-    def min_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum number of members in a managed instance group
         """
         return pulumi.get(self, "min_membership_count")
 
     @min_membership_count.setter
-    def min_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_membership_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group manager action name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="runAt")
-    def run_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def run_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the scheduled action will run.
         """
         return pulumi.get(self, "run_at")
 
     @run_at.setter
-    def run_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def run_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "run_at", value)
 
     @_builtins.property
     @pulumi.getter(name="targetManager")
-    def target_manager(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_manager(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this instance group manager of type autoscale.
         """
         return pulumi.get(self, "target_manager")
 
     @target_manager.setter
-    def target_manager(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_manager(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_manager", value)
 
 
 @pulumi.input_type
 class _IsInstanceGroupManagerActionState:
     def __init__(__self__, *,
-                 action_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_delete_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_applied_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_run_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_manager_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_at: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_delete_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_applied_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_run_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_manager_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_at: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceGroupManagerAction resources.
+
         :param pulumi.Input[_builtins.str] action_id: Instance group manager action ID
         :param pulumi.Input[_builtins.str] action_type: The type of action for the instance group.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the instance group manager action was modified.
@@ -253,236 +255,236 @@ class _IsInstanceGroupManagerActionState:
 
     @_builtins.property
     @pulumi.getter(name="actionId")
-    def action_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance group manager action ID
         """
         return pulumi.get(self, "action_id")
 
     @action_id.setter
-    def action_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_id", value)
 
     @_builtins.property
     @pulumi.getter(name="actionType")
-    def action_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of action for the instance group.
         """
         return pulumi.get(self, "action_type")
 
     @action_type.setter
-    def action_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_type", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
-    def auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "auto_delete")
 
     @auto_delete.setter
-    def auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDeleteTimeout")
-    def auto_delete_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_delete_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "auto_delete_timeout")
 
     @auto_delete_timeout.setter
-    def auto_delete_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_delete_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_delete_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the instance group manager action was modified.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="cronSpec")
-    def cron_spec(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cron_spec(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cron specification for a recurring scheduled action. Actions can be applied a maximum of one time within a 5 min period.
         """
         return pulumi.get(self, "cron_spec")
 
     @cron_spec.setter
-    def cron_spec(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cron_spec(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cron_spec", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceGroup")
-    def instance_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group ID
         """
         return pulumi.get(self, "instance_group")
 
     @instance_group.setter
-    def instance_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_group", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceGroupManager")
-    def instance_group_manager(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_group_manager(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance group manager ID of type scheduled
         """
         return pulumi.get(self, "instance_group_manager")
 
     @instance_group_manager.setter
-    def instance_group_manager(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_group_manager(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_group_manager", value)
 
     @_builtins.property
     @pulumi.getter(name="lastAppliedAt")
-    def last_applied_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_applied_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the scheduled action was last applied. If empty the action has never been applied.
         """
         return pulumi.get(self, "last_applied_at")
 
     @last_applied_at.setter
-    def last_applied_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_applied_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_applied_at", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMembershipCount")
-    def max_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of members in a managed instance group
         """
         return pulumi.get(self, "max_membership_count")
 
     @max_membership_count.setter
-    def max_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_membership_count", value)
 
     @_builtins.property
     @pulumi.getter(name="membershipCount")
-    def membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of members the instance group should have at the scheduled time.
         """
         return pulumi.get(self, "membership_count")
 
     @membership_count.setter
-    def membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "membership_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minMembershipCount")
-    def min_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum number of members in a managed instance group
         """
         return pulumi.get(self, "min_membership_count")
 
     @min_membership_count.setter
-    def min_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_membership_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group manager action name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nextRunAt")
-    def next_run_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_run_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the scheduled action will next run. If empty the system is currently calculating the next run time.
         """
         return pulumi.get(self, "next_run_at")
 
     @next_run_at.setter
-    def next_run_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_run_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_run_at", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="runAt")
-    def run_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def run_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the scheduled action will run.
         """
         return pulumi.get(self, "run_at")
 
     @run_at.setter
-    def run_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def run_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "run_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the instance group action- `active`: Action is ready to be run- `completed`: Action was completed successfully- `failed`: Action could not be completed successfully- `incompatible`: Action parameters are not compatible with the group or manager- `omitted`: Action was not applied because this action's manager was disabled.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="targetManager")
-    def target_manager(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_manager(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this instance group manager of type autoscale.
         """
         return pulumi.get(self, "target_manager")
 
     @target_manager.setter
-    def target_manager(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_manager(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_manager", value)
 
     @_builtins.property
     @pulumi.getter(name="targetManagerName")
-    def target_manager_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_manager_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance group manager name of type autoscale.
         """
         return pulumi.get(self, "target_manager_name")
 
     @target_manager_name.setter
-    def target_manager_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_manager_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_manager_name", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the instance group manager action was modified.
         """
         return pulumi.get(self, "updated_at")
 
     @updated_at.setter
-    def updated_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_at", value)
 
 
@@ -492,18 +494,19 @@ class IsInstanceGroupManagerAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_manager: Optional[pulumi.Input[_builtins.str]] = None,
+                 cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_manager: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceGroupManagerAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cron_spec: The cron specification for a recurring scheduled action. Actions can be applied a maximum of one time within a 5 min period.
@@ -524,6 +527,7 @@ class IsInstanceGroupManagerAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceGroupManagerAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceGroupManagerActionInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -539,15 +543,15 @@ class IsInstanceGroupManagerAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_manager: Optional[pulumi.Input[_builtins.str]] = None,
+                 cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_manager: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -591,26 +595,26 @@ class IsInstanceGroupManagerAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_id: Optional[pulumi.Input[_builtins.str]] = None,
-            action_type: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_delete_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-            last_applied_at: Optional[pulumi.Input[_builtins.str]] = None,
-            max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-            membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-            min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            next_run_at: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            run_at: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            target_manager: Optional[pulumi.Input[_builtins.str]] = None,
-            target_manager_name: Optional[pulumi.Input[_builtins.str]] = None,
-            updated_at: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceGroupManagerAction':
+            action_id: pulumi.Input[Optional[_builtins.str]] = None,
+            action_type: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_delete_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+            last_applied_at: pulumi.Input[Optional[_builtins.str]] = None,
+            max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+            membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_run_at: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            run_at: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            target_manager: pulumi.Input[Optional[_builtins.str]] = None,
+            target_manager_name: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceGroupManagerAction':
         """
         Get an existing IsInstanceGroupManagerAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

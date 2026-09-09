@@ -29,6 +29,7 @@ export interface GetPiNetworkInterfaceArgs {
  */
 export interface GetPiNetworkInterfaceResult {
     readonly crn: string;
+    readonly externalIp: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */

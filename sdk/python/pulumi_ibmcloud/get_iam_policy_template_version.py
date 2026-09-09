@@ -131,8 +131,8 @@ def get_iam_policy_template_version(policy_template_id: Optional[_builtins.str] 
         policies=pulumi.get(__ret__, 'policies'),
         policy_template_id=pulumi.get(__ret__, 'policy_template_id'),
         version=pulumi.get(__ret__, 'version'))
-def get_iam_policy_template_version_output(policy_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_policy_template_version_output(policy_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           version: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamPolicyTemplateVersionResult]:
     """
     Use this data source to access information about an existing resource.

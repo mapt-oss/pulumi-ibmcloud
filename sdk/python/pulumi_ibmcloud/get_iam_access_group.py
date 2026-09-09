@@ -82,7 +82,7 @@ def get_iam_access_group(access_group_name: Optional[_builtins.str] = None,
         access_group_name=pulumi.get(__ret__, 'access_group_name'),
         groups=pulumi.get(__ret__, 'groups'),
         id=pulumi.get(__ret__, 'id'))
-def get_iam_access_group_output(access_group_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_access_group_output(access_group_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccessGroupResult]:
     """
     Use this data source to access information about an existing resource.

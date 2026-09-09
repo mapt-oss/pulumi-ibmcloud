@@ -23,6 +23,7 @@ class PiNetworkSecurityGroupActionArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiNetworkSecurityGroupAction resource.
+
         :param pulumi.Input[_builtins.str] pi_action: Name of the action to take; can be enable to enable NSGs in a workspace or disable to disable NSGs in a workspace.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         """
@@ -57,11 +58,12 @@ class PiNetworkSecurityGroupActionArgs:
 @pulumi.input_type
 class _PiNetworkSecurityGroupActionState:
     def __init__(__self__, *,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiNetworkSecurityGroupAction resources.
+
         :param pulumi.Input[_builtins.str] pi_action: Name of the action to take; can be enable to enable NSGs in a workspace or disable to disable NSGs in a workspace.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] state: The workspace network security group's state.
@@ -75,38 +77,38 @@ class _PiNetworkSecurityGroupActionState:
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the action to take; can be enable to enable NSGs in a workspace or disable to disable NSGs in a workspace.
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workspace network security group's state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -116,11 +118,12 @@ class PiNetworkSecurityGroupAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiNetworkSecurityGroupAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_action: Name of the action to take; can be enable to enable NSGs in a workspace or disable to disable NSGs in a workspace.
@@ -134,6 +137,7 @@ class PiNetworkSecurityGroupAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkSecurityGroupAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkSecurityGroupActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -149,8 +153,8 @@ class PiNetworkSecurityGroupAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -177,9 +181,9 @@ class PiNetworkSecurityGroupAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiNetworkSecurityGroupAction':
+            pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiNetworkSecurityGroupAction':
         """
         Get an existing PiNetworkSecurityGroupAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -23,11 +23,12 @@ class IamPolicyTemplateVersionArgs:
     def __init__(__self__, *,
                  policy: pulumi.Input['IamPolicyTemplateVersionPolicyArgs'],
                  template_id: pulumi.Input[_builtins.str],
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamPolicyTemplateVersion resource.
+
         :param pulumi.Input['IamPolicyTemplateVersionPolicyArgs'] policy: The core set of properties associated with the template's policy objet.
         :param pulumi.Input[_builtins.str] template_id: The policy template ID and Version.
         :param pulumi.Input[_builtins.bool] committed: Template version committed status.
@@ -68,50 +69,51 @@ class IamPolicyTemplateVersionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Template version committed status.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of template purpose.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IamPolicyTemplateVersionState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input['IamPolicyTemplateVersionPolicyArgs']] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional['IamPolicyTemplateVersionPolicyArgs']] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamPolicyTemplateVersion resources.
+
         :param pulumi.Input[_builtins.bool] committed: Template version committed status.
         :param pulumi.Input[_builtins.str] description: description of template purpose.
         :param pulumi.Input['IamPolicyTemplateVersionPolicyArgs'] policy: The core set of properties associated with the template's policy objet.
@@ -135,80 +137,80 @@ class _IamPolicyTemplateVersionState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Template version committed status.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of template purpose.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def policy(self) -> Optional[pulumi.Input['IamPolicyTemplateVersionPolicyArgs']]:
+    def policy(self) -> pulumi.Input[Optional['IamPolicyTemplateVersionPolicyArgs']]:
         """
         The core set of properties associated with the template's policy objet.
         """
         return pulumi.get(self, "policy")
 
     @policy.setter
-    def policy(self, value: Optional[pulumi.Input['IamPolicyTemplateVersionPolicyArgs']]):
+    def policy(self, value: pulumi.Input[Optional['IamPolicyTemplateVersionPolicyArgs']]):
         pulumi.set(self, "policy", value)
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The policy template ID and Version.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Template Version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -218,19 +220,20 @@ class IamPolicyTemplateVersion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict']]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict', 'outputs.IamPolicyTemplateVersionPolicy']]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamPolicyTemplateVersion resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] committed: Template version committed status.
         :param pulumi.Input[_builtins.str] description: description of template purpose.
-        :param pulumi.Input[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict']] policy: The core set of properties associated with the template's policy objet.
+        :param pulumi.Input[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict', 'outputs.IamPolicyTemplateVersionPolicy']] policy: The core set of properties associated with the template's policy objet.
         :param pulumi.Input[_builtins.str] template_id: The policy template ID and Version.
         """
         ...
@@ -241,6 +244,7 @@ class IamPolicyTemplateVersion(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamPolicyTemplateVersion resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamPolicyTemplateVersionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -256,11 +260,11 @@ class IamPolicyTemplateVersion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict']]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict', 'outputs.IamPolicyTemplateVersionPolicy']]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -291,13 +295,13 @@ class IamPolicyTemplateVersion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            committed: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policy: Optional[pulumi.Input[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict']]] = None,
-            template_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamPolicyTemplateVersion':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            committed: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy: pulumi.Input[Optional[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict', 'outputs.IamPolicyTemplateVersionPolicy']]] = None,
+            template_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamPolicyTemplateVersion':
         """
         Get an existing IamPolicyTemplateVersion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -307,7 +311,7 @@ class IamPolicyTemplateVersion(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] committed: Template version committed status.
         :param pulumi.Input[_builtins.str] description: description of template purpose.
-        :param pulumi.Input[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict']] policy: The core set of properties associated with the template's policy objet.
+        :param pulumi.Input[Union['IamPolicyTemplateVersionPolicyArgs', 'IamPolicyTemplateVersionPolicyArgsDict', 'outputs.IamPolicyTemplateVersionPolicy']] policy: The core set of properties associated with the template's policy objet.
         :param pulumi.Input[_builtins.str] template_id: The policy template ID and Version.
         :param pulumi.Input[_builtins.str] version: Template Version.
         """

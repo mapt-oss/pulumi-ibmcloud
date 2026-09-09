@@ -46,6 +46,6 @@ export function getIsVpcAddressPrefixesOutput(args: GetIsVpcAddressPrefixesOutpu
  * A collection of arguments for invoking getIsVpcAddressPrefixes.
  */
 export interface GetIsVpcAddressPrefixesOutputArgs {
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     vpc: pulumi.Input<string>;
 }

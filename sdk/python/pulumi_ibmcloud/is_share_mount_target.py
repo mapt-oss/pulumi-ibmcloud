@@ -22,13 +22,14 @@ __all__ = ['IsShareMountTargetInitArgs', 'IsShareMountTarget']
 class IsShareMountTargetInitArgs:
     def __init__(__self__, *,
                  share: pulumi.Input[_builtins.str],
-                 access_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 transit_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input['IsShareMountTargetVirtualNetworkInterfaceArgs']] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 transit_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional['IsShareMountTargetVirtualNetworkInterfaceArgs']] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsShareMountTarget resource.
+
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         :param pulumi.Input[_builtins.str] access_protocol: The protocol to use to access the share for this share mount target.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
@@ -62,83 +63,84 @@ class IsShareMountTargetInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessProtocol")
-    def access_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol to use to access the share for this share mount target.
         """
         return pulumi.get(self, "access_protocol")
 
     @access_protocol.setter
-    def access_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="transitEncryption")
-    def transit_encryption(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transit_encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The transit encryption mode.
         """
         return pulumi.get(self, "transit_encryption")
 
     @transit_encryption.setter
-    def transit_encryption(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transit_encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transit_encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input['IsShareMountTargetVirtualNetworkInterfaceArgs']]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional['IsShareMountTargetVirtualNetworkInterfaceArgs']]:
         """
         VNI for mount target.
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input['IsShareMountTargetVirtualNetworkInterfaceArgs']]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional['IsShareMountTargetVirtualNetworkInterfaceArgs']]):
         pulumi.set(self, "virtual_network_interface", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
 
 @pulumi.input_type
 class _IsShareMountTargetState:
     def __init__(__self__, *,
-                 access_control_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 mount_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 mount_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
-                 transit_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input['IsShareMountTargetVirtualNetworkInterfaceArgs']] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_control_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 mount_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 mount_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
+                 transit_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional['IsShareMountTargetVirtualNetworkInterfaceArgs']] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsShareMountTarget resources.
+
         :param pulumi.Input[_builtins.str] access_control_mode: The access control mode for the share
         :param pulumi.Input[_builtins.str] access_protocol: The protocol to use to access the share for this share mount target.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the share target was created.
@@ -182,158 +184,158 @@ class _IsShareMountTargetState:
 
     @_builtins.property
     @pulumi.getter(name="accessControlMode")
-    def access_control_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_control_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access control mode for the share
         """
         return pulumi.get(self, "access_control_mode")
 
     @access_control_mode.setter
-    def access_control_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_control_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_control_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="accessProtocol")
-    def access_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol to use to access the share for this share mount target.
         """
         return pulumi.get(self, "access_protocol")
 
     @access_protocol.setter
-    def access_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the share target was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this share target.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the mount target.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="mountPath")
-    def mount_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mount_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The mount path for the share.The IP addresses used in the mount path are currently within the IBM services IP range, but are expected to change to be within one of the VPC's subnets in the future.
         """
         return pulumi.get(self, "mount_path")
 
     @mount_path.setter
-    def mount_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mount_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mount_path", value)
 
     @_builtins.property
     @pulumi.getter(name="mountTarget")
-    def mount_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mount_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of this target
         """
         return pulumi.get(self, "mount_target")
 
     @mount_target.setter
-    def mount_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mount_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mount_target", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of resource referenced.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def share(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def share(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The file share identifier.
         """
         return pulumi.get(self, "share")
 
     @share.setter
-    def share(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def share(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "share", value)
 
     @_builtins.property
     @pulumi.getter(name="transitEncryption")
-    def transit_encryption(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transit_encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The transit encryption mode.
         """
         return pulumi.get(self, "transit_encryption")
 
     @transit_encryption.setter
-    def transit_encryption(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transit_encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transit_encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input['IsShareMountTargetVirtualNetworkInterfaceArgs']]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional['IsShareMountTargetVirtualNetworkInterfaceArgs']]:
         """
         VNI for mount target.
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input['IsShareMountTargetVirtualNetworkInterfaceArgs']]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional['IsShareMountTargetVirtualNetworkInterfaceArgs']]):
         pulumi.set(self, "virtual_network_interface", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
 
@@ -343,22 +345,23 @@ class IsShareMountTarget(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
-                 transit_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict']]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
+                 transit_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict', 'outputs.IsShareMountTargetVirtualNetworkInterface']]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsShareMountTarget resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_protocol: The protocol to use to access the share for this share mount target.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         :param pulumi.Input[_builtins.str] transit_encryption: The transit encryption mode.
-        :param pulumi.Input[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict']] virtual_network_interface: VNI for mount target.
+        :param pulumi.Input[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict', 'outputs.IsShareMountTargetVirtualNetworkInterface']] virtual_network_interface: VNI for mount target.
         :param pulumi.Input[_builtins.str] vpc: The unique identifier of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
         """
         ...
@@ -369,6 +372,7 @@ class IsShareMountTarget(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsShareMountTarget resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsShareMountTargetInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -384,12 +388,12 @@ class IsShareMountTarget(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
-                 transit_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict']]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
+                 transit_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict', 'outputs.IsShareMountTargetVirtualNetworkInterface']]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -424,19 +428,19 @@ class IsShareMountTarget(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_control_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            access_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            mount_path: Optional[pulumi.Input[_builtins.str]] = None,
-            mount_target: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            share: Optional[pulumi.Input[_builtins.str]] = None,
-            transit_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_network_interface: Optional[pulumi.Input[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict']]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsShareMountTarget':
+            access_control_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            access_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_path: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_target: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            share: pulumi.Input[Optional[_builtins.str]] = None,
+            transit_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_network_interface: pulumi.Input[Optional[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict', 'outputs.IsShareMountTargetVirtualNetworkInterface']]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsShareMountTarget':
         """
         Get an existing IsShareMountTarget resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -455,7 +459,7 @@ class IsShareMountTarget(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: The type of resource referenced.
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         :param pulumi.Input[_builtins.str] transit_encryption: The transit encryption mode.
-        :param pulumi.Input[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict']] virtual_network_interface: VNI for mount target.
+        :param pulumi.Input[Union['IsShareMountTargetVirtualNetworkInterfaceArgs', 'IsShareMountTargetVirtualNetworkInterfaceArgsDict', 'outputs.IsShareMountTargetVirtualNetworkInterface']] virtual_network_interface: VNI for mount target.
         :param pulumi.Input[_builtins.str] vpc: The unique identifier of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

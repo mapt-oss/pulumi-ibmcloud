@@ -22,13 +22,14 @@ __all__ = ['PiDhcpArgs', 'PiDhcp']
 class PiDhcpArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_snat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_dns_server: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_snat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_dns_server: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiDhcp resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
         :param pulumi.Input[_builtins.str] pi_cidr: Optional cidr for DHCP private network
         :param pulumi.Input[_builtins.str] pi_cloud_connection_id: Optional cloud connection uuid to connect with DHCP private network
@@ -62,81 +63,82 @@ class PiDhcpArgs:
 
     @_builtins.property
     @pulumi.getter(name="piCidr")
-    def pi_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional cidr for DHCP private network
         """
         return pulumi.get(self, "pi_cidr")
 
     @pi_cidr.setter
-    def pi_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionId")
-    def pi_cloud_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional cloud connection uuid to connect with DHCP private network
         """
         return pulumi.get(self, "pi_cloud_connection_id")
 
     @pi_cloud_connection_id.setter
-    def pi_cloud_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDhcpName")
-    def pi_dhcp_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_dhcp_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional name of DHCP Service (will be prefixed by DHCP identifier)
         """
         return pulumi.get(self, "pi_dhcp_name")
 
     @pi_dhcp_name.setter
-    def pi_dhcp_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_dhcp_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_dhcp_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piDhcpSnatEnabled")
-    def pi_dhcp_snat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_dhcp_snat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if SNAT will be enabled for the DHCP service
         """
         return pulumi.get(self, "pi_dhcp_snat_enabled")
 
     @pi_dhcp_snat_enabled.setter
-    def pi_dhcp_snat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_dhcp_snat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_dhcp_snat_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piDnsServer")
-    def pi_dns_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_dns_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional DNS Server for DHCP service
         """
         return pulumi.get(self, "pi_dns_server")
 
     @pi_dns_server.setter
-    def pi_dns_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_dns_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_dns_server", value)
 
 
 @pulumi.input_type
 class _PiDhcpState:
     def __init__(__self__, *,
-                 dhcp_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 leases: Optional[pulumi.Input[Sequence[pulumi.Input['PiDhcpLeaseArgs']]]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_snat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_dns_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 dhcp_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 leases: pulumi.Input[Optional[Sequence[pulumi.Input['PiDhcpLeaseArgs']]]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_snat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_dns_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiDhcp resources.
+
         :param pulumi.Input[_builtins.str] dhcp_id: The ID of the DHCP Server
         :param pulumi.Input[Sequence[pulumi.Input['PiDhcpLeaseArgs']]] leases: The list of DHCP Server PVM Instance leases
         :param pulumi.Input[_builtins.str] network_id: The ID of the DHCP Server private network
@@ -174,134 +176,134 @@ class _PiDhcpState:
 
     @_builtins.property
     @pulumi.getter(name="dhcpId")
-    def dhcp_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dhcp_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the DHCP Server
         """
         return pulumi.get(self, "dhcp_id")
 
     @dhcp_id.setter
-    def dhcp_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dhcp_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dhcp_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def leases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiDhcpLeaseArgs']]]]:
+    def leases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiDhcpLeaseArgs']]]]:
         """
         The list of DHCP Server PVM Instance leases
         """
         return pulumi.get(self, "leases")
 
     @leases.setter
-    def leases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiDhcpLeaseArgs']]]]):
+    def leases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiDhcpLeaseArgs']]]]):
         pulumi.set(self, "leases", value)
 
     @_builtins.property
     @pulumi.getter(name="networkId")
-    def network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the DHCP Server private network
         """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
-    def network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkName")
-    def network_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the DHCP Server private network
         """
         return pulumi.get(self, "network_name")
 
     @network_name.setter
-    def network_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piCidr")
-    def pi_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional cidr for DHCP private network
         """
         return pulumi.get(self, "pi_cidr")
 
     @pi_cidr.setter
-    def pi_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionId")
-    def pi_cloud_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional cloud connection uuid to connect with DHCP private network
         """
         return pulumi.get(self, "pi_cloud_connection_id")
 
     @pi_cloud_connection_id.setter
-    def pi_cloud_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI cloud instance ID
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDhcpName")
-    def pi_dhcp_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_dhcp_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional name of DHCP Service (will be prefixed by DHCP identifier)
         """
         return pulumi.get(self, "pi_dhcp_name")
 
     @pi_dhcp_name.setter
-    def pi_dhcp_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_dhcp_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_dhcp_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piDhcpSnatEnabled")
-    def pi_dhcp_snat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_dhcp_snat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if SNAT will be enabled for the DHCP service
         """
         return pulumi.get(self, "pi_dhcp_snat_enabled")
 
     @pi_dhcp_snat_enabled.setter
-    def pi_dhcp_snat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_dhcp_snat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_dhcp_snat_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piDnsServer")
-    def pi_dns_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_dns_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional DNS Server for DHCP service
         """
         return pulumi.get(self, "pi_dns_server")
 
     @pi_dns_server.setter
-    def pi_dns_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_dns_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_dns_server", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the DHCP Server
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -311,15 +313,16 @@ class PiDhcp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_snat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_dns_server: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_snat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_dns_server: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiDhcp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cidr: Optional cidr for DHCP private network
@@ -337,6 +340,7 @@ class PiDhcp(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiDhcp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiDhcpArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -352,12 +356,12 @@ class PiDhcp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dhcp_snat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_dns_server: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dhcp_snat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_dns_server: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -390,17 +394,17 @@ class PiDhcp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dhcp_id: Optional[pulumi.Input[_builtins.str]] = None,
-            leases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiDhcpLeaseArgs', 'PiDhcpLeaseArgsDict']]]]] = None,
-            network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_dhcp_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_dhcp_snat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_dns_server: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiDhcp':
+            dhcp_id: pulumi.Input[Optional[_builtins.str]] = None,
+            leases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiDhcpLeaseArgs', 'PiDhcpLeaseArgsDict', 'outputs.PiDhcpLease']]]]] = None,
+            network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_dhcp_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_dhcp_snat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_dns_server: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiDhcp':
         """
         Get an existing PiDhcp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -409,7 +413,7 @@ class PiDhcp(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dhcp_id: The ID of the DHCP Server
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiDhcpLeaseArgs', 'PiDhcpLeaseArgsDict']]]] leases: The list of DHCP Server PVM Instance leases
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiDhcpLeaseArgs', 'PiDhcpLeaseArgsDict', 'outputs.PiDhcpLease']]]] leases: The list of DHCP Server PVM Instance leases
         :param pulumi.Input[_builtins.str] network_id: The ID of the DHCP Server private network
         :param pulumi.Input[_builtins.str] network_name: The name of the DHCP Server private network
         :param pulumi.Input[_builtins.str] pi_cidr: Optional cidr for DHCP private network

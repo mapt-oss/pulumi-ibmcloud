@@ -174,8 +174,8 @@ def get_pi_volume_group_details(pi_cloud_instance_id: Optional[_builtins.str] = 
         storage_pool=pulumi.get(__ret__, 'storage_pool'),
         volume_group_name=pulumi.get(__ret__, 'volume_group_name'),
         volume_ids=pulumi.get(__ret__, 'volume_ids'))
-def get_pi_volume_group_details_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       pi_volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_volume_group_details_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       pi_volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeGroupDetailsResult]:
     """
     Use this data source to access information about an existing resource.

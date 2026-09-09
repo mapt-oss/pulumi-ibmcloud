@@ -154,8 +154,8 @@ def get_pi_volume_onboarding(pi_cloud_instance_id: Optional[_builtins.str] = Non
         results_onboarded_volumes=pulumi.get(__ret__, 'results_onboarded_volumes'),
         results_volume_onboarding_failures=pulumi.get(__ret__, 'results_volume_onboarding_failures'),
         status=pulumi.get(__ret__, 'status'))
-def get_pi_volume_onboarding_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    pi_volume_onboarding_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_volume_onboarding_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    pi_volume_onboarding_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeOnboardingResult]:
     """
     Use this data source to access information about an existing resource.

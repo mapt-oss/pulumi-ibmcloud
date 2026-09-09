@@ -23,19 +23,22 @@ class IsVirtualEndpointGatewayArgs:
     def __init__(__self__, *,
                  target: pulumi.Input['IsVirtualEndpointGatewayTargetArgs'],
                  vpc: pulumi.Input[_builtins.str],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_dns_resolution_binding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_dns_resolution_binding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dns_resolution_binding_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsVirtualEndpointGateway resource.
+
         :param pulumi.Input['IsVirtualEndpointGatewayTargetArgs'] target: Endpoint gateway target
         :param pulumi.Input[_builtins.str] vpc: The VPC id
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.bool] allow_dns_resolution_binding: Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
+        :param pulumi.Input[_builtins.str] dns_resolution_binding_mode: The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `per_resource_binding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
         :param pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]] ips: Endpoint gateway IPs
         :param pulumi.Input[_builtins.str] name: Endpoint gateway name
         :param pulumi.Input[_builtins.str] resource_group: The resource group id
@@ -47,7 +50,12 @@ class IsVirtualEndpointGatewayArgs:
         if access_tags is not None:
             pulumi.set(__self__, "access_tags", access_tags)
         if allow_dns_resolution_binding is not None:
+            warnings.warn("""This field has been deprecated in favor of `dns_resolution_binding_mode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dns_resolution_binding_mode`.""", DeprecationWarning)
+            pulumi.log.warn("""allow_dns_resolution_binding is deprecated: This field has been deprecated in favor of `dns_resolution_binding_mode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dns_resolution_binding_mode`.""")
+        if allow_dns_resolution_binding is not None:
             pulumi.set(__self__, "allow_dns_resolution_binding", allow_dns_resolution_binding)
+        if dns_resolution_binding_mode is not None:
+            pulumi.set(__self__, "dns_resolution_binding_mode", dns_resolution_binding_mode)
         if ips is not None:
             pulumi.set(__self__, "ips", ips)
         if name is not None:
@@ -85,114 +93,130 @@ class IsVirtualEndpointGatewayArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowDnsResolutionBinding")
-    def allow_dns_resolution_binding(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    @_utilities.deprecated("""This field has been deprecated in favor of `dns_resolution_binding_mode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dns_resolution_binding_mode`.""")
+    def allow_dns_resolution_binding(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
         """
         return pulumi.get(self, "allow_dns_resolution_binding")
 
     @allow_dns_resolution_binding.setter
-    def allow_dns_resolution_binding(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_dns_resolution_binding(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_dns_resolution_binding", value)
 
     @_builtins.property
+    @pulumi.getter(name="dnsResolutionBindingMode")
+    def dns_resolution_binding_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `per_resource_binding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+        """
+        return pulumi.get(self, "dns_resolution_binding_mode")
+
+    @dns_resolution_binding_mode.setter
+    def dns_resolution_binding_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "dns_resolution_binding_mode", value)
+
+    @_builtins.property
     @pulumi.getter
-    def ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]:
+    def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]:
         """
         Endpoint gateway IPs
         """
         return pulumi.get(self, "ips")
 
     @ips.setter
-    def ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]):
+    def ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]):
         pulumi.set(self, "ips", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group id
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Endpoint gateway securitygroups list
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags for VPE
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsVirtualEndpointGatewayState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_dns_resolution_binding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input['IsVirtualEndpointGatewayTargetArgs']] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_dns_resolution_binding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_resolution_binding_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional['IsVirtualEndpointGatewayTargetArgs']] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVirtualEndpointGateway resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.bool] allow_dns_resolution_binding: Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
         :param pulumi.Input[_builtins.str] created_at: Endpoint gateway created date and time
         :param pulumi.Input[_builtins.str] crn: The CRN for this Endpoint gateway
+        :param pulumi.Input[_builtins.str] dns_resolution_binding_mode: The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `per_resource_binding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
         :param pulumi.Input[_builtins.str] health_state: Endpoint gateway health state
         :param pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]] ips: Endpoint gateway IPs
         :param pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayLifecycleReasonArgs']]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
@@ -209,11 +233,16 @@ class _IsVirtualEndpointGatewayState:
         if access_tags is not None:
             pulumi.set(__self__, "access_tags", access_tags)
         if allow_dns_resolution_binding is not None:
+            warnings.warn("""This field has been deprecated in favor of `dns_resolution_binding_mode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dns_resolution_binding_mode`.""", DeprecationWarning)
+            pulumi.log.warn("""allow_dns_resolution_binding is deprecated: This field has been deprecated in favor of `dns_resolution_binding_mode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dns_resolution_binding_mode`.""")
+        if allow_dns_resolution_binding is not None:
             pulumi.set(__self__, "allow_dns_resolution_binding", allow_dns_resolution_binding)
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
         if crn is not None:
             pulumi.set(__self__, "crn", crn)
+        if dns_resolution_binding_mode is not None:
+            pulumi.set(__self__, "dns_resolution_binding_mode", dns_resolution_binding_mode)
         if health_state is not None:
             pulumi.set(__self__, "health_state", health_state)
         if ips is not None:
@@ -241,194 +270,207 @@ class _IsVirtualEndpointGatewayState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowDnsResolutionBinding")
-    def allow_dns_resolution_binding(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    @_utilities.deprecated("""This field has been deprecated in favor of `dns_resolution_binding_mode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dns_resolution_binding_mode`.""")
+    def allow_dns_resolution_binding(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
         """
         return pulumi.get(self, "allow_dns_resolution_binding")
 
     @allow_dns_resolution_binding.setter
-    def allow_dns_resolution_binding(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_dns_resolution_binding(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_dns_resolution_binding", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway created date and time
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this Endpoint gateway
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
+    @pulumi.getter(name="dnsResolutionBindingMode")
+    def dns_resolution_binding_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `per_resource_binding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+        """
+        return pulumi.get(self, "dns_resolution_binding_mode")
+
+    @dns_resolution_binding_mode.setter
+    def dns_resolution_binding_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "dns_resolution_binding_mode", value)
+
+    @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway health state
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]:
+    def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]:
         """
         Endpoint gateway IPs
         """
         return pulumi.get(self, "ips")
 
     @ips.setter
-    def ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]):
+    def ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpArgs']]]]):
         pulumi.set(self, "ips", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayLifecycleReasonArgs']]]]:
         """
         The reasons for the current lifecycle_state (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway lifecycle state
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group id
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway resource type
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Endpoint gateway securitygroups list
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpoints")
-    def service_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def service_endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The fully qualified domain names for the target service. A fully qualified domain name for the target service
         """
         return pulumi.get(self, "service_endpoints")
 
     @service_endpoints.setter
-    def service_endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def service_endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service_endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags for VPE
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['IsVirtualEndpointGatewayTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['IsVirtualEndpointGatewayTargetArgs']]:
         """
         Endpoint gateway target
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['IsVirtualEndpointGatewayTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['IsVirtualEndpointGatewayTargetArgs']]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPC id
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
 
@@ -438,28 +480,31 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_dns_resolution_binding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict']]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_dns_resolution_binding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dns_resolution_binding_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict', 'outputs.IsVirtualEndpointGatewayIp']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict', 'outputs.IsVirtualEndpointGatewayTarget']]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVirtualEndpointGateway resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.bool] allow_dns_resolution_binding: Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict']]]] ips: Endpoint gateway IPs
+        :param pulumi.Input[_builtins.str] dns_resolution_binding_mode: The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `per_resource_binding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict', 'outputs.IsVirtualEndpointGatewayIp']]]] ips: Endpoint gateway IPs
         :param pulumi.Input[_builtins.str] name: Endpoint gateway name
         :param pulumi.Input[_builtins.str] resource_group: The resource group id
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_groups: Endpoint gateway securitygroups list
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of tags for VPE
-        :param pulumi.Input[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict']] target: Endpoint gateway target
+        :param pulumi.Input[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict', 'outputs.IsVirtualEndpointGatewayTarget']] target: Endpoint gateway target
         :param pulumi.Input[_builtins.str] vpc: The VPC id
         """
         ...
@@ -470,6 +515,7 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVirtualEndpointGateway resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVirtualEndpointGatewayArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -485,15 +531,16 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allow_dns_resolution_binding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict']]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allow_dns_resolution_binding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dns_resolution_binding_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict', 'outputs.IsVirtualEndpointGatewayIp']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict', 'outputs.IsVirtualEndpointGatewayTarget']]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -505,6 +552,7 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
 
             __props__.__dict__["access_tags"] = access_tags
             __props__.__dict__["allow_dns_resolution_binding"] = allow_dns_resolution_binding
+            __props__.__dict__["dns_resolution_binding_mode"] = dns_resolution_binding_mode
             __props__.__dict__["ips"] = ips
             __props__.__dict__["name"] = name
             __props__.__dict__["resource_group"] = resource_group
@@ -533,22 +581,23 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allow_dns_resolution_binding: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict']]]]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayLifecycleReasonArgs', 'IsVirtualEndpointGatewayLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            target: Optional[pulumi.Input[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict']]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVirtualEndpointGateway':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allow_dns_resolution_binding: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_resolution_binding_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict', 'outputs.IsVirtualEndpointGatewayIp']]]]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayLifecycleReasonArgs', 'IsVirtualEndpointGatewayLifecycleReasonArgsDict', 'outputs.IsVirtualEndpointGatewayLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target: pulumi.Input[Optional[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict', 'outputs.IsVirtualEndpointGatewayTarget']]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVirtualEndpointGateway':
         """
         Get an existing IsVirtualEndpointGateway resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -560,9 +609,10 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] allow_dns_resolution_binding: Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
         :param pulumi.Input[_builtins.str] created_at: Endpoint gateway created date and time
         :param pulumi.Input[_builtins.str] crn: The CRN for this Endpoint gateway
+        :param pulumi.Input[_builtins.str] dns_resolution_binding_mode: The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `per_resource_binding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
         :param pulumi.Input[_builtins.str] health_state: Endpoint gateway health state
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict']]]] ips: Endpoint gateway IPs
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayLifecycleReasonArgs', 'IsVirtualEndpointGatewayLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpArgs', 'IsVirtualEndpointGatewayIpArgsDict', 'outputs.IsVirtualEndpointGatewayIp']]]] ips: Endpoint gateway IPs
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayLifecycleReasonArgs', 'IsVirtualEndpointGatewayLifecycleReasonArgsDict', 'outputs.IsVirtualEndpointGatewayLifecycleReason']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: Endpoint gateway lifecycle state
         :param pulumi.Input[_builtins.str] name: Endpoint gateway name
         :param pulumi.Input[_builtins.str] resource_group: The resource group id
@@ -570,7 +620,7 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_groups: Endpoint gateway securitygroups list
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_endpoints: The fully qualified domain names for the target service. A fully qualified domain name for the target service
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of tags for VPE
-        :param pulumi.Input[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict']] target: Endpoint gateway target
+        :param pulumi.Input[Union['IsVirtualEndpointGatewayTargetArgs', 'IsVirtualEndpointGatewayTargetArgsDict', 'outputs.IsVirtualEndpointGatewayTarget']] target: Endpoint gateway target
         :param pulumi.Input[_builtins.str] vpc: The VPC id
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -581,6 +631,7 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
         __props__.__dict__["allow_dns_resolution_binding"] = allow_dns_resolution_binding
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["crn"] = crn
+        __props__.__dict__["dns_resolution_binding_mode"] = dns_resolution_binding_mode
         __props__.__dict__["health_state"] = health_state
         __props__.__dict__["ips"] = ips
         __props__.__dict__["lifecycle_reasons"] = lifecycle_reasons
@@ -605,6 +656,7 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="allowDnsResolutionBinding")
+    @_utilities.deprecated("""This field has been deprecated in favor of `dns_resolution_binding_mode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dns_resolution_binding_mode`.""")
     def allow_dns_resolution_binding(self) -> pulumi.Output[_builtins.bool]:
         """
         Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
@@ -626,6 +678,14 @@ class IsVirtualEndpointGateway(pulumi.CustomResource):
         The CRN for this Endpoint gateway
         """
         return pulumi.get(self, "crn")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsResolutionBindingMode")
+    def dns_resolution_binding_mode(self) -> pulumi.Output[_builtins.str]:
+        """
+        The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `per_resource_binding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+        """
+        return pulumi.get(self, "dns_resolution_binding_mode")
 
     @_builtins.property
     @pulumi.getter(name="healthState")

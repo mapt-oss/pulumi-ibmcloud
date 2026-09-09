@@ -140,51 +140,51 @@ export interface IamServicePolicyState {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of ServiceID
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * UUID of ServiceID
      *
      * @deprecated This field is deprecated and will be removed starting with this 1.82.0 release. Please use iamId field instead.
      */
-    iamServiceId?: pulumi.Input<string>;
+    iamServiceId?: pulumi.Input<string | undefined>;
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamServicePolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamServicePolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -194,34 +194,34 @@ export interface IamServicePolicyArgs {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of ServiceID
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * UUID of ServiceID
      *
      * @deprecated This field is deprecated and will be removed starting with this 1.82.0 release. Please use iamId field instead.
      */
-    iamServiceId?: pulumi.Input<string>;
+    iamServiceId?: pulumi.Input<string | undefined>;
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamServicePolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamServicePolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
@@ -229,14 +229,14 @@ export interface IamServicePolicyArgs {
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

@@ -26,7 +26,7 @@ class GetIamApiKeyResult:
     """
     A collection of values returned by getIamApiKey.
     """
-    def __init__(__self__, account_id=None, apikey_id=None, created_at=None, created_by=None, crn=None, description=None, entity_tag=None, iam_id=None, id=None, locked=None, modified_at=None, name=None):
+    def __init__(__self__, account_id=None, apikey_id=None, created_at=None, created_by=None, crn=None, description=None, entity_tag=None, expires_at=None, iam_id=None, id=None, locked=None, modified_at=None, name=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -48,6 +48,9 @@ class GetIamApiKeyResult:
         if entity_tag and not isinstance(entity_tag, str):
             raise TypeError("Expected argument 'entity_tag' to be a str")
         pulumi.set(__self__, "entity_tag", entity_tag)
+        if expires_at and not isinstance(expires_at, str):
+            raise TypeError("Expected argument 'expires_at' to be a str")
+        pulumi.set(__self__, "expires_at", expires_at)
         if iam_id and not isinstance(iam_id, str):
             raise TypeError("Expected argument 'iam_id' to be a str")
         pulumi.set(__self__, "iam_id", iam_id)
@@ -100,6 +103,11 @@ class GetIamApiKeyResult:
         return pulumi.get(self, "entity_tag")
 
     @_builtins.property
+    @pulumi.getter(name="expiresAt")
+    def expires_at(self) -> _builtins.str:
+        return pulumi.get(self, "expires_at")
+
+    @_builtins.property
     @pulumi.getter(name="iamId")
     def iam_id(self) -> _builtins.str:
         return pulumi.get(self, "iam_id")
@@ -141,6 +149,7 @@ class AwaitableGetIamApiKeyResult(GetIamApiKeyResult):
             crn=self.crn,
             description=self.description,
             entity_tag=self.entity_tag,
+            expires_at=self.expires_at,
             iam_id=self.iam_id,
             id=self.id,
             locked=self.locked,
@@ -166,12 +175,13 @@ def get_iam_api_key(apikey_id: Optional[_builtins.str] = None,
         crn=pulumi.get(__ret__, 'crn'),
         description=pulumi.get(__ret__, 'description'),
         entity_tag=pulumi.get(__ret__, 'entity_tag'),
+        expires_at=pulumi.get(__ret__, 'expires_at'),
         iam_id=pulumi.get(__ret__, 'iam_id'),
         id=pulumi.get(__ret__, 'id'),
         locked=pulumi.get(__ret__, 'locked'),
         modified_at=pulumi.get(__ret__, 'modified_at'),
         name=pulumi.get(__ret__, 'name'))
-def get_iam_api_key_output(apikey_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_api_key_output(apikey_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamApiKeyResult]:
     """
     Use this data source to access information about an existing resource.
@@ -188,6 +198,7 @@ def get_iam_api_key_output(apikey_id: Optional[pulumi.Input[_builtins.str]] = No
         crn=pulumi.get(__response__, 'crn'),
         description=pulumi.get(__response__, 'description'),
         entity_tag=pulumi.get(__response__, 'entity_tag'),
+        expires_at=pulumi.get(__response__, 'expires_at'),
         iam_id=pulumi.get(__response__, 'iam_id'),
         id=pulumi.get(__response__, 'id'),
         locked=pulumi.get(__response__, 'locked'),

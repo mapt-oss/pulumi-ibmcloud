@@ -21,17 +21,18 @@ __all__ = ['IsSnapshotArgs', 'IsSnapshot']
 @pulumi.input_type
 class IsSnapshotArgs:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input['IsSnapshotAllowedUseArgs']] = None,
-                 clones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional['IsSnapshotAllowedUseArgs']] = None,
+                 clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsSnapshot resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input['IsSnapshotAllowedUseArgs'] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] clones: Zones for creating the snapshot clone
@@ -63,143 +64,144 @@ class IsSnapshotArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedUse")
-    def allowed_use(self) -> Optional[pulumi.Input['IsSnapshotAllowedUseArgs']]:
+    def allowed_use(self) -> pulumi.Input[Optional['IsSnapshotAllowedUseArgs']]:
         """
         The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
         """
         return pulumi.get(self, "allowed_use")
 
     @allowed_use.setter
-    def allowed_use(self, value: Optional[pulumi.Input['IsSnapshotAllowedUseArgs']]):
+    def allowed_use(self, value: pulumi.Input[Optional['IsSnapshotAllowedUseArgs']]):
         pulumi.set(self, "allowed_use", value)
 
     @_builtins.property
     @pulumi.getter
-    def clones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def clones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Zones for creating the snapshot clone
         """
         return pulumi.get(self, "clones")
 
     @clones.setter
-    def clones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def clones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "clones", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A reference to the root key used to wrap the data encryption key for the source volume.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Snapshot name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group info
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshotCrn")
-    def source_snapshot_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_snapshot_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source Snapshot CRN
         """
         return pulumi.get(self, "source_snapshot_crn")
 
     @source_snapshot_crn.setter
-    def source_snapshot_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_snapshot_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_snapshot_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceVolume")
-    def source_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Snapshot source volume
         """
         return pulumi.get(self, "source_volume")
 
     @source_volume.setter
-    def source_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_volume", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Tags for the snapshot
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsSnapshotState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input['IsSnapshotAllowedUseArgs']] = None,
-                 backup_policy_plans: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotBackupPolicyPlanArgs']]]] = None,
-                 bootable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 catalog_offerings: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotCatalogOfferingArgs']]]] = None,
-                 clones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 copies: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotCopyArgs']]]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 minimum_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 snapshot_consistency_groups: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotSnapshotConsistencyGroupArgs']]]] = None,
-                 source_image: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshots: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotSourceSnapshotArgs']]]] = None,
-                 source_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional['IsSnapshotAllowedUseArgs']] = None,
+                 backup_policy_plans: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotBackupPolicyPlanArgs']]]] = None,
+                 bootable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 catalog_offerings: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotCatalogOfferingArgs']]]] = None,
+                 clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 copies: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotCopyArgs']]]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 minimum_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 snapshot_consistency_groups: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotSnapshotConsistencyGroupArgs']]]] = None,
+                 source_image: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshots: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotSourceSnapshotArgs']]]] = None,
+                 source_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IsSnapshot resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input['IsSnapshotAllowedUseArgs'] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
         :param pulumi.Input[Sequence[pulumi.Input['IsSnapshotBackupPolicyPlanArgs']]] backup_policy_plans: If present, the backup policy plan which created this snapshot.
@@ -279,302 +281,302 @@ class _IsSnapshotState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedUse")
-    def allowed_use(self) -> Optional[pulumi.Input['IsSnapshotAllowedUseArgs']]:
+    def allowed_use(self) -> pulumi.Input[Optional['IsSnapshotAllowedUseArgs']]:
         """
         The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
         """
         return pulumi.get(self, "allowed_use")
 
     @allowed_use.setter
-    def allowed_use(self, value: Optional[pulumi.Input['IsSnapshotAllowedUseArgs']]):
+    def allowed_use(self, value: pulumi.Input[Optional['IsSnapshotAllowedUseArgs']]):
         pulumi.set(self, "allowed_use", value)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyPlans")
-    def backup_policy_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotBackupPolicyPlanArgs']]]]:
+    def backup_policy_plans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotBackupPolicyPlanArgs']]]]:
         """
         If present, the backup policy plan which created this snapshot.
         """
         return pulumi.get(self, "backup_policy_plans")
 
     @backup_policy_plans.setter
-    def backup_policy_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotBackupPolicyPlanArgs']]]]):
+    def backup_policy_plans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotBackupPolicyPlanArgs']]]]):
         pulumi.set(self, "backup_policy_plans", value)
 
     @_builtins.property
     @pulumi.getter
-    def bootable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def bootable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if a boot volume attachment can be created with a volume created from this snapshot
         """
         return pulumi.get(self, "bootable")
 
     @bootable.setter
-    def bootable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def bootable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "bootable", value)
 
     @_builtins.property
     @pulumi.getter(name="catalogOfferings")
-    def catalog_offerings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotCatalogOfferingArgs']]]]:
+    def catalog_offerings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotCatalogOfferingArgs']]]]:
         """
         The catalog offering inherited from the snapshot's source. If a virtual server instance is provisioned with a source_snapshot specifying this snapshot, the virtual server instance will use this snapshot's catalog offering, including its pricing plan.
         """
         return pulumi.get(self, "catalog_offerings")
 
     @catalog_offerings.setter
-    def catalog_offerings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotCatalogOfferingArgs']]]]):
+    def catalog_offerings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotCatalogOfferingArgs']]]]):
         pulumi.set(self, "catalog_offerings", value)
 
     @_builtins.property
     @pulumi.getter
-    def clones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def clones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Zones for creating the snapshot clone
         """
         return pulumi.get(self, "clones")
 
     @clones.setter
-    def clones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def clones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "clones", value)
 
     @_builtins.property
     @pulumi.getter
-    def copies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotCopyArgs']]]]:
+    def copies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotCopyArgs']]]]:
         """
         The copies of this snapshot in other regions.
         """
         return pulumi.get(self, "copies")
 
     @copies.setter
-    def copies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotCopyArgs']]]]):
+    def copies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotCopyArgs']]]]):
         pulumi.set(self, "copies", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def encryption(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Encryption type of the snapshot
         """
         return pulumi.get(self, "encryption")
 
     @encryption.setter
-    def encryption(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A reference to the root key used to wrap the data encryption key for the source volume.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL for the snapshot
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Snapshot lifecycle state
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumCapacity")
-    def minimum_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def minimum_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Minimum capacity of the snapshot
         """
         return pulumi.get(self, "minimum_capacity")
 
     @minimum_capacity.setter
-    def minimum_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def minimum_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "minimum_capacity", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Snapshot name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystem")
-    def operating_system(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name for the operating system included in this image
         """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
-    def operating_system(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group info
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type of the snapshot
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceTags")
-    def service_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def service_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [service tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) prefixed with `is.snapshot:` associated with this snapshot.
         """
         return pulumi.get(self, "service_tags")
 
     @service_tags.setter
-    def service_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def service_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The size of the snapshot
         """
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotConsistencyGroups")
-    def snapshot_consistency_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotSnapshotConsistencyGroupArgs']]]]:
+    def snapshot_consistency_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotSnapshotConsistencyGroupArgs']]]]:
         """
         The snapshot consistency group which created this snapshot.
         """
         return pulumi.get(self, "snapshot_consistency_groups")
 
     @snapshot_consistency_groups.setter
-    def snapshot_consistency_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotSnapshotConsistencyGroupArgs']]]]):
+    def snapshot_consistency_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotSnapshotConsistencyGroupArgs']]]]):
         pulumi.set(self, "snapshot_consistency_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceImage")
-    def source_image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If present, the image id from which the data on this volume was most directly provisioned.
         """
         return pulumi.get(self, "source_image")
 
     @source_image.setter
-    def source_image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_image", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshotCrn")
-    def source_snapshot_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_snapshot_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source Snapshot CRN
         """
         return pulumi.get(self, "source_snapshot_crn")
 
     @source_snapshot_crn.setter
-    def source_snapshot_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_snapshot_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_snapshot_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshots")
-    def source_snapshots(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotSourceSnapshotArgs']]]]:
+    def source_snapshots(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotSourceSnapshotArgs']]]]:
         """
         If present, the source snapshot this snapshot was created from.
         """
         return pulumi.get(self, "source_snapshots")
 
     @source_snapshots.setter
-    def source_snapshots(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotSourceSnapshotArgs']]]]):
+    def source_snapshots(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotSourceSnapshotArgs']]]]):
         pulumi.set(self, "source_snapshots", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceVolume")
-    def source_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Snapshot source volume
         """
         return pulumi.get(self, "source_volume")
 
     @source_volume.setter
-    def source_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_volume", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Tags for the snapshot
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
@@ -584,22 +586,23 @@ class IsSnapshot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict']]] = None,
-                 clones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict', 'outputs.IsSnapshotAllowedUse']]] = None,
+                 clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IsSnapshot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
-        :param pulumi.Input[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
+        :param pulumi.Input[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict', 'outputs.IsSnapshotAllowedUse']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] clones: Zones for creating the snapshot clone
         :param pulumi.Input[_builtins.str] encryption_key: A reference to the root key used to wrap the data encryption key for the source volume.
         :param pulumi.Input[_builtins.str] name: Snapshot name
@@ -616,6 +619,7 @@ class IsSnapshot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsSnapshot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsSnapshotArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -631,15 +635,15 @@ class IsSnapshot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict']]] = None,
-                 clones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict', 'outputs.IsSnapshotAllowedUse']]] = None,
+                 clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -684,31 +688,31 @@ class IsSnapshot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_use: Optional[pulumi.Input[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict']]] = None,
-            backup_policy_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotBackupPolicyPlanArgs', 'IsSnapshotBackupPolicyPlanArgsDict']]]]] = None,
-            bootable: Optional[pulumi.Input[_builtins.bool]] = None,
-            catalog_offerings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotCatalogOfferingArgs', 'IsSnapshotCatalogOfferingArgsDict']]]]] = None,
-            clones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            copies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotCopyArgs', 'IsSnapshotCopyArgsDict']]]]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            minimum_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            service_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            size: Optional[pulumi.Input[_builtins.int]] = None,
-            snapshot_consistency_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotSnapshotConsistencyGroupArgs', 'IsSnapshotSnapshotConsistencyGroupArgsDict']]]]] = None,
-            source_image: Optional[pulumi.Input[_builtins.str]] = None,
-            source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            source_snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotSourceSnapshotArgs', 'IsSnapshotSourceSnapshotArgsDict']]]]] = None,
-            source_volume: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsSnapshot':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_use: pulumi.Input[Optional[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict', 'outputs.IsSnapshotAllowedUse']]] = None,
+            backup_policy_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotBackupPolicyPlanArgs', 'IsSnapshotBackupPolicyPlanArgsDict', 'outputs.IsSnapshotBackupPolicyPlan']]]]] = None,
+            bootable: pulumi.Input[Optional[_builtins.bool]] = None,
+            catalog_offerings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotCatalogOfferingArgs', 'IsSnapshotCatalogOfferingArgsDict', 'outputs.IsSnapshotCatalogOffering']]]]] = None,
+            clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            copies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotCopyArgs', 'IsSnapshotCopyArgsDict', 'outputs.IsSnapshotCopy']]]]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            minimum_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            service_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            size: pulumi.Input[Optional[_builtins.int]] = None,
+            snapshot_consistency_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotSnapshotConsistencyGroupArgs', 'IsSnapshotSnapshotConsistencyGroupArgsDict', 'outputs.IsSnapshotSnapshotConsistencyGroup']]]]] = None,
+            source_image: pulumi.Input[Optional[_builtins.str]] = None,
+            source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            source_snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotSourceSnapshotArgs', 'IsSnapshotSourceSnapshotArgsDict', 'outputs.IsSnapshotSourceSnapshot']]]]] = None,
+            source_volume: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsSnapshot':
         """
         Get an existing IsSnapshot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -717,12 +721,12 @@ class IsSnapshot(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
-        :param pulumi.Input[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotBackupPolicyPlanArgs', 'IsSnapshotBackupPolicyPlanArgsDict']]]] backup_policy_plans: If present, the backup policy plan which created this snapshot.
+        :param pulumi.Input[Union['IsSnapshotAllowedUseArgs', 'IsSnapshotAllowedUseArgsDict', 'outputs.IsSnapshotAllowedUse']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility. Can only be specified for bootable snapshots.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotBackupPolicyPlanArgs', 'IsSnapshotBackupPolicyPlanArgsDict', 'outputs.IsSnapshotBackupPolicyPlan']]]] backup_policy_plans: If present, the backup policy plan which created this snapshot.
         :param pulumi.Input[_builtins.bool] bootable: Indicates if a boot volume attachment can be created with a volume created from this snapshot
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotCatalogOfferingArgs', 'IsSnapshotCatalogOfferingArgsDict']]]] catalog_offerings: The catalog offering inherited from the snapshot's source. If a virtual server instance is provisioned with a source_snapshot specifying this snapshot, the virtual server instance will use this snapshot's catalog offering, including its pricing plan.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotCatalogOfferingArgs', 'IsSnapshotCatalogOfferingArgsDict', 'outputs.IsSnapshotCatalogOffering']]]] catalog_offerings: The catalog offering inherited from the snapshot's source. If a virtual server instance is provisioned with a source_snapshot specifying this snapshot, the virtual server instance will use this snapshot's catalog offering, including its pricing plan.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] clones: Zones for creating the snapshot clone
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotCopyArgs', 'IsSnapshotCopyArgsDict']]]] copies: The copies of this snapshot in other regions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotCopyArgs', 'IsSnapshotCopyArgsDict', 'outputs.IsSnapshotCopy']]]] copies: The copies of this snapshot in other regions.
         :param pulumi.Input[_builtins.str] crn: The crn of the resource
         :param pulumi.Input[_builtins.str] encryption: Encryption type of the snapshot
         :param pulumi.Input[_builtins.str] encryption_key: A reference to the root key used to wrap the data encryption key for the source volume.
@@ -735,10 +739,10 @@ class IsSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: The resource type of the snapshot
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_tags: The [service tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) prefixed with `is.snapshot:` associated with this snapshot.
         :param pulumi.Input[_builtins.int] size: The size of the snapshot
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotSnapshotConsistencyGroupArgs', 'IsSnapshotSnapshotConsistencyGroupArgsDict']]]] snapshot_consistency_groups: The snapshot consistency group which created this snapshot.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotSnapshotConsistencyGroupArgs', 'IsSnapshotSnapshotConsistencyGroupArgsDict', 'outputs.IsSnapshotSnapshotConsistencyGroup']]]] snapshot_consistency_groups: The snapshot consistency group which created this snapshot.
         :param pulumi.Input[_builtins.str] source_image: If present, the image id from which the data on this volume was most directly provisioned.
         :param pulumi.Input[_builtins.str] source_snapshot_crn: Source Snapshot CRN
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotSourceSnapshotArgs', 'IsSnapshotSourceSnapshotArgsDict']]]] source_snapshots: If present, the source snapshot this snapshot was created from.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotSourceSnapshotArgs', 'IsSnapshotSourceSnapshotArgsDict', 'outputs.IsSnapshotSourceSnapshot']]]] source_snapshots: If present, the source snapshot this snapshot was created from.
         :param pulumi.Input[_builtins.str] source_volume: Snapshot source volume
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: User Tags for the snapshot
         """

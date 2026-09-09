@@ -96,19 +96,19 @@ export interface IamUserInviteState {
     /**
      * access group ids to associate the inviting user
      */
-    accessGroups?: pulumi.Input<pulumi.Input<string>[]>;
-    classicInfraRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteClassicInfraRole>[]>;
-    cloudFoundryRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteCloudFoundryRole>[]>;
-    iamPolicies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteIamPolicy>[]>;
-    invitedUsers?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUser>[]>;
+    accessGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    classicInfraRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteClassicInfraRole>[] | undefined>;
+    cloudFoundryRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteCloudFoundryRole>[] | undefined>;
+    iamPolicies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteIamPolicy>[] | undefined>;
+    invitedUsers?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUser>[] | undefined>;
     /**
      * Number of users invited to an account
      */
-    numberOfInvitedUsers?: pulumi.Input<number>;
+    numberOfInvitedUsers?: pulumi.Input<number | undefined>;
     /**
      * List of ibm id or email of user
      */
-    users?: pulumi.Input<pulumi.Input<string>[]>;
+    users?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -118,10 +118,10 @@ export interface IamUserInviteArgs {
     /**
      * access group ids to associate the inviting user
      */
-    accessGroups?: pulumi.Input<pulumi.Input<string>[]>;
-    classicInfraRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteClassicInfraRole>[]>;
-    cloudFoundryRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteCloudFoundryRole>[]>;
-    iamPolicies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteIamPolicy>[]>;
+    accessGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    classicInfraRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteClassicInfraRole>[] | undefined>;
+    cloudFoundryRoles?: pulumi.Input<pulumi.Input<inputs.IamUserInviteCloudFoundryRole>[] | undefined>;
+    iamPolicies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteIamPolicy>[] | undefined>;
     /**
      * List of ibm id or email of user
      */

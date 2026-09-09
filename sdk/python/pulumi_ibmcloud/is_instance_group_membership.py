@@ -23,10 +23,11 @@ class IsInstanceGroupMembershipArgs:
     def __init__(__self__, *,
                  instance_group: pulumi.Input[_builtins.str],
                  instance_group_membership: pulumi.Input[_builtins.str],
-                 action_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsInstanceGroupMembership resource.
+
         :param pulumi.Input[_builtins.str] instance_group: The instance group identifier.
         :param pulumi.Input[_builtins.str] instance_group_membership: The unique identifier for this instance group membership.
         :param pulumi.Input[_builtins.bool] action_delete: The delete flag for this instance group membership. Must be set to true to delete instance group membership.
@@ -65,43 +66,44 @@ class IsInstanceGroupMembershipArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionDelete")
-    def action_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The delete flag for this instance group membership. Must be set to true to delete instance group membership.
         """
         return pulumi.get(self, "action_delete")
 
     @action_delete.setter
-    def action_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this instance group membership. Names must be unique within the instance group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsInstanceGroupMembershipState:
     def __init__(__self__, *,
-                 action_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_instance_on_membership_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_membership: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_templates: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceTemplateArgs']]]] = None,
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceArgs']]]] = None,
-                 load_balancer_pool_member: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_instance_on_membership_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_membership: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_templates: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceTemplateArgs']]]] = None,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceArgs']]]] = None,
+                 load_balancer_pool_member: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceGroupMembership resources.
+
         :param pulumi.Input[_builtins.bool] action_delete: The delete flag for this instance group membership. Must be set to true to delete instance group membership.
         :param pulumi.Input[_builtins.bool] delete_instance_on_membership_delete: If set to true, when deleting the membership the instance will also be deleted.
         :param pulumi.Input[_builtins.str] instance_group: The instance group identifier.
@@ -131,104 +133,104 @@ class _IsInstanceGroupMembershipState:
 
     @_builtins.property
     @pulumi.getter(name="actionDelete")
-    def action_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The delete flag for this instance group membership. Must be set to true to delete instance group membership.
         """
         return pulumi.get(self, "action_delete")
 
     @action_delete.setter
-    def action_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInstanceOnMembershipDelete")
-    def delete_instance_on_membership_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_instance_on_membership_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, when deleting the membership the instance will also be deleted.
         """
         return pulumi.get(self, "delete_instance_on_membership_delete")
 
     @delete_instance_on_membership_delete.setter
-    def delete_instance_on_membership_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_instance_on_membership_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_instance_on_membership_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceGroup")
-    def instance_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The instance group identifier.
         """
         return pulumi.get(self, "instance_group")
 
     @instance_group.setter
-    def instance_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_group", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceGroupMembership")
-    def instance_group_membership(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_group_membership(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this instance group membership.
         """
         return pulumi.get(self, "instance_group_membership")
 
     @instance_group_membership.setter
-    def instance_group_membership(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_group_membership(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_group_membership", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceTemplates")
-    def instance_templates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceTemplateArgs']]]]:
+    def instance_templates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceTemplateArgs']]]]:
         return pulumi.get(self, "instance_templates")
 
     @instance_templates.setter
-    def instance_templates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceTemplateArgs']]]]):
+    def instance_templates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceTemplateArgs']]]]):
         pulumi.set(self, "instance_templates", value)
 
     @_builtins.property
     @pulumi.getter
-    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceArgs']]]]:
+    def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceArgs']]]]:
         return pulumi.get(self, "instances")
 
     @instances.setter
-    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceArgs']]]]):
+    def instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupMembershipInstanceArgs']]]]):
         pulumi.set(self, "instances", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerPoolMember")
-    def load_balancer_pool_member(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_pool_member(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this load balancer pool member.
         """
         return pulumi.get(self, "load_balancer_pool_member")
 
     @load_balancer_pool_member.setter
-    def load_balancer_pool_member(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_pool_member(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_pool_member", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this instance group membership. Names must be unique within the instance group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the instance group membership- `deleting`: Membership is deleting dependent resources- `failed`: Membership was unable to maintain dependent resources- `healthy`: Membership is active and serving in the group- `pending`: Membership is waiting for dependent resources- `unhealthy`: Membership has unhealthy dependent resources.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -238,13 +240,14 @@ class IsInstanceGroupMembership(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_membership: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_membership: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceGroupMembership resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] action_delete: The delete flag for this instance group membership. Must be set to true to delete instance group membership.
@@ -260,6 +263,7 @@ class IsInstanceGroupMembership(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceGroupMembership resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceGroupMembershipArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -275,10 +279,10 @@ class IsInstanceGroupMembership(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_membership: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_membership: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -311,15 +315,15 @@ class IsInstanceGroupMembership(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            delete_instance_on_membership_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_group_membership: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_templates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceGroupMembershipInstanceTemplateArgs', 'IsInstanceGroupMembershipInstanceTemplateArgsDict']]]]] = None,
-            instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceGroupMembershipInstanceArgs', 'IsInstanceGroupMembershipInstanceArgsDict']]]]] = None,
-            load_balancer_pool_member: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceGroupMembership':
+            action_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_instance_on_membership_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_group_membership: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_templates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceGroupMembershipInstanceTemplateArgs', 'IsInstanceGroupMembershipInstanceTemplateArgsDict', 'outputs.IsInstanceGroupMembershipInstanceTemplate']]]]] = None,
+            instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceGroupMembershipInstanceArgs', 'IsInstanceGroupMembershipInstanceArgsDict', 'outputs.IsInstanceGroupMembershipInstance']]]]] = None,
+            load_balancer_pool_member: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceGroupMembership':
         """
         Get an existing IsInstanceGroupMembership resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -164,8 +164,8 @@ def get_is_instance_group_manager(instance_group: Optional[_builtins.str] = None
         min_membership_count=pulumi.get(__ret__, 'min_membership_count'),
         name=pulumi.get(__ret__, 'name'),
         policies=pulumi.get(__ret__, 'policies'))
-def get_is_instance_group_manager_output(instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                                         name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_group_manager_output(instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                                         name: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceGroupManagerResult]:
     """
     Use this data source to access information about an existing resource.

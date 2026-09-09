@@ -51,6 +51,6 @@ export function getIamAccessGroupPolicyOutput(args: GetIamAccessGroupPolicyOutpu
  */
 export interface GetIamAccessGroupPolicyOutputArgs {
     accessGroupId: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
-    transactionId?: pulumi.Input<string>;
+    sort?: pulumi.Input<string | undefined>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

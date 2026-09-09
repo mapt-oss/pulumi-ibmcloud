@@ -181,77 +181,77 @@ export interface IsInstanceGroupManagerActionState {
     /**
      * Instance group manager action ID
      */
-    actionId?: pulumi.Input<string>;
+    actionId?: pulumi.Input<string | undefined>;
     /**
      * The type of action for the instance group.
      */
-    actionType?: pulumi.Input<string>;
-    autoDelete?: pulumi.Input<boolean>;
-    autoDeleteTimeout?: pulumi.Input<number>;
+    actionType?: pulumi.Input<string | undefined>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
+    autoDeleteTimeout?: pulumi.Input<number | undefined>;
     /**
      * The date and time that the instance group manager action was modified.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The cron specification for a recurring scheduled action. Actions can be applied a maximum of one time within a 5 min period.
      */
-    cronSpec?: pulumi.Input<string>;
+    cronSpec?: pulumi.Input<string | undefined>;
     /**
      * instance group ID
      */
-    instanceGroup?: pulumi.Input<string>;
+    instanceGroup?: pulumi.Input<string | undefined>;
     /**
      * Instance group manager ID of type scheduled
      */
-    instanceGroupManager?: pulumi.Input<string>;
+    instanceGroupManager?: pulumi.Input<string | undefined>;
     /**
      * The date and time the scheduled action was last applied. If empty the action has never been applied.
      */
-    lastAppliedAt?: pulumi.Input<string>;
+    lastAppliedAt?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of members in a managed instance group
      */
-    maxMembershipCount?: pulumi.Input<number>;
+    maxMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * The number of members the instance group should have at the scheduled time.
      */
-    membershipCount?: pulumi.Input<number>;
+    membershipCount?: pulumi.Input<number | undefined>;
     /**
      * The minimum number of members in a managed instance group
      */
-    minMembershipCount?: pulumi.Input<number>;
+    minMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * instance group manager action name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The date and time the scheduled action will next run. If empty the system is currently calculating the next run time.
      */
-    nextRunAt?: pulumi.Input<string>;
+    nextRunAt?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The date and time the scheduled action will run.
      */
-    runAt?: pulumi.Input<string>;
+    runAt?: pulumi.Input<string | undefined>;
     /**
      * The status of the instance group action- `active`: Action is ready to be run- `completed`: Action was completed successfully- `failed`: Action could not be completed successfully- `incompatible`: Action parameters are not compatible with the group or manager- `omitted`: Action was not applied because this action's manager was disabled.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance group manager of type autoscale.
      */
-    targetManager?: pulumi.Input<string>;
+    targetManager?: pulumi.Input<string | undefined>;
     /**
      * Instance group manager name of type autoscale.
      */
-    targetManagerName?: pulumi.Input<string>;
+    targetManagerName?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the instance group manager action was modified.
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -261,7 +261,7 @@ export interface IsInstanceGroupManagerActionArgs {
     /**
      * The cron specification for a recurring scheduled action. Actions can be applied a maximum of one time within a 5 min period.
      */
-    cronSpec?: pulumi.Input<string>;
+    cronSpec?: pulumi.Input<string | undefined>;
     /**
      * instance group ID
      */
@@ -273,25 +273,25 @@ export interface IsInstanceGroupManagerActionArgs {
     /**
      * The maximum number of members in a managed instance group
      */
-    maxMembershipCount?: pulumi.Input<number>;
+    maxMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * The number of members the instance group should have at the scheduled time.
      */
-    membershipCount?: pulumi.Input<number>;
+    membershipCount?: pulumi.Input<number | undefined>;
     /**
      * The minimum number of members in a managed instance group
      */
-    minMembershipCount?: pulumi.Input<number>;
+    minMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * instance group manager action name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The date and time the scheduled action will run.
      */
-    runAt?: pulumi.Input<string>;
+    runAt?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance group manager of type autoscale.
      */
-    targetManager?: pulumi.Input<string>;
+    targetManager?: pulumi.Input<string | undefined>;
 }

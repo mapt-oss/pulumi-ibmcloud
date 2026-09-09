@@ -92,7 +92,7 @@ export class IsClusterNetworkInterface extends pulumi.CustomResource {
      */
     declare public readonly subnet: pulumi.Output<outputs.IsClusterNetworkInterfaceSubnet>;
     /**
-     * The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     declare public /*out*/ readonly targets: pulumi.Output<outputs.IsClusterNetworkInterfaceTarget[]>;
     /**
@@ -171,72 +171,72 @@ export interface IsClusterNetworkInterfaceState {
     /**
      * Indicates whether source IP spoofing is allowed on this cluster network interface. If `false`, source IP spoofing is prevented on this cluster network interface. If `true`, source IP spoofing is allowed on this cluster network interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this cluster network interface will be automatically deleted when `target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The cluster network identifier.
      */
-    clusterNetworkId?: pulumi.Input<string>;
+    clusterNetworkId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network interface.
      */
-    clusterNetworkInterfaceId?: pulumi.Input<string>;
+    clusterNetworkInterfaceId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the cluster network interface was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the virtual network interface,  allowing the workload to perform any needed NAT operations.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
-    etag?: pulumi.Input<string>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * The URL for this cluster network interface.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current `lifecycleState` (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the cluster network interface.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The MAC address of the cluster network interface. May be absent if`lifecycleState` is `pending`.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The cluster network subnet reserved IP for this cluster network interface.
      */
-    primaryIp?: pulumi.Input<inputs.IsClusterNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsClusterNetworkInterfacePrimaryIp | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The associated cluster network subnet. Required if `primaryIp` does not specify a clusternetwork subnet reserved IP identity.
      */
-    subnet?: pulumi.Input<inputs.IsClusterNetworkInterfaceSubnet>;
+    subnet?: pulumi.Input<inputs.IsClusterNetworkInterfaceSubnet | undefined>;
     /**
-     * The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    targets?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceTarget>[]>;
+    targets?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceTarget>[] | undefined>;
     /**
      * The VPC this cluster network interface resides in.
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceVpc>[]>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceVpc>[] | undefined>;
     /**
      * The zone this cluster network interface resides in.
      */
-    zones?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceZone>[]>;
+    zones?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceZone>[] | undefined>;
 }
 
 /**
@@ -250,13 +250,13 @@ export interface IsClusterNetworkInterfaceArgs {
     /**
      * The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The cluster network subnet reserved IP for this cluster network interface.
      */
-    primaryIp?: pulumi.Input<inputs.IsClusterNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsClusterNetworkInterfacePrimaryIp | undefined>;
     /**
      * The associated cluster network subnet. Required if `primaryIp` does not specify a clusternetwork subnet reserved IP identity.
      */
-    subnet?: pulumi.Input<inputs.IsClusterNetworkInterfaceSubnet>;
+    subnet?: pulumi.Input<inputs.IsClusterNetworkInterfaceSubnet | undefined>;
 }

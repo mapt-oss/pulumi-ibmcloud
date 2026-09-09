@@ -44,5 +44,5 @@ export function getIsVirtualNetworkInterfacesOutput(args?: GetIsVirtualNetworkIn
  * A collection of arguments for invoking getIsVirtualNetworkInterfaces.
  */
 export interface GetIsVirtualNetworkInterfacesOutputArgs {
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

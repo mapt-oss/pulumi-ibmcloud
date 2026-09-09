@@ -21,29 +21,30 @@ __all__ = ['IsShareArgs', 'IsShare']
 @pulumi.input_type
 class IsShareArgs:
     def __init__(__self__, *,
-                 access_control_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_access_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_transit_encryption_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_owner: Optional[pulumi.Input['IsShareInitialOwnerArgs']] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 mount_targets: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareMountTargetArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_share: Optional[pulumi.Input['IsShareOriginShareArgs']] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_share: Optional[pulumi.Input['IsShareReplicaShareArgs']] = None,
-                 replication_cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_share: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_share_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input['IsShareSourceSnapshotArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_control_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_access_protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_transit_encryption_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_owner: pulumi.Input[Optional['IsShareInitialOwnerArgs']] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 mount_targets: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareMountTargetArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_share: pulumi.Input[Optional['IsShareOriginShareArgs']] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_share: pulumi.Input[Optional['IsShareReplicaShareArgs']] = None,
+                 replication_cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_share: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_share_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional['IsShareSourceSnapshotArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsShare resource.
+
         :param pulumi.Input[_builtins.str] access_control_mode: The access control mode for the share:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_access_protocols: The access protocols to allow for this share
@@ -62,7 +63,7 @@ class IsShareArgs:
         :param pulumi.Input[_builtins.int] size: The size of the file share rounded up to the next gigabyte.
         :param pulumi.Input[_builtins.str] source_share: The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         :param pulumi.Input[_builtins.str] source_share_crn: The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
-        :param pulumi.Input['IsShareSourceSnapshotArgs'] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+        :param pulumi.Input['IsShareSourceSnapshotArgs'] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: User Tags for the file share
         :param pulumi.Input[_builtins.str] zone: The globally unique name of the zone this file share will reside in.
         """
@@ -111,302 +112,303 @@ class IsShareArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessControlMode")
-    def access_control_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_control_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access control mode for the share:
         """
         return pulumi.get(self, "access_control_mode")
 
     @access_control_mode.setter
-    def access_control_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_control_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_control_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedAccessProtocols")
-    def allowed_access_protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_access_protocols(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The access protocols to allow for this share
         """
         return pulumi.get(self, "allowed_access_protocols")
 
     @allowed_access_protocols.setter
-    def allowed_access_protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_access_protocols(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_access_protocols", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedTransitEncryptionModes")
-    def allowed_transit_encryption_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_transit_encryption_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Allowed transit encryption modes
         """
         return pulumi.get(self, "allowed_transit_encryption_modes")
 
     @allowed_transit_encryption_modes.setter
-    def allowed_transit_encryption_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_transit_encryption_modes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_transit_encryption_modes", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The bandwidth for the file share.
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the key to use for encrypting this file share.If no encryption key is provided, the share will not be encrypted.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter(name="initialOwner")
-    def initial_owner(self) -> Optional[pulumi.Input['IsShareInitialOwnerArgs']]:
+    def initial_owner(self) -> pulumi.Input[Optional['IsShareInitialOwnerArgs']]:
         """
         The owner assigned to the file share at creation.
         """
         return pulumi.get(self, "initial_owner")
 
     @initial_owner.setter
-    def initial_owner(self, value: Optional[pulumi.Input['IsShareInitialOwnerArgs']]):
+    def initial_owner(self, value: pulumi.Input[Optional['IsShareInitialOwnerArgs']]):
         pulumi.set(self, "initial_owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum input/output operation performance bandwidth per second for the file share.
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iops", value)
 
     @_builtins.property
     @pulumi.getter(name="mountTargets")
-    def mount_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]:
+    def mount_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]:
         """
         The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
         """
         return pulumi.get(self, "mount_targets")
 
     @mount_targets.setter
-    def mount_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]):
+    def mount_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]):
         pulumi.set(self, "mount_targets", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this file share. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="originShare")
-    def origin_share(self) -> Optional[pulumi.Input['IsShareOriginShareArgs']]:
+    def origin_share(self) -> pulumi.Input[Optional['IsShareOriginShareArgs']]:
         """
         The origin share this accessor share is referring to.This property will be present when the `accessor_binding_role` is `accessor`.
         """
         return pulumi.get(self, "origin_share")
 
     @origin_share.setter
-    def origin_share(self, value: Optional[pulumi.Input['IsShareOriginShareArgs']]):
+    def origin_share(self, value: pulumi.Input[Optional['IsShareOriginShareArgs']]):
         pulumi.set(self, "origin_share", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name for this share profile.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaShare")
-    def replica_share(self) -> Optional[pulumi.Input['IsShareReplicaShareArgs']]:
+    def replica_share(self) -> pulumi.Input[Optional['IsShareReplicaShareArgs']]:
         """
         Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`source_share` referencing this file share.
         """
         return pulumi.get(self, "replica_share")
 
     @replica_share.setter
-    def replica_share(self, value: Optional[pulumi.Input['IsShareReplicaShareArgs']]):
+    def replica_share(self, value: pulumi.Input[Optional['IsShareReplicaShareArgs']]):
         pulumi.set(self, "replica_share", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationCronSpec")
-    def replication_cron_spec(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_cron_spec(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cron specification for the file share replication schedule.Replication of a share can be scheduled to occur at most once per hour.
         """
         return pulumi.get(self, "replication_cron_spec")
 
     @replication_cron_spec.setter
-    def replication_cron_spec(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_cron_spec(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_cron_spec", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The size of the file share rounded up to the next gigabyte.
         """
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceShare")
-    def source_share(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_share(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         """
         return pulumi.get(self, "source_share")
 
     @source_share.setter
-    def source_share(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_share(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_share", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceShareCrn")
-    def source_share_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_share_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         """
         return pulumi.get(self, "source_share_crn")
 
     @source_share_crn.setter
-    def source_share_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_share_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_share_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshot")
-    def source_snapshot(self) -> Optional[pulumi.Input['IsShareSourceSnapshotArgs']]:
+    def source_snapshot(self) -> pulumi.Input[Optional['IsShareSourceSnapshotArgs']]:
         """
-        The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+        The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
         """
         return pulumi.get(self, "source_snapshot")
 
     @source_snapshot.setter
-    def source_snapshot(self, value: Optional[pulumi.Input['IsShareSourceSnapshotArgs']]):
+    def source_snapshot(self, value: pulumi.Input[Optional['IsShareSourceSnapshotArgs']]):
         pulumi.set(self, "source_snapshot", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Tags for the file share
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name of the zone this file share will reside in.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
 @pulumi.input_type
 class _IsShareState:
     def __init__(__self__, *,
-                 access_control_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 accessor_binding_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 accessor_bindings: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareAccessorBindingArgs']]]] = None,
-                 allowed_access_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_transit_encryption_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 availability_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_owner: Optional[pulumi.Input['IsShareInitialOwnerArgs']] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 last_sync_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 latest_jobs: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLatestJobArgs']]]] = None,
-                 latest_syncs: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLatestSyncArgs']]]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 mount_targets: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareMountTargetArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_share: Optional[pulumi.Input['IsShareOriginShareArgs']] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_share: Optional[pulumi.Input['IsShareReplicaShareArgs']] = None,
-                 replication_cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareReplicationStatusReasonArgs']]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 snapshot_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 snapshot_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_share: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_share_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input['IsShareSourceSnapshotArgs']] = None,
-                 storage_generation: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_control_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 accessor_binding_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 accessor_bindings: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareAccessorBindingArgs']]]] = None,
+                 allowed_access_protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_transit_encryption_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_owner: pulumi.Input[Optional['IsShareInitialOwnerArgs']] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 last_sync_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 latest_jobs: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLatestJobArgs']]]] = None,
+                 latest_syncs: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLatestSyncArgs']]]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 mount_targets: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareMountTargetArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_share: pulumi.Input[Optional['IsShareOriginShareArgs']] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_share: pulumi.Input[Optional['IsShareReplicaShareArgs']] = None,
+                 replication_cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareReplicationStatusReasonArgs']]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 snapshot_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 snapshot_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_share: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_share_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional['IsShareSourceSnapshotArgs']] = None,
+                 storage_generation: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsShare resources.
+
         :param pulumi.Input[_builtins.str] access_control_mode: The access control mode for the share:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] accessor_binding_role: The accessor binding role of this file share:- `none`: This file share is not participating in access with another file share- `origin`: This file share is the origin for one or more file shares  (which may be in other accounts)- `accessor`: This file share is providing access to another file share  (which may be in another account).
@@ -443,7 +445,7 @@ class _IsShareState:
         :param pulumi.Input[_builtins.int] snapshot_size: The total size (in gigabytes) of snapshots used for this file share.
         :param pulumi.Input[_builtins.str] source_share: The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         :param pulumi.Input[_builtins.str] source_share_crn: The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
-        :param pulumi.Input['IsShareSourceSnapshotArgs'] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+        :param pulumi.Input['IsShareSourceSnapshotArgs'] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
         :param pulumi.Input[_builtins.int] storage_generation: The storage generation for this share
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: User Tags for the file share
         :param pulumi.Input[_builtins.str] zone: The globally unique name of the zone this file share will reside in.
@@ -531,482 +533,482 @@ class _IsShareState:
 
     @_builtins.property
     @pulumi.getter(name="accessControlMode")
-    def access_control_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_control_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access control mode for the share:
         """
         return pulumi.get(self, "access_control_mode")
 
     @access_control_mode.setter
-    def access_control_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_control_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_control_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="accessorBindingRole")
-    def accessor_binding_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def accessor_binding_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The accessor binding role of this file share:- `none`: This file share is not participating in access with another file share- `origin`: This file share is the origin for one or more file shares  (which may be in other accounts)- `accessor`: This file share is providing access to another file share  (which may be in another account).
         """
         return pulumi.get(self, "accessor_binding_role")
 
     @accessor_binding_role.setter
-    def accessor_binding_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def accessor_binding_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "accessor_binding_role", value)
 
     @_builtins.property
     @pulumi.getter(name="accessorBindings")
-    def accessor_bindings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareAccessorBindingArgs']]]]:
+    def accessor_bindings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareAccessorBindingArgs']]]]:
         """
         The accessor bindings for this file share. Each accessor binding identifies a resource (possibly in another account) with access to this file share's data.
         """
         return pulumi.get(self, "accessor_bindings")
 
     @accessor_bindings.setter
-    def accessor_bindings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareAccessorBindingArgs']]]]):
+    def accessor_bindings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareAccessorBindingArgs']]]]):
         pulumi.set(self, "accessor_bindings", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedAccessProtocols")
-    def allowed_access_protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_access_protocols(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The access protocols to allow for this share
         """
         return pulumi.get(self, "allowed_access_protocols")
 
     @allowed_access_protocols.setter
-    def allowed_access_protocols(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_access_protocols(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_access_protocols", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedTransitEncryptionModes")
-    def allowed_transit_encryption_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_transit_encryption_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Allowed transit encryption modes
         """
         return pulumi.get(self, "allowed_transit_encryption_modes")
 
     @allowed_transit_encryption_modes.setter
-    def allowed_transit_encryption_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_transit_encryption_modes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_transit_encryption_modes", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityMode")
-    def availability_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Availability mode of the share.
         """
         return pulumi.get(self, "availability_mode")
 
     @availability_mode.setter
-    def availability_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The bandwidth for the file share.
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the file share is created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this share.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def encryption(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of encryption used for this file share.
         """
         return pulumi.get(self, "encryption")
 
     @encryption.setter
-    def encryption(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the key to use for encrypting this file share.If no encryption key is provided, the share will not be encrypted.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this share.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="initialOwner")
-    def initial_owner(self) -> Optional[pulumi.Input['IsShareInitialOwnerArgs']]:
+    def initial_owner(self) -> pulumi.Input[Optional['IsShareInitialOwnerArgs']]:
         """
         The owner assigned to the file share at creation.
         """
         return pulumi.get(self, "initial_owner")
 
     @initial_owner.setter
-    def initial_owner(self, value: Optional[pulumi.Input['IsShareInitialOwnerArgs']]):
+    def initial_owner(self, value: pulumi.Input[Optional['IsShareInitialOwnerArgs']]):
         pulumi.set(self, "initial_owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum input/output operation performance bandwidth per second for the file share.
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iops", value)
 
     @_builtins.property
     @pulumi.getter(name="lastSyncAt")
-    def last_sync_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_sync_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the file share was last synchronized to its replica.This property will be present when the `replication_role` is `source`.
         """
         return pulumi.get(self, "last_sync_at")
 
     @last_sync_at.setter
-    def last_sync_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_sync_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_sync_at", value)
 
     @_builtins.property
     @pulumi.getter(name="latestJobs")
-    def latest_jobs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLatestJobArgs']]]]:
+    def latest_jobs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLatestJobArgs']]]]:
         """
         The latest job associated with this file share.This property will be absent if no jobs have been created for this file share.
         """
         return pulumi.get(self, "latest_jobs")
 
     @latest_jobs.setter
-    def latest_jobs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLatestJobArgs']]]]):
+    def latest_jobs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLatestJobArgs']]]]):
         pulumi.set(self, "latest_jobs", value)
 
     @_builtins.property
     @pulumi.getter(name="latestSyncs")
-    def latest_syncs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLatestSyncArgs']]]]:
+    def latest_syncs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLatestSyncArgs']]]]:
         """
         Information about the latest synchronization for this file share.
         """
         return pulumi.get(self, "latest_syncs")
 
     @latest_syncs.setter
-    def latest_syncs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLatestSyncArgs']]]]):
+    def latest_syncs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLatestSyncArgs']]]]):
         pulumi.set(self, "latest_syncs", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLifecycleReasonArgs']]]]:
         """
         The reasons for the current lifecycle_state (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the file share.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="mountTargets")
-    def mount_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]:
+    def mount_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]:
         """
         The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
         """
         return pulumi.get(self, "mount_targets")
 
     @mount_targets.setter
-    def mount_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]):
+    def mount_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareMountTargetArgs']]]]):
         pulumi.set(self, "mount_targets", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this file share. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="originShare")
-    def origin_share(self) -> Optional[pulumi.Input['IsShareOriginShareArgs']]:
+    def origin_share(self) -> pulumi.Input[Optional['IsShareOriginShareArgs']]:
         """
         The origin share this accessor share is referring to.This property will be present when the `accessor_binding_role` is `accessor`.
         """
         return pulumi.get(self, "origin_share")
 
     @origin_share.setter
-    def origin_share(self, value: Optional[pulumi.Input['IsShareOriginShareArgs']]):
+    def origin_share(self, value: pulumi.Input[Optional['IsShareOriginShareArgs']]):
         pulumi.set(self, "origin_share", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name for this share profile.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaShare")
-    def replica_share(self) -> Optional[pulumi.Input['IsShareReplicaShareArgs']]:
+    def replica_share(self) -> pulumi.Input[Optional['IsShareReplicaShareArgs']]:
         """
         Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`source_share` referencing this file share.
         """
         return pulumi.get(self, "replica_share")
 
     @replica_share.setter
-    def replica_share(self, value: Optional[pulumi.Input['IsShareReplicaShareArgs']]):
+    def replica_share(self, value: pulumi.Input[Optional['IsShareReplicaShareArgs']]):
         pulumi.set(self, "replica_share", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationCronSpec")
-    def replication_cron_spec(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_cron_spec(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cron specification for the file share replication schedule.Replication of a share can be scheduled to occur at most once per hour.
         """
         return pulumi.get(self, "replication_cron_spec")
 
     @replication_cron_spec.setter
-    def replication_cron_spec(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_cron_spec(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_cron_spec", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationRole")
-    def replication_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The replication role of the file share.* `none`: This share is not participating in replication.* `replica`: This share is a replication target.* `source`: This share is a replication source.
         """
         return pulumi.get(self, "replication_role")
 
     @replication_role.setter
-    def replication_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_role", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationStatus")
-    def replication_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The replication status of the file share.* `initializing`: This share is initializing replication.* `active`: This share is actively participating in replication.* `failover_pending`: This share is performing a replication failover.* `split_pending`: This share is performing a replication split.* `none`: This share is not participating in replication.* `degraded`: This share's replication sync is degraded.* `sync_pending`: This share is performing a replication sync.
         """
         return pulumi.get(self, "replication_status")
 
     @replication_status.setter
-    def replication_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_status", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationStatusReasons")
-    def replication_status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareReplicationStatusReasonArgs']]]]:
+    def replication_status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareReplicationStatusReasonArgs']]]]:
         """
         The reasons for the current replication status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
         """
         return pulumi.get(self, "replication_status_reasons")
 
     @replication_status_reasons.setter
-    def replication_status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareReplicationStatusReasonArgs']]]]):
+    def replication_status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareReplicationStatusReasonArgs']]]]):
         pulumi.set(self, "replication_status_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of resource referenced.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The size of the file share rounded up to the next gigabyte.
         """
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotCount")
-    def snapshot_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def snapshot_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of snapshots for this share.
         """
         return pulumi.get(self, "snapshot_count")
 
     @snapshot_count.setter
-    def snapshot_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def snapshot_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "snapshot_count", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotSize")
-    def snapshot_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def snapshot_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total size (in gigabytes) of snapshots used for this file share.
         """
         return pulumi.get(self, "snapshot_size")
 
     @snapshot_size.setter
-    def snapshot_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def snapshot_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "snapshot_size", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceShare")
-    def source_share(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_share(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         """
         return pulumi.get(self, "source_share")
 
     @source_share.setter
-    def source_share(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_share(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_share", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceShareCrn")
-    def source_share_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_share_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         """
         return pulumi.get(self, "source_share_crn")
 
     @source_share_crn.setter
-    def source_share_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_share_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_share_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshot")
-    def source_snapshot(self) -> Optional[pulumi.Input['IsShareSourceSnapshotArgs']]:
+    def source_snapshot(self) -> pulumi.Input[Optional['IsShareSourceSnapshotArgs']]:
         """
-        The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+        The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
         """
         return pulumi.get(self, "source_snapshot")
 
     @source_snapshot.setter
-    def source_snapshot(self, value: Optional[pulumi.Input['IsShareSourceSnapshotArgs']]):
+    def source_snapshot(self, value: pulumi.Input[Optional['IsShareSourceSnapshotArgs']]):
         pulumi.set(self, "source_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="storageGeneration")
-    def storage_generation(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_generation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The storage generation for this share
         """
         return pulumi.get(self, "storage_generation")
 
     @storage_generation.setter
-    def storage_generation(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_generation(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_generation", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Tags for the file share
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name of the zone this file share will reside in.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -1016,30 +1018,31 @@ class IsShare(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_control_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_access_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_transit_encryption_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_owner: Optional[pulumi.Input[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict']]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 mount_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_share: Optional[pulumi.Input[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_share: Optional[pulumi.Input[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict']]] = None,
-                 replication_cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_share: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_share_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_control_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_access_protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_transit_encryption_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_owner: pulumi.Input[Optional[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict', 'outputs.IsShareInitialOwner']]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 mount_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict', 'outputs.IsShareMountTarget']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_share: pulumi.Input[Optional[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict', 'outputs.IsShareOriginShare']]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_share: pulumi.Input[Optional[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict', 'outputs.IsShareReplicaShare']]] = None,
+                 replication_cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_share: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_share_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict', 'outputs.IsShareSourceSnapshot']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsShare resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_control_mode: The access control mode for the share:
@@ -1048,19 +1051,19 @@ class IsShare(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_transit_encryption_modes: Allowed transit encryption modes
         :param pulumi.Input[_builtins.int] bandwidth: The bandwidth for the file share.
         :param pulumi.Input[_builtins.str] encryption_key: The CRN of the key to use for encrypting this file share.If no encryption key is provided, the share will not be encrypted.
-        :param pulumi.Input[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict']] initial_owner: The owner assigned to the file share at creation.
+        :param pulumi.Input[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict', 'outputs.IsShareInitialOwner']] initial_owner: The owner assigned to the file share at creation.
         :param pulumi.Input[_builtins.int] iops: The maximum input/output operation performance bandwidth per second for the file share.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict']]]] mount_targets: The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict', 'outputs.IsShareMountTarget']]]] mount_targets: The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
         :param pulumi.Input[_builtins.str] name: The unique user-defined name for this file share. If unspecified, the name will be a hyphenated list of randomly-selected words.
-        :param pulumi.Input[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict']] origin_share: The origin share this accessor share is referring to.This property will be present when the `accessor_binding_role` is `accessor`.
+        :param pulumi.Input[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict', 'outputs.IsShareOriginShare']] origin_share: The origin share this accessor share is referring to.This property will be present when the `accessor_binding_role` is `accessor`.
         :param pulumi.Input[_builtins.str] profile: The globally unique name for this share profile.
-        :param pulumi.Input[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict']] replica_share: Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`source_share` referencing this file share.
+        :param pulumi.Input[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict', 'outputs.IsShareReplicaShare']] replica_share: Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`source_share` referencing this file share.
         :param pulumi.Input[_builtins.str] replication_cron_spec: The cron specification for the file share replication schedule.Replication of a share can be scheduled to occur at most once per hour.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         :param pulumi.Input[_builtins.int] size: The size of the file share rounded up to the next gigabyte.
         :param pulumi.Input[_builtins.str] source_share: The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         :param pulumi.Input[_builtins.str] source_share_crn: The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
-        :param pulumi.Input[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict']] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+        :param pulumi.Input[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict', 'outputs.IsShareSourceSnapshot']] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: User Tags for the file share
         :param pulumi.Input[_builtins.str] zone: The globally unique name of the zone this file share will reside in.
         """
@@ -1072,6 +1075,7 @@ class IsShare(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsShare resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsShareArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1087,27 +1091,27 @@ class IsShare(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_control_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_access_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_transit_encryption_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_owner: Optional[pulumi.Input[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict']]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 mount_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_share: Optional[pulumi.Input[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_share: Optional[pulumi.Input[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict']]] = None,
-                 replication_cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_share: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_share_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_control_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_access_protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_transit_encryption_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_owner: pulumi.Input[Optional[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict', 'outputs.IsShareInitialOwner']]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 mount_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict', 'outputs.IsShareMountTarget']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_share: pulumi.Input[Optional[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict', 'outputs.IsShareOriginShare']]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_share: pulumi.Input[Optional[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict', 'outputs.IsShareReplicaShare']]] = None,
+                 replication_cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_share: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_share_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict', 'outputs.IsShareSourceSnapshot']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1167,46 +1171,46 @@ class IsShare(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_control_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            accessor_binding_role: Optional[pulumi.Input[_builtins.str]] = None,
-            accessor_bindings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareAccessorBindingArgs', 'IsShareAccessorBindingArgsDict']]]]] = None,
-            allowed_access_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_transit_encryption_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            availability_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            initial_owner: Optional[pulumi.Input[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict']]] = None,
-            iops: Optional[pulumi.Input[_builtins.int]] = None,
-            last_sync_at: Optional[pulumi.Input[_builtins.str]] = None,
-            latest_jobs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareLatestJobArgs', 'IsShareLatestJobArgsDict']]]]] = None,
-            latest_syncs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareLatestSyncArgs', 'IsShareLatestSyncArgsDict']]]]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareLifecycleReasonArgs', 'IsShareLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            mount_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            origin_share: Optional[pulumi.Input[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict']]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            replica_share: Optional[pulumi.Input[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict']]] = None,
-            replication_cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_role: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareReplicationStatusReasonArgs', 'IsShareReplicationStatusReasonArgsDict']]]]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            size: Optional[pulumi.Input[_builtins.int]] = None,
-            snapshot_count: Optional[pulumi.Input[_builtins.int]] = None,
-            snapshot_size: Optional[pulumi.Input[_builtins.int]] = None,
-            source_share: Optional[pulumi.Input[_builtins.str]] = None,
-            source_share_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            source_snapshot: Optional[pulumi.Input[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict']]] = None,
-            storage_generation: Optional[pulumi.Input[_builtins.int]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsShare':
+            access_control_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            accessor_binding_role: pulumi.Input[Optional[_builtins.str]] = None,
+            accessor_bindings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareAccessorBindingArgs', 'IsShareAccessorBindingArgsDict', 'outputs.IsShareAccessorBinding']]]]] = None,
+            allowed_access_protocols: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_transit_encryption_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_owner: pulumi.Input[Optional[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict', 'outputs.IsShareInitialOwner']]] = None,
+            iops: pulumi.Input[Optional[_builtins.int]] = None,
+            last_sync_at: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_jobs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareLatestJobArgs', 'IsShareLatestJobArgsDict', 'outputs.IsShareLatestJob']]]]] = None,
+            latest_syncs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareLatestSyncArgs', 'IsShareLatestSyncArgsDict', 'outputs.IsShareLatestSync']]]]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareLifecycleReasonArgs', 'IsShareLifecycleReasonArgsDict', 'outputs.IsShareLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict', 'outputs.IsShareMountTarget']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            origin_share: pulumi.Input[Optional[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict', 'outputs.IsShareOriginShare']]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_share: pulumi.Input[Optional[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict', 'outputs.IsShareReplicaShare']]] = None,
+            replication_cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_role: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareReplicationStatusReasonArgs', 'IsShareReplicationStatusReasonArgsDict', 'outputs.IsShareReplicationStatusReason']]]]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            size: pulumi.Input[Optional[_builtins.int]] = None,
+            snapshot_count: pulumi.Input[Optional[_builtins.int]] = None,
+            snapshot_size: pulumi.Input[Optional[_builtins.int]] = None,
+            source_share: pulumi.Input[Optional[_builtins.str]] = None,
+            source_share_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            source_snapshot: pulumi.Input[Optional[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict', 'outputs.IsShareSourceSnapshot']]] = None,
+            storage_generation: pulumi.Input[Optional[_builtins.int]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsShare':
         """
         Get an existing IsShare resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1217,7 +1221,7 @@ class IsShare(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] access_control_mode: The access control mode for the share:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] accessor_binding_role: The accessor binding role of this file share:- `none`: This file share is not participating in access with another file share- `origin`: This file share is the origin for one or more file shares  (which may be in other accounts)- `accessor`: This file share is providing access to another file share  (which may be in another account).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareAccessorBindingArgs', 'IsShareAccessorBindingArgsDict']]]] accessor_bindings: The accessor bindings for this file share. Each accessor binding identifies a resource (possibly in another account) with access to this file share's data.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareAccessorBindingArgs', 'IsShareAccessorBindingArgsDict', 'outputs.IsShareAccessorBinding']]]] accessor_bindings: The accessor bindings for this file share. Each accessor binding identifies a resource (possibly in another account) with access to this file share's data.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_access_protocols: The access protocols to allow for this share
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_transit_encryption_modes: Allowed transit encryption modes
         :param pulumi.Input[_builtins.str] availability_mode: Availability mode of the share.
@@ -1227,22 +1231,22 @@ class IsShare(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] encryption: The type of encryption used for this file share.
         :param pulumi.Input[_builtins.str] encryption_key: The CRN of the key to use for encrypting this file share.If no encryption key is provided, the share will not be encrypted.
         :param pulumi.Input[_builtins.str] href: The URL for this share.
-        :param pulumi.Input[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict']] initial_owner: The owner assigned to the file share at creation.
+        :param pulumi.Input[Union['IsShareInitialOwnerArgs', 'IsShareInitialOwnerArgsDict', 'outputs.IsShareInitialOwner']] initial_owner: The owner assigned to the file share at creation.
         :param pulumi.Input[_builtins.int] iops: The maximum input/output operation performance bandwidth per second for the file share.
         :param pulumi.Input[_builtins.str] last_sync_at: The date and time that the file share was last synchronized to its replica.This property will be present when the `replication_role` is `source`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareLatestJobArgs', 'IsShareLatestJobArgsDict']]]] latest_jobs: The latest job associated with this file share.This property will be absent if no jobs have been created for this file share.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareLatestSyncArgs', 'IsShareLatestSyncArgsDict']]]] latest_syncs: Information about the latest synchronization for this file share.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareLifecycleReasonArgs', 'IsShareLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareLatestJobArgs', 'IsShareLatestJobArgsDict', 'outputs.IsShareLatestJob']]]] latest_jobs: The latest job associated with this file share.This property will be absent if no jobs have been created for this file share.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareLatestSyncArgs', 'IsShareLatestSyncArgsDict', 'outputs.IsShareLatestSync']]]] latest_syncs: Information about the latest synchronization for this file share.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareLifecycleReasonArgs', 'IsShareLifecycleReasonArgsDict', 'outputs.IsShareLifecycleReason']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the file share.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict']]]] mount_targets: The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareMountTargetArgs', 'IsShareMountTargetArgsDict', 'outputs.IsShareMountTarget']]]] mount_targets: The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
         :param pulumi.Input[_builtins.str] name: The unique user-defined name for this file share. If unspecified, the name will be a hyphenated list of randomly-selected words.
-        :param pulumi.Input[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict']] origin_share: The origin share this accessor share is referring to.This property will be present when the `accessor_binding_role` is `accessor`.
+        :param pulumi.Input[Union['IsShareOriginShareArgs', 'IsShareOriginShareArgsDict', 'outputs.IsShareOriginShare']] origin_share: The origin share this accessor share is referring to.This property will be present when the `accessor_binding_role` is `accessor`.
         :param pulumi.Input[_builtins.str] profile: The globally unique name for this share profile.
-        :param pulumi.Input[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict']] replica_share: Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`source_share` referencing this file share.
+        :param pulumi.Input[Union['IsShareReplicaShareArgs', 'IsShareReplicaShareArgsDict', 'outputs.IsShareReplicaShare']] replica_share: Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`source_share` referencing this file share.
         :param pulumi.Input[_builtins.str] replication_cron_spec: The cron specification for the file share replication schedule.Replication of a share can be scheduled to occur at most once per hour.
         :param pulumi.Input[_builtins.str] replication_role: The replication role of the file share.* `none`: This share is not participating in replication.* `replica`: This share is a replication target.* `source`: This share is a replication source.
         :param pulumi.Input[_builtins.str] replication_status: The replication status of the file share.* `initializing`: This share is initializing replication.* `active`: This share is actively participating in replication.* `failover_pending`: This share is performing a replication failover.* `split_pending`: This share is performing a replication split.* `none`: This share is not participating in replication.* `degraded`: This share's replication sync is degraded.* `sync_pending`: This share is performing a replication sync.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareReplicationStatusReasonArgs', 'IsShareReplicationStatusReasonArgsDict']]]] replication_status_reasons: The reasons for the current replication status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareReplicationStatusReasonArgs', 'IsShareReplicationStatusReasonArgsDict', 'outputs.IsShareReplicationStatusReason']]]] replication_status_reasons: The reasons for the current replication status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         :param pulumi.Input[_builtins.str] resource_type: The type of resource referenced.
         :param pulumi.Input[_builtins.int] size: The size of the file share rounded up to the next gigabyte.
@@ -1250,7 +1254,7 @@ class IsShare(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] snapshot_size: The total size (in gigabytes) of snapshots used for this file share.
         :param pulumi.Input[_builtins.str] source_share: The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
         :param pulumi.Input[_builtins.str] source_share_crn: The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
-        :param pulumi.Input[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict']] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+        :param pulumi.Input[Union['IsShareSourceSnapshotArgs', 'IsShareSourceSnapshotArgsDict', 'outputs.IsShareSourceSnapshot']] source_snapshot: The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
         :param pulumi.Input[_builtins.int] storage_generation: The storage generation for this share
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: User Tags for the file share
         :param pulumi.Input[_builtins.str] zone: The globally unique name of the zone this file share will reside in.
@@ -1593,7 +1597,7 @@ class IsShare(pulumi.CustomResource):
     @pulumi.getter(name="sourceSnapshot")
     def source_snapshot(self) -> pulumi.Output['outputs.IsShareSourceSnapshot']:
         """
-        The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+        The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
         """
         return pulumi.get(self, "source_snapshot")
 

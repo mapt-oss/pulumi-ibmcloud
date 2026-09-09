@@ -194,8 +194,8 @@ def get_is_flow_log(identifier: Optional[_builtins.str] = None,
         storage_buckets=pulumi.get(__ret__, 'storage_buckets'),
         targets=pulumi.get(__ret__, 'targets'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_is_flow_log_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_flow_log_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsFlowLogResult]:
     """
     Use this data source to access information about an existing resource.

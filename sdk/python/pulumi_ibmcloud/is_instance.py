@@ -21,49 +21,55 @@ __all__ = ['IsInstanceArgs', 'IsInstance']
 @pulumi.input_type
 class IsInstanceArgs:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_policy_host_failure: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_volume: Optional[pulumi.Input['IsInstanceBootVolumeArgs']] = None,
-                 catalog_offering: Optional[pulumi.Input['IsInstanceCatalogOfferingArgs']] = None,
-                 cluster_network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]] = None,
-                 confidential_compute_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile_auto_link: Optional[pulumi.Input[_builtins.bool]] = None,
-                 default_trusted_profile_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_recovery_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metadata_service: Optional[pulumi.Input['IsInstanceMetadataServiceArgs']] = None,
-                 metadata_service_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]] = None,
-                 placement_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_network_attachment: Optional[pulumi.Input['IsInstancePrimaryNetworkAttachmentArgs']] = None,
-                 primary_network_interface: Optional[pulumi.Input['IsInstancePrimaryNetworkInterfaceArgs']] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 total_volume_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_bandwidth_qos_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_prototypes: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_before_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability: pulumi.Input[Optional['IsInstanceAvailabilityArgs']] = None,
+                 availability_policy: pulumi.Input[Optional['IsInstanceAvailabilityPolicyArgs']] = None,
+                 availability_policy_host_failure: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_volume: pulumi.Input[Optional['IsInstanceBootVolumeArgs']] = None,
+                 catalog_offering: pulumi.Input[Optional['IsInstanceCatalogOfferingArgs']] = None,
+                 cluster_network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]] = None,
+                 confidential_compute_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile_auto_link: pulumi.Input[Optional[_builtins.bool]] = None,
+                 default_trusted_profile_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_recovery_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metadata_service: pulumi.Input[Optional['IsInstanceMetadataServiceArgs']] = None,
+                 metadata_service_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]] = None,
+                 placement_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_network_attachment: pulumi.Input[Optional['IsInstancePrimaryNetworkAttachmentArgs']] = None,
+                 primary_network_interface: pulumi.Input[Optional['IsInstancePrimaryNetworkInterfaceArgs']] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_volume_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcpus: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]] = None,
+                 volume_bandwidth_qos_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_prototypes: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_before_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsInstance resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: list of access tags for the instance
         :param pulumi.Input[_builtins.str] action: Enables stopping of instance before deleting and waits till deletion is complete
         :param pulumi.Input[_builtins.bool] auto_delete_volume: Auto delete volume along with instance
+        :param pulumi.Input['IsInstanceAvailabilityPolicyArgs'] availability_policy: The availability policy for this virtual server instance.
         :param pulumi.Input[_builtins.str] availability_policy_host_failure: The availability policy to use for this virtual server instance
         :param pulumi.Input['IsInstanceCatalogOfferingArgs'] catalog_offering: The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
         :param pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]] cluster_network_attachments: The cluster network attachments for this virtual server instance.The cluster network attachments are ordered for consistent instance configuration.
@@ -88,8 +94,10 @@ class IsInstanceArgs:
         :param pulumi.Input[_builtins.str] profile: Profile info
         :param pulumi.Input[_builtins.str] resource_group: Instance resource group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: list of tags for the instance
+        :param pulumi.Input[_builtins.int] threads_per_core: The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
         :param pulumi.Input[_builtins.int] total_volume_bandwidth: The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
         :param pulumi.Input[_builtins.str] user_data: User data given for the instance
+        :param pulumi.Input[Sequence[pulumi.Input['IsInstanceVcpusArgs']]] vcpus: The virtual server instance VCPU configuration.
         :param pulumi.Input[_builtins.str] volume_bandwidth_qos_mode: The volume bandwidth QoS mode for this virtual server instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] volumes: List of volumes
         :param pulumi.Input[_builtins.str] vpc: VPC id
@@ -102,6 +110,13 @@ class IsInstanceArgs:
             pulumi.set(__self__, "action", action)
         if auto_delete_volume is not None:
             pulumi.set(__self__, "auto_delete_volume", auto_delete_volume)
+        if availability is not None:
+            pulumi.set(__self__, "availability", availability)
+        if availability_policy is not None:
+            pulumi.set(__self__, "availability_policy", availability_policy)
+        if availability_policy_host_failure is not None:
+            warnings.warn("""Use availability_policy.0.host_failure instead. Existing configurations can continue using this attribute, switching attributes with the same value will not trigger change.""", DeprecationWarning)
+            pulumi.log.warn("""availability_policy_host_failure is deprecated: Use availability_policy.0.host_failure instead. Existing configurations can continue using this attribute, switching attributes with the same value will not trigger change.""")
         if availability_policy_host_failure is not None:
             pulumi.set(__self__, "availability_policy_host_failure", availability_policy_host_failure)
         if boot_volume is not None:
@@ -159,10 +174,14 @@ class IsInstanceArgs:
             pulumi.set(__self__, "resource_group", resource_group)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if threads_per_core is not None:
+            pulumi.set(__self__, "threads_per_core", threads_per_core)
         if total_volume_bandwidth is not None:
             pulumi.set(__self__, "total_volume_bandwidth", total_volume_bandwidth)
         if user_data is not None:
             pulumi.set(__self__, "user_data", user_data)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
         if volume_bandwidth_qos_mode is not None:
             pulumi.set(__self__, "volume_bandwidth_qos_mode", volume_bandwidth_qos_mode)
         if volume_prototypes is not None:
@@ -178,519 +197,571 @@ class IsInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of access tags for the instance
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enables stopping of instance before deleting and waits till deletion is complete
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDeleteVolume")
-    def auto_delete_volume(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete_volume(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Auto delete volume along with instance
         """
         return pulumi.get(self, "auto_delete_volume")
 
     @auto_delete_volume.setter
-    def auto_delete_volume(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete_volume(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete_volume", value)
 
     @_builtins.property
+    @pulumi.getter
+    def availability(self) -> pulumi.Input[Optional['IsInstanceAvailabilityArgs']]:
+        return pulumi.get(self, "availability")
+
+    @availability.setter
+    def availability(self, value: pulumi.Input[Optional['IsInstanceAvailabilityArgs']]):
+        pulumi.set(self, "availability", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityPolicy")
+    def availability_policy(self) -> pulumi.Input[Optional['IsInstanceAvailabilityPolicyArgs']]:
+        """
+        The availability policy for this virtual server instance.
+        """
+        return pulumi.get(self, "availability_policy")
+
+    @availability_policy.setter
+    def availability_policy(self, value: pulumi.Input[Optional['IsInstanceAvailabilityPolicyArgs']]):
+        pulumi.set(self, "availability_policy", value)
+
+    @_builtins.property
     @pulumi.getter(name="availabilityPolicyHostFailure")
-    def availability_policy_host_failure(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @_utilities.deprecated("""Use availability_policy.0.host_failure instead. Existing configurations can continue using this attribute, switching attributes with the same value will not trigger change.""")
+    def availability_policy_host_failure(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability policy to use for this virtual server instance
         """
         return pulumi.get(self, "availability_policy_host_failure")
 
     @availability_policy_host_failure.setter
-    def availability_policy_host_failure(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_policy_host_failure(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_policy_host_failure", value)
 
     @_builtins.property
     @pulumi.getter(name="bootVolume")
-    def boot_volume(self) -> Optional[pulumi.Input['IsInstanceBootVolumeArgs']]:
+    def boot_volume(self) -> pulumi.Input[Optional['IsInstanceBootVolumeArgs']]:
         return pulumi.get(self, "boot_volume")
 
     @boot_volume.setter
-    def boot_volume(self, value: Optional[pulumi.Input['IsInstanceBootVolumeArgs']]):
+    def boot_volume(self, value: pulumi.Input[Optional['IsInstanceBootVolumeArgs']]):
         pulumi.set(self, "boot_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="catalogOffering")
-    def catalog_offering(self) -> Optional[pulumi.Input['IsInstanceCatalogOfferingArgs']]:
+    def catalog_offering(self) -> pulumi.Input[Optional['IsInstanceCatalogOfferingArgs']]:
         """
         The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
         """
         return pulumi.get(self, "catalog_offering")
 
     @catalog_offering.setter
-    def catalog_offering(self, value: Optional[pulumi.Input['IsInstanceCatalogOfferingArgs']]):
+    def catalog_offering(self, value: pulumi.Input[Optional['IsInstanceCatalogOfferingArgs']]):
         pulumi.set(self, "catalog_offering", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkAttachments")
-    def cluster_network_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]:
+    def cluster_network_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]:
         """
         The cluster network attachments for this virtual server instance.The cluster network attachments are ordered for consistent instance configuration.
         """
         return pulumi.get(self, "cluster_network_attachments")
 
     @cluster_network_attachments.setter
-    def cluster_network_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]):
+    def cluster_network_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]):
         pulumi.set(self, "cluster_network_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="confidentialComputeMode")
-    def confidential_compute_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def confidential_compute_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The confidential compute mode to use for this virtual server instance.If unspecified, the default confidential compute mode from the profile will be used.
         """
         return pulumi.get(self, "confidential_compute_mode")
 
     @confidential_compute_mode.setter
-    def confidential_compute_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def confidential_compute_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "confidential_compute_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHost")
-    def dedicated_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Identifier of the Dedicated Host where the instance will be placed
         """
         return pulumi.get(self, "dedicated_host")
 
     @dedicated_host.setter
-    def dedicated_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostGroup")
-    def dedicated_host_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Identifier of the Dedicated Host Group where the instance will be placed
         """
         return pulumi.get(self, "dedicated_host_group")
 
     @dedicated_host_group.setter
-    def dedicated_host_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host_group", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfileAutoLink")
-    def default_trusted_profile_auto_link(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def default_trusted_profile_auto_link(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to `true`, the system will create a link to the specified `target` trusted profile during instance creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the instance is deleted.
         """
         return pulumi.get(self, "default_trusted_profile_auto_link")
 
     @default_trusted_profile_auto_link.setter
-    def default_trusted_profile_auto_link(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def default_trusted_profile_auto_link(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "default_trusted_profile_auto_link", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfileTarget")
-    def default_trusted_profile_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_trusted_profile_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier or CRN of the default IAM trusted profile to use for this virtual server instance.
         """
         return pulumi.get(self, "default_trusted_profile_target")
 
     @default_trusted_profile_target.setter
-    def default_trusted_profile_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_trusted_profile_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_trusted_profile_target", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSecureBoot")
-    def enable_secure_boot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_secure_boot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether secure boot is enabled for this virtual server instance.If unspecified, the default secure boot mode from the profile will be used.
         """
         return pulumi.get(self, "enable_secure_boot")
 
     @enable_secure_boot.setter
-    def enable_secure_boot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_secure_boot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_secure_boot", value)
 
     @_builtins.property
     @pulumi.getter(name="forceAction")
-    def force_action(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_action(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
         """
         return pulumi.get(self, "force_action")
 
     @force_action.setter
-    def force_action(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_action(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_action", value)
 
     @_builtins.property
     @pulumi.getter(name="forceRecoveryTime")
-    def force_recovery_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def force_recovery_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Define timeout to force the instances to start/stop in minutes.
         """
         return pulumi.get(self, "force_recovery_time")
 
     @force_recovery_time.setter
-    def force_recovery_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def force_recovery_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "force_recovery_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         image id
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceTemplate")
-    def instance_template(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_template(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Id of the instance template
         """
         return pulumi.get(self, "instance_template")
 
     @instance_template.setter
-    def instance_template(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_template(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_template", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         SSH key Ids for the instance
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataService")
-    def metadata_service(self) -> Optional[pulumi.Input['IsInstanceMetadataServiceArgs']]:
+    def metadata_service(self) -> pulumi.Input[Optional['IsInstanceMetadataServiceArgs']]:
         """
         The metadata service configuration
         """
         return pulumi.get(self, "metadata_service")
 
     @metadata_service.setter
-    def metadata_service(self, value: Optional[pulumi.Input['IsInstanceMetadataServiceArgs']]):
+    def metadata_service(self, value: pulumi.Input[Optional['IsInstanceMetadataServiceArgs']]):
         pulumi.set(self, "metadata_service", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataServiceEnabled")
     @_utilities.deprecated("""Use metadata_service instead""")
-    def metadata_service_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def metadata_service_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the metadata service endpoint is available to the virtual server instance
         """
         return pulumi.get(self, "metadata_service_enabled")
 
     @metadata_service_enabled.setter
-    def metadata_service_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def metadata_service_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "metadata_service_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAttachments")
-    def network_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]:
+    def network_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]:
         """
         The network attachments for this virtual server instance, including the primary network attachment.
         """
         return pulumi.get(self, "network_attachments")
 
     @network_attachments.setter
-    def network_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]):
+    def network_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]):
         pulumi.set(self, "network_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterfaces")
-    def network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]:
+    def network_interfaces(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]:
         return pulumi.get(self, "network_interfaces")
 
     @network_interfaces.setter
-    def network_interfaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]):
+    def network_interfaces(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]):
         pulumi.set(self, "network_interfaces", value)
 
     @_builtins.property
     @pulumi.getter(name="placementGroup")
-    def placement_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def placement_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Identifier of the Placement Group for restricting the placement of the instance
         """
         return pulumi.get(self, "placement_group")
 
     @placement_group.setter
-    def placement_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def placement_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "placement_group", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkAttachment")
-    def primary_network_attachment(self) -> Optional[pulumi.Input['IsInstancePrimaryNetworkAttachmentArgs']]:
+    def primary_network_attachment(self) -> pulumi.Input[Optional['IsInstancePrimaryNetworkAttachmentArgs']]:
         """
         The primary network attachment for this virtual server instance.
         """
         return pulumi.get(self, "primary_network_attachment")
 
     @primary_network_attachment.setter
-    def primary_network_attachment(self, value: Optional[pulumi.Input['IsInstancePrimaryNetworkAttachmentArgs']]):
+    def primary_network_attachment(self, value: pulumi.Input[Optional['IsInstancePrimaryNetworkAttachmentArgs']]):
         pulumi.set(self, "primary_network_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkInterface")
-    def primary_network_interface(self) -> Optional[pulumi.Input['IsInstancePrimaryNetworkInterfaceArgs']]:
+    def primary_network_interface(self) -> pulumi.Input[Optional['IsInstancePrimaryNetworkInterfaceArgs']]:
         """
         Primary Network interface info
         """
         return pulumi.get(self, "primary_network_interface")
 
     @primary_network_interface.setter
-    def primary_network_interface(self, value: Optional[pulumi.Input['IsInstancePrimaryNetworkInterfaceArgs']]):
+    def primary_network_interface(self, value: pulumi.Input[Optional['IsInstancePrimaryNetworkInterfaceArgs']]):
         pulumi.set(self, "primary_network_interface", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Profile info
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="reservationAffinities")
-    def reservation_affinities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]:
+    def reservation_affinities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]:
         return pulumi.get(self, "reservation_affinities")
 
     @reservation_affinities.setter
-    def reservation_affinities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]):
+    def reservation_affinities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]):
         pulumi.set(self, "reservation_affinities", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance resource group
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of tags for the instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="threadsPerCore")
+    def threads_per_core(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
+        """
+        return pulumi.get(self, "threads_per_core")
+
+    @threads_per_core.setter
+    def threads_per_core(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "threads_per_core", value)
+
+    @_builtins.property
     @pulumi.getter(name="totalVolumeBandwidth")
-    def total_volume_bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_volume_bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
         """
         return pulumi.get(self, "total_volume_bandwidth")
 
     @total_volume_bandwidth.setter
-    def total_volume_bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_volume_bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_volume_bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="userData")
-    def user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User data given for the instance
         """
         return pulumi.get(self, "user_data")
 
     @user_data.setter
-    def user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_data", value)
 
     @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]]:
+        """
+        The virtual server instance VCPU configuration.
+        """
+        return pulumi.get(self, "vcpus")
+
+    @vcpus.setter
+    def vcpus(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]]):
+        pulumi.set(self, "vcpus", value)
+
+    @_builtins.property
     @pulumi.getter(name="volumeBandwidthQosMode")
-    def volume_bandwidth_qos_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_bandwidth_qos_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume bandwidth QoS mode for this virtual server instance.
         """
         return pulumi.get(self, "volume_bandwidth_qos_mode")
 
     @volume_bandwidth_qos_mode.setter
-    def volume_bandwidth_qos_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_bandwidth_qos_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_bandwidth_qos_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="volumePrototypes")
-    def volume_prototypes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]:
+    def volume_prototypes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]:
         return pulumi.get(self, "volume_prototypes")
 
     @volume_prototypes.setter
-    def volume_prototypes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]):
+    def volume_prototypes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]):
         pulumi.set(self, "volume_prototypes", value)
 
     @_builtins.property
     @pulumi.getter
-    def volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes
         """
         return pulumi.get(self, "volumes")
 
     @volumes.setter
-    def volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "volumes", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPC id
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
     @_builtins.property
     @pulumi.getter(name="waitBeforeDelete")
-    def wait_before_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_before_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables stopping of instance before deleting and waits till deletion is complete
         """
         return pulumi.get(self, "wait_before_delete")
 
     @wait_before_delete.setter
-    def wait_before_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_before_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_before_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Zone name
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
 @pulumi.input_type
 class _IsInstanceState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_policy_host_failure: Optional[pulumi.Input[_builtins.str]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 boot_volume: Optional[pulumi.Input['IsInstanceBootVolumeArgs']] = None,
-                 catalog_offering: Optional[pulumi.Input['IsInstanceCatalogOfferingArgs']] = None,
-                 cluster_network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]] = None,
-                 cluster_networks: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkArgs']]]] = None,
-                 confidential_compute_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile_auto_link: Optional[pulumi.Input[_builtins.bool]] = None,
-                 default_trusted_profile_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskArgs']]]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_recovery_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 gpus: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGpusArgs']]]] = None,
-                 health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceHealthReasonArgs']]]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 metadata_service: Optional[pulumi.Input['IsInstanceMetadataServiceArgs']] = None,
-                 metadata_service_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]] = None,
-                 numa_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 placement_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_targets: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstancePlacementTargetArgs']]]] = None,
-                 primary_network_attachment: Optional[pulumi.Input['IsInstancePrimaryNetworkAttachmentArgs']] = None,
-                 primary_network_interface: Optional[pulumi.Input['IsInstancePrimaryNetworkInterfaceArgs']] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]] = None,
-                 reservations: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationArgs']]]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceStatusReasonArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 total_network_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_volume_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcpus: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]] = None,
-                 volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumeAttachmentArgs']]]] = None,
-                 volume_bandwidth_qos_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_prototypes: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_before_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability: pulumi.Input[Optional['IsInstanceAvailabilityArgs']] = None,
+                 availability_policy: pulumi.Input[Optional['IsInstanceAvailabilityPolicyArgs']] = None,
+                 availability_policy_host_failure: pulumi.Input[Optional[_builtins.str]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 boot_volume: pulumi.Input[Optional['IsInstanceBootVolumeArgs']] = None,
+                 catalog_offering: pulumi.Input[Optional['IsInstanceCatalogOfferingArgs']] = None,
+                 cluster_network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]] = None,
+                 cluster_networks: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkArgs']]]] = None,
+                 confidential_compute_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile_auto_link: pulumi.Input[Optional[_builtins.bool]] = None,
+                 default_trusted_profile_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceDiskArgs']]]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_recovery_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 gpus: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGpusArgs']]]] = None,
+                 health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceHealthReasonArgs']]]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 metadata_service: pulumi.Input[Optional['IsInstanceMetadataServiceArgs']] = None,
+                 metadata_service_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]] = None,
+                 numa_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 placement_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_targets: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstancePlacementTargetArgs']]]] = None,
+                 primary_network_attachment: pulumi.Input[Optional['IsInstancePrimaryNetworkAttachmentArgs']] = None,
+                 primary_network_interface: pulumi.Input[Optional['IsInstancePrimaryNetworkInterfaceArgs']] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]] = None,
+                 reservations: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationArgs']]]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceSoftwareAttachmentArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceStatusReasonArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_network_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_volume_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcpus: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]] = None,
+                 volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumeAttachmentArgs']]]] = None,
+                 volume_bandwidth_qos_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_prototypes: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_before_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstance resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: list of access tags for the instance
         :param pulumi.Input[_builtins.str] action: Enables stopping of instance before deleting and waits till deletion is complete
         :param pulumi.Input[_builtins.bool] auto_delete_volume: Auto delete volume along with instance
+        :param pulumi.Input['IsInstanceAvailabilityPolicyArgs'] availability_policy: The availability policy for this virtual server instance.
         :param pulumi.Input[_builtins.str] availability_policy_host_failure: The availability policy to use for this virtual server instance
         :param pulumi.Input[_builtins.int] bandwidth: The total bandwidth (in megabits per second) shared across the instance's network interfaces and storage volumes
         :param pulumi.Input['IsInstanceCatalogOfferingArgs'] catalog_offering: The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
@@ -732,12 +803,15 @@ class _IsInstanceState:
         :param pulumi.Input[_builtins.str] resource_group_name: The resource group name in which resource is provisioned
         :param pulumi.Input[_builtins.str] resource_name: The name of the resource
         :param pulumi.Input[_builtins.str] resource_status: The status of the resource
+        :param pulumi.Input[Sequence[pulumi.Input['IsInstanceSoftwareAttachmentArgs']]] software_attachments: The software attachments for this instance.
         :param pulumi.Input[_builtins.str] status: instance status
         :param pulumi.Input[Sequence[pulumi.Input['IsInstanceStatusReasonArgs']]] status_reasons: The reasons for the current status (if any).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: list of tags for the instance
+        :param pulumi.Input[_builtins.int] threads_per_core: The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
         :param pulumi.Input[_builtins.int] total_network_bandwidth: The amount of bandwidth (in megabits per second) allocated exclusively to instance network interfaces.
         :param pulumi.Input[_builtins.int] total_volume_bandwidth: The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
         :param pulumi.Input[_builtins.str] user_data: User data given for the instance
+        :param pulumi.Input[Sequence[pulumi.Input['IsInstanceVcpusArgs']]] vcpus: The virtual server instance VCPU configuration.
         :param pulumi.Input[_builtins.str] volume_bandwidth_qos_mode: The volume bandwidth QoS mode for this virtual server instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] volumes: List of volumes
         :param pulumi.Input[_builtins.str] vpc: VPC id
@@ -750,6 +824,13 @@ class _IsInstanceState:
             pulumi.set(__self__, "action", action)
         if auto_delete_volume is not None:
             pulumi.set(__self__, "auto_delete_volume", auto_delete_volume)
+        if availability is not None:
+            pulumi.set(__self__, "availability", availability)
+        if availability_policy is not None:
+            pulumi.set(__self__, "availability_policy", availability_policy)
+        if availability_policy_host_failure is not None:
+            warnings.warn("""Use availability_policy.0.host_failure instead. Existing configurations can continue using this attribute, switching attributes with the same value will not trigger change.""", DeprecationWarning)
+            pulumi.log.warn("""availability_policy_host_failure is deprecated: Use availability_policy.0.host_failure instead. Existing configurations can continue using this attribute, switching attributes with the same value will not trigger change.""")
         if availability_policy_host_failure is not None:
             pulumi.set(__self__, "availability_policy_host_failure", availability_policy_host_failure)
         if bandwidth is not None:
@@ -841,12 +922,16 @@ class _IsInstanceState:
             pulumi.set(__self__, "resource_name", resource_name)
         if resource_status is not None:
             pulumi.set(__self__, "resource_status", resource_status)
+        if software_attachments is not None:
+            pulumi.set(__self__, "software_attachments", software_attachments)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if status_reasons is not None:
             pulumi.set(__self__, "status_reasons", status_reasons)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if threads_per_core is not None:
+            pulumi.set(__self__, "threads_per_core", threads_per_core)
         if total_network_bandwidth is not None:
             pulumi.set(__self__, "total_network_bandwidth", total_network_bandwidth)
         if total_volume_bandwidth is not None:
@@ -872,717 +957,766 @@ class _IsInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of access tags for the instance
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enables stopping of instance before deleting and waits till deletion is complete
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDeleteVolume")
-    def auto_delete_volume(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete_volume(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Auto delete volume along with instance
         """
         return pulumi.get(self, "auto_delete_volume")
 
     @auto_delete_volume.setter
-    def auto_delete_volume(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete_volume(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete_volume", value)
 
     @_builtins.property
+    @pulumi.getter
+    def availability(self) -> pulumi.Input[Optional['IsInstanceAvailabilityArgs']]:
+        return pulumi.get(self, "availability")
+
+    @availability.setter
+    def availability(self, value: pulumi.Input[Optional['IsInstanceAvailabilityArgs']]):
+        pulumi.set(self, "availability", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityPolicy")
+    def availability_policy(self) -> pulumi.Input[Optional['IsInstanceAvailabilityPolicyArgs']]:
+        """
+        The availability policy for this virtual server instance.
+        """
+        return pulumi.get(self, "availability_policy")
+
+    @availability_policy.setter
+    def availability_policy(self, value: pulumi.Input[Optional['IsInstanceAvailabilityPolicyArgs']]):
+        pulumi.set(self, "availability_policy", value)
+
+    @_builtins.property
     @pulumi.getter(name="availabilityPolicyHostFailure")
-    def availability_policy_host_failure(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @_utilities.deprecated("""Use availability_policy.0.host_failure instead. Existing configurations can continue using this attribute, switching attributes with the same value will not trigger change.""")
+    def availability_policy_host_failure(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability policy to use for this virtual server instance
         """
         return pulumi.get(self, "availability_policy_host_failure")
 
     @availability_policy_host_failure.setter
-    def availability_policy_host_failure(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_policy_host_failure(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_policy_host_failure", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total bandwidth (in megabits per second) shared across the instance's network interfaces and storage volumes
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="bootVolume")
-    def boot_volume(self) -> Optional[pulumi.Input['IsInstanceBootVolumeArgs']]:
+    def boot_volume(self) -> pulumi.Input[Optional['IsInstanceBootVolumeArgs']]:
         return pulumi.get(self, "boot_volume")
 
     @boot_volume.setter
-    def boot_volume(self, value: Optional[pulumi.Input['IsInstanceBootVolumeArgs']]):
+    def boot_volume(self, value: pulumi.Input[Optional['IsInstanceBootVolumeArgs']]):
         pulumi.set(self, "boot_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="catalogOffering")
-    def catalog_offering(self) -> Optional[pulumi.Input['IsInstanceCatalogOfferingArgs']]:
+    def catalog_offering(self) -> pulumi.Input[Optional['IsInstanceCatalogOfferingArgs']]:
         """
         The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
         """
         return pulumi.get(self, "catalog_offering")
 
     @catalog_offering.setter
-    def catalog_offering(self, value: Optional[pulumi.Input['IsInstanceCatalogOfferingArgs']]):
+    def catalog_offering(self, value: pulumi.Input[Optional['IsInstanceCatalogOfferingArgs']]):
         pulumi.set(self, "catalog_offering", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkAttachments")
-    def cluster_network_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]:
+    def cluster_network_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]:
         """
         The cluster network attachments for this virtual server instance.The cluster network attachments are ordered for consistent instance configuration.
         """
         return pulumi.get(self, "cluster_network_attachments")
 
     @cluster_network_attachments.setter
-    def cluster_network_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]):
+    def cluster_network_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentArgs']]]]):
         pulumi.set(self, "cluster_network_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworks")
-    def cluster_networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkArgs']]]]:
+    def cluster_networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkArgs']]]]:
         """
         If present, the cluster network that this virtual server instance resides in.
         """
         return pulumi.get(self, "cluster_networks")
 
     @cluster_networks.setter
-    def cluster_networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkArgs']]]]):
+    def cluster_networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkArgs']]]]):
         pulumi.set(self, "cluster_networks", value)
 
     @_builtins.property
     @pulumi.getter(name="confidentialComputeMode")
-    def confidential_compute_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def confidential_compute_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The confidential compute mode to use for this virtual server instance.If unspecified, the default confidential compute mode from the profile will be used.
         """
         return pulumi.get(self, "confidential_compute_mode")
 
     @confidential_compute_mode.setter
-    def confidential_compute_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def confidential_compute_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "confidential_compute_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Crn for this Instance
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHost")
-    def dedicated_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Identifier of the Dedicated Host where the instance will be placed
         """
         return pulumi.get(self, "dedicated_host")
 
     @dedicated_host.setter
-    def dedicated_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostGroup")
-    def dedicated_host_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Identifier of the Dedicated Host Group where the instance will be placed
         """
         return pulumi.get(self, "dedicated_host_group")
 
     @dedicated_host_group.setter
-    def dedicated_host_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host_group", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfileAutoLink")
-    def default_trusted_profile_auto_link(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def default_trusted_profile_auto_link(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to `true`, the system will create a link to the specified `target` trusted profile during instance creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the instance is deleted.
         """
         return pulumi.get(self, "default_trusted_profile_auto_link")
 
     @default_trusted_profile_auto_link.setter
-    def default_trusted_profile_auto_link(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def default_trusted_profile_auto_link(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "default_trusted_profile_auto_link", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfileTarget")
-    def default_trusted_profile_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_trusted_profile_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier or CRN of the default IAM trusted profile to use for this virtual server instance.
         """
         return pulumi.get(self, "default_trusted_profile_target")
 
     @default_trusted_profile_target.setter
-    def default_trusted_profile_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_trusted_profile_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_trusted_profile_target", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceDiskArgs']]]]:
         """
         Collection of the instance's disks.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSecureBoot")
-    def enable_secure_boot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_secure_boot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether secure boot is enabled for this virtual server instance.If unspecified, the default secure boot mode from the profile will be used.
         """
         return pulumi.get(self, "enable_secure_boot")
 
     @enable_secure_boot.setter
-    def enable_secure_boot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_secure_boot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_secure_boot", value)
 
     @_builtins.property
     @pulumi.getter(name="forceAction")
-    def force_action(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_action(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
         """
         return pulumi.get(self, "force_action")
 
     @force_action.setter
-    def force_action(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_action(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_action", value)
 
     @_builtins.property
     @pulumi.getter(name="forceRecoveryTime")
-    def force_recovery_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def force_recovery_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Define timeout to force the instances to start/stop in minutes.
         """
         return pulumi.get(self, "force_recovery_time")
 
     @force_recovery_time.setter
-    def force_recovery_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def force_recovery_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "force_recovery_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def gpus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGpusArgs']]]]:
+    def gpus(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGpusArgs']]]]:
         """
         The virtual server instance GPU configuration
         """
         return pulumi.get(self, "gpus")
 
     @gpus.setter
-    def gpus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGpusArgs']]]]):
+    def gpus(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGpusArgs']]]]):
         pulumi.set(self, "gpus", value)
 
     @_builtins.property
     @pulumi.getter(name="healthReasons")
-    def health_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceHealthReasonArgs']]]]:
+    def health_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceHealthReasonArgs']]]]:
         """
         The reasons for the current health_state (if any).
         """
         return pulumi.get(self, "health_reasons")
 
     @health_reasons.setter
-    def health_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceHealthReasonArgs']]]]):
+    def health_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceHealthReasonArgs']]]]):
         pulumi.set(self, "health_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The health of this resource
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         image id
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceTemplate")
-    def instance_template(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_template(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Id of the instance template
         """
         return pulumi.get(self, "instance_template")
 
     @instance_template.setter
-    def instance_template(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_template(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_template", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         SSH key Ids for the instance
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceLifecycleReasonArgs']]]]:
         """
         The reasons for the current lifecycle_state (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the virtual server instance.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Instance memory
         """
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataService")
-    def metadata_service(self) -> Optional[pulumi.Input['IsInstanceMetadataServiceArgs']]:
+    def metadata_service(self) -> pulumi.Input[Optional['IsInstanceMetadataServiceArgs']]:
         """
         The metadata service configuration
         """
         return pulumi.get(self, "metadata_service")
 
     @metadata_service.setter
-    def metadata_service(self, value: Optional[pulumi.Input['IsInstanceMetadataServiceArgs']]):
+    def metadata_service(self, value: pulumi.Input[Optional['IsInstanceMetadataServiceArgs']]):
         pulumi.set(self, "metadata_service", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataServiceEnabled")
     @_utilities.deprecated("""Use metadata_service instead""")
-    def metadata_service_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def metadata_service_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the metadata service endpoint is available to the virtual server instance
         """
         return pulumi.get(self, "metadata_service_enabled")
 
     @metadata_service_enabled.setter
-    def metadata_service_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def metadata_service_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "metadata_service_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAttachments")
-    def network_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]:
+    def network_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]:
         """
         The network attachments for this virtual server instance, including the primary network attachment.
         """
         return pulumi.get(self, "network_attachments")
 
     @network_attachments.setter
-    def network_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]):
+    def network_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkAttachmentArgs']]]]):
         pulumi.set(self, "network_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterfaces")
-    def network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]:
+    def network_interfaces(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]:
         return pulumi.get(self, "network_interfaces")
 
     @network_interfaces.setter
-    def network_interfaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]):
+    def network_interfaces(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceNetworkInterfaceArgs']]]]):
         pulumi.set(self, "network_interfaces", value)
 
     @_builtins.property
     @pulumi.getter(name="numaCount")
-    def numa_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def numa_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of NUMA nodes this virtual server instance is provisioned on. This property may be absent if the instance's `status` is not `running`.
         """
         return pulumi.get(self, "numa_count")
 
     @numa_count.setter
-    def numa_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def numa_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "numa_count", value)
 
     @_builtins.property
     @pulumi.getter(name="placementGroup")
-    def placement_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def placement_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Identifier of the Placement Group for restricting the placement of the instance
         """
         return pulumi.get(self, "placement_group")
 
     @placement_group.setter
-    def placement_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def placement_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "placement_group", value)
 
     @_builtins.property
     @pulumi.getter(name="placementTargets")
-    def placement_targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstancePlacementTargetArgs']]]]:
+    def placement_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstancePlacementTargetArgs']]]]:
         """
         The placement restrictions for the virtual server instance.
         """
         return pulumi.get(self, "placement_targets")
 
     @placement_targets.setter
-    def placement_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstancePlacementTargetArgs']]]]):
+    def placement_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstancePlacementTargetArgs']]]]):
         pulumi.set(self, "placement_targets", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkAttachment")
-    def primary_network_attachment(self) -> Optional[pulumi.Input['IsInstancePrimaryNetworkAttachmentArgs']]:
+    def primary_network_attachment(self) -> pulumi.Input[Optional['IsInstancePrimaryNetworkAttachmentArgs']]:
         """
         The primary network attachment for this virtual server instance.
         """
         return pulumi.get(self, "primary_network_attachment")
 
     @primary_network_attachment.setter
-    def primary_network_attachment(self, value: Optional[pulumi.Input['IsInstancePrimaryNetworkAttachmentArgs']]):
+    def primary_network_attachment(self, value: pulumi.Input[Optional['IsInstancePrimaryNetworkAttachmentArgs']]):
         pulumi.set(self, "primary_network_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkInterface")
-    def primary_network_interface(self) -> Optional[pulumi.Input['IsInstancePrimaryNetworkInterfaceArgs']]:
+    def primary_network_interface(self) -> pulumi.Input[Optional['IsInstancePrimaryNetworkInterfaceArgs']]:
         """
         Primary Network interface info
         """
         return pulumi.get(self, "primary_network_interface")
 
     @primary_network_interface.setter
-    def primary_network_interface(self, value: Optional[pulumi.Input['IsInstancePrimaryNetworkInterfaceArgs']]):
+    def primary_network_interface(self, value: pulumi.Input[Optional['IsInstancePrimaryNetworkInterfaceArgs']]):
         pulumi.set(self, "primary_network_interface", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Profile info
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="reservationAffinities")
-    def reservation_affinities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]:
+    def reservation_affinities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]:
         return pulumi.get(self, "reservation_affinities")
 
     @reservation_affinities.setter
-    def reservation_affinities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]):
+    def reservation_affinities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationAffinityArgs']]]]):
         pulumi.set(self, "reservation_affinities", value)
 
     @_builtins.property
     @pulumi.getter
-    def reservations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationArgs']]]]:
+    def reservations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationArgs']]]]:
         """
         The reservation used by this virtual server instance
         """
         return pulumi.get(self, "reservations")
 
     @reservations.setter
-    def reservations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceReservationArgs']]]]):
+    def reservations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceReservationArgs']]]]):
         pulumi.set(self, "reservations", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCrn")
-    def resource_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "resource_crn")
 
     @resource_crn.setter
-    def resource_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance resource group
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceStatus")
-    def resource_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the resource
         """
         return pulumi.get(self, "resource_status")
 
     @resource_status.setter
-    def resource_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_status", value)
 
     @_builtins.property
+    @pulumi.getter(name="softwareAttachments")
+    def software_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceSoftwareAttachmentArgs']]]]:
+        """
+        The software attachments for this instance.
+        """
+        return pulumi.get(self, "software_attachments")
+
+    @software_attachments.setter
+    def software_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceSoftwareAttachmentArgs']]]]):
+        pulumi.set(self, "software_attachments", value)
+
+    @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceStatusReasonArgs']]]]:
         """
         The reasons for the current status (if any).
         """
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of tags for the instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="threadsPerCore")
+    def threads_per_core(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
+        """
+        return pulumi.get(self, "threads_per_core")
+
+    @threads_per_core.setter
+    def threads_per_core(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "threads_per_core", value)
+
+    @_builtins.property
     @pulumi.getter(name="totalNetworkBandwidth")
-    def total_network_bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_network_bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of bandwidth (in megabits per second) allocated exclusively to instance network interfaces.
         """
         return pulumi.get(self, "total_network_bandwidth")
 
     @total_network_bandwidth.setter
-    def total_network_bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_network_bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_network_bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="totalVolumeBandwidth")
-    def total_volume_bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_volume_bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
         """
         return pulumi.get(self, "total_volume_bandwidth")
 
     @total_volume_bandwidth.setter
-    def total_volume_bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_volume_bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_volume_bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="userData")
-    def user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User data given for the instance
         """
         return pulumi.get(self, "user_data")
 
     @user_data.setter
-    def user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_data", value)
 
     @_builtins.property
     @pulumi.getter
-    def vcpus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]]:
+    def vcpus(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]]:
+        """
+        The virtual server instance VCPU configuration.
+        """
         return pulumi.get(self, "vcpus")
 
     @vcpus.setter
-    def vcpus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]]):
+    def vcpus(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVcpusArgs']]]]):
         pulumi.set(self, "vcpus", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeAttachments")
-    def volume_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumeAttachmentArgs']]]]:
+    def volume_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumeAttachmentArgs']]]]:
         return pulumi.get(self, "volume_attachments")
 
     @volume_attachments.setter
-    def volume_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumeAttachmentArgs']]]]):
+    def volume_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumeAttachmentArgs']]]]):
         pulumi.set(self, "volume_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeBandwidthQosMode")
-    def volume_bandwidth_qos_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_bandwidth_qos_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume bandwidth QoS mode for this virtual server instance.
         """
         return pulumi.get(self, "volume_bandwidth_qos_mode")
 
     @volume_bandwidth_qos_mode.setter
-    def volume_bandwidth_qos_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_bandwidth_qos_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_bandwidth_qos_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="volumePrototypes")
-    def volume_prototypes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]:
+    def volume_prototypes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]:
         return pulumi.get(self, "volume_prototypes")
 
     @volume_prototypes.setter
-    def volume_prototypes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]):
+    def volume_prototypes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceVolumePrototypeArgs']]]]):
         pulumi.set(self, "volume_prototypes", value)
 
     @_builtins.property
     @pulumi.getter
-    def volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes
         """
         return pulumi.get(self, "volumes")
 
     @volumes.setter
-    def volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "volumes", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPC id
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
     @_builtins.property
     @pulumi.getter(name="waitBeforeDelete")
-    def wait_before_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def wait_before_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables stopping of instance before deleting and waits till deletion is complete
         """
         return pulumi.get(self, "wait_before_delete")
 
     @wait_before_delete.setter
-    def wait_before_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def wait_before_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "wait_before_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Zone name
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -1592,55 +1726,61 @@ class IsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_policy_host_failure: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_volume: Optional[pulumi.Input[Union['IsInstanceBootVolumeArgs', 'IsInstanceBootVolumeArgsDict']]] = None,
-                 catalog_offering: Optional[pulumi.Input[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict']]] = None,
-                 cluster_network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict']]]]] = None,
-                 confidential_compute_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile_auto_link: Optional[pulumi.Input[_builtins.bool]] = None,
-                 default_trusted_profile_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_recovery_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metadata_service: Optional[pulumi.Input[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict']]] = None,
-                 metadata_service_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict']]]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceArgs', 'IsInstanceNetworkInterfaceArgsDict']]]]] = None,
-                 placement_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_network_attachment: Optional[pulumi.Input[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict']]] = None,
-                 primary_network_interface: Optional[pulumi.Input[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceReservationAffinityArgs', 'IsInstanceReservationAffinityArgsDict']]]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 total_volume_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_bandwidth_qos_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_prototypes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceVolumePrototypeArgs', 'IsInstanceVolumePrototypeArgsDict']]]]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_before_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability: pulumi.Input[Optional[Union['IsInstanceAvailabilityArgs', 'IsInstanceAvailabilityArgsDict', 'outputs.IsInstanceAvailability']]] = None,
+                 availability_policy: pulumi.Input[Optional[Union['IsInstanceAvailabilityPolicyArgs', 'IsInstanceAvailabilityPolicyArgsDict', 'outputs.IsInstanceAvailabilityPolicy']]] = None,
+                 availability_policy_host_failure: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_volume: pulumi.Input[Optional[Union['IsInstanceBootVolumeArgs', 'IsInstanceBootVolumeArgsDict', 'outputs.IsInstanceBootVolume']]] = None,
+                 catalog_offering: pulumi.Input[Optional[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict', 'outputs.IsInstanceCatalogOffering']]] = None,
+                 cluster_network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict', 'outputs.IsInstanceClusterNetworkAttachment']]]]] = None,
+                 confidential_compute_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile_auto_link: pulumi.Input[Optional[_builtins.bool]] = None,
+                 default_trusted_profile_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_recovery_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metadata_service: pulumi.Input[Optional[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict', 'outputs.IsInstanceMetadataService']]] = None,
+                 metadata_service_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict', 'outputs.IsInstanceNetworkAttachment']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceArgs', 'IsInstanceNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkInterface']]]]] = None,
+                 placement_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_network_attachment: pulumi.Input[Optional[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict', 'outputs.IsInstancePrimaryNetworkAttachment']]] = None,
+                 primary_network_interface: pulumi.Input[Optional[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict', 'outputs.IsInstancePrimaryNetworkInterface']]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceReservationAffinityArgs', 'IsInstanceReservationAffinityArgsDict', 'outputs.IsInstanceReservationAffinity']]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_volume_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcpus: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceVcpusArgs', 'IsInstanceVcpusArgsDict', 'outputs.IsInstanceVcpus']]]]] = None,
+                 volume_bandwidth_qos_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_prototypes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceVolumePrototypeArgs', 'IsInstanceVolumePrototypeArgsDict', 'outputs.IsInstanceVolumePrototype']]]]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_before_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: list of access tags for the instance
         :param pulumi.Input[_builtins.str] action: Enables stopping of instance before deleting and waits till deletion is complete
         :param pulumi.Input[_builtins.bool] auto_delete_volume: Auto delete volume along with instance
+        :param pulumi.Input[Union['IsInstanceAvailabilityPolicyArgs', 'IsInstanceAvailabilityPolicyArgsDict', 'outputs.IsInstanceAvailabilityPolicy']] availability_policy: The availability policy for this virtual server instance.
         :param pulumi.Input[_builtins.str] availability_policy_host_failure: The availability policy to use for this virtual server instance
-        :param pulumi.Input[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict']] catalog_offering: The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict']]]] cluster_network_attachments: The cluster network attachments for this virtual server instance.The cluster network attachments are ordered for consistent instance configuration.
+        :param pulumi.Input[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict', 'outputs.IsInstanceCatalogOffering']] catalog_offering: The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict', 'outputs.IsInstanceClusterNetworkAttachment']]]] cluster_network_attachments: The cluster network attachments for this virtual server instance.The cluster network attachments are ordered for consistent instance configuration.
         :param pulumi.Input[_builtins.str] confidential_compute_mode: The confidential compute mode to use for this virtual server instance.If unspecified, the default confidential compute mode from the profile will be used.
         :param pulumi.Input[_builtins.str] dedicated_host: Unique Identifier of the Dedicated Host where the instance will be placed
         :param pulumi.Input[_builtins.str] dedicated_host_group: Unique Identifier of the Dedicated Host Group where the instance will be placed
@@ -1652,18 +1792,20 @@ class IsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] image: image id
         :param pulumi.Input[_builtins.str] instance_template: Id of the instance template
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the instance
-        :param pulumi.Input[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict']] metadata_service: The metadata service configuration
+        :param pulumi.Input[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict', 'outputs.IsInstanceMetadataService']] metadata_service: The metadata service configuration
         :param pulumi.Input[_builtins.bool] metadata_service_enabled: Indicates whether the metadata service endpoint is available to the virtual server instance
         :param pulumi.Input[_builtins.str] name: Instance name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict']]]] network_attachments: The network attachments for this virtual server instance, including the primary network attachment.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict', 'outputs.IsInstanceNetworkAttachment']]]] network_attachments: The network attachments for this virtual server instance, including the primary network attachment.
         :param pulumi.Input[_builtins.str] placement_group: Unique Identifier of the Placement Group for restricting the placement of the instance
-        :param pulumi.Input[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict']] primary_network_attachment: The primary network attachment for this virtual server instance.
-        :param pulumi.Input[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict']] primary_network_interface: Primary Network interface info
+        :param pulumi.Input[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict', 'outputs.IsInstancePrimaryNetworkAttachment']] primary_network_attachment: The primary network attachment for this virtual server instance.
+        :param pulumi.Input[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict', 'outputs.IsInstancePrimaryNetworkInterface']] primary_network_interface: Primary Network interface info
         :param pulumi.Input[_builtins.str] profile: Profile info
         :param pulumi.Input[_builtins.str] resource_group: Instance resource group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: list of tags for the instance
+        :param pulumi.Input[_builtins.int] threads_per_core: The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
         :param pulumi.Input[_builtins.int] total_volume_bandwidth: The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
         :param pulumi.Input[_builtins.str] user_data: User data given for the instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceVcpusArgs', 'IsInstanceVcpusArgsDict', 'outputs.IsInstanceVcpus']]]] vcpus: The virtual server instance VCPU configuration.
         :param pulumi.Input[_builtins.str] volume_bandwidth_qos_mode: The volume bandwidth QoS mode for this virtual server instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] volumes: List of volumes
         :param pulumi.Input[_builtins.str] vpc: VPC id
@@ -1678,6 +1820,7 @@ class IsInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1693,44 +1836,48 @@ class IsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_policy_host_failure: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_volume: Optional[pulumi.Input[Union['IsInstanceBootVolumeArgs', 'IsInstanceBootVolumeArgsDict']]] = None,
-                 catalog_offering: Optional[pulumi.Input[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict']]] = None,
-                 cluster_network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict']]]]] = None,
-                 confidential_compute_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile_auto_link: Optional[pulumi.Input[_builtins.bool]] = None,
-                 default_trusted_profile_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 force_recovery_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metadata_service: Optional[pulumi.Input[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict']]] = None,
-                 metadata_service_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict']]]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceArgs', 'IsInstanceNetworkInterfaceArgsDict']]]]] = None,
-                 placement_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_network_attachment: Optional[pulumi.Input[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict']]] = None,
-                 primary_network_interface: Optional[pulumi.Input[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceReservationAffinityArgs', 'IsInstanceReservationAffinityArgsDict']]]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 total_volume_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_bandwidth_qos_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_prototypes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceVolumePrototypeArgs', 'IsInstanceVolumePrototypeArgsDict']]]]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_before_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability: pulumi.Input[Optional[Union['IsInstanceAvailabilityArgs', 'IsInstanceAvailabilityArgsDict', 'outputs.IsInstanceAvailability']]] = None,
+                 availability_policy: pulumi.Input[Optional[Union['IsInstanceAvailabilityPolicyArgs', 'IsInstanceAvailabilityPolicyArgsDict', 'outputs.IsInstanceAvailabilityPolicy']]] = None,
+                 availability_policy_host_failure: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_volume: pulumi.Input[Optional[Union['IsInstanceBootVolumeArgs', 'IsInstanceBootVolumeArgsDict', 'outputs.IsInstanceBootVolume']]] = None,
+                 catalog_offering: pulumi.Input[Optional[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict', 'outputs.IsInstanceCatalogOffering']]] = None,
+                 cluster_network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict', 'outputs.IsInstanceClusterNetworkAttachment']]]]] = None,
+                 confidential_compute_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile_auto_link: pulumi.Input[Optional[_builtins.bool]] = None,
+                 default_trusted_profile_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 force_recovery_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metadata_service: pulumi.Input[Optional[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict', 'outputs.IsInstanceMetadataService']]] = None,
+                 metadata_service_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict', 'outputs.IsInstanceNetworkAttachment']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceArgs', 'IsInstanceNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkInterface']]]]] = None,
+                 placement_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_network_attachment: pulumi.Input[Optional[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict', 'outputs.IsInstancePrimaryNetworkAttachment']]] = None,
+                 primary_network_interface: pulumi.Input[Optional[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict', 'outputs.IsInstancePrimaryNetworkInterface']]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceReservationAffinityArgs', 'IsInstanceReservationAffinityArgsDict', 'outputs.IsInstanceReservationAffinity']]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_volume_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcpus: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceVcpusArgs', 'IsInstanceVcpusArgsDict', 'outputs.IsInstanceVcpus']]]]] = None,
+                 volume_bandwidth_qos_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_prototypes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceVolumePrototypeArgs', 'IsInstanceVolumePrototypeArgsDict', 'outputs.IsInstanceVolumePrototype']]]]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_before_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1743,6 +1890,8 @@ class IsInstance(pulumi.CustomResource):
             __props__.__dict__["access_tags"] = access_tags
             __props__.__dict__["action"] = action
             __props__.__dict__["auto_delete_volume"] = auto_delete_volume
+            __props__.__dict__["availability"] = availability
+            __props__.__dict__["availability_policy"] = availability_policy
             __props__.__dict__["availability_policy_host_failure"] = availability_policy_host_failure
             __props__.__dict__["boot_volume"] = boot_volume
             __props__.__dict__["catalog_offering"] = catalog_offering
@@ -1770,8 +1919,10 @@ class IsInstance(pulumi.CustomResource):
             __props__.__dict__["reservation_affinities"] = reservation_affinities
             __props__.__dict__["resource_group"] = resource_group
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["threads_per_core"] = threads_per_core
             __props__.__dict__["total_volume_bandwidth"] = total_volume_bandwidth
             __props__.__dict__["user_data"] = user_data
+            __props__.__dict__["vcpus"] = vcpus
             __props__.__dict__["volume_bandwidth_qos_mode"] = volume_bandwidth_qos_mode
             __props__.__dict__["volume_prototypes"] = volume_prototypes
             __props__.__dict__["volumes"] = volumes
@@ -1796,10 +1947,10 @@ class IsInstance(pulumi.CustomResource):
             __props__.__dict__["resource_group_name"] = None
             __props__.__dict__["resource_name"] = None
             __props__.__dict__["resource_status"] = None
+            __props__.__dict__["software_attachments"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["status_reasons"] = None
             __props__.__dict__["total_network_bandwidth"] = None
-            __props__.__dict__["vcpus"] = None
             __props__.__dict__["volume_attachments"] = None
         super(IsInstance, __self__).__init__(
             'ibmcloud:index/isInstance:IsInstance',
@@ -1811,67 +1962,71 @@ class IsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_delete_volume: Optional[pulumi.Input[_builtins.bool]] = None,
-            availability_policy_host_failure: Optional[pulumi.Input[_builtins.str]] = None,
-            bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-            boot_volume: Optional[pulumi.Input[Union['IsInstanceBootVolumeArgs', 'IsInstanceBootVolumeArgsDict']]] = None,
-            catalog_offering: Optional[pulumi.Input[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict']]] = None,
-            cluster_network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict']]]]] = None,
-            cluster_networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkArgs', 'IsInstanceClusterNetworkArgsDict']]]]] = None,
-            confidential_compute_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-            dedicated_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-            default_trusted_profile_auto_link: Optional[pulumi.Input[_builtins.bool]] = None,
-            default_trusted_profile_target: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskArgs', 'IsInstanceDiskArgsDict']]]]] = None,
-            enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-            force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-            force_recovery_time: Optional[pulumi.Input[_builtins.int]] = None,
-            gpus: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceGpusArgs', 'IsInstanceGpusArgsDict']]]]] = None,
-            health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceHealthReasonArgs', 'IsInstanceHealthReasonArgsDict']]]]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_template: Optional[pulumi.Input[_builtins.str]] = None,
-            keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceLifecycleReasonArgs', 'IsInstanceLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            memory: Optional[pulumi.Input[_builtins.int]] = None,
-            metadata_service: Optional[pulumi.Input[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict']]] = None,
-            metadata_service_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict']]]]] = None,
-            network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceArgs', 'IsInstanceNetworkInterfaceArgsDict']]]]] = None,
-            numa_count: Optional[pulumi.Input[_builtins.int]] = None,
-            placement_group: Optional[pulumi.Input[_builtins.str]] = None,
-            placement_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstancePlacementTargetArgs', 'IsInstancePlacementTargetArgsDict']]]]] = None,
-            primary_network_attachment: Optional[pulumi.Input[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict']]] = None,
-            primary_network_interface: Optional[pulumi.Input[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict']]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceReservationAffinityArgs', 'IsInstanceReservationAffinityArgsDict']]]]] = None,
-            reservations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceReservationArgs', 'IsInstanceReservationArgsDict']]]]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceStatusReasonArgs', 'IsInstanceStatusReasonArgsDict']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            total_network_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-            total_volume_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-            user_data: Optional[pulumi.Input[_builtins.str]] = None,
-            vcpus: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceVcpusArgs', 'IsInstanceVcpusArgsDict']]]]] = None,
-            volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceVolumeAttachmentArgs', 'IsInstanceVolumeAttachmentArgsDict']]]]] = None,
-            volume_bandwidth_qos_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_prototypes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceVolumePrototypeArgs', 'IsInstanceVolumePrototypeArgsDict']]]]] = None,
-            volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None,
-            wait_before_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstance':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_delete_volume: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability: pulumi.Input[Optional[Union['IsInstanceAvailabilityArgs', 'IsInstanceAvailabilityArgsDict', 'outputs.IsInstanceAvailability']]] = None,
+            availability_policy: pulumi.Input[Optional[Union['IsInstanceAvailabilityPolicyArgs', 'IsInstanceAvailabilityPolicyArgsDict', 'outputs.IsInstanceAvailabilityPolicy']]] = None,
+            availability_policy_host_failure: pulumi.Input[Optional[_builtins.str]] = None,
+            bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+            boot_volume: pulumi.Input[Optional[Union['IsInstanceBootVolumeArgs', 'IsInstanceBootVolumeArgsDict', 'outputs.IsInstanceBootVolume']]] = None,
+            catalog_offering: pulumi.Input[Optional[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict', 'outputs.IsInstanceCatalogOffering']]] = None,
+            cluster_network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict', 'outputs.IsInstanceClusterNetworkAttachment']]]]] = None,
+            cluster_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkArgs', 'IsInstanceClusterNetworkArgsDict', 'outputs.IsInstanceClusterNetwork']]]]] = None,
+            confidential_compute_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+            dedicated_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+            default_trusted_profile_auto_link: pulumi.Input[Optional[_builtins.bool]] = None,
+            default_trusted_profile_target: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceDiskArgs', 'IsInstanceDiskArgsDict', 'outputs.IsInstanceDisk']]]]] = None,
+            enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+            force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+            force_recovery_time: pulumi.Input[Optional[_builtins.int]] = None,
+            gpus: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceGpusArgs', 'IsInstanceGpusArgsDict', 'outputs.IsInstanceGpus']]]]] = None,
+            health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceHealthReasonArgs', 'IsInstanceHealthReasonArgsDict', 'outputs.IsInstanceHealthReason']]]]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_template: pulumi.Input[Optional[_builtins.str]] = None,
+            keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceLifecycleReasonArgs', 'IsInstanceLifecycleReasonArgsDict', 'outputs.IsInstanceLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            memory: pulumi.Input[Optional[_builtins.int]] = None,
+            metadata_service: pulumi.Input[Optional[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict', 'outputs.IsInstanceMetadataService']]] = None,
+            metadata_service_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict', 'outputs.IsInstanceNetworkAttachment']]]]] = None,
+            network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceNetworkInterfaceArgs', 'IsInstanceNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkInterface']]]]] = None,
+            numa_count: pulumi.Input[Optional[_builtins.int]] = None,
+            placement_group: pulumi.Input[Optional[_builtins.str]] = None,
+            placement_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstancePlacementTargetArgs', 'IsInstancePlacementTargetArgsDict', 'outputs.IsInstancePlacementTarget']]]]] = None,
+            primary_network_attachment: pulumi.Input[Optional[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict', 'outputs.IsInstancePrimaryNetworkAttachment']]] = None,
+            primary_network_interface: pulumi.Input[Optional[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict', 'outputs.IsInstancePrimaryNetworkInterface']]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceReservationAffinityArgs', 'IsInstanceReservationAffinityArgsDict', 'outputs.IsInstanceReservationAffinity']]]]] = None,
+            reservations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceReservationArgs', 'IsInstanceReservationArgsDict', 'outputs.IsInstanceReservation']]]]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+            software_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceSoftwareAttachmentArgs', 'IsInstanceSoftwareAttachmentArgsDict', 'outputs.IsInstanceSoftwareAttachment']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceStatusReasonArgs', 'IsInstanceStatusReasonArgsDict', 'outputs.IsInstanceStatusReason']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+            total_network_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+            total_volume_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+            user_data: pulumi.Input[Optional[_builtins.str]] = None,
+            vcpus: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceVcpusArgs', 'IsInstanceVcpusArgsDict', 'outputs.IsInstanceVcpus']]]]] = None,
+            volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceVolumeAttachmentArgs', 'IsInstanceVolumeAttachmentArgsDict', 'outputs.IsInstanceVolumeAttachment']]]]] = None,
+            volume_bandwidth_qos_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_prototypes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceVolumePrototypeArgs', 'IsInstanceVolumePrototypeArgsDict', 'outputs.IsInstanceVolumePrototype']]]]] = None,
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_before_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstance':
         """
         Get an existing IsInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1882,53 +2037,57 @@ class IsInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: list of access tags for the instance
         :param pulumi.Input[_builtins.str] action: Enables stopping of instance before deleting and waits till deletion is complete
         :param pulumi.Input[_builtins.bool] auto_delete_volume: Auto delete volume along with instance
+        :param pulumi.Input[Union['IsInstanceAvailabilityPolicyArgs', 'IsInstanceAvailabilityPolicyArgsDict', 'outputs.IsInstanceAvailabilityPolicy']] availability_policy: The availability policy for this virtual server instance.
         :param pulumi.Input[_builtins.str] availability_policy_host_failure: The availability policy to use for this virtual server instance
         :param pulumi.Input[_builtins.int] bandwidth: The total bandwidth (in megabits per second) shared across the instance's network interfaces and storage volumes
-        :param pulumi.Input[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict']] catalog_offering: The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict']]]] cluster_network_attachments: The cluster network attachments for this virtual server instance.The cluster network attachments are ordered for consistent instance configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkArgs', 'IsInstanceClusterNetworkArgsDict']]]] cluster_networks: If present, the cluster network that this virtual server instance resides in.
+        :param pulumi.Input[Union['IsInstanceCatalogOfferingArgs', 'IsInstanceCatalogOfferingArgsDict', 'outputs.IsInstanceCatalogOffering']] catalog_offering: The catalog offering or offering version to use when provisioning this virtual server instance. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentArgs', 'IsInstanceClusterNetworkAttachmentArgsDict', 'outputs.IsInstanceClusterNetworkAttachment']]]] cluster_network_attachments: The cluster network attachments for this virtual server instance.The cluster network attachments are ordered for consistent instance configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkArgs', 'IsInstanceClusterNetworkArgsDict', 'outputs.IsInstanceClusterNetwork']]]] cluster_networks: If present, the cluster network that this virtual server instance resides in.
         :param pulumi.Input[_builtins.str] confidential_compute_mode: The confidential compute mode to use for this virtual server instance.If unspecified, the default confidential compute mode from the profile will be used.
         :param pulumi.Input[_builtins.str] crn: Crn for this Instance
         :param pulumi.Input[_builtins.str] dedicated_host: Unique Identifier of the Dedicated Host where the instance will be placed
         :param pulumi.Input[_builtins.str] dedicated_host_group: Unique Identifier of the Dedicated Host Group where the instance will be placed
         :param pulumi.Input[_builtins.bool] default_trusted_profile_auto_link: If set to `true`, the system will create a link to the specified `target` trusted profile during instance creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the instance is deleted.
         :param pulumi.Input[_builtins.str] default_trusted_profile_target: The unique identifier or CRN of the default IAM trusted profile to use for this virtual server instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskArgs', 'IsInstanceDiskArgsDict']]]] disks: Collection of the instance's disks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskArgs', 'IsInstanceDiskArgsDict', 'outputs.IsInstanceDisk']]]] disks: Collection of the instance's disks.
         :param pulumi.Input[_builtins.bool] enable_secure_boot: Indicates whether secure boot is enabled for this virtual server instance.If unspecified, the default secure boot mode from the profile will be used.
         :param pulumi.Input[_builtins.bool] force_action: If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
         :param pulumi.Input[_builtins.int] force_recovery_time: Define timeout to force the instances to start/stop in minutes.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceGpusArgs', 'IsInstanceGpusArgsDict']]]] gpus: The virtual server instance GPU configuration
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceHealthReasonArgs', 'IsInstanceHealthReasonArgsDict']]]] health_reasons: The reasons for the current health_state (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceGpusArgs', 'IsInstanceGpusArgsDict', 'outputs.IsInstanceGpus']]]] gpus: The virtual server instance GPU configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceHealthReasonArgs', 'IsInstanceHealthReasonArgsDict', 'outputs.IsInstanceHealthReason']]]] health_reasons: The reasons for the current health_state (if any).
         :param pulumi.Input[_builtins.str] health_state: The health of this resource
         :param pulumi.Input[_builtins.str] image: image id
         :param pulumi.Input[_builtins.str] instance_template: Id of the instance template
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceLifecycleReasonArgs', 'IsInstanceLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceLifecycleReasonArgs', 'IsInstanceLifecycleReasonArgsDict', 'outputs.IsInstanceLifecycleReason']]]] lifecycle_reasons: The reasons for the current lifecycle_state (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the virtual server instance.
         :param pulumi.Input[_builtins.int] memory: Instance memory
-        :param pulumi.Input[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict']] metadata_service: The metadata service configuration
+        :param pulumi.Input[Union['IsInstanceMetadataServiceArgs', 'IsInstanceMetadataServiceArgsDict', 'outputs.IsInstanceMetadataService']] metadata_service: The metadata service configuration
         :param pulumi.Input[_builtins.bool] metadata_service_enabled: Indicates whether the metadata service endpoint is available to the virtual server instance
         :param pulumi.Input[_builtins.str] name: Instance name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict']]]] network_attachments: The network attachments for this virtual server instance, including the primary network attachment.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceNetworkAttachmentArgs', 'IsInstanceNetworkAttachmentArgsDict', 'outputs.IsInstanceNetworkAttachment']]]] network_attachments: The network attachments for this virtual server instance, including the primary network attachment.
         :param pulumi.Input[_builtins.int] numa_count: The number of NUMA nodes this virtual server instance is provisioned on. This property may be absent if the instance's `status` is not `running`.
         :param pulumi.Input[_builtins.str] placement_group: Unique Identifier of the Placement Group for restricting the placement of the instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstancePlacementTargetArgs', 'IsInstancePlacementTargetArgsDict']]]] placement_targets: The placement restrictions for the virtual server instance.
-        :param pulumi.Input[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict']] primary_network_attachment: The primary network attachment for this virtual server instance.
-        :param pulumi.Input[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict']] primary_network_interface: Primary Network interface info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstancePlacementTargetArgs', 'IsInstancePlacementTargetArgsDict', 'outputs.IsInstancePlacementTarget']]]] placement_targets: The placement restrictions for the virtual server instance.
+        :param pulumi.Input[Union['IsInstancePrimaryNetworkAttachmentArgs', 'IsInstancePrimaryNetworkAttachmentArgsDict', 'outputs.IsInstancePrimaryNetworkAttachment']] primary_network_attachment: The primary network attachment for this virtual server instance.
+        :param pulumi.Input[Union['IsInstancePrimaryNetworkInterfaceArgs', 'IsInstancePrimaryNetworkInterfaceArgsDict', 'outputs.IsInstancePrimaryNetworkInterface']] primary_network_interface: Primary Network interface info
         :param pulumi.Input[_builtins.str] profile: Profile info
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceReservationArgs', 'IsInstanceReservationArgsDict']]]] reservations: The reservation used by this virtual server instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceReservationArgs', 'IsInstanceReservationArgsDict', 'outputs.IsInstanceReservation']]]] reservations: The reservation used by this virtual server instance
         :param pulumi.Input[_builtins.str] resource_controller_url: The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         :param pulumi.Input[_builtins.str] resource_crn: The crn of the resource
         :param pulumi.Input[_builtins.str] resource_group: Instance resource group
         :param pulumi.Input[_builtins.str] resource_group_name: The resource group name in which resource is provisioned
         :param pulumi.Input[_builtins.str] resource_name_: The name of the resource
         :param pulumi.Input[_builtins.str] resource_status: The status of the resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceSoftwareAttachmentArgs', 'IsInstanceSoftwareAttachmentArgsDict', 'outputs.IsInstanceSoftwareAttachment']]]] software_attachments: The software attachments for this instance.
         :param pulumi.Input[_builtins.str] status: instance status
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceStatusReasonArgs', 'IsInstanceStatusReasonArgsDict']]]] status_reasons: The reasons for the current status (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceStatusReasonArgs', 'IsInstanceStatusReasonArgsDict', 'outputs.IsInstanceStatusReason']]]] status_reasons: The reasons for the current status (if any).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: list of tags for the instance
+        :param pulumi.Input[_builtins.int] threads_per_core: The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
         :param pulumi.Input[_builtins.int] total_network_bandwidth: The amount of bandwidth (in megabits per second) allocated exclusively to instance network interfaces.
         :param pulumi.Input[_builtins.int] total_volume_bandwidth: The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
         :param pulumi.Input[_builtins.str] user_data: User data given for the instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceVcpusArgs', 'IsInstanceVcpusArgsDict', 'outputs.IsInstanceVcpus']]]] vcpus: The virtual server instance VCPU configuration.
         :param pulumi.Input[_builtins.str] volume_bandwidth_qos_mode: The volume bandwidth QoS mode for this virtual server instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] volumes: List of volumes
         :param pulumi.Input[_builtins.str] vpc: VPC id
@@ -1942,6 +2101,8 @@ class IsInstance(pulumi.CustomResource):
         __props__.__dict__["access_tags"] = access_tags
         __props__.__dict__["action"] = action
         __props__.__dict__["auto_delete_volume"] = auto_delete_volume
+        __props__.__dict__["availability"] = availability
+        __props__.__dict__["availability_policy"] = availability_policy
         __props__.__dict__["availability_policy_host_failure"] = availability_policy_host_failure
         __props__.__dict__["bandwidth"] = bandwidth
         __props__.__dict__["boot_volume"] = boot_volume
@@ -1986,9 +2147,11 @@ class IsInstance(pulumi.CustomResource):
         __props__.__dict__["resource_group_name"] = resource_group_name
         __props__.__dict__["resource_name"] = resource_name_
         __props__.__dict__["resource_status"] = resource_status
+        __props__.__dict__["software_attachments"] = software_attachments
         __props__.__dict__["status"] = status
         __props__.__dict__["status_reasons"] = status_reasons
         __props__.__dict__["tags"] = tags
+        __props__.__dict__["threads_per_core"] = threads_per_core
         __props__.__dict__["total_network_bandwidth"] = total_network_bandwidth
         __props__.__dict__["total_volume_bandwidth"] = total_volume_bandwidth
         __props__.__dict__["user_data"] = user_data
@@ -2027,7 +2190,21 @@ class IsInstance(pulumi.CustomResource):
         return pulumi.get(self, "auto_delete_volume")
 
     @_builtins.property
+    @pulumi.getter
+    def availability(self) -> pulumi.Output['outputs.IsInstanceAvailability']:
+        return pulumi.get(self, "availability")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityPolicy")
+    def availability_policy(self) -> pulumi.Output['outputs.IsInstanceAvailabilityPolicy']:
+        """
+        The availability policy for this virtual server instance.
+        """
+        return pulumi.get(self, "availability_policy")
+
+    @_builtins.property
     @pulumi.getter(name="availabilityPolicyHostFailure")
+    @_utilities.deprecated("""Use availability_policy.0.host_failure instead. Existing configurations can continue using this attribute, switching attributes with the same value will not trigger change.""")
     def availability_policy_host_failure(self) -> pulumi.Output[_builtins.str]:
         """
         The availability policy to use for this virtual server instance
@@ -2371,6 +2548,14 @@ class IsInstance(pulumi.CustomResource):
         return pulumi.get(self, "resource_status")
 
     @_builtins.property
+    @pulumi.getter(name="softwareAttachments")
+    def software_attachments(self) -> pulumi.Output[Sequence['outputs.IsInstanceSoftwareAttachment']]:
+        """
+        The software attachments for this instance.
+        """
+        return pulumi.get(self, "software_attachments")
+
+    @_builtins.property
     @pulumi.getter
     def status(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2393,6 +2578,14 @@ class IsInstance(pulumi.CustomResource):
         list of tags for the instance
         """
         return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="threadsPerCore")
+    def threads_per_core(self) -> pulumi.Output[_builtins.int]:
+        """
+        The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
+        """
+        return pulumi.get(self, "threads_per_core")
 
     @_builtins.property
     @pulumi.getter(name="totalNetworkBandwidth")
@@ -2421,6 +2614,9 @@ class IsInstance(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def vcpus(self) -> pulumi.Output[Sequence['outputs.IsInstanceVcpus']]:
+        """
+        The virtual server instance VCPU configuration.
+        """
         return pulumi.get(self, "vcpus")
 
     @_builtins.property

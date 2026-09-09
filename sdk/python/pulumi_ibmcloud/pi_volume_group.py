@@ -23,10 +23,11 @@ class PiVolumeGroupArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_volume_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 pi_consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_group_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_group_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiVolumeGroup resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_volume_ids: List of volumes to add in volume group
         :param pulumi.Input[_builtins.str] pi_consistency_group_name: The name of consistency group at storage controller level
@@ -65,44 +66,45 @@ class PiVolumeGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="piConsistencyGroupName")
-    def pi_consistency_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_consistency_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of consistency group at storage controller level
         """
         return pulumi.get(self, "pi_consistency_group_name")
 
     @pi_consistency_group_name.setter
-    def pi_consistency_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_consistency_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_consistency_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeGroupName")
-    def pi_volume_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group Name to create
         """
         return pulumi.get(self, "pi_volume_group_name")
 
     @pi_volume_group_name.setter
-    def pi_volume_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_group_name", value)
 
 
 @pulumi.input_type
 class _PiVolumeGroupState:
     def __init__(__self__, *,
-                 consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_description_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeGroupStatusDescriptionErrorArgs']]]] = None,
-                 volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_group_status: Optional[pulumi.Input[_builtins.str]] = None):
+                 consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_description_errors: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeGroupStatusDescriptionErrorArgs']]]] = None,
+                 volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVolumeGroup resources.
+
         :param pulumi.Input[_builtins.str] consistency_group_name: Consistency Group Name if volume is a part of volume group
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_consistency_group_name: The name of consistency group at storage controller level
@@ -137,122 +139,122 @@ class _PiVolumeGroupState:
 
     @_builtins.property
     @pulumi.getter(name="consistencyGroupName")
-    def consistency_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consistency_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Consistency Group Name if volume is a part of volume group
         """
         return pulumi.get(self, "consistency_group_name")
 
     @consistency_group_name.setter
-    def consistency_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consistency_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consistency_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piConsistencyGroupName")
-    def pi_consistency_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_consistency_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of consistency group at storage controller level
         """
         return pulumi.get(self, "pi_consistency_group_name")
 
     @pi_consistency_group_name.setter
-    def pi_consistency_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_consistency_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_consistency_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeGroupName")
-    def pi_volume_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group Name to create
         """
         return pulumi.get(self, "pi_volume_group_name")
 
     @pi_volume_group_name.setter
-    def pi_volume_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeIds")
-    def pi_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to add in volume group
         """
         return pulumi.get(self, "pi_volume_ids")
 
     @pi_volume_ids.setter
-    def pi_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_volume_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationSites")
-    def replication_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def replication_sites(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Indicates the replication sites of the volume group.
         """
         return pulumi.get(self, "replication_sites")
 
     @replication_sites.setter
-    def replication_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def replication_sites(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "replication_sites", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationStatus")
-    def replication_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group Replication Status
         """
         return pulumi.get(self, "replication_status")
 
     @replication_status.setter
-    def replication_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusDescriptionErrors")
-    def status_description_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeGroupStatusDescriptionErrorArgs']]]]:
+    def status_description_errors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeGroupStatusDescriptionErrorArgs']]]]:
         """
         The status details of the volume group.
         """
         return pulumi.get(self, "status_description_errors")
 
     @status_description_errors.setter
-    def status_description_errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeGroupStatusDescriptionErrorArgs']]]]):
+    def status_description_errors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeGroupStatusDescriptionErrorArgs']]]]):
         pulumi.set(self, "status_description_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupId")
-    def volume_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group ID
         """
         return pulumi.get(self, "volume_group_id")
 
     @volume_group_id.setter
-    def volume_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupStatus")
-    def volume_group_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_group_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group Status
         """
         return pulumi.get(self, "volume_group_status")
 
     @volume_group_status.setter
-    def volume_group_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_group_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_group_status", value)
 
 
@@ -262,13 +264,14 @@ class PiVolumeGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiVolumeGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -284,6 +287,7 @@ class PiVolumeGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVolumeGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVolumeGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -299,10 +303,10 @@ class PiVolumeGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -336,16 +340,16 @@ class PiVolumeGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_volume_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_description_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeGroupStatusDescriptionErrorArgs', 'PiVolumeGroupStatusDescriptionErrorArgsDict']]]]] = None,
-            volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_group_status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVolumeGroup':
+            consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_volume_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_description_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiVolumeGroupStatusDescriptionErrorArgs', 'PiVolumeGroupStatusDescriptionErrorArgsDict', 'outputs.PiVolumeGroupStatusDescriptionError']]]]] = None,
+            volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVolumeGroup':
         """
         Get an existing PiVolumeGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -360,7 +364,7 @@ class PiVolumeGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_volume_ids: List of volumes to add in volume group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] replication_sites: Indicates the replication sites of the volume group.
         :param pulumi.Input[_builtins.str] replication_status: Volume Group Replication Status
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeGroupStatusDescriptionErrorArgs', 'PiVolumeGroupStatusDescriptionErrorArgsDict']]]] status_description_errors: The status details of the volume group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeGroupStatusDescriptionErrorArgs', 'PiVolumeGroupStatusDescriptionErrorArgsDict', 'outputs.PiVolumeGroupStatusDescriptionError']]]] status_description_errors: The status details of the volume group.
         :param pulumi.Input[_builtins.str] volume_group_id: Volume Group ID
         :param pulumi.Input[_builtins.str] volume_group_status: Volume Group Status
         """

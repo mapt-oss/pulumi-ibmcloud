@@ -62,7 +62,7 @@ export function getIsSecurityGroupOutput(args: GetIsSecurityGroupOutputArgs, opt
  */
 export interface GetIsSecurityGroupOutputArgs {
     name: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    vpc?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    vpc?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

@@ -56,5 +56,5 @@ export function getIsPublicGatewayOutput(args: GetIsPublicGatewayOutputArgs, opt
  */
 export interface GetIsPublicGatewayOutputArgs {
     name: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

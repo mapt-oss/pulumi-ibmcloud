@@ -43,6 +43,10 @@ export class IsLbListener extends pulumi.CustomResource {
      */
     declare public readonly certificateInstance: pulumi.Output<string | undefined>;
     /**
+     * The client authentication to use for this listener. Supported by load balancers with mtlsSupported set to true. The listener must have a protocol of https.
+     */
+    declare public readonly clientAuthentication: pulumi.Output<outputs.IsLbListenerClientAuthentication | undefined>;
+    /**
      * Connection limit for Loadbalancer
      */
     declare public readonly connectionLimit: pulumi.Output<number | undefined>;
@@ -121,6 +125,7 @@ export class IsLbListener extends pulumi.CustomResource {
             const state = argsOrState as IsLbListenerState | undefined;
             resourceInputs["acceptProxyProtocol"] = state?.acceptProxyProtocol;
             resourceInputs["certificateInstance"] = state?.certificateInstance;
+            resourceInputs["clientAuthentication"] = state?.clientAuthentication;
             resourceInputs["connectionLimit"] = state?.connectionLimit;
             resourceInputs["defaultPool"] = state?.defaultPool;
             resourceInputs["httpsRedirect"] = state?.httpsRedirect;
@@ -146,6 +151,7 @@ export class IsLbListener extends pulumi.CustomResource {
             }
             resourceInputs["acceptProxyProtocol"] = args?.acceptProxyProtocol;
             resourceInputs["certificateInstance"] = args?.certificateInstance;
+            resourceInputs["clientAuthentication"] = args?.clientAuthentication;
             resourceInputs["connectionLimit"] = args?.connectionLimit;
             resourceInputs["defaultPool"] = args?.defaultPool;
             resourceInputs["httpsRedirect"] = args?.httpsRedirect;
@@ -174,74 +180,78 @@ export interface IsLbListenerState {
     /**
      * Listener will forward proxy protocol
      */
-    acceptProxyProtocol?: pulumi.Input<boolean>;
+    acceptProxyProtocol?: pulumi.Input<boolean | undefined>;
     /**
      * certificate instance for the Loadbalancer
      */
-    certificateInstance?: pulumi.Input<string>;
+    certificateInstance?: pulumi.Input<string | undefined>;
+    /**
+     * The client authentication to use for this listener. Supported by load balancers with mtlsSupported set to true. The listener must have a protocol of https.
+     */
+    clientAuthentication?: pulumi.Input<inputs.IsLbListenerClientAuthentication | undefined>;
     /**
      * Connection limit for Loadbalancer
      */
-    connectionLimit?: pulumi.Input<number>;
+    connectionLimit?: pulumi.Input<number | undefined>;
     /**
      * Loadbalancer default pool info
      */
-    defaultPool?: pulumi.Input<string>;
+    defaultPool?: pulumi.Input<string | undefined>;
     /**
      * If present, the target listener that requests are redirected to.
      */
-    httpsRedirect?: pulumi.Input<inputs.IsLbListenerHttpsRedirect>;
+    httpsRedirect?: pulumi.Input<inputs.IsLbListenerHttpsRedirect | undefined>;
     /**
      * ID of the listener that will be set as http redirect target
      *
      * @deprecated Please use the argument 'https_redirect'
      */
-    httpsRedirectListener?: pulumi.Input<string>;
+    httpsRedirectListener?: pulumi.Input<string | undefined>;
     /**
      * The HTTP status code to be returned in the redirect response
      *
      * @deprecated Please use the argument 'https_redirect'
      */
-    httpsRedirectStatusCode?: pulumi.Input<number>;
+    httpsRedirectStatusCode?: pulumi.Input<number | undefined>;
     /**
      * Target URI where traffic will be redirected
      *
      * @deprecated Please use the argument 'https_redirect'
      */
-    httpsRedirectUri?: pulumi.Input<string>;
+    httpsRedirectUri?: pulumi.Input<string | undefined>;
     /**
      * idle connection timeout of listener
      */
-    idleConnectionTimeout?: pulumi.Input<number>;
+    idleConnectionTimeout?: pulumi.Input<number | undefined>;
     /**
      * Loadbalancer listener ID
      */
-    lb?: pulumi.Input<string>;
-    listenerId?: pulumi.Input<string>;
+    lb?: pulumi.Input<string | undefined>;
+    listenerId?: pulumi.Input<string | undefined>;
     /**
      * Loadbalancer listener port
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The inclusive upper bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener
      */
-    portMax?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
     /**
      * The inclusive lower bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener.
      */
-    portMin?: pulumi.Input<number>;
+    portMin?: pulumi.Input<number | undefined>;
     /**
      * Loadbalancer protocol
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The crn of the LB resource
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
     /**
      * Loadbalancer listener status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -251,45 +261,49 @@ export interface IsLbListenerArgs {
     /**
      * Listener will forward proxy protocol
      */
-    acceptProxyProtocol?: pulumi.Input<boolean>;
+    acceptProxyProtocol?: pulumi.Input<boolean | undefined>;
     /**
      * certificate instance for the Loadbalancer
      */
-    certificateInstance?: pulumi.Input<string>;
+    certificateInstance?: pulumi.Input<string | undefined>;
+    /**
+     * The client authentication to use for this listener. Supported by load balancers with mtlsSupported set to true. The listener must have a protocol of https.
+     */
+    clientAuthentication?: pulumi.Input<inputs.IsLbListenerClientAuthentication | undefined>;
     /**
      * Connection limit for Loadbalancer
      */
-    connectionLimit?: pulumi.Input<number>;
+    connectionLimit?: pulumi.Input<number | undefined>;
     /**
      * Loadbalancer default pool info
      */
-    defaultPool?: pulumi.Input<string>;
+    defaultPool?: pulumi.Input<string | undefined>;
     /**
      * If present, the target listener that requests are redirected to.
      */
-    httpsRedirect?: pulumi.Input<inputs.IsLbListenerHttpsRedirect>;
+    httpsRedirect?: pulumi.Input<inputs.IsLbListenerHttpsRedirect | undefined>;
     /**
      * ID of the listener that will be set as http redirect target
      *
      * @deprecated Please use the argument 'https_redirect'
      */
-    httpsRedirectListener?: pulumi.Input<string>;
+    httpsRedirectListener?: pulumi.Input<string | undefined>;
     /**
      * The HTTP status code to be returned in the redirect response
      *
      * @deprecated Please use the argument 'https_redirect'
      */
-    httpsRedirectStatusCode?: pulumi.Input<number>;
+    httpsRedirectStatusCode?: pulumi.Input<number | undefined>;
     /**
      * Target URI where traffic will be redirected
      *
      * @deprecated Please use the argument 'https_redirect'
      */
-    httpsRedirectUri?: pulumi.Input<string>;
+    httpsRedirectUri?: pulumi.Input<string | undefined>;
     /**
      * idle connection timeout of listener
      */
-    idleConnectionTimeout?: pulumi.Input<number>;
+    idleConnectionTimeout?: pulumi.Input<number | undefined>;
     /**
      * Loadbalancer listener ID
      */
@@ -297,15 +311,15 @@ export interface IsLbListenerArgs {
     /**
      * Loadbalancer listener port
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The inclusive upper bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener
      */
-    portMax?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
     /**
      * The inclusive lower bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener.
      */
-    portMin?: pulumi.Input<number>;
+    portMin?: pulumi.Input<number | undefined>;
     /**
      * Loadbalancer protocol
      */

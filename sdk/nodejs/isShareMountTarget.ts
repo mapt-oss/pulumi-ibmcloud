@@ -144,55 +144,55 @@ export interface IsShareMountTargetState {
     /**
      * The access control mode for the share
      */
-    accessControlMode?: pulumi.Input<string>;
+    accessControlMode?: pulumi.Input<string | undefined>;
     /**
      * The protocol to use to access the share for this share mount target.
      */
-    accessProtocol?: pulumi.Input<string>;
+    accessProtocol?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the share target was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The URL for this share target.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the mount target.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The mount path for the share.The IP addresses used in the mount path are currently within the IBM services IP range, but are expected to change to be within one of the VPC's subnets in the future.
      */
-    mountPath?: pulumi.Input<string>;
+    mountPath?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of this target
      */
-    mountTarget?: pulumi.Input<string>;
+    mountTarget?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The file share identifier.
      */
-    share?: pulumi.Input<string>;
+    share?: pulumi.Input<string | undefined>;
     /**
      * The transit encryption mode.
      */
-    transitEncryption?: pulumi.Input<string>;
+    transitEncryption?: pulumi.Input<string | undefined>;
     /**
      * VNI for mount target.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterface | undefined>;
     /**
      * The unique identifier of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -202,11 +202,11 @@ export interface IsShareMountTargetArgs {
     /**
      * The protocol to use to access the share for this share mount target.
      */
-    accessProtocol?: pulumi.Input<string>;
+    accessProtocol?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The file share identifier.
      */
@@ -214,13 +214,13 @@ export interface IsShareMountTargetArgs {
     /**
      * The transit encryption mode.
      */
-    transitEncryption?: pulumi.Input<string>;
+    transitEncryption?: pulumi.Input<string | undefined>;
     /**
      * VNI for mount target.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterface | undefined>;
     /**
      * The unique identifier of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }

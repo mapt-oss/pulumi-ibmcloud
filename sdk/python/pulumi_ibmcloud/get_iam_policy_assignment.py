@@ -181,8 +181,8 @@ def get_iam_policy_assignment(assignment_id: Optional[_builtins.str] = None,
         target=pulumi.get(__ret__, 'target'),
         template=pulumi.get(__ret__, 'template'),
         version=pulumi.get(__ret__, 'version'))
-def get_iam_policy_assignment_output(assignment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_policy_assignment_output(assignment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamPolicyAssignmentResult]:
     """
     Use this data source to access information about an existing resource.

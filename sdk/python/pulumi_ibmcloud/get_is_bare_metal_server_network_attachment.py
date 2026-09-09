@@ -234,8 +234,8 @@ def get_is_bare_metal_server_network_attachment(bare_metal_server: Optional[_bui
         type=pulumi.get(__ret__, 'type'),
         virtual_network_interfaces=pulumi.get(__ret__, 'virtual_network_interfaces'),
         vlan=pulumi.get(__ret__, 'vlan'))
-def get_is_bare_metal_server_network_attachment_output(bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       network_attachment: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_bare_metal_server_network_attachment_output(bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       network_attachment: pulumi.Input[Optional[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerNetworkAttachmentResult]:
     """
     Use this data source to access information about an existing resource.

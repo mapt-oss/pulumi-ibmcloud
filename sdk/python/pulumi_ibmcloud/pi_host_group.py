@@ -24,10 +24,11 @@ class PiHostGroupArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_hosts: pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]],
                  pi_name: pulumi.Input[_builtins.str],
-                 pi_remove: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_secondaries: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]] = None):
+                 pi_remove: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_secondaries: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]] = None):
         """
         The set of arguments for constructing a PiHostGroup resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]] pi_hosts: List of hosts to add to the group.
         :param pulumi.Input[_builtins.str] pi_name: Name of the host group to create.
@@ -80,45 +81,46 @@ class PiHostGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="piRemove")
-    def pi_remove(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_remove(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A workspace ID to stop sharing the host group with.
         """
         return pulumi.get(self, "pi_remove")
 
     @pi_remove.setter
-    def pi_remove(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_remove(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_remove", value)
 
     @_builtins.property
     @pulumi.getter(name="piSecondaries")
-    def pi_secondaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]:
+    def pi_secondaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]:
         """
         List of workspaces to share the host group with.
         """
         return pulumi.get(self, "pi_secondaries")
 
     @pi_secondaries.setter
-    def pi_secondaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]):
+    def pi_secondaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]):
         pulumi.set(self, "pi_secondaries", value)
 
 
 @pulumi.input_type
 class _PiHostGroupState:
     def __init__(__self__, *,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_remove: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_secondaries: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]] = None,
-                 primary: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondaries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_hosts: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_remove: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_secondaries: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]] = None,
+                 primary: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondaries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiHostGroup resources.
+
         :param pulumi.Input[_builtins.str] creation_date: Date/Time of host group creation.
         :param pulumi.Input[_builtins.str] host_group_id: Host group ID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: List of hosts.
@@ -156,134 +158,134 @@ class _PiHostGroupState:
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date/Time of host group creation.
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroupId")
-    def host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host group ID.
         """
         return pulumi.get(self, "host_group_id")
 
     @host_group_id.setter
-    def host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of hosts.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the host group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piHosts")
-    def pi_hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]]]:
+    def pi_hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]]]:
         """
         List of hosts to add to the group.
         """
         return pulumi.get(self, "pi_hosts")
 
     @pi_hosts.setter
-    def pi_hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]]]):
+    def pi_hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiHostArgs']]]]):
         pulumi.set(self, "pi_hosts", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the host group to create.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piRemove")
-    def pi_remove(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_remove(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A workspace ID to stop sharing the host group with.
         """
         return pulumi.get(self, "pi_remove")
 
     @pi_remove.setter
-    def pi_remove(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_remove(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_remove", value)
 
     @_builtins.property
     @pulumi.getter(name="piSecondaries")
-    def pi_secondaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]:
+    def pi_secondaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]:
         """
         List of workspaces to share the host group with.
         """
         return pulumi.get(self, "pi_secondaries")
 
     @pi_secondaries.setter
-    def pi_secondaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]):
+    def pi_secondaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostGroupPiSecondaryArgs']]]]):
         pulumi.set(self, "pi_secondaries", value)
 
     @_builtins.property
     @pulumi.getter
-    def primary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the workspace owning the host group.
         """
         return pulumi.get(self, "primary")
 
     @primary.setter
-    def primary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary", value)
 
     @_builtins.property
     @pulumi.getter
-    def secondaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secondaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IDs of workspaces the host group has been shared with.
         """
         return pulumi.get(self, "secondaries")
 
     @secondaries.setter
-    def secondaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secondaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondaries", value)
 
 
@@ -293,21 +295,22 @@ class PiHostGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict']]]]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_remove: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_secondaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict', 'outputs.PiHostGroupPiHost']]]]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_remove: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_secondaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict', 'outputs.PiHostGroupPiSecondary']]]]] = None,
                  __props__=None):
         """
         Create a PiHostGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict']]]] pi_hosts: List of hosts to add to the group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict', 'outputs.PiHostGroupPiHost']]]] pi_hosts: List of hosts to add to the group.
         :param pulumi.Input[_builtins.str] pi_name: Name of the host group to create.
         :param pulumi.Input[_builtins.str] pi_remove: A workspace ID to stop sharing the host group with.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict']]]] pi_secondaries: List of workspaces to share the host group with.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict', 'outputs.PiHostGroupPiSecondary']]]] pi_secondaries: List of workspaces to share the host group with.
         """
         ...
     @overload
@@ -317,6 +320,7 @@ class PiHostGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiHostGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiHostGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -332,11 +336,11 @@ class PiHostGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict']]]]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_remove: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_secondaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict', 'outputs.PiHostGroupPiHost']]]]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_remove: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_secondaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict', 'outputs.PiHostGroupPiSecondary']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -373,17 +377,17 @@ class PiHostGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-            host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict']]]]] = None,
-            pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_remove: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_secondaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict']]]]] = None,
-            primary: Optional[pulumi.Input[_builtins.str]] = None,
-            secondaries: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiHostGroup':
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict', 'outputs.PiHostGroupPiHost']]]]] = None,
+            pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_remove: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_secondaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict', 'outputs.PiHostGroupPiSecondary']]]]] = None,
+            primary: pulumi.Input[Optional[_builtins.str]] = None,
+            secondaries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiHostGroup':
         """
         Get an existing PiHostGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -396,10 +400,10 @@ class PiHostGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: List of hosts.
         :param pulumi.Input[_builtins.str] name: Name of the host group.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict']]]] pi_hosts: List of hosts to add to the group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiHostArgs', 'PiHostGroupPiHostArgsDict', 'outputs.PiHostGroupPiHost']]]] pi_hosts: List of hosts to add to the group.
         :param pulumi.Input[_builtins.str] pi_name: Name of the host group to create.
         :param pulumi.Input[_builtins.str] pi_remove: A workspace ID to stop sharing the host group with.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict']]]] pi_secondaries: List of workspaces to share the host group with.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiHostGroupPiSecondaryArgs', 'PiHostGroupPiSecondaryArgsDict', 'outputs.PiHostGroupPiSecondary']]]] pi_secondaries: List of workspaces to share the host group with.
         :param pulumi.Input[_builtins.str] primary: ID of the workspace owning the host group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secondaries: IDs of workspaces the host group has been shared with.
         """

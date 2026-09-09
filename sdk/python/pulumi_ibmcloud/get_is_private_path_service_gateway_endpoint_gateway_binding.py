@@ -164,8 +164,8 @@ def get_is_private_path_service_gateway_endpoint_gateway_binding(endpoint_gatewa
         resource_type=pulumi.get(__ret__, 'resource_type'),
         status=pulumi.get(__ret__, 'status'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_is_private_path_service_gateway_endpoint_gateway_binding_output(endpoint_gateway_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                        private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_private_path_service_gateway_endpoint_gateway_binding_output(endpoint_gateway_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                        private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsPrivatePathServiceGatewayEndpointGatewayBindingResult]:
     """
     Use this data source to access information about an existing resource.

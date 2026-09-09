@@ -22,10 +22,11 @@ __all__ = ['IsSubnetRoutingTableAttachmentArgs', 'IsSubnetRoutingTableAttachment
 class IsSubnetRoutingTableAttachmentArgs:
     def __init__(__self__, *,
                  subnet: pulumi.Input[_builtins.str],
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_table_crn: Optional[pulumi.Input[_builtins.str]] = None):
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_table_crn: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsSubnetRoutingTableAttachment resource.
+
         :param pulumi.Input[_builtins.str] subnet: The subnet identifier
         :param pulumi.Input[_builtins.str] routing_table: The unique identifier of routing table
         :param pulumi.Input[_builtins.str] routing_table_crn: The crn of routing table
@@ -50,47 +51,48 @@ class IsSubnetRoutingTableAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="routingTable")
-    def routing_table(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_table(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of routing table
         """
         return pulumi.get(self, "routing_table")
 
     @routing_table.setter
-    def routing_table(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_table(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_table", value)
 
     @_builtins.property
     @pulumi.getter(name="routingTableCrn")
-    def routing_table_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_table_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of routing table
         """
         return pulumi.get(self, "routing_table_crn")
 
     @routing_table_crn.setter
-    def routing_table_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_table_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_table_crn", value)
 
 
 @pulumi.input_type
 class _IsSubnetRoutingTableAttachmentState:
     def __init__(__self__, *,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_groups: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentResourceGroupArgs']]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_direct_link_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_transit_gateway_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_vpc_zone_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 routes: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentRouteArgs']]]] = None,
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_table_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentSubnetArgs']]]] = None):
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_groups: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentResourceGroupArgs']]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_direct_link_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_transit_gateway_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_vpc_zone_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 routes: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentRouteArgs']]]] = None,
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_table_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentSubnetArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsSubnetRoutingTableAttachment resources.
+
         :param pulumi.Input[_builtins.bool] is_default: Indicates whether this is the default routing table for this VPC
         :param pulumi.Input[_builtins.str] lifecycle_state: he lifecycle state of the routing table [ deleting, failed, pending, stable, suspended, updating, waiting ]
         :param pulumi.Input[_builtins.str] name: The name of the routing table
@@ -132,152 +134,152 @@ class _IsSubnetRoutingTableAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this is the default routing table for this VPC
         """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
-    def is_default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         he lifecycle state of the routing table [ deleting, failed, pending, stable, suspended, updating, waiting ]
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the routing table
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroups")
-    def resource_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentResourceGroupArgs']]]]:
+    def resource_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentResourceGroupArgs']]]]:
         """
         The resource group for this volume.
         """
         return pulumi.get(self, "resource_groups")
 
     @resource_groups.setter
-    def resource_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentResourceGroupArgs']]]]):
+    def resource_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentResourceGroupArgs']]]]):
         pulumi.set(self, "resource_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="routeDirectLinkIngress")
-    def route_direct_link_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_direct_link_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
         """
         return pulumi.get(self, "route_direct_link_ingress")
 
     @route_direct_link_ingress.setter
-    def route_direct_link_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_direct_link_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_direct_link_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTransitGatewayIngress")
-    def route_transit_gateway_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_transit_gateway_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, this routing table will be used to route traffic that originates from Transit Gateway to this VPC.
         """
         return pulumi.get(self, "route_transit_gateway_ingress")
 
     @route_transit_gateway_ingress.setter
-    def route_transit_gateway_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_transit_gateway_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_transit_gateway_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeVpcZoneIngress")
-    def route_vpc_zone_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_vpc_zone_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, this routing table will be used to route traffic that originates from subnets in other zones in this VPC.
         """
         return pulumi.get(self, "route_vpc_zone_ingress")
 
     @route_vpc_zone_ingress.setter
-    def route_vpc_zone_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_vpc_zone_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_vpc_zone_ingress", value)
 
     @_builtins.property
     @pulumi.getter
-    def routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentRouteArgs']]]]:
+    def routes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentRouteArgs']]]]:
         return pulumi.get(self, "routes")
 
     @routes.setter
-    def routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentRouteArgs']]]]):
+    def routes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentRouteArgs']]]]):
         pulumi.set(self, "routes", value)
 
     @_builtins.property
     @pulumi.getter(name="routingTable")
-    def routing_table(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_table(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of routing table
         """
         return pulumi.get(self, "routing_table")
 
     @routing_table.setter
-    def routing_table(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_table(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_table", value)
 
     @_builtins.property
     @pulumi.getter(name="routingTableCrn")
-    def routing_table_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_table_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of routing table
         """
         return pulumi.get(self, "routing_table_crn")
 
     @routing_table_crn.setter
-    def routing_table_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_table_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_table_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet identifier
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentSubnetArgs']]]]:
+    def subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentSubnetArgs']]]]:
         return pulumi.get(self, "subnets")
 
     @subnets.setter
-    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentSubnetArgs']]]]):
+    def subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetRoutingTableAttachmentSubnetArgs']]]]):
         pulumi.set(self, "subnets", value)
 
 
@@ -287,12 +289,13 @@ class IsSubnetRoutingTableAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_table_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_table_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsSubnetRoutingTableAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] routing_table: The unique identifier of routing table
@@ -307,6 +310,7 @@ class IsSubnetRoutingTableAttachment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsSubnetRoutingTableAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsSubnetRoutingTableAttachmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -322,9 +326,9 @@ class IsSubnetRoutingTableAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_table_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_table_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -359,19 +363,19 @@ class IsSubnetRoutingTableAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentResourceGroupArgs', 'IsSubnetRoutingTableAttachmentResourceGroupArgsDict']]]]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            route_direct_link_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            route_transit_gateway_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            route_vpc_zone_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentRouteArgs', 'IsSubnetRoutingTableAttachmentRouteArgsDict']]]]] = None,
-            routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-            routing_table_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentSubnetArgs', 'IsSubnetRoutingTableAttachmentSubnetArgsDict']]]]] = None) -> 'IsSubnetRoutingTableAttachment':
+            is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentResourceGroupArgs', 'IsSubnetRoutingTableAttachmentResourceGroupArgsDict', 'outputs.IsSubnetRoutingTableAttachmentResourceGroup']]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            route_direct_link_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_transit_gateway_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_vpc_zone_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentRouteArgs', 'IsSubnetRoutingTableAttachmentRouteArgsDict', 'outputs.IsSubnetRoutingTableAttachmentRoute']]]]] = None,
+            routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_table_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentSubnetArgs', 'IsSubnetRoutingTableAttachmentSubnetArgsDict', 'outputs.IsSubnetRoutingTableAttachmentSubnet']]]]] = None) -> 'IsSubnetRoutingTableAttachment':
         """
         Get an existing IsSubnetRoutingTableAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -382,7 +386,7 @@ class IsSubnetRoutingTableAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_default: Indicates whether this is the default routing table for this VPC
         :param pulumi.Input[_builtins.str] lifecycle_state: he lifecycle state of the routing table [ deleting, failed, pending, stable, suspended, updating, waiting ]
         :param pulumi.Input[_builtins.str] name: The name of the routing table
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentResourceGroupArgs', 'IsSubnetRoutingTableAttachmentResourceGroupArgsDict']]]] resource_groups: The resource group for this volume.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSubnetRoutingTableAttachmentResourceGroupArgs', 'IsSubnetRoutingTableAttachmentResourceGroupArgsDict', 'outputs.IsSubnetRoutingTableAttachmentResourceGroup']]]] resource_groups: The resource group for this volume.
         :param pulumi.Input[_builtins.str] resource_type: The resource type
         :param pulumi.Input[_builtins.bool] route_direct_link_ingress: If true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
         :param pulumi.Input[_builtins.bool] route_transit_gateway_ingress: If true, this routing table will be used to route traffic that originates from Transit Gateway to this VPC.

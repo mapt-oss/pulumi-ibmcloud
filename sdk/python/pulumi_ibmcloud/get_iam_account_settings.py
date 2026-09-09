@@ -234,8 +234,8 @@ def get_iam_account_settings(include_history: Optional[_builtins.bool] = None,
         system_access_token_expiration_in_seconds=pulumi.get(__ret__, 'system_access_token_expiration_in_seconds'),
         system_refresh_token_expiration_in_seconds=pulumi.get(__ret__, 'system_refresh_token_expiration_in_seconds'),
         user_mfas=pulumi.get(__ret__, 'user_mfas'))
-def get_iam_account_settings_output(include_history: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    resolve_user_mfa: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_iam_account_settings_output(include_history: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    resolve_user_mfa: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccountSettingsResult]:
     """
     Use this data source to access information about an existing resource.

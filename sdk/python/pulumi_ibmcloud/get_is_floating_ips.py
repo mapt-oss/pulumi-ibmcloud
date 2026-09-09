@@ -94,8 +94,8 @@ def get_is_floating_ips(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         resource_group=pulumi.get(__ret__, 'resource_group'))
-def get_is_floating_ips_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_floating_ips_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsFloatingIpsResult]:
     """
     Use this data source to access information about an existing resource.

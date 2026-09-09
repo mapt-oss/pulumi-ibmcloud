@@ -27,10 +27,13 @@ class GetIsVpnGatewayResult:
     """
     A collection of values returned by getIsVpnGateway.
     """
-    def __init__(__self__, access_tags=None, connections=None, created_at=None, crn=None, health_reasons=None, health_state=None, href=None, id=None, lifecycle_reasons=None, lifecycle_state=None, members=None, mode=None, name=None, resource_groups=None, resource_type=None, status=None, subnets=None, tags=None, vpcs=None, vpn_gateway=None, vpn_gateway_name=None):
+    def __init__(__self__, access_tags=None, advertised_cidrs=None, connections=None, created_at=None, crn=None, health_reasons=None, health_state=None, href=None, id=None, lifecycle_reasons=None, lifecycle_state=None, local_asn=None, members=None, mode=None, name=None, resource_groups=None, resource_type=None, status=None, subnets=None, tags=None, vpcs=None, vpn_gateway=None, vpn_gateway_name=None):
         if access_tags and not isinstance(access_tags, list):
             raise TypeError("Expected argument 'access_tags' to be a list")
         pulumi.set(__self__, "access_tags", access_tags)
+        if advertised_cidrs and not isinstance(advertised_cidrs, list):
+            raise TypeError("Expected argument 'advertised_cidrs' to be a list")
+        pulumi.set(__self__, "advertised_cidrs", advertised_cidrs)
         if connections and not isinstance(connections, list):
             raise TypeError("Expected argument 'connections' to be a list")
         pulumi.set(__self__, "connections", connections)
@@ -58,6 +61,9 @@ class GetIsVpnGatewayResult:
         if lifecycle_state and not isinstance(lifecycle_state, str):
             raise TypeError("Expected argument 'lifecycle_state' to be a str")
         pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        if local_asn and not isinstance(local_asn, int):
+            raise TypeError("Expected argument 'local_asn' to be a int")
+        pulumi.set(__self__, "local_asn", local_asn)
         if members and not isinstance(members, list):
             raise TypeError("Expected argument 'members' to be a list")
         pulumi.set(__self__, "members", members)
@@ -96,6 +102,11 @@ class GetIsVpnGatewayResult:
     @pulumi.getter(name="accessTags")
     def access_tags(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "access_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="advertisedCidrs")
+    def advertised_cidrs(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "advertised_cidrs")
 
     @_builtins.property
     @pulumi.getter
@@ -144,6 +155,11 @@ class GetIsVpnGatewayResult:
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> _builtins.str:
         return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="localAsn")
+    def local_asn(self) -> _builtins.int:
+        return pulumi.get(self, "local_asn")
 
     @_builtins.property
     @pulumi.getter
@@ -208,6 +224,7 @@ class AwaitableGetIsVpnGatewayResult(GetIsVpnGatewayResult):
             yield self
         return GetIsVpnGatewayResult(
             access_tags=self.access_tags,
+            advertised_cidrs=self.advertised_cidrs,
             connections=self.connections,
             created_at=self.created_at,
             crn=self.crn,
@@ -217,6 +234,7 @@ class AwaitableGetIsVpnGatewayResult(GetIsVpnGatewayResult):
             id=self.id,
             lifecycle_reasons=self.lifecycle_reasons,
             lifecycle_state=self.lifecycle_state,
+            local_asn=self.local_asn,
             members=self.members,
             mode=self.mode,
             name=self.name,
@@ -244,6 +262,7 @@ def get_is_vpn_gateway(vpn_gateway: Optional[_builtins.str] = None,
 
     return AwaitableGetIsVpnGatewayResult(
         access_tags=pulumi.get(__ret__, 'access_tags'),
+        advertised_cidrs=pulumi.get(__ret__, 'advertised_cidrs'),
         connections=pulumi.get(__ret__, 'connections'),
         created_at=pulumi.get(__ret__, 'created_at'),
         crn=pulumi.get(__ret__, 'crn'),
@@ -253,6 +272,7 @@ def get_is_vpn_gateway(vpn_gateway: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_reasons=pulumi.get(__ret__, 'lifecycle_reasons'),
         lifecycle_state=pulumi.get(__ret__, 'lifecycle_state'),
+        local_asn=pulumi.get(__ret__, 'local_asn'),
         members=pulumi.get(__ret__, 'members'),
         mode=pulumi.get(__ret__, 'mode'),
         name=pulumi.get(__ret__, 'name'),
@@ -264,8 +284,8 @@ def get_is_vpn_gateway(vpn_gateway: Optional[_builtins.str] = None,
         vpcs=pulumi.get(__ret__, 'vpcs'),
         vpn_gateway=pulumi.get(__ret__, 'vpn_gateway'),
         vpn_gateway_name=pulumi.get(__ret__, 'vpn_gateway_name'))
-def get_is_vpn_gateway_output(vpn_gateway: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              vpn_gateway_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_vpn_gateway_output(vpn_gateway: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              vpn_gateway_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpnGatewayResult]:
     """
     Use this data source to access information about an existing resource.
@@ -277,6 +297,7 @@ def get_is_vpn_gateway_output(vpn_gateway: Optional[pulumi.Input[Optional[_built
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsVpnGateway:getIsVpnGateway', __args__, opts=opts, typ=GetIsVpnGatewayResult)
     return __ret__.apply(lambda __response__: GetIsVpnGatewayResult(
         access_tags=pulumi.get(__response__, 'access_tags'),
+        advertised_cidrs=pulumi.get(__response__, 'advertised_cidrs'),
         connections=pulumi.get(__response__, 'connections'),
         created_at=pulumi.get(__response__, 'created_at'),
         crn=pulumi.get(__response__, 'crn'),
@@ -286,6 +307,7 @@ def get_is_vpn_gateway_output(vpn_gateway: Optional[pulumi.Input[Optional[_built
         id=pulumi.get(__response__, 'id'),
         lifecycle_reasons=pulumi.get(__response__, 'lifecycle_reasons'),
         lifecycle_state=pulumi.get(__response__, 'lifecycle_state'),
+        local_asn=pulumi.get(__response__, 'local_asn'),
         members=pulumi.get(__response__, 'members'),
         mode=pulumi.get(__response__, 'mode'),
         name=pulumi.get(__response__, 'name'),

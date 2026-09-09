@@ -52,7 +52,7 @@ export function getIamAuthorizationPoliciesOutput(args?: GetIamAuthorizationPoli
  * A collection of arguments for invoking getIamAuthorizationPolicies.
  */
 export interface GetIamAuthorizationPoliciesOutputArgs {
-    accountId?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
-    transactionId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

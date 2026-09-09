@@ -174,8 +174,8 @@ def get_iam_trusted_profile_claim_rule(profile_id: Optional[_builtins.str] = Non
         realm_name=pulumi.get(__ret__, 'realm_name'),
         rule_id=pulumi.get(__ret__, 'rule_id'),
         type=pulumi.get(__ret__, 'type'))
-def get_iam_trusted_profile_claim_rule_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              rule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_trusted_profile_claim_rule_output(profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              rule_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTrustedProfileClaimRuleResult]:
     """
     Use this data source to access information about an existing resource.

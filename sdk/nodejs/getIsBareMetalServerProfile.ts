@@ -45,6 +45,7 @@ export interface GetIsBareMetalServerProfileResult {
     readonly resourceType: string;
     readonly supportedTrustedPlatformModuleModes: outputs.GetIsBareMetalServerProfileSupportedTrustedPlatformModuleMode[];
     readonly virtualNetworkInterfacesSupporteds: outputs.GetIsBareMetalServerProfileVirtualNetworkInterfacesSupported[];
+    readonly zones: outputs.GetIsBareMetalServerProfileZone[];
 }
 export function getIsBareMetalServerProfileOutput(args: GetIsBareMetalServerProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIsBareMetalServerProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

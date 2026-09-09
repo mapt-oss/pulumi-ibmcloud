@@ -249,11 +249,11 @@ def get_resource_instance(identifier: Optional[_builtins.str] = None,
         service=pulumi.get(__ret__, 'service'),
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_resource_instance_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 resource_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 service: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resource_instance_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 resource_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 service: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceInstanceResult]:
     """
     Use this data source to access information about an existing resource.

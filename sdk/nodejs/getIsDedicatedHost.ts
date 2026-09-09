@@ -71,5 +71,5 @@ export function getIsDedicatedHostOutput(args: GetIsDedicatedHostOutputArgs, opt
 export interface GetIsDedicatedHostOutputArgs {
     hostGroup: pulumi.Input<string>;
     name: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

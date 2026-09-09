@@ -24,6 +24,7 @@ class IsPrivatePathServiceGatewayAccountPolicyArgs:
                  private_path_service_gateway: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsPrivatePathServiceGatewayAccountPolicy resource.
+
         :param pulumi.Input[_builtins.str] access_policy: The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
         :param pulumi.Input[_builtins.str] account: The account for this access policy.
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
@@ -72,16 +73,17 @@ class IsPrivatePathServiceGatewayAccountPolicyArgs:
 @pulumi.input_type
 class _IsPrivatePathServiceGatewayAccountPolicyState:
     def __init__(__self__, *,
-                 access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 account: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_at: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 account: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_at: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsPrivatePathServiceGatewayAccountPolicy resources.
+
         :param pulumi.Input[_builtins.str] access_policy: The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
         :param pulumi.Input[_builtins.str] account: The account for this access policy.
         :param pulumi.Input[_builtins.str] account_policy: The unique identifier for this account policy.
@@ -110,98 +112,98 @@ class _IsPrivatePathServiceGatewayAccountPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="accessPolicy")
-    def access_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
         """
         return pulumi.get(self, "access_policy")
 
     @access_policy.setter
-    def access_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The account for this access policy.
         """
         return pulumi.get(self, "account")
 
     @account.setter
-    def account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account", value)
 
     @_builtins.property
     @pulumi.getter(name="accountPolicy")
-    def account_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this account policy.
         """
         return pulumi.get(self, "account_policy")
 
     @account_policy.setter
-    def account_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the account policy was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this account policy.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="privatePathServiceGateway")
-    def private_path_service_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_path_service_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private path service gateway identifier.
         """
         return pulumi.get(self, "private_path_service_gateway")
 
     @private_path_service_gateway.setter
-    def private_path_service_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_path_service_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_path_service_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the account policy was updated.
         """
         return pulumi.get(self, "updated_at")
 
     @updated_at.setter
-    def updated_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_at", value)
 
 
@@ -211,12 +213,13 @@ class IsPrivatePathServiceGatewayAccountPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 account: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 account: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsPrivatePathServiceGatewayAccountPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_policy: The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
@@ -231,6 +234,7 @@ class IsPrivatePathServiceGatewayAccountPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsPrivatePathServiceGatewayAccountPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsPrivatePathServiceGatewayAccountPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -246,9 +250,9 @@ class IsPrivatePathServiceGatewayAccountPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 account: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 account: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -282,14 +286,14 @@ class IsPrivatePathServiceGatewayAccountPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            account: Optional[pulumi.Input[_builtins.str]] = None,
-            account_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            updated_at: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsPrivatePathServiceGatewayAccountPolicy':
+            access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            account: pulumi.Input[Optional[_builtins.str]] = None,
+            account_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsPrivatePathServiceGatewayAccountPolicy':
         """
         Get an existing IsPrivatePathServiceGatewayAccountPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

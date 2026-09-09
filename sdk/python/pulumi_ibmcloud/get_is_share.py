@@ -444,8 +444,8 @@ def get_is_share(name: Optional[_builtins.str] = None,
         storage_generation=pulumi.get(__ret__, 'storage_generation'),
         tags=pulumi.get(__ret__, 'tags'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_share_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        share: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_share_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        share: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsShareResult]:
     """
     Use this data source to access information about an existing resource.

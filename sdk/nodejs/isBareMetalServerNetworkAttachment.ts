@@ -168,71 +168,71 @@ export interface IsBareMetalServerNetworkAttachmentState {
     /**
      * Indicates if the bare metal server network attachment can automatically float to any other server within the same `resourceGroup`. The bare metal server network attachment will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to bare metal server network attachments with `vlan` interface type.
      */
-    allowToFloat?: pulumi.Input<boolean>;
+    allowToFloat?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) attachment.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * The bare metal server identifier.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the bare metal server network attachment was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The bare metal server identifier of the server where the attachment is floated to(only applicated for allowToFloat true).
      */
-    floatingBareMetalServer?: pulumi.Input<string>;
+    floatingBareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * Only used for PCI network attachments, whether to hard/immediately stop server
      */
-    hardStop?: pulumi.Input<boolean>;
+    hardStop?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this bare metal server network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The network attachment's interface type:- `pci`: a physical PCI device which can only be created or deleted when the bare metal  server is stopped  - Has an `allowedVlans` property which controls the VLANs that will be permitted    to use the PCI attachment  - Cannot directly use an IEEE 802.1q VLAN tag.- `vlan`: a virtual device, used through a `pci` device that has the `vlan` in its  array of `allowedVlans`.  - Must use an IEEE 802.1q tag.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the bare metal server network attachment.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this bare metal server network attachment. The name is unique across all network attachments for the bare metal server.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The network attachment's id.
      */
-    networkAttachment?: pulumi.Input<string>;
+    networkAttachment?: pulumi.Input<string | undefined>;
     /**
      * The port speed for this bare metal server network attachment in Mbps.
      */
-    portSpeed?: pulumi.Input<number>;
+    portSpeed?: pulumi.Input<number | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The bare metal server network attachment type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface | undefined>;
     /**
      * The virtual_network_interface's id.
      */
-    virtualNetworkInterfaceId?: pulumi.Input<string>;
+    virtualNetworkInterfaceId?: pulumi.Input<string | undefined>;
     /**
      * Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this attachment.
      */
-    vlan?: pulumi.Input<number>;
+    vlan?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -242,11 +242,11 @@ export interface IsBareMetalServerNetworkAttachmentArgs {
     /**
      * Indicates if the bare metal server network attachment can automatically float to any other server within the same `resourceGroup`. The bare metal server network attachment will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to bare metal server network attachments with `vlan` interface type.
      */
-    allowToFloat?: pulumi.Input<boolean>;
+    allowToFloat?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) attachment.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * The bare metal server identifier.
      */
@@ -254,21 +254,21 @@ export interface IsBareMetalServerNetworkAttachmentArgs {
     /**
      * Only used for PCI network attachments, whether to hard/immediately stop server
      */
-    hardStop?: pulumi.Input<boolean>;
+    hardStop?: pulumi.Input<boolean | undefined>;
     /**
      * The network attachment's interface type:- `pci`: a physical PCI device which can only be created or deleted when the bare metal  server is stopped  - Has an `allowedVlans` property which controls the VLANs that will be permitted    to use the PCI attachment  - Cannot directly use an IEEE 802.1q VLAN tag.- `vlan`: a virtual device, used through a `pci` device that has the `vlan` in its  array of `allowedVlans`.  - Must use an IEEE 802.1q tag.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The name for this bare metal server network attachment. The name is unique across all network attachments for the bare metal server.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface | undefined>;
     /**
      * Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this attachment.
      */
-    vlan?: pulumi.Input<number>;
+    vlan?: pulumi.Input<number | undefined>;
 }

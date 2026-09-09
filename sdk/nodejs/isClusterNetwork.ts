@@ -147,52 +147,52 @@ export interface IsClusterNetworkState {
     /**
      * The date and time that the cluster network was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this cluster network.
      */
-    crn?: pulumi.Input<string>;
-    etag?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * The URL for this cluster network.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current `lifecycleState` (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the cluster network.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network. The name must not be used by another cluster network in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this cluster network profile.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group for this cluster network.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The IP address ranges available for subnets for this cluster network.
      */
-    subnetPrefixes?: pulumi.Input<inputs.IsClusterNetworkSubnetPrefixes>;
+    subnetPrefixes?: pulumi.Input<inputs.IsClusterNetworkSubnetPrefixes | undefined>;
     /**
      * The VPC this cluster network resides in.
      */
-    vpc?: pulumi.Input<inputs.IsClusterNetworkVpc>;
+    vpc?: pulumi.Input<inputs.IsClusterNetworkVpc | undefined>;
     /**
      * The globally unique name for the zone this cluster network resides in.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -202,7 +202,7 @@ export interface IsClusterNetworkArgs {
     /**
      * The name for this cluster network. The name must not be used by another cluster network in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this cluster network profile.
      */
@@ -210,11 +210,11 @@ export interface IsClusterNetworkArgs {
     /**
      * The unique identifier for this resource group for this cluster network.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The IP address ranges available for subnets for this cluster network.
      */
-    subnetPrefixes?: pulumi.Input<inputs.IsClusterNetworkSubnetPrefixes>;
+    subnetPrefixes?: pulumi.Input<inputs.IsClusterNetworkSubnetPrefixes | undefined>;
     /**
      * The VPC this cluster network resides in.
      */

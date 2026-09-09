@@ -24,6 +24,7 @@ class PiVolumeAttachArgs:
                  pi_volume_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiVolumeAttach resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_instance_id: PI Instance Id
         :param pulumi.Input[_builtins.str] pi_volume_id: Id of the volume to attach. Note these volumes should have been created
@@ -72,12 +73,13 @@ class PiVolumeAttachArgs:
 @pulumi.input_type
 class _PiVolumeAttachState:
     def __init__(__self__, *,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVolumeAttach resources.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_instance_id: PI Instance Id
         :param pulumi.Input[_builtins.str] pi_volume_id: Id of the volume to attach. Note these volumes should have been created
@@ -94,50 +96,50 @@ class _PiVolumeAttachState:
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceId")
-    def pi_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI Instance Id
         """
         return pulumi.get(self, "pi_instance_id")
 
     @pi_instance_id.setter
-    def pi_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeId")
-    def pi_volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Id of the volume to attach. Note these volumes should have been created
         """
         return pulumi.get(self, "pi_volume_id")
 
     @pi_volume_id.setter
-    def pi_volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the volume.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -147,12 +149,13 @@ class PiVolumeAttach(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiVolumeAttach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -167,6 +170,7 @@ class PiVolumeAttach(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVolumeAttach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVolumeAttachArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -182,9 +186,9 @@ class PiVolumeAttach(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -214,10 +218,10 @@ class PiVolumeAttach(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVolumeAttach':
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVolumeAttach':
         """
         Get an existing PiVolumeAttach resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

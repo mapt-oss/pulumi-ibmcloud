@@ -39,6 +39,10 @@ export class PiNetwork extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly crn: pulumi.Output<string>;
     /**
+     * DHCP enabled network.
+     */
+    declare public /*out*/ readonly enableDhcp: pulumi.Output<boolean>;
+    /**
      * Contains the Network Address Translation Details (for on-prem locations only).
      *
      * @deprecated This field is deprecated
@@ -74,6 +78,10 @@ export class PiNetwork extends pulumi.CustomResource {
      * The DNS Servers for the network.
      */
     declare public readonly piDns: pulumi.Output<string[]>;
+    /**
+     * Network will support DHCP.
+     */
+    declare public readonly piEnableDhcp: pulumi.Output<boolean | undefined>;
     /**
      * The gateway ip address.
      */
@@ -123,6 +131,7 @@ export class PiNetwork extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as PiNetworkState | undefined;
             resourceInputs["crn"] = state?.crn;
+            resourceInputs["enableDhcp"] = state?.enableDhcp;
             resourceInputs["networkAddressTranslations"] = state?.networkAddressTranslations;
             resourceInputs["networkId"] = state?.networkId;
             resourceInputs["peerId"] = state?.peerId;
@@ -131,6 +140,7 @@ export class PiNetwork extends pulumi.CustomResource {
             resourceInputs["piCidr"] = state?.piCidr;
             resourceInputs["piCloudInstanceId"] = state?.piCloudInstanceId;
             resourceInputs["piDns"] = state?.piDns;
+            resourceInputs["piEnableDhcp"] = state?.piEnableDhcp;
             resourceInputs["piGateway"] = state?.piGateway;
             resourceInputs["piIpaddressRanges"] = state?.piIpaddressRanges;
             resourceInputs["piNetworkMtu"] = state?.piNetworkMtu;
@@ -155,6 +165,7 @@ export class PiNetwork extends pulumi.CustomResource {
             resourceInputs["piCidr"] = args?.piCidr;
             resourceInputs["piCloudInstanceId"] = args?.piCloudInstanceId;
             resourceInputs["piDns"] = args?.piDns;
+            resourceInputs["piEnableDhcp"] = args?.piEnableDhcp;
             resourceInputs["piGateway"] = args?.piGateway;
             resourceInputs["piIpaddressRanges"] = args?.piIpaddressRanges;
             resourceInputs["piNetworkMtu"] = args?.piNetworkMtu;
@@ -163,6 +174,7 @@ export class PiNetwork extends pulumi.CustomResource {
             resourceInputs["piNetworkType"] = args?.piNetworkType;
             resourceInputs["piUserTags"] = args?.piUserTags;
             resourceInputs["crn"] = undefined /*out*/;
+            resourceInputs["enableDhcp"] = undefined /*out*/;
             resourceInputs["networkAddressTranslations"] = undefined /*out*/;
             resourceInputs["networkId"] = undefined /*out*/;
             resourceInputs["peerId"] = undefined /*out*/;
@@ -180,77 +192,85 @@ export interface PiNetworkState {
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * DHCP enabled network.
+     */
+    enableDhcp?: pulumi.Input<boolean | undefined>;
     /**
      * Contains the Network Address Translation Details (for on-prem locations only).
      *
      * @deprecated This field is deprecated
      */
-    networkAddressTranslations?: pulumi.Input<pulumi.Input<inputs.PiNetworkNetworkAddressTranslation>[]>;
+    networkAddressTranslations?: pulumi.Input<pulumi.Input<inputs.PiNetworkNetworkAddressTranslation>[] | undefined>;
     /**
      * The unique identifier of the network.
      */
-    networkId?: pulumi.Input<string>;
+    networkId?: pulumi.Input<string | undefined>;
     /**
      * Network Peer ID (for on-prem locations only).
      *
      * @deprecated This field is deprecated
      */
-    peerId?: pulumi.Input<string>;
+    peerId?: pulumi.Input<string | undefined>;
     /**
      * Enable the network to be advertised.
      */
-    piAdvertise?: pulumi.Input<string>;
+    piAdvertise?: pulumi.Input<string | undefined>;
     /**
      * Enable ARP Broadcast.
      */
-    piArpBroadcast?: pulumi.Input<string>;
+    piArpBroadcast?: pulumi.Input<string | undefined>;
     /**
      * The network CIDR. Required for `vlan` network type.
      */
-    piCidr?: pulumi.Input<string>;
+    piCidr?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The DNS Servers for the network.
      */
-    piDns?: pulumi.Input<pulumi.Input<string>[]>;
+    piDns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Network will support DHCP.
+     */
+    piEnableDhcp?: pulumi.Input<boolean | undefined>;
     /**
      * The gateway ip address.
      */
-    piGateway?: pulumi.Input<string>;
+    piGateway?: pulumi.Input<string | undefined>;
     /**
      * List of one or more ip address range(s).
      */
-    piIpaddressRanges?: pulumi.Input<pulumi.Input<inputs.PiNetworkPiIpaddressRange>[]>;
+    piIpaddressRanges?: pulumi.Input<pulumi.Input<inputs.PiNetworkPiIpaddressRange>[] | undefined>;
     /**
      * Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
      */
-    piNetworkMtu?: pulumi.Input<number>;
+    piNetworkMtu?: pulumi.Input<number | undefined>;
     /**
      * The name of the network.
      */
-    piNetworkName?: pulumi.Input<string>;
+    piNetworkName?: pulumi.Input<string | undefined>;
     /**
      * Network peer information.
      *
      * @deprecated This field is deprecated
      */
-    piNetworkPeer?: pulumi.Input<inputs.PiNetworkPiNetworkPeer>;
+    piNetworkPeer?: pulumi.Input<inputs.PiNetworkPiNetworkPeer | undefined>;
     /**
      * The type of network that you want to create. Valid values are `pub-vlan`, and `vlan`.
      */
-    piNetworkType?: pulumi.Input<string>;
+    piNetworkType?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The ID of the VLAN that your network is attached to.
      */
-    vlanId?: pulumi.Input<number>;
+    vlanId?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -260,15 +280,15 @@ export interface PiNetworkArgs {
     /**
      * Enable the network to be advertised.
      */
-    piAdvertise?: pulumi.Input<string>;
+    piAdvertise?: pulumi.Input<string | undefined>;
     /**
      * Enable ARP Broadcast.
      */
-    piArpBroadcast?: pulumi.Input<string>;
+    piArpBroadcast?: pulumi.Input<string | undefined>;
     /**
      * The network CIDR. Required for `vlan` network type.
      */
-    piCidr?: pulumi.Input<string>;
+    piCidr?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -276,19 +296,23 @@ export interface PiNetworkArgs {
     /**
      * The DNS Servers for the network.
      */
-    piDns?: pulumi.Input<pulumi.Input<string>[]>;
+    piDns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Network will support DHCP.
+     */
+    piEnableDhcp?: pulumi.Input<boolean | undefined>;
     /**
      * The gateway ip address.
      */
-    piGateway?: pulumi.Input<string>;
+    piGateway?: pulumi.Input<string | undefined>;
     /**
      * List of one or more ip address range(s).
      */
-    piIpaddressRanges?: pulumi.Input<pulumi.Input<inputs.PiNetworkPiIpaddressRange>[]>;
+    piIpaddressRanges?: pulumi.Input<pulumi.Input<inputs.PiNetworkPiIpaddressRange>[] | undefined>;
     /**
      * Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
      */
-    piNetworkMtu?: pulumi.Input<number>;
+    piNetworkMtu?: pulumi.Input<number | undefined>;
     /**
      * The name of the network.
      */
@@ -298,7 +322,7 @@ export interface PiNetworkArgs {
      *
      * @deprecated This field is deprecated
      */
-    piNetworkPeer?: pulumi.Input<inputs.PiNetworkPiNetworkPeer>;
+    piNetworkPeer?: pulumi.Input<inputs.PiNetworkPiNetworkPeer | undefined>;
     /**
      * The type of network that you want to create. Valid values are `pub-vlan`, and `vlan`.
      */
@@ -306,5 +330,5 @@ export interface PiNetworkArgs {
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

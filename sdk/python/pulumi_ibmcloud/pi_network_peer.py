@@ -29,11 +29,12 @@ class PiNetworkPeerArgs:
                  pi_name: pulumi.Input[_builtins.str],
                  pi_peer_interface_id: pulumi.Input[_builtins.str],
                  pi_vlan: pulumi.Input[_builtins.int],
-                 pi_default_export_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_default_import_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_default_export_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_import_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiNetworkPeer resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.int] pi_customer_asn: ASN number at customer network side.
         :param pulumi.Input[_builtins.str] pi_customer_cidr: IP address used for configuring customer network interface with network subnet mask. customerCidr and ibmCidr must have matching network and subnet mask values.
@@ -159,64 +160,65 @@ class PiNetworkPeerArgs:
 
     @_builtins.property
     @pulumi.getter(name="piDefaultExportRouteFilter")
-    def pi_default_export_route_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_default_export_route_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default action for export route filter. Allowed values: allow, deny.
         """
         return pulumi.get(self, "pi_default_export_route_filter")
 
     @pi_default_export_route_filter.setter
-    def pi_default_export_route_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_default_export_route_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_default_export_route_filter", value)
 
     @_builtins.property
     @pulumi.getter(name="piDefaultImportRouteFilter")
-    def pi_default_import_route_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_default_import_route_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default action for import route filter. Allowed values: allow, deny.
         """
         return pulumi.get(self, "pi_default_import_route_filter")
 
     @pi_default_import_route_filter.setter
-    def pi_default_import_route_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_default_import_route_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_default_import_route_filter", value)
 
     @_builtins.property
     @pulumi.getter(name="piType")
-    def pi_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the peer network * dcnetwork_bgp: broader gateway protocol is used to share routes between two autonomous network.
         """
         return pulumi.get(self, "pi_type")
 
     @pi_type.setter
-    def pi_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_type", value)
 
 
 @pulumi.input_type
 class _PiNetworkPeerState:
     def __init__(__self__, *,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 error: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_route_filters: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPeerExportRouteFilterArgs']]]] = None,
-                 import_route_filters: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPeerImportRouteFilterArgs']]]] = None,
-                 peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_customer_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_customer_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_default_export_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_default_import_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ibm_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_ibm_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_peer_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_vlan: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_date: Optional[pulumi.Input[_builtins.str]] = None):
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 error: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_route_filters: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPeerExportRouteFilterArgs']]]] = None,
+                 import_route_filters: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPeerImportRouteFilterArgs']]]] = None,
+                 peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_customer_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_customer_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_export_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_import_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ibm_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_ibm_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_peer_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_vlan: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_date: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiNetworkPeer resources.
+
         :param pulumi.Input[_builtins.str] creation_date: Time stamp for create network peer.
         :param pulumi.Input[_builtins.str] error: Error description.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkPeerExportRouteFilterArgs']]] export_route_filters: List of export route filters.
@@ -275,218 +277,218 @@ class _PiNetworkPeerState:
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time stamp for create network peer.
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def error(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Error description.
         """
         return pulumi.get(self, "error")
 
     @error.setter
-    def error(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error", value)
 
     @_builtins.property
     @pulumi.getter(name="exportRouteFilters")
-    def export_route_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPeerExportRouteFilterArgs']]]]:
+    def export_route_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPeerExportRouteFilterArgs']]]]:
         """
         List of export route filters.
         """
         return pulumi.get(self, "export_route_filters")
 
     @export_route_filters.setter
-    def export_route_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPeerExportRouteFilterArgs']]]]):
+    def export_route_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPeerExportRouteFilterArgs']]]]):
         pulumi.set(self, "export_route_filters", value)
 
     @_builtins.property
     @pulumi.getter(name="importRouteFilters")
-    def import_route_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPeerImportRouteFilterArgs']]]]:
+    def import_route_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPeerImportRouteFilterArgs']]]]:
         """
         List of import route filters.
         """
         return pulumi.get(self, "import_route_filters")
 
     @import_route_filters.setter
-    def import_route_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPeerImportRouteFilterArgs']]]]):
+    def import_route_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPeerImportRouteFilterArgs']]]]):
         pulumi.set(self, "import_route_filters", value)
 
     @_builtins.property
     @pulumi.getter(name="peerId")
-    def peer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network peer id.
         """
         return pulumi.get(self, "peer_id")
 
     @peer_id.setter
-    def peer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCustomerAsn")
-    def pi_customer_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_customer_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         ASN number at customer network side.
         """
         return pulumi.get(self, "pi_customer_asn")
 
     @pi_customer_asn.setter
-    def pi_customer_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_customer_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_customer_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="piCustomerCidr")
-    def pi_customer_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_customer_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP address used for configuring customer network interface with network subnet mask. customerCidr and ibmCidr must have matching network and subnet mask values.
         """
         return pulumi.get(self, "pi_customer_cidr")
 
     @pi_customer_cidr.setter
-    def pi_customer_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_customer_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_customer_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piDefaultExportRouteFilter")
-    def pi_default_export_route_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_default_export_route_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default action for export route filter. Allowed values: allow, deny.
         """
         return pulumi.get(self, "pi_default_export_route_filter")
 
     @pi_default_export_route_filter.setter
-    def pi_default_export_route_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_default_export_route_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_default_export_route_filter", value)
 
     @_builtins.property
     @pulumi.getter(name="piDefaultImportRouteFilter")
-    def pi_default_import_route_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_default_import_route_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default action for import route filter. Allowed values: allow, deny.
         """
         return pulumi.get(self, "pi_default_import_route_filter")
 
     @pi_default_import_route_filter.setter
-    def pi_default_import_route_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_default_import_route_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_default_import_route_filter", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmAsn")
-    def pi_ibm_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_ibm_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         ASN number at IBM PowerVS side.
         """
         return pulumi.get(self, "pi_ibm_asn")
 
     @pi_ibm_asn.setter
-    def pi_ibm_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_ibm_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_ibm_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmCidr")
-    def pi_ibm_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_ibm_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP address used for configuring IBM network interface with network subnet mask. customerCidr and ibmCidr must have matching network and subnet mask values.
         """
         return pulumi.get(self, "pi_ibm_cidr")
 
     @pi_ibm_cidr.setter
-    def pi_ibm_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_ibm_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_ibm_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User defined name.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piPeerInterfaceId")
-    def pi_peer_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_peer_interface_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Peer interface id. Use datasource 'ibmi_pi_network_peer_interfaces' to get a list of valid peer interface id.
         """
         return pulumi.get(self, "pi_peer_interface_id")
 
     @pi_peer_interface_id.setter
-    def pi_peer_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_peer_interface_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_peer_interface_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piType")
-    def pi_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the peer network * dcnetwork_bgp: broader gateway protocol is used to share routes between two autonomous network.
         """
         return pulumi.get(self, "pi_type")
 
     @pi_type.setter
-    def pi_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piVlan")
-    def pi_vlan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_vlan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         A vlan configured at the customer network.
         """
         return pulumi.get(self, "pi_vlan")
 
     @pi_vlan.setter
-    def pi_vlan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_vlan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_vlan", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the network peer.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedDate")
-    def updated_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time stamp for update network peer.
         """
         return pulumi.get(self, "updated_date")
 
     @updated_date.setter
-    def updated_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_date", value)
 
 
@@ -496,20 +498,21 @@ class PiNetworkPeer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_customer_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_customer_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_default_export_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_default_import_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ibm_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_ibm_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_peer_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_vlan: Optional[pulumi.Input[_builtins.int]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_customer_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_customer_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_export_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_import_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ibm_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_ibm_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_peer_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_vlan: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a PiNetworkPeer resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -532,6 +535,7 @@ class PiNetworkPeer(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkPeer resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkPeerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -547,17 +551,17 @@ class PiNetworkPeer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_customer_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_customer_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_default_export_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_default_import_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ibm_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_ibm_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_peer_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_vlan: Optional[pulumi.Input[_builtins.int]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_customer_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_customer_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_export_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_import_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ibm_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_ibm_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_peer_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_vlan: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -611,24 +615,24 @@ class PiNetworkPeer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-            error: Optional[pulumi.Input[_builtins.str]] = None,
-            export_route_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPeerExportRouteFilterArgs', 'PiNetworkPeerExportRouteFilterArgsDict']]]]] = None,
-            import_route_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPeerImportRouteFilterArgs', 'PiNetworkPeerImportRouteFilterArgsDict']]]]] = None,
-            peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_customer_asn: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_customer_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_default_export_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_default_import_route_filter: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ibm_asn: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_ibm_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_peer_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_vlan: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            updated_date: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiNetworkPeer':
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            error: pulumi.Input[Optional[_builtins.str]] = None,
+            export_route_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkPeerExportRouteFilterArgs', 'PiNetworkPeerExportRouteFilterArgsDict', 'outputs.PiNetworkPeerExportRouteFilter']]]]] = None,
+            import_route_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkPeerImportRouteFilterArgs', 'PiNetworkPeerImportRouteFilterArgsDict', 'outputs.PiNetworkPeerImportRouteFilter']]]]] = None,
+            peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_customer_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_customer_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_default_export_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_default_import_route_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ibm_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_ibm_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_peer_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_vlan: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_date: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiNetworkPeer':
         """
         Get an existing PiNetworkPeer resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -638,8 +642,8 @@ class PiNetworkPeer(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] creation_date: Time stamp for create network peer.
         :param pulumi.Input[_builtins.str] error: Error description.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPeerExportRouteFilterArgs', 'PiNetworkPeerExportRouteFilterArgsDict']]]] export_route_filters: List of export route filters.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPeerImportRouteFilterArgs', 'PiNetworkPeerImportRouteFilterArgsDict']]]] import_route_filters: List of import route filters.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPeerExportRouteFilterArgs', 'PiNetworkPeerExportRouteFilterArgsDict', 'outputs.PiNetworkPeerExportRouteFilter']]]] export_route_filters: List of export route filters.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPeerImportRouteFilterArgs', 'PiNetworkPeerImportRouteFilterArgsDict', 'outputs.PiNetworkPeerImportRouteFilter']]]] import_route_filters: List of import route filters.
         :param pulumi.Input[_builtins.str] peer_id: Network peer id.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.int] pi_customer_asn: ASN number at customer network side.

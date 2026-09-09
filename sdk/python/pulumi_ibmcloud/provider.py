@@ -19,35 +19,36 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 bluemix_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 bluemix_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 endpoints_file_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 generation: Optional[pulumi.Input[_builtins.int]] = None,
-                 iaas_classic_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 iaas_classic_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iaas_classic_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 iaas_classic_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_refresh_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 riaas_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 softlayer_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 bluemix_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 bluemix_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 endpoints_file_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 generation: pulumi.Input[Optional[_builtins.int]] = None,
+                 iaas_classic_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 iaas_classic_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iaas_classic_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 iaas_classic_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_refresh_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 riaas_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 softlayer_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
+
         :param pulumi.Input[_builtins.str] bluemix_api_key: The Bluemix API Key
         :param pulumi.Input[_builtins.int] bluemix_timeout: The timeout (in seconds) to set for any Bluemix API calls made.
         :param pulumi.Input[_builtins.str] endpoints_file_path: Path of the file that contains private and public regional endpoints mapping
@@ -161,334 +162,334 @@ class ProviderArgs:
     @_builtins.property
     @pulumi.getter(name="bluemixApiKey")
     @_utilities.deprecated("""This field is deprecated please use ibmcloud_api_key""")
-    def bluemix_api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bluemix_api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Bluemix API Key
         """
         return pulumi.get(self, "bluemix_api_key")
 
     @bluemix_api_key.setter
-    def bluemix_api_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bluemix_api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bluemix_api_key", value)
 
     @_builtins.property
     @pulumi.getter(name="bluemixTimeout")
     @_utilities.deprecated("""This field is deprecated please use ibmcloud_timeout""")
-    def bluemix_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bluemix_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The timeout (in seconds) to set for any Bluemix API calls made.
         """
         return pulumi.get(self, "bluemix_timeout")
 
     @bluemix_timeout.setter
-    def bluemix_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bluemix_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bluemix_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointsFilePath")
-    def endpoints_file_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoints_file_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path of the file that contains private and public regional endpoints mapping
         """
         return pulumi.get(self, "endpoints_file_path")
 
     @endpoints_file_path.setter
-    def endpoints_file_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoints_file_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoints_file_path", value)
 
     @_builtins.property
     @pulumi.getter(name="functionNamespace")
     @_utilities.deprecated("""This field will be deprecated soon""")
-    def function_namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def function_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IBM Cloud Function namespace
         """
         return pulumi.get(self, "function_namespace")
 
     @function_namespace.setter
-    def function_namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def function_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "function_namespace", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The generation field is deprecated and will be removed after couple of releases""")
-    def generation(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Generation of Virtual Private Cloud. Default is 2
         """
         return pulumi.get(self, "generation")
 
     @generation.setter
-    def generation(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generation(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generation", value)
 
     @_builtins.property
     @pulumi.getter(name="iaasClassicApiKey")
-    def iaas_classic_api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iaas_classic_api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Classic Infrastructure API Key
         """
         return pulumi.get(self, "iaas_classic_api_key")
 
     @iaas_classic_api_key.setter
-    def iaas_classic_api_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iaas_classic_api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iaas_classic_api_key", value)
 
     @_builtins.property
     @pulumi.getter(name="iaasClassicEndpointUrl")
-    def iaas_classic_endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iaas_classic_endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Classic Infrastructure Endpoint
         """
         return pulumi.get(self, "iaas_classic_endpoint_url")
 
     @iaas_classic_endpoint_url.setter
-    def iaas_classic_endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iaas_classic_endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iaas_classic_endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="iaasClassicTimeout")
-    def iaas_classic_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iaas_classic_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The timeout (in seconds) to set for any Classic Infrastructure API calls made.
         """
         return pulumi.get(self, "iaas_classic_timeout")
 
     @iaas_classic_timeout.setter
-    def iaas_classic_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iaas_classic_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iaas_classic_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="iaasClassicUsername")
-    def iaas_classic_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iaas_classic_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Classic Infrastructure API user name
         """
         return pulumi.get(self, "iaas_classic_username")
 
     @iaas_classic_username.setter
-    def iaas_classic_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iaas_classic_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iaas_classic_username", value)
 
     @_builtins.property
     @pulumi.getter(name="iamProfileId")
-    def iam_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAM Trusted Profile ID
         """
         return pulumi.get(self, "iam_profile_id")
 
     @iam_profile_id.setter
-    def iam_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamProfileName")
-    def iam_profile_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_profile_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAM Trusted Profile Name
         """
         return pulumi.get(self, "iam_profile_name")
 
     @iam_profile_name.setter
-    def iam_profile_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_profile_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_profile_name", value)
 
     @_builtins.property
     @pulumi.getter(name="iamRefreshToken")
-    def iam_refresh_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_refresh_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAM Authentication refresh token
         """
         return pulumi.get(self, "iam_refresh_token")
 
     @iam_refresh_token.setter
-    def iam_refresh_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_refresh_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_refresh_token", value)
 
     @_builtins.property
     @pulumi.getter(name="iamToken")
-    def iam_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAM Authentication token
         """
         return pulumi.get(self, "iam_token")
 
     @iam_token.setter
-    def iam_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_token", value)
 
     @_builtins.property
     @pulumi.getter(name="ibmcloudAccountId")
-    def ibmcloud_account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ibmcloud_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IBM Cloud account ID
         """
         return pulumi.get(self, "ibmcloud_account_id")
 
     @ibmcloud_account_id.setter
-    def ibmcloud_account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ibmcloud_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ibmcloud_account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ibmcloudApiKey")
-    def ibmcloud_api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ibmcloud_api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IBM Cloud API Key
         """
         return pulumi.get(self, "ibmcloud_api_key")
 
     @ibmcloud_api_key.setter
-    def ibmcloud_api_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ibmcloud_api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ibmcloud_api_key", value)
 
     @_builtins.property
     @pulumi.getter(name="ibmcloudTimeout")
-    def ibmcloud_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ibmcloud_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The timeout (in seconds) to set for any IBM Cloud API calls made.
         """
         return pulumi.get(self, "ibmcloud_timeout")
 
     @ibmcloud_timeout.setter
-    def ibmcloud_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ibmcloud_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ibmcloud_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="maxRetries")
-    def max_retries(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_retries(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The retry count to set for API calls.
         """
         return pulumi.get(self, "max_retries")
 
     @max_retries.setter
-    def max_retries(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_retries(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_retries", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointType")
-    def private_endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Private Endpoint type used by the service endpoints. Example: vpe.
         """
         return pulumi.get(self, "private_endpoint_type")
 
     @private_endpoint_type.setter
-    def private_endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IBM cloud Region (for example 'us-south').
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Resource group id.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="riaasEndpoint")
     @_utilities.deprecated("""This field is deprecated use generation""")
-    def riaas_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def riaas_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The next generation infrastructure service endpoint url.
         """
         return pulumi.get(self, "riaas_endpoint")
 
     @riaas_endpoint.setter
-    def riaas_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def riaas_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "riaas_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="softlayerApiKey")
     @_utilities.deprecated("""This field is deprecated please use iaas_classic_api_key""")
-    def softlayer_api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def softlayer_api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SoftLayer API Key
         """
         return pulumi.get(self, "softlayer_api_key")
 
     @softlayer_api_key.setter
-    def softlayer_api_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def softlayer_api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "softlayer_api_key", value)
 
     @_builtins.property
     @pulumi.getter(name="softlayerEndpointUrl")
     @_utilities.deprecated("""This field is deprecated please use iaas_classic_endpoint_url""")
-    def softlayer_endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def softlayer_endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Softlayer Endpoint
         """
         return pulumi.get(self, "softlayer_endpoint_url")
 
     @softlayer_endpoint_url.setter
-    def softlayer_endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def softlayer_endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "softlayer_endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="softlayerTimeout")
     @_utilities.deprecated("""This field is deprecated please use iaas_classic_timeout""")
-    def softlayer_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def softlayer_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The timeout (in seconds) to set for any SoftLayer API calls made.
         """
         return pulumi.get(self, "softlayer_timeout")
 
     @softlayer_timeout.setter
-    def softlayer_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def softlayer_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "softlayer_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="softlayerUsername")
     @_utilities.deprecated("""This field is deprecated please use iaas_classic_username""")
-    def softlayer_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def softlayer_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The SoftLayer user name
         """
         return pulumi.get(self, "softlayer_username")
 
     @softlayer_username.setter
-    def softlayer_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def softlayer_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "softlayer_username", value)
 
     @_builtins.property
     @pulumi.getter
-    def visibility(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def visibility(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Visibility of the provider if it is private or public.
         """
         return pulumi.get(self, "visibility")
 
     @visibility.setter
-    def visibility(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def visibility(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "visibility", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IBM cloud Region zone (for example 'us-south-1') for power resources.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -498,39 +499,40 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bluemix_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 bluemix_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 endpoints_file_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 generation: Optional[pulumi.Input[_builtins.int]] = None,
-                 iaas_classic_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 iaas_classic_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iaas_classic_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 iaas_classic_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_refresh_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 riaas_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 softlayer_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 bluemix_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 bluemix_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 endpoints_file_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 generation: pulumi.Input[Optional[_builtins.int]] = None,
+                 iaas_classic_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 iaas_classic_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iaas_classic_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 iaas_classic_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_refresh_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 riaas_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 softlayer_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         The provider type for the ibmcloud package. By default, resources use package-wide configuration
         settings, however an explicit `Provider` instance may be created and passed during resource
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -574,6 +576,7 @@ class Provider(pulumi.ProviderResource):
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
 
+
         :param str resource_name: The name of the resource.
         :param ProviderArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -589,33 +592,33 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bluemix_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 bluemix_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 endpoints_file_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 function_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 generation: Optional[pulumi.Input[_builtins.int]] = None,
-                 iaas_classic_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 iaas_classic_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iaas_classic_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 iaas_classic_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_refresh_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmcloud_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 riaas_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_api_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 softlayer_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 softlayer_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 bluemix_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 bluemix_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 endpoints_file_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 function_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 generation: pulumi.Input[Optional[_builtins.int]] = None,
+                 iaas_classic_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 iaas_classic_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iaas_classic_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 iaas_classic_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_refresh_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmcloud_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 riaas_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 softlayer_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 softlayer_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):

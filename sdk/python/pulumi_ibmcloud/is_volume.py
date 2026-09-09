@@ -23,20 +23,21 @@ class IsVolumeArgs:
     def __init__(__self__, *,
                  profile: pulumi.Input[_builtins.str],
                  zone: pulumi.Input[_builtins.str],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input['IsVolumeAllowedUseArgs']] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 delete_all_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional['IsVolumeAllowedUseArgs']] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 delete_all_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsVolume resource.
+
         :param pulumi.Input[_builtins.str] profile: Volume profile name
         :param pulumi.Input[_builtins.str] zone: Zone name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: Access management tags for the volume instance
@@ -105,184 +106,185 @@ class IsVolumeArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Access management tags for the volume instance
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedUse")
-    def allowed_use(self) -> Optional[pulumi.Input['IsVolumeAllowedUseArgs']]:
+    def allowed_use(self) -> pulumi.Input[Optional['IsVolumeAllowedUseArgs']]:
         """
         The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
         """
         return pulumi.get(self, "allowed_use")
 
     @allowed_use.setter
-    def allowed_use(self, value: Optional[pulumi.Input['IsVolumeAllowedUseArgs']]):
+    def allowed_use(self, value: pulumi.Input[Optional['IsVolumeAllowedUseArgs']]):
         pulumi.set(self, "allowed_use", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Volume capacity value
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteAllSnapshots")
-    def delete_all_snapshots(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_all_snapshots(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Deletes all snapshots created from this volume
         """
         return pulumi.get(self, "delete_all_snapshots")
 
     @delete_all_snapshots.setter
-    def delete_all_snapshots(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_all_snapshots(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_all_snapshots", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume encryption key info
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IOPS value for the Volume
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iops", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group name
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshot")
-    def source_snapshot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_snapshot(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this snapshot
         """
         return pulumi.get(self, "source_snapshot")
 
     @source_snapshot.setter
-    def source_snapshot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_snapshot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshotCrn")
-    def source_snapshot_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_snapshot_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn for this snapshot
         """
         return pulumi.get(self, "source_snapshot_crn")
 
     @source_snapshot_crn.setter
-    def source_snapshot_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_snapshot_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_snapshot_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         UserTags for the volume instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsVolumeState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 adjustable_capacity_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 adjustable_iops_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input['IsVolumeAllowedUseArgs']] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 catalog_offerings: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeCatalogOfferingArgs']]]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_all_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeHealthReasonArgs']]]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeOperatingSystemArgs']]]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeStatusReasonArgs']]]] = None,
-                 storage_generation: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 adjustable_capacity_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 adjustable_iops_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional['IsVolumeAllowedUseArgs']] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 catalog_offerings: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeCatalogOfferingArgs']]]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_all_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeHealthReasonArgs']]]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeOperatingSystemArgs']]]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeStatusReasonArgs']]]] = None,
+                 storage_generation: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVolume resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: Access management tags for the volume instance
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] adjustable_capacity_states: The attachment states that support adjustable capacity for this volume.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] adjustable_iops_states: The attachment states that support adjustable IOPS for this volume.
@@ -375,356 +377,356 @@ class _IsVolumeState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Access management tags for the volume instance
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="adjustableCapacityStates")
-    def adjustable_capacity_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def adjustable_capacity_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The attachment states that support adjustable capacity for this volume.
         """
         return pulumi.get(self, "adjustable_capacity_states")
 
     @adjustable_capacity_states.setter
-    def adjustable_capacity_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def adjustable_capacity_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "adjustable_capacity_states", value)
 
     @_builtins.property
     @pulumi.getter(name="adjustableIopsStates")
-    def adjustable_iops_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def adjustable_iops_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The attachment states that support adjustable IOPS for this volume.
         """
         return pulumi.get(self, "adjustable_iops_states")
 
     @adjustable_iops_states.setter
-    def adjustable_iops_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def adjustable_iops_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "adjustable_iops_states", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedUse")
-    def allowed_use(self) -> Optional[pulumi.Input['IsVolumeAllowedUseArgs']]:
+    def allowed_use(self) -> pulumi.Input[Optional['IsVolumeAllowedUseArgs']]:
         """
         The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
         """
         return pulumi.get(self, "allowed_use")
 
     @allowed_use.setter
-    def allowed_use(self, value: Optional[pulumi.Input['IsVolumeAllowedUseArgs']]):
+    def allowed_use(self, value: pulumi.Input[Optional['IsVolumeAllowedUseArgs']]):
         pulumi.set(self, "allowed_use", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Volume capacity value
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="catalogOfferings")
-    def catalog_offerings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeCatalogOfferingArgs']]]]:
+    def catalog_offerings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeCatalogOfferingArgs']]]]:
         """
         The catalog offering this volume was created from. If a virtual server instance is provisioned with a boot_volume_attachment specifying this volume, the virtual server instance will use this volume's catalog offering, including its pricing plan.
         """
         return pulumi.get(self, "catalog_offerings")
 
     @catalog_offerings.setter
-    def catalog_offerings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeCatalogOfferingArgs']]]]):
+    def catalog_offerings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeCatalogOfferingArgs']]]]):
         pulumi.set(self, "catalog_offerings", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN value for the volume instance
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteAllSnapshots")
-    def delete_all_snapshots(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_all_snapshots(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Deletes all snapshots created from this volume
         """
         return pulumi.get(self, "delete_all_snapshots")
 
     @delete_all_snapshots.setter
-    def delete_all_snapshots(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_all_snapshots(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_all_snapshots", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume encryption key info
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionType")
-    def encryption_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume encryption type info
         """
         return pulumi.get(self, "encryption_type")
 
     @encryption_type.setter
-    def encryption_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_type", value)
 
     @_builtins.property
     @pulumi.getter(name="healthReasons")
-    def health_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeHealthReasonArgs']]]]:
+    def health_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeHealthReasonArgs']]]]:
         return pulumi.get(self, "health_reasons")
 
     @health_reasons.setter
-    def health_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeHealthReasonArgs']]]]):
+    def health_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeHealthReasonArgs']]]]):
         pulumi.set(self, "health_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The health of this resource.
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IOPS value for the Volume
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iops", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeOperatingSystemArgs']]]]:
+    def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeOperatingSystemArgs']]]]:
         """
         The operating system associated with this volume. If absent, this volume was notcreated from an image, or the image did not include an operating system.
         """
         return pulumi.get(self, "operating_systems")
 
     @operating_systems.setter
-    def operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeOperatingSystemArgs']]]]):
+    def operating_systems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeOperatingSystemArgs']]]]):
         pulumi.set(self, "operating_systems", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume profile name
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCrn")
-    def resource_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "resource_crn")
 
     @resource_crn.setter
-    def resource_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group name
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceStatus")
-    def resource_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the resource
         """
         return pulumi.get(self, "resource_status")
 
     @resource_status.setter
-    def resource_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_status", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshot")
-    def source_snapshot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_snapshot(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this snapshot
         """
         return pulumi.get(self, "source_snapshot")
 
     @source_snapshot.setter
-    def source_snapshot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_snapshot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceSnapshotCrn")
-    def source_snapshot_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_snapshot_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn for this snapshot
         """
         return pulumi.get(self, "source_snapshot_crn")
 
     @source_snapshot_crn.setter
-    def source_snapshot_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_snapshot_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_snapshot_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeStatusReasonArgs']]]]:
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVolumeStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVolumeStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="storageGeneration")
-    def storage_generation(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_generation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         storage_generation indicates which generation the profile family belongs to. For the custom and tiered profiles, this value is 1.
         """
         return pulumi.get(self, "storage_generation")
 
     @storage_generation.setter
-    def storage_generation(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_generation(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_generation", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         UserTags for the volume instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Zone name
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -734,27 +736,28 @@ class IsVolume(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict']]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 delete_all_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict', 'outputs.IsVolumeAllowedUse']]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 delete_all_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVolume resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: Access management tags for the volume instance
-        :param pulumi.Input[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
+        :param pulumi.Input[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict', 'outputs.IsVolumeAllowedUse']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.int] bandwidth: The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         :param pulumi.Input[_builtins.int] capacity: Volume capacity value
         :param pulumi.Input[_builtins.bool] delete_all_snapshots: Deletes all snapshots created from this volume
@@ -776,6 +779,7 @@ class IsVolume(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVolume resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVolumeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -791,20 +795,20 @@ class IsVolume(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_use: Optional[pulumi.Input[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict']]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 delete_all_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_use: pulumi.Input[Optional[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict', 'outputs.IsVolumeAllowedUse']]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 delete_all_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -858,36 +862,36 @@ class IsVolume(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            adjustable_capacity_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            adjustable_iops_states: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_use: Optional[pulumi.Input[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict']]] = None,
-            bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-            capacity: Optional[pulumi.Input[_builtins.int]] = None,
-            catalog_offerings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeCatalogOfferingArgs', 'IsVolumeCatalogOfferingArgsDict']]]]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_all_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
-            encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_type: Optional[pulumi.Input[_builtins.str]] = None,
-            health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeHealthReasonArgs', 'IsVolumeHealthReasonArgsDict']]]]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            iops: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeOperatingSystemArgs', 'IsVolumeOperatingSystemArgsDict']]]]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-            source_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-            source_snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeStatusReasonArgs', 'IsVolumeStatusReasonArgsDict']]]]] = None,
-            storage_generation: Optional[pulumi.Input[_builtins.int]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVolume':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            adjustable_capacity_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            adjustable_iops_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_use: pulumi.Input[Optional[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict', 'outputs.IsVolumeAllowedUse']]] = None,
+            bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+            capacity: pulumi.Input[Optional[_builtins.int]] = None,
+            catalog_offerings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVolumeCatalogOfferingArgs', 'IsVolumeCatalogOfferingArgsDict', 'outputs.IsVolumeCatalogOffering']]]]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_all_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+            encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_type: pulumi.Input[Optional[_builtins.str]] = None,
+            health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVolumeHealthReasonArgs', 'IsVolumeHealthReasonArgsDict', 'outputs.IsVolumeHealthReason']]]]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            iops: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVolumeOperatingSystemArgs', 'IsVolumeOperatingSystemArgsDict', 'outputs.IsVolumeOperatingSystem']]]]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+            source_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+            source_snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVolumeStatusReasonArgs', 'IsVolumeStatusReasonArgsDict', 'outputs.IsVolumeStatusReason']]]]] = None,
+            storage_generation: pulumi.Input[Optional[_builtins.int]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVolume':
         """
         Get an existing IsVolume resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -898,10 +902,10 @@ class IsVolume(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: Access management tags for the volume instance
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] adjustable_capacity_states: The attachment states that support adjustable capacity for this volume.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] adjustable_iops_states: The attachment states that support adjustable IOPS for this volume.
-        :param pulumi.Input[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
+        :param pulumi.Input[Union['IsVolumeAllowedUseArgs', 'IsVolumeAllowedUseArgsDict', 'outputs.IsVolumeAllowedUse']] allowed_use: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.int] bandwidth: The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         :param pulumi.Input[_builtins.int] capacity: Volume capacity value
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeCatalogOfferingArgs', 'IsVolumeCatalogOfferingArgsDict']]]] catalog_offerings: The catalog offering this volume was created from. If a virtual server instance is provisioned with a boot_volume_attachment specifying this volume, the virtual server instance will use this volume's catalog offering, including its pricing plan.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeCatalogOfferingArgs', 'IsVolumeCatalogOfferingArgsDict', 'outputs.IsVolumeCatalogOffering']]]] catalog_offerings: The catalog offering this volume was created from. If a virtual server instance is provisioned with a boot_volume_attachment specifying this volume, the virtual server instance will use this volume's catalog offering, including its pricing plan.
         :param pulumi.Input[_builtins.str] crn: CRN value for the volume instance
         :param pulumi.Input[_builtins.bool] delete_all_snapshots: Deletes all snapshots created from this volume
         :param pulumi.Input[_builtins.str] encryption_key: Volume encryption key info
@@ -909,7 +913,7 @@ class IsVolume(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] health_state: The health of this resource.
         :param pulumi.Input[_builtins.int] iops: IOPS value for the Volume
         :param pulumi.Input[_builtins.str] name: Volume name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeOperatingSystemArgs', 'IsVolumeOperatingSystemArgsDict']]]] operating_systems: The operating system associated with this volume. If absent, this volume was notcreated from an image, or the image did not include an operating system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVolumeOperatingSystemArgs', 'IsVolumeOperatingSystemArgsDict', 'outputs.IsVolumeOperatingSystem']]]] operating_systems: The operating system associated with this volume. If absent, this volume was notcreated from an image, or the image did not include an operating system.
         :param pulumi.Input[_builtins.str] profile: Volume profile name
         :param pulumi.Input[_builtins.str] resource_controller_url: The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         :param pulumi.Input[_builtins.str] resource_crn: The crn of the resource

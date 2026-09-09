@@ -114,8 +114,8 @@ def get_iam_user_mfa_enrollments(account_id: Optional[_builtins.str] = None,
         iam_id=pulumi.get(__ret__, 'iam_id'),
         id=pulumi.get(__ret__, 'id'),
         id_based_mfas=pulumi.get(__ret__, 'id_based_mfas'))
-def get_iam_user_mfa_enrollments_output(account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        iam_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_user_mfa_enrollments_output(account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        iam_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamUserMfaEnrollmentsResult]:
     """
     Use this data source to access information about an existing resource.

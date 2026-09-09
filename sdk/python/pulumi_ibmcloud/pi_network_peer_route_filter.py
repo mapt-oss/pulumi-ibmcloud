@@ -24,11 +24,12 @@ class PiNetworkPeerRouteFilterArgs:
                  pi_index: pulumi.Input[_builtins.int],
                  pi_network_peer_id: pulumi.Input[_builtins.str],
                  pi_prefix: pulumi.Input[_builtins.str],
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_le: Optional[pulumi.Input[_builtins.int]] = None):
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_le: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a PiNetworkPeerRouteFilter resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_direction: Direction of the filter.
         :param pulumi.Input[_builtins.int] pi_index: Priority or order of the filter.
@@ -112,58 +113,59 @@ class PiNetworkPeerRouteFilterArgs:
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action of the filter.
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piGe")
-    def pi_ge(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_ge(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum matching length of the prefix-set(1 ≤ value ≤ 32 & value ≤ LE).
         """
         return pulumi.get(self, "pi_ge")
 
     @pi_ge.setter
-    def pi_ge(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_ge(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_ge", value)
 
     @_builtins.property
     @pulumi.getter(name="piLe")
-    def pi_le(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_le(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum matching length of the prefix-set( 1 ≤ value ≤ 32 & value >= GE).
         """
         return pulumi.get(self, "pi_le")
 
     @pi_le.setter
-    def pi_le(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_le(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_le", value)
 
 
 @pulumi.input_type
 class _PiNetworkPeerRouteFilterState:
     def __init__(__self__, *,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 error: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_index: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_le: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_network_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 error: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_le: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_network_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiNetworkPeerRouteFilter resources.
+
         :param pulumi.Input[_builtins.str] creation_date: Time stamp for create route filter.
         :param pulumi.Input[_builtins.str] error: Error description.
         :param pulumi.Input[_builtins.str] pi_action: Action of the filter.
@@ -204,146 +206,146 @@ class _PiNetworkPeerRouteFilterState:
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time stamp for create route filter.
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def error(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Error description.
         """
         return pulumi.get(self, "error")
 
     @error.setter
-    def error(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error", value)
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action of the filter.
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDirection")
-    def pi_direction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_direction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Direction of the filter.
         """
         return pulumi.get(self, "pi_direction")
 
     @pi_direction.setter
-    def pi_direction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_direction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_direction", value)
 
     @_builtins.property
     @pulumi.getter(name="piGe")
-    def pi_ge(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_ge(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum matching length of the prefix-set(1 ≤ value ≤ 32 & value ≤ LE).
         """
         return pulumi.get(self, "pi_ge")
 
     @pi_ge.setter
-    def pi_ge(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_ge(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_ge", value)
 
     @_builtins.property
     @pulumi.getter(name="piIndex")
-    def pi_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Priority or order of the filter.
         """
         return pulumi.get(self, "pi_index")
 
     @pi_index.setter
-    def pi_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_index", value)
 
     @_builtins.property
     @pulumi.getter(name="piLe")
-    def pi_le(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_le(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum matching length of the prefix-set( 1 ≤ value ≤ 32 & value >= GE).
         """
         return pulumi.get(self, "pi_le")
 
     @pi_le.setter
-    def pi_le(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_le(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_le", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkPeerId")
-    def pi_network_peer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_peer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network peer ID.
         """
         return pulumi.get(self, "pi_network_peer_id")
 
     @pi_network_peer_id.setter
-    def pi_network_peer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_peer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_peer_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piPrefix")
-    def pi_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP prefix representing an address and mask length of the prefix-set.
         """
         return pulumi.get(self, "pi_prefix")
 
     @pi_prefix.setter
-    def pi_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="routeFilterId")
-    def route_filter_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_filter_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route filter ID.
         """
         return pulumi.get(self, "route_filter_id")
 
     @route_filter_id.setter
-    def route_filter_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_filter_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_filter_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the route filter.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -353,17 +355,18 @@ class PiNetworkPeerRouteFilter(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_index: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_le: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_network_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_le: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_network_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiNetworkPeerRouteFilter resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_action: Action of the filter.
@@ -383,6 +386,7 @@ class PiNetworkPeerRouteFilter(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkPeerRouteFilter resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkPeerRouteFilterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -398,14 +402,14 @@ class PiNetworkPeerRouteFilter(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_index: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_le: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_network_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_le: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_network_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -447,18 +451,18 @@ class PiNetworkPeerRouteFilter(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-            error: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_direction: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ge: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_index: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_le: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_network_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            route_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiNetworkPeerRouteFilter':
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            error: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_direction: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ge: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_index: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_le: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_network_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            route_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiNetworkPeerRouteFilter':
         """
         Get an existing PiNetworkPeerRouteFilter resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

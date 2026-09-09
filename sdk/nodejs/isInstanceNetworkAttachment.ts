@@ -126,43 +126,43 @@ export interface IsInstanceNetworkAttachmentState {
     /**
      * The date and time that the instance network attachment was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The URL for this instance network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The virtual server instance identifier.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the instance network attachment.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this instance network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance network attachment.
      */
-    networkAttachment?: pulumi.Input<string>;
+    networkAttachment?: pulumi.Input<string | undefined>;
     /**
      * The port speed for this instance network attachment in Mbps.
      */
-    portSpeed?: pulumi.Input<number>;
+    portSpeed?: pulumi.Input<number | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The instance network attachment type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterface | undefined>;
 }
 
 /**
@@ -176,9 +176,9 @@ export interface IsInstanceNetworkAttachmentArgs {
     /**
      * The name for this instance network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterface | undefined>;
 }

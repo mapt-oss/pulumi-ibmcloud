@@ -103,27 +103,27 @@ export interface IsVirtualNetworkInterfaceIpState {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The reserved ip identifier.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The virtual network interface identifier.
      */
-    virtualNetworkInterface?: pulumi.Input<string>;
+    virtualNetworkInterface?: pulumi.Input<string | undefined>;
 }
 
 /**

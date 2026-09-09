@@ -23,9 +23,10 @@ class IsVpcDnsResolutionBindingArgs:
     def __init__(__self__, *,
                  vpc: pulumi.Input['IsVpcDnsResolutionBindingVpcArgs'],
                  vpc_id: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsVpcDnsResolutionBinding resource.
+
         :param pulumi.Input['IsVpcDnsResolutionBindingVpcArgs'] vpc: The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
         :param pulumi.Input[_builtins.str] vpc_id: The VPC identifier.
         :param pulumi.Input[_builtins.str] name: The name for this DNS resolution binding. The name is unique across all DNS resolution bindings for the VPC.
@@ -61,32 +62,33 @@ class IsVpcDnsResolutionBindingArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this DNS resolution binding. The name is unique across all DNS resolution bindings for the VPC.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsVpcDnsResolutionBindingState:
     def __init__(__self__, *,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_gateways: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingEndpointGatewayArgs']]]] = None,
-                 health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingHealthReasonArgs']]]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input['IsVpcDnsResolutionBindingVpcArgs']] = None,
-                 vpc_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_gateways: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcDnsResolutionBindingEndpointGatewayArgs']]]] = None,
+                 health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcDnsResolutionBindingHealthReasonArgs']]]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional['IsVpcDnsResolutionBindingVpcArgs']] = None,
+                 vpc_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVpcDnsResolutionBinding resources.
+
         :param pulumi.Input[_builtins.str] created_at: The date and time that the DNS resolution binding was created.
         :param pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingEndpointGatewayArgs']]] endpoint_gateways: The endpoint gateways in the bound to VPC that are allowed to participate in this DNS resolution binding.The endpoint gateways may be remote and therefore may not be directly retrievable.
         :param pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingHealthReasonArgs']]] health_reasons: The reasons for the current `health_state` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
@@ -121,122 +123,122 @@ class _IsVpcDnsResolutionBindingState:
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the DNS resolution binding was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointGateways")
-    def endpoint_gateways(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingEndpointGatewayArgs']]]]:
+    def endpoint_gateways(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcDnsResolutionBindingEndpointGatewayArgs']]]]:
         """
         The endpoint gateways in the bound to VPC that are allowed to participate in this DNS resolution binding.The endpoint gateways may be remote and therefore may not be directly retrievable.
         """
         return pulumi.get(self, "endpoint_gateways")
 
     @endpoint_gateways.setter
-    def endpoint_gateways(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingEndpointGatewayArgs']]]]):
+    def endpoint_gateways(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcDnsResolutionBindingEndpointGatewayArgs']]]]):
         pulumi.set(self, "endpoint_gateways", value)
 
     @_builtins.property
     @pulumi.getter(name="healthReasons")
-    def health_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingHealthReasonArgs']]]]:
+    def health_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcDnsResolutionBindingHealthReasonArgs']]]]:
         """
         The reasons for the current `health_state` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
         """
         return pulumi.get(self, "health_reasons")
 
     @health_reasons.setter
-    def health_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcDnsResolutionBindingHealthReasonArgs']]]]):
+    def health_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcDnsResolutionBindingHealthReasonArgs']]]]):
         pulumi.set(self, "health_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The health of this resource.- `ok`: No abnormal behavior detected- `degraded`: Experiencing compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this DNS resolution binding.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the DNS resolution binding.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this DNS resolution binding. The name is unique across all DNS resolution bindings for the VPC.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input['IsVpcDnsResolutionBindingVpcArgs']]:
+    def vpc(self) -> pulumi.Input[Optional['IsVpcDnsResolutionBindingVpcArgs']]:
         """
         The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input['IsVpcDnsResolutionBindingVpcArgs']]):
+    def vpc(self, value: pulumi.Input[Optional['IsVpcDnsResolutionBindingVpcArgs']]):
         pulumi.set(self, "vpc", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcId")
-    def vpc_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPC identifier.
         """
         return pulumi.get(self, "vpc_id")
 
     @vpc_id.setter
-    def vpc_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_id", value)
 
 
@@ -246,16 +248,17 @@ class IsVpcDnsResolutionBinding(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict']]] = None,
-                 vpc_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict', 'outputs.IsVpcDnsResolutionBindingVpc']]] = None,
+                 vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVpcDnsResolutionBinding resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name for this DNS resolution binding. The name is unique across all DNS resolution bindings for the VPC.
-        :param pulumi.Input[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict']] vpc: The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
+        :param pulumi.Input[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict', 'outputs.IsVpcDnsResolutionBindingVpc']] vpc: The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
         :param pulumi.Input[_builtins.str] vpc_id: The VPC identifier.
         """
         ...
@@ -266,6 +269,7 @@ class IsVpcDnsResolutionBinding(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVpcDnsResolutionBinding resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVpcDnsResolutionBindingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -281,9 +285,9 @@ class IsVpcDnsResolutionBinding(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict']]] = None,
-                 vpc_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict', 'outputs.IsVpcDnsResolutionBindingVpc']]] = None,
+                 vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -317,16 +321,16 @@ class IsVpcDnsResolutionBinding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_gateways: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingEndpointGatewayArgs', 'IsVpcDnsResolutionBindingEndpointGatewayArgsDict']]]]] = None,
-            health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingHealthReasonArgs', 'IsVpcDnsResolutionBindingHealthReasonArgsDict']]]]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc: Optional[pulumi.Input[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict']]] = None,
-            vpc_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVpcDnsResolutionBinding':
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_gateways: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingEndpointGatewayArgs', 'IsVpcDnsResolutionBindingEndpointGatewayArgsDict', 'outputs.IsVpcDnsResolutionBindingEndpointGateway']]]]] = None,
+            health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingHealthReasonArgs', 'IsVpcDnsResolutionBindingHealthReasonArgsDict', 'outputs.IsVpcDnsResolutionBindingHealthReason']]]]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc: pulumi.Input[Optional[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict', 'outputs.IsVpcDnsResolutionBindingVpc']]] = None,
+            vpc_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVpcDnsResolutionBinding':
         """
         Get an existing IsVpcDnsResolutionBinding resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -335,14 +339,14 @@ class IsVpcDnsResolutionBinding(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the DNS resolution binding was created.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingEndpointGatewayArgs', 'IsVpcDnsResolutionBindingEndpointGatewayArgsDict']]]] endpoint_gateways: The endpoint gateways in the bound to VPC that are allowed to participate in this DNS resolution binding.The endpoint gateways may be remote and therefore may not be directly retrievable.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingHealthReasonArgs', 'IsVpcDnsResolutionBindingHealthReasonArgsDict']]]] health_reasons: The reasons for the current `health_state` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingEndpointGatewayArgs', 'IsVpcDnsResolutionBindingEndpointGatewayArgsDict', 'outputs.IsVpcDnsResolutionBindingEndpointGateway']]]] endpoint_gateways: The endpoint gateways in the bound to VPC that are allowed to participate in this DNS resolution binding.The endpoint gateways may be remote and therefore may not be directly retrievable.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcDnsResolutionBindingHealthReasonArgs', 'IsVpcDnsResolutionBindingHealthReasonArgsDict', 'outputs.IsVpcDnsResolutionBindingHealthReason']]]] health_reasons: The reasons for the current `health_state` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
         :param pulumi.Input[_builtins.str] health_state: The health of this resource.- `ok`: No abnormal behavior detected- `degraded`: Experiencing compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
         :param pulumi.Input[_builtins.str] href: The URL for this DNS resolution binding.
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the DNS resolution binding.
         :param pulumi.Input[_builtins.str] name: The name for this DNS resolution binding. The name is unique across all DNS resolution bindings for the VPC.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
-        :param pulumi.Input[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict']] vpc: The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
+        :param pulumi.Input[Union['IsVpcDnsResolutionBindingVpcArgs', 'IsVpcDnsResolutionBindingVpcArgsDict', 'outputs.IsVpcDnsResolutionBindingVpc']] vpc: The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
         :param pulumi.Input[_builtins.str] vpc_id: The VPC identifier.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

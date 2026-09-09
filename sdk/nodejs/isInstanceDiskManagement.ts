@@ -81,11 +81,11 @@ export interface IsInstanceDiskManagementState {
     /**
      * Disk information that has to be updated.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.IsInstanceDiskManagementDisk>[]>;
+    disks?: pulumi.Input<pulumi.Input<inputs.IsInstanceDiskManagementDisk>[] | undefined>;
     /**
      * ID of the instance for which disks has to be managed
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 /**

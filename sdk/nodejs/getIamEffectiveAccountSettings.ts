@@ -53,6 +53,6 @@ export function getIamEffectiveAccountSettingsOutput(args: GetIamEffectiveAccoun
  */
 export interface GetIamEffectiveAccountSettingsOutputArgs {
     accountId: pulumi.Input<string>;
-    includeHistory?: pulumi.Input<boolean>;
-    resolveUserMfa?: pulumi.Input<boolean>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
+    resolveUserMfa?: pulumi.Input<boolean | undefined>;
 }

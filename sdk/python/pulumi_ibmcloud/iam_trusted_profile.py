@@ -21,67 +21,88 @@ __all__ = ['IamTrustedProfileArgs', 'IamTrustedProfile']
 @pulumi.input_type
 class IamTrustedProfileArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamTrustedProfile resource.
+
         :param pulumi.Input[_builtins.str] description: The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
+        :param pulumi.Input[_builtins.str] email: The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
         :param pulumi.Input[_builtins.str] name: Name of the trusted profile. The name is checked for uniqueness. Therefore trusted profiles with the same names can not exist in the same account.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "email", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the trusted profile. The name is checked for uniqueness. Therefore trusted profiles with the same names can not exist in the same account.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IamTrustedProfileState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 assignment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 histories: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileHistoryArgs']]]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ims_account_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ims_user_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 activities: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileActivityArgs']]]] = None,
+                 assignment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 histories: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileHistoryArgs']]]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ims_account_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ims_user_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamTrustedProfile resources.
+
         :param pulumi.Input[_builtins.str] account_id: ID of the account that this trusted profile belong to.
         :param pulumi.Input[_builtins.str] assignment_id: ID of the assignment that was used to create an enterprise-managed trusted profile in your account. When returned, this indicates that the trusted profile is created from and managed by a template in the root enterprise account.
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
         :param pulumi.Input[_builtins.str] crn: Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::profile:Profile-94497d0d-2ac3-41bf-a993-a49d1b14627c'.
         :param pulumi.Input[_builtins.str] description: The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
+        :param pulumi.Input[_builtins.str] email: The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
         :param pulumi.Input[_builtins.str] entity_tag: Version of the trusted profile details object. You need to specify this value when updating the trusted profile to avoid stale updates.
         :param pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileHistoryArgs']]] histories: History of the trusted profile.
         :param pulumi.Input[_builtins.str] iam_id: The iam_id of this trusted profile.
@@ -94,6 +115,8 @@ class _IamTrustedProfileState:
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
+        if activities is not None:
+            pulumi.set(__self__, "activities", activities)
         if assignment_id is not None:
             pulumi.set(__self__, "assignment_id", assignment_id)
         if created_at is not None:
@@ -102,6 +125,8 @@ class _IamTrustedProfileState:
             pulumi.set(__self__, "crn", crn)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
         if entity_tag is not None:
             pulumi.set(__self__, "entity_tag", entity_tag)
         if histories is not None:
@@ -123,170 +148,191 @@ class _IamTrustedProfileState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the account that this trusted profile belong to.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
+    @pulumi.getter
+    def activities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileActivityArgs']]]]:
+        return pulumi.get(self, "activities")
+
+    @activities.setter
+    def activities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileActivityArgs']]]]):
+        pulumi.set(self, "activities", value)
+
+    @_builtins.property
     @pulumi.getter(name="assignmentId")
-    def assignment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assignment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the assignment that was used to create an enterprise-managed trusted profile in your account. When returned, this indicates that the trusted profile is created from and managed by a template in the root enterprise account.
         """
         return pulumi.get(self, "assignment_id")
 
     @assignment_id.setter
-    def assignment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assignment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assignment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the creation date in ISO format.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::profile:Profile-94497d0d-2ac3-41bf-a993-a49d1b14627c'.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
+    @pulumi.getter
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "email", value)
+
+    @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the trusted profile details object. You need to specify this value when updating the trusted profile to avoid stale updates.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
     @pulumi.getter
-    def histories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileHistoryArgs']]]]:
+    def histories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileHistoryArgs']]]]:
         """
         History of the trusted profile.
         """
         return pulumi.get(self, "histories")
 
     @histories.setter
-    def histories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileHistoryArgs']]]]):
+    def histories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileHistoryArgs']]]]):
         pulumi.set(self, "histories", value)
 
     @_builtins.property
     @pulumi.getter(name="iamId")
-    def iam_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The iam_id of this trusted profile.
         """
         return pulumi.get(self, "iam_id")
 
     @iam_id.setter
-    def iam_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_id", value)
 
     @_builtins.property
     @pulumi.getter(name="imsAccountId")
-    def ims_account_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ims_account_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IMS acount ID of the trusted profile.
         """
         return pulumi.get(self, "ims_account_id")
 
     @ims_account_id.setter
-    def ims_account_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ims_account_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ims_account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="imsUserId")
-    def ims_user_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ims_user_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IMS user ID of the trusted profile.
         """
         return pulumi.get(self, "ims_user_id")
 
     @ims_user_id.setter
-    def ims_user_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ims_user_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ims_user_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedAt")
-    def modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the last modification date in ISO format.
         """
         return pulumi.get(self, "modified_at")
 
     @modified_at.setter
-    def modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the trusted profile. The name is checked for uniqueness. Therefore trusted profiles with the same names can not exist in the same account.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="profileId")
-    def profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the unique identifier of the trusted profile. Example:'Profile-94497d0d-2ac3-41bf-a993-a49d1b14627c'.
         """
         return pulumi.get(self, "profile_id")
 
     @profile_id.setter
-    def profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the IAM template that was used to create an enterprise-managed trusted profile in your account. When returned, this indicates that the trusted profile is created from and managed by a template in the root enterprise account.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
 
@@ -296,14 +342,17 @@ class IamTrustedProfile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamTrustedProfile resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
+        :param pulumi.Input[_builtins.str] email: The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
         :param pulumi.Input[_builtins.str] name: Name of the trusted profile. The name is checked for uniqueness. Therefore trusted profiles with the same names can not exist in the same account.
         """
         ...
@@ -314,6 +363,7 @@ class IamTrustedProfile(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamTrustedProfile resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamTrustedProfileArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -329,8 +379,9 @@ class IamTrustedProfile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -341,8 +392,10 @@ class IamTrustedProfile(pulumi.CustomResource):
             __props__ = IamTrustedProfileArgs.__new__(IamTrustedProfileArgs)
 
             __props__.__dict__["description"] = description
+            __props__.__dict__["email"] = email
             __props__.__dict__["name"] = name
             __props__.__dict__["account_id"] = None
+            __props__.__dict__["activities"] = None
             __props__.__dict__["assignment_id"] = None
             __props__.__dict__["created_at"] = None
             __props__.__dict__["crn"] = None
@@ -364,20 +417,22 @@ class IamTrustedProfile(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            assignment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-            histories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileHistoryArgs', 'IamTrustedProfileHistoryArgsDict']]]]] = None,
-            iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ims_account_id: Optional[pulumi.Input[_builtins.int]] = None,
-            ims_user_id: Optional[pulumi.Input[_builtins.int]] = None,
-            modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            template_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamTrustedProfile':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            activities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileActivityArgs', 'IamTrustedProfileActivityArgsDict', 'outputs.IamTrustedProfileActivity']]]]] = None,
+            assignment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+            histories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileHistoryArgs', 'IamTrustedProfileHistoryArgsDict', 'outputs.IamTrustedProfileHistory']]]]] = None,
+            iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ims_account_id: pulumi.Input[Optional[_builtins.int]] = None,
+            ims_user_id: pulumi.Input[Optional[_builtins.int]] = None,
+            modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            template_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamTrustedProfile':
         """
         Get an existing IamTrustedProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -390,8 +445,9 @@ class IamTrustedProfile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
         :param pulumi.Input[_builtins.str] crn: Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::profile:Profile-94497d0d-2ac3-41bf-a993-a49d1b14627c'.
         :param pulumi.Input[_builtins.str] description: The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
+        :param pulumi.Input[_builtins.str] email: The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
         :param pulumi.Input[_builtins.str] entity_tag: Version of the trusted profile details object. You need to specify this value when updating the trusted profile to avoid stale updates.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileHistoryArgs', 'IamTrustedProfileHistoryArgsDict']]]] histories: History of the trusted profile.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileHistoryArgs', 'IamTrustedProfileHistoryArgsDict', 'outputs.IamTrustedProfileHistory']]]] histories: History of the trusted profile.
         :param pulumi.Input[_builtins.str] iam_id: The iam_id of this trusted profile.
         :param pulumi.Input[_builtins.int] ims_account_id: IMS acount ID of the trusted profile.
         :param pulumi.Input[_builtins.int] ims_user_id: IMS user ID of the trusted profile.
@@ -405,10 +461,12 @@ class IamTrustedProfile(pulumi.CustomResource):
         __props__ = _IamTrustedProfileState.__new__(_IamTrustedProfileState)
 
         __props__.__dict__["account_id"] = account_id
+        __props__.__dict__["activities"] = activities
         __props__.__dict__["assignment_id"] = assignment_id
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["crn"] = crn
         __props__.__dict__["description"] = description
+        __props__.__dict__["email"] = email
         __props__.__dict__["entity_tag"] = entity_tag
         __props__.__dict__["histories"] = histories
         __props__.__dict__["iam_id"] = iam_id
@@ -427,6 +485,11 @@ class IamTrustedProfile(pulumi.CustomResource):
         ID of the account that this trusted profile belong to.
         """
         return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def activities(self) -> pulumi.Output[Sequence['outputs.IamTrustedProfileActivity']]:
+        return pulumi.get(self, "activities")
 
     @_builtins.property
     @pulumi.getter(name="assignmentId")
@@ -459,6 +522,14 @@ class IamTrustedProfile(pulumi.CustomResource):
         The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
         """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
+        """
+        return pulumi.get(self, "email")
 
     @_builtins.property
     @pulumi.getter(name="entityTag")

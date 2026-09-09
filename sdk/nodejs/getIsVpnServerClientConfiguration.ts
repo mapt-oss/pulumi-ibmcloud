@@ -44,6 +44,6 @@ export function getIsVpnServerClientConfigurationOutput(args: GetIsVpnServerClie
  * A collection of arguments for invoking getIsVpnServerClientConfiguration.
  */
 export interface GetIsVpnServerClientConfigurationOutputArgs {
-    filePath?: pulumi.Input<string>;
+    filePath?: pulumi.Input<string | undefined>;
     vpnServer: pulumi.Input<string>;
 }

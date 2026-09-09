@@ -27,13 +27,19 @@ class GetIsLbResult:
     """
     A collection of values returned by getIsLb.
     """
-    def __init__(__self__, access_mode=None, access_tags=None, attached_load_balancer_pool_members=None, availability=None, crn=None, dns=None, failsafe_policy_actions=None, hostname=None, id=None, instance_groups_supported=None, listeners=None, logging=None, name=None, operating_status=None, pools=None, private_ip=None, private_ips=None, profile=None, public_ips=None, resource_controller_url=None, resource_group=None, resource_group_name=None, resource_name=None, route_mode=None, security_group_supported=None, security_groups=None, source_ip_session_persistence_supported=None, status=None, subnets=None, tags=None, type=None, udp_supported=None):
+    def __init__(__self__, access_mode=None, access_tags=None, advanced_health_checks_supported=None, asymmetric_routing_supported=None, attached_load_balancer_pool_members=None, availability=None, crn=None, dns=None, failsafe_policy_actions=None, fqdn_pool_members_supported=None, hostname=None, id=None, instance_groups_supported=None, listeners=None, logging=None, mtls_supported=None, name=None, operating_status=None, pools=None, private_ip=None, private_ips=None, profile=None, public_ips=None, resource_controller_url=None, resource_group=None, resource_group_name=None, resource_name=None, route_mode=None, security_group_supported=None, security_groups=None, source_ip_session_persistence_supported=None, status=None, subnets=None, tags=None, type=None, udp_supported=None):
         if access_mode and not isinstance(access_mode, str):
             raise TypeError("Expected argument 'access_mode' to be a str")
         pulumi.set(__self__, "access_mode", access_mode)
         if access_tags and not isinstance(access_tags, list):
             raise TypeError("Expected argument 'access_tags' to be a list")
         pulumi.set(__self__, "access_tags", access_tags)
+        if advanced_health_checks_supported and not isinstance(advanced_health_checks_supported, bool):
+            raise TypeError("Expected argument 'advanced_health_checks_supported' to be a bool")
+        pulumi.set(__self__, "advanced_health_checks_supported", advanced_health_checks_supported)
+        if asymmetric_routing_supported and not isinstance(asymmetric_routing_supported, bool):
+            raise TypeError("Expected argument 'asymmetric_routing_supported' to be a bool")
+        pulumi.set(__self__, "asymmetric_routing_supported", asymmetric_routing_supported)
         if attached_load_balancer_pool_members and not isinstance(attached_load_balancer_pool_members, list):
             raise TypeError("Expected argument 'attached_load_balancer_pool_members' to be a list")
         pulumi.set(__self__, "attached_load_balancer_pool_members", attached_load_balancer_pool_members)
@@ -49,6 +55,9 @@ class GetIsLbResult:
         if failsafe_policy_actions and not isinstance(failsafe_policy_actions, list):
             raise TypeError("Expected argument 'failsafe_policy_actions' to be a list")
         pulumi.set(__self__, "failsafe_policy_actions", failsafe_policy_actions)
+        if fqdn_pool_members_supported and not isinstance(fqdn_pool_members_supported, bool):
+            raise TypeError("Expected argument 'fqdn_pool_members_supported' to be a bool")
+        pulumi.set(__self__, "fqdn_pool_members_supported", fqdn_pool_members_supported)
         if hostname and not isinstance(hostname, str):
             raise TypeError("Expected argument 'hostname' to be a str")
         pulumi.set(__self__, "hostname", hostname)
@@ -64,6 +73,9 @@ class GetIsLbResult:
         if logging and not isinstance(logging, bool):
             raise TypeError("Expected argument 'logging' to be a bool")
         pulumi.set(__self__, "logging", logging)
+        if mtls_supported and not isinstance(mtls_supported, bool):
+            raise TypeError("Expected argument 'mtls_supported' to be a bool")
+        pulumi.set(__self__, "mtls_supported", mtls_supported)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -136,6 +148,16 @@ class GetIsLbResult:
         return pulumi.get(self, "access_tags")
 
     @_builtins.property
+    @pulumi.getter(name="advancedHealthChecksSupported")
+    def advanced_health_checks_supported(self) -> _builtins.bool:
+        return pulumi.get(self, "advanced_health_checks_supported")
+
+    @_builtins.property
+    @pulumi.getter(name="asymmetricRoutingSupported")
+    def asymmetric_routing_supported(self) -> _builtins.bool:
+        return pulumi.get(self, "asymmetric_routing_supported")
+
+    @_builtins.property
     @pulumi.getter(name="attachedLoadBalancerPoolMembers")
     def attached_load_balancer_pool_members(self) -> Sequence['outputs.GetIsLbAttachedLoadBalancerPoolMemberResult']:
         return pulumi.get(self, "attached_load_balancer_pool_members")
@@ -159,6 +181,11 @@ class GetIsLbResult:
     @pulumi.getter(name="failsafePolicyActions")
     def failsafe_policy_actions(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "failsafe_policy_actions")
+
+    @_builtins.property
+    @pulumi.getter(name="fqdnPoolMembersSupported")
+    def fqdn_pool_members_supported(self) -> _builtins.bool:
+        return pulumi.get(self, "fqdn_pool_members_supported")
 
     @_builtins.property
     @pulumi.getter
@@ -187,6 +214,11 @@ class GetIsLbResult:
     @pulumi.getter
     def logging(self) -> _builtins.bool:
         return pulumi.get(self, "logging")
+
+    @_builtins.property
+    @pulumi.getter(name="mtlsSupported")
+    def mtls_supported(self) -> _builtins.bool:
+        return pulumi.get(self, "mtls_supported")
 
     @_builtins.property
     @pulumi.getter
@@ -297,16 +329,20 @@ class AwaitableGetIsLbResult(GetIsLbResult):
         return GetIsLbResult(
             access_mode=self.access_mode,
             access_tags=self.access_tags,
+            advanced_health_checks_supported=self.advanced_health_checks_supported,
+            asymmetric_routing_supported=self.asymmetric_routing_supported,
             attached_load_balancer_pool_members=self.attached_load_balancer_pool_members,
             availability=self.availability,
             crn=self.crn,
             dns=self.dns,
             failsafe_policy_actions=self.failsafe_policy_actions,
+            fqdn_pool_members_supported=self.fqdn_pool_members_supported,
             hostname=self.hostname,
             id=self.id,
             instance_groups_supported=self.instance_groups_supported,
             listeners=self.listeners,
             logging=self.logging,
+            mtls_supported=self.mtls_supported,
             name=self.name,
             operating_status=self.operating_status,
             pools=self.pools,
@@ -342,16 +378,20 @@ def get_is_lb(name: Optional[_builtins.str] = None,
     return AwaitableGetIsLbResult(
         access_mode=pulumi.get(__ret__, 'access_mode'),
         access_tags=pulumi.get(__ret__, 'access_tags'),
+        advanced_health_checks_supported=pulumi.get(__ret__, 'advanced_health_checks_supported'),
+        asymmetric_routing_supported=pulumi.get(__ret__, 'asymmetric_routing_supported'),
         attached_load_balancer_pool_members=pulumi.get(__ret__, 'attached_load_balancer_pool_members'),
         availability=pulumi.get(__ret__, 'availability'),
         crn=pulumi.get(__ret__, 'crn'),
         dns=pulumi.get(__ret__, 'dns'),
         failsafe_policy_actions=pulumi.get(__ret__, 'failsafe_policy_actions'),
+        fqdn_pool_members_supported=pulumi.get(__ret__, 'fqdn_pool_members_supported'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         instance_groups_supported=pulumi.get(__ret__, 'instance_groups_supported'),
         listeners=pulumi.get(__ret__, 'listeners'),
         logging=pulumi.get(__ret__, 'logging'),
+        mtls_supported=pulumi.get(__ret__, 'mtls_supported'),
         name=pulumi.get(__ret__, 'name'),
         operating_status=pulumi.get(__ret__, 'operating_status'),
         pools=pulumi.get(__ret__, 'pools'),
@@ -372,7 +412,7 @@ def get_is_lb(name: Optional[_builtins.str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         type=pulumi.get(__ret__, 'type'),
         udp_supported=pulumi.get(__ret__, 'udp_supported'))
-def get_is_lb_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_lb_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsLbResult]:
     """
     Use this data source to access information about an existing resource.
@@ -384,16 +424,20 @@ def get_is_lb_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetIsLbResult(
         access_mode=pulumi.get(__response__, 'access_mode'),
         access_tags=pulumi.get(__response__, 'access_tags'),
+        advanced_health_checks_supported=pulumi.get(__response__, 'advanced_health_checks_supported'),
+        asymmetric_routing_supported=pulumi.get(__response__, 'asymmetric_routing_supported'),
         attached_load_balancer_pool_members=pulumi.get(__response__, 'attached_load_balancer_pool_members'),
         availability=pulumi.get(__response__, 'availability'),
         crn=pulumi.get(__response__, 'crn'),
         dns=pulumi.get(__response__, 'dns'),
         failsafe_policy_actions=pulumi.get(__response__, 'failsafe_policy_actions'),
+        fqdn_pool_members_supported=pulumi.get(__response__, 'fqdn_pool_members_supported'),
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
         instance_groups_supported=pulumi.get(__response__, 'instance_groups_supported'),
         listeners=pulumi.get(__response__, 'listeners'),
         logging=pulumi.get(__response__, 'logging'),
+        mtls_supported=pulumi.get(__response__, 'mtls_supported'),
         name=pulumi.get(__response__, 'name'),
         operating_status=pulumi.get(__response__, 'operating_status'),
         pools=pulumi.get(__response__, 'pools'),

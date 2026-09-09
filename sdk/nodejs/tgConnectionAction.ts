@@ -88,15 +88,15 @@ export interface TgConnectionActionState {
     /**
      * The Transit Gateway Connection cross account action
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection identifier
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway identifier
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
 }
 
 /**

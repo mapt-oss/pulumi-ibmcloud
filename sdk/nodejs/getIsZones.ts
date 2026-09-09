@@ -48,5 +48,5 @@ export function getIsZonesOutput(args: GetIsZonesOutputArgs, opts?: pulumi.Invok
  */
 export interface GetIsZonesOutputArgs {
     region: pulumi.Input<string>;
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

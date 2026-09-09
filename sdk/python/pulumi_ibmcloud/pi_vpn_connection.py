@@ -29,6 +29,7 @@ class PiVpnConnectionArgs:
                  pi_vpn_connection_name: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiVpnConnection resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
         :param pulumi.Input[_builtins.str] pi_ike_policy_id: Unique identifier of IKE Policy selected for this VPN Connection
         :param pulumi.Input[_builtins.str] pi_ipsec_policy_id: Unique identifier of IPSec Policy selected for this VPN Connection
@@ -147,21 +148,22 @@ class PiVpnConnectionArgs:
 @pulumi.input_type
 class _PiVpnConnectionState:
     def __init__(__self__, *,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 dead_peer_detections: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ike_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ipsec_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_peer_gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_peer_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_vpn_connection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_vpn_connection_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 dead_peer_detections: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ike_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ipsec_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_peer_gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_peer_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_vpn_connection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_vpn_connection_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVpnConnection resources.
+
         :param pulumi.Input[_builtins.str] connection_id: VPN connection ID
         :param pulumi.Input[_builtins.str] connection_status: Status of the VPN connection
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dead_peer_detections: Dead Peer Detection
@@ -205,158 +207,158 @@ class _PiVpnConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="connectionId")
-    def connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN connection ID
         """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
-    def connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the VPN connection
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="deadPeerDetections")
-    def dead_peer_detections(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dead_peer_detections(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Dead Peer Detection
         """
         return pulumi.get(self, "dead_peer_detections")
 
     @dead_peer_detections.setter
-    def dead_peer_detections(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dead_peer_detections(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dead_peer_detections", value)
 
     @_builtins.property
     @pulumi.getter(name="gatewayAddress")
-    def gateway_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Public IP address of the VPN Gateway (vSRX) attached to this VPN Connection
         """
         return pulumi.get(self, "gateway_address")
 
     @gateway_address.setter
-    def gateway_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway_address", value)
 
     @_builtins.property
     @pulumi.getter(name="localGatewayAddress")
-    def local_gateway_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_gateway_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Local Gateway address, only in 'route' mode
         """
         return pulumi.get(self, "local_gateway_address")
 
     @local_gateway_address.setter
-    def local_gateway_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_gateway_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_gateway_address", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI cloud instance ID
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piIkePolicyId")
-    def pi_ike_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_ike_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of IKE Policy selected for this VPN Connection
         """
         return pulumi.get(self, "pi_ike_policy_id")
 
     @pi_ike_policy_id.setter
-    def pi_ike_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_ike_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_ike_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piIpsecPolicyId")
-    def pi_ipsec_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_ipsec_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of IPSec Policy selected for this VPN Connection
         """
         return pulumi.get(self, "pi_ipsec_policy_id")
 
     @pi_ipsec_policy_id.setter
-    def pi_ipsec_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_ipsec_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_ipsec_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworks")
-    def pi_networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of network IDs to attach to this VPN connection
         """
         return pulumi.get(self, "pi_networks")
 
     @pi_networks.setter
-    def pi_networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_networks", value)
 
     @_builtins.property
     @pulumi.getter(name="piPeerGatewayAddress")
-    def pi_peer_gateway_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_peer_gateway_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Peer Gateway address
         """
         return pulumi.get(self, "pi_peer_gateway_address")
 
     @pi_peer_gateway_address.setter
-    def pi_peer_gateway_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_peer_gateway_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_peer_gateway_address", value)
 
     @_builtins.property
     @pulumi.getter(name="piPeerSubnets")
-    def pi_peer_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_peer_subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of CIDR of peer subnets
         """
         return pulumi.get(self, "pi_peer_subnets")
 
     @pi_peer_subnets.setter
-    def pi_peer_subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_peer_subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_peer_subnets", value)
 
     @_builtins.property
     @pulumi.getter(name="piVpnConnectionMode")
-    def pi_vpn_connection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_vpn_connection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Mode used by this VPN Connection, either 'policy' or 'route'
         """
         return pulumi.get(self, "pi_vpn_connection_mode")
 
     @pi_vpn_connection_mode.setter
-    def pi_vpn_connection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_vpn_connection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_vpn_connection_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="piVpnConnectionName")
-    def pi_vpn_connection_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_vpn_connection_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the VPN Connection
         """
         return pulumi.get(self, "pi_vpn_connection_name")
 
     @pi_vpn_connection_name.setter
-    def pi_vpn_connection_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_vpn_connection_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_vpn_connection_name", value)
 
 
@@ -366,17 +368,18 @@ class PiVpnConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ike_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ipsec_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_peer_gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_peer_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_vpn_connection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_vpn_connection_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ike_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ipsec_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_peer_gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_peer_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_vpn_connection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_vpn_connection_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiVpnConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
@@ -396,6 +399,7 @@ class PiVpnConnection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVpnConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVpnConnectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -411,14 +415,14 @@ class PiVpnConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ike_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ipsec_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_peer_gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_peer_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_vpn_connection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_vpn_connection_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ike_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ipsec_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_peer_gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_peer_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_vpn_connection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_vpn_connection_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -467,19 +471,19 @@ class PiVpnConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-            dead_peer_detections: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-            local_gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ike_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ipsec_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_peer_gateway_address: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_peer_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_vpn_connection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_vpn_connection_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVpnConnection':
+            connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+            dead_peer_detections: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+            local_gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ike_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ipsec_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_peer_gateway_address: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_peer_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_vpn_connection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_vpn_connection_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVpnConnection':
         """
         Get an existing PiVpnConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

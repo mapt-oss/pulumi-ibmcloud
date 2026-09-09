@@ -175,75 +175,75 @@ export interface IsFlowLogState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether this collector is active
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, this flow log collector will be automatically deleted when the target is deleted
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time flow log was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this flow log collector
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The URL for this flow log collector
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the flow log collector
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * Flow Log Collector name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * The resource group of flow log
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * The Cloud Object Storage bucket name where the collected flows will be logged
      */
-    storageBucket?: pulumi.Input<string>;
+    storageBucket?: pulumi.Input<string | undefined>;
     /**
      * Tags for the VPC Flow logs
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The target id that the flow log collector is to collect flow logs
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The VPC this flow log collector is associated with
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -253,19 +253,19 @@ export interface IsFlowLogArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether this collector is active
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Flow Log Collector name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group of flow log
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The Cloud Object Storage bucket name where the collected flows will be logged
      */
@@ -273,7 +273,7 @@ export interface IsFlowLogArgs {
     /**
      * Tags for the VPC Flow logs
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The target id that the flow log collector is to collect flow logs
      */

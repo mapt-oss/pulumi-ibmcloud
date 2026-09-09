@@ -24,12 +24,13 @@ class ComputeAutoscalePolicyArgs:
                  scale_amount: pulumi.Input[_builtins.int],
                  scale_group_id: pulumi.Input[_builtins.int],
                  scale_type: pulumi.Input[_builtins.str],
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 triggers: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]] = None):
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 triggers: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]] = None):
         """
         The set of arguments for constructing a ComputeAutoscalePolicy resource.
+
         :param pulumi.Input[_builtins.int] scale_amount: Scale amount
         :param pulumi.Input[_builtins.int] scale_group_id: scale group ID
         :param pulumi.Input[_builtins.str] scale_type: scale type
@@ -87,62 +88,63 @@ class ComputeAutoscalePolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def cooldown(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cooldown(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         cooldown value
         """
         return pulumi.get(self, "cooldown")
 
     @cooldown.setter
-    def cooldown(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cooldown(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cooldown", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def triggers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]:
+    def triggers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]:
         return pulumi.get(self, "triggers")
 
     @triggers.setter
-    def triggers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]):
+    def triggers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]):
         pulumi.set(self, "triggers", value)
 
 
 @pulumi.input_type
 class _ComputeAutoscalePolicyState:
     def __init__(__self__, *,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scale_amount: Optional[pulumi.Input[_builtins.int]] = None,
-                 scale_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 scale_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 triggers: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]] = None):
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scale_amount: pulumi.Input[Optional[_builtins.int]] = None,
+                 scale_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 scale_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 triggers: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]] = None):
         """
         Input properties used for looking up and filtering ComputeAutoscalePolicy resources.
+
         :param pulumi.Input[_builtins.int] cooldown: cooldown value
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.int] scale_amount: Scale amount
@@ -167,83 +169,83 @@ class _ComputeAutoscalePolicyState:
 
     @_builtins.property
     @pulumi.getter
-    def cooldown(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cooldown(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         cooldown value
         """
         return pulumi.get(self, "cooldown")
 
     @cooldown.setter
-    def cooldown(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cooldown(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cooldown", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="scaleAmount")
-    def scale_amount(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scale_amount(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Scale amount
         """
         return pulumi.get(self, "scale_amount")
 
     @scale_amount.setter
-    def scale_amount(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scale_amount(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scale_amount", value)
 
     @_builtins.property
     @pulumi.getter(name="scaleGroupId")
-    def scale_group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scale_group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         scale group ID
         """
         return pulumi.get(self, "scale_group_id")
 
     @scale_group_id.setter
-    def scale_group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scale_group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scale_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scaleType")
-    def scale_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scale_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         scale type
         """
         return pulumi.get(self, "scale_type")
 
     @scale_type.setter
-    def scale_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scale_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scale_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def triggers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]:
+    def triggers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]:
         return pulumi.get(self, "triggers")
 
     @triggers.setter
-    def triggers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]):
+    def triggers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeAutoscalePolicyTriggerArgs']]]]):
         pulumi.set(self, "triggers", value)
 
 
@@ -253,16 +255,17 @@ class ComputeAutoscalePolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scale_amount: Optional[pulumi.Input[_builtins.int]] = None,
-                 scale_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 scale_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 triggers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscalePolicyTriggerArgs', 'ComputeAutoscalePolicyTriggerArgsDict']]]]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scale_amount: pulumi.Input[Optional[_builtins.int]] = None,
+                 scale_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 scale_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 triggers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeAutoscalePolicyTriggerArgs', 'ComputeAutoscalePolicyTriggerArgsDict', 'outputs.ComputeAutoscalePolicyTrigger']]]]] = None,
                  __props__=None):
         """
         Create a ComputeAutoscalePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] cooldown: cooldown value
@@ -280,6 +283,7 @@ class ComputeAutoscalePolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ComputeAutoscalePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ComputeAutoscalePolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -295,13 +299,13 @@ class ComputeAutoscalePolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scale_amount: Optional[pulumi.Input[_builtins.int]] = None,
-                 scale_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 scale_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 triggers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscalePolicyTriggerArgs', 'ComputeAutoscalePolicyTriggerArgsDict']]]]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scale_amount: pulumi.Input[Optional[_builtins.int]] = None,
+                 scale_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 scale_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 triggers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeAutoscalePolicyTriggerArgs', 'ComputeAutoscalePolicyTriggerArgsDict', 'outputs.ComputeAutoscalePolicyTrigger']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -334,13 +338,13 @@ class ComputeAutoscalePolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            scale_amount: Optional[pulumi.Input[_builtins.int]] = None,
-            scale_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            scale_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            triggers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeAutoscalePolicyTriggerArgs', 'ComputeAutoscalePolicyTriggerArgsDict']]]]] = None) -> 'ComputeAutoscalePolicy':
+            cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scale_amount: pulumi.Input[Optional[_builtins.int]] = None,
+            scale_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            scale_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            triggers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeAutoscalePolicyTriggerArgs', 'ComputeAutoscalePolicyTriggerArgsDict', 'outputs.ComputeAutoscalePolicyTrigger']]]]] = None) -> 'ComputeAutoscalePolicy':
         """
         Get an existing ComputeAutoscalePolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

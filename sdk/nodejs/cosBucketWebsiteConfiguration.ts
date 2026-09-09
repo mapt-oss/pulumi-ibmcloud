@@ -99,20 +99,20 @@ export interface CosBucketWebsiteConfigurationState {
     /**
      * COS bucket CRN
      */
-    bucketCrn?: pulumi.Input<string>;
+    bucketCrn?: pulumi.Input<string | undefined>;
     /**
      * COS bucket location
      */
-    bucketLocation?: pulumi.Input<string>;
+    bucketLocation?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Configuration for Hosting a static website on COS with public access.
      */
-    websiteConfiguration?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfiguration>;
-    websiteEndpoint?: pulumi.Input<string>;
+    websiteConfiguration?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfiguration | undefined>;
+    websiteEndpoint?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -130,7 +130,7 @@ export interface CosBucketWebsiteConfigurationArgs {
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Configuration for Hosting a static website on COS with public access.
      */

@@ -233,8 +233,8 @@ def get_pi_volume_remote_copy_relationship(pi_cloud_instance_id: Optional[_built
         remote_copy_id=pulumi.get(__ret__, 'remote_copy_id'),
         state=pulumi.get(__ret__, 'state'),
         synchronized=pulumi.get(__ret__, 'synchronized'))
-def get_pi_volume_remote_copy_relationship_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  pi_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_volume_remote_copy_relationship_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  pi_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeRemoteCopyRelationshipResult]:
     """
     Use this data source to access information about an existing resource.

@@ -139,51 +139,51 @@ export interface IsSubnetReservedIpPatchState {
     /**
      * The address for this reserved IP.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If set to true, this reserved IP will be automatically deleted
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time that the reserved IP was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the reserved IP
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The user-defined or system-provided name for this reserved IP.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The owner of a reserved IP, defining whether it is managed by the user or the provider.
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The subnet identifier.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for target.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The crn for target.
      */
-    targetCrn?: pulumi.Input<string>;
+    targetCrn?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -193,15 +193,15 @@ export interface IsSubnetReservedIpPatchArgs {
     /**
      * The address for this reserved IP.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If set to true, this reserved IP will be automatically deleted
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The user-defined or system-provided name for this reserved IP.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the reserved IP.
      */
@@ -213,9 +213,9 @@ export interface IsSubnetReservedIpPatchArgs {
     /**
      * The unique identifier for target.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The crn for target.
      */
-    targetCrn?: pulumi.Input<string>;
+    targetCrn?: pulumi.Input<string | undefined>;
 }

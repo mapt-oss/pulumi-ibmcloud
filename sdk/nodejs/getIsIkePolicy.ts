@@ -28,10 +28,13 @@ export interface GetIsIkePolicyArgs {
  */
 export interface GetIsIkePolicyResult {
     readonly authenticationAlgorithm: string;
+    readonly authenticationAlgorithms: string[];
     readonly connections: outputs.GetIsIkePolicyConnection[];
     readonly createdAt: string;
     readonly dhGroup: number;
+    readonly dhGroups: number[];
     readonly encryptionAlgorithm: string;
+    readonly encryptionAlgorithms: string[];
     readonly href: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -58,6 +61,6 @@ export function getIsIkePolicyOutput(args?: GetIsIkePolicyOutputArgs, opts?: pul
  * A collection of arguments for invoking getIsIkePolicy.
  */
 export interface GetIsIkePolicyOutputArgs {
-    ikePolicy?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    ikePolicy?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

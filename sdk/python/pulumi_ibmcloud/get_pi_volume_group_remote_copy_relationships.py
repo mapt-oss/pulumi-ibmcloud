@@ -94,8 +94,8 @@ def get_pi_volume_group_remote_copy_relationships(pi_cloud_instance_id: Optional
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pi_volume_group_id=pulumi.get(__ret__, 'pi_volume_group_id'),
         remote_copy_relationships=pulumi.get(__ret__, 'remote_copy_relationships'))
-def get_pi_volume_group_remote_copy_relationships_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         pi_volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_volume_group_remote_copy_relationships_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         pi_volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeGroupRemoteCopyRelationshipsResult]:
     """
     Use this data source to access information about an existing resource.

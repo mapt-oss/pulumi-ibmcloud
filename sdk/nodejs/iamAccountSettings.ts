@@ -77,7 +77,7 @@ export class IamAccountSettings extends pulumi.CustomResource {
     /**
      * Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realmId set.
      */
-    declare public readonly restrictUserDomains: pulumi.Output<outputs.IamAccountSettingsRestrictUserDomain[]>;
+    declare public readonly restrictUserDomains: pulumi.Output<outputs.IamAccountSettingsRestrictUserDomain[] | undefined>;
     /**
      * Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console.
      */
@@ -165,71 +165,71 @@ export interface IamAccountSettingsState {
     /**
      * Defines the IP addresses and subnets from which IAM tokens can be created for the account.
      */
-    allowedIpAddresses?: pulumi.Input<string>;
+    allowedIpAddresses?: pulumi.Input<string | undefined>;
     /**
      * Version of the account settings.
      */
-    entityTag?: pulumi.Input<string>;
+    entityTag?: pulumi.Input<string | undefined>;
     /**
      * History of the Account Settings.
      */
-    histories?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsHistory>[]>;
+    histories?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsHistory>[] | undefined>;
     /**
      * Version of the account settings to be updated. Specify the version that you retrieved as entityTag (ETag header) when reading the account. This value helps identifying parallel usage of this API. Pass * to indicate to update any version available. This might result in stale updates.
      */
-    ifMatch?: pulumi.Input<string>;
+    ifMatch?: pulumi.Input<string | undefined>;
     /**
      * Defines if the entity history is included in the response.
      */
-    includeHistory?: pulumi.Input<boolean>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
     /**
      * Defines the max allowed sessions per identity required by the account. Valid values:  * Any whole number greater than 0  * NOT_SET - To unset account setting and use service default.
      */
-    maxSessionsPerIdentity?: pulumi.Input<string>;
+    maxSessionsPerIdentity?: pulumi.Input<string | undefined>;
     /**
      * Defines the MFA trait for the account. Valid values:  * NONE - No MFA trait set  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
      */
-    mfa?: pulumi.Input<string>;
+    mfa?: pulumi.Input<string | undefined>;
     /**
      * Enrich MFA exemptions with user PI.
      */
-    resolveUserMfa?: pulumi.Input<boolean>;
+    resolveUserMfa?: pulumi.Input<boolean | undefined>;
     /**
      * Defines whether or not creating platform API keys is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
      */
-    restrictCreatePlatformApikey?: pulumi.Input<string>;
+    restrictCreatePlatformApikey?: pulumi.Input<string | undefined>;
     /**
      * Defines whether or not creating a Service Id is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
      */
-    restrictCreateServiceId?: pulumi.Input<string>;
+    restrictCreateServiceId?: pulumi.Input<string | undefined>;
     /**
      * Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realmId set.
      */
-    restrictUserDomains?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsRestrictUserDomain>[]>;
+    restrictUserDomains?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsRestrictUserDomain>[] | undefined>;
     /**
      * Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console.
      */
-    restrictUserListVisibility?: pulumi.Input<string>;
+    restrictUserListVisibility?: pulumi.Input<string | undefined>;
     /**
      * Defines the session expiration in seconds for the account. Valid values:  * Any whole number between between '900' and '86400'  * NOT_SET - To unset account setting and use service default.
      */
-    sessionExpirationInSeconds?: pulumi.Input<string>;
+    sessionExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the period of time in seconds in which a session will be invalidated due to inactivity. Valid values:  * Any whole number between '900' and '7200'  * NOT_SET - To unset account setting and use service default.
      */
-    sessionInvalidationInSeconds?: pulumi.Input<string>;
+    sessionInvalidationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the access token expiration in seconds. Valid values:  * Any whole number between '900' and '3600'  * NOT_SET - To unset account setting and use service default.
      */
-    systemAccessTokenExpirationInSeconds?: pulumi.Input<string>;
+    systemAccessTokenExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the refresh token expiration in seconds. Valid values:  * Any whole number between '900' and '2592000'  * NOT_SET - To unset account setting and use service default.
      */
-    systemRefreshTokenExpirationInSeconds?: pulumi.Input<string>;
+    systemRefreshTokenExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * List of users that are exempted from the MFA requirement of the account.
      */
-    userMfas?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsUserMfa>[]>;
+    userMfas?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsUserMfa>[] | undefined>;
 }
 
 /**
@@ -239,65 +239,65 @@ export interface IamAccountSettingsArgs {
     /**
      * Defines the IP addresses and subnets from which IAM tokens can be created for the account.
      */
-    allowedIpAddresses?: pulumi.Input<string>;
+    allowedIpAddresses?: pulumi.Input<string | undefined>;
     /**
      * Version of the account settings.
      */
-    entityTag?: pulumi.Input<string>;
+    entityTag?: pulumi.Input<string | undefined>;
     /**
      * Version of the account settings to be updated. Specify the version that you retrieved as entityTag (ETag header) when reading the account. This value helps identifying parallel usage of this API. Pass * to indicate to update any version available. This might result in stale updates.
      */
-    ifMatch?: pulumi.Input<string>;
+    ifMatch?: pulumi.Input<string | undefined>;
     /**
      * Defines if the entity history is included in the response.
      */
-    includeHistory?: pulumi.Input<boolean>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
     /**
      * Defines the max allowed sessions per identity required by the account. Valid values:  * Any whole number greater than 0  * NOT_SET - To unset account setting and use service default.
      */
-    maxSessionsPerIdentity?: pulumi.Input<string>;
+    maxSessionsPerIdentity?: pulumi.Input<string | undefined>;
     /**
      * Defines the MFA trait for the account. Valid values:  * NONE - No MFA trait set  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
      */
-    mfa?: pulumi.Input<string>;
+    mfa?: pulumi.Input<string | undefined>;
     /**
      * Enrich MFA exemptions with user PI.
      */
-    resolveUserMfa?: pulumi.Input<boolean>;
+    resolveUserMfa?: pulumi.Input<boolean | undefined>;
     /**
      * Defines whether or not creating platform API keys is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
      */
-    restrictCreatePlatformApikey?: pulumi.Input<string>;
+    restrictCreatePlatformApikey?: pulumi.Input<string | undefined>;
     /**
      * Defines whether or not creating a Service Id is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
      */
-    restrictCreateServiceId?: pulumi.Input<string>;
+    restrictCreateServiceId?: pulumi.Input<string | undefined>;
     /**
      * Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realmId set.
      */
-    restrictUserDomains?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsRestrictUserDomain>[]>;
+    restrictUserDomains?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsRestrictUserDomain>[] | undefined>;
     /**
      * Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console.
      */
-    restrictUserListVisibility?: pulumi.Input<string>;
+    restrictUserListVisibility?: pulumi.Input<string | undefined>;
     /**
      * Defines the session expiration in seconds for the account. Valid values:  * Any whole number between between '900' and '86400'  * NOT_SET - To unset account setting and use service default.
      */
-    sessionExpirationInSeconds?: pulumi.Input<string>;
+    sessionExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the period of time in seconds in which a session will be invalidated due to inactivity. Valid values:  * Any whole number between '900' and '7200'  * NOT_SET - To unset account setting and use service default.
      */
-    sessionInvalidationInSeconds?: pulumi.Input<string>;
+    sessionInvalidationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the access token expiration in seconds. Valid values:  * Any whole number between '900' and '3600'  * NOT_SET - To unset account setting and use service default.
      */
-    systemAccessTokenExpirationInSeconds?: pulumi.Input<string>;
+    systemAccessTokenExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the refresh token expiration in seconds. Valid values:  * Any whole number between '900' and '2592000'  * NOT_SET - To unset account setting and use service default.
      */
-    systemRefreshTokenExpirationInSeconds?: pulumi.Input<string>;
+    systemRefreshTokenExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * List of users that are exempted from the MFA requirement of the account.
      */
-    userMfas?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsUserMfa>[]>;
+    userMfas?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsUserMfa>[] | undefined>;
 }

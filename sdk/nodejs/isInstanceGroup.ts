@@ -157,63 +157,63 @@ export interface IsInstanceGroupState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used by the instance group when scaling up instances to supply the port for the load balancer pool member.
      */
-    applicationPort?: pulumi.Input<number>;
+    applicationPort?: pulumi.Input<number | undefined>;
     /**
      * The CRN of this instance group
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The number of instances in the instance group
      */
-    instanceCount?: pulumi.Input<number>;
+    instanceCount?: pulumi.Input<number | undefined>;
     /**
      * instance template ID
      */
-    instanceTemplate?: pulumi.Input<string>;
+    instanceTemplate?: pulumi.Input<string | undefined>;
     /**
      * number of instances in the intances group
      */
-    instances?: pulumi.Input<number>;
+    instances?: pulumi.Input<number | undefined>;
     /**
      * load balancer ID
      */
-    loadBalancer?: pulumi.Input<string>;
+    loadBalancer?: pulumi.Input<string | undefined>;
     /**
      * load balancer pool ID
      */
-    loadBalancerPool?: pulumi.Input<string>;
+    loadBalancerPool?: pulumi.Input<string | undefined>;
     /**
      * list of Managers associated with instancegroup
      */
-    managers?: pulumi.Input<pulumi.Input<string>[]>;
+    managers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user-defined name for this instance group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource group ID
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Instance group status - deleting, healthy, scaling, unhealthy
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * list of subnet IDs
      */
-    subnets?: pulumi.Input<pulumi.Input<string>[]>;
+    subnets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of tags for instance group
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * vpc instance
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -223,15 +223,15 @@ export interface IsInstanceGroupArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used by the instance group when scaling up instances to supply the port for the load balancer pool member.
      */
-    applicationPort?: pulumi.Input<number>;
+    applicationPort?: pulumi.Input<number | undefined>;
     /**
      * The number of instances in the instance group
      */
-    instanceCount?: pulumi.Input<number>;
+    instanceCount?: pulumi.Input<number | undefined>;
     /**
      * instance template ID
      */
@@ -239,19 +239,19 @@ export interface IsInstanceGroupArgs {
     /**
      * load balancer ID
      */
-    loadBalancer?: pulumi.Input<string>;
+    loadBalancer?: pulumi.Input<string | undefined>;
     /**
      * load balancer pool ID
      */
-    loadBalancerPool?: pulumi.Input<string>;
+    loadBalancerPool?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this instance group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource group ID
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * list of subnet IDs
      */
@@ -259,5 +259,5 @@ export interface IsInstanceGroupArgs {
     /**
      * List of tags for instance group
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

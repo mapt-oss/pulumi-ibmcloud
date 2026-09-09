@@ -50,7 +50,7 @@ export function getResourceTagOutput(args?: GetResourceTagOutputArgs, opts?: pul
  * A collection of arguments for invoking getResourceTag.
  */
 export interface GetResourceTagOutputArgs {
-    resourceId?: pulumi.Input<string>;
-    resourceType?: pulumi.Input<string>;
-    tagType?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
+    resourceType?: pulumi.Input<string | undefined>;
+    tagType?: pulumi.Input<string | undefined>;
 }

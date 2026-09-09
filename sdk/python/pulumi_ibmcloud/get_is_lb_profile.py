@@ -27,22 +27,40 @@ class GetIsLbProfileResult:
     """
     A collection of values returned by getIsLbProfile.
     """
-    def __init__(__self__, access_modes=None, failsafe_policy_actions=None, family=None, href=None, id=None, name=None, route_mode_supported=None, route_mode_type=None, targetable_load_balancer_profiles=None, targetable_resource_types=None, udp_supported=None, udp_supported_type=None):
+    def __init__(__self__, access_modes=None, advanced_health_checks_supporteds=None, asymmetric_routing_supported=None, asymmetric_routing_supported_type=None, failsafe_policy_actions=None, family=None, fqdn_pool_members_supporteds=None, href=None, id=None, mtls_supported=None, mtls_supported_type=None, name=None, route_mode_supported=None, route_mode_type=None, targetable_load_balancer_profiles=None, targetable_resource_types=None, udp_supported=None, udp_supported_type=None):
         if access_modes and not isinstance(access_modes, list):
             raise TypeError("Expected argument 'access_modes' to be a list")
         pulumi.set(__self__, "access_modes", access_modes)
+        if advanced_health_checks_supporteds and not isinstance(advanced_health_checks_supporteds, list):
+            raise TypeError("Expected argument 'advanced_health_checks_supporteds' to be a list")
+        pulumi.set(__self__, "advanced_health_checks_supporteds", advanced_health_checks_supporteds)
+        if asymmetric_routing_supported and not isinstance(asymmetric_routing_supported, bool):
+            raise TypeError("Expected argument 'asymmetric_routing_supported' to be a bool")
+        pulumi.set(__self__, "asymmetric_routing_supported", asymmetric_routing_supported)
+        if asymmetric_routing_supported_type and not isinstance(asymmetric_routing_supported_type, str):
+            raise TypeError("Expected argument 'asymmetric_routing_supported_type' to be a str")
+        pulumi.set(__self__, "asymmetric_routing_supported_type", asymmetric_routing_supported_type)
         if failsafe_policy_actions and not isinstance(failsafe_policy_actions, list):
             raise TypeError("Expected argument 'failsafe_policy_actions' to be a list")
         pulumi.set(__self__, "failsafe_policy_actions", failsafe_policy_actions)
         if family and not isinstance(family, str):
             raise TypeError("Expected argument 'family' to be a str")
         pulumi.set(__self__, "family", family)
+        if fqdn_pool_members_supporteds and not isinstance(fqdn_pool_members_supporteds, list):
+            raise TypeError("Expected argument 'fqdn_pool_members_supporteds' to be a list")
+        pulumi.set(__self__, "fqdn_pool_members_supporteds", fqdn_pool_members_supporteds)
         if href and not isinstance(href, str):
             raise TypeError("Expected argument 'href' to be a str")
         pulumi.set(__self__, "href", href)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if mtls_supported and not isinstance(mtls_supported, bool):
+            raise TypeError("Expected argument 'mtls_supported' to be a bool")
+        pulumi.set(__self__, "mtls_supported", mtls_supported)
+        if mtls_supported_type and not isinstance(mtls_supported_type, str):
+            raise TypeError("Expected argument 'mtls_supported_type' to be a str")
+        pulumi.set(__self__, "mtls_supported_type", mtls_supported_type)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -71,6 +89,21 @@ class GetIsLbProfileResult:
         return pulumi.get(self, "access_modes")
 
     @_builtins.property
+    @pulumi.getter(name="advancedHealthChecksSupporteds")
+    def advanced_health_checks_supporteds(self) -> Sequence['outputs.GetIsLbProfileAdvancedHealthChecksSupportedResult']:
+        return pulumi.get(self, "advanced_health_checks_supporteds")
+
+    @_builtins.property
+    @pulumi.getter(name="asymmetricRoutingSupported")
+    def asymmetric_routing_supported(self) -> _builtins.bool:
+        return pulumi.get(self, "asymmetric_routing_supported")
+
+    @_builtins.property
+    @pulumi.getter(name="asymmetricRoutingSupportedType")
+    def asymmetric_routing_supported_type(self) -> _builtins.str:
+        return pulumi.get(self, "asymmetric_routing_supported_type")
+
+    @_builtins.property
     @pulumi.getter(name="failsafePolicyActions")
     def failsafe_policy_actions(self) -> Sequence['outputs.GetIsLbProfileFailsafePolicyActionResult']:
         return pulumi.get(self, "failsafe_policy_actions")
@@ -79,6 +112,11 @@ class GetIsLbProfileResult:
     @pulumi.getter
     def family(self) -> _builtins.str:
         return pulumi.get(self, "family")
+
+    @_builtins.property
+    @pulumi.getter(name="fqdnPoolMembersSupporteds")
+    def fqdn_pool_members_supporteds(self) -> Sequence['outputs.GetIsLbProfileFqdnPoolMembersSupportedResult']:
+        return pulumi.get(self, "fqdn_pool_members_supporteds")
 
     @_builtins.property
     @pulumi.getter
@@ -92,6 +130,16 @@ class GetIsLbProfileResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="mtlsSupported")
+    def mtls_supported(self) -> _builtins.bool:
+        return pulumi.get(self, "mtls_supported")
+
+    @_builtins.property
+    @pulumi.getter(name="mtlsSupportedType")
+    def mtls_supported_type(self) -> _builtins.str:
+        return pulumi.get(self, "mtls_supported_type")
 
     @_builtins.property
     @pulumi.getter
@@ -136,10 +184,16 @@ class AwaitableGetIsLbProfileResult(GetIsLbProfileResult):
             yield self
         return GetIsLbProfileResult(
             access_modes=self.access_modes,
+            advanced_health_checks_supporteds=self.advanced_health_checks_supporteds,
+            asymmetric_routing_supported=self.asymmetric_routing_supported,
+            asymmetric_routing_supported_type=self.asymmetric_routing_supported_type,
             failsafe_policy_actions=self.failsafe_policy_actions,
             family=self.family,
+            fqdn_pool_members_supporteds=self.fqdn_pool_members_supporteds,
             href=self.href,
             id=self.id,
+            mtls_supported=self.mtls_supported,
+            mtls_supported_type=self.mtls_supported_type,
             name=self.name,
             route_mode_supported=self.route_mode_supported,
             route_mode_type=self.route_mode_type,
@@ -161,10 +215,16 @@ def get_is_lb_profile(name: Optional[_builtins.str] = None,
 
     return AwaitableGetIsLbProfileResult(
         access_modes=pulumi.get(__ret__, 'access_modes'),
+        advanced_health_checks_supporteds=pulumi.get(__ret__, 'advanced_health_checks_supporteds'),
+        asymmetric_routing_supported=pulumi.get(__ret__, 'asymmetric_routing_supported'),
+        asymmetric_routing_supported_type=pulumi.get(__ret__, 'asymmetric_routing_supported_type'),
         failsafe_policy_actions=pulumi.get(__ret__, 'failsafe_policy_actions'),
         family=pulumi.get(__ret__, 'family'),
+        fqdn_pool_members_supporteds=pulumi.get(__ret__, 'fqdn_pool_members_supporteds'),
         href=pulumi.get(__ret__, 'href'),
         id=pulumi.get(__ret__, 'id'),
+        mtls_supported=pulumi.get(__ret__, 'mtls_supported'),
+        mtls_supported_type=pulumi.get(__ret__, 'mtls_supported_type'),
         name=pulumi.get(__ret__, 'name'),
         route_mode_supported=pulumi.get(__ret__, 'route_mode_supported'),
         route_mode_type=pulumi.get(__ret__, 'route_mode_type'),
@@ -172,7 +232,7 @@ def get_is_lb_profile(name: Optional[_builtins.str] = None,
         targetable_resource_types=pulumi.get(__ret__, 'targetable_resource_types'),
         udp_supported=pulumi.get(__ret__, 'udp_supported'),
         udp_supported_type=pulumi.get(__ret__, 'udp_supported_type'))
-def get_is_lb_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_lb_profile_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsLbProfileResult]:
     """
     Use this data source to access information about an existing resource.
@@ -183,10 +243,16 @@ def get_is_lb_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsLbProfile:getIsLbProfile', __args__, opts=opts, typ=GetIsLbProfileResult)
     return __ret__.apply(lambda __response__: GetIsLbProfileResult(
         access_modes=pulumi.get(__response__, 'access_modes'),
+        advanced_health_checks_supporteds=pulumi.get(__response__, 'advanced_health_checks_supporteds'),
+        asymmetric_routing_supported=pulumi.get(__response__, 'asymmetric_routing_supported'),
+        asymmetric_routing_supported_type=pulumi.get(__response__, 'asymmetric_routing_supported_type'),
         failsafe_policy_actions=pulumi.get(__response__, 'failsafe_policy_actions'),
         family=pulumi.get(__response__, 'family'),
+        fqdn_pool_members_supporteds=pulumi.get(__response__, 'fqdn_pool_members_supporteds'),
         href=pulumi.get(__response__, 'href'),
         id=pulumi.get(__response__, 'id'),
+        mtls_supported=pulumi.get(__response__, 'mtls_supported'),
+        mtls_supported_type=pulumi.get(__response__, 'mtls_supported_type'),
         name=pulumi.get(__response__, 'name'),
         route_mode_supported=pulumi.get(__response__, 'route_mode_supported'),
         route_mode_type=pulumi.get(__response__, 'route_mode_type'),

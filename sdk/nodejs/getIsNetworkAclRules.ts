@@ -46,6 +46,6 @@ export function getIsNetworkAclRulesOutput(args: GetIsNetworkAclRulesOutputArgs,
  * A collection of arguments for invoking getIsNetworkAclRules.
  */
 export interface GetIsNetworkAclRulesOutputArgs {
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     networkAcl: pulumi.Input<string>;
 }

@@ -82,7 +82,7 @@ def get_is_virtual_endpoint_gateway_ips(gateway: Optional[_builtins.str] = None,
         gateway=pulumi.get(__ret__, 'gateway'),
         id=pulumi.get(__ret__, 'id'),
         ips=pulumi.get(__ret__, 'ips'))
-def get_is_virtual_endpoint_gateway_ips_output(gateway: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_virtual_endpoint_gateway_ips_output(gateway: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVirtualEndpointGatewayIpsResult]:
     """
     Use this data source to access information about an existing resource.

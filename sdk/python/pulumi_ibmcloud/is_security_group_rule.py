@@ -23,35 +23,65 @@ class IsSecurityGroupRuleInitArgs:
     def __init__(__self__, *,
                  direction: pulumi.Input[_builtins.str],
                  group: pulumi.Input[_builtins.str],
-                 icmp: Optional[pulumi.Input['IsSecurityGroupRuleIcmpArgs']] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input['IsSecurityGroupRuleTcpArgs']] = None,
-                 udp: Optional[pulumi.Input['IsSecurityGroupRuleUdpArgs']] = None):
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 icmp: pulumi.Input[Optional['IsSecurityGroupRuleIcmpArgs']] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp: pulumi.Input[Optional['IsSecurityGroupRuleTcpArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional['IsSecurityGroupRuleUdpArgs']] = None):
         """
         The set of arguments for constructing a IsSecurityGroupRule resource.
+
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] group: Security group id
         :param pulumi.Input['IsSecurityGroupRuleIcmpArgs'] icmp: protocol=icmp
         :param pulumi.Input[_builtins.str] ip_version: IP version: ipv4
         :param pulumi.Input[_builtins.str] local: Security group id: an IP address, a CIDR block, or a single security group identifier
+        :param pulumi.Input[_builtins.str] name: The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
         :param pulumi.Input[_builtins.str] remote: Security group local ip: an IP address, a CIDR block
         :param pulumi.Input['IsSecurityGroupRuleTcpArgs'] tcp: protocol=tcp
         :param pulumi.Input['IsSecurityGroupRuleUdpArgs'] udp: protocol=udp
         """
         pulumi.set(__self__, "direction", direction)
         pulumi.set(__self__, "group", group)
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if icmp is not None:
+            warnings.warn("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""", DeprecationWarning)
+            pulumi.log.warn("""icmp is deprecated: icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
         if icmp is not None:
             pulumi.set(__self__, "icmp", icmp)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
         if local is not None:
             pulumi.set(__self__, "local", local)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if port_max is not None:
+            pulumi.set(__self__, "port_max", port_max)
+        if port_min is not None:
+            pulumi.set(__self__, "port_min", port_min)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
         if remote is not None:
             pulumi.set(__self__, "remote", remote)
         if tcp is not None:
+            warnings.warn("""tcp is deprecated, use 'protocol', 'code', and 'type' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tcp is deprecated: tcp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+        if tcp is not None:
             pulumi.set(__self__, "tcp", tcp)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if udp is not None:
+            warnings.warn("""udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.""", DeprecationWarning)
+            pulumi.log.warn("""udp is deprecated: udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.""")
         if udp is not None:
             pulumi.set(__self__, "udp", udp)
 
@@ -81,115 +111,196 @@ class IsSecurityGroupRuleInitArgs:
 
     @_builtins.property
     @pulumi.getter
-    def icmp(self) -> Optional[pulumi.Input['IsSecurityGroupRuleIcmpArgs']]:
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def icmp(self) -> pulumi.Input[Optional['IsSecurityGroupRuleIcmpArgs']]:
         """
         protocol=icmp
         """
         return pulumi.get(self, "icmp")
 
     @icmp.setter
-    def icmp(self, value: Optional[pulumi.Input['IsSecurityGroupRuleIcmpArgs']]):
+    def icmp(self, value: pulumi.Input[Optional['IsSecurityGroupRuleIcmpArgs']]):
         pulumi.set(self, "icmp", value)
 
     @_builtins.property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP version: ipv4
         """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
-    def ip_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def local(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group id: an IP address, a CIDR block, or a single security group identifier
         """
         return pulumi.get(self, "local")
 
     @local.setter
-    def local(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local", value)
 
     @_builtins.property
     @pulumi.getter
-    def remote(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portMax")
+    def port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "port_max")
+
+    @port_max.setter
+    def port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_max", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portMin")
+    def port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "port_min")
+
+    @port_min.setter
+    def port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_min", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the network protocol
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "protocol", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def remote(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group local ip: an IP address, a CIDR block
         """
         return pulumi.get(self, "remote")
 
     @remote.setter
-    def remote(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote", value)
 
     @_builtins.property
     @pulumi.getter
-    def tcp(self) -> Optional[pulumi.Input['IsSecurityGroupRuleTcpArgs']]:
+    @_utilities.deprecated("""tcp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def tcp(self) -> pulumi.Input[Optional['IsSecurityGroupRuleTcpArgs']]:
         """
         protocol=tcp
         """
         return pulumi.get(self, "tcp")
 
     @tcp.setter
-    def tcp(self, value: Optional[pulumi.Input['IsSecurityGroupRuleTcpArgs']]):
+    def tcp(self, value: pulumi.Input[Optional['IsSecurityGroupRuleTcpArgs']]):
         pulumi.set(self, "tcp", value)
 
     @_builtins.property
     @pulumi.getter
-    def udp(self) -> Optional[pulumi.Input['IsSecurityGroupRuleUdpArgs']]:
+    def type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.""")
+    def udp(self) -> pulumi.Input[Optional['IsSecurityGroupRuleUdpArgs']]:
         """
         protocol=udp
         """
         return pulumi.get(self, "udp")
 
     @udp.setter
-    def udp(self, value: Optional[pulumi.Input['IsSecurityGroupRuleUdpArgs']]):
+    def udp(self, value: pulumi.Input[Optional['IsSecurityGroupRuleUdpArgs']]):
         pulumi.set(self, "udp", value)
 
 
 @pulumi.input_type
 class _IsSecurityGroupRuleState:
     def __init__(__self__, *,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp: Optional[pulumi.Input['IsSecurityGroupRuleIcmpArgs']] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input['IsSecurityGroupRuleTcpArgs']] = None,
-                 udp: Optional[pulumi.Input['IsSecurityGroupRuleUdpArgs']] = None):
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp: pulumi.Input[Optional['IsSecurityGroupRuleIcmpArgs']] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp: pulumi.Input[Optional['IsSecurityGroupRuleTcpArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional['IsSecurityGroupRuleUdpArgs']] = None):
         """
         Input properties used for looking up and filtering IsSecurityGroupRule resources.
+
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] group: Security group id
         :param pulumi.Input['IsSecurityGroupRuleIcmpArgs'] icmp: protocol=icmp
         :param pulumi.Input[_builtins.str] ip_version: IP version: ipv4
         :param pulumi.Input[_builtins.str] local: Security group id: an IP address, a CIDR block, or a single security group identifier
-        :param pulumi.Input[_builtins.str] protocol: The Security Group Rule Protocol
+        :param pulumi.Input[_builtins.str] name: The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
         :param pulumi.Input[_builtins.str] related_crn: The crn of the Security Group
         :param pulumi.Input[_builtins.str] remote: Security group local ip: an IP address, a CIDR block
         :param pulumi.Input[_builtins.str] rule_id: Rule id
         :param pulumi.Input['IsSecurityGroupRuleTcpArgs'] tcp: protocol=tcp
         :param pulumi.Input['IsSecurityGroupRuleUdpArgs'] udp: protocol=udp
         """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
         if direction is not None:
             pulumi.set(__self__, "direction", direction)
         if group is not None:
             pulumi.set(__self__, "group", group)
+        if icmp is not None:
+            warnings.warn("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""", DeprecationWarning)
+            pulumi.log.warn("""icmp is deprecated: icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
         if icmp is not None:
             pulumi.set(__self__, "icmp", icmp)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
         if local is not None:
             pulumi.set(__self__, "local", local)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if port_max is not None:
+            pulumi.set(__self__, "port_max", port_max)
+        if port_min is not None:
+            pulumi.set(__self__, "port_min", port_min)
         if protocol is not None:
             pulumi.set(__self__, "protocol", protocol)
         if related_crn is not None:
@@ -199,140 +310,199 @@ class _IsSecurityGroupRuleState:
         if rule_id is not None:
             pulumi.set(__self__, "rule_id", rule_id)
         if tcp is not None:
+            warnings.warn("""tcp is deprecated, use 'protocol', 'code', and 'type' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tcp is deprecated: tcp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+        if tcp is not None:
             pulumi.set(__self__, "tcp", tcp)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if udp is not None:
+            warnings.warn("""udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.""", DeprecationWarning)
+            pulumi.log.warn("""udp is deprecated: udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.""")
         if udp is not None:
             pulumi.set(__self__, "udp", udp)
 
     @_builtins.property
     @pulumi.getter
-    def direction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def direction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Direction of traffic to enforce, either inbound or outbound
         """
         return pulumi.get(self, "direction")
 
     @direction.setter
-    def direction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def direction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "direction", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group id
         """
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter
-    def icmp(self) -> Optional[pulumi.Input['IsSecurityGroupRuleIcmpArgs']]:
+    @_utilities.deprecated("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def icmp(self) -> pulumi.Input[Optional['IsSecurityGroupRuleIcmpArgs']]:
         """
         protocol=icmp
         """
         return pulumi.get(self, "icmp")
 
     @icmp.setter
-    def icmp(self, value: Optional[pulumi.Input['IsSecurityGroupRuleIcmpArgs']]):
+    def icmp(self, value: pulumi.Input[Optional['IsSecurityGroupRuleIcmpArgs']]):
         pulumi.set(self, "icmp", value)
 
     @_builtins.property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP version: ipv4
         """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
-    def ip_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def local(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group id: an IP address, a CIDR block, or a single security group identifier
         """
         return pulumi.get(self, "local")
 
     @local.setter
-    def local(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The Security Group Rule Protocol
+        The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portMax")
+    def port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "port_max")
+
+    @port_max.setter
+    def port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_max", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portMin")
+    def port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "port_min")
+
+    @port_min.setter
+    def port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_min", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the network protocol
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedCrn")
-    def related_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the Security Group
         """
         return pulumi.get(self, "related_crn")
 
     @related_crn.setter
-    def related_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def remote(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Security group local ip: an IP address, a CIDR block
         """
         return pulumi.get(self, "remote")
 
     @remote.setter
-    def remote(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleId")
-    def rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule id
         """
         return pulumi.get(self, "rule_id")
 
     @rule_id.setter
-    def rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def tcp(self) -> Optional[pulumi.Input['IsSecurityGroupRuleTcpArgs']]:
+    @_utilities.deprecated("""tcp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def tcp(self) -> pulumi.Input[Optional['IsSecurityGroupRuleTcpArgs']]:
         """
         protocol=tcp
         """
         return pulumi.get(self, "tcp")
 
     @tcp.setter
-    def tcp(self, value: Optional[pulumi.Input['IsSecurityGroupRuleTcpArgs']]):
+    def tcp(self, value: pulumi.Input[Optional['IsSecurityGroupRuleTcpArgs']]):
         pulumi.set(self, "tcp", value)
 
     @_builtins.property
     @pulumi.getter
-    def udp(self) -> Optional[pulumi.Input['IsSecurityGroupRuleUdpArgs']]:
+    def type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.""")
+    def udp(self) -> pulumi.Input[Optional['IsSecurityGroupRuleUdpArgs']]:
         """
         protocol=udp
         """
         return pulumi.get(self, "udp")
 
     @udp.setter
-    def udp(self, value: Optional[pulumi.Input['IsSecurityGroupRuleUdpArgs']]):
+    def udp(self, value: pulumi.Input[Optional['IsSecurityGroupRuleUdpArgs']]):
         pulumi.set(self, "udp", value)
 
 
@@ -342,27 +512,36 @@ class IsSecurityGroupRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp: Optional[pulumi.Input[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict']]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict']]] = None,
-                 udp: Optional[pulumi.Input[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict']]] = None,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp: pulumi.Input[Optional[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict', 'outputs.IsSecurityGroupRuleIcmp']]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp: pulumi.Input[Optional[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict', 'outputs.IsSecurityGroupRuleTcp']]] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict', 'outputs.IsSecurityGroupRuleUdp']]] = None,
                  __props__=None):
         """
         Create a IsSecurityGroupRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] group: Security group id
-        :param pulumi.Input[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict']] icmp: protocol=icmp
+        :param pulumi.Input[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict', 'outputs.IsSecurityGroupRuleIcmp']] icmp: protocol=icmp
         :param pulumi.Input[_builtins.str] ip_version: IP version: ipv4
         :param pulumi.Input[_builtins.str] local: Security group id: an IP address, a CIDR block, or a single security group identifier
+        :param pulumi.Input[_builtins.str] name: The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
         :param pulumi.Input[_builtins.str] remote: Security group local ip: an IP address, a CIDR block
-        :param pulumi.Input[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict']] tcp: protocol=tcp
-        :param pulumi.Input[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict']] udp: protocol=udp
+        :param pulumi.Input[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict', 'outputs.IsSecurityGroupRuleTcp']] tcp: protocol=tcp
+        :param pulumi.Input[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict', 'outputs.IsSecurityGroupRuleUdp']] udp: protocol=udp
         """
         ...
     @overload
@@ -372,6 +551,7 @@ class IsSecurityGroupRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsSecurityGroupRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsSecurityGroupRuleInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -387,14 +567,20 @@ class IsSecurityGroupRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp: Optional[pulumi.Input[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict']]] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict']]] = None,
-                 udp: Optional[pulumi.Input[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict']]] = None,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp: pulumi.Input[Optional[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict', 'outputs.IsSecurityGroupRuleIcmp']]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp: pulumi.Input[Optional[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict', 'outputs.IsSecurityGroupRuleTcp']]] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict', 'outputs.IsSecurityGroupRuleUdp']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -404,6 +590,7 @@ class IsSecurityGroupRule(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = IsSecurityGroupRuleInitArgs.__new__(IsSecurityGroupRuleInitArgs)
 
+            __props__.__dict__["code"] = code
             if direction is None and not opts.urn:
                 raise TypeError("Missing required property 'direction'")
             __props__.__dict__["direction"] = direction
@@ -413,10 +600,14 @@ class IsSecurityGroupRule(pulumi.CustomResource):
             __props__.__dict__["icmp"] = icmp
             __props__.__dict__["ip_version"] = ip_version
             __props__.__dict__["local"] = local
+            __props__.__dict__["name"] = name
+            __props__.__dict__["port_max"] = port_max
+            __props__.__dict__["port_min"] = port_min
+            __props__.__dict__["protocol"] = protocol
             __props__.__dict__["remote"] = remote
             __props__.__dict__["tcp"] = tcp
+            __props__.__dict__["type"] = type
             __props__.__dict__["udp"] = udp
-            __props__.__dict__["protocol"] = None
             __props__.__dict__["related_crn"] = None
             __props__.__dict__["rule_id"] = None
         super(IsSecurityGroupRule, __self__).__init__(
@@ -429,17 +620,22 @@ class IsSecurityGroupRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            direction: Optional[pulumi.Input[_builtins.str]] = None,
-            group: Optional[pulumi.Input[_builtins.str]] = None,
-            icmp: Optional[pulumi.Input[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict']]] = None,
-            ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-            local: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            remote: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tcp: Optional[pulumi.Input[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict']]] = None,
-            udp: Optional[pulumi.Input[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict']]] = None) -> 'IsSecurityGroupRule':
+            code: pulumi.Input[Optional[_builtins.int]] = None,
+            direction: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            icmp: pulumi.Input[Optional[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict', 'outputs.IsSecurityGroupRuleIcmp']]] = None,
+            ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+            local: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            port_max: pulumi.Input[Optional[_builtins.int]] = None,
+            port_min: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            remote: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tcp: pulumi.Input[Optional[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict', 'outputs.IsSecurityGroupRuleTcp']]] = None,
+            type: pulumi.Input[Optional[_builtins.int]] = None,
+            udp: pulumi.Input[Optional[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict', 'outputs.IsSecurityGroupRuleUdp']]] = None) -> 'IsSecurityGroupRule':
         """
         Get an existing IsSecurityGroupRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -449,32 +645,43 @@ class IsSecurityGroupRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] group: Security group id
-        :param pulumi.Input[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict']] icmp: protocol=icmp
+        :param pulumi.Input[Union['IsSecurityGroupRuleIcmpArgs', 'IsSecurityGroupRuleIcmpArgsDict', 'outputs.IsSecurityGroupRuleIcmp']] icmp: protocol=icmp
         :param pulumi.Input[_builtins.str] ip_version: IP version: ipv4
         :param pulumi.Input[_builtins.str] local: Security group id: an IP address, a CIDR block, or a single security group identifier
-        :param pulumi.Input[_builtins.str] protocol: The Security Group Rule Protocol
+        :param pulumi.Input[_builtins.str] name: The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
         :param pulumi.Input[_builtins.str] related_crn: The crn of the Security Group
         :param pulumi.Input[_builtins.str] remote: Security group local ip: an IP address, a CIDR block
         :param pulumi.Input[_builtins.str] rule_id: Rule id
-        :param pulumi.Input[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict']] tcp: protocol=tcp
-        :param pulumi.Input[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict']] udp: protocol=udp
+        :param pulumi.Input[Union['IsSecurityGroupRuleTcpArgs', 'IsSecurityGroupRuleTcpArgsDict', 'outputs.IsSecurityGroupRuleTcp']] tcp: protocol=tcp
+        :param pulumi.Input[Union['IsSecurityGroupRuleUdpArgs', 'IsSecurityGroupRuleUdpArgsDict', 'outputs.IsSecurityGroupRuleUdp']] udp: protocol=udp
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _IsSecurityGroupRuleState.__new__(_IsSecurityGroupRuleState)
 
+        __props__.__dict__["code"] = code
         __props__.__dict__["direction"] = direction
         __props__.__dict__["group"] = group
         __props__.__dict__["icmp"] = icmp
         __props__.__dict__["ip_version"] = ip_version
         __props__.__dict__["local"] = local
+        __props__.__dict__["name"] = name
+        __props__.__dict__["port_max"] = port_max
+        __props__.__dict__["port_min"] = port_min
         __props__.__dict__["protocol"] = protocol
         __props__.__dict__["related_crn"] = related_crn
         __props__.__dict__["remote"] = remote
         __props__.__dict__["rule_id"] = rule_id
         __props__.__dict__["tcp"] = tcp
+        __props__.__dict__["type"] = type
         __props__.__dict__["udp"] = udp
         return IsSecurityGroupRule(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> pulumi.Output[_builtins.int]:
+        return pulumi.get(self, "code")
 
     @_builtins.property
     @pulumi.getter
@@ -494,7 +701,8 @@ class IsSecurityGroupRule(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def icmp(self) -> pulumi.Output[Optional['outputs.IsSecurityGroupRuleIcmp']]:
+    @_utilities.deprecated("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def icmp(self) -> pulumi.Output['outputs.IsSecurityGroupRuleIcmp']:
         """
         protocol=icmp
         """
@@ -518,9 +726,27 @@ class IsSecurityGroupRule(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    def name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="portMax")
+    def port_max(self) -> pulumi.Output[_builtins.int]:
+        return pulumi.get(self, "port_max")
+
+    @_builtins.property
+    @pulumi.getter(name="portMin")
+    def port_min(self) -> pulumi.Output[_builtins.int]:
+        return pulumi.get(self, "port_min")
+
+    @_builtins.property
+    @pulumi.getter
     def protocol(self) -> pulumi.Output[_builtins.str]:
         """
-        The Security Group Rule Protocol
+        The name of the network protocol
         """
         return pulumi.get(self, "protocol")
 
@@ -550,7 +776,8 @@ class IsSecurityGroupRule(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def tcp(self) -> pulumi.Output[Optional['outputs.IsSecurityGroupRuleTcp']]:
+    @_utilities.deprecated("""tcp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def tcp(self) -> pulumi.Output['outputs.IsSecurityGroupRuleTcp']:
         """
         protocol=tcp
         """
@@ -558,7 +785,13 @@ class IsSecurityGroupRule(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def udp(self) -> pulumi.Output[Optional['outputs.IsSecurityGroupRuleUdp']]:
+    def type(self) -> pulumi.Output[_builtins.int]:
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.""")
+    def udp(self) -> pulumi.Output['outputs.IsSecurityGroupRuleUdp']:
         """
         protocol=udp
         """

@@ -46,6 +46,6 @@ export function getIsPrivatePathServiceGatewayAccountPoliciesOutput(args: GetIsP
  * A collection of arguments for invoking getIsPrivatePathServiceGatewayAccountPolicies.
  */
 export interface GetIsPrivatePathServiceGatewayAccountPoliciesOutputArgs {
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     privatePathServiceGateway: pulumi.Input<string>;
 }

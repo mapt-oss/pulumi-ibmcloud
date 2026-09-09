@@ -94,8 +94,8 @@ def get_iam_action_control_assignments(template_id: Optional[_builtins.str] = No
         id=pulumi.get(__ret__, 'id'),
         template_id=pulumi.get(__ret__, 'template_id'),
         template_version=pulumi.get(__ret__, 'template_version'))
-def get_iam_action_control_assignments_output(template_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              template_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_action_control_assignments_output(template_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              template_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamActionControlAssignmentsResult]:
     """
     Use this data source to access information about an existing resource.

@@ -173,8 +173,8 @@ def get_pi_volume_group_storage_details(pi_cloud_instance_id: Optional[_builtins
         replication_type=pulumi.get(__ret__, 'replication_type'),
         state=pulumi.get(__ret__, 'state'),
         synchronized=pulumi.get(__ret__, 'synchronized'))
-def get_pi_volume_group_storage_details_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               pi_volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_volume_group_storage_details_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               pi_volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeGroupStorageDetailsResult]:
     """
     Use this data source to access information about an existing resource.

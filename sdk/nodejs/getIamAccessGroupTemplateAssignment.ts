@@ -66,9 +66,9 @@ export function getIamAccessGroupTemplateAssignmentOutput(args?: GetIamAccessGro
  * A collection of arguments for invoking getIamAccessGroupTemplateAssignment.
  */
 export interface GetIamAccessGroupTemplateAssignmentOutputArgs {
-    status?: pulumi.Input<string>;
-    target?: pulumi.Input<string>;
-    templateId?: pulumi.Input<string>;
-    templateVersion?: pulumi.Input<string>;
-    transactionId?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
+    target?: pulumi.Input<string | undefined>;
+    templateId?: pulumi.Input<string | undefined>;
+    templateVersion?: pulumi.Input<string | undefined>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

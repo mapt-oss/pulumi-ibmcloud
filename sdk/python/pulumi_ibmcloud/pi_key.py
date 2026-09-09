@@ -22,10 +22,11 @@ class PiKeyArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_key_name: pulumi.Input[_builtins.str],
                  pi_ssh_key: pulumi.Input[_builtins.str],
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_visibility: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_visibility: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiKey resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_key_name: User defined name for the SSH key.
         :param pulumi.Input[_builtins.str] pi_ssh_key: SSH RSA key.
@@ -78,44 +79,45 @@ class PiKeyArgs:
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the ssh key.
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piVisibility")
-    def pi_visibility(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_visibility(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Visibility of the ssh key. Valid values are: ["account", "workspace"].
         """
         return pulumi.get(self, "pi_visibility")
 
     @pi_visibility.setter
-    def pi_visibility(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_visibility(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_visibility", value)
 
 
 @pulumi.input_type
 class _PiKeyState:
     def __init__(__self__, *,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_workspace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ssh_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_workspace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssh_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiKey resources.
+
         :param pulumi.Input[_builtins.str] creation_date: Date of SSH Key creation.
         :param pulumi.Input[_builtins.str] key: SSH RSA key.
         :param pulumi.Input[_builtins.str] name: User defined name for the SSH key.
@@ -156,124 +158,124 @@ class _PiKeyState:
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date of SSH Key creation.
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""This field is deprecated and will be removed in a future release. Use pi_ssh_key instead.""")
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSH RSA key.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""This field is deprecated and will be removed in a future release. Use pi_key_name instead.""")
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User defined name for the SSH key.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the ssh key.
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piKeyName")
-    def pi_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User defined name for the SSH key.
         """
         return pulumi.get(self, "pi_key_name")
 
     @pi_key_name.setter
-    def pi_key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_key_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piSshKey")
-    def pi_ssh_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_ssh_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSH RSA key.
         """
         return pulumi.get(self, "pi_ssh_key")
 
     @pi_ssh_key.setter
-    def pi_ssh_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_ssh_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_ssh_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piVisibility")
-    def pi_visibility(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_visibility(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Visibility of the ssh key. Valid values are: ["account", "workspace"].
         """
         return pulumi.get(self, "pi_visibility")
 
     @pi_visibility.setter
-    def pi_visibility(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_visibility(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_visibility", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryWorkspace")
-    def primary_workspace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def primary_workspace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the current workspace owns the ssh key or not.
         """
         return pulumi.get(self, "primary_workspace")
 
     @primary_workspace.setter
-    def primary_workspace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def primary_workspace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "primary_workspace", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKeyId")
-    def ssh_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssh_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique ID of SSH key.
         """
         return pulumi.get(self, "ssh_key_id")
 
     @ssh_key_id.setter
-    def ssh_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssh_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssh_key_id", value)
 
 
@@ -283,14 +285,15 @@ class PiKey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_visibility: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_visibility: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiKey resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -307,6 +310,7 @@ class PiKey(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiKey resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiKeyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -322,11 +326,11 @@ class PiKey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_visibility: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_visibility: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -362,16 +366,16 @@ class PiKey(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_visibility: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_workspace: Optional[pulumi.Input[_builtins.bool]] = None,
-            ssh_key_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiKey':
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_visibility: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_workspace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ssh_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiKey':
         """
         Get an existing PiKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -57,9 +57,9 @@ export function getPiNetworkPortOutput(args: GetPiNetworkPortOutputArgs, opts?: 
  */
 export interface GetPiNetworkPortOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piNetworkId?: pulumi.Input<string>;
+    piNetworkId?: pulumi.Input<string | undefined>;
     /**
      * @deprecated The piNetworkName field is deprecated. Please use piNetworkId instead
      */
-    piNetworkName?: pulumi.Input<string>;
+    piNetworkName?: pulumi.Input<string | undefined>;
 }

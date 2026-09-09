@@ -23,9 +23,10 @@ class IsInstanceActionArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
                  instance: pulumi.Input[_builtins.str],
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None):
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a IsInstanceAction resource.
+
         :param pulumi.Input[_builtins.str] action: This restart/start/stops an instance.
         :param pulumi.Input[_builtins.str] instance: Instance identifier
         :param pulumi.Input[_builtins.bool] force_action: If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
@@ -61,27 +62,28 @@ class IsInstanceActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="forceAction")
-    def force_action(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_action(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
         """
         return pulumi.get(self, "force_action")
 
     @force_action.setter
-    def force_action(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_action(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_action", value)
 
 
 @pulumi.input_type
 class _IsInstanceActionState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceActionStatusReasonArgs']]]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceActionStatusReasonArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsInstanceAction resources.
+
         :param pulumi.Input[_builtins.str] action: This restart/start/stops an instance.
         :param pulumi.Input[_builtins.bool] force_action: If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
         :param pulumi.Input[_builtins.str] instance: Instance identifier
@@ -100,59 +102,59 @@ class _IsInstanceActionState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This restart/start/stops an instance.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="forceAction")
-    def force_action(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_action(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
         """
         return pulumi.get(self, "force_action")
 
     @force_action.setter
-    def force_action(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_action(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_action", value)
 
     @_builtins.property
     @pulumi.getter
-    def instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance identifier
         """
         return pulumi.get(self, "instance")
 
     @instance.setter
-    def instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceActionStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceActionStatusReasonArgs']]]]:
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceActionStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceActionStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
 
@@ -162,12 +164,13 @@ class IsInstanceAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: This restart/start/stops an instance.
@@ -182,6 +185,7 @@ class IsInstanceAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -197,9 +201,9 @@ class IsInstanceAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,11 +232,11 @@ class IsInstanceAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            force_action: Optional[pulumi.Input[_builtins.bool]] = None,
-            instance: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceActionStatusReasonArgs', 'IsInstanceActionStatusReasonArgsDict']]]]] = None) -> 'IsInstanceAction':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            force_action: pulumi.Input[Optional[_builtins.bool]] = None,
+            instance: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceActionStatusReasonArgs', 'IsInstanceActionStatusReasonArgsDict', 'outputs.IsInstanceActionStatusReason']]]]] = None) -> 'IsInstanceAction':
         """
         Get an existing IsInstanceAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

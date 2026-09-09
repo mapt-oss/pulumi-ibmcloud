@@ -23,12 +23,13 @@ class IsDedicatedHostArgs:
     def __init__(__self__, *,
                  host_group: pulumi.Input[_builtins.str],
                  profile: pulumi.Input[_builtins.str],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 instance_placement_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 instance_placement_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsDedicatedHost resource.
+
         :param pulumi.Input[_builtins.str] host_group: The unique identifier of the dedicated host group for this dedicated host.
         :param pulumi.Input[_builtins.str] profile: The Globally unique name of the dedicated host profile to use for this dedicated host.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -73,81 +74,82 @@ class IsDedicatedHostArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instancePlacementEnabled")
-    def instance_placement_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def instance_placement_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, instances can be placed on this dedicated host.
         """
         return pulumi.get(self, "instance_placement_enabled")
 
     @instance_placement_enabled.setter
-    def instance_placement_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def instance_placement_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "instance_placement_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
 @pulumi.input_type
 class _IsDedicatedHostState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 available_memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 available_vcpus: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostAvailableVcpusArgs']]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskArgs']]]] = None,
-                 host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_placement_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostInstanceArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 numas: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostNumaArgs']]]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisionable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 socket_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_instance_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostSupportedInstanceProfileArgs']]]] = None,
-                 vcpus: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostVcpusArgs']]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 available_memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 available_vcpus: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostAvailableVcpusArgs']]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostDiskArgs']]]] = None,
+                 host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_placement_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostInstanceArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 numas: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostNumaArgs']]]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisionable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 socket_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_instance_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostSupportedInstanceProfileArgs']]]] = None,
+                 vcpus: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostVcpusArgs']]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsDedicatedHost resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.int] available_memory: The amount of memory in gibibytes that is currently available for instances.
         :param pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostAvailableVcpusArgs']]] available_vcpus: The available VCPU for the dedicated host.
@@ -221,278 +223,278 @@ class _IsDedicatedHostState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="availableMemory")
-    def available_memory(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def available_memory(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of memory in gibibytes that is currently available for instances.
         """
         return pulumi.get(self, "available_memory")
 
     @available_memory.setter
-    def available_memory(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def available_memory(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "available_memory", value)
 
     @_builtins.property
     @pulumi.getter(name="availableVcpus")
-    def available_vcpus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostAvailableVcpusArgs']]]]:
+    def available_vcpus(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostAvailableVcpusArgs']]]]:
         """
         The available VCPU for the dedicated host.
         """
         return pulumi.get(self, "available_vcpus")
 
     @available_vcpus.setter
-    def available_vcpus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostAvailableVcpusArgs']]]]):
+    def available_vcpus(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostAvailableVcpusArgs']]]]):
         pulumi.set(self, "available_vcpus", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the dedicated host was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this dedicated host.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostDiskArgs']]]]:
         """
         Collection of the dedicated host's disks.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroup")
-    def host_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the dedicated host group for this dedicated host.
         """
         return pulumi.get(self, "host_group")
 
     @host_group.setter
-    def host_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this dedicated host.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="instancePlacementEnabled")
-    def instance_placement_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def instance_placement_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, instances can be placed on this dedicated host.
         """
         return pulumi.get(self, "instance_placement_enabled")
 
     @instance_placement_enabled.setter
-    def instance_placement_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def instance_placement_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "instance_placement_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostInstanceArgs']]]]:
+    def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostInstanceArgs']]]]:
         """
         Array of instances that are allocated to this dedicated host.
         """
         return pulumi.get(self, "instances")
 
     @instances.setter
-    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostInstanceArgs']]]]):
+    def instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostInstanceArgs']]]]):
         pulumi.set(self, "instances", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the dedicated host resource.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total amount of memory in gibibytes for this host.
         """
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def numas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostNumaArgs']]]]:
+    def numas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostNumaArgs']]]]:
         """
         The dedicated host NUMA configuration
         """
         return pulumi.get(self, "numas")
 
     @numas.setter
-    def numas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostNumaArgs']]]]):
+    def numas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostNumaArgs']]]]):
         pulumi.set(self, "numas", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Globally unique name of the dedicated host profile to use for this dedicated host.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def provisionable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def provisionable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this dedicated host is available for instance creation.
         """
         return pulumi.get(self, "provisionable")
 
     @provisionable.setter
-    def provisionable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def provisionable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "provisionable", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of resource referenced.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="socketCount")
-    def socket_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def socket_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of sockets for this host.
         """
         return pulumi.get(self, "socket_count")
 
     @socket_count.setter
-    def socket_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def socket_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "socket_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedInstanceProfiles")
-    def supported_instance_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostSupportedInstanceProfileArgs']]]]:
+    def supported_instance_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostSupportedInstanceProfileArgs']]]]:
         """
         Array of instance profiles that can be used by instances placed on this dedicated host.
         """
         return pulumi.get(self, "supported_instance_profiles")
 
     @supported_instance_profiles.setter
-    def supported_instance_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostSupportedInstanceProfileArgs']]]]):
+    def supported_instance_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostSupportedInstanceProfileArgs']]]]):
         pulumi.set(self, "supported_instance_profiles", value)
 
     @_builtins.property
     @pulumi.getter
-    def vcpus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostVcpusArgs']]]]:
+    def vcpus(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostVcpusArgs']]]]:
         """
         The total VCPU of the dedicated host.
         """
         return pulumi.get(self, "vcpus")
 
     @vcpus.setter
-    def vcpus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostVcpusArgs']]]]):
+    def vcpus(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostVcpusArgs']]]]):
         pulumi.set(self, "vcpus", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name of the zone this dedicated host resides in.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -502,15 +504,16 @@ class IsDedicatedHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_placement_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_placement_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsDedicatedHost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -528,6 +531,7 @@ class IsDedicatedHost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsDedicatedHost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsDedicatedHostArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -543,12 +547,12 @@ class IsDedicatedHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_placement_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_placement_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -595,29 +599,29 @@ class IsDedicatedHost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            available_memory: Optional[pulumi.Input[_builtins.int]] = None,
-            available_vcpus: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostAvailableVcpusArgs', 'IsDedicatedHostAvailableVcpusArgsDict']]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskArgs', 'IsDedicatedHostDiskArgsDict']]]]] = None,
-            host_group: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_placement_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostInstanceArgs', 'IsDedicatedHostInstanceArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            memory: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            numas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostNumaArgs', 'IsDedicatedHostNumaArgsDict']]]]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            provisionable: Optional[pulumi.Input[_builtins.bool]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            socket_count: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            supported_instance_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostSupportedInstanceProfileArgs', 'IsDedicatedHostSupportedInstanceProfileArgsDict']]]]] = None,
-            vcpus: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostVcpusArgs', 'IsDedicatedHostVcpusArgsDict']]]]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsDedicatedHost':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            available_memory: pulumi.Input[Optional[_builtins.int]] = None,
+            available_vcpus: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostAvailableVcpusArgs', 'IsDedicatedHostAvailableVcpusArgsDict', 'outputs.IsDedicatedHostAvailableVcpus']]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostDiskArgs', 'IsDedicatedHostDiskArgsDict', 'outputs.IsDedicatedHostDisk']]]]] = None,
+            host_group: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_placement_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostInstanceArgs', 'IsDedicatedHostInstanceArgsDict', 'outputs.IsDedicatedHostInstance']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            memory: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            numas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostNumaArgs', 'IsDedicatedHostNumaArgsDict', 'outputs.IsDedicatedHostNuma']]]]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            provisionable: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            socket_count: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            supported_instance_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostSupportedInstanceProfileArgs', 'IsDedicatedHostSupportedInstanceProfileArgsDict', 'outputs.IsDedicatedHostSupportedInstanceProfile']]]]] = None,
+            vcpus: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostVcpusArgs', 'IsDedicatedHostVcpusArgsDict', 'outputs.IsDedicatedHostVcpus']]]]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsDedicatedHost':
         """
         Get an existing IsDedicatedHost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -627,26 +631,26 @@ class IsDedicatedHost(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.int] available_memory: The amount of memory in gibibytes that is currently available for instances.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostAvailableVcpusArgs', 'IsDedicatedHostAvailableVcpusArgsDict']]]] available_vcpus: The available VCPU for the dedicated host.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostAvailableVcpusArgs', 'IsDedicatedHostAvailableVcpusArgsDict', 'outputs.IsDedicatedHostAvailableVcpus']]]] available_vcpus: The available VCPU for the dedicated host.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the dedicated host was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this dedicated host.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskArgs', 'IsDedicatedHostDiskArgsDict']]]] disks: Collection of the dedicated host's disks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskArgs', 'IsDedicatedHostDiskArgsDict', 'outputs.IsDedicatedHostDisk']]]] disks: Collection of the dedicated host's disks.
         :param pulumi.Input[_builtins.str] host_group: The unique identifier of the dedicated host group for this dedicated host.
         :param pulumi.Input[_builtins.str] href: The URL for this dedicated host.
         :param pulumi.Input[_builtins.bool] instance_placement_enabled: If set to true, instances can be placed on this dedicated host.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostInstanceArgs', 'IsDedicatedHostInstanceArgsDict']]]] instances: Array of instances that are allocated to this dedicated host.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostInstanceArgs', 'IsDedicatedHostInstanceArgsDict', 'outputs.IsDedicatedHostInstance']]]] instances: Array of instances that are allocated to this dedicated host.
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the dedicated host resource.
         :param pulumi.Input[_builtins.int] memory: The total amount of memory in gibibytes for this host.
         :param pulumi.Input[_builtins.str] name: The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostNumaArgs', 'IsDedicatedHostNumaArgsDict']]]] numas: The dedicated host NUMA configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostNumaArgs', 'IsDedicatedHostNumaArgsDict', 'outputs.IsDedicatedHostNuma']]]] numas: The dedicated host NUMA configuration
         :param pulumi.Input[_builtins.str] profile: The Globally unique name of the dedicated host profile to use for this dedicated host.
         :param pulumi.Input[_builtins.bool] provisionable: Indicates whether this dedicated host is available for instance creation.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier for the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
         :param pulumi.Input[_builtins.str] resource_type: The type of resource referenced.
         :param pulumi.Input[_builtins.int] socket_count: The total number of sockets for this host.
         :param pulumi.Input[_builtins.str] state: The administrative state of the dedicated host.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the dedicated host on which the unexpected property value was encountered.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostSupportedInstanceProfileArgs', 'IsDedicatedHostSupportedInstanceProfileArgsDict']]]] supported_instance_profiles: Array of instance profiles that can be used by instances placed on this dedicated host.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostVcpusArgs', 'IsDedicatedHostVcpusArgsDict']]]] vcpus: The total VCPU of the dedicated host.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostSupportedInstanceProfileArgs', 'IsDedicatedHostSupportedInstanceProfileArgsDict', 'outputs.IsDedicatedHostSupportedInstanceProfile']]]] supported_instance_profiles: Array of instance profiles that can be used by instances placed on this dedicated host.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostVcpusArgs', 'IsDedicatedHostVcpusArgsDict', 'outputs.IsDedicatedHostVcpus']]]] vcpus: The total VCPU of the dedicated host.
         :param pulumi.Input[_builtins.str] zone: The globally unique name of the zone this dedicated host resides in.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

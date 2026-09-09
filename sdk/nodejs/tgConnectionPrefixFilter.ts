@@ -133,43 +133,43 @@ export interface TgConnectionPrefixFilterState {
     /**
      * Whether to permit or deny the prefix filter
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Identifier of prefix filter that handles ordering
      */
-    before?: pulumi.Input<string>;
+    before?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection identifier
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that this prefix filter was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection Prefix Filter identifier
      */
-    filterId?: pulumi.Input<string>;
+    filterId?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway identifier
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * IP Prefix GE
      */
-    ge?: pulumi.Input<number>;
+    ge?: pulumi.Input<number | undefined>;
     /**
      * IP Prefix LE
      */
-    le?: pulumi.Input<number>;
+    le?: pulumi.Input<number | undefined>;
     /**
      * IP Prefix
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * The date and time that this prefix filter was last updated
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -183,7 +183,7 @@ export interface TgConnectionPrefixFilterArgs {
     /**
      * Identifier of prefix filter that handles ordering
      */
-    before?: pulumi.Input<string>;
+    before?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection identifier
      */
@@ -195,11 +195,11 @@ export interface TgConnectionPrefixFilterArgs {
     /**
      * IP Prefix GE
      */
-    ge?: pulumi.Input<number>;
+    ge?: pulumi.Input<number | undefined>;
     /**
      * IP Prefix LE
      */
-    le?: pulumi.Input<number>;
+    le?: pulumi.Input<number | undefined>;
     /**
      * IP Prefix
      */

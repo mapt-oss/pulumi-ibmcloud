@@ -134,8 +134,8 @@ def get_tg_route_report(gateway: Optional[_builtins.str] = None,
         route_report=pulumi.get(__ret__, 'route_report'),
         status=pulumi.get(__ret__, 'status'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_tg_route_report_output(gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                               route_report: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tg_route_report_output(gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                               route_report: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTgRouteReportResult]:
     """
     Use this data source to access information about an existing resource.

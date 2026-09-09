@@ -143,8 +143,8 @@ def get_is_instance_disk(disk: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         size=pulumi.get(__ret__, 'size'))
-def get_is_instance_disk_output(disk: Optional[pulumi.Input[_builtins.str]] = None,
-                                instance: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_disk_output(disk: pulumi.Input[Optional[_builtins.str]] = None,
+                                instance: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceDiskResult]:
     """
     Use this data source to access information about an existing resource.

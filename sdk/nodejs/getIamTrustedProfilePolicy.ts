@@ -62,11 +62,11 @@ export function getIamTrustedProfilePolicyOutput(args?: GetIamTrustedProfilePoli
  * A collection of arguments for invoking getIamTrustedProfilePolicy.
  */
 export interface GetIamTrustedProfilePolicyOutputArgs {
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * @deprecated This field is deprecated and will be removed starting with this 1.82.0 release. Please use iamId field instead.
      */
-    profileId?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
-    transactionId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

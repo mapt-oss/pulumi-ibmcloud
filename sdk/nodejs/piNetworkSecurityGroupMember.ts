@@ -141,51 +141,51 @@ export interface PiNetworkSecurityGroupMemberState {
     /**
      * The network security group's crn.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the network security group is the default network security group in the workspace.
      */
-    default?: pulumi.Input<boolean>;
+    default?: pulumi.Input<boolean | undefined>;
     /**
      * The list of IPv4 addresses and, or network interfaces in the network security group.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberMember>[] | undefined>;
     /**
      * The name of the network security group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the network security group.
      */
-    networkSecurityGroupMemberId?: pulumi.Input<string>;
+    networkSecurityGroupMemberId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * network security group ID.
      */
-    piNetworkSecurityGroupId?: pulumi.Input<string>;
+    piNetworkSecurityGroupId?: pulumi.Input<string | undefined>;
     /**
      * network security group member ID.
      */
-    piNetworkSecurityGroupMemberId?: pulumi.Input<string>;
+    piNetworkSecurityGroupMemberId?: pulumi.Input<string | undefined>;
     /**
      * The target member to add. An IP4 address if ipv4-address type or a network interface ID if network-interface type.
      */
-    piTarget?: pulumi.Input<string>;
+    piTarget?: pulumi.Input<string | undefined>;
     /**
      * The type of member.
      */
-    piType?: pulumi.Input<string>;
+    piType?: pulumi.Input<string | undefined>;
     /**
      * The list of rules in the network security group.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRule>[] | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -203,17 +203,17 @@ export interface PiNetworkSecurityGroupMemberArgs {
     /**
      * network security group member ID.
      */
-    piNetworkSecurityGroupMemberId?: pulumi.Input<string>;
+    piNetworkSecurityGroupMemberId?: pulumi.Input<string | undefined>;
     /**
      * The target member to add. An IP4 address if ipv4-address type or a network interface ID if network-interface type.
      */
-    piTarget?: pulumi.Input<string>;
+    piTarget?: pulumi.Input<string | undefined>;
     /**
      * The type of member.
      */
-    piType?: pulumi.Input<string>;
+    piType?: pulumi.Input<string | undefined>;
     /**
      * The list of rules in the network security group.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRule>[] | undefined>;
 }

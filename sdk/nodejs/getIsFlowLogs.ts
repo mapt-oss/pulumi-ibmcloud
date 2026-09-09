@@ -68,11 +68,11 @@ export function getIsFlowLogsOutput(args?: GetIsFlowLogsOutputArgs, opts?: pulum
  * A collection of arguments for invoking getIsFlowLogs.
  */
 export interface GetIsFlowLogsOutputArgs {
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    target?: pulumi.Input<string>;
-    targetResourceType?: pulumi.Input<string>;
-    vpc?: pulumi.Input<string>;
-    vpcCrn?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    target?: pulumi.Input<string | undefined>;
+    targetResourceType?: pulumi.Input<string | undefined>;
+    vpc?: pulumi.Input<string | undefined>;
+    vpcCrn?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

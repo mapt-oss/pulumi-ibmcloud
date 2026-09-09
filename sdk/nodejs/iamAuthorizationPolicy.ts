@@ -153,60 +153,60 @@ export interface IamAuthorizationPolicyState {
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicyResourceAttribute>[] | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The source resource group Id
      */
-    sourceResourceGroupId?: pulumi.Input<string>;
+    sourceResourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The source resource instance Id
      */
-    sourceResourceInstanceId?: pulumi.Input<string>;
+    sourceResourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of source service
      */
-    sourceResourceType?: pulumi.Input<string>;
+    sourceResourceType?: pulumi.Input<string | undefined>;
     /**
      * Account GUID of source service
      */
-    sourceServiceAccount?: pulumi.Input<string>;
+    sourceServiceAccount?: pulumi.Input<string | undefined>;
     /**
      * The source service name
      */
-    sourceServiceName?: pulumi.Input<string>;
+    sourceServiceName?: pulumi.Input<string | undefined>;
     /**
      * Set subject attributes.
      */
-    subjectAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicySubjectAttribute>[]>;
+    subjectAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicySubjectAttribute>[] | undefined>;
     /**
      * The target resource group Id
      */
-    targetResourceGroupId?: pulumi.Input<string>;
+    targetResourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The target resource instance Id
      */
-    targetResourceInstanceId?: pulumi.Input<string>;
+    targetResourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of target service
      */
-    targetResourceType?: pulumi.Input<string>;
+    targetResourceType?: pulumi.Input<string | undefined>;
     /**
      * The target service name
      */
-    targetServiceName?: pulumi.Input<string>;
+    targetServiceName?: pulumi.Input<string | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -216,11 +216,11 @@ export interface IamAuthorizationPolicyArgs {
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicyResourceAttribute>[] | undefined>;
     /**
      * Role names of the policy definition
      */
@@ -228,45 +228,45 @@ export interface IamAuthorizationPolicyArgs {
     /**
      * The source resource group Id
      */
-    sourceResourceGroupId?: pulumi.Input<string>;
+    sourceResourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The source resource instance Id
      */
-    sourceResourceInstanceId?: pulumi.Input<string>;
+    sourceResourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of source service
      */
-    sourceResourceType?: pulumi.Input<string>;
+    sourceResourceType?: pulumi.Input<string | undefined>;
     /**
      * Account GUID of source service
      */
-    sourceServiceAccount?: pulumi.Input<string>;
+    sourceServiceAccount?: pulumi.Input<string | undefined>;
     /**
      * The source service name
      */
-    sourceServiceName?: pulumi.Input<string>;
+    sourceServiceName?: pulumi.Input<string | undefined>;
     /**
      * Set subject attributes.
      */
-    subjectAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicySubjectAttribute>[]>;
+    subjectAttributes?: pulumi.Input<pulumi.Input<inputs.IamAuthorizationPolicySubjectAttribute>[] | undefined>;
     /**
      * The target resource group Id
      */
-    targetResourceGroupId?: pulumi.Input<string>;
+    targetResourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The target resource instance Id
      */
-    targetResourceInstanceId?: pulumi.Input<string>;
+    targetResourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of target service
      */
-    targetResourceType?: pulumi.Input<string>;
+    targetResourceType?: pulumi.Input<string | undefined>;
     /**
      * The target service name
      */
-    targetServiceName?: pulumi.Input<string>;
+    targetServiceName?: pulumi.Input<string | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

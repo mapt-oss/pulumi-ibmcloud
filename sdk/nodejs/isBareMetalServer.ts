@@ -270,128 +270,128 @@ export interface IsBareMetalServerState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This restart/start/stops a bare metal server.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The total bandwidth (in megabits per second)
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * The unique identifier for this bare metal server disk
      */
-    bootTarget?: pulumi.Input<string>;
+    bootTarget?: pulumi.Input<string | undefined>;
     /**
      * The bare metal server CPU configuration
      */
-    cpus?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerCpus>[]>;
+    cpus?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerCpus>[] | undefined>;
     /**
      * The CRN for this bare metal server
      */
-    crn?: pulumi.Input<string>;
-    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerDefaultTrustedProfile>;
+    crn?: pulumi.Input<string | undefined>;
+    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerDefaultTrustedProfile | undefined>;
     /**
      * Enables stopping type of the bare metal server before deleting
      */
-    deleteType?: pulumi.Input<string>;
+    deleteType?: pulumi.Input<string | undefined>;
     /**
      * The disks for this bare metal server, including any disks that are associated with the boot_target.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerDisk>[]>;
+    disks?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerDisk>[] | undefined>;
     /**
      * Indicates whether secure boot is enabled. If enabled, the image must support secure boot or the server will fail to boot.
      */
-    enableSecureBoot?: pulumi.Input<boolean>;
+    enableSecureBoot?: pulumi.Input<boolean | undefined>;
     /**
      * The type of firmware update available
      */
-    firmwareUpdateTypeAvailable?: pulumi.Input<string>;
+    firmwareUpdateTypeAvailable?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current healthState (if any).
      */
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerHealthReason>[]>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerHealthReason>[] | undefined>;
     /**
      * The health of this resource
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * The URL for this bare metal server
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * image id
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * SSH key Ids for the bare metal server
      */
-    keys?: pulumi.Input<pulumi.Input<string>[]>;
+    keys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The amount of memory, truncated to whole gibibytes
      */
-    memory?: pulumi.Input<number>;
+    memory?: pulumi.Input<number | undefined>;
     /**
      * The metadata service configuration
      */
-    metadataService?: pulumi.Input<inputs.IsBareMetalServerMetadataService>;
+    metadataService?: pulumi.Input<inputs.IsBareMetalServerMetadataService | undefined>;
     /**
      * Bare metal server name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The network attachments for this bare metal server, including the primary network attachment.
      */
-    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachment>[]>;
-    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkInterface>[]>;
+    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachment>[] | undefined>;
+    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkInterface>[] | undefined>;
     /**
      * The primary network attachment.
      */
-    primaryNetworkAttachment?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachment>;
+    primaryNetworkAttachment?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachment | undefined>;
     /**
      * Primary Network interface info
      */
-    primaryNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkInterface>;
+    primaryNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkInterface | undefined>;
     /**
      * profile name
      */
-    profile?: pulumi.Input<string>;
-    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinity>[]>;
+    profile?: pulumi.Input<string | undefined>;
+    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinity>[] | undefined>;
     /**
      * The reservation used by this bare metal server
      */
-    reservations?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservation>[]>;
+    reservations?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservation>[] | undefined>;
     /**
      * Resource group name
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Resource type name
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Bare metal server status
      */
-    status?: pulumi.Input<string>;
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerStatusReason>[]>;
+    status?: pulumi.Input<string | undefined>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerStatusReason>[] | undefined>;
     /**
      * Tags for the Bare metal server
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    trustedPlatformModule?: pulumi.Input<inputs.IsBareMetalServerTrustedPlatformModule>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    trustedPlatformModule?: pulumi.Input<inputs.IsBareMetalServerTrustedPlatformModule | undefined>;
     /**
      * User data given for the bare metal server
      */
-    userData?: pulumi.Input<string>;
+    userData?: pulumi.Input<string | undefined>;
     /**
      * The VPC the bare metal server is to be a part of
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * Zone name
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -401,24 +401,24 @@ export interface IsBareMetalServerArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This restart/start/stops a bare metal server.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The total bandwidth (in megabits per second)
      */
-    bandwidth?: pulumi.Input<number>;
-    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerDefaultTrustedProfile>;
+    bandwidth?: pulumi.Input<number | undefined>;
+    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerDefaultTrustedProfile | undefined>;
     /**
      * Enables stopping type of the bare metal server before deleting
      */
-    deleteType?: pulumi.Input<string>;
+    deleteType?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether secure boot is enabled. If enabled, the image must support secure boot or the server will fail to boot.
      */
-    enableSecureBoot?: pulumi.Input<boolean>;
+    enableSecureBoot?: pulumi.Input<boolean | undefined>;
     /**
      * image id
      */
@@ -430,46 +430,46 @@ export interface IsBareMetalServerArgs {
     /**
      * The metadata service configuration
      */
-    metadataService?: pulumi.Input<inputs.IsBareMetalServerMetadataService>;
+    metadataService?: pulumi.Input<inputs.IsBareMetalServerMetadataService | undefined>;
     /**
      * Bare metal server name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The network attachments for this bare metal server, including the primary network attachment.
      */
-    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachment>[]>;
-    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkInterface>[]>;
+    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachment>[] | undefined>;
+    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkInterface>[] | undefined>;
     /**
      * The primary network attachment.
      */
-    primaryNetworkAttachment?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachment>;
+    primaryNetworkAttachment?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachment | undefined>;
     /**
      * Primary Network interface info
      */
-    primaryNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkInterface>;
+    primaryNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkInterface | undefined>;
     /**
      * profile name
      */
     profile: pulumi.Input<string>;
-    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinity>[]>;
+    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinity>[] | undefined>;
     /**
      * Resource group name
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Tags for the Bare metal server
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    trustedPlatformModule?: pulumi.Input<inputs.IsBareMetalServerTrustedPlatformModule>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    trustedPlatformModule?: pulumi.Input<inputs.IsBareMetalServerTrustedPlatformModule | undefined>;
     /**
      * User data given for the bare metal server
      */
-    userData?: pulumi.Input<string>;
+    userData?: pulumi.Input<string | undefined>;
     /**
      * The VPC the bare metal server is to be a part of
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * Zone name
      */

@@ -27,7 +27,7 @@ class GetPiConsoleLanguagesResult:
     """
     A collection of values returned by getPiConsoleLanguages.
     """
-    def __init__(__self__, console_languages=None, id=None, pi_cloud_instance_id=None, pi_instance_name=None):
+    def __init__(__self__, console_languages=None, id=None, pi_cloud_instance_id=None, pi_instance_id=None, pi_instance_name=None):
         if console_languages and not isinstance(console_languages, list):
             raise TypeError("Expected argument 'console_languages' to be a list")
         pulumi.set(__self__, "console_languages", console_languages)
@@ -37,6 +37,9 @@ class GetPiConsoleLanguagesResult:
         if pi_cloud_instance_id and not isinstance(pi_cloud_instance_id, str):
             raise TypeError("Expected argument 'pi_cloud_instance_id' to be a str")
         pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
+        if pi_instance_id and not isinstance(pi_instance_id, str):
+            raise TypeError("Expected argument 'pi_instance_id' to be a str")
+        pulumi.set(__self__, "pi_instance_id", pi_instance_id)
         if pi_instance_name and not isinstance(pi_instance_name, str):
             raise TypeError("Expected argument 'pi_instance_name' to be a str")
         pulumi.set(__self__, "pi_instance_name", pi_instance_name)
@@ -60,8 +63,14 @@ class GetPiConsoleLanguagesResult:
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @_builtins.property
+    @pulumi.getter(name="piInstanceId")
+    def pi_instance_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "pi_instance_id")
+
+    @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> _builtins.str:
+    @_utilities.deprecated("""The pi_instance_name field is deprecated. Please use pi_instance_id instead""")
+    def pi_instance_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "pi_instance_name")
 
 
@@ -74,10 +83,12 @@ class AwaitableGetPiConsoleLanguagesResult(GetPiConsoleLanguagesResult):
             console_languages=self.console_languages,
             id=self.id,
             pi_cloud_instance_id=self.pi_cloud_instance_id,
+            pi_instance_id=self.pi_instance_id,
             pi_instance_name=self.pi_instance_name)
 
 
 def get_pi_console_languages(pi_cloud_instance_id: Optional[_builtins.str] = None,
+                             pi_instance_id: Optional[_builtins.str] = None,
                              pi_instance_name: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPiConsoleLanguagesResult:
     """
@@ -85,6 +96,7 @@ def get_pi_console_languages(pi_cloud_instance_id: Optional[_builtins.str] = Non
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getPiConsoleLanguages:getPiConsoleLanguages', __args__, opts=opts, typ=GetPiConsoleLanguagesResult).value
@@ -93,15 +105,18 @@ def get_pi_console_languages(pi_cloud_instance_id: Optional[_builtins.str] = Non
         console_languages=pulumi.get(__ret__, 'console_languages'),
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__ret__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__ret__, 'pi_instance_name'))
-def get_pi_console_languages_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_console_languages_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    pi_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    pi_instance_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiConsoleLanguagesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getPiConsoleLanguages:getPiConsoleLanguages', __args__, opts=opts, typ=GetPiConsoleLanguagesResult)
@@ -109,4 +124,5 @@ def get_pi_console_languages_output(pi_cloud_instance_id: Optional[pulumi.Input[
         console_languages=pulumi.get(__response__, 'console_languages'),
         id=pulumi.get(__response__, 'id'),
         pi_cloud_instance_id=pulumi.get(__response__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__response__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__response__, 'pi_instance_name')))

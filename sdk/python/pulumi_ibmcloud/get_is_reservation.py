@@ -183,8 +183,8 @@ class AwaitableGetIsReservationResult(GetIsReservationResult):
             zone=self.zone)
 
 
-def get_is_reservation(capacities: Optional[Sequence[Union['GetIsReservationCapacityArgs', 'GetIsReservationCapacityArgsDict']]] = None,
-                       committed_uses: Optional[Sequence[Union['GetIsReservationCommittedUseArgs', 'GetIsReservationCommittedUseArgsDict']]] = None,
+def get_is_reservation(capacities: Optional[Sequence[Union['GetIsReservationCapacityArgs', 'GetIsReservationCapacityArgsDict', 'outputs.GetIsReservationCapacityResult']]] = None,
+                       committed_uses: Optional[Sequence[Union['GetIsReservationCommittedUseArgs', 'GetIsReservationCommittedUseArgsDict', 'outputs.GetIsReservationCommittedUseResult']]] = None,
                        identifier: Optional[_builtins.str] = None,
                        name: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIsReservationResult:
@@ -216,10 +216,10 @@ def get_is_reservation(capacities: Optional[Sequence[Union['GetIsReservationCapa
         status=pulumi.get(__ret__, 'status'),
         status_reasons=pulumi.get(__ret__, 'status_reasons'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_reservation_output(capacities: Optional[pulumi.Input[Optional[Sequence[Union['GetIsReservationCapacityArgs', 'GetIsReservationCapacityArgsDict']]]]] = None,
-                              committed_uses: Optional[pulumi.Input[Optional[Sequence[Union['GetIsReservationCommittedUseArgs', 'GetIsReservationCommittedUseArgsDict']]]]] = None,
-                              identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_reservation_output(capacities: pulumi.Input[Optional[Optional[Sequence[Union['GetIsReservationCapacityArgs', 'GetIsReservationCapacityArgsDict', 'outputs.GetIsReservationCapacityResult']]]]] = None,
+                              committed_uses: pulumi.Input[Optional[Optional[Sequence[Union['GetIsReservationCommittedUseArgs', 'GetIsReservationCommittedUseArgsDict', 'outputs.GetIsReservationCommittedUseResult']]]]] = None,
+                              identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsReservationResult]:
     """
     Use this data source to access information about an existing resource.

@@ -33,7 +33,7 @@ export class IamApiKey extends pulumi.CustomResource {
     }
 
     /**
-     * The account ID of the API key.
+     * ID of the account that this API key authenticates for.
      */
     declare public /*out*/ readonly accountId: pulumi.Output<string>;
     /**
@@ -68,6 +68,10 @@ export class IamApiKey extends pulumi.CustomResource {
      * Version of the API Key details object. You need to specify this value when updating the API key to avoid stale updates.
      */
     declare public /*out*/ readonly entityTag: pulumi.Output<string>;
+    /**
+     * Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expiresAt and modifiedAt timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
+     */
+    declare public readonly expiresAt: pulumi.Output<string | undefined>;
     /**
      * File where api key is to be stored
      */
@@ -115,6 +119,7 @@ export class IamApiKey extends pulumi.CustomResource {
             resourceInputs["description"] = state?.description;
             resourceInputs["entityLock"] = state?.entityLock;
             resourceInputs["entityTag"] = state?.entityTag;
+            resourceInputs["expiresAt"] = state?.expiresAt;
             resourceInputs["file"] = state?.file;
             resourceInputs["iamId"] = state?.iamId;
             resourceInputs["locked"] = state?.locked;
@@ -126,6 +131,7 @@ export class IamApiKey extends pulumi.CustomResource {
             resourceInputs["apikey"] = args?.apikey ? pulumi.secret(args.apikey) : undefined;
             resourceInputs["description"] = args?.description;
             resourceInputs["entityLock"] = args?.entityLock;
+            resourceInputs["expiresAt"] = args?.expiresAt;
             resourceInputs["file"] = args?.file;
             resourceInputs["name"] = args?.name;
             resourceInputs["storeValue"] = args?.storeValue;
@@ -151,65 +157,69 @@ export class IamApiKey extends pulumi.CustomResource {
  */
 export interface IamApiKeyState {
     /**
-     * The account ID of the API key.
+     * ID of the account that this API key authenticates for.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
      */
-    apikey?: pulumi.Input<string>;
+    apikey?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of this API Key.
      */
-    apikeyId?: pulumi.Input<string>;
+    apikeyId?: pulumi.Input<string | undefined>;
     /**
      * If set contains a date time string of the creation date in ISO format.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of the user or service which created the API key.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::apikey:1234-9012-5678'.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the API key is locked for further write operations. False by default.
      */
-    entityLock?: pulumi.Input<string>;
+    entityLock?: pulumi.Input<string | undefined>;
     /**
      * Version of the API Key details object. You need to specify this value when updating the API key to avoid stale updates.
      */
-    entityTag?: pulumi.Input<string>;
+    entityTag?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expiresAt and modifiedAt timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
+     */
+    expiresAt?: pulumi.Input<string | undefined>;
     /**
      * File where api key is to be stored
      */
-    file?: pulumi.Input<string>;
+    file?: pulumi.Input<string | undefined>;
     /**
      * The iamId that this API key authenticates.
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * The API key cannot be changed if set to true.
      */
-    locked?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean | undefined>;
     /**
      * If set contains a date time string of the last modification date in ISO format.
      */
-    modifiedAt?: pulumi.Input<string>;
+    modifiedAt?: pulumi.Input<string | undefined>;
     /**
      * Name of the API key. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the API key.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Send true or false to set whether the API key value is retrievable in the future by using the Get details of an API key request. If you create an API key for a user, you must specify `false` or omit the value. We don't allow storing of API keys for users.
      */
-    storeValue?: pulumi.Input<boolean>;
+    storeValue?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -219,25 +229,29 @@ export interface IamApiKeyArgs {
     /**
      * You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
      */
-    apikey?: pulumi.Input<string>;
+    apikey?: pulumi.Input<string | undefined>;
     /**
      * The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the API key is locked for further write operations. False by default.
      */
-    entityLock?: pulumi.Input<string>;
+    entityLock?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expiresAt and modifiedAt timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
+     */
+    expiresAt?: pulumi.Input<string | undefined>;
     /**
      * File where api key is to be stored
      */
-    file?: pulumi.Input<string>;
+    file?: pulumi.Input<string | undefined>;
     /**
      * Name of the API key. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the API key.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Send true or false to set whether the API key value is retrievable in the future by using the Get details of an API key request. If you create an API key for a user, you must specify `false` or omit the value. We don't allow storing of API keys for users.
      */
-    storeValue?: pulumi.Input<boolean>;
+    storeValue?: pulumi.Input<boolean | undefined>;
 }

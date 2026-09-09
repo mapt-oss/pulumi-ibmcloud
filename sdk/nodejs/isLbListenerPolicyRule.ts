@@ -130,34 +130,34 @@ export interface IsLbListenerPolicyRuleState {
     /**
      * Condition info of the rule.
      */
-    condition?: pulumi.Input<string>;
-    field?: pulumi.Input<string>;
+    condition?: pulumi.Input<string | undefined>;
+    field?: pulumi.Input<string | undefined>;
     /**
      * Loadbalancer ID
      */
-    lb?: pulumi.Input<string>;
+    lb?: pulumi.Input<string | undefined>;
     /**
      * Listener ID.
      */
-    listener?: pulumi.Input<string>;
+    listener?: pulumi.Input<string | undefined>;
     /**
      * Listener Policy ID
      */
-    policy?: pulumi.Input<string>;
-    provisioningStatus?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
+    provisioningStatus?: pulumi.Input<string | undefined>;
     /**
      * The crn of the LB resource
      */
-    relatedCrn?: pulumi.Input<string>;
-    rule?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
+    rule?: pulumi.Input<string | undefined>;
     /**
      * Policy rule type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * policy rule value info
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -168,7 +168,7 @@ export interface IsLbListenerPolicyRuleArgs {
      * Condition info of the rule.
      */
     condition: pulumi.Input<string>;
-    field?: pulumi.Input<string>;
+    field?: pulumi.Input<string | undefined>;
     /**
      * Loadbalancer ID
      */

@@ -23,15 +23,16 @@ class IsBackupPolicyPlanArgs:
     def __init__(__self__, *,
                  backup_policy_id: pulumi.Input[_builtins.str],
                  cron_spec: pulumi.Input[_builtins.str],
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attach_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 clone_policy: Optional[pulumi.Input['IsBackupPolicyPlanClonePolicyArgs']] = None,
-                 copy_user_tags: Optional[pulumi.Input[_builtins.bool]] = None,
-                 deletion_trigger: Optional[pulumi.Input['IsBackupPolicyPlanDeletionTriggerArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_region_policies: Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attach_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 clone_policy: pulumi.Input[Optional['IsBackupPolicyPlanClonePolicyArgs']] = None,
+                 copy_user_tags: pulumi.Input[Optional[_builtins.bool]] = None,
+                 deletion_trigger: pulumi.Input[Optional['IsBackupPolicyPlanDeletionTriggerArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_region_policies: pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]] = None):
         """
         The set of arguments for constructing a IsBackupPolicyPlan resource.
+
         :param pulumi.Input[_builtins.str] backup_policy_id: The backup policy identifier.
         :param pulumi.Input[_builtins.str] cron_spec: The cron specification for the backup schedule.
         :param pulumi.Input[_builtins.bool] active: Indicates whether the plan is active.
@@ -83,103 +84,104 @@ class IsBackupPolicyPlanArgs:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the plan is active.
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="attachUserTags")
-    def attach_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attach_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User tags to attach to each backup (snapshot) created by this plan. If unspecified, no user tags will be attached.
         """
         return pulumi.get(self, "attach_user_tags")
 
     @attach_user_tags.setter
-    def attach_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attach_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attach_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="clonePolicy")
-    def clone_policy(self) -> Optional[pulumi.Input['IsBackupPolicyPlanClonePolicyArgs']]:
+    def clone_policy(self) -> pulumi.Input[Optional['IsBackupPolicyPlanClonePolicyArgs']]:
         return pulumi.get(self, "clone_policy")
 
     @clone_policy.setter
-    def clone_policy(self, value: Optional[pulumi.Input['IsBackupPolicyPlanClonePolicyArgs']]):
+    def clone_policy(self, value: pulumi.Input[Optional['IsBackupPolicyPlanClonePolicyArgs']]):
         pulumi.set(self, "clone_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="copyUserTags")
-    def copy_user_tags(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def copy_user_tags(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to copy the source's user tags to the created backups (snapshots).
         """
         return pulumi.get(self, "copy_user_tags")
 
     @copy_user_tags.setter
-    def copy_user_tags(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def copy_user_tags(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "copy_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionTrigger")
-    def deletion_trigger(self) -> Optional[pulumi.Input['IsBackupPolicyPlanDeletionTriggerArgs']]:
+    def deletion_trigger(self) -> pulumi.Input[Optional['IsBackupPolicyPlanDeletionTriggerArgs']]:
         return pulumi.get(self, "deletion_trigger")
 
     @deletion_trigger.setter
-    def deletion_trigger(self, value: Optional[pulumi.Input['IsBackupPolicyPlanDeletionTriggerArgs']]):
+    def deletion_trigger(self, value: pulumi.Input[Optional['IsBackupPolicyPlanDeletionTriggerArgs']]):
         pulumi.set(self, "deletion_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this backup policy plan. Names must be unique within the backup policy this plan resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteRegionPolicies")
-    def remote_region_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]:
+    def remote_region_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]:
         """
         Backup policy plan cross region rule.
         """
         return pulumi.get(self, "remote_region_policies")
 
     @remote_region_policies.setter
-    def remote_region_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]):
+    def remote_region_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]):
         pulumi.set(self, "remote_region_policies", value)
 
 
 @pulumi.input_type
 class _IsBackupPolicyPlanState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attach_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_policy: Optional[pulumi.Input['IsBackupPolicyPlanClonePolicyArgs']] = None,
-                 copy_user_tags: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 deletion_trigger: Optional[pulumi.Input['IsBackupPolicyPlanDeletionTriggerArgs']] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_region_policies: Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attach_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_policy: pulumi.Input[Optional['IsBackupPolicyPlanClonePolicyArgs']] = None,
+                 copy_user_tags: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 deletion_trigger: pulumi.Input[Optional['IsBackupPolicyPlanDeletionTriggerArgs']] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_region_policies: pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsBackupPolicyPlan resources.
+
         :param pulumi.Input[_builtins.bool] active: Indicates whether the plan is active.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attach_user_tags: User tags to attach to each backup (snapshot) created by this plan. If unspecified, no user tags will be attached.
         :param pulumi.Input[_builtins.str] backup_policy_id: The backup policy identifier.
@@ -227,176 +229,176 @@ class _IsBackupPolicyPlanState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the plan is active.
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="attachUserTags")
-    def attach_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attach_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User tags to attach to each backup (snapshot) created by this plan. If unspecified, no user tags will be attached.
         """
         return pulumi.get(self, "attach_user_tags")
 
     @attach_user_tags.setter
-    def attach_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attach_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attach_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyId")
-    def backup_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The backup policy identifier.
         """
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
-    def backup_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyPlanId")
-    def backup_policy_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_policy_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The backup policy identifier.
         """
         return pulumi.get(self, "backup_policy_plan_id")
 
     @backup_policy_plan_id.setter
-    def backup_policy_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_policy_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_policy_plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clonePolicy")
-    def clone_policy(self) -> Optional[pulumi.Input['IsBackupPolicyPlanClonePolicyArgs']]:
+    def clone_policy(self) -> pulumi.Input[Optional['IsBackupPolicyPlanClonePolicyArgs']]:
         return pulumi.get(self, "clone_policy")
 
     @clone_policy.setter
-    def clone_policy(self, value: Optional[pulumi.Input['IsBackupPolicyPlanClonePolicyArgs']]):
+    def clone_policy(self, value: pulumi.Input[Optional['IsBackupPolicyPlanClonePolicyArgs']]):
         pulumi.set(self, "clone_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="copyUserTags")
-    def copy_user_tags(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def copy_user_tags(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to copy the source's user tags to the created backups (snapshots).
         """
         return pulumi.get(self, "copy_user_tags")
 
     @copy_user_tags.setter
-    def copy_user_tags(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def copy_user_tags(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "copy_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the backup policy plan was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="cronSpec")
-    def cron_spec(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cron_spec(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cron specification for the backup schedule.
         """
         return pulumi.get(self, "cron_spec")
 
     @cron_spec.setter
-    def cron_spec(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cron_spec(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cron_spec", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionTrigger")
-    def deletion_trigger(self) -> Optional[pulumi.Input['IsBackupPolicyPlanDeletionTriggerArgs']]:
+    def deletion_trigger(self) -> pulumi.Input[Optional['IsBackupPolicyPlanDeletionTriggerArgs']]:
         return pulumi.get(self, "deletion_trigger")
 
     @deletion_trigger.setter
-    def deletion_trigger(self, value: Optional[pulumi.Input['IsBackupPolicyPlanDeletionTriggerArgs']]):
+    def deletion_trigger(self, value: pulumi.Input[Optional['IsBackupPolicyPlanDeletionTriggerArgs']]):
         pulumi.set(self, "deletion_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this backup policy plan.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of this backup policy plan.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this backup policy plan. Names must be unique within the backup policy this plan resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteRegionPolicies")
-    def remote_region_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]:
+    def remote_region_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]:
         """
         Backup policy plan cross region rule.
         """
         return pulumi.get(self, "remote_region_policies")
 
     @remote_region_policies.setter
-    def remote_region_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]):
+    def remote_region_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBackupPolicyPlanRemoteRegionPolicyArgs']]]]):
         pulumi.set(self, "remote_region_policies", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the BackupPolicyPlan.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -406,18 +408,19 @@ class IsBackupPolicyPlan(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attach_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_policy: Optional[pulumi.Input[Union['IsBackupPolicyPlanClonePolicyArgs', 'IsBackupPolicyPlanClonePolicyArgsDict']]] = None,
-                 copy_user_tags: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 deletion_trigger: Optional[pulumi.Input[Union['IsBackupPolicyPlanDeletionTriggerArgs', 'IsBackupPolicyPlanDeletionTriggerArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_region_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict']]]]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attach_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_policy: pulumi.Input[Optional[Union['IsBackupPolicyPlanClonePolicyArgs', 'IsBackupPolicyPlanClonePolicyArgsDict', 'outputs.IsBackupPolicyPlanClonePolicy']]] = None,
+                 copy_user_tags: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 deletion_trigger: pulumi.Input[Optional[Union['IsBackupPolicyPlanDeletionTriggerArgs', 'IsBackupPolicyPlanDeletionTriggerArgsDict', 'outputs.IsBackupPolicyPlanDeletionTrigger']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_region_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict', 'outputs.IsBackupPolicyPlanRemoteRegionPolicy']]]]] = None,
                  __props__=None):
         """
         Create a IsBackupPolicyPlan resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: Indicates whether the plan is active.
@@ -426,7 +429,7 @@ class IsBackupPolicyPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] copy_user_tags: Indicates whether to copy the source's user tags to the created backups (snapshots).
         :param pulumi.Input[_builtins.str] cron_spec: The cron specification for the backup schedule.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this backup policy plan. Names must be unique within the backup policy this plan resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict']]]] remote_region_policies: Backup policy plan cross region rule.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict', 'outputs.IsBackupPolicyPlanRemoteRegionPolicy']]]] remote_region_policies: Backup policy plan cross region rule.
         """
         ...
     @overload
@@ -436,6 +439,7 @@ class IsBackupPolicyPlan(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBackupPolicyPlan resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBackupPolicyPlanArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -451,15 +455,15 @@ class IsBackupPolicyPlan(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 attach_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone_policy: Optional[pulumi.Input[Union['IsBackupPolicyPlanClonePolicyArgs', 'IsBackupPolicyPlanClonePolicyArgsDict']]] = None,
-                 copy_user_tags: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 deletion_trigger: Optional[pulumi.Input[Union['IsBackupPolicyPlanDeletionTriggerArgs', 'IsBackupPolicyPlanDeletionTriggerArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_region_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict']]]]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attach_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_policy: pulumi.Input[Optional[Union['IsBackupPolicyPlanClonePolicyArgs', 'IsBackupPolicyPlanClonePolicyArgsDict', 'outputs.IsBackupPolicyPlanClonePolicy']]] = None,
+                 copy_user_tags: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 deletion_trigger: pulumi.Input[Optional[Union['IsBackupPolicyPlanDeletionTriggerArgs', 'IsBackupPolicyPlanDeletionTriggerArgsDict', 'outputs.IsBackupPolicyPlanDeletionTrigger']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_region_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict', 'outputs.IsBackupPolicyPlanRemoteRegionPolicy']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -498,21 +502,21 @@ class IsBackupPolicyPlan(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            attach_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_policy_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            clone_policy: Optional[pulumi.Input[Union['IsBackupPolicyPlanClonePolicyArgs', 'IsBackupPolicyPlanClonePolicyArgsDict']]] = None,
-            copy_user_tags: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            cron_spec: Optional[pulumi.Input[_builtins.str]] = None,
-            deletion_trigger: Optional[pulumi.Input[Union['IsBackupPolicyPlanDeletionTriggerArgs', 'IsBackupPolicyPlanDeletionTriggerArgsDict']]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_region_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict']]]]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsBackupPolicyPlan':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            attach_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_policy_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            clone_policy: pulumi.Input[Optional[Union['IsBackupPolicyPlanClonePolicyArgs', 'IsBackupPolicyPlanClonePolicyArgsDict', 'outputs.IsBackupPolicyPlanClonePolicy']]] = None,
+            copy_user_tags: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            cron_spec: pulumi.Input[Optional[_builtins.str]] = None,
+            deletion_trigger: pulumi.Input[Optional[Union['IsBackupPolicyPlanDeletionTriggerArgs', 'IsBackupPolicyPlanDeletionTriggerArgsDict', 'outputs.IsBackupPolicyPlanDeletionTrigger']]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_region_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict', 'outputs.IsBackupPolicyPlanRemoteRegionPolicy']]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsBackupPolicyPlan':
         """
         Get an existing IsBackupPolicyPlan resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -530,7 +534,7 @@ class IsBackupPolicyPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] href: The URL for this backup policy plan.
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of this backup policy plan.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this backup policy plan. Names must be unique within the backup policy this plan resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict']]]] remote_region_policies: Backup policy plan cross region rule.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBackupPolicyPlanRemoteRegionPolicyArgs', 'IsBackupPolicyPlanRemoteRegionPolicyArgsDict', 'outputs.IsBackupPolicyPlanRemoteRegionPolicy']]]] remote_region_policies: Backup policy plan cross region rule.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.str] version: Version of the BackupPolicyPlan.
         """

@@ -129,43 +129,43 @@ export interface IsVpcDnsResolutionBindingState {
     /**
      * The date and time that the DNS resolution binding was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The endpoint gateways in the bound to VPC that are allowed to participate in this DNS resolution binding.The endpoint gateways may be remote and therefore may not be directly retrievable.
      */
-    endpointGateways?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGateway>[]>;
+    endpointGateways?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGateway>[] | undefined>;
     /**
      * The reasons for the current `healthState` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
      */
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingHealthReason>[]>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingHealthReason>[] | undefined>;
     /**
      * The health of this resource.- `ok`: No abnormal behavior detected- `degraded`: Experiencing compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * The URL for this DNS resolution binding.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the DNS resolution binding.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this DNS resolution binding. The name is unique across all DNS resolution bindings for the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
      */
-    vpc?: pulumi.Input<inputs.IsVpcDnsResolutionBindingVpc>;
+    vpc?: pulumi.Input<inputs.IsVpcDnsResolutionBindingVpc | undefined>;
     /**
      * The VPC identifier.
      */
-    vpcId?: pulumi.Input<string>;
+    vpcId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -175,7 +175,7 @@ export interface IsVpcDnsResolutionBindingArgs {
     /**
      * The name for this DNS resolution binding. The name is unique across all DNS resolution bindings for the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The VPC bound to for DNS resolution.The VPC may be remote and therefore may not be directly retrievable.
      */

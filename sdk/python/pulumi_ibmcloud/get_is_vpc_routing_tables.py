@@ -94,8 +94,8 @@ def get_is_vpc_routing_tables(is_default: Optional[_builtins.bool] = None,
         is_default=pulumi.get(__ret__, 'is_default'),
         routing_tables=pulumi.get(__ret__, 'routing_tables'),
         vpc=pulumi.get(__ret__, 'vpc'))
-def get_is_vpc_routing_tables_output(is_default: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                     vpc: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_vpc_routing_tables_output(is_default: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                     vpc: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpcRoutingTablesResult]:
     """
     Use this data source to access information about an existing resource.

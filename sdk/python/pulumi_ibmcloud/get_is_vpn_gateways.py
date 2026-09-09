@@ -94,8 +94,8 @@ def get_is_vpn_gateways(mode: Optional[_builtins.str] = None,
         mode=pulumi.get(__ret__, 'mode'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         vpn_gateways=pulumi.get(__ret__, 'vpn_gateways'))
-def get_is_vpn_gateways_output(mode: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_vpn_gateways_output(mode: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpnGatewaysResult]:
     """
     Use this data source to access information about an existing resource.

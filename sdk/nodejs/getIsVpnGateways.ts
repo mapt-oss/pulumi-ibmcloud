@@ -48,6 +48,6 @@ export function getIsVpnGatewaysOutput(args?: GetIsVpnGatewaysOutputArgs, opts?:
  * A collection of arguments for invoking getIsVpnGateways.
  */
 export interface GetIsVpnGatewaysOutputArgs {
-    mode?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

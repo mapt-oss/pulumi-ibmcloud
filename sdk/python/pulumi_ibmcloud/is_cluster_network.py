@@ -24,11 +24,12 @@ class IsClusterNetworkArgs:
                  profile: pulumi.Input[_builtins.str],
                  vpc: pulumi.Input['IsClusterNetworkVpcArgs'],
                  zone: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_prefixes: Optional[pulumi.Input['IsClusterNetworkSubnetPrefixesArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_prefixes: pulumi.Input[Optional['IsClusterNetworkSubnetPrefixesArgs']] = None):
         """
         The set of arguments for constructing a IsClusterNetwork resource.
+
         :param pulumi.Input[_builtins.str] profile: The globally unique name for this cluster network profile.
         :param pulumi.Input['IsClusterNetworkVpcArgs'] vpc: The VPC this cluster network resides in.
         :param pulumi.Input[_builtins.str] zone: The globally unique name for the zone this cluster network resides in.
@@ -84,59 +85,60 @@ class IsClusterNetworkArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network. The name must not be used by another cluster network in the region.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this resource group for this cluster network.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetPrefixes")
-    def subnet_prefixes(self) -> Optional[pulumi.Input['IsClusterNetworkSubnetPrefixesArgs']]:
+    def subnet_prefixes(self) -> pulumi.Input[Optional['IsClusterNetworkSubnetPrefixesArgs']]:
         """
         The IP address ranges available for subnets for this cluster network.
         """
         return pulumi.get(self, "subnet_prefixes")
 
     @subnet_prefixes.setter
-    def subnet_prefixes(self, value: Optional[pulumi.Input['IsClusterNetworkSubnetPrefixesArgs']]):
+    def subnet_prefixes(self, value: pulumi.Input[Optional['IsClusterNetworkSubnetPrefixesArgs']]):
         pulumi.set(self, "subnet_prefixes", value)
 
 
 @pulumi.input_type
 class _IsClusterNetworkState:
     def __init__(__self__, *,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_prefixes: Optional[pulumi.Input['IsClusterNetworkSubnetPrefixesArgs']] = None,
-                 vpc: Optional[pulumi.Input['IsClusterNetworkVpcArgs']] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_prefixes: pulumi.Input[Optional['IsClusterNetworkSubnetPrefixesArgs']] = None,
+                 vpc: pulumi.Input[Optional['IsClusterNetworkVpcArgs']] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsClusterNetwork resources.
+
         :param pulumi.Input[_builtins.str] created_at: The date and time that the cluster network was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this cluster network.
         :param pulumi.Input[_builtins.str] href: The URL for this cluster network.
@@ -179,155 +181,155 @@ class _IsClusterNetworkState:
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the cluster network was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this cluster network.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this cluster network.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkLifecycleReasonArgs']]]]:
         """
         The reasons for the current `lifecycle_state` (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsClusterNetworkLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsClusterNetworkLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the cluster network.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this cluster network. The name must not be used by another cluster network in the region.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name for this cluster network profile.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this resource group for this cluster network.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetPrefixes")
-    def subnet_prefixes(self) -> Optional[pulumi.Input['IsClusterNetworkSubnetPrefixesArgs']]:
+    def subnet_prefixes(self) -> pulumi.Input[Optional['IsClusterNetworkSubnetPrefixesArgs']]:
         """
         The IP address ranges available for subnets for this cluster network.
         """
         return pulumi.get(self, "subnet_prefixes")
 
     @subnet_prefixes.setter
-    def subnet_prefixes(self, value: Optional[pulumi.Input['IsClusterNetworkSubnetPrefixesArgs']]):
+    def subnet_prefixes(self, value: pulumi.Input[Optional['IsClusterNetworkSubnetPrefixesArgs']]):
         pulumi.set(self, "subnet_prefixes", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input['IsClusterNetworkVpcArgs']]:
+    def vpc(self) -> pulumi.Input[Optional['IsClusterNetworkVpcArgs']]:
         """
         The VPC this cluster network resides in.
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input['IsClusterNetworkVpcArgs']]):
+    def vpc(self, value: pulumi.Input[Optional['IsClusterNetworkVpcArgs']]):
         pulumi.set(self, "vpc", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name for the zone this cluster network resides in.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -337,22 +339,23 @@ class IsClusterNetwork(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_prefixes: Optional[pulumi.Input[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict']]] = None,
-                 vpc: Optional[pulumi.Input[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict']]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_prefixes: pulumi.Input[Optional[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict', 'outputs.IsClusterNetworkSubnetPrefixes']]] = None,
+                 vpc: pulumi.Input[Optional[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict', 'outputs.IsClusterNetworkVpc']]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsClusterNetwork resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network. The name must not be used by another cluster network in the region.
         :param pulumi.Input[_builtins.str] profile: The globally unique name for this cluster network profile.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier for this resource group for this cluster network.
-        :param pulumi.Input[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict']] subnet_prefixes: The IP address ranges available for subnets for this cluster network.
-        :param pulumi.Input[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict']] vpc: The VPC this cluster network resides in.
+        :param pulumi.Input[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict', 'outputs.IsClusterNetworkSubnetPrefixes']] subnet_prefixes: The IP address ranges available for subnets for this cluster network.
+        :param pulumi.Input[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict', 'outputs.IsClusterNetworkVpc']] vpc: The VPC this cluster network resides in.
         :param pulumi.Input[_builtins.str] zone: The globally unique name for the zone this cluster network resides in.
         """
         ...
@@ -363,6 +366,7 @@ class IsClusterNetwork(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsClusterNetwork resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsClusterNetworkArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -378,12 +382,12 @@ class IsClusterNetwork(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_prefixes: Optional[pulumi.Input[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict']]] = None,
-                 vpc: Optional[pulumi.Input[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict']]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_prefixes: pulumi.Input[Optional[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict', 'outputs.IsClusterNetworkSubnetPrefixes']]] = None,
+                 vpc: pulumi.Input[Optional[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict', 'outputs.IsClusterNetworkVpc']]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -422,19 +426,19 @@ class IsClusterNetwork(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkLifecycleReasonArgs', 'IsClusterNetworkLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_prefixes: Optional[pulumi.Input[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict']]] = None,
-            vpc: Optional[pulumi.Input[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict']]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsClusterNetwork':
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsClusterNetworkLifecycleReasonArgs', 'IsClusterNetworkLifecycleReasonArgsDict', 'outputs.IsClusterNetworkLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_prefixes: pulumi.Input[Optional[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict', 'outputs.IsClusterNetworkSubnetPrefixes']]] = None,
+            vpc: pulumi.Input[Optional[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict', 'outputs.IsClusterNetworkVpc']]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsClusterNetwork':
         """
         Get an existing IsClusterNetwork resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -445,14 +449,14 @@ class IsClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_at: The date and time that the cluster network was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this cluster network.
         :param pulumi.Input[_builtins.str] href: The URL for this cluster network.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkLifecycleReasonArgs', 'IsClusterNetworkLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsClusterNetworkLifecycleReasonArgs', 'IsClusterNetworkLifecycleReasonArgsDict', 'outputs.IsClusterNetworkLifecycleReason']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the cluster network.
         :param pulumi.Input[_builtins.str] name: The name for this cluster network. The name must not be used by another cluster network in the region.
         :param pulumi.Input[_builtins.str] profile: The globally unique name for this cluster network profile.
         :param pulumi.Input[_builtins.str] resource_group: The unique identifier for this resource group for this cluster network.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
-        :param pulumi.Input[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict']] subnet_prefixes: The IP address ranges available for subnets for this cluster network.
-        :param pulumi.Input[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict']] vpc: The VPC this cluster network resides in.
+        :param pulumi.Input[Union['IsClusterNetworkSubnetPrefixesArgs', 'IsClusterNetworkSubnetPrefixesArgsDict', 'outputs.IsClusterNetworkSubnetPrefixes']] subnet_prefixes: The IP address ranges available for subnets for this cluster network.
+        :param pulumi.Input[Union['IsClusterNetworkVpcArgs', 'IsClusterNetworkVpcArgsDict', 'outputs.IsClusterNetworkVpc']] vpc: The VPC this cluster network resides in.
         :param pulumi.Input[_builtins.str] zone: The globally unique name for the zone this cluster network resides in.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

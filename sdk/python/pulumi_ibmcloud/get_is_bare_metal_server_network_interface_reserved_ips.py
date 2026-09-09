@@ -104,8 +104,8 @@ def get_is_bare_metal_server_network_interface_reserved_ips(bare_metal_server: O
         network_interface=pulumi.get(__ret__, 'network_interface'),
         reserved_ips=pulumi.get(__ret__, 'reserved_ips'),
         total_count=pulumi.get(__ret__, 'total_count'))
-def get_is_bare_metal_server_network_interface_reserved_ips_output(bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                   network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_bare_metal_server_network_interface_reserved_ips_output(bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                   network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerNetworkInterfaceReservedIpsResult]:
     """
     Use this data source to access information about an existing resource.

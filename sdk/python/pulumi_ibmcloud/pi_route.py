@@ -23,14 +23,15 @@ class PiRouteArgs:
                  pi_destination: pulumi.Input[_builtins.str],
                  pi_name: pulumi.Input[_builtins.str],
                  pi_next_hop: pulumi.Input[_builtins.str],
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_next_hop_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_next_hop_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiRoute resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_destination: Destination of route.
         :param pulumi.Input[_builtins.str] pi_name: Name of the route.
@@ -109,95 +110,96 @@ class PiRouteArgs:
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action for route. Valid values are "deliver".
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piAdvertise")
-    def pi_advertise(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_advertise(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates if the route is advertised. Valid values are "enable" and "disable".
         """
         return pulumi.get(self, "pi_advertise")
 
     @pi_advertise.setter
-    def pi_advertise(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_advertise(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_advertise", value)
 
     @_builtins.property
     @pulumi.getter(name="piDestinationType")
-    def pi_destination_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_destination_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination type. Valid values are "ipv4-address".
         """
         return pulumi.get(self, "pi_destination_type")
 
     @pi_destination_type.setter
-    def pi_destination_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_destination_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_destination_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piEnabled")
-    def pi_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the route should be enabled in the fabric.
         """
         return pulumi.get(self, "pi_enabled")
 
     @pi_enabled.setter
-    def pi_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piNextHopType")
-    def pi_next_hop_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_next_hop_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The next hop type. Valid values are "ipv4-address".
         """
         return pulumi.get(self, "pi_next_hop_type")
 
     @pi_next_hop_type.setter
-    def pi_next_hop_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_next_hop_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_next_hop_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiRouteState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_next_hop_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 route_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_next_hop_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 route_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiRoute resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
         :param pulumi.Input[_builtins.str] pi_action: Action for route. Valid values are "deliver".
         :param pulumi.Input[_builtins.str] pi_advertise: Indicates if the route is advertised. Valid values are "enable" and "disable".
@@ -241,158 +243,158 @@ class _PiRouteState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action for route. Valid values are "deliver".
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piAdvertise")
-    def pi_advertise(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_advertise(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates if the route is advertised. Valid values are "enable" and "disable".
         """
         return pulumi.get(self, "pi_advertise")
 
     @pi_advertise.setter
-    def pi_advertise(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_advertise(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_advertise", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDestination")
-    def pi_destination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_destination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination of route.
         """
         return pulumi.get(self, "pi_destination")
 
     @pi_destination.setter
-    def pi_destination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_destination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_destination", value)
 
     @_builtins.property
     @pulumi.getter(name="piDestinationType")
-    def pi_destination_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_destination_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination type. Valid values are "ipv4-address".
         """
         return pulumi.get(self, "pi_destination_type")
 
     @pi_destination_type.setter
-    def pi_destination_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_destination_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_destination_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piEnabled")
-    def pi_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the route should be enabled in the fabric.
         """
         return pulumi.get(self, "pi_enabled")
 
     @pi_enabled.setter
-    def pi_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the route.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piNextHop")
-    def pi_next_hop(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_next_hop(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The next hop.
         """
         return pulumi.get(self, "pi_next_hop")
 
     @pi_next_hop.setter
-    def pi_next_hop(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_next_hop(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_next_hop", value)
 
     @_builtins.property
     @pulumi.getter(name="piNextHopType")
-    def pi_next_hop_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_next_hop_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The next hop type. Valid values are "ipv4-address".
         """
         return pulumi.get(self, "pi_next_hop_type")
 
     @pi_next_hop_type.setter
-    def pi_next_hop_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_next_hop_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_next_hop_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="routeId")
-    def route_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique route ID.
         """
         return pulumi.get(self, "route_id")
 
     @route_id.setter
-    def route_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the route.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -402,19 +404,20 @@ class PiRoute(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_next_hop_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_next_hop_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiRoute resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_action: Action for route. Valid values are "deliver".
@@ -436,6 +439,7 @@ class PiRoute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiRoute resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiRouteArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -451,16 +455,16 @@ class PiRoute(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_next_hop_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_next_hop_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -501,19 +505,19 @@ class PiRoute(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_destination: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_next_hop: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_next_hop_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            route_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiRoute':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_destination: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_next_hop: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_next_hop_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            route_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiRoute':
         """
         Get an existing PiRoute resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

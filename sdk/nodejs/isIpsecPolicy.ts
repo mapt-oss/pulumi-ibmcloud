@@ -36,16 +36,28 @@ export class IsIpsecPolicy extends pulumi.CustomResource {
 
     /**
      * Authentication alorothm
+     *
+     * @deprecated `authenticationAlgorithm` is deprecated in favor of `authenticationAlgorithms`. The existing `authenticationAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authenticationAlgorithms`. Use `authenticationAlgorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.
      */
     declare public readonly authenticationAlgorithm: pulumi.Output<string>;
+    /**
+     * The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    declare public readonly authenticationAlgorithms: pulumi.Output<string[]>;
     /**
      * IPSEC encapsulation mode
      */
     declare public /*out*/ readonly encapsulationMode: pulumi.Output<string>;
     /**
      * Encryption algorithm
+     *
+     * @deprecated `encryptionAlgorithm` is deprecated in favor of `encryptionAlgorithms`. The existing `encryptionAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryptionAlgorithms`. Use `encryptionAlgorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.
      */
     declare public readonly encryptionAlgorithm: pulumi.Output<string>;
+    /**
+     * The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    declare public readonly encryptionAlgorithms: pulumi.Output<string[]>;
     /**
      * IPSEC key lifetime
      */
@@ -56,8 +68,14 @@ export class IsIpsecPolicy extends pulumi.CustomResource {
     declare public readonly name: pulumi.Output<string>;
     /**
      * PFS info
+     *
+     * @deprecated `pfs` is deprecated in favor of `pfsGroups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfsGroups`. Use `pfsGroups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.
      */
     declare public readonly pfs: pulumi.Output<string>;
+    /**
+     * The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
+     */
+    declare public readonly pfsGroups: pulumi.Output<string[]>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
@@ -91,18 +109,21 @@ export class IsIpsecPolicy extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: IsIpsecPolicyArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: IsIpsecPolicyArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: IsIpsecPolicyArgs | IsIpsecPolicyState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IsIpsecPolicyState | undefined;
             resourceInputs["authenticationAlgorithm"] = state?.authenticationAlgorithm;
+            resourceInputs["authenticationAlgorithms"] = state?.authenticationAlgorithms;
             resourceInputs["encapsulationMode"] = state?.encapsulationMode;
             resourceInputs["encryptionAlgorithm"] = state?.encryptionAlgorithm;
+            resourceInputs["encryptionAlgorithms"] = state?.encryptionAlgorithms;
             resourceInputs["keyLifetime"] = state?.keyLifetime;
             resourceInputs["name"] = state?.name;
             resourceInputs["pfs"] = state?.pfs;
+            resourceInputs["pfsGroups"] = state?.pfsGroups;
             resourceInputs["resourceControllerUrl"] = state?.resourceControllerUrl;
             resourceInputs["resourceCrn"] = state?.resourceCrn;
             resourceInputs["resourceGroup"] = state?.resourceGroup;
@@ -112,20 +133,14 @@ export class IsIpsecPolicy extends pulumi.CustomResource {
             resourceInputs["vpnConnections"] = state?.vpnConnections;
         } else {
             const args = argsOrState as IsIpsecPolicyArgs | undefined;
-            if (args?.authenticationAlgorithm === undefined && !opts.urn) {
-                throw new Error("Missing required property 'authenticationAlgorithm'");
-            }
-            if (args?.encryptionAlgorithm === undefined && !opts.urn) {
-                throw new Error("Missing required property 'encryptionAlgorithm'");
-            }
-            if (args?.pfs === undefined && !opts.urn) {
-                throw new Error("Missing required property 'pfs'");
-            }
             resourceInputs["authenticationAlgorithm"] = args?.authenticationAlgorithm;
+            resourceInputs["authenticationAlgorithms"] = args?.authenticationAlgorithms;
             resourceInputs["encryptionAlgorithm"] = args?.encryptionAlgorithm;
+            resourceInputs["encryptionAlgorithms"] = args?.encryptionAlgorithms;
             resourceInputs["keyLifetime"] = args?.keyLifetime;
             resourceInputs["name"] = args?.name;
             resourceInputs["pfs"] = args?.pfs;
+            resourceInputs["pfsGroups"] = args?.pfsGroups;
             resourceInputs["resourceGroup"] = args?.resourceGroup;
             resourceInputs["encapsulationMode"] = undefined /*out*/;
             resourceInputs["resourceControllerUrl"] = undefined /*out*/;
@@ -146,53 +161,71 @@ export class IsIpsecPolicy extends pulumi.CustomResource {
 export interface IsIpsecPolicyState {
     /**
      * Authentication alorothm
+     *
+     * @deprecated `authenticationAlgorithm` is deprecated in favor of `authenticationAlgorithms`. The existing `authenticationAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authenticationAlgorithms`. Use `authenticationAlgorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.
      */
-    authenticationAlgorithm?: pulumi.Input<string>;
+    authenticationAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    authenticationAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IPSEC encapsulation mode
      */
-    encapsulationMode?: pulumi.Input<string>;
+    encapsulationMode?: pulumi.Input<string | undefined>;
     /**
      * Encryption algorithm
+     *
+     * @deprecated `encryptionAlgorithm` is deprecated in favor of `encryptionAlgorithms`. The existing `encryptionAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryptionAlgorithms`. Use `encryptionAlgorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.
      */
-    encryptionAlgorithm?: pulumi.Input<string>;
+    encryptionAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    encryptionAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IPSEC key lifetime
      */
-    keyLifetime?: pulumi.Input<number>;
+    keyLifetime?: pulumi.Input<number | undefined>;
     /**
      * IPSEC name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * PFS info
+     *
+     * @deprecated `pfs` is deprecated in favor of `pfsGroups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfsGroups`. Use `pfsGroups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.
      */
-    pfs?: pulumi.Input<string>;
+    pfs?: pulumi.Input<string | undefined>;
+    /**
+     * The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
+     */
+    pfsGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * IPSEC transform protocol
      */
-    transformProtocol?: pulumi.Input<string>;
-    vpnConnections?: pulumi.Input<pulumi.Input<inputs.IsIpsecPolicyVpnConnection>[]>;
+    transformProtocol?: pulumi.Input<string | undefined>;
+    vpnConnections?: pulumi.Input<pulumi.Input<inputs.IsIpsecPolicyVpnConnection>[] | undefined>;
 }
 
 /**
@@ -201,26 +234,44 @@ export interface IsIpsecPolicyState {
 export interface IsIpsecPolicyArgs {
     /**
      * Authentication alorothm
+     *
+     * @deprecated `authenticationAlgorithm` is deprecated in favor of `authenticationAlgorithms`. The existing `authenticationAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authenticationAlgorithms`. Use `authenticationAlgorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.
      */
-    authenticationAlgorithm: pulumi.Input<string>;
+    authenticationAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    authenticationAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Encryption algorithm
+     *
+     * @deprecated `encryptionAlgorithm` is deprecated in favor of `encryptionAlgorithms`. The existing `encryptionAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryptionAlgorithms`. Use `encryptionAlgorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.
      */
-    encryptionAlgorithm: pulumi.Input<string>;
+    encryptionAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The encryption algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    encryptionAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IPSEC key lifetime
      */
-    keyLifetime?: pulumi.Input<number>;
+    keyLifetime?: pulumi.Input<number | undefined>;
     /**
      * IPSEC name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * PFS info
+     *
+     * @deprecated `pfs` is deprecated in favor of `pfsGroups`. The existing `pfs` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `pfsGroups`. Use `pfsGroups` to configure multiple Perfect Forward Secrecy (PFS) groups. This enhancement adds support for multi-group PFS configurations while preserving compatibility with earlier single-group configurations.
      */
-    pfs: pulumi.Input<string>;
+    pfs?: pulumi.Input<string | undefined>;
+    /**
+     * The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
+     */
+    pfsGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

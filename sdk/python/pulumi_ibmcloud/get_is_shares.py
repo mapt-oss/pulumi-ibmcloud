@@ -104,8 +104,8 @@ def get_is_shares(name: Optional[_builtins.str] = None,
         resource_group=pulumi.get(__ret__, 'resource_group'),
         shares=pulumi.get(__ret__, 'shares'),
         total_count=pulumi.get(__ret__, 'total_count'))
-def get_is_shares_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_shares_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSharesResult]:
     """
     Use this data source to access information about an existing resource.

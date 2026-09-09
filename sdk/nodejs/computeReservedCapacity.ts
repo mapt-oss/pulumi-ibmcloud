@@ -115,31 +115,31 @@ export interface ComputeReservedCapacityState {
     /**
      * Dataceneter name
      */
-    datacenter?: pulumi.Input<string>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * flavor of the reserved capacity
      */
-    flavor?: pulumi.Input<string>;
+    flavor?: pulumi.Input<string | undefined>;
     /**
      * Force the creation of reserved capacity with same name
      */
-    forceCreate?: pulumi.Input<boolean>;
+    forceCreate?: pulumi.Input<boolean | undefined>;
     /**
      * no of the instances
      */
-    instances?: pulumi.Input<number>;
+    instances?: pulumi.Input<number | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Pod name
      */
-    pod?: pulumi.Input<string>;
+    pod?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -157,7 +157,7 @@ export interface ComputeReservedCapacityArgs {
     /**
      * Force the creation of reserved capacity with same name
      */
-    forceCreate?: pulumi.Input<boolean>;
+    forceCreate?: pulumi.Input<boolean | undefined>;
     /**
      * no of the instances
      */
@@ -165,7 +165,7 @@ export interface ComputeReservedCapacityArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Pod name
      */
@@ -173,5 +173,5 @@ export interface ComputeReservedCapacityArgs {
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

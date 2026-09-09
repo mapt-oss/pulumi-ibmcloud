@@ -93,8 +93,8 @@ def get_is_vpn_gateway_connection_local_cidrs(vpn_gateway: Optional[_builtins.st
         id=pulumi.get(__ret__, 'id'),
         vpn_gateway=pulumi.get(__ret__, 'vpn_gateway'),
         vpn_gateway_connection=pulumi.get(__ret__, 'vpn_gateway_connection'))
-def get_is_vpn_gateway_connection_local_cidrs_output(vpn_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     vpn_gateway_connection: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_vpn_gateway_connection_local_cidrs_output(vpn_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     vpn_gateway_connection: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpnGatewayConnectionLocalCidrsResult]:
     """
     Use this data source to access information about an existing resource.

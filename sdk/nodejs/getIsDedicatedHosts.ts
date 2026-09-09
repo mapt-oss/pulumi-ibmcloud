@@ -57,8 +57,8 @@ export function getIsDedicatedHostsOutput(args?: GetIsDedicatedHostsOutputArgs, 
  * A collection of arguments for invoking getIsDedicatedHosts.
  */
 export interface GetIsDedicatedHostsOutputArgs {
-    hostGroup?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    zone?: pulumi.Input<string>;
+    hostGroup?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    zone?: pulumi.Input<string | undefined>;
 }

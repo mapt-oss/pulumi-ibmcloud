@@ -33,6 +33,10 @@ export class IsPrivatePathServiceGateway extends pulumi.CustomResource {
     }
 
     /**
+     * List of access management tags for this private path service gateway.
+     */
+    declare public readonly accessTags: pulumi.Output<string[]>;
+    /**
      * The date and time that the account policy was created.
      */
     declare public /*out*/ readonly createdAt: pulumi.Output<string>;
@@ -93,6 +97,10 @@ export class IsPrivatePathServiceGateway extends pulumi.CustomResource {
      */
     declare public readonly serviceEndpoints: pulumi.Output<string[]>;
     /**
+     * List of user tags for this private path service gateway.
+     */
+    declare public readonly tags: pulumi.Output<string[]>;
+    /**
      * The date and time that the account policy was updated.
      */
     declare public /*out*/ readonly updatedAt: pulumi.Output<string>;
@@ -118,6 +126,7 @@ export class IsPrivatePathServiceGateway extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IsPrivatePathServiceGatewayState | undefined;
+            resourceInputs["accessTags"] = state?.accessTags;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["crn"] = state?.crn;
             resourceInputs["defaultAccessPolicy"] = state?.defaultAccessPolicy;
@@ -133,6 +142,7 @@ export class IsPrivatePathServiceGateway extends pulumi.CustomResource {
             resourceInputs["resourceGroup"] = state?.resourceGroup;
             resourceInputs["resourceType"] = state?.resourceType;
             resourceInputs["serviceEndpoints"] = state?.serviceEndpoints;
+            resourceInputs["tags"] = state?.tags;
             resourceInputs["updatedAt"] = state?.updatedAt;
             resourceInputs["vpc"] = state?.vpc;
             resourceInputs["zonalAffinity"] = state?.zonalAffinity;
@@ -144,11 +154,13 @@ export class IsPrivatePathServiceGateway extends pulumi.CustomResource {
             if (args?.serviceEndpoints === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceEndpoints'");
             }
+            resourceInputs["accessTags"] = args?.accessTags;
             resourceInputs["defaultAccessPolicy"] = args?.defaultAccessPolicy;
             resourceInputs["loadBalancer"] = args?.loadBalancer;
             resourceInputs["name"] = args?.name;
             resourceInputs["resourceGroup"] = args?.resourceGroup;
             resourceInputs["serviceEndpoints"] = args?.serviceEndpoints;
+            resourceInputs["tags"] = args?.tags;
             resourceInputs["zonalAffinity"] = args?.zonalAffinity;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["crn"] = undefined /*out*/;
@@ -173,77 +185,85 @@ export class IsPrivatePathServiceGateway extends pulumi.CustomResource {
  */
 export interface IsPrivatePathServiceGatewayState {
     /**
+     * List of access management tags for this private path service gateway.
+     */
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
      * The date and time that the account policy was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
      */
-    defaultAccessPolicy?: pulumi.Input<string>;
+    defaultAccessPolicy?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether endpoint gateway bindings will be automatically deleted after endpointGatewayBindingAutoDeleteTimeout hours have passed.
      */
-    endpointGatewayBindingAutoDelete?: pulumi.Input<boolean>;
+    endpointGatewayBindingAutoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If endpointGatewayBindingAutoDelete is true, the hours after which endpoint gateway bindings will be automatically deleted.
      */
-    endpointGatewayBindingAutoDeleteTimeout?: pulumi.Input<number>;
+    endpointGatewayBindingAutoDeleteTimeout?: pulumi.Input<number | undefined>;
     /**
      * The number of endpoint gateways using this private path service gateway.
      */
-    endpointGatewayCount?: pulumi.Input<number>;
+    endpointGatewayCount?: pulumi.Input<number | undefined>;
     /**
      * Href of this resource
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * lifecycle_state of this resource
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The load balancer for this private path service gateway.
      */
-    loadBalancer?: pulumi.Input<string>;
+    loadBalancer?: pulumi.Input<string | undefined>;
     /**
      * The name of this PPSG
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this account policy.
      */
-    privatePathServiceGateway?: pulumi.Input<string>;
+    privatePathServiceGateway?: pulumi.Input<string | undefined>;
     /**
      * Indicates the availability of this private path service gateway.
      */
-    published?: pulumi.Input<boolean>;
+    published?: pulumi.Input<boolean | undefined>;
     /**
      * ID of resource group to use.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain names for this private path service gateway.
      */
-    serviceEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
+    serviceEndpoints?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * List of user tags for this private path service gateway.
+     */
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The date and time that the account policy was updated.
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
     /**
      * The VPC this private path service gateway resides in.
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * ndicates whether this private path service gateway has zonal affinity.
      */
-    zonalAffinity?: pulumi.Input<boolean>;
+    zonalAffinity?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -251,9 +271,13 @@ export interface IsPrivatePathServiceGatewayState {
  */
 export interface IsPrivatePathServiceGatewayArgs {
     /**
+     * List of access management tags for this private path service gateway.
+     */
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
      * The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
      */
-    defaultAccessPolicy?: pulumi.Input<string>;
+    defaultAccessPolicy?: pulumi.Input<string | undefined>;
     /**
      * The load balancer for this private path service gateway.
      */
@@ -261,17 +285,21 @@ export interface IsPrivatePathServiceGatewayArgs {
     /**
      * The name of this PPSG
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of resource group to use.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain names for this private path service gateway.
      */
     serviceEndpoints: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * List of user tags for this private path service gateway.
+     */
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
      * ndicates whether this private path service gateway has zonal affinity.
      */
-    zonalAffinity?: pulumi.Input<boolean>;
+    zonalAffinity?: pulumi.Input<boolean | undefined>;
 }

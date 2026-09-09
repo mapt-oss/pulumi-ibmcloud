@@ -27,10 +27,13 @@ class GetIamTrustedProfileResult:
     """
     A collection of values returned by getIamTrustedProfile.
     """
-    def __init__(__self__, account_id=None, assignment_id=None, created_at=None, crn=None, description=None, entity_tag=None, histories=None, iam_id=None, id=None, ims_account_id=None, ims_user_id=None, modified_at=None, name=None, profile_id=None, template_id=None):
+    def __init__(__self__, account_id=None, activities=None, assignment_id=None, created_at=None, crn=None, description=None, email=None, entity_tag=None, histories=None, iam_id=None, id=None, ims_account_id=None, ims_user_id=None, include_activity=None, modified_at=None, name=None, profile_id=None, template_id=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
+        if activities and not isinstance(activities, list):
+            raise TypeError("Expected argument 'activities' to be a list")
+        pulumi.set(__self__, "activities", activities)
         if assignment_id and not isinstance(assignment_id, str):
             raise TypeError("Expected argument 'assignment_id' to be a str")
         pulumi.set(__self__, "assignment_id", assignment_id)
@@ -43,6 +46,9 @@ class GetIamTrustedProfileResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if email and not isinstance(email, str):
+            raise TypeError("Expected argument 'email' to be a str")
+        pulumi.set(__self__, "email", email)
         if entity_tag and not isinstance(entity_tag, str):
             raise TypeError("Expected argument 'entity_tag' to be a str")
         pulumi.set(__self__, "entity_tag", entity_tag)
@@ -61,6 +67,9 @@ class GetIamTrustedProfileResult:
         if ims_user_id and not isinstance(ims_user_id, int):
             raise TypeError("Expected argument 'ims_user_id' to be a int")
         pulumi.set(__self__, "ims_user_id", ims_user_id)
+        if include_activity and not isinstance(include_activity, bool):
+            raise TypeError("Expected argument 'include_activity' to be a bool")
+        pulumi.set(__self__, "include_activity", include_activity)
         if modified_at and not isinstance(modified_at, str):
             raise TypeError("Expected argument 'modified_at' to be a str")
         pulumi.set(__self__, "modified_at", modified_at)
@@ -78,6 +87,11 @@ class GetIamTrustedProfileResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> _builtins.str:
         return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def activities(self) -> Sequence['outputs.GetIamTrustedProfileActivityResult']:
+        return pulumi.get(self, "activities")
 
     @_builtins.property
     @pulumi.getter(name="assignmentId")
@@ -98,6 +112,11 @@ class GetIamTrustedProfileResult:
     @pulumi.getter
     def description(self) -> _builtins.str:
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> _builtins.str:
+        return pulumi.get(self, "email")
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
@@ -133,6 +152,11 @@ class GetIamTrustedProfileResult:
         return pulumi.get(self, "ims_user_id")
 
     @_builtins.property
+    @pulumi.getter(name="includeActivity")
+    def include_activity(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "include_activity")
+
+    @_builtins.property
     @pulumi.getter(name="modifiedAt")
     def modified_at(self) -> _builtins.str:
         return pulumi.get(self, "modified_at")
@@ -160,69 +184,82 @@ class AwaitableGetIamTrustedProfileResult(GetIamTrustedProfileResult):
             yield self
         return GetIamTrustedProfileResult(
             account_id=self.account_id,
+            activities=self.activities,
             assignment_id=self.assignment_id,
             created_at=self.created_at,
             crn=self.crn,
             description=self.description,
+            email=self.email,
             entity_tag=self.entity_tag,
             histories=self.histories,
             iam_id=self.iam_id,
             id=self.id,
             ims_account_id=self.ims_account_id,
             ims_user_id=self.ims_user_id,
+            include_activity=self.include_activity,
             modified_at=self.modified_at,
             name=self.name,
             profile_id=self.profile_id,
             template_id=self.template_id)
 
 
-def get_iam_trusted_profile(profile_id: Optional[_builtins.str] = None,
+def get_iam_trusted_profile(include_activity: Optional[_builtins.bool] = None,
+                            profile_id: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamTrustedProfileResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['includeActivity'] = include_activity
     __args__['profileId'] = profile_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getIamTrustedProfile:getIamTrustedProfile', __args__, opts=opts, typ=GetIamTrustedProfileResult).value
 
     return AwaitableGetIamTrustedProfileResult(
         account_id=pulumi.get(__ret__, 'account_id'),
+        activities=pulumi.get(__ret__, 'activities'),
         assignment_id=pulumi.get(__ret__, 'assignment_id'),
         created_at=pulumi.get(__ret__, 'created_at'),
         crn=pulumi.get(__ret__, 'crn'),
         description=pulumi.get(__ret__, 'description'),
+        email=pulumi.get(__ret__, 'email'),
         entity_tag=pulumi.get(__ret__, 'entity_tag'),
         histories=pulumi.get(__ret__, 'histories'),
         iam_id=pulumi.get(__ret__, 'iam_id'),
         id=pulumi.get(__ret__, 'id'),
         ims_account_id=pulumi.get(__ret__, 'ims_account_id'),
         ims_user_id=pulumi.get(__ret__, 'ims_user_id'),
+        include_activity=pulumi.get(__ret__, 'include_activity'),
         modified_at=pulumi.get(__ret__, 'modified_at'),
         name=pulumi.get(__ret__, 'name'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         template_id=pulumi.get(__ret__, 'template_id'))
-def get_iam_trusted_profile_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_trusted_profile_output(include_activity: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                   profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTrustedProfileResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['includeActivity'] = include_activity
     __args__['profileId'] = profile_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIamTrustedProfile:getIamTrustedProfile', __args__, opts=opts, typ=GetIamTrustedProfileResult)
     return __ret__.apply(lambda __response__: GetIamTrustedProfileResult(
         account_id=pulumi.get(__response__, 'account_id'),
+        activities=pulumi.get(__response__, 'activities'),
         assignment_id=pulumi.get(__response__, 'assignment_id'),
         created_at=pulumi.get(__response__, 'created_at'),
         crn=pulumi.get(__response__, 'crn'),
         description=pulumi.get(__response__, 'description'),
+        email=pulumi.get(__response__, 'email'),
         entity_tag=pulumi.get(__response__, 'entity_tag'),
         histories=pulumi.get(__response__, 'histories'),
         iam_id=pulumi.get(__response__, 'iam_id'),
         id=pulumi.get(__response__, 'id'),
         ims_account_id=pulumi.get(__response__, 'ims_account_id'),
         ims_user_id=pulumi.get(__response__, 'ims_user_id'),
+        include_activity=pulumi.get(__response__, 'include_activity'),
         modified_at=pulumi.get(__response__, 'modified_at'),
         name=pulumi.get(__response__, 'name'),
         profile_id=pulumi.get(__response__, 'profile_id'),

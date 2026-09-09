@@ -82,7 +82,7 @@ def get_is_image_bare_metal_server_profiles(identifier: Optional[_builtins.str] 
         bare_metal_server_profiles=pulumi.get(__ret__, 'bare_metal_server_profiles'),
         id=pulumi.get(__ret__, 'id'),
         identifier=pulumi.get(__ret__, 'identifier'))
-def get_is_image_bare_metal_server_profiles_output(identifier: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_image_bare_metal_server_profiles_output(identifier: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsImageBareMetalServerProfilesResult]:
     """
     Use this data source to access information about an existing resource.

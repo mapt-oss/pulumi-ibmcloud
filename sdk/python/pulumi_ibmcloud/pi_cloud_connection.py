@@ -22,17 +22,18 @@ class PiCloudConnectionArgs:
                  pi_cloud_connection_name: pulumi.Input[_builtins.str],
                  pi_cloud_connection_speed: pulumi.Input[_builtins.int],
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
-                 pi_cloud_connection_classic_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_global_routing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_gre_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_gre_destination_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_metered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_vpc_crns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_vpc_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 pi_cloud_connection_classic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_global_routing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_gre_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_gre_destination_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_metered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_vpc_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_vpc_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a PiCloudConnection resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_connection_name: Name of the cloud connection
         :param pulumi.Input[_builtins.int] pi_cloud_connection_speed: Speed of the cloud connection (speed in megabits per second)
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -106,137 +107,138 @@ class PiCloudConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionClassicEnabled")
-    def pi_cloud_connection_classic_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_classic_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable classic endpoint destination
         """
         return pulumi.get(self, "pi_cloud_connection_classic_enabled")
 
     @pi_cloud_connection_classic_enabled.setter
-    def pi_cloud_connection_classic_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_classic_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_classic_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionGlobalRouting")
-    def pi_cloud_connection_global_routing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_global_routing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable global routing for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_global_routing")
 
     @pi_cloud_connection_global_routing.setter
-    def pi_cloud_connection_global_routing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_global_routing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_global_routing", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionGreCidr")
-    def pi_cloud_connection_gre_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_gre_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         GRE network in CIDR notation
         """
         return pulumi.get(self, "pi_cloud_connection_gre_cidr")
 
     @pi_cloud_connection_gre_cidr.setter
-    def pi_cloud_connection_gre_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_gre_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_gre_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionGreDestinationAddress")
-    def pi_cloud_connection_gre_destination_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_gre_destination_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         GRE destination IP address
         """
         return pulumi.get(self, "pi_cloud_connection_gre_destination_address")
 
     @pi_cloud_connection_gre_destination_address.setter
-    def pi_cloud_connection_gre_destination_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_gre_destination_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_gre_destination_address", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionMetered")
-    def pi_cloud_connection_metered(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_metered(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable metered for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_metered")
 
     @pi_cloud_connection_metered.setter
-    def pi_cloud_connection_metered(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_metered(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_metered", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionNetworks")
-    def pi_cloud_connection_networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_cloud_connection_networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of Networks to attach to this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_networks")
 
     @pi_cloud_connection_networks.setter
-    def pi_cloud_connection_networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_cloud_connection_networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_cloud_connection_networks", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionTransitEnabled")
-    def pi_cloud_connection_transit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable transit gateway for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_transit_enabled")
 
     @pi_cloud_connection_transit_enabled.setter
-    def pi_cloud_connection_transit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionVpcCrns")
-    def pi_cloud_connection_vpc_crns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_cloud_connection_vpc_crns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of VPCs to attach to this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_vpc_crns")
 
     @pi_cloud_connection_vpc_crns.setter
-    def pi_cloud_connection_vpc_crns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_cloud_connection_vpc_crns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_cloud_connection_vpc_crns", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionVpcEnabled")
-    def pi_cloud_connection_vpc_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_vpc_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable VPC for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_vpc_enabled")
 
     @pi_cloud_connection_vpc_enabled.setter
-    def pi_cloud_connection_vpc_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_vpc_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_vpc_enabled", value)
 
 
 @pulumi.input_type
 class _PiCloudConnectionState:
     def __init__(__self__, *,
-                 cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 gre_source_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibm_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_classic_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_global_routing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_gre_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_gre_destination_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_metered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_cloud_connection_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_vpc_crns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_vpc_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ip_address: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 gre_source_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibm_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_classic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_global_routing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_gre_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_gre_destination_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_metered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_cloud_connection_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_vpc_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_vpc_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ip_address: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiCloudConnection resources.
+
         :param pulumi.Input[_builtins.str] cloud_connection_id: Cloud connection ID
         :param pulumi.Input[_builtins.str] connection_mode: Type of service the gateway is attached to
         :param pulumi.Input[_builtins.str] gre_source_address: GRE auto-assigned source IP address
@@ -298,230 +300,230 @@ class _PiCloudConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="cloudConnectionId")
-    def cloud_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud connection ID
         """
         return pulumi.get(self, "cloud_connection_id")
 
     @cloud_connection_id.setter
-    def cloud_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionMode")
-    def connection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of service the gateway is attached to
         """
         return pulumi.get(self, "connection_mode")
 
     @connection_mode.setter
-    def connection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="greSourceAddress")
-    def gre_source_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gre_source_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         GRE auto-assigned source IP address
         """
         return pulumi.get(self, "gre_source_address")
 
     @gre_source_address.setter
-    def gre_source_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gre_source_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gre_source_address", value)
 
     @_builtins.property
     @pulumi.getter(name="ibmIpAddress")
-    def ibm_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ibm_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IBM IP address
         """
         return pulumi.get(self, "ibm_ip_address")
 
     @ibm_ip_address.setter
-    def ibm_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ibm_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ibm_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionClassicEnabled")
-    def pi_cloud_connection_classic_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_classic_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable classic endpoint destination
         """
         return pulumi.get(self, "pi_cloud_connection_classic_enabled")
 
     @pi_cloud_connection_classic_enabled.setter
-    def pi_cloud_connection_classic_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_classic_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_classic_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionGlobalRouting")
-    def pi_cloud_connection_global_routing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_global_routing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable global routing for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_global_routing")
 
     @pi_cloud_connection_global_routing.setter
-    def pi_cloud_connection_global_routing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_global_routing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_global_routing", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionGreCidr")
-    def pi_cloud_connection_gre_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_gre_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         GRE network in CIDR notation
         """
         return pulumi.get(self, "pi_cloud_connection_gre_cidr")
 
     @pi_cloud_connection_gre_cidr.setter
-    def pi_cloud_connection_gre_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_gre_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_gre_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionGreDestinationAddress")
-    def pi_cloud_connection_gre_destination_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_gre_destination_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         GRE destination IP address
         """
         return pulumi.get(self, "pi_cloud_connection_gre_destination_address")
 
     @pi_cloud_connection_gre_destination_address.setter
-    def pi_cloud_connection_gre_destination_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_gre_destination_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_gre_destination_address", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionMetered")
-    def pi_cloud_connection_metered(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_metered(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable metered for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_metered")
 
     @pi_cloud_connection_metered.setter
-    def pi_cloud_connection_metered(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_metered(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_metered", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionName")
-    def pi_cloud_connection_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_name")
 
     @pi_cloud_connection_name.setter
-    def pi_cloud_connection_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionNetworks")
-    def pi_cloud_connection_networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_cloud_connection_networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of Networks to attach to this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_networks")
 
     @pi_cloud_connection_networks.setter
-    def pi_cloud_connection_networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_cloud_connection_networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_cloud_connection_networks", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionSpeed")
-    def pi_cloud_connection_speed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_cloud_connection_speed(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Speed of the cloud connection (speed in megabits per second)
         """
         return pulumi.get(self, "pi_cloud_connection_speed")
 
     @pi_cloud_connection_speed.setter
-    def pi_cloud_connection_speed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_cloud_connection_speed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_cloud_connection_speed", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionTransitEnabled")
-    def pi_cloud_connection_transit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable transit gateway for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_transit_enabled")
 
     @pi_cloud_connection_transit_enabled.setter
-    def pi_cloud_connection_transit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionVpcCrns")
-    def pi_cloud_connection_vpc_crns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_cloud_connection_vpc_crns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Set of VPCs to attach to this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_vpc_crns")
 
     @pi_cloud_connection_vpc_crns.setter
-    def pi_cloud_connection_vpc_crns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_cloud_connection_vpc_crns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_cloud_connection_vpc_crns", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionVpcEnabled")
-    def pi_cloud_connection_vpc_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_cloud_connection_vpc_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable VPC for this cloud connection
         """
         return pulumi.get(self, "pi_cloud_connection_vpc_enabled")
 
     @pi_cloud_connection_vpc_enabled.setter
-    def pi_cloud_connection_vpc_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_cloud_connection_vpc_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_cloud_connection_vpc_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Port
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Link status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="userIpAddress")
-    def user_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User IP address
         """
         return pulumi.get(self, "user_ip_address")
 
     @user_ip_address.setter
-    def user_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_ip_address", value)
 
 
@@ -531,21 +533,22 @@ class PiCloudConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_connection_classic_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_global_routing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_gre_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_gre_destination_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_metered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_cloud_connection_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_vpc_crns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_vpc_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_connection_classic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_global_routing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_gre_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_gre_destination_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_metered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_cloud_connection_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_vpc_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_vpc_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiCloudConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] pi_cloud_connection_classic_enabled: Enable classic endpoint destination
@@ -569,6 +572,7 @@ class PiCloudConnection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiCloudConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiCloudConnectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -584,18 +588,18 @@ class PiCloudConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_connection_classic_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_global_routing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_gre_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_gre_destination_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_metered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_connection_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_cloud_connection_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_connection_vpc_crns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_connection_vpc_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_connection_classic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_global_routing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_gre_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_gre_destination_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_metered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_connection_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_cloud_connection_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_connection_vpc_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_connection_vpc_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -640,25 +644,25 @@ class PiCloudConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            gre_source_address: Optional[pulumi.Input[_builtins.str]] = None,
-            ibm_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_connection_classic_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_cloud_connection_global_routing: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_cloud_connection_gre_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_connection_gre_destination_address: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_connection_metered: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_cloud_connection_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_connection_networks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_cloud_connection_speed: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_cloud_connection_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_cloud_connection_vpc_crns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_cloud_connection_vpc_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            user_ip_address: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiCloudConnection':
+            cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            gre_source_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ibm_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_connection_classic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_cloud_connection_global_routing: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_cloud_connection_gre_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_connection_gre_destination_address: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_connection_metered: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_cloud_connection_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_connection_networks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_cloud_connection_speed: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_cloud_connection_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_cloud_connection_vpc_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_cloud_connection_vpc_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            user_ip_address: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiCloudConnection':
         """
         Get an existing PiCloudConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -387,10 +387,10 @@ def get_compute_bare_metal(domain: Optional[_builtins.str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         unbonded_network=pulumi.get(__ret__, 'unbonded_network'),
         user_metadata=pulumi.get(__ret__, 'user_metadata'))
-def get_compute_bare_metal_output(domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  global_identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  hostname: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  most_recent: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_compute_bare_metal_output(domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  global_identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  hostname: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  most_recent: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeBareMetalResult]:
     """
     Use this data source to access information about an existing resource.

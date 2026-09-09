@@ -51,6 +51,6 @@ export function getPiSapProfilesOutput(args: GetPiSapProfilesOutputArgs, opts?: 
  */
 export interface GetPiSapProfilesOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piFamilyFilter?: pulumi.Input<string>;
-    piPrefixFilter?: pulumi.Input<string>;
+    piFamilyFilter?: pulumi.Input<string | undefined>;
+    piPrefixFilter?: pulumi.Input<string | undefined>;
 }

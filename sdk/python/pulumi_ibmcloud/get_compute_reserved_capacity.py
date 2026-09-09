@@ -134,8 +134,8 @@ def get_compute_reserved_capacity(most_recent: Optional[_builtins.bool] = None,
         name=pulumi.get(__ret__, 'name'),
         pod=pulumi.get(__ret__, 'pod'),
         virtual_guests=pulumi.get(__ret__, 'virtual_guests'))
-def get_compute_reserved_capacity_output(most_recent: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                         name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_reserved_capacity_output(most_recent: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                         name: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeReservedCapacityResult]:
     """
     Use this data source to access information about an existing resource.

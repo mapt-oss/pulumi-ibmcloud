@@ -94,8 +94,8 @@ def get_is_lb_listener_policies(lb: Optional[_builtins.str] = None,
         lb=pulumi.get(__ret__, 'lb'),
         listener=pulumi.get(__ret__, 'listener'),
         policies=pulumi.get(__ret__, 'policies'))
-def get_is_lb_listener_policies_output(lb: Optional[pulumi.Input[_builtins.str]] = None,
-                                       listener: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_lb_listener_policies_output(lb: pulumi.Input[Optional[_builtins.str]] = None,
+                                       listener: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsLbListenerPoliciesResult]:
     """
     Use this data source to access information about an existing resource.

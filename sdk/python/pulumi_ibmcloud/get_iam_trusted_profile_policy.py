@@ -119,10 +119,10 @@ def get_iam_trusted_profile_policy(iam_id: Optional[_builtins.str] = None,
         profile_id=pulumi.get(__ret__, 'profile_id'),
         sort=pulumi.get(__ret__, 'sort'),
         transaction_id=pulumi.get(__ret__, 'transaction_id'))
-def get_iam_trusted_profile_policy_output(iam_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          profile_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          sort: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          transaction_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_trusted_profile_policy_output(iam_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          profile_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          sort: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          transaction_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTrustedProfilePolicyResult]:
     """
     Use this data source to access information about an existing resource.

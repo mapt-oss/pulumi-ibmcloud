@@ -22,21 +22,22 @@ __all__ = ['IamAuthorizationPolicyArgs', 'IamAuthorizationPolicy']
 class IamAuthorizationPolicyArgs:
     def __init__(__self__, *,
                  roles: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]] = None,
-                 source_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]] = None,
-                 target_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]] = None,
+                 source_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]] = None,
+                 target_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamAuthorizationPolicy resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
         :param pulumi.Input[_builtins.str] description: Description of the Policy
         :param pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]] resource_attributes: Set resource attributes.
@@ -94,181 +95,182 @@ class IamAuthorizationPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the Policy
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributes")
-    def resource_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]:
+    def resource_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]:
         """
         Set resource attributes.
         """
         return pulumi.get(self, "resource_attributes")
 
     @resource_attributes.setter
-    def resource_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]):
+    def resource_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]):
         pulumi.set(self, "resource_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceGroupId")
-    def source_resource_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source resource group Id
         """
         return pulumi.get(self, "source_resource_group_id")
 
     @source_resource_group_id.setter
-    def source_resource_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_resource_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceInstanceId")
-    def source_resource_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_resource_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source resource instance Id
         """
         return pulumi.get(self, "source_resource_instance_id")
 
     @source_resource_instance_id.setter
-    def source_resource_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_resource_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_resource_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceType")
-    def source_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type of source service
         """
         return pulumi.get(self, "source_resource_type")
 
     @source_resource_type.setter
-    def source_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceServiceAccount")
-    def source_service_account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_service_account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Account GUID of source service
         """
         return pulumi.get(self, "source_service_account")
 
     @source_service_account.setter
-    def source_service_account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_service_account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_service_account", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceServiceName")
-    def source_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source service name
         """
         return pulumi.get(self, "source_service_name")
 
     @source_service_name.setter
-    def source_service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectAttributes")
-    def subject_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]:
+    def subject_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]:
         """
         Set subject attributes.
         """
         return pulumi.get(self, "subject_attributes")
 
     @subject_attributes.setter
-    def subject_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]):
+    def subject_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]):
         pulumi.set(self, "subject_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceGroupId")
-    def target_resource_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target resource group Id
         """
         return pulumi.get(self, "target_resource_group_id")
 
     @target_resource_group_id.setter
-    def target_resource_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceInstanceId")
-    def target_resource_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target resource instance Id
         """
         return pulumi.get(self, "target_resource_instance_id")
 
     @target_resource_instance_id.setter
-    def target_resource_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceType")
-    def target_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type of target service
         """
         return pulumi.get(self, "target_resource_type")
 
     @target_resource_type.setter
-    def target_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="targetServiceName")
-    def target_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target service name
         """
         return pulumi.get(self, "target_service_name")
 
     @target_service_name.setter
-    def target_service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set transactionID for debug
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
 
 @pulumi.input_type
 class _IamAuthorizationPolicyState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]] = None,
-                 target_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]] = None,
+                 target_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamAuthorizationPolicy resources.
+
         :param pulumi.Input[_builtins.str] description: Description of the Policy
         :param pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]] resource_attributes: Set resource attributes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
@@ -317,179 +319,179 @@ class _IamAuthorizationPolicyState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the Policy
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributes")
-    def resource_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]:
+    def resource_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]:
         """
         Set resource attributes.
         """
         return pulumi.get(self, "resource_attributes")
 
     @resource_attributes.setter
-    def resource_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]):
+    def resource_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicyResourceAttributeArgs']]]]):
         pulumi.set(self, "resource_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Role names of the policy definition
         """
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceGroupId")
-    def source_resource_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source resource group Id
         """
         return pulumi.get(self, "source_resource_group_id")
 
     @source_resource_group_id.setter
-    def source_resource_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_resource_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceInstanceId")
-    def source_resource_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_resource_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source resource instance Id
         """
         return pulumi.get(self, "source_resource_instance_id")
 
     @source_resource_instance_id.setter
-    def source_resource_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_resource_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_resource_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceType")
-    def source_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type of source service
         """
         return pulumi.get(self, "source_resource_type")
 
     @source_resource_type.setter
-    def source_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceServiceAccount")
-    def source_service_account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_service_account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Account GUID of source service
         """
         return pulumi.get(self, "source_service_account")
 
     @source_service_account.setter
-    def source_service_account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_service_account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_service_account", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceServiceName")
-    def source_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source service name
         """
         return pulumi.get(self, "source_service_name")
 
     @source_service_name.setter
-    def source_service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectAttributes")
-    def subject_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]:
+    def subject_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]:
         """
         Set subject attributes.
         """
         return pulumi.get(self, "subject_attributes")
 
     @subject_attributes.setter
-    def subject_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]):
+    def subject_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAuthorizationPolicySubjectAttributeArgs']]]]):
         pulumi.set(self, "subject_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceGroupId")
-    def target_resource_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target resource group Id
         """
         return pulumi.get(self, "target_resource_group_id")
 
     @target_resource_group_id.setter
-    def target_resource_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceInstanceId")
-    def target_resource_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target resource instance Id
         """
         return pulumi.get(self, "target_resource_instance_id")
 
     @target_resource_instance_id.setter
-    def target_resource_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceType")
-    def target_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type of target service
         """
         return pulumi.get(self, "target_resource_type")
 
     @target_resource_type.setter
-    def target_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="targetServiceName")
-    def target_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target service name
         """
         return pulumi.get(self, "target_service_name")
 
     @target_service_name.setter
-    def target_service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set transactionID for debug
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -499,34 +501,35 @@ class IamAuthorizationPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict']]]]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict']]]]] = None,
-                 target_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict', 'outputs.IamAuthorizationPolicyResourceAttribute']]]]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict', 'outputs.IamAuthorizationPolicySubjectAttribute']]]]] = None,
+                 target_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamAuthorizationPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of the Policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict']]]] resource_attributes: Set resource attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict', 'outputs.IamAuthorizationPolicyResourceAttribute']]]] resource_attributes: Set resource attributes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
         :param pulumi.Input[_builtins.str] source_resource_group_id: The source resource group Id
         :param pulumi.Input[_builtins.str] source_resource_instance_id: The source resource instance Id
         :param pulumi.Input[_builtins.str] source_resource_type: Resource type of source service
         :param pulumi.Input[_builtins.str] source_service_account: Account GUID of source service
         :param pulumi.Input[_builtins.str] source_service_name: The source service name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict']]]] subject_attributes: Set subject attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict', 'outputs.IamAuthorizationPolicySubjectAttribute']]]] subject_attributes: Set subject attributes.
         :param pulumi.Input[_builtins.str] target_resource_group_id: The target resource group Id
         :param pulumi.Input[_builtins.str] target_resource_instance_id: The target resource instance Id
         :param pulumi.Input[_builtins.str] target_resource_type: Resource type of target service
@@ -541,6 +544,7 @@ class IamAuthorizationPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAuthorizationPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAuthorizationPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -556,20 +560,20 @@ class IamAuthorizationPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict']]]]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict']]]]] = None,
-                 target_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict', 'outputs.IamAuthorizationPolicyResourceAttribute']]]]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict', 'outputs.IamAuthorizationPolicySubjectAttribute']]]]] = None,
+                 target_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -606,21 +610,21 @@ class IamAuthorizationPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict']]]]] = None,
-            roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            source_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            source_service_account: Optional[pulumi.Input[_builtins.str]] = None,
-            source_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-            subject_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict']]]]] = None,
-            target_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            target_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-            transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamAuthorizationPolicy':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict', 'outputs.IamAuthorizationPolicyResourceAttribute']]]]] = None,
+            roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            source_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            source_service_account: pulumi.Input[Optional[_builtins.str]] = None,
+            source_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict', 'outputs.IamAuthorizationPolicySubjectAttribute']]]]] = None,
+            target_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            target_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamAuthorizationPolicy':
         """
         Get an existing IamAuthorizationPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -629,14 +633,14 @@ class IamAuthorizationPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of the Policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict']]]] resource_attributes: Set resource attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicyResourceAttributeArgs', 'IamAuthorizationPolicyResourceAttributeArgsDict', 'outputs.IamAuthorizationPolicyResourceAttribute']]]] resource_attributes: Set resource attributes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
         :param pulumi.Input[_builtins.str] source_resource_group_id: The source resource group Id
         :param pulumi.Input[_builtins.str] source_resource_instance_id: The source resource instance Id
         :param pulumi.Input[_builtins.str] source_resource_type: Resource type of source service
         :param pulumi.Input[_builtins.str] source_service_account: Account GUID of source service
         :param pulumi.Input[_builtins.str] source_service_name: The source service name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict']]]] subject_attributes: Set subject attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAuthorizationPolicySubjectAttributeArgs', 'IamAuthorizationPolicySubjectAttributeArgsDict', 'outputs.IamAuthorizationPolicySubjectAttribute']]]] subject_attributes: Set subject attributes.
         :param pulumi.Input[_builtins.str] target_resource_group_id: The target resource group Id
         :param pulumi.Input[_builtins.str] target_resource_instance_id: The target resource instance Id
         :param pulumi.Input[_builtins.str] target_resource_type: Resource type of target service

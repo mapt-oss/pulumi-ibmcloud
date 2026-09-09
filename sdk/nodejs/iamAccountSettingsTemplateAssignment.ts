@@ -39,10 +39,6 @@ export class IamAccountSettingsTemplateAssignment extends pulumi.CustomResource 
      */
     declare public /*out*/ readonly accountId: pulumi.Output<string>;
     /**
-     * Context with key properties for problem determination.
-     */
-    declare public /*out*/ readonly contexts: pulumi.Output<outputs.IamAccountSettingsTemplateAssignmentContext[]>;
-    /**
      * Assignment created at.
      */
     declare public /*out*/ readonly createdAt: pulumi.Output<string>;
@@ -54,10 +50,6 @@ export class IamAccountSettingsTemplateAssignment extends pulumi.CustomResource 
      * Entity tag for this assignment record.
      */
     declare public /*out*/ readonly entityTag: pulumi.Output<string>;
-    /**
-     * Assignment history.
-     */
-    declare public /*out*/ readonly histories: pulumi.Output<outputs.IamAccountSettingsTemplateAssignmentHistory[]>;
     /**
      * Href.
      */
@@ -109,11 +101,9 @@ export class IamAccountSettingsTemplateAssignment extends pulumi.CustomResource 
         if (opts.id) {
             const state = argsOrState as IamAccountSettingsTemplateAssignmentState | undefined;
             resourceInputs["accountId"] = state?.accountId;
-            resourceInputs["contexts"] = state?.contexts;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["createdById"] = state?.createdById;
             resourceInputs["entityTag"] = state?.entityTag;
-            resourceInputs["histories"] = state?.histories;
             resourceInputs["href"] = state?.href;
             resourceInputs["lastModifiedAt"] = state?.lastModifiedAt;
             resourceInputs["lastModifiedById"] = state?.lastModifiedById;
@@ -142,11 +132,9 @@ export class IamAccountSettingsTemplateAssignment extends pulumi.CustomResource 
             resourceInputs["templateId"] = args?.templateId;
             resourceInputs["templateVersion"] = args?.templateVersion;
             resourceInputs["accountId"] = undefined /*out*/;
-            resourceInputs["contexts"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["createdById"] = undefined /*out*/;
             resourceInputs["entityTag"] = undefined /*out*/;
-            resourceInputs["histories"] = undefined /*out*/;
             resourceInputs["href"] = undefined /*out*/;
             resourceInputs["lastModifiedAt"] = undefined /*out*/;
             resourceInputs["lastModifiedById"] = undefined /*out*/;
@@ -165,63 +153,55 @@ export interface IamAccountSettingsTemplateAssignmentState {
     /**
      * Enterprise account Id.
      */
-    accountId?: pulumi.Input<string>;
-    /**
-     * Context with key properties for problem determination.
-     */
-    contexts?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentContext>[]>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Assignment created at.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * IAMid of the identity that created the assignment.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * Entity tag for this assignment record.
      */
-    entityTag?: pulumi.Input<string>;
-    /**
-     * Assignment history.
-     */
-    histories?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentHistory>[]>;
+    entityTag?: pulumi.Input<string | undefined>;
     /**
      * Href.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Assignment modified at.
      */
-    lastModifiedAt?: pulumi.Input<string>;
+    lastModifiedAt?: pulumi.Input<string | undefined>;
     /**
      * IAMid of the identity that last modified the assignment.
      */
-    lastModifiedById?: pulumi.Input<string>;
+    lastModifiedById?: pulumi.Input<string | undefined>;
     /**
      * Status breakdown per target account of IAM resources created or errors encountered in attempting to create those IAM resources. IAM resources are only included in the response providing the assignment is not in progress. IAM resources are also only included when getting a single assignment, and excluded by list APIs.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResource>[] | undefined>;
     /**
      * Assignment status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Assignment target.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * Assignment target type.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * Template Id.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
     /**
      * Template version.
      */
-    templateVersion?: pulumi.Input<number>;
+    templateVersion?: pulumi.Input<number | undefined>;
 }
 
 /**

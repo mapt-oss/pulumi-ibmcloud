@@ -138,48 +138,48 @@ export interface IsVpnServerRouteState {
     /**
      * The action to perform with a packet matching the VPN route:- `translate`: translate the source IP address to one of the private IP addresses of the VPN server, then deliver the packet to target.- `deliver`: deliver the packet to the target.- `drop`: drop the packetThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the VPN route on which the unexpected property value was encountered.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the VPN route was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The destination to use for this VPN route in the VPN server. Must be unique within the VPN server. If an incoming packet does not match any destination, it will be dropped.
      */
-    destination?: pulumi.Input<string>;
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerRouteHealthReason>[]>;
+    destination?: pulumi.Input<string | undefined>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerRouteHealthReason>[] | undefined>;
     /**
      * The health of this resource.- `ok`: Healthy- `degraded`: Suffering from compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * The URL for this VPN route.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current lifecycleState (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerRouteLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnServerRouteLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the VPN route.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this VPN route. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the VPN server the VPN route resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The VPN route identifier.
      */
-    vpnRoute?: pulumi.Input<string>;
+    vpnRoute?: pulumi.Input<string | undefined>;
     /**
      * The VPN server identifier.
      */
-    vpnServer?: pulumi.Input<string>;
+    vpnServer?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -189,7 +189,7 @@ export interface IsVpnServerRouteArgs {
     /**
      * The action to perform with a packet matching the VPN route:- `translate`: translate the source IP address to one of the private IP addresses of the VPN server, then deliver the packet to target.- `deliver`: deliver the packet to the target.- `drop`: drop the packetThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the VPN route on which the unexpected property value was encountered.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The destination to use for this VPN route in the VPN server. Must be unique within the VPN server. If an incoming packet does not match any destination, it will be dropped.
      */
@@ -197,7 +197,7 @@ export interface IsVpnServerRouteArgs {
     /**
      * The user-defined name for this VPN route. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the VPN server the VPN route resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The VPN server identifier.
      */

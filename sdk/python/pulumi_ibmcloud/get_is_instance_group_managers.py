@@ -82,7 +82,7 @@ def get_is_instance_group_managers(instance_group: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         instance_group=pulumi.get(__ret__, 'instance_group'),
         instance_group_managers=pulumi.get(__ret__, 'instance_group_managers'))
-def get_is_instance_group_managers_output(instance_group: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_group_managers_output(instance_group: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceGroupManagersResult]:
     """
     Use this data source to access information about an existing resource.

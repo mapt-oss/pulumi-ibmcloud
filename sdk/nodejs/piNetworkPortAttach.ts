@@ -138,49 +138,49 @@ export interface PiNetworkPortAttachState {
     /**
      * The MAC address of the port.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * The MAC address of the instance.
      *
      * @deprecated Deprecated, use macAddress instead
      */
-    macaddress?: pulumi.Input<string>;
+    macaddress?: pulumi.Input<string | undefined>;
     /**
      * The ID of the port.
      */
-    networkPortId?: pulumi.Input<string>;
+    networkPortId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Instance id to attach the network port to.
      */
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The network ID or name.
      */
-    piNetworkName?: pulumi.Input<string>;
+    piNetworkName?: pulumi.Input<string | undefined>;
     /**
      * The description for the Network Port.
      */
-    piNetworkPortDescription?: pulumi.Input<string>;
+    piNetworkPortDescription?: pulumi.Input<string | undefined>;
     /**
      * The requested ip address of this port
      */
-    piNetworkPortIpaddress?: pulumi.Input<string>;
+    piNetworkPortIpaddress?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The public IP associated with the port.
      */
-    publicIp?: pulumi.Input<string>;
+    publicIp?: pulumi.Input<string | undefined>;
     /**
      * The status of the port.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -202,13 +202,13 @@ export interface PiNetworkPortAttachArgs {
     /**
      * The description for the Network Port.
      */
-    piNetworkPortDescription?: pulumi.Input<string>;
+    piNetworkPortDescription?: pulumi.Input<string | undefined>;
     /**
      * The requested ip address of this port
      */
-    piNetworkPortIpaddress?: pulumi.Input<string>;
+    piNetworkPortIpaddress?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

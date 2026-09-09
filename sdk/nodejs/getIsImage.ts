@@ -44,6 +44,7 @@ export interface GetIsImageResult {
      */
     readonly id: string;
     readonly identifier?: string;
+    readonly minimumProvisionedSize: number;
     readonly name?: string;
     readonly obsolescenceAt: string;
     readonly operatingSystems: outputs.GetIsImageOperatingSystem[];
@@ -55,6 +56,7 @@ export interface GetIsImageResult {
     readonly statusReasons: outputs.GetIsImageStatusReason[];
     readonly userDataFormat: string;
     readonly visibility?: string;
+    readonly zones: outputs.GetIsImageZone[];
 }
 export function getIsImageOutput(args?: GetIsImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIsImageResult> {
     args = args || {};
@@ -70,7 +72,7 @@ export function getIsImageOutput(args?: GetIsImageOutputArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getIsImage.
  */
 export interface GetIsImageOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    visibility?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    visibility?: pulumi.Input<string | undefined>;
 }

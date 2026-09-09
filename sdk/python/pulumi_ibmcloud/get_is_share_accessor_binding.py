@@ -134,8 +134,8 @@ def get_is_share_accessor_binding(accessor_binding: Optional[_builtins.str] = No
         lifecycle_state=pulumi.get(__ret__, 'lifecycle_state'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         share=pulumi.get(__ret__, 'share'))
-def get_is_share_accessor_binding_output(accessor_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                                         share: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_share_accessor_binding_output(accessor_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                                         share: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsShareAccessorBindingResult]:
     """
     Use this data source to access information about an existing resource.

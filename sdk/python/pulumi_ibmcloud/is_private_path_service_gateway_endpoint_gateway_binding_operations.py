@@ -24,6 +24,7 @@ class IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArgs:
                  private_path_service_gateway: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsPrivatePathServiceGatewayEndpointGatewayBindingOperations resource.
+
         :param pulumi.Input[_builtins.str] access_policy: Access polict to set for this endpoint gateway binding.
         :param pulumi.Input[_builtins.str] endpoint_gateway_binding: The private path service gateway identifier.
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
@@ -72,11 +73,12 @@ class IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArgs:
 @pulumi.input_type
 class _IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsState:
     def __init__(__self__, *,
-                 access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_gateway_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_gateway_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsPrivatePathServiceGatewayEndpointGatewayBindingOperations resources.
+
         :param pulumi.Input[_builtins.str] access_policy: Access polict to set for this endpoint gateway binding.
         :param pulumi.Input[_builtins.str] endpoint_gateway_binding: The private path service gateway identifier.
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
@@ -90,38 +92,38 @@ class _IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsState:
 
     @_builtins.property
     @pulumi.getter(name="accessPolicy")
-    def access_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Access polict to set for this endpoint gateway binding.
         """
         return pulumi.get(self, "access_policy")
 
     @access_policy.setter
-    def access_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointGatewayBinding")
-    def endpoint_gateway_binding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_gateway_binding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private path service gateway identifier.
         """
         return pulumi.get(self, "endpoint_gateway_binding")
 
     @endpoint_gateway_binding.setter
-    def endpoint_gateway_binding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_gateway_binding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_gateway_binding", value)
 
     @_builtins.property
     @pulumi.getter(name="privatePathServiceGateway")
-    def private_path_service_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_path_service_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private path service gateway identifier.
         """
         return pulumi.get(self, "private_path_service_gateway")
 
     @private_path_service_gateway.setter
-    def private_path_service_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_path_service_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_path_service_gateway", value)
 
 
@@ -131,12 +133,13 @@ class IsPrivatePathServiceGatewayEndpointGatewayBindingOperations(pulumi.CustomR
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_gateway_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_gateway_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsPrivatePathServiceGatewayEndpointGatewayBindingOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_policy: Access polict to set for this endpoint gateway binding.
@@ -151,6 +154,7 @@ class IsPrivatePathServiceGatewayEndpointGatewayBindingOperations(pulumi.CustomR
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsPrivatePathServiceGatewayEndpointGatewayBindingOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsPrivatePathServiceGatewayEndpointGatewayBindingOperationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -166,9 +170,9 @@ class IsPrivatePathServiceGatewayEndpointGatewayBindingOperations(pulumi.CustomR
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_gateway_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_gateway_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -197,9 +201,9 @@ class IsPrivatePathServiceGatewayEndpointGatewayBindingOperations(pulumi.CustomR
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_gateway_binding: Optional[pulumi.Input[_builtins.str]] = None,
-            private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsPrivatePathServiceGatewayEndpointGatewayBindingOperations':
+            access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_gateway_binding: pulumi.Input[Optional[_builtins.str]] = None,
+            private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsPrivatePathServiceGatewayEndpointGatewayBindingOperations':
         """
         Get an existing IsPrivatePathServiceGatewayEndpointGatewayBindingOperations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

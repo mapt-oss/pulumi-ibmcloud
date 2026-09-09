@@ -154,56 +154,56 @@ export interface IamAccessGroupTemplateAssignmentState {
     /**
      * The ID of the account that the assignment belongs to.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the assignment was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The user or system that created the assignment.
      */
-    createdById?: pulumi.Input<string>;
-    etag?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * The URL of the assignment resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the assignment was last updated.
      */
-    lastModifiedAt?: pulumi.Input<string>;
+    lastModifiedAt?: pulumi.Input<string | undefined>;
     /**
      * The user or system that last updated the assignment.
      */
-    lastModifiedById?: pulumi.Input<string>;
+    lastModifiedById?: pulumi.Input<string | undefined>;
     /**
      * The operation that the assignment applies to (e.g. 'assign', 'update', 'remove').
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * The status of the assignment (e.g. 'accepted', 'in_progress', 'succeeded', 'failed', 'superseded').
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The ID of the entity that the assignment applies to.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The type of the entity that the assignment applies to.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The ID of the template that the assignment is based on.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
     /**
      * The version of the template that the assignment is based on.
      */
-    templateVersion?: pulumi.Input<string>;
+    templateVersion?: pulumi.Input<string | undefined>;
     /**
      * An optional transaction id for the request.
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -229,5 +229,5 @@ export interface IamAccessGroupTemplateAssignmentArgs {
     /**
      * An optional transaction id for the request.
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

@@ -212,102 +212,102 @@ export interface ResourceKeyState {
     /**
      * An alpha-numeric value identifying the account ID.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * The date when the key was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who created the key.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Credentials asociated with the key
      */
-    credentials?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    credentials?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Credentials asociated with the key in json string
      */
-    credentialsJson?: pulumi.Input<string>;
+    credentialsJson?: pulumi.Input<string | undefined>;
     /**
      * crn of resource key
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The date when the key was deleted.
      */
-    deletedAt?: pulumi.Input<string>;
+    deletedAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who deleted the key.
      */
-    deletedBy?: pulumi.Input<string>;
+    deletedBy?: pulumi.Input<string | undefined>;
     /**
      * When you create a new key, a globally unique identifier (GUID) is assigned.
      */
-    guid?: pulumi.Input<string>;
+    guid?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the key's credentials support IAM.
      */
-    iamCompatible?: pulumi.Input<boolean>;
+    iamCompatible?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the resource key
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * onetime_credentials of resource key
      */
-    onetimeCredentials?: pulumi.Input<boolean>;
+    onetimeCredentials?: pulumi.Input<boolean | undefined>;
     /**
      * Arbitrary parameters to pass. Must be a JSON object
      */
-    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The id of the resource alias for which to create resource key
      *
      * @deprecated Remove this attribute's configuration as it's no longer in use and the attribute will be removed in the upcoming major version of the provider 1.71.0.
      */
-    resourceAliasId?: pulumi.Input<string>;
+    resourceAliasId?: pulumi.Input<string | undefined>;
     /**
      * The short ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The id of the resource instance for which to create resource key
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The relative path to the resource.
      */
-    resourceInstanceUrl?: pulumi.Input<string>;
+    resourceInstanceUrl?: pulumi.Input<string | undefined>;
     /**
      * Name of the user role.Valid roles are Writer, Reader, Manager, Administrator, Operator, Viewer, Editor and Custom Roles.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The CRN of resource instance or alias associated to the key.
      */
-    sourceCrn?: pulumi.Input<string>;
+    sourceCrn?: pulumi.Input<string | undefined>;
     /**
      * The state of the key.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Status of resource key
      */
-    status?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    status?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The date when the key was last updated.
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
     /**
      * The subject who updated the key.
      */
-    updatedBy?: pulumi.Input<string>;
+    updatedBy?: pulumi.Input<string | undefined>;
     /**
      * When you created a new key, a relative URL path is created identifying the location of the key.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -317,24 +317,24 @@ export interface ResourceKeyArgs {
     /**
      * The name of the resource key
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Arbitrary parameters to pass. Must be a JSON object
      */
-    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The id of the resource alias for which to create resource key
      *
      * @deprecated Remove this attribute's configuration as it's no longer in use and the attribute will be removed in the upcoming major version of the provider 1.71.0.
      */
-    resourceAliasId?: pulumi.Input<string>;
+    resourceAliasId?: pulumi.Input<string | undefined>;
     /**
      * The id of the resource instance for which to create resource key
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Name of the user role.Valid roles are Writer, Reader, Manager, Administrator, Operator, Viewer, Editor and Custom Roles.
      */
-    role?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    role?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

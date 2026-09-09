@@ -22,19 +22,24 @@ class PiWorkspaceArgs:
                  pi_datacenter: pulumi.Input[_builtins.str],
                  pi_name: pulumi.Input[_builtins.str],
                  pi_resource_group_id: pulumi.Input[_builtins.str],
-                 pi_plan: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pi_plan: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiWorkspace resource.
+
         :param pulumi.Input[_builtins.str] pi_datacenter: Target location or environment to create the resource instance.
         :param pulumi.Input[_builtins.str] pi_name: A descriptive name used to identify the workspace.
         :param pulumi.Input[_builtins.str] pi_resource_group_id: The ID of the resource group where you want to create the workspace. You can retrieve the value from data source ibm_resource_group.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] pi_parameters: Parameters to pass to the workspace. For example: sharedImages = true.
         :param pulumi.Input[_builtins.str] pi_plan: Plan associated with the offering; Valid values are public or private.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: List of user tags attached to the resource.
         """
         pulumi.set(__self__, "pi_datacenter", pi_datacenter)
         pulumi.set(__self__, "pi_name", pi_name)
         pulumi.set(__self__, "pi_resource_group_id", pi_resource_group_id)
+        if pi_parameters is not None:
+            pulumi.set(__self__, "pi_parameters", pi_parameters)
         if pi_plan is not None:
             pulumi.set(__self__, "pi_plan", pi_plan)
         if pi_user_tags is not None:
@@ -77,45 +82,60 @@ class PiWorkspaceArgs:
         pulumi.set(self, "pi_resource_group_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="piParameters")
+    def pi_parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Parameters to pass to the workspace. For example: sharedImages = true.
+        """
+        return pulumi.get(self, "pi_parameters")
+
+    @pi_parameters.setter
+    def pi_parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "pi_parameters", value)
+
+    @_builtins.property
     @pulumi.getter(name="piPlan")
-    def pi_plan(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_plan(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plan associated with the offering; Valid values are public or private.
         """
         return pulumi.get(self, "pi_plan")
 
     @pi_plan.setter
-    def pi_plan(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_plan(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_plan", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiWorkspaceState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_plan: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_workspace_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pi_plan: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_workspace_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiWorkspace resources.
+
         :param pulumi.Input[_builtins.str] crn: The Workspace crn.
         :param pulumi.Input[_builtins.str] pi_datacenter: Target location or environment to create the resource instance.
         :param pulumi.Input[_builtins.str] pi_name: A descriptive name used to identify the workspace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] pi_parameters: Parameters to pass to the workspace. For example: sharedImages = true.
         :param pulumi.Input[_builtins.str] pi_plan: Plan associated with the offering; Valid values are public or private.
         :param pulumi.Input[_builtins.str] pi_resource_group_id: The ID of the resource group where you want to create the workspace. You can retrieve the value from data source ibm_resource_group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: List of user tags attached to the resource.
@@ -127,6 +147,8 @@ class _PiWorkspaceState:
             pulumi.set(__self__, "pi_datacenter", pi_datacenter)
         if pi_name is not None:
             pulumi.set(__self__, "pi_name", pi_name)
+        if pi_parameters is not None:
+            pulumi.set(__self__, "pi_parameters", pi_parameters)
         if pi_plan is not None:
             pulumi.set(__self__, "pi_plan", pi_plan)
         if pi_resource_group_id is not None:
@@ -141,87 +163,99 @@ class _PiWorkspaceState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Workspace crn.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="piDatacenter")
-    def pi_datacenter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_datacenter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Target location or environment to create the resource instance.
         """
         return pulumi.get(self, "pi_datacenter")
 
     @pi_datacenter.setter
-    def pi_datacenter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_datacenter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_datacenter", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A descriptive name used to identify the workspace.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="piParameters")
+    def pi_parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Parameters to pass to the workspace. For example: sharedImages = true.
+        """
+        return pulumi.get(self, "pi_parameters")
+
+    @pi_parameters.setter
+    def pi_parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "pi_parameters", value)
+
+    @_builtins.property
     @pulumi.getter(name="piPlan")
-    def pi_plan(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_plan(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plan associated with the offering; Valid values are public or private.
         """
         return pulumi.get(self, "pi_plan")
 
     @pi_plan.setter
-    def pi_plan(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_plan(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_plan", value)
 
     @_builtins.property
     @pulumi.getter(name="piResourceGroupId")
-    def pi_resource_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource group where you want to create the workspace. You can retrieve the value from data source ibm_resource_group.
         """
         return pulumi.get(self, "pi_resource_group_id")
 
     @pi_resource_group_id.setter
-    def pi_resource_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_resource_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piWorkspaceDetails")
     @_utilities.deprecated("""This field is deprecated, use crn instead.""")
-    def pi_workspace_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def pi_workspace_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Workspace information.
         """
         return pulumi.get(self, "pi_workspace_details")
 
     @pi_workspace_details.setter
-    def pi_workspace_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def pi_workspace_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_workspace_details", value)
 
 
@@ -231,18 +265,21 @@ class PiWorkspace(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_plan: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pi_plan: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiWorkspace resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_datacenter: Target location or environment to create the resource instance.
         :param pulumi.Input[_builtins.str] pi_name: A descriptive name used to identify the workspace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] pi_parameters: Parameters to pass to the workspace. For example: sharedImages = true.
         :param pulumi.Input[_builtins.str] pi_plan: Plan associated with the offering; Valid values are public or private.
         :param pulumi.Input[_builtins.str] pi_resource_group_id: The ID of the resource group where you want to create the workspace. You can retrieve the value from data source ibm_resource_group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: List of user tags attached to the resource.
@@ -255,6 +292,7 @@ class PiWorkspace(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiWorkspace resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiWorkspaceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -270,11 +308,12 @@ class PiWorkspace(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_plan: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pi_plan: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -290,6 +329,7 @@ class PiWorkspace(pulumi.CustomResource):
             if pi_name is None and not opts.urn:
                 raise TypeError("Missing required property 'pi_name'")
             __props__.__dict__["pi_name"] = pi_name
+            __props__.__dict__["pi_parameters"] = pi_parameters
             __props__.__dict__["pi_plan"] = pi_plan
             if pi_resource_group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'pi_resource_group_id'")
@@ -307,13 +347,14 @@ class PiWorkspace(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_plan: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_workspace_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'PiWorkspace':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            pi_plan: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_workspace_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'PiWorkspace':
         """
         Get an existing PiWorkspace resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -324,6 +365,7 @@ class PiWorkspace(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] crn: The Workspace crn.
         :param pulumi.Input[_builtins.str] pi_datacenter: Target location or environment to create the resource instance.
         :param pulumi.Input[_builtins.str] pi_name: A descriptive name used to identify the workspace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] pi_parameters: Parameters to pass to the workspace. For example: sharedImages = true.
         :param pulumi.Input[_builtins.str] pi_plan: Plan associated with the offering; Valid values are public or private.
         :param pulumi.Input[_builtins.str] pi_resource_group_id: The ID of the resource group where you want to create the workspace. You can retrieve the value from data source ibm_resource_group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: List of user tags attached to the resource.
@@ -336,6 +378,7 @@ class PiWorkspace(pulumi.CustomResource):
         __props__.__dict__["crn"] = crn
         __props__.__dict__["pi_datacenter"] = pi_datacenter
         __props__.__dict__["pi_name"] = pi_name
+        __props__.__dict__["pi_parameters"] = pi_parameters
         __props__.__dict__["pi_plan"] = pi_plan
         __props__.__dict__["pi_resource_group_id"] = pi_resource_group_id
         __props__.__dict__["pi_user_tags"] = pi_user_tags
@@ -365,6 +408,14 @@ class PiWorkspace(pulumi.CustomResource):
         A descriptive name used to identify the workspace.
         """
         return pulumi.get(self, "pi_name")
+
+    @_builtins.property
+    @pulumi.getter(name="piParameters")
+    def pi_parameters(self) -> pulumi.Output[Optional[Mapping[str, _builtins.str]]]:
+        """
+        Parameters to pass to the workspace. For example: sharedImages = true.
+        """
+        return pulumi.get(self, "pi_parameters")
 
     @_builtins.property
     @pulumi.getter(name="piPlan")

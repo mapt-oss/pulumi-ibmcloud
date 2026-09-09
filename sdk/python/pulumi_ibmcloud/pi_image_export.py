@@ -27,6 +27,7 @@ class PiImageExportArgs:
                  pi_image_secret_key: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiImageExport resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_image_access_key: Cloud Object Storage access key; required for buckets with private access
         :param pulumi.Input[_builtins.str] pi_image_bucket_name: Cloud Object Storage bucket name; bucket-name[/optional/folder]
@@ -117,14 +118,15 @@ class PiImageExportArgs:
 @pulumi.input_type
 class _PiImageExportState:
     def __init__(__self__, *,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiImageExport resources.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_image_access_key: Cloud Object Storage access key; required for buckets with private access
         :param pulumi.Input[_builtins.str] pi_image_bucket_name: Cloud Object Storage bucket name; bucket-name[/optional/folder]
@@ -147,74 +149,74 @@ class _PiImageExportState:
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageAccessKey")
-    def pi_image_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage access key; required for buckets with private access
         """
         return pulumi.get(self, "pi_image_access_key")
 
     @pi_image_access_key.setter
-    def pi_image_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketName")
-    def pi_image_bucket_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage bucket name; bucket-name[/optional/folder]
         """
         return pulumi.get(self, "pi_image_bucket_name")
 
     @pi_image_bucket_name.setter
-    def pi_image_bucket_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketRegion")
-    def pi_image_bucket_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage region
         """
         return pulumi.get(self, "pi_image_bucket_region")
 
     @pi_image_bucket_region.setter
-    def pi_image_bucket_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_region", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageId")
-    def pi_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance image id
         """
         return pulumi.get(self, "pi_image_id")
 
     @pi_image_id.setter
-    def pi_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageSecretKey")
-    def pi_image_secret_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_secret_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage secret key; required for buckets with private access
         """
         return pulumi.get(self, "pi_image_secret_key")
 
     @pi_image_secret_key.setter
-    def pi_image_secret_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_secret_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_secret_key", value)
 
 
@@ -224,15 +226,16 @@ class PiImageExport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiImageExport resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -250,6 +253,7 @@ class PiImageExport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiImageExport resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiImageExportArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -265,12 +269,12 @@ class PiImageExport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -310,12 +314,12 @@ class PiImageExport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiImageExport':
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiImageExport':
         """
         Get an existing PiImageExport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -100,27 +100,27 @@ export interface ResourceTagState {
     /**
      * The ID of the account that owns the resources to be tagged (required if tag-type is set to service)
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * If true, it indicates that the attaching operation is a replacement operation
      */
-    replace?: pulumi.Input<boolean>;
+    replace?: pulumi.Input<boolean | undefined>;
     /**
      * CRN of the resource on which the tags should be attached
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type on which the tags should be attached
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Type of the tag. Only allowed values are: user, or service or access (default value : user)
      */
-    tagType?: pulumi.Input<string>;
+    tagType?: pulumi.Input<string | undefined>;
     /**
      * List of tags associated with resource instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -130,7 +130,7 @@ export interface ResourceTagArgs {
     /**
      * If true, it indicates that the attaching operation is a replacement operation
      */
-    replace?: pulumi.Input<boolean>;
+    replace?: pulumi.Input<boolean | undefined>;
     /**
      * CRN of the resource on which the tags should be attached
      */
@@ -138,13 +138,13 @@ export interface ResourceTagArgs {
     /**
      * Resource type on which the tags should be attached
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Type of the tag. Only allowed values are: user, or service or access (default value : user)
      */
-    tagType?: pulumi.Input<string>;
+    tagType?: pulumi.Input<string | undefined>;
     /**
      * List of tags associated with resource instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -27,7 +27,7 @@ class GetIsSecurityGroupRuleResult:
     """
     A collection of values returned by getIsSecurityGroupRule.
     """
-    def __init__(__self__, code=None, direction=None, href=None, id=None, ip_version=None, locals=None, port_max=None, port_min=None, protocol=None, remotes=None, security_group=None, security_group_rule=None, type=None):
+    def __init__(__self__, code=None, direction=None, href=None, id=None, ip_version=None, locals=None, name=None, port_max=None, port_min=None, protocol=None, remotes=None, security_group=None, security_group_rule=None, type=None):
         if code and not isinstance(code, int):
             raise TypeError("Expected argument 'code' to be a int")
         pulumi.set(__self__, "code", code)
@@ -46,6 +46,9 @@ class GetIsSecurityGroupRuleResult:
         if locals and not isinstance(locals, list):
             raise TypeError("Expected argument 'locals' to be a list")
         pulumi.set(__self__, "locals", locals)
+        if name and not isinstance(name, str):
+            raise TypeError("Expected argument 'name' to be a str")
+        pulumi.set(__self__, "name", name)
         if port_max and not isinstance(port_max, int):
             raise TypeError("Expected argument 'port_max' to be a int")
         pulumi.set(__self__, "port_max", port_max)
@@ -102,6 +105,11 @@ class GetIsSecurityGroupRuleResult:
         return pulumi.get(self, "locals")
 
     @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
     @pulumi.getter(name="portMax")
     def port_max(self) -> _builtins.int:
         return pulumi.get(self, "port_max")
@@ -149,6 +157,7 @@ class AwaitableGetIsSecurityGroupRuleResult(GetIsSecurityGroupRuleResult):
             id=self.id,
             ip_version=self.ip_version,
             locals=self.locals,
+            name=self.name,
             port_max=self.port_max,
             port_min=self.port_min,
             protocol=self.protocol,
@@ -177,6 +186,7 @@ def get_is_security_group_rule(security_group: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         ip_version=pulumi.get(__ret__, 'ip_version'),
         locals=pulumi.get(__ret__, 'locals'),
+        name=pulumi.get(__ret__, 'name'),
         port_max=pulumi.get(__ret__, 'port_max'),
         port_min=pulumi.get(__ret__, 'port_min'),
         protocol=pulumi.get(__ret__, 'protocol'),
@@ -184,8 +194,8 @@ def get_is_security_group_rule(security_group: Optional[_builtins.str] = None,
         security_group=pulumi.get(__ret__, 'security_group'),
         security_group_rule=pulumi.get(__ret__, 'security_group_rule'),
         type=pulumi.get(__ret__, 'type'))
-def get_is_security_group_rule_output(security_group: Optional[pulumi.Input[_builtins.str]] = None,
-                                      security_group_rule: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_security_group_rule_output(security_group: pulumi.Input[Optional[_builtins.str]] = None,
+                                      security_group_rule: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSecurityGroupRuleResult]:
     """
     Use this data source to access information about an existing resource.
@@ -202,6 +212,7 @@ def get_is_security_group_rule_output(security_group: Optional[pulumi.Input[_bui
         id=pulumi.get(__response__, 'id'),
         ip_version=pulumi.get(__response__, 'ip_version'),
         locals=pulumi.get(__response__, 'locals'),
+        name=pulumi.get(__response__, 'name'),
         port_max=pulumi.get(__response__, 'port_max'),
         port_min=pulumi.get(__response__, 'port_min'),
         protocol=pulumi.get(__response__, 'protocol'),

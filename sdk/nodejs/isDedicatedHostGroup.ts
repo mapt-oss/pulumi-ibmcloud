@@ -138,47 +138,47 @@ export interface IsDedicatedHostGroupState {
     /**
      * The dedicated host profile class for hosts in this group.
      */
-    class?: pulumi.Input<string>;
+    class?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the dedicated host group was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this dedicated host group.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The dedicated hosts that are in this dedicated host group.
      */
-    dedicatedHosts?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostGroupDedicatedHost>[]>;
+    dedicatedHosts?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostGroupDedicatedHost>[] | undefined>;
     /**
      * The dedicated host profile family for hosts in this group.
      */
-    family?: pulumi.Input<string>;
+    family?: pulumi.Input<string | undefined>;
     /**
      * The URL for this dedicated host group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this dedicated host group. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Array of instance profiles that can be used by instances placed on this dedicated host group.
      */
-    supportedInstanceProfiles?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostGroupSupportedInstanceProfile>[]>;
+    supportedInstanceProfiles?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostGroupSupportedInstanceProfile>[] | undefined>;
     /**
      * The globally unique name of the zone this dedicated host group will reside in.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -196,11 +196,11 @@ export interface IsDedicatedHostGroupArgs {
     /**
      * The unique user-defined name for this dedicated host group. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name of the zone this dedicated host group will reside in.
      */

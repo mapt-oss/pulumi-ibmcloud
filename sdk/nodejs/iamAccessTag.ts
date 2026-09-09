@@ -73,11 +73,11 @@ export interface IamAccessTagState {
     /**
      * Name of the access tag
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Type of the tag(access)
      */
-    tagType?: pulumi.Input<string>;
+    tagType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -87,5 +87,5 @@ export interface IamAccessTagArgs {
     /**
      * Name of the access tag
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

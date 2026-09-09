@@ -24,6 +24,7 @@ class PiConsoleLanguageArgs:
                  pi_language_code: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiConsoleLanguage resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_instance_name: The unique identifier or name of the instance.
         :param pulumi.Input[_builtins.str] pi_language_code: Language code.
@@ -72,11 +73,12 @@ class PiConsoleLanguageArgs:
 @pulumi.input_type
 class _PiConsoleLanguageState:
     def __init__(__self__, *,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_language_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_language_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiConsoleLanguage resources.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_instance_name: The unique identifier or name of the instance.
         :param pulumi.Input[_builtins.str] pi_language_code: Language code.
@@ -90,38 +92,38 @@ class _PiConsoleLanguageState:
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier or name of the instance.
         """
         return pulumi.get(self, "pi_instance_name")
 
     @pi_instance_name.setter
-    def pi_instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piLanguageCode")
-    def pi_language_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_language_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Language code.
         """
         return pulumi.get(self, "pi_language_code")
 
     @pi_language_code.setter
-    def pi_language_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_language_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_language_code", value)
 
 
@@ -131,12 +133,13 @@ class PiConsoleLanguage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_language_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_language_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiConsoleLanguage resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -151,6 +154,7 @@ class PiConsoleLanguage(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiConsoleLanguage resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiConsoleLanguageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -166,9 +170,9 @@ class PiConsoleLanguage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_language_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_language_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -197,9 +201,9 @@ class PiConsoleLanguage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_language_code: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiConsoleLanguage':
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_language_code: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiConsoleLanguage':
         """
         Get an existing PiConsoleLanguage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

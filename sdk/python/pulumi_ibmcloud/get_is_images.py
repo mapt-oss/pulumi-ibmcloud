@@ -154,13 +154,13 @@ def get_is_images(catalog_managed: Optional[_builtins.bool] = None,
         status=pulumi.get(__ret__, 'status'),
         user_data_formats=pulumi.get(__ret__, 'user_data_formats'),
         visibility=pulumi.get(__ret__, 'visibility'))
-def get_is_images_output(catalog_managed: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         remote_account_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         user_data_formats: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                         visibility: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_images_output(catalog_managed: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         remote_account_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         user_data_formats: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                         visibility: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsImagesResult]:
     """
     Use this data source to access information about an existing resource.

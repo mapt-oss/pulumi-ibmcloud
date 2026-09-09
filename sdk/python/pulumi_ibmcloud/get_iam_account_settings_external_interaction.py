@@ -94,8 +94,8 @@ def get_iam_account_settings_external_interaction(accept_language: Optional[_bui
         account_id=pulumi.get(__ret__, 'account_id'),
         external_account_identity_interactions=pulumi.get(__ret__, 'external_account_identity_interactions'),
         id=pulumi.get(__ret__, 'id'))
-def get_iam_account_settings_external_interaction_output(accept_language: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         account_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_account_settings_external_interaction_output(accept_language: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         account_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccountSettingsExternalInteractionResult]:
     """
     Use this data source to access information about an existing resource.

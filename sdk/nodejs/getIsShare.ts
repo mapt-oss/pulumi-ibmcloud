@@ -83,6 +83,6 @@ export function getIsShareOutput(args?: GetIsShareOutputArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getIsShare.
  */
 export interface GetIsShareOutputArgs {
-    name?: pulumi.Input<string>;
-    share?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    share?: pulumi.Input<string | undefined>;
 }

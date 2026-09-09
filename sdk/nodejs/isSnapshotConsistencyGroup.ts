@@ -39,6 +39,10 @@ export class IsSnapshotConsistencyGroup extends pulumi.CustomResource {
      */
     declare public readonly accessTags: pulumi.Output<string[]>;
     /**
+     * If present, the backup policy job that created this snapshot consistency group. Snapshot consistency groups with the same backup policy job identifier represent snapshots of the same instance across different storage generations.
+     */
+    declare public /*out*/ readonly backupPolicyJobs: pulumi.Output<outputs.IsSnapshotConsistencyGroupBackupPolicyJob[]>;
+    /**
      * If present, the backup policy plan which created this snapshot consistency group.
      */
     declare public /*out*/ readonly backupPolicyPlans: pulumi.Output<outputs.IsSnapshotConsistencyGroupBackupPolicyPlan[]>;
@@ -105,6 +109,7 @@ export class IsSnapshotConsistencyGroup extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IsSnapshotConsistencyGroupState | undefined;
             resourceInputs["accessTags"] = state?.accessTags;
+            resourceInputs["backupPolicyJobs"] = state?.backupPolicyJobs;
             resourceInputs["backupPolicyPlans"] = state?.backupPolicyPlans;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["crn"] = state?.crn;
@@ -129,6 +134,7 @@ export class IsSnapshotConsistencyGroup extends pulumi.CustomResource {
             resourceInputs["resourceGroup"] = args?.resourceGroup;
             resourceInputs["snapshots"] = args?.snapshots;
             resourceInputs["tags"] = args?.tags;
+            resourceInputs["backupPolicyJobs"] = undefined /*out*/;
             resourceInputs["backupPolicyPlans"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["crn"] = undefined /*out*/;
@@ -150,59 +156,63 @@ export interface IsSnapshotConsistencyGroupState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * If present, the backup policy job that created this snapshot consistency group. Snapshot consistency groups with the same backup policy job identifier represent snapshots of the same instance across different storage generations.
+     */
+    backupPolicyJobs?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyJob>[] | undefined>;
     /**
      * If present, the backup policy plan which created this snapshot consistency group.
      */
-    backupPolicyPlans?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyPlan>[]>;
+    backupPolicyPlans?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyPlan>[] | undefined>;
     /**
      * The date and time that this snapshot consistency group was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN of this snapshot consistency group.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether deleting the snapshot consistency group will also delete the snapshots in the group.
      */
-    deleteSnapshotsOnDelete?: pulumi.Input<boolean>;
+    deleteSnapshotsOnDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this snapshot consistency group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of this snapshot consistency group.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this snapshot consistency group. The name is unique across all snapshot consistency groups in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource group Id
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The [service tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags)[`is.instance:` prefix](https://cloud.ibm.com/docs/vpc?topic=vpc-snapshots-vpc-faqs) associated with this snapshot consistency group.
      */
-    serviceTags?: pulumi.Input<pulumi.Input<string>[]>;
+    serviceTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
      */
-    snapshotReferences?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshotReference>[]>;
+    snapshotReferences?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshotReference>[] | undefined>;
     /**
      * The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
      */
-    snapshots?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshot>[]>;
+    snapshots?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshot>[] | undefined>;
     /**
      * Snapshot Consistency Group tags list
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -212,19 +222,19 @@ export interface IsSnapshotConsistencyGroupArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether deleting the snapshot consistency group will also delete the snapshots in the group.
      */
-    deleteSnapshotsOnDelete?: pulumi.Input<boolean>;
+    deleteSnapshotsOnDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The name for this snapshot consistency group. The name is unique across all snapshot consistency groups in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource group Id
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
      */
@@ -232,5 +242,5 @@ export interface IsSnapshotConsistencyGroupArgs {
     /**
      * Snapshot Consistency Group tags list
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

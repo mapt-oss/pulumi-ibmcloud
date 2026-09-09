@@ -25,6 +25,7 @@ class IsInstanceDiskManagementArgs:
                  instance: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsInstanceDiskManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]] disks: Disk information that has to be updated.
         :param pulumi.Input[_builtins.str] instance: ID of the instance for which disks has to be managed
         """
@@ -59,10 +60,11 @@ class IsInstanceDiskManagementArgs:
 @pulumi.input_type
 class _IsInstanceDiskManagementState:
     def __init__(__self__, *,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None):
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceDiskManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]] disks: Disk information that has to be updated.
         :param pulumi.Input[_builtins.str] instance: ID of the instance for which disks has to be managed
         """
@@ -73,26 +75,26 @@ class _IsInstanceDiskManagementState:
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]]]:
         """
         Disk information that has to be updated.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceDiskManagementDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter
-    def instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the instance for which disks has to be managed
         """
         return pulumi.get(self, "instance")
 
     @instance.setter
-    def instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance", value)
 
 
@@ -102,14 +104,15 @@ class IsInstanceDiskManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict']]]]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict', 'outputs.IsInstanceDiskManagementDisk']]]]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceDiskManagement resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict']]]] disks: Disk information that has to be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict', 'outputs.IsInstanceDiskManagementDisk']]]] disks: Disk information that has to be updated.
         :param pulumi.Input[_builtins.str] instance: ID of the instance for which disks has to be managed
         """
         ...
@@ -120,6 +123,7 @@ class IsInstanceDiskManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceDiskManagement resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceDiskManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -135,8 +139,8 @@ class IsInstanceDiskManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict']]]]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict', 'outputs.IsInstanceDiskManagementDisk']]]]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -162,8 +166,8 @@ class IsInstanceDiskManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict']]]]] = None,
-            instance: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceDiskManagement':
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict', 'outputs.IsInstanceDiskManagementDisk']]]]] = None,
+            instance: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceDiskManagement':
         """
         Get an existing IsInstanceDiskManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -171,7 +175,7 @@ class IsInstanceDiskManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict']]]] disks: Disk information that has to be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceDiskManagementDiskArgs', 'IsInstanceDiskManagementDiskArgsDict', 'outputs.IsInstanceDiskManagementDisk']]]] disks: Disk information that has to be updated.
         :param pulumi.Input[_builtins.str] instance: ID of the instance for which disks has to be managed
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

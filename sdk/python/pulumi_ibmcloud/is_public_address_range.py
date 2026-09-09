@@ -22,13 +22,14 @@ __all__ = ['IsPublicAddressRangeArgs', 'IsPublicAddressRange']
 class IsPublicAddressRangeArgs:
     def __init__(__self__, *,
                  ipv4_address_count: pulumi.Input[_builtins.int],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input['IsPublicAddressRangeResourceGroupArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input['IsPublicAddressRangeTargetArgs']] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional['IsPublicAddressRangeResourceGroupArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional['IsPublicAddressRangeTargetArgs']] = None):
         """
         The set of arguments for constructing a IsPublicAddressRange resource.
+
         :param pulumi.Input[_builtins.int] ipv4_address_count: The number of IPv4 addresses in this public address range.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] name: The name for this public address range. The name is unique across all public address ranges in the region.
@@ -62,82 +63,83 @@ class IsPublicAddressRangeArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this public address range. The name is unique across all public address ranges in the region.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input['IsPublicAddressRangeResourceGroupArgs']]:
+    def resource_group(self) -> pulumi.Input[Optional['IsPublicAddressRangeResourceGroupArgs']]:
         """
         The resource group for this public address range.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input['IsPublicAddressRangeResourceGroupArgs']]):
+    def resource_group(self, value: pulumi.Input[Optional['IsPublicAddressRangeResourceGroupArgs']]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Tags for the PublicAddressRange
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['IsPublicAddressRangeTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['IsPublicAddressRangeTargetArgs']]:
         """
         The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['IsPublicAddressRangeTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['IsPublicAddressRangeTargetArgs']]):
         pulumi.set(self, "target", value)
 
 
 @pulumi.input_type
 class _IsPublicAddressRangeState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input['IsPublicAddressRangeResourceGroupArgs']] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input['IsPublicAddressRangeTargetArgs']] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional['IsPublicAddressRangeResourceGroupArgs']] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional['IsPublicAddressRangeTargetArgs']] = None):
         """
         Input properties used for looking up and filtering IsPublicAddressRange resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] cidr: The public IPv4 range, expressed in CIDR format.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the public address range was created.
@@ -178,146 +180,146 @@ class _IsPublicAddressRangeState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public IPv4 range, expressed in CIDR format.
         """
         return pulumi.get(self, "cidr")
 
     @cidr.setter
-    def cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the public address range was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this public address range.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this public address range.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4AddressCount")
-    def ipv4_address_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ipv4_address_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of IPv4 addresses in this public address range.
         """
         return pulumi.get(self, "ipv4_address_count")
 
     @ipv4_address_count.setter
-    def ipv4_address_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ipv4_address_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ipv4_address_count", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the public address range.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this public address range. The name is unique across all public address ranges in the region.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input['IsPublicAddressRangeResourceGroupArgs']]:
+    def resource_group(self) -> pulumi.Input[Optional['IsPublicAddressRangeResourceGroupArgs']]:
         """
         The resource group for this public address range.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input['IsPublicAddressRangeResourceGroupArgs']]):
+    def resource_group(self, value: pulumi.Input[Optional['IsPublicAddressRangeResourceGroupArgs']]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Tags for the PublicAddressRange
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['IsPublicAddressRangeTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['IsPublicAddressRangeTargetArgs']]:
         """
         The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['IsPublicAddressRangeTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['IsPublicAddressRangeTargetArgs']]):
         pulumi.set(self, "target", value)
 
 
@@ -327,23 +329,24 @@ class IsPublicAddressRange(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict']]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict', 'outputs.IsPublicAddressRangeResourceGroup']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict', 'outputs.IsPublicAddressRangeTarget']]] = None,
                  __props__=None):
         """
         Create a IsPublicAddressRange resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.int] ipv4_address_count: The number of IPv4 addresses in this public address range.
         :param pulumi.Input[_builtins.str] name: The name for this public address range. The name is unique across all public address ranges in the region.
-        :param pulumi.Input[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict']] resource_group: The resource group for this public address range.
+        :param pulumi.Input[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict', 'outputs.IsPublicAddressRangeResourceGroup']] resource_group: The resource group for this public address range.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: User Tags for the PublicAddressRange
-        :param pulumi.Input[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict']] target: The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
+        :param pulumi.Input[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict', 'outputs.IsPublicAddressRangeTarget']] target: The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
         """
         ...
     @overload
@@ -353,6 +356,7 @@ class IsPublicAddressRange(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsPublicAddressRange resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsPublicAddressRangeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -368,12 +372,12 @@ class IsPublicAddressRange(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target: Optional[pulumi.Input[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict']]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict', 'outputs.IsPublicAddressRangeResourceGroup']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target: pulumi.Input[Optional[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict', 'outputs.IsPublicAddressRangeTarget']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -407,18 +411,18 @@ class IsPublicAddressRange(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv4_address_count: Optional[pulumi.Input[_builtins.int]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict']]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            target: Optional[pulumi.Input[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict']]] = None) -> 'IsPublicAddressRange':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4_address_count: pulumi.Input[Optional[_builtins.int]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict', 'outputs.IsPublicAddressRangeResourceGroup']]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target: pulumi.Input[Optional[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict', 'outputs.IsPublicAddressRangeTarget']]] = None) -> 'IsPublicAddressRange':
         """
         Get an existing IsPublicAddressRange resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -434,10 +438,10 @@ class IsPublicAddressRange(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] ipv4_address_count: The number of IPv4 addresses in this public address range.
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the public address range.
         :param pulumi.Input[_builtins.str] name: The name for this public address range. The name is unique across all public address ranges in the region.
-        :param pulumi.Input[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict']] resource_group: The resource group for this public address range.
+        :param pulumi.Input[Union['IsPublicAddressRangeResourceGroupArgs', 'IsPublicAddressRangeResourceGroupArgsDict', 'outputs.IsPublicAddressRangeResourceGroup']] resource_group: The resource group for this public address range.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: User Tags for the PublicAddressRange
-        :param pulumi.Input[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict']] target: The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
+        :param pulumi.Input[Union['IsPublicAddressRangeTargetArgs', 'IsPublicAddressRangeTargetArgsDict', 'outputs.IsPublicAddressRangeTarget']] target: The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

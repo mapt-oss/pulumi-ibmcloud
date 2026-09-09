@@ -56,6 +56,6 @@ export function getIsClusterNetworkSubnetReservedIpsOutput(args: GetIsClusterNet
 export interface GetIsClusterNetworkSubnetReservedIpsOutputArgs {
     clusterNetworkId: pulumi.Input<string>;
     clusterNetworkSubnetId: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
 }

@@ -151,60 +151,60 @@ export interface TgGatewayState {
     /**
      * The creation time of the resource
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Allow global routing for a Transit Gateway. If unspecified, the default value is false
      */
-    global?: pulumi.Input<boolean>;
+    global?: pulumi.Input<boolean | undefined>;
     /**
      * Allow route propagation across all GREs connected to the same transit gateway. This affects connections on the gateway of type redundant_gre, unboundGreTunnel and gre_tunnel
      */
-    greEnhancedRoutePropagation?: pulumi.Input<boolean>;
+    greEnhancedRoutePropagation?: pulumi.Input<boolean | undefined>;
     /**
      * Location of Transit Gateway Services
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * Name Transit Gateway Services
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * The Status of the resource
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Tags for the transit gateway instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The updation time of the resource
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -214,11 +214,11 @@ export interface TgGatewayArgs {
     /**
      * Allow global routing for a Transit Gateway. If unspecified, the default value is false
      */
-    global?: pulumi.Input<boolean>;
+    global?: pulumi.Input<boolean | undefined>;
     /**
      * Allow route propagation across all GREs connected to the same transit gateway. This affects connections on the gateway of type redundant_gre, unboundGreTunnel and gre_tunnel
      */
-    greEnhancedRoutePropagation?: pulumi.Input<boolean>;
+    greEnhancedRoutePropagation?: pulumi.Input<boolean | undefined>;
     /**
      * Location of Transit Gateway Services
      */
@@ -226,10 +226,10 @@ export interface TgGatewayArgs {
     /**
      * Name Transit Gateway Services
      */
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Tags for the transit gateway instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

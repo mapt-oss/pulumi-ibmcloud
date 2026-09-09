@@ -38,6 +38,7 @@ export class IamTrustedProfile extends pulumi.CustomResource {
      * ID of the account that this trusted profile belong to.
      */
     declare public /*out*/ readonly accountId: pulumi.Output<string>;
+    declare public /*out*/ readonly activities: pulumi.Output<outputs.IamTrustedProfileActivity[]>;
     /**
      * ID of the assignment that was used to create an enterprise-managed trusted profile in your account. When returned, this indicates that the trusted profile is created from and managed by a template in the root enterprise account.
      */
@@ -54,6 +55,10 @@ export class IamTrustedProfile extends pulumi.CustomResource {
      * The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
      */
     declare public readonly description: pulumi.Output<string | undefined>;
+    /**
+     * The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
+     */
+    declare public readonly email: pulumi.Output<string | undefined>;
     /**
      * Version of the trusted profile details object. You need to specify this value when updating the trusted profile to avoid stale updates.
      */
@@ -105,10 +110,12 @@ export class IamTrustedProfile extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IamTrustedProfileState | undefined;
             resourceInputs["accountId"] = state?.accountId;
+            resourceInputs["activities"] = state?.activities;
             resourceInputs["assignmentId"] = state?.assignmentId;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["crn"] = state?.crn;
             resourceInputs["description"] = state?.description;
+            resourceInputs["email"] = state?.email;
             resourceInputs["entityTag"] = state?.entityTag;
             resourceInputs["histories"] = state?.histories;
             resourceInputs["iamId"] = state?.iamId;
@@ -121,8 +128,10 @@ export class IamTrustedProfile extends pulumi.CustomResource {
         } else {
             const args = argsOrState as IamTrustedProfileArgs | undefined;
             resourceInputs["description"] = args?.description;
+            resourceInputs["email"] = args?.email;
             resourceInputs["name"] = args?.name;
             resourceInputs["accountId"] = undefined /*out*/;
+            resourceInputs["activities"] = undefined /*out*/;
             resourceInputs["assignmentId"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["crn"] = undefined /*out*/;
@@ -147,59 +156,64 @@ export interface IamTrustedProfileState {
     /**
      * ID of the account that this trusted profile belong to.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
+    activities?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileActivity>[] | undefined>;
     /**
      * ID of the assignment that was used to create an enterprise-managed trusted profile in your account. When returned, this indicates that the trusted profile is created from and managed by a template in the root enterprise account.
      */
-    assignmentId?: pulumi.Input<string>;
+    assignmentId?: pulumi.Input<string | undefined>;
     /**
      * If set contains a date time string of the creation date in ISO format.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::profile:Profile-94497d0d-2ac3-41bf-a993-a49d1b14627c'.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
+     */
+    email?: pulumi.Input<string | undefined>;
     /**
      * Version of the trusted profile details object. You need to specify this value when updating the trusted profile to avoid stale updates.
      */
-    entityTag?: pulumi.Input<string>;
+    entityTag?: pulumi.Input<string | undefined>;
     /**
      * History of the trusted profile.
      */
-    histories?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileHistory>[]>;
+    histories?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileHistory>[] | undefined>;
     /**
      * The iamId of this trusted profile.
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * IMS acount ID of the trusted profile.
      */
-    imsAccountId?: pulumi.Input<number>;
+    imsAccountId?: pulumi.Input<number | undefined>;
     /**
      * IMS user ID of the trusted profile.
      */
-    imsUserId?: pulumi.Input<number>;
+    imsUserId?: pulumi.Input<number | undefined>;
     /**
      * If set contains a date time string of the last modification date in ISO format.
      */
-    modifiedAt?: pulumi.Input<string>;
+    modifiedAt?: pulumi.Input<string | undefined>;
     /**
      * Name of the trusted profile. The name is checked for uniqueness. Therefore trusted profiles with the same names can not exist in the same account.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * the unique identifier of the trusted profile. Example:'Profile-94497d0d-2ac3-41bf-a993-a49d1b14627c'.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * ID of the IAM template that was used to create an enterprise-managed trusted profile in your account. When returned, this indicates that the trusted profile is created from and managed by a template in the root enterprise account.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -209,9 +223,13 @@ export interface IamTrustedProfileArgs {
     /**
      * The optional description of the trusted profile. The 'description' property is only available if a description was provided during a create of a trusted profile.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * The optional email of the trusted profile. The 'email' property is only available if an email was provided during a create of a trusted profile.
+     */
+    email?: pulumi.Input<string | undefined>;
     /**
      * Name of the trusted profile. The name is checked for uniqueness. Therefore trusted profiles with the same names can not exist in the same account.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

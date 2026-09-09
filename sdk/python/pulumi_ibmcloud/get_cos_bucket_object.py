@@ -217,10 +217,10 @@ def get_cos_bucket_object(bucket_crn: Optional[_builtins.str] = None,
         object_sql_url=pulumi.get(__ret__, 'object_sql_url'),
         version_id=pulumi.get(__ret__, 'version_id'),
         website_redirect=pulumi.get(__ret__, 'website_redirect'))
-def get_cos_bucket_object_output(bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                                 endpoint_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cos_bucket_object_output(bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                                 endpoint_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 key: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCosBucketObjectResult]:
     """
     Use this data source to access information about an existing resource.

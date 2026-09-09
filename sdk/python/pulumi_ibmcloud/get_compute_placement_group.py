@@ -112,7 +112,7 @@ def get_compute_placement_group(name: Optional[_builtins.str] = None,
         pod=pulumi.get(__ret__, 'pod'),
         rule=pulumi.get(__ret__, 'rule'),
         virtual_guests=pulumi.get(__ret__, 'virtual_guests'))
-def get_compute_placement_group_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_placement_group_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputePlacementGroupResult]:
     """
     Use this data source to access information about an existing resource.

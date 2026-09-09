@@ -35,7 +35,7 @@ export class IamTrustedProfileLink extends pulumi.CustomResource {
     }
 
     /**
-     * The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+     * The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
     declare public readonly crType: pulumi.Output<string>;
     /**
@@ -46,6 +46,10 @@ export class IamTrustedProfileLink extends pulumi.CustomResource {
      * version of the link.
      */
     declare public /*out*/ readonly entityTag: pulumi.Output<string>;
+    /**
+     * Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+     */
+    declare public readonly isCrossAccount: pulumi.Output<boolean | undefined>;
     /**
      * Link details.
      */
@@ -83,6 +87,7 @@ export class IamTrustedProfileLink extends pulumi.CustomResource {
             resourceInputs["crType"] = state?.crType;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["entityTag"] = state?.entityTag;
+            resourceInputs["isCrossAccount"] = state?.isCrossAccount;
             resourceInputs["link"] = state?.link;
             resourceInputs["linkId"] = state?.linkId;
             resourceInputs["modifiedAt"] = state?.modifiedAt;
@@ -100,6 +105,7 @@ export class IamTrustedProfileLink extends pulumi.CustomResource {
                 throw new Error("Missing required property 'profileId'");
             }
             resourceInputs["crType"] = args?.crType;
+            resourceInputs["isCrossAccount"] = args?.isCrossAccount;
             resourceInputs["link"] = args?.link;
             resourceInputs["name"] = args?.name;
             resourceInputs["profileId"] = args?.profileId;
@@ -118,37 +124,41 @@ export class IamTrustedProfileLink extends pulumi.CustomResource {
  */
 export interface IamTrustedProfileLinkState {
     /**
-     * The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+     * The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
-    crType?: pulumi.Input<string>;
+    crType?: pulumi.Input<string | undefined>;
     /**
      * If set contains a date time string of the creation date in ISO format.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * version of the link.
      */
-    entityTag?: pulumi.Input<string>;
+    entityTag?: pulumi.Input<string | undefined>;
+    /**
+     * Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+     */
+    isCrossAccount?: pulumi.Input<boolean | undefined>;
     /**
      * Link details.
      */
-    link?: pulumi.Input<inputs.IamTrustedProfileLinkLink>;
+    link?: pulumi.Input<inputs.IamTrustedProfileLinkLink | undefined>;
     /**
      * the unique identifier of the link.
      */
-    linkId?: pulumi.Input<string>;
+    linkId?: pulumi.Input<string | undefined>;
     /**
      * If set contains a date time string of the last modification date in ISO format.
      */
-    modifiedAt?: pulumi.Input<string>;
+    modifiedAt?: pulumi.Input<string | undefined>;
     /**
      * Optional name of the Link.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of the trusted profile.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -156,9 +166,13 @@ export interface IamTrustedProfileLinkState {
  */
 export interface IamTrustedProfileLinkArgs {
     /**
-     * The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+     * The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
     crType: pulumi.Input<string>;
+    /**
+     * Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+     */
+    isCrossAccount?: pulumi.Input<boolean | undefined>;
     /**
      * Link details.
      */
@@ -166,7 +180,7 @@ export interface IamTrustedProfileLinkArgs {
     /**
      * Optional name of the Link.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of the trusted profile.
      */

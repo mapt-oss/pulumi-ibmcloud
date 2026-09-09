@@ -96,19 +96,19 @@ export interface CosBucketObjectLockConfigurationState {
     /**
      * COS bucket CRN
      */
-    bucketCrn?: pulumi.Input<string>;
+    bucketCrn?: pulumi.Input<string | undefined>;
     /**
      * COS bucket location
      */
-    bucketLocation?: pulumi.Input<string>;
+    bucketLocation?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Bucket level object lock settings includes Days, Years, Mode.
      */
-    objectLockConfiguration?: pulumi.Input<inputs.CosBucketObjectLockConfigurationObjectLockConfiguration>;
+    objectLockConfiguration?: pulumi.Input<inputs.CosBucketObjectLockConfigurationObjectLockConfiguration | undefined>;
 }
 
 /**
@@ -126,7 +126,7 @@ export interface CosBucketObjectLockConfigurationArgs {
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Bucket level object lock settings includes Days, Years, Mode.
      */

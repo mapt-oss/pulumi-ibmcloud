@@ -25,6 +25,7 @@ class IsVirtualNetworkInterfaceFloatingIpArgs:
                  virtual_network_interface: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsVirtualNetworkInterfaceFloatingIp resource.
+
         :param pulumi.Input[_builtins.str] floating_ip: The floating IP identifier
         :param pulumi.Input[_builtins.str] virtual_network_interface: The virtual network interface identifier
         """
@@ -59,15 +60,16 @@ class IsVirtualNetworkInterfaceFloatingIpArgs:
 @pulumi.input_type
 class _IsVirtualNetworkInterfaceFloatingIpState:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 deleteds: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceFloatingIpDeletedArgs']]]] = None,
-                 floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 deleteds: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceFloatingIpDeletedArgs']]]] = None,
+                 floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVirtualNetworkInterfaceFloatingIp resources.
+
         :param pulumi.Input[_builtins.str] address: The globally unique IP address.
         :param pulumi.Input[_builtins.str] crn: The CRN for this floating IP.
         :param pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceFloatingIpDeletedArgs']]] deleteds: If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
@@ -93,86 +95,86 @@ class _IsVirtualNetworkInterfaceFloatingIpState:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique IP address.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this floating IP.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def deleteds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceFloatingIpDeletedArgs']]]]:
+    def deleteds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceFloatingIpDeletedArgs']]]]:
         """
         If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
         """
         return pulumi.get(self, "deleteds")
 
     @deleteds.setter
-    def deleteds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualNetworkInterfaceFloatingIpDeletedArgs']]]]):
+    def deleteds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualNetworkInterfaceFloatingIpDeletedArgs']]]]):
         pulumi.set(self, "deleteds", value)
 
     @_builtins.property
     @pulumi.getter(name="floatingIp")
-    def floating_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def floating_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The floating IP identifier
         """
         return pulumi.get(self, "floating_ip")
 
     @floating_ip.setter
-    def floating_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def floating_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "floating_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this floating IP.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this floating IP. The name is unique across all floating IPs in the region.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual network interface identifier
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtual_network_interface", value)
 
 
@@ -182,11 +184,12 @@ class IsVirtualNetworkInterfaceFloatingIp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+                 floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVirtualNetworkInterfaceFloatingIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] floating_ip: The floating IP identifier
@@ -200,6 +203,7 @@ class IsVirtualNetworkInterfaceFloatingIp(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVirtualNetworkInterfaceFloatingIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVirtualNetworkInterfaceFloatingIpArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -215,8 +219,8 @@ class IsVirtualNetworkInterfaceFloatingIp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+                 floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -247,13 +251,13 @@ class IsVirtualNetworkInterfaceFloatingIp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            deleteds: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'IsVirtualNetworkInterfaceFloatingIpDeletedArgsDict']]]]] = None,
-            floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVirtualNetworkInterfaceFloatingIp':
+            address: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            deleteds: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'IsVirtualNetworkInterfaceFloatingIpDeletedArgsDict', 'outputs.IsVirtualNetworkInterfaceFloatingIpDeleted']]]]] = None,
+            floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVirtualNetworkInterfaceFloatingIp':
         """
         Get an existing IsVirtualNetworkInterfaceFloatingIp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -263,7 +267,7 @@ class IsVirtualNetworkInterfaceFloatingIp(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address: The globally unique IP address.
         :param pulumi.Input[_builtins.str] crn: The CRN for this floating IP.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'IsVirtualNetworkInterfaceFloatingIpDeletedArgsDict']]]] deleteds: If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'IsVirtualNetworkInterfaceFloatingIpDeletedArgsDict', 'outputs.IsVirtualNetworkInterfaceFloatingIpDeleted']]]] deleteds: If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
         :param pulumi.Input[_builtins.str] floating_ip: The floating IP identifier
         :param pulumi.Input[_builtins.str] href: The URL for this floating IP.
         :param pulumi.Input[_builtins.str] name: The name for this floating IP. The name is unique across all floating IPs in the region.

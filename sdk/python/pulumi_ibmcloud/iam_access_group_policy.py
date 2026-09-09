@@ -23,18 +23,19 @@ class IamAccessGroupPolicyArgs:
     def __init__(__self__, *,
                  access_group_id: pulumi.Input[_builtins.str],
                  roles: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]] = None,
-                 resources: Optional[pulumi.Input['IamAccessGroupPolicyResourcesArgs']] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]] = None,
+                 resources: pulumi.Input[Optional['IamAccessGroupPolicyResourcesArgs']] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamAccessGroupPolicy resource.
+
         :param pulumi.Input[_builtins.str] access_group_id: ID of access group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
         :param pulumi.Input[_builtins.bool] account_management: Give access to all account management services
@@ -95,137 +96,138 @@ class IamAccessGroupPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountManagement")
-    def account_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def account_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Give access to all account management services
         """
         return pulumi.get(self, "account_management")
 
     @account_management.setter
-    def account_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def account_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "account_management", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the Policy
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pattern rule follows for time-based condition
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributes")
-    def resource_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]:
+    def resource_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]:
         """
         Set resource attributes.
         """
         return pulumi.get(self, "resource_attributes")
 
     @resource_attributes.setter
-    def resource_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]):
+    def resource_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]):
         pulumi.set(self, "resource_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTags")
-    def resource_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]:
+    def resource_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]:
         """
         Set access management tags.
         """
         return pulumi.get(self, "resource_tags")
 
     @resource_tags.setter
-    def resource_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]):
+    def resource_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]):
         pulumi.set(self, "resource_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input['IamAccessGroupPolicyResourcesArgs']]:
+    def resources(self) -> pulumi.Input[Optional['IamAccessGroupPolicyResourcesArgs']]:
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input['IamAccessGroupPolicyResourcesArgs']]):
+    def resources(self, value: pulumi.Input[Optional['IamAccessGroupPolicyResourcesArgs']]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleConditions")
-    def rule_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]:
+    def rule_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]:
         """
         Rule conditions enforced by the policy
         """
         return pulumi.get(self, "rule_conditions")
 
     @rule_conditions.setter
-    def rule_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]):
+    def rule_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]):
         pulumi.set(self, "rule_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleOperator")
-    def rule_operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operator that multiple rule conditions are evaluated over
         """
         return pulumi.get(self, "rule_operator")
 
     @rule_operator.setter
-    def rule_operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set transactionID for debug
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
 
 @pulumi.input_type
 class _IamAccessGroupPolicyState:
     def __init__(__self__, *,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]] = None,
-                 resources: Optional[pulumi.Input['IamAccessGroupPolicyResourcesArgs']] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]] = None,
+                 resources: pulumi.Input[Optional['IamAccessGroupPolicyResourcesArgs']] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamAccessGroupPolicy resources.
+
         :param pulumi.Input[_builtins.str] access_group_id: ID of access group
         :param pulumi.Input[_builtins.bool] account_management: Give access to all account management services
         :param pulumi.Input[_builtins.str] description: Description of the Policy
@@ -266,149 +268,149 @@ class _IamAccessGroupPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="accessGroupId")
-    def access_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of access group
         """
         return pulumi.get(self, "access_group_id")
 
     @access_group_id.setter
-    def access_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accountManagement")
-    def account_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def account_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Give access to all account management services
         """
         return pulumi.get(self, "account_management")
 
     @account_management.setter
-    def account_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def account_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "account_management", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the Policy
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pattern rule follows for time-based condition
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributes")
-    def resource_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]:
+    def resource_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]:
         """
         Set resource attributes.
         """
         return pulumi.get(self, "resource_attributes")
 
     @resource_attributes.setter
-    def resource_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]):
+    def resource_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceAttributeArgs']]]]):
         pulumi.set(self, "resource_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTags")
-    def resource_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]:
+    def resource_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]:
         """
         Set access management tags.
         """
         return pulumi.get(self, "resource_tags")
 
     @resource_tags.setter
-    def resource_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]):
+    def resource_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyResourceTagArgs']]]]):
         pulumi.set(self, "resource_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input['IamAccessGroupPolicyResourcesArgs']]:
+    def resources(self) -> pulumi.Input[Optional['IamAccessGroupPolicyResourcesArgs']]:
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input['IamAccessGroupPolicyResourcesArgs']]):
+    def resources(self, value: pulumi.Input[Optional['IamAccessGroupPolicyResourcesArgs']]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Role names of the policy definition
         """
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleConditions")
-    def rule_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]:
+    def rule_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]:
         """
         Rule conditions enforced by the policy
         """
         return pulumi.get(self, "rule_conditions")
 
     @rule_conditions.setter
-    def rule_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]):
+    def rule_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupPolicyRuleConditionArgs']]]]):
         pulumi.set(self, "rule_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleOperator")
-    def rule_operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operator that multiple rule conditions are evaluated over
         """
         return pulumi.get(self, "rule_operator")
 
     @rule_operator.setter
-    def rule_operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set transactionID for debug
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -418,31 +420,32 @@ class IamAccessGroupPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict']]]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict']]]]] = None,
-                 resources: Optional[pulumi.Input[Union['IamAccessGroupPolicyResourcesArgs', 'IamAccessGroupPolicyResourcesArgsDict']]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict']]]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict', 'outputs.IamAccessGroupPolicyResourceAttribute']]]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict', 'outputs.IamAccessGroupPolicyResourceTag']]]]] = None,
+                 resources: pulumi.Input[Optional[Union['IamAccessGroupPolicyResourcesArgs', 'IamAccessGroupPolicyResourcesArgsDict', 'outputs.IamAccessGroupPolicyResources']]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict', 'outputs.IamAccessGroupPolicyRuleCondition']]]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamAccessGroupPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_group_id: ID of access group
         :param pulumi.Input[_builtins.bool] account_management: Give access to all account management services
         :param pulumi.Input[_builtins.str] description: Description of the Policy
         :param pulumi.Input[_builtins.str] pattern: Pattern rule follows for time-based condition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict']]]] resource_attributes: Set resource attributes.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict']]]] resource_tags: Set access management tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict', 'outputs.IamAccessGroupPolicyResourceAttribute']]]] resource_attributes: Set resource attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict', 'outputs.IamAccessGroupPolicyResourceTag']]]] resource_tags: Set access management tags.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict']]]] rule_conditions: Rule conditions enforced by the policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict', 'outputs.IamAccessGroupPolicyRuleCondition']]]] rule_conditions: Rule conditions enforced by the policy
         :param pulumi.Input[_builtins.str] rule_operator: Operator that multiple rule conditions are evaluated over
         :param pulumi.Input[_builtins.str] transaction_id: Set transactionID for debug
         """
@@ -454,6 +457,7 @@ class IamAccessGroupPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccessGroupPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccessGroupPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -469,18 +473,18 @@ class IamAccessGroupPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict']]]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict']]]]] = None,
-                 resources: Optional[pulumi.Input[Union['IamAccessGroupPolicyResourcesArgs', 'IamAccessGroupPolicyResourcesArgsDict']]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict']]]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict', 'outputs.IamAccessGroupPolicyResourceAttribute']]]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict', 'outputs.IamAccessGroupPolicyResourceTag']]]]] = None,
+                 resources: pulumi.Input[Optional[Union['IamAccessGroupPolicyResourcesArgs', 'IamAccessGroupPolicyResourcesArgsDict', 'outputs.IamAccessGroupPolicyResources']]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict', 'outputs.IamAccessGroupPolicyRuleCondition']]]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -517,19 +521,19 @@ class IamAccessGroupPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            pattern: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict']]]]] = None,
-            resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict']]]]] = None,
-            resources: Optional[pulumi.Input[Union['IamAccessGroupPolicyResourcesArgs', 'IamAccessGroupPolicyResourcesArgsDict']]] = None,
-            roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict']]]]] = None,
-            rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamAccessGroupPolicy':
+            access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict', 'outputs.IamAccessGroupPolicyResourceAttribute']]]]] = None,
+            resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict', 'outputs.IamAccessGroupPolicyResourceTag']]]]] = None,
+            resources: pulumi.Input[Optional[Union['IamAccessGroupPolicyResourcesArgs', 'IamAccessGroupPolicyResourcesArgsDict', 'outputs.IamAccessGroupPolicyResources']]] = None,
+            roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict', 'outputs.IamAccessGroupPolicyRuleCondition']]]]] = None,
+            rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamAccessGroupPolicy':
         """
         Get an existing IamAccessGroupPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -541,10 +545,10 @@ class IamAccessGroupPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] account_management: Give access to all account management services
         :param pulumi.Input[_builtins.str] description: Description of the Policy
         :param pulumi.Input[_builtins.str] pattern: Pattern rule follows for time-based condition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict']]]] resource_attributes: Set resource attributes.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict']]]] resource_tags: Set access management tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceAttributeArgs', 'IamAccessGroupPolicyResourceAttributeArgsDict', 'outputs.IamAccessGroupPolicyResourceAttribute']]]] resource_attributes: Set resource attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyResourceTagArgs', 'IamAccessGroupPolicyResourceTagArgsDict', 'outputs.IamAccessGroupPolicyResourceTag']]]] resource_tags: Set access management tags.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict']]]] rule_conditions: Rule conditions enforced by the policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupPolicyRuleConditionArgs', 'IamAccessGroupPolicyRuleConditionArgsDict', 'outputs.IamAccessGroupPolicyRuleCondition']]]] rule_conditions: Rule conditions enforced by the policy
         :param pulumi.Input[_builtins.str] rule_operator: Operator that multiple rule conditions are evaluated over
         :param pulumi.Input[_builtins.str] transaction_id: Set transactionID for debug
         """

@@ -190,75 +190,75 @@ export interface TgConnectionRgreTunnelState {
     /**
      * The type of the base network for the RGRE. It should be i.e classic or VPC
      */
-    baseNetworkType?: pulumi.Input<string>;
+    baseNetworkType?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection identifier
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that this tunnel was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway identifier
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * The local network BGP ASN.
      */
-    localBgpAsn?: pulumi.Input<number>;
+    localBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The local gateway IP address.
      */
-    localGatewayIp?: pulumi.Input<string>;
+    localGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The local tunnel IP address.
      */
-    localTunnelIp?: pulumi.Input<string>;
+    localTunnelIp?: pulumi.Input<string | undefined>;
     /**
      * Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]
      */
-    mtu?: pulumi.Input<number>;
+    mtu?: pulumi.Input<number | undefined>;
     /**
      * The user-defined name for this tunnel connection.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associatedNetworkType is 'classic' and the GRE tunnel is in a different account than the gateway.
      */
-    networkAccountId?: pulumi.Input<string>;
+    networkAccountId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or powerVirtualServer gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
      */
-    networkId?: pulumi.Input<string>;
+    networkId?: pulumi.Input<string | undefined>;
     /**
      * The remote network BGP ASN.
      */
-    remoteBgpAsn?: pulumi.Input<number>;
+    remoteBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The remote gateway IP address.
      */
-    remoteGatewayIp?: pulumi.Input<string>;
+    remoteGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The remote tunnel IP address.
      */
-    remoteTunnelIp?: pulumi.Input<string>;
+    remoteTunnelIp?: pulumi.Input<string | undefined>;
     /**
      * What is the current configuration state of this tunnel. Possible values: [attached,failed,pending,deleting,detaching,detached]
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway tunnel identifier
      */
-    tunnelId?: pulumi.Input<string>;
+    tunnelId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that this tunnel was last updated
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
     /**
      * Location of GRE tunnel.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -268,7 +268,7 @@ export interface TgConnectionRgreTunnelArgs {
     /**
      * The type of the base network for the RGRE. It should be i.e classic or VPC
      */
-    baseNetworkType?: pulumi.Input<string>;
+    baseNetworkType?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection identifier
      */
@@ -280,7 +280,7 @@ export interface TgConnectionRgreTunnelArgs {
     /**
      * The local network BGP ASN.
      */
-    localBgpAsn?: pulumi.Input<number>;
+    localBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The local gateway IP address.
      */
@@ -292,19 +292,19 @@ export interface TgConnectionRgreTunnelArgs {
     /**
      * The user-defined name for this tunnel connection.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associatedNetworkType is 'classic' and the GRE tunnel is in a different account than the gateway.
      */
-    networkAccountId?: pulumi.Input<string>;
+    networkAccountId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or powerVirtualServer gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
      */
-    networkId?: pulumi.Input<string>;
+    networkId?: pulumi.Input<string | undefined>;
     /**
      * The remote network BGP ASN.
      */
-    remoteBgpAsn?: pulumi.Input<number>;
+    remoteBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The remote gateway IP address.
      */

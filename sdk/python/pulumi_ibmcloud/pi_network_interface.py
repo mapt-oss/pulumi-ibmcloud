@@ -23,13 +23,14 @@ class PiNetworkInterfaceArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_network_id: pulumi.Input[_builtins.str],
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiNetworkInterface resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_network_id: Network ID.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]] instances: The attached instance to this network interface.
@@ -77,86 +78,89 @@ class PiNetworkInterfaceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]:
+    def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]:
         """
         The attached instance to this network interface.
         """
         return pulumi.get(self, "instances")
 
     @instances.setter
-    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]):
+    def instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]):
         pulumi.set(self, "instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceId")
-    def pi_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If supplied populated it attaches to the instance ID, if empty detaches from the instance ID.
         """
         return pulumi.get(self, "pi_instance_id")
 
     @pi_instance_id.setter
-    def pi_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piIpAddress")
-    def pi_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The requested IP address of this network interface.
         """
         return pulumi.get(self, "pi_ip_address")
 
     @pi_ip_address.setter
-    def pi_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the network interface.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiNetworkInterfaceState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiNetworkInterface resources.
+
         :param pulumi.Input[_builtins.str] crn: The network interface's crn.
+        :param pulumi.Input[_builtins.str] external_ip: The external ip address for pub-vlan networks.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]] instances: The attached instance to this network interface.
         :param pulumi.Input[_builtins.str] ip_address: The ip address of this network interface.
         :param pulumi.Input[_builtins.str] mac_address: The mac address of the network interface.
@@ -174,6 +178,8 @@ class _PiNetworkInterfaceState:
         """
         if crn is not None:
             pulumi.set(__self__, "crn", crn)
+        if external_ip is not None:
+            pulumi.set(__self__, "external_ip", external_ip)
         if instances is not None:
             pulumi.set(__self__, "instances", instances)
         if ip_address is not None:
@@ -208,183 +214,195 @@ class _PiNetworkInterfaceState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network interface's crn.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
+    @pulumi.getter(name="externalIp")
+    def external_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external ip address for pub-vlan networks.
+        """
+        return pulumi.get(self, "external_ip")
+
+    @external_ip.setter
+    def external_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "external_ip", value)
+
+    @_builtins.property
     @pulumi.getter
-    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]:
+    def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]:
         """
         The attached instance to this network interface.
         """
         return pulumi.get(self, "instances")
 
     @instances.setter
-    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]):
+    def instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkInterfaceInstanceArgs']]]]):
         pulumi.set(self, "instances", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ip address of this network interface.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The mac address of the network interface.
         """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
-    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the network interface (not unique or indexable).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterfaceId")
-    def network_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_interface_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the network interface.
         """
         return pulumi.get(self, "network_interface_id")
 
     @network_interface_id.setter
-    def network_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_interface_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_interface_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupId")
     @_utilities.deprecated("""Deprecated, use network_security_group_ids instead.""")
-    def network_security_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_security_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the network security group the network interface will be added to.
         """
         return pulumi.get(self, "network_security_group_id")
 
     @network_security_group_id.setter
-    def network_security_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_security_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_security_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of network security groups that the network interface is a member of.
         """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
-    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceId")
-    def pi_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If supplied populated it attaches to the instance ID, if empty detaches from the instance ID.
         """
         return pulumi.get(self, "pi_instance_id")
 
     @pi_instance_id.setter
-    def pi_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piIpAddress")
-    def pi_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The requested IP address of this network interface.
         """
         return pulumi.get(self, "pi_ip_address")
 
     @pi_ip_address.setter
-    def pi_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the network interface.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkId")
-    def pi_network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network ID.
         """
         return pulumi.get(self, "pi_network_id")
 
     @pi_network_id.setter
-    def pi_network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the network interface.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -394,19 +412,20 @@ class PiNetworkInterface(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict']]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict', 'outputs.PiNetworkInterfaceInstance']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict']]]] instances: The attached instance to this network interface.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict', 'outputs.PiNetworkInterfaceInstance']]]] instances: The attached instance to this network interface.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_instance_id: If supplied populated it attaches to the instance ID, if empty detaches from the instance ID.
         :param pulumi.Input[_builtins.str] pi_ip_address: The requested IP address of this network interface.
@@ -422,6 +441,7 @@ class PiNetworkInterface(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkInterfaceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -437,13 +457,13 @@ class PiNetworkInterface(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict']]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict', 'outputs.PiNetworkInterfaceInstance']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -465,6 +485,7 @@ class PiNetworkInterface(pulumi.CustomResource):
             __props__.__dict__["pi_network_id"] = pi_network_id
             __props__.__dict__["pi_user_tags"] = pi_user_tags
             __props__.__dict__["crn"] = None
+            __props__.__dict__["external_ip"] = None
             __props__.__dict__["ip_address"] = None
             __props__.__dict__["mac_address"] = None
             __props__.__dict__["name"] = None
@@ -482,21 +503,22 @@ class PiNetworkInterface(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict']]]]] = None,
-            ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiNetworkInterface':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict', 'outputs.PiNetworkInterfaceInstance']]]]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiNetworkInterface':
         """
         Get an existing PiNetworkInterface resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -505,7 +527,8 @@ class PiNetworkInterface(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] crn: The network interface's crn.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict']]]] instances: The attached instance to this network interface.
+        :param pulumi.Input[_builtins.str] external_ip: The external ip address for pub-vlan networks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkInterfaceInstanceArgs', 'PiNetworkInterfaceInstanceArgsDict', 'outputs.PiNetworkInterfaceInstance']]]] instances: The attached instance to this network interface.
         :param pulumi.Input[_builtins.str] ip_address: The ip address of this network interface.
         :param pulumi.Input[_builtins.str] mac_address: The mac address of the network interface.
         :param pulumi.Input[_builtins.str] name: Name of the network interface (not unique or indexable).
@@ -525,6 +548,7 @@ class PiNetworkInterface(pulumi.CustomResource):
         __props__ = _PiNetworkInterfaceState.__new__(_PiNetworkInterfaceState)
 
         __props__.__dict__["crn"] = crn
+        __props__.__dict__["external_ip"] = external_ip
         __props__.__dict__["instances"] = instances
         __props__.__dict__["ip_address"] = ip_address
         __props__.__dict__["mac_address"] = mac_address
@@ -548,6 +572,14 @@ class PiNetworkInterface(pulumi.CustomResource):
         The network interface's crn.
         """
         return pulumi.get(self, "crn")
+
+    @_builtins.property
+    @pulumi.getter(name="externalIp")
+    def external_ip(self) -> pulumi.Output[_builtins.str]:
+        """
+        The external ip address for pub-vlan networks.
+        """
+        return pulumi.get(self, "external_ip")
 
     @_builtins.property
     @pulumi.getter

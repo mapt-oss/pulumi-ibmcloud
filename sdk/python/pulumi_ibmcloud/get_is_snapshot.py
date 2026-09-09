@@ -287,7 +287,7 @@ class AwaitableGetIsSnapshotResult(GetIsSnapshotResult):
 
 def get_is_snapshot(identifier: Optional[_builtins.str] = None,
                     name: Optional[_builtins.str] = None,
-                    source_snapshots: Optional[Sequence[Union['GetIsSnapshotSourceSnapshotArgs', 'GetIsSnapshotSourceSnapshotArgsDict']]] = None,
+                    source_snapshots: Optional[Sequence[Union['GetIsSnapshotSourceSnapshotArgs', 'GetIsSnapshotSourceSnapshotArgsDict', 'outputs.GetIsSnapshotSourceSnapshotResult']]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIsSnapshotResult:
     """
     Use this data source to access information about an existing resource.
@@ -327,9 +327,9 @@ def get_is_snapshot(identifier: Optional[_builtins.str] = None,
         source_snapshots=pulumi.get(__ret__, 'source_snapshots'),
         source_volume=pulumi.get(__ret__, 'source_volume'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_is_snapshot_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           source_snapshots: Optional[pulumi.Input[Optional[Sequence[Union['GetIsSnapshotSourceSnapshotArgs', 'GetIsSnapshotSourceSnapshotArgsDict']]]]] = None,
+def get_is_snapshot_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           source_snapshots: pulumi.Input[Optional[Optional[Sequence[Union['GetIsSnapshotSourceSnapshotArgs', 'GetIsSnapshotSourceSnapshotArgsDict', 'outputs.GetIsSnapshotSourceSnapshotResult']]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSnapshotResult]:
     """
     Use this data source to access information about an existing resource.

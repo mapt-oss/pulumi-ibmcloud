@@ -70,9 +70,9 @@ export function getResourceInstanceOutput(args?: GetResourceInstanceOutputArgs, 
  * A collection of arguments for invoking getResourceInstance.
  */
 export interface GetResourceInstanceOutputArgs {
-    identifier?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    resourceGroupId?: pulumi.Input<string>;
-    service?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    location?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
+    service?: pulumi.Input<string | undefined>;
 }

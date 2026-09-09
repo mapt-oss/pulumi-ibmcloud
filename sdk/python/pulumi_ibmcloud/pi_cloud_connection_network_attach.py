@@ -24,6 +24,7 @@ class PiCloudConnectionNetworkAttachArgs:
                  pi_network_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiCloudConnectionNetworkAttach resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_connection_id: Cloud Connection ID
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_network_id: Network ID to attach to this cloud connection
@@ -72,11 +73,12 @@ class PiCloudConnectionNetworkAttachArgs:
 @pulumi.input_type
 class _PiCloudConnectionNetworkAttachState:
     def __init__(__self__, *,
-                 pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiCloudConnectionNetworkAttach resources.
+
         :param pulumi.Input[_builtins.str] pi_cloud_connection_id: Cloud Connection ID
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_network_id: Network ID to attach to this cloud connection
@@ -90,38 +92,38 @@ class _PiCloudConnectionNetworkAttachState:
 
     @_builtins.property
     @pulumi.getter(name="piCloudConnectionId")
-    def pi_cloud_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Connection ID
         """
         return pulumi.get(self, "pi_cloud_connection_id")
 
     @pi_cloud_connection_id.setter
-    def pi_cloud_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkId")
-    def pi_network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network ID to attach to this cloud connection
         """
         return pulumi.get(self, "pi_network_id")
 
     @pi_network_id.setter
-    def pi_network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_id", value)
 
 
@@ -131,12 +133,13 @@ class PiCloudConnectionNetworkAttach(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiCloudConnectionNetworkAttach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_connection_id: Cloud Connection ID
@@ -151,6 +154,7 @@ class PiCloudConnectionNetworkAttach(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiCloudConnectionNetworkAttach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiCloudConnectionNetworkAttachArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -166,9 +170,9 @@ class PiCloudConnectionNetworkAttach(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -197,9 +201,9 @@ class PiCloudConnectionNetworkAttach(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_cloud_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_network_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiCloudConnectionNetworkAttach':
+            pi_cloud_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_network_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiCloudConnectionNetworkAttach':
         """
         Get an existing PiCloudConnectionNetworkAttach resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

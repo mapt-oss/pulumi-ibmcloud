@@ -25,6 +25,7 @@ class IsSubnetNetworkAclAttachmentArgs:
                  subnet: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsSubnetNetworkAclAttachment resource.
+
         :param pulumi.Input[_builtins.str] network_acl: The unique identifier of network ACL
         :param pulumi.Input[_builtins.str] subnet: The subnet identifier
         """
@@ -59,15 +60,16 @@ class IsSubnetNetworkAclAttachmentArgs:
 @pulumi.input_type
 class _IsSubnetNetworkAclAttachmentState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetNetworkAclAttachmentRuleArgs']]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetNetworkAclAttachmentRuleArgs']]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsSubnetNetworkAclAttachment resources.
+
         :param pulumi.Input[_builtins.str] crn: The crn for this Network ACL
         :param pulumi.Input[_builtins.str] name: Network ACL name
         :param pulumi.Input[_builtins.str] network_acl: The unique identifier of network ACL
@@ -92,83 +94,83 @@ class _IsSubnetNetworkAclAttachmentState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn for this Network ACL
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network ACL name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAcl")
-    def network_acl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_acl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of network ACL
         """
         return pulumi.get(self, "network_acl")
 
     @network_acl.setter
-    def network_acl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_acl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_acl", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group ID for the network ACL
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetNetworkAclAttachmentRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetNetworkAclAttachmentRuleArgs']]]]:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSubnetNetworkAclAttachmentRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSubnetNetworkAclAttachmentRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet identifier
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network ACL VPC
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
 
@@ -178,11 +180,12 @@ class IsSubnetNetworkAclAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsSubnetNetworkAclAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] network_acl: The unique identifier of network ACL
@@ -196,6 +199,7 @@ class IsSubnetNetworkAclAttachment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsSubnetNetworkAclAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsSubnetNetworkAclAttachmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -211,8 +215,8 @@ class IsSubnetNetworkAclAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -243,13 +247,13 @@ class IsSubnetNetworkAclAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSubnetNetworkAclAttachmentRuleArgs', 'IsSubnetNetworkAclAttachmentRuleArgsDict']]]]] = None,
-            subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsSubnetNetworkAclAttachment':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSubnetNetworkAclAttachmentRuleArgs', 'IsSubnetNetworkAclAttachmentRuleArgsDict', 'outputs.IsSubnetNetworkAclAttachmentRule']]]]] = None,
+            subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsSubnetNetworkAclAttachment':
         """
         Get an existing IsSubnetNetworkAclAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

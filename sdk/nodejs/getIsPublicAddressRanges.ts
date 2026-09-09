@@ -44,5 +44,5 @@ export function getIsPublicAddressRangesOutput(args?: GetIsPublicAddressRangesOu
  * A collection of arguments for invoking getIsPublicAddressRanges.
  */
 export interface GetIsPublicAddressRangesOutputArgs {
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

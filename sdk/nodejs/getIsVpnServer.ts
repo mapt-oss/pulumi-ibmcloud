@@ -72,6 +72,6 @@ export function getIsVpnServerOutput(args?: GetIsVpnServerOutputArgs, opts?: pul
  * A collection of arguments for invoking getIsVpnServer.
  */
 export interface GetIsVpnServerOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

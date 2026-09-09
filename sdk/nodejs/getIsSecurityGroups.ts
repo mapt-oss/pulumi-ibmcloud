@@ -56,8 +56,8 @@ export function getIsSecurityGroupsOutput(args?: GetIsSecurityGroupsOutputArgs, 
  * A collection of arguments for invoking getIsSecurityGroups.
  */
 export interface GetIsSecurityGroupsOutputArgs {
-    resourceGroup?: pulumi.Input<string>;
-    vpcCrn?: pulumi.Input<string>;
-    vpcId?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    vpcCrn?: pulumi.Input<string | undefined>;
+    vpcId?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

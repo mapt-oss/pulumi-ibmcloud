@@ -86,8 +86,8 @@ export function getIsVpnGatewayConnectionOutput(args?: GetIsVpnGatewayConnection
  * A collection of arguments for invoking getIsVpnGatewayConnection.
  */
 export interface GetIsVpnGatewayConnectionOutputArgs {
-    vpnGateway?: pulumi.Input<string>;
-    vpnGatewayConnection?: pulumi.Input<string>;
-    vpnGatewayConnectionName?: pulumi.Input<string>;
-    vpnGatewayName?: pulumi.Input<string>;
+    vpnGateway?: pulumi.Input<string | undefined>;
+    vpnGatewayConnection?: pulumi.Input<string | undefined>;
+    vpnGatewayConnectionName?: pulumi.Input<string | undefined>;
+    vpnGatewayName?: pulumi.Input<string | undefined>;
 }

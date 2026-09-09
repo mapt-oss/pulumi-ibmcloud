@@ -27,7 +27,7 @@ class GetPiNetworkResult:
     """
     A collection of values returned by getPiNetwork.
     """
-    def __init__(__self__, advertise=None, arp_broadcast=None, available_ip_count=None, cidr=None, crn=None, dns=None, gateway=None, id=None, mtu=None, name=None, network_address_translations=None, peer_id=None, pi_cloud_instance_id=None, pi_network_id=None, pi_network_name=None, type=None, used_ip_count=None, used_ip_percent=None, user_tags=None, vlan_id=None):
+    def __init__(__self__, advertise=None, arp_broadcast=None, available_ip_count=None, cidr=None, crn=None, dns=None, enable_dhcp=None, gateway=None, id=None, mtu=None, name=None, network_address_translations=None, peer_id=None, pi_cloud_instance_id=None, pi_network_id=None, pi_network_name=None, type=None, used_ip_count=None, used_ip_percent=None, user_tags=None, vlan_id=None):
         if advertise and not isinstance(advertise, str):
             raise TypeError("Expected argument 'advertise' to be a str")
         pulumi.set(__self__, "advertise", advertise)
@@ -46,6 +46,9 @@ class GetPiNetworkResult:
         if dns and not isinstance(dns, list):
             raise TypeError("Expected argument 'dns' to be a list")
         pulumi.set(__self__, "dns", dns)
+        if enable_dhcp and not isinstance(enable_dhcp, bool):
+            raise TypeError("Expected argument 'enable_dhcp' to be a bool")
+        pulumi.set(__self__, "enable_dhcp", enable_dhcp)
         if gateway and not isinstance(gateway, str):
             raise TypeError("Expected argument 'gateway' to be a str")
         pulumi.set(__self__, "gateway", gateway)
@@ -118,6 +121,11 @@ class GetPiNetworkResult:
     @pulumi.getter
     def dns(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "dns")
+
+    @_builtins.property
+    @pulumi.getter(name="enableDhcp")
+    def enable_dhcp(self) -> _builtins.bool:
+        return pulumi.get(self, "enable_dhcp")
 
     @_builtins.property
     @pulumi.getter
@@ -207,6 +215,7 @@ class AwaitableGetPiNetworkResult(GetPiNetworkResult):
             cidr=self.cidr,
             crn=self.crn,
             dns=self.dns,
+            enable_dhcp=self.enable_dhcp,
             gateway=self.gateway,
             id=self.id,
             mtu=self.mtu,
@@ -244,6 +253,7 @@ def get_pi_network(pi_cloud_instance_id: Optional[_builtins.str] = None,
         cidr=pulumi.get(__ret__, 'cidr'),
         crn=pulumi.get(__ret__, 'crn'),
         dns=pulumi.get(__ret__, 'dns'),
+        enable_dhcp=pulumi.get(__ret__, 'enable_dhcp'),
         gateway=pulumi.get(__ret__, 'gateway'),
         id=pulumi.get(__ret__, 'id'),
         mtu=pulumi.get(__ret__, 'mtu'),
@@ -258,9 +268,9 @@ def get_pi_network(pi_cloud_instance_id: Optional[_builtins.str] = None,
         used_ip_percent=pulumi.get(__ret__, 'used_ip_percent'),
         user_tags=pulumi.get(__ret__, 'user_tags'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'))
-def get_pi_network_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          pi_network_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          pi_network_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pi_network_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          pi_network_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          pi_network_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkResult]:
     """
     Use this data source to access information about an existing resource.
@@ -278,6 +288,7 @@ def get_pi_network_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.
         cidr=pulumi.get(__response__, 'cidr'),
         crn=pulumi.get(__response__, 'crn'),
         dns=pulumi.get(__response__, 'dns'),
+        enable_dhcp=pulumi.get(__response__, 'enable_dhcp'),
         gateway=pulumi.get(__response__, 'gateway'),
         id=pulumi.get(__response__, 'id'),
         mtu=pulumi.get(__response__, 'mtu'),

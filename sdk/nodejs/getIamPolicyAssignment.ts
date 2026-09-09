@@ -53,5 +53,5 @@ export function getIamPolicyAssignmentOutput(args: GetIamPolicyAssignmentOutputA
  */
 export interface GetIamPolicyAssignmentOutputArgs {
     assignmentId: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

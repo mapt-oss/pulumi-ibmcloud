@@ -97,23 +97,23 @@ export interface ComputePlacementGroupState {
     /**
      * Dataceneter name
      */
-    datacenter?: pulumi.Input<string>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Pod name
      */
-    pod?: pulumi.Input<string>;
+    pod?: pulumi.Input<string | undefined>;
     /**
      * Rule info
      */
-    rule?: pulumi.Input<string>;
+    rule?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -127,7 +127,7 @@ export interface ComputePlacementGroupArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Pod name
      */
@@ -135,9 +135,9 @@ export interface ComputePlacementGroupArgs {
     /**
      * Rule info
      */
-    rule?: pulumi.Input<string>;
+    rule?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

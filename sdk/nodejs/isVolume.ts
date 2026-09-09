@@ -243,117 +243,117 @@ export interface IsVolumeState {
     /**
      * Access management tags for the volume instance
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The attachment states that support adjustable capacity for this volume.
      */
-    adjustableCapacityStates?: pulumi.Input<pulumi.Input<string>[]>;
+    adjustableCapacityStates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The attachment states that support adjustable IOPS for this volume.
      */
-    adjustableIopsStates?: pulumi.Input<pulumi.Input<string>[]>;
+    adjustableIopsStates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsVolumeAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsVolumeAllowedUse | undefined>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * Volume capacity value
      */
-    capacity?: pulumi.Input<number>;
+    capacity?: pulumi.Input<number | undefined>;
     /**
      * The catalog offering this volume was created from. If a virtual server instance is provisioned with a bootVolumeAttachment specifying this volume, the virtual server instance will use this volume's catalog offering, including its pricing plan.
      */
-    catalogOfferings?: pulumi.Input<pulumi.Input<inputs.IsVolumeCatalogOffering>[]>;
+    catalogOfferings?: pulumi.Input<pulumi.Input<inputs.IsVolumeCatalogOffering>[] | undefined>;
     /**
      * CRN value for the volume instance
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Deletes all snapshots created from this volume
      */
-    deleteAllSnapshots?: pulumi.Input<boolean>;
+    deleteAllSnapshots?: pulumi.Input<boolean | undefined>;
     /**
      * Volume encryption key info
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * Volume encryption type info
      */
-    encryptionType?: pulumi.Input<string>;
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVolumeHealthReason>[]>;
+    encryptionType?: pulumi.Input<string | undefined>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVolumeHealthReason>[] | undefined>;
     /**
      * The health of this resource.
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * IOPS value for the Volume
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * Volume name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The operating system associated with this volume. If absent, this volume was notcreated from an image, or the image did not include an operating system.
      */
-    operatingSystems?: pulumi.Input<pulumi.Input<inputs.IsVolumeOperatingSystem>[]>;
+    operatingSystems?: pulumi.Input<pulumi.Input<inputs.IsVolumeOperatingSystem>[] | undefined>;
     /**
      * Volume profile name
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * Resource group name
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this snapshot
      */
-    sourceSnapshot?: pulumi.Input<string>;
+    sourceSnapshot?: pulumi.Input<string | undefined>;
     /**
      * The crn for this snapshot
      */
-    sourceSnapshotCrn?: pulumi.Input<string>;
+    sourceSnapshotCrn?: pulumi.Input<string | undefined>;
     /**
      * Volume status
      */
-    status?: pulumi.Input<string>;
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsVolumeStatusReason>[]>;
+    status?: pulumi.Input<string | undefined>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsVolumeStatusReason>[] | undefined>;
     /**
      * storage_generation indicates which generation the profile family belongs to. For the custom and tiered profiles, this value is 1.
      */
-    storageGeneration?: pulumi.Input<number>;
+    storageGeneration?: pulumi.Input<number | undefined>;
     /**
      * UserTags for the volume instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Zone name
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -363,35 +363,35 @@ export interface IsVolumeArgs {
     /**
      * Access management tags for the volume instance
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsVolumeAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsVolumeAllowedUse | undefined>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * Volume capacity value
      */
-    capacity?: pulumi.Input<number>;
+    capacity?: pulumi.Input<number | undefined>;
     /**
      * Deletes all snapshots created from this volume
      */
-    deleteAllSnapshots?: pulumi.Input<boolean>;
+    deleteAllSnapshots?: pulumi.Input<boolean | undefined>;
     /**
      * Volume encryption key info
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * IOPS value for the Volume
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * Volume name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Volume profile name
      */
@@ -399,19 +399,19 @@ export interface IsVolumeArgs {
     /**
      * Resource group name
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this snapshot
      */
-    sourceSnapshot?: pulumi.Input<string>;
+    sourceSnapshot?: pulumi.Input<string | undefined>;
     /**
      * The crn for this snapshot
      */
-    sourceSnapshotCrn?: pulumi.Input<string>;
+    sourceSnapshotCrn?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the volume instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Zone name
      */

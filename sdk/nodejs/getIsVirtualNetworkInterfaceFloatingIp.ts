@@ -53,7 +53,7 @@ export function getIsVirtualNetworkInterfaceFloatingIpOutput(args: GetIsVirtualN
  * A collection of arguments for invoking getIsVirtualNetworkInterfaceFloatingIp.
  */
 export interface GetIsVirtualNetworkInterfaceFloatingIpOutputArgs {
-    deleteds?: pulumi.Input<pulumi.Input<inputs.GetIsVirtualNetworkInterfaceFloatingIpDeletedArgs>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.GetIsVirtualNetworkInterfaceFloatingIpDeletedArgs>[] | undefined>;
     floatingIp: pulumi.Input<string>;
     virtualNetworkInterface: pulumi.Input<string>;
 }

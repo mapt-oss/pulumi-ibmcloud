@@ -138,47 +138,47 @@ export interface PiHostGroupState {
     /**
      * Date/Time of host group creation.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * Host group ID.
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
     /**
      * List of hosts.
      */
-    hosts?: pulumi.Input<pulumi.Input<string>[]>;
+    hosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name of the host group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * List of hosts to add to the group.
      */
-    piHosts?: pulumi.Input<pulumi.Input<inputs.PiHostGroupPiHost>[]>;
+    piHosts?: pulumi.Input<pulumi.Input<inputs.PiHostGroupPiHost>[] | undefined>;
     /**
      * Name of the host group to create.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
     /**
      * A workspace ID to stop sharing the host group with.
      */
-    piRemove?: pulumi.Input<string>;
+    piRemove?: pulumi.Input<string | undefined>;
     /**
      * List of workspaces to share the host group with.
      */
-    piSecondaries?: pulumi.Input<pulumi.Input<inputs.PiHostGroupPiSecondary>[]>;
+    piSecondaries?: pulumi.Input<pulumi.Input<inputs.PiHostGroupPiSecondary>[] | undefined>;
     /**
      * ID of the workspace owning the host group.
      */
-    primary?: pulumi.Input<string>;
+    primary?: pulumi.Input<string | undefined>;
     /**
      * IDs of workspaces the host group has been shared with.
      */
-    secondaries?: pulumi.Input<pulumi.Input<string>[]>;
+    secondaries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -200,9 +200,9 @@ export interface PiHostGroupArgs {
     /**
      * A workspace ID to stop sharing the host group with.
      */
-    piRemove?: pulumi.Input<string>;
+    piRemove?: pulumi.Input<string | undefined>;
     /**
      * List of workspaces to share the host group with.
      */
-    piSecondaries?: pulumi.Input<pulumi.Input<inputs.PiHostGroupPiSecondary>[]>;
+    piSecondaries?: pulumi.Input<pulumi.Input<inputs.PiHostGroupPiSecondary>[] | undefined>;
 }

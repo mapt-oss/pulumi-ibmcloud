@@ -102,23 +102,23 @@ export interface IsBareMetalServerInitializationState {
     /**
      * Bare metal server identifier
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The default trusted profile configuration for the bare metal server
      */
-    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerInitializationDefaultTrustedProfile>;
+    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerInitializationDefaultTrustedProfile | undefined>;
     /**
      * The image to be used when provisioning the bare metal server.
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * SSH key Ids for the bare metal server
      */
-    keys?: pulumi.Input<pulumi.Input<string>[]>;
+    keys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Bare metal server user data to replace initialization
      */
-    userData?: pulumi.Input<string>;
+    userData?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -132,7 +132,7 @@ export interface IsBareMetalServerInitializationArgs {
     /**
      * The default trusted profile configuration for the bare metal server
      */
-    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerInitializationDefaultTrustedProfile>;
+    defaultTrustedProfile?: pulumi.Input<inputs.IsBareMetalServerInitializationDefaultTrustedProfile | undefined>;
     /**
      * The image to be used when provisioning the bare metal server.
      */
@@ -144,5 +144,5 @@ export interface IsBareMetalServerInitializationArgs {
     /**
      * Bare metal server user data to replace initialization
      */
-    userData?: pulumi.Input<string>;
+    userData?: pulumi.Input<string | undefined>;
 }

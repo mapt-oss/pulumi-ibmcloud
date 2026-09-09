@@ -88,19 +88,19 @@ export interface IsShareReplicaOperationsState {
     /**
      * The action to take if the failover request is accepted but cannot be performed or times out
      */
-    fallbackPolicy?: pulumi.Input<string>;
+    fallbackPolicy?: pulumi.Input<string | undefined>;
     /**
      * The file share identifier.
      */
-    shareReplica?: pulumi.Input<string>;
+    shareReplica?: pulumi.Input<string | undefined>;
     /**
      * If set to true the replication relationship between source share and replica will be removed.
      */
-    splitShare?: pulumi.Input<boolean>;
+    splitShare?: pulumi.Input<boolean | undefined>;
     /**
      * The failover timeout in seconds
      */
-    timeout?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -110,7 +110,7 @@ export interface IsShareReplicaOperationsArgs {
     /**
      * The action to take if the failover request is accepted but cannot be performed or times out
      */
-    fallbackPolicy?: pulumi.Input<string>;
+    fallbackPolicy?: pulumi.Input<string | undefined>;
     /**
      * The file share identifier.
      */
@@ -118,9 +118,9 @@ export interface IsShareReplicaOperationsArgs {
     /**
      * If set to true the replication relationship between source share and replica will be removed.
      */
-    splitShare?: pulumi.Input<boolean>;
+    splitShare?: pulumi.Input<boolean | undefined>;
     /**
      * The failover timeout in seconds
      */
-    timeout?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number | undefined>;
 }

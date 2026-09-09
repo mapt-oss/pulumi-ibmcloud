@@ -25,17 +25,18 @@ class IsLbListenerPolicyArgs:
                  lb: pulumi.Input[_builtins.str],
                  listener: pulumi.Input[_builtins.str],
                  priority: pulumi.Input[_builtins.int],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]] = None,
-                 target: Optional[pulumi.Input['IsLbListenerPolicyTargetArgs']] = None,
-                 target_http_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_url: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]] = None,
+                 target: pulumi.Input[Optional['IsLbListenerPolicyTargetArgs']] = None,
+                 target_http_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsLbListenerPolicy resource.
+
         :param pulumi.Input[_builtins.str] action: Policy Action
         :param pulumi.Input[_builtins.str] lb: Load Balancer Listener Policy
         :param pulumi.Input[_builtins.str] listener: Listener ID
@@ -141,140 +142,141 @@ class IsLbListenerPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Policy name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]:
         """
         Policy Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['IsLbListenerPolicyTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['IsLbListenerPolicyTargetArgs']]:
         """
         - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `https_redirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['IsLbListenerPolicyTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['IsLbListenerPolicyTargetArgs']]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpStatusCode")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_http_status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def target_http_status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener Policy target HTTPS Status code.
         """
         return pulumi.get(self, "target_http_status_code")
 
     @target_http_status_code.setter
-    def target_http_status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def target_http_status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "target_http_status_code", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpsRedirectListener")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_https_redirect_listener(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_https_redirect_listener(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the listener that will be set as http redirect target
         """
         return pulumi.get(self, "target_https_redirect_listener")
 
     @target_https_redirect_listener.setter
-    def target_https_redirect_listener(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_https_redirect_listener(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_https_redirect_listener", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpsRedirectStatusCode")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_https_redirect_status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def target_https_redirect_status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The HTTP status code to be returned in the redirect response
         """
         return pulumi.get(self, "target_https_redirect_status_code")
 
     @target_https_redirect_status_code.setter
-    def target_https_redirect_status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def target_https_redirect_status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "target_https_redirect_status_code", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpsRedirectUri")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_https_redirect_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_https_redirect_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Target URI where traffic will be redirected
         """
         return pulumi.get(self, "target_https_redirect_uri")
 
     @target_https_redirect_uri.setter
-    def target_https_redirect_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_https_redirect_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_https_redirect_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listener Policy Target ID
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetUrl")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Policy Target URL
         """
         return pulumi.get(self, "target_url")
 
     @target_url.setter
-    def target_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_url", value)
 
 
 @pulumi.input_type
 class _IsLbListenerPolicyState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 provisioning_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]] = None,
-                 target: Optional[pulumi.Input['IsLbListenerPolicyTargetArgs']] = None,
-                 target_http_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_url: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 provisioning_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]] = None,
+                 target: pulumi.Input[Optional['IsLbListenerPolicyTargetArgs']] = None,
+                 target_http_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsLbListenerPolicy resources.
+
         :param pulumi.Input[_builtins.str] action: Policy Action
         :param pulumi.Input[_builtins.str] lb: Load Balancer Listener Policy
         :param pulumi.Input[_builtins.str] listener: Listener ID
@@ -345,200 +347,200 @@ class _IsLbListenerPolicyState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Policy Action
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def lb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Listener Policy
         """
         return pulumi.get(self, "lb")
 
     @lb.setter
-    def lb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lb", value)
 
     @_builtins.property
     @pulumi.getter
-    def listener(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listener ID
         """
         return pulumi.get(self, "listener")
 
     @listener.setter
-    def listener(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Policy name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listener Policy ID
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener Policy Priority
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningStatus")
-    def provisioning_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listner Policy status
         """
         return pulumi.get(self, "provisioning_status")
 
     @provisioning_status.setter
-    def provisioning_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_status", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedCrn")
-    def related_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the LB resource
         """
         return pulumi.get(self, "related_crn")
 
     @related_crn.setter
-    def related_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]:
         """
         Policy Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbListenerPolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['IsLbListenerPolicyTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['IsLbListenerPolicyTargetArgs']]:
         """
         - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `https_redirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['IsLbListenerPolicyTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['IsLbListenerPolicyTargetArgs']]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpStatusCode")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_http_status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def target_http_status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener Policy target HTTPS Status code.
         """
         return pulumi.get(self, "target_http_status_code")
 
     @target_http_status_code.setter
-    def target_http_status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def target_http_status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "target_http_status_code", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpsRedirectListener")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_https_redirect_listener(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_https_redirect_listener(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the listener that will be set as http redirect target
         """
         return pulumi.get(self, "target_https_redirect_listener")
 
     @target_https_redirect_listener.setter
-    def target_https_redirect_listener(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_https_redirect_listener(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_https_redirect_listener", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpsRedirectStatusCode")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_https_redirect_status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def target_https_redirect_status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The HTTP status code to be returned in the redirect response
         """
         return pulumi.get(self, "target_https_redirect_status_code")
 
     @target_https_redirect_status_code.setter
-    def target_https_redirect_status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def target_https_redirect_status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "target_https_redirect_status_code", value)
 
     @_builtins.property
     @pulumi.getter(name="targetHttpsRedirectUri")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_https_redirect_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_https_redirect_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Target URI where traffic will be redirected
         """
         return pulumi.get(self, "target_https_redirect_uri")
 
     @target_https_redirect_uri.setter
-    def target_https_redirect_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_https_redirect_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_https_redirect_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Listener Policy Target ID
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetUrl")
     @_utilities.deprecated("""Please use the argument 'target'""")
-    def target_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Policy Target URL
         """
         return pulumi.get(self, "target_url")
 
     @target_url.setter
-    def target_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_url", value)
 
 
@@ -548,22 +550,23 @@ class IsLbListenerPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict']]]]] = None,
-                 target: Optional[pulumi.Input[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict']]] = None,
-                 target_http_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict', 'outputs.IsLbListenerPolicyRule']]]]] = None,
+                 target: pulumi.Input[Optional[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict', 'outputs.IsLbListenerPolicyTarget']]] = None,
+                 target_http_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_url: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsLbListenerPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Policy Action
@@ -571,8 +574,8 @@ class IsLbListenerPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] listener: Listener ID
         :param pulumi.Input[_builtins.str] name: Policy name
         :param pulumi.Input[_builtins.int] priority: Listener Policy Priority
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict']]]] rules: Policy Rules
-        :param pulumi.Input[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict']] target: - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `https_redirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict', 'outputs.IsLbListenerPolicyRule']]]] rules: Policy Rules
+        :param pulumi.Input[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict', 'outputs.IsLbListenerPolicyTarget']] target: - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `https_redirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
         :param pulumi.Input[_builtins.int] target_http_status_code: Listener Policy target HTTPS Status code.
         :param pulumi.Input[_builtins.str] target_https_redirect_listener: ID of the listener that will be set as http redirect target
         :param pulumi.Input[_builtins.int] target_https_redirect_status_code: The HTTP status code to be returned in the redirect response
@@ -588,6 +591,7 @@ class IsLbListenerPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsLbListenerPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsLbListenerPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -603,19 +607,19 @@ class IsLbListenerPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict']]]]] = None,
-                 target: Optional[pulumi.Input[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict']]] = None,
-                 target_http_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict', 'outputs.IsLbListenerPolicyRule']]]]] = None,
+                 target: pulumi.Input[Optional[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict', 'outputs.IsLbListenerPolicyTarget']]] = None,
+                 target_http_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_url: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -659,22 +663,22 @@ class IsLbListenerPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            lb: Optional[pulumi.Input[_builtins.str]] = None,
-            listener: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            provisioning_status: Optional[pulumi.Input[_builtins.str]] = None,
-            related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict']]]]] = None,
-            target: Optional[pulumi.Input[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict']]] = None,
-            target_http_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-            target_https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-            target_https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-            target_https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_url: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsLbListenerPolicy':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            lb: pulumi.Input[Optional[_builtins.str]] = None,
+            listener: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            provisioning_status: pulumi.Input[Optional[_builtins.str]] = None,
+            related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict', 'outputs.IsLbListenerPolicyRule']]]]] = None,
+            target: pulumi.Input[Optional[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict', 'outputs.IsLbListenerPolicyTarget']]] = None,
+            target_http_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+            target_https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+            target_https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+            target_https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_url: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsLbListenerPolicy':
         """
         Get an existing IsLbListenerPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -690,8 +694,8 @@ class IsLbListenerPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] priority: Listener Policy Priority
         :param pulumi.Input[_builtins.str] provisioning_status: Listner Policy status
         :param pulumi.Input[_builtins.str] related_crn: The crn of the LB resource
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict']]]] rules: Policy Rules
-        :param pulumi.Input[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict']] target: - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `https_redirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbListenerPolicyRuleArgs', 'IsLbListenerPolicyRuleArgsDict', 'outputs.IsLbListenerPolicyRule']]]] rules: Policy Rules
+        :param pulumi.Input[Union['IsLbListenerPolicyTargetArgs', 'IsLbListenerPolicyTargetArgsDict', 'outputs.IsLbListenerPolicyTarget']] target: - If `action` is `forward`, the response is a `LoadBalancerPoolReference`- If `action` is `redirect`, the response is a `LoadBalancerListenerPolicyRedirectURL`- If `action` is `https_redirect`, the response is a `LoadBalancerListenerHTTPSRedirect`.
         :param pulumi.Input[_builtins.int] target_http_status_code: Listener Policy target HTTPS Status code.
         :param pulumi.Input[_builtins.str] target_https_redirect_listener: ID of the listener that will be set as http redirect target
         :param pulumi.Input[_builtins.int] target_https_redirect_status_code: The HTTP status code to be returned in the redirect response

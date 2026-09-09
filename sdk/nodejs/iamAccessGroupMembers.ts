@@ -84,11 +84,11 @@ export interface IamAccessGroupMembersState {
     /**
      * Unique identifier of the access group
      */
-    accessGroupId?: pulumi.Input<string>;
-    iamProfileIds?: pulumi.Input<pulumi.Input<string>[]>;
-    iamServiceIds?: pulumi.Input<pulumi.Input<string>[]>;
-    ibmIds?: pulumi.Input<pulumi.Input<string>[]>;
-    members?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupMembersMember>[]>;
+    accessGroupId?: pulumi.Input<string | undefined>;
+    iamProfileIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    iamServiceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ibmIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    members?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupMembersMember>[] | undefined>;
 }
 
 /**
@@ -99,7 +99,7 @@ export interface IamAccessGroupMembersArgs {
      * Unique identifier of the access group
      */
     accessGroupId: pulumi.Input<string>;
-    iamProfileIds?: pulumi.Input<pulumi.Input<string>[]>;
-    iamServiceIds?: pulumi.Input<pulumi.Input<string>[]>;
-    ibmIds?: pulumi.Input<pulumi.Input<string>[]>;
+    iamProfileIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    iamServiceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ibmIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -103,27 +103,27 @@ export interface PiVirtualSerialNumberState {
     /**
      * This is the Power Instance id that is assigned to the account
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Description of virtual serial number.
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * PVM Instance to attach VSN to.
      */
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to retain virtual serial number after unassigning from PVM instance during deletion.
      */
-    piRetainVirtualSerialNumber?: pulumi.Input<boolean>;
+    piRetainVirtualSerialNumber?: pulumi.Input<boolean | undefined>;
     /**
      * Virtual serial number.
      */
-    piSerial?: pulumi.Input<string>;
+    piSerial?: pulumi.Input<string | undefined>;
     /**
      * Software tier for virtual serial number.
      */
-    piSoftwareTier?: pulumi.Input<string>;
+    piSoftwareTier?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -137,15 +137,15 @@ export interface PiVirtualSerialNumberArgs {
     /**
      * Description of virtual serial number.
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * PVM Instance to attach VSN to.
      */
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to retain virtual serial number after unassigning from PVM instance during deletion.
      */
-    piRetainVirtualSerialNumber?: pulumi.Input<boolean>;
+    piRetainVirtualSerialNumber?: pulumi.Input<boolean | undefined>;
     /**
      * Virtual serial number.
      */
@@ -153,5 +153,5 @@ export interface PiVirtualSerialNumberArgs {
     /**
      * Software tier for virtual serial number.
      */
-    piSoftwareTier?: pulumi.Input<string>;
+    piSoftwareTier?: pulumi.Input<string | undefined>;
 }

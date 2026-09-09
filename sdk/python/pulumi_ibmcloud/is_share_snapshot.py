@@ -22,11 +22,12 @@ __all__ = ['IsShareSnapshotArgs', 'IsShareSnapshot']
 class IsShareSnapshotArgs:
     def __init__(__self__, *,
                  share: pulumi.Input[_builtins.str],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsShareSnapshot resource.
+
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] name: The name for this share snapshot. The name is unique across all snapshots for the file share.
@@ -54,64 +55,65 @@ class IsShareSnapshotArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this share snapshot. The name is unique across all snapshots for the file share.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [user tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) associated with this share snapshot.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsShareSnapshotState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_policy_plans: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotBackupPolicyPlanArgs']]]] = None,
-                 captured_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 minimum_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_groups: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotResourceGroupArgs']]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
-                 share_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotStatusReasonArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zones: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotZoneArgs']]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_policy_plans: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotBackupPolicyPlanArgs']]]] = None,
+                 captured_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 minimum_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_groups: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotResourceGroupArgs']]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
+                 share_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotStatusReasonArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zones: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotZoneArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsShareSnapshot resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotBackupPolicyPlanArgs']]] backup_policy_plans: If present, the backup policy plan which created this share snapshot.
         :param pulumi.Input[_builtins.str] captured_at: The date and time the data capture for this share snapshot was completed.If absent, this snapshot's data has not yet been captured.
@@ -126,7 +128,7 @@ class _IsShareSnapshotState:
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         :param pulumi.Input[_builtins.str] share_snapshot: The unique identifier for this share snapshot.
-        :param pulumi.Input[_builtins.str] status: The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] status: The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotStatusReasonArgs']]] status_reasons: The reasons for the current status (if any).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: The [user tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) associated with this share snapshot.
         :param pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotZoneArgs']]] zones: The zone this share snapshot resides in.
@@ -170,218 +172,218 @@ class _IsShareSnapshotState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyPlans")
-    def backup_policy_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotBackupPolicyPlanArgs']]]]:
+    def backup_policy_plans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotBackupPolicyPlanArgs']]]]:
         """
         If present, the backup policy plan which created this share snapshot.
         """
         return pulumi.get(self, "backup_policy_plans")
 
     @backup_policy_plans.setter
-    def backup_policy_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotBackupPolicyPlanArgs']]]]):
+    def backup_policy_plans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotBackupPolicyPlanArgs']]]]):
         pulumi.set(self, "backup_policy_plans", value)
 
     @_builtins.property
     @pulumi.getter(name="capturedAt")
-    def captured_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def captured_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the data capture for this share snapshot was completed.If absent, this snapshot's data has not yet been captured.
         """
         return pulumi.get(self, "captured_at")
 
     @captured_at.setter
-    def captured_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def captured_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "captured_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the share snapshot was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this share snapshot.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fingerprint for this snapshot.
         """
         return pulumi.get(self, "fingerprint")
 
     @fingerprint.setter
-    def fingerprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fingerprint", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this share snapshot.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of this share snapshot.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumSize")
-    def minimum_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def minimum_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum size of a share created from this snapshot. When a snapshot is created, this will be set to the size of the `source_share`.
         """
         return pulumi.get(self, "minimum_size")
 
     @minimum_size.setter
-    def minimum_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def minimum_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "minimum_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this share snapshot. The name is unique across all snapshots for the file share.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroups")
-    def resource_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotResourceGroupArgs']]]]:
+    def resource_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotResourceGroupArgs']]]]:
         """
         The resource group for this file share.
         """
         return pulumi.get(self, "resource_groups")
 
     @resource_groups.setter
-    def resource_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotResourceGroupArgs']]]]):
+    def resource_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotResourceGroupArgs']]]]):
         pulumi.set(self, "resource_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def share(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def share(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The file share identifier.
         """
         return pulumi.get(self, "share")
 
     @share.setter
-    def share(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def share(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "share", value)
 
     @_builtins.property
     @pulumi.getter(name="shareSnapshot")
-    def share_snapshot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def share_snapshot(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this share snapshot.
         """
         return pulumi.get(self, "share_snapshot")
 
     @share_snapshot.setter
-    def share_snapshot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def share_snapshot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "share_snapshot", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotStatusReasonArgs']]]]:
         """
         The reasons for the current status (if any).
         """
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [user tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) associated with this share snapshot.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotZoneArgs']]]]:
+    def zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotZoneArgs']]]]:
         """
         The zone this share snapshot resides in.
         """
         return pulumi.get(self, "zones")
 
     @zones.setter
-    def zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsShareSnapshotZoneArgs']]]]):
+    def zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsShareSnapshotZoneArgs']]]]):
         pulumi.set(self, "zones", value)
 
 
@@ -391,13 +393,14 @@ class IsShareSnapshot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IsShareSnapshot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -413,6 +416,7 @@ class IsShareSnapshot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsShareSnapshot resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsShareSnapshotArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -428,10 +432,10 @@ class IsShareSnapshot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -471,24 +475,24 @@ class IsShareSnapshot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            backup_policy_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotBackupPolicyPlanArgs', 'IsShareSnapshotBackupPolicyPlanArgsDict']]]]] = None,
-            captured_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            minimum_size: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotResourceGroupArgs', 'IsShareSnapshotResourceGroupArgsDict']]]]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            share: Optional[pulumi.Input[_builtins.str]] = None,
-            share_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotStatusReasonArgs', 'IsShareSnapshotStatusReasonArgsDict']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            zones: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotZoneArgs', 'IsShareSnapshotZoneArgsDict']]]]] = None) -> 'IsShareSnapshot':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            backup_policy_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareSnapshotBackupPolicyPlanArgs', 'IsShareSnapshotBackupPolicyPlanArgsDict', 'outputs.IsShareSnapshotBackupPolicyPlan']]]]] = None,
+            captured_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            minimum_size: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareSnapshotResourceGroupArgs', 'IsShareSnapshotResourceGroupArgsDict', 'outputs.IsShareSnapshotResourceGroup']]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            share: pulumi.Input[Optional[_builtins.str]] = None,
+            share_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareSnapshotStatusReasonArgs', 'IsShareSnapshotStatusReasonArgsDict', 'outputs.IsShareSnapshotStatusReason']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            zones: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsShareSnapshotZoneArgs', 'IsShareSnapshotZoneArgsDict', 'outputs.IsShareSnapshotZone']]]]] = None) -> 'IsShareSnapshot':
         """
         Get an existing IsShareSnapshot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -497,7 +501,7 @@ class IsShareSnapshot(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotBackupPolicyPlanArgs', 'IsShareSnapshotBackupPolicyPlanArgsDict']]]] backup_policy_plans: If present, the backup policy plan which created this share snapshot.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotBackupPolicyPlanArgs', 'IsShareSnapshotBackupPolicyPlanArgsDict', 'outputs.IsShareSnapshotBackupPolicyPlan']]]] backup_policy_plans: If present, the backup policy plan which created this share snapshot.
         :param pulumi.Input[_builtins.str] captured_at: The date and time the data capture for this share snapshot was completed.If absent, this snapshot's data has not yet been captured.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the share snapshot was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this share snapshot.
@@ -506,14 +510,14 @@ class IsShareSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of this share snapshot.
         :param pulumi.Input[_builtins.int] minimum_size: The minimum size of a share created from this snapshot. When a snapshot is created, this will be set to the size of the `source_share`.
         :param pulumi.Input[_builtins.str] name: The name for this share snapshot. The name is unique across all snapshots for the file share.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotResourceGroupArgs', 'IsShareSnapshotResourceGroupArgsDict']]]] resource_groups: The resource group for this file share.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotResourceGroupArgs', 'IsShareSnapshotResourceGroupArgsDict', 'outputs.IsShareSnapshotResourceGroup']]]] resource_groups: The resource group for this file share.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         :param pulumi.Input[_builtins.str] share_snapshot: The unique identifier for this share snapshot.
-        :param pulumi.Input[_builtins.str] status: The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotStatusReasonArgs', 'IsShareSnapshotStatusReasonArgsDict']]]] status_reasons: The reasons for the current status (if any).
+        :param pulumi.Input[_builtins.str] status: The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotStatusReasonArgs', 'IsShareSnapshotStatusReasonArgsDict', 'outputs.IsShareSnapshotStatusReason']]]] status_reasons: The reasons for the current status (if any).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: The [user tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags) associated with this share snapshot.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotZoneArgs', 'IsShareSnapshotZoneArgsDict']]]] zones: The zone this share snapshot resides in.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsShareSnapshotZoneArgs', 'IsShareSnapshotZoneArgsDict', 'outputs.IsShareSnapshotZone']]]] zones: The zone this share snapshot resides in.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -655,7 +659,7 @@ class IsShareSnapshot(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[_builtins.str]:
         """
-        The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `status_reasons`)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "status")
 

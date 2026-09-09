@@ -116,9 +116,9 @@ def get_is_dedicated_host_groups(name: Optional[_builtins.str] = None,
         resource_group=pulumi.get(__ret__, 'resource_group'),
         total_count=pulumi.get(__ret__, 'total_count'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_dedicated_host_groups_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        zone: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_dedicated_host_groups_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        zone: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsDedicatedHostGroupsResult]:
     """
     Use this data source to access information about an existing resource.

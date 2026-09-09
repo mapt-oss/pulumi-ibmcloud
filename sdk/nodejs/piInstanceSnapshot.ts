@@ -148,55 +148,55 @@ export interface PiInstanceSnapshotState {
     /**
      * Creation date of the snapshot.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The last updated date of the snapshot.
      */
-    lastUpdateDate?: pulumi.Input<string>;
+    lastUpdateDate?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Description of the PVM instance snapshot.
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * The name of the instance you want to take a snapshot of.
      */
-    piInstanceName?: pulumi.Input<string>;
+    piInstanceName?: pulumi.Input<string | undefined>;
     /**
      * The unique name of the snapshot.
      */
-    piSnapshotName?: pulumi.Input<string>;
+    piSnapshotName?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of volume IDs of the instance that will be part of the snapshot. If none are provided, then all the volumes of the instance will be part of the snapshot.
      */
-    piVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * ID of the PVM instance snapshot.
      */
-    snapshotId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string | undefined>;
     /**
      * Status of the PVM instance snapshot.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Detailed information for the last PVM instance snapshot action.
      */
-    statusDetail?: pulumi.Input<string>;
+    statusDetail?: pulumi.Input<string | undefined>;
     /**
      * A map of volume snapshots included in the PVM instance snapshot.
      */
-    volumeSnapshots?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    volumeSnapshots?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
 /**
@@ -210,7 +210,7 @@ export interface PiInstanceSnapshotArgs {
     /**
      * Description of the PVM instance snapshot.
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * The name of the instance you want to take a snapshot of.
      */
@@ -222,9 +222,9 @@ export interface PiInstanceSnapshotArgs {
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of volume IDs of the instance that will be part of the snapshot. If none are provided, then all the volumes of the instance will be part of the snapshot.
      */
-    piVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

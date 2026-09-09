@@ -33,6 +33,7 @@ export interface GetIamTrustedProfileLinkResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isCrossAccount: boolean;
     readonly linkId: string;
     readonly links: outputs.GetIamTrustedProfileLinkLink[];
     readonly modifiedAt: string;

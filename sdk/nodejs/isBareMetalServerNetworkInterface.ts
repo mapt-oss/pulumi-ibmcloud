@@ -189,83 +189,83 @@ export interface IsBareMetalServerNetworkInterfaceState {
     /**
      * Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
      */
-    allowInterfaceToFloat?: pulumi.Input<boolean>;
+    allowInterfaceToFloat?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowedVlans array for one PCI type adapter per bare metal server.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Bare metal server identifier
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * If true, the VPC infrastructure performs any needed NAT operations. If false, the packet is passed unmodified to/from the network interface, allowing the workload to perform any needed NAT operations.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The floating IPs associated with this network interface.
      */
-    floatingIps?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkInterfaceFloatingIp>[]>;
+    floatingIps?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkInterfaceFloatingIp>[] | undefined>;
     /**
      * Only used for PCI network interfaces, whether to hard/immediately stop server
      */
-    hardStop?: pulumi.Input<boolean>;
+    hardStop?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this network interface
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The network interface type: [ pci, vlan, hipersocket ]
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The MAC address of the interface. If absent, the value is not known.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this network interface
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The bare metal server network interface identifier
      */
-    networkInterface?: pulumi.Input<string>;
+    networkInterface?: pulumi.Input<string | undefined>;
     /**
      * The network interface port speed in Mbps
      */
-    portSpeed?: pulumi.Input<number>;
+    portSpeed?: pulumi.Input<number | undefined>;
     /**
      * title: IPv4, The IP address.
      */
-    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkInterfacePrimaryIp | undefined>;
     /**
      * The resource type : [ subnetReservedIp ]
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Collection of security groups ids
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The status of the network interface : [ available, deleting, failed, pending ]
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The id of the associated subnet
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * The type of this bare metal server network interface : [ primary, secondary ]
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
      */
-    vlan?: pulumi.Input<number>;
+    vlan?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -275,15 +275,15 @@ export interface IsBareMetalServerNetworkInterfaceArgs {
     /**
      * Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
      */
-    allowInterfaceToFloat?: pulumi.Input<boolean>;
+    allowInterfaceToFloat?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowedVlans array for one PCI type adapter per bare metal server.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Bare metal server identifier
      */
@@ -291,27 +291,27 @@ export interface IsBareMetalServerNetworkInterfaceArgs {
     /**
      * If true, the VPC infrastructure performs any needed NAT operations. If false, the packet is passed unmodified to/from the network interface, allowing the workload to perform any needed NAT operations.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * Only used for PCI network interfaces, whether to hard/immediately stop server
      */
-    hardStop?: pulumi.Input<boolean>;
+    hardStop?: pulumi.Input<boolean | undefined>;
     /**
      * The network interface type: [ pci, vlan, hipersocket ]
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this network interface
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * title: IPv4, The IP address.
      */
-    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkInterfacePrimaryIp | undefined>;
     /**
      * Collection of security groups ids
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The id of the associated subnet
      */
@@ -319,5 +319,5 @@ export interface IsBareMetalServerNetworkInterfaceArgs {
     /**
      * Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
      */
-    vlan?: pulumi.Input<number>;
+    vlan?: pulumi.Input<number | undefined>;
 }

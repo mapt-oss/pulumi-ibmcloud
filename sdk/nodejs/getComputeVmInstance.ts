@@ -68,5 +68,5 @@ export function getComputeVmInstanceOutput(args: GetComputeVmInstanceOutputArgs,
 export interface GetComputeVmInstanceOutputArgs {
     domain: pulumi.Input<string>;
     hostname: pulumi.Input<string>;
-    mostRecent?: pulumi.Input<boolean>;
+    mostRecent?: pulumi.Input<boolean | undefined>;
 }

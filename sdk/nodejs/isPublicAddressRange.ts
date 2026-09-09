@@ -138,51 +138,51 @@ export interface IsPublicAddressRangeState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The public IPv4 range, expressed in CIDR format.
      */
-    cidr?: pulumi.Input<string>;
+    cidr?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the public address range was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this public address range.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The URL for this public address range.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The number of IPv4 addresses in this public address range.
      */
-    ipv4AddressCount?: pulumi.Input<number>;
+    ipv4AddressCount?: pulumi.Input<number | undefined>;
     /**
      * The lifecycle state of the public address range.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this public address range. The name is unique across all public address ranges in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this public address range.
      */
-    resourceGroup?: pulumi.Input<inputs.IsPublicAddressRangeResourceGroup>;
+    resourceGroup?: pulumi.Input<inputs.IsPublicAddressRangeResourceGroup | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * User Tags for the PublicAddressRange
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
      */
-    target?: pulumi.Input<inputs.IsPublicAddressRangeTarget>;
+    target?: pulumi.Input<inputs.IsPublicAddressRangeTarget | undefined>;
 }
 
 /**
@@ -192,7 +192,7 @@ export interface IsPublicAddressRangeArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The number of IPv4 addresses in this public address range.
      */
@@ -200,17 +200,17 @@ export interface IsPublicAddressRangeArgs {
     /**
      * The name for this public address range. The name is unique across all public address ranges in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this public address range.
      */
-    resourceGroup?: pulumi.Input<inputs.IsPublicAddressRangeResourceGroup>;
+    resourceGroup?: pulumi.Input<inputs.IsPublicAddressRangeResourceGroup | undefined>;
     /**
      * User Tags for the PublicAddressRange
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The target this public address range is bound to.If absent, this pubic address range is not bound to a target.
      */
-    target?: pulumi.Input<inputs.IsPublicAddressRangeTarget>;
+    target?: pulumi.Input<inputs.IsPublicAddressRangeTarget | undefined>;
 }

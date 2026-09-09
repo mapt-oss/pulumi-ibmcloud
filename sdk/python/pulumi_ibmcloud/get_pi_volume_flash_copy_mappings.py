@@ -94,8 +94,8 @@ def get_pi_volume_flash_copy_mappings(pi_cloud_instance_id: Optional[_builtins.s
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pi_volume_id=pulumi.get(__ret__, 'pi_volume_id'))
-def get_pi_volume_flash_copy_mappings_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             pi_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_volume_flash_copy_mappings_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             pi_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeFlashCopyMappingsResult]:
     """
     Use this data source to access information about an existing resource.

@@ -2,12 +2,15 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getPiImage(args: GetPiImageArgs, opts?: pulumi.InvokeOptions): Promise<GetPiImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getPiImage:getPiImage", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piImageId": args.piImageId,
         "piImageName": args.piImageName,
     }, opts);
 }
@@ -17,7 +20,11 @@ export function getPiImage(args: GetPiImageArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetPiImageArgs {
     piCloudInstanceId: string;
-    piImageName: string;
+    piImageId?: string;
+    /**
+     * @deprecated The piImageName field is deprecated. Please use piImageId instead
+     */
+    piImageName?: string;
 }
 
 /**
@@ -25,27 +32,38 @@ export interface GetPiImageArgs {
  */
 export interface GetPiImageResult {
     readonly architecture: string;
+    readonly containerFormat: string;
     readonly crn: string;
+    readonly diskFormat: string;
+    readonly endianness: string;
     readonly hypervisor: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly imageType: string;
+    readonly name: string;
     readonly operatingSystem: string;
     readonly piCloudInstanceId: string;
-    readonly piImageName: string;
+    readonly piImageId?: string;
+    /**
+     * @deprecated The piImageName field is deprecated. Please use piImageId instead
+     */
+    readonly piImageName?: string;
+    readonly shared: boolean;
     readonly size: number;
     readonly sourceChecksum: string;
     readonly state: string;
     readonly storagePool: string;
     readonly storageType: string;
     readonly userTags: string[];
+    readonly volumes: outputs.GetPiImageVolume[];
 }
 export function getPiImageOutput(args: GetPiImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPiImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getPiImage:getPiImage", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piImageId": args.piImageId,
         "piImageName": args.piImageName,
     }, opts);
 }
@@ -55,5 +73,9 @@ export function getPiImageOutput(args: GetPiImageOutputArgs, opts?: pulumi.Invok
  */
 export interface GetPiImageOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piImageName: pulumi.Input<string>;
+    piImageId?: pulumi.Input<string | undefined>;
+    /**
+     * @deprecated The piImageName field is deprecated. Please use piImageId instead
+     */
+    piImageName?: pulumi.Input<string | undefined>;
 }

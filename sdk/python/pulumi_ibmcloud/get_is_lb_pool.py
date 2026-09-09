@@ -27,10 +27,13 @@ class GetIsLbPoolResult:
     """
     A collection of values returned by getIsLbPool.
     """
-    def __init__(__self__, algorithm=None, created_at=None, failsafe_policies=None, health_monitors=None, href=None, id=None, identifier=None, instance_groups=None, lb=None, members=None, name=None, protocol=None, provisioning_status=None, proxy_protocol=None, session_persistences=None):
+    def __init__(__self__, algorithm=None, client_authentications=None, created_at=None, failsafe_policies=None, health_monitors=None, href=None, id=None, identifier=None, instance_groups=None, lb=None, members=None, name=None, protocol=None, provisioning_status=None, proxy_protocol=None, server_authentications=None, session_persistences=None):
         if algorithm and not isinstance(algorithm, str):
             raise TypeError("Expected argument 'algorithm' to be a str")
         pulumi.set(__self__, "algorithm", algorithm)
+        if client_authentications and not isinstance(client_authentications, list):
+            raise TypeError("Expected argument 'client_authentications' to be a list")
+        pulumi.set(__self__, "client_authentications", client_authentications)
         if created_at and not isinstance(created_at, str):
             raise TypeError("Expected argument 'created_at' to be a str")
         pulumi.set(__self__, "created_at", created_at)
@@ -70,6 +73,9 @@ class GetIsLbPoolResult:
         if proxy_protocol and not isinstance(proxy_protocol, str):
             raise TypeError("Expected argument 'proxy_protocol' to be a str")
         pulumi.set(__self__, "proxy_protocol", proxy_protocol)
+        if server_authentications and not isinstance(server_authentications, list):
+            raise TypeError("Expected argument 'server_authentications' to be a list")
+        pulumi.set(__self__, "server_authentications", server_authentications)
         if session_persistences and not isinstance(session_persistences, list):
             raise TypeError("Expected argument 'session_persistences' to be a list")
         pulumi.set(__self__, "session_persistences", session_persistences)
@@ -78,6 +84,11 @@ class GetIsLbPoolResult:
     @pulumi.getter
     def algorithm(self) -> _builtins.str:
         return pulumi.get(self, "algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="clientAuthentications")
+    def client_authentications(self) -> Sequence['outputs.GetIsLbPoolClientAuthenticationResult']:
+        return pulumi.get(self, "client_authentications")
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -148,6 +159,11 @@ class GetIsLbPoolResult:
         return pulumi.get(self, "proxy_protocol")
 
     @_builtins.property
+    @pulumi.getter(name="serverAuthentications")
+    def server_authentications(self) -> Sequence['outputs.GetIsLbPoolServerAuthenticationResult']:
+        return pulumi.get(self, "server_authentications")
+
+    @_builtins.property
     @pulumi.getter(name="sessionPersistences")
     def session_persistences(self) -> Sequence['outputs.GetIsLbPoolSessionPersistenceResult']:
         return pulumi.get(self, "session_persistences")
@@ -160,6 +176,7 @@ class AwaitableGetIsLbPoolResult(GetIsLbPoolResult):
             yield self
         return GetIsLbPoolResult(
             algorithm=self.algorithm,
+            client_authentications=self.client_authentications,
             created_at=self.created_at,
             failsafe_policies=self.failsafe_policies,
             health_monitors=self.health_monitors,
@@ -173,6 +190,7 @@ class AwaitableGetIsLbPoolResult(GetIsLbPoolResult):
             protocol=self.protocol,
             provisioning_status=self.provisioning_status,
             proxy_protocol=self.proxy_protocol,
+            server_authentications=self.server_authentications,
             session_persistences=self.session_persistences)
 
 
@@ -192,6 +210,7 @@ def get_is_lb_pool(identifier: Optional[_builtins.str] = None,
 
     return AwaitableGetIsLbPoolResult(
         algorithm=pulumi.get(__ret__, 'algorithm'),
+        client_authentications=pulumi.get(__ret__, 'client_authentications'),
         created_at=pulumi.get(__ret__, 'created_at'),
         failsafe_policies=pulumi.get(__ret__, 'failsafe_policies'),
         health_monitors=pulumi.get(__ret__, 'health_monitors'),
@@ -205,10 +224,11 @@ def get_is_lb_pool(identifier: Optional[_builtins.str] = None,
         protocol=pulumi.get(__ret__, 'protocol'),
         provisioning_status=pulumi.get(__ret__, 'provisioning_status'),
         proxy_protocol=pulumi.get(__ret__, 'proxy_protocol'),
+        server_authentications=pulumi.get(__ret__, 'server_authentications'),
         session_persistences=pulumi.get(__ret__, 'session_persistences'))
-def get_is_lb_pool_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          lb: Optional[pulumi.Input[_builtins.str]] = None,
-                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_lb_pool_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          lb: pulumi.Input[Optional[_builtins.str]] = None,
+                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsLbPoolResult]:
     """
     Use this data source to access information about an existing resource.
@@ -221,6 +241,7 @@ def get_is_lb_pool_output(identifier: Optional[pulumi.Input[Optional[_builtins.s
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsLbPool:getIsLbPool', __args__, opts=opts, typ=GetIsLbPoolResult)
     return __ret__.apply(lambda __response__: GetIsLbPoolResult(
         algorithm=pulumi.get(__response__, 'algorithm'),
+        client_authentications=pulumi.get(__response__, 'client_authentications'),
         created_at=pulumi.get(__response__, 'created_at'),
         failsafe_policies=pulumi.get(__response__, 'failsafe_policies'),
         health_monitors=pulumi.get(__response__, 'health_monitors'),
@@ -234,4 +255,5 @@ def get_is_lb_pool_output(identifier: Optional[pulumi.Input[Optional[_builtins.s
         protocol=pulumi.get(__response__, 'protocol'),
         provisioning_status=pulumi.get(__response__, 'provisioning_status'),
         proxy_protocol=pulumi.get(__response__, 'proxy_protocol'),
+        server_authentications=pulumi.get(__response__, 'server_authentications'),
         session_persistences=pulumi.get(__response__, 'session_persistences')))

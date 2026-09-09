@@ -117,33 +117,33 @@ export interface IsInstanceGroupMembershipState {
     /**
      * The delete flag for this instance group membership. Must be set to true to delete instance group membership.
      */
-    actionDelete?: pulumi.Input<boolean>;
+    actionDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, when deleting the membership the instance will also be deleted.
      */
-    deleteInstanceOnMembershipDelete?: pulumi.Input<boolean>;
+    deleteInstanceOnMembershipDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The instance group identifier.
      */
-    instanceGroup?: pulumi.Input<string>;
+    instanceGroup?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance group membership.
      */
-    instanceGroupMembership?: pulumi.Input<string>;
-    instanceTemplates?: pulumi.Input<pulumi.Input<inputs.IsInstanceGroupMembershipInstanceTemplate>[]>;
-    instances?: pulumi.Input<pulumi.Input<inputs.IsInstanceGroupMembershipInstance>[]>;
+    instanceGroupMembership?: pulumi.Input<string | undefined>;
+    instanceTemplates?: pulumi.Input<pulumi.Input<inputs.IsInstanceGroupMembershipInstanceTemplate>[] | undefined>;
+    instances?: pulumi.Input<pulumi.Input<inputs.IsInstanceGroupMembershipInstance>[] | undefined>;
     /**
      * The unique identifier for this load balancer pool member.
      */
-    loadBalancerPoolMember?: pulumi.Input<string>;
+    loadBalancerPoolMember?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this instance group membership. Names must be unique within the instance group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The status of the instance group membership- `deleting`: Membership is deleting dependent resources- `failed`: Membership was unable to maintain dependent resources- `healthy`: Membership is active and serving in the group- `pending`: Membership is waiting for dependent resources- `unhealthy`: Membership has unhealthy dependent resources.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -153,7 +153,7 @@ export interface IsInstanceGroupMembershipArgs {
     /**
      * The delete flag for this instance group membership. Must be set to true to delete instance group membership.
      */
-    actionDelete?: pulumi.Input<boolean>;
+    actionDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The instance group identifier.
      */
@@ -165,5 +165,5 @@ export interface IsInstanceGroupMembershipArgs {
     /**
      * The user-defined name for this instance group membership. Names must be unique within the instance group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

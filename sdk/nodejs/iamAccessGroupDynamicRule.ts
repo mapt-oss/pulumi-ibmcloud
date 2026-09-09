@@ -111,27 +111,27 @@ export interface IamAccessGroupDynamicRuleState {
     /**
      * Unique identifier of the access group
      */
-    accessGroupId?: pulumi.Input<string>;
+    accessGroupId?: pulumi.Input<string | undefined>;
     /**
      * conditions info
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupDynamicRuleCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupDynamicRuleCondition>[] | undefined>;
     /**
      * The expiration in hours
      */
-    expiration?: pulumi.Input<number>;
+    expiration?: pulumi.Input<number | undefined>;
     /**
      * The realm name or identity proivider url
      */
-    identityProvider?: pulumi.Input<string>;
+    identityProvider?: pulumi.Input<string | undefined>;
     /**
      * The name of the Rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * id of the rule
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -157,5 +157,5 @@ export interface IamAccessGroupDynamicRuleArgs {
     /**
      * The name of the Rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

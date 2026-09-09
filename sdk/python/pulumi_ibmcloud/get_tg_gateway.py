@@ -162,7 +162,7 @@ def get_tg_gateway(name: Optional[_builtins.str] = None,
         resource_group=pulumi.get(__ret__, 'resource_group'),
         status=pulumi.get(__ret__, 'status'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_tg_gateway_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tg_gateway_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTgGatewayResult]:
     """
     Use this data source to access information about an existing resource.

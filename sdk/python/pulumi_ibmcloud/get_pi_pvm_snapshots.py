@@ -27,13 +27,16 @@ class GetPiPvmSnapshotsResult:
     """
     A collection of values returned by getPiPvmSnapshots.
     """
-    def __init__(__self__, id=None, pi_cloud_instance_id=None, pi_instance_name=None, pvm_snapshots=None):
+    def __init__(__self__, id=None, pi_cloud_instance_id=None, pi_instance_id=None, pi_instance_name=None, pvm_snapshots=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if pi_cloud_instance_id and not isinstance(pi_cloud_instance_id, str):
             raise TypeError("Expected argument 'pi_cloud_instance_id' to be a str")
         pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
+        if pi_instance_id and not isinstance(pi_instance_id, str):
+            raise TypeError("Expected argument 'pi_instance_id' to be a str")
+        pulumi.set(__self__, "pi_instance_id", pi_instance_id)
         if pi_instance_name and not isinstance(pi_instance_name, str):
             raise TypeError("Expected argument 'pi_instance_name' to be a str")
         pulumi.set(__self__, "pi_instance_name", pi_instance_name)
@@ -55,8 +58,14 @@ class GetPiPvmSnapshotsResult:
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @_builtins.property
+    @pulumi.getter(name="piInstanceId")
+    def pi_instance_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "pi_instance_id")
+
+    @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> _builtins.str:
+    @_utilities.deprecated("""The pi_instance_name field is deprecated. Please use pi_instance_id instead""")
+    def pi_instance_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "pi_instance_name")
 
     @_builtins.property
@@ -73,11 +82,13 @@ class AwaitableGetPiPvmSnapshotsResult(GetPiPvmSnapshotsResult):
         return GetPiPvmSnapshotsResult(
             id=self.id,
             pi_cloud_instance_id=self.pi_cloud_instance_id,
+            pi_instance_id=self.pi_instance_id,
             pi_instance_name=self.pi_instance_name,
             pvm_snapshots=self.pvm_snapshots)
 
 
 def get_pi_pvm_snapshots(pi_cloud_instance_id: Optional[_builtins.str] = None,
+                         pi_instance_id: Optional[_builtins.str] = None,
                          pi_instance_name: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPiPvmSnapshotsResult:
     """
@@ -85,6 +96,7 @@ def get_pi_pvm_snapshots(pi_cloud_instance_id: Optional[_builtins.str] = None,
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getPiPvmSnapshots:getPiPvmSnapshots', __args__, opts=opts, typ=GetPiPvmSnapshotsResult).value
@@ -92,21 +104,25 @@ def get_pi_pvm_snapshots(pi_cloud_instance_id: Optional[_builtins.str] = None,
     return AwaitableGetPiPvmSnapshotsResult(
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__ret__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__ret__, 'pi_instance_name'),
         pvm_snapshots=pulumi.get(__ret__, 'pvm_snapshots'))
-def get_pi_pvm_snapshots_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_pvm_snapshots_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                pi_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                pi_instance_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiPvmSnapshotsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getPiPvmSnapshots:getPiPvmSnapshots', __args__, opts=opts, typ=GetPiPvmSnapshotsResult)
     return __ret__.apply(lambda __response__: GetPiPvmSnapshotsResult(
         id=pulumi.get(__response__, 'id'),
         pi_cloud_instance_id=pulumi.get(__response__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__response__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__response__, 'pi_instance_name'),
         pvm_snapshots=pulumi.get(__response__, 'pvm_snapshots')))

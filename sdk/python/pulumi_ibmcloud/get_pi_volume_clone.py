@@ -124,8 +124,8 @@ def get_pi_volume_clone(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pi_volume_clone_task_id=pulumi.get(__ret__, 'pi_volume_clone_task_id'),
         status=pulumi.get(__ret__, 'status'))
-def get_pi_volume_clone_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               pi_volume_clone_task_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_volume_clone_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               pi_volume_clone_task_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeCloneResult]:
     """
     Use this data source to access information about an existing resource.

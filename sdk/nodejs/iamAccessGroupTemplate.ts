@@ -147,59 +147,59 @@ export interface IamAccessGroupTemplateState {
     /**
      * The ID of the account to which the access group template is assigned.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * A boolean indicating whether the access group template is committed. You must commit a template before you can assign it to child accounts.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time when the access group template was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The ID of the user who created the access group template.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * The description of the access group template.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Access Group Component.
      */
-    group?: pulumi.Input<inputs.IamAccessGroupTemplateGroup>;
+    group?: pulumi.Input<inputs.IamAccessGroupTemplateGroup | undefined>;
     /**
      * The URL of the access group template resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the access group template was last modified.
      */
-    lastModifiedAt?: pulumi.Input<string>;
+    lastModifiedAt?: pulumi.Input<string | undefined>;
     /**
      * The ID of the user who last modified the access group template.
      */
-    lastModifiedById?: pulumi.Input<string>;
+    lastModifiedById?: pulumi.Input<string | undefined>;
     /**
      * The name of the access group template.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * References to policy templates assigned to the access group template.
      */
-    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplatePolicyTemplateReference>[]>;
+    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplatePolicyTemplateReference>[] | undefined>;
     /**
      * Template ID.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
     /**
      * An optional transaction id for the request.
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
     /**
      * The version of the access group template.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -209,25 +209,25 @@ export interface IamAccessGroupTemplateArgs {
     /**
      * A boolean indicating whether the access group template is committed. You must commit a template before you can assign it to child accounts.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * The description of the access group template.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Access Group Component.
      */
-    group?: pulumi.Input<inputs.IamAccessGroupTemplateGroup>;
+    group?: pulumi.Input<inputs.IamAccessGroupTemplateGroup | undefined>;
     /**
      * The name of the access group template.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * References to policy templates assigned to the access group template.
      */
-    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplatePolicyTemplateReference>[]>;
+    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplatePolicyTemplateReference>[] | undefined>;
     /**
      * An optional transaction id for the request.
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

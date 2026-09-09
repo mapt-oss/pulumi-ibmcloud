@@ -168,63 +168,63 @@ export interface IsVpcRoutingTableRouteState {
     /**
      * The action to perform with a packet matching the route.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this route will be advertised to the ingress sources specified by the `advertiseRoutesTo` routing table property.
      */
-    advertise?: pulumi.Input<boolean>;
+    advertise?: pulumi.Input<boolean | undefined>;
     /**
      * Routing table route Created At
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * If present, the resource that created the route. Routes with this property present cannot bedirectly deleted. All routes with an `origin` of `learned` or `service` will have thisproperty set, and future `origin` values may also have this property set.
      */
-    creators?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableRouteCreator>[]>;
+    creators?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableRouteCreator>[] | undefined>;
     /**
      * The destination of the route.
      */
-    destination?: pulumi.Input<string>;
+    destination?: pulumi.Input<string | undefined>;
     /**
      * Routing table route Href
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Routing table route Lifecycle State
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this route.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If action is deliver, the next hop that packets will be delivered to. For other action values, its address will be 0.0.0.0.
      */
-    nextHop?: pulumi.Input<string>;
+    nextHop?: pulumi.Input<string | undefined>;
     /**
      * The origin of this route.
      */
-    origin?: pulumi.Input<string>;
+    origin?: pulumi.Input<string | undefined>;
     /**
      * The route's priority. Smaller values have higher priority.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * The routing table route identifier.
      */
-    routeId?: pulumi.Input<string>;
+    routeId?: pulumi.Input<string | undefined>;
     /**
      * The routing table identifier.
      */
-    routingTable?: pulumi.Input<string>;
+    routingTable?: pulumi.Input<string | undefined>;
     /**
      * The VPC identifier.
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * The zone to apply the route to. Traffic from subnets in this zone will be subject to this route.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -234,11 +234,11 @@ export interface IsVpcRoutingTableRouteArgs {
     /**
      * The action to perform with a packet matching the route.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this route will be advertised to the ingress sources specified by the `advertiseRoutesTo` routing table property.
      */
-    advertise?: pulumi.Input<boolean>;
+    advertise?: pulumi.Input<boolean | undefined>;
     /**
      * The destination of the route.
      */
@@ -246,7 +246,7 @@ export interface IsVpcRoutingTableRouteArgs {
     /**
      * The user-defined name for this route.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If action is deliver, the next hop that packets will be delivered to. For other action values, its address will be 0.0.0.0.
      */
@@ -254,7 +254,7 @@ export interface IsVpcRoutingTableRouteArgs {
     /**
      * The route's priority. Smaller values have higher priority.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * The routing table identifier.
      */

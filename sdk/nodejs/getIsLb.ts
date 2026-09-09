@@ -26,11 +26,14 @@ export interface GetIsLbArgs {
 export interface GetIsLbResult {
     readonly accessMode: string;
     readonly accessTags: string[];
+    readonly advancedHealthChecksSupported: boolean;
+    readonly asymmetricRoutingSupported: boolean;
     readonly attachedLoadBalancerPoolMembers: outputs.GetIsLbAttachedLoadBalancerPoolMember[];
     readonly availability: string;
     readonly crn: string;
     readonly dns: outputs.GetIsLbDn[];
     readonly failsafePolicyActions: string[];
+    readonly fqdnPoolMembersSupported: boolean;
     readonly hostname: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -39,6 +42,7 @@ export interface GetIsLbResult {
     readonly instanceGroupsSupported: boolean;
     readonly listeners: string[];
     readonly logging: boolean;
+    readonly mtlsSupported: boolean;
     readonly name: string;
     readonly operatingStatus: string;
     readonly pools: outputs.GetIsLbPool[];

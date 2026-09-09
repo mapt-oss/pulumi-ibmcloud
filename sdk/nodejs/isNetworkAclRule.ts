@@ -43,6 +43,10 @@ export class IsNetworkAclRule extends pulumi.CustomResource {
      */
     declare public readonly before: pulumi.Output<string>;
     /**
+     * The ICMP traffic code to allow. Valid values from 0 to 255.
+     */
+    declare public readonly code: pulumi.Output<number>;
+    /**
      * The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
      */
     declare public readonly destination: pulumi.Output<string>;
@@ -54,7 +58,10 @@ export class IsNetworkAclRule extends pulumi.CustomResource {
      * The url of the rule.
      */
     declare public /*out*/ readonly href: pulumi.Output<string>;
-    declare public readonly icmp: pulumi.Output<outputs.IsNetworkAclRuleIcmp | undefined>;
+    /**
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
+     */
+    declare public readonly icmp: pulumi.Output<outputs.IsNetworkAclRuleIcmp>;
     /**
      * The IP version for this rule.
      */
@@ -68,9 +75,17 @@ export class IsNetworkAclRule extends pulumi.CustomResource {
      */
     declare public readonly networkAcl: pulumi.Output<string>;
     /**
-     * The protocol of the rule.
+     * The highest port in the range of ports to be matched
      */
-    declare public /*out*/ readonly protocol: pulumi.Output<string>;
+    declare public readonly portMax: pulumi.Output<number>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    declare public readonly portMin: pulumi.Output<number>;
+    /**
+     * The name of the network protocol
+     */
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * The network acl rule id.
      */
@@ -79,8 +94,26 @@ export class IsNetworkAclRule extends pulumi.CustomResource {
      * The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
      */
     declare public readonly source: pulumi.Output<string>;
-    declare public readonly tcp: pulumi.Output<outputs.IsNetworkAclRuleTcp | undefined>;
-    declare public readonly udp: pulumi.Output<outputs.IsNetworkAclRuleUdp | undefined>;
+    /**
+     * The highest port in the range of ports to be matched
+     */
+    declare public readonly sourcePortMax: pulumi.Output<number>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    declare public readonly sourcePortMin: pulumi.Output<number>;
+    /**
+     * @deprecated tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    declare public readonly tcp: pulumi.Output<outputs.IsNetworkAclRuleTcp>;
+    /**
+     * The ICMP traffic type to allow. Valid values from 0 to 254.
+     */
+    declare public readonly type: pulumi.Output<number>;
+    /**
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    declare public readonly udp: pulumi.Output<outputs.IsNetworkAclRuleUdp>;
 
     /**
      * Create a IsNetworkAclRule resource with the given unique name, arguments, and options.
@@ -97,6 +130,7 @@ export class IsNetworkAclRule extends pulumi.CustomResource {
             const state = argsOrState as IsNetworkAclRuleState | undefined;
             resourceInputs["action"] = state?.action;
             resourceInputs["before"] = state?.before;
+            resourceInputs["code"] = state?.code;
             resourceInputs["destination"] = state?.destination;
             resourceInputs["direction"] = state?.direction;
             resourceInputs["href"] = state?.href;
@@ -104,10 +138,15 @@ export class IsNetworkAclRule extends pulumi.CustomResource {
             resourceInputs["ipVersion"] = state?.ipVersion;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkAcl"] = state?.networkAcl;
+            resourceInputs["portMax"] = state?.portMax;
+            resourceInputs["portMin"] = state?.portMin;
             resourceInputs["protocol"] = state?.protocol;
             resourceInputs["ruleId"] = state?.ruleId;
             resourceInputs["source"] = state?.source;
+            resourceInputs["sourcePortMax"] = state?.sourcePortMax;
+            resourceInputs["sourcePortMin"] = state?.sourcePortMin;
             resourceInputs["tcp"] = state?.tcp;
+            resourceInputs["type"] = state?.type;
             resourceInputs["udp"] = state?.udp;
         } else {
             const args = argsOrState as IsNetworkAclRuleArgs | undefined;
@@ -128,17 +167,23 @@ export class IsNetworkAclRule extends pulumi.CustomResource {
             }
             resourceInputs["action"] = args?.action;
             resourceInputs["before"] = args?.before;
+            resourceInputs["code"] = args?.code;
             resourceInputs["destination"] = args?.destination;
             resourceInputs["direction"] = args?.direction;
             resourceInputs["icmp"] = args?.icmp;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkAcl"] = args?.networkAcl;
+            resourceInputs["portMax"] = args?.portMax;
+            resourceInputs["portMin"] = args?.portMin;
+            resourceInputs["protocol"] = args?.protocol;
             resourceInputs["source"] = args?.source;
+            resourceInputs["sourcePortMax"] = args?.sourcePortMax;
+            resourceInputs["sourcePortMin"] = args?.sourcePortMin;
             resourceInputs["tcp"] = args?.tcp;
+            resourceInputs["type"] = args?.type;
             resourceInputs["udp"] = args?.udp;
             resourceInputs["href"] = undefined /*out*/;
             resourceInputs["ipVersion"] = undefined /*out*/;
-            resourceInputs["protocol"] = undefined /*out*/;
             resourceInputs["ruleId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -153,50 +198,83 @@ export interface IsNetworkAclRuleState {
     /**
      * Whether to allow or deny matching traffic
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The rule that this rule is immediately before. If absent, this is the last rule.
      */
-    before?: pulumi.Input<string>;
+    before?: pulumi.Input<string | undefined>;
+    /**
+     * The ICMP traffic code to allow. Valid values from 0 to 255.
+     */
+    code?: pulumi.Input<number | undefined>;
     /**
      * The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
      */
-    destination?: pulumi.Input<string>;
+    destination?: pulumi.Input<string | undefined>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     /**
      * The url of the rule.
      */
-    href?: pulumi.Input<string>;
-    icmp?: pulumi.Input<inputs.IsNetworkAclRuleIcmp>;
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
+     */
+    icmp?: pulumi.Input<inputs.IsNetworkAclRuleIcmp | undefined>;
     /**
      * The IP version for this rule.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Network ACL id
      */
-    networkAcl?: pulumi.Input<string>;
+    networkAcl?: pulumi.Input<string | undefined>;
     /**
-     * The protocol of the rule.
+     * The highest port in the range of ports to be matched
      */
-    protocol?: pulumi.Input<string>;
+    portMax?: pulumi.Input<number | undefined>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    portMin?: pulumi.Input<number | undefined>;
+    /**
+     * The name of the network protocol
+     */
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The network acl rule id.
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
     /**
      * The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
      */
-    source?: pulumi.Input<string>;
-    tcp?: pulumi.Input<inputs.IsNetworkAclRuleTcp>;
-    udp?: pulumi.Input<inputs.IsNetworkAclRuleUdp>;
+    source?: pulumi.Input<string | undefined>;
+    /**
+     * The highest port in the range of ports to be matched
+     */
+    sourcePortMax?: pulumi.Input<number | undefined>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    sourcePortMin?: pulumi.Input<number | undefined>;
+    /**
+     * @deprecated tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    tcp?: pulumi.Input<inputs.IsNetworkAclRuleTcp | undefined>;
+    /**
+     * The ICMP traffic type to allow. Valid values from 0 to 254.
+     */
+    type?: pulumi.Input<number | undefined>;
+    /**
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    udp?: pulumi.Input<inputs.IsNetworkAclRuleUdp | undefined>;
 }
 
 /**
@@ -210,7 +288,11 @@ export interface IsNetworkAclRuleArgs {
     /**
      * The rule that this rule is immediately before. If absent, this is the last rule.
      */
-    before?: pulumi.Input<string>;
+    before?: pulumi.Input<string | undefined>;
+    /**
+     * The ICMP traffic code to allow. Valid values from 0 to 255.
+     */
+    code?: pulumi.Input<number | undefined>;
     /**
      * The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
      */
@@ -219,19 +301,52 @@ export interface IsNetworkAclRuleArgs {
      * Direction of traffic to enforce, either inbound or outbound
      */
     direction: pulumi.Input<string>;
-    icmp?: pulumi.Input<inputs.IsNetworkAclRuleIcmp>;
+    /**
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
+     */
+    icmp?: pulumi.Input<inputs.IsNetworkAclRuleIcmp | undefined>;
     /**
      * The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Network ACL id
      */
     networkAcl: pulumi.Input<string>;
     /**
+     * The highest port in the range of ports to be matched
+     */
+    portMax?: pulumi.Input<number | undefined>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    portMin?: pulumi.Input<number | undefined>;
+    /**
+     * The name of the network protocol
+     */
+    protocol?: pulumi.Input<string | undefined>;
+    /**
      * The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
      */
     source: pulumi.Input<string>;
-    tcp?: pulumi.Input<inputs.IsNetworkAclRuleTcp>;
-    udp?: pulumi.Input<inputs.IsNetworkAclRuleUdp>;
+    /**
+     * The highest port in the range of ports to be matched
+     */
+    sourcePortMax?: pulumi.Input<number | undefined>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    sourcePortMin?: pulumi.Input<number | undefined>;
+    /**
+     * @deprecated tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    tcp?: pulumi.Input<inputs.IsNetworkAclRuleTcp | undefined>;
+    /**
+     * The ICMP traffic type to allow. Valid values from 0 to 254.
+     */
+    type?: pulumi.Input<number | undefined>;
+    /**
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    udp?: pulumi.Input<inputs.IsNetworkAclRuleUdp | undefined>;
 }

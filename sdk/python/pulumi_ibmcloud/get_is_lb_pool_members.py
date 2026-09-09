@@ -94,8 +94,8 @@ def get_is_lb_pool_members(lb: Optional[_builtins.str] = None,
         lb=pulumi.get(__ret__, 'lb'),
         members=pulumi.get(__ret__, 'members'),
         pool=pulumi.get(__ret__, 'pool'))
-def get_is_lb_pool_members_output(lb: Optional[pulumi.Input[_builtins.str]] = None,
-                                  pool: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_lb_pool_members_output(lb: pulumi.Input[Optional[_builtins.str]] = None,
+                                  pool: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsLbPoolMembersResult]:
     """
     Use this data source to access information about an existing resource.

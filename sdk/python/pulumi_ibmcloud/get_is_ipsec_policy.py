@@ -27,10 +27,13 @@ class GetIsIpsecPolicyResult:
     """
     A collection of values returned by getIsIpsecPolicy.
     """
-    def __init__(__self__, authentication_algorithm=None, connections=None, created_at=None, encapsulation_mode=None, encryption_algorithm=None, href=None, id=None, ipsec_policy=None, key_lifetime=None, name=None, pfs=None, resource_groups=None, resource_type=None, transform_protocol=None):
+    def __init__(__self__, authentication_algorithm=None, authentication_algorithms=None, connections=None, created_at=None, encapsulation_mode=None, encryption_algorithm=None, encryption_algorithms=None, href=None, id=None, ipsec_policy=None, key_lifetime=None, name=None, pfs=None, pfs_groups=None, resource_groups=None, resource_type=None, transform_protocol=None):
         if authentication_algorithm and not isinstance(authentication_algorithm, str):
             raise TypeError("Expected argument 'authentication_algorithm' to be a str")
         pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
+        if authentication_algorithms and not isinstance(authentication_algorithms, list):
+            raise TypeError("Expected argument 'authentication_algorithms' to be a list")
+        pulumi.set(__self__, "authentication_algorithms", authentication_algorithms)
         if connections and not isinstance(connections, list):
             raise TypeError("Expected argument 'connections' to be a list")
         pulumi.set(__self__, "connections", connections)
@@ -43,6 +46,9 @@ class GetIsIpsecPolicyResult:
         if encryption_algorithm and not isinstance(encryption_algorithm, str):
             raise TypeError("Expected argument 'encryption_algorithm' to be a str")
         pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_algorithms and not isinstance(encryption_algorithms, list):
+            raise TypeError("Expected argument 'encryption_algorithms' to be a list")
+        pulumi.set(__self__, "encryption_algorithms", encryption_algorithms)
         if href and not isinstance(href, str):
             raise TypeError("Expected argument 'href' to be a str")
         pulumi.set(__self__, "href", href)
@@ -61,6 +67,9 @@ class GetIsIpsecPolicyResult:
         if pfs and not isinstance(pfs, str):
             raise TypeError("Expected argument 'pfs' to be a str")
         pulumi.set(__self__, "pfs", pfs)
+        if pfs_groups and not isinstance(pfs_groups, list):
+            raise TypeError("Expected argument 'pfs_groups' to be a list")
+        pulumi.set(__self__, "pfs_groups", pfs_groups)
         if resource_groups and not isinstance(resource_groups, list):
             raise TypeError("Expected argument 'resource_groups' to be a list")
         pulumi.set(__self__, "resource_groups", resource_groups)
@@ -75,6 +84,11 @@ class GetIsIpsecPolicyResult:
     @pulumi.getter(name="authenticationAlgorithm")
     def authentication_algorithm(self) -> _builtins.str:
         return pulumi.get(self, "authentication_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "authentication_algorithms")
 
     @_builtins.property
     @pulumi.getter
@@ -95,6 +109,11 @@ class GetIsIpsecPolicyResult:
     @pulumi.getter(name="encryptionAlgorithm")
     def encryption_algorithm(self) -> _builtins.str:
         return pulumi.get(self, "encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "encryption_algorithms")
 
     @_builtins.property
     @pulumi.getter
@@ -130,6 +149,11 @@ class GetIsIpsecPolicyResult:
         return pulumi.get(self, "pfs")
 
     @_builtins.property
+    @pulumi.getter(name="pfsGroups")
+    def pfs_groups(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "pfs_groups")
+
+    @_builtins.property
     @pulumi.getter(name="resourceGroups")
     def resource_groups(self) -> Sequence['outputs.GetIsIpsecPolicyResourceGroupResult']:
         return pulumi.get(self, "resource_groups")
@@ -152,16 +176,19 @@ class AwaitableGetIsIpsecPolicyResult(GetIsIpsecPolicyResult):
             yield self
         return GetIsIpsecPolicyResult(
             authentication_algorithm=self.authentication_algorithm,
+            authentication_algorithms=self.authentication_algorithms,
             connections=self.connections,
             created_at=self.created_at,
             encapsulation_mode=self.encapsulation_mode,
             encryption_algorithm=self.encryption_algorithm,
+            encryption_algorithms=self.encryption_algorithms,
             href=self.href,
             id=self.id,
             ipsec_policy=self.ipsec_policy,
             key_lifetime=self.key_lifetime,
             name=self.name,
             pfs=self.pfs,
+            pfs_groups=self.pfs_groups,
             resource_groups=self.resource_groups,
             resource_type=self.resource_type,
             transform_protocol=self.transform_protocol)
@@ -181,21 +208,24 @@ def get_is_ipsec_policy(ipsec_policy: Optional[_builtins.str] = None,
 
     return AwaitableGetIsIpsecPolicyResult(
         authentication_algorithm=pulumi.get(__ret__, 'authentication_algorithm'),
+        authentication_algorithms=pulumi.get(__ret__, 'authentication_algorithms'),
         connections=pulumi.get(__ret__, 'connections'),
         created_at=pulumi.get(__ret__, 'created_at'),
         encapsulation_mode=pulumi.get(__ret__, 'encapsulation_mode'),
         encryption_algorithm=pulumi.get(__ret__, 'encryption_algorithm'),
+        encryption_algorithms=pulumi.get(__ret__, 'encryption_algorithms'),
         href=pulumi.get(__ret__, 'href'),
         id=pulumi.get(__ret__, 'id'),
         ipsec_policy=pulumi.get(__ret__, 'ipsec_policy'),
         key_lifetime=pulumi.get(__ret__, 'key_lifetime'),
         name=pulumi.get(__ret__, 'name'),
         pfs=pulumi.get(__ret__, 'pfs'),
+        pfs_groups=pulumi.get(__ret__, 'pfs_groups'),
         resource_groups=pulumi.get(__ret__, 'resource_groups'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         transform_protocol=pulumi.get(__ret__, 'transform_protocol'))
-def get_is_ipsec_policy_output(ipsec_policy: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_ipsec_policy_output(ipsec_policy: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsIpsecPolicyResult]:
     """
     Use this data source to access information about an existing resource.
@@ -207,16 +237,19 @@ def get_is_ipsec_policy_output(ipsec_policy: Optional[pulumi.Input[Optional[_bui
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsIpsecPolicy:getIsIpsecPolicy', __args__, opts=opts, typ=GetIsIpsecPolicyResult)
     return __ret__.apply(lambda __response__: GetIsIpsecPolicyResult(
         authentication_algorithm=pulumi.get(__response__, 'authentication_algorithm'),
+        authentication_algorithms=pulumi.get(__response__, 'authentication_algorithms'),
         connections=pulumi.get(__response__, 'connections'),
         created_at=pulumi.get(__response__, 'created_at'),
         encapsulation_mode=pulumi.get(__response__, 'encapsulation_mode'),
         encryption_algorithm=pulumi.get(__response__, 'encryption_algorithm'),
+        encryption_algorithms=pulumi.get(__response__, 'encryption_algorithms'),
         href=pulumi.get(__response__, 'href'),
         id=pulumi.get(__response__, 'id'),
         ipsec_policy=pulumi.get(__response__, 'ipsec_policy'),
         key_lifetime=pulumi.get(__response__, 'key_lifetime'),
         name=pulumi.get(__response__, 'name'),
         pfs=pulumi.get(__response__, 'pfs'),
+        pfs_groups=pulumi.get(__response__, 'pfs_groups'),
         resource_groups=pulumi.get(__response__, 'resource_groups'),
         resource_type=pulumi.get(__response__, 'resource_type'),
         transform_protocol=pulumi.get(__response__, 'transform_protocol')))

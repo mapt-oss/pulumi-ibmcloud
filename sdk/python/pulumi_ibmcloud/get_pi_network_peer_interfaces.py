@@ -82,7 +82,7 @@ def get_pi_network_peer_interfaces(pi_cloud_instance_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         peer_interfaces=pulumi.get(__ret__, 'peer_interfaces'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'))
-def get_pi_network_peer_interfaces_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_network_peer_interfaces_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkPeerInterfacesResult]:
     """
     Use this data source to access information about an existing resource.

@@ -113,8 +113,8 @@ def get_compute_ssh_key(label: Optional[_builtins.str] = None,
         most_recent=pulumi.get(__ret__, 'most_recent'),
         notes=pulumi.get(__ret__, 'notes'),
         public_key=pulumi.get(__ret__, 'public_key'))
-def get_compute_ssh_key_output(label: Optional[pulumi.Input[_builtins.str]] = None,
-                               most_recent: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_compute_ssh_key_output(label: pulumi.Input[Optional[_builtins.str]] = None,
+                               most_recent: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeSshKeyResult]:
     """
     Use this data source to access information about an existing resource.

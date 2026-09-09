@@ -285,9 +285,9 @@ def get_compute_vm_instance(domain: Optional[_builtins.str] = None,
         secondary_ip_addresses=pulumi.get(__ret__, 'secondary_ip_addresses'),
         secondary_ip_count=pulumi.get(__ret__, 'secondary_ip_count'),
         status=pulumi.get(__ret__, 'status'))
-def get_compute_vm_instance_output(domain: Optional[pulumi.Input[_builtins.str]] = None,
-                                   hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                                   most_recent: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_compute_vm_instance_output(domain: pulumi.Input[Optional[_builtins.str]] = None,
+                                   hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                                   most_recent: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeVmInstanceResult]:
     """
     Use this data source to access information about an existing resource.

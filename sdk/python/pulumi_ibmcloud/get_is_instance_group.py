@@ -181,7 +181,7 @@ def get_is_instance_group(name: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         subnets=pulumi.get(__ret__, 'subnets'),
         vpc=pulumi.get(__ret__, 'vpc'))
-def get_is_instance_group_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_group_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceGroupResult]:
     """
     Use this data source to access information about an existing resource.

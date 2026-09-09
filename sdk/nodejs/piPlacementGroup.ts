@@ -112,31 +112,31 @@ export interface PiPlacementGroupState {
     /**
      * The CRN of the resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The list of server instances IDs that are members of the placement group.
      */
-    members?: pulumi.Input<pulumi.Input<string>[]>;
+    members?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The name of the placement group.
      */
-    piPlacementGroupName?: pulumi.Input<string>;
+    piPlacementGroupName?: pulumi.Input<string | undefined>;
     /**
      * The value of the group's affinity policy. Valid values are 'affinity' and 'anti-affinity'.
      */
-    piPlacementGroupPolicy?: pulumi.Input<string>;
+    piPlacementGroupPolicy?: pulumi.Input<string | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The placement group ID.
      */
-    placementGroupId?: pulumi.Input<string>;
+    placementGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -158,5 +158,5 @@ export interface PiPlacementGroupArgs {
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

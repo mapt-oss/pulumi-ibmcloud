@@ -23,9 +23,10 @@ class IamActionControlAssignmentArgs:
     def __init__(__self__, *,
                  target: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
                  templates: pulumi.Input['IamActionControlAssignmentTemplatesArgs'],
-                 template_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 template_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamActionControlAssignment resource.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] target: assignment target details
         :param pulumi.Input['IamActionControlAssignmentTemplatesArgs'] templates: action control template details.
         :param pulumi.Input[_builtins.str] template_version: The policy template version.
@@ -61,34 +62,35 @@ class IamActionControlAssignmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="templateVersion")
-    def template_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The policy template version.
         """
         return pulumi.get(self, "template_version")
 
     @template_version.setter
-    def template_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_version", value)
 
 
 @pulumi.input_type
 class _IamActionControlAssignmentState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlAssignmentResourceArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 templates: Optional[pulumi.Input['IamActionControlAssignmentTemplatesArgs']] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlAssignmentResourceArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 templates: pulumi.Input[Optional['IamActionControlAssignmentTemplatesArgs']] = None):
         """
         Input properties used for looking up and filtering IamActionControlAssignment resources.
+
         :param pulumi.Input[_builtins.str] account_id: The account GUID that the action control assignments belong to.
         :param pulumi.Input[_builtins.str] created_at: The UTC timestamp when the action control assignment was created.
         :param pulumi.Input[_builtins.str] created_by_id: The IAM ID of the entity that created the action control assignment.
@@ -129,146 +131,146 @@ class _IamActionControlAssignmentState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The account GUID that the action control assignments belong to.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UTC timestamp when the action control assignment was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IAM ID of the entity that created the action control assignment.
         """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
-    def created_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The href URL that links to the action control assignments API by action control assignment ID.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedAt")
-    def last_modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UTC timestamp when the action control assignment was last modified.
         """
         return pulumi.get(self, "last_modified_at")
 
     @last_modified_at.setter
-    def last_modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_at", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedById")
-    def last_modified_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IAM ID of the entity that last modified the action control assignment.
         """
         return pulumi.get(self, "last_modified_by_id")
 
     @last_modified_by_id.setter
-    def last_modified_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def operation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current operation of the action control assignment.
         """
         return pulumi.get(self, "operation")
 
     @operation.setter
-    def operation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlAssignmentResourceArgs']]]]:
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlAssignmentResourceArgs']]]]:
         """
         Resources created when action control template is assigned.
         """
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlAssignmentResourceArgs']]]]):
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlAssignmentResourceArgs']]]]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action control assignment status.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def target(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         assignment target details
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def target(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="templateVersion")
-    def template_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The policy template version.
         """
         return pulumi.get(self, "template_version")
 
     @template_version.setter
-    def template_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def templates(self) -> Optional[pulumi.Input['IamActionControlAssignmentTemplatesArgs']]:
+    def templates(self) -> pulumi.Input[Optional['IamActionControlAssignmentTemplatesArgs']]:
         """
         action control template details.
         """
         return pulumi.get(self, "templates")
 
     @templates.setter
-    def templates(self, value: Optional[pulumi.Input['IamActionControlAssignmentTemplatesArgs']]):
+    def templates(self, value: pulumi.Input[Optional['IamActionControlAssignmentTemplatesArgs']]):
         pulumi.set(self, "templates", value)
 
 
@@ -278,17 +280,18 @@ class IamActionControlAssignment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 templates: Optional[pulumi.Input[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict']]] = None,
+                 target: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 templates: pulumi.Input[Optional[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict', 'outputs.IamActionControlAssignmentTemplates']]] = None,
                  __props__=None):
         """
         Create a IamActionControlAssignment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] target: assignment target details
         :param pulumi.Input[_builtins.str] template_version: The policy template version.
-        :param pulumi.Input[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict']] templates: action control template details.
+        :param pulumi.Input[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict', 'outputs.IamActionControlAssignmentTemplates']] templates: action control template details.
         """
         ...
     @overload
@@ -298,6 +301,7 @@ class IamActionControlAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamActionControlAssignment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamActionControlAssignmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -313,9 +317,9 @@ class IamActionControlAssignment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 templates: Optional[pulumi.Input[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict']]] = None,
+                 target: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 templates: pulumi.Input[Optional[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict', 'outputs.IamActionControlAssignmentTemplates']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -351,18 +355,18 @@ class IamActionControlAssignment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            operation: Optional[pulumi.Input[_builtins.str]] = None,
-            resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlAssignmentResourceArgs', 'IamActionControlAssignmentResourceArgsDict']]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            template_version: Optional[pulumi.Input[_builtins.str]] = None,
-            templates: Optional[pulumi.Input[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict']]] = None) -> 'IamActionControlAssignment':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamActionControlAssignmentResourceArgs', 'IamActionControlAssignmentResourceArgsDict', 'outputs.IamActionControlAssignmentResource']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            template_version: pulumi.Input[Optional[_builtins.str]] = None,
+            templates: pulumi.Input[Optional[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict', 'outputs.IamActionControlAssignmentTemplates']]] = None) -> 'IamActionControlAssignment':
         """
         Get an existing IamActionControlAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -377,11 +381,11 @@ class IamActionControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_modified_at: The UTC timestamp when the action control assignment was last modified.
         :param pulumi.Input[_builtins.str] last_modified_by_id: The IAM ID of the entity that last modified the action control assignment.
         :param pulumi.Input[_builtins.str] operation: The current operation of the action control assignment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlAssignmentResourceArgs', 'IamActionControlAssignmentResourceArgsDict']]]] resources: Resources created when action control template is assigned.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlAssignmentResourceArgs', 'IamActionControlAssignmentResourceArgsDict', 'outputs.IamActionControlAssignmentResource']]]] resources: Resources created when action control template is assigned.
         :param pulumi.Input[_builtins.str] status: The action control assignment status.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] target: assignment target details
         :param pulumi.Input[_builtins.str] template_version: The policy template version.
-        :param pulumi.Input[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict']] templates: action control template details.
+        :param pulumi.Input[Union['IamActionControlAssignmentTemplatesArgs', 'IamActionControlAssignmentTemplatesArgsDict', 'outputs.IamActionControlAssignmentTemplates']] templates: action control template details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

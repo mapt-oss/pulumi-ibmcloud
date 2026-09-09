@@ -24,17 +24,19 @@ class PiNetworkArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_network_name: pulumi.Input[_builtins.str],
                  pi_network_type: pulumi.Input[_builtins.str],
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_arp_broadcast: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ipaddress_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]] = None,
-                 pi_network_mtu: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_network_peer: Optional[pulumi.Input['PiNetworkPiNetworkPeerArgs']] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_arp_broadcast: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_enable_dhcp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ipaddress_ranges: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]] = None,
+                 pi_network_mtu: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_network_peer: pulumi.Input[Optional['PiNetworkPiNetworkPeerArgs']] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiNetwork resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_network_name: The name of the network.
         :param pulumi.Input[_builtins.str] pi_network_type: The type of network that you want to create. Valid values are `pub-vlan`, and `vlan`.
@@ -42,6 +44,7 @@ class PiNetworkArgs:
         :param pulumi.Input[_builtins.str] pi_arp_broadcast: Enable ARP Broadcast.
         :param pulumi.Input[_builtins.str] pi_cidr: The network CIDR. Required for `vlan` network type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_dns: The DNS Servers for the network.
+        :param pulumi.Input[_builtins.bool] pi_enable_dhcp: Network will support DHCP.
         :param pulumi.Input[_builtins.str] pi_gateway: The gateway ip address.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]] pi_ipaddress_ranges: List of one or more ip address range(s).
         :param pulumi.Input[_builtins.int] pi_network_mtu: Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
@@ -59,6 +62,8 @@ class PiNetworkArgs:
             pulumi.set(__self__, "pi_cidr", pi_cidr)
         if pi_dns is not None:
             pulumi.set(__self__, "pi_dns", pi_dns)
+        if pi_enable_dhcp is not None:
+            pulumi.set(__self__, "pi_enable_dhcp", pi_enable_dhcp)
         if pi_gateway is not None:
             pulumi.set(__self__, "pi_gateway", pi_gateway)
         if pi_ipaddress_ranges is not None:
@@ -111,137 +116,153 @@ class PiNetworkArgs:
 
     @_builtins.property
     @pulumi.getter(name="piAdvertise")
-    def pi_advertise(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_advertise(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable the network to be advertised.
         """
         return pulumi.get(self, "pi_advertise")
 
     @pi_advertise.setter
-    def pi_advertise(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_advertise(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_advertise", value)
 
     @_builtins.property
     @pulumi.getter(name="piArpBroadcast")
-    def pi_arp_broadcast(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_arp_broadcast(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable ARP Broadcast.
         """
         return pulumi.get(self, "pi_arp_broadcast")
 
     @pi_arp_broadcast.setter
-    def pi_arp_broadcast(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_arp_broadcast(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_arp_broadcast", value)
 
     @_builtins.property
     @pulumi.getter(name="piCidr")
-    def pi_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network CIDR. Required for `vlan` network type.
         """
         return pulumi.get(self, "pi_cidr")
 
     @pi_cidr.setter
-    def pi_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piDns")
-    def pi_dns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_dns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The DNS Servers for the network.
         """
         return pulumi.get(self, "pi_dns")
 
     @pi_dns.setter
-    def pi_dns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_dns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_dns", value)
 
     @_builtins.property
+    @pulumi.getter(name="piEnableDhcp")
+    def pi_enable_dhcp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Network will support DHCP.
+        """
+        return pulumi.get(self, "pi_enable_dhcp")
+
+    @pi_enable_dhcp.setter
+    def pi_enable_dhcp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pi_enable_dhcp", value)
+
+    @_builtins.property
     @pulumi.getter(name="piGateway")
-    def pi_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The gateway ip address.
         """
         return pulumi.get(self, "pi_gateway")
 
     @pi_gateway.setter
-    def pi_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="piIpaddressRanges")
-    def pi_ipaddress_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]:
+    def pi_ipaddress_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]:
         """
         List of one or more ip address range(s).
         """
         return pulumi.get(self, "pi_ipaddress_ranges")
 
     @pi_ipaddress_ranges.setter
-    def pi_ipaddress_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]):
+    def pi_ipaddress_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]):
         pulumi.set(self, "pi_ipaddress_ranges", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkMtu")
-    def pi_network_mtu(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_network_mtu(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
         """
         return pulumi.get(self, "pi_network_mtu")
 
     @pi_network_mtu.setter
-    def pi_network_mtu(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_network_mtu(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_network_mtu", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkPeer")
     @_utilities.deprecated("""This field is deprecated""")
-    def pi_network_peer(self) -> Optional[pulumi.Input['PiNetworkPiNetworkPeerArgs']]:
+    def pi_network_peer(self) -> pulumi.Input[Optional['PiNetworkPiNetworkPeerArgs']]:
         """
         Network peer information.
         """
         return pulumi.get(self, "pi_network_peer")
 
     @pi_network_peer.setter
-    def pi_network_peer(self, value: Optional[pulumi.Input['PiNetworkPiNetworkPeerArgs']]):
+    def pi_network_peer(self, value: pulumi.Input[Optional['PiNetworkPiNetworkPeerArgs']]):
         pulumi.set(self, "pi_network_peer", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiNetworkState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_address_translations: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkNetworkAddressTranslationArgs']]]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_arp_broadcast: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ipaddress_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]] = None,
-                 pi_network_mtu: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_peer: Optional[pulumi.Input['PiNetworkPiNetworkPeerArgs']] = None,
-                 pi_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vlan_id: Optional[pulumi.Input[_builtins.float]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_dhcp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_address_translations: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkNetworkAddressTranslationArgs']]]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_arp_broadcast: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_enable_dhcp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ipaddress_ranges: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]] = None,
+                 pi_network_mtu: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_peer: pulumi.Input[Optional['PiNetworkPiNetworkPeerArgs']] = None,
+                 pi_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vlan_id: pulumi.Input[Optional[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering PiNetwork resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
+        :param pulumi.Input[_builtins.bool] enable_dhcp: DHCP enabled network.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkNetworkAddressTranslationArgs']]] network_address_translations: Contains the Network Address Translation Details (for on-prem locations only).
         :param pulumi.Input[_builtins.str] network_id: The unique identifier of the network.
         :param pulumi.Input[_builtins.str] peer_id: Network Peer ID (for on-prem locations only).
@@ -250,6 +271,7 @@ class _PiNetworkState:
         :param pulumi.Input[_builtins.str] pi_cidr: The network CIDR. Required for `vlan` network type.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_dns: The DNS Servers for the network.
+        :param pulumi.Input[_builtins.bool] pi_enable_dhcp: Network will support DHCP.
         :param pulumi.Input[_builtins.str] pi_gateway: The gateway ip address.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]] pi_ipaddress_ranges: List of one or more ip address range(s).
         :param pulumi.Input[_builtins.int] pi_network_mtu: Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
@@ -261,6 +283,8 @@ class _PiNetworkState:
         """
         if crn is not None:
             pulumi.set(__self__, "crn", crn)
+        if enable_dhcp is not None:
+            pulumi.set(__self__, "enable_dhcp", enable_dhcp)
         if network_address_translations is not None:
             warnings.warn("""This field is deprecated""", DeprecationWarning)
             pulumi.log.warn("""network_address_translations is deprecated: This field is deprecated""")
@@ -283,6 +307,8 @@ class _PiNetworkState:
             pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
         if pi_dns is not None:
             pulumi.set(__self__, "pi_dns", pi_dns)
+        if pi_enable_dhcp is not None:
+            pulumi.set(__self__, "pi_enable_dhcp", pi_enable_dhcp)
         if pi_gateway is not None:
             pulumi.set(__self__, "pi_gateway", pi_gateway)
         if pi_ipaddress_ranges is not None:
@@ -305,209 +331,233 @@ class _PiNetworkState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enableDhcp")
+    def enable_dhcp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        DHCP enabled network.
+        """
+        return pulumi.get(self, "enable_dhcp")
+
+    @enable_dhcp.setter
+    def enable_dhcp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_dhcp", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAddressTranslations")
     @_utilities.deprecated("""This field is deprecated""")
-    def network_address_translations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkNetworkAddressTranslationArgs']]]]:
+    def network_address_translations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkNetworkAddressTranslationArgs']]]]:
         """
         Contains the Network Address Translation Details (for on-prem locations only).
         """
         return pulumi.get(self, "network_address_translations")
 
     @network_address_translations.setter
-    def network_address_translations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkNetworkAddressTranslationArgs']]]]):
+    def network_address_translations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkNetworkAddressTranslationArgs']]]]):
         pulumi.set(self, "network_address_translations", value)
 
     @_builtins.property
     @pulumi.getter(name="networkId")
-    def network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the network.
         """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
-    def network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerId")
     @_utilities.deprecated("""This field is deprecated""")
-    def peer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network Peer ID (for on-prem locations only).
         """
         return pulumi.get(self, "peer_id")
 
     @peer_id.setter
-    def peer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piAdvertise")
-    def pi_advertise(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_advertise(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable the network to be advertised.
         """
         return pulumi.get(self, "pi_advertise")
 
     @pi_advertise.setter
-    def pi_advertise(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_advertise(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_advertise", value)
 
     @_builtins.property
     @pulumi.getter(name="piArpBroadcast")
-    def pi_arp_broadcast(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_arp_broadcast(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable ARP Broadcast.
         """
         return pulumi.get(self, "pi_arp_broadcast")
 
     @pi_arp_broadcast.setter
-    def pi_arp_broadcast(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_arp_broadcast(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_arp_broadcast", value)
 
     @_builtins.property
     @pulumi.getter(name="piCidr")
-    def pi_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network CIDR. Required for `vlan` network type.
         """
         return pulumi.get(self, "pi_cidr")
 
     @pi_cidr.setter
-    def pi_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDns")
-    def pi_dns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_dns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The DNS Servers for the network.
         """
         return pulumi.get(self, "pi_dns")
 
     @pi_dns.setter
-    def pi_dns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_dns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_dns", value)
 
     @_builtins.property
+    @pulumi.getter(name="piEnableDhcp")
+    def pi_enable_dhcp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Network will support DHCP.
+        """
+        return pulumi.get(self, "pi_enable_dhcp")
+
+    @pi_enable_dhcp.setter
+    def pi_enable_dhcp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pi_enable_dhcp", value)
+
+    @_builtins.property
     @pulumi.getter(name="piGateway")
-    def pi_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The gateway ip address.
         """
         return pulumi.get(self, "pi_gateway")
 
     @pi_gateway.setter
-    def pi_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="piIpaddressRanges")
-    def pi_ipaddress_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]:
+    def pi_ipaddress_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]:
         """
         List of one or more ip address range(s).
         """
         return pulumi.get(self, "pi_ipaddress_ranges")
 
     @pi_ipaddress_ranges.setter
-    def pi_ipaddress_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]):
+    def pi_ipaddress_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkPiIpaddressRangeArgs']]]]):
         pulumi.set(self, "pi_ipaddress_ranges", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkMtu")
-    def pi_network_mtu(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_network_mtu(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
         """
         return pulumi.get(self, "pi_network_mtu")
 
     @pi_network_mtu.setter
-    def pi_network_mtu(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_network_mtu(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_network_mtu", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkName")
-    def pi_network_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the network.
         """
         return pulumi.get(self, "pi_network_name")
 
     @pi_network_name.setter
-    def pi_network_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkPeer")
     @_utilities.deprecated("""This field is deprecated""")
-    def pi_network_peer(self) -> Optional[pulumi.Input['PiNetworkPiNetworkPeerArgs']]:
+    def pi_network_peer(self) -> pulumi.Input[Optional['PiNetworkPiNetworkPeerArgs']]:
         """
         Network peer information.
         """
         return pulumi.get(self, "pi_network_peer")
 
     @pi_network_peer.setter
-    def pi_network_peer(self, value: Optional[pulumi.Input['PiNetworkPiNetworkPeerArgs']]):
+    def pi_network_peer(self, value: pulumi.Input[Optional['PiNetworkPiNetworkPeerArgs']]):
         pulumi.set(self, "pi_network_peer", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkType")
-    def pi_network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of network that you want to create. Valid values are `pub-vlan`, and `vlan`.
         """
         return pulumi.get(self, "pi_network_type")
 
     @pi_network_type.setter
-    def pi_network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def vlan_id(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The ID of the VLAN that your network is attached to.
         """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
-    def vlan_id(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def vlan_id(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "vlan_id", value)
 
 
@@ -517,21 +567,23 @@ class PiNetwork(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_arp_broadcast: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ipaddress_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict']]]]] = None,
-                 pi_network_mtu: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_peer: Optional[pulumi.Input[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict']]] = None,
-                 pi_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_arp_broadcast: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_enable_dhcp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ipaddress_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict', 'outputs.PiNetworkPiIpaddressRange']]]]] = None,
+                 pi_network_mtu: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_peer: pulumi.Input[Optional[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict', 'outputs.PiNetworkPiNetworkPeer']]] = None,
+                 pi_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiNetwork resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_advertise: Enable the network to be advertised.
@@ -539,11 +591,12 @@ class PiNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_cidr: The network CIDR. Required for `vlan` network type.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_dns: The DNS Servers for the network.
+        :param pulumi.Input[_builtins.bool] pi_enable_dhcp: Network will support DHCP.
         :param pulumi.Input[_builtins.str] pi_gateway: The gateway ip address.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict']]]] pi_ipaddress_ranges: List of one or more ip address range(s).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict', 'outputs.PiNetworkPiIpaddressRange']]]] pi_ipaddress_ranges: List of one or more ip address range(s).
         :param pulumi.Input[_builtins.int] pi_network_mtu: Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
         :param pulumi.Input[_builtins.str] pi_network_name: The name of the network.
-        :param pulumi.Input[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict']] pi_network_peer: Network peer information.
+        :param pulumi.Input[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict', 'outputs.PiNetworkPiNetworkPeer']] pi_network_peer: Network peer information.
         :param pulumi.Input[_builtins.str] pi_network_type: The type of network that you want to create. Valid values are `pub-vlan`, and `vlan`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         """
@@ -555,6 +608,7 @@ class PiNetwork(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetwork resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -570,18 +624,19 @@ class PiNetwork(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_arp_broadcast: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_dns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ipaddress_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict']]]]] = None,
-                 pi_network_mtu: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_peer: Optional[pulumi.Input[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict']]] = None,
-                 pi_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_arp_broadcast: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_dns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_enable_dhcp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ipaddress_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict', 'outputs.PiNetworkPiIpaddressRange']]]]] = None,
+                 pi_network_mtu: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_peer: pulumi.Input[Optional[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict', 'outputs.PiNetworkPiNetworkPeer']]] = None,
+                 pi_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -598,6 +653,7 @@ class PiNetwork(pulumi.CustomResource):
                 raise TypeError("Missing required property 'pi_cloud_instance_id'")
             __props__.__dict__["pi_cloud_instance_id"] = pi_cloud_instance_id
             __props__.__dict__["pi_dns"] = pi_dns
+            __props__.__dict__["pi_enable_dhcp"] = pi_enable_dhcp
             __props__.__dict__["pi_gateway"] = pi_gateway
             __props__.__dict__["pi_ipaddress_ranges"] = pi_ipaddress_ranges
             __props__.__dict__["pi_network_mtu"] = pi_network_mtu
@@ -610,6 +666,7 @@ class PiNetwork(pulumi.CustomResource):
             __props__.__dict__["pi_network_type"] = pi_network_type
             __props__.__dict__["pi_user_tags"] = pi_user_tags
             __props__.__dict__["crn"] = None
+            __props__.__dict__["enable_dhcp"] = None
             __props__.__dict__["network_address_translations"] = None
             __props__.__dict__["network_id"] = None
             __props__.__dict__["peer_id"] = None
@@ -624,23 +681,25 @@ class PiNetwork(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            network_address_translations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkNetworkAddressTranslationArgs', 'PiNetworkNetworkAddressTranslationArgsDict']]]]] = None,
-            network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_advertise: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_arp_broadcast: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_dns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ipaddress_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict']]]]] = None,
-            pi_network_mtu: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_network_peer: Optional[pulumi.Input[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict']]] = None,
-            pi_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vlan_id: Optional[pulumi.Input[_builtins.float]] = None) -> 'PiNetwork':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_dhcp: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_address_translations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkNetworkAddressTranslationArgs', 'PiNetworkNetworkAddressTranslationArgsDict', 'outputs.PiNetworkNetworkAddressTranslation']]]]] = None,
+            network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_advertise: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_arp_broadcast: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_dns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_enable_dhcp: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ipaddress_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict', 'outputs.PiNetworkPiIpaddressRange']]]]] = None,
+            pi_network_mtu: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_network_peer: pulumi.Input[Optional[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict', 'outputs.PiNetworkPiNetworkPeer']]] = None,
+            pi_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vlan_id: pulumi.Input[Optional[_builtins.float]] = None) -> 'PiNetwork':
         """
         Get an existing PiNetwork resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -649,7 +708,8 @@ class PiNetwork(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkNetworkAddressTranslationArgs', 'PiNetworkNetworkAddressTranslationArgsDict']]]] network_address_translations: Contains the Network Address Translation Details (for on-prem locations only).
+        :param pulumi.Input[_builtins.bool] enable_dhcp: DHCP enabled network.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkNetworkAddressTranslationArgs', 'PiNetworkNetworkAddressTranslationArgsDict', 'outputs.PiNetworkNetworkAddressTranslation']]]] network_address_translations: Contains the Network Address Translation Details (for on-prem locations only).
         :param pulumi.Input[_builtins.str] network_id: The unique identifier of the network.
         :param pulumi.Input[_builtins.str] peer_id: Network Peer ID (for on-prem locations only).
         :param pulumi.Input[_builtins.str] pi_advertise: Enable the network to be advertised.
@@ -657,11 +717,12 @@ class PiNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_cidr: The network CIDR. Required for `vlan` network type.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_dns: The DNS Servers for the network.
+        :param pulumi.Input[_builtins.bool] pi_enable_dhcp: Network will support DHCP.
         :param pulumi.Input[_builtins.str] pi_gateway: The gateway ip address.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict']]]] pi_ipaddress_ranges: List of one or more ip address range(s).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkPiIpaddressRangeArgs', 'PiNetworkPiIpaddressRangeArgsDict', 'outputs.PiNetworkPiIpaddressRange']]]] pi_ipaddress_ranges: List of one or more ip address range(s).
         :param pulumi.Input[_builtins.int] pi_network_mtu: Maximum Transmission Unit option of the network. Minimum is 1450 and maximum is 9000.
         :param pulumi.Input[_builtins.str] pi_network_name: The name of the network.
-        :param pulumi.Input[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict']] pi_network_peer: Network peer information.
+        :param pulumi.Input[Union['PiNetworkPiNetworkPeerArgs', 'PiNetworkPiNetworkPeerArgsDict', 'outputs.PiNetworkPiNetworkPeer']] pi_network_peer: Network peer information.
         :param pulumi.Input[_builtins.str] pi_network_type: The type of network that you want to create. Valid values are `pub-vlan`, and `vlan`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         :param pulumi.Input[_builtins.float] vlan_id: The ID of the VLAN that your network is attached to.
@@ -671,6 +732,7 @@ class PiNetwork(pulumi.CustomResource):
         __props__ = _PiNetworkState.__new__(_PiNetworkState)
 
         __props__.__dict__["crn"] = crn
+        __props__.__dict__["enable_dhcp"] = enable_dhcp
         __props__.__dict__["network_address_translations"] = network_address_translations
         __props__.__dict__["network_id"] = network_id
         __props__.__dict__["peer_id"] = peer_id
@@ -679,6 +741,7 @@ class PiNetwork(pulumi.CustomResource):
         __props__.__dict__["pi_cidr"] = pi_cidr
         __props__.__dict__["pi_cloud_instance_id"] = pi_cloud_instance_id
         __props__.__dict__["pi_dns"] = pi_dns
+        __props__.__dict__["pi_enable_dhcp"] = pi_enable_dhcp
         __props__.__dict__["pi_gateway"] = pi_gateway
         __props__.__dict__["pi_ipaddress_ranges"] = pi_ipaddress_ranges
         __props__.__dict__["pi_network_mtu"] = pi_network_mtu
@@ -696,6 +759,14 @@ class PiNetwork(pulumi.CustomResource):
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
+
+    @_builtins.property
+    @pulumi.getter(name="enableDhcp")
+    def enable_dhcp(self) -> pulumi.Output[_builtins.bool]:
+        """
+        DHCP enabled network.
+        """
+        return pulumi.get(self, "enable_dhcp")
 
     @_builtins.property
     @pulumi.getter(name="networkAddressTranslations")
@@ -762,6 +833,14 @@ class PiNetwork(pulumi.CustomResource):
         The DNS Servers for the network.
         """
         return pulumi.get(self, "pi_dns")
+
+    @_builtins.property
+    @pulumi.getter(name="piEnableDhcp")
+    def pi_enable_dhcp(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Network will support DHCP.
+        """
+        return pulumi.get(self, "pi_enable_dhcp")
 
     @_builtins.property
     @pulumi.getter(name="piGateway")

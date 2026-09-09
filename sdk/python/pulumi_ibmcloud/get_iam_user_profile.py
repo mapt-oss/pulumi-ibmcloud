@@ -171,7 +171,7 @@ def get_iam_user_profile(iam_id: Optional[_builtins.str] = None,
         phonenumber=pulumi.get(__ret__, 'phonenumber'),
         state=pulumi.get(__ret__, 'state'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_iam_user_profile_output(iam_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_user_profile_output(iam_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamUserProfileResult]:
     """
     Use this data source to access information about an existing resource.

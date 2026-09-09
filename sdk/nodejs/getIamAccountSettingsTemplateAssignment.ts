@@ -70,9 +70,9 @@ export function getIamAccountSettingsTemplateAssignmentOutput(args: GetIamAccoun
  */
 export interface GetIamAccountSettingsTemplateAssignmentOutputArgs {
     assignmentId: pulumi.Input<string>;
-    includeHistory?: pulumi.Input<boolean>;
-    target?: pulumi.Input<string>;
-    targetType?: pulumi.Input<string>;
-    templateId?: pulumi.Input<string>;
-    templateVersion?: pulumi.Input<number>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
+    target?: pulumi.Input<string | undefined>;
+    targetType?: pulumi.Input<string | undefined>;
+    templateId?: pulumi.Input<string | undefined>;
+    templateVersion?: pulumi.Input<number | undefined>;
 }

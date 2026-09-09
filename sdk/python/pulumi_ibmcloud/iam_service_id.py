@@ -19,13 +19,14 @@ __all__ = ['IamServiceIdArgs', 'IamServiceId']
 @pulumi.input_type
 class IamServiceIdArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IamServiceId resource.
-        :param pulumi.Input[_builtins.str] description: Description of the serviceID
-        :param pulumi.Input[_builtins.str] name: Name of the serviceID
+
+        :param pulumi.Input[_builtins.str] description: The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
+        :param pulumi.Input[_builtins.str] name: Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -36,56 +37,68 @@ class IamServiceIdArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Description of the serviceID
+        The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name of the serviceID
+        Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IamServiceIdState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamServiceId resources.
-        :param pulumi.Input[_builtins.str] crn: crn of the serviceID
-        :param pulumi.Input[_builtins.str] description: Description of the serviceID
-        :param pulumi.Input[_builtins.str] iam_id: The IAM ID of the serviceID
-        :param pulumi.Input[_builtins.str] name: Name of the serviceID
-        :param pulumi.Input[_builtins.str] version: version of the serviceID
+
+        :param pulumi.Input[_builtins.str] account_id: ID of the account.
+        :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
+        :param pulumi.Input[_builtins.str] crn: Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::serviceid:1234-5678-9012'.
+        :param pulumi.Input[_builtins.str] description: The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
+        :param pulumi.Input[_builtins.str] iam_id: Cloud wide identifier for identities of this service ID.
+        :param pulumi.Input[_builtins.bool] locked: The service ID cannot be changed if set to true.
+        :param pulumi.Input[_builtins.str] modified_at: If set contains a date time string of the last modification date in ISO format.
+        :param pulumi.Input[_builtins.str] name: Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
+        :param pulumi.Input[_builtins.str] version: Version of the ServiceID object.
         """
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if created_at is not None:
+            pulumi.set(__self__, "created_at", created_at)
         if crn is not None:
             pulumi.set(__self__, "crn", crn)
         if description is not None:
@@ -94,6 +107,8 @@ class _IamServiceIdState:
             pulumi.set(__self__, "iam_id", iam_id)
         if locked is not None:
             pulumi.set(__self__, "locked", locked)
+        if modified_at is not None:
+            pulumi.set(__self__, "modified_at", modified_at)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if tags is not None:
@@ -102,81 +117,120 @@ class _IamServiceIdState:
             pulumi.set(__self__, "version", version)
 
     @_builtins.property
-    @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        crn of the serviceID
+        ID of the account.
+        """
+        return pulumi.get(self, "account_id")
+
+    @account_id.setter
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "account_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        If set contains a date time string of the creation date in ISO format.
+        """
+        return pulumi.get(self, "created_at")
+
+    @created_at.setter
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "created_at", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::serviceid:1234-5678-9012'.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Description of the serviceID
+        The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="iamId")
-    def iam_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The IAM ID of the serviceID
+        Cloud wide identifier for identities of this service ID.
         """
         return pulumi.get(self, "iam_id")
 
     @iam_id.setter
-    def iam_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def locked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        The service ID cannot be changed if set to true.
+        """
         return pulumi.get(self, "locked")
 
     @locked.setter
-    def locked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "locked", value)
 
     @_builtins.property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @pulumi.getter(name="modifiedAt")
+    def modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name of the serviceID
+        If set contains a date time string of the last modification date in ISO format.
+        """
+        return pulumi.get(self, "modified_at")
+
+    @modified_at.setter
+    def modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "modified_at", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        version of the serviceID
+        Version of the ServiceID object.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -186,16 +240,17 @@ class IamServiceId(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IamServiceId resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] description: Description of the serviceID
-        :param pulumi.Input[_builtins.str] name: Name of the serviceID
+        :param pulumi.Input[_builtins.str] description: The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
+        :param pulumi.Input[_builtins.str] name: Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
         """
         ...
     @overload
@@ -205,6 +260,7 @@ class IamServiceId(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamServiceId resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamServiceIdArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -220,9 +276,9 @@ class IamServiceId(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -235,9 +291,12 @@ class IamServiceId(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["account_id"] = None
+            __props__.__dict__["created_at"] = None
             __props__.__dict__["crn"] = None
             __props__.__dict__["iam_id"] = None
             __props__.__dict__["locked"] = None
+            __props__.__dict__["modified_at"] = None
             __props__.__dict__["version"] = None
         super(IamServiceId, __self__).__init__(
             'ibmcloud:index/iamServiceId:IamServiceId',
@@ -249,13 +308,16 @@ class IamServiceId(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-            locked: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamServiceId':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+            locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamServiceId':
         """
         Get an existing IamServiceId resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -263,30 +325,53 @@ class IamServiceId(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] crn: crn of the serviceID
-        :param pulumi.Input[_builtins.str] description: Description of the serviceID
-        :param pulumi.Input[_builtins.str] iam_id: The IAM ID of the serviceID
-        :param pulumi.Input[_builtins.str] name: Name of the serviceID
-        :param pulumi.Input[_builtins.str] version: version of the serviceID
+        :param pulumi.Input[_builtins.str] account_id: ID of the account.
+        :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
+        :param pulumi.Input[_builtins.str] crn: Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::serviceid:1234-5678-9012'.
+        :param pulumi.Input[_builtins.str] description: The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
+        :param pulumi.Input[_builtins.str] iam_id: Cloud wide identifier for identities of this service ID.
+        :param pulumi.Input[_builtins.bool] locked: The service ID cannot be changed if set to true.
+        :param pulumi.Input[_builtins.str] modified_at: If set contains a date time string of the last modification date in ISO format.
+        :param pulumi.Input[_builtins.str] name: Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
+        :param pulumi.Input[_builtins.str] version: Version of the ServiceID object.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _IamServiceIdState.__new__(_IamServiceIdState)
 
+        __props__.__dict__["account_id"] = account_id
+        __props__.__dict__["created_at"] = created_at
         __props__.__dict__["crn"] = crn
         __props__.__dict__["description"] = description
         __props__.__dict__["iam_id"] = iam_id
         __props__.__dict__["locked"] = locked
+        __props__.__dict__["modified_at"] = modified_at
         __props__.__dict__["name"] = name
         __props__.__dict__["tags"] = tags
         __props__.__dict__["version"] = version
         return IamServiceId(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        ID of the account.
+        """
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> pulumi.Output[_builtins.str]:
+        """
+        If set contains a date time string of the creation date in ISO format.
+        """
+        return pulumi.get(self, "created_at")
+
+    @_builtins.property
     @pulumi.getter
     def crn(self) -> pulumi.Output[_builtins.str]:
         """
-        crn of the serviceID
+        Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::serviceid:1234-5678-9012'.
         """
         return pulumi.get(self, "crn")
 
@@ -294,7 +379,7 @@ class IamServiceId(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Description of the serviceID
+        The optional description of the Service Id. The 'description' property is only available if a description was provided during a create of a Service Id.
         """
         return pulumi.get(self, "description")
 
@@ -302,20 +387,31 @@ class IamServiceId(pulumi.CustomResource):
     @pulumi.getter(name="iamId")
     def iam_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The IAM ID of the serviceID
+        Cloud wide identifier for identities of this service ID.
         """
         return pulumi.get(self, "iam_id")
 
     @_builtins.property
     @pulumi.getter
     def locked(self) -> pulumi.Output[_builtins.bool]:
+        """
+        The service ID cannot be changed if set to true.
+        """
         return pulumi.get(self, "locked")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedAt")
+    def modified_at(self) -> pulumi.Output[_builtins.str]:
+        """
+        If set contains a date time string of the last modification date in ISO format.
+        """
+        return pulumi.get(self, "modified_at")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Name of the serviceID
+        Name of the Service Id. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the Service Id.
         """
         return pulumi.get(self, "name")
 
@@ -328,7 +424,7 @@ class IamServiceId(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[_builtins.str]:
         """
-        version of the serviceID
+        Version of the ServiceID object.
         """
         return pulumi.get(self, "version")
 

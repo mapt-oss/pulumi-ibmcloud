@@ -88,9 +88,9 @@ export function getCosBucketOutput(args: GetCosBucketOutputArgs, opts?: pulumi.I
  */
 export interface GetCosBucketOutputArgs {
     bucketName: pulumi.Input<string>;
-    bucketRegion?: pulumi.Input<string>;
-    bucketType?: pulumi.Input<string>;
-    endpointType?: pulumi.Input<string>;
+    bucketRegion?: pulumi.Input<string | undefined>;
+    bucketType?: pulumi.Input<string | undefined>;
+    endpointType?: pulumi.Input<string | undefined>;
     resourceInstanceId: pulumi.Input<string>;
-    satelliteLocationId?: pulumi.Input<string>;
+    satelliteLocationId?: pulumi.Input<string | undefined>;
 }

@@ -46,6 +46,6 @@ export function getIamAccountSettingsExternalInteractionOutput(args: GetIamAccou
  * A collection of arguments for invoking getIamAccountSettingsExternalInteraction.
  */
 export interface GetIamAccountSettingsExternalInteractionOutputArgs {
-    acceptLanguage?: pulumi.Input<string>;
+    acceptLanguage?: pulumi.Input<string | undefined>;
     accountId: pulumi.Input<string>;
 }

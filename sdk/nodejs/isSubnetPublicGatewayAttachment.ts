@@ -130,44 +130,44 @@ export interface IsSubnetPublicGatewayAttachmentState {
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
-    floatingIp?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    crn?: pulumi.Input<string | undefined>;
+    floatingIp?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of the Public gateway instance
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of public gateway
      */
-    publicGateway?: pulumi.Input<string>;
+    publicGateway?: pulumi.Input<string | undefined>;
     /**
      * Public gateway resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Public gateway instance status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The subnet identifier
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * Public gateway VPC info
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * Public gateway zone info
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**

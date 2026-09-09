@@ -159,63 +159,63 @@ export interface IsImageExportJobState {
     /**
      * The date and time that the image export job was completed.If absent, the export job has not yet completed.
      */
-    completedAt?: pulumi.Input<string>;
+    completedAt?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the image export job was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * A base64-encoded, encrypted representation of the key that was used to encrypt the data for the exported image. This key can be unwrapped with the image's `encryptionKey` root key using either Key Protect or Hyper Protect Crypto Service.If absent, the export job is for an unencrypted image.
      */
-    encryptedDataKey?: pulumi.Input<string>;
+    encryptedDataKey?: pulumi.Input<string | undefined>;
     /**
      * The format to use for the exported image. If the image is encrypted, only `qcow2` is supported.
      */
-    format?: pulumi.Input<string>;
+    format?: pulumi.Input<string | undefined>;
     /**
      * The URL for this image export job.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The image identifier.
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this image export job.
      */
-    imageExportJob?: pulumi.Input<string>;
+    imageExportJob?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this image export job. Names must be unique within the image this export job resides in. If unspecified, the name will be a hyphenated list of randomly-selected words prefixed with the first 16 characters of the parent image name.The exported image object name in Cloud Object Storage (`storage_object.name` in the response) will be based on this name. The object name will be unique within the bucket.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the image export job started running.If absent, the export job has not yet started.
      */
-    startedAt?: pulumi.Input<string>;
+    startedAt?: pulumi.Input<string | undefined>;
     /**
      * The status of this image export job:- `deleting`: Export job is being deleted- `failed`: Export job could not be completed successfully- `queued`: Export job is queued- `running`: Export job is in progress- `succeeded`: Export job was completed successfullyThe exported image object is automatically deleted for `failed` jobs.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
      */
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsImageExportJobStatusReason>[]>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsImageExportJobStatusReason>[] | undefined>;
     /**
      * The name of the Cloud Object Storage bucket to export the image to.
      */
-    storageBucket?: pulumi.Input<inputs.IsImageExportJobStorageBucket>;
+    storageBucket?: pulumi.Input<inputs.IsImageExportJobStorageBucket | undefined>;
     /**
      * The Cloud Object Storage location of the exported image object. The object at this location may not exist until the job is started, and will be incomplete while the job is running.After the job completes, the exported image object is not managed by the IBM VPC service, and may be removed or replaced with a different object by any user or service with IAM authorization to the bucket.
      */
-    storageHref?: pulumi.Input<string>;
+    storageHref?: pulumi.Input<string | undefined>;
     /**
      * The Cloud Object Storage object for the exported image. This object may not exist untilthe job is started, and will not be complete until the job completes.
      */
-    storageObjects?: pulumi.Input<pulumi.Input<inputs.IsImageExportJobStorageObject>[]>;
+    storageObjects?: pulumi.Input<pulumi.Input<inputs.IsImageExportJobStorageObject>[] | undefined>;
 }
 
 /**
@@ -225,7 +225,7 @@ export interface IsImageExportJobArgs {
     /**
      * The format to use for the exported image. If the image is encrypted, only `qcow2` is supported.
      */
-    format?: pulumi.Input<string>;
+    format?: pulumi.Input<string | undefined>;
     /**
      * The image identifier.
      */
@@ -233,7 +233,7 @@ export interface IsImageExportJobArgs {
     /**
      * The user-defined name for this image export job. Names must be unique within the image this export job resides in. If unspecified, the name will be a hyphenated list of randomly-selected words prefixed with the first 16 characters of the parent image name.The exported image object name in Cloud Object Storage (`storage_object.name` in the response) will be based on this name. The object name will be unique within the bucket.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The name of the Cloud Object Storage bucket to export the image to.
      */

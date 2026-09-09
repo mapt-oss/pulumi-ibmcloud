@@ -117,35 +117,35 @@ export interface PiNetworkSecurityGroupState {
     /**
      * The network security group's crn.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the network security group is the default network security group in the workspace.
      */
-    default?: pulumi.Input<boolean>;
+    default?: pulumi.Input<boolean | undefined>;
     /**
      * The list of IPv4 addresses and, or network interfaces in the network security group.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMember>[] | undefined>;
     /**
      * The unique identifier of the network security group.
      */
-    networkSecurityGroupId?: pulumi.Input<string>;
+    networkSecurityGroupId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The name of the network security group.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
     /**
      * The user tags associated with this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of rules in the network security group.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRule>[] | undefined>;
 }
 
 /**
@@ -163,5 +163,5 @@ export interface PiNetworkSecurityGroupArgs {
     /**
      * The user tags associated with this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

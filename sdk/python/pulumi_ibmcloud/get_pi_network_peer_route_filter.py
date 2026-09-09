@@ -195,9 +195,9 @@ def get_pi_network_peer_route_filter(pi_cloud_instance_id: Optional[_builtins.st
         prefix=pulumi.get(__ret__, 'prefix'),
         route_filter_id=pulumi.get(__ret__, 'route_filter_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_pi_network_peer_route_filter_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            pi_network_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            pi_route_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_network_peer_route_filter_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            pi_network_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            pi_route_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkPeerRouteFilterResult]:
     """
     Use this data source to access information about an existing resource.

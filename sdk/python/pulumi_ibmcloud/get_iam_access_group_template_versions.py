@@ -112,7 +112,7 @@ def get_iam_access_group_template_versions(template_id: Optional[_builtins.str] 
         lasts=pulumi.get(__ret__, 'lasts'),
         previouses=pulumi.get(__ret__, 'previouses'),
         template_id=pulumi.get(__ret__, 'template_id'))
-def get_iam_access_group_template_versions_output(template_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_access_group_template_versions_output(template_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccessGroupTemplateVersionsResult]:
     """
     Use this data source to access information about an existing resource.

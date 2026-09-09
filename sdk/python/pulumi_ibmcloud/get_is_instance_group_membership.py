@@ -144,8 +144,8 @@ def get_is_instance_group_membership(instance_group: Optional[_builtins.str] = N
         load_balancer_pool_member=pulumi.get(__ret__, 'load_balancer_pool_member'),
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'))
-def get_is_instance_group_membership_output(instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                                            name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_group_membership_output(instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                                            name: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceGroupMembershipResult]:
     """
     Use this data source to access information about an existing resource.

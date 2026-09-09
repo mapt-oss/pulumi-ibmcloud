@@ -64,6 +64,6 @@ export function getCosBucketObjectOutput(args: GetCosBucketObjectOutputArgs, opt
 export interface GetCosBucketObjectOutputArgs {
     bucketCrn: pulumi.Input<string>;
     bucketLocation: pulumi.Input<string>;
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     key: pulumi.Input<string>;
 }

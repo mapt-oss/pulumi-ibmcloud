@@ -189,87 +189,87 @@ export interface IsVirtualNetworkInterfaceState {
     /**
      * Access management tags for the vni instance
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time that the virtual network interface was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this virtual network interface.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this virtual network interface.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The lifecycle state of the virtual network interface.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The MAC address of the interface. Absent when the interface is not attached to a target.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The reserved IP for this virtual network interface.
      */
-    primaryIp?: pulumi.Input<inputs.IsVirtualNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsVirtualNetworkInterfacePrimaryIp | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the vni instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The target of this virtual network interface.If absent, this virtual network interface is not attached to a target.
      */
-    targets?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceTarget>[]>;
+    targets?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceTarget>[] | undefined>;
     /**
      * The VPC this virtual network interface resides in.
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceVpc>[]>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceVpc>[] | undefined>;
     /**
      * The zone name this virtual network interface resides in.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -279,49 +279,49 @@ export interface IsVirtualNetworkInterfaceArgs {
     /**
      * Access management tags for the vni instance
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The reserved IP for this virtual network interface.
      */
-    primaryIp?: pulumi.Input<inputs.IsVirtualNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsVirtualNetworkInterfacePrimaryIp | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the vni instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

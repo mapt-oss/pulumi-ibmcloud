@@ -25,9 +25,13 @@ export interface GetIsVirtualEndpointGatewayArgs {
  */
 export interface GetIsVirtualEndpointGatewayResult {
     readonly accessTags: string[];
+    /**
+     * @deprecated This property has been deprecated in favor of dns_resolution_binding_mode.
+     */
     readonly allowDnsResolutionBinding: boolean;
     readonly createdAt: string;
     readonly crn: string;
+    readonly dnsResolutionBindingMode: string;
     readonly healthState: string;
     /**
      * The provider-assigned unique ID for this managed resource.

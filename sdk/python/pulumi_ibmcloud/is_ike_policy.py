@@ -21,26 +21,51 @@ __all__ = ['IsIkePolicyArgs', 'IsIkePolicy']
 @pulumi.input_type
 class IsIkePolicyArgs:
     def __init__(__self__, *,
-                 authentication_algorithm: pulumi.Input[_builtins.str],
-                 dh_group: pulumi.Input[_builtins.int],
-                 encryption_algorithm: pulumi.Input[_builtins.str],
-                 ike_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 dh_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsIkePolicy resource.
+
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication algorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] dh_group: IKE DH group
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dh_groups: The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption alogorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] ike_version: IKE version
         :param pulumi.Input[_builtins.int] key_lifetime: IKE Key lifetime
         :param pulumi.Input[_builtins.str] name: IKE name
         :param pulumi.Input[_builtins.str] resource_group: IKE resource group ID
         """
-        pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
-        pulumi.set(__self__, "dh_group", dh_group)
-        pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if authentication_algorithm is not None:
+            warnings.warn("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""authentication_algorithm is deprecated: `authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+        if authentication_algorithm is not None:
+            pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
+        if authentication_algorithms is not None:
+            pulumi.set(__self__, "authentication_algorithms", authentication_algorithms)
+        if dh_group is not None:
+            warnings.warn("""`dh_group` is deprecated in favor of `dh_groups`. The existing `dh_group` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dh_groups`. Use `dh_groups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.""", DeprecationWarning)
+            pulumi.log.warn("""dh_group is deprecated: `dh_group` is deprecated in favor of `dh_groups`. The existing `dh_group` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dh_groups`. Use `dh_groups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.""")
+        if dh_group is not None:
+            pulumi.set(__self__, "dh_group", dh_group)
+        if dh_groups is not None:
+            pulumi.set(__self__, "dh_groups", dh_groups)
+        if encryption_algorithm is not None:
+            warnings.warn("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""encryption_algorithm is deprecated: `encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
+        if encryption_algorithm is not None:
+            pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_algorithms is not None:
+            pulumi.set(__self__, "encryption_algorithms", encryption_algorithms)
         if ike_version is not None:
             pulumi.set(__self__, "ike_version", ike_version)
         if key_lifetime is not None:
@@ -52,110 +77,156 @@ class IsIkePolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="authenticationAlgorithm")
-    def authentication_algorithm(self) -> pulumi.Input[_builtins.str]:
+    @_utilities.deprecated("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+    def authentication_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authentication algorithm type
         """
         return pulumi.get(self, "authentication_algorithm")
 
     @authentication_algorithm.setter
-    def authentication_algorithm(self, value: pulumi.Input[_builtins.str]):
+    def authentication_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "authentication_algorithms")
+
+    @authentication_algorithms.setter
+    def authentication_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "authentication_algorithms", value)
+
+    @_builtins.property
     @pulumi.getter(name="dhGroup")
-    def dh_group(self) -> pulumi.Input[_builtins.int]:
+    @_utilities.deprecated("""`dh_group` is deprecated in favor of `dh_groups`. The existing `dh_group` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dh_groups`. Use `dh_groups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.""")
+    def dh_group(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IKE DH group
         """
         return pulumi.get(self, "dh_group")
 
     @dh_group.setter
-    def dh_group(self, value: pulumi.Input[_builtins.int]):
+    def dh_group(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dh_group", value)
 
     @_builtins.property
+    @pulumi.getter(name="dhGroups")
+    def dh_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
+        """
+        return pulumi.get(self, "dh_groups")
+
+    @dh_groups.setter
+    def dh_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "dh_groups", value)
+
+    @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
-    def encryption_algorithm(self) -> pulumi.Input[_builtins.str]:
+    @_utilities.deprecated("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
+    def encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Encryption alogorithm type
         """
         return pulumi.get(self, "encryption_algorithm")
 
     @encryption_algorithm.setter
-    def encryption_algorithm(self, value: pulumi.Input[_builtins.str]):
+    def encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "encryption_algorithms")
+
+    @encryption_algorithms.setter
+    def encryption_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_algorithms", value)
+
+    @_builtins.property
     @pulumi.getter(name="ikeVersion")
-    def ike_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ike_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IKE version
         """
         return pulumi.get(self, "ike_version")
 
     @ike_version.setter
-    def ike_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ike_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ike_version", value)
 
     @_builtins.property
     @pulumi.getter(name="keyLifetime")
-    def key_lifetime(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key_lifetime(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IKE Key lifetime
         """
         return pulumi.get(self, "key_lifetime")
 
     @key_lifetime.setter
-    def key_lifetime(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key_lifetime(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key_lifetime", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IKE name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IKE resource group ID
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
 @pulumi.input_type
 class _IsIkePolicyState:
     def __init__(__self__, *,
-                 authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 ike_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 negotiation_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpn_connections: Optional[pulumi.Input[Sequence[pulumi.Input['IsIkePolicyVpnConnectionArgs']]]] = None):
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 dh_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 negotiation_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpn_connections: pulumi.Input[Optional[Sequence[pulumi.Input['IsIkePolicyVpnConnectionArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsIkePolicy resources.
+
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication algorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] dh_group: IKE DH group
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dh_groups: The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption alogorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.str] href: IKE href value
         :param pulumi.Input[_builtins.int] ike_version: IKE version
         :param pulumi.Input[_builtins.int] key_lifetime: IKE Key lifetime
@@ -167,11 +238,26 @@ class _IsIkePolicyState:
         :param pulumi.Input[_builtins.str] resource_name: The name of the resource
         """
         if authentication_algorithm is not None:
+            warnings.warn("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""authentication_algorithm is deprecated: `authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+        if authentication_algorithm is not None:
             pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
+        if authentication_algorithms is not None:
+            pulumi.set(__self__, "authentication_algorithms", authentication_algorithms)
+        if dh_group is not None:
+            warnings.warn("""`dh_group` is deprecated in favor of `dh_groups`. The existing `dh_group` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dh_groups`. Use `dh_groups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.""", DeprecationWarning)
+            pulumi.log.warn("""dh_group is deprecated: `dh_group` is deprecated in favor of `dh_groups`. The existing `dh_group` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dh_groups`. Use `dh_groups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.""")
         if dh_group is not None:
             pulumi.set(__self__, "dh_group", dh_group)
+        if dh_groups is not None:
+            pulumi.set(__self__, "dh_groups", dh_groups)
+        if encryption_algorithm is not None:
+            warnings.warn("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""", DeprecationWarning)
+            pulumi.log.warn("""encryption_algorithm is deprecated: `encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
         if encryption_algorithm is not None:
             pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_algorithms is not None:
+            pulumi.set(__self__, "encryption_algorithms", encryption_algorithms)
         if href is not None:
             pulumi.set(__self__, "href", href)
         if ike_version is not None:
@@ -195,155 +281,194 @@ class _IsIkePolicyState:
 
     @_builtins.property
     @pulumi.getter(name="authenticationAlgorithm")
-    def authentication_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @_utilities.deprecated("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
+    def authentication_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authentication algorithm type
         """
         return pulumi.get(self, "authentication_algorithm")
 
     @authentication_algorithm.setter
-    def authentication_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "authentication_algorithms")
+
+    @authentication_algorithms.setter
+    def authentication_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "authentication_algorithms", value)
+
+    @_builtins.property
     @pulumi.getter(name="dhGroup")
-    def dh_group(self) -> Optional[pulumi.Input[_builtins.int]]:
+    @_utilities.deprecated("""`dh_group` is deprecated in favor of `dh_groups`. The existing `dh_group` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dh_groups`. Use `dh_groups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.""")
+    def dh_group(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IKE DH group
         """
         return pulumi.get(self, "dh_group")
 
     @dh_group.setter
-    def dh_group(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dh_group(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dh_group", value)
 
     @_builtins.property
+    @pulumi.getter(name="dhGroups")
+    def dh_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
+        """
+        return pulumi.get(self, "dh_groups")
+
+    @dh_groups.setter
+    def dh_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "dh_groups", value)
+
+    @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
-    def encryption_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @_utilities.deprecated("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
+    def encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Encryption alogorithm type
         """
         return pulumi.get(self, "encryption_algorithm")
 
     @encryption_algorithm.setter
-    def encryption_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "encryption_algorithms")
+
+    @encryption_algorithms.setter
+    def encryption_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "encryption_algorithms", value)
+
+    @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IKE href value
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="ikeVersion")
-    def ike_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ike_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IKE version
         """
         return pulumi.get(self, "ike_version")
 
     @ike_version.setter
-    def ike_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ike_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ike_version", value)
 
     @_builtins.property
     @pulumi.getter(name="keyLifetime")
-    def key_lifetime(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key_lifetime(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IKE Key lifetime
         """
         return pulumi.get(self, "key_lifetime")
 
     @key_lifetime.setter
-    def key_lifetime(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key_lifetime(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key_lifetime", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IKE name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="negotiationMode")
-    def negotiation_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def negotiation_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IKE negotiation mode
         """
         return pulumi.get(self, "negotiation_mode")
 
     @negotiation_mode.setter
-    def negotiation_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def negotiation_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "negotiation_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IKE resource group ID
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vpnConnections")
-    def vpn_connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsIkePolicyVpnConnectionArgs']]]]:
+    def vpn_connections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsIkePolicyVpnConnectionArgs']]]]:
         return pulumi.get(self, "vpn_connections")
 
     @vpn_connections.setter
-    def vpn_connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsIkePolicyVpnConnectionArgs']]]]):
+    def vpn_connections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsIkePolicyVpnConnectionArgs']]]]):
         pulumi.set(self, "vpn_connections", value)
 
 
@@ -353,21 +478,28 @@ class IsIkePolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 ike_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 dh_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsIkePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication algorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] dh_group: IKE DH group
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dh_groups: The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption alogorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] ike_version: IKE version
         :param pulumi.Input[_builtins.int] key_lifetime: IKE Key lifetime
         :param pulumi.Input[_builtins.str] name: IKE name
@@ -377,10 +509,11 @@ class IsIkePolicy(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: IsIkePolicyArgs,
+                 args: Optional[IsIkePolicyArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsIkePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsIkePolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -396,13 +529,16 @@ class IsIkePolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 ike_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 dh_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ike_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -412,15 +548,12 @@ class IsIkePolicy(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = IsIkePolicyArgs.__new__(IsIkePolicyArgs)
 
-            if authentication_algorithm is None and not opts.urn:
-                raise TypeError("Missing required property 'authentication_algorithm'")
             __props__.__dict__["authentication_algorithm"] = authentication_algorithm
-            if dh_group is None and not opts.urn:
-                raise TypeError("Missing required property 'dh_group'")
+            __props__.__dict__["authentication_algorithms"] = authentication_algorithms
             __props__.__dict__["dh_group"] = dh_group
-            if encryption_algorithm is None and not opts.urn:
-                raise TypeError("Missing required property 'encryption_algorithm'")
+            __props__.__dict__["dh_groups"] = dh_groups
             __props__.__dict__["encryption_algorithm"] = encryption_algorithm
+            __props__.__dict__["encryption_algorithms"] = encryption_algorithms
             __props__.__dict__["ike_version"] = ike_version
             __props__.__dict__["key_lifetime"] = key_lifetime
             __props__.__dict__["name"] = name
@@ -441,19 +574,22 @@ class IsIkePolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authentication_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-            encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            ike_version: Optional[pulumi.Input[_builtins.int]] = None,
-            key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            negotiation_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            vpn_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsIkePolicyVpnConnectionArgs', 'IsIkePolicyVpnConnectionArgsDict']]]]] = None) -> 'IsIkePolicy':
+            authentication_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            authentication_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+            dh_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            ike_version: pulumi.Input[Optional[_builtins.int]] = None,
+            key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            negotiation_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            vpn_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsIkePolicyVpnConnectionArgs', 'IsIkePolicyVpnConnectionArgsDict', 'outputs.IsIkePolicyVpnConnection']]]]] = None) -> 'IsIkePolicy':
         """
         Get an existing IsIkePolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -462,8 +598,11 @@ class IsIkePolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authentication_algorithm: Authentication algorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] authentication_algorithms: The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.int] dh_group: IKE DH group
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] dh_groups: The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
         :param pulumi.Input[_builtins.str] encryption_algorithm: Encryption alogorithm type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] encryption_algorithms: The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
         :param pulumi.Input[_builtins.str] href: IKE href value
         :param pulumi.Input[_builtins.int] ike_version: IKE version
         :param pulumi.Input[_builtins.int] key_lifetime: IKE Key lifetime
@@ -479,8 +618,11 @@ class IsIkePolicy(pulumi.CustomResource):
         __props__ = _IsIkePolicyState.__new__(_IsIkePolicyState)
 
         __props__.__dict__["authentication_algorithm"] = authentication_algorithm
+        __props__.__dict__["authentication_algorithms"] = authentication_algorithms
         __props__.__dict__["dh_group"] = dh_group
+        __props__.__dict__["dh_groups"] = dh_groups
         __props__.__dict__["encryption_algorithm"] = encryption_algorithm
+        __props__.__dict__["encryption_algorithms"] = encryption_algorithms
         __props__.__dict__["href"] = href
         __props__.__dict__["ike_version"] = ike_version
         __props__.__dict__["key_lifetime"] = key_lifetime
@@ -495,6 +637,7 @@ class IsIkePolicy(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="authenticationAlgorithm")
+    @_utilities.deprecated("""`authentication_algorithm` is deprecated in favor of `authentication_algorithms`. The existing `authentication_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authentication_algorithms`. Use `authentication_algorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.""")
     def authentication_algorithm(self) -> pulumi.Output[_builtins.str]:
         """
         Authentication algorithm type
@@ -502,7 +645,16 @@ class IsIkePolicy(pulumi.CustomResource):
         return pulumi.get(self, "authentication_algorithm")
 
     @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "authentication_algorithms")
+
+    @_builtins.property
     @pulumi.getter(name="dhGroup")
+    @_utilities.deprecated("""`dh_group` is deprecated in favor of `dh_groups`. The existing `dh_group` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dh_groups`. Use `dh_groups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.""")
     def dh_group(self) -> pulumi.Output[_builtins.int]:
         """
         IKE DH group
@@ -510,12 +662,29 @@ class IsIkePolicy(pulumi.CustomResource):
         return pulumi.get(self, "dh_group")
 
     @_builtins.property
+    @pulumi.getter(name="dhGroups")
+    def dh_groups(self) -> pulumi.Output[Sequence[_builtins.int]]:
+        """
+        The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
+        """
+        return pulumi.get(self, "dh_groups")
+
+    @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
+    @_utilities.deprecated("""`encryption_algorithm` is deprecated in favor of `encryption_algorithms`. The existing `encryption_algorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryption_algorithms`. Use `encryption_algorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.""")
     def encryption_algorithm(self) -> pulumi.Output[_builtins.str]:
         """
         Encryption alogorithm type
         """
         return pulumi.get(self, "encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+        """
+        return pulumi.get(self, "encryption_algorithms")
 
     @_builtins.property
     @pulumi.getter

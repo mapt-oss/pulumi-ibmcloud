@@ -27,7 +27,7 @@ class GetIamTrustedProfileLinkResult:
     """
     A collection of values returned by getIamTrustedProfileLink.
     """
-    def __init__(__self__, cr_type=None, created_at=None, entity_tag=None, id=None, link_id=None, links=None, modified_at=None, name=None, profile_id=None):
+    def __init__(__self__, cr_type=None, created_at=None, entity_tag=None, id=None, is_cross_account=None, link_id=None, links=None, modified_at=None, name=None, profile_id=None):
         if cr_type and not isinstance(cr_type, str):
             raise TypeError("Expected argument 'cr_type' to be a str")
         pulumi.set(__self__, "cr_type", cr_type)
@@ -40,6 +40,9 @@ class GetIamTrustedProfileLinkResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_cross_account and not isinstance(is_cross_account, bool):
+            raise TypeError("Expected argument 'is_cross_account' to be a bool")
+        pulumi.set(__self__, "is_cross_account", is_cross_account)
         if link_id and not isinstance(link_id, str):
             raise TypeError("Expected argument 'link_id' to be a str")
         pulumi.set(__self__, "link_id", link_id)
@@ -80,6 +83,11 @@ class GetIamTrustedProfileLinkResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isCrossAccount")
+    def is_cross_account(self) -> _builtins.bool:
+        return pulumi.get(self, "is_cross_account")
+
+    @_builtins.property
     @pulumi.getter(name="linkId")
     def link_id(self) -> _builtins.str:
         return pulumi.get(self, "link_id")
@@ -115,6 +123,7 @@ class AwaitableGetIamTrustedProfileLinkResult(GetIamTrustedProfileLinkResult):
             created_at=self.created_at,
             entity_tag=self.entity_tag,
             id=self.id,
+            is_cross_account=self.is_cross_account,
             link_id=self.link_id,
             links=self.links,
             modified_at=self.modified_at,
@@ -139,13 +148,14 @@ def get_iam_trusted_profile_link(link_id: Optional[_builtins.str] = None,
         created_at=pulumi.get(__ret__, 'created_at'),
         entity_tag=pulumi.get(__ret__, 'entity_tag'),
         id=pulumi.get(__ret__, 'id'),
+        is_cross_account=pulumi.get(__ret__, 'is_cross_account'),
         link_id=pulumi.get(__ret__, 'link_id'),
         links=pulumi.get(__ret__, 'links'),
         modified_at=pulumi.get(__ret__, 'modified_at'),
         name=pulumi.get(__ret__, 'name'),
         profile_id=pulumi.get(__ret__, 'profile_id'))
-def get_iam_trusted_profile_link_output(link_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_trusted_profile_link_output(link_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTrustedProfileLinkResult]:
     """
     Use this data source to access information about an existing resource.
@@ -160,6 +170,7 @@ def get_iam_trusted_profile_link_output(link_id: Optional[pulumi.Input[_builtins
         created_at=pulumi.get(__response__, 'created_at'),
         entity_tag=pulumi.get(__response__, 'entity_tag'),
         id=pulumi.get(__response__, 'id'),
+        is_cross_account=pulumi.get(__response__, 'is_cross_account'),
         link_id=pulumi.get(__response__, 'link_id'),
         links=pulumi.get(__response__, 'links'),
         modified_at=pulumi.get(__response__, 'modified_at'),

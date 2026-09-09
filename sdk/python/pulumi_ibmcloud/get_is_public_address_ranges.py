@@ -82,7 +82,7 @@ def get_is_public_address_ranges(resource_group: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         public_address_ranges=pulumi.get(__ret__, 'public_address_ranges'),
         resource_group=pulumi.get(__ret__, 'resource_group'))
-def get_is_public_address_ranges_output(resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_public_address_ranges_output(resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsPublicAddressRangesResult]:
     """
     Use this data source to access information about an existing resource.

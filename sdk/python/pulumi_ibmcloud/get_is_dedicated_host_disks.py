@@ -82,7 +82,7 @@ def get_is_dedicated_host_disks(dedicated_host: Optional[_builtins.str] = None,
         dedicated_host=pulumi.get(__ret__, 'dedicated_host'),
         disks=pulumi.get(__ret__, 'disks'),
         id=pulumi.get(__ret__, 'id'))
-def get_is_dedicated_host_disks_output(dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_dedicated_host_disks_output(dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsDedicatedHostDisksResult]:
     """
     Use this data source to access information about an existing resource.

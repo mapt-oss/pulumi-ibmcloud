@@ -23,9 +23,10 @@ class IsBareMetalServerActionArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
                  bare_metal_server: pulumi.Input[_builtins.str],
-                 stop_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 stop_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsBareMetalServerAction resource.
+
         :param pulumi.Input[_builtins.str] action: This restart/start/stops a bare metal server.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.str] stop_type: The type of stop operation
@@ -61,27 +62,28 @@ class IsBareMetalServerActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="stopType")
-    def stop_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stop_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of stop operation
         """
         return pulumi.get(self, "stop_type")
 
     @stop_type.setter
-    def stop_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stop_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stop_type", value)
 
 
 @pulumi.input_type
 class _IsBareMetalServerActionState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerActionStatusReasonArgs']]]] = None,
-                 stop_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerActionStatusReasonArgs']]]] = None,
+                 stop_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsBareMetalServerAction resources.
+
         :param pulumi.Input[_builtins.str] action: This restart/start/stops a bare metal server.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.str] status: Bare metal server status
@@ -100,59 +102,59 @@ class _IsBareMetalServerActionState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This restart/start/stops a bare metal server.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="bareMetalServer")
-    def bare_metal_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bare_metal_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server identifier
         """
         return pulumi.get(self, "bare_metal_server")
 
     @bare_metal_server.setter
-    def bare_metal_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bare_metal_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bare_metal_server", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerActionStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerActionStatusReasonArgs']]]]:
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerActionStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerActionStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="stopType")
-    def stop_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stop_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of stop operation
         """
         return pulumi.get(self, "stop_type")
 
     @stop_type.setter
-    def stop_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stop_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stop_type", value)
 
 
@@ -162,12 +164,13 @@ class IsBareMetalServerAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsBareMetalServerAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: This restart/start/stops a bare metal server.
@@ -182,6 +185,7 @@ class IsBareMetalServerAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBareMetalServerAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBareMetalServerActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -197,9 +201,9 @@ class IsBareMetalServerAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,11 +232,11 @@ class IsBareMetalServerAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerActionStatusReasonArgs', 'IsBareMetalServerActionStatusReasonArgsDict']]]]] = None,
-            stop_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsBareMetalServerAction':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerActionStatusReasonArgs', 'IsBareMetalServerActionStatusReasonArgsDict', 'outputs.IsBareMetalServerActionStatusReason']]]]] = None,
+            stop_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsBareMetalServerAction':
         """
         Get an existing IsBareMetalServerAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

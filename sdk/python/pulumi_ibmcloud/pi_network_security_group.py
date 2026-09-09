@@ -23,9 +23,10 @@ class PiNetworkSecurityGroupArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_name: pulumi.Input[_builtins.str],
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiNetworkSecurityGroup resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_name: The name of the network security group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags associated with this resource.
@@ -61,30 +62,31 @@ class PiNetworkSecurityGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags associated with this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiNetworkSecurityGroupState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberArgs']]]] = None,
-                 network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleArgs']]]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberArgs']]]] = None,
+                 network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleArgs']]]] = None):
         """
         Input properties used for looking up and filtering PiNetworkSecurityGroup resources.
+
         :param pulumi.Input[_builtins.str] crn: The network security group's crn.
         :param pulumi.Input[_builtins.bool] default: Indicates if the network security group is the default network security group in the workspace.
         :param pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberArgs']]] members: The list of IPv4 addresses and, or network interfaces in the network security group.
@@ -113,98 +115,98 @@ class _PiNetworkSecurityGroupState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network security group's crn.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the network security group is the default network security group in the workspace.
         """
         return pulumi.get(self, "default")
 
     @default.setter
-    def default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "default", value)
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberArgs']]]]:
         """
         The list of IPv4 addresses and, or network interfaces in the network security group.
         """
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupId")
-    def network_security_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_security_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the network security group.
         """
         return pulumi.get(self, "network_security_group_id")
 
     @network_security_group_id.setter
-    def network_security_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_security_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_security_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piName")
-    def pi_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the network security group.
         """
         return pulumi.get(self, "pi_name")
 
     @pi_name.setter
-    def pi_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags associated with this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleArgs']]]]:
         """
         The list of rules in the network security group.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiNetworkSecurityGroupRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
@@ -214,12 +216,13 @@ class PiNetworkSecurityGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiNetworkSecurityGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -234,6 +237,7 @@ class PiNetworkSecurityGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkSecurityGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkSecurityGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -249,9 +253,9 @@ class PiNetworkSecurityGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -283,14 +287,14 @@ class PiNetworkSecurityGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            default: Optional[pulumi.Input[_builtins.bool]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupMemberArgs', 'PiNetworkSecurityGroupMemberArgsDict']]]]] = None,
-            network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleArgs', 'PiNetworkSecurityGroupRuleArgsDict']]]]] = None) -> 'PiNetworkSecurityGroup':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            default: pulumi.Input[Optional[_builtins.bool]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupMemberArgs', 'PiNetworkSecurityGroupMemberArgsDict', 'outputs.PiNetworkSecurityGroupMember']]]]] = None,
+            network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleArgs', 'PiNetworkSecurityGroupRuleArgsDict', 'outputs.PiNetworkSecurityGroupRule']]]]] = None) -> 'PiNetworkSecurityGroup':
         """
         Get an existing PiNetworkSecurityGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -300,12 +304,12 @@ class PiNetworkSecurityGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] crn: The network security group's crn.
         :param pulumi.Input[_builtins.bool] default: Indicates if the network security group is the default network security group in the workspace.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupMemberArgs', 'PiNetworkSecurityGroupMemberArgsDict']]]] members: The list of IPv4 addresses and, or network interfaces in the network security group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupMemberArgs', 'PiNetworkSecurityGroupMemberArgsDict', 'outputs.PiNetworkSecurityGroupMember']]]] members: The list of IPv4 addresses and, or network interfaces in the network security group.
         :param pulumi.Input[_builtins.str] network_security_group_id: The unique identifier of the network security group.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_name: The name of the network security group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags associated with this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleArgs', 'PiNetworkSecurityGroupRuleArgsDict']]]] rules: The list of rules in the network security group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiNetworkSecurityGroupRuleArgs', 'PiNetworkSecurityGroupRuleArgsDict', 'outputs.PiNetworkSecurityGroupRule']]]] rules: The list of rules in the network security group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

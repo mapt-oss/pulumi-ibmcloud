@@ -26,6 +26,7 @@ class CosBackupPolicyArgs:
                  target_backup_vault_crn: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a CosBackupPolicy resource.
+
         :param pulumi.Input[_builtins.str] backup_type: The type of backup to support.
         :param pulumi.Input[_builtins.str] bucket_crn: Bucket Crn of the source bucket.
         :param pulumi.Input[_builtins.int] initial_delete_after_days: Number of days after which the objects inside backup vault should be deleted.
@@ -102,14 +103,15 @@ class CosBackupPolicyArgs:
 @pulumi.input_type
 class _CosBackupPolicyState:
     def __init__(__self__, *,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_delete_after_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_backup_vault_crn: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_delete_after_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_backup_vault_crn: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CosBackupPolicy resources.
+
         :param pulumi.Input[_builtins.str] backup_type: The type of backup to support.
         :param pulumi.Input[_builtins.str] bucket_crn: Bucket Crn of the source bucket.
         :param pulumi.Input[_builtins.int] initial_delete_after_days: Number of days after which the objects inside backup vault should be deleted.
@@ -132,74 +134,74 @@ class _CosBackupPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of backup to support.
         """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
-    def backup_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_type", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketCrn")
-    def bucket_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bucket Crn of the source bucket.
         """
         return pulumi.get(self, "bucket_crn")
 
     @bucket_crn.setter
-    def bucket_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="initialDeleteAfterDays")
-    def initial_delete_after_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def initial_delete_after_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of days after which the objects inside backup vault should be deleted.
         """
         return pulumi.get(self, "initial_delete_after_days")
 
     @initial_delete_after_days.setter
-    def initial_delete_after_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def initial_delete_after_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "initial_delete_after_days", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Id of the backup policy applied on the source bucket
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="policyName")
-    def policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the backup policy to be applied on the source bucket.
         """
         return pulumi.get(self, "policy_name")
 
     @policy_name.setter
-    def policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetBackupVaultCrn")
-    def target_backup_vault_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_backup_vault_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for a COS BackupVault.
         """
         return pulumi.get(self, "target_backup_vault_crn")
 
     @target_backup_vault_crn.setter
-    def target_backup_vault_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_backup_vault_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_backup_vault_crn", value)
 
 
@@ -209,14 +211,15 @@ class CosBackupPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_delete_after_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_backup_vault_crn: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_delete_after_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_backup_vault_crn: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a CosBackupPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_type: The type of backup to support.
@@ -233,6 +236,7 @@ class CosBackupPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CosBackupPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CosBackupPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -248,11 +252,11 @@ class CosBackupPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 initial_delete_after_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_backup_vault_crn: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_delete_after_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_backup_vault_crn: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -288,12 +292,12 @@ class CosBackupPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            initial_delete_after_days: Optional[pulumi.Input[_builtins.int]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-            target_backup_vault_crn: Optional[pulumi.Input[_builtins.str]] = None) -> 'CosBackupPolicy':
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_delete_after_days: pulumi.Input[Optional[_builtins.int]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            target_backup_vault_crn: pulumi.Input[Optional[_builtins.str]] = None) -> 'CosBackupPolicy':
         """
         Get an existing CosBackupPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

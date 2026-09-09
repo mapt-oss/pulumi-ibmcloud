@@ -47,5 +47,5 @@ export function getComputeSshKeyOutput(args: GetComputeSshKeyOutputArgs, opts?: 
  */
 export interface GetComputeSshKeyOutputArgs {
     label: pulumi.Input<string>;
-    mostRecent?: pulumi.Input<boolean>;
+    mostRecent?: pulumi.Input<boolean | undefined>;
 }

@@ -25,13 +25,19 @@ export interface GetIsLbProfileArgs {
  */
 export interface GetIsLbProfileResult {
     readonly accessModes: outputs.GetIsLbProfileAccessMode[];
+    readonly advancedHealthChecksSupporteds: outputs.GetIsLbProfileAdvancedHealthChecksSupported[];
+    readonly asymmetricRoutingSupported: boolean;
+    readonly asymmetricRoutingSupportedType: string;
     readonly failsafePolicyActions: outputs.GetIsLbProfileFailsafePolicyAction[];
     readonly family: string;
+    readonly fqdnPoolMembersSupporteds: outputs.GetIsLbProfileFqdnPoolMembersSupported[];
     readonly href: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly mtlsSupported: boolean;
+    readonly mtlsSupportedType: string;
     readonly name: string;
     readonly routeModeSupported: boolean;
     readonly routeModeType: string;

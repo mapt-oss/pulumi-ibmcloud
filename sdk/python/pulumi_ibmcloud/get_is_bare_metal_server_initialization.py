@@ -146,9 +146,9 @@ def get_is_bare_metal_server_initialization(bare_metal_server: Optional[_builtin
         passphrase=pulumi.get(__ret__, 'passphrase'),
         private_key=pulumi.get(__ret__, 'private_key'),
         user_accounts=pulumi.get(__ret__, 'user_accounts'))
-def get_is_bare_metal_server_initialization_output(bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   passphrase: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   private_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_bare_metal_server_initialization_output(bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   passphrase: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   private_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerInitializationResult]:
     """
     Use this data source to access information about an existing resource.

@@ -111,7 +111,7 @@ def get_pi_public_network(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         type=pulumi.get(__ret__, 'type'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'))
-def get_pi_public_network_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_public_network_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiPublicNetworkResult]:
     """
     Use this data source to access information about an existing resource.

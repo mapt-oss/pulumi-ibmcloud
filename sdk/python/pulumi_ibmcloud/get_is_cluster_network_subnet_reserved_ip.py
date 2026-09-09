@@ -196,9 +196,9 @@ def get_is_cluster_network_subnet_reserved_ip(cluster_network_id: Optional[_buil
         owner=pulumi.get(__ret__, 'owner'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         targets=pulumi.get(__ret__, 'targets'))
-def get_is_cluster_network_subnet_reserved_ip_output(cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     cluster_network_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     cluster_network_subnet_reserved_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_cluster_network_subnet_reserved_ip_output(cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     cluster_network_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     cluster_network_subnet_reserved_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsClusterNetworkSubnetReservedIpResult]:
     """
     Use this data source to access information about an existing resource.

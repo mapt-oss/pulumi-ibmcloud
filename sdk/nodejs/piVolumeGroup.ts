@@ -129,43 +129,43 @@ export interface PiVolumeGroupState {
     /**
      * Consistency Group Name if volume is a part of volume group
      */
-    consistencyGroupName?: pulumi.Input<string>;
+    consistencyGroupName?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The name of consistency group at storage controller level
      */
-    piConsistencyGroupName?: pulumi.Input<string>;
+    piConsistencyGroupName?: pulumi.Input<string | undefined>;
     /**
      * Volume Group Name to create
      */
-    piVolumeGroupName?: pulumi.Input<string>;
+    piVolumeGroupName?: pulumi.Input<string | undefined>;
     /**
      * List of volumes to add in volume group
      */
-    piVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates the replication sites of the volume group.
      */
-    replicationSites?: pulumi.Input<pulumi.Input<string>[]>;
+    replicationSites?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Volume Group Replication Status
      */
-    replicationStatus?: pulumi.Input<string>;
+    replicationStatus?: pulumi.Input<string | undefined>;
     /**
      * The status details of the volume group.
      */
-    statusDescriptionErrors?: pulumi.Input<pulumi.Input<inputs.PiVolumeGroupStatusDescriptionError>[]>;
+    statusDescriptionErrors?: pulumi.Input<pulumi.Input<inputs.PiVolumeGroupStatusDescriptionError>[] | undefined>;
     /**
      * Volume Group ID
      */
-    volumeGroupId?: pulumi.Input<string>;
+    volumeGroupId?: pulumi.Input<string | undefined>;
     /**
      * Volume Group Status
      */
-    volumeGroupStatus?: pulumi.Input<string>;
+    volumeGroupStatus?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,11 +179,11 @@ export interface PiVolumeGroupArgs {
     /**
      * The name of consistency group at storage controller level
      */
-    piConsistencyGroupName?: pulumi.Input<string>;
+    piConsistencyGroupName?: pulumi.Input<string | undefined>;
     /**
      * Volume Group Name to create
      */
-    piVolumeGroupName?: pulumi.Input<string>;
+    piVolumeGroupName?: pulumi.Input<string | undefined>;
     /**
      * List of volumes to add in volume group
      */

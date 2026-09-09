@@ -64,6 +64,6 @@ export interface GetPiKeyOutputArgs {
     /**
      * @deprecated The piKeyName field is deprecated. Please use piSshKeyId instead
      */
-    piKeyName?: pulumi.Input<string>;
-    piSshKeyId?: pulumi.Input<string>;
+    piKeyName?: pulumi.Input<string | undefined>;
+    piSshKeyId?: pulumi.Input<string | undefined>;
 }

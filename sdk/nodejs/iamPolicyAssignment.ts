@@ -156,59 +156,59 @@ export interface IamPolicyAssignmentState {
     /**
      * Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
      */
-    acceptLanguage?: pulumi.Input<string>;
+    acceptLanguage?: pulumi.Input<string | undefined>;
     /**
      * The account GUID that the policies assignments belong to..
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * The UTC timestamp when the policy assignment was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The iam ID of the entity that created the policy assignment.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * The href URL that links to the policies assignments API by policy assignment ID.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The UTC timestamp when the policy assignment was last modified.
      */
-    lastModifiedAt?: pulumi.Input<string>;
+    lastModifiedAt?: pulumi.Input<string | undefined>;
     /**
      * The iam ID of the entity that last modified the policy assignment.
      */
-    lastModifiedById?: pulumi.Input<string>;
+    lastModifiedById?: pulumi.Input<string | undefined>;
     /**
      * Object for each account assigned.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResource>[] | undefined>;
     /**
      * The policy assignment status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * assignment target details
      */
-    target?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    target?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * policy template details
      */
-    template?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    template?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The policy template version.
      */
-    templateVersion?: pulumi.Input<string>;
+    templateVersion?: pulumi.Input<string | undefined>;
     /**
      * policy template details.
      */
-    templates?: pulumi.Input<inputs.IamPolicyAssignmentTemplates>;
+    templates?: pulumi.Input<inputs.IamPolicyAssignmentTemplates | undefined>;
     /**
      * specify version of response body format.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -218,7 +218,7 @@ export interface IamPolicyAssignmentArgs {
     /**
      * Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
      */
-    acceptLanguage?: pulumi.Input<string>;
+    acceptLanguage?: pulumi.Input<string | undefined>;
     /**
      * assignment target details
      */
@@ -226,7 +226,7 @@ export interface IamPolicyAssignmentArgs {
     /**
      * The policy template version.
      */
-    templateVersion?: pulumi.Input<string>;
+    templateVersion?: pulumi.Input<string | undefined>;
     /**
      * policy template details.
      */

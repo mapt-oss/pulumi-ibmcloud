@@ -25,26 +25,27 @@ class IsBareMetalServerArgs:
                  keys: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  profile: pulumi.Input[_builtins.str],
                  zone: pulumi.Input[_builtins.str],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_trusted_profile: Optional[pulumi.Input['IsBareMetalServerDefaultTrustedProfileArgs']] = None,
-                 delete_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata_service: Optional[pulumi.Input['IsBareMetalServerMetadataServiceArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]] = None,
-                 primary_network_attachment: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkAttachmentArgs']] = None,
-                 primary_network_interface: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkInterfaceArgs']] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trusted_platform_module: Optional[pulumi.Input['IsBareMetalServerTrustedPlatformModuleArgs']] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_trusted_profile: pulumi.Input[Optional['IsBareMetalServerDefaultTrustedProfileArgs']] = None,
+                 delete_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata_service: pulumi.Input[Optional['IsBareMetalServerMetadataServiceArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]] = None,
+                 primary_network_attachment: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkAttachmentArgs']] = None,
+                 primary_network_interface: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkInterfaceArgs']] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trusted_platform_module: pulumi.Input[Optional['IsBareMetalServerTrustedPlatformModuleArgs']] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsBareMetalServer resource.
+
         :param pulumi.Input[_builtins.str] image: image id
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the bare metal server
         :param pulumi.Input[_builtins.str] profile: profile name
@@ -155,249 +156,250 @@ class IsBareMetalServerArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This restart/start/stops a bare metal server.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total bandwidth (in megabits per second)
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfile")
-    def default_trusted_profile(self) -> Optional[pulumi.Input['IsBareMetalServerDefaultTrustedProfileArgs']]:
+    def default_trusted_profile(self) -> pulumi.Input[Optional['IsBareMetalServerDefaultTrustedProfileArgs']]:
         return pulumi.get(self, "default_trusted_profile")
 
     @default_trusted_profile.setter
-    def default_trusted_profile(self, value: Optional[pulumi.Input['IsBareMetalServerDefaultTrustedProfileArgs']]):
+    def default_trusted_profile(self, value: pulumi.Input[Optional['IsBareMetalServerDefaultTrustedProfileArgs']]):
         pulumi.set(self, "default_trusted_profile", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteType")
-    def delete_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delete_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enables stopping type of the bare metal server before deleting
         """
         return pulumi.get(self, "delete_type")
 
     @delete_type.setter
-    def delete_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delete_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delete_type", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSecureBoot")
-    def enable_secure_boot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_secure_boot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether secure boot is enabled. If enabled, the image must support secure boot or the server will fail to boot.
         """
         return pulumi.get(self, "enable_secure_boot")
 
     @enable_secure_boot.setter
-    def enable_secure_boot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_secure_boot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_secure_boot", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataService")
-    def metadata_service(self) -> Optional[pulumi.Input['IsBareMetalServerMetadataServiceArgs']]:
+    def metadata_service(self) -> pulumi.Input[Optional['IsBareMetalServerMetadataServiceArgs']]:
         """
         The metadata service configuration
         """
         return pulumi.get(self, "metadata_service")
 
     @metadata_service.setter
-    def metadata_service(self, value: Optional[pulumi.Input['IsBareMetalServerMetadataServiceArgs']]):
+    def metadata_service(self, value: pulumi.Input[Optional['IsBareMetalServerMetadataServiceArgs']]):
         pulumi.set(self, "metadata_service", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAttachments")
-    def network_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]:
+    def network_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]:
         """
         The network attachments for this bare metal server, including the primary network attachment.
         """
         return pulumi.get(self, "network_attachments")
 
     @network_attachments.setter
-    def network_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]):
+    def network_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]):
         pulumi.set(self, "network_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterfaces")
-    def network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]:
+    def network_interfaces(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]:
         return pulumi.get(self, "network_interfaces")
 
     @network_interfaces.setter
-    def network_interfaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]):
+    def network_interfaces(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]):
         pulumi.set(self, "network_interfaces", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkAttachment")
-    def primary_network_attachment(self) -> Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkAttachmentArgs']]:
+    def primary_network_attachment(self) -> pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkAttachmentArgs']]:
         """
         The primary network attachment.
         """
         return pulumi.get(self, "primary_network_attachment")
 
     @primary_network_attachment.setter
-    def primary_network_attachment(self, value: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkAttachmentArgs']]):
+    def primary_network_attachment(self, value: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkAttachmentArgs']]):
         pulumi.set(self, "primary_network_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkInterface")
-    def primary_network_interface(self) -> Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkInterfaceArgs']]:
+    def primary_network_interface(self) -> pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkInterfaceArgs']]:
         """
         Primary Network interface info
         """
         return pulumi.get(self, "primary_network_interface")
 
     @primary_network_interface.setter
-    def primary_network_interface(self, value: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkInterfaceArgs']]):
+    def primary_network_interface(self, value: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkInterfaceArgs']]):
         pulumi.set(self, "primary_network_interface", value)
 
     @_builtins.property
     @pulumi.getter(name="reservationAffinities")
-    def reservation_affinities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]:
+    def reservation_affinities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]:
         return pulumi.get(self, "reservation_affinities")
 
     @reservation_affinities.setter
-    def reservation_affinities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]):
+    def reservation_affinities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]):
         pulumi.set(self, "reservation_affinities", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group name
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags for the Bare metal server
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedPlatformModule")
-    def trusted_platform_module(self) -> Optional[pulumi.Input['IsBareMetalServerTrustedPlatformModuleArgs']]:
+    def trusted_platform_module(self) -> pulumi.Input[Optional['IsBareMetalServerTrustedPlatformModuleArgs']]:
         return pulumi.get(self, "trusted_platform_module")
 
     @trusted_platform_module.setter
-    def trusted_platform_module(self, value: Optional[pulumi.Input['IsBareMetalServerTrustedPlatformModuleArgs']]):
+    def trusted_platform_module(self, value: pulumi.Input[Optional['IsBareMetalServerTrustedPlatformModuleArgs']]):
         pulumi.set(self, "trusted_platform_module", value)
 
     @_builtins.property
     @pulumi.getter(name="userData")
-    def user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User data given for the bare metal server
         """
         return pulumi.get(self, "user_data")
 
     @user_data.setter
-    def user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_data", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPC the bare metal server is to be a part of
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
 
 @pulumi.input_type
 class _IsBareMetalServerState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 boot_target: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpus: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerCpusArgs']]]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile: Optional[pulumi.Input['IsBareMetalServerDefaultTrustedProfileArgs']] = None,
-                 delete_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerDiskArgs']]]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 firmware_update_type_available: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerHealthReasonArgs']]]] = None,
-                 health_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 metadata_service: Optional[pulumi.Input['IsBareMetalServerMetadataServiceArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]] = None,
-                 primary_network_attachment: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkAttachmentArgs']] = None,
-                 primary_network_interface: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkInterfaceArgs']] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]] = None,
-                 reservations: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationArgs']]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerStatusReasonArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trusted_platform_module: Optional[pulumi.Input['IsBareMetalServerTrustedPlatformModuleArgs']] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 boot_target: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpus: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerCpusArgs']]]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile: pulumi.Input[Optional['IsBareMetalServerDefaultTrustedProfileArgs']] = None,
+                 delete_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerDiskArgs']]]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 firmware_update_type_available: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerHealthReasonArgs']]]] = None,
+                 health_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 metadata_service: pulumi.Input[Optional['IsBareMetalServerMetadataServiceArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]] = None,
+                 primary_network_attachment: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkAttachmentArgs']] = None,
+                 primary_network_interface: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkInterfaceArgs']] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]] = None,
+                 reservations: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationArgs']]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerStatusReasonArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trusted_platform_module: pulumi.Input[Optional['IsBareMetalServerTrustedPlatformModuleArgs']] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsBareMetalServer resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.str] action: This restart/start/stops a bare metal server.
         :param pulumi.Input[_builtins.int] bandwidth: The total bandwidth (in megabits per second)
@@ -502,407 +504,407 @@ class _IsBareMetalServerState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This restart/start/stops a bare metal server.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total bandwidth (in megabits per second)
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="bootTarget")
-    def boot_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this bare metal server disk
         """
         return pulumi.get(self, "boot_target")
 
     @boot_target.setter
-    def boot_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_target", value)
 
     @_builtins.property
     @pulumi.getter
-    def cpus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerCpusArgs']]]]:
+    def cpus(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerCpusArgs']]]]:
         """
         The bare metal server CPU configuration
         """
         return pulumi.get(self, "cpus")
 
     @cpus.setter
-    def cpus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerCpusArgs']]]]):
+    def cpus(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerCpusArgs']]]]):
         pulumi.set(self, "cpus", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this bare metal server
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfile")
-    def default_trusted_profile(self) -> Optional[pulumi.Input['IsBareMetalServerDefaultTrustedProfileArgs']]:
+    def default_trusted_profile(self) -> pulumi.Input[Optional['IsBareMetalServerDefaultTrustedProfileArgs']]:
         return pulumi.get(self, "default_trusted_profile")
 
     @default_trusted_profile.setter
-    def default_trusted_profile(self, value: Optional[pulumi.Input['IsBareMetalServerDefaultTrustedProfileArgs']]):
+    def default_trusted_profile(self, value: pulumi.Input[Optional['IsBareMetalServerDefaultTrustedProfileArgs']]):
         pulumi.set(self, "default_trusted_profile", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteType")
-    def delete_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delete_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enables stopping type of the bare metal server before deleting
         """
         return pulumi.get(self, "delete_type")
 
     @delete_type.setter
-    def delete_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delete_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delete_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerDiskArgs']]]]:
         """
         The disks for this bare metal server, including any disks that are associated with the boot_target.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSecureBoot")
-    def enable_secure_boot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_secure_boot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether secure boot is enabled. If enabled, the image must support secure boot or the server will fail to boot.
         """
         return pulumi.get(self, "enable_secure_boot")
 
     @enable_secure_boot.setter
-    def enable_secure_boot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_secure_boot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_secure_boot", value)
 
     @_builtins.property
     @pulumi.getter(name="firmwareUpdateTypeAvailable")
-    def firmware_update_type_available(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def firmware_update_type_available(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of firmware update available
         """
         return pulumi.get(self, "firmware_update_type_available")
 
     @firmware_update_type_available.setter
-    def firmware_update_type_available(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def firmware_update_type_available(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "firmware_update_type_available", value)
 
     @_builtins.property
     @pulumi.getter(name="healthReasons")
-    def health_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerHealthReasonArgs']]]]:
+    def health_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerHealthReasonArgs']]]]:
         """
         The reasons for the current health_state (if any).
         """
         return pulumi.get(self, "health_reasons")
 
     @health_reasons.setter
-    def health_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerHealthReasonArgs']]]]):
+    def health_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerHealthReasonArgs']]]]):
         pulumi.set(self, "health_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="healthState")
-    def health_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The health of this resource
         """
         return pulumi.get(self, "health_state")
 
     @health_state.setter
-    def health_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this bare metal server
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         image id
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         SSH key Ids for the bare metal server
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of memory, truncated to whole gibibytes
         """
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataService")
-    def metadata_service(self) -> Optional[pulumi.Input['IsBareMetalServerMetadataServiceArgs']]:
+    def metadata_service(self) -> pulumi.Input[Optional['IsBareMetalServerMetadataServiceArgs']]:
         """
         The metadata service configuration
         """
         return pulumi.get(self, "metadata_service")
 
     @metadata_service.setter
-    def metadata_service(self, value: Optional[pulumi.Input['IsBareMetalServerMetadataServiceArgs']]):
+    def metadata_service(self, value: pulumi.Input[Optional['IsBareMetalServerMetadataServiceArgs']]):
         pulumi.set(self, "metadata_service", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAttachments")
-    def network_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]:
+    def network_attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]:
         """
         The network attachments for this bare metal server, including the primary network attachment.
         """
         return pulumi.get(self, "network_attachments")
 
     @network_attachments.setter
-    def network_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]):
+    def network_attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkAttachmentArgs']]]]):
         pulumi.set(self, "network_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterfaces")
-    def network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]:
+    def network_interfaces(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]:
         return pulumi.get(self, "network_interfaces")
 
     @network_interfaces.setter
-    def network_interfaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]):
+    def network_interfaces(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceArgs']]]]):
         pulumi.set(self, "network_interfaces", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkAttachment")
-    def primary_network_attachment(self) -> Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkAttachmentArgs']]:
+    def primary_network_attachment(self) -> pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkAttachmentArgs']]:
         """
         The primary network attachment.
         """
         return pulumi.get(self, "primary_network_attachment")
 
     @primary_network_attachment.setter
-    def primary_network_attachment(self, value: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkAttachmentArgs']]):
+    def primary_network_attachment(self, value: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkAttachmentArgs']]):
         pulumi.set(self, "primary_network_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryNetworkInterface")
-    def primary_network_interface(self) -> Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkInterfaceArgs']]:
+    def primary_network_interface(self) -> pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkInterfaceArgs']]:
         """
         Primary Network interface info
         """
         return pulumi.get(self, "primary_network_interface")
 
     @primary_network_interface.setter
-    def primary_network_interface(self, value: Optional[pulumi.Input['IsBareMetalServerPrimaryNetworkInterfaceArgs']]):
+    def primary_network_interface(self, value: pulumi.Input[Optional['IsBareMetalServerPrimaryNetworkInterfaceArgs']]):
         pulumi.set(self, "primary_network_interface", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         profile name
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="reservationAffinities")
-    def reservation_affinities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]:
+    def reservation_affinities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]:
         return pulumi.get(self, "reservation_affinities")
 
     @reservation_affinities.setter
-    def reservation_affinities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]):
+    def reservation_affinities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationAffinityArgs']]]]):
         pulumi.set(self, "reservation_affinities", value)
 
     @_builtins.property
     @pulumi.getter
-    def reservations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationArgs']]]]:
+    def reservations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationArgs']]]]:
         """
         The reservation used by this bare metal server
         """
         return pulumi.get(self, "reservations")
 
     @reservations.setter
-    def reservations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerReservationArgs']]]]):
+    def reservations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerReservationArgs']]]]):
         pulumi.set(self, "reservations", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group name
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type name
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerStatusReasonArgs']]]]:
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags for the Bare metal server
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedPlatformModule")
-    def trusted_platform_module(self) -> Optional[pulumi.Input['IsBareMetalServerTrustedPlatformModuleArgs']]:
+    def trusted_platform_module(self) -> pulumi.Input[Optional['IsBareMetalServerTrustedPlatformModuleArgs']]:
         return pulumi.get(self, "trusted_platform_module")
 
     @trusted_platform_module.setter
-    def trusted_platform_module(self, value: Optional[pulumi.Input['IsBareMetalServerTrustedPlatformModuleArgs']]):
+    def trusted_platform_module(self, value: pulumi.Input[Optional['IsBareMetalServerTrustedPlatformModuleArgs']]):
         pulumi.set(self, "trusted_platform_module", value)
 
     @_builtins.property
     @pulumi.getter(name="userData")
-    def user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User data given for the bare metal server
         """
         return pulumi.get(self, "user_data")
 
     @user_data.setter
-    def user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_data", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPC the bare metal server is to be a part of
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Zone name
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -912,31 +914,32 @@ class IsBareMetalServer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_trusted_profile: Optional[pulumi.Input[Union['IsBareMetalServerDefaultTrustedProfileArgs', 'IsBareMetalServerDefaultTrustedProfileArgsDict']]] = None,
-                 delete_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metadata_service: Optional[pulumi.Input[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict']]]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceArgs', 'IsBareMetalServerNetworkInterfaceArgsDict']]]]] = None,
-                 primary_network_attachment: Optional[pulumi.Input[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict']]] = None,
-                 primary_network_interface: Optional[pulumi.Input[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerReservationAffinityArgs', 'IsBareMetalServerReservationAffinityArgsDict']]]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trusted_platform_module: Optional[pulumi.Input[Union['IsBareMetalServerTrustedPlatformModuleArgs', 'IsBareMetalServerTrustedPlatformModuleArgsDict']]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_trusted_profile: pulumi.Input[Optional[Union['IsBareMetalServerDefaultTrustedProfileArgs', 'IsBareMetalServerDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerDefaultTrustedProfile']]] = None,
+                 delete_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metadata_service: pulumi.Input[Optional[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict', 'outputs.IsBareMetalServerMetadataService']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerNetworkAttachment']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceArgs', 'IsBareMetalServerNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkInterface']]]]] = None,
+                 primary_network_attachment: pulumi.Input[Optional[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkAttachment']]] = None,
+                 primary_network_interface: pulumi.Input[Optional[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkInterface']]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerReservationAffinityArgs', 'IsBareMetalServerReservationAffinityArgsDict', 'outputs.IsBareMetalServerReservationAffinity']]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trusted_platform_module: pulumi.Input[Optional[Union['IsBareMetalServerTrustedPlatformModuleArgs', 'IsBareMetalServerTrustedPlatformModuleArgsDict', 'outputs.IsBareMetalServerTrustedPlatformModule']]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsBareMetalServer resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -946,11 +949,11 @@ class IsBareMetalServer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_secure_boot: Indicates whether secure boot is enabled. If enabled, the image must support secure boot or the server will fail to boot.
         :param pulumi.Input[_builtins.str] image: image id
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the bare metal server
-        :param pulumi.Input[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict']] metadata_service: The metadata service configuration
+        :param pulumi.Input[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict', 'outputs.IsBareMetalServerMetadataService']] metadata_service: The metadata service configuration
         :param pulumi.Input[_builtins.str] name: Bare metal server name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict']]]] network_attachments: The network attachments for this bare metal server, including the primary network attachment.
-        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict']] primary_network_attachment: The primary network attachment.
-        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict']] primary_network_interface: Primary Network interface info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerNetworkAttachment']]]] network_attachments: The network attachments for this bare metal server, including the primary network attachment.
+        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkAttachment']] primary_network_attachment: The primary network attachment.
+        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkInterface']] primary_network_interface: Primary Network interface info
         :param pulumi.Input[_builtins.str] profile: profile name
         :param pulumi.Input[_builtins.str] resource_group: Resource group name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Tags for the Bare metal server
@@ -966,6 +969,7 @@ class IsBareMetalServer(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBareMetalServer resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBareMetalServerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -981,28 +985,28 @@ class IsBareMetalServer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_trusted_profile: Optional[pulumi.Input[Union['IsBareMetalServerDefaultTrustedProfileArgs', 'IsBareMetalServerDefaultTrustedProfileArgsDict']]] = None,
-                 delete_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metadata_service: Optional[pulumi.Input[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict']]]]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceArgs', 'IsBareMetalServerNetworkInterfaceArgsDict']]]]] = None,
-                 primary_network_attachment: Optional[pulumi.Input[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict']]] = None,
-                 primary_network_interface: Optional[pulumi.Input[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerReservationAffinityArgs', 'IsBareMetalServerReservationAffinityArgsDict']]]]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trusted_platform_module: Optional[pulumi.Input[Union['IsBareMetalServerTrustedPlatformModuleArgs', 'IsBareMetalServerTrustedPlatformModuleArgsDict']]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_trusted_profile: pulumi.Input[Optional[Union['IsBareMetalServerDefaultTrustedProfileArgs', 'IsBareMetalServerDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerDefaultTrustedProfile']]] = None,
+                 delete_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metadata_service: pulumi.Input[Optional[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict', 'outputs.IsBareMetalServerMetadataService']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerNetworkAttachment']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceArgs', 'IsBareMetalServerNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkInterface']]]]] = None,
+                 primary_network_attachment: pulumi.Input[Optional[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkAttachment']]] = None,
+                 primary_network_interface: pulumi.Input[Optional[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkInterface']]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerReservationAffinityArgs', 'IsBareMetalServerReservationAffinityArgsDict', 'outputs.IsBareMetalServerReservationAffinity']]]]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trusted_platform_module: pulumi.Input[Optional[Union['IsBareMetalServerTrustedPlatformModuleArgs', 'IsBareMetalServerTrustedPlatformModuleArgsDict', 'outputs.IsBareMetalServerTrustedPlatformModule']]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1065,41 +1069,41 @@ class IsBareMetalServer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-            boot_target: Optional[pulumi.Input[_builtins.str]] = None,
-            cpus: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerCpusArgs', 'IsBareMetalServerCpusArgsDict']]]]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            default_trusted_profile: Optional[pulumi.Input[Union['IsBareMetalServerDefaultTrustedProfileArgs', 'IsBareMetalServerDefaultTrustedProfileArgsDict']]] = None,
-            delete_type: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerDiskArgs', 'IsBareMetalServerDiskArgsDict']]]]] = None,
-            enable_secure_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-            firmware_update_type_available: Optional[pulumi.Input[_builtins.str]] = None,
-            health_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerHealthReasonArgs', 'IsBareMetalServerHealthReasonArgsDict']]]]] = None,
-            health_state: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            memory: Optional[pulumi.Input[_builtins.int]] = None,
-            metadata_service: Optional[pulumi.Input[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict']]]]] = None,
-            network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceArgs', 'IsBareMetalServerNetworkInterfaceArgsDict']]]]] = None,
-            primary_network_attachment: Optional[pulumi.Input[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict']]] = None,
-            primary_network_interface: Optional[pulumi.Input[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict']]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            reservation_affinities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerReservationAffinityArgs', 'IsBareMetalServerReservationAffinityArgsDict']]]]] = None,
-            reservations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerReservationArgs', 'IsBareMetalServerReservationArgsDict']]]]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerStatusReasonArgs', 'IsBareMetalServerStatusReasonArgsDict']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            trusted_platform_module: Optional[pulumi.Input[Union['IsBareMetalServerTrustedPlatformModuleArgs', 'IsBareMetalServerTrustedPlatformModuleArgsDict']]] = None,
-            user_data: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsBareMetalServer':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+            boot_target: pulumi.Input[Optional[_builtins.str]] = None,
+            cpus: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerCpusArgs', 'IsBareMetalServerCpusArgsDict', 'outputs.IsBareMetalServerCpus']]]]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            default_trusted_profile: pulumi.Input[Optional[Union['IsBareMetalServerDefaultTrustedProfileArgs', 'IsBareMetalServerDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerDefaultTrustedProfile']]] = None,
+            delete_type: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerDiskArgs', 'IsBareMetalServerDiskArgsDict', 'outputs.IsBareMetalServerDisk']]]]] = None,
+            enable_secure_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+            firmware_update_type_available: pulumi.Input[Optional[_builtins.str]] = None,
+            health_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerHealthReasonArgs', 'IsBareMetalServerHealthReasonArgsDict', 'outputs.IsBareMetalServerHealthReason']]]]] = None,
+            health_state: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            memory: pulumi.Input[Optional[_builtins.int]] = None,
+            metadata_service: pulumi.Input[Optional[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict', 'outputs.IsBareMetalServerMetadataService']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerNetworkAttachment']]]]] = None,
+            network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceArgs', 'IsBareMetalServerNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkInterface']]]]] = None,
+            primary_network_attachment: pulumi.Input[Optional[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkAttachment']]] = None,
+            primary_network_interface: pulumi.Input[Optional[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkInterface']]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            reservation_affinities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerReservationAffinityArgs', 'IsBareMetalServerReservationAffinityArgsDict', 'outputs.IsBareMetalServerReservationAffinity']]]]] = None,
+            reservations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerReservationArgs', 'IsBareMetalServerReservationArgsDict', 'outputs.IsBareMetalServerReservation']]]]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerStatusReasonArgs', 'IsBareMetalServerStatusReasonArgsDict', 'outputs.IsBareMetalServerStatusReason']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            trusted_platform_module: pulumi.Input[Optional[Union['IsBareMetalServerTrustedPlatformModuleArgs', 'IsBareMetalServerTrustedPlatformModuleArgsDict', 'outputs.IsBareMetalServerTrustedPlatformModule']]] = None,
+            user_data: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsBareMetalServer':
         """
         Get an existing IsBareMetalServer resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1111,25 +1115,25 @@ class IsBareMetalServer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action: This restart/start/stops a bare metal server.
         :param pulumi.Input[_builtins.int] bandwidth: The total bandwidth (in megabits per second)
         :param pulumi.Input[_builtins.str] boot_target: The unique identifier for this bare metal server disk
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerCpusArgs', 'IsBareMetalServerCpusArgsDict']]]] cpus: The bare metal server CPU configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerCpusArgs', 'IsBareMetalServerCpusArgsDict', 'outputs.IsBareMetalServerCpus']]]] cpus: The bare metal server CPU configuration
         :param pulumi.Input[_builtins.str] crn: The CRN for this bare metal server
         :param pulumi.Input[_builtins.str] delete_type: Enables stopping type of the bare metal server before deleting
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerDiskArgs', 'IsBareMetalServerDiskArgsDict']]]] disks: The disks for this bare metal server, including any disks that are associated with the boot_target.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerDiskArgs', 'IsBareMetalServerDiskArgsDict', 'outputs.IsBareMetalServerDisk']]]] disks: The disks for this bare metal server, including any disks that are associated with the boot_target.
         :param pulumi.Input[_builtins.bool] enable_secure_boot: Indicates whether secure boot is enabled. If enabled, the image must support secure boot or the server will fail to boot.
         :param pulumi.Input[_builtins.str] firmware_update_type_available: The type of firmware update available
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerHealthReasonArgs', 'IsBareMetalServerHealthReasonArgsDict']]]] health_reasons: The reasons for the current health_state (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerHealthReasonArgs', 'IsBareMetalServerHealthReasonArgsDict', 'outputs.IsBareMetalServerHealthReason']]]] health_reasons: The reasons for the current health_state (if any).
         :param pulumi.Input[_builtins.str] health_state: The health of this resource
         :param pulumi.Input[_builtins.str] href: The URL for this bare metal server
         :param pulumi.Input[_builtins.str] image: image id
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the bare metal server
         :param pulumi.Input[_builtins.int] memory: The amount of memory, truncated to whole gibibytes
-        :param pulumi.Input[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict']] metadata_service: The metadata service configuration
+        :param pulumi.Input[Union['IsBareMetalServerMetadataServiceArgs', 'IsBareMetalServerMetadataServiceArgsDict', 'outputs.IsBareMetalServerMetadataService']] metadata_service: The metadata service configuration
         :param pulumi.Input[_builtins.str] name: Bare metal server name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict']]]] network_attachments: The network attachments for this bare metal server, including the primary network attachment.
-        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict']] primary_network_attachment: The primary network attachment.
-        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict']] primary_network_interface: Primary Network interface info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentArgs', 'IsBareMetalServerNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerNetworkAttachment']]]] network_attachments: The network attachments for this bare metal server, including the primary network attachment.
+        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkAttachmentArgs', 'IsBareMetalServerPrimaryNetworkAttachmentArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkAttachment']] primary_network_attachment: The primary network attachment.
+        :param pulumi.Input[Union['IsBareMetalServerPrimaryNetworkInterfaceArgs', 'IsBareMetalServerPrimaryNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerPrimaryNetworkInterface']] primary_network_interface: Primary Network interface info
         :param pulumi.Input[_builtins.str] profile: profile name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerReservationArgs', 'IsBareMetalServerReservationArgsDict']]]] reservations: The reservation used by this bare metal server
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerReservationArgs', 'IsBareMetalServerReservationArgsDict', 'outputs.IsBareMetalServerReservation']]]] reservations: The reservation used by this bare metal server
         :param pulumi.Input[_builtins.str] resource_group: Resource group name
         :param pulumi.Input[_builtins.str] resource_type: Resource type name
         :param pulumi.Input[_builtins.str] status: Bare metal server status

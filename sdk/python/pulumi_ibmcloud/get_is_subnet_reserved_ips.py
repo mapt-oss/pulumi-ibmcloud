@@ -92,7 +92,7 @@ def get_is_subnet_reserved_ips(subnet: Optional[_builtins.str] = None,
         reserved_ips=pulumi.get(__ret__, 'reserved_ips'),
         subnet=pulumi.get(__ret__, 'subnet'),
         total_count=pulumi.get(__ret__, 'total_count'))
-def get_is_subnet_reserved_ips_output(subnet: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_subnet_reserved_ips_output(subnet: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSubnetReservedIpsResult]:
     """
     Use this data source to access information about an existing resource.

@@ -111,28 +111,28 @@ export interface ComputeAutoscalePolicyState {
     /**
      * cooldown value
      */
-    cooldown?: pulumi.Input<number>;
+    cooldown?: pulumi.Input<number | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Scale amount
      */
-    scaleAmount?: pulumi.Input<number>;
+    scaleAmount?: pulumi.Input<number | undefined>;
     /**
      * scale group ID
      */
-    scaleGroupId?: pulumi.Input<number>;
+    scaleGroupId?: pulumi.Input<number | undefined>;
     /**
      * scale type
      */
-    scaleType?: pulumi.Input<string>;
+    scaleType?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    triggers?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscalePolicyTrigger>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    triggers?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscalePolicyTrigger>[] | undefined>;
 }
 
 /**
@@ -142,11 +142,11 @@ export interface ComputeAutoscalePolicyArgs {
     /**
      * cooldown value
      */
-    cooldown?: pulumi.Input<number>;
+    cooldown?: pulumi.Input<number | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Scale amount
      */
@@ -162,6 +162,6 @@ export interface ComputeAutoscalePolicyArgs {
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    triggers?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscalePolicyTrigger>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    triggers?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscalePolicyTrigger>[] | undefined>;
 }

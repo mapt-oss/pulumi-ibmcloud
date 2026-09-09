@@ -25,6 +25,7 @@ class IsDedicatedHostDiskManagementArgs:
                  disks: pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]]):
         """
         The set of arguments for constructing a IsDedicatedHostDiskManagement resource.
+
         :param pulumi.Input[_builtins.str] dedicated_host: ID of the dedicated host for which disks has to be managed
         :param pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]] disks: Disk information that has to be updated.
         """
@@ -59,10 +60,11 @@ class IsDedicatedHostDiskManagementArgs:
 @pulumi.input_type
 class _IsDedicatedHostDiskManagementState:
     def __init__(__self__, *,
-                 dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]]] = None):
+                 dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsDedicatedHostDiskManagement resources.
+
         :param pulumi.Input[_builtins.str] dedicated_host: ID of the dedicated host for which disks has to be managed
         :param pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]] disks: Disk information that has to be updated.
         """
@@ -73,26 +75,26 @@ class _IsDedicatedHostDiskManagementState:
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHost")
-    def dedicated_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the dedicated host for which disks has to be managed
         """
         return pulumi.get(self, "dedicated_host")
 
     @dedicated_host.setter
-    def dedicated_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]]]:
         """
         Disk information that has to be updated.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsDedicatedHostDiskManagementDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
 
@@ -102,15 +104,16 @@ class IsDedicatedHostDiskManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict']]]]] = None,
+                 dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict', 'outputs.IsDedicatedHostDiskManagementDisk']]]]] = None,
                  __props__=None):
         """
         Create a IsDedicatedHostDiskManagement resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dedicated_host: ID of the dedicated host for which disks has to be managed
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict']]]] disks: Disk information that has to be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict', 'outputs.IsDedicatedHostDiskManagementDisk']]]] disks: Disk information that has to be updated.
         """
         ...
     @overload
@@ -120,6 +123,7 @@ class IsDedicatedHostDiskManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsDedicatedHostDiskManagement resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsDedicatedHostDiskManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -135,8 +139,8 @@ class IsDedicatedHostDiskManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict']]]]] = None,
+                 dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict', 'outputs.IsDedicatedHostDiskManagementDisk']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -162,8 +166,8 @@ class IsDedicatedHostDiskManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dedicated_host: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict']]]]] = None) -> 'IsDedicatedHostDiskManagement':
+            dedicated_host: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict', 'outputs.IsDedicatedHostDiskManagementDisk']]]]] = None) -> 'IsDedicatedHostDiskManagement':
         """
         Get an existing IsDedicatedHostDiskManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -172,7 +176,7 @@ class IsDedicatedHostDiskManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dedicated_host: ID of the dedicated host for which disks has to be managed
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict']]]] disks: Disk information that has to be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsDedicatedHostDiskManagementDiskArgs', 'IsDedicatedHostDiskManagementDiskArgsDict', 'outputs.IsDedicatedHostDiskManagementDisk']]]] disks: Disk information that has to be updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

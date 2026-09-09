@@ -22,12 +22,13 @@ class ComputeMonitorArgs:
                  guest_id: pulumi.Input[_builtins.int],
                  query_type_id: pulumi.Input[_builtins.int],
                  response_action_id: pulumi.Input[_builtins.int],
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 notified_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_cycles: Optional[pulumi.Input[_builtins.int]] = None):
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 notified_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_cycles: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ComputeMonitor resource.
+
         :param pulumi.Input[_builtins.int] guest_id: Guest ID
         :param pulumi.Input[_builtins.int] query_type_id: Query Type ID
         :param pulumi.Input[_builtins.int] response_action_id: Response action ID
@@ -86,65 +87,66 @@ class ComputeMonitorArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP Address
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="notifiedUsers")
-    def notified_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def notified_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         List of users notified
         """
         return pulumi.get(self, "notified_users")
 
     @notified_users.setter
-    def notified_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def notified_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "notified_users", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="waitCycles")
-    def wait_cycles(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_cycles(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         wait cycles count
         """
         return pulumi.get(self, "wait_cycles")
 
     @wait_cycles.setter
-    def wait_cycles(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_cycles(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_cycles", value)
 
 
 @pulumi.input_type
 class _ComputeMonitorState:
     def __init__(__self__, *,
-                 guest_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 notified_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 query_type_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 response_action_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_cycles: Optional[pulumi.Input[_builtins.int]] = None):
+                 guest_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 notified_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 query_type_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 response_action_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_cycles: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ComputeMonitor resources.
+
         :param pulumi.Input[_builtins.int] guest_id: Guest ID
         :param pulumi.Input[_builtins.str] ip_address: IP Address
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] notified_users: List of users notified
@@ -170,86 +172,86 @@ class _ComputeMonitorState:
 
     @_builtins.property
     @pulumi.getter(name="guestId")
-    def guest_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def guest_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Guest ID
         """
         return pulumi.get(self, "guest_id")
 
     @guest_id.setter
-    def guest_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def guest_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "guest_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP Address
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="notifiedUsers")
-    def notified_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def notified_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         List of users notified
         """
         return pulumi.get(self, "notified_users")
 
     @notified_users.setter
-    def notified_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def notified_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "notified_users", value)
 
     @_builtins.property
     @pulumi.getter(name="queryTypeId")
-    def query_type_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def query_type_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Query Type ID
         """
         return pulumi.get(self, "query_type_id")
 
     @query_type_id.setter
-    def query_type_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def query_type_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "query_type_id", value)
 
     @_builtins.property
     @pulumi.getter(name="responseActionId")
-    def response_action_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def response_action_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Response action ID
         """
         return pulumi.get(self, "response_action_id")
 
     @response_action_id.setter
-    def response_action_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def response_action_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "response_action_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="waitCycles")
-    def wait_cycles(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_cycles(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         wait cycles count
         """
         return pulumi.get(self, "wait_cycles")
 
     @wait_cycles.setter
-    def wait_cycles(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_cycles(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_cycles", value)
 
 
@@ -259,16 +261,17 @@ class ComputeMonitor(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 guest_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 notified_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 query_type_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 response_action_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_cycles: Optional[pulumi.Input[_builtins.int]] = None,
+                 guest_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 notified_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 query_type_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 response_action_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_cycles: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a ComputeMonitor resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] guest_id: Guest ID
@@ -287,6 +290,7 @@ class ComputeMonitor(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ComputeMonitor resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ComputeMonitorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -302,13 +306,13 @@ class ComputeMonitor(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 guest_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 notified_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 query_type_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 response_action_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_cycles: Optional[pulumi.Input[_builtins.int]] = None,
+                 guest_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 notified_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 query_type_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 response_action_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 wait_cycles: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -341,13 +345,13 @@ class ComputeMonitor(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            guest_id: Optional[pulumi.Input[_builtins.int]] = None,
-            ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            notified_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            query_type_id: Optional[pulumi.Input[_builtins.int]] = None,
-            response_action_id: Optional[pulumi.Input[_builtins.int]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            wait_cycles: Optional[pulumi.Input[_builtins.int]] = None) -> 'ComputeMonitor':
+            guest_id: pulumi.Input[Optional[_builtins.int]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            notified_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            query_type_id: pulumi.Input[Optional[_builtins.int]] = None,
+            response_action_id: pulumi.Input[Optional[_builtins.int]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            wait_cycles: pulumi.Input[Optional[_builtins.int]] = None) -> 'ComputeMonitor':
         """
         Get an existing ComputeMonitor resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

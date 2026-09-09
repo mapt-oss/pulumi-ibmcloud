@@ -10,6 +10,7 @@ export function getPiInstanceVolumes(args: GetPiInstanceVolumesArgs, opts?: pulu
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getPiInstanceVolumes:getPiInstanceVolumes", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piInstanceId": args.piInstanceId,
         "piInstanceName": args.piInstanceName,
     }, opts);
 }
@@ -19,7 +20,11 @@ export function getPiInstanceVolumes(args: GetPiInstanceVolumesArgs, opts?: pulu
  */
 export interface GetPiInstanceVolumesArgs {
     piCloudInstanceId: string;
-    piInstanceName: string;
+    piInstanceId?: string;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    piInstanceName?: string;
 }
 
 /**
@@ -33,12 +38,17 @@ export interface GetPiInstanceVolumesResult {
     readonly id: string;
     readonly instanceVolumes: outputs.GetPiInstanceVolumesInstanceVolume[];
     readonly piCloudInstanceId: string;
-    readonly piInstanceName: string;
+    readonly piInstanceId?: string;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    readonly piInstanceName?: string;
 }
 export function getPiInstanceVolumesOutput(args: GetPiInstanceVolumesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPiInstanceVolumesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getPiInstanceVolumes:getPiInstanceVolumes", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piInstanceId": args.piInstanceId,
         "piInstanceName": args.piInstanceName,
     }, opts);
 }
@@ -48,5 +58,9 @@ export function getPiInstanceVolumesOutput(args: GetPiInstanceVolumesOutputArgs,
  */
 export interface GetPiInstanceVolumesOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piInstanceName: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    piInstanceName?: pulumi.Input<string | undefined>;
 }

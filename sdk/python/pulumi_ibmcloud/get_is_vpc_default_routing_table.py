@@ -242,7 +242,7 @@ def get_is_vpc_default_routing_table(vpc: Optional[_builtins.str] = None,
         subnets=pulumi.get(__ret__, 'subnets'),
         tags=pulumi.get(__ret__, 'tags'),
         vpc=pulumi.get(__ret__, 'vpc'))
-def get_is_vpc_default_routing_table_output(vpc: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_vpc_default_routing_table_output(vpc: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpcDefaultRoutingTableResult]:
     """
     Use this data source to access information about an existing resource.

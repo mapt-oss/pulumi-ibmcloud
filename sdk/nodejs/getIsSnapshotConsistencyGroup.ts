@@ -32,6 +32,7 @@ export interface GetIsSnapshotConsistencyGroupArgs {
  */
 export interface GetIsSnapshotConsistencyGroupResult {
     readonly accessTags: string[];
+    readonly backupPolicyJobs: outputs.GetIsSnapshotConsistencyGroupBackupPolicyJob[];
     readonly backupPolicyPlans: outputs.GetIsSnapshotConsistencyGroupBackupPolicyPlan[];
     readonly createdAt: string;
     readonly crn: string;
@@ -65,8 +66,8 @@ export function getIsSnapshotConsistencyGroupOutput(args?: GetIsSnapshotConsiste
  * A collection of arguments for invoking getIsSnapshotConsistencyGroup.
  */
 export interface GetIsSnapshotConsistencyGroupOutputArgs {
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

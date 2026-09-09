@@ -144,8 +144,8 @@ def get_pi_network_security_group(pi_cloud_instance_id: Optional[_builtins.str] 
         pi_network_security_group_id=pulumi.get(__ret__, 'pi_network_security_group_id'),
         rules=pulumi.get(__ret__, 'rules'),
         user_tags=pulumi.get(__ret__, 'user_tags'))
-def get_pi_network_security_group_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         pi_network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_network_security_group_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         pi_network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkSecurityGroupResult]:
     """
     Use this data source to access information about an existing resource.

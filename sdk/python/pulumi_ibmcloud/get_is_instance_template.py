@@ -27,7 +27,13 @@ class GetIsInstanceTemplateResult:
     """
     A collection of values returned by getIsInstanceTemplate.
     """
-    def __init__(__self__, availability_policy_host_failure=None, boot_volume_attachments=None, catalog_offerings=None, cluster_network_attachments=None, confidential_compute_mode=None, crn=None, default_trusted_profile_auto_link=None, default_trusted_profile_target=None, enable_secure_boot=None, href=None, id=None, identifier=None, image=None, keys=None, metadata_service_enabled=None, metadata_services=None, name=None, network_attachments=None, network_interfaces=None, placement_targets=None, primary_network_attachments=None, primary_network_interfaces=None, profile=None, reservation_affinities=None, resource_group=None, total_volume_bandwidth=None, user_data=None, volume_attachments=None, volume_bandwidth_qos_mode=None, vpc=None, zone=None):
+    def __init__(__self__, availabilities=None, availability_policies=None, availability_policy_host_failure=None, boot_volume_attachments=None, catalog_offerings=None, cluster_network_attachments=None, confidential_compute_mode=None, crn=None, default_trusted_profile_auto_link=None, default_trusted_profile_target=None, enable_secure_boot=None, href=None, id=None, identifier=None, image=None, keys=None, metadata_service_enabled=None, metadata_services=None, name=None, network_attachments=None, network_interfaces=None, placement_targets=None, primary_network_attachments=None, primary_network_interfaces=None, profile=None, reservation_affinities=None, resource_group=None, threads_per_core=None, total_volume_bandwidth=None, user_data=None, vcpus=None, volume_attachments=None, volume_bandwidth_qos_mode=None, vpc=None, zone=None):
+        if availabilities and not isinstance(availabilities, list):
+            raise TypeError("Expected argument 'availabilities' to be a list")
+        pulumi.set(__self__, "availabilities", availabilities)
+        if availability_policies and not isinstance(availability_policies, list):
+            raise TypeError("Expected argument 'availability_policies' to be a list")
+        pulumi.set(__self__, "availability_policies", availability_policies)
         if availability_policy_host_failure and not isinstance(availability_policy_host_failure, str):
             raise TypeError("Expected argument 'availability_policy_host_failure' to be a str")
         pulumi.set(__self__, "availability_policy_host_failure", availability_policy_host_failure)
@@ -103,12 +109,18 @@ class GetIsInstanceTemplateResult:
         if resource_group and not isinstance(resource_group, str):
             raise TypeError("Expected argument 'resource_group' to be a str")
         pulumi.set(__self__, "resource_group", resource_group)
+        if threads_per_core and not isinstance(threads_per_core, int):
+            raise TypeError("Expected argument 'threads_per_core' to be a int")
+        pulumi.set(__self__, "threads_per_core", threads_per_core)
         if total_volume_bandwidth and not isinstance(total_volume_bandwidth, int):
             raise TypeError("Expected argument 'total_volume_bandwidth' to be a int")
         pulumi.set(__self__, "total_volume_bandwidth", total_volume_bandwidth)
         if user_data and not isinstance(user_data, str):
             raise TypeError("Expected argument 'user_data' to be a str")
         pulumi.set(__self__, "user_data", user_data)
+        if vcpus and not isinstance(vcpus, list):
+            raise TypeError("Expected argument 'vcpus' to be a list")
+        pulumi.set(__self__, "vcpus", vcpus)
         if volume_attachments and not isinstance(volume_attachments, list):
             raise TypeError("Expected argument 'volume_attachments' to be a list")
         pulumi.set(__self__, "volume_attachments", volume_attachments)
@@ -121,6 +133,16 @@ class GetIsInstanceTemplateResult:
         if zone and not isinstance(zone, str):
             raise TypeError("Expected argument 'zone' to be a str")
         pulumi.set(__self__, "zone", zone)
+
+    @_builtins.property
+    @pulumi.getter
+    def availabilities(self) -> Sequence['outputs.GetIsInstanceTemplateAvailabilityResult']:
+        return pulumi.get(self, "availabilities")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityPolicies")
+    def availability_policies(self) -> Sequence['outputs.GetIsInstanceTemplateAvailabilityPolicyResult']:
+        return pulumi.get(self, "availability_policies")
 
     @_builtins.property
     @pulumi.getter(name="availabilityPolicyHostFailure")
@@ -251,6 +273,11 @@ class GetIsInstanceTemplateResult:
         return pulumi.get(self, "resource_group")
 
     @_builtins.property
+    @pulumi.getter(name="threadsPerCore")
+    def threads_per_core(self) -> _builtins.int:
+        return pulumi.get(self, "threads_per_core")
+
+    @_builtins.property
     @pulumi.getter(name="totalVolumeBandwidth")
     def total_volume_bandwidth(self) -> _builtins.int:
         return pulumi.get(self, "total_volume_bandwidth")
@@ -259,6 +286,11 @@ class GetIsInstanceTemplateResult:
     @pulumi.getter(name="userData")
     def user_data(self) -> _builtins.str:
         return pulumi.get(self, "user_data")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> Sequence['outputs.GetIsInstanceTemplateVcpusResult']:
+        return pulumi.get(self, "vcpus")
 
     @_builtins.property
     @pulumi.getter(name="volumeAttachments")
@@ -287,6 +319,8 @@ class AwaitableGetIsInstanceTemplateResult(GetIsInstanceTemplateResult):
         if False:
             yield self
         return GetIsInstanceTemplateResult(
+            availabilities=self.availabilities,
+            availability_policies=self.availability_policies,
             availability_policy_host_failure=self.availability_policy_host_failure,
             boot_volume_attachments=self.boot_volume_attachments,
             catalog_offerings=self.catalog_offerings,
@@ -312,8 +346,10 @@ class AwaitableGetIsInstanceTemplateResult(GetIsInstanceTemplateResult):
             profile=self.profile,
             reservation_affinities=self.reservation_affinities,
             resource_group=self.resource_group,
+            threads_per_core=self.threads_per_core,
             total_volume_bandwidth=self.total_volume_bandwidth,
             user_data=self.user_data,
+            vcpus=self.vcpus,
             volume_attachments=self.volume_attachments,
             volume_bandwidth_qos_mode=self.volume_bandwidth_qos_mode,
             vpc=self.vpc,
@@ -333,6 +369,8 @@ def get_is_instance_template(identifier: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getIsInstanceTemplate:getIsInstanceTemplate', __args__, opts=opts, typ=GetIsInstanceTemplateResult).value
 
     return AwaitableGetIsInstanceTemplateResult(
+        availabilities=pulumi.get(__ret__, 'availabilities'),
+        availability_policies=pulumi.get(__ret__, 'availability_policies'),
         availability_policy_host_failure=pulumi.get(__ret__, 'availability_policy_host_failure'),
         boot_volume_attachments=pulumi.get(__ret__, 'boot_volume_attachments'),
         catalog_offerings=pulumi.get(__ret__, 'catalog_offerings'),
@@ -358,14 +396,16 @@ def get_is_instance_template(identifier: Optional[_builtins.str] = None,
         profile=pulumi.get(__ret__, 'profile'),
         reservation_affinities=pulumi.get(__ret__, 'reservation_affinities'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
+        threads_per_core=pulumi.get(__ret__, 'threads_per_core'),
         total_volume_bandwidth=pulumi.get(__ret__, 'total_volume_bandwidth'),
         user_data=pulumi.get(__ret__, 'user_data'),
+        vcpus=pulumi.get(__ret__, 'vcpus'),
         volume_attachments=pulumi.get(__ret__, 'volume_attachments'),
         volume_bandwidth_qos_mode=pulumi.get(__ret__, 'volume_bandwidth_qos_mode'),
         vpc=pulumi.get(__ret__, 'vpc'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_instance_template_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_instance_template_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceTemplateResult]:
     """
     Use this data source to access information about an existing resource.
@@ -376,6 +416,8 @@ def get_is_instance_template_output(identifier: Optional[pulumi.Input[Optional[_
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsInstanceTemplate:getIsInstanceTemplate', __args__, opts=opts, typ=GetIsInstanceTemplateResult)
     return __ret__.apply(lambda __response__: GetIsInstanceTemplateResult(
+        availabilities=pulumi.get(__response__, 'availabilities'),
+        availability_policies=pulumi.get(__response__, 'availability_policies'),
         availability_policy_host_failure=pulumi.get(__response__, 'availability_policy_host_failure'),
         boot_volume_attachments=pulumi.get(__response__, 'boot_volume_attachments'),
         catalog_offerings=pulumi.get(__response__, 'catalog_offerings'),
@@ -401,8 +443,10 @@ def get_is_instance_template_output(identifier: Optional[pulumi.Input[Optional[_
         profile=pulumi.get(__response__, 'profile'),
         reservation_affinities=pulumi.get(__response__, 'reservation_affinities'),
         resource_group=pulumi.get(__response__, 'resource_group'),
+        threads_per_core=pulumi.get(__response__, 'threads_per_core'),
         total_volume_bandwidth=pulumi.get(__response__, 'total_volume_bandwidth'),
         user_data=pulumi.get(__response__, 'user_data'),
+        vcpus=pulumi.get(__response__, 'vcpus'),
         volume_attachments=pulumi.get(__response__, 'volume_attachments'),
         volume_bandwidth_qos_mode=pulumi.get(__response__, 'volume_bandwidth_qos_mode'),
         vpc=pulumi.get(__response__, 'vpc'),

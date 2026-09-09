@@ -184,79 +184,79 @@ export interface PiCloudConnectionState {
     /**
      * Cloud connection ID
      */
-    cloudConnectionId?: pulumi.Input<string>;
+    cloudConnectionId?: pulumi.Input<string | undefined>;
     /**
      * Type of service the gateway is attached to
      */
-    connectionMode?: pulumi.Input<string>;
+    connectionMode?: pulumi.Input<string | undefined>;
     /**
      * GRE auto-assigned source IP address
      */
-    greSourceAddress?: pulumi.Input<string>;
+    greSourceAddress?: pulumi.Input<string | undefined>;
     /**
      * IBM IP address
      */
-    ibmIpAddress?: pulumi.Input<string>;
+    ibmIpAddress?: pulumi.Input<string | undefined>;
     /**
      * Enable classic endpoint destination
      */
-    piCloudConnectionClassicEnabled?: pulumi.Input<boolean>;
+    piCloudConnectionClassicEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable global routing for this cloud connection
      */
-    piCloudConnectionGlobalRouting?: pulumi.Input<boolean>;
+    piCloudConnectionGlobalRouting?: pulumi.Input<boolean | undefined>;
     /**
      * GRE network in CIDR notation
      */
-    piCloudConnectionGreCidr?: pulumi.Input<string>;
+    piCloudConnectionGreCidr?: pulumi.Input<string | undefined>;
     /**
      * GRE destination IP address
      */
-    piCloudConnectionGreDestinationAddress?: pulumi.Input<string>;
+    piCloudConnectionGreDestinationAddress?: pulumi.Input<string | undefined>;
     /**
      * Enable metered for this cloud connection
      */
-    piCloudConnectionMetered?: pulumi.Input<boolean>;
+    piCloudConnectionMetered?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the cloud connection
      */
-    piCloudConnectionName?: pulumi.Input<string>;
+    piCloudConnectionName?: pulumi.Input<string | undefined>;
     /**
      * Set of Networks to attach to this cloud connection
      */
-    piCloudConnectionNetworks?: pulumi.Input<pulumi.Input<string>[]>;
+    piCloudConnectionNetworks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Speed of the cloud connection (speed in megabits per second)
      */
-    piCloudConnectionSpeed?: pulumi.Input<number>;
+    piCloudConnectionSpeed?: pulumi.Input<number | undefined>;
     /**
      * Enable transit gateway for this cloud connection
      */
-    piCloudConnectionTransitEnabled?: pulumi.Input<boolean>;
+    piCloudConnectionTransitEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Set of VPCs to attach to this cloud connection
      */
-    piCloudConnectionVpcCrns?: pulumi.Input<pulumi.Input<string>[]>;
+    piCloudConnectionVpcCrns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enable VPC for this cloud connection
      */
-    piCloudConnectionVpcEnabled?: pulumi.Input<boolean>;
+    piCloudConnectionVpcEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Port
      */
-    port?: pulumi.Input<string>;
+    port?: pulumi.Input<string | undefined>;
     /**
      * Link status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * User IP address
      */
-    userIpAddress?: pulumi.Input<string>;
+    userIpAddress?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -266,23 +266,23 @@ export interface PiCloudConnectionArgs {
     /**
      * Enable classic endpoint destination
      */
-    piCloudConnectionClassicEnabled?: pulumi.Input<boolean>;
+    piCloudConnectionClassicEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable global routing for this cloud connection
      */
-    piCloudConnectionGlobalRouting?: pulumi.Input<boolean>;
+    piCloudConnectionGlobalRouting?: pulumi.Input<boolean | undefined>;
     /**
      * GRE network in CIDR notation
      */
-    piCloudConnectionGreCidr?: pulumi.Input<string>;
+    piCloudConnectionGreCidr?: pulumi.Input<string | undefined>;
     /**
      * GRE destination IP address
      */
-    piCloudConnectionGreDestinationAddress?: pulumi.Input<string>;
+    piCloudConnectionGreDestinationAddress?: pulumi.Input<string | undefined>;
     /**
      * Enable metered for this cloud connection
      */
-    piCloudConnectionMetered?: pulumi.Input<boolean>;
+    piCloudConnectionMetered?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the cloud connection
      */
@@ -290,7 +290,7 @@ export interface PiCloudConnectionArgs {
     /**
      * Set of Networks to attach to this cloud connection
      */
-    piCloudConnectionNetworks?: pulumi.Input<pulumi.Input<string>[]>;
+    piCloudConnectionNetworks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Speed of the cloud connection (speed in megabits per second)
      */
@@ -298,15 +298,15 @@ export interface PiCloudConnectionArgs {
     /**
      * Enable transit gateway for this cloud connection
      */
-    piCloudConnectionTransitEnabled?: pulumi.Input<boolean>;
+    piCloudConnectionTransitEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Set of VPCs to attach to this cloud connection
      */
-    piCloudConnectionVpcCrns?: pulumi.Input<pulumi.Input<string>[]>;
+    piCloudConnectionVpcCrns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enable VPC for this cloud connection
      */
-    piCloudConnectionVpcEnabled?: pulumi.Input<boolean>;
+    piCloudConnectionVpcEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */

@@ -29,6 +29,7 @@ export interface GetIamApiKeyResult {
     readonly crn: string;
     readonly description: string;
     readonly entityTag: string;
+    readonly expiresAt: string;
     readonly iamId: string;
     /**
      * The provider-assigned unique ID for this managed resource.

@@ -113,8 +113,8 @@ def get_is_zone(name: Optional[_builtins.str] = None,
         region=pulumi.get(__ret__, 'region'),
         status=pulumi.get(__ret__, 'status'),
         universal_name=pulumi.get(__ret__, 'universal_name'))
-def get_is_zone_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                       region: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_zone_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                       region: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsZoneResult]:
     """
     Use this data source to access information about an existing resource.

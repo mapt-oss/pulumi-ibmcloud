@@ -24,11 +24,12 @@ class PiVolumeCloneArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_volume_clone_name: pulumi.Input[_builtins.str],
                  pi_volume_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_target_storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_target_storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiVolumeClone resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_volume_clone_name: The base name of the newly cloned volume(s).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_volume_ids: List of volumes to be cloned.
@@ -84,57 +85,58 @@ class PiVolumeCloneArgs:
 
     @_builtins.property
     @pulumi.getter(name="piReplicationEnabled")
-    def pi_replication_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_replication_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the cloned volume should have replication enabled. If no value is provided, it will default to the replication status of the source volume(s).
         """
         return pulumi.get(self, "pi_replication_enabled")
 
     @pi_replication_enabled.setter
-    def pi_replication_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_replication_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_replication_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piTargetStorageTier")
-    def pi_target_storage_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_target_storage_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The storage tier for the cloned volume(s).
         """
         return pulumi.get(self, "pi_target_storage_tier")
 
     @pi_target_storage_tier.setter
-    def pi_target_storage_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_target_storage_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_target_storage_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiVolumeCloneState:
     def __init__(__self__, *,
-                 clone_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeCloneCloneVolumeArgs']]]] = None,
-                 failure_reason: Optional[pulumi.Input[_builtins.str]] = None,
-                 percent_complete: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_target_storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_clone_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 clone_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeCloneCloneVolumeArgs']]]] = None,
+                 failure_reason: pulumi.Input[Optional[_builtins.str]] = None,
+                 percent_complete: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_target_storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_clone_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVolumeClone resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['PiVolumeCloneCloneVolumeArgs']]] clone_volumes: The List of cloned volumes.
         :param pulumi.Input[_builtins.str] failure_reason: The reason the clone volumes task has failed.
         :param pulumi.Input[_builtins.int] percent_complete: The completion percentage of the volume clone task.
@@ -172,134 +174,134 @@ class _PiVolumeCloneState:
 
     @_builtins.property
     @pulumi.getter(name="cloneVolumes")
-    def clone_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeCloneCloneVolumeArgs']]]]:
+    def clone_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeCloneCloneVolumeArgs']]]]:
         """
         The List of cloned volumes.
         """
         return pulumi.get(self, "clone_volumes")
 
     @clone_volumes.setter
-    def clone_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeCloneCloneVolumeArgs']]]]):
+    def clone_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeCloneCloneVolumeArgs']]]]):
         pulumi.set(self, "clone_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="failureReason")
-    def failure_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def failure_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reason the clone volumes task has failed.
         """
         return pulumi.get(self, "failure_reason")
 
     @failure_reason.setter
-    def failure_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def failure_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "failure_reason", value)
 
     @_builtins.property
     @pulumi.getter(name="percentComplete")
-    def percent_complete(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def percent_complete(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The completion percentage of the volume clone task.
         """
         return pulumi.get(self, "percent_complete")
 
     @percent_complete.setter
-    def percent_complete(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def percent_complete(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "percent_complete", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationEnabled")
-    def pi_replication_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_replication_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the cloned volume should have replication enabled. If no value is provided, it will default to the replication status of the source volume(s).
         """
         return pulumi.get(self, "pi_replication_enabled")
 
     @pi_replication_enabled.setter
-    def pi_replication_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_replication_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_replication_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piTargetStorageTier")
-    def pi_target_storage_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_target_storage_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The storage tier for the cloned volume(s).
         """
         return pulumi.get(self, "pi_target_storage_tier")
 
     @pi_target_storage_tier.setter
-    def pi_target_storage_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_target_storage_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_target_storage_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeCloneName")
-    def pi_volume_clone_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_clone_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base name of the newly cloned volume(s).
         """
         return pulumi.get(self, "pi_volume_clone_name")
 
     @pi_volume_clone_name.setter
-    def pi_volume_clone_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_clone_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_clone_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeIds")
-    def pi_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to be cloned.
         """
         return pulumi.get(self, "pi_volume_ids")
 
     @pi_volume_ids.setter
-    def pi_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_volume_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the volume clone task.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="taskId")
-    def task_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def task_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the volume clone task.
         """
         return pulumi.get(self, "task_id")
 
     @task_id.setter
-    def task_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def task_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "task_id", value)
 
 
@@ -309,15 +311,16 @@ class PiVolumeClone(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_target_storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_clone_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_target_storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_clone_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiVolumeClone resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -335,6 +338,7 @@ class PiVolumeClone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVolumeClone resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVolumeCloneArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -350,12 +354,12 @@ class PiVolumeClone(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_target_storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_clone_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_target_storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_clone_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -392,17 +396,17 @@ class PiVolumeClone(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            clone_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeCloneCloneVolumeArgs', 'PiVolumeCloneCloneVolumeArgsDict']]]]] = None,
-            failure_reason: Optional[pulumi.Input[_builtins.str]] = None,
-            percent_complete: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_target_storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_volume_clone_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            task_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVolumeClone':
+            clone_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiVolumeCloneCloneVolumeArgs', 'PiVolumeCloneCloneVolumeArgsDict', 'outputs.PiVolumeCloneCloneVolume']]]]] = None,
+            failure_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            percent_complete: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_target_storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_volume_clone_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            task_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVolumeClone':
         """
         Get an existing PiVolumeClone resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -410,7 +414,7 @@ class PiVolumeClone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeCloneCloneVolumeArgs', 'PiVolumeCloneCloneVolumeArgsDict']]]] clone_volumes: The List of cloned volumes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeCloneCloneVolumeArgs', 'PiVolumeCloneCloneVolumeArgsDict', 'outputs.PiVolumeCloneCloneVolume']]]] clone_volumes: The List of cloned volumes.
         :param pulumi.Input[_builtins.str] failure_reason: The reason the clone volumes task has failed.
         :param pulumi.Input[_builtins.int] percent_complete: The completion percentage of the volume clone task.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.

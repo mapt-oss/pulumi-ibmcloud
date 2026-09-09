@@ -26,7 +26,7 @@ class GetPiInstanceIpResult:
     """
     A collection of values returned by getPiInstanceIp.
     """
-    def __init__(__self__, external_ip=None, id=None, ip=None, ipoctet=None, mac_address=None, macaddress=None, network_id=None, network_interface_id=None, network_security_group_ids=None, network_security_groups_hreves=None, pi_cloud_instance_id=None, pi_instance_name=None, pi_network_name=None, type=None):
+    def __init__(__self__, external_ip=None, id=None, ip=None, ipoctet=None, mac_address=None, macaddress=None, network_id=None, network_interface_id=None, network_security_group_ids=None, network_security_groups_hreves=None, pi_cloud_instance_id=None, pi_instance_id=None, pi_instance_name=None, pi_network_name=None, type=None):
         if external_ip and not isinstance(external_ip, str):
             raise TypeError("Expected argument 'external_ip' to be a str")
         pulumi.set(__self__, "external_ip", external_ip)
@@ -60,6 +60,9 @@ class GetPiInstanceIpResult:
         if pi_cloud_instance_id and not isinstance(pi_cloud_instance_id, str):
             raise TypeError("Expected argument 'pi_cloud_instance_id' to be a str")
         pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
+        if pi_instance_id and not isinstance(pi_instance_id, str):
+            raise TypeError("Expected argument 'pi_instance_id' to be a str")
+        pulumi.set(__self__, "pi_instance_id", pi_instance_id)
         if pi_instance_name and not isinstance(pi_instance_name, str):
             raise TypeError("Expected argument 'pi_instance_name' to be a str")
         pulumi.set(__self__, "pi_instance_name", pi_instance_name)
@@ -130,8 +133,14 @@ class GetPiInstanceIpResult:
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @_builtins.property
+    @pulumi.getter(name="piInstanceId")
+    def pi_instance_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "pi_instance_id")
+
+    @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> _builtins.str:
+    @_utilities.deprecated("""The pi_instance_name field is deprecated. Please use pi_instance_id instead""")
+    def pi_instance_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "pi_instance_name")
 
     @_builtins.property
@@ -162,12 +171,14 @@ class AwaitableGetPiInstanceIpResult(GetPiInstanceIpResult):
             network_security_group_ids=self.network_security_group_ids,
             network_security_groups_hreves=self.network_security_groups_hreves,
             pi_cloud_instance_id=self.pi_cloud_instance_id,
+            pi_instance_id=self.pi_instance_id,
             pi_instance_name=self.pi_instance_name,
             pi_network_name=self.pi_network_name,
             type=self.type)
 
 
 def get_pi_instance_ip(pi_cloud_instance_id: Optional[_builtins.str] = None,
+                       pi_instance_id: Optional[_builtins.str] = None,
                        pi_instance_name: Optional[_builtins.str] = None,
                        pi_network_name: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPiInstanceIpResult:
@@ -176,6 +187,7 @@ def get_pi_instance_ip(pi_cloud_instance_id: Optional[_builtins.str] = None,
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     __args__['piNetworkName'] = pi_network_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -193,18 +205,21 @@ def get_pi_instance_ip(pi_cloud_instance_id: Optional[_builtins.str] = None,
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
         network_security_groups_hreves=pulumi.get(__ret__, 'network_security_groups_hreves'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__ret__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__ret__, 'pi_instance_name'),
         pi_network_name=pulumi.get(__ret__, 'pi_network_name'),
         type=pulumi.get(__ret__, 'type'))
-def get_pi_instance_ip_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                              pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_instance_ip_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              pi_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              pi_instance_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiInstanceIpResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     __args__['piNetworkName'] = pi_network_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -221,6 +236,7 @@ def get_pi_instance_ip_output(pi_cloud_instance_id: Optional[pulumi.Input[_built
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
         network_security_groups_hreves=pulumi.get(__response__, 'network_security_groups_hreves'),
         pi_cloud_instance_id=pulumi.get(__response__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__response__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__response__, 'pi_instance_name'),
         pi_network_name=pulumi.get(__response__, 'pi_network_name'),
         type=pulumi.get(__response__, 'type')))

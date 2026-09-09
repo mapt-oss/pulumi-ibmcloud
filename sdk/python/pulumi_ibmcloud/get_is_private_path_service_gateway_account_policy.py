@@ -144,8 +144,8 @@ def get_is_private_path_service_gateway_account_policy(account_policy: Optional[
         private_path_service_gateway=pulumi.get(__ret__, 'private_path_service_gateway'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_is_private_path_service_gateway_account_policy_output(account_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_private_path_service_gateway_account_policy_output(account_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsPrivatePathServiceGatewayAccountPolicyResult]:
     """
     Use this data source to access information about an existing resource.

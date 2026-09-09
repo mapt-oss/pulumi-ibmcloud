@@ -155,9 +155,9 @@ def get_is_bare_metal_server_network_interface_floating_ip(bare_metal_server: Op
         status=pulumi.get(__ret__, 'status'),
         target=pulumi.get(__ret__, 'target'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_bare_metal_server_network_interface_floating_ip_output(bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_bare_metal_server_network_interface_floating_ip_output(bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerNetworkInterfaceFloatingIpResult]:
     """
     Use this data source to access information about an existing resource.

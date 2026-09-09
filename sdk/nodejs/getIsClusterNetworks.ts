@@ -64,10 +64,10 @@ export function getIsClusterNetworksOutput(args?: GetIsClusterNetworksOutputArgs
  * A collection of arguments for invoking getIsClusterNetworks.
  */
 export interface GetIsClusterNetworksOutputArgs {
-    name?: pulumi.Input<string>;
-    resourceGroupId?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
-    vpcCrn?: pulumi.Input<string>;
-    vpcId?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
+    vpcCrn?: pulumi.Input<string | undefined>;
+    vpcId?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

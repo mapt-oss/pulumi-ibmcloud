@@ -10,6 +10,7 @@ export function getPiInstance(args: GetPiInstanceArgs, opts?: pulumi.InvokeOptio
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getPiInstance:getPiInstance", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piInstanceId": args.piInstanceId,
         "piInstanceName": args.piInstanceName,
     }, opts);
 }
@@ -19,15 +20,21 @@ export function getPiInstance(args: GetPiInstanceArgs, opts?: pulumi.InvokeOptio
  */
 export interface GetPiInstanceArgs {
     piCloudInstanceId: string;
-    piInstanceName: string;
+    piInstanceId?: string;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    piInstanceName?: string;
 }
 
 /**
  * A collection of values returned by getPiInstance.
  */
 export interface GetPiInstanceResult {
+    readonly allowRemoteRestart: boolean;
     readonly crn: string;
     readonly dedicatedHostId: string;
+    readonly defaultTrustedProfiles: outputs.GetPiInstanceDefaultTrustedProfile[];
     readonly deploymentType: string;
     readonly effectiveProcessorCompatibilityMode: string;
     readonly fault: {[key: string]: string};
@@ -45,12 +52,17 @@ export interface GetPiInstanceResult {
     readonly maxmem: number;
     readonly maxproc: number;
     readonly memory: number;
+    readonly metadataServices: outputs.GetPiInstanceMetadataService[];
     readonly minVirtualCores: number;
     readonly minmem: number;
     readonly minproc: number;
     readonly networks: outputs.GetPiInstanceNetwork[];
     readonly piCloudInstanceId: string;
-    readonly piInstanceName: string;
+    readonly piInstanceId?: string;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    readonly piInstanceName?: string;
     readonly pinPolicy: string;
     readonly placementGroupId: string;
     readonly preferredProcessorCompatibilityMode: string;
@@ -68,11 +80,13 @@ export interface GetPiInstanceResult {
     readonly virtualCoresAssigned: number;
     readonly virtualSerialNumbers: outputs.GetPiInstanceVirtualSerialNumber[];
     readonly volumes: string[];
+    readonly vpmemVolumes: outputs.GetPiInstanceVpmemVolume[];
 }
 export function getPiInstanceOutput(args: GetPiInstanceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPiInstanceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getPiInstance:getPiInstance", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piInstanceId": args.piInstanceId,
         "piInstanceName": args.piInstanceName,
     }, opts);
 }
@@ -82,5 +96,9 @@ export function getPiInstanceOutput(args: GetPiInstanceOutputArgs, opts?: pulumi
  */
 export interface GetPiInstanceOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piInstanceName: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    piInstanceName?: pulumi.Input<string | undefined>;
 }

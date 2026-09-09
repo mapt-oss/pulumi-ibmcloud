@@ -92,17 +92,17 @@ export function getIsInstancesOutput(args?: GetIsInstancesOutputArgs, opts?: pul
  * A collection of arguments for invoking getIsInstances.
  */
 export interface GetIsInstancesOutputArgs {
-    clusterNetworkCrn?: pulumi.Input<string>;
-    clusterNetworkId?: pulumi.Input<string>;
-    clusterNetworkName?: pulumi.Input<string>;
-    dedicatedHost?: pulumi.Input<string>;
-    dedicatedHostName?: pulumi.Input<string>;
-    instanceGroup?: pulumi.Input<string>;
-    instanceGroupName?: pulumi.Input<string>;
-    placementGroup?: pulumi.Input<string>;
-    placementGroupName?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    vpc?: pulumi.Input<string>;
-    vpcCrn?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    clusterNetworkCrn?: pulumi.Input<string | undefined>;
+    clusterNetworkId?: pulumi.Input<string | undefined>;
+    clusterNetworkName?: pulumi.Input<string | undefined>;
+    dedicatedHost?: pulumi.Input<string | undefined>;
+    dedicatedHostName?: pulumi.Input<string | undefined>;
+    instanceGroup?: pulumi.Input<string | undefined>;
+    instanceGroupName?: pulumi.Input<string | undefined>;
+    placementGroup?: pulumi.Input<string | undefined>;
+    placementGroupName?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    vpc?: pulumi.Input<string | undefined>;
+    vpcCrn?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

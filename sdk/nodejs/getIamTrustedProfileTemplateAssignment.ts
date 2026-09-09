@@ -58,5 +58,5 @@ export function getIamTrustedProfileTemplateAssignmentOutput(args: GetIamTrusted
  */
 export interface GetIamTrustedProfileTemplateAssignmentOutputArgs {
     assignmentId: pulumi.Input<string>;
-    includeHistory?: pulumi.Input<boolean>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
 }

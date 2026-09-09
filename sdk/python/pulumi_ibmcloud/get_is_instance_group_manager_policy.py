@@ -135,9 +135,9 @@ def get_is_instance_group_manager_policy(instance_group: Optional[_builtins.str]
         name=pulumi.get(__ret__, 'name'),
         policy_id=pulumi.get(__ret__, 'policy_id'),
         policy_type=pulumi.get(__ret__, 'policy_type'))
-def get_is_instance_group_manager_policy_output(instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                                                instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                                                name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_group_manager_policy_output(instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                                                instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                                                name: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceGroupManagerPolicyResult]:
     """
     Use this data source to access information about an existing resource.

@@ -8,6 +8,7 @@ export function getResourceGroup(args?: GetResourceGroupArgs, opts?: pulumi.Invo
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getResourceGroup:getResourceGroup", {
+        "id": args.id,
         "isDefault": args.isDefault,
         "name": args.name,
     }, opts);
@@ -17,6 +18,7 @@ export function getResourceGroup(args?: GetResourceGroupArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getResourceGroup.
  */
 export interface GetResourceGroupArgs {
+    id?: string;
     isDefault?: boolean;
     name?: string;
 }
@@ -28,9 +30,6 @@ export interface GetResourceGroupResult {
     readonly accountId: string;
     readonly createdAt: string;
     readonly crn: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
     readonly id: string;
     readonly isDefault: boolean;
     readonly name: string;
@@ -46,6 +45,7 @@ export function getResourceGroupOutput(args?: GetResourceGroupOutputArgs, opts?:
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getResourceGroup:getResourceGroup", {
+        "id": args.id,
         "isDefault": args.isDefault,
         "name": args.name,
     }, opts);
@@ -55,6 +55,7 @@ export function getResourceGroupOutput(args?: GetResourceGroupOutputArgs, opts?:
  * A collection of arguments for invoking getResourceGroup.
  */
 export interface GetResourceGroupOutputArgs {
-    isDefault?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
+    isDefault?: pulumi.Input<boolean | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

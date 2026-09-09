@@ -117,35 +117,35 @@ export interface IsVirtualEndpointGatewayIpState {
     /**
      * Endpoint gateway IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway IP auto delete
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * Endpoint gateway IP created date and time
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway ID
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway IP name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway IP id
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway IP resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway detail
      */
-    targets?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayIpTarget>[]>;
+    targets?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayIpTarget>[] | undefined>;
 }
 
 /**

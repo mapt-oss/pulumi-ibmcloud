@@ -148,51 +148,51 @@ export interface PiNetworkPeerRouteFilterState {
     /**
      * Time stamp for create route filter.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * Error description.
      */
-    error?: pulumi.Input<string>;
+    error?: pulumi.Input<string | undefined>;
     /**
      * Action of the filter.
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Direction of the filter.
      */
-    piDirection?: pulumi.Input<string>;
+    piDirection?: pulumi.Input<string | undefined>;
     /**
      * The minimum matching length of the prefix-set(1 ≤ value ≤ 32 & value ≤ LE).
      */
-    piGe?: pulumi.Input<number>;
+    piGe?: pulumi.Input<number | undefined>;
     /**
      * Priority or order of the filter.
      */
-    piIndex?: pulumi.Input<number>;
+    piIndex?: pulumi.Input<number | undefined>;
     /**
      * The maximum matching length of the prefix-set( 1 ≤ value ≤ 32 & value >= GE).
      */
-    piLe?: pulumi.Input<number>;
+    piLe?: pulumi.Input<number | undefined>;
     /**
      * Network peer ID.
      */
-    piNetworkPeerId?: pulumi.Input<string>;
+    piNetworkPeerId?: pulumi.Input<string | undefined>;
     /**
      * IP prefix representing an address and mask length of the prefix-set.
      */
-    piPrefix?: pulumi.Input<string>;
+    piPrefix?: pulumi.Input<string | undefined>;
     /**
      * Route filter ID.
      */
-    routeFilterId?: pulumi.Input<string>;
+    routeFilterId?: pulumi.Input<string | undefined>;
     /**
      * Status of the route filter.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -202,7 +202,7 @@ export interface PiNetworkPeerRouteFilterArgs {
     /**
      * Action of the filter.
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -214,7 +214,7 @@ export interface PiNetworkPeerRouteFilterArgs {
     /**
      * The minimum matching length of the prefix-set(1 ≤ value ≤ 32 & value ≤ LE).
      */
-    piGe?: pulumi.Input<number>;
+    piGe?: pulumi.Input<number | undefined>;
     /**
      * Priority or order of the filter.
      */
@@ -222,7 +222,7 @@ export interface PiNetworkPeerRouteFilterArgs {
     /**
      * The maximum matching length of the prefix-set( 1 ≤ value ≤ 32 & value >= GE).
      */
-    piLe?: pulumi.Input<number>;
+    piLe?: pulumi.Input<number | undefined>;
     /**
      * Network peer ID.
      */

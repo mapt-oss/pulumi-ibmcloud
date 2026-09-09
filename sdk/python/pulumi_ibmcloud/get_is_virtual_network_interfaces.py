@@ -82,7 +82,7 @@ def get_is_virtual_network_interfaces(resource_group: Optional[_builtins.str] = 
         id=pulumi.get(__ret__, 'id'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         virtual_network_interfaces=pulumi.get(__ret__, 'virtual_network_interfaces'))
-def get_is_virtual_network_interfaces_output(resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_virtual_network_interfaces_output(resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVirtualNetworkInterfacesResult]:
     """
     Use this data source to access information about an existing resource.

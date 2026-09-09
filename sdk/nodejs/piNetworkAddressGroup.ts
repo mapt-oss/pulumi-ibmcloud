@@ -105,27 +105,27 @@ export interface PiNetworkAddressGroupState {
     /**
      * The Network Address Group's crn.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkAddressGroupMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkAddressGroupMember>[] | undefined>;
     /**
      * The unique identifier of the network address group.
      */
-    networkAddressGroupId?: pulumi.Input<string>;
+    networkAddressGroupId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The name of the Network Address Group.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
     /**
      * The user tags associated with this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -135,7 +135,7 @@ export interface PiNetworkAddressGroupArgs {
     /**
      * The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkAddressGroupMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkAddressGroupMember>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -147,5 +147,5 @@ export interface PiNetworkAddressGroupArgs {
     /**
      * The user tags associated with this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

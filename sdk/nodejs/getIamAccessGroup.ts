@@ -44,5 +44,5 @@ export function getIamAccessGroupOutput(args?: GetIamAccessGroupOutputArgs, opts
  * A collection of arguments for invoking getIamAccessGroup.
  */
 export interface GetIamAccessGroupOutputArgs {
-    accessGroupName?: pulumi.Input<string>;
+    accessGroupName?: pulumi.Input<string | undefined>;
 }

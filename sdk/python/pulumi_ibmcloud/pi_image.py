@@ -22,25 +22,27 @@ __all__ = ['PiImageArgs', 'PiImage']
 class PiImageArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_import_details: Optional[pulumi.Input['PiImagePiImageImportDetailsArgs']] = None,
-                 pi_image_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_import_details: pulumi.Input[Optional['PiImagePiImageImportDetailsArgs']] = None,
+                 pi_image_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_source_checksum: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiImage resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         :param pulumi.Input[_builtins.str] pi_affinity_policy: Affinity policy for image; ignored if pi_image_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
@@ -57,6 +59,7 @@ class PiImageArgs:
         :param pulumi.Input[_builtins.str] pi_image_secret_key: Cloud Object Storage secret key; required for buckets with private access
         :param pulumi.Input[_builtins.str] pi_image_storage_pool: Storage pool where the image will be loaded, if provided then pi_affinity_policy will be ignored
         :param pulumi.Input[_builtins.str] pi_image_storage_type: Type of storage; If not specified, default is tier3
+        :param pulumi.Input[_builtins.bool] pi_source_checksum: Checks the checksum file from the COS bucket against the one computed on the downloaded image.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         """
         pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
@@ -92,6 +95,8 @@ class PiImageArgs:
             pulumi.set(__self__, "pi_image_storage_pool", pi_image_storage_pool)
         if pi_image_storage_type is not None:
             pulumi.set(__self__, "pi_image_storage_type", pi_image_storage_type)
+        if pi_source_checksum is not None:
+            pulumi.set(__self__, "pi_source_checksum", pi_source_checksum)
         if pi_user_tags is not None:
             pulumi.set(__self__, "pi_user_tags", pi_user_tags)
 
@@ -109,231 +114,245 @@ class PiImageArgs:
 
     @_builtins.property
     @pulumi.getter(name="piAffinityInstance")
-    def pi_affinity_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         """
         return pulumi.get(self, "pi_affinity_instance")
 
     @pi_affinity_instance.setter
-    def pi_affinity_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_instance", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityPolicy")
-    def pi_affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Affinity policy for image; ignored if pi_image_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         """
         return pulumi.get(self, "pi_affinity_policy")
 
     @pi_affinity_policy.setter
-    def pi_affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityVolume")
-    def pi_affinity_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
         """
         return pulumi.get(self, "pi_affinity_volume")
 
     @pi_affinity_volume.setter
-    def pi_affinity_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityInstances")
-    def pi_anti_affinity_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_instances")
 
     @pi_anti_affinity_instances.setter
-    def pi_anti_affinity_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityVolumes")
-    def pi_anti_affinity_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_volumes")
 
     @pi_anti_affinity_volumes.setter
-    def pi_anti_affinity_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageAccessKey")
-    def pi_image_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage access key; required for buckets with private access
         """
         return pulumi.get(self, "pi_image_access_key")
 
     @pi_image_access_key.setter
-    def pi_image_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketAccess")
-    def pi_image_bucket_access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates if the bucket has public or private access
         """
         return pulumi.get(self, "pi_image_bucket_access")
 
     @pi_image_bucket_access.setter
-    def pi_image_bucket_access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_access", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketFileName")
-    def pi_image_bucket_file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage image filename
         """
         return pulumi.get(self, "pi_image_bucket_file_name")
 
     @pi_image_bucket_file_name.setter
-    def pi_image_bucket_file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_file_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketName")
-    def pi_image_bucket_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage bucket name; bucket-name[/optional/folder]
         """
         return pulumi.get(self, "pi_image_bucket_name")
 
     @pi_image_bucket_name.setter
-    def pi_image_bucket_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketRegion")
-    def pi_image_bucket_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage region
         """
         return pulumi.get(self, "pi_image_bucket_region")
 
     @pi_image_bucket_region.setter
-    def pi_image_bucket_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_region", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageId")
-    def pi_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance image id
         """
         return pulumi.get(self, "pi_image_id")
 
     @pi_image_id.setter
-    def pi_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageImportDetails")
-    def pi_image_import_details(self) -> Optional[pulumi.Input['PiImagePiImageImportDetailsArgs']]:
+    def pi_image_import_details(self) -> pulumi.Input[Optional['PiImagePiImageImportDetailsArgs']]:
         return pulumi.get(self, "pi_image_import_details")
 
     @pi_image_import_details.setter
-    def pi_image_import_details(self, value: Optional[pulumi.Input['PiImagePiImageImportDetailsArgs']]):
+    def pi_image_import_details(self, value: pulumi.Input[Optional['PiImagePiImageImportDetailsArgs']]):
         pulumi.set(self, "pi_image_import_details", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageName")
-    def pi_image_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image name
         """
         return pulumi.get(self, "pi_image_name")
 
     @pi_image_name.setter
-    def pi_image_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageSecretKey")
-    def pi_image_secret_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_secret_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage secret key; required for buckets with private access
         """
         return pulumi.get(self, "pi_image_secret_key")
 
     @pi_image_secret_key.setter
-    def pi_image_secret_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_secret_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_secret_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageStoragePool")
-    def pi_image_storage_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_storage_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage pool where the image will be loaded, if provided then pi_affinity_policy will be ignored
         """
         return pulumi.get(self, "pi_image_storage_pool")
 
     @pi_image_storage_pool.setter
-    def pi_image_storage_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_storage_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_storage_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageStorageType")
-    def pi_image_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of storage; If not specified, default is tier3
         """
         return pulumi.get(self, "pi_image_storage_type")
 
     @pi_image_storage_type.setter
-    def pi_image_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_storage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_storage_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="piSourceChecksum")
+    def pi_source_checksum(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Checks the checksum file from the COS bucket against the one computed on the downloaded image.
+        """
+        return pulumi.get(self, "pi_source_checksum")
+
+    @pi_source_checksum.setter
+    def pi_source_checksum(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pi_source_checksum", value)
+
+    @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiImageState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_import_details: Optional[pulumi.Input['PiImagePiImageImportDetailsArgs']] = None,
-                 pi_image_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_import_details: pulumi.Input[Optional['PiImagePiImageImportDetailsArgs']] = None,
+                 pi_image_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_source_checksum: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiImage resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
         :param pulumi.Input[_builtins.str] image_id: Image ID
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
@@ -352,6 +371,7 @@ class _PiImageState:
         :param pulumi.Input[_builtins.str] pi_image_secret_key: Cloud Object Storage secret key; required for buckets with private access
         :param pulumi.Input[_builtins.str] pi_image_storage_pool: Storage pool where the image will be loaded, if provided then pi_affinity_policy will be ignored
         :param pulumi.Input[_builtins.str] pi_image_storage_type: Type of storage; If not specified, default is tier3
+        :param pulumi.Input[_builtins.bool] pi_source_checksum: Checks the checksum file from the COS bucket against the one computed on the downloaded image.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         """
         if crn is not None:
@@ -392,244 +412,258 @@ class _PiImageState:
             pulumi.set(__self__, "pi_image_storage_pool", pi_image_storage_pool)
         if pi_image_storage_type is not None:
             pulumi.set(__self__, "pi_image_storage_type", pi_image_storage_type)
+        if pi_source_checksum is not None:
+            pulumi.set(__self__, "pi_source_checksum", pi_source_checksum)
         if pi_user_tags is not None:
             pulumi.set(__self__, "pi_user_tags", pi_user_tags)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image ID
         """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
-    def image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityInstance")
-    def pi_affinity_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         """
         return pulumi.get(self, "pi_affinity_instance")
 
     @pi_affinity_instance.setter
-    def pi_affinity_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_instance", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityPolicy")
-    def pi_affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Affinity policy for image; ignored if pi_image_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         """
         return pulumi.get(self, "pi_affinity_policy")
 
     @pi_affinity_policy.setter
-    def pi_affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityVolume")
-    def pi_affinity_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
         """
         return pulumi.get(self, "pi_affinity_volume")
 
     @pi_affinity_volume.setter
-    def pi_affinity_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityInstances")
-    def pi_anti_affinity_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_instances")
 
     @pi_anti_affinity_instances.setter
-    def pi_anti_affinity_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityVolumes")
-    def pi_anti_affinity_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_volumes")
 
     @pi_anti_affinity_volumes.setter
-    def pi_anti_affinity_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageAccessKey")
-    def pi_image_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage access key; required for buckets with private access
         """
         return pulumi.get(self, "pi_image_access_key")
 
     @pi_image_access_key.setter
-    def pi_image_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketAccess")
-    def pi_image_bucket_access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates if the bucket has public or private access
         """
         return pulumi.get(self, "pi_image_bucket_access")
 
     @pi_image_bucket_access.setter
-    def pi_image_bucket_access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_access", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketFileName")
-    def pi_image_bucket_file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage image filename
         """
         return pulumi.get(self, "pi_image_bucket_file_name")
 
     @pi_image_bucket_file_name.setter
-    def pi_image_bucket_file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_file_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketName")
-    def pi_image_bucket_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage bucket name; bucket-name[/optional/folder]
         """
         return pulumi.get(self, "pi_image_bucket_name")
 
     @pi_image_bucket_name.setter
-    def pi_image_bucket_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageBucketRegion")
-    def pi_image_bucket_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_bucket_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage region
         """
         return pulumi.get(self, "pi_image_bucket_region")
 
     @pi_image_bucket_region.setter
-    def pi_image_bucket_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_bucket_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_bucket_region", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageId")
-    def pi_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance image id
         """
         return pulumi.get(self, "pi_image_id")
 
     @pi_image_id.setter
-    def pi_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageImportDetails")
-    def pi_image_import_details(self) -> Optional[pulumi.Input['PiImagePiImageImportDetailsArgs']]:
+    def pi_image_import_details(self) -> pulumi.Input[Optional['PiImagePiImageImportDetailsArgs']]:
         return pulumi.get(self, "pi_image_import_details")
 
     @pi_image_import_details.setter
-    def pi_image_import_details(self, value: Optional[pulumi.Input['PiImagePiImageImportDetailsArgs']]):
+    def pi_image_import_details(self, value: pulumi.Input[Optional['PiImagePiImageImportDetailsArgs']]):
         pulumi.set(self, "pi_image_import_details", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageName")
-    def pi_image_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image name
         """
         return pulumi.get(self, "pi_image_name")
 
     @pi_image_name.setter
-    def pi_image_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageSecretKey")
-    def pi_image_secret_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_secret_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Object Storage secret key; required for buckets with private access
         """
         return pulumi.get(self, "pi_image_secret_key")
 
     @pi_image_secret_key.setter
-    def pi_image_secret_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_secret_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_secret_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageStoragePool")
-    def pi_image_storage_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_storage_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage pool where the image will be loaded, if provided then pi_affinity_policy will be ignored
         """
         return pulumi.get(self, "pi_image_storage_pool")
 
     @pi_image_storage_pool.setter
-    def pi_image_storage_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_storage_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_storage_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageStorageType")
-    def pi_image_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of storage; If not specified, default is tier3
         """
         return pulumi.get(self, "pi_image_storage_type")
 
     @pi_image_storage_type.setter
-    def pi_image_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_storage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_storage_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="piSourceChecksum")
+    def pi_source_checksum(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Checks the checksum file from the COS bucket against the one computed on the downloaded image.
+        """
+        return pulumi.get(self, "pi_source_checksum")
+
+    @pi_source_checksum.setter
+    def pi_source_checksum(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pi_source_checksum", value)
+
+    @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
@@ -639,27 +673,29 @@ class PiImage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_import_details: Optional[pulumi.Input[Union['PiImagePiImageImportDetailsArgs', 'PiImagePiImageImportDetailsArgsDict']]] = None,
-                 pi_image_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_import_details: pulumi.Input[Optional[Union['PiImagePiImageImportDetailsArgs', 'PiImagePiImageImportDetailsArgsDict', 'outputs.PiImagePiImageImportDetails']]] = None,
+                 pi_image_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_source_checksum: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiImage resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
@@ -678,6 +714,7 @@ class PiImage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_image_secret_key: Cloud Object Storage secret key; required for buckets with private access
         :param pulumi.Input[_builtins.str] pi_image_storage_pool: Storage pool where the image will be loaded, if provided then pi_affinity_policy will be ignored
         :param pulumi.Input[_builtins.str] pi_image_storage_type: Type of storage; If not specified, default is tier3
+        :param pulumi.Input[_builtins.bool] pi_source_checksum: Checks the checksum file from the COS bucket against the one computed on the downloaded image.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         """
         ...
@@ -688,6 +725,7 @@ class PiImage(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiImage resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiImageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -703,24 +741,25 @@ class PiImage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_access: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_import_details: Optional[pulumi.Input[Union['PiImagePiImageImportDetailsArgs', 'PiImagePiImageImportDetailsArgsDict']]] = None,
-                 pi_image_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_image_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_access: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_import_details: pulumi.Input[Optional[Union['PiImagePiImageImportDetailsArgs', 'PiImagePiImageImportDetailsArgsDict', 'outputs.PiImagePiImageImportDetails']]] = None,
+                 pi_image_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_image_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_source_checksum: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -749,6 +788,7 @@ class PiImage(pulumi.CustomResource):
             __props__.__dict__["pi_image_secret_key"] = None if pi_image_secret_key is None else pulumi.Output.secret(pi_image_secret_key)
             __props__.__dict__["pi_image_storage_pool"] = pi_image_storage_pool
             __props__.__dict__["pi_image_storage_type"] = pi_image_storage_type
+            __props__.__dict__["pi_source_checksum"] = pi_source_checksum
             __props__.__dict__["pi_user_tags"] = pi_user_tags
             __props__.__dict__["crn"] = None
             __props__.__dict__["image_id"] = None
@@ -764,26 +804,27 @@ class PiImage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_bucket_access: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_bucket_file_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_bucket_region: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_import_details: Optional[pulumi.Input[Union['PiImagePiImageImportDetailsArgs', 'PiImagePiImageImportDetailsArgsDict']]] = None,
-            pi_image_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_image_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiImage':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_bucket_access: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_bucket_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_bucket_region: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_import_details: pulumi.Input[Optional[Union['PiImagePiImageImportDetailsArgs', 'PiImagePiImageImportDetailsArgsDict', 'outputs.PiImagePiImageImportDetails']]] = None,
+            pi_image_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_image_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_source_checksum: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiImage':
         """
         Get an existing PiImage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -809,6 +850,7 @@ class PiImage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_image_secret_key: Cloud Object Storage secret key; required for buckets with private access
         :param pulumi.Input[_builtins.str] pi_image_storage_pool: Storage pool where the image will be loaded, if provided then pi_affinity_policy will be ignored
         :param pulumi.Input[_builtins.str] pi_image_storage_type: Type of storage; If not specified, default is tier3
+        :param pulumi.Input[_builtins.bool] pi_source_checksum: Checks the checksum file from the COS bucket against the one computed on the downloaded image.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -834,6 +876,7 @@ class PiImage(pulumi.CustomResource):
         __props__.__dict__["pi_image_secret_key"] = pi_image_secret_key
         __props__.__dict__["pi_image_storage_pool"] = pi_image_storage_pool
         __props__.__dict__["pi_image_storage_type"] = pi_image_storage_type
+        __props__.__dict__["pi_source_checksum"] = pi_source_checksum
         __props__.__dict__["pi_user_tags"] = pi_user_tags
         return PiImage(resource_name, opts=opts, __props__=__props__)
 
@@ -985,6 +1028,14 @@ class PiImage(pulumi.CustomResource):
         Type of storage; If not specified, default is tier3
         """
         return pulumi.get(self, "pi_image_storage_type")
+
+    @_builtins.property
+    @pulumi.getter(name="piSourceChecksum")
+    def pi_source_checksum(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Checks the checksum file from the COS bucket against the one computed on the downloaded image.
+        """
+        return pulumi.get(self, "pi_source_checksum")
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")

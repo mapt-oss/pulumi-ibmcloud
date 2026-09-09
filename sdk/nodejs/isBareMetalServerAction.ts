@@ -96,20 +96,20 @@ export interface IsBareMetalServerActionState {
     /**
      * This restart/start/stops a bare metal server.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Bare metal server identifier
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * Bare metal server status
      */
-    status?: pulumi.Input<string>;
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerActionStatusReason>[]>;
+    status?: pulumi.Input<string | undefined>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerActionStatusReason>[] | undefined>;
     /**
      * The type of stop operation
      */
-    stopType?: pulumi.Input<string>;
+    stopType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -127,5 +127,5 @@ export interface IsBareMetalServerActionArgs {
     /**
      * The type of stop operation
      */
-    stopType?: pulumi.Input<string>;
+    stopType?: pulumi.Input<string | undefined>;
 }

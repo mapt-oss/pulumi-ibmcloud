@@ -85,9 +85,6 @@ class GetResourceGroupResult:
     @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
         return pulumi.get(self, "id")
 
     @_builtins.property
@@ -157,13 +154,15 @@ class AwaitableGetResourceGroupResult(GetResourceGroupResult):
             updated_at=self.updated_at)
 
 
-def get_resource_group(is_default: Optional[_builtins.bool] = None,
+def get_resource_group(id: Optional[_builtins.str] = None,
+                       is_default: Optional[_builtins.bool] = None,
                        name: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceGroupResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['id'] = id
     __args__['isDefault'] = is_default
     __args__['name'] = name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -183,13 +182,15 @@ def get_resource_group(is_default: Optional[_builtins.bool] = None,
         state=pulumi.get(__ret__, 'state'),
         teams_url=pulumi.get(__ret__, 'teams_url'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_resource_group_output(is_default: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resource_group_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              is_default: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceGroupResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['id'] = id
     __args__['isDefault'] = is_default
     __args__['name'] = name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

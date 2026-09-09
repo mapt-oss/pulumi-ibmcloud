@@ -44,5 +44,5 @@ export function getPiDatacentersOutput(args?: GetPiDatacentersOutputArgs, opts?:
  * A collection of arguments for invoking getPiDatacenters.
  */
 export interface GetPiDatacentersOutputArgs {
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
 }

@@ -132,7 +132,7 @@ def get_pi_workspace(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_workspace_name=pulumi.get(__ret__, 'pi_workspace_name'),
         pi_workspace_status=pulumi.get(__ret__, 'pi_workspace_status'),
         pi_workspace_type=pulumi.get(__ret__, 'pi_workspace_type'))
-def get_pi_workspace_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_workspace_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiWorkspaceResult]:
     """
     Use this data source to access information about an existing resource.

@@ -214,8 +214,8 @@ def get_is_image_export_job(image: Optional[_builtins.str] = None,
         storage_buckets=pulumi.get(__ret__, 'storage_buckets'),
         storage_href=pulumi.get(__ret__, 'storage_href'),
         storage_objects=pulumi.get(__ret__, 'storage_objects'))
-def get_is_image_export_job_output(image: Optional[pulumi.Input[_builtins.str]] = None,
-                                   image_export_job: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_image_export_job_output(image: pulumi.Input[Optional[_builtins.str]] = None,
+                                   image_export_job: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsImageExportJobResult]:
     """
     Use this data source to access information about an existing resource.

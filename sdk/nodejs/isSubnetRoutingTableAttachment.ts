@@ -138,49 +138,49 @@ export interface IsSubnetRoutingTableAttachmentState {
     /**
      * Indicates whether this is the default routing table for this VPC
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * he lifecycle state of the routing table [ deleting, failed, pending, stable, suspended, updating, waiting ]
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name of the routing table
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this volume.
      */
-    resourceGroups?: pulumi.Input<pulumi.Input<inputs.IsSubnetRoutingTableAttachmentResourceGroup>[]>;
+    resourceGroups?: pulumi.Input<pulumi.Input<inputs.IsSubnetRoutingTableAttachmentResourceGroup>[] | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * If true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
      */
-    routeDirectLinkIngress?: pulumi.Input<boolean>;
+    routeDirectLinkIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If true, this routing table will be used to route traffic that originates from Transit Gateway to this VPC.
      */
-    routeTransitGatewayIngress?: pulumi.Input<boolean>;
+    routeTransitGatewayIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If true, this routing table will be used to route traffic that originates from subnets in other zones in this VPC.
      */
-    routeVpcZoneIngress?: pulumi.Input<boolean>;
-    routes?: pulumi.Input<pulumi.Input<inputs.IsSubnetRoutingTableAttachmentRoute>[]>;
+    routeVpcZoneIngress?: pulumi.Input<boolean | undefined>;
+    routes?: pulumi.Input<pulumi.Input<inputs.IsSubnetRoutingTableAttachmentRoute>[] | undefined>;
     /**
      * The unique identifier of routing table
      */
-    routingTable?: pulumi.Input<string>;
+    routingTable?: pulumi.Input<string | undefined>;
     /**
      * The crn of routing table
      */
-    routingTableCrn?: pulumi.Input<string>;
+    routingTableCrn?: pulumi.Input<string | undefined>;
     /**
      * The subnet identifier
      */
-    subnet?: pulumi.Input<string>;
-    subnets?: pulumi.Input<pulumi.Input<inputs.IsSubnetRoutingTableAttachmentSubnet>[]>;
+    subnet?: pulumi.Input<string | undefined>;
+    subnets?: pulumi.Input<pulumi.Input<inputs.IsSubnetRoutingTableAttachmentSubnet>[] | undefined>;
 }
 
 /**
@@ -190,11 +190,11 @@ export interface IsSubnetRoutingTableAttachmentArgs {
     /**
      * The unique identifier of routing table
      */
-    routingTable?: pulumi.Input<string>;
+    routingTable?: pulumi.Input<string | undefined>;
     /**
      * The crn of routing table
      */
-    routingTableCrn?: pulumi.Input<string>;
+    routingTableCrn?: pulumi.Input<string | undefined>;
     /**
      * The subnet identifier
      */

@@ -108,6 +108,10 @@ export class PiImage extends pulumi.CustomResource {
      */
     declare public readonly piImageStorageType: pulumi.Output<string | undefined>;
     /**
+     * Checks the checksum file from the COS bucket against the one computed on the downloaded image.
+     */
+    declare public readonly piSourceChecksum: pulumi.Output<boolean | undefined>;
+    /**
      * The user tags attached to this resource.
      */
     declare public readonly piUserTags: pulumi.Output<string[]>;
@@ -144,6 +148,7 @@ export class PiImage extends pulumi.CustomResource {
             resourceInputs["piImageSecretKey"] = state?.piImageSecretKey;
             resourceInputs["piImageStoragePool"] = state?.piImageStoragePool;
             resourceInputs["piImageStorageType"] = state?.piImageStorageType;
+            resourceInputs["piSourceChecksum"] = state?.piSourceChecksum;
             resourceInputs["piUserTags"] = state?.piUserTags;
         } else {
             const args = argsOrState as PiImageArgs | undefined;
@@ -167,6 +172,7 @@ export class PiImage extends pulumi.CustomResource {
             resourceInputs["piImageSecretKey"] = args?.piImageSecretKey ? pulumi.secret(args.piImageSecretKey) : undefined;
             resourceInputs["piImageStoragePool"] = args?.piImageStoragePool;
             resourceInputs["piImageStorageType"] = args?.piImageStorageType;
+            resourceInputs["piSourceChecksum"] = args?.piSourceChecksum;
             resourceInputs["piUserTags"] = args?.piUserTags;
             resourceInputs["crn"] = undefined /*out*/;
             resourceInputs["imageId"] = undefined /*out*/;
@@ -185,80 +191,84 @@ export interface PiImageState {
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Image ID
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and piAffinityVolume is not provided
      */
-    piAffinityInstance?: pulumi.Input<string>;
+    piAffinityInstance?: pulumi.Input<string | undefined>;
     /**
      * Affinity policy for image; ignored if piImageStoragePool provided; for policy affinity requires one of piAffinityInstance or piAffinityVolume to be specified; for policy anti-affinity requires one of piAntiAffinityInstances or piAntiAffinityVolumes to be specified
      */
-    piAffinityPolicy?: pulumi.Input<string>;
+    piAffinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and piAffinityInstance is not provided
      */
-    piAffinityVolume?: pulumi.Input<string>;
+    piAffinityVolume?: pulumi.Input<string | undefined>;
     /**
      * List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityVolumes is not provided
      */
-    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityInstances is not provided
      */
-    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage access key; required for buckets with private access
      */
-    piImageAccessKey?: pulumi.Input<string>;
+    piImageAccessKey?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the bucket has public or private access
      */
-    piImageBucketAccess?: pulumi.Input<string>;
+    piImageBucketAccess?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage image filename
      */
-    piImageBucketFileName?: pulumi.Input<string>;
+    piImageBucketFileName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage bucket name; bucket-name[/optional/folder]
      */
-    piImageBucketName?: pulumi.Input<string>;
+    piImageBucketName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage region
      */
-    piImageBucketRegion?: pulumi.Input<string>;
+    piImageBucketRegion?: pulumi.Input<string | undefined>;
     /**
      * Instance image id
      */
-    piImageId?: pulumi.Input<string>;
-    piImageImportDetails?: pulumi.Input<inputs.PiImagePiImageImportDetails>;
+    piImageId?: pulumi.Input<string | undefined>;
+    piImageImportDetails?: pulumi.Input<inputs.PiImagePiImageImportDetails | undefined>;
     /**
      * Image name
      */
-    piImageName?: pulumi.Input<string>;
+    piImageName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage secret key; required for buckets with private access
      */
-    piImageSecretKey?: pulumi.Input<string>;
+    piImageSecretKey?: pulumi.Input<string | undefined>;
     /**
      * Storage pool where the image will be loaded, if provided then piAffinityPolicy will be ignored
      */
-    piImageStoragePool?: pulumi.Input<string>;
+    piImageStoragePool?: pulumi.Input<string | undefined>;
     /**
      * Type of storage; If not specified, default is tier3
      */
-    piImageStorageType?: pulumi.Input<string>;
+    piImageStorageType?: pulumi.Input<string | undefined>;
+    /**
+     * Checks the checksum file from the COS bucket against the one computed on the downloaded image.
+     */
+    piSourceChecksum?: pulumi.Input<boolean | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -268,23 +278,23 @@ export interface PiImageArgs {
     /**
      * PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and piAffinityVolume is not provided
      */
-    piAffinityInstance?: pulumi.Input<string>;
+    piAffinityInstance?: pulumi.Input<string | undefined>;
     /**
      * Affinity policy for image; ignored if piImageStoragePool provided; for policy affinity requires one of piAffinityInstance or piAffinityVolume to be specified; for policy anti-affinity requires one of piAntiAffinityInstances or piAntiAffinityVolumes to be specified
      */
-    piAffinityPolicy?: pulumi.Input<string>;
+    piAffinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and piAffinityInstance is not provided
      */
-    piAffinityVolume?: pulumi.Input<string>;
+    piAffinityVolume?: pulumi.Input<string | undefined>;
     /**
      * List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityVolumes is not provided
      */
-    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityInstances?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and piAntiAffinityInstances is not provided
      */
-    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    piAntiAffinityVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -292,46 +302,50 @@ export interface PiImageArgs {
     /**
      * Cloud Object Storage access key; required for buckets with private access
      */
-    piImageAccessKey?: pulumi.Input<string>;
+    piImageAccessKey?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the bucket has public or private access
      */
-    piImageBucketAccess?: pulumi.Input<string>;
+    piImageBucketAccess?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage image filename
      */
-    piImageBucketFileName?: pulumi.Input<string>;
+    piImageBucketFileName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage bucket name; bucket-name[/optional/folder]
      */
-    piImageBucketName?: pulumi.Input<string>;
+    piImageBucketName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage region
      */
-    piImageBucketRegion?: pulumi.Input<string>;
+    piImageBucketRegion?: pulumi.Input<string | undefined>;
     /**
      * Instance image id
      */
-    piImageId?: pulumi.Input<string>;
-    piImageImportDetails?: pulumi.Input<inputs.PiImagePiImageImportDetails>;
+    piImageId?: pulumi.Input<string | undefined>;
+    piImageImportDetails?: pulumi.Input<inputs.PiImagePiImageImportDetails | undefined>;
     /**
      * Image name
      */
-    piImageName?: pulumi.Input<string>;
+    piImageName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Object Storage secret key; required for buckets with private access
      */
-    piImageSecretKey?: pulumi.Input<string>;
+    piImageSecretKey?: pulumi.Input<string | undefined>;
     /**
      * Storage pool where the image will be loaded, if provided then piAffinityPolicy will be ignored
      */
-    piImageStoragePool?: pulumi.Input<string>;
+    piImageStoragePool?: pulumi.Input<string | undefined>;
     /**
      * Type of storage; If not specified, default is tier3
      */
-    piImageStorageType?: pulumi.Input<string>;
+    piImageStorageType?: pulumi.Input<string | undefined>;
+    /**
+     * Checks the checksum file from the COS bucket against the one computed on the downloaded image.
+     */
+    piSourceChecksum?: pulumi.Input<boolean | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

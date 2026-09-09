@@ -61,6 +61,10 @@ export class IamServiceApiKey extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly entityTag: pulumi.Output<string>;
     /**
+     * Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. WARNING An API key will be permanently and irrevocably deleted when both the expiresAt and modifiedAt timestamps are more than ninety (90) days in the past, regardless of the key's locked status or any other state.
+     */
+    declare public readonly expiresAt: pulumi.Output<string | undefined>;
+    /**
      * File where api key is to be stored
      */
     declare public readonly file: pulumi.Output<string | undefined>;
@@ -105,6 +109,7 @@ export class IamServiceApiKey extends pulumi.CustomResource {
             resourceInputs["crn"] = state?.crn;
             resourceInputs["description"] = state?.description;
             resourceInputs["entityTag"] = state?.entityTag;
+            resourceInputs["expiresAt"] = state?.expiresAt;
             resourceInputs["file"] = state?.file;
             resourceInputs["iamServiceId"] = state?.iamServiceId;
             resourceInputs["locked"] = state?.locked;
@@ -118,6 +123,7 @@ export class IamServiceApiKey extends pulumi.CustomResource {
             }
             resourceInputs["apikey"] = args?.apikey ? pulumi.secret(args.apikey) : undefined;
             resourceInputs["description"] = args?.description;
+            resourceInputs["expiresAt"] = args?.expiresAt;
             resourceInputs["file"] = args?.file;
             resourceInputs["iamServiceId"] = args?.iamServiceId;
             resourceInputs["locked"] = args?.locked;
@@ -144,55 +150,59 @@ export interface IamServiceApiKeyState {
     /**
      * The account ID of the API key
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * API key value for this API key
      */
-    apikey?: pulumi.Input<string>;
+    apikey?: pulumi.Input<string | undefined>;
     /**
      * The date and time Service API Key was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of the service which created the API key
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * crn of the Service API Key
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * description of the API key
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Version of the API Key details object
      */
-    entityTag?: pulumi.Input<string>;
+    entityTag?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. WARNING An API key will be permanently and irrevocably deleted when both the expiresAt and modifiedAt timestamps are more than ninety (90) days in the past, regardless of the key's locked status or any other state.
+     */
+    expiresAt?: pulumi.Input<string | undefined>;
     /**
      * File where api key is to be stored
      */
-    file?: pulumi.Input<string>;
+    file?: pulumi.Input<string | undefined>;
     /**
      * The service iamId that this API key authenticates
      */
-    iamServiceId?: pulumi.Input<string>;
+    iamServiceId?: pulumi.Input<string | undefined>;
     /**
      * The API key cannot be changed if set to true
      */
-    locked?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time Service API Key was modified
      */
-    modifiedAt?: pulumi.Input<string>;
+    modifiedAt?: pulumi.Input<string | undefined>;
     /**
      * Name of the Service API key
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Boolean value deciding whether API key value is retrievable in the future
      */
-    storeValue?: pulumi.Input<boolean>;
+    storeValue?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -202,15 +212,19 @@ export interface IamServiceApiKeyArgs {
     /**
      * API key value for this API key
      */
-    apikey?: pulumi.Input<string>;
+    apikey?: pulumi.Input<string | undefined>;
     /**
      * description of the API key
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. WARNING An API key will be permanently and irrevocably deleted when both the expiresAt and modifiedAt timestamps are more than ninety (90) days in the past, regardless of the key's locked status or any other state.
+     */
+    expiresAt?: pulumi.Input<string | undefined>;
     /**
      * File where api key is to be stored
      */
-    file?: pulumi.Input<string>;
+    file?: pulumi.Input<string | undefined>;
     /**
      * The service iamId that this API key authenticates
      */
@@ -218,13 +232,13 @@ export interface IamServiceApiKeyArgs {
     /**
      * The API key cannot be changed if set to true
      */
-    locked?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Service API key
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Boolean value deciding whether API key value is retrievable in the future
      */
-    storeValue?: pulumi.Input<boolean>;
+    storeValue?: pulumi.Input<boolean | undefined>;
 }

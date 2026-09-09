@@ -27,10 +27,13 @@ class GetIsIkePolicyResult:
     """
     A collection of values returned by getIsIkePolicy.
     """
-    def __init__(__self__, authentication_algorithm=None, connections=None, created_at=None, dh_group=None, encryption_algorithm=None, href=None, id=None, ike_policy=None, ike_version=None, key_lifetime=None, name=None, negotiation_mode=None, resource_groups=None, resource_type=None):
+    def __init__(__self__, authentication_algorithm=None, authentication_algorithms=None, connections=None, created_at=None, dh_group=None, dh_groups=None, encryption_algorithm=None, encryption_algorithms=None, href=None, id=None, ike_policy=None, ike_version=None, key_lifetime=None, name=None, negotiation_mode=None, resource_groups=None, resource_type=None):
         if authentication_algorithm and not isinstance(authentication_algorithm, str):
             raise TypeError("Expected argument 'authentication_algorithm' to be a str")
         pulumi.set(__self__, "authentication_algorithm", authentication_algorithm)
+        if authentication_algorithms and not isinstance(authentication_algorithms, list):
+            raise TypeError("Expected argument 'authentication_algorithms' to be a list")
+        pulumi.set(__self__, "authentication_algorithms", authentication_algorithms)
         if connections and not isinstance(connections, list):
             raise TypeError("Expected argument 'connections' to be a list")
         pulumi.set(__self__, "connections", connections)
@@ -40,9 +43,15 @@ class GetIsIkePolicyResult:
         if dh_group and not isinstance(dh_group, int):
             raise TypeError("Expected argument 'dh_group' to be a int")
         pulumi.set(__self__, "dh_group", dh_group)
+        if dh_groups and not isinstance(dh_groups, list):
+            raise TypeError("Expected argument 'dh_groups' to be a list")
+        pulumi.set(__self__, "dh_groups", dh_groups)
         if encryption_algorithm and not isinstance(encryption_algorithm, str):
             raise TypeError("Expected argument 'encryption_algorithm' to be a str")
         pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_algorithms and not isinstance(encryption_algorithms, list):
+            raise TypeError("Expected argument 'encryption_algorithms' to be a list")
+        pulumi.set(__self__, "encryption_algorithms", encryption_algorithms)
         if href and not isinstance(href, str):
             raise TypeError("Expected argument 'href' to be a str")
         pulumi.set(__self__, "href", href)
@@ -77,6 +86,11 @@ class GetIsIkePolicyResult:
         return pulumi.get(self, "authentication_algorithm")
 
     @_builtins.property
+    @pulumi.getter(name="authenticationAlgorithms")
+    def authentication_algorithms(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "authentication_algorithms")
+
+    @_builtins.property
     @pulumi.getter
     def connections(self) -> Sequence['outputs.GetIsIkePolicyConnectionResult']:
         return pulumi.get(self, "connections")
@@ -92,9 +106,19 @@ class GetIsIkePolicyResult:
         return pulumi.get(self, "dh_group")
 
     @_builtins.property
+    @pulumi.getter(name="dhGroups")
+    def dh_groups(self) -> Sequence[_builtins.int]:
+        return pulumi.get(self, "dh_groups")
+
+    @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
     def encryption_algorithm(self) -> _builtins.str:
         return pulumi.get(self, "encryption_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithms")
+    def encryption_algorithms(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "encryption_algorithms")
 
     @_builtins.property
     @pulumi.getter
@@ -152,10 +176,13 @@ class AwaitableGetIsIkePolicyResult(GetIsIkePolicyResult):
             yield self
         return GetIsIkePolicyResult(
             authentication_algorithm=self.authentication_algorithm,
+            authentication_algorithms=self.authentication_algorithms,
             connections=self.connections,
             created_at=self.created_at,
             dh_group=self.dh_group,
+            dh_groups=self.dh_groups,
             encryption_algorithm=self.encryption_algorithm,
+            encryption_algorithms=self.encryption_algorithms,
             href=self.href,
             id=self.id,
             ike_policy=self.ike_policy,
@@ -181,10 +208,13 @@ def get_is_ike_policy(ike_policy: Optional[_builtins.str] = None,
 
     return AwaitableGetIsIkePolicyResult(
         authentication_algorithm=pulumi.get(__ret__, 'authentication_algorithm'),
+        authentication_algorithms=pulumi.get(__ret__, 'authentication_algorithms'),
         connections=pulumi.get(__ret__, 'connections'),
         created_at=pulumi.get(__ret__, 'created_at'),
         dh_group=pulumi.get(__ret__, 'dh_group'),
+        dh_groups=pulumi.get(__ret__, 'dh_groups'),
         encryption_algorithm=pulumi.get(__ret__, 'encryption_algorithm'),
+        encryption_algorithms=pulumi.get(__ret__, 'encryption_algorithms'),
         href=pulumi.get(__ret__, 'href'),
         id=pulumi.get(__ret__, 'id'),
         ike_policy=pulumi.get(__ret__, 'ike_policy'),
@@ -194,8 +224,8 @@ def get_is_ike_policy(ike_policy: Optional[_builtins.str] = None,
         negotiation_mode=pulumi.get(__ret__, 'negotiation_mode'),
         resource_groups=pulumi.get(__ret__, 'resource_groups'),
         resource_type=pulumi.get(__ret__, 'resource_type'))
-def get_is_ike_policy_output(ike_policy: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_ike_policy_output(ike_policy: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsIkePolicyResult]:
     """
     Use this data source to access information about an existing resource.
@@ -207,10 +237,13 @@ def get_is_ike_policy_output(ike_policy: Optional[pulumi.Input[Optional[_builtin
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsIkePolicy:getIsIkePolicy', __args__, opts=opts, typ=GetIsIkePolicyResult)
     return __ret__.apply(lambda __response__: GetIsIkePolicyResult(
         authentication_algorithm=pulumi.get(__response__, 'authentication_algorithm'),
+        authentication_algorithms=pulumi.get(__response__, 'authentication_algorithms'),
         connections=pulumi.get(__response__, 'connections'),
         created_at=pulumi.get(__response__, 'created_at'),
         dh_group=pulumi.get(__response__, 'dh_group'),
+        dh_groups=pulumi.get(__response__, 'dh_groups'),
         encryption_algorithm=pulumi.get(__response__, 'encryption_algorithm'),
+        encryption_algorithms=pulumi.get(__response__, 'encryption_algorithms'),
         href=pulumi.get(__response__, 'href'),
         id=pulumi.get(__response__, 'id'),
         ike_policy=pulumi.get(__response__, 'ike_policy'),

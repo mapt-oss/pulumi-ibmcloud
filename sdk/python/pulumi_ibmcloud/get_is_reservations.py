@@ -106,9 +106,9 @@ def get_is_reservations(name: Optional[_builtins.str] = None,
         reservations=pulumi.get(__ret__, 'reservations'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         zone_name=pulumi.get(__ret__, 'zone_name'))
-def get_is_reservations_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               zone_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_reservations_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               zone_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsReservationsResult]:
     """
     Use this data source to access information about an existing resource.

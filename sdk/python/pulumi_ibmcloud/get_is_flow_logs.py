@@ -154,13 +154,13 @@ def get_is_flow_logs(name: Optional[_builtins.str] = None,
         vpc=pulumi.get(__ret__, 'vpc'),
         vpc_crn=pulumi.get(__ret__, 'vpc_crn'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'))
-def get_is_flow_logs_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            target: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            target_resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            vpc: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            vpc_crn: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_flow_logs_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            target: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            target_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            vpc: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            vpc_crn: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsFlowLogsResult]:
     """
     Use this data source to access information about an existing resource.

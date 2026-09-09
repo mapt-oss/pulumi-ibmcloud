@@ -36,16 +36,34 @@ export class IsIkePolicy extends pulumi.CustomResource {
 
     /**
      * Authentication algorithm type
+     *
+     * @deprecated `authenticationAlgorithm` is deprecated in favor of `authenticationAlgorithms`. The existing `authenticationAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authenticationAlgorithms`. Use `authenticationAlgorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.
      */
     declare public readonly authenticationAlgorithm: pulumi.Output<string>;
     /**
+     * The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    declare public readonly authenticationAlgorithms: pulumi.Output<string[]>;
+    /**
      * IKE DH group
+     *
+     * @deprecated `dhGroup` is deprecated in favor of `dhGroups`. The existing `dhGroup` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dhGroups`. Use `dhGroups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.
      */
     declare public readonly dhGroup: pulumi.Output<number>;
     /**
+     * The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
+     */
+    declare public readonly dhGroups: pulumi.Output<number[]>;
+    /**
      * Encryption alogorithm type
+     *
+     * @deprecated `encryptionAlgorithm` is deprecated in favor of `encryptionAlgorithms`. The existing `encryptionAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryptionAlgorithms`. Use `encryptionAlgorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.
      */
     declare public readonly encryptionAlgorithm: pulumi.Output<string>;
+    /**
+     * The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    declare public readonly encryptionAlgorithms: pulumi.Output<string[]>;
     /**
      * IKE href value
      */
@@ -91,15 +109,18 @@ export class IsIkePolicy extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: IsIkePolicyArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: IsIkePolicyArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: IsIkePolicyArgs | IsIkePolicyState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IsIkePolicyState | undefined;
             resourceInputs["authenticationAlgorithm"] = state?.authenticationAlgorithm;
+            resourceInputs["authenticationAlgorithms"] = state?.authenticationAlgorithms;
             resourceInputs["dhGroup"] = state?.dhGroup;
+            resourceInputs["dhGroups"] = state?.dhGroups;
             resourceInputs["encryptionAlgorithm"] = state?.encryptionAlgorithm;
+            resourceInputs["encryptionAlgorithms"] = state?.encryptionAlgorithms;
             resourceInputs["href"] = state?.href;
             resourceInputs["ikeVersion"] = state?.ikeVersion;
             resourceInputs["keyLifetime"] = state?.keyLifetime;
@@ -112,18 +133,12 @@ export class IsIkePolicy extends pulumi.CustomResource {
             resourceInputs["vpnConnections"] = state?.vpnConnections;
         } else {
             const args = argsOrState as IsIkePolicyArgs | undefined;
-            if (args?.authenticationAlgorithm === undefined && !opts.urn) {
-                throw new Error("Missing required property 'authenticationAlgorithm'");
-            }
-            if (args?.dhGroup === undefined && !opts.urn) {
-                throw new Error("Missing required property 'dhGroup'");
-            }
-            if (args?.encryptionAlgorithm === undefined && !opts.urn) {
-                throw new Error("Missing required property 'encryptionAlgorithm'");
-            }
             resourceInputs["authenticationAlgorithm"] = args?.authenticationAlgorithm;
+            resourceInputs["authenticationAlgorithms"] = args?.authenticationAlgorithms;
             resourceInputs["dhGroup"] = args?.dhGroup;
+            resourceInputs["dhGroups"] = args?.dhGroups;
             resourceInputs["encryptionAlgorithm"] = args?.encryptionAlgorithm;
+            resourceInputs["encryptionAlgorithms"] = args?.encryptionAlgorithms;
             resourceInputs["ikeVersion"] = args?.ikeVersion;
             resourceInputs["keyLifetime"] = args?.keyLifetime;
             resourceInputs["name"] = args?.name;
@@ -146,53 +161,71 @@ export class IsIkePolicy extends pulumi.CustomResource {
 export interface IsIkePolicyState {
     /**
      * Authentication algorithm type
+     *
+     * @deprecated `authenticationAlgorithm` is deprecated in favor of `authenticationAlgorithms`. The existing `authenticationAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authenticationAlgorithms`. Use `authenticationAlgorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.
      */
-    authenticationAlgorithm?: pulumi.Input<string>;
+    authenticationAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    authenticationAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IKE DH group
+     *
+     * @deprecated `dhGroup` is deprecated in favor of `dhGroups`. The existing `dhGroup` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dhGroups`. Use `dhGroups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.
      */
-    dhGroup?: pulumi.Input<number>;
+    dhGroup?: pulumi.Input<number | undefined>;
+    /**
+     * The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
+     */
+    dhGroups?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Encryption alogorithm type
+     *
+     * @deprecated `encryptionAlgorithm` is deprecated in favor of `encryptionAlgorithms`. The existing `encryptionAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryptionAlgorithms`. Use `encryptionAlgorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.
      */
-    encryptionAlgorithm?: pulumi.Input<string>;
+    encryptionAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    encryptionAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IKE href value
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * IKE version
      */
-    ikeVersion?: pulumi.Input<number>;
+    ikeVersion?: pulumi.Input<number | undefined>;
     /**
      * IKE Key lifetime
      */
-    keyLifetime?: pulumi.Input<number>;
+    keyLifetime?: pulumi.Input<number | undefined>;
     /**
      * IKE name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * IKE negotiation mode
      */
-    negotiationMode?: pulumi.Input<string>;
+    negotiationMode?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * IKE resource group ID
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
-    vpnConnections?: pulumi.Input<pulumi.Input<inputs.IsIkePolicyVpnConnection>[]>;
+    resourceName?: pulumi.Input<string | undefined>;
+    vpnConnections?: pulumi.Input<pulumi.Input<inputs.IsIkePolicyVpnConnection>[] | undefined>;
 }
 
 /**
@@ -201,30 +234,48 @@ export interface IsIkePolicyState {
 export interface IsIkePolicyArgs {
     /**
      * Authentication algorithm type
+     *
+     * @deprecated `authenticationAlgorithm` is deprecated in favor of `authenticationAlgorithms`. The existing `authenticationAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `authenticationAlgorithms`. Use `authenticationAlgorithms` to configure multiple authentication algorithms. This enhancement adds support for multi-algorithm authentication while preserving compatibility with earlier single-algorithm configurations.
      */
-    authenticationAlgorithm: pulumi.Input<string>;
+    authenticationAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    authenticationAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IKE DH group
+     *
+     * @deprecated `dhGroup` is deprecated in favor of `dhGroups`. The existing `dhGroup` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `dhGroups`. Use `dhGroups` to configure multiple Diffie-Hellman groups. This enhancement adds support for multi-group DH configurations while preserving compatibility with earlier single-group configurations.
      */
-    dhGroup: pulumi.Input<number>;
+    dhGroup?: pulumi.Input<number | undefined>;
+    /**
+     * The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
+     */
+    dhGroups?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Encryption alogorithm type
+     *
+     * @deprecated `encryptionAlgorithm` is deprecated in favor of `encryptionAlgorithms`. The existing `encryptionAlgorithm` field will continue to function without any behavior changes to maintain backward compatibility. No migration is required for existing configurations, for newer use `encryptionAlgorithms`. Use `encryptionAlgorithms` to configure multiple encryption algorithms. This enhancement adds support for multi-algorithm encryption while preserving compatibility with earlier single-algorithm configurations.
      */
-    encryptionAlgorithm: pulumi.Input<string>;
+    encryptionAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    encryptionAlgorithms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IKE version
      */
-    ikeVersion?: pulumi.Input<number>;
+    ikeVersion?: pulumi.Input<number | undefined>;
     /**
      * IKE Key lifetime
      */
-    keyLifetime?: pulumi.Input<number>;
+    keyLifetime?: pulumi.Input<number | undefined>;
     /**
      * IKE name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * IKE resource group ID
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

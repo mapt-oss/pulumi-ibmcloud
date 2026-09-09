@@ -34,6 +34,7 @@ export class IsSecurityGroupRule extends pulumi.CustomResource {
         return obj['__pulumiType'] === IsSecurityGroupRule.__pulumiType;
     }
 
+    declare public readonly code: pulumi.Output<number>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
@@ -44,8 +45,10 @@ export class IsSecurityGroupRule extends pulumi.CustomResource {
     declare public readonly group: pulumi.Output<string>;
     /**
      * protocol=icmp
+     *
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
      */
-    declare public readonly icmp: pulumi.Output<outputs.IsSecurityGroupRuleIcmp | undefined>;
+    declare public readonly icmp: pulumi.Output<outputs.IsSecurityGroupRuleIcmp>;
     /**
      * IP version: ipv4
      */
@@ -55,9 +58,15 @@ export class IsSecurityGroupRule extends pulumi.CustomResource {
      */
     declare public readonly local: pulumi.Output<string>;
     /**
-     * The Security Group Rule Protocol
+     * The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    declare public /*out*/ readonly protocol: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly portMax: pulumi.Output<number>;
+    declare public readonly portMin: pulumi.Output<number>;
+    /**
+     * The name of the network protocol
+     */
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * The crn of the Security Group
      */
@@ -72,12 +81,17 @@ export class IsSecurityGroupRule extends pulumi.CustomResource {
     declare public /*out*/ readonly ruleId: pulumi.Output<string>;
     /**
      * protocol=tcp
+     *
+     * @deprecated tcp is deprecated, use 'protocol', 'code', and 'type' instead.
      */
-    declare public readonly tcp: pulumi.Output<outputs.IsSecurityGroupRuleTcp | undefined>;
+    declare public readonly tcp: pulumi.Output<outputs.IsSecurityGroupRuleTcp>;
+    declare public readonly type: pulumi.Output<number>;
     /**
      * protocol=udp
+     *
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.
      */
-    declare public readonly udp: pulumi.Output<outputs.IsSecurityGroupRuleUdp | undefined>;
+    declare public readonly udp: pulumi.Output<outputs.IsSecurityGroupRuleUdp>;
 
     /**
      * Create a IsSecurityGroupRule resource with the given unique name, arguments, and options.
@@ -92,16 +106,21 @@ export class IsSecurityGroupRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IsSecurityGroupRuleState | undefined;
+            resourceInputs["code"] = state?.code;
             resourceInputs["direction"] = state?.direction;
             resourceInputs["group"] = state?.group;
             resourceInputs["icmp"] = state?.icmp;
             resourceInputs["ipVersion"] = state?.ipVersion;
             resourceInputs["local"] = state?.local;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["portMax"] = state?.portMax;
+            resourceInputs["portMin"] = state?.portMin;
             resourceInputs["protocol"] = state?.protocol;
             resourceInputs["relatedCrn"] = state?.relatedCrn;
             resourceInputs["remote"] = state?.remote;
             resourceInputs["ruleId"] = state?.ruleId;
             resourceInputs["tcp"] = state?.tcp;
+            resourceInputs["type"] = state?.type;
             resourceInputs["udp"] = state?.udp;
         } else {
             const args = argsOrState as IsSecurityGroupRuleArgs | undefined;
@@ -111,15 +130,20 @@ export class IsSecurityGroupRule extends pulumi.CustomResource {
             if (args?.group === undefined && !opts.urn) {
                 throw new Error("Missing required property 'group'");
             }
+            resourceInputs["code"] = args?.code;
             resourceInputs["direction"] = args?.direction;
             resourceInputs["group"] = args?.group;
             resourceInputs["icmp"] = args?.icmp;
             resourceInputs["ipVersion"] = args?.ipVersion;
             resourceInputs["local"] = args?.local;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["portMax"] = args?.portMax;
+            resourceInputs["portMin"] = args?.portMin;
+            resourceInputs["protocol"] = args?.protocol;
             resourceInputs["remote"] = args?.remote;
             resourceInputs["tcp"] = args?.tcp;
+            resourceInputs["type"] = args?.type;
             resourceInputs["udp"] = args?.udp;
-            resourceInputs["protocol"] = undefined /*out*/;
             resourceInputs["relatedCrn"] = undefined /*out*/;
             resourceInputs["ruleId"] = undefined /*out*/;
         }
@@ -132,56 +156,71 @@ export class IsSecurityGroupRule extends pulumi.CustomResource {
  * Input properties used for looking up and filtering IsSecurityGroupRule resources.
  */
 export interface IsSecurityGroupRuleState {
+    code?: pulumi.Input<number | undefined>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     /**
      * Security group id
      */
-    group?: pulumi.Input<string>;
+    group?: pulumi.Input<string | undefined>;
     /**
      * protocol=icmp
+     *
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
      */
-    icmp?: pulumi.Input<inputs.IsSecurityGroupRuleIcmp>;
+    icmp?: pulumi.Input<inputs.IsSecurityGroupRuleIcmp | undefined>;
     /**
      * IP version: ipv4
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * Security group id: an IP address, a CIDR block, or a single security group identifier
      */
-    local?: pulumi.Input<string>;
+    local?: pulumi.Input<string | undefined>;
     /**
-     * The Security Group Rule Protocol
+     * The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    protocol?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    portMax?: pulumi.Input<number | undefined>;
+    portMin?: pulumi.Input<number | undefined>;
+    /**
+     * The name of the network protocol
+     */
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The crn of the Security Group
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
     /**
      * Security group local ip: an IP address, a CIDR block
      */
-    remote?: pulumi.Input<string>;
+    remote?: pulumi.Input<string | undefined>;
     /**
      * Rule id
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
     /**
      * protocol=tcp
+     *
+     * @deprecated tcp is deprecated, use 'protocol', 'code', and 'type' instead.
      */
-    tcp?: pulumi.Input<inputs.IsSecurityGroupRuleTcp>;
+    tcp?: pulumi.Input<inputs.IsSecurityGroupRuleTcp | undefined>;
+    type?: pulumi.Input<number | undefined>;
     /**
      * protocol=udp
+     *
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.
      */
-    udp?: pulumi.Input<inputs.IsSecurityGroupRuleUdp>;
+    udp?: pulumi.Input<inputs.IsSecurityGroupRuleUdp | undefined>;
 }
 
 /**
  * The set of arguments for constructing a IsSecurityGroupRule resource.
  */
 export interface IsSecurityGroupRuleArgs {
+    code?: pulumi.Input<number | undefined>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
@@ -192,26 +231,43 @@ export interface IsSecurityGroupRuleArgs {
     group: pulumi.Input<string>;
     /**
      * protocol=icmp
+     *
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
      */
-    icmp?: pulumi.Input<inputs.IsSecurityGroupRuleIcmp>;
+    icmp?: pulumi.Input<inputs.IsSecurityGroupRuleIcmp | undefined>;
     /**
      * IP version: ipv4
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * Security group id: an IP address, a CIDR block, or a single security group identifier
      */
-    local?: pulumi.Input<string>;
+    local?: pulumi.Input<string | undefined>;
+    /**
+     * The name for this security group rule. The name must not be used by another rule in the security group. If unspecified, the name will be a hyphenated list of randomly-selected words.
+     */
+    name?: pulumi.Input<string | undefined>;
+    portMax?: pulumi.Input<number | undefined>;
+    portMin?: pulumi.Input<number | undefined>;
+    /**
+     * The name of the network protocol
+     */
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * Security group local ip: an IP address, a CIDR block
      */
-    remote?: pulumi.Input<string>;
+    remote?: pulumi.Input<string | undefined>;
     /**
      * protocol=tcp
+     *
+     * @deprecated tcp is deprecated, use 'protocol', 'code', and 'type' instead.
      */
-    tcp?: pulumi.Input<inputs.IsSecurityGroupRuleTcp>;
+    tcp?: pulumi.Input<inputs.IsSecurityGroupRuleTcp | undefined>;
+    type?: pulumi.Input<number | undefined>;
     /**
      * protocol=udp
+     *
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', and 'port_max' instead.
      */
-    udp?: pulumi.Input<inputs.IsSecurityGroupRuleUdp>;
+    udp?: pulumi.Input<inputs.IsSecurityGroupRuleUdp | undefined>;
 }

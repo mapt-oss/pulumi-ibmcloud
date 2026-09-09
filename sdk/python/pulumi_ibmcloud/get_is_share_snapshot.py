@@ -244,8 +244,8 @@ def get_is_share_snapshot(share: Optional[_builtins.str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         user_tags=pulumi.get(__ret__, 'user_tags'),
         zones=pulumi.get(__ret__, 'zones'))
-def get_is_share_snapshot_output(share: Optional[pulumi.Input[_builtins.str]] = None,
-                                 share_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_share_snapshot_output(share: pulumi.Input[Optional[_builtins.str]] = None,
+                                 share_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsShareSnapshotResult]:
     """
     Use this data source to access information about an existing resource.

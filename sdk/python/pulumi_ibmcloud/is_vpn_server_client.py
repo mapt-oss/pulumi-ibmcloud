@@ -21,9 +21,10 @@ class IsVpnServerClientArgs:
     def __init__(__self__, *,
                  vpn_client: pulumi.Input[_builtins.str],
                  vpn_server: pulumi.Input[_builtins.str],
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a IsVpnServerClient resource.
+
         :param pulumi.Input[_builtins.str] vpn_client: The VPN Client identifier.
         :param pulumi.Input[_builtins.str] vpn_server: The VPN server identifier.
         :param pulumi.Input[_builtins.bool] delete: The delete to use for this VPN client to be deleted or not, when false, client is disconneted and when set to true client is deleted.
@@ -59,27 +60,28 @@ class IsVpnServerClientArgs:
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The delete to use for this VPN client to be deleted or not, when false, client is disconneted and when set to true client is deleted.
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
 
 @pulumi.input_type
 class _IsVpnServerClientState:
     def __init__(__self__, *,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 vpn_client: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpn_server: Optional[pulumi.Input[_builtins.str]] = None):
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 vpn_client: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpn_server: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVpnServerClient resources.
+
         :param pulumi.Input[_builtins.bool] delete: The delete to use for this VPN client to be deleted or not, when false, client is disconneted and when set to true client is deleted.
         :param pulumi.Input[_builtins.str] description: description of the result.
         :param pulumi.Input[_builtins.int] status_code: status code of the result.
@@ -99,62 +101,62 @@ class _IsVpnServerClientState:
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The delete to use for this VPN client to be deleted or not, when false, client is disconneted and when set to true client is deleted.
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of the result.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="statusCode")
-    def status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         status code of the result.
         """
         return pulumi.get(self, "status_code")
 
     @status_code.setter
-    def status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "status_code", value)
 
     @_builtins.property
     @pulumi.getter(name="vpnClient")
-    def vpn_client(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpn_client(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPN Client identifier.
         """
         return pulumi.get(self, "vpn_client")
 
     @vpn_client.setter
-    def vpn_client(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpn_client(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpn_client", value)
 
     @_builtins.property
     @pulumi.getter(name="vpnServer")
-    def vpn_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpn_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPN server identifier.
         """
         return pulumi.get(self, "vpn_server")
 
     @vpn_server.setter
-    def vpn_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpn_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpn_server", value)
 
 
@@ -164,12 +166,13 @@ class IsVpnServerClient(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vpn_client: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpn_server: Optional[pulumi.Input[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vpn_client: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpn_server: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVpnServerClient resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] delete: The delete to use for this VPN client to be deleted or not, when false, client is disconneted and when set to true client is deleted.
@@ -184,6 +187,7 @@ class IsVpnServerClient(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVpnServerClient resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVpnServerClientArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -199,9 +203,9 @@ class IsVpnServerClient(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vpn_client: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpn_server: Optional[pulumi.Input[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vpn_client: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpn_server: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -230,11 +234,11 @@ class IsVpnServerClient(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            status_code: Optional[pulumi.Input[_builtins.int]] = None,
-            vpn_client: Optional[pulumi.Input[_builtins.str]] = None,
-            vpn_server: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVpnServerClient':
+            delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            status_code: pulumi.Input[Optional[_builtins.int]] = None,
+            vpn_client: pulumi.Input[Optional[_builtins.str]] = None,
+            vpn_server: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVpnServerClient':
         """
         Get an existing IsVpnServerClient resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

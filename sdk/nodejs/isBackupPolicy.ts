@@ -161,66 +161,66 @@ export interface IsBackupPolicyState {
     /**
      * The date and time that the backup policy was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this backup policy.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current healthState (if any).
      */
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsBackupPolicyHealthReason>[]>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsBackupPolicyHealthReason>[] | undefined>;
     /**
      * The health of this resource
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * The URL for this backup policy.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The included content for backups created using this policy
      */
-    includedContents?: pulumi.Input<pulumi.Input<string>[]>;
+    includedContents?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The date and time that the most recent job for this backup policy completed.
      */
-    lastJobCompletedAt?: pulumi.Input<string>;
+    lastJobCompletedAt?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the backup policy.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
      */
-    matchResourceType?: pulumi.Input<string>;
+    matchResourceType?: pulumi.Input<string | undefined>;
     /**
      * A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
      *
      * @deprecated match_resource_types is being deprecated. Use matchResourceType instead
      */
-    matchResourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    matchResourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user tags this backup policy applies to. Resources that have both a matching user tag and a matching type will be subject to the backup policy.
      */
-    matchUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    matchUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user-defined name for this backup policy. Names must be unique within the region this backup policy resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The scope for this backup policy.
      */
-    scope?: pulumi.Input<inputs.IsBackupPolicyScope>;
-    version?: pulumi.Input<string>;
+    scope?: pulumi.Input<inputs.IsBackupPolicyScope | undefined>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -230,17 +230,17 @@ export interface IsBackupPolicyArgs {
     /**
      * The included content for backups created using this policy
      */
-    includedContents?: pulumi.Input<pulumi.Input<string>[]>;
+    includedContents?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
      */
-    matchResourceType?: pulumi.Input<string>;
+    matchResourceType?: pulumi.Input<string | undefined>;
     /**
      * A resource type this backup policy applies to. Resources that have both a matching type and a matching user tag will be subject to the backup policy.
      *
      * @deprecated match_resource_types is being deprecated. Use matchResourceType instead
      */
-    matchResourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    matchResourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user tags this backup policy applies to. Resources that have both a matching user tag and a matching type will be subject to the backup policy.
      */
@@ -248,13 +248,13 @@ export interface IsBackupPolicyArgs {
     /**
      * The user-defined name for this backup policy. Names must be unique within the region this backup policy resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The scope for this backup policy.
      */
-    scope?: pulumi.Input<inputs.IsBackupPolicyScope>;
+    scope?: pulumi.Input<inputs.IsBackupPolicyScope | undefined>;
 }

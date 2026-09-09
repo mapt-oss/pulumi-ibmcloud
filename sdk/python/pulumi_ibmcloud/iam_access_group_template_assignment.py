@@ -23,9 +23,10 @@ class IamAccessGroupTemplateAssignmentArgs:
                  target_type: pulumi.Input[_builtins.str],
                  template_id: pulumi.Input[_builtins.str],
                  template_version: pulumi.Input[_builtins.str],
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamAccessGroupTemplateAssignment resource.
+
         :param pulumi.Input[_builtins.str] target: The ID of the entity that the assignment applies to.
         :param pulumi.Input[_builtins.str] target_type: The type of the entity that the assignment applies to.
         :param pulumi.Input[_builtins.str] template_id: The ID of the template that the assignment is based on.
@@ -89,36 +90,37 @@ class IamAccessGroupTemplateAssignmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional transaction id for the request.
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
 
 @pulumi.input_type
 class _IamAccessGroupTemplateAssignmentState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamAccessGroupTemplateAssignment resources.
+
         :param pulumi.Input[_builtins.str] account_id: The ID of the account that the assignment belongs to.
         :param pulumi.Input[_builtins.str] created_at: The date and time when the assignment was created.
         :param pulumi.Input[_builtins.str] created_by_id: The user or system that created the assignment.
@@ -164,167 +166,167 @@ class _IamAccessGroupTemplateAssignmentState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the account that the assignment belongs to.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the assignment was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user or system that created the assignment.
         """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
-    def created_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the assignment resource.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedAt")
-    def last_modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the assignment was last updated.
         """
         return pulumi.get(self, "last_modified_at")
 
     @last_modified_at.setter
-    def last_modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_at", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedById")
-    def last_modified_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user or system that last updated the assignment.
         """
         return pulumi.get(self, "last_modified_by_id")
 
     @last_modified_by_id.setter
-    def last_modified_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def operation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operation that the assignment applies to (e.g. 'assign', 'update', 'remove').
         """
         return pulumi.get(self, "operation")
 
     @operation.setter
-    def operation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the assignment (e.g. 'accepted', 'in_progress', 'succeeded', 'failed', 'superseded').
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the entity that the assignment applies to.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the entity that the assignment applies to.
         """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
-    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the template that the assignment is based on.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
     @_builtins.property
     @pulumi.getter(name="templateVersion")
-    def template_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the template that the assignment is based on.
         """
         return pulumi.get(self, "template_version")
 
     @template_version.setter
-    def template_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_version", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional transaction id for the request.
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
 
@@ -334,14 +336,15 @@ class IamAccessGroupTemplateAssignment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamAccessGroupTemplateAssignment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] target: The ID of the entity that the assignment applies to.
@@ -358,6 +361,7 @@ class IamAccessGroupTemplateAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccessGroupTemplateAssignment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccessGroupTemplateAssignmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -373,11 +377,11 @@ class IamAccessGroupTemplateAssignment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -419,20 +423,20 @@ class IamAccessGroupTemplateAssignment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            operation: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[_builtins.str]] = None,
-            target_type: Optional[pulumi.Input[_builtins.str]] = None,
-            template_id: Optional[pulumi.Input[_builtins.str]] = None,
-            template_version: Optional[pulumi.Input[_builtins.str]] = None,
-            transaction_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamAccessGroupTemplateAssignment':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            template_id: pulumi.Input[Optional[_builtins.str]] = None,
+            template_version: pulumi.Input[Optional[_builtins.str]] = None,
+            transaction_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamAccessGroupTemplateAssignment':
         """
         Get an existing IamAccessGroupTemplateAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

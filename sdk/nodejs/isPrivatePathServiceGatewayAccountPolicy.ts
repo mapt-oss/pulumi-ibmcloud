@@ -118,35 +118,35 @@ export interface IsPrivatePathServiceGatewayAccountPolicyState {
     /**
      * The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
      */
-    accessPolicy?: pulumi.Input<string>;
+    accessPolicy?: pulumi.Input<string | undefined>;
     /**
      * The account for this access policy.
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this account policy.
      */
-    accountPolicy?: pulumi.Input<string>;
+    accountPolicy?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the account policy was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The URL for this account policy.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The private path service gateway identifier.
      */
-    privatePathServiceGateway?: pulumi.Input<string>;
+    privatePathServiceGateway?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the account policy was updated.
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
 }
 
 /**

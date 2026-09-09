@@ -224,8 +224,8 @@ def get_is_backup_policy_job(backup_policy_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         status_reasons=pulumi.get(__ret__, 'status_reasons'),
         target_snapshots=pulumi.get(__ret__, 'target_snapshots'))
-def get_is_backup_policy_job_output(backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    identifier: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_backup_policy_job_output(backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    identifier: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBackupPolicyJobResult]:
     """
     Use this data source to access information about an existing resource.

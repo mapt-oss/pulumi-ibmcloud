@@ -132,47 +132,47 @@ export interface PiDhcpState {
     /**
      * The ID of the DHCP Server
      */
-    dhcpId?: pulumi.Input<string>;
+    dhcpId?: pulumi.Input<string | undefined>;
     /**
      * The list of DHCP Server PVM Instance leases
      */
-    leases?: pulumi.Input<pulumi.Input<inputs.PiDhcpLease>[]>;
+    leases?: pulumi.Input<pulumi.Input<inputs.PiDhcpLease>[] | undefined>;
     /**
      * The ID of the DHCP Server private network
      */
-    networkId?: pulumi.Input<string>;
+    networkId?: pulumi.Input<string | undefined>;
     /**
      * The name of the DHCP Server private network
      */
-    networkName?: pulumi.Input<string>;
+    networkName?: pulumi.Input<string | undefined>;
     /**
      * Optional cidr for DHCP private network
      */
-    piCidr?: pulumi.Input<string>;
+    piCidr?: pulumi.Input<string | undefined>;
     /**
      * Optional cloud connection uuid to connect with DHCP private network
      */
-    piCloudConnectionId?: pulumi.Input<string>;
+    piCloudConnectionId?: pulumi.Input<string | undefined>;
     /**
      * PI cloud instance ID
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Optional name of DHCP Service (will be prefixed by DHCP identifier)
      */
-    piDhcpName?: pulumi.Input<string>;
+    piDhcpName?: pulumi.Input<string | undefined>;
     /**
      * Indicates if SNAT will be enabled for the DHCP service
      */
-    piDhcpSnatEnabled?: pulumi.Input<boolean>;
+    piDhcpSnatEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Optional DNS Server for DHCP service
      */
-    piDnsServer?: pulumi.Input<string>;
+    piDnsServer?: pulumi.Input<string | undefined>;
     /**
      * The status of the DHCP Server
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -182,11 +182,11 @@ export interface PiDhcpArgs {
     /**
      * Optional cidr for DHCP private network
      */
-    piCidr?: pulumi.Input<string>;
+    piCidr?: pulumi.Input<string | undefined>;
     /**
      * Optional cloud connection uuid to connect with DHCP private network
      */
-    piCloudConnectionId?: pulumi.Input<string>;
+    piCloudConnectionId?: pulumi.Input<string | undefined>;
     /**
      * PI cloud instance ID
      */
@@ -194,13 +194,13 @@ export interface PiDhcpArgs {
     /**
      * Optional name of DHCP Service (will be prefixed by DHCP identifier)
      */
-    piDhcpName?: pulumi.Input<string>;
+    piDhcpName?: pulumi.Input<string | undefined>;
     /**
      * Indicates if SNAT will be enabled for the DHCP service
      */
-    piDhcpSnatEnabled?: pulumi.Input<boolean>;
+    piDhcpSnatEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Optional DNS Server for DHCP service
      */
-    piDnsServer?: pulumi.Input<string>;
+    piDnsServer?: pulumi.Input<string | undefined>;
 }

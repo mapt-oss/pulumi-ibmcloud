@@ -25,15 +25,16 @@ class PiSharedProcessorPoolArgs:
                  pi_shared_processor_pool_host_group: pulumi.Input[_builtins.str],
                  pi_shared_processor_pool_name: pulumi.Input[_builtins.str],
                  pi_shared_processor_pool_reserved_cores: pulumi.Input[_builtins.int],
-                 pi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 spp_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 spp_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiSharedProcessorPool resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_shared_processor_pool_name: The name of the shared processor pool.
         :param pulumi.Input[_builtins.int] pi_shared_processor_pool_reserved_cores: The amount of reserved cores for the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_host_id: The host id of a host in a host group (only available for dedicated hosts).
@@ -79,7 +80,7 @@ class PiSharedProcessorPoolArgs:
     @pulumi.getter(name="piSharedProcessorPoolHostGroup")
     def pi_shared_processor_pool_host_group(self) -> pulumi.Input[_builtins.str]:
         """
-        Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+        Host group of the shared processor pool.
         """
         return pulumi.get(self, "pi_shared_processor_pool_host_group")
 
@@ -113,91 +114,92 @@ class PiSharedProcessorPoolArgs:
 
     @_builtins.property
     @pulumi.getter(name="piHostId")
-    def pi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host id of a host in a host group (only available for dedicated hosts).
         """
         return pulumi.get(self, "pi_host_id")
 
     @pi_host_id.setter
-    def pi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPoolPlacementGroupId")
     @_utilities.deprecated("""This field is deprecated, use pi_shared_processor_pool_placement_groups instead""")
-    def pi_shared_processor_pool_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_shared_processor_pool_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the placement group the shared processor pool is created in.
         """
         return pulumi.get(self, "pi_shared_processor_pool_placement_group_id")
 
     @pi_shared_processor_pool_placement_group_id.setter
-    def pi_shared_processor_pool_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_shared_processor_pool_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_shared_processor_pool_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPoolPlacementGroups")
-    def pi_shared_processor_pool_placement_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_shared_processor_pool_placement_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of shared processor pool placement groups that the shared processor pool is in.
         """
         return pulumi.get(self, "pi_shared_processor_pool_placement_groups")
 
     @pi_shared_processor_pool_placement_groups.setter
-    def pi_shared_processor_pool_placement_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_shared_processor_pool_placement_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_shared_processor_pool_placement_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="sppPlacementGroups")
     @_utilities.deprecated("""This field is deprecated, use pi_shared_processor_pool_placement_groups instead""")
-    def spp_placement_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def spp_placement_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of shared processor pool placement groups that the shared processor pool is in.
         """
         return pulumi.get(self, "spp_placement_groups")
 
     @spp_placement_groups.setter
-    def spp_placement_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def spp_placement_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "spp_placement_groups", value)
 
 
 @pulumi.input_type
 class _PiSharedProcessorPoolState:
     def __init__(__self__, *,
-                 allocated_cores: Optional[pulumi.Input[_builtins.float]] = None,
-                 available_cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['PiSharedProcessorPoolInstanceArgs']]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_shared_processor_pool_reserved_cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shared_processor_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 spp_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_detail: Optional[pulumi.Input[_builtins.str]] = None):
+                 allocated_cores: pulumi.Input[Optional[_builtins.float]] = None,
+                 available_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input['PiSharedProcessorPoolInstanceArgs']]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_shared_processor_pool_reserved_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shared_processor_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spp_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_detail: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiSharedProcessorPool resources.
+
         :param pulumi.Input[_builtins.float] allocated_cores: The allocated cores in the shared processor pool.
         :param pulumi.Input[_builtins.int] available_cores: The available cores in the shared processor pool.
         :param pulumi.Input[_builtins.str] creation_date: Date of shared processor pool creation.
@@ -207,7 +209,7 @@ class _PiSharedProcessorPoolState:
         :param pulumi.Input[Sequence[pulumi.Input['PiSharedProcessorPoolInstanceArgs']]] instances: The list of server instances that are deployed in the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_host_id: The host id of a host in a host group (only available for dedicated hosts).
-        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_shared_processor_pool_name: The name of the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_shared_processor_pool_placement_group_id: The ID of the placement group the shared processor pool is created in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_shared_processor_pool_placement_groups: The list of shared processor pool placement groups that the shared processor pool is in.
@@ -265,232 +267,232 @@ class _PiSharedProcessorPoolState:
 
     @_builtins.property
     @pulumi.getter(name="allocatedCores")
-    def allocated_cores(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def allocated_cores(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The allocated cores in the shared processor pool.
         """
         return pulumi.get(self, "allocated_cores")
 
     @allocated_cores.setter
-    def allocated_cores(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def allocated_cores(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "allocated_cores", value)
 
     @_builtins.property
     @pulumi.getter(name="availableCores")
-    def available_cores(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def available_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The available cores in the shared processor pool.
         """
         return pulumi.get(self, "available_cores")
 
     @available_cores.setter
-    def available_cores(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def available_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "available_cores", value)
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date of shared processor pool creation.
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostId")
-    def dedicated_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The dedicated host ID where the shared processor pool resides.
         """
         return pulumi.get(self, "dedicated_host_id")
 
     @dedicated_host_id.setter
-    def dedicated_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The host ID where the shared processor pool resides.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "host_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiSharedProcessorPoolInstanceArgs']]]]:
+    def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiSharedProcessorPoolInstanceArgs']]]]:
         """
         The list of server instances that are deployed in the shared processor pool.
         """
         return pulumi.get(self, "instances")
 
     @instances.setter
-    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiSharedProcessorPoolInstanceArgs']]]]):
+    def instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiSharedProcessorPoolInstanceArgs']]]]):
         pulumi.set(self, "instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piHostId")
-    def pi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host id of a host in a host group (only available for dedicated hosts).
         """
         return pulumi.get(self, "pi_host_id")
 
     @pi_host_id.setter
-    def pi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPoolHostGroup")
-    def pi_shared_processor_pool_host_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_shared_processor_pool_host_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+        Host group of the shared processor pool.
         """
         return pulumi.get(self, "pi_shared_processor_pool_host_group")
 
     @pi_shared_processor_pool_host_group.setter
-    def pi_shared_processor_pool_host_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_shared_processor_pool_host_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_shared_processor_pool_host_group", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPoolName")
-    def pi_shared_processor_pool_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_shared_processor_pool_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the shared processor pool.
         """
         return pulumi.get(self, "pi_shared_processor_pool_name")
 
     @pi_shared_processor_pool_name.setter
-    def pi_shared_processor_pool_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_shared_processor_pool_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_shared_processor_pool_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPoolPlacementGroupId")
     @_utilities.deprecated("""This field is deprecated, use pi_shared_processor_pool_placement_groups instead""")
-    def pi_shared_processor_pool_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_shared_processor_pool_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the placement group the shared processor pool is created in.
         """
         return pulumi.get(self, "pi_shared_processor_pool_placement_group_id")
 
     @pi_shared_processor_pool_placement_group_id.setter
-    def pi_shared_processor_pool_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_shared_processor_pool_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_shared_processor_pool_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPoolPlacementGroups")
-    def pi_shared_processor_pool_placement_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_shared_processor_pool_placement_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of shared processor pool placement groups that the shared processor pool is in.
         """
         return pulumi.get(self, "pi_shared_processor_pool_placement_groups")
 
     @pi_shared_processor_pool_placement_groups.setter
-    def pi_shared_processor_pool_placement_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_shared_processor_pool_placement_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_shared_processor_pool_placement_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPoolReservedCores")
-    def pi_shared_processor_pool_reserved_cores(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_shared_processor_pool_reserved_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of reserved cores for the shared processor pool.
         """
         return pulumi.get(self, "pi_shared_processor_pool_reserved_cores")
 
     @pi_shared_processor_pool_reserved_cores.setter
-    def pi_shared_processor_pool_reserved_cores(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_shared_processor_pool_reserved_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_shared_processor_pool_reserved_cores", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="sharedProcessorPoolId")
-    def shared_processor_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shared_processor_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shared processor pool's unique ID.
         """
         return pulumi.get(self, "shared_processor_pool_id")
 
     @shared_processor_pool_id.setter
-    def shared_processor_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shared_processor_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shared_processor_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sppPlacementGroups")
     @_utilities.deprecated("""This field is deprecated, use pi_shared_processor_pool_placement_groups instead""")
-    def spp_placement_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def spp_placement_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of shared processor pool placement groups that the shared processor pool is in.
         """
         return pulumi.get(self, "spp_placement_groups")
 
     @spp_placement_groups.setter
-    def spp_placement_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def spp_placement_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "spp_placement_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the shared processor pool.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusDetail")
-    def status_detail(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_detail(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status details of the shared processor pool.
         """
         return pulumi.get(self, "status_detail")
 
     @status_detail.setter
-    def status_detail(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_detail(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_detail", value)
 
 
@@ -500,23 +502,24 @@ class PiSharedProcessorPool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_shared_processor_pool_reserved_cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 spp_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_shared_processor_pool_reserved_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 spp_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiSharedProcessorPool resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_host_id: The host id of a host in a host group (only available for dedicated hosts).
-        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_shared_processor_pool_name: The name of the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_shared_processor_pool_placement_group_id: The ID of the placement group the shared processor pool is created in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_shared_processor_pool_placement_groups: The list of shared processor pool placement groups that the shared processor pool is in.
@@ -532,6 +535,7 @@ class PiSharedProcessorPool(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiSharedProcessorPool resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiSharedProcessorPoolArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -547,15 +551,15 @@ class PiSharedProcessorPool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_shared_processor_pool_reserved_cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 spp_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_shared_processor_pool_reserved_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 spp_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -602,25 +606,25 @@ class PiSharedProcessorPool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allocated_cores: Optional[pulumi.Input[_builtins.float]] = None,
-            available_cores: Optional[pulumi.Input[_builtins.int]] = None,
-            creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            dedicated_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            host_id: Optional[pulumi.Input[_builtins.int]] = None,
-            instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiSharedProcessorPoolInstanceArgs', 'PiSharedProcessorPoolInstanceArgsDict']]]]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_shared_processor_pool_host_group: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_shared_processor_pool_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_shared_processor_pool_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_shared_processor_pool_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_shared_processor_pool_reserved_cores: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            shared_processor_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            spp_placement_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_detail: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiSharedProcessorPool':
+            allocated_cores: pulumi.Input[Optional[_builtins.float]] = None,
+            available_cores: pulumi.Input[Optional[_builtins.int]] = None,
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            dedicated_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host_id: pulumi.Input[Optional[_builtins.int]] = None,
+            instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiSharedProcessorPoolInstanceArgs', 'PiSharedProcessorPoolInstanceArgsDict', 'outputs.PiSharedProcessorPoolInstance']]]]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_shared_processor_pool_host_group: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_shared_processor_pool_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_shared_processor_pool_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_shared_processor_pool_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_shared_processor_pool_reserved_cores: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            shared_processor_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            spp_placement_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_detail: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiSharedProcessorPool':
         """
         Get an existing PiSharedProcessorPool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -634,10 +638,10 @@ class PiSharedProcessorPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
         :param pulumi.Input[_builtins.str] dedicated_host_id: The dedicated host ID where the shared processor pool resides.
         :param pulumi.Input[_builtins.int] host_id: The host ID where the shared processor pool resides.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiSharedProcessorPoolInstanceArgs', 'PiSharedProcessorPoolInstanceArgsDict']]]] instances: The list of server instances that are deployed in the shared processor pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiSharedProcessorPoolInstanceArgs', 'PiSharedProcessorPoolInstanceArgsDict', 'outputs.PiSharedProcessorPoolInstance']]]] instances: The list of server instances that are deployed in the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_host_id: The host id of a host in a host group (only available for dedicated hosts).
-        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+        :param pulumi.Input[_builtins.str] pi_shared_processor_pool_host_group: Host group of the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_shared_processor_pool_name: The name of the shared processor pool.
         :param pulumi.Input[_builtins.str] pi_shared_processor_pool_placement_group_id: The ID of the placement group the shared processor pool is created in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_shared_processor_pool_placement_groups: The list of shared processor pool placement groups that the shared processor pool is in.
@@ -749,7 +753,7 @@ class PiSharedProcessorPool(pulumi.CustomResource):
     @pulumi.getter(name="piSharedProcessorPoolHostGroup")
     def pi_shared_processor_pool_host_group(self) -> pulumi.Output[_builtins.str]:
         """
-        Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+        Host group of the shared processor pool.
         """
         return pulumi.get(self, "pi_shared_processor_pool_host_group")
 

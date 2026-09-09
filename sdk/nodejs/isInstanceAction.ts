@@ -96,20 +96,20 @@ export interface IsInstanceActionState {
     /**
      * This restart/start/stops an instance.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
      */
-    forceAction?: pulumi.Input<boolean>;
+    forceAction?: pulumi.Input<boolean | undefined>;
     /**
      * Instance identifier
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
     /**
      * Instance status
      */
-    status?: pulumi.Input<string>;
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsInstanceActionStatusReason>[]>;
+    status?: pulumi.Input<string | undefined>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsInstanceActionStatusReason>[] | undefined>;
 }
 
 /**
@@ -123,7 +123,7 @@ export interface IsInstanceActionArgs {
     /**
      * If set to true, the action will be forced immediately, and all queued actions deleted. Ignored for the start action.
      */
-    forceAction?: pulumi.Input<boolean>;
+    forceAction?: pulumi.Input<boolean | undefined>;
     /**
      * Instance identifier
      */

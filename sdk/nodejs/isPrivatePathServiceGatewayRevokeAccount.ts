@@ -79,11 +79,11 @@ export interface IsPrivatePathServiceGatewayRevokeAccountState {
     /**
      * The account for this access policy.
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * The private path service gateway identifier.
      */
-    privatePathServiceGateway?: pulumi.Input<string>;
+    privatePathServiceGateway?: pulumi.Input<string | undefined>;
 }
 
 /**

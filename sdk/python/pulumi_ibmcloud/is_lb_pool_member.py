@@ -22,15 +22,18 @@ class IsLbPoolMemberArgs:
                  lb: pulumi.Input[_builtins.str],
                  pool: pulumi.Input[_builtins.str],
                  port: pulumi.Input[_builtins.int],
-                 target_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None):
+                 target_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a IsLbPoolMember resource.
+
         :param pulumi.Input[_builtins.str] lb: Load balancer ID
         :param pulumi.Input[_builtins.str] pool: Loadblancer Poold ID
         :param pulumi.Input[_builtins.int] port: Load Balancer Pool port
         :param pulumi.Input[_builtins.str] target_address: Load balancer pool member target address
+        :param pulumi.Input[_builtins.str] target_fqdn: The fully qualified domain name (FQDN) to target. The load balancer must have fqdn_pool_members_supported set to true. Member health checks will fail if the FQDN cannot be resolved.
         :param pulumi.Input[_builtins.str] target_id: Load balancer pool member target id
         :param pulumi.Input[_builtins.int] weight: Load balcner pool member weight
         """
@@ -39,6 +42,8 @@ class IsLbPoolMemberArgs:
         pulumi.set(__self__, "port", port)
         if target_address is not None:
             pulumi.set(__self__, "target_address", target_address)
+        if target_fqdn is not None:
+            pulumi.set(__self__, "target_fqdn", target_fqdn)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
         if weight is not None:
@@ -82,56 +87,70 @@ class IsLbPoolMemberArgs:
 
     @_builtins.property
     @pulumi.getter(name="targetAddress")
-    def target_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load balancer pool member target address
         """
         return pulumi.get(self, "target_address")
 
     @target_address.setter
-    def target_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_address", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetFqdn")
+    def target_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The fully qualified domain name (FQDN) to target. The load balancer must have fqdn_pool_members_supported set to true. Member health checks will fail if the FQDN cannot be resolved.
+        """
+        return pulumi.get(self, "target_fqdn")
+
+    @target_fqdn.setter
+    def target_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_fqdn", value)
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load balancer pool member target id
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Load balcner pool member weight
         """
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
 
 @pulumi.input_type
 class _IsLbPoolMemberState:
     def __init__(__self__, *,
-                 health: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 provisioning_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None):
+                 health: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 provisioning_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IsLbPoolMember resources.
+
         :param pulumi.Input[_builtins.str] health: LB Pool member health
         :param pulumi.Input[_builtins.str] href: LB pool member Href value
         :param pulumi.Input[_builtins.str] lb: Load balancer ID
@@ -140,6 +159,7 @@ class _IsLbPoolMemberState:
         :param pulumi.Input[_builtins.str] provisioning_status: Load balancer Pool member provisioning status
         :param pulumi.Input[_builtins.str] related_crn: The crn of the LB resource
         :param pulumi.Input[_builtins.str] target_address: Load balancer pool member target address
+        :param pulumi.Input[_builtins.str] target_fqdn: The fully qualified domain name (FQDN) to target. The load balancer must have fqdn_pool_members_supported set to true. Member health checks will fail if the FQDN cannot be resolved.
         :param pulumi.Input[_builtins.str] target_id: Load balancer pool member target id
         :param pulumi.Input[_builtins.int] weight: Load balcner pool member weight
         """
@@ -159,6 +179,8 @@ class _IsLbPoolMemberState:
             pulumi.set(__self__, "related_crn", related_crn)
         if target_address is not None:
             pulumi.set(__self__, "target_address", target_address)
+        if target_fqdn is not None:
+            pulumi.set(__self__, "target_fqdn", target_fqdn)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
         if weight is not None:
@@ -166,122 +188,134 @@ class _IsLbPoolMemberState:
 
     @_builtins.property
     @pulumi.getter
-    def health(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         LB Pool member health
         """
         return pulumi.get(self, "health")
 
     @health.setter
-    def health(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         LB pool member Href value
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def lb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load balancer ID
         """
         return pulumi.get(self, "lb")
 
     @lb.setter
-    def lb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lb", value)
 
     @_builtins.property
     @pulumi.getter
-    def pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Loadblancer Poold ID
         """
         return pulumi.get(self, "pool")
 
     @pool.setter
-    def pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pool", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Load Balancer Pool port
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningStatus")
-    def provisioning_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load balancer Pool member provisioning status
         """
         return pulumi.get(self, "provisioning_status")
 
     @provisioning_status.setter
-    def provisioning_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_status", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedCrn")
-    def related_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the LB resource
         """
         return pulumi.get(self, "related_crn")
 
     @related_crn.setter
-    def related_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="targetAddress")
-    def target_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load balancer pool member target address
         """
         return pulumi.get(self, "target_address")
 
     @target_address.setter
-    def target_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_address", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetFqdn")
+    def target_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The fully qualified domain name (FQDN) to target. The load balancer must have fqdn_pool_members_supported set to true. Member health checks will fail if the FQDN cannot be resolved.
+        """
+        return pulumi.get(self, "target_fqdn")
+
+    @target_fqdn.setter
+    def target_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_fqdn", value)
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load balancer pool member target id
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Load balcner pool member weight
         """
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
 
@@ -291,21 +325,24 @@ class IsLbPoolMember(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a IsLbPoolMember resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lb: Load balancer ID
         :param pulumi.Input[_builtins.str] pool: Loadblancer Poold ID
         :param pulumi.Input[_builtins.int] port: Load Balancer Pool port
         :param pulumi.Input[_builtins.str] target_address: Load balancer pool member target address
+        :param pulumi.Input[_builtins.str] target_fqdn: The fully qualified domain name (FQDN) to target. The load balancer must have fqdn_pool_members_supported set to true. Member health checks will fail if the FQDN cannot be resolved.
         :param pulumi.Input[_builtins.str] target_id: Load balancer pool member target id
         :param pulumi.Input[_builtins.int] weight: Load balcner pool member weight
         """
@@ -317,6 +354,7 @@ class IsLbPoolMember(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsLbPoolMember resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsLbPoolMemberArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -332,12 +370,13 @@ class IsLbPoolMember(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -357,6 +396,7 @@ class IsLbPoolMember(pulumi.CustomResource):
                 raise TypeError("Missing required property 'port'")
             __props__.__dict__["port"] = port
             __props__.__dict__["target_address"] = target_address
+            __props__.__dict__["target_fqdn"] = target_fqdn
             __props__.__dict__["target_id"] = target_id
             __props__.__dict__["weight"] = weight
             __props__.__dict__["health"] = None
@@ -373,16 +413,17 @@ class IsLbPoolMember(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            health: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lb: Optional[pulumi.Input[_builtins.str]] = None,
-            pool: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            provisioning_status: Optional[pulumi.Input[_builtins.str]] = None,
-            related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            target_address: Optional[pulumi.Input[_builtins.str]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            weight: Optional[pulumi.Input[_builtins.int]] = None) -> 'IsLbPoolMember':
+            health: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lb: pulumi.Input[Optional[_builtins.str]] = None,
+            pool: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            provisioning_status: pulumi.Input[Optional[_builtins.str]] = None,
+            related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            target_address: pulumi.Input[Optional[_builtins.str]] = None,
+            target_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            weight: pulumi.Input[Optional[_builtins.int]] = None) -> 'IsLbPoolMember':
         """
         Get an existing IsLbPoolMember resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -398,6 +439,7 @@ class IsLbPoolMember(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] provisioning_status: Load balancer Pool member provisioning status
         :param pulumi.Input[_builtins.str] related_crn: The crn of the LB resource
         :param pulumi.Input[_builtins.str] target_address: Load balancer pool member target address
+        :param pulumi.Input[_builtins.str] target_fqdn: The fully qualified domain name (FQDN) to target. The load balancer must have fqdn_pool_members_supported set to true. Member health checks will fail if the FQDN cannot be resolved.
         :param pulumi.Input[_builtins.str] target_id: Load balancer pool member target id
         :param pulumi.Input[_builtins.int] weight: Load balcner pool member weight
         """
@@ -413,6 +455,7 @@ class IsLbPoolMember(pulumi.CustomResource):
         __props__.__dict__["provisioning_status"] = provisioning_status
         __props__.__dict__["related_crn"] = related_crn
         __props__.__dict__["target_address"] = target_address
+        __props__.__dict__["target_fqdn"] = target_fqdn
         __props__.__dict__["target_id"] = target_id
         __props__.__dict__["weight"] = weight
         return IsLbPoolMember(resource_name, opts=opts, __props__=__props__)
@@ -480,6 +523,14 @@ class IsLbPoolMember(pulumi.CustomResource):
         Load balancer pool member target address
         """
         return pulumi.get(self, "target_address")
+
+    @_builtins.property
+    @pulumi.getter(name="targetFqdn")
+    def target_fqdn(self) -> pulumi.Output[_builtins.str]:
+        """
+        The fully qualified domain name (FQDN) to target. The load balancer must have fqdn_pool_members_supported set to true. Member health checks will fail if the FQDN cannot be resolved.
+        """
+        return pulumi.get(self, "target_fqdn")
 
     @_builtins.property
     @pulumi.getter(name="targetId")

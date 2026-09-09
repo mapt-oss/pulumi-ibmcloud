@@ -126,9 +126,9 @@ def get_iam_effective_account_settings(account_id: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         include_history=pulumi.get(__ret__, 'include_history'),
         resolve_user_mfa=pulumi.get(__ret__, 'resolve_user_mfa'))
-def get_iam_effective_account_settings_output(account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              include_history: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                              resolve_user_mfa: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_iam_effective_account_settings_output(account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              include_history: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              resolve_user_mfa: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamEffectiveAccountSettingsResult]:
     """
     Use this data source to access information about an existing resource.

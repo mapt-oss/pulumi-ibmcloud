@@ -21,53 +21,54 @@ __all__ = ['ComputeVmInstanceArgs', 'ComputeVmInstance']
 @pulumi.input_type
 class ComputeVmInstanceArgs:
     def __init__(__self__, *,
-                 block_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bulk_vms: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]] = None,
-                 cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter_choices: Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
-                 dedicated_acct_host_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dedicated_host_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 dedicated_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 evault: Optional[pulumi.Input[_builtins.int]] = None,
-                 file_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 flavor_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv6_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ipv6_static_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 local_disk: Optional[pulumi.Input[_builtins.bool]] = None,
-                 memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_reference_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_install_script_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_network_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 private_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_limited: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 public_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 quote_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_instance_primary_disk: Optional[pulumi.Input[_builtins.int]] = None,
-                 secondary_ip_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transient: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_metadata: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 block_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bulk_vms: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]] = None,
+                 cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter_choices: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 dedicated_acct_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dedicated_host_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 dedicated_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 evault: pulumi.Input[Optional[_builtins.int]] = None,
+                 file_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 flavor_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv6_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ipv6_static_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 local_disk: pulumi.Input[Optional[_builtins.bool]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_reference_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_install_script_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_network_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 private_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_limited: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 public_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 quote_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_instance_primary_disk: pulumi.Input[Optional[_builtins.int]] = None,
+                 secondary_ip_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transient: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ComputeVmInstance resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] datacenter_choices: The user provided datacenter options
         :param pulumi.Input[_builtins.str] flavor_key_name: Flavor key name used to provision vm.
         :param pulumi.Input[_builtins.int] placement_group_id: The placement group id
@@ -173,501 +174,502 @@ class ComputeVmInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockStorageIds")
-    def block_storage_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def block_storage_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "block_storage_ids")
 
     @block_storage_ids.setter
-    def block_storage_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def block_storage_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "block_storage_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="bulkVms")
-    def bulk_vms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]:
+    def bulk_vms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]:
         return pulumi.get(self, "bulk_vms")
 
     @bulk_vms.setter
-    def bulk_vms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]):
+    def bulk_vms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]):
         pulumi.set(self, "bulk_vms", value)
 
     @_builtins.property
     @pulumi.getter
-    def cores(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cores(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "cores")
 
     @cores.setter
-    def cores(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cores(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cores", value)
 
     @_builtins.property
     @pulumi.getter
-    def datacenter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datacenter(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "datacenter")
 
     @datacenter.setter
-    def datacenter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datacenter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datacenter", value)
 
     @_builtins.property
     @pulumi.getter(name="datacenterChoices")
-    def datacenter_choices(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+    def datacenter_choices(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
         """
         The user provided datacenter options
         """
         return pulumi.get(self, "datacenter_choices")
 
     @datacenter_choices.setter
-    def datacenter_choices(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+    def datacenter_choices(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
         pulumi.set(self, "datacenter_choices", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedAcctHostOnly")
-    def dedicated_acct_host_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dedicated_acct_host_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "dedicated_acct_host_only")
 
     @dedicated_acct_host_only.setter
-    def dedicated_acct_host_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dedicated_acct_host_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dedicated_acct_host_only", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostId")
-    def dedicated_host_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dedicated_host_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "dedicated_host_id")
 
     @dedicated_host_id.setter
-    def dedicated_host_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dedicated_host_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dedicated_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostName")
-    def dedicated_host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dedicated_host_name")
 
     @dedicated_host_name.setter
-    def dedicated_host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def evault(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def evault(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "evault")
 
     @evault.setter
-    def evault(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def evault(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "evault", value)
 
     @_builtins.property
     @pulumi.getter(name="fileStorageIds")
-    def file_storage_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def file_storage_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "file_storage_ids")
 
     @file_storage_ids.setter
-    def file_storage_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def file_storage_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "file_storage_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="flavorKeyName")
-    def flavor_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def flavor_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Flavor key name used to provision vm.
         """
         return pulumi.get(self, "flavor_key_name")
 
     @flavor_key_name.setter
-    def flavor_key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def flavor_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "flavor_key_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="hourlyBilling")
-    def hourly_billing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hourly_billing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "hourly_billing")
 
     @hourly_billing.setter
-    def hourly_billing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hourly_billing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hourly_billing", value)
 
     @_builtins.property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def image_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "image_id")
 
     @image_id.setter
-    def image_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def image_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6Enabled")
-    def ipv6_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ipv6_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ipv6_enabled")
 
     @ipv6_enabled.setter
-    def ipv6_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ipv6_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ipv6_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6StaticEnabled")
-    def ipv6_static_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ipv6_static_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ipv6_static_enabled")
 
     @ipv6_static_enabled.setter
-    def ipv6_static_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ipv6_static_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ipv6_static_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="localDisk")
-    def local_disk(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def local_disk(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "local_disk")
 
     @local_disk.setter
-    def local_disk(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def local_disk(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "local_disk", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSpeed")
-    def network_speed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_speed(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "network_speed")
 
     @network_speed.setter
-    def network_speed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_speed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_speed", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
     @_builtins.property
     @pulumi.getter(name="osReferenceCode")
-    def os_reference_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_reference_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "os_reference_code")
 
     @os_reference_code.setter
-    def os_reference_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_reference_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_reference_code", value)
 
     @_builtins.property
     @pulumi.getter(name="placementGroupId")
-    def placement_group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def placement_group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The placement group id
         """
         return pulumi.get(self, "placement_group_id")
 
     @placement_group_id.setter
-    def placement_group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def placement_group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="placementGroupName")
-    def placement_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def placement_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The placement group name
         """
         return pulumi.get(self, "placement_group_name")
 
     @placement_group_name.setter
-    def placement_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def placement_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "placement_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="postInstallScriptUri")
-    def post_install_script_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_install_script_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "post_install_script_uri")
 
     @post_install_script_uri.setter
-    def post_install_script_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_install_script_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_install_script_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="privateNetworkOnly")
-    def private_network_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def private_network_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "private_network_only")
 
     @private_network_only.setter
-    def private_network_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def private_network_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "private_network_only", value)
 
     @_builtins.property
     @pulumi.getter(name="privateSecurityGroupIds")
-    def private_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def private_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "private_security_group_ids")
 
     @private_security_group_ids.setter
-    def private_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def private_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "private_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateSubnet")
-    def private_subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "private_subnet")
 
     @private_subnet.setter
-    def private_subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_subnet", value)
 
     @_builtins.property
     @pulumi.getter(name="privateVlanId")
-    def private_vlan_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def private_vlan_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "private_vlan_id")
 
     @private_vlan_id.setter
-    def private_vlan_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def private_vlan_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "private_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="publicBandwidthLimited")
-    def public_bandwidth_limited(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def public_bandwidth_limited(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "public_bandwidth_limited")
 
     @public_bandwidth_limited.setter
-    def public_bandwidth_limited(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def public_bandwidth_limited(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "public_bandwidth_limited", value)
 
     @_builtins.property
     @pulumi.getter(name="publicBandwidthUnlimited")
-    def public_bandwidth_unlimited(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def public_bandwidth_unlimited(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "public_bandwidth_unlimited")
 
     @public_bandwidth_unlimited.setter
-    def public_bandwidth_unlimited(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def public_bandwidth_unlimited(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "public_bandwidth_unlimited", value)
 
     @_builtins.property
     @pulumi.getter(name="publicSecurityGroupIds")
-    def public_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def public_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "public_security_group_ids")
 
     @public_security_group_ids.setter
-    def public_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def public_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "public_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="publicSubnet")
-    def public_subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "public_subnet")
 
     @public_subnet.setter
-    def public_subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_subnet", value)
 
     @_builtins.property
     @pulumi.getter(name="publicVlanId")
-    def public_vlan_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def public_vlan_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "public_vlan_id")
 
     @public_vlan_id.setter
-    def public_vlan_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def public_vlan_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "public_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="quoteId")
-    def quote_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quote_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Quote ID for Quote based provisioning
         """
         return pulumi.get(self, "quote_id")
 
     @quote_id.setter
-    def quote_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quote_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quote_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedCapacityId")
-    def reserved_capacity_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reserved_capacity_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The reserved group id
         """
         return pulumi.get(self, "reserved_capacity_id")
 
     @reserved_capacity_id.setter
-    def reserved_capacity_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reserved_capacity_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reserved_capacity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedCapacityName")
-    def reserved_capacity_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reserved_capacity_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reserved group id
         """
         return pulumi.get(self, "reserved_capacity_name")
 
     @reserved_capacity_name.setter
-    def reserved_capacity_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reserved_capacity_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reserved_capacity_name", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedInstancePrimaryDisk")
-    def reserved_instance_primary_disk(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reserved_instance_primary_disk(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The primary disk of reserved instance
         """
         return pulumi.get(self, "reserved_instance_primary_disk")
 
     @reserved_instance_primary_disk.setter
-    def reserved_instance_primary_disk(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reserved_instance_primary_disk(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reserved_instance_primary_disk", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryIpCount")
-    def secondary_ip_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def secondary_ip_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "secondary_ip_count")
 
     @secondary_ip_count.setter
-    def secondary_ip_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def secondary_ip_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "secondary_ip_count", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKeyIds")
-    def ssh_key_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def ssh_key_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "ssh_key_ids")
 
     @ssh_key_ids.setter
-    def ssh_key_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def ssh_key_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "ssh_key_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def transient(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def transient(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "transient")
 
     @transient.setter
-    def transient(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def transient(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "transient", value)
 
     @_builtins.property
     @pulumi.getter(name="userMetadata")
-    def user_metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_metadata")
 
     @user_metadata.setter
-    def user_metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="waitTimeMinutes")
     @_utilities.deprecated("""This field is deprecated. Use timeouts block instead""")
-    def wait_time_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_time_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "wait_time_minutes")
 
     @wait_time_minutes.setter
-    def wait_time_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_time_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_time_minutes", value)
 
 
 @pulumi.input_type
 class _ComputeVmInstanceState:
     def __init__(__self__, *,
-                 block_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bulk_vms: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]] = None,
-                 cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter_choices: Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
-                 dedicated_acct_host_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dedicated_host_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 dedicated_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 evault: Optional[pulumi.Input[_builtins.int]] = None,
-                 file_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 flavor_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ip_address_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ip_address_id_private: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4_address_private: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6_address_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv6_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ipv6_static_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 local_disk: Optional[pulumi.Input[_builtins.bool]] = None,
-                 memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_reference_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_install_script_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_interface_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_network_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 private_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_subnet_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_limited: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public_interface_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_ipv6_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ipv6_subnet_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 public_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_subnet_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 quote_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_instance_primary_disk: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 secondary_ip_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transient: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_metadata: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 block_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bulk_vms: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]] = None,
+                 cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter_choices: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 dedicated_acct_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dedicated_host_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 dedicated_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 evault: pulumi.Input[Optional[_builtins.int]] = None,
+                 file_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 flavor_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ip_address_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ip_address_id_private: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4_address_private: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6_address_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv6_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ipv6_static_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 local_disk: pulumi.Input[Optional[_builtins.bool]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_reference_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_install_script_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_interface_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_network_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 private_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_subnet_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_limited: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public_interface_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_ipv6_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ipv6_subnet_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 public_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_subnet_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 quote_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_instance_primary_disk: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secondary_ip_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transient: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ComputeVmInstance resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] datacenter_choices: The user provided datacenter options
         :param pulumi.Input[_builtins.str] flavor_key_name: Flavor key name used to provision vm.
         :param pulumi.Input[_builtins.int] placement_group_id: The placement group id
@@ -808,585 +810,585 @@ class _ComputeVmInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="blockStorageIds")
-    def block_storage_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def block_storage_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "block_storage_ids")
 
     @block_storage_ids.setter
-    def block_storage_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def block_storage_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "block_storage_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="bulkVms")
-    def bulk_vms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]:
+    def bulk_vms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]:
         return pulumi.get(self, "bulk_vms")
 
     @bulk_vms.setter
-    def bulk_vms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]):
+    def bulk_vms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeVmInstanceBulkVmArgs']]]]):
         pulumi.set(self, "bulk_vms", value)
 
     @_builtins.property
     @pulumi.getter
-    def cores(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cores(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "cores")
 
     @cores.setter
-    def cores(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cores(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cores", value)
 
     @_builtins.property
     @pulumi.getter
-    def datacenter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datacenter(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "datacenter")
 
     @datacenter.setter
-    def datacenter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datacenter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datacenter", value)
 
     @_builtins.property
     @pulumi.getter(name="datacenterChoices")
-    def datacenter_choices(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+    def datacenter_choices(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
         """
         The user provided datacenter options
         """
         return pulumi.get(self, "datacenter_choices")
 
     @datacenter_choices.setter
-    def datacenter_choices(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+    def datacenter_choices(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
         pulumi.set(self, "datacenter_choices", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedAcctHostOnly")
-    def dedicated_acct_host_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dedicated_acct_host_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "dedicated_acct_host_only")
 
     @dedicated_acct_host_only.setter
-    def dedicated_acct_host_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dedicated_acct_host_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dedicated_acct_host_only", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostId")
-    def dedicated_host_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dedicated_host_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "dedicated_host_id")
 
     @dedicated_host_id.setter
-    def dedicated_host_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dedicated_host_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dedicated_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostName")
-    def dedicated_host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dedicated_host_name")
 
     @dedicated_host_name.setter
-    def dedicated_host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def evault(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def evault(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "evault")
 
     @evault.setter
-    def evault(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def evault(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "evault", value)
 
     @_builtins.property
     @pulumi.getter(name="fileStorageIds")
-    def file_storage_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def file_storage_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "file_storage_ids")
 
     @file_storage_ids.setter
-    def file_storage_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def file_storage_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "file_storage_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="flavorKeyName")
-    def flavor_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def flavor_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Flavor key name used to provision vm.
         """
         return pulumi.get(self, "flavor_key_name")
 
     @flavor_key_name.setter
-    def flavor_key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def flavor_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "flavor_key_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="hourlyBilling")
-    def hourly_billing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hourly_billing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "hourly_billing")
 
     @hourly_billing.setter
-    def hourly_billing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hourly_billing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hourly_billing", value)
 
     @_builtins.property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def image_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "image_id")
 
     @image_id.setter
-    def image_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def image_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddressId")
-    def ip_address_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ip_address_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ip_address_id")
 
     @ip_address_id.setter
-    def ip_address_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ip_address_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ip_address_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddressIdPrivate")
-    def ip_address_id_private(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ip_address_id_private(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ip_address_id_private")
 
     @ip_address_id_private.setter
-    def ip_address_id_private(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ip_address_id_private(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ip_address_id_private", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4Address")
-    def ipv4_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ipv4_address")
 
     @ipv4_address.setter
-    def ipv4_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4_address", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4AddressPrivate")
-    def ipv4_address_private(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4_address_private(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ipv4_address_private")
 
     @ipv4_address_private.setter
-    def ipv4_address_private(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4_address_private(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4_address_private", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6Address")
-    def ipv6_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ipv6_address")
 
     @ipv6_address.setter
-    def ipv6_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6_address", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6AddressId")
-    def ipv6_address_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ipv6_address_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "ipv6_address_id")
 
     @ipv6_address_id.setter
-    def ipv6_address_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ipv6_address_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ipv6_address_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6Enabled")
-    def ipv6_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ipv6_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ipv6_enabled")
 
     @ipv6_enabled.setter
-    def ipv6_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ipv6_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ipv6_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6StaticEnabled")
-    def ipv6_static_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ipv6_static_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ipv6_static_enabled")
 
     @ipv6_static_enabled.setter
-    def ipv6_static_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ipv6_static_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ipv6_static_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="localDisk")
-    def local_disk(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def local_disk(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "local_disk")
 
     @local_disk.setter
-    def local_disk(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def local_disk(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "local_disk", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSpeed")
-    def network_speed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_speed(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "network_speed")
 
     @network_speed.setter
-    def network_speed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_speed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_speed", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
     @_builtins.property
     @pulumi.getter(name="osReferenceCode")
-    def os_reference_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_reference_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "os_reference_code")
 
     @os_reference_code.setter
-    def os_reference_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_reference_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_reference_code", value)
 
     @_builtins.property
     @pulumi.getter(name="placementGroupId")
-    def placement_group_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def placement_group_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The placement group id
         """
         return pulumi.get(self, "placement_group_id")
 
     @placement_group_id.setter
-    def placement_group_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def placement_group_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="placementGroupName")
-    def placement_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def placement_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The placement group name
         """
         return pulumi.get(self, "placement_group_name")
 
     @placement_group_name.setter
-    def placement_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def placement_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "placement_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="postInstallScriptUri")
-    def post_install_script_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_install_script_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "post_install_script_uri")
 
     @post_install_script_uri.setter
-    def post_install_script_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_install_script_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_install_script_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="privateInterfaceId")
-    def private_interface_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def private_interface_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "private_interface_id")
 
     @private_interface_id.setter
-    def private_interface_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def private_interface_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "private_interface_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateNetworkOnly")
-    def private_network_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def private_network_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "private_network_only")
 
     @private_network_only.setter
-    def private_network_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def private_network_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "private_network_only", value)
 
     @_builtins.property
     @pulumi.getter(name="privateSecurityGroupIds")
-    def private_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def private_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "private_security_group_ids")
 
     @private_security_group_ids.setter
-    def private_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def private_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "private_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateSubnet")
-    def private_subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "private_subnet")
 
     @private_subnet.setter
-    def private_subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_subnet", value)
 
     @_builtins.property
     @pulumi.getter(name="privateSubnetId")
-    def private_subnet_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def private_subnet_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "private_subnet_id")
 
     @private_subnet_id.setter
-    def private_subnet_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def private_subnet_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "private_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateVlanId")
-    def private_vlan_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def private_vlan_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "private_vlan_id")
 
     @private_vlan_id.setter
-    def private_vlan_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def private_vlan_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "private_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="publicBandwidthLimited")
-    def public_bandwidth_limited(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def public_bandwidth_limited(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "public_bandwidth_limited")
 
     @public_bandwidth_limited.setter
-    def public_bandwidth_limited(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def public_bandwidth_limited(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "public_bandwidth_limited", value)
 
     @_builtins.property
     @pulumi.getter(name="publicBandwidthUnlimited")
-    def public_bandwidth_unlimited(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def public_bandwidth_unlimited(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "public_bandwidth_unlimited")
 
     @public_bandwidth_unlimited.setter
-    def public_bandwidth_unlimited(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def public_bandwidth_unlimited(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "public_bandwidth_unlimited", value)
 
     @_builtins.property
     @pulumi.getter(name="publicInterfaceId")
-    def public_interface_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def public_interface_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "public_interface_id")
 
     @public_interface_id.setter
-    def public_interface_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def public_interface_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "public_interface_id", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIpv6Subnet")
-    def public_ipv6_subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ipv6_subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "public_ipv6_subnet")
 
     @public_ipv6_subnet.setter
-    def public_ipv6_subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ipv6_subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ipv6_subnet", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIpv6SubnetId")
-    def public_ipv6_subnet_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def public_ipv6_subnet_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "public_ipv6_subnet_id")
 
     @public_ipv6_subnet_id.setter
-    def public_ipv6_subnet_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def public_ipv6_subnet_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "public_ipv6_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="publicSecurityGroupIds")
-    def public_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def public_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "public_security_group_ids")
 
     @public_security_group_ids.setter
-    def public_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def public_security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "public_security_group_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="publicSubnet")
-    def public_subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "public_subnet")
 
     @public_subnet.setter
-    def public_subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_subnet", value)
 
     @_builtins.property
     @pulumi.getter(name="publicSubnetId")
-    def public_subnet_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def public_subnet_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "public_subnet_id")
 
     @public_subnet_id.setter
-    def public_subnet_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def public_subnet_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "public_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="publicVlanId")
-    def public_vlan_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def public_vlan_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "public_vlan_id")
 
     @public_vlan_id.setter
-    def public_vlan_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def public_vlan_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "public_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="quoteId")
-    def quote_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quote_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Quote ID for Quote based provisioning
         """
         return pulumi.get(self, "quote_id")
 
     @quote_id.setter
-    def quote_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quote_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quote_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedCapacityId")
-    def reserved_capacity_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reserved_capacity_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The reserved group id
         """
         return pulumi.get(self, "reserved_capacity_id")
 
     @reserved_capacity_id.setter
-    def reserved_capacity_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reserved_capacity_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reserved_capacity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedCapacityName")
-    def reserved_capacity_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reserved_capacity_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reserved group id
         """
         return pulumi.get(self, "reserved_capacity_name")
 
     @reserved_capacity_name.setter
-    def reserved_capacity_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reserved_capacity_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reserved_capacity_name", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedInstancePrimaryDisk")
-    def reserved_instance_primary_disk(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reserved_instance_primary_disk(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The primary disk of reserved instance
         """
         return pulumi.get(self, "reserved_instance_primary_disk")
 
     @reserved_instance_primary_disk.setter
-    def reserved_instance_primary_disk(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reserved_instance_primary_disk(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reserved_instance_primary_disk", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceStatus")
-    def resource_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the resource
         """
         return pulumi.get(self, "resource_status")
 
     @resource_status.setter
-    def resource_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_status", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryIpAddresses")
-    def secondary_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secondary_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "secondary_ip_addresses")
 
     @secondary_ip_addresses.setter
-    def secondary_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secondary_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondary_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryIpCount")
-    def secondary_ip_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def secondary_ip_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "secondary_ip_count")
 
     @secondary_ip_count.setter
-    def secondary_ip_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def secondary_ip_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "secondary_ip_count", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKeyIds")
-    def ssh_key_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def ssh_key_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         return pulumi.get(self, "ssh_key_ids")
 
     @ssh_key_ids.setter
-    def ssh_key_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def ssh_key_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "ssh_key_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def transient(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def transient(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "transient")
 
     @transient.setter
-    def transient(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def transient(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "transient", value)
 
     @_builtins.property
     @pulumi.getter(name="userMetadata")
-    def user_metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_metadata")
 
     @user_metadata.setter
-    def user_metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="waitTimeMinutes")
     @_utilities.deprecated("""This field is deprecated. Use timeouts block instead""")
-    def wait_time_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def wait_time_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "wait_time_minutes")
 
     @wait_time_minutes.setter
-    def wait_time_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def wait_time_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "wait_time_minutes", value)
 
 
@@ -1396,54 +1398,55 @@ class ComputeVmInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 block_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bulk_vms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeVmInstanceBulkVmArgs', 'ComputeVmInstanceBulkVmArgsDict']]]]] = None,
-                 cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter_choices: Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
-                 dedicated_acct_host_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dedicated_host_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 dedicated_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 evault: Optional[pulumi.Input[_builtins.int]] = None,
-                 file_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 flavor_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv6_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ipv6_static_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 local_disk: Optional[pulumi.Input[_builtins.bool]] = None,
-                 memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_reference_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_install_script_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_network_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 private_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_limited: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 public_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 quote_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_instance_primary_disk: Optional[pulumi.Input[_builtins.int]] = None,
-                 secondary_ip_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transient: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_metadata: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 block_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bulk_vms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeVmInstanceBulkVmArgs', 'ComputeVmInstanceBulkVmArgsDict', 'outputs.ComputeVmInstanceBulkVm']]]]] = None,
+                 cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter_choices: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 dedicated_acct_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dedicated_host_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 dedicated_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 evault: pulumi.Input[Optional[_builtins.int]] = None,
+                 file_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 flavor_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv6_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ipv6_static_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 local_disk: pulumi.Input[Optional[_builtins.bool]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_reference_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_install_script_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_network_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 private_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_limited: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 public_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 quote_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_instance_primary_disk: pulumi.Input[Optional[_builtins.int]] = None,
+                 secondary_ip_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transient: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a ComputeVmInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] datacenter_choices: The user provided datacenter options
@@ -1463,6 +1466,7 @@ class ComputeVmInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ComputeVmInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ComputeVmInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1478,51 +1482,51 @@ class ComputeVmInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 block_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bulk_vms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeVmInstanceBulkVmArgs', 'ComputeVmInstanceBulkVmArgsDict']]]]] = None,
-                 cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter_choices: Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
-                 dedicated_acct_host_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dedicated_host_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 dedicated_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 evault: Optional[pulumi.Input[_builtins.int]] = None,
-                 file_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 flavor_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv6_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ipv6_static_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 local_disk: Optional[pulumi.Input[_builtins.bool]] = None,
-                 memory: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_reference_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_install_script_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_network_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 private_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_limited: Optional[pulumi.Input[_builtins.int]] = None,
-                 public_bandwidth_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 public_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 quote_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_capacity_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_instance_primary_disk: Optional[pulumi.Input[_builtins.int]] = None,
-                 secondary_ip_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transient: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_metadata: Optional[pulumi.Input[_builtins.str]] = None,
-                 wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 block_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bulk_vms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeVmInstanceBulkVmArgs', 'ComputeVmInstanceBulkVmArgsDict', 'outputs.ComputeVmInstanceBulkVm']]]]] = None,
+                 cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter_choices: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 dedicated_acct_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dedicated_host_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 dedicated_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 evault: pulumi.Input[Optional[_builtins.int]] = None,
+                 file_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 flavor_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv6_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ipv6_static_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 local_disk: pulumi.Input[Optional[_builtins.bool]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_reference_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_install_script_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_network_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 private_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_limited: pulumi.Input[Optional[_builtins.int]] = None,
+                 public_bandwidth_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 public_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 quote_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_capacity_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_instance_primary_disk: pulumi.Input[Optional[_builtins.int]] = None,
+                 secondary_ip_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transient: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1603,67 +1607,67 @@ class ComputeVmInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            block_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            bulk_vms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeVmInstanceBulkVmArgs', 'ComputeVmInstanceBulkVmArgsDict']]]]] = None,
-            cores: Optional[pulumi.Input[_builtins.int]] = None,
-            datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-            datacenter_choices: Optional[pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
-            dedicated_acct_host_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            dedicated_host_id: Optional[pulumi.Input[_builtins.int]] = None,
-            dedicated_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            evault: Optional[pulumi.Input[_builtins.int]] = None,
-            file_storage_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            flavor_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            hourly_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-            image_id: Optional[pulumi.Input[_builtins.int]] = None,
-            ip_address_id: Optional[pulumi.Input[_builtins.int]] = None,
-            ip_address_id_private: Optional[pulumi.Input[_builtins.int]] = None,
-            ipv4_address: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv4_address_private: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6_address: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6_address_id: Optional[pulumi.Input[_builtins.int]] = None,
-            ipv6_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            ipv6_static_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            local_disk: Optional[pulumi.Input[_builtins.bool]] = None,
-            memory: Optional[pulumi.Input[_builtins.int]] = None,
-            network_speed: Optional[pulumi.Input[_builtins.int]] = None,
-            notes: Optional[pulumi.Input[_builtins.str]] = None,
-            os_reference_code: Optional[pulumi.Input[_builtins.str]] = None,
-            placement_group_id: Optional[pulumi.Input[_builtins.int]] = None,
-            placement_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            post_install_script_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            private_interface_id: Optional[pulumi.Input[_builtins.int]] = None,
-            private_network_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            private_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            private_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            private_subnet_id: Optional[pulumi.Input[_builtins.int]] = None,
-            private_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-            public_bandwidth_limited: Optional[pulumi.Input[_builtins.int]] = None,
-            public_bandwidth_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
-            public_interface_id: Optional[pulumi.Input[_builtins.int]] = None,
-            public_ipv6_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            public_ipv6_subnet_id: Optional[pulumi.Input[_builtins.int]] = None,
-            public_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            public_subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            public_subnet_id: Optional[pulumi.Input[_builtins.int]] = None,
-            public_vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
-            quote_id: Optional[pulumi.Input[_builtins.int]] = None,
-            reserved_capacity_id: Optional[pulumi.Input[_builtins.int]] = None,
-            reserved_capacity_name: Optional[pulumi.Input[_builtins.str]] = None,
-            reserved_instance_primary_disk: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-            secondary_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            secondary_ip_count: Optional[pulumi.Input[_builtins.int]] = None,
-            ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            transient: Optional[pulumi.Input[_builtins.bool]] = None,
-            user_metadata: Optional[pulumi.Input[_builtins.str]] = None,
-            wait_time_minutes: Optional[pulumi.Input[_builtins.int]] = None) -> 'ComputeVmInstance':
+            block_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            bulk_vms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeVmInstanceBulkVmArgs', 'ComputeVmInstanceBulkVmArgsDict', 'outputs.ComputeVmInstanceBulkVm']]]]] = None,
+            cores: pulumi.Input[Optional[_builtins.int]] = None,
+            datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+            datacenter_choices: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+            dedicated_acct_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            dedicated_host_id: pulumi.Input[Optional[_builtins.int]] = None,
+            dedicated_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            evault: pulumi.Input[Optional[_builtins.int]] = None,
+            file_storage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            flavor_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            hourly_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+            image_id: pulumi.Input[Optional[_builtins.int]] = None,
+            ip_address_id: pulumi.Input[Optional[_builtins.int]] = None,
+            ip_address_id_private: pulumi.Input[Optional[_builtins.int]] = None,
+            ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4_address_private: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6_address_id: pulumi.Input[Optional[_builtins.int]] = None,
+            ipv6_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            ipv6_static_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            local_disk: pulumi.Input[Optional[_builtins.bool]] = None,
+            memory: pulumi.Input[Optional[_builtins.int]] = None,
+            network_speed: pulumi.Input[Optional[_builtins.int]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            os_reference_code: pulumi.Input[Optional[_builtins.str]] = None,
+            placement_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            placement_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            post_install_script_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            private_interface_id: pulumi.Input[Optional[_builtins.int]] = None,
+            private_network_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            private_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            private_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            private_subnet_id: pulumi.Input[Optional[_builtins.int]] = None,
+            private_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+            public_bandwidth_limited: pulumi.Input[Optional[_builtins.int]] = None,
+            public_bandwidth_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+            public_interface_id: pulumi.Input[Optional[_builtins.int]] = None,
+            public_ipv6_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ipv6_subnet_id: pulumi.Input[Optional[_builtins.int]] = None,
+            public_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            public_subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            public_subnet_id: pulumi.Input[Optional[_builtins.int]] = None,
+            public_vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+            quote_id: pulumi.Input[Optional[_builtins.int]] = None,
+            reserved_capacity_id: pulumi.Input[Optional[_builtins.int]] = None,
+            reserved_capacity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_instance_primary_disk: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+            secondary_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            secondary_ip_count: pulumi.Input[Optional[_builtins.int]] = None,
+            ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            transient: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_metadata: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_time_minutes: pulumi.Input[Optional[_builtins.int]] = None) -> 'ComputeVmInstance':
         """
         Get an existing ComputeVmInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

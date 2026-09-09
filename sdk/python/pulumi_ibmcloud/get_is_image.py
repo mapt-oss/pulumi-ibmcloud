@@ -27,7 +27,7 @@ class GetIsImageResult:
     """
     A collection of values returned by getIsImage.
     """
-    def __init__(__self__, access_tags=None, allowed_uses=None, architecture=None, catalog_offerings=None, checksum=None, created_at=None, crn=None, deprecation_at=None, encryption=None, encryption_key=None, id=None, identifier=None, name=None, obsolescence_at=None, operating_systems=None, os=None, remotes=None, resource_groups=None, source_volume=None, status=None, status_reasons=None, user_data_format=None, visibility=None):
+    def __init__(__self__, access_tags=None, allowed_uses=None, architecture=None, catalog_offerings=None, checksum=None, created_at=None, crn=None, deprecation_at=None, encryption=None, encryption_key=None, id=None, identifier=None, minimum_provisioned_size=None, name=None, obsolescence_at=None, operating_systems=None, os=None, remotes=None, resource_groups=None, source_volume=None, status=None, status_reasons=None, user_data_format=None, visibility=None, zones=None):
         if access_tags and not isinstance(access_tags, list):
             raise TypeError("Expected argument 'access_tags' to be a list")
         pulumi.set(__self__, "access_tags", access_tags)
@@ -64,6 +64,9 @@ class GetIsImageResult:
         if identifier and not isinstance(identifier, str):
             raise TypeError("Expected argument 'identifier' to be a str")
         pulumi.set(__self__, "identifier", identifier)
+        if minimum_provisioned_size and not isinstance(minimum_provisioned_size, int):
+            raise TypeError("Expected argument 'minimum_provisioned_size' to be a int")
+        pulumi.set(__self__, "minimum_provisioned_size", minimum_provisioned_size)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -97,6 +100,9 @@ class GetIsImageResult:
         if visibility and not isinstance(visibility, str):
             raise TypeError("Expected argument 'visibility' to be a str")
         pulumi.set(__self__, "visibility", visibility)
+        if zones and not isinstance(zones, list):
+            raise TypeError("Expected argument 'zones' to be a list")
+        pulumi.set(__self__, "zones", zones)
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
@@ -162,6 +168,11 @@ class GetIsImageResult:
         return pulumi.get(self, "identifier")
 
     @_builtins.property
+    @pulumi.getter(name="minimumProvisionedSize")
+    def minimum_provisioned_size(self) -> _builtins.int:
+        return pulumi.get(self, "minimum_provisioned_size")
+
+    @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "name")
@@ -216,6 +227,11 @@ class GetIsImageResult:
     def visibility(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "visibility")
 
+    @_builtins.property
+    @pulumi.getter
+    def zones(self) -> Sequence['outputs.GetIsImageZoneResult']:
+        return pulumi.get(self, "zones")
+
 
 class AwaitableGetIsImageResult(GetIsImageResult):
     # pylint: disable=using-constant-test
@@ -235,6 +251,7 @@ class AwaitableGetIsImageResult(GetIsImageResult):
             encryption_key=self.encryption_key,
             id=self.id,
             identifier=self.identifier,
+            minimum_provisioned_size=self.minimum_provisioned_size,
             name=self.name,
             obsolescence_at=self.obsolescence_at,
             operating_systems=self.operating_systems,
@@ -245,7 +262,8 @@ class AwaitableGetIsImageResult(GetIsImageResult):
             status=self.status,
             status_reasons=self.status_reasons,
             user_data_format=self.user_data_format,
-            visibility=self.visibility)
+            visibility=self.visibility,
+            zones=self.zones)
 
 
 def get_is_image(identifier: Optional[_builtins.str] = None,
@@ -275,6 +293,7 @@ def get_is_image(identifier: Optional[_builtins.str] = None,
         encryption_key=pulumi.get(__ret__, 'encryption_key'),
         id=pulumi.get(__ret__, 'id'),
         identifier=pulumi.get(__ret__, 'identifier'),
+        minimum_provisioned_size=pulumi.get(__ret__, 'minimum_provisioned_size'),
         name=pulumi.get(__ret__, 'name'),
         obsolescence_at=pulumi.get(__ret__, 'obsolescence_at'),
         operating_systems=pulumi.get(__ret__, 'operating_systems'),
@@ -285,10 +304,11 @@ def get_is_image(identifier: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         status_reasons=pulumi.get(__ret__, 'status_reasons'),
         user_data_format=pulumi.get(__ret__, 'user_data_format'),
-        visibility=pulumi.get(__ret__, 'visibility'))
-def get_is_image_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        visibility: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+        visibility=pulumi.get(__ret__, 'visibility'),
+        zones=pulumi.get(__ret__, 'zones'))
+def get_is_image_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        visibility: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsImageResult]:
     """
     Use this data source to access information about an existing resource.
@@ -312,6 +332,7 @@ def get_is_image_output(identifier: Optional[pulumi.Input[Optional[_builtins.str
         encryption_key=pulumi.get(__response__, 'encryption_key'),
         id=pulumi.get(__response__, 'id'),
         identifier=pulumi.get(__response__, 'identifier'),
+        minimum_provisioned_size=pulumi.get(__response__, 'minimum_provisioned_size'),
         name=pulumi.get(__response__, 'name'),
         obsolescence_at=pulumi.get(__response__, 'obsolescence_at'),
         operating_systems=pulumi.get(__response__, 'operating_systems'),
@@ -322,4 +343,5 @@ def get_is_image_output(identifier: Optional[pulumi.Input[Optional[_builtins.str
         status=pulumi.get(__response__, 'status'),
         status_reasons=pulumi.get(__response__, 'status_reasons'),
         user_data_format=pulumi.get(__response__, 'user_data_format'),
-        visibility=pulumi.get(__response__, 'visibility')))
+        visibility=pulumi.get(__response__, 'visibility'),
+        zones=pulumi.get(__response__, 'zones')))

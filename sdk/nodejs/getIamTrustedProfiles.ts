@@ -51,6 +51,6 @@ export function getIamTrustedProfilesOutput(args: GetIamTrustedProfilesOutputArg
  */
 export interface GetIamTrustedProfilesOutputArgs {
     accountId: pulumi.Input<string>;
-    includeHistory?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

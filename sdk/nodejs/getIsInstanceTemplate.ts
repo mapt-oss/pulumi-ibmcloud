@@ -27,6 +27,8 @@ export interface GetIsInstanceTemplateArgs {
  * A collection of values returned by getIsInstanceTemplate.
  */
 export interface GetIsInstanceTemplateResult {
+    readonly availabilities: outputs.GetIsInstanceTemplateAvailability[];
+    readonly availabilityPolicies: outputs.GetIsInstanceTemplateAvailabilityPolicy[];
     readonly availabilityPolicyHostFailure: string;
     readonly bootVolumeAttachments: outputs.GetIsInstanceTemplateBootVolumeAttachment[];
     readonly catalogOfferings: outputs.GetIsInstanceTemplateCatalogOffering[];
@@ -55,8 +57,10 @@ export interface GetIsInstanceTemplateResult {
     readonly profile: string;
     readonly reservationAffinities: outputs.GetIsInstanceTemplateReservationAffinity[];
     readonly resourceGroup: string;
+    readonly threadsPerCore: number;
     readonly totalVolumeBandwidth: number;
     readonly userData: string;
+    readonly vcpus: outputs.GetIsInstanceTemplateVcpus[];
     readonly volumeAttachments: outputs.GetIsInstanceTemplateVolumeAttachment[];
     readonly volumeBandwidthQosMode: string;
     readonly vpc: string;
@@ -75,6 +79,6 @@ export function getIsInstanceTemplateOutput(args?: GetIsInstanceTemplateOutputAr
  * A collection of arguments for invoking getIsInstanceTemplate.
  */
 export interface GetIsInstanceTemplateOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

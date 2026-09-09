@@ -25,9 +25,10 @@ class IamAccessGroupDynamicRuleArgs:
                  conditions: pulumi.Input[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]],
                  expiration: pulumi.Input[_builtins.int],
                  identity_provider: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamAccessGroupDynamicRule resource.
+
         :param pulumi.Input[_builtins.str] access_group_id: Unique identifier of the access group
         :param pulumi.Input[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]] conditions: conditions info
         :param pulumi.Input[_builtins.int] expiration: The expiration in hours
@@ -91,28 +92,29 @@ class IamAccessGroupDynamicRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IamAccessGroupDynamicRuleState:
     def __init__(__self__, *,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.int]] = None,
-                 identity_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 identity_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamAccessGroupDynamicRule resources.
+
         :param pulumi.Input[_builtins.str] access_group_id: Unique identifier of the access group
         :param pulumi.Input[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]] conditions: conditions info
         :param pulumi.Input[_builtins.int] expiration: The expiration in hours
@@ -135,74 +137,74 @@ class _IamAccessGroupDynamicRuleState:
 
     @_builtins.property
     @pulumi.getter(name="accessGroupId")
-    def access_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the access group
         """
         return pulumi.get(self, "access_group_id")
 
     @access_group_id.setter
-    def access_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]]]:
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]]]:
         """
         conditions info
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]]]):
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupDynamicRuleConditionArgs']]]]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter
-    def expiration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def expiration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The expiration in hours
         """
         return pulumi.get(self, "expiration")
 
     @expiration.setter
-    def expiration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def expiration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProvider")
-    def identity_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The realm name or identity proivider url
         """
         return pulumi.get(self, "identity_provider")
 
     @identity_provider.setter
-    def identity_provider(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_provider(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_provider", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleId")
-    def rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         id of the rule
         """
         return pulumi.get(self, "rule_id")
 
     @rule_id.setter
-    def rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_id", value)
 
 
@@ -212,18 +214,19 @@ class IamAccessGroupDynamicRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict']]]]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.int]] = None,
-                 identity_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict', 'outputs.IamAccessGroupDynamicRuleCondition']]]]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 identity_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamAccessGroupDynamicRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_group_id: Unique identifier of the access group
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict']]]] conditions: conditions info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict', 'outputs.IamAccessGroupDynamicRuleCondition']]]] conditions: conditions info
         :param pulumi.Input[_builtins.int] expiration: The expiration in hours
         :param pulumi.Input[_builtins.str] identity_provider: The realm name or identity proivider url
         :param pulumi.Input[_builtins.str] name: The name of the Rule
@@ -236,6 +239,7 @@ class IamAccessGroupDynamicRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccessGroupDynamicRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccessGroupDynamicRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -251,11 +255,11 @@ class IamAccessGroupDynamicRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict']]]]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.int]] = None,
-                 identity_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict', 'outputs.IamAccessGroupDynamicRuleCondition']]]]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 identity_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -289,12 +293,12 @@ class IamAccessGroupDynamicRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict']]]]] = None,
-            expiration: Optional[pulumi.Input[_builtins.int]] = None,
-            identity_provider: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamAccessGroupDynamicRule':
+            access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict', 'outputs.IamAccessGroupDynamicRuleCondition']]]]] = None,
+            expiration: pulumi.Input[Optional[_builtins.int]] = None,
+            identity_provider: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamAccessGroupDynamicRule':
         """
         Get an existing IamAccessGroupDynamicRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -303,7 +307,7 @@ class IamAccessGroupDynamicRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_group_id: Unique identifier of the access group
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict']]]] conditions: conditions info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupDynamicRuleConditionArgs', 'IamAccessGroupDynamicRuleConditionArgsDict', 'outputs.IamAccessGroupDynamicRuleCondition']]]] conditions: conditions info
         :param pulumi.Input[_builtins.int] expiration: The expiration in hours
         :param pulumi.Input[_builtins.str] identity_provider: The realm name or identity proivider url
         :param pulumi.Input[_builtins.str] name: The name of the Rule

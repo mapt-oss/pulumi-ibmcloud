@@ -106,9 +106,9 @@ def get_is_share_snapshots(backup_policy_plan: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         share=pulumi.get(__ret__, 'share'),
         snapshots=pulumi.get(__ret__, 'snapshots'))
-def get_is_share_snapshots_output(backup_policy_plan: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  share: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_share_snapshots_output(backup_policy_plan: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  share: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsShareSnapshotsResult]:
     """
     Use this data source to access information about an existing resource.

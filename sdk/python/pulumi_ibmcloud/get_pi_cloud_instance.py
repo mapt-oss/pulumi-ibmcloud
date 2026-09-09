@@ -172,7 +172,7 @@ def get_pi_cloud_instance(pi_cloud_instance_id: Optional[_builtins.str] = None,
         total_processors_consumed=pulumi.get(__ret__, 'total_processors_consumed'),
         total_ssd_storage_consumed=pulumi.get(__ret__, 'total_ssd_storage_consumed'),
         total_standard_storage_consumed=pulumi.get(__ret__, 'total_standard_storage_consumed'))
-def get_pi_cloud_instance_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_cloud_instance_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiCloudInstanceResult]:
     """
     Use this data source to access information about an existing resource.

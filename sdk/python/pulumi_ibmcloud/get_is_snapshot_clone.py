@@ -103,8 +103,8 @@ def get_is_snapshot_clone(snapshot: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         snapshot=pulumi.get(__ret__, 'snapshot'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_snapshot_clone_output(snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_snapshot_clone_output(snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSnapshotCloneResult]:
     """
     Use this data source to access information about an existing resource.

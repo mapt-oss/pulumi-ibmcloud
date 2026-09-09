@@ -26,6 +26,7 @@ class PiHostArgs:
                  pi_host_group_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiHost resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input['PiHostPiHostArgs'] pi_host: Host to add to a host group.
         :param pulumi.Input[_builtins.str] pi_host_group_id: ID of the host group to which the host should be added.
@@ -74,20 +75,21 @@ class PiHostArgs:
 @pulumi.input_type
 class _PiHostState:
     def __init__(__self__, *,
-                 capacities: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostCapacityArgs']]]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_group: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_host: Optional[pulumi.Input['PiHostPiHostArgs']] = None,
-                 pi_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 sys_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 capacities: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostCapacityArgs']]]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_group: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_host: pulumi.Input[Optional['PiHostPiHostArgs']] = None,
+                 pi_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 sys_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiHost resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
         :param pulumi.Input[_builtins.str] display_name: Name of the host (chosen by the user).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] host_group: Link to host group resource.
@@ -127,143 +129,143 @@ class _PiHostState:
 
     @_builtins.property
     @pulumi.getter
-    def capacities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiHostCapacityArgs']]]]:
+    def capacities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiHostCapacityArgs']]]]:
         return pulumi.get(self, "capacities")
 
     @capacities.setter
-    def capacities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiHostCapacityArgs']]]]):
+    def capacities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiHostCapacityArgs']]]]):
         pulumi.set(self, "capacities", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the host (chosen by the user).
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroup")
-    def host_group(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def host_group(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Link to host group resource.
         """
         return pulumi.get(self, "host_group")
 
     @host_group.setter
-    def host_group(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def host_group(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "host_group", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the host.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piHost")
-    def pi_host(self) -> Optional[pulumi.Input['PiHostPiHostArgs']]:
+    def pi_host(self) -> pulumi.Input[Optional['PiHostPiHostArgs']]:
         """
         Host to add to a host group.
         """
         return pulumi.get(self, "pi_host")
 
     @pi_host.setter
-    def pi_host(self, value: Optional[pulumi.Input['PiHostPiHostArgs']]):
+    def pi_host(self, value: pulumi.Input[Optional['PiHostPiHostArgs']]):
         pulumi.set(self, "pi_host", value)
 
     @_builtins.property
     @pulumi.getter(name="piHostGroupId")
-    def pi_host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the host group to which the host should be added.
         """
         return pulumi.get(self, "pi_host_group_id")
 
     @pi_host_group_id.setter
-    def pi_host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_host_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of the host (up/down).
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the host (enabled/disabled).
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="sysType")
-    def sys_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sys_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         System type.
         """
         return pulumi.get(self, "sys_type")
 
     @sys_type.setter
-    def sys_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sys_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sys_type", value)
 
     @_builtins.property
     @pulumi.getter(name="userTags")
-    def user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "user_tags")
 
     @user_tags.setter
-    def user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "user_tags", value)
 
 
@@ -273,16 +275,17 @@ class PiHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_host: Optional[pulumi.Input[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict']]] = None,
-                 pi_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_host: pulumi.Input[Optional[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict', 'outputs.PiHostPiHost']]] = None,
+                 pi_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiHost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict']] pi_host: Host to add to a host group.
+        :param pulumi.Input[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict', 'outputs.PiHostPiHost']] pi_host: Host to add to a host group.
         :param pulumi.Input[_builtins.str] pi_host_group_id: ID of the host group to which the host should be added.
         """
         ...
@@ -293,6 +296,7 @@ class PiHost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiHost resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiHostArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -308,9 +312,9 @@ class PiHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_host: Optional[pulumi.Input[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict']]] = None,
-                 pi_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_host: pulumi.Input[Optional[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict', 'outputs.PiHostPiHost']]] = None,
+                 pi_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -348,18 +352,18 @@ class PiHost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capacities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiHostCapacityArgs', 'PiHostCapacityArgsDict']]]]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            host_group: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_host: Optional[pulumi.Input[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict']]] = None,
-            pi_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            sys_type: Optional[pulumi.Input[_builtins.str]] = None,
-            user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiHost':
+            capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiHostCapacityArgs', 'PiHostCapacityArgsDict', 'outputs.PiHostCapacity']]]]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            host_group: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_host: pulumi.Input[Optional[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict', 'outputs.PiHostPiHost']]] = None,
+            pi_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            sys_type: pulumi.Input[Optional[_builtins.str]] = None,
+            user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiHost':
         """
         Get an existing PiHost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -372,7 +376,7 @@ class PiHost(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] host_group: Link to host group resource.
         :param pulumi.Input[_builtins.str] host_id: ID of the host.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict']] pi_host: Host to add to a host group.
+        :param pulumi.Input[Union['PiHostPiHostArgs', 'PiHostPiHostArgsDict', 'outputs.PiHostPiHost']] pi_host: Host to add to a host group.
         :param pulumi.Input[_builtins.str] pi_host_group_id: ID of the host group to which the host should be added.
         :param pulumi.Input[_builtins.str] state: State of the host (up/down).
         :param pulumi.Input[_builtins.str] status: Status of the host (enabled/disabled).

@@ -28,6 +28,7 @@ export interface GetIsVpnGatewayArgs {
  */
 export interface GetIsVpnGatewayResult {
     readonly accessTags: string[];
+    readonly advertisedCidrs: string[];
     readonly connections: outputs.GetIsVpnGatewayConnection[];
     readonly createdAt: string;
     readonly crn: string;
@@ -40,6 +41,7 @@ export interface GetIsVpnGatewayResult {
     readonly id: string;
     readonly lifecycleReasons: outputs.GetIsVpnGatewayLifecycleReason[];
     readonly lifecycleState: string;
+    readonly localAsn: number;
     readonly members: outputs.GetIsVpnGatewayMember[];
     readonly mode: string;
     readonly name: string;
@@ -65,6 +67,6 @@ export function getIsVpnGatewayOutput(args?: GetIsVpnGatewayOutputArgs, opts?: p
  * A collection of arguments for invoking getIsVpnGateway.
  */
 export interface GetIsVpnGatewayOutputArgs {
-    vpnGateway?: pulumi.Input<string>;
-    vpnGatewayName?: pulumi.Input<string>;
+    vpnGateway?: pulumi.Input<string | undefined>;
+    vpnGatewayName?: pulumi.Input<string | undefined>;
 }

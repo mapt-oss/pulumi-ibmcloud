@@ -24,17 +24,22 @@ class IamTrustedProfileLinkArgs:
                  cr_type: pulumi.Input[_builtins.str],
                  link: pulumi.Input['IamTrustedProfileLinkLinkArgs'],
                  profile_id: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_cross_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamTrustedProfileLink resource.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         :param pulumi.Input['IamTrustedProfileLinkLinkArgs'] link: Link details.
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile.
+        :param pulumi.Input[_builtins.bool] is_cross_account: Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
         :param pulumi.Input[_builtins.str] name: Optional name of the Link.
         """
         pulumi.set(__self__, "cr_type", cr_type)
         pulumi.set(__self__, "link", link)
         pulumi.set(__self__, "profile_id", profile_id)
+        if is_cross_account is not None:
+            pulumi.set(__self__, "is_cross_account", is_cross_account)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -42,7 +47,7 @@ class IamTrustedProfileLinkArgs:
     @pulumi.getter(name="crType")
     def cr_type(self) -> pulumi.Input[_builtins.str]:
         """
-        The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+        The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         """
         return pulumi.get(self, "cr_type")
 
@@ -75,34 +80,49 @@ class IamTrustedProfileLinkArgs:
         pulumi.set(self, "profile_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="isCrossAccount")
+    def is_cross_account(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+        """
+        return pulumi.get(self, "is_cross_account")
+
+    @is_cross_account.setter
+    def is_cross_account(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_cross_account", value)
+
+    @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional name of the Link.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IamTrustedProfileLinkState:
     def __init__(__self__, *,
-                 cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 link: Optional[pulumi.Input['IamTrustedProfileLinkLinkArgs']] = None,
-                 link_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_cross_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 link: pulumi.Input[Optional['IamTrustedProfileLinkLinkArgs']] = None,
+                 link_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamTrustedProfileLink resources.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
         :param pulumi.Input[_builtins.str] entity_tag: version of the link.
+        :param pulumi.Input[_builtins.bool] is_cross_account: Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
         :param pulumi.Input['IamTrustedProfileLinkLinkArgs'] link: Link details.
         :param pulumi.Input[_builtins.str] link_id: the unique identifier of the link.
         :param pulumi.Input[_builtins.str] modified_at: If set contains a date time string of the last modification date in ISO format.
@@ -115,6 +135,8 @@ class _IamTrustedProfileLinkState:
             pulumi.set(__self__, "created_at", created_at)
         if entity_tag is not None:
             pulumi.set(__self__, "entity_tag", entity_tag)
+        if is_cross_account is not None:
+            pulumi.set(__self__, "is_cross_account", is_cross_account)
         if link is not None:
             pulumi.set(__self__, "link", link)
         if link_id is not None:
@@ -128,98 +150,110 @@ class _IamTrustedProfileLinkState:
 
     @_builtins.property
     @pulumi.getter(name="crType")
-    def cr_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cr_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+        The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         """
         return pulumi.get(self, "cr_type")
 
     @cr_type.setter
-    def cr_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cr_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cr_type", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the creation date in ISO format.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         version of the link.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
+    @pulumi.getter(name="isCrossAccount")
+    def is_cross_account(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+        """
+        return pulumi.get(self, "is_cross_account")
+
+    @is_cross_account.setter
+    def is_cross_account(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_cross_account", value)
+
+    @_builtins.property
     @pulumi.getter
-    def link(self) -> Optional[pulumi.Input['IamTrustedProfileLinkLinkArgs']]:
+    def link(self) -> pulumi.Input[Optional['IamTrustedProfileLinkLinkArgs']]:
         """
         Link details.
         """
         return pulumi.get(self, "link")
 
     @link.setter
-    def link(self, value: Optional[pulumi.Input['IamTrustedProfileLinkLinkArgs']]):
+    def link(self, value: pulumi.Input[Optional['IamTrustedProfileLinkLinkArgs']]):
         pulumi.set(self, "link", value)
 
     @_builtins.property
     @pulumi.getter(name="linkId")
-    def link_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def link_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the unique identifier of the link.
         """
         return pulumi.get(self, "link_id")
 
     @link_id.setter
-    def link_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def link_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "link_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedAt")
-    def modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the last modification date in ISO format.
         """
         return pulumi.get(self, "modified_at")
 
     @modified_at.setter
-    def modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional name of the Link.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="profileId")
-    def profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the trusted profile.
         """
         return pulumi.get(self, "profile_id")
 
     @profile_id.setter
-    def profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_id", value)
 
 
@@ -229,17 +263,20 @@ class IamTrustedProfileLink(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 link: Optional[pulumi.Input[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_cross_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 link: pulumi.Input[Optional[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict', 'outputs.IamTrustedProfileLinkLink']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamTrustedProfileLink resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
-        :param pulumi.Input[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict']] link: Link details.
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
+        :param pulumi.Input[_builtins.bool] is_cross_account: Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+        :param pulumi.Input[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict', 'outputs.IamTrustedProfileLinkLink']] link: Link details.
         :param pulumi.Input[_builtins.str] name: Optional name of the Link.
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile.
         """
@@ -251,6 +288,7 @@ class IamTrustedProfileLink(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamTrustedProfileLink resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamTrustedProfileLinkArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -266,10 +304,11 @@ class IamTrustedProfileLink(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 link: Optional[pulumi.Input[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_cross_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 link: pulumi.Input[Optional[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict', 'outputs.IamTrustedProfileLinkLink']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -282,6 +321,7 @@ class IamTrustedProfileLink(pulumi.CustomResource):
             if cr_type is None and not opts.urn:
                 raise TypeError("Missing required property 'cr_type'")
             __props__.__dict__["cr_type"] = cr_type
+            __props__.__dict__["is_cross_account"] = is_cross_account
             if link is None and not opts.urn:
                 raise TypeError("Missing required property 'link'")
             __props__.__dict__["link"] = link
@@ -303,14 +343,15 @@ class IamTrustedProfileLink(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-            link: Optional[pulumi.Input[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict']]] = None,
-            link_id: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamTrustedProfileLink':
+            cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+            is_cross_account: pulumi.Input[Optional[_builtins.bool]] = None,
+            link: pulumi.Input[Optional[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict', 'outputs.IamTrustedProfileLinkLink']]] = None,
+            link_id: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamTrustedProfileLink':
         """
         Get an existing IamTrustedProfileLink resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -318,10 +359,11 @@ class IamTrustedProfileLink(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
         :param pulumi.Input[_builtins.str] entity_tag: version of the link.
-        :param pulumi.Input[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict']] link: Link details.
+        :param pulumi.Input[_builtins.bool] is_cross_account: Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+        :param pulumi.Input[Union['IamTrustedProfileLinkLinkArgs', 'IamTrustedProfileLinkLinkArgsDict', 'outputs.IamTrustedProfileLinkLink']] link: Link details.
         :param pulumi.Input[_builtins.str] link_id: the unique identifier of the link.
         :param pulumi.Input[_builtins.str] modified_at: If set contains a date time string of the last modification date in ISO format.
         :param pulumi.Input[_builtins.str] name: Optional name of the Link.
@@ -334,6 +376,7 @@ class IamTrustedProfileLink(pulumi.CustomResource):
         __props__.__dict__["cr_type"] = cr_type
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["entity_tag"] = entity_tag
+        __props__.__dict__["is_cross_account"] = is_cross_account
         __props__.__dict__["link"] = link
         __props__.__dict__["link_id"] = link_id
         __props__.__dict__["modified_at"] = modified_at
@@ -345,7 +388,7 @@ class IamTrustedProfileLink(pulumi.CustomResource):
     @pulumi.getter(name="crType")
     def cr_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The compute resource type. Valid values are VSI, BMS, IKS_SA, ROKS_SA, CE.
+        The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         """
         return pulumi.get(self, "cr_type")
 
@@ -364,6 +407,14 @@ class IamTrustedProfileLink(pulumi.CustomResource):
         version of the link.
         """
         return pulumi.get(self, "entity_tag")
+
+    @_builtins.property
+    @pulumi.getter(name="isCrossAccount")
+    def is_cross_account(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Flag to indicate that the link provides cross account access. If not provided then the account scope of the CRN must match the Profile's account.
+        """
+        return pulumi.get(self, "is_cross_account")
 
     @_builtins.property
     @pulumi.getter

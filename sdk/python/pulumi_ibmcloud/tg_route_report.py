@@ -24,6 +24,7 @@ class TgRouteReportArgs:
                  gateway: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a TgRouteReport resource.
+
         :param pulumi.Input[_builtins.str] gateway: The Transit Gateway identifier
         """
         pulumi.set(__self__, "gateway", gateway)
@@ -44,15 +45,16 @@ class TgRouteReportArgs:
 @pulumi.input_type
 class _TgRouteReportState:
     def __init__(__self__, *,
-                 connections: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionArgs']]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 overlapping_routes: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteArgs']]]] = None,
-                 route_report_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_at: Optional[pulumi.Input[_builtins.str]] = None):
+                 connections: pulumi.Input[Optional[Sequence[pulumi.Input['TgRouteReportConnectionArgs']]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 overlapping_routes: pulumi.Input[Optional[Sequence[pulumi.Input['TgRouteReportOverlappingRouteArgs']]]] = None,
+                 route_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_at: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TgRouteReport resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionArgs']]] connections: Collection of transit gateway connections
         :param pulumi.Input[_builtins.str] gateway: The Transit Gateway identifier
         :param pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteArgs']]] overlapping_routes: Collection of transit gateway overlapping routes
@@ -75,77 +77,77 @@ class _TgRouteReportState:
 
     @_builtins.property
     @pulumi.getter
-    def connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionArgs']]]]:
+    def connections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TgRouteReportConnectionArgs']]]]:
         """
         Collection of transit gateway connections
         """
         return pulumi.get(self, "connections")
 
     @connections.setter
-    def connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportConnectionArgs']]]]):
+    def connections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TgRouteReportConnectionArgs']]]]):
         pulumi.set(self, "connections", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Transit Gateway identifier
         """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
-    def gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="overlappingRoutes")
-    def overlapping_routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteArgs']]]]:
+    def overlapping_routes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TgRouteReportOverlappingRouteArgs']]]]:
         """
         Collection of transit gateway overlapping routes
         """
         return pulumi.get(self, "overlapping_routes")
 
     @overlapping_routes.setter
-    def overlapping_routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TgRouteReportOverlappingRouteArgs']]]]):
+    def overlapping_routes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TgRouteReportOverlappingRouteArgs']]]]):
         pulumi.set(self, "overlapping_routes", value)
 
     @_builtins.property
     @pulumi.getter(name="routeReportId")
-    def route_report_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_report_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Transit Gateway Route Report identifier
         """
         return pulumi.get(self, "route_report_id")
 
     @route_report_id.setter
-    def route_report_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_report_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_report_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "updated_at")
 
     @updated_at.setter
-    def updated_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_at", value)
 
 
@@ -155,10 +157,11 @@ class TgRouteReport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a TgRouteReport resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] gateway: The Transit Gateway identifier
@@ -171,6 +174,7 @@ class TgRouteReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a TgRouteReport resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param TgRouteReportArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -186,7 +190,7 @@ class TgRouteReport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -215,13 +219,13 @@ class TgRouteReport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TgRouteReportConnectionArgs', 'TgRouteReportConnectionArgsDict']]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            overlapping_routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TgRouteReportOverlappingRouteArgs', 'TgRouteReportOverlappingRouteArgsDict']]]]] = None,
-            route_report_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            updated_at: Optional[pulumi.Input[_builtins.str]] = None) -> 'TgRouteReport':
+            connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TgRouteReportConnectionArgs', 'TgRouteReportConnectionArgsDict', 'outputs.TgRouteReportConnection']]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            overlapping_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TgRouteReportOverlappingRouteArgs', 'TgRouteReportOverlappingRouteArgsDict', 'outputs.TgRouteReportOverlappingRoute']]]]] = None,
+            route_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'TgRouteReport':
         """
         Get an existing TgRouteReport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -229,9 +233,9 @@ class TgRouteReport(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TgRouteReportConnectionArgs', 'TgRouteReportConnectionArgsDict']]]] connections: Collection of transit gateway connections
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TgRouteReportConnectionArgs', 'TgRouteReportConnectionArgsDict', 'outputs.TgRouteReportConnection']]]] connections: Collection of transit gateway connections
         :param pulumi.Input[_builtins.str] gateway: The Transit Gateway identifier
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TgRouteReportOverlappingRouteArgs', 'TgRouteReportOverlappingRouteArgsDict']]]] overlapping_routes: Collection of transit gateway overlapping routes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TgRouteReportOverlappingRouteArgs', 'TgRouteReportOverlappingRouteArgsDict', 'outputs.TgRouteReportOverlappingRoute']]]] overlapping_routes: Collection of transit gateway overlapping routes
         :param pulumi.Input[_builtins.str] route_report_id: The Transit Gateway Route Report identifier
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

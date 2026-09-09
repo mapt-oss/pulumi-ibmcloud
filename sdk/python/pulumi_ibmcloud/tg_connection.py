@@ -23,25 +23,28 @@ class TgConnectionArgs:
     def __init__(__self__, *,
                  gateway: pulumi.Input[_builtins.str],
                  network_type: pulumi.Input[_builtins.str],
-                 base_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 base_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_prefix_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 remote_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnels: Optional[pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 base_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_prefix_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 remote_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnels: pulumi.Input[Optional[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a TgConnection resource.
+
         :param pulumi.Input[_builtins.str] gateway: The Transit Gateway identifier
-        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
         :param pulumi.Input[_builtins.str] base_connection_id: The ID of a network_type 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] base_network_type: The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
+        :param pulumi.Input[_builtins.str] cidr: The network_type 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
         :param pulumi.Input[_builtins.str] default_prefix_filter: Whether to permit or deny the prefix filter
         :param pulumi.Input[_builtins.str] local_gateway_ip: The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] local_tunnel_ip: The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
@@ -52,7 +55,7 @@ class TgConnectionArgs:
         :param pulumi.Input[_builtins.str] remote_gateway_ip: The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] remote_tunnel_ip: The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]] tunnels: List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
-        :param pulumi.Input[_builtins.str] zone: Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] zone: Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
         """
         pulumi.set(__self__, "gateway", gateway)
         pulumi.set(__self__, "network_type", network_type)
@@ -60,6 +63,8 @@ class TgConnectionArgs:
             pulumi.set(__self__, "base_connection_id", base_connection_id)
         if base_network_type is not None:
             pulumi.set(__self__, "base_network_type", base_network_type)
+        if cidr is not None:
+            pulumi.set(__self__, "cidr", cidr)
         if default_prefix_filter is not None:
             pulumi.set(__self__, "default_prefix_filter", default_prefix_filter)
         if local_gateway_ip is not None:
@@ -99,7 +104,7 @@ class TgConnectionArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+        Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
         """
         return pulumi.get(self, "network_type")
 
@@ -109,189 +114,204 @@ class TgConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="baseConnectionId")
-    def base_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def base_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of a network_type 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
         """
         return pulumi.get(self, "base_connection_id")
 
     @base_connection_id.setter
-    def base_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def base_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "base_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="baseNetworkType")
-    def base_network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def base_network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
         """
         return pulumi.get(self, "base_network_type")
 
     @base_network_type.setter
-    def base_network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def base_network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "base_network_type", value)
 
     @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The network_type 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
+        """
+        return pulumi.get(self, "cidr")
+
+    @cidr.setter
+    def cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cidr", value)
+
+    @_builtins.property
     @pulumi.getter(name="defaultPrefixFilter")
-    def default_prefix_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_prefix_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether to permit or deny the prefix filter
         """
         return pulumi.get(self, "default_prefix_filter")
 
     @default_prefix_filter.setter
-    def default_prefix_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_prefix_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_prefix_filter", value)
 
     @_builtins.property
     @pulumi.getter(name="localGatewayIp")
-    def local_gateway_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_gateway_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "local_gateway_ip")
 
     @local_gateway_ip.setter
-    def local_gateway_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_gateway_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_gateway_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="localTunnelIp")
-    def local_tunnel_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_tunnel_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "local_tunnel_ip")
 
     @local_tunnel_ip.setter
-    def local_tunnel_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_tunnel_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_tunnel_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic').
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAccountId")
-    def network_account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associated_network_type is 'classic' and the GRE tunnel is in a different account than the gateway.
         """
         return pulumi.get(self, "network_account_id")
 
     @network_account_id.setter
-    def network_account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkId")
-    def network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or power_virtual_server gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
         """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
-    def network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteBgpAsn")
-    def remote_bgp_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def remote_bgp_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "remote_bgp_asn")
 
     @remote_bgp_asn.setter
-    def remote_bgp_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def remote_bgp_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "remote_bgp_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteGatewayIp")
-    def remote_gateway_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_gateway_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "remote_gateway_ip")
 
     @remote_gateway_ip.setter
-    def remote_gateway_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_gateway_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_gateway_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteTunnelIp")
-    def remote_tunnel_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_tunnel_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "remote_tunnel_ip")
 
     @remote_tunnel_ip.setter
-    def remote_tunnel_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_tunnel_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_tunnel_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def tunnels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]:
+    def tunnels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]:
         """
         List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
         """
         return pulumi.get(self, "tunnels")
 
     @tunnels.setter
-    def tunnels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]):
+    def tunnels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]):
         pulumi.set(self, "tunnels", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
 @pulumi.input_type
 class _TgConnectionState:
     def __init__(__self__, *,
-                 base_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 base_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_prefix_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 remote_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnels: Optional[pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]] = None,
-                 updated_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 base_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_prefix_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 remote_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnels: pulumi.Input[Optional[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]] = None,
+                 updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TgConnection resources.
+
         :param pulumi.Input[_builtins.str] base_connection_id: The ID of a network_type 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] base_network_type: The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
+        :param pulumi.Input[_builtins.str] cidr: The network_type 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
         :param pulumi.Input[_builtins.str] connection_id: The Transit Gateway Connection identifier
         :param pulumi.Input[_builtins.str] created_at: The date and time that this connection was created
         :param pulumi.Input[_builtins.str] default_prefix_filter: Whether to permit or deny the prefix filter
@@ -301,7 +321,7 @@ class _TgConnectionState:
         :param pulumi.Input[_builtins.str] name: The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic').
         :param pulumi.Input[_builtins.str] network_account_id: The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associated_network_type is 'classic' and the GRE tunnel is in a different account than the gateway.
         :param pulumi.Input[_builtins.str] network_id: The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or power_virtual_server gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
-        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
         :param pulumi.Input[_builtins.str] related_crn: The crn of the transit gateway
         :param pulumi.Input[_builtins.int] remote_bgp_asn: The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] remote_gateway_ip: The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
@@ -310,12 +330,14 @@ class _TgConnectionState:
         :param pulumi.Input[_builtins.str] status: What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
         :param pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]] tunnels: List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
         :param pulumi.Input[_builtins.str] updated_at: The date and time that this connection was last updated
-        :param pulumi.Input[_builtins.str] zone: Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] zone: Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
         """
         if base_connection_id is not None:
             pulumi.set(__self__, "base_connection_id", base_connection_id)
         if base_network_type is not None:
             pulumi.set(__self__, "base_network_type", base_network_type)
+        if cidr is not None:
+            pulumi.set(__self__, "cidr", cidr)
         if connection_id is not None:
             pulumi.set(__self__, "connection_id", connection_id)
         if created_at is not None:
@@ -357,254 +379,266 @@ class _TgConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="baseConnectionId")
-    def base_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def base_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of a network_type 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
         """
         return pulumi.get(self, "base_connection_id")
 
     @base_connection_id.setter
-    def base_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def base_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "base_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="baseNetworkType")
-    def base_network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def base_network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
         """
         return pulumi.get(self, "base_network_type")
 
     @base_network_type.setter
-    def base_network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def base_network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "base_network_type", value)
 
     @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The network_type 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
+        """
+        return pulumi.get(self, "cidr")
+
+    @cidr.setter
+    def cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cidr", value)
+
+    @_builtins.property
     @pulumi.getter(name="connectionId")
-    def connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Transit Gateway Connection identifier
         """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
-    def connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that this connection was created
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultPrefixFilter")
-    def default_prefix_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_prefix_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether to permit or deny the prefix filter
         """
         return pulumi.get(self, "default_prefix_filter")
 
     @default_prefix_filter.setter
-    def default_prefix_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_prefix_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_prefix_filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Transit Gateway identifier
         """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
-    def gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="localGatewayIp")
-    def local_gateway_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_gateway_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "local_gateway_ip")
 
     @local_gateway_ip.setter
-    def local_gateway_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_gateway_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_gateway_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="localTunnelIp")
-    def local_tunnel_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_tunnel_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "local_tunnel_ip")
 
     @local_tunnel_ip.setter
-    def local_tunnel_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_tunnel_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_tunnel_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic').
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAccountId")
-    def network_account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associated_network_type is 'classic' and the GRE tunnel is in a different account than the gateway.
         """
         return pulumi.get(self, "network_account_id")
 
     @network_account_id.setter
-    def network_account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkId")
-    def network_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or power_virtual_server gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
         """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
-    def network_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkType")
-    def network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+        Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
         """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
-    def network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_type", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedCrn")
-    def related_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the transit gateway
         """
         return pulumi.get(self, "related_crn")
 
     @related_crn.setter
-    def related_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteBgpAsn")
-    def remote_bgp_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def remote_bgp_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "remote_bgp_asn")
 
     @remote_bgp_asn.setter
-    def remote_bgp_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def remote_bgp_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "remote_bgp_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteGatewayIp")
-    def remote_gateway_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_gateway_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "remote_gateway_ip")
 
     @remote_gateway_ip.setter
-    def remote_gateway_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_gateway_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_gateway_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteTunnelIp")
-    def remote_tunnel_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_tunnel_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         """
         return pulumi.get(self, "remote_tunnel_ip")
 
     @remote_tunnel_ip.setter
-    def remote_tunnel_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_tunnel_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_tunnel_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="requestStatus")
-    def request_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]
         """
         return pulumi.get(self, "request_status")
 
     @request_status.setter
-    def request_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tunnels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]:
+    def tunnels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]:
         """
         List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
         """
         return pulumi.get(self, "tunnels")
 
     @tunnels.setter
-    def tunnels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]):
+    def tunnels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TgConnectionTunnelArgs']]]]):
         pulumi.set(self, "tunnels", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that this connection was last updated
         """
         return pulumi.get(self, "updated_at")
 
     @updated_at.setter
-    def updated_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -614,28 +648,31 @@ class TgConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 base_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 base_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_prefix_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 remote_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict']]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 base_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_prefix_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 remote_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict', 'outputs.TgConnectionTunnel']]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a TgConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] base_connection_id: The ID of a network_type 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] base_network_type: The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
+        :param pulumi.Input[_builtins.str] cidr: The network_type 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
         :param pulumi.Input[_builtins.str] default_prefix_filter: Whether to permit or deny the prefix filter
         :param pulumi.Input[_builtins.str] gateway: The Transit Gateway identifier
         :param pulumi.Input[_builtins.str] local_gateway_ip: The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
@@ -643,12 +680,12 @@ class TgConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic').
         :param pulumi.Input[_builtins.str] network_account_id: The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associated_network_type is 'classic' and the GRE tunnel is in a different account than the gateway.
         :param pulumi.Input[_builtins.str] network_id: The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or power_virtual_server gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
-        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
         :param pulumi.Input[_builtins.int] remote_bgp_asn: The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] remote_gateway_ip: The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] remote_tunnel_ip: The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict']]]] tunnels: List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
-        :param pulumi.Input[_builtins.str] zone: Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict', 'outputs.TgConnectionTunnel']]]] tunnels: List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
+        :param pulumi.Input[_builtins.str] zone: Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
         """
         ...
     @overload
@@ -658,6 +695,7 @@ class TgConnection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a TgConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param TgConnectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -673,21 +711,22 @@ class TgConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 base_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 base_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_prefix_filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 remote_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict']]]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 base_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_prefix_filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 remote_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict', 'outputs.TgConnectionTunnel']]]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -699,6 +738,7 @@ class TgConnection(pulumi.CustomResource):
 
             __props__.__dict__["base_connection_id"] = base_connection_id
             __props__.__dict__["base_network_type"] = base_network_type
+            __props__.__dict__["cidr"] = cidr
             __props__.__dict__["default_prefix_filter"] = default_prefix_filter
             if gateway is None and not opts.urn:
                 raise TypeError("Missing required property 'gateway'")
@@ -732,27 +772,28 @@ class TgConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            base_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            base_network_type: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            default_prefix_filter: Optional[pulumi.Input[_builtins.str]] = None,
-            gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            local_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            local_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_type: Optional[pulumi.Input[_builtins.str]] = None,
-            related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-            remote_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_tunnel_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            request_status: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tunnels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict']]]]] = None,
-            updated_at: Optional[pulumi.Input[_builtins.str]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'TgConnection':
+            base_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            base_network_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            default_prefix_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            local_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            local_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_type: pulumi.Input[Optional[_builtins.str]] = None,
+            related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            remote_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_tunnel_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            request_status: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tunnels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict', 'outputs.TgConnectionTunnel']]]]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'TgConnection':
         """
         Get an existing TgConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -762,6 +803,7 @@ class TgConnection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] base_connection_id: The ID of a network_type 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] base_network_type: The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
+        :param pulumi.Input[_builtins.str] cidr: The network_type 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
         :param pulumi.Input[_builtins.str] connection_id: The Transit Gateway Connection identifier
         :param pulumi.Input[_builtins.str] created_at: The date and time that this connection was created
         :param pulumi.Input[_builtins.str] default_prefix_filter: Whether to permit or deny the prefix filter
@@ -771,16 +813,16 @@ class TgConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic').
         :param pulumi.Input[_builtins.str] network_account_id: The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associated_network_type is 'classic' and the GRE tunnel is in a different account than the gateway.
         :param pulumi.Input[_builtins.str] network_id: The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or power_virtual_server gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
-        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+        :param pulumi.Input[_builtins.str] network_type: Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
         :param pulumi.Input[_builtins.str] related_crn: The crn of the transit gateway
         :param pulumi.Input[_builtins.int] remote_bgp_asn: The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] remote_gateway_ip: The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] remote_tunnel_ip: The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
         :param pulumi.Input[_builtins.str] request_status: Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]
         :param pulumi.Input[_builtins.str] status: What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict']]]] tunnels: List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TgConnectionTunnelArgs', 'TgConnectionTunnelArgsDict', 'outputs.TgConnectionTunnel']]]] tunnels: List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
         :param pulumi.Input[_builtins.str] updated_at: The date and time that this connection was last updated
-        :param pulumi.Input[_builtins.str] zone: Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        :param pulumi.Input[_builtins.str] zone: Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -788,6 +830,7 @@ class TgConnection(pulumi.CustomResource):
 
         __props__.__dict__["base_connection_id"] = base_connection_id
         __props__.__dict__["base_network_type"] = base_network_type
+        __props__.__dict__["cidr"] = cidr
         __props__.__dict__["connection_id"] = connection_id
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["default_prefix_filter"] = default_prefix_filter
@@ -824,6 +867,14 @@ class TgConnection(pulumi.CustomResource):
         The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
         """
         return pulumi.get(self, "base_network_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The network_type 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
+        """
+        return pulumi.get(self, "cidr")
 
     @_builtins.property
     @pulumi.getter(name="connectionId")
@@ -901,7 +952,7 @@ class TgConnection(pulumi.CustomResource):
     @pulumi.getter(name="networkType")
     def network_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+        Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
         """
         return pulumi.get(self, "network_type")
 
@@ -973,7 +1024,7 @@ class TgConnection(pulumi.CustomResource):
     @pulumi.getter
     def zone(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+        Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
         """
         return pulumi.get(self, "zone")
 

@@ -135,45 +135,45 @@ export interface IamUserPolicyState {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ibm id or email of user
      */
-    ibmId?: pulumi.Input<string>;
+    ibmId?: pulumi.Input<string | undefined>;
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamUserPolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamUserPolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -183,11 +183,11 @@ export interface IamUserPolicyArgs {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ibm id or email of user
      */
@@ -195,16 +195,16 @@ export interface IamUserPolicyArgs {
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamUserPolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamUserPolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
@@ -212,14 +212,14 @@ export interface IamUserPolicyArgs {
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

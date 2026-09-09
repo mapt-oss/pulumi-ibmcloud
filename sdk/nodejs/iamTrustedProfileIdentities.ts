@@ -84,15 +84,15 @@ export interface IamTrustedProfileIdentitiesState {
     /**
      * List of identities.
      */
-    identities?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileIdentitiesIdentity>[]>;
+    identities?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileIdentitiesIdentity>[] | undefined>;
     /**
      * Entity tag of the Identities to be updated. Specify the tag that you retrieved when reading the Profile Identities. This value helps identify parallel usage of this API. Pass * to indicate updating any available version, which may result in stale updates.
      */
-    ifMatch?: pulumi.Input<string>;
+    ifMatch?: pulumi.Input<string | undefined>;
     /**
      * ID of the trusted profile.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -102,7 +102,7 @@ export interface IamTrustedProfileIdentitiesArgs {
     /**
      * List of identities.
      */
-    identities?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileIdentitiesIdentity>[]>;
+    identities?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileIdentitiesIdentity>[] | undefined>;
     /**
      * ID of the trusted profile.
      */

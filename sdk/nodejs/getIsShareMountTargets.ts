@@ -46,6 +46,6 @@ export function getIsShareMountTargetsOutput(args: GetIsShareMountTargetsOutputA
  * A collection of arguments for invoking getIsShareMountTargets.
  */
 export interface GetIsShareMountTargetsOutputArgs {
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     share: pulumi.Input<string>;
 }

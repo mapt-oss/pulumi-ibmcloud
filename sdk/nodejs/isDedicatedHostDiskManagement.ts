@@ -81,11 +81,11 @@ export interface IsDedicatedHostDiskManagementState {
     /**
      * ID of the dedicated host for which disks has to be managed
      */
-    dedicatedHost?: pulumi.Input<string>;
+    dedicatedHost?: pulumi.Input<string | undefined>;
     /**
      * Disk information that has to be updated.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDiskManagementDisk>[]>;
+    disks?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDiskManagementDisk>[] | undefined>;
 }
 
 /**

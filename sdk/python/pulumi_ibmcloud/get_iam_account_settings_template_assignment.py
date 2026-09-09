@@ -239,12 +239,12 @@ def get_iam_account_settings_template_assignment(assignment_id: Optional[_builti
         target_type=pulumi.get(__ret__, 'target_type'),
         template_id=pulumi.get(__ret__, 'template_id'),
         template_version=pulumi.get(__ret__, 'template_version'))
-def get_iam_account_settings_template_assignment_output(assignment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        include_history: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                        target: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        target_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        template_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        template_version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_iam_account_settings_template_assignment_output(assignment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        include_history: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                        target: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        target_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        template_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        template_version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccountSettingsTemplateAssignmentResult]:
     """
     Use this data source to access information about an existing resource.

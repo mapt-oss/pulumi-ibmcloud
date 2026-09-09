@@ -68,11 +68,11 @@ export function getIsSubnetsOutput(args?: GetIsSubnetsOutputArgs, opts?: pulumi.
  * A collection of arguments for invoking getIsSubnets.
  */
 export interface GetIsSubnetsOutputArgs {
-    resourceGroup?: pulumi.Input<string>;
-    routingTable?: pulumi.Input<string>;
-    routingTableName?: pulumi.Input<string>;
-    vpc?: pulumi.Input<string>;
-    vpcCrn?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
-    zone?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    routingTable?: pulumi.Input<string | undefined>;
+    routingTableName?: pulumi.Input<string | undefined>;
+    vpc?: pulumi.Input<string | undefined>;
+    vpcCrn?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
+    zone?: pulumi.Input<string | undefined>;
 }

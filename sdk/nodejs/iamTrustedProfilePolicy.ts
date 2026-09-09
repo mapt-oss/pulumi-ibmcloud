@@ -45,7 +45,7 @@ export class IamTrustedProfilePolicy extends pulumi.CustomResource {
     /**
      * IAM ID of Trusted Profile
      */
-    declare public readonly iamId: pulumi.Output<string | undefined>;
+    declare public readonly iamId: pulumi.Output<string>;
     /**
      * Pattern rule follows for time-based condition
      */
@@ -55,7 +55,7 @@ export class IamTrustedProfilePolicy extends pulumi.CustomResource {
      *
      * @deprecated This field is deprecated and will be removed starting with this 1.82.0 release. Please use iamId field instead.
      */
-    declare public readonly profileId: pulumi.Output<string | undefined>;
+    declare public readonly profileId: pulumi.Output<string>;
     /**
      * Set resource attributes.
      */
@@ -140,51 +140,51 @@ export interface IamTrustedProfilePolicyState {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of Trusted Profile
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * UUID of Trusted Profile
      *
      * @deprecated This field is deprecated and will be removed starting with this 1.82.0 release. Please use iamId field instead.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamTrustedProfilePolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamTrustedProfilePolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -194,34 +194,34 @@ export interface IamTrustedProfilePolicyArgs {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of Trusted Profile
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * UUID of Trusted Profile
      *
      * @deprecated This field is deprecated and will be removed starting with this 1.82.0 release. Please use iamId field instead.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamTrustedProfilePolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamTrustedProfilePolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
@@ -229,14 +229,14 @@ export interface IamTrustedProfilePolicyArgs {
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

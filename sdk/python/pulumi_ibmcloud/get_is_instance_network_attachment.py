@@ -184,8 +184,8 @@ def get_is_instance_network_attachment(instance: Optional[_builtins.str] = None,
         subnets=pulumi.get(__ret__, 'subnets'),
         type=pulumi.get(__ret__, 'type'),
         virtual_network_interfaces=pulumi.get(__ret__, 'virtual_network_interfaces'))
-def get_is_instance_network_attachment_output(instance: Optional[pulumi.Input[_builtins.str]] = None,
-                                              network_attachment: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_network_attachment_output(instance: pulumi.Input[Optional[_builtins.str]] = None,
+                                              network_attachment: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceNetworkAttachmentResult]:
     """
     Use this data source to access information about an existing resource.

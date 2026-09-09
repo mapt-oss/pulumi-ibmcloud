@@ -76,11 +76,11 @@ export interface IamUserSettingsState {
     /**
      * List of allowed IPv4 or IPv6 addresses
      */
-    allowedIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * User's IAM ID or or email of user
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -90,7 +90,7 @@ export interface IamUserSettingsArgs {
     /**
      * List of allowed IPv4 or IPv6 addresses
      */
-    allowedIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * User's IAM ID or or email of user
      */

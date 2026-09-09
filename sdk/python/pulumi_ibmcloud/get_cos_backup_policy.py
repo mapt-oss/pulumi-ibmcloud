@@ -123,8 +123,8 @@ def get_cos_backup_policy(bucket_name: Optional[_builtins.str] = None,
         policy_id=pulumi.get(__ret__, 'policy_id'),
         policy_name=pulumi.get(__ret__, 'policy_name'),
         target_backup_vault_crn=pulumi.get(__ret__, 'target_backup_vault_crn'))
-def get_cos_backup_policy_output(bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cos_backup_policy_output(bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCosBackupPolicyResult]:
     """
     Use this data source to access information about an existing resource.

@@ -112,27 +112,27 @@ export interface CosBackupPolicyState {
     /**
      * The type of backup to support.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * Bucket Crn of the source bucket.
      */
-    bucketCrn?: pulumi.Input<string>;
+    bucketCrn?: pulumi.Input<string | undefined>;
     /**
      * Number of days after which the objects inside backup vault should be deleted.
      */
-    initialDeleteAfterDays?: pulumi.Input<number>;
+    initialDeleteAfterDays?: pulumi.Input<number | undefined>;
     /**
      * Id of the backup policy applied on the source bucket
      */
-    policyId?: pulumi.Input<string>;
+    policyId?: pulumi.Input<string | undefined>;
     /**
      * Name of the backup policy to be applied on the source bucket.
      */
-    policyName?: pulumi.Input<string>;
+    policyName?: pulumi.Input<string | undefined>;
     /**
      * The CRN for a COS BackupVault.
      */
-    targetBackupVaultCrn?: pulumi.Input<string>;
+    targetBackupVaultCrn?: pulumi.Input<string | undefined>;
 }
 
 /**

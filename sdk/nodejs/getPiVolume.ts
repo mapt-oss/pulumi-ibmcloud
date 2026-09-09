@@ -81,9 +81,9 @@ export function getPiVolumeOutput(args: GetPiVolumeOutputArgs, opts?: pulumi.Inv
  */
 export interface GetPiVolumeOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piVolumeId?: pulumi.Input<string>;
+    piVolumeId?: pulumi.Input<string | undefined>;
     /**
      * @deprecated The piVolumeName field is deprecated. Please use piVolumeId instead
      */
-    piVolumeName?: pulumi.Input<string>;
+    piVolumeName?: pulumi.Input<string | undefined>;
 }

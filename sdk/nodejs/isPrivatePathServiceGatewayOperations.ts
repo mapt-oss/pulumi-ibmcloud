@@ -79,11 +79,11 @@ export interface IsPrivatePathServiceGatewayOperationsState {
     /**
      * The private path service gateway identifier.
      */
-    privatePathServiceGateway?: pulumi.Input<string>;
+    privatePathServiceGateway?: pulumi.Input<string | undefined>;
     /**
      * Publish or unpublish PPSG.
      */
-    published?: pulumi.Input<boolean>;
+    published?: pulumi.Input<boolean | undefined>;
 }
 
 /**

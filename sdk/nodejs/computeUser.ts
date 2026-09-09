@@ -198,75 +198,75 @@ export interface ComputeUserState {
     /**
      * Address info of the user
      */
-    address1?: pulumi.Input<string>;
+    address1?: pulumi.Input<string | undefined>;
     /**
      * Address info of the user
      */
-    address2?: pulumi.Input<string>;
+    address2?: pulumi.Input<string | undefined>;
     /**
      * API key for the user
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * City name
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * comapany name
      */
-    companyName?: pulumi.Input<string>;
+    companyName?: pulumi.Input<string | undefined>;
     /**
      * Country name
      */
-    country?: pulumi.Input<string>;
+    country?: pulumi.Input<string | undefined>;
     /**
      * email address of the user
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * First name of the user
      */
-    firstName?: pulumi.Input<string>;
+    firstName?: pulumi.Input<string | undefined>;
     /**
      * API Key info of the user
      */
-    hasApiKey?: pulumi.Input<boolean>;
+    hasApiKey?: pulumi.Input<boolean | undefined>;
     /**
      * IBM ID of the  user
      */
-    ibmId?: pulumi.Input<string>;
+    ibmId?: pulumi.Input<string | undefined>;
     /**
      * Last name of the user
      */
-    lastName?: pulumi.Input<string>;
+    lastName?: pulumi.Input<string | undefined>;
     /**
      * password for the user
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * set of persmissions assigned for the user
      */
-    permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Satate name
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Tags set for the resources
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * time zone info
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
     /**
      * user status info
      */
-    userStatus?: pulumi.Input<string>;
+    userStatus?: pulumi.Input<string | undefined>;
     /**
      * user name
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -280,11 +280,11 @@ export interface ComputeUserArgs {
     /**
      * Address info of the user
      */
-    address2?: pulumi.Input<string>;
+    address2?: pulumi.Input<string | undefined>;
     /**
      * API key for the user
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * City name
      */
@@ -308,7 +308,7 @@ export interface ComputeUserArgs {
     /**
      * API Key info of the user
      */
-    hasApiKey?: pulumi.Input<boolean>;
+    hasApiKey?: pulumi.Input<boolean | undefined>;
     /**
      * Last name of the user
      */
@@ -316,11 +316,11 @@ export interface ComputeUserArgs {
     /**
      * password for the user
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * set of persmissions assigned for the user
      */
-    permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Satate name
      */
@@ -328,7 +328,7 @@ export interface ComputeUserArgs {
     /**
      * Tags set for the resources
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * time zone info
      */
@@ -336,9 +336,9 @@ export interface ComputeUserArgs {
     /**
      * user status info
      */
-    userStatus?: pulumi.Input<string>;
+    userStatus?: pulumi.Input<string | undefined>;
     /**
      * user name
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }

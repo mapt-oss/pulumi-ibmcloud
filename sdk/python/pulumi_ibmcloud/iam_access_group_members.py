@@ -22,11 +22,12 @@ __all__ = ['IamAccessGroupMembersArgs', 'IamAccessGroupMembers']
 class IamAccessGroupMembersArgs:
     def __init__(__self__, *,
                  access_group_id: pulumi.Input[_builtins.str],
-                 iam_profile_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iam_service_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ibm_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 iam_profile_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iam_service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ibm_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IamAccessGroupMembers resource.
+
         :param pulumi.Input[_builtins.str] access_group_id: Unique identifier of the access group
         """
         pulumi.set(__self__, "access_group_id", access_group_id)
@@ -51,42 +52,43 @@ class IamAccessGroupMembersArgs:
 
     @_builtins.property
     @pulumi.getter(name="iamProfileIds")
-    def iam_profile_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def iam_profile_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "iam_profile_ids")
 
     @iam_profile_ids.setter
-    def iam_profile_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def iam_profile_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "iam_profile_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="iamServiceIds")
-    def iam_service_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def iam_service_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "iam_service_ids")
 
     @iam_service_ids.setter
-    def iam_service_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def iam_service_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "iam_service_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="ibmIds")
-    def ibm_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ibm_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "ibm_ids")
 
     @ibm_ids.setter
-    def ibm_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ibm_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ibm_ids", value)
 
 
 @pulumi.input_type
 class _IamAccessGroupMembersState:
     def __init__(__self__, *,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iam_service_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ibm_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupMembersMemberArgs']]]] = None):
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iam_service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ibm_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupMembersMemberArgs']]]] = None):
         """
         Input properties used for looking up and filtering IamAccessGroupMembers resources.
+
         :param pulumi.Input[_builtins.str] access_group_id: Unique identifier of the access group
         """
         if access_group_id is not None:
@@ -102,50 +104,50 @@ class _IamAccessGroupMembersState:
 
     @_builtins.property
     @pulumi.getter(name="accessGroupId")
-    def access_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of the access group
         """
         return pulumi.get(self, "access_group_id")
 
     @access_group_id.setter
-    def access_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamProfileIds")
-    def iam_profile_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def iam_profile_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "iam_profile_ids")
 
     @iam_profile_ids.setter
-    def iam_profile_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def iam_profile_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "iam_profile_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="iamServiceIds")
-    def iam_service_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def iam_service_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "iam_service_ids")
 
     @iam_service_ids.setter
-    def iam_service_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def iam_service_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "iam_service_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="ibmIds")
-    def ibm_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ibm_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "ibm_ids")
 
     @ibm_ids.setter
-    def ibm_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ibm_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ibm_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupMembersMemberArgs']]]]:
+    def members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupMembersMemberArgs']]]]:
         return pulumi.get(self, "members")
 
     @members.setter
-    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupMembersMemberArgs']]]]):
+    def members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupMembersMemberArgs']]]]):
         pulumi.set(self, "members", value)
 
 
@@ -155,13 +157,14 @@ class IamAccessGroupMembers(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iam_service_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ibm_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iam_service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ibm_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IamAccessGroupMembers resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_group_id: Unique identifier of the access group
@@ -174,6 +177,7 @@ class IamAccessGroupMembers(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccessGroupMembers resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccessGroupMembersArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -189,10 +193,10 @@ class IamAccessGroupMembers(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_profile_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iam_service_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ibm_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_profile_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iam_service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ibm_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -219,11 +223,11 @@ class IamAccessGroupMembers(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            iam_profile_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            iam_service_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ibm_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupMembersMemberArgs', 'IamAccessGroupMembersMemberArgsDict']]]]] = None) -> 'IamAccessGroupMembers':
+            access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_profile_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            iam_service_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ibm_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupMembersMemberArgs', 'IamAccessGroupMembersMemberArgsDict', 'outputs.IamAccessGroupMembersMember']]]]] = None) -> 'IamAccessGroupMembers':
         """
         Get an existing IamAccessGroupMembers resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

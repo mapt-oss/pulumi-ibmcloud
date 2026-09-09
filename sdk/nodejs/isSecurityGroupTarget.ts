@@ -97,23 +97,23 @@ export interface IsSecurityGroupTargetState {
     /**
      * The CRN for this Security group target
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Security group target name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource Type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Security group id
      */
-    securityGroup?: pulumi.Input<string>;
+    securityGroup?: pulumi.Input<string | undefined>;
     /**
      * security group target identifier
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
 }
 
 /**

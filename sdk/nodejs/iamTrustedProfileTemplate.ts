@@ -63,10 +63,6 @@ export class IamTrustedProfileTemplate extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly entityTag: pulumi.Output<string>;
     /**
-     * History of the trusted profile template.
-     */
-    declare public /*out*/ readonly histories: pulumi.Output<outputs.IamTrustedProfileTemplateHistory[]>;
-    /**
      * Timestamp of when the template was last modified.
      */
     declare public /*out*/ readonly lastModifiedAt: pulumi.Output<string>;
@@ -115,7 +111,6 @@ export class IamTrustedProfileTemplate extends pulumi.CustomResource {
             resourceInputs["crn"] = state?.crn;
             resourceInputs["description"] = state?.description;
             resourceInputs["entityTag"] = state?.entityTag;
-            resourceInputs["histories"] = state?.histories;
             resourceInputs["lastModifiedAt"] = state?.lastModifiedAt;
             resourceInputs["lastModifiedById"] = state?.lastModifiedById;
             resourceInputs["name"] = state?.name;
@@ -136,7 +131,6 @@ export class IamTrustedProfileTemplate extends pulumi.CustomResource {
             resourceInputs["createdById"] = undefined /*out*/;
             resourceInputs["crn"] = undefined /*out*/;
             resourceInputs["entityTag"] = undefined /*out*/;
-            resourceInputs["histories"] = undefined /*out*/;
             resourceInputs["lastModifiedAt"] = undefined /*out*/;
             resourceInputs["lastModifiedById"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
@@ -153,63 +147,59 @@ export interface IamTrustedProfileTemplateState {
     /**
      * ID of the account where the template resides.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Committed flag determines if the template is ready for assignment.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * Timestamp of when the template was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * IAMid of the creator.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * Cloud resource name.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The description of the trusted profile template. Describe the template for enterprise account users.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Entity tag for this templateId-version combination.
      */
-    entityTag?: pulumi.Input<string>;
-    /**
-     * History of the trusted profile template.
-     */
-    histories?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateHistory>[]>;
+    entityTag?: pulumi.Input<string | undefined>;
     /**
      * Timestamp of when the template was last modified.
      */
-    lastModifiedAt?: pulumi.Input<string>;
+    lastModifiedAt?: pulumi.Input<string | undefined>;
     /**
      * IAMid of the identity that made the latest modification.
      */
-    lastModifiedById?: pulumi.Input<string>;
+    lastModifiedById?: pulumi.Input<string | undefined>;
     /**
      * The name of the trusted profile template. This is visible only in the enterprise account.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Existing policy templates that you can reference to assign access in the trusted profile component.
      */
-    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplatePolicyTemplateReference>[]>;
+    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplatePolicyTemplateReference>[] | undefined>;
     /**
      * Input body parameters for the TemplateProfileComponent.
      */
-    profile?: pulumi.Input<inputs.IamTrustedProfileTemplateProfile>;
+    profile?: pulumi.Input<inputs.IamTrustedProfileTemplateProfile | undefined>;
     /**
      * ID of the the template.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
     /**
      * Version of the the template.
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -219,29 +209,29 @@ export interface IamTrustedProfileTemplateArgs {
     /**
      * ID of the account where the template resides.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Committed flag determines if the template is ready for assignment.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * The description of the trusted profile template. Describe the template for enterprise account users.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The name of the trusted profile template. This is visible only in the enterprise account.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Existing policy templates that you can reference to assign access in the trusted profile component.
      */
-    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplatePolicyTemplateReference>[]>;
+    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplatePolicyTemplateReference>[] | undefined>;
     /**
      * Input body parameters for the TemplateProfileComponent.
      */
-    profile?: pulumi.Input<inputs.IamTrustedProfileTemplateProfile>;
+    profile?: pulumi.Input<inputs.IamTrustedProfileTemplateProfile | undefined>;
     /**
      * ID of the the template.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
 }

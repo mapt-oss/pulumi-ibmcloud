@@ -22,22 +22,23 @@ class PiVolumeArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_volume_name: pulumi.Input[_builtins.str],
                  pi_volume_size: pulumi.Input[_builtins.float],
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_volume_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_volume_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiVolume resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_volume_name: The name of the volume.
-        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GB.
+        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GiB.
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_volume' is not provided.
         :param pulumi.Input[_builtins.str] pi_affinity_policy: Affinity policy for data volume being created; ignored if 'pi_volume_pool' provided; for policy 'affinity' requires one of 'pi_affinity_instance' or 'pi_affinity_volume' to be specified; for policy 'anti-affinity' requires one of 'pi_anti_affinity_instances' or 'pi_anti_affinity_volumes' to be specified; Allowable values: 'affinity', 'anti-affinity'.
         :param pulumi.Input[_builtins.str] pi_affinity_volume: Volume (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_instance' is not provided.
@@ -104,7 +105,7 @@ class PiVolumeArgs:
     @pulumi.getter(name="piVolumeSize")
     def pi_volume_size(self) -> pulumi.Input[_builtins.float]:
         """
-        The size of the volume in GB.
+        The size of the volume in GiB.
         """
         return pulumi.get(self, "pi_volume_size")
 
@@ -114,173 +115,174 @@ class PiVolumeArgs:
 
     @_builtins.property
     @pulumi.getter(name="piAffinityInstance")
-    def pi_affinity_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_volume' is not provided.
         """
         return pulumi.get(self, "pi_affinity_instance")
 
     @pi_affinity_instance.setter
-    def pi_affinity_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_instance", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityPolicy")
-    def pi_affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Affinity policy for data volume being created; ignored if 'pi_volume_pool' provided; for policy 'affinity' requires one of 'pi_affinity_instance' or 'pi_affinity_volume' to be specified; for policy 'anti-affinity' requires one of 'pi_anti_affinity_instances' or 'pi_anti_affinity_volumes' to be specified; Allowable values: 'affinity', 'anti-affinity'.
         """
         return pulumi.get(self, "pi_affinity_policy")
 
     @pi_affinity_policy.setter
-    def pi_affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityVolume")
-    def pi_affinity_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_instance' is not provided.
         """
         return pulumi.get(self, "pi_affinity_volume")
 
     @pi_affinity_volume.setter
-    def pi_affinity_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityInstances")
-    def pi_anti_affinity_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of pvmInstances to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_volumes' is not provided.
         """
         return pulumi.get(self, "pi_anti_affinity_instances")
 
     @pi_anti_affinity_instances.setter
-    def pi_anti_affinity_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityVolumes")
-    def pi_anti_affinity_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_instances' is not provided.
         """
         return pulumi.get(self, "pi_anti_affinity_volumes")
 
     @pi_anti_affinity_volumes.setter
-    def pi_anti_affinity_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationEnabled")
-    def pi_replication_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_replication_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the volume should be replication enabled or not.
         """
         return pulumi.get(self, "pi_replication_enabled")
 
     @pi_replication_enabled.setter
-    def pi_replication_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_replication_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_replication_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationSites")
-    def pi_replication_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_replication_sites(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of replication sites for volume replication.
         """
         return pulumi.get(self, "pi_replication_sites")
 
     @pi_replication_sites.setter
-    def pi_replication_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_replication_sites(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_replication_sites", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumePool")
-    def pi_volume_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume pool where the volume will be created; if provided then 'pi_affinity_policy' values will be ignored.
         """
         return pulumi.get(self, "pi_volume_pool")
 
     @pi_volume_pool.setter
-    def pi_volume_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeShareable")
-    def pi_volume_shareable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_volume_shareable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, the volume can be shared across Power Systems Virtual Server instances. If set to false, you can attach it only to one instance.
         """
         return pulumi.get(self, "pi_volume_shareable")
 
     @pi_volume_shareable.setter
-    def pi_volume_shareable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_volume_shareable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_volume_shareable", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeType")
-    def pi_volume_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of disk, if diskType is not provided the disk type will default to 'tier3'
         """
         return pulumi.get(self, "pi_volume_type")
 
     @pi_volume_type.setter
-    def pi_volume_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_type", value)
 
 
 @pulumi.input_type
 class _PiVolumeState:
     def __init__(__self__, *,
-                 auxiliary: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auxiliary_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_on_termination: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 io_throttle_rate: Optional[pulumi.Input[_builtins.str]] = None,
-                 master_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 mirroring_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 out_of_band_deleted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_volume_size: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_volume_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 wwn: Optional[pulumi.Input[_builtins.str]] = None):
+                 auxiliary: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auxiliary_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_on_termination: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 io_throttle_rate: pulumi.Input[Optional[_builtins.str]] = None,
+                 master_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 mirroring_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 out_of_band_deleted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_volume_size: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_volume_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 wwn: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVolume resources.
+
         :param pulumi.Input[_builtins.bool] auxiliary: Indicates if the volume is auxiliary or not.
         :param pulumi.Input[_builtins.str] auxiliary_volume_name: The auxiliary volume name.
         :param pulumi.Input[_builtins.str] consistency_group_name: The consistency group name if volume is a part of volume group.
@@ -303,7 +305,7 @@ class _PiVolumeState:
         :param pulumi.Input[_builtins.str] pi_volume_name: The name of the volume.
         :param pulumi.Input[_builtins.str] pi_volume_pool: Volume pool where the volume will be created; if provided then 'pi_affinity_policy' values will be ignored.
         :param pulumi.Input[_builtins.bool] pi_volume_shareable: If set to true, the volume can be shared across Power Systems Virtual Server instances. If set to false, you can attach it only to one instance.
-        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GB.
+        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GiB.
         :param pulumi.Input[_builtins.str] pi_volume_type: Type of disk, if diskType is not provided the disk type will default to 'tier3'
         :param pulumi.Input[_builtins.str] primary_role: Indicates whether 'master'/'auxiliary' volume is playing the primary role.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] replication_sites: List of replication sites for volume replication.
@@ -378,374 +380,374 @@ class _PiVolumeState:
 
     @_builtins.property
     @pulumi.getter
-    def auxiliary(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auxiliary(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the volume is auxiliary or not.
         """
         return pulumi.get(self, "auxiliary")
 
     @auxiliary.setter
-    def auxiliary(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auxiliary(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auxiliary", value)
 
     @_builtins.property
     @pulumi.getter(name="auxiliaryVolumeName")
-    def auxiliary_volume_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auxiliary_volume_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The auxiliary volume name.
         """
         return pulumi.get(self, "auxiliary_volume_name")
 
     @auxiliary_volume_name.setter
-    def auxiliary_volume_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auxiliary_volume_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auxiliary_volume_name", value)
 
     @_builtins.property
     @pulumi.getter(name="consistencyGroupName")
-    def consistency_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consistency_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The consistency group name if volume is a part of volume group.
         """
         return pulumi.get(self, "consistency_group_name")
 
     @consistency_group_name.setter
-    def consistency_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consistency_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consistency_group_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteOnTermination")
-    def delete_on_termination(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_on_termination(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the volume should be deleted when the server terminates.
         """
         return pulumi.get(self, "delete_on_termination")
 
     @delete_on_termination.setter
-    def delete_on_termination(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_on_termination(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_on_termination", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume group id to which volume belongs.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ioThrottleRate")
-    def io_throttle_rate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def io_throttle_rate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Amount of iops assigned to the volume.
         """
         return pulumi.get(self, "io_throttle_rate")
 
     @io_throttle_rate.setter
-    def io_throttle_rate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def io_throttle_rate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "io_throttle_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="masterVolumeName")
-    def master_volume_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def master_volume_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates master volume name
         """
         return pulumi.get(self, "master_volume_name")
 
     @master_volume_name.setter
-    def master_volume_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def master_volume_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "master_volume_name", value)
 
     @_builtins.property
     @pulumi.getter(name="mirroringState")
-    def mirroring_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mirroring_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Mirroring state for replication enabled volume
         """
         return pulumi.get(self, "mirroring_state")
 
     @mirroring_state.setter
-    def mirroring_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mirroring_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mirroring_state", value)
 
     @_builtins.property
     @pulumi.getter(name="outOfBandDeleted")
-    def out_of_band_deleted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def out_of_band_deleted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the volume does not exist on storage controller.
         """
         return pulumi.get(self, "out_of_band_deleted")
 
     @out_of_band_deleted.setter
-    def out_of_band_deleted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def out_of_band_deleted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "out_of_band_deleted", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityInstance")
-    def pi_affinity_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_volume' is not provided.
         """
         return pulumi.get(self, "pi_affinity_instance")
 
     @pi_affinity_instance.setter
-    def pi_affinity_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_instance", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityPolicy")
-    def pi_affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Affinity policy for data volume being created; ignored if 'pi_volume_pool' provided; for policy 'affinity' requires one of 'pi_affinity_instance' or 'pi_affinity_volume' to be specified; for policy 'anti-affinity' requires one of 'pi_anti_affinity_instances' or 'pi_anti_affinity_volumes' to be specified; Allowable values: 'affinity', 'anti-affinity'.
         """
         return pulumi.get(self, "pi_affinity_policy")
 
     @pi_affinity_policy.setter
-    def pi_affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityVolume")
-    def pi_affinity_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_instance' is not provided.
         """
         return pulumi.get(self, "pi_affinity_volume")
 
     @pi_affinity_volume.setter
-    def pi_affinity_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityInstances")
-    def pi_anti_affinity_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of pvmInstances to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_volumes' is not provided.
         """
         return pulumi.get(self, "pi_anti_affinity_instances")
 
     @pi_anti_affinity_instances.setter
-    def pi_anti_affinity_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityVolumes")
-    def pi_anti_affinity_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to base volume anti-affinity policy against; required if requesting 'anti-affinity' and 'pi_anti_affinity_instances' is not provided.
         """
         return pulumi.get(self, "pi_anti_affinity_volumes")
 
     @pi_anti_affinity_volumes.setter
-    def pi_anti_affinity_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationEnabled")
-    def pi_replication_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_replication_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the volume should be replication enabled or not.
         """
         return pulumi.get(self, "pi_replication_enabled")
 
     @pi_replication_enabled.setter
-    def pi_replication_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_replication_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_replication_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationSites")
-    def pi_replication_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_replication_sites(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of replication sites for volume replication.
         """
         return pulumi.get(self, "pi_replication_sites")
 
     @pi_replication_sites.setter
-    def pi_replication_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_replication_sites(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_replication_sites", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeName")
-    def pi_volume_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the volume.
         """
         return pulumi.get(self, "pi_volume_name")
 
     @pi_volume_name.setter
-    def pi_volume_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumePool")
-    def pi_volume_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume pool where the volume will be created; if provided then 'pi_affinity_policy' values will be ignored.
         """
         return pulumi.get(self, "pi_volume_pool")
 
     @pi_volume_pool.setter
-    def pi_volume_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeShareable")
-    def pi_volume_shareable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_volume_shareable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, the volume can be shared across Power Systems Virtual Server instances. If set to false, you can attach it only to one instance.
         """
         return pulumi.get(self, "pi_volume_shareable")
 
     @pi_volume_shareable.setter
-    def pi_volume_shareable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_volume_shareable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_volume_shareable", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeSize")
-    def pi_volume_size(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def pi_volume_size(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        The size of the volume in GB.
+        The size of the volume in GiB.
         """
         return pulumi.get(self, "pi_volume_size")
 
     @pi_volume_size.setter
-    def pi_volume_size(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def pi_volume_size(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "pi_volume_size", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeType")
-    def pi_volume_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of disk, if diskType is not provided the disk type will default to 'tier3'
         """
         return pulumi.get(self, "pi_volume_type")
 
     @pi_volume_type.setter
-    def pi_volume_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_type", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryRole")
-    def primary_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether 'master'/'auxiliary' volume is playing the primary role.
         """
         return pulumi.get(self, "primary_role")
 
     @primary_role.setter
-    def primary_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_role", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationSites")
-    def replication_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def replication_sites(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of replication sites for volume replication.
         """
         return pulumi.get(self, "replication_sites")
 
     @replication_sites.setter
-    def replication_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def replication_sites(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "replication_sites", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationStatus")
-    def replication_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The replication status of the volume.
         """
         return pulumi.get(self, "replication_status")
 
     @replication_status.setter
-    def replication_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_status", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationType")
-    def replication_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The replication type of the volume 'metro' or 'global'.
         """
         return pulumi.get(self, "replication_type")
 
     @replication_type.setter
-    def replication_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_type", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeId")
-    def volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the volume.
         """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
-    def volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_id", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeStatus")
-    def volume_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the volume.
         """
         return pulumi.get(self, "volume_status")
 
     @volume_status.setter
-    def volume_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def wwn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wwn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The world wide name of the volume.
         """
         return pulumi.get(self, "wwn")
 
     @wwn.setter
-    def wwn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wwn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wwn", value)
 
 
@@ -755,23 +757,24 @@ class PiVolume(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_volume_size: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_volume_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_volume_size: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_volume_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiVolume resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base volume affinity policy against; required if requesting 'affinity' and 'pi_affinity_volume' is not provided.
@@ -786,7 +789,7 @@ class PiVolume(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_volume_name: The name of the volume.
         :param pulumi.Input[_builtins.str] pi_volume_pool: Volume pool where the volume will be created; if provided then 'pi_affinity_policy' values will be ignored.
         :param pulumi.Input[_builtins.bool] pi_volume_shareable: If set to true, the volume can be shared across Power Systems Virtual Server instances. If set to false, you can attach it only to one instance.
-        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GB.
+        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GiB.
         :param pulumi.Input[_builtins.str] pi_volume_type: Type of disk, if diskType is not provided the disk type will default to 'tier3'
         """
         ...
@@ -797,6 +800,7 @@ class PiVolume(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVolume resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVolumeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -812,20 +816,20 @@ class PiVolume(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_volume_size: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_volume_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_volume_size: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_volume_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -882,37 +886,37 @@ class PiVolume(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auxiliary: Optional[pulumi.Input[_builtins.bool]] = None,
-            auxiliary_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-            consistency_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_on_termination: Optional[pulumi.Input[_builtins.bool]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            io_throttle_rate: Optional[pulumi.Input[_builtins.str]] = None,
-            master_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-            mirroring_state: Optional[pulumi.Input[_builtins.str]] = None,
-            out_of_band_deleted: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_volume_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_volume_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_volume_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_volume_size: Optional[pulumi.Input[_builtins.float]] = None,
-            pi_volume_type: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_role: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_type: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_status: Optional[pulumi.Input[_builtins.str]] = None,
-            wwn: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVolume':
+            auxiliary: pulumi.Input[Optional[_builtins.bool]] = None,
+            auxiliary_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+            consistency_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_on_termination: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            io_throttle_rate: pulumi.Input[Optional[_builtins.str]] = None,
+            master_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+            mirroring_state: pulumi.Input[Optional[_builtins.str]] = None,
+            out_of_band_deleted: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_volume_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_volume_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_volume_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_volume_size: pulumi.Input[Optional[_builtins.float]] = None,
+            pi_volume_type: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_role: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_type: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_status: pulumi.Input[Optional[_builtins.str]] = None,
+            wwn: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVolume':
         """
         Get an existing PiVolume resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -942,7 +946,7 @@ class PiVolume(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_volume_name: The name of the volume.
         :param pulumi.Input[_builtins.str] pi_volume_pool: Volume pool where the volume will be created; if provided then 'pi_affinity_policy' values will be ignored.
         :param pulumi.Input[_builtins.bool] pi_volume_shareable: If set to true, the volume can be shared across Power Systems Virtual Server instances. If set to false, you can attach it only to one instance.
-        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GB.
+        :param pulumi.Input[_builtins.float] pi_volume_size: The size of the volume in GiB.
         :param pulumi.Input[_builtins.str] pi_volume_type: Type of disk, if diskType is not provided the disk type will default to 'tier3'
         :param pulumi.Input[_builtins.str] primary_role: Indicates whether 'master'/'auxiliary' volume is playing the primary role.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] replication_sites: List of replication sites for volume replication.
@@ -1169,7 +1173,7 @@ class PiVolume(pulumi.CustomResource):
     @pulumi.getter(name="piVolumeSize")
     def pi_volume_size(self) -> pulumi.Output[_builtins.float]:
         """
-        The size of the volume in GB.
+        The size of the volume in GiB.
         """
         return pulumi.get(self, "pi_volume_size")
 

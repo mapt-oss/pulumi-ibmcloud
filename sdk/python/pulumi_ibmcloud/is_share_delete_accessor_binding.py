@@ -23,6 +23,7 @@ class IsShareDeleteAccessorBindingArgs:
                  share: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsShareDeleteAccessorBinding resource.
+
         :param pulumi.Input[_builtins.str] accessor_binding: The accessor binding id
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         """
@@ -57,10 +58,11 @@ class IsShareDeleteAccessorBindingArgs:
 @pulumi.input_type
 class _IsShareDeleteAccessorBindingState:
     def __init__(__self__, *,
-                 accessor_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None):
+                 accessor_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsShareDeleteAccessorBinding resources.
+
         :param pulumi.Input[_builtins.str] accessor_binding: The accessor binding id
         :param pulumi.Input[_builtins.str] share: The file share identifier.
         """
@@ -71,26 +73,26 @@ class _IsShareDeleteAccessorBindingState:
 
     @_builtins.property
     @pulumi.getter(name="accessorBinding")
-    def accessor_binding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def accessor_binding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The accessor binding id
         """
         return pulumi.get(self, "accessor_binding")
 
     @accessor_binding.setter
-    def accessor_binding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def accessor_binding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "accessor_binding", value)
 
     @_builtins.property
     @pulumi.getter
-    def share(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def share(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The file share identifier.
         """
         return pulumi.get(self, "share")
 
     @share.setter
-    def share(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def share(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "share", value)
 
 
@@ -100,11 +102,12 @@ class IsShareDeleteAccessorBinding(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accessor_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
+                 accessor_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsShareDeleteAccessorBinding resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] accessor_binding: The accessor binding id
@@ -118,6 +121,7 @@ class IsShareDeleteAccessorBinding(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsShareDeleteAccessorBinding resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsShareDeleteAccessorBindingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -133,8 +137,8 @@ class IsShareDeleteAccessorBinding(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accessor_binding: Optional[pulumi.Input[_builtins.str]] = None,
-                 share: Optional[pulumi.Input[_builtins.str]] = None,
+                 accessor_binding: pulumi.Input[Optional[_builtins.str]] = None,
+                 share: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -160,8 +164,8 @@ class IsShareDeleteAccessorBinding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            accessor_binding: Optional[pulumi.Input[_builtins.str]] = None,
-            share: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsShareDeleteAccessorBinding':
+            accessor_binding: pulumi.Input[Optional[_builtins.str]] = None,
+            share: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsShareDeleteAccessorBinding':
         """
         Get an existing IsShareDeleteAccessorBinding resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

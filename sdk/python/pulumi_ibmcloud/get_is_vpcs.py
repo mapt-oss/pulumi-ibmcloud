@@ -94,8 +94,8 @@ def get_is_vpcs(classic_access: Optional[_builtins.bool] = None,
         id=pulumi.get(__ret__, 'id'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_is_vpcs_output(classic_access: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                       resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_vpcs_output(classic_access: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                       resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpcsResult]:
     """
     Use this data source to access information about an existing resource.

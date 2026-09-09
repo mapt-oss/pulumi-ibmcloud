@@ -21,24 +21,25 @@ __all__ = ['IamAccountSettingsArgs', 'IamAccountSettings']
 @pulumi.input_type
 class IamAccountSettingsArgs:
     def __init__(__self__, *,
-                 allowed_ip_addresses: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 if_match: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_history: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sessions_per_identity: Optional[pulumi.Input[_builtins.str]] = None,
-                 mfa: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolve_user_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 restrict_create_platform_apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_create_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_user_domains: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]] = None,
-                 restrict_user_list_visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_invalidation_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_access_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_refresh_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_mfas: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]] = None):
+                 allowed_ip_addresses: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 if_match: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_history: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sessions_per_identity: pulumi.Input[Optional[_builtins.str]] = None,
+                 mfa: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolve_user_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 restrict_create_platform_apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_create_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_user_domains: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]] = None,
+                 restrict_user_list_visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_invalidation_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_access_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_refresh_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_mfas: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]] = None):
         """
         The set of arguments for constructing a IamAccountSettings resource.
+
         :param pulumi.Input[_builtins.str] allowed_ip_addresses: Defines the IP addresses and subnets from which IAM tokens can be created for the account.
         :param pulumi.Input[_builtins.str] entity_tag: Version of the account settings.
         :param pulumi.Input[_builtins.str] if_match: Version of the account settings to be updated. Specify the version that you retrieved as entity_tag (ETag header) when reading the account. This value helps identifying parallel usage of this API. Pass * to indicate to update any version available. This might result in stale updates.
@@ -91,219 +92,220 @@ class IamAccountSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedIpAddresses")
-    def allowed_ip_addresses(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_ip_addresses(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the IP addresses and subnets from which IAM tokens can be created for the account.
         """
         return pulumi.get(self, "allowed_ip_addresses")
 
     @allowed_ip_addresses.setter
-    def allowed_ip_addresses(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_ip_addresses(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the account settings.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
     @pulumi.getter(name="ifMatch")
-    def if_match(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def if_match(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the account settings to be updated. Specify the version that you retrieved as entity_tag (ETag header) when reading the account. This value helps identifying parallel usage of this API. Pass * to indicate to update any version available. This might result in stale updates.
         """
         return pulumi.get(self, "if_match")
 
     @if_match.setter
-    def if_match(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def if_match(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "if_match", value)
 
     @_builtins.property
     @pulumi.getter(name="includeHistory")
-    def include_history(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_history(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Defines if the entity history is included in the response.
         """
         return pulumi.get(self, "include_history")
 
     @include_history.setter
-    def include_history(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_history(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_history", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSessionsPerIdentity")
-    def max_sessions_per_identity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_sessions_per_identity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the max allowed sessions per identity required by the account. Valid values:  * Any whole number greater than 0  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "max_sessions_per_identity")
 
     @max_sessions_per_identity.setter
-    def max_sessions_per_identity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_sessions_per_identity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_sessions_per_identity", value)
 
     @_builtins.property
     @pulumi.getter
-    def mfa(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mfa(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the MFA trait for the account. Valid values:  * NONE - No MFA trait set  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
         """
         return pulumi.get(self, "mfa")
 
     @mfa.setter
-    def mfa(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mfa(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mfa", value)
 
     @_builtins.property
     @pulumi.getter(name="resolveUserMfa")
-    def resolve_user_mfa(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def resolve_user_mfa(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enrich MFA exemptions with user PI.
         """
         return pulumi.get(self, "resolve_user_mfa")
 
     @resolve_user_mfa.setter
-    def resolve_user_mfa(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def resolve_user_mfa(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "resolve_user_mfa", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictCreatePlatformApikey")
-    def restrict_create_platform_apikey(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_create_platform_apikey(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines whether or not creating platform API keys is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
         """
         return pulumi.get(self, "restrict_create_platform_apikey")
 
     @restrict_create_platform_apikey.setter
-    def restrict_create_platform_apikey(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_create_platform_apikey(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_create_platform_apikey", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictCreateServiceId")
-    def restrict_create_service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_create_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines whether or not creating a Service Id is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
         """
         return pulumi.get(self, "restrict_create_service_id")
 
     @restrict_create_service_id.setter
-    def restrict_create_service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_create_service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_create_service_id", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictUserDomains")
-    def restrict_user_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]:
+    def restrict_user_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]:
         """
         Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realm_id set.
         """
         return pulumi.get(self, "restrict_user_domains")
 
     @restrict_user_domains.setter
-    def restrict_user_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]):
+    def restrict_user_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]):
         pulumi.set(self, "restrict_user_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictUserListVisibility")
-    def restrict_user_list_visibility(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_user_list_visibility(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console.
         """
         return pulumi.get(self, "restrict_user_list_visibility")
 
     @restrict_user_list_visibility.setter
-    def restrict_user_list_visibility(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_user_list_visibility(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_user_list_visibility", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionExpirationInSeconds")
-    def session_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the session expiration in seconds for the account. Valid values:  * Any whole number between between '900' and '86400'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "session_expiration_in_seconds")
 
     @session_expiration_in_seconds.setter
-    def session_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionInvalidationInSeconds")
-    def session_invalidation_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_invalidation_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the period of time in seconds in which a session will be invalidated due to inactivity. Valid values:  * Any whole number between '900' and '7200'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "session_invalidation_in_seconds")
 
     @session_invalidation_in_seconds.setter
-    def session_invalidation_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_invalidation_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_invalidation_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="systemAccessTokenExpirationInSeconds")
-    def system_access_token_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_access_token_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the access token expiration in seconds. Valid values:  * Any whole number between '900' and '3600'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "system_access_token_expiration_in_seconds")
 
     @system_access_token_expiration_in_seconds.setter
-    def system_access_token_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_access_token_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_access_token_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="systemRefreshTokenExpirationInSeconds")
-    def system_refresh_token_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_refresh_token_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the refresh token expiration in seconds. Valid values:  * Any whole number between '900' and '2592000'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "system_refresh_token_expiration_in_seconds")
 
     @system_refresh_token_expiration_in_seconds.setter
-    def system_refresh_token_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_refresh_token_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_refresh_token_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="userMfas")
-    def user_mfas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]:
+    def user_mfas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]:
         """
         List of users that are exempted from the MFA requirement of the account.
         """
         return pulumi.get(self, "user_mfas")
 
     @user_mfas.setter
-    def user_mfas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]):
+    def user_mfas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]):
         pulumi.set(self, "user_mfas", value)
 
 
 @pulumi.input_type
 class _IamAccountSettingsState:
     def __init__(__self__, *,
-                 allowed_ip_addresses: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 histories: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsHistoryArgs']]]] = None,
-                 if_match: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_history: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sessions_per_identity: Optional[pulumi.Input[_builtins.str]] = None,
-                 mfa: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolve_user_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 restrict_create_platform_apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_create_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_user_domains: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]] = None,
-                 restrict_user_list_visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_invalidation_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_access_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_refresh_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_mfas: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]] = None):
+                 allowed_ip_addresses: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 histories: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsHistoryArgs']]]] = None,
+                 if_match: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_history: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sessions_per_identity: pulumi.Input[Optional[_builtins.str]] = None,
+                 mfa: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolve_user_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 restrict_create_platform_apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_create_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_user_domains: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]] = None,
+                 restrict_user_list_visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_invalidation_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_access_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_refresh_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_mfas: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]] = None):
         """
         Input properties used for looking up and filtering IamAccountSettings resources.
+
         :param pulumi.Input[_builtins.str] allowed_ip_addresses: Defines the IP addresses and subnets from which IAM tokens can be created for the account.
         :param pulumi.Input[_builtins.str] entity_tag: Version of the account settings.
         :param pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsHistoryArgs']]] histories: History of the Account Settings.
@@ -359,206 +361,206 @@ class _IamAccountSettingsState:
 
     @_builtins.property
     @pulumi.getter(name="allowedIpAddresses")
-    def allowed_ip_addresses(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_ip_addresses(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the IP addresses and subnets from which IAM tokens can be created for the account.
         """
         return pulumi.get(self, "allowed_ip_addresses")
 
     @allowed_ip_addresses.setter
-    def allowed_ip_addresses(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_ip_addresses(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the account settings.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
     @pulumi.getter
-    def histories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsHistoryArgs']]]]:
+    def histories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsHistoryArgs']]]]:
         """
         History of the Account Settings.
         """
         return pulumi.get(self, "histories")
 
     @histories.setter
-    def histories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsHistoryArgs']]]]):
+    def histories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsHistoryArgs']]]]):
         pulumi.set(self, "histories", value)
 
     @_builtins.property
     @pulumi.getter(name="ifMatch")
-    def if_match(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def if_match(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the account settings to be updated. Specify the version that you retrieved as entity_tag (ETag header) when reading the account. This value helps identifying parallel usage of this API. Pass * to indicate to update any version available. This might result in stale updates.
         """
         return pulumi.get(self, "if_match")
 
     @if_match.setter
-    def if_match(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def if_match(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "if_match", value)
 
     @_builtins.property
     @pulumi.getter(name="includeHistory")
-    def include_history(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_history(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Defines if the entity history is included in the response.
         """
         return pulumi.get(self, "include_history")
 
     @include_history.setter
-    def include_history(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_history(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_history", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSessionsPerIdentity")
-    def max_sessions_per_identity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_sessions_per_identity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the max allowed sessions per identity required by the account. Valid values:  * Any whole number greater than 0  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "max_sessions_per_identity")
 
     @max_sessions_per_identity.setter
-    def max_sessions_per_identity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_sessions_per_identity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_sessions_per_identity", value)
 
     @_builtins.property
     @pulumi.getter
-    def mfa(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mfa(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the MFA trait for the account. Valid values:  * NONE - No MFA trait set  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
         """
         return pulumi.get(self, "mfa")
 
     @mfa.setter
-    def mfa(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mfa(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mfa", value)
 
     @_builtins.property
     @pulumi.getter(name="resolveUserMfa")
-    def resolve_user_mfa(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def resolve_user_mfa(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enrich MFA exemptions with user PI.
         """
         return pulumi.get(self, "resolve_user_mfa")
 
     @resolve_user_mfa.setter
-    def resolve_user_mfa(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def resolve_user_mfa(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "resolve_user_mfa", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictCreatePlatformApikey")
-    def restrict_create_platform_apikey(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_create_platform_apikey(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines whether or not creating platform API keys is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
         """
         return pulumi.get(self, "restrict_create_platform_apikey")
 
     @restrict_create_platform_apikey.setter
-    def restrict_create_platform_apikey(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_create_platform_apikey(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_create_platform_apikey", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictCreateServiceId")
-    def restrict_create_service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_create_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines whether or not creating a Service Id is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
         """
         return pulumi.get(self, "restrict_create_service_id")
 
     @restrict_create_service_id.setter
-    def restrict_create_service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_create_service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_create_service_id", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictUserDomains")
-    def restrict_user_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]:
+    def restrict_user_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]:
         """
         Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realm_id set.
         """
         return pulumi.get(self, "restrict_user_domains")
 
     @restrict_user_domains.setter
-    def restrict_user_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]):
+    def restrict_user_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsRestrictUserDomainArgs']]]]):
         pulumi.set(self, "restrict_user_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictUserListVisibility")
-    def restrict_user_list_visibility(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_user_list_visibility(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console.
         """
         return pulumi.get(self, "restrict_user_list_visibility")
 
     @restrict_user_list_visibility.setter
-    def restrict_user_list_visibility(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_user_list_visibility(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_user_list_visibility", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionExpirationInSeconds")
-    def session_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the session expiration in seconds for the account. Valid values:  * Any whole number between between '900' and '86400'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "session_expiration_in_seconds")
 
     @session_expiration_in_seconds.setter
-    def session_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionInvalidationInSeconds")
-    def session_invalidation_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_invalidation_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the period of time in seconds in which a session will be invalidated due to inactivity. Valid values:  * Any whole number between '900' and '7200'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "session_invalidation_in_seconds")
 
     @session_invalidation_in_seconds.setter
-    def session_invalidation_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_invalidation_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_invalidation_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="systemAccessTokenExpirationInSeconds")
-    def system_access_token_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_access_token_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the access token expiration in seconds. Valid values:  * Any whole number between '900' and '3600'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "system_access_token_expiration_in_seconds")
 
     @system_access_token_expiration_in_seconds.setter
-    def system_access_token_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_access_token_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_access_token_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="systemRefreshTokenExpirationInSeconds")
-    def system_refresh_token_expiration_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_refresh_token_expiration_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the refresh token expiration in seconds. Valid values:  * Any whole number between '900' and '2592000'  * NOT_SET - To unset account setting and use service default.
         """
         return pulumi.get(self, "system_refresh_token_expiration_in_seconds")
 
     @system_refresh_token_expiration_in_seconds.setter
-    def system_refresh_token_expiration_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_refresh_token_expiration_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_refresh_token_expiration_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="userMfas")
-    def user_mfas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]:
+    def user_mfas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]:
         """
         List of users that are exempted from the MFA requirement of the account.
         """
         return pulumi.get(self, "user_mfas")
 
     @user_mfas.setter
-    def user_mfas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]):
+    def user_mfas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsUserMfaArgs']]]]):
         pulumi.set(self, "user_mfas", value)
 
 
@@ -568,25 +570,26 @@ class IamAccountSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_ip_addresses: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 if_match: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_history: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sessions_per_identity: Optional[pulumi.Input[_builtins.str]] = None,
-                 mfa: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolve_user_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 restrict_create_platform_apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_create_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_user_domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict']]]]] = None,
-                 restrict_user_list_visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_invalidation_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_access_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_refresh_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_mfas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict']]]]] = None,
+                 allowed_ip_addresses: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 if_match: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_history: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sessions_per_identity: pulumi.Input[Optional[_builtins.str]] = None,
+                 mfa: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolve_user_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 restrict_create_platform_apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_create_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_user_domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict', 'outputs.IamAccountSettingsRestrictUserDomain']]]]] = None,
+                 restrict_user_list_visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_invalidation_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_access_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_refresh_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_mfas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict', 'outputs.IamAccountSettingsUserMfa']]]]] = None,
                  __props__=None):
         """
         Create a IamAccountSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] allowed_ip_addresses: Defines the IP addresses and subnets from which IAM tokens can be created for the account.
@@ -598,13 +601,13 @@ class IamAccountSettings(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] resolve_user_mfa: Enrich MFA exemptions with user PI.
         :param pulumi.Input[_builtins.str] restrict_create_platform_apikey: Defines whether or not creating platform API keys is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
         :param pulumi.Input[_builtins.str] restrict_create_service_id: Defines whether or not creating a Service Id is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict']]]] restrict_user_domains: Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realm_id set.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict', 'outputs.IamAccountSettingsRestrictUserDomain']]]] restrict_user_domains: Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realm_id set.
         :param pulumi.Input[_builtins.str] restrict_user_list_visibility: Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console.
         :param pulumi.Input[_builtins.str] session_expiration_in_seconds: Defines the session expiration in seconds for the account. Valid values:  * Any whole number between between '900' and '86400'  * NOT_SET - To unset account setting and use service default.
         :param pulumi.Input[_builtins.str] session_invalidation_in_seconds: Defines the period of time in seconds in which a session will be invalidated due to inactivity. Valid values:  * Any whole number between '900' and '7200'  * NOT_SET - To unset account setting and use service default.
         :param pulumi.Input[_builtins.str] system_access_token_expiration_in_seconds: Defines the access token expiration in seconds. Valid values:  * Any whole number between '900' and '3600'  * NOT_SET - To unset account setting and use service default.
         :param pulumi.Input[_builtins.str] system_refresh_token_expiration_in_seconds: Defines the refresh token expiration in seconds. Valid values:  * Any whole number between '900' and '2592000'  * NOT_SET - To unset account setting and use service default.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict']]]] user_mfas: List of users that are exempted from the MFA requirement of the account.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict', 'outputs.IamAccountSettingsUserMfa']]]] user_mfas: List of users that are exempted from the MFA requirement of the account.
         """
         ...
     @overload
@@ -614,6 +617,7 @@ class IamAccountSettings(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccountSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccountSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -629,22 +633,22 @@ class IamAccountSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_ip_addresses: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 if_match: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_history: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sessions_per_identity: Optional[pulumi.Input[_builtins.str]] = None,
-                 mfa: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolve_user_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-                 restrict_create_platform_apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_create_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_user_domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict']]]]] = None,
-                 restrict_user_list_visibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_invalidation_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_access_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_refresh_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_mfas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict']]]]] = None,
+                 allowed_ip_addresses: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 if_match: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_history: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sessions_per_identity: pulumi.Input[Optional[_builtins.str]] = None,
+                 mfa: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolve_user_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+                 restrict_create_platform_apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_create_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_user_domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict', 'outputs.IamAccountSettingsRestrictUserDomain']]]]] = None,
+                 restrict_user_list_visibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_invalidation_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_access_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_refresh_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_mfas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict', 'outputs.IamAccountSettingsUserMfa']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -681,23 +685,23 @@ class IamAccountSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_ip_addresses: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-            histories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsHistoryArgs', 'IamAccountSettingsHistoryArgsDict']]]]] = None,
-            if_match: Optional[pulumi.Input[_builtins.str]] = None,
-            include_history: Optional[pulumi.Input[_builtins.bool]] = None,
-            max_sessions_per_identity: Optional[pulumi.Input[_builtins.str]] = None,
-            mfa: Optional[pulumi.Input[_builtins.str]] = None,
-            resolve_user_mfa: Optional[pulumi.Input[_builtins.bool]] = None,
-            restrict_create_platform_apikey: Optional[pulumi.Input[_builtins.str]] = None,
-            restrict_create_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-            restrict_user_domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict']]]]] = None,
-            restrict_user_list_visibility: Optional[pulumi.Input[_builtins.str]] = None,
-            session_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-            session_invalidation_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-            system_access_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-            system_refresh_token_expiration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-            user_mfas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict']]]]] = None) -> 'IamAccountSettings':
+            allowed_ip_addresses: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+            histories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsHistoryArgs', 'IamAccountSettingsHistoryArgsDict', 'outputs.IamAccountSettingsHistory']]]]] = None,
+            if_match: pulumi.Input[Optional[_builtins.str]] = None,
+            include_history: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_sessions_per_identity: pulumi.Input[Optional[_builtins.str]] = None,
+            mfa: pulumi.Input[Optional[_builtins.str]] = None,
+            resolve_user_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+            restrict_create_platform_apikey: pulumi.Input[Optional[_builtins.str]] = None,
+            restrict_create_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+            restrict_user_domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict', 'outputs.IamAccountSettingsRestrictUserDomain']]]]] = None,
+            restrict_user_list_visibility: pulumi.Input[Optional[_builtins.str]] = None,
+            session_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+            session_invalidation_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+            system_access_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+            system_refresh_token_expiration_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+            user_mfas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict', 'outputs.IamAccountSettingsUserMfa']]]]] = None) -> 'IamAccountSettings':
         """
         Get an existing IamAccountSettings resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -707,7 +711,7 @@ class IamAccountSettings(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] allowed_ip_addresses: Defines the IP addresses and subnets from which IAM tokens can be created for the account.
         :param pulumi.Input[_builtins.str] entity_tag: Version of the account settings.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsHistoryArgs', 'IamAccountSettingsHistoryArgsDict']]]] histories: History of the Account Settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsHistoryArgs', 'IamAccountSettingsHistoryArgsDict', 'outputs.IamAccountSettingsHistory']]]] histories: History of the Account Settings.
         :param pulumi.Input[_builtins.str] if_match: Version of the account settings to be updated. Specify the version that you retrieved as entity_tag (ETag header) when reading the account. This value helps identifying parallel usage of this API. Pass * to indicate to update any version available. This might result in stale updates.
         :param pulumi.Input[_builtins.bool] include_history: Defines if the entity history is included in the response.
         :param pulumi.Input[_builtins.str] max_sessions_per_identity: Defines the max allowed sessions per identity required by the account. Valid values:  * Any whole number greater than 0  * NOT_SET - To unset account setting and use service default.
@@ -715,13 +719,13 @@ class IamAccountSettings(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] resolve_user_mfa: Enrich MFA exemptions with user PI.
         :param pulumi.Input[_builtins.str] restrict_create_platform_apikey: Defines whether or not creating platform API keys is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
         :param pulumi.Input[_builtins.str] restrict_create_service_id: Defines whether or not creating a Service Id is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict']]]] restrict_user_domains: Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realm_id set.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsRestrictUserDomainArgs', 'IamAccountSettingsRestrictUserDomainArgsDict', 'outputs.IamAccountSettingsRestrictUserDomain']]]] restrict_user_domains: Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realm_id set.
         :param pulumi.Input[_builtins.str] restrict_user_list_visibility: Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console.
         :param pulumi.Input[_builtins.str] session_expiration_in_seconds: Defines the session expiration in seconds for the account. Valid values:  * Any whole number between between '900' and '86400'  * NOT_SET - To unset account setting and use service default.
         :param pulumi.Input[_builtins.str] session_invalidation_in_seconds: Defines the period of time in seconds in which a session will be invalidated due to inactivity. Valid values:  * Any whole number between '900' and '7200'  * NOT_SET - To unset account setting and use service default.
         :param pulumi.Input[_builtins.str] system_access_token_expiration_in_seconds: Defines the access token expiration in seconds. Valid values:  * Any whole number between '900' and '3600'  * NOT_SET - To unset account setting and use service default.
         :param pulumi.Input[_builtins.str] system_refresh_token_expiration_in_seconds: Defines the refresh token expiration in seconds. Valid values:  * Any whole number between '900' and '2592000'  * NOT_SET - To unset account setting and use service default.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict']]]] user_mfas: List of users that are exempted from the MFA requirement of the account.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsUserMfaArgs', 'IamAccountSettingsUserMfaArgsDict', 'outputs.IamAccountSettingsUserMfa']]]] user_mfas: List of users that are exempted from the MFA requirement of the account.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -828,7 +832,7 @@ class IamAccountSettings(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="restrictUserDomains")
-    def restrict_user_domains(self) -> pulumi.Output[Sequence['outputs.IamAccountSettingsRestrictUserDomain']]:
+    def restrict_user_domains(self) -> pulumi.Output[Optional[Sequence['outputs.IamAccountSettingsRestrictUserDomain']]]:
         """
         Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realm_id set.
         """

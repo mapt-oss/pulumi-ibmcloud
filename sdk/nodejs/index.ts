@@ -240,6 +240,31 @@ export const getIamEffectiveAccountSettings: typeof import("./getIamEffectiveAcc
 export const getIamEffectiveAccountSettingsOutput: typeof import("./getIamEffectiveAccountSettings").getIamEffectiveAccountSettingsOutput = null as any;
 utilities.lazyLoad(exports, ["getIamEffectiveAccountSettings","getIamEffectiveAccountSettingsOutput"], () => require("./getIamEffectiveAccountSettings"));
 
+export { GetIamIdentityPreferenceArgs, GetIamIdentityPreferenceResult, GetIamIdentityPreferenceOutputArgs } from "./getIamIdentityPreference";
+export const getIamIdentityPreference: typeof import("./getIamIdentityPreference").getIamIdentityPreference = null as any;
+export const getIamIdentityPreferenceOutput: typeof import("./getIamIdentityPreference").getIamIdentityPreferenceOutput = null as any;
+utilities.lazyLoad(exports, ["getIamIdentityPreference","getIamIdentityPreferenceOutput"], () => require("./getIamIdentityPreference"));
+
+export { GetIamIdentityPreferencesArgs, GetIamIdentityPreferencesResult, GetIamIdentityPreferencesOutputArgs } from "./getIamIdentityPreferences";
+export const getIamIdentityPreferences: typeof import("./getIamIdentityPreferences").getIamIdentityPreferences = null as any;
+export const getIamIdentityPreferencesOutput: typeof import("./getIamIdentityPreferences").getIamIdentityPreferencesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamIdentityPreferences","getIamIdentityPreferencesOutput"], () => require("./getIamIdentityPreferences"));
+
+export { GetIamIdpArgs, GetIamIdpResult, GetIamIdpOutputArgs } from "./getIamIdp";
+export const getIamIdp: typeof import("./getIamIdp").getIamIdp = null as any;
+export const getIamIdpOutput: typeof import("./getIamIdp").getIamIdpOutput = null as any;
+utilities.lazyLoad(exports, ["getIamIdp","getIamIdpOutput"], () => require("./getIamIdp"));
+
+export { GetIamIdpAccountSettingsArgs, GetIamIdpAccountSettingsResult, GetIamIdpAccountSettingsOutputArgs } from "./getIamIdpAccountSettings";
+export const getIamIdpAccountSettings: typeof import("./getIamIdpAccountSettings").getIamIdpAccountSettings = null as any;
+export const getIamIdpAccountSettingsOutput: typeof import("./getIamIdpAccountSettings").getIamIdpAccountSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamIdpAccountSettings","getIamIdpAccountSettingsOutput"], () => require("./getIamIdpAccountSettings"));
+
+export { GetIamIdpsArgs, GetIamIdpsResult, GetIamIdpsOutputArgs } from "./getIamIdps";
+export const getIamIdps: typeof import("./getIamIdps").getIamIdps = null as any;
+export const getIamIdpsOutput: typeof import("./getIamIdps").getIamIdpsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamIdps","getIamIdpsOutput"], () => require("./getIamIdps"));
+
 export { GetIamPolicyAssignmentArgs, GetIamPolicyAssignmentResult, GetIamPolicyAssignmentOutputArgs } from "./getIamPolicyAssignment";
 export const getIamPolicyAssignment: typeof import("./getIamPolicyAssignment").getIamPolicyAssignment = null as any;
 export const getIamPolicyAssignmentOutput: typeof import("./getIamPolicyAssignment").getIamPolicyAssignmentOutput = null as any;
@@ -265,6 +290,26 @@ export const getIamRoleActions: typeof import("./getIamRoleActions").getIamRoleA
 export const getIamRoleActionsOutput: typeof import("./getIamRoleActions").getIamRoleActionsOutput = null as any;
 utilities.lazyLoad(exports, ["getIamRoleActions","getIamRoleActionsOutput"], () => require("./getIamRoleActions"));
 
+export { GetIamRoleAssignmentArgs, GetIamRoleAssignmentResult, GetIamRoleAssignmentOutputArgs } from "./getIamRoleAssignment";
+export const getIamRoleAssignment: typeof import("./getIamRoleAssignment").getIamRoleAssignment = null as any;
+export const getIamRoleAssignmentOutput: typeof import("./getIamRoleAssignment").getIamRoleAssignmentOutput = null as any;
+utilities.lazyLoad(exports, ["getIamRoleAssignment","getIamRoleAssignmentOutput"], () => require("./getIamRoleAssignment"));
+
+export { GetIamRoleAssignmentsArgs, GetIamRoleAssignmentsResult, GetIamRoleAssignmentsOutputArgs } from "./getIamRoleAssignments";
+export const getIamRoleAssignments: typeof import("./getIamRoleAssignments").getIamRoleAssignments = null as any;
+export const getIamRoleAssignmentsOutput: typeof import("./getIamRoleAssignments").getIamRoleAssignmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamRoleAssignments","getIamRoleAssignmentsOutput"], () => require("./getIamRoleAssignments"));
+
+export { GetIamRoleTemplateResult } from "./getIamRoleTemplate";
+export const getIamRoleTemplate: typeof import("./getIamRoleTemplate").getIamRoleTemplate = null as any;
+export const getIamRoleTemplateOutput: typeof import("./getIamRoleTemplate").getIamRoleTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getIamRoleTemplate","getIamRoleTemplateOutput"], () => require("./getIamRoleTemplate"));
+
+export { GetIamRoleTemplateVersionArgs, GetIamRoleTemplateVersionResult, GetIamRoleTemplateVersionOutputArgs } from "./getIamRoleTemplateVersion";
+export const getIamRoleTemplateVersion: typeof import("./getIamRoleTemplateVersion").getIamRoleTemplateVersion = null as any;
+export const getIamRoleTemplateVersionOutput: typeof import("./getIamRoleTemplateVersion").getIamRoleTemplateVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getIamRoleTemplateVersion","getIamRoleTemplateVersionOutput"], () => require("./getIamRoleTemplateVersion"));
+
 export { GetIamRolesArgs, GetIamRolesResult, GetIamRolesOutputArgs } from "./getIamRoles";
 export const getIamRoles: typeof import("./getIamRoles").getIamRoles = null as any;
 export const getIamRolesOutput: typeof import("./getIamRoles").getIamRolesOutput = null as any;
@@ -279,6 +324,11 @@ export { GetIamServicePolicyArgs, GetIamServicePolicyResult, GetIamServicePolicy
 export const getIamServicePolicy: typeof import("./getIamServicePolicy").getIamServicePolicy = null as any;
 export const getIamServicePolicyOutput: typeof import("./getIamServicePolicy").getIamServicePolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getIamServicePolicy","getIamServicePolicyOutput"], () => require("./getIamServicePolicy"));
+
+export { GetIamServiceidGroupArgs, GetIamServiceidGroupResult, GetIamServiceidGroupOutputArgs } from "./getIamServiceidGroup";
+export const getIamServiceidGroup: typeof import("./getIamServiceidGroup").getIamServiceidGroup = null as any;
+export const getIamServiceidGroupOutput: typeof import("./getIamServiceidGroup").getIamServiceidGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getIamServiceidGroup","getIamServiceidGroupOutput"], () => require("./getIamServiceidGroup"));
 
 export { GetIamTrustedProfileArgs, GetIamTrustedProfileResult, GetIamTrustedProfileOutputArgs } from "./getIamTrustedProfile";
 export const getIamTrustedProfile: typeof import("./getIamTrustedProfile").getIamTrustedProfile = null as any;
@@ -389,6 +439,11 @@ export { GetIsBareMetalServerArgs, GetIsBareMetalServerResult, GetIsBareMetalSer
 export const getIsBareMetalServer: typeof import("./getIsBareMetalServer").getIsBareMetalServer = null as any;
 export const getIsBareMetalServerOutput: typeof import("./getIsBareMetalServer").getIsBareMetalServerOutput = null as any;
 utilities.lazyLoad(exports, ["getIsBareMetalServer","getIsBareMetalServerOutput"], () => require("./getIsBareMetalServer"));
+
+export { GetIsBareMetalServerCapacitiesArgs, GetIsBareMetalServerCapacitiesResult, GetIsBareMetalServerCapacitiesOutputArgs } from "./getIsBareMetalServerCapacities";
+export const getIsBareMetalServerCapacities: typeof import("./getIsBareMetalServerCapacities").getIsBareMetalServerCapacities = null as any;
+export const getIsBareMetalServerCapacitiesOutput: typeof import("./getIsBareMetalServerCapacities").getIsBareMetalServerCapacitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getIsBareMetalServerCapacities","getIsBareMetalServerCapacitiesOutput"], () => require("./getIsBareMetalServerCapacities"));
 
 export { GetIsBareMetalServerDiskArgs, GetIsBareMetalServerDiskResult, GetIsBareMetalServerDiskOutputArgs } from "./getIsBareMetalServerDisk";
 export const getIsBareMetalServerDisk: typeof import("./getIsBareMetalServerDisk").getIsBareMetalServerDisk = null as any;
@@ -729,6 +784,16 @@ export { GetIsInstanceProfilesResult } from "./getIsInstanceProfiles";
 export const getIsInstanceProfiles: typeof import("./getIsInstanceProfiles").getIsInstanceProfiles = null as any;
 export const getIsInstanceProfilesOutput: typeof import("./getIsInstanceProfiles").getIsInstanceProfilesOutput = null as any;
 utilities.lazyLoad(exports, ["getIsInstanceProfiles","getIsInstanceProfilesOutput"], () => require("./getIsInstanceProfiles"));
+
+export { GetIsInstanceSoftwareAttachmentArgs, GetIsInstanceSoftwareAttachmentResult, GetIsInstanceSoftwareAttachmentOutputArgs } from "./getIsInstanceSoftwareAttachment";
+export const getIsInstanceSoftwareAttachment: typeof import("./getIsInstanceSoftwareAttachment").getIsInstanceSoftwareAttachment = null as any;
+export const getIsInstanceSoftwareAttachmentOutput: typeof import("./getIsInstanceSoftwareAttachment").getIsInstanceSoftwareAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getIsInstanceSoftwareAttachment","getIsInstanceSoftwareAttachmentOutput"], () => require("./getIsInstanceSoftwareAttachment"));
+
+export { GetIsInstanceSoftwareAttachmentsArgs, GetIsInstanceSoftwareAttachmentsResult, GetIsInstanceSoftwareAttachmentsOutputArgs } from "./getIsInstanceSoftwareAttachments";
+export const getIsInstanceSoftwareAttachments: typeof import("./getIsInstanceSoftwareAttachments").getIsInstanceSoftwareAttachments = null as any;
+export const getIsInstanceSoftwareAttachmentsOutput: typeof import("./getIsInstanceSoftwareAttachments").getIsInstanceSoftwareAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getIsInstanceSoftwareAttachments","getIsInstanceSoftwareAttachmentsOutput"], () => require("./getIsInstanceSoftwareAttachments"));
 
 export { GetIsInstanceTemplateArgs, GetIsInstanceTemplateResult, GetIsInstanceTemplateOutputArgs } from "./getIsInstanceTemplate";
 export const getIsInstanceTemplate: typeof import("./getIsInstanceTemplate").getIsInstanceTemplate = null as any;
@@ -1105,6 +1170,16 @@ export const getIsVirtualEndpointGatewayIps: typeof import("./getIsVirtualEndpoi
 export const getIsVirtualEndpointGatewayIpsOutput: typeof import("./getIsVirtualEndpointGatewayIps").getIsVirtualEndpointGatewayIpsOutput = null as any;
 utilities.lazyLoad(exports, ["getIsVirtualEndpointGatewayIps","getIsVirtualEndpointGatewayIpsOutput"], () => require("./getIsVirtualEndpointGatewayIps"));
 
+export { GetIsVirtualEndpointGatewayResourceBindingArgs, GetIsVirtualEndpointGatewayResourceBindingResult, GetIsVirtualEndpointGatewayResourceBindingOutputArgs } from "./getIsVirtualEndpointGatewayResourceBinding";
+export const getIsVirtualEndpointGatewayResourceBinding: typeof import("./getIsVirtualEndpointGatewayResourceBinding").getIsVirtualEndpointGatewayResourceBinding = null as any;
+export const getIsVirtualEndpointGatewayResourceBindingOutput: typeof import("./getIsVirtualEndpointGatewayResourceBinding").getIsVirtualEndpointGatewayResourceBindingOutput = null as any;
+utilities.lazyLoad(exports, ["getIsVirtualEndpointGatewayResourceBinding","getIsVirtualEndpointGatewayResourceBindingOutput"], () => require("./getIsVirtualEndpointGatewayResourceBinding"));
+
+export { GetIsVirtualEndpointGatewayResourceBindingsArgs, GetIsVirtualEndpointGatewayResourceBindingsResult, GetIsVirtualEndpointGatewayResourceBindingsOutputArgs } from "./getIsVirtualEndpointGatewayResourceBindings";
+export const getIsVirtualEndpointGatewayResourceBindings: typeof import("./getIsVirtualEndpointGatewayResourceBindings").getIsVirtualEndpointGatewayResourceBindings = null as any;
+export const getIsVirtualEndpointGatewayResourceBindingsOutput: typeof import("./getIsVirtualEndpointGatewayResourceBindings").getIsVirtualEndpointGatewayResourceBindingsOutput = null as any;
+utilities.lazyLoad(exports, ["getIsVirtualEndpointGatewayResourceBindings","getIsVirtualEndpointGatewayResourceBindingsOutput"], () => require("./getIsVirtualEndpointGatewayResourceBindings"));
+
 export { GetIsVirtualEndpointGatewaysArgs, GetIsVirtualEndpointGatewaysResult, GetIsVirtualEndpointGatewaysOutputArgs } from "./getIsVirtualEndpointGateways";
 export const getIsVirtualEndpointGateways: typeof import("./getIsVirtualEndpointGateways").getIsVirtualEndpointGateways = null as any;
 export const getIsVirtualEndpointGatewaysOutput: typeof import("./getIsVirtualEndpointGateways").getIsVirtualEndpointGatewaysOutput = null as any;
@@ -1149,6 +1224,16 @@ export { GetIsVolumeInstanceProfilesArgs, GetIsVolumeInstanceProfilesResult, Get
 export const getIsVolumeInstanceProfiles: typeof import("./getIsVolumeInstanceProfiles").getIsVolumeInstanceProfiles = null as any;
 export const getIsVolumeInstanceProfilesOutput: typeof import("./getIsVolumeInstanceProfiles").getIsVolumeInstanceProfilesOutput = null as any;
 utilities.lazyLoad(exports, ["getIsVolumeInstanceProfiles","getIsVolumeInstanceProfilesOutput"], () => require("./getIsVolumeInstanceProfiles"));
+
+export { GetIsVolumeJobArgs, GetIsVolumeJobResult, GetIsVolumeJobOutputArgs } from "./getIsVolumeJob";
+export const getIsVolumeJob: typeof import("./getIsVolumeJob").getIsVolumeJob = null as any;
+export const getIsVolumeJobOutput: typeof import("./getIsVolumeJob").getIsVolumeJobOutput = null as any;
+utilities.lazyLoad(exports, ["getIsVolumeJob","getIsVolumeJobOutput"], () => require("./getIsVolumeJob"));
+
+export { GetIsVolumeJobsArgs, GetIsVolumeJobsResult, GetIsVolumeJobsOutputArgs } from "./getIsVolumeJobs";
+export const getIsVolumeJobs: typeof import("./getIsVolumeJobs").getIsVolumeJobs = null as any;
+export const getIsVolumeJobsOutput: typeof import("./getIsVolumeJobs").getIsVolumeJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getIsVolumeJobs","getIsVolumeJobsOutput"], () => require("./getIsVolumeJobs"));
 
 export { GetIsVolumeProfileArgs, GetIsVolumeProfileResult, GetIsVolumeProfileOutputArgs } from "./getIsVolumeProfile";
 export const getIsVolumeProfile: typeof import("./getIsVolumeProfile").getIsVolumeProfile = null as any;
@@ -1225,6 +1310,11 @@ export const getIsVpnGateway: typeof import("./getIsVpnGateway").getIsVpnGateway
 export const getIsVpnGatewayOutput: typeof import("./getIsVpnGateway").getIsVpnGatewayOutput = null as any;
 utilities.lazyLoad(exports, ["getIsVpnGateway","getIsVpnGatewayOutput"], () => require("./getIsVpnGateway"));
 
+export { GetIsVpnGatewayAdvertisedCidrsArgs, GetIsVpnGatewayAdvertisedCidrsResult, GetIsVpnGatewayAdvertisedCidrsOutputArgs } from "./getIsVpnGatewayAdvertisedCidrs";
+export const getIsVpnGatewayAdvertisedCidrs: typeof import("./getIsVpnGatewayAdvertisedCidrs").getIsVpnGatewayAdvertisedCidrs = null as any;
+export const getIsVpnGatewayAdvertisedCidrsOutput: typeof import("./getIsVpnGatewayAdvertisedCidrs").getIsVpnGatewayAdvertisedCidrsOutput = null as any;
+utilities.lazyLoad(exports, ["getIsVpnGatewayAdvertisedCidrs","getIsVpnGatewayAdvertisedCidrsOutput"], () => require("./getIsVpnGatewayAdvertisedCidrs"));
+
 export { GetIsVpnGatewayConnectionArgs, GetIsVpnGatewayConnectionResult, GetIsVpnGatewayConnectionOutputArgs } from "./getIsVpnGatewayConnection";
 export const getIsVpnGatewayConnection: typeof import("./getIsVpnGatewayConnection").getIsVpnGatewayConnection = null as any;
 export const getIsVpnGatewayConnectionOutput: typeof import("./getIsVpnGatewayConnection").getIsVpnGatewayConnectionOutput = null as any;
@@ -1244,6 +1334,16 @@ export { GetIsVpnGatewayConnectionsArgs, GetIsVpnGatewayConnectionsResult, GetIs
 export const getIsVpnGatewayConnections: typeof import("./getIsVpnGatewayConnections").getIsVpnGatewayConnections = null as any;
 export const getIsVpnGatewayConnectionsOutput: typeof import("./getIsVpnGatewayConnections").getIsVpnGatewayConnectionsOutput = null as any;
 utilities.lazyLoad(exports, ["getIsVpnGatewayConnections","getIsVpnGatewayConnectionsOutput"], () => require("./getIsVpnGatewayConnections"));
+
+export { GetIsVpnGatewayServiceConnectionArgs, GetIsVpnGatewayServiceConnectionResult, GetIsVpnGatewayServiceConnectionOutputArgs } from "./getIsVpnGatewayServiceConnection";
+export const getIsVpnGatewayServiceConnection: typeof import("./getIsVpnGatewayServiceConnection").getIsVpnGatewayServiceConnection = null as any;
+export const getIsVpnGatewayServiceConnectionOutput: typeof import("./getIsVpnGatewayServiceConnection").getIsVpnGatewayServiceConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getIsVpnGatewayServiceConnection","getIsVpnGatewayServiceConnectionOutput"], () => require("./getIsVpnGatewayServiceConnection"));
+
+export { GetIsVpnGatewayServiceConnectionsArgs, GetIsVpnGatewayServiceConnectionsResult, GetIsVpnGatewayServiceConnectionsOutputArgs } from "./getIsVpnGatewayServiceConnections";
+export const getIsVpnGatewayServiceConnections: typeof import("./getIsVpnGatewayServiceConnections").getIsVpnGatewayServiceConnections = null as any;
+export const getIsVpnGatewayServiceConnectionsOutput: typeof import("./getIsVpnGatewayServiceConnections").getIsVpnGatewayServiceConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getIsVpnGatewayServiceConnections","getIsVpnGatewayServiceConnectionsOutput"], () => require("./getIsVpnGatewayServiceConnections"));
 
 export { GetIsVpnGatewaysArgs, GetIsVpnGatewaysResult, GetIsVpnGatewaysOutputArgs } from "./getIsVpnGateways";
 export const getIsVpnGateways: typeof import("./getIsVpnGateways").getIsVpnGateways = null as any;
@@ -1395,6 +1495,16 @@ export const getPiInstanceIp: typeof import("./getPiInstanceIp").getPiInstanceIp
 export const getPiInstanceIpOutput: typeof import("./getPiInstanceIp").getPiInstanceIpOutput = null as any;
 utilities.lazyLoad(exports, ["getPiInstanceIp","getPiInstanceIpOutput"], () => require("./getPiInstanceIp"));
 
+export { GetPiInstanceNetworkArgs, GetPiInstanceNetworkResult, GetPiInstanceNetworkOutputArgs } from "./getPiInstanceNetwork";
+export const getPiInstanceNetwork: typeof import("./getPiInstanceNetwork").getPiInstanceNetwork = null as any;
+export const getPiInstanceNetworkOutput: typeof import("./getPiInstanceNetwork").getPiInstanceNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceNetwork","getPiInstanceNetworkOutput"], () => require("./getPiInstanceNetwork"));
+
+export { GetPiInstanceNetworksArgs, GetPiInstanceNetworksResult, GetPiInstanceNetworksOutputArgs } from "./getPiInstanceNetworks";
+export const getPiInstanceNetworks: typeof import("./getPiInstanceNetworks").getPiInstanceNetworks = null as any;
+export const getPiInstanceNetworksOutput: typeof import("./getPiInstanceNetworks").getPiInstanceNetworksOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceNetworks","getPiInstanceNetworksOutput"], () => require("./getPiInstanceNetworks"));
+
 export { GetPiInstanceSnapshotArgs, GetPiInstanceSnapshotResult, GetPiInstanceSnapshotOutputArgs } from "./getPiInstanceSnapshot";
 export const getPiInstanceSnapshot: typeof import("./getPiInstanceSnapshot").getPiInstanceSnapshot = null as any;
 export const getPiInstanceSnapshotOutput: typeof import("./getPiInstanceSnapshot").getPiInstanceSnapshotOutput = null as any;
@@ -1409,6 +1519,16 @@ export { GetPiInstanceVolumesArgs, GetPiInstanceVolumesResult, GetPiInstanceVolu
 export const getPiInstanceVolumes: typeof import("./getPiInstanceVolumes").getPiInstanceVolumes = null as any;
 export const getPiInstanceVolumesOutput: typeof import("./getPiInstanceVolumes").getPiInstanceVolumesOutput = null as any;
 utilities.lazyLoad(exports, ["getPiInstanceVolumes","getPiInstanceVolumesOutput"], () => require("./getPiInstanceVolumes"));
+
+export { GetPiInstanceVpmemVolumeArgs, GetPiInstanceVpmemVolumeResult, GetPiInstanceVpmemVolumeOutputArgs } from "./getPiInstanceVpmemVolume";
+export const getPiInstanceVpmemVolume: typeof import("./getPiInstanceVpmemVolume").getPiInstanceVpmemVolume = null as any;
+export const getPiInstanceVpmemVolumeOutput: typeof import("./getPiInstanceVpmemVolume").getPiInstanceVpmemVolumeOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceVpmemVolume","getPiInstanceVpmemVolumeOutput"], () => require("./getPiInstanceVpmemVolume"));
+
+export { GetPiInstanceVpmemVolumesArgs, GetPiInstanceVpmemVolumesResult, GetPiInstanceVpmemVolumesOutputArgs } from "./getPiInstanceVpmemVolumes";
+export const getPiInstanceVpmemVolumes: typeof import("./getPiInstanceVpmemVolumes").getPiInstanceVpmemVolumes = null as any;
+export const getPiInstanceVpmemVolumesOutput: typeof import("./getPiInstanceVpmemVolumes").getPiInstanceVpmemVolumesOutput = null as any;
+utilities.lazyLoad(exports, ["getPiInstanceVpmemVolumes","getPiInstanceVpmemVolumesOutput"], () => require("./getPiInstanceVpmemVolumes"));
 
 export { GetPiInstancesArgs, GetPiInstancesResult, GetPiInstancesOutputArgs } from "./getPiInstances";
 export const getPiInstances: typeof import("./getPiInstances").getPiInstances = null as any;
@@ -1695,6 +1815,11 @@ export const getResourceGroup: typeof import("./getResourceGroup").getResourceGr
 export const getResourceGroupOutput: typeof import("./getResourceGroup").getResourceGroupOutput = null as any;
 utilities.lazyLoad(exports, ["getResourceGroup","getResourceGroupOutput"], () => require("./getResourceGroup"));
 
+export { GetResourceGroupsArgs, GetResourceGroupsResult, GetResourceGroupsOutputArgs } from "./getResourceGroups";
+export const getResourceGroups: typeof import("./getResourceGroups").getResourceGroups = null as any;
+export const getResourceGroupsOutput: typeof import("./getResourceGroups").getResourceGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceGroups","getResourceGroupsOutput"], () => require("./getResourceGroups"));
+
 export { GetResourceInstanceArgs, GetResourceInstanceResult, GetResourceInstanceOutputArgs } from "./getResourceInstance";
 export const getResourceInstance: typeof import("./getResourceInstance").getResourceInstance = null as any;
 export const getResourceInstanceOutput: typeof import("./getResourceInstance").getResourceInstanceOutput = null as any;
@@ -1709,6 +1834,11 @@ export { GetResourceQuotaArgs, GetResourceQuotaResult, GetResourceQuotaOutputArg
 export const getResourceQuota: typeof import("./getResourceQuota").getResourceQuota = null as any;
 export const getResourceQuotaOutput: typeof import("./getResourceQuota").getResourceQuotaOutput = null as any;
 utilities.lazyLoad(exports, ["getResourceQuota","getResourceQuotaOutput"], () => require("./getResourceQuota"));
+
+export { GetResourceReclamationsResult } from "./getResourceReclamations";
+export const getResourceReclamations: typeof import("./getResourceReclamations").getResourceReclamations = null as any;
+export const getResourceReclamationsOutput: typeof import("./getResourceReclamations").getResourceReclamationsOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceReclamations","getResourceReclamationsOutput"], () => require("./getResourceReclamations"));
 
 export { GetResourceTagArgs, GetResourceTagResult, GetResourceTagOutputArgs } from "./getResourceTag";
 export const getResourceTag: typeof import("./getResourceTag").getResourceTag = null as any;
@@ -1855,6 +1985,21 @@ export type IamCustomRole = import("./iamCustomRole").IamCustomRole;
 export const IamCustomRole: typeof import("./iamCustomRole").IamCustomRole = null as any;
 utilities.lazyLoad(exports, ["IamCustomRole"], () => require("./iamCustomRole"));
 
+export { IamIdentityPreferenceArgs, IamIdentityPreferenceState } from "./iamIdentityPreference";
+export type IamIdentityPreference = import("./iamIdentityPreference").IamIdentityPreference;
+export const IamIdentityPreference: typeof import("./iamIdentityPreference").IamIdentityPreference = null as any;
+utilities.lazyLoad(exports, ["IamIdentityPreference"], () => require("./iamIdentityPreference"));
+
+export { IamIdpArgs, IamIdpState } from "./iamIdp";
+export type IamIdp = import("./iamIdp").IamIdp;
+export const IamIdp: typeof import("./iamIdp").IamIdp = null as any;
+utilities.lazyLoad(exports, ["IamIdp"], () => require("./iamIdp"));
+
+export { IamIdpAccountSettingArgs, IamIdpAccountSettingState } from "./iamIdpAccountSetting";
+export type IamIdpAccountSetting = import("./iamIdpAccountSetting").IamIdpAccountSetting;
+export const IamIdpAccountSetting: typeof import("./iamIdpAccountSetting").IamIdpAccountSetting = null as any;
+utilities.lazyLoad(exports, ["IamIdpAccountSetting"], () => require("./iamIdpAccountSetting"));
+
 export { IamPolicyAssignmentArgs, IamPolicyAssignmentState } from "./iamPolicyAssignment";
 export type IamPolicyAssignment = import("./iamPolicyAssignment").IamPolicyAssignment;
 export const IamPolicyAssignment: typeof import("./iamPolicyAssignment").IamPolicyAssignment = null as any;
@@ -1870,6 +2015,21 @@ export type IamPolicyTemplateVersion = import("./iamPolicyTemplateVersion").IamP
 export const IamPolicyTemplateVersion: typeof import("./iamPolicyTemplateVersion").IamPolicyTemplateVersion = null as any;
 utilities.lazyLoad(exports, ["IamPolicyTemplateVersion"], () => require("./iamPolicyTemplateVersion"));
 
+export { IamRoleAssignmentArgs, IamRoleAssignmentState } from "./iamRoleAssignment";
+export type IamRoleAssignment = import("./iamRoleAssignment").IamRoleAssignment;
+export const IamRoleAssignment: typeof import("./iamRoleAssignment").IamRoleAssignment = null as any;
+utilities.lazyLoad(exports, ["IamRoleAssignment"], () => require("./iamRoleAssignment"));
+
+export { IamRoleTemplateArgs, IamRoleTemplateState } from "./iamRoleTemplate";
+export type IamRoleTemplate = import("./iamRoleTemplate").IamRoleTemplate;
+export const IamRoleTemplate: typeof import("./iamRoleTemplate").IamRoleTemplate = null as any;
+utilities.lazyLoad(exports, ["IamRoleTemplate"], () => require("./iamRoleTemplate"));
+
+export { IamRoleTemplateVersionArgs, IamRoleTemplateVersionState } from "./iamRoleTemplateVersion";
+export type IamRoleTemplateVersion = import("./iamRoleTemplateVersion").IamRoleTemplateVersion;
+export const IamRoleTemplateVersion: typeof import("./iamRoleTemplateVersion").IamRoleTemplateVersion = null as any;
+utilities.lazyLoad(exports, ["IamRoleTemplateVersion"], () => require("./iamRoleTemplateVersion"));
+
 export { IamServiceApiKeyArgs, IamServiceApiKeyState } from "./iamServiceApiKey";
 export type IamServiceApiKey = import("./iamServiceApiKey").IamServiceApiKey;
 export const IamServiceApiKey: typeof import("./iamServiceApiKey").IamServiceApiKey = null as any;
@@ -1884,6 +2044,11 @@ export { IamServicePolicyArgs, IamServicePolicyState } from "./iamServicePolicy"
 export type IamServicePolicy = import("./iamServicePolicy").IamServicePolicy;
 export const IamServicePolicy: typeof import("./iamServicePolicy").IamServicePolicy = null as any;
 utilities.lazyLoad(exports, ["IamServicePolicy"], () => require("./iamServicePolicy"));
+
+export { IamServiceidGroupArgs, IamServiceidGroupState } from "./iamServiceidGroup";
+export type IamServiceidGroup = import("./iamServiceidGroup").IamServiceidGroup;
+export const IamServiceidGroup: typeof import("./iamServiceidGroup").IamServiceidGroup = null as any;
+utilities.lazyLoad(exports, ["IamServiceidGroup"], () => require("./iamServiceidGroup"));
 
 export { IamTrustedProfileArgs, IamTrustedProfileState } from "./iamTrustedProfile";
 export type IamTrustedProfile = import("./iamTrustedProfile").IamTrustedProfile;
@@ -2120,6 +2285,16 @@ export type IsInstanceNetworkInterfaceFloatingIp = import("./isInstanceNetworkIn
 export const IsInstanceNetworkInterfaceFloatingIp: typeof import("./isInstanceNetworkInterfaceFloatingIp").IsInstanceNetworkInterfaceFloatingIp = null as any;
 utilities.lazyLoad(exports, ["IsInstanceNetworkInterfaceFloatingIp"], () => require("./isInstanceNetworkInterfaceFloatingIp"));
 
+export { IsInstanceReinitializeArgs, IsInstanceReinitializeState } from "./isInstanceReinitialize";
+export type IsInstanceReinitialize = import("./isInstanceReinitialize").IsInstanceReinitialize;
+export const IsInstanceReinitialize: typeof import("./isInstanceReinitialize").IsInstanceReinitialize = null as any;
+utilities.lazyLoad(exports, ["IsInstanceReinitialize"], () => require("./isInstanceReinitialize"));
+
+export { IsInstanceSoftwareAttachmentArgs, IsInstanceSoftwareAttachmentState } from "./isInstanceSoftwareAttachment";
+export type IsInstanceSoftwareAttachment = import("./isInstanceSoftwareAttachment").IsInstanceSoftwareAttachment;
+export const IsInstanceSoftwareAttachment: typeof import("./isInstanceSoftwareAttachment").IsInstanceSoftwareAttachment = null as any;
+utilities.lazyLoad(exports, ["IsInstanceSoftwareAttachment"], () => require("./isInstanceSoftwareAttachment"));
+
 export { IsInstanceTemplateArgs, IsInstanceTemplateState } from "./isInstanceTemplate";
 export type IsInstanceTemplate = import("./isInstanceTemplate").IsInstanceTemplate;
 export const IsInstanceTemplate: typeof import("./isInstanceTemplate").IsInstanceTemplate = null as any;
@@ -2320,6 +2495,11 @@ export type IsVirtualEndpointGatewayIp = import("./isVirtualEndpointGatewayIp").
 export const IsVirtualEndpointGatewayIp: typeof import("./isVirtualEndpointGatewayIp").IsVirtualEndpointGatewayIp = null as any;
 utilities.lazyLoad(exports, ["IsVirtualEndpointGatewayIp"], () => require("./isVirtualEndpointGatewayIp"));
 
+export { IsVirtualEndpointGatewayResourceBindingArgs, IsVirtualEndpointGatewayResourceBindingState } from "./isVirtualEndpointGatewayResourceBinding";
+export type IsVirtualEndpointGatewayResourceBinding = import("./isVirtualEndpointGatewayResourceBinding").IsVirtualEndpointGatewayResourceBinding;
+export const IsVirtualEndpointGatewayResourceBinding: typeof import("./isVirtualEndpointGatewayResourceBinding").IsVirtualEndpointGatewayResourceBinding = null as any;
+utilities.lazyLoad(exports, ["IsVirtualEndpointGatewayResourceBinding"], () => require("./isVirtualEndpointGatewayResourceBinding"));
+
 export { IsVirtualNetworkInterfaceArgs, IsVirtualNetworkInterfaceState } from "./isVirtualNetworkInterface";
 export type IsVirtualNetworkInterface = import("./isVirtualNetworkInterface").IsVirtualNetworkInterface;
 export const IsVirtualNetworkInterface: typeof import("./isVirtualNetworkInterface").IsVirtualNetworkInterface = null as any;
@@ -2339,6 +2519,16 @@ export { IsVolumeArgs, IsVolumeState } from "./isVolume";
 export type IsVolume = import("./isVolume").IsVolume;
 export const IsVolume: typeof import("./isVolume").IsVolume = null as any;
 utilities.lazyLoad(exports, ["IsVolume"], () => require("./isVolume"));
+
+export { IsVolumeJobArgs, IsVolumeJobState } from "./isVolumeJob";
+export type IsVolumeJob = import("./isVolumeJob").IsVolumeJob;
+export const IsVolumeJob: typeof import("./isVolumeJob").IsVolumeJob = null as any;
+utilities.lazyLoad(exports, ["IsVolumeJob"], () => require("./isVolumeJob"));
+
+export { IsVolumeJobCancelArgs, IsVolumeJobCancelState } from "./isVolumeJobCancel";
+export type IsVolumeJobCancel = import("./isVolumeJobCancel").IsVolumeJobCancel;
+export const IsVolumeJobCancel: typeof import("./isVolumeJobCancel").IsVolumeJobCancel = null as any;
+utilities.lazyLoad(exports, ["IsVolumeJobCancel"], () => require("./isVolumeJobCancel"));
 
 export { IsVpcArgs, IsVpcState } from "./isVpc";
 export type IsVpc = import("./isVpc").IsVpc;
@@ -2369,6 +2559,11 @@ export { IsVpnGatewayArgs, IsVpnGatewayState } from "./isVpnGateway";
 export type IsVpnGateway = import("./isVpnGateway").IsVpnGateway;
 export const IsVpnGateway: typeof import("./isVpnGateway").IsVpnGateway = null as any;
 utilities.lazyLoad(exports, ["IsVpnGateway"], () => require("./isVpnGateway"));
+
+export { IsVpnGatewayAdvertisedCidrArgs, IsVpnGatewayAdvertisedCidrState } from "./isVpnGatewayAdvertisedCidr";
+export type IsVpnGatewayAdvertisedCidr = import("./isVpnGatewayAdvertisedCidr").IsVpnGatewayAdvertisedCidr;
+export const IsVpnGatewayAdvertisedCidr: typeof import("./isVpnGatewayAdvertisedCidr").IsVpnGatewayAdvertisedCidr = null as any;
+utilities.lazyLoad(exports, ["IsVpnGatewayAdvertisedCidr"], () => require("./isVpnGatewayAdvertisedCidr"));
 
 export { IsVpnGatewayConnectionArgs, IsVpnGatewayConnectionState } from "./isVpnGatewayConnection";
 export type IsVpnGatewayConnection = import("./isVpnGatewayConnection").IsVpnGatewayConnection;
@@ -2454,6 +2649,11 @@ export { PiInstanceSnapshotArgs, PiInstanceSnapshotState } from "./piInstanceSna
 export type PiInstanceSnapshot = import("./piInstanceSnapshot").PiInstanceSnapshot;
 export const PiInstanceSnapshot: typeof import("./piInstanceSnapshot").PiInstanceSnapshot = null as any;
 utilities.lazyLoad(exports, ["PiInstanceSnapshot"], () => require("./piInstanceSnapshot"));
+
+export { PiInstanceVpmemVolumesArgs, PiInstanceVpmemVolumesState } from "./piInstanceVpmemVolumes";
+export type PiInstanceVpmemVolumes = import("./piInstanceVpmemVolumes").PiInstanceVpmemVolumes;
+export const PiInstanceVpmemVolumes: typeof import("./piInstanceVpmemVolumes").PiInstanceVpmemVolumes = null as any;
+utilities.lazyLoad(exports, ["PiInstanceVpmemVolumes"], () => require("./piInstanceVpmemVolumes"));
 
 export { PiIpsecPolicyArgs, PiIpsecPolicyState } from "./piIpsecPolicy";
 export type PiIpsecPolicy = import("./piIpsecPolicy").PiIpsecPolicy;
@@ -2608,6 +2808,11 @@ export type ResourceKey = import("./resourceKey").ResourceKey;
 export const ResourceKey: typeof import("./resourceKey").ResourceKey = null as any;
 utilities.lazyLoad(exports, ["ResourceKey"], () => require("./resourceKey"));
 
+export { ResourceReclamationDeleteArgs, ResourceReclamationDeleteState } from "./resourceReclamationDelete";
+export type ResourceReclamationDelete = import("./resourceReclamationDelete").ResourceReclamationDelete;
+export const ResourceReclamationDelete: typeof import("./resourceReclamationDelete").ResourceReclamationDelete = null as any;
+utilities.lazyLoad(exports, ["ResourceReclamationDelete"], () => require("./resourceReclamationDelete"));
+
 export { ResourceTagArgs, ResourceTagState } from "./resourceTag";
 export type ResourceTag = import("./resourceTag").ResourceTag;
 export const ResourceTag: typeof import("./resourceTag").ResourceTag = null as any;
@@ -2737,18 +2942,32 @@ const _module = {
                 return new IamAuthorizationPolicyDetach(name, <any>undefined, { urn })
             case "ibmcloud:index/iamCustomRole:IamCustomRole":
                 return new IamCustomRole(name, <any>undefined, { urn })
+            case "ibmcloud:index/iamIdentityPreference:IamIdentityPreference":
+                return new IamIdentityPreference(name, <any>undefined, { urn })
+            case "ibmcloud:index/iamIdp:IamIdp":
+                return new IamIdp(name, <any>undefined, { urn })
+            case "ibmcloud:index/iamIdpAccountSetting:IamIdpAccountSetting":
+                return new IamIdpAccountSetting(name, <any>undefined, { urn })
             case "ibmcloud:index/iamPolicyAssignment:IamPolicyAssignment":
                 return new IamPolicyAssignment(name, <any>undefined, { urn })
             case "ibmcloud:index/iamPolicyTemplate:IamPolicyTemplate":
                 return new IamPolicyTemplate(name, <any>undefined, { urn })
             case "ibmcloud:index/iamPolicyTemplateVersion:IamPolicyTemplateVersion":
                 return new IamPolicyTemplateVersion(name, <any>undefined, { urn })
+            case "ibmcloud:index/iamRoleAssignment:IamRoleAssignment":
+                return new IamRoleAssignment(name, <any>undefined, { urn })
+            case "ibmcloud:index/iamRoleTemplate:IamRoleTemplate":
+                return new IamRoleTemplate(name, <any>undefined, { urn })
+            case "ibmcloud:index/iamRoleTemplateVersion:IamRoleTemplateVersion":
+                return new IamRoleTemplateVersion(name, <any>undefined, { urn })
             case "ibmcloud:index/iamServiceApiKey:IamServiceApiKey":
                 return new IamServiceApiKey(name, <any>undefined, { urn })
             case "ibmcloud:index/iamServiceId:IamServiceId":
                 return new IamServiceId(name, <any>undefined, { urn })
             case "ibmcloud:index/iamServicePolicy:IamServicePolicy":
                 return new IamServicePolicy(name, <any>undefined, { urn })
+            case "ibmcloud:index/iamServiceidGroup:IamServiceidGroup":
+                return new IamServiceidGroup(name, <any>undefined, { urn })
             case "ibmcloud:index/iamTrustedProfile:IamTrustedProfile":
                 return new IamTrustedProfile(name, <any>undefined, { urn })
             case "ibmcloud:index/iamTrustedProfileClaimRule:IamTrustedProfileClaimRule":
@@ -2843,6 +3062,10 @@ const _module = {
                 return new IsInstanceNetworkInterface(name, <any>undefined, { urn })
             case "ibmcloud:index/isInstanceNetworkInterfaceFloatingIp:IsInstanceNetworkInterfaceFloatingIp":
                 return new IsInstanceNetworkInterfaceFloatingIp(name, <any>undefined, { urn })
+            case "ibmcloud:index/isInstanceReinitialize:IsInstanceReinitialize":
+                return new IsInstanceReinitialize(name, <any>undefined, { urn })
+            case "ibmcloud:index/isInstanceSoftwareAttachment:IsInstanceSoftwareAttachment":
+                return new IsInstanceSoftwareAttachment(name, <any>undefined, { urn })
             case "ibmcloud:index/isInstanceTemplate:IsInstanceTemplate":
                 return new IsInstanceTemplate(name, <any>undefined, { urn })
             case "ibmcloud:index/isInstanceVolumeAttachment:IsInstanceVolumeAttachment":
@@ -2923,6 +3146,8 @@ const _module = {
                 return new IsVirtualEndpointGateway(name, <any>undefined, { urn })
             case "ibmcloud:index/isVirtualEndpointGatewayIp:IsVirtualEndpointGatewayIp":
                 return new IsVirtualEndpointGatewayIp(name, <any>undefined, { urn })
+            case "ibmcloud:index/isVirtualEndpointGatewayResourceBinding:IsVirtualEndpointGatewayResourceBinding":
+                return new IsVirtualEndpointGatewayResourceBinding(name, <any>undefined, { urn })
             case "ibmcloud:index/isVirtualNetworkInterface:IsVirtualNetworkInterface":
                 return new IsVirtualNetworkInterface(name, <any>undefined, { urn })
             case "ibmcloud:index/isVirtualNetworkInterfaceFloatingIp:IsVirtualNetworkInterfaceFloatingIp":
@@ -2931,6 +3156,10 @@ const _module = {
                 return new IsVirtualNetworkInterfaceIp(name, <any>undefined, { urn })
             case "ibmcloud:index/isVolume:IsVolume":
                 return new IsVolume(name, <any>undefined, { urn })
+            case "ibmcloud:index/isVolumeJob:IsVolumeJob":
+                return new IsVolumeJob(name, <any>undefined, { urn })
+            case "ibmcloud:index/isVolumeJobCancel:IsVolumeJobCancel":
+                return new IsVolumeJobCancel(name, <any>undefined, { urn })
             case "ibmcloud:index/isVpc:IsVpc":
                 return new IsVpc(name, <any>undefined, { urn })
             case "ibmcloud:index/isVpcAddressPrefix:IsVpcAddressPrefix":
@@ -2943,6 +3172,8 @@ const _module = {
                 return new IsVpcRoutingTableRoute(name, <any>undefined, { urn })
             case "ibmcloud:index/isVpnGateway:IsVpnGateway":
                 return new IsVpnGateway(name, <any>undefined, { urn })
+            case "ibmcloud:index/isVpnGatewayAdvertisedCidr:IsVpnGatewayAdvertisedCidr":
+                return new IsVpnGatewayAdvertisedCidr(name, <any>undefined, { urn })
             case "ibmcloud:index/isVpnGatewayConnection:IsVpnGatewayConnection":
                 return new IsVpnGatewayConnection(name, <any>undefined, { urn })
             case "ibmcloud:index/isVpnServer:IsVpnServer":
@@ -2977,6 +3208,8 @@ const _module = {
                 return new PiInstanceAction(name, <any>undefined, { urn })
             case "ibmcloud:index/piInstanceSnapshot:PiInstanceSnapshot":
                 return new PiInstanceSnapshot(name, <any>undefined, { urn })
+            case "ibmcloud:index/piInstanceVpmemVolumes:PiInstanceVpmemVolumes":
+                return new PiInstanceVpmemVolumes(name, <any>undefined, { urn })
             case "ibmcloud:index/piIpsecPolicy:PiIpsecPolicy":
                 return new PiIpsecPolicy(name, <any>undefined, { urn })
             case "ibmcloud:index/piKey:PiKey":
@@ -3037,6 +3270,8 @@ const _module = {
                 return new ResourceInstance(name, <any>undefined, { urn })
             case "ibmcloud:index/resourceKey:ResourceKey":
                 return new ResourceKey(name, <any>undefined, { urn })
+            case "ibmcloud:index/resourceReclamationDelete:ResourceReclamationDelete":
+                return new ResourceReclamationDelete(name, <any>undefined, { urn })
             case "ibmcloud:index/resourceTag:ResourceTag":
                 return new ResourceTag(name, <any>undefined, { urn })
             case "ibmcloud:index/tgConnection:TgConnection":
@@ -3096,12 +3331,19 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/iamApiKey", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamAuthorizationPolicy", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamAuthorizationPolicyDetach", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamCustomRole", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/iamIdentityPreference", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/iamIdp", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/iamIdpAccountSetting", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamPolicyAssignment", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamPolicyTemplate", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamPolicyTemplateVersion", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/iamRoleAssignment", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/iamRoleTemplate", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/iamRoleTemplateVersion", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamServiceApiKey", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamServiceId", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamServicePolicy", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/iamServiceidGroup", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamTrustedProfile", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamTrustedProfileClaimRule", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/iamTrustedProfileIdentities", _module)
@@ -3149,6 +3391,8 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceGroupMembersh
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceNetworkAttachment", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceNetworkInterface", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceNetworkInterfaceFloatingIp", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceReinitialize", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceSoftwareAttachment", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceTemplate", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isInstanceVolumeAttachment", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isIpsecPolicy", _module)
@@ -3189,16 +3433,20 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/isSubnetReservedIpPatch
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isSubnetRoutingTableAttachment", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVirtualEndpointGateway", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVirtualEndpointGatewayIp", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/isVirtualEndpointGatewayResourceBinding", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVirtualNetworkInterface", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVirtualNetworkInterfaceFloatingIp", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVirtualNetworkInterfaceIp", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVolume", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/isVolumeJob", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/isVolumeJobCancel", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpc", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpcAddressPrefix", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpcDnsResolutionBinding", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpcRoutingTable", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpcRoutingTableRoute", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnGateway", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnGatewayAdvertisedCidr", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnGatewayConnection", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnServer", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/isVpnServerClient", _module)
@@ -3216,6 +3464,7 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/piImageExport", _module
 pulumi.runtime.registerResourceModule("ibmcloud", "index/piInstance", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/piInstanceAction", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/piInstanceSnapshot", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/piInstanceVpmemVolumes", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/piIpsecPolicy", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/piKey", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/piNetwork", _module)
@@ -3246,6 +3495,7 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/piWorkspace", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceGroup", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceInstance", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceKey", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceReclamationDelete", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceTag", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnection", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnectionAction", _module)

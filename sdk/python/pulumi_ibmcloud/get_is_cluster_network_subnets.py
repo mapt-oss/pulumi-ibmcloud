@@ -106,9 +106,9 @@ def get_is_cluster_network_subnets(cluster_network_id: Optional[_builtins.str] =
         name=pulumi.get(__ret__, 'name'),
         sort=pulumi.get(__ret__, 'sort'),
         subnets=pulumi.get(__ret__, 'subnets'))
-def get_is_cluster_network_subnets_output(cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          sort: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_cluster_network_subnets_output(cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          sort: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsClusterNetworkSubnetsResult]:
     """
     Use this data source to access information about an existing resource.

@@ -135,8 +135,8 @@ def get_pi_dhcp(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pi_dhcp_id=pulumi.get(__ret__, 'pi_dhcp_id'),
         status=pulumi.get(__ret__, 'status'))
-def get_pi_dhcp_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       pi_dhcp_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_dhcp_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       pi_dhcp_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiDhcpResult]:
     """
     Use this data source to access information about an existing resource.

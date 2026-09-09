@@ -105,9 +105,9 @@ def get_resource_tag(resource_id: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         tag_type=pulumi.get(__ret__, 'tag_type'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_resource_tag_output(resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            tag_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resource_tag_output(resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            tag_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceTagResult]:
     """
     Use this data source to access information about an existing resource.

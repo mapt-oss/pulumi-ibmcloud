@@ -85,15 +85,15 @@ export interface PiNetworkSecurityGroupActionState {
     /**
      * Name of the action to take; can be enable to enable NSGs in a workspace or disable to disable NSGs in a workspace.
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The workspace network security group's state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**

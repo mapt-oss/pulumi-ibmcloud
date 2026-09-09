@@ -25,47 +25,52 @@ class PiInstanceArgs:
                  pi_image_id: pulumi.Input[_builtins.str],
                  pi_instance_name: pulumi.Input[_builtins.str],
                  pi_networks: pulumi.Input[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]],
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_boot_volume_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_deployment_target: Optional[pulumi.Input['PiInstancePiDeploymentTargetArgs']] = None,
-                 pi_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ibmi_css: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_pha: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_rds_users: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_key_pair_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_license_repository_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_memory: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_pin_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_preferred_processor_compatibility_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_proc_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_processors: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_replicants: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_replication_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_scheme: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_sap_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sap_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_connection: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool_affinity: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sys_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_virtual_cores_assigned: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_virtual_optical_device: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_virtual_serial_number: Optional[pulumi.Input['PiInstancePiVirtualSerialNumberArgs']] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_allow_remote_restart: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_boot_volume_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_default_trusted_profile: pulumi.Input[Optional['PiInstancePiDefaultTrustedProfileArgs']] = None,
+                 pi_deployment_target: pulumi.Input[Optional['PiInstancePiDeploymentTargetArgs']] = None,
+                 pi_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ibmi_css: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_pha: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_rds_users: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_license_repository_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_memory: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_metadata_service: pulumi.Input[Optional['PiInstancePiMetadataServiceArgs']] = None,
+                 pi_pin_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_preferred_processor_compatibility_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_proc_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_processors: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_replicants: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_replication_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_scheme: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_sap_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sap_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_connection: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool_affinity: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sys_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_virtual_cores_assigned: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_virtual_optical_device: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_virtual_serial_number: pulumi.Input[Optional['PiInstancePiVirtualSerialNumberArgs']] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_vpmem_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]]] = None):
         """
         The set of arguments for constructing a PiInstance resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: This is the Power Instance id that is assigned to the account
         :param pulumi.Input[_builtins.str] pi_image_id: PI instance image id
         :param pulumi.Input[_builtins.str] pi_instance_name: PI Instance name
@@ -73,9 +78,11 @@ class PiInstanceArgs:
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         :param pulumi.Input[_builtins.str] pi_affinity_policy: Affinity policy for pvm instance being created; ignored if pi_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         :param pulumi.Input[_builtins.str] pi_affinity_volume: Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
+        :param pulumi.Input[_builtins.bool] pi_allow_remote_restart: Indicates if the server allows server to be restarted from remote
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_instances: List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_volumes: List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         :param pulumi.Input[_builtins.bool] pi_boot_volume_replication_enabled: Indicates if the boot volume should be replication enabled or not.
+        :param pulumi.Input['PiInstancePiDefaultTrustedProfileArgs'] pi_default_trusted_profile: default IAM trusted profile to use for this virtual server instance.
         :param pulumi.Input['PiInstancePiDeploymentTargetArgs'] pi_deployment_target: The deployment of a dedicated host.
         :param pulumi.Input[_builtins.str] pi_deployment_type: Custom Deployment Type Information
         :param pulumi.Input[_builtins.str] pi_health_status: Allow the user to set the status of the lpar so that they can connect to it faster
@@ -83,8 +90,9 @@ class PiInstanceArgs:
         :param pulumi.Input[_builtins.bool] pi_ibmi_pha: IBM i Power High Availability
         :param pulumi.Input[_builtins.int] pi_ibmi_rds_users: IBM i Rational Dev Studio Number of User Licenses
         :param pulumi.Input[_builtins.str] pi_key_pair_name: SSH key name
-        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TB value
+        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TiB value
         :param pulumi.Input[_builtins.float] pi_memory: Memory size
+        :param pulumi.Input['PiInstancePiMetadataServiceArgs'] pi_metadata_service: The metadata service configuration for the instance.
         :param pulumi.Input[_builtins.str] pi_pin_policy: Pin Policy of the instance
         :param pulumi.Input[_builtins.str] pi_placement_group_id: Placement group ID
         :param pulumi.Input[_builtins.str] pi_preferred_processor_compatibility_mode: Preferred processor compatibility mode.
@@ -102,13 +110,14 @@ class PiInstanceArgs:
         :param pulumi.Input[_builtins.str] pi_storage_pool: Storage Pool for server deployment; if provided then pi_storage_pool_affinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
         :param pulumi.Input[_builtins.bool] pi_storage_pool_affinity: Indicates if all volumes attached to the server must reside in the same storage pool
         :param pulumi.Input[_builtins.str] pi_storage_type: Storage type for server deployment; if pi_storage_type is not provided the storage type will default to tier3
-        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM.
         :param pulumi.Input[_builtins.str] pi_user_data: Base64 encoded data to be passed in for invoking a cloud init script
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         :param pulumi.Input[_builtins.int] pi_virtual_cores_assigned: Virtual Cores Assigned to the PVMInstance
         :param pulumi.Input[_builtins.str] pi_virtual_optical_device: Virtual Machine's Cloud Initialization Virtual Optical Device
         :param pulumi.Input['PiInstancePiVirtualSerialNumberArgs'] pi_virtual_serial_number: Virtual Serial Number information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_volume_ids: List of PI volumes
+        :param pulumi.Input[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]] pi_vpmem_volumes: List of one or more vPMEM volumes to attach to the instance.
         """
         pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
         pulumi.set(__self__, "pi_image_id", pi_image_id)
@@ -120,12 +129,16 @@ class PiInstanceArgs:
             pulumi.set(__self__, "pi_affinity_policy", pi_affinity_policy)
         if pi_affinity_volume is not None:
             pulumi.set(__self__, "pi_affinity_volume", pi_affinity_volume)
+        if pi_allow_remote_restart is not None:
+            pulumi.set(__self__, "pi_allow_remote_restart", pi_allow_remote_restart)
         if pi_anti_affinity_instances is not None:
             pulumi.set(__self__, "pi_anti_affinity_instances", pi_anti_affinity_instances)
         if pi_anti_affinity_volumes is not None:
             pulumi.set(__self__, "pi_anti_affinity_volumes", pi_anti_affinity_volumes)
         if pi_boot_volume_replication_enabled is not None:
             pulumi.set(__self__, "pi_boot_volume_replication_enabled", pi_boot_volume_replication_enabled)
+        if pi_default_trusted_profile is not None:
+            pulumi.set(__self__, "pi_default_trusted_profile", pi_default_trusted_profile)
         if pi_deployment_target is not None:
             pulumi.set(__self__, "pi_deployment_target", pi_deployment_target)
         if pi_deployment_type is not None:
@@ -144,6 +157,8 @@ class PiInstanceArgs:
             pulumi.set(__self__, "pi_license_repository_capacity", pi_license_repository_capacity)
         if pi_memory is not None:
             pulumi.set(__self__, "pi_memory", pi_memory)
+        if pi_metadata_service is not None:
+            pulumi.set(__self__, "pi_metadata_service", pi_metadata_service)
         if pi_pin_policy is not None:
             pulumi.set(__self__, "pi_pin_policy", pi_pin_policy)
         if pi_placement_group_id is not None:
@@ -192,6 +207,8 @@ class PiInstanceArgs:
             pulumi.set(__self__, "pi_virtual_serial_number", pi_virtual_serial_number)
         if pi_volume_ids is not None:
             pulumi.set(__self__, "pi_volume_ids", pi_volume_ids)
+        if pi_vpmem_volumes is not None:
+            pulumi.set(__self__, "pi_vpmem_volumes", pi_vpmem_volumes)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
@@ -243,540 +260,594 @@ class PiInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="piAffinityInstance")
-    def pi_affinity_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         """
         return pulumi.get(self, "pi_affinity_instance")
 
     @pi_affinity_instance.setter
-    def pi_affinity_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_instance", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityPolicy")
-    def pi_affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Affinity policy for pvm instance being created; ignored if pi_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         """
         return pulumi.get(self, "pi_affinity_policy")
 
     @pi_affinity_policy.setter
-    def pi_affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityVolume")
-    def pi_affinity_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
         """
         return pulumi.get(self, "pi_affinity_volume")
 
     @pi_affinity_volume.setter
-    def pi_affinity_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_volume", value)
 
     @_builtins.property
+    @pulumi.getter(name="piAllowRemoteRestart")
+    def pi_allow_remote_restart(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates if the server allows server to be restarted from remote
+        """
+        return pulumi.get(self, "pi_allow_remote_restart")
+
+    @pi_allow_remote_restart.setter
+    def pi_allow_remote_restart(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pi_allow_remote_restart", value)
+
+    @_builtins.property
     @pulumi.getter(name="piAntiAffinityInstances")
-    def pi_anti_affinity_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_instances")
 
     @pi_anti_affinity_instances.setter
-    def pi_anti_affinity_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityVolumes")
-    def pi_anti_affinity_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_volumes")
 
     @pi_anti_affinity_volumes.setter
-    def pi_anti_affinity_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="piBootVolumeReplicationEnabled")
-    def pi_boot_volume_replication_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_boot_volume_replication_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the boot volume should be replication enabled or not.
         """
         return pulumi.get(self, "pi_boot_volume_replication_enabled")
 
     @pi_boot_volume_replication_enabled.setter
-    def pi_boot_volume_replication_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_boot_volume_replication_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_boot_volume_replication_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="piDefaultTrustedProfile")
+    def pi_default_trusted_profile(self) -> pulumi.Input[Optional['PiInstancePiDefaultTrustedProfileArgs']]:
+        """
+        default IAM trusted profile to use for this virtual server instance.
+        """
+        return pulumi.get(self, "pi_default_trusted_profile")
+
+    @pi_default_trusted_profile.setter
+    def pi_default_trusted_profile(self, value: pulumi.Input[Optional['PiInstancePiDefaultTrustedProfileArgs']]):
+        pulumi.set(self, "pi_default_trusted_profile", value)
+
+    @_builtins.property
     @pulumi.getter(name="piDeploymentTarget")
-    def pi_deployment_target(self) -> Optional[pulumi.Input['PiInstancePiDeploymentTargetArgs']]:
+    def pi_deployment_target(self) -> pulumi.Input[Optional['PiInstancePiDeploymentTargetArgs']]:
         """
         The deployment of a dedicated host.
         """
         return pulumi.get(self, "pi_deployment_target")
 
     @pi_deployment_target.setter
-    def pi_deployment_target(self, value: Optional[pulumi.Input['PiInstancePiDeploymentTargetArgs']]):
+    def pi_deployment_target(self, value: pulumi.Input[Optional['PiInstancePiDeploymentTargetArgs']]):
         pulumi.set(self, "pi_deployment_target", value)
 
     @_builtins.property
     @pulumi.getter(name="piDeploymentType")
-    def pi_deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom Deployment Type Information
         """
         return pulumi.get(self, "pi_deployment_type")
 
     @pi_deployment_type.setter
-    def pi_deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piHealthStatus")
-    def pi_health_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_health_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Allow the user to set the status of the lpar so that they can connect to it faster
         """
         return pulumi.get(self, "pi_health_status")
 
     @pi_health_status.setter
-    def pi_health_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_health_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_health_status", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmiCss")
-    def pi_ibmi_css(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_ibmi_css(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         IBM i Cloud Storage Solution
         """
         return pulumi.get(self, "pi_ibmi_css")
 
     @pi_ibmi_css.setter
-    def pi_ibmi_css(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_ibmi_css(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_ibmi_css", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmiPha")
-    def pi_ibmi_pha(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_ibmi_pha(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         IBM i Power High Availability
         """
         return pulumi.get(self, "pi_ibmi_pha")
 
     @pi_ibmi_pha.setter
-    def pi_ibmi_pha(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_ibmi_pha(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_ibmi_pha", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmiRdsUsers")
-    def pi_ibmi_rds_users(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_ibmi_rds_users(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IBM i Rational Dev Studio Number of User Licenses
         """
         return pulumi.get(self, "pi_ibmi_rds_users")
 
     @pi_ibmi_rds_users.setter
-    def pi_ibmi_rds_users(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_ibmi_rds_users(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_ibmi_rds_users", value)
 
     @_builtins.property
     @pulumi.getter(name="piKeyPairName")
-    def pi_key_pair_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_key_pair_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSH key name
         """
         return pulumi.get(self, "pi_key_pair_name")
 
     @pi_key_pair_name.setter
-    def pi_key_pair_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_key_pair_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_key_pair_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piLicenseRepositoryCapacity")
-    def pi_license_repository_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_license_repository_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The VTL license repository capacity TB value
+        The VTL license repository capacity TiB value
         """
         return pulumi.get(self, "pi_license_repository_capacity")
 
     @pi_license_repository_capacity.setter
-    def pi_license_repository_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_license_repository_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_license_repository_capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="piMemory")
-    def pi_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def pi_memory(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Memory size
         """
         return pulumi.get(self, "pi_memory")
 
     @pi_memory.setter
-    def pi_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def pi_memory(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "pi_memory", value)
 
     @_builtins.property
+    @pulumi.getter(name="piMetadataService")
+    def pi_metadata_service(self) -> pulumi.Input[Optional['PiInstancePiMetadataServiceArgs']]:
+        """
+        The metadata service configuration for the instance.
+        """
+        return pulumi.get(self, "pi_metadata_service")
+
+    @pi_metadata_service.setter
+    def pi_metadata_service(self, value: pulumi.Input[Optional['PiInstancePiMetadataServiceArgs']]):
+        pulumi.set(self, "pi_metadata_service", value)
+
+    @_builtins.property
     @pulumi.getter(name="piPinPolicy")
-    def pi_pin_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_pin_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pin Policy of the instance
         """
         return pulumi.get(self, "pi_pin_policy")
 
     @pi_pin_policy.setter
-    def pi_pin_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_pin_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_pin_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piPlacementGroupId")
-    def pi_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Placement group ID
         """
         return pulumi.get(self, "pi_placement_group_id")
 
     @pi_placement_group_id.setter
-    def pi_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piPreferredProcessorCompatibilityMode")
-    def pi_preferred_processor_compatibility_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_preferred_processor_compatibility_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Preferred processor compatibility mode.
         """
         return pulumi.get(self, "pi_preferred_processor_compatibility_mode")
 
     @pi_preferred_processor_compatibility_mode.setter
-    def pi_preferred_processor_compatibility_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_preferred_processor_compatibility_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_preferred_processor_compatibility_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="piProcType")
-    def pi_proc_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_proc_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance processor type
         """
         return pulumi.get(self, "pi_proc_type")
 
     @pi_proc_type.setter
-    def pi_proc_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_proc_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_proc_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piProcessors")
-    def pi_processors(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def pi_processors(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Processors count
         """
         return pulumi.get(self, "pi_processors")
 
     @pi_processors.setter
-    def pi_processors(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def pi_processors(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "pi_processors", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicants")
-    def pi_replicants(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_replicants(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         PI Instance replicas count
         """
         return pulumi.get(self, "pi_replicants")
 
     @pi_replicants.setter
-    def pi_replicants(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_replicants(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_replicants", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationPolicy")
-    def pi_replication_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_replication_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Replication policy for the PI Instance
         """
         return pulumi.get(self, "pi_replication_policy")
 
     @pi_replication_policy.setter
-    def pi_replication_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_replication_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_replication_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationScheme")
-    def pi_replication_scheme(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_replication_scheme(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Replication scheme
         """
         return pulumi.get(self, "pi_replication_scheme")
 
     @pi_replication_scheme.setter
-    def pi_replication_scheme(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_replication_scheme(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_replication_scheme", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationSites")
-    def pi_replication_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_replication_sites(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Indicates the replication sites of the boot volume.
         """
         return pulumi.get(self, "pi_replication_sites")
 
     @pi_replication_sites.setter
-    def pi_replication_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_replication_sites(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_replication_sites", value)
 
     @_builtins.property
     @pulumi.getter(name="piRetainVirtualSerialNumber")
-    def pi_retain_virtual_serial_number(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_retain_virtual_serial_number(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to retain virtual serial number when changed or deleted.
         """
         return pulumi.get(self, "pi_retain_virtual_serial_number")
 
     @pi_retain_virtual_serial_number.setter
-    def pi_retain_virtual_serial_number(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_retain_virtual_serial_number(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_retain_virtual_serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="piSapDeploymentType")
-    def pi_sap_deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_sap_deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom SAP Deployment Type Information
         """
         return pulumi.get(self, "pi_sap_deployment_type")
 
     @pi_sap_deployment_type.setter
-    def pi_sap_deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_sap_deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_sap_deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piSapProfileId")
-    def pi_sap_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_sap_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SAP Profile ID for the amount of cores and memory
         """
         return pulumi.get(self, "pi_sap_profile_id")
 
     @pi_sap_profile_id.setter
-    def pi_sap_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_sap_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_sap_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPool")
-    def pi_shared_processor_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_shared_processor_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shared Processor Pool the instance is deployed on
         """
         return pulumi.get(self, "pi_shared_processor_pool")
 
     @pi_shared_processor_pool.setter
-    def pi_shared_processor_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_shared_processor_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_shared_processor_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piStorageConnection")
-    def pi_storage_connection(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_storage_connection(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage Connectivity Group for server deployment
         """
         return pulumi.get(self, "pi_storage_connection")
 
     @pi_storage_connection.setter
-    def pi_storage_connection(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_storage_connection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_storage_connection", value)
 
     @_builtins.property
     @pulumi.getter(name="piStoragePool")
-    def pi_storage_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_storage_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage Pool for server deployment; if provided then pi_storage_pool_affinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
         """
         return pulumi.get(self, "pi_storage_pool")
 
     @pi_storage_pool.setter
-    def pi_storage_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_storage_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_storage_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piStoragePoolAffinity")
-    def pi_storage_pool_affinity(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_storage_pool_affinity(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if all volumes attached to the server must reside in the same storage pool
         """
         return pulumi.get(self, "pi_storage_pool_affinity")
 
     @pi_storage_pool_affinity.setter
-    def pi_storage_pool_affinity(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_storage_pool_affinity(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_storage_pool_affinity", value)
 
     @_builtins.property
     @pulumi.getter(name="piStorageType")
-    def pi_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage type for server deployment; if pi_storage_type is not provided the storage type will default to tier3
         """
         return pulumi.get(self, "pi_storage_type")
 
     @pi_storage_type.setter
-    def pi_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_storage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_storage_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piSysType")
-    def pi_sys_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_sys_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+        The type of system on which to create the VM.
         """
         return pulumi.get(self, "pi_sys_type")
 
     @pi_sys_type.setter
-    def pi_sys_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_sys_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_sys_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserData")
-    def pi_user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 encoded data to be passed in for invoking a cloud init script
         """
         return pulumi.get(self, "pi_user_data")
 
     @pi_user_data.setter
-    def pi_user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_user_data", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piVirtualCoresAssigned")
-    def pi_virtual_cores_assigned(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_virtual_cores_assigned(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Virtual Cores Assigned to the PVMInstance
         """
         return pulumi.get(self, "pi_virtual_cores_assigned")
 
     @pi_virtual_cores_assigned.setter
-    def pi_virtual_cores_assigned(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_virtual_cores_assigned(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_virtual_cores_assigned", value)
 
     @_builtins.property
     @pulumi.getter(name="piVirtualOpticalDevice")
-    def pi_virtual_optical_device(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_virtual_optical_device(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Virtual Machine's Cloud Initialization Virtual Optical Device
         """
         return pulumi.get(self, "pi_virtual_optical_device")
 
     @pi_virtual_optical_device.setter
-    def pi_virtual_optical_device(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_virtual_optical_device(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_virtual_optical_device", value)
 
     @_builtins.property
     @pulumi.getter(name="piVirtualSerialNumber")
-    def pi_virtual_serial_number(self) -> Optional[pulumi.Input['PiInstancePiVirtualSerialNumberArgs']]:
+    def pi_virtual_serial_number(self) -> pulumi.Input[Optional['PiInstancePiVirtualSerialNumberArgs']]:
         """
         Virtual Serial Number information
         """
         return pulumi.get(self, "pi_virtual_serial_number")
 
     @pi_virtual_serial_number.setter
-    def pi_virtual_serial_number(self, value: Optional[pulumi.Input['PiInstancePiVirtualSerialNumberArgs']]):
+    def pi_virtual_serial_number(self, value: pulumi.Input[Optional['PiInstancePiVirtualSerialNumberArgs']]):
         pulumi.set(self, "pi_virtual_serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeIds")
-    def pi_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of PI volumes
         """
         return pulumi.get(self, "pi_volume_ids")
 
     @pi_volume_ids.setter
-    def pi_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_volume_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="piVpmemVolumes")
+    def pi_vpmem_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]]]:
+        """
+        List of one or more vPMEM volumes to attach to the instance.
+        """
+        return pulumi.get(self, "pi_vpmem_volumes")
+
+    @pi_vpmem_volumes.setter
+    def pi_vpmem_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]]]):
+        pulumi.set(self, "pi_vpmem_volumes", value)
 
 
 @pulumi.input_type
 class _PiInstanceState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 effective_processor_compatibility_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 ibmi_rds: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_memory: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_processors: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_virtual_cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_memory: Optional[pulumi.Input[_builtins.float]] = None,
-                 min_processors: Optional[pulumi.Input[_builtins.float]] = None,
-                 min_virtual_cores: Optional[pulumi.Input[_builtins.int]] = None,
-                 operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_boot_volume_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_deployment_target: Optional[pulumi.Input['PiInstancePiDeploymentTargetArgs']] = None,
-                 pi_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ibmi_css: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_pha: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_rds_users: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_key_pair_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_license_repository_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_memory: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]]] = None,
-                 pi_pin_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_preferred_processor_compatibility_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_proc_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_processors: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_replicants: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_replication_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_scheme: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_sap_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sap_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_connection: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool_affinity: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sys_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_virtual_cores_assigned: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_virtual_optical_device: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_virtual_serial_number: Optional[pulumi.Input['PiInstancePiVirtualSerialNumberArgs']] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pin_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 progress: Optional[pulumi.Input[_builtins.float]] = None,
-                 shared_processor_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 effective_processor_compatibility_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 ibmi_rds: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_memory: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_processors: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_virtual_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_memory: pulumi.Input[Optional[_builtins.float]] = None,
+                 min_processors: pulumi.Input[Optional[_builtins.float]] = None,
+                 min_virtual_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_allow_remote_restart: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_boot_volume_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_trusted_profile: pulumi.Input[Optional['PiInstancePiDefaultTrustedProfileArgs']] = None,
+                 pi_deployment_target: pulumi.Input[Optional['PiInstancePiDeploymentTargetArgs']] = None,
+                 pi_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ibmi_css: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_pha: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_rds_users: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_license_repository_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_memory: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_metadata_service: pulumi.Input[Optional['PiInstancePiMetadataServiceArgs']] = None,
+                 pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]]] = None,
+                 pi_pin_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_preferred_processor_compatibility_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_proc_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_processors: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_replicants: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_replication_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_scheme: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_sap_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sap_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_connection: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool_affinity: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sys_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_virtual_cores_assigned: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_virtual_optical_device: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_virtual_serial_number: pulumi.Input[Optional['PiInstancePiVirtualSerialNumberArgs']] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_vpmem_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]]] = None,
+                 pin_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 progress: pulumi.Input[Optional[_builtins.float]] = None,
+                 shared_processor_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpmem_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstanceVpmemVolumeArgs']]]] = None):
         """
         Input properties used for looking up and filtering PiInstance resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN of this resource.
         :param pulumi.Input[_builtins.str] dedicated_host_id: The dedicated host ID where the shared processor pool resides.
         :param pulumi.Input[_builtins.str] effective_processor_compatibility_mode: Effective processor compatibility mode.
@@ -795,10 +866,12 @@ class _PiInstanceState:
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         :param pulumi.Input[_builtins.str] pi_affinity_policy: Affinity policy for pvm instance being created; ignored if pi_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         :param pulumi.Input[_builtins.str] pi_affinity_volume: Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
+        :param pulumi.Input[_builtins.bool] pi_allow_remote_restart: Indicates if the server allows server to be restarted from remote
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_instances: List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_volumes: List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         :param pulumi.Input[_builtins.bool] pi_boot_volume_replication_enabled: Indicates if the boot volume should be replication enabled or not.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: This is the Power Instance id that is assigned to the account
+        :param pulumi.Input['PiInstancePiDefaultTrustedProfileArgs'] pi_default_trusted_profile: default IAM trusted profile to use for this virtual server instance.
         :param pulumi.Input['PiInstancePiDeploymentTargetArgs'] pi_deployment_target: The deployment of a dedicated host.
         :param pulumi.Input[_builtins.str] pi_deployment_type: Custom Deployment Type Information
         :param pulumi.Input[_builtins.str] pi_health_status: Allow the user to set the status of the lpar so that they can connect to it faster
@@ -808,8 +881,9 @@ class _PiInstanceState:
         :param pulumi.Input[_builtins.str] pi_image_id: PI instance image id
         :param pulumi.Input[_builtins.str] pi_instance_name: PI Instance name
         :param pulumi.Input[_builtins.str] pi_key_pair_name: SSH key name
-        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TB value
+        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TiB value
         :param pulumi.Input[_builtins.float] pi_memory: Memory size
+        :param pulumi.Input['PiInstancePiMetadataServiceArgs'] pi_metadata_service: The metadata service configuration for the instance.
         :param pulumi.Input[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]] pi_networks: List of one or more networks to attach to the instance
         :param pulumi.Input[_builtins.str] pi_pin_policy: Pin Policy of the instance
         :param pulumi.Input[_builtins.str] pi_placement_group_id: Placement group ID
@@ -828,17 +902,19 @@ class _PiInstanceState:
         :param pulumi.Input[_builtins.str] pi_storage_pool: Storage Pool for server deployment; if provided then pi_storage_pool_affinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
         :param pulumi.Input[_builtins.bool] pi_storage_pool_affinity: Indicates if all volumes attached to the server must reside in the same storage pool
         :param pulumi.Input[_builtins.str] pi_storage_type: Storage type for server deployment; if pi_storage_type is not provided the storage type will default to tier3
-        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM.
         :param pulumi.Input[_builtins.str] pi_user_data: Base64 encoded data to be passed in for invoking a cloud init script
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         :param pulumi.Input[_builtins.int] pi_virtual_cores_assigned: Virtual Cores Assigned to the PVMInstance
         :param pulumi.Input[_builtins.str] pi_virtual_optical_device: Virtual Machine's Cloud Initialization Virtual Optical Device
         :param pulumi.Input['PiInstancePiVirtualSerialNumberArgs'] pi_virtual_serial_number: Virtual Serial Number information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_volume_ids: List of PI volumes
+        :param pulumi.Input[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]] pi_vpmem_volumes: List of one or more vPMEM volumes to attach to the instance.
         :param pulumi.Input[_builtins.str] pin_policy: PIN Policy of the Instance
         :param pulumi.Input[_builtins.float] progress: Progress of the operation
         :param pulumi.Input[_builtins.str] shared_processor_pool_id: Shared Processor Pool ID the instance is deployed on
         :param pulumi.Input[_builtins.str] status: PI instance status
+        :param pulumi.Input[Sequence[pulumi.Input['PiInstanceVpmemVolumeArgs']]] vpmem_volumes: List of vPMEM volumes.
         """
         if crn is not None:
             pulumi.set(__self__, "crn", crn)
@@ -876,6 +952,8 @@ class _PiInstanceState:
             pulumi.set(__self__, "pi_affinity_policy", pi_affinity_policy)
         if pi_affinity_volume is not None:
             pulumi.set(__self__, "pi_affinity_volume", pi_affinity_volume)
+        if pi_allow_remote_restart is not None:
+            pulumi.set(__self__, "pi_allow_remote_restart", pi_allow_remote_restart)
         if pi_anti_affinity_instances is not None:
             pulumi.set(__self__, "pi_anti_affinity_instances", pi_anti_affinity_instances)
         if pi_anti_affinity_volumes is not None:
@@ -884,6 +962,8 @@ class _PiInstanceState:
             pulumi.set(__self__, "pi_boot_volume_replication_enabled", pi_boot_volume_replication_enabled)
         if pi_cloud_instance_id is not None:
             pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
+        if pi_default_trusted_profile is not None:
+            pulumi.set(__self__, "pi_default_trusted_profile", pi_default_trusted_profile)
         if pi_deployment_target is not None:
             pulumi.set(__self__, "pi_deployment_target", pi_deployment_target)
         if pi_deployment_type is not None:
@@ -906,6 +986,8 @@ class _PiInstanceState:
             pulumi.set(__self__, "pi_license_repository_capacity", pi_license_repository_capacity)
         if pi_memory is not None:
             pulumi.set(__self__, "pi_memory", pi_memory)
+        if pi_metadata_service is not None:
+            pulumi.set(__self__, "pi_metadata_service", pi_metadata_service)
         if pi_networks is not None:
             pulumi.set(__self__, "pi_networks", pi_networks)
         if pi_pin_policy is not None:
@@ -956,6 +1038,8 @@ class _PiInstanceState:
             pulumi.set(__self__, "pi_virtual_serial_number", pi_virtual_serial_number)
         if pi_volume_ids is not None:
             pulumi.set(__self__, "pi_volume_ids", pi_volume_ids)
+        if pi_vpmem_volumes is not None:
+            pulumi.set(__self__, "pi_vpmem_volumes", pi_vpmem_volumes)
         if pin_policy is not None:
             pulumi.set(__self__, "pin_policy", pin_policy)
         if progress is not None:
@@ -964,750 +1048,812 @@ class _PiInstanceState:
             pulumi.set(__self__, "shared_processor_pool_id", shared_processor_pool_id)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if vpmem_volumes is not None:
+            pulumi.set(__self__, "vpmem_volumes", vpmem_volumes)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedHostId")
-    def dedicated_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The dedicated host ID where the shared processor pool resides.
         """
         return pulumi.get(self, "dedicated_host_id")
 
     @dedicated_host_id.setter
-    def dedicated_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="effectiveProcessorCompatibilityMode")
-    def effective_processor_compatibility_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def effective_processor_compatibility_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Effective processor compatibility mode.
         """
         return pulumi.get(self, "effective_processor_compatibility_mode")
 
     @effective_processor_compatibility_mode.setter
-    def effective_processor_compatibility_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def effective_processor_compatibility_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "effective_processor_compatibility_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def fault(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def fault(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Fault information.
         """
         return pulumi.get(self, "fault")
 
     @fault.setter
-    def fault(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def fault(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fault", value)
 
     @_builtins.property
     @pulumi.getter(name="healthStatus")
-    def health_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI Instance health status
         """
         return pulumi.get(self, "health_status")
 
     @health_status.setter
-    def health_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_status", value)
 
     @_builtins.property
     @pulumi.getter(name="ibmiRds")
-    def ibmi_rds(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ibmi_rds(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         IBM i Rational Dev Studio
         """
         return pulumi.get(self, "ibmi_rds")
 
     @ibmi_rds.setter
-    def ibmi_rds(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ibmi_rds(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ibmi_rds", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance ID
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMemory")
-    def max_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_memory(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Maximum memory size
         """
         return pulumi.get(self, "max_memory")
 
     @max_memory.setter
-    def max_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_memory(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_memory", value)
 
     @_builtins.property
     @pulumi.getter(name="maxProcessors")
-    def max_processors(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_processors(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Maximum number of processors
         """
         return pulumi.get(self, "max_processors")
 
     @max_processors.setter
-    def max_processors(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_processors(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_processors", value)
 
     @_builtins.property
     @pulumi.getter(name="maxVirtualCores")
-    def max_virtual_cores(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_virtual_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum Virtual Cores Assigned to the PVMInstance
         """
         return pulumi.get(self, "max_virtual_cores")
 
     @max_virtual_cores.setter
-    def max_virtual_cores(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_virtual_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_virtual_cores", value)
 
     @_builtins.property
     @pulumi.getter(name="minMemory")
-    def min_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def min_memory(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Minimum memory
         """
         return pulumi.get(self, "min_memory")
 
     @min_memory.setter
-    def min_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def min_memory(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "min_memory", value)
 
     @_builtins.property
     @pulumi.getter(name="minProcessors")
-    def min_processors(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def min_processors(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Minimum number of the CPUs
         """
         return pulumi.get(self, "min_processors")
 
     @min_processors.setter
-    def min_processors(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def min_processors(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "min_processors", value)
 
     @_builtins.property
     @pulumi.getter(name="minVirtualCores")
-    def min_virtual_cores(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_virtual_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Minimum Virtual Cores Assigned to the PVMInstance
         """
         return pulumi.get(self, "min_virtual_cores")
 
     @min_virtual_cores.setter
-    def min_virtual_cores(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_virtual_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_virtual_cores", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystem")
-    def operating_system(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operating System
         """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
-    def operating_system(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system", value)
 
     @_builtins.property
     @pulumi.getter(name="osType")
-    def os_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OS Type
         """
         return pulumi.get(self, "os_type")
 
     @os_type.setter
-    def os_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityInstance")
-    def pi_affinity_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         """
         return pulumi.get(self, "pi_affinity_instance")
 
     @pi_affinity_instance.setter
-    def pi_affinity_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_instance", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityPolicy")
-    def pi_affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Affinity policy for pvm instance being created; ignored if pi_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         """
         return pulumi.get(self, "pi_affinity_policy")
 
     @pi_affinity_policy.setter
-    def pi_affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piAffinityVolume")
-    def pi_affinity_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_affinity_volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
         """
         return pulumi.get(self, "pi_affinity_volume")
 
     @pi_affinity_volume.setter
-    def pi_affinity_volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_affinity_volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_affinity_volume", value)
 
     @_builtins.property
+    @pulumi.getter(name="piAllowRemoteRestart")
+    def pi_allow_remote_restart(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates if the server allows server to be restarted from remote
+        """
+        return pulumi.get(self, "pi_allow_remote_restart")
+
+    @pi_allow_remote_restart.setter
+    def pi_allow_remote_restart(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pi_allow_remote_restart", value)
+
+    @_builtins.property
     @pulumi.getter(name="piAntiAffinityInstances")
-    def pi_anti_affinity_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_instances")
 
     @pi_anti_affinity_instances.setter
-    def pi_anti_affinity_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="piAntiAffinityVolumes")
-    def pi_anti_affinity_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_anti_affinity_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         """
         return pulumi.get(self, "pi_anti_affinity_volumes")
 
     @pi_anti_affinity_volumes.setter
-    def pi_anti_affinity_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_anti_affinity_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_anti_affinity_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="piBootVolumeReplicationEnabled")
-    def pi_boot_volume_replication_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_boot_volume_replication_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the boot volume should be replication enabled or not.
         """
         return pulumi.get(self, "pi_boot_volume_replication_enabled")
 
     @pi_boot_volume_replication_enabled.setter
-    def pi_boot_volume_replication_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_boot_volume_replication_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_boot_volume_replication_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the Power Instance id that is assigned to the account
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="piDefaultTrustedProfile")
+    def pi_default_trusted_profile(self) -> pulumi.Input[Optional['PiInstancePiDefaultTrustedProfileArgs']]:
+        """
+        default IAM trusted profile to use for this virtual server instance.
+        """
+        return pulumi.get(self, "pi_default_trusted_profile")
+
+    @pi_default_trusted_profile.setter
+    def pi_default_trusted_profile(self, value: pulumi.Input[Optional['PiInstancePiDefaultTrustedProfileArgs']]):
+        pulumi.set(self, "pi_default_trusted_profile", value)
+
+    @_builtins.property
     @pulumi.getter(name="piDeploymentTarget")
-    def pi_deployment_target(self) -> Optional[pulumi.Input['PiInstancePiDeploymentTargetArgs']]:
+    def pi_deployment_target(self) -> pulumi.Input[Optional['PiInstancePiDeploymentTargetArgs']]:
         """
         The deployment of a dedicated host.
         """
         return pulumi.get(self, "pi_deployment_target")
 
     @pi_deployment_target.setter
-    def pi_deployment_target(self, value: Optional[pulumi.Input['PiInstancePiDeploymentTargetArgs']]):
+    def pi_deployment_target(self, value: pulumi.Input[Optional['PiInstancePiDeploymentTargetArgs']]):
         pulumi.set(self, "pi_deployment_target", value)
 
     @_builtins.property
     @pulumi.getter(name="piDeploymentType")
-    def pi_deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom Deployment Type Information
         """
         return pulumi.get(self, "pi_deployment_type")
 
     @pi_deployment_type.setter
-    def pi_deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piHealthStatus")
-    def pi_health_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_health_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Allow the user to set the status of the lpar so that they can connect to it faster
         """
         return pulumi.get(self, "pi_health_status")
 
     @pi_health_status.setter
-    def pi_health_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_health_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_health_status", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmiCss")
-    def pi_ibmi_css(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_ibmi_css(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         IBM i Cloud Storage Solution
         """
         return pulumi.get(self, "pi_ibmi_css")
 
     @pi_ibmi_css.setter
-    def pi_ibmi_css(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_ibmi_css(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_ibmi_css", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmiPha")
-    def pi_ibmi_pha(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_ibmi_pha(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         IBM i Power High Availability
         """
         return pulumi.get(self, "pi_ibmi_pha")
 
     @pi_ibmi_pha.setter
-    def pi_ibmi_pha(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_ibmi_pha(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_ibmi_pha", value)
 
     @_builtins.property
     @pulumi.getter(name="piIbmiRdsUsers")
-    def pi_ibmi_rds_users(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_ibmi_rds_users(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IBM i Rational Dev Studio Number of User Licenses
         """
         return pulumi.get(self, "pi_ibmi_rds_users")
 
     @pi_ibmi_rds_users.setter
-    def pi_ibmi_rds_users(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_ibmi_rds_users(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_ibmi_rds_users", value)
 
     @_builtins.property
     @pulumi.getter(name="piImageId")
-    def pi_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI instance image id
         """
         return pulumi.get(self, "pi_image_id")
 
     @pi_image_id.setter
-    def pi_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI Instance name
         """
         return pulumi.get(self, "pi_instance_name")
 
     @pi_instance_name.setter
-    def pi_instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piKeyPairName")
-    def pi_key_pair_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_key_pair_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSH key name
         """
         return pulumi.get(self, "pi_key_pair_name")
 
     @pi_key_pair_name.setter
-    def pi_key_pair_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_key_pair_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_key_pair_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piLicenseRepositoryCapacity")
-    def pi_license_repository_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_license_repository_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The VTL license repository capacity TB value
+        The VTL license repository capacity TiB value
         """
         return pulumi.get(self, "pi_license_repository_capacity")
 
     @pi_license_repository_capacity.setter
-    def pi_license_repository_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_license_repository_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_license_repository_capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="piMemory")
-    def pi_memory(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def pi_memory(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Memory size
         """
         return pulumi.get(self, "pi_memory")
 
     @pi_memory.setter
-    def pi_memory(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def pi_memory(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "pi_memory", value)
 
     @_builtins.property
+    @pulumi.getter(name="piMetadataService")
+    def pi_metadata_service(self) -> pulumi.Input[Optional['PiInstancePiMetadataServiceArgs']]:
+        """
+        The metadata service configuration for the instance.
+        """
+        return pulumi.get(self, "pi_metadata_service")
+
+    @pi_metadata_service.setter
+    def pi_metadata_service(self, value: pulumi.Input[Optional['PiInstancePiMetadataServiceArgs']]):
+        pulumi.set(self, "pi_metadata_service", value)
+
+    @_builtins.property
     @pulumi.getter(name="piNetworks")
-    def pi_networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]]]:
+    def pi_networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]]]:
         """
         List of one or more networks to attach to the instance
         """
         return pulumi.get(self, "pi_networks")
 
     @pi_networks.setter
-    def pi_networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]]]):
+    def pi_networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiNetworkArgs']]]]):
         pulumi.set(self, "pi_networks", value)
 
     @_builtins.property
     @pulumi.getter(name="piPinPolicy")
-    def pi_pin_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_pin_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pin Policy of the instance
         """
         return pulumi.get(self, "pi_pin_policy")
 
     @pi_pin_policy.setter
-    def pi_pin_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_pin_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_pin_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piPlacementGroupId")
-    def pi_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Placement group ID
         """
         return pulumi.get(self, "pi_placement_group_id")
 
     @pi_placement_group_id.setter
-    def pi_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piPreferredProcessorCompatibilityMode")
-    def pi_preferred_processor_compatibility_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_preferred_processor_compatibility_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Preferred processor compatibility mode.
         """
         return pulumi.get(self, "pi_preferred_processor_compatibility_mode")
 
     @pi_preferred_processor_compatibility_mode.setter
-    def pi_preferred_processor_compatibility_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_preferred_processor_compatibility_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_preferred_processor_compatibility_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="piProcType")
-    def pi_proc_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_proc_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance processor type
         """
         return pulumi.get(self, "pi_proc_type")
 
     @pi_proc_type.setter
-    def pi_proc_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_proc_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_proc_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piProcessors")
-    def pi_processors(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def pi_processors(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Processors count
         """
         return pulumi.get(self, "pi_processors")
 
     @pi_processors.setter
-    def pi_processors(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def pi_processors(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "pi_processors", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicants")
-    def pi_replicants(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_replicants(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         PI Instance replicas count
         """
         return pulumi.get(self, "pi_replicants")
 
     @pi_replicants.setter
-    def pi_replicants(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_replicants(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_replicants", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationPolicy")
-    def pi_replication_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_replication_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Replication policy for the PI Instance
         """
         return pulumi.get(self, "pi_replication_policy")
 
     @pi_replication_policy.setter
-    def pi_replication_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_replication_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_replication_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationScheme")
-    def pi_replication_scheme(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_replication_scheme(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Replication scheme
         """
         return pulumi.get(self, "pi_replication_scheme")
 
     @pi_replication_scheme.setter
-    def pi_replication_scheme(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_replication_scheme(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_replication_scheme", value)
 
     @_builtins.property
     @pulumi.getter(name="piReplicationSites")
-    def pi_replication_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_replication_sites(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Indicates the replication sites of the boot volume.
         """
         return pulumi.get(self, "pi_replication_sites")
 
     @pi_replication_sites.setter
-    def pi_replication_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_replication_sites(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_replication_sites", value)
 
     @_builtins.property
     @pulumi.getter(name="piRetainVirtualSerialNumber")
-    def pi_retain_virtual_serial_number(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_retain_virtual_serial_number(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to retain virtual serial number when changed or deleted.
         """
         return pulumi.get(self, "pi_retain_virtual_serial_number")
 
     @pi_retain_virtual_serial_number.setter
-    def pi_retain_virtual_serial_number(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_retain_virtual_serial_number(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_retain_virtual_serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="piSapDeploymentType")
-    def pi_sap_deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_sap_deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom SAP Deployment Type Information
         """
         return pulumi.get(self, "pi_sap_deployment_type")
 
     @pi_sap_deployment_type.setter
-    def pi_sap_deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_sap_deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_sap_deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piSapProfileId")
-    def pi_sap_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_sap_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SAP Profile ID for the amount of cores and memory
         """
         return pulumi.get(self, "pi_sap_profile_id")
 
     @pi_sap_profile_id.setter
-    def pi_sap_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_sap_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_sap_profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piSharedProcessorPool")
-    def pi_shared_processor_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_shared_processor_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shared Processor Pool the instance is deployed on
         """
         return pulumi.get(self, "pi_shared_processor_pool")
 
     @pi_shared_processor_pool.setter
-    def pi_shared_processor_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_shared_processor_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_shared_processor_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piStorageConnection")
-    def pi_storage_connection(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_storage_connection(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage Connectivity Group for server deployment
         """
         return pulumi.get(self, "pi_storage_connection")
 
     @pi_storage_connection.setter
-    def pi_storage_connection(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_storage_connection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_storage_connection", value)
 
     @_builtins.property
     @pulumi.getter(name="piStoragePool")
-    def pi_storage_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_storage_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage Pool for server deployment; if provided then pi_storage_pool_affinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
         """
         return pulumi.get(self, "pi_storage_pool")
 
     @pi_storage_pool.setter
-    def pi_storage_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_storage_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_storage_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="piStoragePoolAffinity")
-    def pi_storage_pool_affinity(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_storage_pool_affinity(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if all volumes attached to the server must reside in the same storage pool
         """
         return pulumi.get(self, "pi_storage_pool_affinity")
 
     @pi_storage_pool_affinity.setter
-    def pi_storage_pool_affinity(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_storage_pool_affinity(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_storage_pool_affinity", value)
 
     @_builtins.property
     @pulumi.getter(name="piStorageType")
-    def pi_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage type for server deployment; if pi_storage_type is not provided the storage type will default to tier3
         """
         return pulumi.get(self, "pi_storage_type")
 
     @pi_storage_type.setter
-    def pi_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_storage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_storage_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piSysType")
-    def pi_sys_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_sys_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+        The type of system on which to create the VM.
         """
         return pulumi.get(self, "pi_sys_type")
 
     @pi_sys_type.setter
-    def pi_sys_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_sys_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_sys_type", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserData")
-    def pi_user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 encoded data to be passed in for invoking a cloud init script
         """
         return pulumi.get(self, "pi_user_data")
 
     @pi_user_data.setter
-    def pi_user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_user_data", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="piVirtualCoresAssigned")
-    def pi_virtual_cores_assigned(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_virtual_cores_assigned(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Virtual Cores Assigned to the PVMInstance
         """
         return pulumi.get(self, "pi_virtual_cores_assigned")
 
     @pi_virtual_cores_assigned.setter
-    def pi_virtual_cores_assigned(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_virtual_cores_assigned(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_virtual_cores_assigned", value)
 
     @_builtins.property
     @pulumi.getter(name="piVirtualOpticalDevice")
-    def pi_virtual_optical_device(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_virtual_optical_device(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Virtual Machine's Cloud Initialization Virtual Optical Device
         """
         return pulumi.get(self, "pi_virtual_optical_device")
 
     @pi_virtual_optical_device.setter
-    def pi_virtual_optical_device(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_virtual_optical_device(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_virtual_optical_device", value)
 
     @_builtins.property
     @pulumi.getter(name="piVirtualSerialNumber")
-    def pi_virtual_serial_number(self) -> Optional[pulumi.Input['PiInstancePiVirtualSerialNumberArgs']]:
+    def pi_virtual_serial_number(self) -> pulumi.Input[Optional['PiInstancePiVirtualSerialNumberArgs']]:
         """
         Virtual Serial Number information
         """
         return pulumi.get(self, "pi_virtual_serial_number")
 
     @pi_virtual_serial_number.setter
-    def pi_virtual_serial_number(self, value: Optional[pulumi.Input['PiInstancePiVirtualSerialNumberArgs']]):
+    def pi_virtual_serial_number(self, value: pulumi.Input[Optional['PiInstancePiVirtualSerialNumberArgs']]):
         pulumi.set(self, "pi_virtual_serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeIds")
-    def pi_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of PI volumes
         """
         return pulumi.get(self, "pi_volume_ids")
 
     @pi_volume_ids.setter
-    def pi_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_volume_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="piVpmemVolumes")
+    def pi_vpmem_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]]]:
+        """
+        List of one or more vPMEM volumes to attach to the instance.
+        """
+        return pulumi.get(self, "pi_vpmem_volumes")
+
+    @pi_vpmem_volumes.setter
+    def pi_vpmem_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstancePiVpmemVolumeArgs']]]]):
+        pulumi.set(self, "pi_vpmem_volumes", value)
+
+    @_builtins.property
     @pulumi.getter(name="pinPolicy")
-    def pin_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pin_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PIN Policy of the Instance
         """
         return pulumi.get(self, "pin_policy")
 
     @pin_policy.setter
-    def pin_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pin_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pin_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def progress(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def progress(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Progress of the operation
         """
         return pulumi.get(self, "progress")
 
     @progress.setter
-    def progress(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def progress(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "progress", value)
 
     @_builtins.property
     @pulumi.getter(name="sharedProcessorPoolId")
-    def shared_processor_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shared_processor_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shared Processor Pool ID the instance is deployed on
         """
         return pulumi.get(self, "shared_processor_pool_id")
 
     @shared_processor_pool_id.setter
-    def shared_processor_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shared_processor_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shared_processor_pool_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI instance status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpmemVolumes")
+    def vpmem_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiInstanceVpmemVolumeArgs']]]]:
+        """
+        List of vPMEM volumes.
+        """
+        return pulumi.get(self, "vpmem_volumes")
+
+    @vpmem_volumes.setter
+    def vpmem_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiInstanceVpmemVolumeArgs']]]]):
+        pulumi.set(self, "vpmem_volumes", value)
 
 
 @pulumi.type_token("ibmcloud:index/piInstance:PiInstance")
@@ -1716,62 +1862,69 @@ class PiInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_boot_volume_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_deployment_target: Optional[pulumi.Input[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict']]] = None,
-                 pi_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ibmi_css: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_pha: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_rds_users: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_key_pair_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_license_repository_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_memory: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict']]]]] = None,
-                 pi_pin_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_preferred_processor_compatibility_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_proc_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_processors: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_replicants: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_replication_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_scheme: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_sap_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sap_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_connection: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool_affinity: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sys_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_virtual_cores_assigned: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_virtual_optical_device: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_virtual_serial_number: Optional[pulumi.Input[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict']]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_allow_remote_restart: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_boot_volume_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_trusted_profile: pulumi.Input[Optional[Union['PiInstancePiDefaultTrustedProfileArgs', 'PiInstancePiDefaultTrustedProfileArgsDict', 'outputs.PiInstancePiDefaultTrustedProfile']]] = None,
+                 pi_deployment_target: pulumi.Input[Optional[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict', 'outputs.PiInstancePiDeploymentTarget']]] = None,
+                 pi_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ibmi_css: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_pha: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_rds_users: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_license_repository_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_memory: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_metadata_service: pulumi.Input[Optional[Union['PiInstancePiMetadataServiceArgs', 'PiInstancePiMetadataServiceArgsDict', 'outputs.PiInstancePiMetadataService']]] = None,
+                 pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict', 'outputs.PiInstancePiNetwork']]]]] = None,
+                 pi_pin_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_preferred_processor_compatibility_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_proc_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_processors: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_replicants: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_replication_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_scheme: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_sap_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sap_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_connection: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool_affinity: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sys_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_virtual_cores_assigned: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_virtual_optical_device: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_virtual_serial_number: pulumi.Input[Optional[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict', 'outputs.PiInstancePiVirtualSerialNumber']]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_vpmem_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiInstancePiVpmemVolumeArgs', 'PiInstancePiVpmemVolumeArgsDict', 'outputs.PiInstancePiVpmemVolume']]]]] = None,
                  __props__=None):
         """
         Create a PiInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         :param pulumi.Input[_builtins.str] pi_affinity_policy: Affinity policy for pvm instance being created; ignored if pi_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         :param pulumi.Input[_builtins.str] pi_affinity_volume: Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
+        :param pulumi.Input[_builtins.bool] pi_allow_remote_restart: Indicates if the server allows server to be restarted from remote
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_instances: List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_volumes: List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         :param pulumi.Input[_builtins.bool] pi_boot_volume_replication_enabled: Indicates if the boot volume should be replication enabled or not.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: This is the Power Instance id that is assigned to the account
-        :param pulumi.Input[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict']] pi_deployment_target: The deployment of a dedicated host.
+        :param pulumi.Input[Union['PiInstancePiDefaultTrustedProfileArgs', 'PiInstancePiDefaultTrustedProfileArgsDict', 'outputs.PiInstancePiDefaultTrustedProfile']] pi_default_trusted_profile: default IAM trusted profile to use for this virtual server instance.
+        :param pulumi.Input[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict', 'outputs.PiInstancePiDeploymentTarget']] pi_deployment_target: The deployment of a dedicated host.
         :param pulumi.Input[_builtins.str] pi_deployment_type: Custom Deployment Type Information
         :param pulumi.Input[_builtins.str] pi_health_status: Allow the user to set the status of the lpar so that they can connect to it faster
         :param pulumi.Input[_builtins.bool] pi_ibmi_css: IBM i Cloud Storage Solution
@@ -1780,9 +1933,10 @@ class PiInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_image_id: PI instance image id
         :param pulumi.Input[_builtins.str] pi_instance_name: PI Instance name
         :param pulumi.Input[_builtins.str] pi_key_pair_name: SSH key name
-        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TB value
+        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TiB value
         :param pulumi.Input[_builtins.float] pi_memory: Memory size
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict']]]] pi_networks: List of one or more networks to attach to the instance
+        :param pulumi.Input[Union['PiInstancePiMetadataServiceArgs', 'PiInstancePiMetadataServiceArgsDict', 'outputs.PiInstancePiMetadataService']] pi_metadata_service: The metadata service configuration for the instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict', 'outputs.PiInstancePiNetwork']]]] pi_networks: List of one or more networks to attach to the instance
         :param pulumi.Input[_builtins.str] pi_pin_policy: Pin Policy of the instance
         :param pulumi.Input[_builtins.str] pi_placement_group_id: Placement group ID
         :param pulumi.Input[_builtins.str] pi_preferred_processor_compatibility_mode: Preferred processor compatibility mode.
@@ -1800,13 +1954,14 @@ class PiInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_storage_pool: Storage Pool for server deployment; if provided then pi_storage_pool_affinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
         :param pulumi.Input[_builtins.bool] pi_storage_pool_affinity: Indicates if all volumes attached to the server must reside in the same storage pool
         :param pulumi.Input[_builtins.str] pi_storage_type: Storage type for server deployment; if pi_storage_type is not provided the storage type will default to tier3
-        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM.
         :param pulumi.Input[_builtins.str] pi_user_data: Base64 encoded data to be passed in for invoking a cloud init script
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         :param pulumi.Input[_builtins.int] pi_virtual_cores_assigned: Virtual Cores Assigned to the PVMInstance
         :param pulumi.Input[_builtins.str] pi_virtual_optical_device: Virtual Machine's Cloud Initialization Virtual Optical Device
-        :param pulumi.Input[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict']] pi_virtual_serial_number: Virtual Serial Number information
+        :param pulumi.Input[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict', 'outputs.PiInstancePiVirtualSerialNumber']] pi_virtual_serial_number: Virtual Serial Number information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_volume_ids: List of PI volumes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiVpmemVolumeArgs', 'PiInstancePiVpmemVolumeArgsDict', 'outputs.PiInstancePiVpmemVolume']]]] pi_vpmem_volumes: List of one or more vPMEM volumes to attach to the instance.
         """
         ...
     @overload
@@ -1816,6 +1971,7 @@ class PiInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1831,49 +1987,53 @@ class PiInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_boot_volume_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_deployment_target: Optional[pulumi.Input[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict']]] = None,
-                 pi_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_ibmi_css: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_pha: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_ibmi_rds_users: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_key_pair_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_license_repository_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_memory: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict']]]]] = None,
-                 pi_pin_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_preferred_processor_compatibility_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_proc_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_processors: Optional[pulumi.Input[_builtins.float]] = None,
-                 pi_replicants: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_replication_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_scheme: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_sap_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sap_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_shared_processor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_connection: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_storage_pool_affinity: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pi_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_sys_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_virtual_cores_assigned: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_virtual_optical_device: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_virtual_serial_number: Optional[pulumi.Input[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict']]] = None,
-                 pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_allow_remote_restart: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_boot_volume_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_default_trusted_profile: pulumi.Input[Optional[Union['PiInstancePiDefaultTrustedProfileArgs', 'PiInstancePiDefaultTrustedProfileArgsDict', 'outputs.PiInstancePiDefaultTrustedProfile']]] = None,
+                 pi_deployment_target: pulumi.Input[Optional[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict', 'outputs.PiInstancePiDeploymentTarget']]] = None,
+                 pi_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_ibmi_css: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_pha: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_ibmi_rds_users: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_license_repository_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_memory: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_metadata_service: pulumi.Input[Optional[Union['PiInstancePiMetadataServiceArgs', 'PiInstancePiMetadataServiceArgsDict', 'outputs.PiInstancePiMetadataService']]] = None,
+                 pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict', 'outputs.PiInstancePiNetwork']]]]] = None,
+                 pi_pin_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_preferred_processor_compatibility_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_proc_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_processors: pulumi.Input[Optional[_builtins.float]] = None,
+                 pi_replicants: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_replication_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_scheme: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_sap_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sap_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_shared_processor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_connection: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_storage_pool_affinity: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pi_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_sys_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_virtual_cores_assigned: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_virtual_optical_device: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_virtual_serial_number: pulumi.Input[Optional[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict', 'outputs.PiInstancePiVirtualSerialNumber']]] = None,
+                 pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_vpmem_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiInstancePiVpmemVolumeArgs', 'PiInstancePiVpmemVolumeArgsDict', 'outputs.PiInstancePiVpmemVolume']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1886,12 +2046,14 @@ class PiInstance(pulumi.CustomResource):
             __props__.__dict__["pi_affinity_instance"] = pi_affinity_instance
             __props__.__dict__["pi_affinity_policy"] = pi_affinity_policy
             __props__.__dict__["pi_affinity_volume"] = pi_affinity_volume
+            __props__.__dict__["pi_allow_remote_restart"] = pi_allow_remote_restart
             __props__.__dict__["pi_anti_affinity_instances"] = pi_anti_affinity_instances
             __props__.__dict__["pi_anti_affinity_volumes"] = pi_anti_affinity_volumes
             __props__.__dict__["pi_boot_volume_replication_enabled"] = pi_boot_volume_replication_enabled
             if pi_cloud_instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'pi_cloud_instance_id'")
             __props__.__dict__["pi_cloud_instance_id"] = pi_cloud_instance_id
+            __props__.__dict__["pi_default_trusted_profile"] = pi_default_trusted_profile
             __props__.__dict__["pi_deployment_target"] = pi_deployment_target
             __props__.__dict__["pi_deployment_type"] = pi_deployment_type
             __props__.__dict__["pi_health_status"] = pi_health_status
@@ -1907,6 +2069,7 @@ class PiInstance(pulumi.CustomResource):
             __props__.__dict__["pi_key_pair_name"] = pi_key_pair_name
             __props__.__dict__["pi_license_repository_capacity"] = pi_license_repository_capacity
             __props__.__dict__["pi_memory"] = pi_memory
+            __props__.__dict__["pi_metadata_service"] = pi_metadata_service
             if pi_networks is None and not opts.urn:
                 raise TypeError("Missing required property 'pi_networks'")
             __props__.__dict__["pi_networks"] = pi_networks
@@ -1934,6 +2097,7 @@ class PiInstance(pulumi.CustomResource):
             __props__.__dict__["pi_virtual_optical_device"] = pi_virtual_optical_device
             __props__.__dict__["pi_virtual_serial_number"] = pi_virtual_serial_number
             __props__.__dict__["pi_volume_ids"] = pi_volume_ids
+            __props__.__dict__["pi_vpmem_volumes"] = pi_vpmem_volumes
             __props__.__dict__["crn"] = None
             __props__.__dict__["dedicated_host_id"] = None
             __props__.__dict__["effective_processor_compatibility_mode"] = None
@@ -1953,6 +2117,7 @@ class PiInstance(pulumi.CustomResource):
             __props__.__dict__["progress"] = None
             __props__.__dict__["shared_processor_pool_id"] = None
             __props__.__dict__["status"] = None
+            __props__.__dict__["vpmem_volumes"] = None
         super(PiInstance, __self__).__init__(
             'ibmcloud:index/piInstance:PiInstance',
             resource_name,
@@ -1963,68 +2128,73 @@ class PiInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            dedicated_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            effective_processor_compatibility_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            fault: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            health_status: Optional[pulumi.Input[_builtins.str]] = None,
-            ibmi_rds: Optional[pulumi.Input[_builtins.bool]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            max_memory: Optional[pulumi.Input[_builtins.float]] = None,
-            max_processors: Optional[pulumi.Input[_builtins.float]] = None,
-            max_virtual_cores: Optional[pulumi.Input[_builtins.int]] = None,
-            min_memory: Optional[pulumi.Input[_builtins.float]] = None,
-            min_processors: Optional[pulumi.Input[_builtins.float]] = None,
-            min_virtual_cores: Optional[pulumi.Input[_builtins.int]] = None,
-            operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-            os_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_instance: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_affinity_volume: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_anti_affinity_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_anti_affinity_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_boot_volume_replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_deployment_target: Optional[pulumi.Input[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict']]] = None,
-            pi_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_ibmi_css: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_ibmi_pha: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_ibmi_rds_users: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_key_pair_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_license_repository_capacity: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_memory: Optional[pulumi.Input[_builtins.float]] = None,
-            pi_networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict']]]]] = None,
-            pi_pin_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_preferred_processor_compatibility_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_proc_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_processors: Optional[pulumi.Input[_builtins.float]] = None,
-            pi_replicants: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_replication_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_replication_scheme: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_replication_sites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_retain_virtual_serial_number: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_sap_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_sap_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_shared_processor_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_storage_connection: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_storage_pool_affinity: Optional[pulumi.Input[_builtins.bool]] = None,
-            pi_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_sys_type: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_data: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_virtual_cores_assigned: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_virtual_optical_device: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_virtual_serial_number: Optional[pulumi.Input[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict']]] = None,
-            pi_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pin_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            progress: Optional[pulumi.Input[_builtins.float]] = None,
-            shared_processor_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiInstance':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            dedicated_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            effective_processor_compatibility_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            fault: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            health_status: pulumi.Input[Optional[_builtins.str]] = None,
+            ibmi_rds: pulumi.Input[Optional[_builtins.bool]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            max_memory: pulumi.Input[Optional[_builtins.float]] = None,
+            max_processors: pulumi.Input[Optional[_builtins.float]] = None,
+            max_virtual_cores: pulumi.Input[Optional[_builtins.int]] = None,
+            min_memory: pulumi.Input[Optional[_builtins.float]] = None,
+            min_processors: pulumi.Input[Optional[_builtins.float]] = None,
+            min_virtual_cores: pulumi.Input[Optional[_builtins.int]] = None,
+            operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+            os_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_instance: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_affinity_volume: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_allow_remote_restart: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_anti_affinity_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_anti_affinity_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_boot_volume_replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_default_trusted_profile: pulumi.Input[Optional[Union['PiInstancePiDefaultTrustedProfileArgs', 'PiInstancePiDefaultTrustedProfileArgsDict', 'outputs.PiInstancePiDefaultTrustedProfile']]] = None,
+            pi_deployment_target: pulumi.Input[Optional[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict', 'outputs.PiInstancePiDeploymentTarget']]] = None,
+            pi_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_ibmi_css: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_ibmi_pha: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_ibmi_rds_users: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_license_repository_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_memory: pulumi.Input[Optional[_builtins.float]] = None,
+            pi_metadata_service: pulumi.Input[Optional[Union['PiInstancePiMetadataServiceArgs', 'PiInstancePiMetadataServiceArgsDict', 'outputs.PiInstancePiMetadataService']]] = None,
+            pi_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict', 'outputs.PiInstancePiNetwork']]]]] = None,
+            pi_pin_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_preferred_processor_compatibility_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_proc_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_processors: pulumi.Input[Optional[_builtins.float]] = None,
+            pi_replicants: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_replication_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_replication_scheme: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_replication_sites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_retain_virtual_serial_number: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_sap_deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_sap_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_shared_processor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_storage_connection: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_storage_pool_affinity: pulumi.Input[Optional[_builtins.bool]] = None,
+            pi_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_sys_type: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_virtual_cores_assigned: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_virtual_optical_device: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_virtual_serial_number: pulumi.Input[Optional[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict', 'outputs.PiInstancePiVirtualSerialNumber']]] = None,
+            pi_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_vpmem_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiInstancePiVpmemVolumeArgs', 'PiInstancePiVpmemVolumeArgsDict', 'outputs.PiInstancePiVpmemVolume']]]]] = None,
+            pin_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            progress: pulumi.Input[Optional[_builtins.float]] = None,
+            shared_processor_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            vpmem_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiInstanceVpmemVolumeArgs', 'PiInstanceVpmemVolumeArgsDict', 'outputs.PiInstanceVpmemVolume']]]]] = None) -> 'PiInstance':
         """
         Get an existing PiInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -2050,11 +2220,13 @@ class PiInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_affinity_instance: PVM Instance (ID or Name) to base storage affinity policy against; required if requesting storage affinity and pi_affinity_volume is not provided
         :param pulumi.Input[_builtins.str] pi_affinity_policy: Affinity policy for pvm instance being created; ignored if pi_storage_pool provided; for policy affinity requires one of pi_affinity_instance or pi_affinity_volume to be specified; for policy anti-affinity requires one of pi_anti_affinity_instances or pi_anti_affinity_volumes to be specified
         :param pulumi.Input[_builtins.str] pi_affinity_volume: Volume (ID or Name) to base storage affinity policy against; required if requesting affinity and pi_affinity_instance is not provided
+        :param pulumi.Input[_builtins.bool] pi_allow_remote_restart: Indicates if the server allows server to be restarted from remote
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_instances: List of pvmInstances to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_volumes is not provided
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_anti_affinity_volumes: List of volumes to base storage anti-affinity policy against; required if requesting anti-affinity and pi_anti_affinity_instances is not provided
         :param pulumi.Input[_builtins.bool] pi_boot_volume_replication_enabled: Indicates if the boot volume should be replication enabled or not.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: This is the Power Instance id that is assigned to the account
-        :param pulumi.Input[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict']] pi_deployment_target: The deployment of a dedicated host.
+        :param pulumi.Input[Union['PiInstancePiDefaultTrustedProfileArgs', 'PiInstancePiDefaultTrustedProfileArgsDict', 'outputs.PiInstancePiDefaultTrustedProfile']] pi_default_trusted_profile: default IAM trusted profile to use for this virtual server instance.
+        :param pulumi.Input[Union['PiInstancePiDeploymentTargetArgs', 'PiInstancePiDeploymentTargetArgsDict', 'outputs.PiInstancePiDeploymentTarget']] pi_deployment_target: The deployment of a dedicated host.
         :param pulumi.Input[_builtins.str] pi_deployment_type: Custom Deployment Type Information
         :param pulumi.Input[_builtins.str] pi_health_status: Allow the user to set the status of the lpar so that they can connect to it faster
         :param pulumi.Input[_builtins.bool] pi_ibmi_css: IBM i Cloud Storage Solution
@@ -2063,9 +2235,10 @@ class PiInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_image_id: PI instance image id
         :param pulumi.Input[_builtins.str] pi_instance_name: PI Instance name
         :param pulumi.Input[_builtins.str] pi_key_pair_name: SSH key name
-        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TB value
+        :param pulumi.Input[_builtins.int] pi_license_repository_capacity: The VTL license repository capacity TiB value
         :param pulumi.Input[_builtins.float] pi_memory: Memory size
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict']]]] pi_networks: List of one or more networks to attach to the instance
+        :param pulumi.Input[Union['PiInstancePiMetadataServiceArgs', 'PiInstancePiMetadataServiceArgsDict', 'outputs.PiInstancePiMetadataService']] pi_metadata_service: The metadata service configuration for the instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiNetworkArgs', 'PiInstancePiNetworkArgsDict', 'outputs.PiInstancePiNetwork']]]] pi_networks: List of one or more networks to attach to the instance
         :param pulumi.Input[_builtins.str] pi_pin_policy: Pin Policy of the instance
         :param pulumi.Input[_builtins.str] pi_placement_group_id: Placement group ID
         :param pulumi.Input[_builtins.str] pi_preferred_processor_compatibility_mode: Preferred processor compatibility mode.
@@ -2083,17 +2256,19 @@ class PiInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pi_storage_pool: Storage Pool for server deployment; if provided then pi_storage_pool_affinity will be ignored; Only valid when you deploy one of the IBM supplied stock images. Storage pool for a custom image (an imported image or an image that is created from a VM capture) defaults to the storage pool the image was created in
         :param pulumi.Input[_builtins.bool] pi_storage_pool_affinity: Indicates if all volumes attached to the server must reside in the same storage pool
         :param pulumi.Input[_builtins.str] pi_storage_type: Storage type for server deployment; if pi_storage_type is not provided the storage type will default to tier3
-        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+        :param pulumi.Input[_builtins.str] pi_sys_type: The type of system on which to create the VM.
         :param pulumi.Input[_builtins.str] pi_user_data: Base64 encoded data to be passed in for invoking a cloud init script
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_user_tags: The user tags attached to this resource.
         :param pulumi.Input[_builtins.int] pi_virtual_cores_assigned: Virtual Cores Assigned to the PVMInstance
         :param pulumi.Input[_builtins.str] pi_virtual_optical_device: Virtual Machine's Cloud Initialization Virtual Optical Device
-        :param pulumi.Input[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict']] pi_virtual_serial_number: Virtual Serial Number information
+        :param pulumi.Input[Union['PiInstancePiVirtualSerialNumberArgs', 'PiInstancePiVirtualSerialNumberArgsDict', 'outputs.PiInstancePiVirtualSerialNumber']] pi_virtual_serial_number: Virtual Serial Number information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pi_volume_ids: List of PI volumes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiInstancePiVpmemVolumeArgs', 'PiInstancePiVpmemVolumeArgsDict', 'outputs.PiInstancePiVpmemVolume']]]] pi_vpmem_volumes: List of one or more vPMEM volumes to attach to the instance.
         :param pulumi.Input[_builtins.str] pin_policy: PIN Policy of the Instance
         :param pulumi.Input[_builtins.float] progress: Progress of the operation
         :param pulumi.Input[_builtins.str] shared_processor_pool_id: Shared Processor Pool ID the instance is deployed on
         :param pulumi.Input[_builtins.str] status: PI instance status
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiInstanceVpmemVolumeArgs', 'PiInstanceVpmemVolumeArgsDict', 'outputs.PiInstanceVpmemVolume']]]] vpmem_volumes: List of vPMEM volumes.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -2117,10 +2292,12 @@ class PiInstance(pulumi.CustomResource):
         __props__.__dict__["pi_affinity_instance"] = pi_affinity_instance
         __props__.__dict__["pi_affinity_policy"] = pi_affinity_policy
         __props__.__dict__["pi_affinity_volume"] = pi_affinity_volume
+        __props__.__dict__["pi_allow_remote_restart"] = pi_allow_remote_restart
         __props__.__dict__["pi_anti_affinity_instances"] = pi_anti_affinity_instances
         __props__.__dict__["pi_anti_affinity_volumes"] = pi_anti_affinity_volumes
         __props__.__dict__["pi_boot_volume_replication_enabled"] = pi_boot_volume_replication_enabled
         __props__.__dict__["pi_cloud_instance_id"] = pi_cloud_instance_id
+        __props__.__dict__["pi_default_trusted_profile"] = pi_default_trusted_profile
         __props__.__dict__["pi_deployment_target"] = pi_deployment_target
         __props__.__dict__["pi_deployment_type"] = pi_deployment_type
         __props__.__dict__["pi_health_status"] = pi_health_status
@@ -2132,6 +2309,7 @@ class PiInstance(pulumi.CustomResource):
         __props__.__dict__["pi_key_pair_name"] = pi_key_pair_name
         __props__.__dict__["pi_license_repository_capacity"] = pi_license_repository_capacity
         __props__.__dict__["pi_memory"] = pi_memory
+        __props__.__dict__["pi_metadata_service"] = pi_metadata_service
         __props__.__dict__["pi_networks"] = pi_networks
         __props__.__dict__["pi_pin_policy"] = pi_pin_policy
         __props__.__dict__["pi_placement_group_id"] = pi_placement_group_id
@@ -2157,10 +2335,12 @@ class PiInstance(pulumi.CustomResource):
         __props__.__dict__["pi_virtual_optical_device"] = pi_virtual_optical_device
         __props__.__dict__["pi_virtual_serial_number"] = pi_virtual_serial_number
         __props__.__dict__["pi_volume_ids"] = pi_volume_ids
+        __props__.__dict__["pi_vpmem_volumes"] = pi_vpmem_volumes
         __props__.__dict__["pin_policy"] = pin_policy
         __props__.__dict__["progress"] = progress
         __props__.__dict__["shared_processor_pool_id"] = shared_processor_pool_id
         __props__.__dict__["status"] = status
+        __props__.__dict__["vpmem_volumes"] = vpmem_volumes
         return PiInstance(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -2308,6 +2488,14 @@ class PiInstance(pulumi.CustomResource):
         return pulumi.get(self, "pi_affinity_volume")
 
     @_builtins.property
+    @pulumi.getter(name="piAllowRemoteRestart")
+    def pi_allow_remote_restart(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates if the server allows server to be restarted from remote
+        """
+        return pulumi.get(self, "pi_allow_remote_restart")
+
+    @_builtins.property
     @pulumi.getter(name="piAntiAffinityInstances")
     def pi_anti_affinity_instances(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
@@ -2338,6 +2526,14 @@ class PiInstance(pulumi.CustomResource):
         This is the Power Instance id that is assigned to the account
         """
         return pulumi.get(self, "pi_cloud_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="piDefaultTrustedProfile")
+    def pi_default_trusted_profile(self) -> pulumi.Output['outputs.PiInstancePiDefaultTrustedProfile']:
+        """
+        default IAM trusted profile to use for this virtual server instance.
+        """
+        return pulumi.get(self, "pi_default_trusted_profile")
 
     @_builtins.property
     @pulumi.getter(name="piDeploymentTarget")
@@ -2415,7 +2611,7 @@ class PiInstance(pulumi.CustomResource):
     @pulumi.getter(name="piLicenseRepositoryCapacity")
     def pi_license_repository_capacity(self) -> pulumi.Output[_builtins.int]:
         """
-        The VTL license repository capacity TB value
+        The VTL license repository capacity TiB value
         """
         return pulumi.get(self, "pi_license_repository_capacity")
 
@@ -2426,6 +2622,14 @@ class PiInstance(pulumi.CustomResource):
         Memory size
         """
         return pulumi.get(self, "pi_memory")
+
+    @_builtins.property
+    @pulumi.getter(name="piMetadataService")
+    def pi_metadata_service(self) -> pulumi.Output['outputs.PiInstancePiMetadataService']:
+        """
+        The metadata service configuration for the instance.
+        """
+        return pulumi.get(self, "pi_metadata_service")
 
     @_builtins.property
     @pulumi.getter(name="piNetworks")
@@ -2575,7 +2779,7 @@ class PiInstance(pulumi.CustomResource):
     @pulumi.getter(name="piSysType")
     def pi_sys_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The type of system on which to create the VM (e980/e1080/e1150/e1180/s922/s1022/s1122).
+        The type of system on which to create the VM.
         """
         return pulumi.get(self, "pi_sys_type")
 
@@ -2628,6 +2832,14 @@ class PiInstance(pulumi.CustomResource):
         return pulumi.get(self, "pi_volume_ids")
 
     @_builtins.property
+    @pulumi.getter(name="piVpmemVolumes")
+    def pi_vpmem_volumes(self) -> pulumi.Output[Optional[Sequence['outputs.PiInstancePiVpmemVolume']]]:
+        """
+        List of one or more vPMEM volumes to attach to the instance.
+        """
+        return pulumi.get(self, "pi_vpmem_volumes")
+
+    @_builtins.property
     @pulumi.getter(name="pinPolicy")
     def pin_policy(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2658,4 +2870,12 @@ class PiInstance(pulumi.CustomResource):
         PI instance status
         """
         return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="vpmemVolumes")
+    def vpmem_volumes(self) -> pulumi.Output[Sequence['outputs.PiInstanceVpmemVolume']]:
+        """
+        List of vPMEM volumes.
+        """
+        return pulumi.get(self, "vpmem_volumes")
 

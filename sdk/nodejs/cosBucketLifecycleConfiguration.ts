@@ -93,16 +93,16 @@ export interface CosBucketLifecycleConfigurationState {
     /**
      * COS bucket CRN
      */
-    bucketCrn?: pulumi.Input<string>;
+    bucketCrn?: pulumi.Input<string | undefined>;
     /**
      * COS bucket location
      */
-    bucketLocation?: pulumi.Input<string>;
+    bucketLocation?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
-    lifecycleRules?: pulumi.Input<pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRule>[]>;
+    endpointType?: pulumi.Input<string | undefined>;
+    lifecycleRules?: pulumi.Input<pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRule>[] | undefined>;
 }
 
 /**
@@ -120,6 +120,6 @@ export interface CosBucketLifecycleConfigurationArgs {
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     lifecycleRules: pulumi.Input<pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRule>[]>;
 }

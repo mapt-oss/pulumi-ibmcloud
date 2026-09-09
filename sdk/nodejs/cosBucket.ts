@@ -87,11 +87,11 @@ export class CosBucket extends pulumi.CustomResource {
     /**
      * CRN of the key you want to use data at rest encryption
      */
-    declare public readonly keyProtect: pulumi.Output<string | undefined>;
+    declare public readonly keyProtect: pulumi.Output<string>;
     /**
      * CRN of the key you want to use data at rest encryption
      */
-    declare public readonly kmsKeyCrn: pulumi.Output<string | undefined>;
+    declare public readonly kmsKeyCrn: pulumi.Output<string>;
     /**
      * Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
      */
@@ -103,7 +103,7 @@ export class CosBucket extends pulumi.CustomResource {
     /**
      * Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
      */
-    declare public readonly objectLock: pulumi.Output<boolean | undefined>;
+    declare public readonly objectLock: pulumi.Output<boolean>;
     /**
      * Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
      */
@@ -233,111 +233,111 @@ export interface CosBucketState {
      *
      * @deprecated Use the ibmcloud.CosBucketLifecycleConfiguration resource instead
      */
-    abortIncompleteMultipartUploadDays?: pulumi.Input<pulumi.Input<inputs.CosBucketAbortIncompleteMultipartUploadDay>[]>;
+    abortIncompleteMultipartUploadDays?: pulumi.Input<pulumi.Input<inputs.CosBucketAbortIncompleteMultipartUploadDay>[] | undefined>;
     /**
      * Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
      */
-    activityTracking?: pulumi.Input<inputs.CosBucketActivityTracking>;
+    activityTracking?: pulumi.Input<inputs.CosBucketActivityTracking | undefined>;
     /**
      * List of IPv4 or IPv6 addresses
      */
-    allowedIps?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enable configuration archiveRule (glacier/accelerated) to COS Bucket after a defined period of time
      *
      * @deprecated Use the ibmcloud.CosBucketLifecycleConfiguration resource instead
      */
-    archiveRule?: pulumi.Input<inputs.CosBucketArchiveRule>;
+    archiveRule?: pulumi.Input<inputs.CosBucketArchiveRule | undefined>;
     /**
      * COS Bucket name
      */
-    bucketName?: pulumi.Input<string>;
+    bucketName?: pulumi.Input<string | undefined>;
     /**
      * CRN of resource instance
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Cros region location info
      */
-    crossRegionLocation?: pulumi.Input<string>;
+    crossRegionLocation?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Enable configuration expireRule to COS Bucket after a defined period of time
      *
      * @deprecated Use the ibmcloud.CosBucketLifecycleConfiguration resource instead
      */
-    expireRules?: pulumi.Input<pulumi.Input<inputs.CosBucketExpireRule>[]>;
+    expireRules?: pulumi.Input<pulumi.Input<inputs.CosBucketExpireRule>[] | undefined>;
     /**
      * COS buckets need to be empty before they can be deleted. forceDelete option empty the bucket and delete it.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * sets a maximum amount of storage (in bytes) available for a bucket
      */
-    hardQuota?: pulumi.Input<number>;
+    hardQuota?: pulumi.Input<number | undefined>;
     /**
      * CRN of the key you want to use data at rest encryption
      */
-    keyProtect?: pulumi.Input<string>;
+    keyProtect?: pulumi.Input<string | undefined>;
     /**
      * CRN of the key you want to use data at rest encryption
      */
-    kmsKeyCrn?: pulumi.Input<string>;
+    kmsKeyCrn?: pulumi.Input<string | undefined>;
     /**
      * Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
      */
-    metricsMonitoring?: pulumi.Input<inputs.CosBucketMetricsMonitoring>;
+    metricsMonitoring?: pulumi.Input<inputs.CosBucketMetricsMonitoring | undefined>;
     /**
      * Enable configuration expireRule to COS Bucket after a defined period of time
      */
-    noncurrentVersionExpiration?: pulumi.Input<inputs.CosBucketNoncurrentVersionExpiration>;
+    noncurrentVersionExpiration?: pulumi.Input<inputs.CosBucketNoncurrentVersionExpiration | undefined>;
     /**
      * Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
      */
-    objectLock?: pulumi.Input<boolean>;
+    objectLock?: pulumi.Input<boolean | undefined>;
     /**
      * Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
      */
-    objectVersioning?: pulumi.Input<inputs.CosBucketObjectVersioning>;
+    objectVersioning?: pulumi.Input<inputs.CosBucketObjectVersioning | undefined>;
     /**
      * Region Location info.
      */
-    regionLocation?: pulumi.Input<string>;
+    regionLocation?: pulumi.Input<string | undefined>;
     /**
      * resource instance ID
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
      */
-    retentionRule?: pulumi.Input<inputs.CosBucketRetentionRule>;
+    retentionRule?: pulumi.Input<inputs.CosBucketRetentionRule | undefined>;
     /**
      * Direct endpoint for the COS bucket
      */
-    s3EndpointDirect?: pulumi.Input<string>;
+    s3EndpointDirect?: pulumi.Input<string | undefined>;
     /**
      * Private endpoint for the COS bucket
      */
-    s3EndpointPrivate?: pulumi.Input<string>;
+    s3EndpointPrivate?: pulumi.Input<string | undefined>;
     /**
      * Public endpoint for the COS bucket
      */
-    s3EndpointPublic?: pulumi.Input<string>;
+    s3EndpointPublic?: pulumi.Input<string | undefined>;
     /**
      * Provide satellite location info.
      */
-    satelliteLocationId?: pulumi.Input<string>;
+    satelliteLocationId?: pulumi.Input<string | undefined>;
     /**
      * single site location info
      */
-    singleSiteLocation?: pulumi.Input<string>;
+    singleSiteLocation?: pulumi.Input<string | undefined>;
     /**
      * Storage class info
      */
-    storageClass?: pulumi.Input<string>;
+    storageClass?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -349,21 +349,21 @@ export interface CosBucketArgs {
      *
      * @deprecated Use the ibmcloud.CosBucketLifecycleConfiguration resource instead
      */
-    abortIncompleteMultipartUploadDays?: pulumi.Input<pulumi.Input<inputs.CosBucketAbortIncompleteMultipartUploadDay>[]>;
+    abortIncompleteMultipartUploadDays?: pulumi.Input<pulumi.Input<inputs.CosBucketAbortIncompleteMultipartUploadDay>[] | undefined>;
     /**
      * Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
      */
-    activityTracking?: pulumi.Input<inputs.CosBucketActivityTracking>;
+    activityTracking?: pulumi.Input<inputs.CosBucketActivityTracking | undefined>;
     /**
      * List of IPv4 or IPv6 addresses
      */
-    allowedIps?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Enable configuration archiveRule (glacier/accelerated) to COS Bucket after a defined period of time
      *
      * @deprecated Use the ibmcloud.CosBucketLifecycleConfiguration resource instead
      */
-    archiveRule?: pulumi.Input<inputs.CosBucketArchiveRule>;
+    archiveRule?: pulumi.Input<inputs.CosBucketArchiveRule | undefined>;
     /**
      * COS Bucket name
      */
@@ -371,53 +371,53 @@ export interface CosBucketArgs {
     /**
      * Cros region location info
      */
-    crossRegionLocation?: pulumi.Input<string>;
+    crossRegionLocation?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Enable configuration expireRule to COS Bucket after a defined period of time
      *
      * @deprecated Use the ibmcloud.CosBucketLifecycleConfiguration resource instead
      */
-    expireRules?: pulumi.Input<pulumi.Input<inputs.CosBucketExpireRule>[]>;
+    expireRules?: pulumi.Input<pulumi.Input<inputs.CosBucketExpireRule>[] | undefined>;
     /**
      * COS buckets need to be empty before they can be deleted. forceDelete option empty the bucket and delete it.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * sets a maximum amount of storage (in bytes) available for a bucket
      */
-    hardQuota?: pulumi.Input<number>;
+    hardQuota?: pulumi.Input<number | undefined>;
     /**
      * CRN of the key you want to use data at rest encryption
      */
-    keyProtect?: pulumi.Input<string>;
+    keyProtect?: pulumi.Input<string | undefined>;
     /**
      * CRN of the key you want to use data at rest encryption
      */
-    kmsKeyCrn?: pulumi.Input<string>;
+    kmsKeyCrn?: pulumi.Input<string | undefined>;
     /**
      * Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
      */
-    metricsMonitoring?: pulumi.Input<inputs.CosBucketMetricsMonitoring>;
+    metricsMonitoring?: pulumi.Input<inputs.CosBucketMetricsMonitoring | undefined>;
     /**
      * Enable configuration expireRule to COS Bucket after a defined period of time
      */
-    noncurrentVersionExpiration?: pulumi.Input<inputs.CosBucketNoncurrentVersionExpiration>;
+    noncurrentVersionExpiration?: pulumi.Input<inputs.CosBucketNoncurrentVersionExpiration | undefined>;
     /**
      * Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
      */
-    objectLock?: pulumi.Input<boolean>;
+    objectLock?: pulumi.Input<boolean | undefined>;
     /**
      * Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
      */
-    objectVersioning?: pulumi.Input<inputs.CosBucketObjectVersioning>;
+    objectVersioning?: pulumi.Input<inputs.CosBucketObjectVersioning | undefined>;
     /**
      * Region Location info.
      */
-    regionLocation?: pulumi.Input<string>;
+    regionLocation?: pulumi.Input<string | undefined>;
     /**
      * resource instance ID
      */
@@ -425,17 +425,17 @@ export interface CosBucketArgs {
     /**
      * A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
      */
-    retentionRule?: pulumi.Input<inputs.CosBucketRetentionRule>;
+    retentionRule?: pulumi.Input<inputs.CosBucketRetentionRule | undefined>;
     /**
      * Provide satellite location info.
      */
-    satelliteLocationId?: pulumi.Input<string>;
+    satelliteLocationId?: pulumi.Input<string | undefined>;
     /**
      * single site location info
      */
-    singleSiteLocation?: pulumi.Input<string>;
+    singleSiteLocation?: pulumi.Input<string | undefined>;
     /**
      * Storage class info
      */
-    storageClass?: pulumi.Input<string>;
+    storageClass?: pulumi.Input<string | undefined>;
 }

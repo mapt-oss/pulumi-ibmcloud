@@ -94,8 +94,8 @@ def get_pi_network_interfaces(pi_cloud_instance_id: Optional[_builtins.str] = No
         interfaces=pulumi.get(__ret__, 'interfaces'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pi_network_id=pulumi.get(__ret__, 'pi_network_id'))
-def get_pi_network_interfaces_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_network_interfaces_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkInterfacesResult]:
     """
     Use this data source to access information about an existing resource.

@@ -57,8 +57,8 @@ export function getResourceKeyOutput(args: GetResourceKeyOutputArgs, opts?: pulu
  * A collection of arguments for invoking getResourceKey.
  */
 export interface GetResourceKeyOutputArgs {
-    mostRecent?: pulumi.Input<boolean>;
+    mostRecent?: pulumi.Input<boolean | undefined>;
     name: pulumi.Input<string>;
-    resourceAliasId?: pulumi.Input<string>;
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceAliasId?: pulumi.Input<string | undefined>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
 }

@@ -22,9 +22,10 @@ __all__ = ['IamTrustedProfileIdentitiesArgs', 'IamTrustedProfileIdentities']
 class IamTrustedProfileIdentitiesArgs:
     def __init__(__self__, *,
                  profile_id: pulumi.Input[_builtins.str],
-                 identities: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]] = None):
+                 identities: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]] = None):
         """
         The set of arguments for constructing a IamTrustedProfileIdentities resource.
+
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile.
         :param pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]] identities: List of identities.
         """
@@ -46,25 +47,26 @@ class IamTrustedProfileIdentitiesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def identities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]:
+    def identities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]:
         """
         List of identities.
         """
         return pulumi.get(self, "identities")
 
     @identities.setter
-    def identities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]):
+    def identities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]):
         pulumi.set(self, "identities", value)
 
 
 @pulumi.input_type
 class _IamTrustedProfileIdentitiesState:
     def __init__(__self__, *,
-                 identities: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]] = None,
-                 if_match: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 identities: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]] = None,
+                 if_match: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamTrustedProfileIdentities resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]] identities: List of identities.
         :param pulumi.Input[_builtins.str] if_match: Entity tag of the Identities to be updated. Specify the tag that you retrieved when reading the Profile Identities. This value helps identify parallel usage of this API. Pass * to indicate updating any available version, which may result in stale updates.
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile.
@@ -78,38 +80,38 @@ class _IamTrustedProfileIdentitiesState:
 
     @_builtins.property
     @pulumi.getter
-    def identities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]:
+    def identities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]:
         """
         List of identities.
         """
         return pulumi.get(self, "identities")
 
     @identities.setter
-    def identities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]):
+    def identities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileIdentitiesIdentityArgs']]]]):
         pulumi.set(self, "identities", value)
 
     @_builtins.property
     @pulumi.getter(name="ifMatch")
-    def if_match(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def if_match(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Entity tag of the Identities to be updated. Specify the tag that you retrieved when reading the Profile Identities. This value helps identify parallel usage of this API. Pass * to indicate updating any available version, which may result in stale updates.
         """
         return pulumi.get(self, "if_match")
 
     @if_match.setter
-    def if_match(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def if_match(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "if_match", value)
 
     @_builtins.property
     @pulumi.getter(name="profileId")
-    def profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the trusted profile.
         """
         return pulumi.get(self, "profile_id")
 
     @profile_id.setter
-    def profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_id", value)
 
 
@@ -119,14 +121,15 @@ class IamTrustedProfileIdentities(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 identities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict']]]]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict', 'outputs.IamTrustedProfileIdentitiesIdentity']]]]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamTrustedProfileIdentities resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict']]]] identities: List of identities.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict', 'outputs.IamTrustedProfileIdentitiesIdentity']]]] identities: List of identities.
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile.
         """
         ...
@@ -137,6 +140,7 @@ class IamTrustedProfileIdentities(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamTrustedProfileIdentities resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamTrustedProfileIdentitiesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -152,8 +156,8 @@ class IamTrustedProfileIdentities(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 identities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict']]]]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict', 'outputs.IamTrustedProfileIdentitiesIdentity']]]]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -178,9 +182,9 @@ class IamTrustedProfileIdentities(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            identities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict']]]]] = None,
-            if_match: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamTrustedProfileIdentities':
+            identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict', 'outputs.IamTrustedProfileIdentitiesIdentity']]]]] = None,
+            if_match: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamTrustedProfileIdentities':
         """
         Get an existing IamTrustedProfileIdentities resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -188,7 +192,7 @@ class IamTrustedProfileIdentities(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict']]]] identities: List of identities.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileIdentitiesIdentityArgs', 'IamTrustedProfileIdentitiesIdentityArgsDict', 'outputs.IamTrustedProfileIdentitiesIdentity']]]] identities: List of identities.
         :param pulumi.Input[_builtins.str] if_match: Entity tag of the Identities to be updated. Specify the tag that you retrieved when reading the Profile Identities. This value helps identify parallel usage of this API. Pass * to indicate updating any available version, which may result in stale updates.
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile.
         """

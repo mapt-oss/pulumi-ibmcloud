@@ -112,31 +112,31 @@ export interface CosBackupVaultState {
     /**
      * Activity Tracking configuration.Whether to send notifications for management events on the BackupVault.
      */
-    activityTrackingManagementEvents?: pulumi.Input<boolean>;
+    activityTrackingManagementEvents?: pulumi.Input<boolean | undefined>;
     /**
      * CRN of resource instance
      */
-    backupVaultCrn?: pulumi.Input<string>;
+    backupVaultCrn?: pulumi.Input<string | undefined>;
     /**
      * Name of the Backup Vault.
      */
-    backupVaultName?: pulumi.Input<string>;
+    backupVaultName?: pulumi.Input<string | undefined>;
     /**
      * The CRN for a KeyProtect root key.
      */
-    kmsKeyCrn?: pulumi.Input<string>;
+    kmsKeyCrn?: pulumi.Input<string | undefined>;
     /**
      * Metrics Monitoring configuration.Whether usage metrics are collected for this BackupVault.
      */
-    metricsMonitoringUsageMetrics?: pulumi.Input<boolean>;
+    metricsMonitoringUsageMetrics?: pulumi.Input<boolean | undefined>;
     /**
      * Location where backup vault  to be created.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Instance id for the backup vault.
      */
-    serviceInstanceId?: pulumi.Input<string>;
+    serviceInstanceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -146,7 +146,7 @@ export interface CosBackupVaultArgs {
     /**
      * Activity Tracking configuration.Whether to send notifications for management events on the BackupVault.
      */
-    activityTrackingManagementEvents?: pulumi.Input<boolean>;
+    activityTrackingManagementEvents?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Backup Vault.
      */
@@ -154,11 +154,11 @@ export interface CosBackupVaultArgs {
     /**
      * The CRN for a KeyProtect root key.
      */
-    kmsKeyCrn?: pulumi.Input<string>;
+    kmsKeyCrn?: pulumi.Input<string | undefined>;
     /**
      * Metrics Monitoring configuration.Whether usage metrics are collected for this BackupVault.
      */
-    metricsMonitoringUsageMetrics?: pulumi.Input<boolean>;
+    metricsMonitoringUsageMetrics?: pulumi.Input<boolean | undefined>;
     /**
      * Location where backup vault  to be created.
      */

@@ -27,10 +27,13 @@ class GetPiNetworkInterfaceResult:
     """
     A collection of values returned by getPiNetworkInterface.
     """
-    def __init__(__self__, crn=None, id=None, instances=None, ip_address=None, mac_address=None, name=None, network_interface_id=None, network_security_group_id=None, network_security_group_ids=None, pi_cloud_instance_id=None, pi_network_id=None, pi_network_interface_id=None, status=None, user_tags=None):
+    def __init__(__self__, crn=None, external_ip=None, id=None, instances=None, ip_address=None, mac_address=None, name=None, network_interface_id=None, network_security_group_id=None, network_security_group_ids=None, pi_cloud_instance_id=None, pi_network_id=None, pi_network_interface_id=None, status=None, user_tags=None):
         if crn and not isinstance(crn, str):
             raise TypeError("Expected argument 'crn' to be a str")
         pulumi.set(__self__, "crn", crn)
+        if external_ip and not isinstance(external_ip, str):
+            raise TypeError("Expected argument 'external_ip' to be a str")
+        pulumi.set(__self__, "external_ip", external_ip)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -75,6 +78,11 @@ class GetPiNetworkInterfaceResult:
     @pulumi.getter
     def crn(self) -> _builtins.str:
         return pulumi.get(self, "crn")
+
+    @_builtins.property
+    @pulumi.getter(name="externalIp")
+    def external_ip(self) -> _builtins.str:
+        return pulumi.get(self, "external_ip")
 
     @_builtins.property
     @pulumi.getter
@@ -153,6 +161,7 @@ class AwaitableGetPiNetworkInterfaceResult(GetPiNetworkInterfaceResult):
             yield self
         return GetPiNetworkInterfaceResult(
             crn=self.crn,
+            external_ip=self.external_ip,
             id=self.id,
             instances=self.instances,
             ip_address=self.ip_address,
@@ -184,6 +193,7 @@ def get_pi_network_interface(pi_cloud_instance_id: Optional[_builtins.str] = Non
 
     return AwaitableGetPiNetworkInterfaceResult(
         crn=pulumi.get(__ret__, 'crn'),
+        external_ip=pulumi.get(__ret__, 'external_ip'),
         id=pulumi.get(__ret__, 'id'),
         instances=pulumi.get(__ret__, 'instances'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
@@ -197,9 +207,9 @@ def get_pi_network_interface(pi_cloud_instance_id: Optional[_builtins.str] = Non
         pi_network_interface_id=pulumi.get(__ret__, 'pi_network_interface_id'),
         status=pulumi.get(__ret__, 'status'),
         user_tags=pulumi.get(__ret__, 'user_tags'))
-def get_pi_network_interface_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    pi_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    pi_network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_network_interface_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    pi_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    pi_network_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkInterfaceResult]:
     """
     Use this data source to access information about an existing resource.
@@ -212,6 +222,7 @@ def get_pi_network_interface_output(pi_cloud_instance_id: Optional[pulumi.Input[
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getPiNetworkInterface:getPiNetworkInterface', __args__, opts=opts, typ=GetPiNetworkInterfaceResult)
     return __ret__.apply(lambda __response__: GetPiNetworkInterfaceResult(
         crn=pulumi.get(__response__, 'crn'),
+        external_ip=pulumi.get(__response__, 'external_ip'),
         id=pulumi.get(__response__, 'id'),
         instances=pulumi.get(__response__, 'instances'),
         ip_address=pulumi.get(__response__, 'ip_address'),

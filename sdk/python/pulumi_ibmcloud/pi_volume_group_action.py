@@ -26,6 +26,7 @@ class PiVolumeGroupActionArgs:
                  pi_volume_group_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PiVolumeGroupAction resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionArgs'] pi_volume_group_action: Performs an action (start stop reset ) on a volume group(one at a time).
         :param pulumi.Input[_builtins.str] pi_volume_group_id: Volume Group ID
@@ -74,14 +75,15 @@ class PiVolumeGroupActionArgs:
 @pulumi.input_type
 class _PiVolumeGroupActionState:
     def __init__(__self__, *,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_group_action: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionArgs']] = None,
-                 pi_volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_group_status: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_group_action: pulumi.Input[Optional['PiVolumeGroupActionPiVolumeGroupActionArgs']] = None,
+                 pi_volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVolumeGroupAction resources.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionArgs'] pi_volume_group_action: Performs an action (start stop reset ) on a volume group(one at a time).
         :param pulumi.Input[_builtins.str] pi_volume_group_id: Volume Group ID
@@ -104,74 +106,74 @@ class _PiVolumeGroupActionState:
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeGroupAction")
-    def pi_volume_group_action(self) -> Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionArgs']]:
+    def pi_volume_group_action(self) -> pulumi.Input[Optional['PiVolumeGroupActionPiVolumeGroupActionArgs']]:
         """
         Performs an action (start stop reset ) on a volume group(one at a time).
         """
         return pulumi.get(self, "pi_volume_group_action")
 
     @pi_volume_group_action.setter
-    def pi_volume_group_action(self, value: Optional[pulumi.Input['PiVolumeGroupActionPiVolumeGroupActionArgs']]):
+    def pi_volume_group_action(self, value: pulumi.Input[Optional['PiVolumeGroupActionPiVolumeGroupActionArgs']]):
         pulumi.set(self, "pi_volume_group_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piVolumeGroupId")
-    def pi_volume_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_volume_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group ID
         """
         return pulumi.get(self, "pi_volume_group_id")
 
     @pi_volume_group_id.setter
-    def pi_volume_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_volume_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_volume_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationStatus")
-    def replication_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group Replication Status
         """
         return pulumi.get(self, "replication_status")
 
     @replication_status.setter
-    def replication_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_status", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupName")
-    def volume_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group ID
         """
         return pulumi.get(self, "volume_group_name")
 
     @volume_group_name.setter
-    def volume_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupStatus")
-    def volume_group_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_group_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume Group Status
         """
         return pulumi.get(self, "volume_group_status")
 
     @volume_group_status.setter
-    def volume_group_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_group_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_group_status", value)
 
 
@@ -181,16 +183,17 @@ class PiVolumeGroupAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_group_action: Optional[pulumi.Input[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict']]] = None,
-                 pi_volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_group_action: pulumi.Input[Optional[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict', 'outputs.PiVolumeGroupActionPiVolumeGroupAction']]] = None,
+                 pi_volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiVolumeGroupAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict']] pi_volume_group_action: Performs an action (start stop reset ) on a volume group(one at a time).
+        :param pulumi.Input[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict', 'outputs.PiVolumeGroupActionPiVolumeGroupAction']] pi_volume_group_action: Performs an action (start stop reset ) on a volume group(one at a time).
         :param pulumi.Input[_builtins.str] pi_volume_group_id: Volume Group ID
         """
         ...
@@ -201,6 +204,7 @@ class PiVolumeGroupAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVolumeGroupAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVolumeGroupActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -216,9 +220,9 @@ class PiVolumeGroupAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_volume_group_action: Optional[pulumi.Input[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict']]] = None,
-                 pi_volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_volume_group_action: pulumi.Input[Optional[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict', 'outputs.PiVolumeGroupActionPiVolumeGroupAction']]] = None,
+                 pi_volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -250,12 +254,12 @@ class PiVolumeGroupAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_volume_group_action: Optional[pulumi.Input[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict']]] = None,
-            pi_volume_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_status: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_group_status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVolumeGroupAction':
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_volume_group_action: pulumi.Input[Optional[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict', 'outputs.PiVolumeGroupActionPiVolumeGroupAction']]] = None,
+            pi_volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_status: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVolumeGroupAction':
         """
         Get an existing PiVolumeGroupAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -264,7 +268,7 @@ class PiVolumeGroupAction(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
-        :param pulumi.Input[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict']] pi_volume_group_action: Performs an action (start stop reset ) on a volume group(one at a time).
+        :param pulumi.Input[Union['PiVolumeGroupActionPiVolumeGroupActionArgs', 'PiVolumeGroupActionPiVolumeGroupActionArgsDict', 'outputs.PiVolumeGroupActionPiVolumeGroupAction']] pi_volume_group_action: Performs an action (start stop reset ) on a volume group(one at a time).
         :param pulumi.Input[_builtins.str] pi_volume_group_id: Volume Group ID
         :param pulumi.Input[_builtins.str] replication_status: Volume Group Replication Status
         :param pulumi.Input[_builtins.str] volume_group_name: Volume Group ID

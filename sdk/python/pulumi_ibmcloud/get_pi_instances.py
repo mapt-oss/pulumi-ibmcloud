@@ -82,7 +82,7 @@ def get_pi_instances(pi_cloud_instance_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pvm_instances=pulumi.get(__ret__, 'pvm_instances'))
-def get_pi_instances_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_instances_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiInstancesResult]:
     """
     Use this data source to access information about an existing resource.

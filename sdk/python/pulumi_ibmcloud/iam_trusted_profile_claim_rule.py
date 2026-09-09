@@ -24,16 +24,17 @@ class IamTrustedProfileClaimRuleArgs:
                  conditions: pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]],
                  profile_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamTrustedProfileClaimRule resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]] conditions: Conditions of this claim rule.
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile to create a claim rule.
         :param pulumi.Input[_builtins.str] type: Type of the calim rule, either 'Profile-SAML' or 'Profile-CR'.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         :param pulumi.Input[_builtins.int] expiration: Session expiration in seconds.
         :param pulumi.Input[_builtins.str] name: Name of the claim rule to be created or updated.
         :param pulumi.Input[_builtins.str] realm_name: The realm name of the Idp this claim rule applies to.
@@ -88,71 +89,72 @@ class IamTrustedProfileClaimRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="crType")
-    def cr_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cr_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+        The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         """
         return pulumi.get(self, "cr_type")
 
     @cr_type.setter
-    def cr_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cr_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cr_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def expiration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def expiration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Session expiration in seconds.
         """
         return pulumi.get(self, "expiration")
 
     @expiration.setter
-    def expiration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def expiration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "expiration", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the claim rule to be created or updated.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="realmName")
-    def realm_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def realm_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The realm name of the Idp this claim rule applies to.
         """
         return pulumi.get(self, "realm_name")
 
     @realm_name.setter
-    def realm_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def realm_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "realm_name", value)
 
 
 @pulumi.input_type
 class _IamTrustedProfileClaimRuleState:
     def __init__(__self__, *,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]]] = None,
-                 cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.int]] = None,
-                 modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]]] = None,
+                 cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamTrustedProfileClaimRule resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]] conditions: Conditions of this claim rule.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
         :param pulumi.Input[_builtins.str] entity_tag: version of the claim rule.
         :param pulumi.Input[_builtins.int] expiration: Session expiration in seconds.
@@ -188,134 +190,134 @@ class _IamTrustedProfileClaimRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]]]:
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]]]:
         """
         Conditions of this claim rule.
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]]]):
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileClaimRuleConditionArgs']]]]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="crType")
-    def cr_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cr_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+        The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         """
         return pulumi.get(self, "cr_type")
 
     @cr_type.setter
-    def cr_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cr_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cr_type", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the creation date in ISO format.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         version of the claim rule.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
     @pulumi.getter
-    def expiration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def expiration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Session expiration in seconds.
         """
         return pulumi.get(self, "expiration")
 
     @expiration.setter
-    def expiration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def expiration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedAt")
-    def modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the last modification date in ISO format.
         """
         return pulumi.get(self, "modified_at")
 
     @modified_at.setter
-    def modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the claim rule to be created or updated.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="profileId")
-    def profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the trusted profile to create a claim rule.
         """
         return pulumi.get(self, "profile_id")
 
     @profile_id.setter
-    def profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_id", value)
 
     @_builtins.property
     @pulumi.getter(name="realmName")
-    def realm_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def realm_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The realm name of the Idp this claim rule applies to.
         """
         return pulumi.get(self, "realm_name")
 
     @realm_name.setter
-    def realm_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def realm_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "realm_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleId")
-    def rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the unique identifier of the claim rule.
         """
         return pulumi.get(self, "rule_id")
 
     @rule_id.setter
-    def rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the calim rule, either 'Profile-SAML' or 'Profile-CR'.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -325,20 +327,21 @@ class IamTrustedProfileClaimRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict']]]]] = None,
-                 cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict', 'outputs.IamTrustedProfileClaimRuleCondition']]]]] = None,
+                 cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamTrustedProfileClaimRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict']]]] conditions: Conditions of this claim rule.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict', 'outputs.IamTrustedProfileClaimRuleCondition']]]] conditions: Conditions of this claim rule.
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         :param pulumi.Input[_builtins.int] expiration: Session expiration in seconds.
         :param pulumi.Input[_builtins.str] name: Name of the claim rule to be created or updated.
         :param pulumi.Input[_builtins.str] profile_id: ID of the trusted profile to create a claim rule.
@@ -353,6 +356,7 @@ class IamTrustedProfileClaimRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamTrustedProfileClaimRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamTrustedProfileClaimRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -368,13 +372,13 @@ class IamTrustedProfileClaimRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict']]]]] = None,
-                 cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict', 'outputs.IamTrustedProfileClaimRuleCondition']]]]] = None,
+                 cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -411,17 +415,17 @@ class IamTrustedProfileClaimRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict']]]]] = None,
-            cr_type: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-            expiration: Optional[pulumi.Input[_builtins.int]] = None,
-            modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            realm_name: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamTrustedProfileClaimRule':
+            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict', 'outputs.IamTrustedProfileClaimRuleCondition']]]]] = None,
+            cr_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+            expiration: pulumi.Input[Optional[_builtins.int]] = None,
+            modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            realm_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamTrustedProfileClaimRule':
         """
         Get an existing IamTrustedProfileClaimRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -429,8 +433,8 @@ class IamTrustedProfileClaimRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict']]]] conditions: Conditions of this claim rule.
-        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileClaimRuleConditionArgs', 'IamTrustedProfileClaimRuleConditionArgsDict', 'outputs.IamTrustedProfileClaimRuleCondition']]]] conditions: Conditions of this claim rule.
+        :param pulumi.Input[_builtins.str] cr_type: The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
         :param pulumi.Input[_builtins.str] entity_tag: version of the claim rule.
         :param pulumi.Input[_builtins.int] expiration: Session expiration in seconds.
@@ -470,7 +474,7 @@ class IamTrustedProfileClaimRule(pulumi.CustomResource):
     @pulumi.getter(name="crType")
     def cr_type(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+        The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
         """
         return pulumi.get(self, "cr_type")
 

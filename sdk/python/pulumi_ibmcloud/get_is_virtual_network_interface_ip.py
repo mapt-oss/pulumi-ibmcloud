@@ -120,8 +120,8 @@ def get_is_virtual_network_interface_ip(reserved_ip: Optional[_builtins.str] = N
         reserved_ip=pulumi.get(__ret__, 'reserved_ip'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         virtual_network_interface=pulumi.get(__ret__, 'virtual_network_interface'))
-def get_is_virtual_network_interface_ip_output(reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                                               virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_virtual_network_interface_ip_output(reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                                               virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVirtualNetworkInterfaceIpResult]:
     """
     Use this data source to access information about an existing resource.

@@ -45,6 +45,10 @@ export class CosBucketObject extends pulumi.CustomResource {
      */
     declare public readonly bucketLocation: pulumi.Output<string>;
     /**
+     * Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
+     */
+    declare public readonly bypassGovernanceRetention: pulumi.Output<boolean | undefined>;
+    /**
      * COS object content
      */
     declare public readonly content: pulumi.Output<string | undefined>;
@@ -122,6 +126,7 @@ export class CosBucketObject extends pulumi.CustomResource {
             resourceInputs["body"] = state?.body;
             resourceInputs["bucketCrn"] = state?.bucketCrn;
             resourceInputs["bucketLocation"] = state?.bucketLocation;
+            resourceInputs["bypassGovernanceRetention"] = state?.bypassGovernanceRetention;
             resourceInputs["content"] = state?.content;
             resourceInputs["contentBase64"] = state?.contentBase64;
             resourceInputs["contentFile"] = state?.contentFile;
@@ -151,6 +156,7 @@ export class CosBucketObject extends pulumi.CustomResource {
             }
             resourceInputs["bucketCrn"] = args?.bucketCrn;
             resourceInputs["bucketLocation"] = args?.bucketLocation;
+            resourceInputs["bypassGovernanceRetention"] = args?.bypassGovernanceRetention;
             resourceInputs["content"] = args?.content;
             resourceInputs["contentBase64"] = args?.contentBase64;
             resourceInputs["contentFile"] = args?.contentFile;
@@ -181,76 +187,80 @@ export interface CosBucketObjectState {
     /**
      * COS object body
      */
-    body?: pulumi.Input<string>;
+    body?: pulumi.Input<string | undefined>;
     /**
      * COS bucket CRN
      */
-    bucketCrn?: pulumi.Input<string>;
+    bucketCrn?: pulumi.Input<string | undefined>;
     /**
      * COS bucket location
      */
-    bucketLocation?: pulumi.Input<string>;
+    bucketLocation?: pulumi.Input<string | undefined>;
+    /**
+     * Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
+     */
+    bypassGovernanceRetention?: pulumi.Input<boolean | undefined>;
     /**
      * COS object content
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * COS object content in base64 encoding
      */
-    contentBase64?: pulumi.Input<string>;
+    contentBase64?: pulumi.Input<string | undefined>;
     /**
      * COS object content file path
      */
-    contentFile?: pulumi.Input<string>;
+    contentFile?: pulumi.Input<string | undefined>;
     /**
      * COS object content length
      */
-    contentLength?: pulumi.Input<number>;
+    contentLength?: pulumi.Input<number | undefined>;
     /**
      * COS object content type
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * COS object MD5 hexdigest
      */
-    etag?: pulumi.Input<string>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * COS buckets need to be empty before they can be deleted. forceDelete option empty the bucket and delete it.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * COS object key
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * COS object last modified date
      */
-    lastModified?: pulumi.Input<string>;
+    lastModified?: pulumi.Input<string | undefined>;
     /**
      * An object lock configuration on the object, the valid states are ON/OFF. When ON prevents deletion of the object version.
      */
-    objectLockLegalHoldStatus?: pulumi.Input<string>;
+    objectLockLegalHoldStatus?: pulumi.Input<string | undefined>;
     /**
      * Retention modes apply different levels of protection to the objects.
      */
-    objectLockMode?: pulumi.Input<string>;
+    objectLockMode?: pulumi.Input<string | undefined>;
     /**
      * An object cannot be deleted when the current time is earlier than the retainUntilDate. After this date, the object can be deleted.
      */
-    objectLockRetainUntilDate?: pulumi.Input<string>;
+    objectLockRetainUntilDate?: pulumi.Input<string | undefined>;
     /**
      * Access the object using an SQL Query instance.The reference url is used to perform queries against objects storing structured data.
      */
-    objectSqlUrl?: pulumi.Input<string>;
-    versionId?: pulumi.Input<string>;
+    objectSqlUrl?: pulumi.Input<string | undefined>;
+    versionId?: pulumi.Input<string | undefined>;
     /**
      * Redirect a request to another object or an URL
      */
-    websiteRedirect?: pulumi.Input<string>;
+    websiteRedirect?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -266,29 +276,33 @@ export interface CosBucketObjectArgs {
      */
     bucketLocation: pulumi.Input<string>;
     /**
+     * Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
+     */
+    bypassGovernanceRetention?: pulumi.Input<boolean | undefined>;
+    /**
      * COS object content
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * COS object content in base64 encoding
      */
-    contentBase64?: pulumi.Input<string>;
+    contentBase64?: pulumi.Input<string | undefined>;
     /**
      * COS object content file path
      */
-    contentFile?: pulumi.Input<string>;
+    contentFile?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * COS object MD5 hexdigest
      */
-    etag?: pulumi.Input<string>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * COS buckets need to be empty before they can be deleted. forceDelete option empty the bucket and delete it.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * COS object key
      */
@@ -296,17 +310,17 @@ export interface CosBucketObjectArgs {
     /**
      * An object lock configuration on the object, the valid states are ON/OFF. When ON prevents deletion of the object version.
      */
-    objectLockLegalHoldStatus?: pulumi.Input<string>;
+    objectLockLegalHoldStatus?: pulumi.Input<string | undefined>;
     /**
      * Retention modes apply different levels of protection to the objects.
      */
-    objectLockMode?: pulumi.Input<string>;
+    objectLockMode?: pulumi.Input<string | undefined>;
     /**
      * An object cannot be deleted when the current time is earlier than the retainUntilDate. After this date, the object can be deleted.
      */
-    objectLockRetainUntilDate?: pulumi.Input<string>;
+    objectLockRetainUntilDate?: pulumi.Input<string | undefined>;
     /**
      * Redirect a request to another object or an URL
      */
-    websiteRedirect?: pulumi.Input<string>;
+    websiteRedirect?: pulumi.Input<string | undefined>;
 }

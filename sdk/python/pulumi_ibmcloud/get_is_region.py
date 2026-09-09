@@ -91,7 +91,7 @@ def get_is_region(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'))
-def get_is_region_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_region_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsRegionResult]:
     """
     Use this data source to access information about an existing resource.

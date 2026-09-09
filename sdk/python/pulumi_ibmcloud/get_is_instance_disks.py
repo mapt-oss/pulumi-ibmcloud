@@ -82,7 +82,7 @@ def get_is_instance_disks(instance: Optional[_builtins.str] = None,
         disks=pulumi.get(__ret__, 'disks'),
         id=pulumi.get(__ret__, 'id'),
         instance=pulumi.get(__ret__, 'instance'))
-def get_is_instance_disks_output(instance: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_disks_output(instance: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceDisksResult]:
     """
     Use this data source to access information about an existing resource.

@@ -24,14 +24,15 @@ class ResourceInstanceArgs:
                  location: pulumi.Input[_builtins.str],
                  plan: pulumi.Input[_builtins.str],
                  service: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_endpoints: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_endpoints: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ResourceInstance resource.
+
         :param pulumi.Input[_builtins.str] location: The location where the instance available
         :param pulumi.Input[_builtins.str] plan: The plan type of the service
         :param pulumi.Input[_builtins.str] service: The name of the service offering like cloud-object-storage, kms etc
@@ -95,124 +96,125 @@ class ResourceInstanceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A name for the resource instance
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Arbitrary parameters to pass. Must be a JSON object
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="parametersJson")
-    def parameters_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parameters_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Arbitrary parameters to pass in Json string format
         """
         return pulumi.get(self, "parameters_json")
 
     @parameters_json.setter
-    def parameters_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parameters_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parameters_json", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupId")
-    def resource_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group id
         """
         return pulumi.get(self, "resource_group_id")
 
     @resource_group_id.setter
-    def resource_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpoints")
-    def service_endpoints(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_endpoints(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Types of the service endpoints. Possible values are 'public', 'private', 'public-and-private'.
         """
         return pulumi.get(self, "service_endpoints")
 
     @service_endpoints.setter
-    def service_endpoints(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_endpoints(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _ResourceInstanceState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 allow_cleanup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 dashboard_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 deleted_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 deleted_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 extensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_operation: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 onetime_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_histories: Optional[pulumi.Input[Sequence[pulumi.Input['ResourceInstancePlanHistoryArgs']]]] = None,
-                 resource_aliases_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_bindings_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_keys_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 restored_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 restored_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_reclaim_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_reclaim_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_endpoints: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 target_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_by: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 allow_cleanup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 dashboard_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 deleted_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 extensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_operation: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 onetime_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_histories: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceInstancePlanHistoryArgs']]]] = None,
+                 resource_aliases_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_bindings_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_keys_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 restored_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 restored_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_reclaim_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_reclaim_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_endpoints: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_by: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceInstance resources.
+
         :param pulumi.Input[_builtins.str] account_id: An alpha-numeric value identifying the account ID.
         :param pulumi.Input[_builtins.bool] allow_cleanup: A boolean that dictates if the resource instance should be deleted (cleaned up) during the processing of a region instance delete call.
         :param pulumi.Input[_builtins.str] created_at: The date when the instance was created.
@@ -357,541 +359,541 @@ class _ResourceInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An alpha-numeric value identifying the account ID.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="allowCleanup")
-    def allow_cleanup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_cleanup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A boolean that dictates if the resource instance should be deleted (cleaned up) during the processing of a region instance delete call.
         """
         return pulumi.get(self, "allow_cleanup")
 
     @allow_cleanup.setter
-    def allow_cleanup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_cleanup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_cleanup", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date when the instance was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subject who created the instance.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of resource instance
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="dashboardUrl")
-    def dashboard_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dashboard_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Dashboard URL to access resource.
         """
         return pulumi.get(self, "dashboard_url")
 
     @dashboard_url.setter
-    def dashboard_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dashboard_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dashboard_url", value)
 
     @_builtins.property
     @pulumi.getter(name="deletedAt")
-    def deleted_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deleted_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date when the instance was deleted.
         """
         return pulumi.get(self, "deleted_at")
 
     @deleted_at.setter
-    def deleted_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deleted_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deleted_at", value)
 
     @_builtins.property
     @pulumi.getter(name="deletedBy")
-    def deleted_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deleted_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subject who deleted the instance.
         """
         return pulumi.get(self, "deleted_by")
 
     @deleted_by.setter
-    def deleted_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deleted_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deleted_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def extensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def extensions(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The extended metadata as a map associated with the resource instance.
         """
         return pulumi.get(self, "extensions")
 
     @extensions.setter
-    def extensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def extensions(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "extensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Guid of resource instance
         """
         return pulumi.get(self, "guid")
 
     @guid.setter
-    def guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guid", value)
 
     @_builtins.property
     @pulumi.getter(name="lastOperation")
-    def last_operation(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def last_operation(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The status of the last operation requested on the instance
         """
         return pulumi.get(self, "last_operation")
 
     @last_operation.setter
-    def last_operation(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def last_operation(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "last_operation", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location where the instance available
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter
-    def locked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A boolean that dictates if the resource instance should be deleted (cleaned up) during the processing of a region instance delete call.
         """
         return pulumi.get(self, "locked")
 
     @locked.setter
-    def locked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "locked", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A name for the resource instance
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="onetimeCredentials")
-    def onetime_credentials(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def onetime_credentials(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A boolean that dictates if the onetime_credentials is true or false.
         """
         return pulumi.get(self, "onetime_credentials")
 
     @onetime_credentials.setter
-    def onetime_credentials(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def onetime_credentials(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "onetime_credentials", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Arbitrary parameters to pass. Must be a JSON object
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="parametersJson")
-    def parameters_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parameters_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Arbitrary parameters to pass in Json string format
         """
         return pulumi.get(self, "parameters_json")
 
     @parameters_json.setter
-    def parameters_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parameters_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parameters_json", value)
 
     @_builtins.property
     @pulumi.getter
-    def plan(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The plan type of the service
         """
         return pulumi.get(self, "plan")
 
     @plan.setter
-    def plan(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan", value)
 
     @_builtins.property
     @pulumi.getter(name="planHistories")
-    def plan_histories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResourceInstancePlanHistoryArgs']]]]:
+    def plan_histories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ResourceInstancePlanHistoryArgs']]]]:
         """
         The plan history of the instance.
         """
         return pulumi.get(self, "plan_histories")
 
     @plan_histories.setter
-    def plan_histories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ResourceInstancePlanHistoryArgs']]]]):
+    def plan_histories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceInstancePlanHistoryArgs']]]]):
         pulumi.set(self, "plan_histories", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAliasesUrl")
     @_utilities.deprecated("""Remove this attribute's configuration as it's no longer in use and the attribute will be removed in the upcoming major version of the provider 1.71.0.""")
-    def resource_aliases_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_aliases_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The relative path to the resource aliases for the instance.
         """
         return pulumi.get(self, "resource_aliases_url")
 
     @resource_aliases_url.setter
-    def resource_aliases_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_aliases_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_aliases_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceBindingsUrl")
     @_utilities.deprecated("""Remove this attribute's configuration as it's no longer in use and the attribute will be removed in the upcoming major version of the provider 1.71.0.""")
-    def resource_bindings_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_bindings_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The relative path to the resource bindings for the instance.
         """
         return pulumi.get(self, "resource_bindings_url")
 
     @resource_bindings_url.setter
-    def resource_bindings_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_bindings_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_bindings_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about the resource
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCrn")
-    def resource_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the resource
         """
         return pulumi.get(self, "resource_crn")
 
     @resource_crn.setter
-    def resource_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupCrn")
-    def resource_group_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The long ID (full CRN) of the resource group
         """
         return pulumi.get(self, "resource_group_crn")
 
     @resource_group_crn.setter
-    def resource_group_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupId")
-    def resource_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group id
         """
         return pulumi.get(self, "resource_group_id")
 
     @resource_group_id.setter
-    def resource_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique ID of the offering
         """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
-    def resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceKeysUrl")
-    def resource_keys_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_keys_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The relative path to the resource keys for the instance.
         """
         return pulumi.get(self, "resource_keys_url")
 
     @resource_keys_url.setter
-    def resource_keys_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_keys_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_keys_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourcePlanId")
-    def resource_plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique ID of the plan associated with the offering
         """
         return pulumi.get(self, "resource_plan_id")
 
     @resource_plan_id.setter
-    def resource_plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceStatus")
-    def resource_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the resource
         """
         return pulumi.get(self, "resource_status")
 
     @resource_status.setter
-    def resource_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_status", value)
 
     @_builtins.property
     @pulumi.getter(name="restoredAt")
-    def restored_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restored_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date when the instance under reclamation was restored.
         """
         return pulumi.get(self, "restored_at")
 
     @restored_at.setter
-    def restored_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restored_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restored_at", value)
 
     @_builtins.property
     @pulumi.getter(name="restoredBy")
-    def restored_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restored_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subject who restored the instance back from reclamation.
         """
         return pulumi.get(self, "restored_by")
 
     @restored_by.setter
-    def restored_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restored_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restored_by", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledReclaimAt")
-    def scheduled_reclaim_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_reclaim_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date when the instance was scheduled for reclamation.
         """
         return pulumi.get(self, "scheduled_reclaim_at")
 
     @scheduled_reclaim_at.setter
-    def scheduled_reclaim_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_reclaim_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_reclaim_at", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledReclaimBy")
-    def scheduled_reclaim_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_reclaim_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subject who initiated the instance reclamation.
         """
         return pulumi.get(self, "scheduled_reclaim_by")
 
     @scheduled_reclaim_by.setter
-    def scheduled_reclaim_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_reclaim_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_reclaim_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the service offering like cloud-object-storage, kms etc
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpoints")
-    def service_endpoints(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_endpoints(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Types of the service endpoints. Possible values are 'public', 'private', 'public-and-private'.
         """
         return pulumi.get(self, "service_endpoints")
 
     @service_endpoints.setter
-    def service_endpoints(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_endpoints(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of resource instance
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="subType")
-    def sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The sub-type of instance, e.g. cfaas .
         """
         return pulumi.get(self, "sub_type")
 
     @sub_type.setter
-    def sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sub_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCrn")
-    def target_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The full deployment CRN as defined in the global catalog
         """
         return pulumi.get(self, "target_crn")
 
     @target_crn.setter
-    def target_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the instance, e.g. service_instance.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="updateAt")
-    def update_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date when the instance was last updated.
         """
         return pulumi.get(self, "update_at")
 
     @update_at.setter
-    def update_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_at", value)
 
     @_builtins.property
     @pulumi.getter(name="updateBy")
-    def update_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subject who updated the instance.
         """
         return pulumi.get(self, "update_by")
 
     @update_by.setter
-    def update_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_by", value)
 
 
@@ -901,18 +903,19 @@ class ResourceInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_endpoints: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_endpoints: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a ResourceInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] location: The location where the instance available
@@ -932,6 +935,7 @@ class ResourceInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ResourceInstance resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ResourceInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -947,15 +951,15 @@ class ResourceInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parameters_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_endpoints: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parameters_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_endpoints: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1026,51 +1030,51 @@ class ResourceInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            allow_cleanup: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            dashboard_url: Optional[pulumi.Input[_builtins.str]] = None,
-            deleted_at: Optional[pulumi.Input[_builtins.str]] = None,
-            deleted_by: Optional[pulumi.Input[_builtins.str]] = None,
-            extensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            guid: Optional[pulumi.Input[_builtins.str]] = None,
-            last_operation: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            location: Optional[pulumi.Input[_builtins.str]] = None,
-            locked: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            onetime_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-            parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            parameters_json: Optional[pulumi.Input[_builtins.str]] = None,
-            plan: Optional[pulumi.Input[_builtins.str]] = None,
-            plan_histories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResourceInstancePlanHistoryArgs', 'ResourceInstancePlanHistoryArgsDict']]]]] = None,
-            resource_aliases_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_bindings_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_keys_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_status: Optional[pulumi.Input[_builtins.str]] = None,
-            restored_at: Optional[pulumi.Input[_builtins.str]] = None,
-            restored_by: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_reclaim_at: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_reclaim_by: Optional[pulumi.Input[_builtins.str]] = None,
-            service: Optional[pulumi.Input[_builtins.str]] = None,
-            service_endpoints: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            target_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            update_at: Optional[pulumi.Input[_builtins.str]] = None,
-            update_by: Optional[pulumi.Input[_builtins.str]] = None) -> 'ResourceInstance':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            allow_cleanup: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            dashboard_url: pulumi.Input[Optional[_builtins.str]] = None,
+            deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
+            deleted_by: pulumi.Input[Optional[_builtins.str]] = None,
+            extensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guid: pulumi.Input[Optional[_builtins.str]] = None,
+            last_operation: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            onetime_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+            parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            parameters_json: pulumi.Input[Optional[_builtins.str]] = None,
+            plan: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_histories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResourceInstancePlanHistoryArgs', 'ResourceInstancePlanHistoryArgsDict', 'outputs.ResourceInstancePlanHistory']]]]] = None,
+            resource_aliases_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_bindings_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_keys_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_status: pulumi.Input[Optional[_builtins.str]] = None,
+            restored_at: pulumi.Input[Optional[_builtins.str]] = None,
+            restored_by: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_reclaim_at: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_reclaim_by: pulumi.Input[Optional[_builtins.str]] = None,
+            service: pulumi.Input[Optional[_builtins.str]] = None,
+            service_endpoints: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            update_at: pulumi.Input[Optional[_builtins.str]] = None,
+            update_by: pulumi.Input[Optional[_builtins.str]] = None) -> 'ResourceInstance':
         """
         Get an existing ResourceInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1096,7 +1100,7 @@ class ResourceInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: Arbitrary parameters to pass. Must be a JSON object
         :param pulumi.Input[_builtins.str] parameters_json: Arbitrary parameters to pass in Json string format
         :param pulumi.Input[_builtins.str] plan: The plan type of the service
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ResourceInstancePlanHistoryArgs', 'ResourceInstancePlanHistoryArgsDict']]]] plan_histories: The plan history of the instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResourceInstancePlanHistoryArgs', 'ResourceInstancePlanHistoryArgsDict', 'outputs.ResourceInstancePlanHistory']]]] plan_histories: The plan history of the instance.
         :param pulumi.Input[_builtins.str] resource_aliases_url: The relative path to the resource aliases for the instance.
         :param pulumi.Input[_builtins.str] resource_bindings_url: The relative path to the resource bindings for the instance.
         :param pulumi.Input[_builtins.str] resource_controller_url: The URL of the IBM Cloud dashboard that can be used to explore and view details about the resource

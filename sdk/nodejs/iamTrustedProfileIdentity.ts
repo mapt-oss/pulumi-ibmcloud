@@ -109,27 +109,27 @@ export interface IamTrustedProfileIdentityState {
     /**
      * Only valid for the type user. Accounts from which a user can assume the trusted profile.
      */
-    accounts?: pulumi.Input<pulumi.Input<string>[]>;
+    accounts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Description of the identity that can assume the trusted profile. This is optional field for all the types of identities. When this field is not set for the identity type 'serviceid' then the description of the service id is used. Description is recommended for the identity type 'crn' E.g. 'Instance 1234 of IBM Cloud Service project'.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Identifier of the identity that can assume the trusted profiles. This can be a user identifier (IAM id), serviceid or crn. Internally it uses account id of the service id for the identifier 'serviceid' and for the identifier 'crn' it uses account id contained in the CRN.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * Type of the identity.
      */
-    identityType?: pulumi.Input<string>;
+    identityType?: pulumi.Input<string | undefined>;
     /**
      * ID of the trusted profile.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * Type of the identity.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -139,11 +139,11 @@ export interface IamTrustedProfileIdentityArgs {
     /**
      * Only valid for the type user. Accounts from which a user can assume the trusted profile.
      */
-    accounts?: pulumi.Input<pulumi.Input<string>[]>;
+    accounts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Description of the identity that can assume the trusted profile. This is optional field for all the types of identities. When this field is not set for the identity type 'serviceid' then the description of the service id is used. Description is recommended for the identity type 'crn' E.g. 'Instance 1234 of IBM Cloud Service project'.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Identifier of the identity that can assume the trusted profiles. This can be a user identifier (IAM id), serviceid or crn. Internally it uses account id of the service id for the identifier 'serviceid' and for the identifier 'crn' it uses account id contained in the CRN.
      */

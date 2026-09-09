@@ -21,10 +21,11 @@ class ComputeSslCertificateArgs:
     def __init__(__self__, *,
                  certificate: pulumi.Input[_builtins.str],
                  private_key: pulumi.Input[_builtins.str],
-                 intermediate_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 intermediate_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ComputeSslCertificate resource.
+
         :param pulumi.Input[_builtins.str] certificate: SSL Certifcate
         :param pulumi.Input[_builtins.str] private_key: SSL Private Key
         :param pulumi.Input[_builtins.str] intermediate_certificate: Intermediate certificate value
@@ -63,46 +64,47 @@ class ComputeSslCertificateArgs:
 
     @_builtins.property
     @pulumi.getter(name="intermediateCertificate")
-    def intermediate_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def intermediate_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Intermediate certificate value
         """
         return pulumi.get(self, "intermediate_certificate")
 
     @intermediate_certificate.setter
-    def intermediate_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def intermediate_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "intermediate_certificate", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags set for resource
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _ComputeSslCertificateState:
     def __init__(__self__, *,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 common_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 intermediate_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 modify_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 organization_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 validity_begin: Optional[pulumi.Input[_builtins.str]] = None,
-                 validity_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 validity_end: Optional[pulumi.Input[_builtins.str]] = None):
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 common_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 intermediate_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 modify_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 organization_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 validity_begin: pulumi.Input[Optional[_builtins.str]] = None,
+                 validity_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 validity_end: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeSslCertificate resources.
+
         :param pulumi.Input[_builtins.str] certificate: SSL Certifcate
         :param pulumi.Input[_builtins.str] common_name: Common name
         :param pulumi.Input[_builtins.str] create_date: certificate creation date
@@ -143,146 +145,146 @@ class _ComputeSslCertificateState:
 
     @_builtins.property
     @pulumi.getter
-    def certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSL Certifcate
         """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
-    def certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="commonName")
-    def common_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def common_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Common name
         """
         return pulumi.get(self, "common_name")
 
     @common_name.setter
-    def common_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def common_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "common_name", value)
 
     @_builtins.property
     @pulumi.getter(name="createDate")
-    def create_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         certificate creation date
         """
         return pulumi.get(self, "create_date")
 
     @create_date.setter
-    def create_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_date", value)
 
     @_builtins.property
     @pulumi.getter(name="intermediateCertificate")
-    def intermediate_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def intermediate_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Intermediate certificate value
         """
         return pulumi.get(self, "intermediate_certificate")
 
     @intermediate_certificate.setter
-    def intermediate_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def intermediate_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "intermediate_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="keySize")
-    def key_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def key_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         SSL key size
         """
         return pulumi.get(self, "key_size")
 
     @key_size.setter
-    def key_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def key_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "key_size", value)
 
     @_builtins.property
     @pulumi.getter(name="modifyDate")
-    def modify_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modify_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         certificate modificatiob date
         """
         return pulumi.get(self, "modify_date")
 
     @modify_date.setter
-    def modify_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modify_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modify_date", value)
 
     @_builtins.property
     @pulumi.getter(name="organizationName")
-    def organization_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def organization_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Organization name
         """
         return pulumi.get(self, "organization_name")
 
     @organization_name.setter
-    def organization_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def organization_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "organization_name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
-    def private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSL Private Key
         """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
-    def private_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags set for resource
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="validityBegin")
-    def validity_begin(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def validity_begin(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Validity begins from
         """
         return pulumi.get(self, "validity_begin")
 
     @validity_begin.setter
-    def validity_begin(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def validity_begin(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "validity_begin", value)
 
     @_builtins.property
     @pulumi.getter(name="validityDays")
-    def validity_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validity_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Validity days
         """
         return pulumi.get(self, "validity_days")
 
     @validity_days.setter
-    def validity_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validity_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validity_days", value)
 
     @_builtins.property
     @pulumi.getter(name="validityEnd")
-    def validity_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def validity_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Validity ends before
         """
         return pulumi.get(self, "validity_end")
 
     @validity_end.setter
-    def validity_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def validity_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "validity_end", value)
 
 
@@ -292,13 +294,14 @@ class ComputeSslCertificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 intermediate_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 intermediate_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a ComputeSslCertificate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] certificate: SSL Certifcate
@@ -314,6 +317,7 @@ class ComputeSslCertificate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ComputeSslCertificate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param ComputeSslCertificateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -329,10 +333,10 @@ class ComputeSslCertificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 intermediate_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 intermediate_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -370,18 +374,18 @@ class ComputeSslCertificate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            common_name: Optional[pulumi.Input[_builtins.str]] = None,
-            create_date: Optional[pulumi.Input[_builtins.str]] = None,
-            intermediate_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            key_size: Optional[pulumi.Input[_builtins.int]] = None,
-            modify_date: Optional[pulumi.Input[_builtins.str]] = None,
-            organization_name: Optional[pulumi.Input[_builtins.str]] = None,
-            private_key: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            validity_begin: Optional[pulumi.Input[_builtins.str]] = None,
-            validity_days: Optional[pulumi.Input[_builtins.int]] = None,
-            validity_end: Optional[pulumi.Input[_builtins.str]] = None) -> 'ComputeSslCertificate':
+            certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            common_name: pulumi.Input[Optional[_builtins.str]] = None,
+            create_date: pulumi.Input[Optional[_builtins.str]] = None,
+            intermediate_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            key_size: pulumi.Input[Optional[_builtins.int]] = None,
+            modify_date: pulumi.Input[Optional[_builtins.str]] = None,
+            organization_name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            validity_begin: pulumi.Input[Optional[_builtins.str]] = None,
+            validity_days: pulumi.Input[Optional[_builtins.int]] = None,
+            validity_end: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeSslCertificate':
         """
         Get an existing ComputeSslCertificate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -150,48 +150,48 @@ export interface ComputeAutoscaleGroupState {
     /**
      * Cooldown value
      */
-    cooldown?: pulumi.Input<number>;
-    healthCheck?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    cooldown?: pulumi.Input<number | undefined>;
+    healthCheck?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Maximum member count
      */
-    maximumMemberCount?: pulumi.Input<number>;
+    maximumMemberCount?: pulumi.Input<number | undefined>;
     /**
      * Minimum member count
      */
-    minimumMemberCount?: pulumi.Input<number>;
+    minimumMemberCount?: pulumi.Input<number | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of network VLAN ids
      */
-    networkVlanIds?: pulumi.Input<pulumi.Input<number>[]>;
+    networkVlanIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Port number
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * regional group
      */
-    regionalGroup?: pulumi.Input<string>;
+    regionalGroup?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Termination policy
      */
-    terminationPolicy?: pulumi.Input<string>;
+    terminationPolicy?: pulumi.Input<string | undefined>;
     /**
      * Virtual guest member template
      */
-    virtualGuestMemberTemplates?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscaleGroupVirtualGuestMemberTemplate>[]>;
+    virtualGuestMemberTemplates?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscaleGroupVirtualGuestMemberTemplate>[] | undefined>;
     /**
      * virtual server ID
      */
-    virtualServerId?: pulumi.Input<number>;
+    virtualServerId?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -202,7 +202,7 @@ export interface ComputeAutoscaleGroupArgs {
      * Cooldown value
      */
     cooldown: pulumi.Input<number>;
-    healthCheck?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    healthCheck?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Maximum member count
      */
@@ -214,15 +214,15 @@ export interface ComputeAutoscaleGroupArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of network VLAN ids
      */
-    networkVlanIds?: pulumi.Input<pulumi.Input<number>[]>;
+    networkVlanIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Port number
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * regional group
      */
@@ -230,7 +230,7 @@ export interface ComputeAutoscaleGroupArgs {
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Termination policy
      */
@@ -242,5 +242,5 @@ export interface ComputeAutoscaleGroupArgs {
     /**
      * virtual server ID
      */
-    virtualServerId?: pulumi.Input<number>;
+    virtualServerId?: pulumi.Input<number | undefined>;
 }

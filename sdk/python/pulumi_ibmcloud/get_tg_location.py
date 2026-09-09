@@ -102,7 +102,7 @@ def get_tg_location(name: Optional[_builtins.str] = None,
         local_connection_locations=pulumi.get(__ret__, 'local_connection_locations'),
         name=pulumi.get(__ret__, 'name'),
         type=pulumi.get(__ret__, 'type'))
-def get_tg_location_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tg_location_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTgLocationResult]:
     """
     Use this data source to access information about an existing resource.

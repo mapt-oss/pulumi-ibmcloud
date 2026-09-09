@@ -175,9 +175,9 @@ def get_is_bare_metal_server_network_interface_reserved_ip(bare_metal_server: Op
         reserved_ip=pulumi.get(__ret__, 'reserved_ip'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         target=pulumi.get(__ret__, 'target'))
-def get_is_bare_metal_server_network_interface_reserved_ip_output(bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  network_interface: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_bare_metal_server_network_interface_reserved_ip_output(bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  network_interface: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerNetworkInterfaceReservedIpResult]:
     """
     Use this data source to access information about an existing resource.

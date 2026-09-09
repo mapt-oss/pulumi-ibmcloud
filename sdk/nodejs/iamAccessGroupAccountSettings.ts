@@ -76,11 +76,11 @@ export interface IamAccessGroupAccountSettingsState {
     /**
      * Id of the account
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Flag to enable/disable public access groups
      */
-    publicAccessEnabled?: pulumi.Input<boolean>;
+    publicAccessEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**

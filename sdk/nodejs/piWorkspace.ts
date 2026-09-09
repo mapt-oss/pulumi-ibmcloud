@@ -45,6 +45,10 @@ export class PiWorkspace extends pulumi.CustomResource {
      */
     declare public readonly piName: pulumi.Output<string>;
     /**
+     * Parameters to pass to the workspace. For example: sharedImages = true.
+     */
+    declare public readonly piParameters: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
      * Plan associated with the offering; Valid values are public or private.
      */
     declare public readonly piPlan: pulumi.Output<string | undefined>;
@@ -79,6 +83,7 @@ export class PiWorkspace extends pulumi.CustomResource {
             resourceInputs["crn"] = state?.crn;
             resourceInputs["piDatacenter"] = state?.piDatacenter;
             resourceInputs["piName"] = state?.piName;
+            resourceInputs["piParameters"] = state?.piParameters;
             resourceInputs["piPlan"] = state?.piPlan;
             resourceInputs["piResourceGroupId"] = state?.piResourceGroupId;
             resourceInputs["piUserTags"] = state?.piUserTags;
@@ -96,6 +101,7 @@ export class PiWorkspace extends pulumi.CustomResource {
             }
             resourceInputs["piDatacenter"] = args?.piDatacenter;
             resourceInputs["piName"] = args?.piName;
+            resourceInputs["piParameters"] = args?.piParameters;
             resourceInputs["piPlan"] = args?.piPlan;
             resourceInputs["piResourceGroupId"] = args?.piResourceGroupId;
             resourceInputs["piUserTags"] = args?.piUserTags;
@@ -114,33 +120,37 @@ export interface PiWorkspaceState {
     /**
      * The Workspace crn.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Target location or environment to create the resource instance.
      */
-    piDatacenter?: pulumi.Input<string>;
+    piDatacenter?: pulumi.Input<string | undefined>;
     /**
      * A descriptive name used to identify the workspace.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
+    /**
+     * Parameters to pass to the workspace. For example: sharedImages = true.
+     */
+    piParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Plan associated with the offering; Valid values are public or private.
      */
-    piPlan?: pulumi.Input<string>;
+    piPlan?: pulumi.Input<string | undefined>;
     /**
      * The ID of the resource group where you want to create the workspace. You can retrieve the value from data source ibm_resource_group.
      */
-    piResourceGroupId?: pulumi.Input<string>;
+    piResourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Workspace information.
      *
      * @deprecated This field is deprecated, use crn instead.
      */
-    piWorkspaceDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    piWorkspaceDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
 /**
@@ -156,9 +166,13 @@ export interface PiWorkspaceArgs {
      */
     piName: pulumi.Input<string>;
     /**
+     * Parameters to pass to the workspace. For example: sharedImages = true.
+     */
+    piParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
      * Plan associated with the offering; Valid values are public or private.
      */
-    piPlan?: pulumi.Input<string>;
+    piPlan?: pulumi.Input<string | undefined>;
     /**
      * The ID of the resource group where you want to create the workspace. You can retrieve the value from data source ibm_resource_group.
      */
@@ -166,5 +180,5 @@ export interface PiWorkspaceArgs {
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

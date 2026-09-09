@@ -23,28 +23,29 @@ class CosBucketArgs:
     def __init__(__self__, *,
                  bucket_name: pulumi.Input[_builtins.str],
                  resource_instance_id: pulumi.Input[_builtins.str],
-                 abort_incomplete_multipart_upload_days: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]] = None,
-                 activity_tracking: Optional[pulumi.Input['CosBucketActivityTrackingArgs']] = None,
-                 allowed_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 archive_rule: Optional[pulumi.Input['CosBucketArchiveRuleArgs']] = None,
-                 cross_region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 expire_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hard_quota: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_protect: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring: Optional[pulumi.Input['CosBucketMetricsMonitoringArgs']] = None,
-                 noncurrent_version_expiration: Optional[pulumi.Input['CosBucketNoncurrentVersionExpirationArgs']] = None,
-                 object_lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_versioning: Optional[pulumi.Input['CosBucketObjectVersioningArgs']] = None,
-                 region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_rule: Optional[pulumi.Input['CosBucketRetentionRuleArgs']] = None,
-                 satellite_location_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 single_site_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_class: Optional[pulumi.Input[_builtins.str]] = None):
+                 abort_incomplete_multipart_upload_days: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]] = None,
+                 activity_tracking: pulumi.Input[Optional['CosBucketActivityTrackingArgs']] = None,
+                 allowed_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 archive_rule: pulumi.Input[Optional['CosBucketArchiveRuleArgs']] = None,
+                 cross_region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expire_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hard_quota: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_protect: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring: pulumi.Input[Optional['CosBucketMetricsMonitoringArgs']] = None,
+                 noncurrent_version_expiration: pulumi.Input[Optional['CosBucketNoncurrentVersionExpirationArgs']] = None,
+                 object_lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_versioning: pulumi.Input[Optional['CosBucketObjectVersioningArgs']] = None,
+                 region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_rule: pulumi.Input[Optional['CosBucketRetentionRuleArgs']] = None,
+                 satellite_location_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 single_site_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_class: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CosBucket resource.
+
         :param pulumi.Input[_builtins.str] bucket_name: COS Bucket name
         :param pulumi.Input[_builtins.str] resource_instance_id: resource instance ID
         :param pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]] abort_incomplete_multipart_upload_days: Enable abort incomplete multipart upload to COS Bucket after a defined period of time
@@ -147,278 +148,279 @@ class CosBucketArgs:
     @_builtins.property
     @pulumi.getter(name="abortIncompleteMultipartUploadDays")
     @_utilities.deprecated("""Use the CosBucketLifecycleConfiguration resource instead""")
-    def abort_incomplete_multipart_upload_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]:
+    def abort_incomplete_multipart_upload_days(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]:
         """
         Enable abort incomplete multipart upload to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "abort_incomplete_multipart_upload_days")
 
     @abort_incomplete_multipart_upload_days.setter
-    def abort_incomplete_multipart_upload_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]):
+    def abort_incomplete_multipart_upload_days(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]):
         pulumi.set(self, "abort_incomplete_multipart_upload_days", value)
 
     @_builtins.property
     @pulumi.getter(name="activityTracking")
-    def activity_tracking(self) -> Optional[pulumi.Input['CosBucketActivityTrackingArgs']]:
+    def activity_tracking(self) -> pulumi.Input[Optional['CosBucketActivityTrackingArgs']]:
         """
         Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
         """
         return pulumi.get(self, "activity_tracking")
 
     @activity_tracking.setter
-    def activity_tracking(self, value: Optional[pulumi.Input['CosBucketActivityTrackingArgs']]):
+    def activity_tracking(self, value: pulumi.Input[Optional['CosBucketActivityTrackingArgs']]):
         pulumi.set(self, "activity_tracking", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedIps")
-    def allowed_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of IPv4 or IPv6 addresses
         """
         return pulumi.get(self, "allowed_ips")
 
     @allowed_ips.setter
-    def allowed_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="archiveRule")
     @_utilities.deprecated("""Use the CosBucketLifecycleConfiguration resource instead""")
-    def archive_rule(self) -> Optional[pulumi.Input['CosBucketArchiveRuleArgs']]:
+    def archive_rule(self) -> pulumi.Input[Optional['CosBucketArchiveRuleArgs']]:
         """
         Enable configuration archive_rule (glacier/accelerated) to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "archive_rule")
 
     @archive_rule.setter
-    def archive_rule(self, value: Optional[pulumi.Input['CosBucketArchiveRuleArgs']]):
+    def archive_rule(self, value: pulumi.Input[Optional['CosBucketArchiveRuleArgs']]):
         pulumi.set(self, "archive_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="crossRegionLocation")
-    def cross_region_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cross_region_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cros region location info
         """
         return pulumi.get(self, "cross_region_location")
 
     @cross_region_location.setter
-    def cross_region_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cross_region_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cross_region_location", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="expireRules")
     @_utilities.deprecated("""Use the CosBucketLifecycleConfiguration resource instead""")
-    def expire_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]:
+    def expire_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]:
         """
         Enable configuration expire_rule to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "expire_rules")
 
     @expire_rules.setter
-    def expire_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]):
+    def expire_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]):
         pulumi.set(self, "expire_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         COS buckets need to be empty before they can be deleted. force_delete option empty the bucket and delete it.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="hardQuota")
-    def hard_quota(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def hard_quota(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         sets a maximum amount of storage (in bytes) available for a bucket
         """
         return pulumi.get(self, "hard_quota")
 
     @hard_quota.setter
-    def hard_quota(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def hard_quota(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "hard_quota", value)
 
     @_builtins.property
     @pulumi.getter(name="keyProtect")
-    def key_protect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_protect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of the key you want to use data at rest encryption
         """
         return pulumi.get(self, "key_protect")
 
     @key_protect.setter
-    def key_protect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_protect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_protect", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyCrn")
-    def kms_key_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of the key you want to use data at rest encryption
         """
         return pulumi.get(self, "kms_key_crn")
 
     @kms_key_crn.setter
-    def kms_key_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="metricsMonitoring")
-    def metrics_monitoring(self) -> Optional[pulumi.Input['CosBucketMetricsMonitoringArgs']]:
+    def metrics_monitoring(self) -> pulumi.Input[Optional['CosBucketMetricsMonitoringArgs']]:
         """
         Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
         """
         return pulumi.get(self, "metrics_monitoring")
 
     @metrics_monitoring.setter
-    def metrics_monitoring(self, value: Optional[pulumi.Input['CosBucketMetricsMonitoringArgs']]):
+    def metrics_monitoring(self, value: pulumi.Input[Optional['CosBucketMetricsMonitoringArgs']]):
         pulumi.set(self, "metrics_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="noncurrentVersionExpiration")
-    def noncurrent_version_expiration(self) -> Optional[pulumi.Input['CosBucketNoncurrentVersionExpirationArgs']]:
+    def noncurrent_version_expiration(self) -> pulumi.Input[Optional['CosBucketNoncurrentVersionExpirationArgs']]:
         """
         Enable configuration expire_rule to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "noncurrent_version_expiration")
 
     @noncurrent_version_expiration.setter
-    def noncurrent_version_expiration(self, value: Optional[pulumi.Input['CosBucketNoncurrentVersionExpirationArgs']]):
+    def noncurrent_version_expiration(self, value: pulumi.Input[Optional['CosBucketNoncurrentVersionExpirationArgs']]):
         pulumi.set(self, "noncurrent_version_expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLock")
-    def object_lock(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def object_lock(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
         """
         return pulumi.get(self, "object_lock")
 
     @object_lock.setter
-    def object_lock(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def object_lock(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "object_lock", value)
 
     @_builtins.property
     @pulumi.getter(name="objectVersioning")
-    def object_versioning(self) -> Optional[pulumi.Input['CosBucketObjectVersioningArgs']]:
+    def object_versioning(self) -> pulumi.Input[Optional['CosBucketObjectVersioningArgs']]:
         """
         Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
         """
         return pulumi.get(self, "object_versioning")
 
     @object_versioning.setter
-    def object_versioning(self, value: Optional[pulumi.Input['CosBucketObjectVersioningArgs']]):
+    def object_versioning(self, value: pulumi.Input[Optional['CosBucketObjectVersioningArgs']]):
         pulumi.set(self, "object_versioning", value)
 
     @_builtins.property
     @pulumi.getter(name="regionLocation")
-    def region_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region Location info.
         """
         return pulumi.get(self, "region_location")
 
     @region_location.setter
-    def region_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region_location", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionRule")
-    def retention_rule(self) -> Optional[pulumi.Input['CosBucketRetentionRuleArgs']]:
+    def retention_rule(self) -> pulumi.Input[Optional['CosBucketRetentionRuleArgs']]:
         """
         A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
         """
         return pulumi.get(self, "retention_rule")
 
     @retention_rule.setter
-    def retention_rule(self, value: Optional[pulumi.Input['CosBucketRetentionRuleArgs']]):
+    def retention_rule(self, value: pulumi.Input[Optional['CosBucketRetentionRuleArgs']]):
         pulumi.set(self, "retention_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="satelliteLocationId")
-    def satellite_location_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def satellite_location_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provide satellite location info.
         """
         return pulumi.get(self, "satellite_location_id")
 
     @satellite_location_id.setter
-    def satellite_location_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def satellite_location_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "satellite_location_id", value)
 
     @_builtins.property
     @pulumi.getter(name="singleSiteLocation")
-    def single_site_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def single_site_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         single site location info
         """
         return pulumi.get(self, "single_site_location")
 
     @single_site_location.setter
-    def single_site_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def single_site_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "single_site_location", value)
 
     @_builtins.property
     @pulumi.getter(name="storageClass")
-    def storage_class(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_class(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage class info
         """
         return pulumi.get(self, "storage_class")
 
     @storage_class.setter
-    def storage_class(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_class(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_class", value)
 
 
 @pulumi.input_type
 class _CosBucketState:
     def __init__(__self__, *,
-                 abort_incomplete_multipart_upload_days: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]] = None,
-                 activity_tracking: Optional[pulumi.Input['CosBucketActivityTrackingArgs']] = None,
-                 allowed_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 archive_rule: Optional[pulumi.Input['CosBucketArchiveRuleArgs']] = None,
-                 bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 cross_region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 expire_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hard_quota: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_protect: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring: Optional[pulumi.Input['CosBucketMetricsMonitoringArgs']] = None,
-                 noncurrent_version_expiration: Optional[pulumi.Input['CosBucketNoncurrentVersionExpirationArgs']] = None,
-                 object_lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_versioning: Optional[pulumi.Input['CosBucketObjectVersioningArgs']] = None,
-                 region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_rule: Optional[pulumi.Input['CosBucketRetentionRuleArgs']] = None,
-                 s3_endpoint_direct: Optional[pulumi.Input[_builtins.str]] = None,
-                 s3_endpoint_private: Optional[pulumi.Input[_builtins.str]] = None,
-                 s3_endpoint_public: Optional[pulumi.Input[_builtins.str]] = None,
-                 satellite_location_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 single_site_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_class: Optional[pulumi.Input[_builtins.str]] = None):
+                 abort_incomplete_multipart_upload_days: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]] = None,
+                 activity_tracking: pulumi.Input[Optional['CosBucketActivityTrackingArgs']] = None,
+                 allowed_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 archive_rule: pulumi.Input[Optional['CosBucketArchiveRuleArgs']] = None,
+                 bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expire_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hard_quota: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_protect: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring: pulumi.Input[Optional['CosBucketMetricsMonitoringArgs']] = None,
+                 noncurrent_version_expiration: pulumi.Input[Optional['CosBucketNoncurrentVersionExpirationArgs']] = None,
+                 object_lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_versioning: pulumi.Input[Optional['CosBucketObjectVersioningArgs']] = None,
+                 region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_rule: pulumi.Input[Optional['CosBucketRetentionRuleArgs']] = None,
+                 s3_endpoint_direct: pulumi.Input[Optional[_builtins.str]] = None,
+                 s3_endpoint_private: pulumi.Input[Optional[_builtins.str]] = None,
+                 s3_endpoint_public: pulumi.Input[Optional[_builtins.str]] = None,
+                 satellite_location_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 single_site_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_class: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CosBucket resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]] abort_incomplete_multipart_upload_days: Enable abort incomplete multipart upload to COS Bucket after a defined period of time
         :param pulumi.Input['CosBucketActivityTrackingArgs'] activity_tracking: Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_ips: List of IPv4 or IPv6 addresses
@@ -511,316 +513,316 @@ class _CosBucketState:
     @_builtins.property
     @pulumi.getter(name="abortIncompleteMultipartUploadDays")
     @_utilities.deprecated("""Use the CosBucketLifecycleConfiguration resource instead""")
-    def abort_incomplete_multipart_upload_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]:
+    def abort_incomplete_multipart_upload_days(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]:
         """
         Enable abort incomplete multipart upload to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "abort_incomplete_multipart_upload_days")
 
     @abort_incomplete_multipart_upload_days.setter
-    def abort_incomplete_multipart_upload_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]):
+    def abort_incomplete_multipart_upload_days(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketAbortIncompleteMultipartUploadDayArgs']]]]):
         pulumi.set(self, "abort_incomplete_multipart_upload_days", value)
 
     @_builtins.property
     @pulumi.getter(name="activityTracking")
-    def activity_tracking(self) -> Optional[pulumi.Input['CosBucketActivityTrackingArgs']]:
+    def activity_tracking(self) -> pulumi.Input[Optional['CosBucketActivityTrackingArgs']]:
         """
         Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
         """
         return pulumi.get(self, "activity_tracking")
 
     @activity_tracking.setter
-    def activity_tracking(self, value: Optional[pulumi.Input['CosBucketActivityTrackingArgs']]):
+    def activity_tracking(self, value: pulumi.Input[Optional['CosBucketActivityTrackingArgs']]):
         pulumi.set(self, "activity_tracking", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedIps")
-    def allowed_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of IPv4 or IPv6 addresses
         """
         return pulumi.get(self, "allowed_ips")
 
     @allowed_ips.setter
-    def allowed_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="archiveRule")
     @_utilities.deprecated("""Use the CosBucketLifecycleConfiguration resource instead""")
-    def archive_rule(self) -> Optional[pulumi.Input['CosBucketArchiveRuleArgs']]:
+    def archive_rule(self) -> pulumi.Input[Optional['CosBucketArchiveRuleArgs']]:
         """
         Enable configuration archive_rule (glacier/accelerated) to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "archive_rule")
 
     @archive_rule.setter
-    def archive_rule(self, value: Optional[pulumi.Input['CosBucketArchiveRuleArgs']]):
+    def archive_rule(self, value: pulumi.Input[Optional['CosBucketArchiveRuleArgs']]):
         pulumi.set(self, "archive_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketName")
-    def bucket_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS Bucket name
         """
         return pulumi.get(self, "bucket_name")
 
     @bucket_name.setter
-    def bucket_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of resource instance
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="crossRegionLocation")
-    def cross_region_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cross_region_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cros region location info
         """
         return pulumi.get(self, "cross_region_location")
 
     @cross_region_location.setter
-    def cross_region_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cross_region_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cross_region_location", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="expireRules")
     @_utilities.deprecated("""Use the CosBucketLifecycleConfiguration resource instead""")
-    def expire_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]:
+    def expire_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]:
         """
         Enable configuration expire_rule to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "expire_rules")
 
     @expire_rules.setter
-    def expire_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]):
+    def expire_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketExpireRuleArgs']]]]):
         pulumi.set(self, "expire_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         COS buckets need to be empty before they can be deleted. force_delete option empty the bucket and delete it.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="hardQuota")
-    def hard_quota(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def hard_quota(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         sets a maximum amount of storage (in bytes) available for a bucket
         """
         return pulumi.get(self, "hard_quota")
 
     @hard_quota.setter
-    def hard_quota(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def hard_quota(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "hard_quota", value)
 
     @_builtins.property
     @pulumi.getter(name="keyProtect")
-    def key_protect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_protect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of the key you want to use data at rest encryption
         """
         return pulumi.get(self, "key_protect")
 
     @key_protect.setter
-    def key_protect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_protect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_protect", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyCrn")
-    def kms_key_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of the key you want to use data at rest encryption
         """
         return pulumi.get(self, "kms_key_crn")
 
     @kms_key_crn.setter
-    def kms_key_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="metricsMonitoring")
-    def metrics_monitoring(self) -> Optional[pulumi.Input['CosBucketMetricsMonitoringArgs']]:
+    def metrics_monitoring(self) -> pulumi.Input[Optional['CosBucketMetricsMonitoringArgs']]:
         """
         Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
         """
         return pulumi.get(self, "metrics_monitoring")
 
     @metrics_monitoring.setter
-    def metrics_monitoring(self, value: Optional[pulumi.Input['CosBucketMetricsMonitoringArgs']]):
+    def metrics_monitoring(self, value: pulumi.Input[Optional['CosBucketMetricsMonitoringArgs']]):
         pulumi.set(self, "metrics_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="noncurrentVersionExpiration")
-    def noncurrent_version_expiration(self) -> Optional[pulumi.Input['CosBucketNoncurrentVersionExpirationArgs']]:
+    def noncurrent_version_expiration(self) -> pulumi.Input[Optional['CosBucketNoncurrentVersionExpirationArgs']]:
         """
         Enable configuration expire_rule to COS Bucket after a defined period of time
         """
         return pulumi.get(self, "noncurrent_version_expiration")
 
     @noncurrent_version_expiration.setter
-    def noncurrent_version_expiration(self, value: Optional[pulumi.Input['CosBucketNoncurrentVersionExpirationArgs']]):
+    def noncurrent_version_expiration(self, value: pulumi.Input[Optional['CosBucketNoncurrentVersionExpirationArgs']]):
         pulumi.set(self, "noncurrent_version_expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLock")
-    def object_lock(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def object_lock(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
         """
         return pulumi.get(self, "object_lock")
 
     @object_lock.setter
-    def object_lock(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def object_lock(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "object_lock", value)
 
     @_builtins.property
     @pulumi.getter(name="objectVersioning")
-    def object_versioning(self) -> Optional[pulumi.Input['CosBucketObjectVersioningArgs']]:
+    def object_versioning(self) -> pulumi.Input[Optional['CosBucketObjectVersioningArgs']]:
         """
         Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
         """
         return pulumi.get(self, "object_versioning")
 
     @object_versioning.setter
-    def object_versioning(self, value: Optional[pulumi.Input['CosBucketObjectVersioningArgs']]):
+    def object_versioning(self, value: pulumi.Input[Optional['CosBucketObjectVersioningArgs']]):
         pulumi.set(self, "object_versioning", value)
 
     @_builtins.property
     @pulumi.getter(name="regionLocation")
-    def region_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region Location info.
         """
         return pulumi.get(self, "region_location")
 
     @region_location.setter
-    def region_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region_location", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceInstanceId")
-    def resource_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         resource instance ID
         """
         return pulumi.get(self, "resource_instance_id")
 
     @resource_instance_id.setter
-    def resource_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionRule")
-    def retention_rule(self) -> Optional[pulumi.Input['CosBucketRetentionRuleArgs']]:
+    def retention_rule(self) -> pulumi.Input[Optional['CosBucketRetentionRuleArgs']]:
         """
         A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
         """
         return pulumi.get(self, "retention_rule")
 
     @retention_rule.setter
-    def retention_rule(self, value: Optional[pulumi.Input['CosBucketRetentionRuleArgs']]):
+    def retention_rule(self, value: pulumi.Input[Optional['CosBucketRetentionRuleArgs']]):
         pulumi.set(self, "retention_rule", value)
 
     @_builtins.property
     @pulumi.getter(name="s3EndpointDirect")
-    def s3_endpoint_direct(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def s3_endpoint_direct(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Direct endpoint for the COS bucket
         """
         return pulumi.get(self, "s3_endpoint_direct")
 
     @s3_endpoint_direct.setter
-    def s3_endpoint_direct(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def s3_endpoint_direct(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "s3_endpoint_direct", value)
 
     @_builtins.property
     @pulumi.getter(name="s3EndpointPrivate")
-    def s3_endpoint_private(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def s3_endpoint_private(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Private endpoint for the COS bucket
         """
         return pulumi.get(self, "s3_endpoint_private")
 
     @s3_endpoint_private.setter
-    def s3_endpoint_private(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def s3_endpoint_private(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "s3_endpoint_private", value)
 
     @_builtins.property
     @pulumi.getter(name="s3EndpointPublic")
-    def s3_endpoint_public(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def s3_endpoint_public(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Public endpoint for the COS bucket
         """
         return pulumi.get(self, "s3_endpoint_public")
 
     @s3_endpoint_public.setter
-    def s3_endpoint_public(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def s3_endpoint_public(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "s3_endpoint_public", value)
 
     @_builtins.property
     @pulumi.getter(name="satelliteLocationId")
-    def satellite_location_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def satellite_location_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provide satellite location info.
         """
         return pulumi.get(self, "satellite_location_id")
 
     @satellite_location_id.setter
-    def satellite_location_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def satellite_location_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "satellite_location_id", value)
 
     @_builtins.property
     @pulumi.getter(name="singleSiteLocation")
-    def single_site_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def single_site_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         single site location info
         """
         return pulumi.get(self, "single_site_location")
 
     @single_site_location.setter
-    def single_site_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def single_site_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "single_site_location", value)
 
     @_builtins.property
     @pulumi.getter(name="storageClass")
-    def storage_class(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_class(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Storage class info
         """
         return pulumi.get(self, "storage_class")
 
     @storage_class.setter
-    def storage_class(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_class(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_class", value)
 
 
@@ -830,52 +832,53 @@ class CosBucket(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 abort_incomplete_multipart_upload_days: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict']]]]] = None,
-                 activity_tracking: Optional[pulumi.Input[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict']]] = None,
-                 allowed_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 archive_rule: Optional[pulumi.Input[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict']]] = None,
-                 bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cross_region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 expire_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict']]]]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hard_quota: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_protect: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring: Optional[pulumi.Input[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict']]] = None,
-                 noncurrent_version_expiration: Optional[pulumi.Input[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict']]] = None,
-                 object_lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_versioning: Optional[pulumi.Input[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict']]] = None,
-                 region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_rule: Optional[pulumi.Input[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict']]] = None,
-                 satellite_location_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 single_site_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_class: Optional[pulumi.Input[_builtins.str]] = None,
+                 abort_incomplete_multipart_upload_days: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict', 'outputs.CosBucketAbortIncompleteMultipartUploadDay']]]]] = None,
+                 activity_tracking: pulumi.Input[Optional[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict', 'outputs.CosBucketActivityTracking']]] = None,
+                 allowed_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 archive_rule: pulumi.Input[Optional[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict', 'outputs.CosBucketArchiveRule']]] = None,
+                 bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expire_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict', 'outputs.CosBucketExpireRule']]]]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hard_quota: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_protect: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring: pulumi.Input[Optional[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict', 'outputs.CosBucketMetricsMonitoring']]] = None,
+                 noncurrent_version_expiration: pulumi.Input[Optional[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict', 'outputs.CosBucketNoncurrentVersionExpiration']]] = None,
+                 object_lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_versioning: pulumi.Input[Optional[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict', 'outputs.CosBucketObjectVersioning']]] = None,
+                 region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_rule: pulumi.Input[Optional[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict', 'outputs.CosBucketRetentionRule']]] = None,
+                 satellite_location_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 single_site_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_class: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a CosBucket resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict']]]] abort_incomplete_multipart_upload_days: Enable abort incomplete multipart upload to COS Bucket after a defined period of time
-        :param pulumi.Input[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict']] activity_tracking: Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict', 'outputs.CosBucketAbortIncompleteMultipartUploadDay']]]] abort_incomplete_multipart_upload_days: Enable abort incomplete multipart upload to COS Bucket after a defined period of time
+        :param pulumi.Input[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict', 'outputs.CosBucketActivityTracking']] activity_tracking: Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_ips: List of IPv4 or IPv6 addresses
-        :param pulumi.Input[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict']] archive_rule: Enable configuration archive_rule (glacier/accelerated) to COS Bucket after a defined period of time
+        :param pulumi.Input[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict', 'outputs.CosBucketArchiveRule']] archive_rule: Enable configuration archive_rule (glacier/accelerated) to COS Bucket after a defined period of time
         :param pulumi.Input[_builtins.str] bucket_name: COS Bucket name
         :param pulumi.Input[_builtins.str] cross_region_location: Cros region location info
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict']]]] expire_rules: Enable configuration expire_rule to COS Bucket after a defined period of time
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict', 'outputs.CosBucketExpireRule']]]] expire_rules: Enable configuration expire_rule to COS Bucket after a defined period of time
         :param pulumi.Input[_builtins.bool] force_delete: COS buckets need to be empty before they can be deleted. force_delete option empty the bucket and delete it.
         :param pulumi.Input[_builtins.int] hard_quota: sets a maximum amount of storage (in bytes) available for a bucket
         :param pulumi.Input[_builtins.str] key_protect: CRN of the key you want to use data at rest encryption
         :param pulumi.Input[_builtins.str] kms_key_crn: CRN of the key you want to use data at rest encryption
-        :param pulumi.Input[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict']] metrics_monitoring: Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
-        :param pulumi.Input[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict']] noncurrent_version_expiration: Enable configuration expire_rule to COS Bucket after a defined period of time
+        :param pulumi.Input[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict', 'outputs.CosBucketMetricsMonitoring']] metrics_monitoring: Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
+        :param pulumi.Input[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict', 'outputs.CosBucketNoncurrentVersionExpiration']] noncurrent_version_expiration: Enable configuration expire_rule to COS Bucket after a defined period of time
         :param pulumi.Input[_builtins.bool] object_lock: Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
-        :param pulumi.Input[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict']] object_versioning: Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
+        :param pulumi.Input[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict', 'outputs.CosBucketObjectVersioning']] object_versioning: Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
         :param pulumi.Input[_builtins.str] region_location: Region Location info.
         :param pulumi.Input[_builtins.str] resource_instance_id: resource instance ID
-        :param pulumi.Input[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict']] retention_rule: A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
+        :param pulumi.Input[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict', 'outputs.CosBucketRetentionRule']] retention_rule: A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
         :param pulumi.Input[_builtins.str] satellite_location_id: Provide satellite location info.
         :param pulumi.Input[_builtins.str] single_site_location: single site location info
         :param pulumi.Input[_builtins.str] storage_class: Storage class info
@@ -888,6 +891,7 @@ class CosBucket(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CosBucket resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CosBucketArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -903,28 +907,28 @@ class CosBucket(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 abort_incomplete_multipart_upload_days: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict']]]]] = None,
-                 activity_tracking: Optional[pulumi.Input[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict']]] = None,
-                 allowed_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 archive_rule: Optional[pulumi.Input[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict']]] = None,
-                 bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cross_region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 expire_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict']]]]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hard_quota: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_protect: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring: Optional[pulumi.Input[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict']]] = None,
-                 noncurrent_version_expiration: Optional[pulumi.Input[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict']]] = None,
-                 object_lock: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_versioning: Optional[pulumi.Input[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict']]] = None,
-                 region_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_rule: Optional[pulumi.Input[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict']]] = None,
-                 satellite_location_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 single_site_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_class: Optional[pulumi.Input[_builtins.str]] = None,
+                 abort_incomplete_multipart_upload_days: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict', 'outputs.CosBucketAbortIncompleteMultipartUploadDay']]]]] = None,
+                 activity_tracking: pulumi.Input[Optional[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict', 'outputs.CosBucketActivityTracking']]] = None,
+                 allowed_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 archive_rule: pulumi.Input[Optional[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict', 'outputs.CosBucketArchiveRule']]] = None,
+                 bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expire_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict', 'outputs.CosBucketExpireRule']]]]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hard_quota: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_protect: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring: pulumi.Input[Optional[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict', 'outputs.CosBucketMetricsMonitoring']]] = None,
+                 noncurrent_version_expiration: pulumi.Input[Optional[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict', 'outputs.CosBucketNoncurrentVersionExpiration']]] = None,
+                 object_lock: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_versioning: pulumi.Input[Optional[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict', 'outputs.CosBucketObjectVersioning']]] = None,
+                 region_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_rule: pulumi.Input[Optional[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict', 'outputs.CosBucketRetentionRule']]] = None,
+                 satellite_location_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 single_site_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_class: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -974,32 +978,32 @@ class CosBucket(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            abort_incomplete_multipart_upload_days: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict']]]]] = None,
-            activity_tracking: Optional[pulumi.Input[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict']]] = None,
-            allowed_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            archive_rule: Optional[pulumi.Input[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict']]] = None,
-            bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            cross_region_location: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-            expire_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict']]]]] = None,
-            force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            hard_quota: Optional[pulumi.Input[_builtins.int]] = None,
-            key_protect: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            metrics_monitoring: Optional[pulumi.Input[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict']]] = None,
-            noncurrent_version_expiration: Optional[pulumi.Input[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict']]] = None,
-            object_lock: Optional[pulumi.Input[_builtins.bool]] = None,
-            object_versioning: Optional[pulumi.Input[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict']]] = None,
-            region_location: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_rule: Optional[pulumi.Input[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict']]] = None,
-            s3_endpoint_direct: Optional[pulumi.Input[_builtins.str]] = None,
-            s3_endpoint_private: Optional[pulumi.Input[_builtins.str]] = None,
-            s3_endpoint_public: Optional[pulumi.Input[_builtins.str]] = None,
-            satellite_location_id: Optional[pulumi.Input[_builtins.str]] = None,
-            single_site_location: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_class: Optional[pulumi.Input[_builtins.str]] = None) -> 'CosBucket':
+            abort_incomplete_multipart_upload_days: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict', 'outputs.CosBucketAbortIncompleteMultipartUploadDay']]]]] = None,
+            activity_tracking: pulumi.Input[Optional[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict', 'outputs.CosBucketActivityTracking']]] = None,
+            allowed_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            archive_rule: pulumi.Input[Optional[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict', 'outputs.CosBucketArchiveRule']]] = None,
+            bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            cross_region_location: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            expire_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict', 'outputs.CosBucketExpireRule']]]]] = None,
+            force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            hard_quota: pulumi.Input[Optional[_builtins.int]] = None,
+            key_protect: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics_monitoring: pulumi.Input[Optional[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict', 'outputs.CosBucketMetricsMonitoring']]] = None,
+            noncurrent_version_expiration: pulumi.Input[Optional[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict', 'outputs.CosBucketNoncurrentVersionExpiration']]] = None,
+            object_lock: pulumi.Input[Optional[_builtins.bool]] = None,
+            object_versioning: pulumi.Input[Optional[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict', 'outputs.CosBucketObjectVersioning']]] = None,
+            region_location: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_rule: pulumi.Input[Optional[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict', 'outputs.CosBucketRetentionRule']]] = None,
+            s3_endpoint_direct: pulumi.Input[Optional[_builtins.str]] = None,
+            s3_endpoint_private: pulumi.Input[Optional[_builtins.str]] = None,
+            s3_endpoint_public: pulumi.Input[Optional[_builtins.str]] = None,
+            satellite_location_id: pulumi.Input[Optional[_builtins.str]] = None,
+            single_site_location: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_class: pulumi.Input[Optional[_builtins.str]] = None) -> 'CosBucket':
         """
         Get an existing CosBucket resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1007,26 +1011,26 @@ class CosBucket(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict']]]] abort_incomplete_multipart_upload_days: Enable abort incomplete multipart upload to COS Bucket after a defined period of time
-        :param pulumi.Input[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict']] activity_tracking: Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketAbortIncompleteMultipartUploadDayArgs', 'CosBucketAbortIncompleteMultipartUploadDayArgsDict', 'outputs.CosBucketAbortIncompleteMultipartUploadDay']]]] abort_incomplete_multipart_upload_days: Enable abort incomplete multipart upload to COS Bucket after a defined period of time
+        :param pulumi.Input[Union['CosBucketActivityTrackingArgs', 'CosBucketActivityTrackingArgsDict', 'outputs.CosBucketActivityTracking']] activity_tracking: Enables sending log data to IBM Cloud Activity Tracker to provide visibility into bucket management, object read and write events.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_ips: List of IPv4 or IPv6 addresses
-        :param pulumi.Input[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict']] archive_rule: Enable configuration archive_rule (glacier/accelerated) to COS Bucket after a defined period of time
+        :param pulumi.Input[Union['CosBucketArchiveRuleArgs', 'CosBucketArchiveRuleArgsDict', 'outputs.CosBucketArchiveRule']] archive_rule: Enable configuration archive_rule (glacier/accelerated) to COS Bucket after a defined period of time
         :param pulumi.Input[_builtins.str] bucket_name: COS Bucket name
         :param pulumi.Input[_builtins.str] crn: CRN of resource instance
         :param pulumi.Input[_builtins.str] cross_region_location: Cros region location info
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict']]]] expire_rules: Enable configuration expire_rule to COS Bucket after a defined period of time
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketExpireRuleArgs', 'CosBucketExpireRuleArgsDict', 'outputs.CosBucketExpireRule']]]] expire_rules: Enable configuration expire_rule to COS Bucket after a defined period of time
         :param pulumi.Input[_builtins.bool] force_delete: COS buckets need to be empty before they can be deleted. force_delete option empty the bucket and delete it.
         :param pulumi.Input[_builtins.int] hard_quota: sets a maximum amount of storage (in bytes) available for a bucket
         :param pulumi.Input[_builtins.str] key_protect: CRN of the key you want to use data at rest encryption
         :param pulumi.Input[_builtins.str] kms_key_crn: CRN of the key you want to use data at rest encryption
-        :param pulumi.Input[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict']] metrics_monitoring: Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
-        :param pulumi.Input[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict']] noncurrent_version_expiration: Enable configuration expire_rule to COS Bucket after a defined period of time
+        :param pulumi.Input[Union['CosBucketMetricsMonitoringArgs', 'CosBucketMetricsMonitoringArgsDict', 'outputs.CosBucketMetricsMonitoring']] metrics_monitoring: Enables sending metrics to IBM Cloud Monitoring.All metrics are opt-in
+        :param pulumi.Input[Union['CosBucketNoncurrentVersionExpirationArgs', 'CosBucketNoncurrentVersionExpirationArgsDict', 'outputs.CosBucketNoncurrentVersionExpiration']] noncurrent_version_expiration: Enable configuration expire_rule to COS Bucket after a defined period of time
         :param pulumi.Input[_builtins.bool] object_lock: Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
-        :param pulumi.Input[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict']] object_versioning: Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
+        :param pulumi.Input[Union['CosBucketObjectVersioningArgs', 'CosBucketObjectVersioningArgsDict', 'outputs.CosBucketObjectVersioning']] object_versioning: Protect objects from accidental deletion or overwrites. Versioning allows you to keep multiple versions of an object protecting from unintentional data loss.
         :param pulumi.Input[_builtins.str] region_location: Region Location info.
         :param pulumi.Input[_builtins.str] resource_instance_id: resource instance ID
-        :param pulumi.Input[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict']] retention_rule: A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
+        :param pulumi.Input[Union['CosBucketRetentionRuleArgs', 'CosBucketRetentionRuleArgsDict', 'outputs.CosBucketRetentionRule']] retention_rule: A retention policy is enabled at the IBM Cloud Object Storage bucket level. Minimum, maximum and default retention period are defined by this policy and apply to all objects in the bucket.
         :param pulumi.Input[_builtins.str] s3_endpoint_direct: Direct endpoint for the COS bucket
         :param pulumi.Input[_builtins.str] s3_endpoint_private: Private endpoint for the COS bucket
         :param pulumi.Input[_builtins.str] s3_endpoint_public: Public endpoint for the COS bucket
@@ -1159,7 +1163,7 @@ class CosBucket(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="keyProtect")
-    def key_protect(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def key_protect(self) -> pulumi.Output[_builtins.str]:
         """
         CRN of the key you want to use data at rest encryption
         """
@@ -1167,7 +1171,7 @@ class CosBucket(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyCrn")
-    def kms_key_crn(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def kms_key_crn(self) -> pulumi.Output[_builtins.str]:
         """
         CRN of the key you want to use data at rest encryption
         """
@@ -1191,7 +1195,7 @@ class CosBucket(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="objectLock")
-    def object_lock(self) -> pulumi.Output[Optional[_builtins.bool]]:
+    def object_lock(self) -> pulumi.Output[_builtins.bool]:
         """
         Enable objectlock for the bucket. When enabled, buckets within the container vault can have Object Lock Configuration applied to the bucket.
         """

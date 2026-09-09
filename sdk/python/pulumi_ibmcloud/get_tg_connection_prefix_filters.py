@@ -94,8 +94,8 @@ def get_tg_connection_prefix_filters(connection_id: Optional[_builtins.str] = No
         gateway=pulumi.get(__ret__, 'gateway'),
         id=pulumi.get(__ret__, 'id'),
         prefix_filters=pulumi.get(__ret__, 'prefix_filters'))
-def get_tg_connection_prefix_filters_output(connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            gateway: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tg_connection_prefix_filters_output(connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            gateway: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTgConnectionPrefixFiltersResult]:
     """
     Use this data source to access information about an existing resource.

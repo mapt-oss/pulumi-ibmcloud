@@ -27,6 +27,7 @@ export interface GetIsInstanceProfileResult {
     readonly architecture: string;
     readonly architectureType: string;
     readonly architectureValues: string[];
+    readonly availabilityClasses: outputs.GetIsInstanceProfileAvailabilityClass[];
     readonly bandwidths: outputs.GetIsInstanceProfileBandwidth[];
     readonly clusterNetworkAttachmentCounts: outputs.GetIsInstanceProfileClusterNetworkAttachmentCount[];
     readonly confidentialComputeModes: outputs.GetIsInstanceProfileConfidentialComputeMode[];
@@ -44,6 +45,7 @@ export interface GetIsInstanceProfileResult {
     readonly memories: outputs.GetIsInstanceProfileMemory[];
     readonly name: string;
     readonly networkAttachmentCounts: outputs.GetIsInstanceProfileNetworkAttachmentCount[];
+    readonly networkBandwidthModes: outputs.GetIsInstanceProfileNetworkBandwidthMode[];
     readonly networkInterfaceCounts: outputs.GetIsInstanceProfileNetworkInterfaceCount[];
     readonly numaCounts: outputs.GetIsInstanceProfileNumaCount[];
     readonly portSpeeds: outputs.GetIsInstanceProfilePortSpeed[];
@@ -51,11 +53,19 @@ export interface GetIsInstanceProfileResult {
     readonly secureBootModes: outputs.GetIsInstanceProfileSecureBootMode[];
     readonly status: string;
     readonly supportedClusterNetworkProfiles: outputs.GetIsInstanceProfileSupportedClusterNetworkProfile[];
+    /**
+     * @deprecated The supportedVcpuCount attribute is deprecated and will be removed in a future release. Use vcpuCount instead, which exposes the same permitted values via its `values` sub-attribute when `type` is `enum`.
+     */
+    readonly supportedVcpuCounts: outputs.GetIsInstanceProfileSupportedVcpuCount[];
+    readonly threadsPerCores: outputs.GetIsInstanceProfileThreadsPerCore[];
     readonly totalVolumeBandwidths: outputs.GetIsInstanceProfileTotalVolumeBandwidth[];
     readonly vcpuArchitectures: outputs.GetIsInstanceProfileVcpuArchitecture[];
+    readonly vcpuBurstLimits: outputs.GetIsInstanceProfileVcpuBurstLimit[];
     readonly vcpuCounts: outputs.GetIsInstanceProfileVcpuCount[];
     readonly vcpuManufacturers: outputs.GetIsInstanceProfileVcpuManufacturer[];
+    readonly vcpuPercentages: outputs.GetIsInstanceProfileVcpuPercentage[];
     readonly volumeBandwidthQosModes: outputs.GetIsInstanceProfileVolumeBandwidthQosMode[];
+    readonly zones: outputs.GetIsInstanceProfileZone[];
 }
 export function getIsInstanceProfileOutput(args: GetIsInstanceProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIsInstanceProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

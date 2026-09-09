@@ -48,6 +48,6 @@ export function getIsVirtualEndpointGatewaysOutput(args?: GetIsVirtualEndpointGa
  * A collection of arguments for invoking getIsVirtualEndpointGateways.
  */
 export interface GetIsVirtualEndpointGatewaysOutputArgs {
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

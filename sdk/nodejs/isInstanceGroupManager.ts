@@ -126,47 +126,47 @@ export class IsInstanceGroupManager extends pulumi.CustomResource {
  * Input properties used for looking up and filtering IsInstanceGroupManager resources.
  */
 export interface IsInstanceGroupManagerState {
-    actions?: pulumi.Input<pulumi.Input<inputs.IsInstanceGroupManagerAction>[]>;
+    actions?: pulumi.Input<pulumi.Input<inputs.IsInstanceGroupManagerAction>[] | undefined>;
     /**
      * The time window in seconds to aggregate metrics prior to evaluation
      */
-    aggregationWindow?: pulumi.Input<number>;
+    aggregationWindow?: pulumi.Input<number | undefined>;
     /**
      * The duration of time in seconds to pause further scale actions after scaling has taken place
      */
-    cooldown?: pulumi.Input<number>;
+    cooldown?: pulumi.Input<number | undefined>;
     /**
      * enable instance group manager
      */
-    enableManager?: pulumi.Input<boolean>;
+    enableManager?: pulumi.Input<boolean | undefined>;
     /**
      * instance group ID
      */
-    instanceGroup?: pulumi.Input<string>;
+    instanceGroup?: pulumi.Input<string | undefined>;
     /**
      * instance group manager ID
      */
-    managerId?: pulumi.Input<string>;
+    managerId?: pulumi.Input<string | undefined>;
     /**
      * The type of instance group manager.
      */
-    managerType?: pulumi.Input<string>;
+    managerType?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of members in a managed instance group
      */
-    maxMembershipCount?: pulumi.Input<number>;
+    maxMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * The minimum number of members in a managed instance group
      */
-    minMembershipCount?: pulumi.Input<number>;
+    minMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * instance group manager name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * list of Policies associated with instancegroup manager
      */
-    policies?: pulumi.Input<pulumi.Input<string>[]>;
+    policies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -176,15 +176,15 @@ export interface IsInstanceGroupManagerArgs {
     /**
      * The time window in seconds to aggregate metrics prior to evaluation
      */
-    aggregationWindow?: pulumi.Input<number>;
+    aggregationWindow?: pulumi.Input<number | undefined>;
     /**
      * The duration of time in seconds to pause further scale actions after scaling has taken place
      */
-    cooldown?: pulumi.Input<number>;
+    cooldown?: pulumi.Input<number | undefined>;
     /**
      * enable instance group manager
      */
-    enableManager?: pulumi.Input<boolean>;
+    enableManager?: pulumi.Input<boolean | undefined>;
     /**
      * instance group ID
      */
@@ -192,17 +192,17 @@ export interface IsInstanceGroupManagerArgs {
     /**
      * The type of instance group manager.
      */
-    managerType?: pulumi.Input<string>;
+    managerType?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of members in a managed instance group
      */
-    maxMembershipCount?: pulumi.Input<number>;
+    maxMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * The minimum number of members in a managed instance group
      */
-    minMembershipCount?: pulumi.Input<number>;
+    minMembershipCount?: pulumi.Input<number | undefined>;
     /**
      * instance group manager name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

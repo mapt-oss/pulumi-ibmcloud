@@ -43,6 +43,10 @@ export class IsNetworkAcl extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly crn: pulumi.Output<string>;
     /**
+     * When set to true, enables surgical inline rule updates (add, remove, reorder, patch, recreate only changed rules). When false (default), any change to inline rules deletes all existing rules and recreates them from the configuration.
+     */
+    declare public readonly incrementalRuleUpdate: pulumi.Output<boolean | undefined>;
+    /**
      * Network ACL name
      */
     declare public readonly name: pulumi.Output<string>;
@@ -91,6 +95,7 @@ export class IsNetworkAcl extends pulumi.CustomResource {
             const state = argsOrState as IsNetworkAclState | undefined;
             resourceInputs["accessTags"] = state?.accessTags;
             resourceInputs["crn"] = state?.crn;
+            resourceInputs["incrementalRuleUpdate"] = state?.incrementalRuleUpdate;
             resourceInputs["name"] = state?.name;
             resourceInputs["resourceControllerUrl"] = state?.resourceControllerUrl;
             resourceInputs["resourceCrn"] = state?.resourceCrn;
@@ -103,6 +108,7 @@ export class IsNetworkAcl extends pulumi.CustomResource {
         } else {
             const args = argsOrState as IsNetworkAclArgs | undefined;
             resourceInputs["accessTags"] = args?.accessTags;
+            resourceInputs["incrementalRuleUpdate"] = args?.incrementalRuleUpdate;
             resourceInputs["name"] = args?.name;
             resourceInputs["resourceGroup"] = args?.resourceGroup;
             resourceInputs["rules"] = args?.rules;
@@ -126,44 +132,48 @@ export interface IsNetworkAclState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * When set to true, enables surgical inline rule updates (add, remove, reorder, patch, recreate only changed rules). When false (default), any change to inline rules deletes all existing rules and recreates them from the configuration.
+     */
+    incrementalRuleUpdate?: pulumi.Input<boolean | undefined>;
     /**
      * Network ACL name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * Resource group ID for the network ACL
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
-    rules?: pulumi.Input<pulumi.Input<inputs.IsNetworkAclRule>[]>;
+    resourceName?: pulumi.Input<string | undefined>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IsNetworkAclRule>[] | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Network ACL VPC name
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -173,22 +183,26 @@ export interface IsNetworkAclArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * When set to true, enables surgical inline rule updates (add, remove, reorder, patch, recreate only changed rules). When false (default), any change to inline rules deletes all existing rules and recreates them from the configuration.
+     */
+    incrementalRuleUpdate?: pulumi.Input<boolean | undefined>;
     /**
      * Network ACL name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource group ID for the network ACL
      */
-    resourceGroup?: pulumi.Input<string>;
-    rules?: pulumi.Input<pulumi.Input<inputs.IsNetworkAclRule>[]>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IsNetworkAclRule>[] | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Network ACL VPC name
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }

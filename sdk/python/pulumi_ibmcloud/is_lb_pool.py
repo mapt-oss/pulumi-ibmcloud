@@ -28,15 +28,19 @@ class IsLbPoolArgs:
                  health_type: pulumi.Input[_builtins.str],
                  lb: pulumi.Input[_builtins.str],
                  protocol: pulumi.Input[_builtins.str],
-                 failsafe_policy: Optional[pulumi.Input['IsLbPoolFailsafePolicyArgs']] = None,
-                 health_monitor_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_monitor_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 proxy_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_app_cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_authentication: pulumi.Input[Optional['IsLbPoolClientAuthenticationArgs']] = None,
+                 failsafe_policy: pulumi.Input[Optional['IsLbPoolFailsafePolicyArgs']] = None,
+                 health_monitor: pulumi.Input[Optional['IsLbPoolHealthMonitorArgs']] = None,
+                 health_monitor_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_monitor_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_authentication: pulumi.Input[Optional['IsLbPoolServerAuthenticationArgs']] = None,
+                 session_persistence_app_cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsLbPool resource.
+
         :param pulumi.Input[_builtins.str] algorithm: Load Balancer Pool algorithm
         :param pulumi.Input[_builtins.int] health_delay: Load Blancer health delay time period
         :param pulumi.Input[_builtins.int] health_retries: Load Balancer health retry count
@@ -44,11 +48,14 @@ class IsLbPoolArgs:
         :param pulumi.Input[_builtins.str] health_type: Load Balancer health type
         :param pulumi.Input[_builtins.str] lb: Load Balancer ID
         :param pulumi.Input[_builtins.str] protocol: Load Balancer Protocol
+        :param pulumi.Input['IsLbPoolClientAuthenticationArgs'] client_authentication: The client authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
         :param pulumi.Input['IsLbPoolFailsafePolicyArgs'] failsafe_policy: The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
+        :param pulumi.Input['IsLbPoolHealthMonitorArgs'] health_monitor: The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
         :param pulumi.Input[_builtins.int] health_monitor_port: Health monitor Port the LB Pool
         :param pulumi.Input[_builtins.str] health_monitor_url: Health monitor URL of LB Pool
         :param pulumi.Input[_builtins.str] name: Load Balancer Pool name
         :param pulumi.Input[_builtins.str] proxy_protocol: PROXY protocol setting for this pool
+        :param pulumi.Input['IsLbPoolServerAuthenticationArgs'] server_authentication: The server authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
         :param pulumi.Input[_builtins.str] session_persistence_app_cookie_name: Load Balancer Pool session persisence app cookie name.
         :param pulumi.Input[_builtins.str] session_persistence_type: Load Balancer Pool session persisence type.
         """
@@ -59,8 +66,12 @@ class IsLbPoolArgs:
         pulumi.set(__self__, "health_type", health_type)
         pulumi.set(__self__, "lb", lb)
         pulumi.set(__self__, "protocol", protocol)
+        if client_authentication is not None:
+            pulumi.set(__self__, "client_authentication", client_authentication)
         if failsafe_policy is not None:
             pulumi.set(__self__, "failsafe_policy", failsafe_policy)
+        if health_monitor is not None:
+            pulumi.set(__self__, "health_monitor", health_monitor)
         if health_monitor_port is not None:
             pulumi.set(__self__, "health_monitor_port", health_monitor_port)
         if health_monitor_url is not None:
@@ -69,6 +80,8 @@ class IsLbPoolArgs:
             pulumi.set(__self__, "name", name)
         if proxy_protocol is not None:
             pulumi.set(__self__, "proxy_protocol", proxy_protocol)
+        if server_authentication is not None:
+            pulumi.set(__self__, "server_authentication", server_authentication)
         if session_persistence_app_cookie_name is not None:
             pulumi.set(__self__, "session_persistence_app_cookie_name", session_persistence_app_cookie_name)
         if session_persistence_type is not None:
@@ -159,116 +172,158 @@ class IsLbPoolArgs:
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
+    @pulumi.getter(name="clientAuthentication")
+    def client_authentication(self) -> pulumi.Input[Optional['IsLbPoolClientAuthenticationArgs']]:
+        """
+        The client authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        """
+        return pulumi.get(self, "client_authentication")
+
+    @client_authentication.setter
+    def client_authentication(self, value: pulumi.Input[Optional['IsLbPoolClientAuthenticationArgs']]):
+        pulumi.set(self, "client_authentication", value)
+
+    @_builtins.property
     @pulumi.getter(name="failsafePolicy")
-    def failsafe_policy(self) -> Optional[pulumi.Input['IsLbPoolFailsafePolicyArgs']]:
+    def failsafe_policy(self) -> pulumi.Input[Optional['IsLbPoolFailsafePolicyArgs']]:
         """
         The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
         """
         return pulumi.get(self, "failsafe_policy")
 
     @failsafe_policy.setter
-    def failsafe_policy(self, value: Optional[pulumi.Input['IsLbPoolFailsafePolicyArgs']]):
+    def failsafe_policy(self, value: pulumi.Input[Optional['IsLbPoolFailsafePolicyArgs']]):
         pulumi.set(self, "failsafe_policy", value)
 
     @_builtins.property
+    @pulumi.getter(name="healthMonitor")
+    def health_monitor(self) -> pulumi.Input[Optional['IsLbPoolHealthMonitorArgs']]:
+        """
+        The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
+        """
+        return pulumi.get(self, "health_monitor")
+
+    @health_monitor.setter
+    def health_monitor(self, value: pulumi.Input[Optional['IsLbPoolHealthMonitorArgs']]):
+        pulumi.set(self, "health_monitor", value)
+
+    @_builtins.property
     @pulumi.getter(name="healthMonitorPort")
-    def health_monitor_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def health_monitor_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Health monitor Port the LB Pool
         """
         return pulumi.get(self, "health_monitor_port")
 
     @health_monitor_port.setter
-    def health_monitor_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def health_monitor_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "health_monitor_port", value)
 
     @_builtins.property
     @pulumi.getter(name="healthMonitorUrl")
-    def health_monitor_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_monitor_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Health monitor URL of LB Pool
         """
         return pulumi.get(self, "health_monitor_url")
 
     @health_monitor_url.setter
-    def health_monitor_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_monitor_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_monitor_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="proxyProtocol")
-    def proxy_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def proxy_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PROXY protocol setting for this pool
         """
         return pulumi.get(self, "proxy_protocol")
 
     @proxy_protocol.setter
-    def proxy_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def proxy_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "proxy_protocol", value)
 
     @_builtins.property
+    @pulumi.getter(name="serverAuthentication")
+    def server_authentication(self) -> pulumi.Input[Optional['IsLbPoolServerAuthenticationArgs']]:
+        """
+        The server authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        """
+        return pulumi.get(self, "server_authentication")
+
+    @server_authentication.setter
+    def server_authentication(self, value: pulumi.Input[Optional['IsLbPoolServerAuthenticationArgs']]):
+        pulumi.set(self, "server_authentication", value)
+
+    @_builtins.property
     @pulumi.getter(name="sessionPersistenceAppCookieName")
-    def session_persistence_app_cookie_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_persistence_app_cookie_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool session persisence app cookie name.
         """
         return pulumi.get(self, "session_persistence_app_cookie_name")
 
     @session_persistence_app_cookie_name.setter
-    def session_persistence_app_cookie_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_persistence_app_cookie_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_persistence_app_cookie_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionPersistenceType")
-    def session_persistence_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_persistence_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool session persisence type.
         """
         return pulumi.get(self, "session_persistence_type")
 
     @session_persistence_type.setter
-    def session_persistence_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_persistence_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_persistence_type", value)
 
 
 @pulumi.input_type
 class _IsLbPoolState:
     def __init__(__self__, *,
-                 algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 failsafe_policy: Optional[pulumi.Input['IsLbPoolFailsafePolicyArgs']] = None,
-                 health_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_monitor_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_monitor_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioning_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 proxy_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_app_cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_http_cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_authentication: pulumi.Input[Optional['IsLbPoolClientAuthenticationArgs']] = None,
+                 failsafe_policy: pulumi.Input[Optional['IsLbPoolFailsafePolicyArgs']] = None,
+                 health_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_monitor: pulumi.Input[Optional['IsLbPoolHealthMonitorArgs']] = None,
+                 health_monitor_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_monitor_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioning_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_authentication: pulumi.Input[Optional['IsLbPoolServerAuthenticationArgs']] = None,
+                 session_persistence_app_cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_http_cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsLbPool resources.
+
         :param pulumi.Input[_builtins.str] algorithm: Load Balancer Pool algorithm
+        :param pulumi.Input['IsLbPoolClientAuthenticationArgs'] client_authentication: The client authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
         :param pulumi.Input['IsLbPoolFailsafePolicyArgs'] failsafe_policy: The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
         :param pulumi.Input[_builtins.int] health_delay: Load Blancer health delay time period
+        :param pulumi.Input['IsLbPoolHealthMonitorArgs'] health_monitor: The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
         :param pulumi.Input[_builtins.int] health_monitor_port: Health monitor Port the LB Pool
         :param pulumi.Input[_builtins.str] health_monitor_url: Health monitor URL of LB Pool
         :param pulumi.Input[_builtins.int] health_retries: Load Balancer health retry count
@@ -281,16 +336,21 @@ class _IsLbPoolState:
         :param pulumi.Input[_builtins.str] provisioning_status: Status of the LB Pool
         :param pulumi.Input[_builtins.str] proxy_protocol: PROXY protocol setting for this pool
         :param pulumi.Input[_builtins.str] related_crn: The crn of the LB resource
+        :param pulumi.Input['IsLbPoolServerAuthenticationArgs'] server_authentication: The server authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
         :param pulumi.Input[_builtins.str] session_persistence_app_cookie_name: Load Balancer Pool session persisence app cookie name.
         :param pulumi.Input[_builtins.str] session_persistence_http_cookie_name: Load Balancer Pool session persisence http cookie name.
         :param pulumi.Input[_builtins.str] session_persistence_type: Load Balancer Pool session persisence type.
         """
         if algorithm is not None:
             pulumi.set(__self__, "algorithm", algorithm)
+        if client_authentication is not None:
+            pulumi.set(__self__, "client_authentication", client_authentication)
         if failsafe_policy is not None:
             pulumi.set(__self__, "failsafe_policy", failsafe_policy)
         if health_delay is not None:
             pulumi.set(__self__, "health_delay", health_delay)
+        if health_monitor is not None:
+            pulumi.set(__self__, "health_monitor", health_monitor)
         if health_monitor_port is not None:
             pulumi.set(__self__, "health_monitor_port", health_monitor_port)
         if health_monitor_url is not None:
@@ -315,6 +375,8 @@ class _IsLbPoolState:
             pulumi.set(__self__, "proxy_protocol", proxy_protocol)
         if related_crn is not None:
             pulumi.set(__self__, "related_crn", related_crn)
+        if server_authentication is not None:
+            pulumi.set(__self__, "server_authentication", server_authentication)
         if session_persistence_app_cookie_name is not None:
             pulumi.set(__self__, "session_persistence_app_cookie_name", session_persistence_app_cookie_name)
         if session_persistence_http_cookie_name is not None:
@@ -324,218 +386,254 @@ class _IsLbPoolState:
 
     @_builtins.property
     @pulumi.getter
-    def algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool algorithm
         """
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
-    def algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="clientAuthentication")
+    def client_authentication(self) -> pulumi.Input[Optional['IsLbPoolClientAuthenticationArgs']]:
+        """
+        The client authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        """
+        return pulumi.get(self, "client_authentication")
+
+    @client_authentication.setter
+    def client_authentication(self, value: pulumi.Input[Optional['IsLbPoolClientAuthenticationArgs']]):
+        pulumi.set(self, "client_authentication", value)
+
+    @_builtins.property
     @pulumi.getter(name="failsafePolicy")
-    def failsafe_policy(self) -> Optional[pulumi.Input['IsLbPoolFailsafePolicyArgs']]:
+    def failsafe_policy(self) -> pulumi.Input[Optional['IsLbPoolFailsafePolicyArgs']]:
         """
         The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
         """
         return pulumi.get(self, "failsafe_policy")
 
     @failsafe_policy.setter
-    def failsafe_policy(self, value: Optional[pulumi.Input['IsLbPoolFailsafePolicyArgs']]):
+    def failsafe_policy(self, value: pulumi.Input[Optional['IsLbPoolFailsafePolicyArgs']]):
         pulumi.set(self, "failsafe_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="healthDelay")
-    def health_delay(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def health_delay(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Load Blancer health delay time period
         """
         return pulumi.get(self, "health_delay")
 
     @health_delay.setter
-    def health_delay(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def health_delay(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "health_delay", value)
 
     @_builtins.property
+    @pulumi.getter(name="healthMonitor")
+    def health_monitor(self) -> pulumi.Input[Optional['IsLbPoolHealthMonitorArgs']]:
+        """
+        The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
+        """
+        return pulumi.get(self, "health_monitor")
+
+    @health_monitor.setter
+    def health_monitor(self, value: pulumi.Input[Optional['IsLbPoolHealthMonitorArgs']]):
+        pulumi.set(self, "health_monitor", value)
+
+    @_builtins.property
     @pulumi.getter(name="healthMonitorPort")
-    def health_monitor_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def health_monitor_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Health monitor Port the LB Pool
         """
         return pulumi.get(self, "health_monitor_port")
 
     @health_monitor_port.setter
-    def health_monitor_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def health_monitor_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "health_monitor_port", value)
 
     @_builtins.property
     @pulumi.getter(name="healthMonitorUrl")
-    def health_monitor_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_monitor_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Health monitor URL of LB Pool
         """
         return pulumi.get(self, "health_monitor_url")
 
     @health_monitor_url.setter
-    def health_monitor_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_monitor_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_monitor_url", value)
 
     @_builtins.property
     @pulumi.getter(name="healthRetries")
-    def health_retries(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def health_retries(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Load Balancer health retry count
         """
         return pulumi.get(self, "health_retries")
 
     @health_retries.setter
-    def health_retries(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def health_retries(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "health_retries", value)
 
     @_builtins.property
     @pulumi.getter(name="healthTimeout")
-    def health_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def health_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Load Balancer health timeout interval
         """
         return pulumi.get(self, "health_timeout")
 
     @health_timeout.setter
-    def health_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def health_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "health_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="healthType")
-    def health_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer health type
         """
         return pulumi.get(self, "health_type")
 
     @health_type.setter
-    def health_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def lb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer ID
         """
         return pulumi.get(self, "lb")
 
     @lb.setter
-    def lb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lb", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="poolId")
-    def pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The LB Pool id
         """
         return pulumi.get(self, "pool_id")
 
     @pool_id.setter
-    def pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pool_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Protocol
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="provisioningStatus")
-    def provisioning_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provisioning_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the LB Pool
         """
         return pulumi.get(self, "provisioning_status")
 
     @provisioning_status.setter
-    def provisioning_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provisioning_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provisioning_status", value)
 
     @_builtins.property
     @pulumi.getter(name="proxyProtocol")
-    def proxy_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def proxy_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PROXY protocol setting for this pool
         """
         return pulumi.get(self, "proxy_protocol")
 
     @proxy_protocol.setter
-    def proxy_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def proxy_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "proxy_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedCrn")
-    def related_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the LB resource
         """
         return pulumi.get(self, "related_crn")
 
     @related_crn.setter
-    def related_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_crn", value)
 
     @_builtins.property
+    @pulumi.getter(name="serverAuthentication")
+    def server_authentication(self) -> pulumi.Input[Optional['IsLbPoolServerAuthenticationArgs']]:
+        """
+        The server authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        """
+        return pulumi.get(self, "server_authentication")
+
+    @server_authentication.setter
+    def server_authentication(self, value: pulumi.Input[Optional['IsLbPoolServerAuthenticationArgs']]):
+        pulumi.set(self, "server_authentication", value)
+
+    @_builtins.property
     @pulumi.getter(name="sessionPersistenceAppCookieName")
-    def session_persistence_app_cookie_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_persistence_app_cookie_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool session persisence app cookie name.
         """
         return pulumi.get(self, "session_persistence_app_cookie_name")
 
     @session_persistence_app_cookie_name.setter
-    def session_persistence_app_cookie_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_persistence_app_cookie_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_persistence_app_cookie_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionPersistenceHttpCookieName")
-    def session_persistence_http_cookie_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_persistence_http_cookie_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool session persisence http cookie name.
         """
         return pulumi.get(self, "session_persistence_http_cookie_name")
 
     @session_persistence_http_cookie_name.setter
-    def session_persistence_http_cookie_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_persistence_http_cookie_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_persistence_http_cookie_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionPersistenceType")
-    def session_persistence_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_persistence_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer Pool session persisence type.
         """
         return pulumi.get(self, "session_persistence_type")
 
     @session_persistence_type.setter
-    def session_persistence_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_persistence_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_persistence_type", value)
 
 
@@ -545,28 +643,34 @@ class IsLbPool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 failsafe_policy: Optional[pulumi.Input[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict']]] = None,
-                 health_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_monitor_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_monitor_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 proxy_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_app_cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_authentication: pulumi.Input[Optional[Union['IsLbPoolClientAuthenticationArgs', 'IsLbPoolClientAuthenticationArgsDict', 'outputs.IsLbPoolClientAuthentication']]] = None,
+                 failsafe_policy: pulumi.Input[Optional[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict', 'outputs.IsLbPoolFailsafePolicy']]] = None,
+                 health_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_monitor: pulumi.Input[Optional[Union['IsLbPoolHealthMonitorArgs', 'IsLbPoolHealthMonitorArgsDict', 'outputs.IsLbPoolHealthMonitor']]] = None,
+                 health_monitor_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_monitor_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_authentication: pulumi.Input[Optional[Union['IsLbPoolServerAuthenticationArgs', 'IsLbPoolServerAuthenticationArgsDict', 'outputs.IsLbPoolServerAuthentication']]] = None,
+                 session_persistence_app_cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsLbPool resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] algorithm: Load Balancer Pool algorithm
-        :param pulumi.Input[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict']] failsafe_policy: The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
+        :param pulumi.Input[Union['IsLbPoolClientAuthenticationArgs', 'IsLbPoolClientAuthenticationArgsDict', 'outputs.IsLbPoolClientAuthentication']] client_authentication: The client authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        :param pulumi.Input[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict', 'outputs.IsLbPoolFailsafePolicy']] failsafe_policy: The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
         :param pulumi.Input[_builtins.int] health_delay: Load Blancer health delay time period
+        :param pulumi.Input[Union['IsLbPoolHealthMonitorArgs', 'IsLbPoolHealthMonitorArgsDict', 'outputs.IsLbPoolHealthMonitor']] health_monitor: The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
         :param pulumi.Input[_builtins.int] health_monitor_port: Health monitor Port the LB Pool
         :param pulumi.Input[_builtins.str] health_monitor_url: Health monitor URL of LB Pool
         :param pulumi.Input[_builtins.int] health_retries: Load Balancer health retry count
@@ -576,6 +680,7 @@ class IsLbPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Load Balancer Pool name
         :param pulumi.Input[_builtins.str] protocol: Load Balancer Protocol
         :param pulumi.Input[_builtins.str] proxy_protocol: PROXY protocol setting for this pool
+        :param pulumi.Input[Union['IsLbPoolServerAuthenticationArgs', 'IsLbPoolServerAuthenticationArgsDict', 'outputs.IsLbPoolServerAuthentication']] server_authentication: The server authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
         :param pulumi.Input[_builtins.str] session_persistence_app_cookie_name: Load Balancer Pool session persisence app cookie name.
         :param pulumi.Input[_builtins.str] session_persistence_type: Load Balancer Pool session persisence type.
         """
@@ -587,6 +692,7 @@ class IsLbPool(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsLbPool resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsLbPoolArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -602,20 +708,23 @@ class IsLbPool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 failsafe_policy: Optional[pulumi.Input[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict']]] = None,
-                 health_delay: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_monitor_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_monitor_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 health_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 proxy_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_app_cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_persistence_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_authentication: pulumi.Input[Optional[Union['IsLbPoolClientAuthenticationArgs', 'IsLbPoolClientAuthenticationArgsDict', 'outputs.IsLbPoolClientAuthentication']]] = None,
+                 failsafe_policy: pulumi.Input[Optional[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict', 'outputs.IsLbPoolFailsafePolicy']]] = None,
+                 health_delay: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_monitor: pulumi.Input[Optional[Union['IsLbPoolHealthMonitorArgs', 'IsLbPoolHealthMonitorArgsDict', 'outputs.IsLbPoolHealthMonitor']]] = None,
+                 health_monitor_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_monitor_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 health_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_authentication: pulumi.Input[Optional[Union['IsLbPoolServerAuthenticationArgs', 'IsLbPoolServerAuthenticationArgsDict', 'outputs.IsLbPoolServerAuthentication']]] = None,
+                 session_persistence_app_cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_persistence_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -628,10 +737,12 @@ class IsLbPool(pulumi.CustomResource):
             if algorithm is None and not opts.urn:
                 raise TypeError("Missing required property 'algorithm'")
             __props__.__dict__["algorithm"] = algorithm
+            __props__.__dict__["client_authentication"] = client_authentication
             __props__.__dict__["failsafe_policy"] = failsafe_policy
             if health_delay is None and not opts.urn:
                 raise TypeError("Missing required property 'health_delay'")
             __props__.__dict__["health_delay"] = health_delay
+            __props__.__dict__["health_monitor"] = health_monitor
             __props__.__dict__["health_monitor_port"] = health_monitor_port
             __props__.__dict__["health_monitor_url"] = health_monitor_url
             if health_retries is None and not opts.urn:
@@ -651,6 +762,7 @@ class IsLbPool(pulumi.CustomResource):
                 raise TypeError("Missing required property 'protocol'")
             __props__.__dict__["protocol"] = protocol
             __props__.__dict__["proxy_protocol"] = proxy_protocol
+            __props__.__dict__["server_authentication"] = server_authentication
             __props__.__dict__["session_persistence_app_cookie_name"] = session_persistence_app_cookie_name
             __props__.__dict__["session_persistence_type"] = session_persistence_type
             __props__.__dict__["pool_id"] = None
@@ -667,24 +779,27 @@ class IsLbPool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            failsafe_policy: Optional[pulumi.Input[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict']]] = None,
-            health_delay: Optional[pulumi.Input[_builtins.int]] = None,
-            health_monitor_port: Optional[pulumi.Input[_builtins.int]] = None,
-            health_monitor_url: Optional[pulumi.Input[_builtins.str]] = None,
-            health_retries: Optional[pulumi.Input[_builtins.int]] = None,
-            health_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            health_type: Optional[pulumi.Input[_builtins.str]] = None,
-            lb: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            provisioning_status: Optional[pulumi.Input[_builtins.str]] = None,
-            proxy_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            session_persistence_app_cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-            session_persistence_http_cookie_name: Optional[pulumi.Input[_builtins.str]] = None,
-            session_persistence_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsLbPool':
+            algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            client_authentication: pulumi.Input[Optional[Union['IsLbPoolClientAuthenticationArgs', 'IsLbPoolClientAuthenticationArgsDict', 'outputs.IsLbPoolClientAuthentication']]] = None,
+            failsafe_policy: pulumi.Input[Optional[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict', 'outputs.IsLbPoolFailsafePolicy']]] = None,
+            health_delay: pulumi.Input[Optional[_builtins.int]] = None,
+            health_monitor: pulumi.Input[Optional[Union['IsLbPoolHealthMonitorArgs', 'IsLbPoolHealthMonitorArgsDict', 'outputs.IsLbPoolHealthMonitor']]] = None,
+            health_monitor_port: pulumi.Input[Optional[_builtins.int]] = None,
+            health_monitor_url: pulumi.Input[Optional[_builtins.str]] = None,
+            health_retries: pulumi.Input[Optional[_builtins.int]] = None,
+            health_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            health_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lb: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            provisioning_status: pulumi.Input[Optional[_builtins.str]] = None,
+            proxy_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            server_authentication: pulumi.Input[Optional[Union['IsLbPoolServerAuthenticationArgs', 'IsLbPoolServerAuthenticationArgsDict', 'outputs.IsLbPoolServerAuthentication']]] = None,
+            session_persistence_app_cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+            session_persistence_http_cookie_name: pulumi.Input[Optional[_builtins.str]] = None,
+            session_persistence_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsLbPool':
         """
         Get an existing IsLbPool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -693,8 +808,10 @@ class IsLbPool(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] algorithm: Load Balancer Pool algorithm
-        :param pulumi.Input[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict']] failsafe_policy: The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
+        :param pulumi.Input[Union['IsLbPoolClientAuthenticationArgs', 'IsLbPoolClientAuthenticationArgsDict', 'outputs.IsLbPoolClientAuthentication']] client_authentication: The client authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        :param pulumi.Input[Union['IsLbPoolFailsafePolicyArgs', 'IsLbPoolFailsafePolicyArgsDict', 'outputs.IsLbPoolFailsafePolicy']] failsafe_policy: The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
         :param pulumi.Input[_builtins.int] health_delay: Load Blancer health delay time period
+        :param pulumi.Input[Union['IsLbPoolHealthMonitorArgs', 'IsLbPoolHealthMonitorArgsDict', 'outputs.IsLbPoolHealthMonitor']] health_monitor: The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
         :param pulumi.Input[_builtins.int] health_monitor_port: Health monitor Port the LB Pool
         :param pulumi.Input[_builtins.str] health_monitor_url: Health monitor URL of LB Pool
         :param pulumi.Input[_builtins.int] health_retries: Load Balancer health retry count
@@ -707,6 +824,7 @@ class IsLbPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] provisioning_status: Status of the LB Pool
         :param pulumi.Input[_builtins.str] proxy_protocol: PROXY protocol setting for this pool
         :param pulumi.Input[_builtins.str] related_crn: The crn of the LB resource
+        :param pulumi.Input[Union['IsLbPoolServerAuthenticationArgs', 'IsLbPoolServerAuthenticationArgsDict', 'outputs.IsLbPoolServerAuthentication']] server_authentication: The server authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
         :param pulumi.Input[_builtins.str] session_persistence_app_cookie_name: Load Balancer Pool session persisence app cookie name.
         :param pulumi.Input[_builtins.str] session_persistence_http_cookie_name: Load Balancer Pool session persisence http cookie name.
         :param pulumi.Input[_builtins.str] session_persistence_type: Load Balancer Pool session persisence type.
@@ -716,8 +834,10 @@ class IsLbPool(pulumi.CustomResource):
         __props__ = _IsLbPoolState.__new__(_IsLbPoolState)
 
         __props__.__dict__["algorithm"] = algorithm
+        __props__.__dict__["client_authentication"] = client_authentication
         __props__.__dict__["failsafe_policy"] = failsafe_policy
         __props__.__dict__["health_delay"] = health_delay
+        __props__.__dict__["health_monitor"] = health_monitor
         __props__.__dict__["health_monitor_port"] = health_monitor_port
         __props__.__dict__["health_monitor_url"] = health_monitor_url
         __props__.__dict__["health_retries"] = health_retries
@@ -730,6 +850,7 @@ class IsLbPool(pulumi.CustomResource):
         __props__.__dict__["provisioning_status"] = provisioning_status
         __props__.__dict__["proxy_protocol"] = proxy_protocol
         __props__.__dict__["related_crn"] = related_crn
+        __props__.__dict__["server_authentication"] = server_authentication
         __props__.__dict__["session_persistence_app_cookie_name"] = session_persistence_app_cookie_name
         __props__.__dict__["session_persistence_http_cookie_name"] = session_persistence_http_cookie_name
         __props__.__dict__["session_persistence_type"] = session_persistence_type
@@ -742,6 +863,14 @@ class IsLbPool(pulumi.CustomResource):
         Load Balancer Pool algorithm
         """
         return pulumi.get(self, "algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="clientAuthentication")
+    def client_authentication(self) -> pulumi.Output[Optional['outputs.IsLbPoolClientAuthentication']]:
+        """
+        The client authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        """
+        return pulumi.get(self, "client_authentication")
 
     @_builtins.property
     @pulumi.getter(name="failsafePolicy")
@@ -758,6 +887,14 @@ class IsLbPool(pulumi.CustomResource):
         Load Blancer health delay time period
         """
         return pulumi.get(self, "health_delay")
+
+    @_builtins.property
+    @pulumi.getter(name="healthMonitor")
+    def health_monitor(self) -> pulumi.Output['outputs.IsLbPoolHealthMonitor']:
+        """
+        The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
+        """
+        return pulumi.get(self, "health_monitor")
 
     @_builtins.property
     @pulumi.getter(name="healthMonitorPort")
@@ -854,6 +991,14 @@ class IsLbPool(pulumi.CustomResource):
         The crn of the LB resource
         """
         return pulumi.get(self, "related_crn")
+
+    @_builtins.property
+    @pulumi.getter(name="serverAuthentication")
+    def server_authentication(self) -> pulumi.Output['outputs.IsLbPoolServerAuthentication']:
+        """
+        The server authentication to use for this pool. Supported by load balancers with mtls_supported set to true. The pool must have a protocol of https.
+        """
+        return pulumi.get(self, "server_authentication")
 
     @_builtins.property
     @pulumi.getter(name="sessionPersistenceAppCookieName")

@@ -21,12 +21,13 @@ __all__ = ['IamActionControlTemplateArgs', 'IamActionControlTemplate']
 @pulumi.input_type
 class IamActionControlTemplateArgs:
     def __init__(__self__, *,
-                 action_controls: Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_controls: pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamActionControlTemplate resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]] action_controls: The action control properties that are created in an action resource when the template is assigned.
         :param pulumi.Input[_builtins.bool] committed: Committed status of the template. If committed is set to true, then the template version can no longer be updated.
         :param pulumi.Input[_builtins.str] description: Description of the action control template. This is shown to users in the enterprise account. Use this to describe the purpose or context of the action control for enterprise users managing IAM templates.
@@ -43,70 +44,71 @@ class IamActionControlTemplateArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionControls")
-    def action_controls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]:
+    def action_controls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]:
         """
         The action control properties that are created in an action resource when the template is assigned.
         """
         return pulumi.get(self, "action_controls")
 
     @action_controls.setter
-    def action_controls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]):
+    def action_controls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]):
         pulumi.set(self, "action_controls", value)
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Committed status of the template. If committed is set to true, then the template version can no longer be updated.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the action control template. This is shown to users in the enterprise account. Use this to describe the purpose or context of the action control for enterprise users managing IAM templates.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Required field when creating a new template. Otherwise, this field is optional. If the field is included, it changes the name value for all existing versions of the template.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IamActionControlTemplateState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_control_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_controls: Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_control_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_controls: pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamActionControlTemplate resources.
+
         :param pulumi.Input[_builtins.str] account_id: Enterprise account ID where this template is created.
         :param pulumi.Input[_builtins.str] action_control_template_id: The action control template ID.
         :param pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]] action_controls: The action control properties that are created in an action resource when the template is assigned.
@@ -147,146 +149,146 @@ class _IamActionControlTemplateState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise account ID where this template is created.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="actionControlTemplateId")
-    def action_control_template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_control_template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action control template ID.
         """
         return pulumi.get(self, "action_control_template_id")
 
     @action_control_template_id.setter
-    def action_control_template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_control_template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_control_template_id", value)
 
     @_builtins.property
     @pulumi.getter(name="actionControls")
-    def action_controls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]:
+    def action_controls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]:
         """
         The action control properties that are created in an action resource when the template is assigned.
         """
         return pulumi.get(self, "action_controls")
 
     @action_controls.setter
-    def action_controls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]):
+    def action_controls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamActionControlTemplateActionControlArgs']]]]):
         pulumi.set(self, "action_controls", value)
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Committed status of the template. If committed is set to true, then the template version can no longer be updated.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UTC timestamp when the action control template was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IAM ID of the entity that created the action control template.
         """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
-    def created_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the action control template. This is shown to users in the enterprise account. Use this to describe the purpose or context of the action control for enterprise users managing IAM templates.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The href URL that links to the action control templates API by action control template ID.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedAt")
-    def last_modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UTC timestamp when the action control template was last modified.
         """
         return pulumi.get(self, "last_modified_at")
 
     @last_modified_at.setter
-    def last_modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_at", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedById")
-    def last_modified_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IAM ID of the entity that last modified the action control template.
         """
         return pulumi.get(self, "last_modified_by_id")
 
     @last_modified_by_id.setter
-    def last_modified_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Required field when creating a new template. Otherwise, this field is optional. If the field is included, it changes the name value for all existing versions of the template.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Template Version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -296,16 +298,17 @@ class IamActionControlTemplate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_controls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict']]]]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_controls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict', 'outputs.IamActionControlTemplateActionControl']]]]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamActionControlTemplate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict']]]] action_controls: The action control properties that are created in an action resource when the template is assigned.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict', 'outputs.IamActionControlTemplateActionControl']]]] action_controls: The action control properties that are created in an action resource when the template is assigned.
         :param pulumi.Input[_builtins.bool] committed: Committed status of the template. If committed is set to true, then the template version can no longer be updated.
         :param pulumi.Input[_builtins.str] description: Description of the action control template. This is shown to users in the enterprise account. Use this to describe the purpose or context of the action control for enterprise users managing IAM templates.
         :param pulumi.Input[_builtins.str] name: Required field when creating a new template. Otherwise, this field is optional. If the field is included, it changes the name value for all existing versions of the template.
@@ -318,6 +321,7 @@ class IamActionControlTemplate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamActionControlTemplate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamActionControlTemplateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -333,10 +337,10 @@ class IamActionControlTemplate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_controls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict']]]]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_controls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict', 'outputs.IamActionControlTemplateActionControl']]]]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -368,18 +372,18 @@ class IamActionControlTemplate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            action_control_template_id: Optional[pulumi.Input[_builtins.str]] = None,
-            action_controls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict']]]]] = None,
-            committed: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamActionControlTemplate':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            action_control_template_id: pulumi.Input[Optional[_builtins.str]] = None,
+            action_controls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict', 'outputs.IamActionControlTemplateActionControl']]]]] = None,
+            committed: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamActionControlTemplate':
         """
         Get an existing IamActionControlTemplate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -389,7 +393,7 @@ class IamActionControlTemplate(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: Enterprise account ID where this template is created.
         :param pulumi.Input[_builtins.str] action_control_template_id: The action control template ID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict']]]] action_controls: The action control properties that are created in an action resource when the template is assigned.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamActionControlTemplateActionControlArgs', 'IamActionControlTemplateActionControlArgsDict', 'outputs.IamActionControlTemplateActionControl']]]] action_controls: The action control properties that are created in an action resource when the template is assigned.
         :param pulumi.Input[_builtins.bool] committed: Committed status of the template. If committed is set to true, then the template version can no longer be updated.
         :param pulumi.Input[_builtins.str] created_at: The UTC timestamp when the action control template was created.
         :param pulumi.Input[_builtins.str] created_by_id: The IAM ID of the entity that created the action control template.

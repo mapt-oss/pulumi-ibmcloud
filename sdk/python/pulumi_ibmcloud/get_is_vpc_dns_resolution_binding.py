@@ -174,8 +174,8 @@ def get_is_vpc_dns_resolution_binding(identifier: Optional[_builtins.str] = None
         resource_type=pulumi.get(__ret__, 'resource_type'),
         vpc_id=pulumi.get(__ret__, 'vpc_id'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_is_vpc_dns_resolution_binding_output(identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                                             vpc_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_vpc_dns_resolution_binding_output(identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                                             vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpcDnsResolutionBindingResult]:
     """
     Use this data source to access information about an existing resource.

@@ -121,7 +121,7 @@ def get_iam_role_actions(service: Optional[_builtins.str] = None,
         readers=pulumi.get(__ret__, 'readers'),
         service=pulumi.get(__ret__, 'service'),
         writers=pulumi.get(__ret__, 'writers'))
-def get_iam_role_actions_output(service: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_role_actions_output(service: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamRoleActionsResult]:
     """
     Use this data source to access information about an existing resource.

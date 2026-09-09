@@ -123,8 +123,8 @@ def get_pi_storage_pool_capacity(pi_cloud_instance_id: Optional[_builtins.str] =
         replication_enabled=pulumi.get(__ret__, 'replication_enabled'),
         storage_type=pulumi.get(__ret__, 'storage_type'),
         total_capacity=pulumi.get(__ret__, 'total_capacity'))
-def get_pi_storage_pool_capacity_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        pi_storage_pool: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_storage_pool_capacity_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        pi_storage_pool: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiStoragePoolCapacityResult]:
     """
     Use this data source to access information about an existing resource.

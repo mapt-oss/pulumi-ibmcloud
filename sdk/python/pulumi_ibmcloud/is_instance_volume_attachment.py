@@ -22,22 +22,23 @@ __all__ = ['IsInstanceVolumeAttachmentInitArgs', 'IsInstanceVolumeAttachment']
 class IsInstanceVolumeAttachmentInitArgs:
     def __init__(__self__, *,
                  instance: pulumi.Input[_builtins.str],
-                 allowed_use: Optional[pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs']] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 delete_volume_on_attachment_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_volume_on_instance_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_use: pulumi.Input[Optional['IsInstanceVolumeAttachmentAllowedUseArgs']] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 delete_volume_on_attachment_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_volume_on_instance_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsInstanceVolumeAttachment resource.
+
         :param pulumi.Input[_builtins.str] instance: Instance id
         :param pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs'] allowed_use: The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.int] bandwidth: The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
@@ -98,202 +99,203 @@ class IsInstanceVolumeAttachmentInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedUse")
-    def allowed_use(self) -> Optional[pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs']]:
+    def allowed_use(self) -> pulumi.Input[Optional['IsInstanceVolumeAttachmentAllowedUseArgs']]:
         """
         The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
         """
         return pulumi.get(self, "allowed_use")
 
     @allowed_use.setter
-    def allowed_use(self, value: Optional[pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs']]):
+    def allowed_use(self, value: pulumi.Input[Optional['IsInstanceVolumeAttachmentAllowedUseArgs']]):
         pulumi.set(self, "allowed_use", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVolumeOnAttachmentDelete")
-    def delete_volume_on_attachment_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_volume_on_attachment_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, when deleting the attachment, the volume will also be deleted. Default value for this true.
         """
         return pulumi.get(self, "delete_volume_on_attachment_delete")
 
     @delete_volume_on_attachment_delete.setter
-    def delete_volume_on_attachment_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_volume_on_attachment_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_volume_on_attachment_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVolumeOnInstanceDelete")
-    def delete_volume_on_instance_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_volume_on_instance_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, when deleting the instance the volume will also be deleted.
         """
         return pulumi.get(self, "delete_volume_on_instance_delete")
 
     @delete_volume_on_instance_delete.setter
-    def delete_volume_on_instance_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_volume_on_instance_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_volume_on_instance_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the [Key Protect Root Key](https://cloud.ibm.com/docs/key-protect?topic=key-protect-getting-started-tutorial) or [Hyper Protect Crypto Service Root Key](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) for this resource.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum I/O operations per second (IOPS) for the volume.
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iops", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this volume attachment.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The  globally unique name for the volume profile to use for this volume.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def snapshot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The snapshot ID of the volume to be attached
         """
         return pulumi.get(self, "snapshot")
 
     @snapshot.setter
-    def snapshot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotCrn")
-    def snapshot_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The snapshot crn of the volume to be attached
         """
         return pulumi.get(self, "snapshot_crn")
 
     @snapshot_crn.setter
-    def snapshot_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         UserTags for the volume instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance id
         """
         return pulumi.get(self, "volume")
 
     @volume.setter
-    def volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeName")
-    def volume_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this volume
         """
         return pulumi.get(self, "volume_name")
 
     @volume_name.setter
-    def volume_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_name", value)
 
 
 @pulumi.input_type
 class _IsInstanceVolumeAttachmentState:
     def __init__(__self__, *,
-                 allowed_use: Optional[pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs']] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 delete_volume_on_attachment_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_volume_on_instance_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 device: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_deleted: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_href: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_use: pulumi.Input[Optional['IsInstanceVolumeAttachmentAllowedUseArgs']] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 delete_volume_on_attachment_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_volume_on_instance_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 device: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_deleted: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_href: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceVolumeAttachment resources.
+
         :param pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs'] allowed_use: The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.int] bandwidth: The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         :param pulumi.Input[_builtins.int] capacity: The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
@@ -369,287 +371,287 @@ class _IsInstanceVolumeAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="allowedUse")
-    def allowed_use(self) -> Optional[pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs']]:
+    def allowed_use(self) -> pulumi.Input[Optional['IsInstanceVolumeAttachmentAllowedUseArgs']]:
         """
         The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
         """
         return pulumi.get(self, "allowed_use")
 
     @allowed_use.setter
-    def allowed_use(self, value: Optional[pulumi.Input['IsInstanceVolumeAttachmentAllowedUseArgs']]):
+    def allowed_use(self, value: pulumi.Input[Optional['IsInstanceVolumeAttachmentAllowedUseArgs']]):
         pulumi.set(self, "allowed_use", value)
 
     @_builtins.property
     @pulumi.getter
-    def bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         """
         return pulumi.get(self, "bandwidth")
 
     @bandwidth.setter
-    def bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVolumeOnAttachmentDelete")
-    def delete_volume_on_attachment_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_volume_on_attachment_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, when deleting the attachment, the volume will also be deleted. Default value for this true.
         """
         return pulumi.get(self, "delete_volume_on_attachment_delete")
 
     @delete_volume_on_attachment_delete.setter
-    def delete_volume_on_attachment_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_volume_on_attachment_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_volume_on_attachment_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVolumeOnInstanceDelete")
-    def delete_volume_on_instance_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_volume_on_instance_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, when deleting the instance the volume will also be deleted.
         """
         return pulumi.get(self, "delete_volume_on_instance_delete")
 
     @delete_volume_on_instance_delete.setter
-    def delete_volume_on_instance_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_volume_on_instance_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_volume_on_instance_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def device(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def device(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for the device which is exposed to the instance operating system
         """
         return pulumi.get(self, "device")
 
     @device.setter
-    def device(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def device(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "device", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKey")
-    def encryption_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the [Key Protect Root Key](https://cloud.ibm.com/docs/key-protect?topic=key-protect-getting-started-tutorial) or [Hyper Protect Crypto Service Root Key](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) for this resource.
         """
         return pulumi.get(self, "encryption_key")
 
     @encryption_key.setter
-    def encryption_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this volume attachment
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance id
         """
         return pulumi.get(self, "instance")
 
     @instance.setter
-    def instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum I/O operations per second (IOPS) for the volume.
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iops", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this volume attachment.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The  globally unique name for the volume profile to use for this volume.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def snapshot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The snapshot ID of the volume to be attached
         """
         return pulumi.get(self, "snapshot")
 
     @snapshot.setter
-    def snapshot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotCrn")
-    def snapshot_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The snapshot crn of the volume to be attached
         """
         return pulumi.get(self, "snapshot_crn")
 
     @snapshot_crn.setter
-    def snapshot_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of this volume attachment, one of [ attached, attaching, deleting, detaching ]
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         UserTags for the volume instance
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of volume attachment one of [ boot, data ]
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter
-    def volume(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance id
         """
         return pulumi.get(self, "volume")
 
     @volume.setter
-    def volume(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeAttachmentId")
-    def volume_attachment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_attachment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this volume attachment
         """
         return pulumi.get(self, "volume_attachment_id")
 
     @volume_attachment_id.setter
-    def volume_attachment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_attachment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_attachment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeCrn")
-    def volume_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this volume
         """
         return pulumi.get(self, "volume_crn")
 
     @volume_crn.setter
-    def volume_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeDeleted")
-    def volume_deleted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_deleted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Link to documentation about deleted resources
         """
         return pulumi.get(self, "volume_deleted")
 
     @volume_deleted.setter
-    def volume_deleted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_deleted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_deleted", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeHref")
-    def volume_href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this volume
         """
         return pulumi.get(self, "volume_href")
 
     @volume_href.setter
-    def volume_href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_href", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeName")
-    def volume_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique user-defined name for this volume
         """
         return pulumi.get(self, "volume_name")
 
     @volume_name.setter
-    def volume_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_name", value)
 
 
@@ -659,27 +661,28 @@ class IsInstanceVolumeAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_use: Optional[pulumi.Input[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict']]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 delete_volume_on_attachment_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_volume_on_instance_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 allowed_use: pulumi.Input[Optional[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict', 'outputs.IsInstanceVolumeAttachmentAllowedUse']]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 delete_volume_on_attachment_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_volume_on_instance_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceVolumeAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict']] allowed_use: The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
+        :param pulumi.Input[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict', 'outputs.IsInstanceVolumeAttachmentAllowedUse']] allowed_use: The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.int] bandwidth: The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         :param pulumi.Input[_builtins.int] capacity: The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
         :param pulumi.Input[_builtins.bool] delete_volume_on_attachment_delete: If set to true, when deleting the attachment, the volume will also be deleted. Default value for this true.
@@ -703,6 +706,7 @@ class IsInstanceVolumeAttachment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceVolumeAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceVolumeAttachmentInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -718,21 +722,21 @@ class IsInstanceVolumeAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_use: Optional[pulumi.Input[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict']]] = None,
-                 bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 capacity: Optional[pulumi.Input[_builtins.int]] = None,
-                 delete_volume_on_attachment_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_volume_on_instance_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 allowed_use: pulumi.Input[Optional[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict', 'outputs.IsInstanceVolumeAttachmentAllowedUse']]] = None,
+                 bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 delete_volume_on_attachment_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_volume_on_instance_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 volume: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -778,30 +782,30 @@ class IsInstanceVolumeAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_use: Optional[pulumi.Input[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict']]] = None,
-            bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-            capacity: Optional[pulumi.Input[_builtins.int]] = None,
-            delete_volume_on_attachment_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            delete_volume_on_instance_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            device: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_key: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            instance: Optional[pulumi.Input[_builtins.str]] = None,
-            iops: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-            snapshot_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            volume: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_deleted: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_href: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceVolumeAttachment':
+            allowed_use: pulumi.Input[Optional[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict', 'outputs.IsInstanceVolumeAttachmentAllowedUse']]] = None,
+            bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+            capacity: pulumi.Input[Optional[_builtins.int]] = None,
+            delete_volume_on_attachment_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_volume_on_instance_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            device: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            instance: pulumi.Input[Optional[_builtins.str]] = None,
+            iops: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            volume: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_deleted: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_href: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceVolumeAttachment':
         """
         Get an existing IsInstanceVolumeAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -809,7 +813,7 @@ class IsInstanceVolumeAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict']] allowed_use: The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
+        :param pulumi.Input[Union['IsInstanceVolumeAttachmentAllowedUseArgs', 'IsInstanceVolumeAttachmentAllowedUseArgsDict', 'outputs.IsInstanceVolumeAttachmentAllowedUse']] allowed_use: The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.int] bandwidth: The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storage_generation must be 2.
         :param pulumi.Input[_builtins.int] capacity: The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
         :param pulumi.Input[_builtins.bool] delete_volume_on_attachment_delete: If set to true, when deleting the attachment, the volume will also be deleted. Default value for this true.

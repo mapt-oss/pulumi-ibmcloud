@@ -88,15 +88,15 @@ export interface PiConsoleLanguageState {
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier or name of the instance.
      */
-    piInstanceName?: pulumi.Input<string>;
+    piInstanceName?: pulumi.Input<string | undefined>;
     /**
      * Language code.
      */
-    piLanguageCode?: pulumi.Input<string>;
+    piLanguageCode?: pulumi.Input<string | undefined>;
 }
 
 /**

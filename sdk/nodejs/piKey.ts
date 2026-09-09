@@ -134,47 +134,47 @@ export interface PiKeyState {
     /**
      * Date of SSH Key creation.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * SSH RSA key.
      *
      * @deprecated This field is deprecated and will be removed in a future release. Use piSshKey instead.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * User defined name for the SSH key.
      *
      * @deprecated This field is deprecated and will be removed in a future release. Use piKeyName instead.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Description of the ssh key.
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * User defined name for the SSH key.
      */
-    piKeyName?: pulumi.Input<string>;
+    piKeyName?: pulumi.Input<string | undefined>;
     /**
      * SSH RSA key.
      */
-    piSshKey?: pulumi.Input<string>;
+    piSshKey?: pulumi.Input<string | undefined>;
     /**
      * Visibility of the ssh key. Valid values are: ["account", "workspace"].
      */
-    piVisibility?: pulumi.Input<string>;
+    piVisibility?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the current workspace owns the ssh key or not.
      */
-    primaryWorkspace?: pulumi.Input<boolean>;
+    primaryWorkspace?: pulumi.Input<boolean | undefined>;
     /**
      * Unique ID of SSH key.
      */
-    sshKeyId?: pulumi.Input<string>;
+    sshKeyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -188,7 +188,7 @@ export interface PiKeyArgs {
     /**
      * Description of the ssh key.
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * User defined name for the SSH key.
      */
@@ -200,5 +200,5 @@ export interface PiKeyArgs {
     /**
      * Visibility of the ssh key. Valid values are: ["account", "workspace"].
      */
-    piVisibility?: pulumi.Input<string>;
+    piVisibility?: pulumi.Input<string | undefined>;
 }

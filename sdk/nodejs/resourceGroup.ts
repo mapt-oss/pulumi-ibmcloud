@@ -130,48 +130,48 @@ export interface ResourceGroupState {
     /**
      * The date when the resource group was initially created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The full CRN associated with the resource group
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether its default resource group or not
      */
-    default?: pulumi.Input<boolean>;
+    default?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the resource group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The URL to access the payment methods details that associated with the resource group.
      */
-    paymentMethodsUrl?: pulumi.Input<string>;
+    paymentMethodsUrl?: pulumi.Input<string | undefined>;
     /**
      * An alpha-numeric value identifying the quota ID associated with the resource group.
      */
-    quotaId?: pulumi.Input<string>;
+    quotaId?: pulumi.Input<string | undefined>;
     /**
      * The URL to access the quota details that associated with the resource group.
      */
-    quotaUrl?: pulumi.Input<string>;
+    quotaUrl?: pulumi.Input<string | undefined>;
     /**
      * An array of the resources that linked to the resource group
      */
-    resourceLinkages?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceLinkages?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * State of the resource group
      */
-    state?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    state?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The URL to access the team details that associated with the resource group.
      */
-    teamsUrl?: pulumi.Input<string>;
+    teamsUrl?: pulumi.Input<string | undefined>;
     /**
      * The date when the resource group was last updated.
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -181,6 +181,6 @@ export interface ResourceGroupArgs {
     /**
      * The name of the resource group
      */
-    name?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    name?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

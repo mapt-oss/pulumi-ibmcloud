@@ -68,7 +68,7 @@ def get_compute_image_template(name: Optional[_builtins.str] = None,
     return AwaitableGetComputeImageTemplateResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_compute_image_template_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_image_template_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeImageTemplateResult]:
     """
     Use this data source to access information about an existing resource.

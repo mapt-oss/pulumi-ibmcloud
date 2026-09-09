@@ -19,17 +19,20 @@ __all__ = ['IamApiKeyArgs', 'IamApiKey']
 @pulumi.input_type
 class IamApiKeyArgs:
     def __init__(__self__, *,
-                 apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_lock: Optional[pulumi.Input[_builtins.str]] = None,
-                 file: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 store_value: Optional[pulumi.Input[_builtins.bool]] = None):
+                 apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_lock: pulumi.Input[Optional[_builtins.str]] = None,
+                 expires_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 file: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 store_value: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a IamApiKey resource.
+
         :param pulumi.Input[_builtins.str] apikey: You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
         :param pulumi.Input[_builtins.str] description: The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
         :param pulumi.Input[_builtins.str] entity_lock: Indicates if the API key is locked for further write operations. False by default.
+        :param pulumi.Input[_builtins.str] expires_at: Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expires_at and modified_at timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
         :param pulumi.Input[_builtins.str] file: File where api key is to be stored
         :param pulumi.Input[_builtins.str] name: Name of the API key. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the API key.
         :param pulumi.Input[_builtins.bool] store_value: Send true or false to set whether the API key value is retrievable in the future by using the Get details of an API key request. If you create an API key for a user, you must specify `false` or omit the value. We don't allow storing of API keys for users.
@@ -40,6 +43,8 @@ class IamApiKeyArgs:
             pulumi.set(__self__, "description", description)
         if entity_lock is not None:
             pulumi.set(__self__, "entity_lock", entity_lock)
+        if expires_at is not None:
+            pulumi.set(__self__, "expires_at", expires_at)
         if file is not None:
             pulumi.set(__self__, "file", file)
         if name is not None:
@@ -49,98 +54,112 @@ class IamApiKeyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def apikey(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apikey(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
         """
         return pulumi.get(self, "apikey")
 
     @apikey.setter
-    def apikey(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apikey(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apikey", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entityLock")
-    def entity_lock(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_lock(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates if the API key is locked for further write operations. False by default.
         """
         return pulumi.get(self, "entity_lock")
 
     @entity_lock.setter
-    def entity_lock(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_lock(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_lock", value)
 
     @_builtins.property
+    @pulumi.getter(name="expiresAt")
+    def expires_at(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expires_at and modified_at timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
+        """
+        return pulumi.get(self, "expires_at")
+
+    @expires_at.setter
+    def expires_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expires_at", value)
+
+    @_builtins.property
     @pulumi.getter
-    def file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         File where api key is to be stored
         """
         return pulumi.get(self, "file")
 
     @file.setter
-    def file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the API key. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the API key.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="storeValue")
-    def store_value(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def store_value(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Send true or false to set whether the API key value is retrievable in the future by using the Get details of an API key request. If you create an API key for a user, you must specify `false` or omit the value. We don't allow storing of API keys for users.
         """
         return pulumi.get(self, "store_value")
 
     @store_value.setter
-    def store_value(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def store_value(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "store_value", value)
 
 
 @pulumi.input_type
 class _IamApiKeyState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 apikey_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_lock: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 file: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 store_value: Optional[pulumi.Input[_builtins.bool]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 apikey_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_lock: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 expires_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 file: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 store_value: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering IamApiKey resources.
-        :param pulumi.Input[_builtins.str] account_id: The account ID of the API key.
+
+        :param pulumi.Input[_builtins.str] account_id: ID of the account that this API key authenticates for.
         :param pulumi.Input[_builtins.str] apikey: You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
         :param pulumi.Input[_builtins.str] apikey_id: Unique identifier of this API Key.
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
@@ -149,6 +168,7 @@ class _IamApiKeyState:
         :param pulumi.Input[_builtins.str] description: The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
         :param pulumi.Input[_builtins.str] entity_lock: Indicates if the API key is locked for further write operations. False by default.
         :param pulumi.Input[_builtins.str] entity_tag: Version of the API Key details object. You need to specify this value when updating the API key to avoid stale updates.
+        :param pulumi.Input[_builtins.str] expires_at: Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expires_at and modified_at timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
         :param pulumi.Input[_builtins.str] file: File where api key is to be stored
         :param pulumi.Input[_builtins.str] iam_id: The iam_id that this API key authenticates.
         :param pulumi.Input[_builtins.bool] locked: The API key cannot be changed if set to true.
@@ -174,6 +194,8 @@ class _IamApiKeyState:
             pulumi.set(__self__, "entity_lock", entity_lock)
         if entity_tag is not None:
             pulumi.set(__self__, "entity_tag", entity_tag)
+        if expires_at is not None:
+            pulumi.set(__self__, "expires_at", expires_at)
         if file is not None:
             pulumi.set(__self__, "file", file)
         if iam_id is not None:
@@ -189,182 +211,194 @@ class _IamApiKeyState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The account ID of the API key.
+        ID of the account that this API key authenticates for.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def apikey(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apikey(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
         """
         return pulumi.get(self, "apikey")
 
     @apikey.setter
-    def apikey(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apikey(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apikey", value)
 
     @_builtins.property
     @pulumi.getter(name="apikeyId")
-    def apikey_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apikey_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier of this API Key.
         """
         return pulumi.get(self, "apikey_id")
 
     @apikey_id.setter
-    def apikey_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apikey_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apikey_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the creation date in ISO format.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAM ID of the user or service which created the API key.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Resource Name of the item. Example Cloud Resource Name: 'crn:v1:bluemix:public:iam-identity:us-south:a/myaccount::apikey:1234-9012-5678'.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entityLock")
-    def entity_lock(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_lock(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates if the API key is locked for further write operations. False by default.
         """
         return pulumi.get(self, "entity_lock")
 
     @entity_lock.setter
-    def entity_lock(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_lock(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_lock", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the API Key details object. You need to specify this value when updating the API key to avoid stale updates.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
+    @pulumi.getter(name="expiresAt")
+    def expires_at(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expires_at and modified_at timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
+        """
+        return pulumi.get(self, "expires_at")
+
+    @expires_at.setter
+    def expires_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expires_at", value)
+
+    @_builtins.property
     @pulumi.getter
-    def file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         File where api key is to be stored
         """
         return pulumi.get(self, "file")
 
     @file.setter
-    def file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file", value)
 
     @_builtins.property
     @pulumi.getter(name="iamId")
-    def iam_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The iam_id that this API key authenticates.
         """
         return pulumi.get(self, "iam_id")
 
     @iam_id.setter
-    def iam_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def locked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The API key cannot be changed if set to true.
         """
         return pulumi.get(self, "locked")
 
     @locked.setter
-    def locked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "locked", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedAt")
-    def modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set contains a date time string of the last modification date in ISO format.
         """
         return pulumi.get(self, "modified_at")
 
     @modified_at.setter
-    def modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the API key. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the API key.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="storeValue")
-    def store_value(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def store_value(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Send true or false to set whether the API key value is retrievable in the future by using the Get details of an API key request. If you create an API key for a user, you must specify `false` or omit the value. We don't allow storing of API keys for users.
         """
         return pulumi.get(self, "store_value")
 
     @store_value.setter
-    def store_value(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def store_value(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "store_value", value)
 
 
@@ -374,20 +408,23 @@ class IamApiKey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_lock: Optional[pulumi.Input[_builtins.str]] = None,
-                 file: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 store_value: Optional[pulumi.Input[_builtins.bool]] = None,
+                 apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_lock: pulumi.Input[Optional[_builtins.str]] = None,
+                 expires_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 file: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 store_value: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a IamApiKey resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apikey: You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
         :param pulumi.Input[_builtins.str] description: The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
         :param pulumi.Input[_builtins.str] entity_lock: Indicates if the API key is locked for further write operations. False by default.
+        :param pulumi.Input[_builtins.str] expires_at: Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expires_at and modified_at timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
         :param pulumi.Input[_builtins.str] file: File where api key is to be stored
         :param pulumi.Input[_builtins.str] name: Name of the API key. The name is not checked for uniqueness. Therefore multiple names with the same value can exist. Access is done via the UUID of the API key.
         :param pulumi.Input[_builtins.bool] store_value: Send true or false to set whether the API key value is retrievable in the future by using the Get details of an API key request. If you create an API key for a user, you must specify `false` or omit the value. We don't allow storing of API keys for users.
@@ -400,6 +437,7 @@ class IamApiKey(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamApiKey resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamApiKeyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -415,12 +453,13 @@ class IamApiKey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apikey: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_lock: Optional[pulumi.Input[_builtins.str]] = None,
-                 file: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 store_value: Optional[pulumi.Input[_builtins.bool]] = None,
+                 apikey: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_lock: pulumi.Input[Optional[_builtins.str]] = None,
+                 expires_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 file: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 store_value: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -433,6 +472,7 @@ class IamApiKey(pulumi.CustomResource):
             __props__.__dict__["apikey"] = None if apikey is None else pulumi.Output.secret(apikey)
             __props__.__dict__["description"] = description
             __props__.__dict__["entity_lock"] = entity_lock
+            __props__.__dict__["expires_at"] = expires_at
             __props__.__dict__["file"] = file
             __props__.__dict__["name"] = name
             __props__.__dict__["store_value"] = store_value
@@ -457,21 +497,22 @@ class IamApiKey(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            apikey: Optional[pulumi.Input[_builtins.str]] = None,
-            apikey_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_lock: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-            file: Optional[pulumi.Input[_builtins.str]] = None,
-            iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-            locked: Optional[pulumi.Input[_builtins.bool]] = None,
-            modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            store_value: Optional[pulumi.Input[_builtins.bool]] = None) -> 'IamApiKey':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            apikey: pulumi.Input[Optional[_builtins.str]] = None,
+            apikey_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_lock: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+            expires_at: pulumi.Input[Optional[_builtins.str]] = None,
+            file: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+            locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            store_value: pulumi.Input[Optional[_builtins.bool]] = None) -> 'IamApiKey':
         """
         Get an existing IamApiKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -479,7 +520,7 @@ class IamApiKey(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] account_id: The account ID of the API key.
+        :param pulumi.Input[_builtins.str] account_id: ID of the account that this API key authenticates for.
         :param pulumi.Input[_builtins.str] apikey: You can optionally passthrough the API key value for this API key. If passed, NO validation of that apiKey value is done, i.e. the value can be non-URL safe. If omitted, the API key management will create an URL safe opaque API key value. The value of the API key is checked for uniqueness. Please ensure enough variations when passing in this value.
         :param pulumi.Input[_builtins.str] apikey_id: Unique identifier of this API Key.
         :param pulumi.Input[_builtins.str] created_at: If set contains a date time string of the creation date in ISO format.
@@ -488,6 +529,7 @@ class IamApiKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: The optional description of the API key. The 'description' property is only available if a description was provided during a create of an API key.
         :param pulumi.Input[_builtins.str] entity_lock: Indicates if the API key is locked for further write operations. False by default.
         :param pulumi.Input[_builtins.str] entity_tag: Version of the API Key details object. You need to specify this value when updating the API key to avoid stale updates.
+        :param pulumi.Input[_builtins.str] expires_at: Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expires_at and modified_at timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
         :param pulumi.Input[_builtins.str] file: File where api key is to be stored
         :param pulumi.Input[_builtins.str] iam_id: The iam_id that this API key authenticates.
         :param pulumi.Input[_builtins.bool] locked: The API key cannot be changed if set to true.
@@ -508,6 +550,7 @@ class IamApiKey(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["entity_lock"] = entity_lock
         __props__.__dict__["entity_tag"] = entity_tag
+        __props__.__dict__["expires_at"] = expires_at
         __props__.__dict__["file"] = file
         __props__.__dict__["iam_id"] = iam_id
         __props__.__dict__["locked"] = locked
@@ -520,7 +563,7 @@ class IamApiKey(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The account ID of the API key.
+        ID of the account that this API key authenticates for.
         """
         return pulumi.get(self, "account_id")
 
@@ -587,6 +630,14 @@ class IamApiKey(pulumi.CustomResource):
         Version of the API Key details object. You need to specify this value when updating the API key to avoid stale updates.
         """
         return pulumi.get(self, "entity_tag")
+
+    @_builtins.property
+    @pulumi.getter(name="expiresAt")
+    def expires_at(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Date and time when the API key becomes invalid, ISO 8601 datetime in the format 'yyyy-MM-ddTHH:mm+0000'. **WARNING** An API key will be permanently and irrevocably deleted when both the expires_at and modified_at timestamps are more than ninety (90) days in the past, regardless of the key’s locked status or any other state.
+        """
+        return pulumi.get(self, "expires_at")
 
     @_builtins.property
     @pulumi.getter

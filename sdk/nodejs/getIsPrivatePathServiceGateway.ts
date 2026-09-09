@@ -64,6 +64,6 @@ export function getIsPrivatePathServiceGatewayOutput(args?: GetIsPrivatePathServ
  * A collection of arguments for invoking getIsPrivatePathServiceGateway.
  */
 export interface GetIsPrivatePathServiceGatewayOutputArgs {
-    privatePathServiceGateway?: pulumi.Input<string>;
-    privatePathServiceGatewayName?: pulumi.Input<string>;
+    privatePathServiceGateway?: pulumi.Input<string | undefined>;
+    privatePathServiceGatewayName?: pulumi.Input<string | undefined>;
 }

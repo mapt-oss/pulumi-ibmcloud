@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
+from . import outputs
 
 __all__ = [
     'GetPiSapProfileResult',
@@ -26,7 +27,10 @@ class GetPiSapProfileResult:
     """
     A collection of values returned by getPiSapProfile.
     """
-    def __init__(__self__, certified=None, cores=None, default_system=None, full_system_profile=None, id=None, memory=None, pi_cloud_instance_id=None, pi_sap_profile_id=None, saps=None, supported_systems=None, type=None, workload_types=None):
+    def __init__(__self__, asaps=None, certified=None, cores=None, default_system=None, deprecated=None, full_system_profile=None, id=None, memory=None, pi_cloud_instance_id=None, pi_sap_profile_id=None, saps=None, supported_systems=None, type=None, vpmem_volumes=None, workload_types=None):
+        if asaps and not isinstance(asaps, int):
+            raise TypeError("Expected argument 'asaps' to be a int")
+        pulumi.set(__self__, "asaps", asaps)
         if certified and not isinstance(certified, bool):
             raise TypeError("Expected argument 'certified' to be a bool")
         pulumi.set(__self__, "certified", certified)
@@ -36,6 +40,9 @@ class GetPiSapProfileResult:
         if default_system and not isinstance(default_system, str):
             raise TypeError("Expected argument 'default_system' to be a str")
         pulumi.set(__self__, "default_system", default_system)
+        if deprecated and not isinstance(deprecated, bool):
+            raise TypeError("Expected argument 'deprecated' to be a bool")
+        pulumi.set(__self__, "deprecated", deprecated)
         if full_system_profile and not isinstance(full_system_profile, bool):
             raise TypeError("Expected argument 'full_system_profile' to be a bool")
         pulumi.set(__self__, "full_system_profile", full_system_profile)
@@ -60,9 +67,17 @@ class GetPiSapProfileResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+        if vpmem_volumes and not isinstance(vpmem_volumes, list):
+            raise TypeError("Expected argument 'vpmem_volumes' to be a list")
+        pulumi.set(__self__, "vpmem_volumes", vpmem_volumes)
         if workload_types and not isinstance(workload_types, list):
             raise TypeError("Expected argument 'workload_types' to be a list")
         pulumi.set(__self__, "workload_types", workload_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def asaps(self) -> _builtins.int:
+        return pulumi.get(self, "asaps")
 
     @_builtins.property
     @pulumi.getter
@@ -78,6 +93,11 @@ class GetPiSapProfileResult:
     @pulumi.getter(name="defaultSystem")
     def default_system(self) -> _builtins.str:
         return pulumi.get(self, "default_system")
+
+    @_builtins.property
+    @pulumi.getter
+    def deprecated(self) -> _builtins.bool:
+        return pulumi.get(self, "deprecated")
 
     @_builtins.property
     @pulumi.getter(name="fullSystemProfile")
@@ -123,6 +143,11 @@ class GetPiSapProfileResult:
         return pulumi.get(self, "type")
 
     @_builtins.property
+    @pulumi.getter(name="vpmemVolumes")
+    def vpmem_volumes(self) -> Sequence['outputs.GetPiSapProfileVpmemVolumeResult']:
+        return pulumi.get(self, "vpmem_volumes")
+
+    @_builtins.property
     @pulumi.getter(name="workloadTypes")
     def workload_types(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "workload_types")
@@ -134,9 +159,11 @@ class AwaitableGetPiSapProfileResult(GetPiSapProfileResult):
         if False:
             yield self
         return GetPiSapProfileResult(
+            asaps=self.asaps,
             certified=self.certified,
             cores=self.cores,
             default_system=self.default_system,
+            deprecated=self.deprecated,
             full_system_profile=self.full_system_profile,
             id=self.id,
             memory=self.memory,
@@ -145,6 +172,7 @@ class AwaitableGetPiSapProfileResult(GetPiSapProfileResult):
             saps=self.saps,
             supported_systems=self.supported_systems,
             type=self.type,
+            vpmem_volumes=self.vpmem_volumes,
             workload_types=self.workload_types)
 
 
@@ -161,9 +189,11 @@ def get_pi_sap_profile(pi_cloud_instance_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getPiSapProfile:getPiSapProfile', __args__, opts=opts, typ=GetPiSapProfileResult).value
 
     return AwaitableGetPiSapProfileResult(
+        asaps=pulumi.get(__ret__, 'asaps'),
         certified=pulumi.get(__ret__, 'certified'),
         cores=pulumi.get(__ret__, 'cores'),
         default_system=pulumi.get(__ret__, 'default_system'),
+        deprecated=pulumi.get(__ret__, 'deprecated'),
         full_system_profile=pulumi.get(__ret__, 'full_system_profile'),
         id=pulumi.get(__ret__, 'id'),
         memory=pulumi.get(__ret__, 'memory'),
@@ -172,9 +202,10 @@ def get_pi_sap_profile(pi_cloud_instance_id: Optional[_builtins.str] = None,
         saps=pulumi.get(__ret__, 'saps'),
         supported_systems=pulumi.get(__ret__, 'supported_systems'),
         type=pulumi.get(__ret__, 'type'),
+        vpmem_volumes=pulumi.get(__ret__, 'vpmem_volumes'),
         workload_types=pulumi.get(__ret__, 'workload_types'))
-def get_pi_sap_profile_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              pi_sap_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_sap_profile_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              pi_sap_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiSapProfileResult]:
     """
     Use this data source to access information about an existing resource.
@@ -185,9 +216,11 @@ def get_pi_sap_profile_output(pi_cloud_instance_id: Optional[pulumi.Input[_built
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getPiSapProfile:getPiSapProfile', __args__, opts=opts, typ=GetPiSapProfileResult)
     return __ret__.apply(lambda __response__: GetPiSapProfileResult(
+        asaps=pulumi.get(__response__, 'asaps'),
         certified=pulumi.get(__response__, 'certified'),
         cores=pulumi.get(__response__, 'cores'),
         default_system=pulumi.get(__response__, 'default_system'),
+        deprecated=pulumi.get(__response__, 'deprecated'),
         full_system_profile=pulumi.get(__response__, 'full_system_profile'),
         id=pulumi.get(__response__, 'id'),
         memory=pulumi.get(__response__, 'memory'),
@@ -196,4 +229,5 @@ def get_pi_sap_profile_output(pi_cloud_instance_id: Optional[pulumi.Input[_built
         saps=pulumi.get(__response__, 'saps'),
         supported_systems=pulumi.get(__response__, 'supported_systems'),
         type=pulumi.get(__response__, 'type'),
+        vpmem_volumes=pulumi.get(__response__, 'vpmem_volumes'),
         workload_types=pulumi.get(__response__, 'workload_types')))

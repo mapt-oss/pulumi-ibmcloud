@@ -29,6 +29,8 @@ export interface GetIsInstanceArgs {
  */
 export interface GetIsInstanceResult {
     readonly accessTags: string[];
+    readonly availabilities: outputs.GetIsInstanceAvailability[];
+    readonly availabilityPolicies: outputs.GetIsInstanceAvailabilityPolicy[];
     readonly availabilityPolicyHostFailure: string;
     readonly bandwidth: number;
     readonly bootVolumes: outputs.GetIsInstanceBootVolume[];
@@ -72,9 +74,11 @@ export interface GetIsInstanceResult {
     readonly resourceGroupName: string;
     readonly resourceName: string;
     readonly resourceStatus: string;
+    readonly softwareAttachments: outputs.GetIsInstanceSoftwareAttachment[];
     readonly status: string;
     readonly statusReasons: outputs.GetIsInstanceStatusReason[];
     readonly tags: string[];
+    readonly threadsPerCore: number;
     readonly totalNetworkBandwidth: number;
     readonly totalVolumeBandwidth: number;
     readonly vcpus: outputs.GetIsInstanceVcpus[];
@@ -98,6 +102,6 @@ export function getIsInstanceOutput(args: GetIsInstanceOutputArgs, opts?: pulumi
  */
 export interface GetIsInstanceOutputArgs {
     name: pulumi.Input<string>;
-    passphrase?: pulumi.Input<string>;
-    privateKey?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
+    privateKey?: pulumi.Input<string | undefined>;
 }

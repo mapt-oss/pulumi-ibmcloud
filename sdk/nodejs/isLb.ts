@@ -43,6 +43,14 @@ export class IsLb extends pulumi.CustomResource {
      */
     declare public readonly accessTags: pulumi.Output<string[]>;
     /**
+     * Indicates whether this load balancer supports advanced health checks.
+     */
+    declare public /*out*/ readonly advancedHealthChecksSupported: pulumi.Output<boolean>;
+    /**
+     * Indicates whether this load balancer supports asymmetric routing.
+     */
+    declare public /*out*/ readonly asymmetricRoutingSupported: pulumi.Output<boolean>;
+    /**
      * The load balancer pool members attached to this load balancer.
      */
     declare public /*out*/ readonly attachedLoadBalancerPoolMembers: pulumi.Output<outputs.IsLbAttachedLoadBalancerPoolMember[]>;
@@ -62,6 +70,10 @@ export class IsLb extends pulumi.CustomResource {
      * The supported `failsafe_policy.action` values for this load balancer's pools.
      */
     declare public /*out*/ readonly failsafePolicyActions: pulumi.Output<string[]>;
+    /**
+     * Indicates whether this load balancer supports pool members specified by their fully qualified domain names.
+     */
+    declare public /*out*/ readonly fqdnPoolMembersSupported: pulumi.Output<boolean>;
     declare public /*out*/ readonly hostname: pulumi.Output<string>;
     /**
      * Indicates whether this load balancer supports instance groups.
@@ -71,6 +83,10 @@ export class IsLb extends pulumi.CustomResource {
      * Logging of Load Balancer
      */
     declare public readonly logging: pulumi.Output<boolean | undefined>;
+    /**
+     * Indicates whether this load balancer supports mTLS.
+     */
+    declare public /*out*/ readonly mtlsSupported: pulumi.Output<boolean>;
     /**
      * Load Balancer name
      */
@@ -146,14 +162,18 @@ export class IsLb extends pulumi.CustomResource {
             const state = argsOrState as IsLbState | undefined;
             resourceInputs["accessMode"] = state?.accessMode;
             resourceInputs["accessTags"] = state?.accessTags;
+            resourceInputs["advancedHealthChecksSupported"] = state?.advancedHealthChecksSupported;
+            resourceInputs["asymmetricRoutingSupported"] = state?.asymmetricRoutingSupported;
             resourceInputs["attachedLoadBalancerPoolMembers"] = state?.attachedLoadBalancerPoolMembers;
             resourceInputs["availability"] = state?.availability;
             resourceInputs["crn"] = state?.crn;
             resourceInputs["dns"] = state?.dns;
             resourceInputs["failsafePolicyActions"] = state?.failsafePolicyActions;
+            resourceInputs["fqdnPoolMembersSupported"] = state?.fqdnPoolMembersSupported;
             resourceInputs["hostname"] = state?.hostname;
             resourceInputs["instanceGroupsSupported"] = state?.instanceGroupsSupported;
             resourceInputs["logging"] = state?.logging;
+            resourceInputs["mtlsSupported"] = state?.mtlsSupported;
             resourceInputs["name"] = state?.name;
             resourceInputs["operatingStatus"] = state?.operatingStatus;
             resourceInputs["privateIp"] = state?.privateIp;
@@ -191,12 +211,16 @@ export class IsLb extends pulumi.CustomResource {
             resourceInputs["tags"] = args?.tags;
             resourceInputs["type"] = args?.type;
             resourceInputs["accessMode"] = undefined /*out*/;
+            resourceInputs["advancedHealthChecksSupported"] = undefined /*out*/;
+            resourceInputs["asymmetricRoutingSupported"] = undefined /*out*/;
             resourceInputs["attachedLoadBalancerPoolMembers"] = undefined /*out*/;
             resourceInputs["availability"] = undefined /*out*/;
             resourceInputs["crn"] = undefined /*out*/;
             resourceInputs["failsafePolicyActions"] = undefined /*out*/;
+            resourceInputs["fqdnPoolMembersSupported"] = undefined /*out*/;
             resourceInputs["hostname"] = undefined /*out*/;
             resourceInputs["instanceGroupsSupported"] = undefined /*out*/;
+            resourceInputs["mtlsSupported"] = undefined /*out*/;
             resourceInputs["operatingStatus"] = undefined /*out*/;
             resourceInputs["privateIp"] = undefined /*out*/;
             resourceInputs["privateIps"] = undefined /*out*/;
@@ -222,99 +246,115 @@ export interface IsLbState {
     /**
      * The access mode of this load balancer
      */
-    accessMode?: pulumi.Input<string>;
+    accessMode?: pulumi.Input<string | undefined>;
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Indicates whether this load balancer supports advanced health checks.
+     */
+    advancedHealthChecksSupported?: pulumi.Input<boolean | undefined>;
+    /**
+     * Indicates whether this load balancer supports asymmetric routing.
+     */
+    asymmetricRoutingSupported?: pulumi.Input<boolean | undefined>;
     /**
      * The load balancer pool members attached to this load balancer.
      */
-    attachedLoadBalancerPoolMembers?: pulumi.Input<pulumi.Input<inputs.IsLbAttachedLoadBalancerPoolMember>[]>;
+    attachedLoadBalancerPoolMembers?: pulumi.Input<pulumi.Input<inputs.IsLbAttachedLoadBalancerPoolMember>[] | undefined>;
     /**
      * The availability of this load balancer
      */
-    availability?: pulumi.Input<string>;
+    availability?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this Load Balancer
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The DNS configuration for this load balancer.
      */
-    dns?: pulumi.Input<inputs.IsLbDns>;
+    dns?: pulumi.Input<inputs.IsLbDns | undefined>;
     /**
      * The supported `failsafe_policy.action` values for this load balancer's pools.
      */
-    failsafePolicyActions?: pulumi.Input<pulumi.Input<string>[]>;
-    hostname?: pulumi.Input<string>;
+    failsafePolicyActions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Indicates whether this load balancer supports pool members specified by their fully qualified domain names.
+     */
+    fqdnPoolMembersSupported?: pulumi.Input<boolean | undefined>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this load balancer supports instance groups.
      */
-    instanceGroupsSupported?: pulumi.Input<boolean>;
+    instanceGroupsSupported?: pulumi.Input<boolean | undefined>;
     /**
      * Logging of Load Balancer
      */
-    logging?: pulumi.Input<boolean>;
+    logging?: pulumi.Input<boolean | undefined>;
+    /**
+     * Indicates whether this load balancer supports mTLS.
+     */
+    mtlsSupported?: pulumi.Input<boolean | undefined>;
     /**
      * Load Balancer name
      */
-    name?: pulumi.Input<string>;
-    operatingStatus?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    operatingStatus?: pulumi.Input<string | undefined>;
     /**
      * The private IP addresses assigned to this load balancer.
      */
-    privateIp?: pulumi.Input<pulumi.Input<inputs.IsLbPrivateIp>[]>;
-    privateIps?: pulumi.Input<pulumi.Input<string>[]>;
+    privateIp?: pulumi.Input<pulumi.Input<inputs.IsLbPrivateIp>[] | undefined>;
+    privateIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The profile to use for this load balancer.
      */
-    profile?: pulumi.Input<string>;
-    publicIps?: pulumi.Input<pulumi.Input<string>[]>;
+    profile?: pulumi.Input<string | undefined>;
+    publicIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether route mode is enabled for this load balancer
      */
-    routeMode?: pulumi.Input<boolean>;
+    routeMode?: pulumi.Input<boolean | undefined>;
     /**
      * Security Group Supported for this Load Balancer
      */
-    securityGroupSupported?: pulumi.Input<boolean>;
+    securityGroupSupported?: pulumi.Input<boolean | undefined>;
     /**
      * Load Balancer securitygroups list
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether this load balancer supports source IP session persistence.
      */
-    sourceIpSessionPersistenceSupported?: pulumi.Input<boolean>;
-    status?: pulumi.Input<string>;
+    sourceIpSessionPersistenceSupported?: pulumi.Input<boolean | undefined>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer subnets list
      */
-    subnets?: pulumi.Input<pulumi.Input<string>[]>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    subnets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Load Balancer type
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this load balancer supports UDP.
      */
-    udpSupported?: pulumi.Input<boolean>;
-    version?: pulumi.Input<string>;
+    udpSupported?: pulumi.Input<boolean | undefined>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -324,39 +364,39 @@ export interface IsLbArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The DNS configuration for this load balancer.
      */
-    dns?: pulumi.Input<inputs.IsLbDns>;
+    dns?: pulumi.Input<inputs.IsLbDns | undefined>;
     /**
      * Logging of Load Balancer
      */
-    logging?: pulumi.Input<boolean>;
+    logging?: pulumi.Input<boolean | undefined>;
     /**
      * Load Balancer name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The profile to use for this load balancer.
      */
-    profile?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether route mode is enabled for this load balancer
      */
-    routeMode?: pulumi.Input<boolean>;
+    routeMode?: pulumi.Input<boolean | undefined>;
     /**
      * Load Balancer securitygroups list
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Load Balancer subnets list
      */
     subnets: pulumi.Input<pulumi.Input<string>[]>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Load Balancer type
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

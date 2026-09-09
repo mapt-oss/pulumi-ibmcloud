@@ -82,7 +82,7 @@ def get_pi_datacenters(pi_cloud_instance_id: Optional[_builtins.str] = None,
         datacenters=pulumi.get(__ret__, 'datacenters'),
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'))
-def get_pi_datacenters_output(pi_cloud_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pi_datacenters_output(pi_cloud_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiDatacentersResult]:
     """
     Use this data source to access information about an existing resource.

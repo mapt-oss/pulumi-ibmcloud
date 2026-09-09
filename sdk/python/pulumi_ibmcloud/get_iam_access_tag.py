@@ -81,7 +81,7 @@ def get_iam_access_tag(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         tag_type=pulumi.get(__ret__, 'tag_type'))
-def get_iam_access_tag_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_access_tag_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccessTagResult]:
     """
     Use this data source to access information about an existing resource.

@@ -40,6 +40,8 @@ export class IsVirtualEndpointGateway extends pulumi.CustomResource {
     declare public readonly accessTags: pulumi.Output<string[]>;
     /**
      * Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
+     *
+     * @deprecated This field has been deprecated in favor of `dnsResolutionBindingMode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dnsResolutionBindingMode`.
      */
     declare public readonly allowDnsResolutionBinding: pulumi.Output<boolean>;
     /**
@@ -50,6 +52,10 @@ export class IsVirtualEndpointGateway extends pulumi.CustomResource {
      * The CRN for this Endpoint gateway
      */
     declare public /*out*/ readonly crn: pulumi.Output<string>;
+    /**
+     * The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `perResourceBinding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+     */
+    declare public readonly dnsResolutionBindingMode: pulumi.Output<string>;
     /**
      * Endpoint gateway health state
      */
@@ -116,6 +122,7 @@ export class IsVirtualEndpointGateway extends pulumi.CustomResource {
             resourceInputs["allowDnsResolutionBinding"] = state?.allowDnsResolutionBinding;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["crn"] = state?.crn;
+            resourceInputs["dnsResolutionBindingMode"] = state?.dnsResolutionBindingMode;
             resourceInputs["healthState"] = state?.healthState;
             resourceInputs["ips"] = state?.ips;
             resourceInputs["lifecycleReasons"] = state?.lifecycleReasons;
@@ -138,6 +145,7 @@ export class IsVirtualEndpointGateway extends pulumi.CustomResource {
             }
             resourceInputs["accessTags"] = args?.accessTags;
             resourceInputs["allowDnsResolutionBinding"] = args?.allowDnsResolutionBinding;
+            resourceInputs["dnsResolutionBindingMode"] = args?.dnsResolutionBindingMode;
             resourceInputs["ips"] = args?.ips;
             resourceInputs["name"] = args?.name;
             resourceInputs["resourceGroup"] = args?.resourceGroup;
@@ -165,67 +173,73 @@ export interface IsVirtualEndpointGatewayState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
+     *
+     * @deprecated This field has been deprecated in favor of `dnsResolutionBindingMode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dnsResolutionBindingMode`.
      */
-    allowDnsResolutionBinding?: pulumi.Input<boolean>;
+    allowDnsResolutionBinding?: pulumi.Input<boolean | undefined>;
     /**
      * Endpoint gateway created date and time
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this Endpoint gateway
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `perResourceBinding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+     */
+    dnsResolutionBindingMode?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway health state
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway IPs
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayIp>[] | undefined>;
     /**
      * The reasons for the current lifecycleState (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayLifecycleReason>[] | undefined>;
     /**
      * Endpoint gateway lifecycle state
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group id
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway securitygroups list
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The fully qualified domain names for the target service. A fully qualified domain name for the target service
      */
-    serviceEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
+    serviceEndpoints?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of tags for VPE
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Endpoint gateway target
      */
-    target?: pulumi.Input<inputs.IsVirtualEndpointGatewayTarget>;
+    target?: pulumi.Input<inputs.IsVirtualEndpointGatewayTarget | undefined>;
     /**
      * The VPC id
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -235,31 +249,37 @@ export interface IsVirtualEndpointGatewayArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
+     *
+     * @deprecated This field has been deprecated in favor of `dnsResolutionBindingMode` and will be removed in a future version. Migration: false='disabled', true='primary'. The new field also supports 'per_resource_binding' for advanced DNS sharing scenarios. Please update your configuration to use `dnsResolutionBindingMode`.
      */
-    allowDnsResolutionBinding?: pulumi.Input<boolean>;
+    allowDnsResolutionBinding?: pulumi.Input<boolean | undefined>;
+    /**
+     * The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `perResourceBinding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+     */
+    dnsResolutionBindingMode?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway IPs
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsVirtualEndpointGatewayIp>[] | undefined>;
     /**
      * Endpoint gateway name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group id
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway securitygroups list
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of tags for VPE
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Endpoint gateway target
      */

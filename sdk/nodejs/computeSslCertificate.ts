@@ -141,51 +141,51 @@ export interface ComputeSslCertificateState {
     /**
      * SSL Certifcate
      */
-    certificate?: pulumi.Input<string>;
+    certificate?: pulumi.Input<string | undefined>;
     /**
      * Common name
      */
-    commonName?: pulumi.Input<string>;
+    commonName?: pulumi.Input<string | undefined>;
     /**
      * certificate creation date
      */
-    createDate?: pulumi.Input<string>;
+    createDate?: pulumi.Input<string | undefined>;
     /**
      * Intermediate certificate value
      */
-    intermediateCertificate?: pulumi.Input<string>;
+    intermediateCertificate?: pulumi.Input<string | undefined>;
     /**
      * SSL key size
      */
-    keySize?: pulumi.Input<number>;
+    keySize?: pulumi.Input<number | undefined>;
     /**
      * certificate modificatiob date
      */
-    modifyDate?: pulumi.Input<string>;
+    modifyDate?: pulumi.Input<string | undefined>;
     /**
      * Organization name
      */
-    organizationName?: pulumi.Input<string>;
+    organizationName?: pulumi.Input<string | undefined>;
     /**
      * SSL Private Key
      */
-    privateKey?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * Tags set for resource
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Validity begins from
      */
-    validityBegin?: pulumi.Input<string>;
+    validityBegin?: pulumi.Input<string | undefined>;
     /**
      * Validity days
      */
-    validityDays?: pulumi.Input<number>;
+    validityDays?: pulumi.Input<number | undefined>;
     /**
      * Validity ends before
      */
-    validityEnd?: pulumi.Input<string>;
+    validityEnd?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -199,7 +199,7 @@ export interface ComputeSslCertificateArgs {
     /**
      * Intermediate certificate value
      */
-    intermediateCertificate?: pulumi.Input<string>;
+    intermediateCertificate?: pulumi.Input<string | undefined>;
     /**
      * SSL Private Key
      */
@@ -207,5 +207,5 @@ export interface ComputeSslCertificateArgs {
     /**
      * Tags set for resource
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -138,46 +138,46 @@ export interface IamAccessGroupPolicyState {
     /**
      * ID of access group
      */
-    accessGroupId?: pulumi.Input<string>;
+    accessGroupId?: pulumi.Input<string | undefined>;
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamAccessGroupPolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamAccessGroupPolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -191,24 +191,24 @@ export interface IamAccessGroupPolicyArgs {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Pattern rule follows for time-based condition
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * Set resource attributes.
      */
-    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceAttribute>[]>;
+    resourceAttributes?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceAttribute>[] | undefined>;
     /**
      * Set access management tags.
      */
-    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceTag>[]>;
-    resources?: pulumi.Input<inputs.IamAccessGroupPolicyResources>;
+    resourceTags?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyResourceTag>[] | undefined>;
+    resources?: pulumi.Input<inputs.IamAccessGroupPolicyResources | undefined>;
     /**
      * Role names of the policy definition
      */
@@ -216,14 +216,14 @@ export interface IamAccessGroupPolicyArgs {
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    ruleOperator?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Set transactionID for debug
      */
-    transactionId?: pulumi.Input<string>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

@@ -242,120 +242,120 @@ export interface IsVpcState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Address Prefix management value
      */
-    addressPrefixManagement?: pulumi.Input<string>;
+    addressPrefixManagement?: pulumi.Input<string | undefined>;
     /**
      * Set to true if classic access needs to enabled to VPC
      *
      * @deprecated Classic access is deprecated
      */
-    classicAccess?: pulumi.Input<boolean>;
+    classicAccess?: pulumi.Input<boolean | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
-    cseSourceAddresses?: pulumi.Input<pulumi.Input<inputs.IsVpcCseSourceAddress>[]>;
+    crn?: pulumi.Input<string | undefined>;
+    cseSourceAddresses?: pulumi.Input<pulumi.Input<inputs.IsVpcCseSourceAddress>[] | undefined>;
     /**
      * Default address prefixes for each zone.
      */
-    defaultAddressPrefixes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    defaultAddressPrefixes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Default network ACL ID
      */
-    defaultNetworkAcl?: pulumi.Input<string>;
+    defaultNetworkAcl?: pulumi.Input<string | undefined>;
     /**
      * Default Network ACL CRN
      */
-    defaultNetworkAclCrn?: pulumi.Input<string>;
+    defaultNetworkAclCrn?: pulumi.Input<string | undefined>;
     /**
      * Default Network ACL name
      */
-    defaultNetworkAclName?: pulumi.Input<string>;
+    defaultNetworkAclName?: pulumi.Input<string | undefined>;
     /**
      * Default routing table associated with VPC
      */
-    defaultRoutingTable?: pulumi.Input<string>;
+    defaultRoutingTable?: pulumi.Input<string | undefined>;
     /**
      * Default routing table CRN
      */
-    defaultRoutingTableCrn?: pulumi.Input<string>;
+    defaultRoutingTableCrn?: pulumi.Input<string | undefined>;
     /**
      * Default routing table name
      */
-    defaultRoutingTableName?: pulumi.Input<string>;
+    defaultRoutingTableName?: pulumi.Input<string | undefined>;
     /**
      * Security group associated with VPC
      */
-    defaultSecurityGroup?: pulumi.Input<string>;
+    defaultSecurityGroup?: pulumi.Input<string | undefined>;
     /**
      * Default security group CRN
      */
-    defaultSecurityGroupCrn?: pulumi.Input<string>;
+    defaultSecurityGroupCrn?: pulumi.Input<string | undefined>;
     /**
      * Default security group name
      */
-    defaultSecurityGroupName?: pulumi.Input<string>;
+    defaultSecurityGroupName?: pulumi.Input<string | undefined>;
     /**
      * The DNS configuration for this VPC.
      */
-    dns?: pulumi.Input<inputs.IsVpcDns>;
+    dns?: pulumi.Input<inputs.IsVpcDns | undefined>;
     /**
      * The reasons for the current `healthState` (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
      */
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpcHealthReason>[]>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpcHealthReason>[] | undefined>;
     /**
      * The health of this resource.- `ok`: No abnormal behavior detected- `degraded`: Experiencing compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * VPC name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Delete all rules attached with default security group and default acl
      */
-    noSgAclRules?: pulumi.Input<boolean>;
+    noSgAclRules?: pulumi.Input<boolean | undefined>;
     /**
      * The public address ranges attached to this VPC.
      */
-    publicAddressRanges?: pulumi.Input<pulumi.Input<inputs.IsVpcPublicAddressRange>[]>;
+    publicAddressRanges?: pulumi.Input<pulumi.Input<inputs.IsVpcPublicAddressRange>[] | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
-    securityGroups?: pulumi.Input<pulumi.Input<inputs.IsVpcSecurityGroup>[]>;
+    resourceStatus?: pulumi.Input<string | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<inputs.IsVpcSecurityGroup>[] | undefined>;
     /**
      * VPC status
      */
-    status?: pulumi.Input<string>;
-    subnets?: pulumi.Input<pulumi.Input<inputs.IsVpcSubnet>[]>;
+    status?: pulumi.Input<string | undefined>;
+    subnets?: pulumi.Input<pulumi.Input<inputs.IsVpcSubnet>[] | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -365,47 +365,47 @@ export interface IsVpcArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Address Prefix management value
      */
-    addressPrefixManagement?: pulumi.Input<string>;
+    addressPrefixManagement?: pulumi.Input<string | undefined>;
     /**
      * Set to true if classic access needs to enabled to VPC
      *
      * @deprecated Classic access is deprecated
      */
-    classicAccess?: pulumi.Input<boolean>;
+    classicAccess?: pulumi.Input<boolean | undefined>;
     /**
      * Default Network ACL name
      */
-    defaultNetworkAclName?: pulumi.Input<string>;
+    defaultNetworkAclName?: pulumi.Input<string | undefined>;
     /**
      * Default routing table name
      */
-    defaultRoutingTableName?: pulumi.Input<string>;
+    defaultRoutingTableName?: pulumi.Input<string | undefined>;
     /**
      * Default security group name
      */
-    defaultSecurityGroupName?: pulumi.Input<string>;
+    defaultSecurityGroupName?: pulumi.Input<string | undefined>;
     /**
      * The DNS configuration for this VPC.
      */
-    dns?: pulumi.Input<inputs.IsVpcDns>;
+    dns?: pulumi.Input<inputs.IsVpcDns | undefined>;
     /**
      * VPC name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Delete all rules attached with default security group and default acl
      */
-    noSgAclRules?: pulumi.Input<boolean>;
+    noSgAclRules?: pulumi.Input<boolean | undefined>;
     /**
      * Resource group info
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

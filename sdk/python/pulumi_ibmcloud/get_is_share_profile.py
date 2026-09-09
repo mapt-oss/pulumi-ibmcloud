@@ -162,7 +162,7 @@ def get_is_share_profile(name: Optional[_builtins.str] = None,
         iops=pulumi.get(__ret__, 'iops'),
         name=pulumi.get(__ret__, 'name'),
         resource_type=pulumi.get(__ret__, 'resource_type'))
-def get_is_share_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_share_profile_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsShareProfileResult]:
     """
     Use this data source to access information about an existing resource.

@@ -207,96 +207,96 @@ export interface IsInstanceVolumeAttachmentState {
     /**
      * The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsInstanceVolumeAttachmentAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsInstanceVolumeAttachmentAllowedUse | undefined>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
      */
-    capacity?: pulumi.Input<number>;
+    capacity?: pulumi.Input<number | undefined>;
     /**
      * If set to true, when deleting the attachment, the volume will also be deleted. Default value for this true.
      */
-    deleteVolumeOnAttachmentDelete?: pulumi.Input<boolean>;
+    deleteVolumeOnAttachmentDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, when deleting the instance the volume will also be deleted.
      */
-    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean>;
+    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * A unique identifier for the device which is exposed to the instance operating system
      */
-    device?: pulumi.Input<string>;
+    device?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the [Key Protect Root Key](https://cloud.ibm.com/docs/key-protect?topic=key-protect-getting-started-tutorial) or [Hyper Protect Crypto Service Root Key](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) for this resource.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * The URL for this volume attachment
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Instance id
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
     /**
      * The maximum I/O operations per second (IOPS) for the volume.
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * The user-defined name for this volume attachment.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The  globally unique name for the volume profile to use for this volume.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The snapshot ID of the volume to be attached
      */
-    snapshot?: pulumi.Input<string>;
+    snapshot?: pulumi.Input<string | undefined>;
     /**
      * The snapshot crn of the volume to be attached
      */
-    snapshotCrn?: pulumi.Input<string>;
+    snapshotCrn?: pulumi.Input<string | undefined>;
     /**
      * The status of this volume attachment, one of [ attached, attaching, deleting, detaching ]
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the volume instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of volume attachment one of [ boot, data ]
      */
-    type?: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * Instance id
      */
-    volume?: pulumi.Input<string>;
+    volume?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this volume attachment
      */
-    volumeAttachmentId?: pulumi.Input<string>;
+    volumeAttachmentId?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this volume
      */
-    volumeCrn?: pulumi.Input<string>;
+    volumeCrn?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about deleted resources
      */
-    volumeDeleted?: pulumi.Input<string>;
+    volumeDeleted?: pulumi.Input<string | undefined>;
     /**
      * The URL for this volume
      */
-    volumeHref?: pulumi.Input<string>;
+    volumeHref?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this volume
      */
-    volumeName?: pulumi.Input<string>;
+    volumeName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -306,27 +306,27 @@ export interface IsInstanceVolumeAttachmentArgs {
     /**
      * The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsInstanceVolumeAttachmentAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsInstanceVolumeAttachmentAllowedUse | undefined>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
      */
-    capacity?: pulumi.Input<number>;
+    capacity?: pulumi.Input<number | undefined>;
     /**
      * If set to true, when deleting the attachment, the volume will also be deleted. Default value for this true.
      */
-    deleteVolumeOnAttachmentDelete?: pulumi.Input<boolean>;
+    deleteVolumeOnAttachmentDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, when deleting the instance the volume will also be deleted.
      */
-    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean>;
+    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The CRN of the [Key Protect Root Key](https://cloud.ibm.com/docs/key-protect?topic=key-protect-getting-started-tutorial) or [Hyper Protect Crypto Service Root Key](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) for this resource.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * Instance id
      */
@@ -334,33 +334,33 @@ export interface IsInstanceVolumeAttachmentArgs {
     /**
      * The maximum I/O operations per second (IOPS) for the volume.
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * The user-defined name for this volume attachment.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The  globally unique name for the volume profile to use for this volume.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The snapshot ID of the volume to be attached
      */
-    snapshot?: pulumi.Input<string>;
+    snapshot?: pulumi.Input<string | undefined>;
     /**
      * The snapshot crn of the volume to be attached
      */
-    snapshotCrn?: pulumi.Input<string>;
+    snapshotCrn?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the volume instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Instance id
      */
-    volume?: pulumi.Input<string>;
+    volume?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this volume
      */
-    volumeName?: pulumi.Input<string>;
+    volumeName?: pulumi.Input<string | undefined>;
 }

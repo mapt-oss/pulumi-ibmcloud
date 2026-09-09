@@ -331,10 +331,10 @@ def get_is_vpn_gateway_connection(vpn_gateway: Optional[_builtins.str] = None,
         vpn_gateway_connection=pulumi.get(__ret__, 'vpn_gateway_connection'),
         vpn_gateway_connection_name=pulumi.get(__ret__, 'vpn_gateway_connection_name'),
         vpn_gateway_name=pulumi.get(__ret__, 'vpn_gateway_name'))
-def get_is_vpn_gateway_connection_output(vpn_gateway: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         vpn_gateway_connection: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         vpn_gateway_connection_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         vpn_gateway_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_vpn_gateway_connection_output(vpn_gateway: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         vpn_gateway_connection: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         vpn_gateway_connection_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         vpn_gateway_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpnGatewayConnectionResult]:
     """
     Use this data source to access information about an existing resource.

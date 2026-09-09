@@ -10,6 +10,7 @@ export function getIsSnapshotConsistencyGroups(args?: GetIsSnapshotConsistencyGr
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getIsSnapshotConsistencyGroups:getIsSnapshotConsistencyGroups", {
+        "backupPolicyJob": args.backupPolicyJob,
         "backupPolicyPlan": args.backupPolicyPlan,
         "name": args.name,
         "resourceGroup": args.resourceGroup,
@@ -20,6 +21,7 @@ export function getIsSnapshotConsistencyGroups(args?: GetIsSnapshotConsistencyGr
  * A collection of arguments for invoking getIsSnapshotConsistencyGroups.
  */
 export interface GetIsSnapshotConsistencyGroupsArgs {
+    backupPolicyJob?: string;
     backupPolicyPlan?: string;
     name?: string;
     resourceGroup?: string;
@@ -29,6 +31,7 @@ export interface GetIsSnapshotConsistencyGroupsArgs {
  * A collection of values returned by getIsSnapshotConsistencyGroups.
  */
 export interface GetIsSnapshotConsistencyGroupsResult {
+    readonly backupPolicyJob?: string;
     readonly backupPolicyPlan?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -42,6 +45,7 @@ export function getIsSnapshotConsistencyGroupsOutput(args?: GetIsSnapshotConsist
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getIsSnapshotConsistencyGroups:getIsSnapshotConsistencyGroups", {
+        "backupPolicyJob": args.backupPolicyJob,
         "backupPolicyPlan": args.backupPolicyPlan,
         "name": args.name,
         "resourceGroup": args.resourceGroup,
@@ -52,7 +56,8 @@ export function getIsSnapshotConsistencyGroupsOutput(args?: GetIsSnapshotConsist
  * A collection of arguments for invoking getIsSnapshotConsistencyGroups.
  */
 export interface GetIsSnapshotConsistencyGroupsOutputArgs {
-    backupPolicyPlan?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    backupPolicyJob?: pulumi.Input<string | undefined>;
+    backupPolicyPlan?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

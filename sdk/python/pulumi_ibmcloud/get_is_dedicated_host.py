@@ -296,9 +296,9 @@ def get_is_dedicated_host(host_group: Optional[_builtins.str] = None,
         supported_instance_profiles=pulumi.get(__ret__, 'supported_instance_profiles'),
         vcpus=pulumi.get(__ret__, 'vcpus'),
         zone=pulumi.get(__ret__, 'zone'))
-def get_is_dedicated_host_output(host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                                 resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_dedicated_host_output(host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                                 resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsDedicatedHostResult]:
     """
     Use this data source to access information about an existing resource.

@@ -39,6 +39,10 @@ export class IsVpnGateway extends pulumi.CustomResource {
      */
     declare public readonly accessTags: pulumi.Output<string[]>;
     /**
+     * The additional CIDRs advertised through any enabled routing protocol (for example, BGP). The routing protocol will advertise routes with these CIDRs and VPC prefixes as route destinations.
+     */
+    declare public /*out*/ readonly advertisedCidrs: pulumi.Output<string[]>;
+    /**
      * Created Time of the VPN Gateway
      */
     declare public /*out*/ readonly createdAt: pulumi.Output<string>;
@@ -59,6 +63,10 @@ export class IsVpnGateway extends pulumi.CustomResource {
      * The lifecycle state of the VPN route.
      */
     declare public /*out*/ readonly lifecycleState: pulumi.Output<string>;
+    /**
+     * The local autonomous system number (ASN) for this VPN gateway and its connections.
+     */
+    declare public readonly localAsn: pulumi.Output<number>;
     /**
      * Collection of VPN gateway members
      */
@@ -142,12 +150,14 @@ export class IsVpnGateway extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IsVpnGatewayState | undefined;
             resourceInputs["accessTags"] = state?.accessTags;
+            resourceInputs["advertisedCidrs"] = state?.advertisedCidrs;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["crn"] = state?.crn;
             resourceInputs["healthReasons"] = state?.healthReasons;
             resourceInputs["healthState"] = state?.healthState;
             resourceInputs["lifecycleReasons"] = state?.lifecycleReasons;
             resourceInputs["lifecycleState"] = state?.lifecycleState;
+            resourceInputs["localAsn"] = state?.localAsn;
             resourceInputs["members"] = state?.members;
             resourceInputs["mode"] = state?.mode;
             resourceInputs["name"] = state?.name;
@@ -171,11 +181,13 @@ export class IsVpnGateway extends pulumi.CustomResource {
                 throw new Error("Missing required property 'subnet'");
             }
             resourceInputs["accessTags"] = args?.accessTags;
+            resourceInputs["localAsn"] = args?.localAsn;
             resourceInputs["mode"] = args?.mode;
             resourceInputs["name"] = args?.name;
             resourceInputs["resourceGroup"] = args?.resourceGroup;
             resourceInputs["subnet"] = args?.subnet;
             resourceInputs["tags"] = args?.tags;
+            resourceInputs["advertisedCidrs"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["crn"] = undefined /*out*/;
             resourceInputs["healthReasons"] = undefined /*out*/;
@@ -207,96 +219,104 @@ export interface IsVpnGatewayState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The additional CIDRs advertised through any enabled routing protocol (for example, BGP). The routing protocol will advertise routes with these CIDRs and VPC prefixes as route destinations.
+     */
+    advertisedCidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Created Time of the VPN Gateway
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
-    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayHealthReason>[]>;
+    crn?: pulumi.Input<string | undefined>;
+    healthReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayHealthReason>[] | undefined>;
     /**
      * The health of this resource.- `ok`: Healthy- `degraded`: Suffering from compromised performance, capacity, or connectivity- `faulted`: Completely unreachable, inoperative, or otherwise entirely incapacitated- `inapplicable`: The health state does not apply because of the current lifecycle state. A resource with a lifecycle state of `failed` or `deleting` will have a health state of `inapplicable`. A `pending` resource may also have this state.
      */
-    healthState?: pulumi.Input<string>;
+    healthState?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current lifecycleState (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the VPN route.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
+    /**
+     * The local autonomous system number (ASN) for this VPN gateway and its connections.
+     */
+    localAsn?: pulumi.Input<number | undefined>;
     /**
      * Collection of VPN gateway members
      */
-    members?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayMember>[] | undefined>;
     /**
      * mode in VPN gateway(route/policy)
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * VPN Gateway instance name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Private IP address assigned to the VPN gateway member.
      */
-    privateIpAddress?: pulumi.Input<string>;
+    privateIpAddress?: pulumi.Input<string | undefined>;
     /**
      * The Second Private IP address assigned to the VPN gateway member.
      */
-    privateIpAddress2?: pulumi.Input<string>;
+    privateIpAddress2?: pulumi.Input<string | undefined>;
     /**
      * The public IP address assigned to the VPN gateway member.
      */
-    publicIpAddress?: pulumi.Input<string>;
+    publicIpAddress?: pulumi.Input<string | undefined>;
     /**
      * The second public IP address assigned to the VPN gateway member.
      */
-    publicIpAddress2?: pulumi.Input<string>;
+    publicIpAddress2?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this VPN gateway
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * The status of the VPN gateway
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * VPNGateway subnet info
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * VPN Gateway tags list
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * VPC for the VPN Gateway
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayVpc>[]>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayVpc>[] | undefined>;
 }
 
 /**
@@ -306,19 +326,23 @@ export interface IsVpnGatewayArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The local autonomous system number (ASN) for this VPN gateway and its connections.
+     */
+    localAsn?: pulumi.Input<number | undefined>;
     /**
      * mode in VPN gateway(route/policy)
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * VPN Gateway instance name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this VPN gateway
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * VPNGateway subnet info
      */
@@ -326,5 +350,5 @@ export interface IsVpnGatewayArgs {
     /**
      * VPN Gateway tags list
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

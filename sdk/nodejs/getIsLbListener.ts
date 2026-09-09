@@ -28,6 +28,7 @@ export interface GetIsLbListenerArgs {
 export interface GetIsLbListenerResult {
     readonly acceptProxyProtocol: boolean;
     readonly certificateInstances: outputs.GetIsLbListenerCertificateInstance[];
+    readonly clientAuthentications: outputs.GetIsLbListenerClientAuthentication[];
     readonly connectionLimit: number;
     readonly createdAt: string;
     readonly defaultPools: outputs.GetIsLbListenerDefaultPool[];

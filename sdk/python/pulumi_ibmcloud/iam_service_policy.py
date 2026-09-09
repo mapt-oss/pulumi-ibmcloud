@@ -22,20 +22,21 @@ __all__ = ['IamServicePolicyArgs', 'IamServicePolicy']
 class IamServicePolicyArgs:
     def __init__(__self__, *,
                  roles: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]] = None,
-                 resources: Optional[pulumi.Input['IamServicePolicyResourcesArgs']] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]] = None,
+                 resources: pulumi.Input[Optional['IamServicePolicyResourcesArgs']] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamServicePolicy resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
         :param pulumi.Input[_builtins.bool] account_management: Give access to all account management services
         :param pulumi.Input[_builtins.str] description: Description of the Policy
@@ -91,162 +92,163 @@ class IamServicePolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountManagement")
-    def account_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def account_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Give access to all account management services
         """
         return pulumi.get(self, "account_management")
 
     @account_management.setter
-    def account_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def account_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "account_management", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the Policy
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="iamId")
-    def iam_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAM ID of ServiceID
         """
         return pulumi.get(self, "iam_id")
 
     @iam_id.setter
-    def iam_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamServiceId")
     @_utilities.deprecated("""This field is deprecated and will be removed starting with this 1.82.0 release. Please use iam_id field instead.""")
-    def iam_service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of ServiceID
         """
         return pulumi.get(self, "iam_service_id")
 
     @iam_service_id.setter
-    def iam_service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_service_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pattern rule follows for time-based condition
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributes")
-    def resource_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]:
+    def resource_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]:
         """
         Set resource attributes.
         """
         return pulumi.get(self, "resource_attributes")
 
     @resource_attributes.setter
-    def resource_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]):
+    def resource_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]):
         pulumi.set(self, "resource_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTags")
-    def resource_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]:
+    def resource_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]:
         """
         Set access management tags.
         """
         return pulumi.get(self, "resource_tags")
 
     @resource_tags.setter
-    def resource_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]):
+    def resource_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]):
         pulumi.set(self, "resource_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input['IamServicePolicyResourcesArgs']]:
+    def resources(self) -> pulumi.Input[Optional['IamServicePolicyResourcesArgs']]:
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input['IamServicePolicyResourcesArgs']]):
+    def resources(self, value: pulumi.Input[Optional['IamServicePolicyResourcesArgs']]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleConditions")
-    def rule_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]:
+    def rule_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]:
         """
         Rule conditions enforced by the policy
         """
         return pulumi.get(self, "rule_conditions")
 
     @rule_conditions.setter
-    def rule_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]):
+    def rule_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]):
         pulumi.set(self, "rule_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleOperator")
-    def rule_operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operator that multiple rule conditions are evaluated over
         """
         return pulumi.get(self, "rule_operator")
 
     @rule_operator.setter
-    def rule_operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set transactionID for debug
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
 
 @pulumi.input_type
 class _IamServicePolicyState:
     def __init__(__self__, *,
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]] = None,
-                 resources: Optional[pulumi.Input['IamServicePolicyResourcesArgs']] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]] = None,
+                 resources: pulumi.Input[Optional['IamServicePolicyResourcesArgs']] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamServicePolicy resources.
+
         :param pulumi.Input[_builtins.bool] account_management: Give access to all account management services
         :param pulumi.Input[_builtins.str] description: Description of the Policy
         :param pulumi.Input[_builtins.str] iam_id: IAM ID of ServiceID
@@ -291,153 +293,153 @@ class _IamServicePolicyState:
 
     @_builtins.property
     @pulumi.getter(name="accountManagement")
-    def account_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def account_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Give access to all account management services
         """
         return pulumi.get(self, "account_management")
 
     @account_management.setter
-    def account_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def account_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "account_management", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the Policy
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="iamId")
-    def iam_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAM ID of ServiceID
         """
         return pulumi.get(self, "iam_id")
 
     @iam_id.setter
-    def iam_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamServiceId")
     @_utilities.deprecated("""This field is deprecated and will be removed starting with this 1.82.0 release. Please use iam_id field instead.""")
-    def iam_service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of ServiceID
         """
         return pulumi.get(self, "iam_service_id")
 
     @iam_service_id.setter
-    def iam_service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_service_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pattern rule follows for time-based condition
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributes")
-    def resource_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]:
+    def resource_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]:
         """
         Set resource attributes.
         """
         return pulumi.get(self, "resource_attributes")
 
     @resource_attributes.setter
-    def resource_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]):
+    def resource_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceAttributeArgs']]]]):
         pulumi.set(self, "resource_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTags")
-    def resource_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]:
+    def resource_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]:
         """
         Set access management tags.
         """
         return pulumi.get(self, "resource_tags")
 
     @resource_tags.setter
-    def resource_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]):
+    def resource_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyResourceTagArgs']]]]):
         pulumi.set(self, "resource_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input['IamServicePolicyResourcesArgs']]:
+    def resources(self) -> pulumi.Input[Optional['IamServicePolicyResourcesArgs']]:
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input['IamServicePolicyResourcesArgs']]):
+    def resources(self, value: pulumi.Input[Optional['IamServicePolicyResourcesArgs']]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Role names of the policy definition
         """
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleConditions")
-    def rule_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]:
+    def rule_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]:
         """
         Rule conditions enforced by the policy
         """
         return pulumi.get(self, "rule_conditions")
 
     @rule_conditions.setter
-    def rule_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]):
+    def rule_conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamServicePolicyRuleConditionArgs']]]]):
         pulumi.set(self, "rule_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleOperator")
-    def rule_operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operator that multiple rule conditions are evaluated over
         """
         return pulumi.get(self, "rule_operator")
 
     @rule_operator.setter
-    def rule_operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set transactionID for debug
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
 
@@ -447,22 +449,23 @@ class IamServicePolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict']]]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict']]]]] = None,
-                 resources: Optional[pulumi.Input[Union['IamServicePolicyResourcesArgs', 'IamServicePolicyResourcesArgsDict']]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict']]]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict', 'outputs.IamServicePolicyResourceAttribute']]]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict', 'outputs.IamServicePolicyResourceTag']]]]] = None,
+                 resources: pulumi.Input[Optional[Union['IamServicePolicyResourcesArgs', 'IamServicePolicyResourcesArgsDict', 'outputs.IamServicePolicyResources']]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict', 'outputs.IamServicePolicyRuleCondition']]]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamServicePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] account_management: Give access to all account management services
@@ -470,10 +473,10 @@ class IamServicePolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] iam_id: IAM ID of ServiceID
         :param pulumi.Input[_builtins.str] iam_service_id: UUID of ServiceID
         :param pulumi.Input[_builtins.str] pattern: Pattern rule follows for time-based condition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict']]]] resource_attributes: Set resource attributes.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict']]]] resource_tags: Set access management tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict', 'outputs.IamServicePolicyResourceAttribute']]]] resource_attributes: Set resource attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict', 'outputs.IamServicePolicyResourceTag']]]] resource_tags: Set access management tags.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict']]]] rule_conditions: Rule conditions enforced by the policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict', 'outputs.IamServicePolicyRuleCondition']]]] rule_conditions: Rule conditions enforced by the policy
         :param pulumi.Input[_builtins.str] rule_operator: Operator that multiple rule conditions are evaluated over
         :param pulumi.Input[_builtins.str] transaction_id: Set transactionID for debug
         """
@@ -485,6 +488,7 @@ class IamServicePolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamServicePolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamServicePolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -500,19 +504,19 @@ class IamServicePolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict']]]]] = None,
-                 resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict']]]]] = None,
-                 resources: Optional[pulumi.Input[Union['IamServicePolicyResourcesArgs', 'IamServicePolicyResourcesArgsDict']]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict']]]]] = None,
-                 rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict', 'outputs.IamServicePolicyResourceAttribute']]]]] = None,
+                 resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict', 'outputs.IamServicePolicyResourceTag']]]]] = None,
+                 resources: pulumi.Input[Optional[Union['IamServicePolicyResourcesArgs', 'IamServicePolicyResourcesArgsDict', 'outputs.IamServicePolicyResources']]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict', 'outputs.IamServicePolicyRuleCondition']]]]] = None,
+                 rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -547,19 +551,19 @@ class IamServicePolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            iam_id: Optional[pulumi.Input[_builtins.str]] = None,
-            iam_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pattern: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict']]]]] = None,
-            resource_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict']]]]] = None,
-            resources: Optional[pulumi.Input[Union['IamServicePolicyResourcesArgs', 'IamServicePolicyResourcesArgsDict']]] = None,
-            roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            rule_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict']]]]] = None,
-            rule_operator: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            transaction_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamServicePolicy':
+            account_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_id: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict', 'outputs.IamServicePolicyResourceAttribute']]]]] = None,
+            resource_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict', 'outputs.IamServicePolicyResourceTag']]]]] = None,
+            resources: pulumi.Input[Optional[Union['IamServicePolicyResourcesArgs', 'IamServicePolicyResourcesArgsDict', 'outputs.IamServicePolicyResources']]] = None,
+            roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            rule_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict', 'outputs.IamServicePolicyRuleCondition']]]]] = None,
+            rule_operator: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            transaction_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamServicePolicy':
         """
         Get an existing IamServicePolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -572,10 +576,10 @@ class IamServicePolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] iam_id: IAM ID of ServiceID
         :param pulumi.Input[_builtins.str] iam_service_id: UUID of ServiceID
         :param pulumi.Input[_builtins.str] pattern: Pattern rule follows for time-based condition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict']]]] resource_attributes: Set resource attributes.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict']]]] resource_tags: Set access management tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceAttributeArgs', 'IamServicePolicyResourceAttributeArgsDict', 'outputs.IamServicePolicyResourceAttribute']]]] resource_attributes: Set resource attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyResourceTagArgs', 'IamServicePolicyResourceTagArgsDict', 'outputs.IamServicePolicyResourceTag']]]] resource_tags: Set access management tags.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: Role names of the policy definition
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict']]]] rule_conditions: Rule conditions enforced by the policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamServicePolicyRuleConditionArgs', 'IamServicePolicyRuleConditionArgsDict', 'outputs.IamServicePolicyRuleCondition']]]] rule_conditions: Rule conditions enforced by the policy
         :param pulumi.Input[_builtins.str] rule_operator: Operator that multiple rule conditions are evaluated over
         :param pulumi.Input[_builtins.str] transaction_id: Set transactionID for debug
         """

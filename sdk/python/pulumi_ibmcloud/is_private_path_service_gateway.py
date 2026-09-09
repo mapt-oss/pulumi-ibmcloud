@@ -21,27 +21,36 @@ class IsPrivatePathServiceGatewayArgs:
     def __init__(__self__, *,
                  load_balancer: pulumi.Input[_builtins.str],
                  service_endpoints: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 default_access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 zonal_affinity: Optional[pulumi.Input[_builtins.bool]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 default_access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zonal_affinity: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a IsPrivatePathServiceGateway resource.
+
         :param pulumi.Input[_builtins.str] load_balancer: The load balancer for this private path service gateway.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_endpoints: The fully qualified domain names for this private path service gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags for this private path service gateway.
         :param pulumi.Input[_builtins.str] default_access_policy: The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
         :param pulumi.Input[_builtins.str] name: The name of this PPSG
         :param pulumi.Input[_builtins.str] resource_group: ID of resource group to use.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of user tags for this private path service gateway.
         :param pulumi.Input[_builtins.bool] zonal_affinity: ndicates whether this private path service gateway has zonal affinity.
         """
         pulumi.set(__self__, "load_balancer", load_balancer)
         pulumi.set(__self__, "service_endpoints", service_endpoints)
+        if access_tags is not None:
+            pulumi.set(__self__, "access_tags", access_tags)
         if default_access_policy is not None:
             pulumi.set(__self__, "default_access_policy", default_access_policy)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if resource_group is not None:
             pulumi.set(__self__, "resource_group", resource_group)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
         if zonal_affinity is not None:
             pulumi.set(__self__, "zonal_affinity", zonal_affinity)
 
@@ -70,77 +79,105 @@ class IsPrivatePathServiceGatewayArgs:
         pulumi.set(self, "service_endpoints", value)
 
     @_builtins.property
+    @pulumi.getter(name="accessTags")
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of access management tags for this private path service gateway.
+        """
+        return pulumi.get(self, "access_tags")
+
+    @access_tags.setter
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "access_tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="defaultAccessPolicy")
-    def default_access_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_access_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
         """
         return pulumi.get(self, "default_access_policy")
 
     @default_access_policy.setter
-    def default_access_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_access_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_access_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of this PPSG
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of resource group to use.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of user tags for this private path service gateway.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="zonalAffinity")
-    def zonal_affinity(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def zonal_affinity(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         ndicates whether this private path service gateway has zonal affinity.
         """
         return pulumi.get(self, "zonal_affinity")
 
     @zonal_affinity.setter
-    def zonal_affinity(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def zonal_affinity(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "zonal_affinity", value)
 
 
 @pulumi.input_type
 class _IsPrivatePathServiceGatewayState:
     def __init__(__self__, *,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_gateway_binding_auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_gateway_binding_auto_delete_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 endpoint_gateway_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 published: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 updated_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
-                 zonal_affinity: Optional[pulumi.Input[_builtins.bool]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_gateway_binding_auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_gateway_binding_auto_delete_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 endpoint_gateway_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 published: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
+                 zonal_affinity: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering IsPrivatePathServiceGateway resources.
+
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags for this private path service gateway.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the account policy was created.
         :param pulumi.Input[_builtins.str] crn: CRN of this resource.
         :param pulumi.Input[_builtins.str] default_access_policy: The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
@@ -156,10 +193,13 @@ class _IsPrivatePathServiceGatewayState:
         :param pulumi.Input[_builtins.str] resource_group: ID of resource group to use.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_endpoints: The fully qualified domain names for this private path service gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of user tags for this private path service gateway.
         :param pulumi.Input[_builtins.str] updated_at: The date and time that the account policy was updated.
         :param pulumi.Input[_builtins.str] vpc: The VPC this private path service gateway resides in.
         :param pulumi.Input[_builtins.bool] zonal_affinity: ndicates whether this private path service gateway has zonal affinity.
         """
+        if access_tags is not None:
+            pulumi.set(__self__, "access_tags", access_tags)
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
         if crn is not None:
@@ -190,6 +230,8 @@ class _IsPrivatePathServiceGatewayState:
             pulumi.set(__self__, "resource_type", resource_type)
         if service_endpoints is not None:
             pulumi.set(__self__, "service_endpoints", service_endpoints)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
         if updated_at is not None:
             pulumi.set(__self__, "updated_at", updated_at)
         if vpc is not None:
@@ -198,219 +240,243 @@ class _IsPrivatePathServiceGatewayState:
             pulumi.set(__self__, "zonal_affinity", zonal_affinity)
 
     @_builtins.property
+    @pulumi.getter(name="accessTags")
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of access management tags for this private path service gateway.
+        """
+        return pulumi.get(self, "access_tags")
+
+    @access_tags.setter
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "access_tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the account policy was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of this resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultAccessPolicy")
-    def default_access_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_access_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
         """
         return pulumi.get(self, "default_access_policy")
 
     @default_access_policy.setter
-    def default_access_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_access_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_access_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointGatewayBindingAutoDelete")
-    def endpoint_gateway_binding_auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def endpoint_gateway_binding_auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether endpoint gateway bindings will be automatically deleted after endpoint_gateway_binding_auto_delete_timeout hours have passed.
         """
         return pulumi.get(self, "endpoint_gateway_binding_auto_delete")
 
     @endpoint_gateway_binding_auto_delete.setter
-    def endpoint_gateway_binding_auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def endpoint_gateway_binding_auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "endpoint_gateway_binding_auto_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointGatewayBindingAutoDeleteTimeout")
-    def endpoint_gateway_binding_auto_delete_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def endpoint_gateway_binding_auto_delete_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         If endpoint_gateway_binding_auto_delete is true, the hours after which endpoint gateway bindings will be automatically deleted.
         """
         return pulumi.get(self, "endpoint_gateway_binding_auto_delete_timeout")
 
     @endpoint_gateway_binding_auto_delete_timeout.setter
-    def endpoint_gateway_binding_auto_delete_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def endpoint_gateway_binding_auto_delete_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "endpoint_gateway_binding_auto_delete_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointGatewayCount")
-    def endpoint_gateway_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def endpoint_gateway_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of endpoint gateways using this private path service gateway.
         """
         return pulumi.get(self, "endpoint_gateway_count")
 
     @endpoint_gateway_count.setter
-    def endpoint_gateway_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def endpoint_gateway_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "endpoint_gateway_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Href of this resource
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         lifecycle_state of this resource
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancer")
-    def load_balancer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The load balancer for this private path service gateway.
         """
         return pulumi.get(self, "load_balancer")
 
     @load_balancer.setter
-    def load_balancer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of this PPSG
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="privatePathServiceGateway")
-    def private_path_service_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_path_service_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this account policy.
         """
         return pulumi.get(self, "private_path_service_gateway")
 
     @private_path_service_gateway.setter
-    def private_path_service_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_path_service_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_path_service_gateway", value)
 
     @_builtins.property
     @pulumi.getter
-    def published(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def published(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates the availability of this private path service gateway.
         """
         return pulumi.get(self, "published")
 
     @published.setter
-    def published(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def published(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "published", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of resource group to use.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpoints")
-    def service_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def service_endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The fully qualified domain names for this private path service gateway.
         """
         return pulumi.get(self, "service_endpoints")
 
     @service_endpoints.setter
-    def service_endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def service_endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service_endpoints", value)
 
     @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of user tags for this private path service gateway.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the account policy was updated.
         """
         return pulumi.get(self, "updated_at")
 
     @updated_at.setter
-    def updated_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPC this private path service gateway resides in.
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
     @_builtins.property
     @pulumi.getter(name="zonalAffinity")
-    def zonal_affinity(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def zonal_affinity(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         ndicates whether this private path service gateway has zonal affinity.
         """
         return pulumi.get(self, "zonal_affinity")
 
     @zonal_affinity.setter
-    def zonal_affinity(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def zonal_affinity(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "zonal_affinity", value)
 
 
@@ -420,22 +486,27 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zonal_affinity: Optional[pulumi.Input[_builtins.bool]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 default_access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zonal_affinity: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a IsPrivatePathServiceGateway resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags for this private path service gateway.
         :param pulumi.Input[_builtins.str] default_access_policy: The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
         :param pulumi.Input[_builtins.str] load_balancer: The load balancer for this private path service gateway.
         :param pulumi.Input[_builtins.str] name: The name of this PPSG
         :param pulumi.Input[_builtins.str] resource_group: ID of resource group to use.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_endpoints: The fully qualified domain names for this private path service gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of user tags for this private path service gateway.
         :param pulumi.Input[_builtins.bool] zonal_affinity: ndicates whether this private path service gateway has zonal affinity.
         """
         ...
@@ -446,6 +517,7 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsPrivatePathServiceGateway resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsPrivatePathServiceGatewayArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -461,12 +533,14 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 zonal_affinity: Optional[pulumi.Input[_builtins.bool]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 default_access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 zonal_affinity: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -476,6 +550,7 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = IsPrivatePathServiceGatewayArgs.__new__(IsPrivatePathServiceGatewayArgs)
 
+            __props__.__dict__["access_tags"] = access_tags
             __props__.__dict__["default_access_policy"] = default_access_policy
             if load_balancer is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer'")
@@ -485,6 +560,7 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
             if service_endpoints is None and not opts.urn:
                 raise TypeError("Missing required property 'service_endpoints'")
             __props__.__dict__["service_endpoints"] = service_endpoints
+            __props__.__dict__["tags"] = tags
             __props__.__dict__["zonal_affinity"] = zonal_affinity
             __props__.__dict__["created_at"] = None
             __props__.__dict__["crn"] = None
@@ -508,24 +584,26 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            default_access_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_gateway_binding_auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            endpoint_gateway_binding_auto_delete_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            endpoint_gateway_count: Optional[pulumi.Input[_builtins.int]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            load_balancer: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            published: Optional[pulumi.Input[_builtins.bool]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            service_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            updated_at: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None,
-            zonal_affinity: Optional[pulumi.Input[_builtins.bool]] = None) -> 'IsPrivatePathServiceGateway':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            default_access_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_gateway_binding_auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint_gateway_binding_auto_delete_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            endpoint_gateway_count: pulumi.Input[Optional[_builtins.int]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            published: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            service_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None,
+            zonal_affinity: pulumi.Input[Optional[_builtins.bool]] = None) -> 'IsPrivatePathServiceGateway':
         """
         Get an existing IsPrivatePathServiceGateway resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -533,6 +611,7 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags for this private path service gateway.
         :param pulumi.Input[_builtins.str] created_at: The date and time that the account policy was created.
         :param pulumi.Input[_builtins.str] crn: CRN of this resource.
         :param pulumi.Input[_builtins.str] default_access_policy: The access policy for the account:- permit: access will be permitted- deny:  access will be denied- review: access will be manually reviewed.
@@ -548,6 +627,7 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_group: ID of resource group to use.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_endpoints: The fully qualified domain names for this private path service gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of user tags for this private path service gateway.
         :param pulumi.Input[_builtins.str] updated_at: The date and time that the account policy was updated.
         :param pulumi.Input[_builtins.str] vpc: The VPC this private path service gateway resides in.
         :param pulumi.Input[_builtins.bool] zonal_affinity: ndicates whether this private path service gateway has zonal affinity.
@@ -556,6 +636,7 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
 
         __props__ = _IsPrivatePathServiceGatewayState.__new__(_IsPrivatePathServiceGatewayState)
 
+        __props__.__dict__["access_tags"] = access_tags
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["crn"] = crn
         __props__.__dict__["default_access_policy"] = default_access_policy
@@ -571,10 +652,19 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
         __props__.__dict__["resource_group"] = resource_group
         __props__.__dict__["resource_type"] = resource_type
         __props__.__dict__["service_endpoints"] = service_endpoints
+        __props__.__dict__["tags"] = tags
         __props__.__dict__["updated_at"] = updated_at
         __props__.__dict__["vpc"] = vpc
         __props__.__dict__["zonal_affinity"] = zonal_affinity
         return IsPrivatePathServiceGateway(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="accessTags")
+    def access_tags(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of access management tags for this private path service gateway.
+        """
+        return pulumi.get(self, "access_tags")
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -695,6 +785,14 @@ class IsPrivatePathServiceGateway(pulumi.CustomResource):
         The fully qualified domain names for this private path service gateway.
         """
         return pulumi.get(self, "service_endpoints")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of user tags for this private path service gateway.
+        """
+        return pulumi.get(self, "tags")
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")

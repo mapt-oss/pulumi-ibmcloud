@@ -48,6 +48,6 @@ export function getIsVpcsOutput(args?: GetIsVpcsOutputArgs, opts?: pulumi.Invoke
  * A collection of arguments for invoking getIsVpcs.
  */
 export interface GetIsVpcsOutputArgs {
-    classicAccess?: pulumi.Input<boolean>;
-    resourceGroup?: pulumi.Input<string>;
+    classicAccess?: pulumi.Input<boolean | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

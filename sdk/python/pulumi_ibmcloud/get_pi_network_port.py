@@ -107,9 +107,9 @@ def get_pi_network_port(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         pi_network_id=pulumi.get(__ret__, 'pi_network_id'),
         pi_network_name=pulumi.get(__ret__, 'pi_network_name'))
-def get_pi_network_port_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               pi_network_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               pi_network_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pi_network_port_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               pi_network_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               pi_network_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkPortResult]:
     """
     Use this data source to access information about an existing resource.

@@ -22,11 +22,12 @@ class CosBackupVaultArgs:
                  backup_vault_name: pulumi.Input[_builtins.str],
                  region: pulumi.Input[_builtins.str],
                  service_instance_id: pulumi.Input[_builtins.str],
-                 activity_tracking_management_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring_usage_metrics: Optional[pulumi.Input[_builtins.bool]] = None):
+                 activity_tracking_management_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring_usage_metrics: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a CosBackupVault resource.
+
         :param pulumi.Input[_builtins.str] backup_vault_name: Name of the Backup Vault.
         :param pulumi.Input[_builtins.str] region: Location where backup vault  to be created.
         :param pulumi.Input[_builtins.str] service_instance_id: Instance id for the backup vault.
@@ -82,53 +83,54 @@ class CosBackupVaultArgs:
 
     @_builtins.property
     @pulumi.getter(name="activityTrackingManagementEvents")
-    def activity_tracking_management_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def activity_tracking_management_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Activity Tracking configuration.Whether to send notifications for management events on the BackupVault.
         """
         return pulumi.get(self, "activity_tracking_management_events")
 
     @activity_tracking_management_events.setter
-    def activity_tracking_management_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def activity_tracking_management_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "activity_tracking_management_events", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyCrn")
-    def kms_key_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for a KeyProtect root key.
         """
         return pulumi.get(self, "kms_key_crn")
 
     @kms_key_crn.setter
-    def kms_key_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="metricsMonitoringUsageMetrics")
-    def metrics_monitoring_usage_metrics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def metrics_monitoring_usage_metrics(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Metrics Monitoring configuration.Whether usage metrics are collected for this BackupVault.
         """
         return pulumi.get(self, "metrics_monitoring_usage_metrics")
 
     @metrics_monitoring_usage_metrics.setter
-    def metrics_monitoring_usage_metrics(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def metrics_monitoring_usage_metrics(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "metrics_monitoring_usage_metrics", value)
 
 
 @pulumi.input_type
 class _CosBackupVaultState:
     def __init__(__self__, *,
-                 activity_tracking_management_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 backup_vault_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_vault_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring_usage_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 activity_tracking_management_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_vault_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_vault_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring_usage_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_instance_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CosBackupVault resources.
+
         :param pulumi.Input[_builtins.bool] activity_tracking_management_events: Activity Tracking configuration.Whether to send notifications for management events on the BackupVault.
         :param pulumi.Input[_builtins.str] backup_vault_crn: CRN of resource instance
         :param pulumi.Input[_builtins.str] backup_vault_name: Name of the Backup Vault.
@@ -154,86 +156,86 @@ class _CosBackupVaultState:
 
     @_builtins.property
     @pulumi.getter(name="activityTrackingManagementEvents")
-    def activity_tracking_management_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def activity_tracking_management_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Activity Tracking configuration.Whether to send notifications for management events on the BackupVault.
         """
         return pulumi.get(self, "activity_tracking_management_events")
 
     @activity_tracking_management_events.setter
-    def activity_tracking_management_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def activity_tracking_management_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "activity_tracking_management_events", value)
 
     @_builtins.property
     @pulumi.getter(name="backupVaultCrn")
-    def backup_vault_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_vault_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CRN of resource instance
         """
         return pulumi.get(self, "backup_vault_crn")
 
     @backup_vault_crn.setter
-    def backup_vault_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_vault_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_vault_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="backupVaultName")
-    def backup_vault_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_vault_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Backup Vault.
         """
         return pulumi.get(self, "backup_vault_name")
 
     @backup_vault_name.setter
-    def backup_vault_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_vault_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_vault_name", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyCrn")
-    def kms_key_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for a KeyProtect root key.
         """
         return pulumi.get(self, "kms_key_crn")
 
     @kms_key_crn.setter
-    def kms_key_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="metricsMonitoringUsageMetrics")
-    def metrics_monitoring_usage_metrics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def metrics_monitoring_usage_metrics(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Metrics Monitoring configuration.Whether usage metrics are collected for this BackupVault.
         """
         return pulumi.get(self, "metrics_monitoring_usage_metrics")
 
     @metrics_monitoring_usage_metrics.setter
-    def metrics_monitoring_usage_metrics(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def metrics_monitoring_usage_metrics(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "metrics_monitoring_usage_metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location where backup vault  to be created.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceInstanceId")
-    def service_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance id for the backup vault.
         """
         return pulumi.get(self, "service_instance_id")
 
     @service_instance_id.setter
-    def service_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_instance_id", value)
 
 
@@ -243,15 +245,16 @@ class CosBackupVault(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activity_tracking_management_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 backup_vault_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring_usage_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 activity_tracking_management_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_vault_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring_usage_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a CosBackupVault resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] activity_tracking_management_events: Activity Tracking configuration.Whether to send notifications for management events on the BackupVault.
@@ -269,6 +272,7 @@ class CosBackupVault(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CosBackupVault resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CosBackupVaultArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -284,12 +288,12 @@ class CosBackupVault(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activity_tracking_management_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 backup_vault_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_monitoring_usage_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 activity_tracking_management_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_vault_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_monitoring_usage_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -322,13 +326,13 @@ class CosBackupVault(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activity_tracking_management_events: Optional[pulumi.Input[_builtins.bool]] = None,
-            backup_vault_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_vault_name: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            metrics_monitoring_usage_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            service_instance_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'CosBackupVault':
+            activity_tracking_management_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            backup_vault_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_vault_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics_monitoring_usage_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            service_instance_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'CosBackupVault':
         """
         Get an existing CosBackupVault resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

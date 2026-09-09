@@ -142,12 +142,12 @@ def get_is_volumes(attachment_state: Optional[_builtins.str] = None,
         volume_name=pulumi.get(__ret__, 'volume_name'),
         volumes=pulumi.get(__ret__, 'volumes'),
         zone_name=pulumi.get(__ret__, 'zone_name'))
-def get_is_volumes_output(attachment_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          encryption: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          operating_system_architecture: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          operating_system_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          volume_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          zone_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_volumes_output(attachment_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          encryption: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          operating_system_architecture: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          operating_system_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          volume_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          zone_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVolumesResult]:
     """
     Use this data source to access information about an existing resource.

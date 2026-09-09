@@ -121,7 +121,7 @@ export class IsVpnGatewayConnection extends pulumi.CustomResource {
     /**
      * Routing protocols for this VPN gateway connection.
      */
-    declare public /*out*/ readonly routingProtocol: pulumi.Output<string>;
+    declare public readonly routingProtocol: pulumi.Output<string>;
     /**
      * VPN gateway connection status
      */
@@ -134,6 +134,7 @@ export class IsVpnGatewayConnection extends pulumi.CustomResource {
      * Timeout for dead peer detection
      */
     declare public readonly timeout: pulumi.Output<number | undefined>;
+    declare public readonly tunnel: pulumi.Output<outputs.IsVpnGatewayConnectionTunnel[] | undefined>;
     /**
      * The VPN tunnel configuration for this VPN gateway connection (in static route mode)
      */
@@ -181,6 +182,7 @@ export class IsVpnGatewayConnection extends pulumi.CustomResource {
             resourceInputs["status"] = state?.status;
             resourceInputs["statusReasons"] = state?.statusReasons;
             resourceInputs["timeout"] = state?.timeout;
+            resourceInputs["tunnel"] = state?.tunnel;
             resourceInputs["tunnels"] = state?.tunnels;
             resourceInputs["vpnGateway"] = state?.vpnGateway;
         } else {
@@ -205,7 +207,9 @@ export class IsVpnGatewayConnection extends pulumi.CustomResource {
             resourceInputs["peerAddress"] = args?.peerAddress;
             resourceInputs["peerCidrs"] = args?.peerCidrs;
             resourceInputs["presharedKey"] = args?.presharedKey;
+            resourceInputs["routingProtocol"] = args?.routingProtocol;
             resourceInputs["timeout"] = args?.timeout;
+            resourceInputs["tunnel"] = args?.tunnel;
             resourceInputs["vpnGateway"] = args?.vpnGateway;
             resourceInputs["authenticationMode"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
@@ -214,7 +218,6 @@ export class IsVpnGatewayConnection extends pulumi.CustomResource {
             resourceInputs["mode"] = undefined /*out*/;
             resourceInputs["relatedCrn"] = undefined /*out*/;
             resourceInputs["resourceType"] = undefined /*out*/;
-            resourceInputs["routingProtocol"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["statusReasons"] = undefined /*out*/;
             resourceInputs["tunnels"] = undefined /*out*/;
@@ -231,111 +234,112 @@ export interface IsVpnGatewayConnectionState {
     /**
      * Action detection for dead peer detection action
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * VPN gateway connection admin state
      */
-    adminStateUp?: pulumi.Input<boolean>;
+    adminStateUp?: pulumi.Input<boolean | undefined>;
     /**
      * The authentication mode
      */
-    authenticationMode?: pulumi.Input<string>;
+    authenticationMode?: pulumi.Input<string | undefined>;
     /**
      * The date and time that this VPN gateway connection was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the traffic is distributed between the `up` tunnels of the VPN gateway connection when the VPC route's next hop is a VPN connection. If `false`, the traffic is only routed through the `up` tunnel with the lower `publicIp` address.
      */
-    distributeTraffic?: pulumi.Input<boolean>;
+    distributeTraffic?: pulumi.Input<boolean | undefined>;
     /**
      * The establish mode of the VPN gateway connection:- `bidirectional`: Either side of the VPN gateway can initiate IKE protocol   negotiations or rekeying processes.- `peerOnly`: Only the peer can initiate IKE protocol negotiations for this VPN gateway   connection. Additionally, the peer is responsible for initiating the rekeying process   after the connection is established. If rekeying does not occur, the VPN gateway   connection will be brought down after its lifetime expires.
      */
-    establishMode?: pulumi.Input<string>;
+    establishMode?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPN gateway connection
      */
-    gatewayConnection?: pulumi.Input<string>;
+    gatewayConnection?: pulumi.Input<string | undefined>;
     /**
      * Href of the VPN Gateway connection
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * VPN gateway connection IKE Policy
      */
-    ikePolicy?: pulumi.Input<string>;
+    ikePolicy?: pulumi.Input<string | undefined>;
     /**
      * Interval for dead peer detection interval
      */
-    interval?: pulumi.Input<number>;
+    interval?: pulumi.Input<number | undefined>;
     /**
      * IP security policy for vpn gateway connection
      */
-    ipsecPolicy?: pulumi.Input<string>;
-    local?: pulumi.Input<inputs.IsVpnGatewayConnectionLocal>;
+    ipsecPolicy?: pulumi.Input<string | undefined>;
+    local?: pulumi.Input<inputs.IsVpnGatewayConnectionLocal | undefined>;
     /**
      * VPN gateway connection local CIDRs
      *
      * @deprecated local_cidrs is deprecated, use local instead
      */
-    localCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    localCidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The mode of the VPN gateway
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * VPN Gateway connection name
      */
-    name?: pulumi.Input<string>;
-    peer?: pulumi.Input<inputs.IsVpnGatewayConnectionPeer>;
+    name?: pulumi.Input<string | undefined>;
+    peer?: pulumi.Input<inputs.IsVpnGatewayConnectionPeer | undefined>;
     /**
      * VPN gateway connection peer address
      *
      * @deprecated peer_address is deprecated, use peer instead
      */
-    peerAddress?: pulumi.Input<string>;
+    peerAddress?: pulumi.Input<string | undefined>;
     /**
      * VPN gateway connection peer CIDRs
      *
      * @deprecated peer_cidrs is deprecated, use peer instead
      */
-    peerCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    peerCidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * vpn gateway
      */
-    presharedKey?: pulumi.Input<string>;
+    presharedKey?: pulumi.Input<string | undefined>;
     /**
      * The crn of the VPN Gateway resource
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Routing protocols for this VPN gateway connection.
      */
-    routingProtocol?: pulumi.Input<string>;
+    routingProtocol?: pulumi.Input<string | undefined>;
     /**
      * VPN gateway connection status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current status (if any).
      */
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionStatusReason>[]>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionStatusReason>[] | undefined>;
     /**
      * Timeout for dead peer detection
      */
-    timeout?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number | undefined>;
+    tunnel?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionTunnel>[] | undefined>;
     /**
      * The VPN tunnel configuration for this VPN gateway connection (in static route mode)
      */
-    tunnels?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionTunnel>[]>;
+    tunnels?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionTunnel>[] | undefined>;
     /**
      * VPN Gateway info
      */
-    vpnGateway?: pulumi.Input<string>;
+    vpnGateway?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -345,63 +349,68 @@ export interface IsVpnGatewayConnectionArgs {
     /**
      * Action detection for dead peer detection action
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * VPN gateway connection admin state
      */
-    adminStateUp?: pulumi.Input<boolean>;
+    adminStateUp?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether the traffic is distributed between the `up` tunnels of the VPN gateway connection when the VPC route's next hop is a VPN connection. If `false`, the traffic is only routed through the `up` tunnel with the lower `publicIp` address.
      */
-    distributeTraffic?: pulumi.Input<boolean>;
+    distributeTraffic?: pulumi.Input<boolean | undefined>;
     /**
      * The establish mode of the VPN gateway connection:- `bidirectional`: Either side of the VPN gateway can initiate IKE protocol   negotiations or rekeying processes.- `peerOnly`: Only the peer can initiate IKE protocol negotiations for this VPN gateway   connection. Additionally, the peer is responsible for initiating the rekeying process   after the connection is established. If rekeying does not occur, the VPN gateway   connection will be brought down after its lifetime expires.
      */
-    establishMode?: pulumi.Input<string>;
+    establishMode?: pulumi.Input<string | undefined>;
     /**
      * VPN gateway connection IKE Policy
      */
-    ikePolicy?: pulumi.Input<string>;
+    ikePolicy?: pulumi.Input<string | undefined>;
     /**
      * Interval for dead peer detection interval
      */
-    interval?: pulumi.Input<number>;
+    interval?: pulumi.Input<number | undefined>;
     /**
      * IP security policy for vpn gateway connection
      */
-    ipsecPolicy?: pulumi.Input<string>;
-    local?: pulumi.Input<inputs.IsVpnGatewayConnectionLocal>;
+    ipsecPolicy?: pulumi.Input<string | undefined>;
+    local?: pulumi.Input<inputs.IsVpnGatewayConnectionLocal | undefined>;
     /**
      * VPN gateway connection local CIDRs
      *
      * @deprecated local_cidrs is deprecated, use local instead
      */
-    localCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    localCidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * VPN Gateway connection name
      */
-    name?: pulumi.Input<string>;
-    peer?: pulumi.Input<inputs.IsVpnGatewayConnectionPeer>;
+    name?: pulumi.Input<string | undefined>;
+    peer?: pulumi.Input<inputs.IsVpnGatewayConnectionPeer | undefined>;
     /**
      * VPN gateway connection peer address
      *
      * @deprecated peer_address is deprecated, use peer instead
      */
-    peerAddress?: pulumi.Input<string>;
+    peerAddress?: pulumi.Input<string | undefined>;
     /**
      * VPN gateway connection peer CIDRs
      *
      * @deprecated peer_cidrs is deprecated, use peer instead
      */
-    peerCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    peerCidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * vpn gateway
      */
     presharedKey: pulumi.Input<string>;
     /**
+     * Routing protocols for this VPN gateway connection.
+     */
+    routingProtocol?: pulumi.Input<string | undefined>;
+    /**
      * Timeout for dead peer detection
      */
-    timeout?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number | undefined>;
+    tunnel?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionTunnel>[] | undefined>;
     /**
      * VPN Gateway info
      */

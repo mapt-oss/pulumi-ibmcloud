@@ -23,22 +23,25 @@ class IsVpnGatewayConnectionArgs:
     def __init__(__self__, *,
                  preshared_key: pulumi.Input[_builtins.str],
                  vpn_gateway: pulumi.Input[_builtins.str],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_state_up: Optional[pulumi.Input[_builtins.bool]] = None,
-                 distribute_traffic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 establish_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ike_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipsec_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input['IsVpnGatewayConnectionLocalArgs']] = None,
-                 local_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer: Optional[pulumi.Input['IsVpnGatewayConnectionPeerArgs']] = None,
-                 peer_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_state_up: pulumi.Input[Optional[_builtins.bool]] = None,
+                 distribute_traffic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 establish_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ike_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipsec_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional['IsVpnGatewayConnectionLocalArgs']] = None,
+                 local_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer: pulumi.Input[Optional['IsVpnGatewayConnectionPeerArgs']] = None,
+                 peer_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 routing_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 tunnel: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]] = None):
         """
         The set of arguments for constructing a IsVpnGatewayConnection resource.
+
         :param pulumi.Input[_builtins.str] preshared_key: vpn gateway
         :param pulumi.Input[_builtins.str] vpn_gateway: VPN Gateway info
         :param pulumi.Input[_builtins.str] action: Action detection for dead peer detection action
@@ -52,6 +55,7 @@ class IsVpnGatewayConnectionArgs:
         :param pulumi.Input[_builtins.str] name: VPN Gateway connection name
         :param pulumi.Input[_builtins.str] peer_address: VPN gateway connection peer address
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_cidrs: VPN gateway connection peer CIDRs
+        :param pulumi.Input[_builtins.str] routing_protocol: Routing protocols for this VPN gateway connection.
         :param pulumi.Input[_builtins.int] timeout: Timeout for dead peer detection
         """
         pulumi.set(__self__, "preshared_key", preshared_key)
@@ -91,8 +95,12 @@ class IsVpnGatewayConnectionArgs:
             pulumi.log.warn("""peer_cidrs is deprecated: peer_cidrs is deprecated, use peer instead""")
         if peer_cidrs is not None:
             pulumi.set(__self__, "peer_cidrs", peer_cidrs)
+        if routing_protocol is not None:
+            pulumi.set(__self__, "routing_protocol", routing_protocol)
         if timeout is not None:
             pulumi.set(__self__, "timeout", timeout)
+        if tunnel is not None:
+            pulumi.set(__self__, "tunnel", tunnel)
 
     @_builtins.property
     @pulumi.getter(name="presharedKey")
@@ -120,202 +128,225 @@ class IsVpnGatewayConnectionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action detection for dead peer detection action
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="adminStateUp")
-    def admin_state_up(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def admin_state_up(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         VPN gateway connection admin state
         """
         return pulumi.get(self, "admin_state_up")
 
     @admin_state_up.setter
-    def admin_state_up(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def admin_state_up(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "admin_state_up", value)
 
     @_builtins.property
     @pulumi.getter(name="distributeTraffic")
-    def distribute_traffic(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def distribute_traffic(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the traffic is distributed between the `up` tunnels of the VPN gateway connection when the VPC route's next hop is a VPN connection. If `false`, the traffic is only routed through the `up` tunnel with the lower `public_ip` address.
         """
         return pulumi.get(self, "distribute_traffic")
 
     @distribute_traffic.setter
-    def distribute_traffic(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def distribute_traffic(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "distribute_traffic", value)
 
     @_builtins.property
     @pulumi.getter(name="establishMode")
-    def establish_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def establish_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The establish mode of the VPN gateway connection:- `bidirectional`: Either side of the VPN gateway can initiate IKE protocol   negotiations or rekeying processes.- `peer_only`: Only the peer can initiate IKE protocol negotiations for this VPN gateway   connection. Additionally, the peer is responsible for initiating the rekeying process   after the connection is established. If rekeying does not occur, the VPN gateway   connection will be brought down after its lifetime expires.
         """
         return pulumi.get(self, "establish_mode")
 
     @establish_mode.setter
-    def establish_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def establish_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "establish_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="ikePolicy")
-    def ike_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ike_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN gateway connection IKE Policy
         """
         return pulumi.get(self, "ike_policy")
 
     @ike_policy.setter
-    def ike_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ike_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ike_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Interval for dead peer detection interval
         """
         return pulumi.get(self, "interval")
 
     @interval.setter
-    def interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval", value)
 
     @_builtins.property
     @pulumi.getter(name="ipsecPolicy")
-    def ipsec_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipsec_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP security policy for vpn gateway connection
         """
         return pulumi.get(self, "ipsec_policy")
 
     @ipsec_policy.setter
-    def ipsec_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipsec_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipsec_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def local(self) -> Optional[pulumi.Input['IsVpnGatewayConnectionLocalArgs']]:
+    def local(self) -> pulumi.Input[Optional['IsVpnGatewayConnectionLocalArgs']]:
         return pulumi.get(self, "local")
 
     @local.setter
-    def local(self, value: Optional[pulumi.Input['IsVpnGatewayConnectionLocalArgs']]):
+    def local(self, value: pulumi.Input[Optional['IsVpnGatewayConnectionLocalArgs']]):
         pulumi.set(self, "local", value)
 
     @_builtins.property
     @pulumi.getter(name="localCidrs")
     @_utilities.deprecated("""local_cidrs is deprecated, use local instead""")
-    def local_cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def local_cidrs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         VPN gateway connection local CIDRs
         """
         return pulumi.get(self, "local_cidrs")
 
     @local_cidrs.setter
-    def local_cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def local_cidrs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "local_cidrs", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN Gateway connection name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def peer(self) -> Optional[pulumi.Input['IsVpnGatewayConnectionPeerArgs']]:
+    def peer(self) -> pulumi.Input[Optional['IsVpnGatewayConnectionPeerArgs']]:
         return pulumi.get(self, "peer")
 
     @peer.setter
-    def peer(self, value: Optional[pulumi.Input['IsVpnGatewayConnectionPeerArgs']]):
+    def peer(self, value: pulumi.Input[Optional['IsVpnGatewayConnectionPeerArgs']]):
         pulumi.set(self, "peer", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAddress")
     @_utilities.deprecated("""peer_address is deprecated, use peer instead""")
-    def peer_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN gateway connection peer address
         """
         return pulumi.get(self, "peer_address")
 
     @peer_address.setter
-    def peer_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_address", value)
 
     @_builtins.property
     @pulumi.getter(name="peerCidrs")
     @_utilities.deprecated("""peer_cidrs is deprecated, use peer instead""")
-    def peer_cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def peer_cidrs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         VPN gateway connection peer CIDRs
         """
         return pulumi.get(self, "peer_cidrs")
 
     @peer_cidrs.setter
-    def peer_cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def peer_cidrs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "peer_cidrs", value)
 
     @_builtins.property
+    @pulumi.getter(name="routingProtocol")
+    def routing_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Routing protocols for this VPN gateway connection.
+        """
+        return pulumi.get(self, "routing_protocol")
+
+    @routing_protocol.setter
+    def routing_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "routing_protocol", value)
+
+    @_builtins.property
     @pulumi.getter
-    def timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Timeout for dead peer detection
         """
         return pulumi.get(self, "timeout")
 
     @timeout.setter
-    def timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tunnel(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]:
+        return pulumi.get(self, "tunnel")
+
+    @tunnel.setter
+    def tunnel(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]):
+        pulumi.set(self, "tunnel", value)
 
 
 @pulumi.input_type
 class _IsVpnGatewayConnectionState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_state_up: Optional[pulumi.Input[_builtins.bool]] = None,
-                 authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribute_traffic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 establish_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway_connection: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 ike_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipsec_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input['IsVpnGatewayConnectionLocalArgs']] = None,
-                 local_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer: Optional[pulumi.Input['IsVpnGatewayConnectionPeerArgs']] = None,
-                 peer_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 preshared_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayConnectionStatusReasonArgs']]]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 tunnels: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]] = None,
-                 vpn_gateway: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_state_up: pulumi.Input[Optional[_builtins.bool]] = None,
+                 authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribute_traffic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 establish_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway_connection: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 ike_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipsec_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional['IsVpnGatewayConnectionLocalArgs']] = None,
+                 local_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer: pulumi.Input[Optional['IsVpnGatewayConnectionPeerArgs']] = None,
+                 peer_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preshared_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionStatusReasonArgs']]]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 tunnel: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]] = None,
+                 tunnels: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]] = None,
+                 vpn_gateway: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVpnGatewayConnection resources.
+
         :param pulumi.Input[_builtins.str] action: Action detection for dead peer detection action
         :param pulumi.Input[_builtins.bool] admin_state_up: VPN gateway connection admin state
         :param pulumi.Input[_builtins.str] authentication_mode: The authentication mode
@@ -401,6 +432,8 @@ class _IsVpnGatewayConnectionState:
             pulumi.set(__self__, "status_reasons", status_reasons)
         if timeout is not None:
             pulumi.set(__self__, "timeout", timeout)
+        if tunnel is not None:
+            pulumi.set(__self__, "tunnel", tunnel)
         if tunnels is not None:
             pulumi.set(__self__, "tunnels", tunnels)
         if vpn_gateway is not None:
@@ -408,323 +441,332 @@ class _IsVpnGatewayConnectionState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action detection for dead peer detection action
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="adminStateUp")
-    def admin_state_up(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def admin_state_up(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         VPN gateway connection admin state
         """
         return pulumi.get(self, "admin_state_up")
 
     @admin_state_up.setter
-    def admin_state_up(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def admin_state_up(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "admin_state_up", value)
 
     @_builtins.property
     @pulumi.getter(name="authenticationMode")
-    def authentication_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authentication_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The authentication mode
         """
         return pulumi.get(self, "authentication_mode")
 
     @authentication_mode.setter
-    def authentication_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authentication_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authentication_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that this VPN gateway connection was created
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="distributeTraffic")
-    def distribute_traffic(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def distribute_traffic(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the traffic is distributed between the `up` tunnels of the VPN gateway connection when the VPC route's next hop is a VPN connection. If `false`, the traffic is only routed through the `up` tunnel with the lower `public_ip` address.
         """
         return pulumi.get(self, "distribute_traffic")
 
     @distribute_traffic.setter
-    def distribute_traffic(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def distribute_traffic(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "distribute_traffic", value)
 
     @_builtins.property
     @pulumi.getter(name="establishMode")
-    def establish_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def establish_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The establish mode of the VPN gateway connection:- `bidirectional`: Either side of the VPN gateway can initiate IKE protocol   negotiations or rekeying processes.- `peer_only`: Only the peer can initiate IKE protocol negotiations for this VPN gateway   connection. Additionally, the peer is responsible for initiating the rekeying process   after the connection is established. If rekeying does not occur, the VPN gateway   connection will be brought down after its lifetime expires.
         """
         return pulumi.get(self, "establish_mode")
 
     @establish_mode.setter
-    def establish_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def establish_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "establish_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="gatewayConnection")
-    def gateway_connection(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway_connection(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this VPN gateway connection
         """
         return pulumi.get(self, "gateway_connection")
 
     @gateway_connection.setter
-    def gateway_connection(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway_connection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway_connection", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Href of the VPN Gateway connection
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="ikePolicy")
-    def ike_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ike_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN gateway connection IKE Policy
         """
         return pulumi.get(self, "ike_policy")
 
     @ike_policy.setter
-    def ike_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ike_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ike_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Interval for dead peer detection interval
         """
         return pulumi.get(self, "interval")
 
     @interval.setter
-    def interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval", value)
 
     @_builtins.property
     @pulumi.getter(name="ipsecPolicy")
-    def ipsec_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipsec_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP security policy for vpn gateway connection
         """
         return pulumi.get(self, "ipsec_policy")
 
     @ipsec_policy.setter
-    def ipsec_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipsec_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipsec_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def local(self) -> Optional[pulumi.Input['IsVpnGatewayConnectionLocalArgs']]:
+    def local(self) -> pulumi.Input[Optional['IsVpnGatewayConnectionLocalArgs']]:
         return pulumi.get(self, "local")
 
     @local.setter
-    def local(self, value: Optional[pulumi.Input['IsVpnGatewayConnectionLocalArgs']]):
+    def local(self, value: pulumi.Input[Optional['IsVpnGatewayConnectionLocalArgs']]):
         pulumi.set(self, "local", value)
 
     @_builtins.property
     @pulumi.getter(name="localCidrs")
     @_utilities.deprecated("""local_cidrs is deprecated, use local instead""")
-    def local_cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def local_cidrs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         VPN gateway connection local CIDRs
         """
         return pulumi.get(self, "local_cidrs")
 
     @local_cidrs.setter
-    def local_cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def local_cidrs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "local_cidrs", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The mode of the VPN gateway
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN Gateway connection name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def peer(self) -> Optional[pulumi.Input['IsVpnGatewayConnectionPeerArgs']]:
+    def peer(self) -> pulumi.Input[Optional['IsVpnGatewayConnectionPeerArgs']]:
         return pulumi.get(self, "peer")
 
     @peer.setter
-    def peer(self, value: Optional[pulumi.Input['IsVpnGatewayConnectionPeerArgs']]):
+    def peer(self, value: pulumi.Input[Optional['IsVpnGatewayConnectionPeerArgs']]):
         pulumi.set(self, "peer", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAddress")
     @_utilities.deprecated("""peer_address is deprecated, use peer instead""")
-    def peer_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN gateway connection peer address
         """
         return pulumi.get(self, "peer_address")
 
     @peer_address.setter
-    def peer_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_address", value)
 
     @_builtins.property
     @pulumi.getter(name="peerCidrs")
     @_utilities.deprecated("""peer_cidrs is deprecated, use peer instead""")
-    def peer_cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def peer_cidrs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         VPN gateway connection peer CIDRs
         """
         return pulumi.get(self, "peer_cidrs")
 
     @peer_cidrs.setter
-    def peer_cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def peer_cidrs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "peer_cidrs", value)
 
     @_builtins.property
     @pulumi.getter(name="presharedKey")
-    def preshared_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preshared_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         vpn gateway
         """
         return pulumi.get(self, "preshared_key")
 
     @preshared_key.setter
-    def preshared_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preshared_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preshared_key", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedCrn")
-    def related_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the VPN Gateway resource
         """
         return pulumi.get(self, "related_crn")
 
     @related_crn.setter
-    def related_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="routingProtocol")
-    def routing_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing protocols for this VPN gateway connection.
         """
         return pulumi.get(self, "routing_protocol")
 
     @routing_protocol.setter
-    def routing_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN gateway connection status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayConnectionStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionStatusReasonArgs']]]]:
         """
         The reasons for the current status (if any).
         """
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayConnectionStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Timeout for dead peer detection
         """
         return pulumi.get(self, "timeout")
 
     @timeout.setter
-    def timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def tunnels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]:
+    def tunnel(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]:
+        return pulumi.get(self, "tunnel")
+
+    @tunnel.setter
+    def tunnel(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]):
+        pulumi.set(self, "tunnel", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tunnels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]:
         """
         The VPN tunnel configuration for this VPN gateway connection (in static route mode)
         """
         return pulumi.get(self, "tunnels")
 
     @tunnels.setter
-    def tunnels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]):
+    def tunnels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpnGatewayConnectionTunnelArgs']]]]):
         pulumi.set(self, "tunnels", value)
 
     @_builtins.property
     @pulumi.getter(name="vpnGateway")
-    def vpn_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpn_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPN Gateway info
         """
         return pulumi.get(self, "vpn_gateway")
 
     @vpn_gateway.setter
-    def vpn_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpn_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpn_gateway", value)
 
 
@@ -734,25 +776,28 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_state_up: Optional[pulumi.Input[_builtins.bool]] = None,
-                 distribute_traffic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 establish_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ike_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipsec_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input[Union['IsVpnGatewayConnectionLocalArgs', 'IsVpnGatewayConnectionLocalArgsDict']]] = None,
-                 local_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer: Optional[pulumi.Input[Union['IsVpnGatewayConnectionPeerArgs', 'IsVpnGatewayConnectionPeerArgsDict']]] = None,
-                 peer_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 preshared_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 vpn_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_state_up: pulumi.Input[Optional[_builtins.bool]] = None,
+                 distribute_traffic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 establish_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ike_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipsec_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional[Union['IsVpnGatewayConnectionLocalArgs', 'IsVpnGatewayConnectionLocalArgsDict', 'outputs.IsVpnGatewayConnectionLocal']]] = None,
+                 local_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer: pulumi.Input[Optional[Union['IsVpnGatewayConnectionPeerArgs', 'IsVpnGatewayConnectionPeerArgsDict', 'outputs.IsVpnGatewayConnectionPeer']]] = None,
+                 peer_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preshared_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 tunnel: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionTunnelArgs', 'IsVpnGatewayConnectionTunnelArgsDict', 'outputs.IsVpnGatewayConnectionTunnel']]]]] = None,
+                 vpn_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVpnGatewayConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Action detection for dead peer detection action
@@ -767,6 +812,7 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] peer_address: VPN gateway connection peer address
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_cidrs: VPN gateway connection peer CIDRs
         :param pulumi.Input[_builtins.str] preshared_key: vpn gateway
+        :param pulumi.Input[_builtins.str] routing_protocol: Routing protocols for this VPN gateway connection.
         :param pulumi.Input[_builtins.int] timeout: Timeout for dead peer detection
         :param pulumi.Input[_builtins.str] vpn_gateway: VPN Gateway info
         """
@@ -778,6 +824,7 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVpnGatewayConnection resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVpnGatewayConnectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -793,22 +840,24 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_state_up: Optional[pulumi.Input[_builtins.bool]] = None,
-                 distribute_traffic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 establish_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 ike_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipsec_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 local: Optional[pulumi.Input[Union['IsVpnGatewayConnectionLocalArgs', 'IsVpnGatewayConnectionLocalArgsDict']]] = None,
-                 local_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer: Optional[pulumi.Input[Union['IsVpnGatewayConnectionPeerArgs', 'IsVpnGatewayConnectionPeerArgsDict']]] = None,
-                 peer_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 preshared_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 vpn_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_state_up: pulumi.Input[Optional[_builtins.bool]] = None,
+                 distribute_traffic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 establish_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 ike_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipsec_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 local: pulumi.Input[Optional[Union['IsVpnGatewayConnectionLocalArgs', 'IsVpnGatewayConnectionLocalArgsDict', 'outputs.IsVpnGatewayConnectionLocal']]] = None,
+                 local_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer: pulumi.Input[Optional[Union['IsVpnGatewayConnectionPeerArgs', 'IsVpnGatewayConnectionPeerArgsDict', 'outputs.IsVpnGatewayConnectionPeer']]] = None,
+                 peer_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preshared_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 tunnel: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionTunnelArgs', 'IsVpnGatewayConnectionTunnelArgsDict', 'outputs.IsVpnGatewayConnectionTunnel']]]]] = None,
+                 vpn_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -834,7 +883,9 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
             if preshared_key is None and not opts.urn:
                 raise TypeError("Missing required property 'preshared_key'")
             __props__.__dict__["preshared_key"] = preshared_key
+            __props__.__dict__["routing_protocol"] = routing_protocol
             __props__.__dict__["timeout"] = timeout
+            __props__.__dict__["tunnel"] = tunnel
             if vpn_gateway is None and not opts.urn:
                 raise TypeError("Missing required property 'vpn_gateway'")
             __props__.__dict__["vpn_gateway"] = vpn_gateway
@@ -845,7 +896,6 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
             __props__.__dict__["mode"] = None
             __props__.__dict__["related_crn"] = None
             __props__.__dict__["resource_type"] = None
-            __props__.__dict__["routing_protocol"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["status_reasons"] = None
             __props__.__dict__["tunnels"] = None
@@ -859,33 +909,34 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            admin_state_up: Optional[pulumi.Input[_builtins.bool]] = None,
-            authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            distribute_traffic: Optional[pulumi.Input[_builtins.bool]] = None,
-            establish_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            gateway_connection: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            ike_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            interval: Optional[pulumi.Input[_builtins.int]] = None,
-            ipsec_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            local: Optional[pulumi.Input[Union['IsVpnGatewayConnectionLocalArgs', 'IsVpnGatewayConnectionLocalArgsDict']]] = None,
-            local_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            peer: Optional[pulumi.Input[Union['IsVpnGatewayConnectionPeerArgs', 'IsVpnGatewayConnectionPeerArgsDict']]] = None,
-            peer_address: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            preshared_key: Optional[pulumi.Input[_builtins.str]] = None,
-            related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            routing_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionStatusReasonArgs', 'IsVpnGatewayConnectionStatusReasonArgsDict']]]]] = None,
-            timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            tunnels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionTunnelArgs', 'IsVpnGatewayConnectionTunnelArgsDict']]]]] = None,
-            vpn_gateway: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVpnGatewayConnection':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            admin_state_up: pulumi.Input[Optional[_builtins.bool]] = None,
+            authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            distribute_traffic: pulumi.Input[Optional[_builtins.bool]] = None,
+            establish_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            gateway_connection: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            ike_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            interval: pulumi.Input[Optional[_builtins.int]] = None,
+            ipsec_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            local: pulumi.Input[Optional[Union['IsVpnGatewayConnectionLocalArgs', 'IsVpnGatewayConnectionLocalArgsDict', 'outputs.IsVpnGatewayConnectionLocal']]] = None,
+            local_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            peer: pulumi.Input[Optional[Union['IsVpnGatewayConnectionPeerArgs', 'IsVpnGatewayConnectionPeerArgsDict', 'outputs.IsVpnGatewayConnectionPeer']]] = None,
+            peer_address: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            preshared_key: pulumi.Input[Optional[_builtins.str]] = None,
+            related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionStatusReasonArgs', 'IsVpnGatewayConnectionStatusReasonArgsDict', 'outputs.IsVpnGatewayConnectionStatusReason']]]]] = None,
+            timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            tunnel: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionTunnelArgs', 'IsVpnGatewayConnectionTunnelArgsDict', 'outputs.IsVpnGatewayConnectionTunnel']]]]] = None,
+            tunnels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionTunnelArgs', 'IsVpnGatewayConnectionTunnelArgsDict', 'outputs.IsVpnGatewayConnectionTunnel']]]]] = None,
+            vpn_gateway: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVpnGatewayConnection':
         """
         Get an existing IsVpnGatewayConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -914,9 +965,9 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: The resource type
         :param pulumi.Input[_builtins.str] routing_protocol: Routing protocols for this VPN gateway connection.
         :param pulumi.Input[_builtins.str] status: VPN gateway connection status
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionStatusReasonArgs', 'IsVpnGatewayConnectionStatusReasonArgsDict']]]] status_reasons: The reasons for the current status (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionStatusReasonArgs', 'IsVpnGatewayConnectionStatusReasonArgsDict', 'outputs.IsVpnGatewayConnectionStatusReason']]]] status_reasons: The reasons for the current status (if any).
         :param pulumi.Input[_builtins.int] timeout: Timeout for dead peer detection
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionTunnelArgs', 'IsVpnGatewayConnectionTunnelArgsDict']]]] tunnels: The VPN tunnel configuration for this VPN gateway connection (in static route mode)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpnGatewayConnectionTunnelArgs', 'IsVpnGatewayConnectionTunnelArgsDict', 'outputs.IsVpnGatewayConnectionTunnel']]]] tunnels: The VPN tunnel configuration for this VPN gateway connection (in static route mode)
         :param pulumi.Input[_builtins.str] vpn_gateway: VPN Gateway info
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -948,6 +999,7 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["status_reasons"] = status_reasons
         __props__.__dict__["timeout"] = timeout
+        __props__.__dict__["tunnel"] = tunnel
         __props__.__dict__["tunnels"] = tunnels
         __props__.__dict__["vpn_gateway"] = vpn_gateway
         return IsVpnGatewayConnection(resource_name, opts=opts, __props__=__props__)
@@ -1148,6 +1200,11 @@ class IsVpnGatewayConnection(pulumi.CustomResource):
         Timeout for dead peer detection
         """
         return pulumi.get(self, "timeout")
+
+    @_builtins.property
+    @pulumi.getter
+    def tunnel(self) -> pulumi.Output[Optional[Sequence['outputs.IsVpnGatewayConnectionTunnel']]]:
+        return pulumi.get(self, "tunnel")
 
     @_builtins.property
     @pulumi.getter

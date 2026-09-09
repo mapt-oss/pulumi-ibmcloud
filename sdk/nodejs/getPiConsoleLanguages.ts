@@ -10,6 +10,7 @@ export function getPiConsoleLanguages(args: GetPiConsoleLanguagesArgs, opts?: pu
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getPiConsoleLanguages:getPiConsoleLanguages", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piInstanceId": args.piInstanceId,
         "piInstanceName": args.piInstanceName,
     }, opts);
 }
@@ -19,7 +20,11 @@ export function getPiConsoleLanguages(args: GetPiConsoleLanguagesArgs, opts?: pu
  */
 export interface GetPiConsoleLanguagesArgs {
     piCloudInstanceId: string;
-    piInstanceName: string;
+    piInstanceId?: string;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    piInstanceName?: string;
 }
 
 /**
@@ -32,12 +37,17 @@ export interface GetPiConsoleLanguagesResult {
      */
     readonly id: string;
     readonly piCloudInstanceId: string;
-    readonly piInstanceName: string;
+    readonly piInstanceId?: string;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    readonly piInstanceName?: string;
 }
 export function getPiConsoleLanguagesOutput(args: GetPiConsoleLanguagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPiConsoleLanguagesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getPiConsoleLanguages:getPiConsoleLanguages", {
         "piCloudInstanceId": args.piCloudInstanceId,
+        "piInstanceId": args.piInstanceId,
         "piInstanceName": args.piInstanceName,
     }, opts);
 }
@@ -47,5 +57,9 @@ export function getPiConsoleLanguagesOutput(args: GetPiConsoleLanguagesOutputArg
  */
 export interface GetPiConsoleLanguagesOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piInstanceName: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
+    /**
+     * @deprecated The piInstanceName field is deprecated. Please use piInstanceId instead
+     */
+    piInstanceName?: pulumi.Input<string | undefined>;
 }

@@ -74,7 +74,7 @@ export function getIsSnapshotOutput(args?: GetIsSnapshotOutputArgs, opts?: pulum
  * A collection of arguments for invoking getIsSnapshot.
  */
 export interface GetIsSnapshotOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    sourceSnapshots?: pulumi.Input<pulumi.Input<inputs.GetIsSnapshotSourceSnapshotArgs>[]>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    sourceSnapshots?: pulumi.Input<pulumi.Input<inputs.GetIsSnapshotSourceSnapshotArgs>[] | undefined>;
 }

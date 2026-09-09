@@ -23,6 +23,7 @@ class IsPrivatePathServiceGatewayOperationsArgs:
                  published: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a IsPrivatePathServiceGatewayOperations resource.
+
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
         :param pulumi.Input[_builtins.bool] published: Publish or unpublish PPSG.
         """
@@ -57,10 +58,11 @@ class IsPrivatePathServiceGatewayOperationsArgs:
 @pulumi.input_type
 class _IsPrivatePathServiceGatewayOperationsState:
     def __init__(__self__, *,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 published: Optional[pulumi.Input[_builtins.bool]] = None):
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 published: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering IsPrivatePathServiceGatewayOperations resources.
+
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
         :param pulumi.Input[_builtins.bool] published: Publish or unpublish PPSG.
         """
@@ -71,26 +73,26 @@ class _IsPrivatePathServiceGatewayOperationsState:
 
     @_builtins.property
     @pulumi.getter(name="privatePathServiceGateway")
-    def private_path_service_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_path_service_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private path service gateway identifier.
         """
         return pulumi.get(self, "private_path_service_gateway")
 
     @private_path_service_gateway.setter
-    def private_path_service_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_path_service_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_path_service_gateway", value)
 
     @_builtins.property
     @pulumi.getter
-    def published(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def published(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Publish or unpublish PPSG.
         """
         return pulumi.get(self, "published")
 
     @published.setter
-    def published(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def published(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "published", value)
 
 
@@ -100,11 +102,12 @@ class IsPrivatePathServiceGatewayOperations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 published: Optional[pulumi.Input[_builtins.bool]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 published: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a IsPrivatePathServiceGatewayOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
@@ -118,6 +121,7 @@ class IsPrivatePathServiceGatewayOperations(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsPrivatePathServiceGatewayOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsPrivatePathServiceGatewayOperationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -133,8 +137,8 @@ class IsPrivatePathServiceGatewayOperations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 published: Optional[pulumi.Input[_builtins.bool]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 published: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -160,8 +164,8 @@ class IsPrivatePathServiceGatewayOperations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            published: Optional[pulumi.Input[_builtins.bool]] = None) -> 'IsPrivatePathServiceGatewayOperations':
+            private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            published: pulumi.Input[Optional[_builtins.bool]] = None) -> 'IsPrivatePathServiceGatewayOperations':
         """
         Get an existing IsPrivatePathServiceGatewayOperations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

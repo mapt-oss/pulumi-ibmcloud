@@ -166,14 +166,14 @@ def get_is_bare_metal_servers(name: Optional[_builtins.str] = None,
         vpc=pulumi.get(__ret__, 'vpc'),
         vpc_crn=pulumi.get(__ret__, 'vpc_crn'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'))
-def get_is_bare_metal_servers_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     network_interfaces_subnet: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     network_interfaces_subnet_crn: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     network_interfaces_subnet_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     vpc: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     vpc_crn: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_bare_metal_servers_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     network_interfaces_subnet: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     network_interfaces_subnet_crn: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     network_interfaces_subnet_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     vpc: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     vpc_crn: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServersResult]:
     """
     Use this data source to access information about an existing resource.

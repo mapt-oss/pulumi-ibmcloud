@@ -142,7 +142,7 @@ def get_is_volume_profile(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         iops=pulumi.get(__ret__, 'iops'),
         name=pulumi.get(__ret__, 'name'))
-def get_is_volume_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_volume_profile_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVolumeProfileResult]:
     """
     Use this data source to access information about an existing resource.

@@ -24,9 +24,10 @@ class CosBucketReplicationRuleArgs:
                  bucket_crn: pulumi.Input[_builtins.str],
                  bucket_location: pulumi.Input[_builtins.str],
                  replication_rules: pulumi.Input[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]],
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CosBucketReplicationRule resource.
+
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]] replication_rules: Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
@@ -76,26 +77,27 @@ class CosBucketReplicationRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
 
 @pulumi.input_type
 class _CosBucketReplicationRuleState:
     def __init__(__self__, *,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]]] = None):
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]]] = None):
         """
         Input properties used for looking up and filtering CosBucketReplicationRule resources.
+
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
@@ -112,50 +114,50 @@ class _CosBucketReplicationRuleState:
 
     @_builtins.property
     @pulumi.getter(name="bucketCrn")
-    def bucket_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket CRN
         """
         return pulumi.get(self, "bucket_crn")
 
     @bucket_crn.setter
-    def bucket_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketLocation")
-    def bucket_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket location
         """
         return pulumi.get(self, "bucket_location")
 
     @bucket_location.setter
-    def bucket_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_location", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationRules")
-    def replication_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]]]:
+    def replication_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]]]:
         """
         Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
         """
         return pulumi.get(self, "replication_rules")
 
     @replication_rules.setter
-    def replication_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]]]):
+    def replication_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CosBucketReplicationRuleReplicationRuleArgs']]]]):
         pulumi.set(self, "replication_rules", value)
 
 
@@ -165,19 +167,20 @@ class CosBucketReplicationRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict']]]]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict', 'outputs.CosBucketReplicationRuleReplicationRule']]]]] = None,
                  __props__=None):
         """
         Create a CosBucketReplicationRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict']]]] replication_rules: Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict', 'outputs.CosBucketReplicationRuleReplicationRule']]]] replication_rules: Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
         """
         ...
     @overload
@@ -187,6 +190,7 @@ class CosBucketReplicationRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CosBucketReplicationRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CosBucketReplicationRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -202,10 +206,10 @@ class CosBucketReplicationRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict']]]]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict', 'outputs.CosBucketReplicationRuleReplicationRule']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -235,10 +239,10 @@ class CosBucketReplicationRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict']]]]] = None) -> 'CosBucketReplicationRule':
+            bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict', 'outputs.CosBucketReplicationRuleReplicationRule']]]]] = None) -> 'CosBucketReplicationRule':
         """
         Get an existing CosBucketReplicationRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -249,7 +253,7 @@ class CosBucketReplicationRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict']]]] replication_rules: Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CosBucketReplicationRuleReplicationRuleArgs', 'CosBucketReplicationRuleReplicationRuleArgsDict', 'outputs.CosBucketReplicationRuleReplicationRule']]]] replication_rules: Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

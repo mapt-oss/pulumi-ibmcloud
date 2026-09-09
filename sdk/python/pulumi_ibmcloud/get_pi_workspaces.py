@@ -48,7 +48,8 @@ class GetPiWorkspacesResult:
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> _builtins.str:
+    @_utilities.deprecated("""This field is deprecated and will be removed in a future release.""")
+    def pi_cloud_instance_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @_builtins.property
@@ -82,7 +83,7 @@ def get_pi_workspaces(pi_cloud_instance_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         workspaces=pulumi.get(__ret__, 'workspaces'))
-def get_pi_workspaces_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_workspaces_output(pi_cloud_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiWorkspacesResult]:
     """
     Use this data source to access information about an existing resource.

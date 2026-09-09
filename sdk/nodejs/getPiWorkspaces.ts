@@ -6,7 +6,8 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-export function getPiWorkspaces(args: GetPiWorkspacesArgs, opts?: pulumi.InvokeOptions): Promise<GetPiWorkspacesResult> {
+export function getPiWorkspaces(args?: GetPiWorkspacesArgs, opts?: pulumi.InvokeOptions): Promise<GetPiWorkspacesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("ibmcloud:index/getPiWorkspaces:getPiWorkspaces", {
         "piCloudInstanceId": args.piCloudInstanceId,
@@ -17,7 +18,10 @@ export function getPiWorkspaces(args: GetPiWorkspacesArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getPiWorkspaces.
  */
 export interface GetPiWorkspacesArgs {
-    piCloudInstanceId: string;
+    /**
+     * @deprecated This field is deprecated and will be removed in a future release.
+     */
+    piCloudInstanceId?: string;
 }
 
 /**
@@ -28,10 +32,14 @@ export interface GetPiWorkspacesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly piCloudInstanceId: string;
+    /**
+     * @deprecated This field is deprecated and will be removed in a future release.
+     */
+    readonly piCloudInstanceId?: string;
     readonly workspaces: outputs.GetPiWorkspacesWorkspace[];
 }
-export function getPiWorkspacesOutput(args: GetPiWorkspacesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPiWorkspacesResult> {
+export function getPiWorkspacesOutput(args?: GetPiWorkspacesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPiWorkspacesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("ibmcloud:index/getPiWorkspaces:getPiWorkspaces", {
         "piCloudInstanceId": args.piCloudInstanceId,
@@ -42,5 +50,8 @@ export function getPiWorkspacesOutput(args: GetPiWorkspacesOutputArgs, opts?: pu
  * A collection of arguments for invoking getPiWorkspaces.
  */
 export interface GetPiWorkspacesOutputArgs {
-    piCloudInstanceId: pulumi.Input<string>;
+    /**
+     * @deprecated This field is deprecated and will be removed in a future release.
+     */
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
 }

@@ -82,7 +82,7 @@ def get_is_instance_network_attachments(instance: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         instance=pulumi.get(__ret__, 'instance'),
         network_attachments=pulumi.get(__ret__, 'network_attachments'))
-def get_is_instance_network_attachments_output(instance: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_network_attachments_output(instance: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceNetworkAttachmentsResult]:
     """
     Use this data source to access information about an existing resource.

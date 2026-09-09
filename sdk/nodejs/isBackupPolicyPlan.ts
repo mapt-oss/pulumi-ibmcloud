@@ -153,57 +153,57 @@ export interface IsBackupPolicyPlanState {
     /**
      * Indicates whether the plan is active.
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * User tags to attach to each backup (snapshot) created by this plan. If unspecified, no user tags will be attached.
      */
-    attachUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    attachUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The backup policy identifier.
      */
-    backupPolicyId?: pulumi.Input<string>;
+    backupPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The backup policy identifier.
      */
-    backupPolicyPlanId?: pulumi.Input<string>;
-    clonePolicy?: pulumi.Input<inputs.IsBackupPolicyPlanClonePolicy>;
+    backupPolicyPlanId?: pulumi.Input<string | undefined>;
+    clonePolicy?: pulumi.Input<inputs.IsBackupPolicyPlanClonePolicy | undefined>;
     /**
      * Indicates whether to copy the source's user tags to the created backups (snapshots).
      */
-    copyUserTags?: pulumi.Input<boolean>;
+    copyUserTags?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time that the backup policy plan was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The cron specification for the backup schedule.
      */
-    cronSpec?: pulumi.Input<string>;
-    deletionTrigger?: pulumi.Input<inputs.IsBackupPolicyPlanDeletionTrigger>;
+    cronSpec?: pulumi.Input<string | undefined>;
+    deletionTrigger?: pulumi.Input<inputs.IsBackupPolicyPlanDeletionTrigger | undefined>;
     /**
      * The URL for this backup policy plan.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of this backup policy plan.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this backup policy plan. Names must be unique within the backup policy this plan resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Backup policy plan cross region rule.
      */
-    remoteRegionPolicies?: pulumi.Input<pulumi.Input<inputs.IsBackupPolicyPlanRemoteRegionPolicy>[]>;
+    remoteRegionPolicies?: pulumi.Input<pulumi.Input<inputs.IsBackupPolicyPlanRemoteRegionPolicy>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Version of the BackupPolicyPlan.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -213,31 +213,31 @@ export interface IsBackupPolicyPlanArgs {
     /**
      * Indicates whether the plan is active.
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * User tags to attach to each backup (snapshot) created by this plan. If unspecified, no user tags will be attached.
      */
-    attachUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    attachUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The backup policy identifier.
      */
     backupPolicyId: pulumi.Input<string>;
-    clonePolicy?: pulumi.Input<inputs.IsBackupPolicyPlanClonePolicy>;
+    clonePolicy?: pulumi.Input<inputs.IsBackupPolicyPlanClonePolicy | undefined>;
     /**
      * Indicates whether to copy the source's user tags to the created backups (snapshots).
      */
-    copyUserTags?: pulumi.Input<boolean>;
+    copyUserTags?: pulumi.Input<boolean | undefined>;
     /**
      * The cron specification for the backup schedule.
      */
     cronSpec: pulumi.Input<string>;
-    deletionTrigger?: pulumi.Input<inputs.IsBackupPolicyPlanDeletionTrigger>;
+    deletionTrigger?: pulumi.Input<inputs.IsBackupPolicyPlanDeletionTrigger | undefined>;
     /**
      * The user-defined name for this backup policy plan. Names must be unique within the backup policy this plan resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Backup policy plan cross region rule.
      */
-    remoteRegionPolicies?: pulumi.Input<pulumi.Input<inputs.IsBackupPolicyPlanRemoteRegionPolicy>[]>;
+    remoteRegionPolicies?: pulumi.Input<pulumi.Input<inputs.IsBackupPolicyPlanRemoteRegionPolicy>[] | undefined>;
 }

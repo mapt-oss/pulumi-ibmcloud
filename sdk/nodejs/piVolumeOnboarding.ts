@@ -129,43 +129,43 @@ export interface PiVolumeOnboardingState {
     /**
      * The create time of volume onboarding operation.
      */
-    createTime?: pulumi.Input<string>;
+    createTime?: pulumi.Input<string | undefined>;
     /**
      * List of volumes requested to be onboarded.
      */
-    inputVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    inputVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The volume onboarding ID.
      */
-    onboardingId?: pulumi.Input<string>;
+    onboardingId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Description of the volume onboarding operation
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * List of onboarding volumes.
      */
-    piOnboardingVolumes?: pulumi.Input<pulumi.Input<inputs.PiVolumeOnboardingPiOnboardingVolume>[]>;
+    piOnboardingVolumes?: pulumi.Input<pulumi.Input<inputs.PiVolumeOnboardingPiOnboardingVolume>[] | undefined>;
     /**
      * The progress of volume onboarding operation.
      */
-    progress?: pulumi.Input<number>;
+    progress?: pulumi.Input<number | undefined>;
     /**
      * List of volumes which are onboarded successfully.
      */
-    resultsOnboardedVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+    resultsOnboardedVolumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The volume onboarding failure details.
      */
-    resultsVolumeOnboardingFailures?: pulumi.Input<pulumi.Input<inputs.PiVolumeOnboardingResultsVolumeOnboardingFailure>[]>;
+    resultsVolumeOnboardingFailures?: pulumi.Input<pulumi.Input<inputs.PiVolumeOnboardingResultsVolumeOnboardingFailure>[] | undefined>;
     /**
      * The status of volume onboarding operation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,7 +179,7 @@ export interface PiVolumeOnboardingArgs {
     /**
      * Description of the volume onboarding operation
      */
-    piDescription?: pulumi.Input<string>;
+    piDescription?: pulumi.Input<string | undefined>;
     /**
      * List of onboarding volumes.
      */

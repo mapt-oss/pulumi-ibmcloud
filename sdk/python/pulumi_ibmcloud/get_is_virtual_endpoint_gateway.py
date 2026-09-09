@@ -27,7 +27,7 @@ class GetIsVirtualEndpointGatewayResult:
     """
     A collection of values returned by getIsVirtualEndpointGateway.
     """
-    def __init__(__self__, access_tags=None, allow_dns_resolution_binding=None, created_at=None, crn=None, health_state=None, id=None, ips=None, lifecycle_reasons=None, lifecycle_state=None, name=None, resource_group=None, resource_type=None, security_groups=None, service_endpoints=None, tags=None, targets=None, vpc=None):
+    def __init__(__self__, access_tags=None, allow_dns_resolution_binding=None, created_at=None, crn=None, dns_resolution_binding_mode=None, health_state=None, id=None, ips=None, lifecycle_reasons=None, lifecycle_state=None, name=None, resource_group=None, resource_type=None, security_groups=None, service_endpoints=None, tags=None, targets=None, vpc=None):
         if access_tags and not isinstance(access_tags, list):
             raise TypeError("Expected argument 'access_tags' to be a list")
         pulumi.set(__self__, "access_tags", access_tags)
@@ -40,6 +40,9 @@ class GetIsVirtualEndpointGatewayResult:
         if crn and not isinstance(crn, str):
             raise TypeError("Expected argument 'crn' to be a str")
         pulumi.set(__self__, "crn", crn)
+        if dns_resolution_binding_mode and not isinstance(dns_resolution_binding_mode, str):
+            raise TypeError("Expected argument 'dns_resolution_binding_mode' to be a str")
+        pulumi.set(__self__, "dns_resolution_binding_mode", dns_resolution_binding_mode)
         if health_state and not isinstance(health_state, str):
             raise TypeError("Expected argument 'health_state' to be a str")
         pulumi.set(__self__, "health_state", health_state)
@@ -87,6 +90,7 @@ class GetIsVirtualEndpointGatewayResult:
 
     @_builtins.property
     @pulumi.getter(name="allowDnsResolutionBinding")
+    @_utilities.deprecated("""This property has been deprecated in favor of dns_resolution_binding_mode.""")
     def allow_dns_resolution_binding(self) -> _builtins.bool:
         return pulumi.get(self, "allow_dns_resolution_binding")
 
@@ -99,6 +103,11 @@ class GetIsVirtualEndpointGatewayResult:
     @pulumi.getter
     def crn(self) -> _builtins.str:
         return pulumi.get(self, "crn")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsResolutionBindingMode")
+    def dns_resolution_binding_mode(self) -> _builtins.str:
+        return pulumi.get(self, "dns_resolution_binding_mode")
 
     @_builtins.property
     @pulumi.getter(name="healthState")
@@ -179,6 +188,7 @@ class AwaitableGetIsVirtualEndpointGatewayResult(GetIsVirtualEndpointGatewayResu
             allow_dns_resolution_binding=self.allow_dns_resolution_binding,
             created_at=self.created_at,
             crn=self.crn,
+            dns_resolution_binding_mode=self.dns_resolution_binding_mode,
             health_state=self.health_state,
             id=self.id,
             ips=self.ips,
@@ -209,6 +219,7 @@ def get_is_virtual_endpoint_gateway(name: Optional[_builtins.str] = None,
         allow_dns_resolution_binding=pulumi.get(__ret__, 'allow_dns_resolution_binding'),
         created_at=pulumi.get(__ret__, 'created_at'),
         crn=pulumi.get(__ret__, 'crn'),
+        dns_resolution_binding_mode=pulumi.get(__ret__, 'dns_resolution_binding_mode'),
         health_state=pulumi.get(__ret__, 'health_state'),
         id=pulumi.get(__ret__, 'id'),
         ips=pulumi.get(__ret__, 'ips'),
@@ -222,7 +233,7 @@ def get_is_virtual_endpoint_gateway(name: Optional[_builtins.str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         targets=pulumi.get(__ret__, 'targets'),
         vpc=pulumi.get(__ret__, 'vpc'))
-def get_is_virtual_endpoint_gateway_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_virtual_endpoint_gateway_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVirtualEndpointGatewayResult]:
     """
     Use this data source to access information about an existing resource.
@@ -236,6 +247,7 @@ def get_is_virtual_endpoint_gateway_output(name: Optional[pulumi.Input[_builtins
         allow_dns_resolution_binding=pulumi.get(__response__, 'allow_dns_resolution_binding'),
         created_at=pulumi.get(__response__, 'created_at'),
         crn=pulumi.get(__response__, 'crn'),
+        dns_resolution_binding_mode=pulumi.get(__response__, 'dns_resolution_binding_mode'),
         health_state=pulumi.get(__response__, 'health_state'),
         id=pulumi.get(__response__, 'id'),
         ips=pulumi.get(__response__, 'ips'),

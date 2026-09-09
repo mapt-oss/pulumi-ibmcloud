@@ -195,75 +195,75 @@ export interface PiNetworkPeerState {
     /**
      * Time stamp for create network peer.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * Error description.
      */
-    error?: pulumi.Input<string>;
+    error?: pulumi.Input<string | undefined>;
     /**
      * List of export route filters.
      */
-    exportRouteFilters?: pulumi.Input<pulumi.Input<inputs.PiNetworkPeerExportRouteFilter>[]>;
+    exportRouteFilters?: pulumi.Input<pulumi.Input<inputs.PiNetworkPeerExportRouteFilter>[] | undefined>;
     /**
      * List of import route filters.
      */
-    importRouteFilters?: pulumi.Input<pulumi.Input<inputs.PiNetworkPeerImportRouteFilter>[]>;
+    importRouteFilters?: pulumi.Input<pulumi.Input<inputs.PiNetworkPeerImportRouteFilter>[] | undefined>;
     /**
      * Network peer id.
      */
-    peerId?: pulumi.Input<string>;
+    peerId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * ASN number at customer network side.
      */
-    piCustomerAsn?: pulumi.Input<number>;
+    piCustomerAsn?: pulumi.Input<number | undefined>;
     /**
      * IP address used for configuring customer network interface with network subnet mask. customerCidr and ibmCidr must have matching network and subnet mask values.
      */
-    piCustomerCidr?: pulumi.Input<string>;
+    piCustomerCidr?: pulumi.Input<string | undefined>;
     /**
      * Default action for export route filter. Allowed values: allow, deny.
      */
-    piDefaultExportRouteFilter?: pulumi.Input<string>;
+    piDefaultExportRouteFilter?: pulumi.Input<string | undefined>;
     /**
      * Default action for import route filter. Allowed values: allow, deny.
      */
-    piDefaultImportRouteFilter?: pulumi.Input<string>;
+    piDefaultImportRouteFilter?: pulumi.Input<string | undefined>;
     /**
      * ASN number at IBM PowerVS side.
      */
-    piIbmAsn?: pulumi.Input<number>;
+    piIbmAsn?: pulumi.Input<number | undefined>;
     /**
      * IP address used for configuring IBM network interface with network subnet mask. customerCidr and ibmCidr must have matching network and subnet mask values.
      */
-    piIbmCidr?: pulumi.Input<string>;
+    piIbmCidr?: pulumi.Input<string | undefined>;
     /**
      * User defined name.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
     /**
      * Peer interface id. Use datasource 'ibmi_pi_network_peer_interfaces' to get a list of valid peer interface id.
      */
-    piPeerInterfaceId?: pulumi.Input<string>;
+    piPeerInterfaceId?: pulumi.Input<string | undefined>;
     /**
      * Type of the peer network * dcnetwork_bgp: broader gateway protocol is used to share routes between two autonomous network.
      */
-    piType?: pulumi.Input<string>;
+    piType?: pulumi.Input<string | undefined>;
     /**
      * A vlan configured at the customer network.
      */
-    piVlan?: pulumi.Input<number>;
+    piVlan?: pulumi.Input<number | undefined>;
     /**
      * Status of the network peer.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Time stamp for update network peer.
      */
-    updatedDate?: pulumi.Input<string>;
+    updatedDate?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -285,11 +285,11 @@ export interface PiNetworkPeerArgs {
     /**
      * Default action for export route filter. Allowed values: allow, deny.
      */
-    piDefaultExportRouteFilter?: pulumi.Input<string>;
+    piDefaultExportRouteFilter?: pulumi.Input<string | undefined>;
     /**
      * Default action for import route filter. Allowed values: allow, deny.
      */
-    piDefaultImportRouteFilter?: pulumi.Input<string>;
+    piDefaultImportRouteFilter?: pulumi.Input<string | undefined>;
     /**
      * ASN number at IBM PowerVS side.
      */
@@ -309,7 +309,7 @@ export interface PiNetworkPeerArgs {
     /**
      * Type of the peer network * dcnetwork_bgp: broader gateway protocol is used to share routes between two autonomous network.
      */
-    piType?: pulumi.Input<string>;
+    piType?: pulumi.Input<string | undefined>;
     /**
      * A vlan configured at the customer network.
      */

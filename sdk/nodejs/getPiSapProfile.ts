@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getPiSapProfile(args: GetPiSapProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetPiSapProfileResult> {
@@ -24,9 +26,11 @@ export interface GetPiSapProfileArgs {
  * A collection of values returned by getPiSapProfile.
  */
 export interface GetPiSapProfileResult {
+    readonly asaps: number;
     readonly certified: boolean;
     readonly cores: number;
     readonly defaultSystem: string;
+    readonly deprecated: boolean;
     readonly fullSystemProfile: boolean;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -38,6 +42,7 @@ export interface GetPiSapProfileResult {
     readonly saps: number;
     readonly supportedSystems: string[];
     readonly type: string;
+    readonly vpmemVolumes: outputs.GetPiSapProfileVpmemVolume[];
     readonly workloadTypes: string[];
 }
 export function getPiSapProfileOutput(args: GetPiSapProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPiSapProfileResult> {

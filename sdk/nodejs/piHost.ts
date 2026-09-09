@@ -138,51 +138,51 @@ export class PiHost extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PiHost resources.
  */
 export interface PiHostState {
-    capacities?: pulumi.Input<pulumi.Input<inputs.PiHostCapacity>[]>;
+    capacities?: pulumi.Input<pulumi.Input<inputs.PiHostCapacity>[] | undefined>;
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Name of the host (chosen by the user).
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Link to host group resource.
      */
-    hostGroup?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    hostGroup?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * ID of the host.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Host to add to a host group.
      */
-    piHost?: pulumi.Input<inputs.PiHostPiHost>;
+    piHost?: pulumi.Input<inputs.PiHostPiHost | undefined>;
     /**
      * ID of the host group to which the host should be added.
      */
-    piHostGroupId?: pulumi.Input<string>;
+    piHostGroupId?: pulumi.Input<string | undefined>;
     /**
      * State of the host (up/down).
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Status of the host (enabled/disabled).
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System type.
      */
-    sysType?: pulumi.Input<string>;
+    sysType?: pulumi.Input<string | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

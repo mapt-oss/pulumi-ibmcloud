@@ -20,11 +20,12 @@ __all__ = ['IsShareReplicaOperationsArgs', 'IsShareReplicaOperations']
 class IsShareReplicaOperationsArgs:
     def __init__(__self__, *,
                  share_replica: pulumi.Input[_builtins.str],
-                 fallback_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 split_share: Optional[pulumi.Input[_builtins.bool]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None):
+                 fallback_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 split_share: pulumi.Input[Optional[_builtins.bool]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a IsShareReplicaOperations resource.
+
         :param pulumi.Input[_builtins.str] share_replica: The file share identifier.
         :param pulumi.Input[_builtins.str] fallback_policy: The action to take if the failover request is accepted but cannot be performed or times out
         :param pulumi.Input[_builtins.bool] split_share: If set to true the replication relationship between source share and replica will be removed.
@@ -52,50 +53,51 @@ class IsShareReplicaOperationsArgs:
 
     @_builtins.property
     @pulumi.getter(name="fallbackPolicy")
-    def fallback_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fallback_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action to take if the failover request is accepted but cannot be performed or times out
         """
         return pulumi.get(self, "fallback_policy")
 
     @fallback_policy.setter
-    def fallback_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fallback_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fallback_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="splitShare")
-    def split_share(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def split_share(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true the replication relationship between source share and replica will be removed.
         """
         return pulumi.get(self, "split_share")
 
     @split_share.setter
-    def split_share(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def split_share(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "split_share", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The failover timeout in seconds
         """
         return pulumi.get(self, "timeout")
 
     @timeout.setter
-    def timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout", value)
 
 
 @pulumi.input_type
 class _IsShareReplicaOperationsState:
     def __init__(__self__, *,
-                 fallback_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 share_replica: Optional[pulumi.Input[_builtins.str]] = None,
-                 split_share: Optional[pulumi.Input[_builtins.bool]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None):
+                 fallback_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 share_replica: pulumi.Input[Optional[_builtins.str]] = None,
+                 split_share: pulumi.Input[Optional[_builtins.bool]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IsShareReplicaOperations resources.
+
         :param pulumi.Input[_builtins.str] fallback_policy: The action to take if the failover request is accepted but cannot be performed or times out
         :param pulumi.Input[_builtins.str] share_replica: The file share identifier.
         :param pulumi.Input[_builtins.bool] split_share: If set to true the replication relationship between source share and replica will be removed.
@@ -112,50 +114,50 @@ class _IsShareReplicaOperationsState:
 
     @_builtins.property
     @pulumi.getter(name="fallbackPolicy")
-    def fallback_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fallback_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action to take if the failover request is accepted but cannot be performed or times out
         """
         return pulumi.get(self, "fallback_policy")
 
     @fallback_policy.setter
-    def fallback_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fallback_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fallback_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="shareReplica")
-    def share_replica(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def share_replica(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The file share identifier.
         """
         return pulumi.get(self, "share_replica")
 
     @share_replica.setter
-    def share_replica(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def share_replica(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "share_replica", value)
 
     @_builtins.property
     @pulumi.getter(name="splitShare")
-    def split_share(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def split_share(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true the replication relationship between source share and replica will be removed.
         """
         return pulumi.get(self, "split_share")
 
     @split_share.setter
-    def split_share(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def split_share(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "split_share", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The failover timeout in seconds
         """
         return pulumi.get(self, "timeout")
 
     @timeout.setter
-    def timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout", value)
 
 
@@ -165,13 +167,14 @@ class IsShareReplicaOperations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fallback_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 share_replica: Optional[pulumi.Input[_builtins.str]] = None,
-                 split_share: Optional[pulumi.Input[_builtins.bool]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 fallback_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 share_replica: pulumi.Input[Optional[_builtins.str]] = None,
+                 split_share: pulumi.Input[Optional[_builtins.bool]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a IsShareReplicaOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] fallback_policy: The action to take if the failover request is accepted but cannot be performed or times out
@@ -187,6 +190,7 @@ class IsShareReplicaOperations(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsShareReplicaOperations resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsShareReplicaOperationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -202,10 +206,10 @@ class IsShareReplicaOperations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fallback_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 share_replica: Optional[pulumi.Input[_builtins.str]] = None,
-                 split_share: Optional[pulumi.Input[_builtins.bool]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 fallback_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 share_replica: pulumi.Input[Optional[_builtins.str]] = None,
+                 split_share: pulumi.Input[Optional[_builtins.bool]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -231,10 +235,10 @@ class IsShareReplicaOperations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            fallback_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            share_replica: Optional[pulumi.Input[_builtins.str]] = None,
-            split_share: Optional[pulumi.Input[_builtins.bool]] = None,
-            timeout: Optional[pulumi.Input[_builtins.int]] = None) -> 'IsShareReplicaOperations':
+            fallback_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            share_replica: pulumi.Input[Optional[_builtins.str]] = None,
+            split_share: pulumi.Input[Optional[_builtins.bool]] = None,
+            timeout: pulumi.Input[Optional[_builtins.int]] = None) -> 'IsShareReplicaOperations':
         """
         Get an existing IsShareReplicaOperations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

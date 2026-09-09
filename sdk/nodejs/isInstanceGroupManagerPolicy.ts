@@ -118,31 +118,31 @@ export interface IsInstanceGroupManagerPolicyState {
     /**
      * instance group ID
      */
-    instanceGroup?: pulumi.Input<string>;
+    instanceGroup?: pulumi.Input<string | undefined>;
     /**
      * Instance group manager ID
      */
-    instanceGroupManager?: pulumi.Input<string>;
+    instanceGroupManager?: pulumi.Input<string | undefined>;
     /**
      * The type of metric to be evaluated
      */
-    metricType?: pulumi.Input<string>;
+    metricType?: pulumi.Input<string | undefined>;
     /**
      * The metric value to be evaluated
      */
-    metricValue?: pulumi.Input<number>;
+    metricValue?: pulumi.Input<number | undefined>;
     /**
      * instance group manager policy name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Policy ID
      */
-    policyId?: pulumi.Input<string>;
+    policyId?: pulumi.Input<string | undefined>;
     /**
      * The type of Policy for the Instance Group
      */
-    policyType?: pulumi.Input<string>;
+    policyType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -168,7 +168,7 @@ export interface IsInstanceGroupManagerPolicyArgs {
     /**
      * instance group manager policy name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of Policy for the Instance Group
      */

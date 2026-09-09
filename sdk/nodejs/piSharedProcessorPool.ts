@@ -71,7 +71,7 @@ export class PiSharedProcessorPool extends pulumi.CustomResource {
      */
     declare public readonly piHostId: pulumi.Output<string | undefined>;
     /**
-     * Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+     * Host group of the shared processor pool.
      */
     declare public readonly piSharedProcessorPoolHostGroup: pulumi.Output<string>;
     /**
@@ -193,83 +193,83 @@ export interface PiSharedProcessorPoolState {
     /**
      * The allocated cores in the shared processor pool.
      */
-    allocatedCores?: pulumi.Input<number>;
+    allocatedCores?: pulumi.Input<number | undefined>;
     /**
      * The available cores in the shared processor pool.
      */
-    availableCores?: pulumi.Input<number>;
+    availableCores?: pulumi.Input<number | undefined>;
     /**
      * Date of shared processor pool creation.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The dedicated host ID where the shared processor pool resides.
      */
-    dedicatedHostId?: pulumi.Input<string>;
+    dedicatedHostId?: pulumi.Input<string | undefined>;
     /**
      * The host ID where the shared processor pool resides.
      */
-    hostId?: pulumi.Input<number>;
+    hostId?: pulumi.Input<number | undefined>;
     /**
      * The list of server instances that are deployed in the shared processor pool.
      */
-    instances?: pulumi.Input<pulumi.Input<inputs.PiSharedProcessorPoolInstance>[]>;
+    instances?: pulumi.Input<pulumi.Input<inputs.PiSharedProcessorPoolInstance>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The host id of a host in a host group (only available for dedicated hosts).
      */
-    piHostId?: pulumi.Input<string>;
+    piHostId?: pulumi.Input<string | undefined>;
     /**
-     * Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+     * Host group of the shared processor pool.
      */
-    piSharedProcessorPoolHostGroup?: pulumi.Input<string>;
+    piSharedProcessorPoolHostGroup?: pulumi.Input<string | undefined>;
     /**
      * The name of the shared processor pool.
      */
-    piSharedProcessorPoolName?: pulumi.Input<string>;
+    piSharedProcessorPoolName?: pulumi.Input<string | undefined>;
     /**
      * The ID of the placement group the shared processor pool is created in.
      *
      * @deprecated This field is deprecated, use piSharedProcessorPoolPlacementGroups instead
      */
-    piSharedProcessorPoolPlacementGroupId?: pulumi.Input<string>;
+    piSharedProcessorPoolPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * The list of shared processor pool placement groups that the shared processor pool is in.
      */
-    piSharedProcessorPoolPlacementGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    piSharedProcessorPoolPlacementGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The amount of reserved cores for the shared processor pool.
      */
-    piSharedProcessorPoolReservedCores?: pulumi.Input<number>;
+    piSharedProcessorPoolReservedCores?: pulumi.Input<number | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The shared processor pool's unique ID.
      */
-    sharedProcessorPoolId?: pulumi.Input<string>;
+    sharedProcessorPoolId?: pulumi.Input<string | undefined>;
     /**
      * The list of shared processor pool placement groups that the shared processor pool is in.
      *
      * @deprecated This field is deprecated, use piSharedProcessorPoolPlacementGroups instead
      */
-    sppPlacementGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    sppPlacementGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The status of the shared processor pool.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The status details of the shared processor pool.
      */
-    statusDetail?: pulumi.Input<string>;
+    statusDetail?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -283,9 +283,9 @@ export interface PiSharedProcessorPoolArgs {
     /**
      * The host id of a host in a host group (only available for dedicated hosts).
      */
-    piHostId?: pulumi.Input<string>;
+    piHostId?: pulumi.Input<string | undefined>;
     /**
-     * Host group of the shared processor pool. Valid values are 'e980', 'e1080', 'e1180', 's922', 's1022' and 's1122'.
+     * Host group of the shared processor pool.
      */
     piSharedProcessorPoolHostGroup: pulumi.Input<string>;
     /**
@@ -297,11 +297,11 @@ export interface PiSharedProcessorPoolArgs {
      *
      * @deprecated This field is deprecated, use piSharedProcessorPoolPlacementGroups instead
      */
-    piSharedProcessorPoolPlacementGroupId?: pulumi.Input<string>;
+    piSharedProcessorPoolPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * The list of shared processor pool placement groups that the shared processor pool is in.
      */
-    piSharedProcessorPoolPlacementGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    piSharedProcessorPoolPlacementGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The amount of reserved cores for the shared processor pool.
      */
@@ -309,11 +309,11 @@ export interface PiSharedProcessorPoolArgs {
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of shared processor pool placement groups that the shared processor pool is in.
      *
      * @deprecated This field is deprecated, use piSharedProcessorPoolPlacementGroups instead
      */
-    sppPlacementGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    sppPlacementGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

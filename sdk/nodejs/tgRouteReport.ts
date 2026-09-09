@@ -99,22 +99,22 @@ export interface TgRouteReportState {
     /**
      * Collection of transit gateway connections
      */
-    connections?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnection>[]>;
-    createdAt?: pulumi.Input<string>;
+    connections?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnection>[] | undefined>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway identifier
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * Collection of transit gateway overlapping routes
      */
-    overlappingRoutes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportOverlappingRoute>[]>;
+    overlappingRoutes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportOverlappingRoute>[] | undefined>;
     /**
      * The Transit Gateway Route Report identifier
      */
-    routeReportId?: pulumi.Input<string>;
-    status?: pulumi.Input<string>;
-    updatedAt?: pulumi.Input<string>;
+    routeReportId?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string | undefined>;
+    updatedAt?: pulumi.Input<string | undefined>;
 }
 
 /**

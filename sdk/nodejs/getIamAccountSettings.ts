@@ -62,6 +62,6 @@ export function getIamAccountSettingsOutput(args?: GetIamAccountSettingsOutputAr
  * A collection of arguments for invoking getIamAccountSettings.
  */
 export interface GetIamAccountSettingsOutputArgs {
-    includeHistory?: pulumi.Input<boolean>;
-    resolveUserMfa?: pulumi.Input<boolean>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
+    resolveUserMfa?: pulumi.Input<boolean | undefined>;
 }

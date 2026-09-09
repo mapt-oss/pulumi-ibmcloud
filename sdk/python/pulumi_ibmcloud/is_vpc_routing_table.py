@@ -22,17 +22,18 @@ __all__ = ['IsVpcRoutingTableArgs', 'IsVpcRoutingTable']
 class IsVpcRoutingTableArgs:
     def __init__(__self__, *,
                  vpc: pulumi.Input[_builtins.str],
-                 accept_routes_from_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 advertise_routes_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_direct_link_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_transit_gateway_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_vpc_zone_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 accept_routes_from_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 advertise_routes_tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_direct_link_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_transit_gateway_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_vpc_zone_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsVpcRoutingTable resource.
+
         :param pulumi.Input[_builtins.str] vpc: The VPC identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] accept_routes_from_resource_types: The filters specifying the resources that may create routes in this routing table, The resource type: vpn_gateway or vpn_server
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
@@ -78,137 +79,138 @@ class IsVpcRoutingTableArgs:
 
     @_builtins.property
     @pulumi.getter(name="acceptRoutesFromResourceTypes")
-    def accept_routes_from_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def accept_routes_from_resource_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The filters specifying the resources that may create routes in this routing table, The resource type: vpn_gateway or vpn_server
         """
         return pulumi.get(self, "accept_routes_from_resource_types")
 
     @accept_routes_from_resource_types.setter
-    def accept_routes_from_resource_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def accept_routes_from_resource_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "accept_routes_from_resource_types", value)
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="advertiseRoutesTos")
-    def advertise_routes_tos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def advertise_routes_tos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The ingress sources to advertise routes to. Routes in the table with `advertise` enabled will be advertised to these sources.
         """
         return pulumi.get(self, "advertise_routes_tos")
 
     @advertise_routes_tos.setter
-    def advertise_routes_tos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def advertise_routes_tos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "advertise_routes_tos", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this routing table.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="routeDirectLinkIngress")
-    def route_direct_link_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_direct_link_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
         """
         return pulumi.get(self, "route_direct_link_ingress")
 
     @route_direct_link_ingress.setter
-    def route_direct_link_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_direct_link_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_direct_link_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeInternetIngress")
-    def route_internet_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_internet_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from the internet. For this to succeed, the VPC must not already have a routing table with this property set to true.
         """
         return pulumi.get(self, "route_internet_ingress")
 
     @route_internet_ingress.setter
-    def route_internet_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_internet_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_internet_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTransitGatewayIngress")
-    def route_transit_gateway_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_transit_gateway_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from Transit Gateway to this VPC.
         """
         return pulumi.get(self, "route_transit_gateway_ingress")
 
     @route_transit_gateway_ingress.setter
-    def route_transit_gateway_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_transit_gateway_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_transit_gateway_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeVpcZoneIngress")
-    def route_vpc_zone_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_vpc_zone_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from subnets in other zones in this VPC.
         """
         return pulumi.get(self, "route_vpc_zone_ingress")
 
     @route_vpc_zone_ingress.setter
-    def route_vpc_zone_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_vpc_zone_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_vpc_zone_ingress", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsVpcRoutingTableState:
     def __init__(__self__, *,
-                 accept_routes_from_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 advertise_routes_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_groups: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableResourceGroupArgs']]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_direct_link_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_transit_gateway_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_vpc_zone_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableSubnetArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None):
+                 accept_routes_from_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 advertise_routes_tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_groups: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableResourceGroupArgs']]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_direct_link_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_transit_gateway_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_vpc_zone_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableSubnetArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVpcRoutingTable resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] accept_routes_from_resource_types: The filters specifying the resources that may create routes in this routing table, The resource type: vpn_gateway or vpn_server
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] advertise_routes_tos: The ingress sources to advertise routes to. Routes in the table with `advertise` enabled will be advertised to these sources.
@@ -269,227 +271,227 @@ class _IsVpcRoutingTableState:
 
     @_builtins.property
     @pulumi.getter(name="acceptRoutesFromResourceTypes")
-    def accept_routes_from_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def accept_routes_from_resource_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The filters specifying the resources that may create routes in this routing table, The resource type: vpn_gateway or vpn_server
         """
         return pulumi.get(self, "accept_routes_from_resource_types")
 
     @accept_routes_from_resource_types.setter
-    def accept_routes_from_resource_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def accept_routes_from_resource_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "accept_routes_from_resource_types", value)
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="advertiseRoutesTos")
-    def advertise_routes_tos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def advertise_routes_tos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The ingress sources to advertise routes to. Routes in the table with `advertise` enabled will be advertised to these sources.
         """
         return pulumi.get(self, "advertise_routes_tos")
 
     @advertise_routes_tos.setter
-    def advertise_routes_tos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def advertise_routes_tos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "advertise_routes_tos", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing table Created At
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The routing table CRN.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing table Href
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this is the default routing table for this VPC
         """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
-    def is_default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing table Lifecycle State
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this routing table.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroups")
-    def resource_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableResourceGroupArgs']]]]:
+    def resource_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableResourceGroupArgs']]]]:
         """
         The resource group for this volume.
         """
         return pulumi.get(self, "resource_groups")
 
     @resource_groups.setter
-    def resource_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableResourceGroupArgs']]]]):
+    def resource_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableResourceGroupArgs']]]]):
         pulumi.set(self, "resource_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing table Resource Type
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="routeDirectLinkIngress")
-    def route_direct_link_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_direct_link_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
         """
         return pulumi.get(self, "route_direct_link_ingress")
 
     @route_direct_link_ingress.setter
-    def route_direct_link_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_direct_link_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_direct_link_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeInternetIngress")
-    def route_internet_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_internet_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from the internet. For this to succeed, the VPC must not already have a routing table with this property set to true.
         """
         return pulumi.get(self, "route_internet_ingress")
 
     @route_internet_ingress.setter
-    def route_internet_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_internet_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_internet_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTransitGatewayIngress")
-    def route_transit_gateway_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_transit_gateway_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from Transit Gateway to this VPC.
         """
         return pulumi.get(self, "route_transit_gateway_ingress")
 
     @route_transit_gateway_ingress.setter
-    def route_transit_gateway_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_transit_gateway_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_transit_gateway_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routeVpcZoneIngress")
-    def route_vpc_zone_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_vpc_zone_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, this routing table will be used to route traffic that originates from subnets in other zones in this VPC.
         """
         return pulumi.get(self, "route_vpc_zone_ingress")
 
     @route_vpc_zone_ingress.setter
-    def route_vpc_zone_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_vpc_zone_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_vpc_zone_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="routingTable")
-    def routing_table(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def routing_table(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The routing table identifier.
         """
         return pulumi.get(self, "routing_table")
 
     @routing_table.setter
-    def routing_table(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def routing_table(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "routing_table", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableSubnetArgs']]]]:
+    def subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableSubnetArgs']]]]:
         return pulumi.get(self, "subnets")
 
     @subnets.setter
-    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVpcRoutingTableSubnetArgs']]]]):
+    def subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVpcRoutingTableSubnetArgs']]]]):
         pulumi.set(self, "subnets", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VPC identifier.
         """
         return pulumi.get(self, "vpc")
 
     @vpc.setter
-    def vpc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc", value)
 
 
@@ -499,19 +501,20 @@ class IsVpcRoutingTable(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accept_routes_from_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 advertise_routes_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_direct_link_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_transit_gateway_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_vpc_zone_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
+                 accept_routes_from_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 advertise_routes_tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_direct_link_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_transit_gateway_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_vpc_zone_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVpcRoutingTable resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] accept_routes_from_resource_types: The filters specifying the resources that may create routes in this routing table, The resource type: vpn_gateway or vpn_server
@@ -533,6 +536,7 @@ class IsVpcRoutingTable(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVpcRoutingTable resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVpcRoutingTableArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -548,16 +552,16 @@ class IsVpcRoutingTable(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accept_routes_from_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 advertise_routes_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_direct_link_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_transit_gateway_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_vpc_zone_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc: Optional[pulumi.Input[_builtins.str]] = None,
+                 accept_routes_from_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 advertise_routes_tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_direct_link_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_transit_gateway_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_vpc_zone_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -598,25 +602,25 @@ class IsVpcRoutingTable(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            accept_routes_from_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            advertise_routes_tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcRoutingTableResourceGroupArgs', 'IsVpcRoutingTableResourceGroupArgsDict']]]]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            route_direct_link_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            route_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            route_transit_gateway_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            route_vpc_zone_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            routing_table: Optional[pulumi.Input[_builtins.str]] = None,
-            subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVpcRoutingTableSubnetArgs', 'IsVpcRoutingTableSubnetArgsDict']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vpc: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVpcRoutingTable':
+            accept_routes_from_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            advertise_routes_tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcRoutingTableResourceGroupArgs', 'IsVpcRoutingTableResourceGroupArgsDict', 'outputs.IsVpcRoutingTableResourceGroup']]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            route_direct_link_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_transit_gateway_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_vpc_zone_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            routing_table: pulumi.Input[Optional[_builtins.str]] = None,
+            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVpcRoutingTableSubnetArgs', 'IsVpcRoutingTableSubnetArgsDict', 'outputs.IsVpcRoutingTableSubnet']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vpc: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVpcRoutingTable':
         """
         Get an existing IsVpcRoutingTable resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -633,7 +637,7 @@ class IsVpcRoutingTable(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_default: Indicates whether this is the default routing table for this VPC
         :param pulumi.Input[_builtins.str] lifecycle_state: Routing table Lifecycle State
         :param pulumi.Input[_builtins.str] name: The user-defined name for this routing table.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcRoutingTableResourceGroupArgs', 'IsVpcRoutingTableResourceGroupArgsDict']]]] resource_groups: The resource group for this volume.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVpcRoutingTableResourceGroupArgs', 'IsVpcRoutingTableResourceGroupArgsDict', 'outputs.IsVpcRoutingTableResourceGroup']]]] resource_groups: The resource group for this volume.
         :param pulumi.Input[_builtins.str] resource_type: Routing table Resource Type
         :param pulumi.Input[_builtins.bool] route_direct_link_ingress: If set to true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
         :param pulumi.Input[_builtins.bool] route_internet_ingress: If set to true, this routing table will be used to route traffic that originates from the internet. For this to succeed, the VPC must not already have a routing table with this property set to true.

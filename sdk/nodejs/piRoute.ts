@@ -151,55 +151,55 @@ export interface PiRouteState {
     /**
      * The CRN of this resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Action for route. Valid values are "deliver".
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the route is advertised. Valid values are "enable" and "disable".
      */
-    piAdvertise?: pulumi.Input<string>;
+    piAdvertise?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Destination of route.
      */
-    piDestination?: pulumi.Input<string>;
+    piDestination?: pulumi.Input<string | undefined>;
     /**
      * The destination type. Valid values are "ipv4-address".
      */
-    piDestinationType?: pulumi.Input<string>;
+    piDestinationType?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the route should be enabled in the fabric.
      */
-    piEnabled?: pulumi.Input<boolean>;
+    piEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the route.
      */
-    piName?: pulumi.Input<string>;
+    piName?: pulumi.Input<string | undefined>;
     /**
      * The next hop.
      */
-    piNextHop?: pulumi.Input<string>;
+    piNextHop?: pulumi.Input<string | undefined>;
     /**
      * The next hop type. Valid values are "ipv4-address".
      */
-    piNextHopType?: pulumi.Input<string>;
+    piNextHopType?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique route ID.
      */
-    routeId?: pulumi.Input<string>;
+    routeId?: pulumi.Input<string | undefined>;
     /**
      * The state of the route.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -209,11 +209,11 @@ export interface PiRouteArgs {
     /**
      * Action for route. Valid values are "deliver".
      */
-    piAction?: pulumi.Input<string>;
+    piAction?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the route is advertised. Valid values are "enable" and "disable".
      */
-    piAdvertise?: pulumi.Input<string>;
+    piAdvertise?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -225,11 +225,11 @@ export interface PiRouteArgs {
     /**
      * The destination type. Valid values are "ipv4-address".
      */
-    piDestinationType?: pulumi.Input<string>;
+    piDestinationType?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the route should be enabled in the fabric.
      */
-    piEnabled?: pulumi.Input<boolean>;
+    piEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the route.
      */
@@ -241,9 +241,9 @@ export interface PiRouteArgs {
     /**
      * The next hop type. Valid values are "ipv4-address".
      */
-    piNextHopType?: pulumi.Input<string>;
+    piNextHopType?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

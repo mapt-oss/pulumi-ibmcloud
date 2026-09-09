@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
+from . import outputs
 
 __all__ = [
     'GetPiImageResult',
@@ -26,13 +27,22 @@ class GetPiImageResult:
     """
     A collection of values returned by getPiImage.
     """
-    def __init__(__self__, architecture=None, crn=None, hypervisor=None, id=None, image_type=None, operating_system=None, pi_cloud_instance_id=None, pi_image_name=None, size=None, source_checksum=None, state=None, storage_pool=None, storage_type=None, user_tags=None):
+    def __init__(__self__, architecture=None, container_format=None, crn=None, disk_format=None, endianness=None, hypervisor=None, id=None, image_type=None, name=None, operating_system=None, pi_cloud_instance_id=None, pi_image_id=None, pi_image_name=None, shared=None, size=None, source_checksum=None, state=None, storage_pool=None, storage_type=None, user_tags=None, volumes=None):
         if architecture and not isinstance(architecture, str):
             raise TypeError("Expected argument 'architecture' to be a str")
         pulumi.set(__self__, "architecture", architecture)
+        if container_format and not isinstance(container_format, str):
+            raise TypeError("Expected argument 'container_format' to be a str")
+        pulumi.set(__self__, "container_format", container_format)
         if crn and not isinstance(crn, str):
             raise TypeError("Expected argument 'crn' to be a str")
         pulumi.set(__self__, "crn", crn)
+        if disk_format and not isinstance(disk_format, str):
+            raise TypeError("Expected argument 'disk_format' to be a str")
+        pulumi.set(__self__, "disk_format", disk_format)
+        if endianness and not isinstance(endianness, str):
+            raise TypeError("Expected argument 'endianness' to be a str")
+        pulumi.set(__self__, "endianness", endianness)
         if hypervisor and not isinstance(hypervisor, str):
             raise TypeError("Expected argument 'hypervisor' to be a str")
         pulumi.set(__self__, "hypervisor", hypervisor)
@@ -42,15 +52,24 @@ class GetPiImageResult:
         if image_type and not isinstance(image_type, str):
             raise TypeError("Expected argument 'image_type' to be a str")
         pulumi.set(__self__, "image_type", image_type)
+        if name and not isinstance(name, str):
+            raise TypeError("Expected argument 'name' to be a str")
+        pulumi.set(__self__, "name", name)
         if operating_system and not isinstance(operating_system, str):
             raise TypeError("Expected argument 'operating_system' to be a str")
         pulumi.set(__self__, "operating_system", operating_system)
         if pi_cloud_instance_id and not isinstance(pi_cloud_instance_id, str):
             raise TypeError("Expected argument 'pi_cloud_instance_id' to be a str")
         pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
+        if pi_image_id and not isinstance(pi_image_id, str):
+            raise TypeError("Expected argument 'pi_image_id' to be a str")
+        pulumi.set(__self__, "pi_image_id", pi_image_id)
         if pi_image_name and not isinstance(pi_image_name, str):
             raise TypeError("Expected argument 'pi_image_name' to be a str")
         pulumi.set(__self__, "pi_image_name", pi_image_name)
+        if shared and not isinstance(shared, bool):
+            raise TypeError("Expected argument 'shared' to be a bool")
+        pulumi.set(__self__, "shared", shared)
         if size and not isinstance(size, int):
             raise TypeError("Expected argument 'size' to be a int")
         pulumi.set(__self__, "size", size)
@@ -69,6 +88,9 @@ class GetPiImageResult:
         if user_tags and not isinstance(user_tags, list):
             raise TypeError("Expected argument 'user_tags' to be a list")
         pulumi.set(__self__, "user_tags", user_tags)
+        if volumes and not isinstance(volumes, list):
+            raise TypeError("Expected argument 'volumes' to be a list")
+        pulumi.set(__self__, "volumes", volumes)
 
     @_builtins.property
     @pulumi.getter
@@ -76,9 +98,24 @@ class GetPiImageResult:
         return pulumi.get(self, "architecture")
 
     @_builtins.property
+    @pulumi.getter(name="containerFormat")
+    def container_format(self) -> _builtins.str:
+        return pulumi.get(self, "container_format")
+
+    @_builtins.property
     @pulumi.getter
     def crn(self) -> _builtins.str:
         return pulumi.get(self, "crn")
+
+    @_builtins.property
+    @pulumi.getter(name="diskFormat")
+    def disk_format(self) -> _builtins.str:
+        return pulumi.get(self, "disk_format")
+
+    @_builtins.property
+    @pulumi.getter
+    def endianness(self) -> _builtins.str:
+        return pulumi.get(self, "endianness")
 
     @_builtins.property
     @pulumi.getter
@@ -99,6 +136,11 @@ class GetPiImageResult:
         return pulumi.get(self, "image_type")
 
     @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> _builtins.str:
         return pulumi.get(self, "operating_system")
@@ -109,9 +151,20 @@ class GetPiImageResult:
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @_builtins.property
+    @pulumi.getter(name="piImageId")
+    def pi_image_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "pi_image_id")
+
+    @_builtins.property
     @pulumi.getter(name="piImageName")
-    def pi_image_name(self) -> _builtins.str:
+    @_utilities.deprecated("""The pi_image_name field is deprecated. Please use pi_image_id instead""")
+    def pi_image_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "pi_image_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def shared(self) -> _builtins.bool:
+        return pulumi.get(self, "shared")
 
     @_builtins.property
     @pulumi.getter
@@ -143,6 +196,11 @@ class GetPiImageResult:
     def user_tags(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "user_tags")
 
+    @_builtins.property
+    @pulumi.getter
+    def volumes(self) -> Sequence['outputs.GetPiImageVolumeResult']:
+        return pulumi.get(self, "volumes")
+
 
 class AwaitableGetPiImageResult(GetPiImageResult):
     # pylint: disable=using-constant-test
@@ -151,22 +209,30 @@ class AwaitableGetPiImageResult(GetPiImageResult):
             yield self
         return GetPiImageResult(
             architecture=self.architecture,
+            container_format=self.container_format,
             crn=self.crn,
+            disk_format=self.disk_format,
+            endianness=self.endianness,
             hypervisor=self.hypervisor,
             id=self.id,
             image_type=self.image_type,
+            name=self.name,
             operating_system=self.operating_system,
             pi_cloud_instance_id=self.pi_cloud_instance_id,
+            pi_image_id=self.pi_image_id,
             pi_image_name=self.pi_image_name,
+            shared=self.shared,
             size=self.size,
             source_checksum=self.source_checksum,
             state=self.state,
             storage_pool=self.storage_pool,
             storage_type=self.storage_type,
-            user_tags=self.user_tags)
+            user_tags=self.user_tags,
+            volumes=self.volumes)
 
 
 def get_pi_image(pi_cloud_instance_id: Optional[_builtins.str] = None,
+                 pi_image_id: Optional[_builtins.str] = None,
                  pi_image_name: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPiImageResult:
     """
@@ -174,48 +240,65 @@ def get_pi_image(pi_cloud_instance_id: Optional[_builtins.str] = None,
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piImageId'] = pi_image_id
     __args__['piImageName'] = pi_image_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getPiImage:getPiImage', __args__, opts=opts, typ=GetPiImageResult).value
 
     return AwaitableGetPiImageResult(
         architecture=pulumi.get(__ret__, 'architecture'),
+        container_format=pulumi.get(__ret__, 'container_format'),
         crn=pulumi.get(__ret__, 'crn'),
+        disk_format=pulumi.get(__ret__, 'disk_format'),
+        endianness=pulumi.get(__ret__, 'endianness'),
         hypervisor=pulumi.get(__ret__, 'hypervisor'),
         id=pulumi.get(__ret__, 'id'),
         image_type=pulumi.get(__ret__, 'image_type'),
+        name=pulumi.get(__ret__, 'name'),
         operating_system=pulumi.get(__ret__, 'operating_system'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
+        pi_image_id=pulumi.get(__ret__, 'pi_image_id'),
         pi_image_name=pulumi.get(__ret__, 'pi_image_name'),
+        shared=pulumi.get(__ret__, 'shared'),
         size=pulumi.get(__ret__, 'size'),
         source_checksum=pulumi.get(__ret__, 'source_checksum'),
         state=pulumi.get(__ret__, 'state'),
         storage_pool=pulumi.get(__ret__, 'storage_pool'),
         storage_type=pulumi.get(__ret__, 'storage_type'),
-        user_tags=pulumi.get(__ret__, 'user_tags'))
-def get_pi_image_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        pi_image_name: Optional[pulumi.Input[_builtins.str]] = None,
+        user_tags=pulumi.get(__ret__, 'user_tags'),
+        volumes=pulumi.get(__ret__, 'volumes'))
+def get_pi_image_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        pi_image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        pi_image_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiImageResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piImageId'] = pi_image_id
     __args__['piImageName'] = pi_image_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getPiImage:getPiImage', __args__, opts=opts, typ=GetPiImageResult)
     return __ret__.apply(lambda __response__: GetPiImageResult(
         architecture=pulumi.get(__response__, 'architecture'),
+        container_format=pulumi.get(__response__, 'container_format'),
         crn=pulumi.get(__response__, 'crn'),
+        disk_format=pulumi.get(__response__, 'disk_format'),
+        endianness=pulumi.get(__response__, 'endianness'),
         hypervisor=pulumi.get(__response__, 'hypervisor'),
         id=pulumi.get(__response__, 'id'),
         image_type=pulumi.get(__response__, 'image_type'),
+        name=pulumi.get(__response__, 'name'),
         operating_system=pulumi.get(__response__, 'operating_system'),
         pi_cloud_instance_id=pulumi.get(__response__, 'pi_cloud_instance_id'),
+        pi_image_id=pulumi.get(__response__, 'pi_image_id'),
         pi_image_name=pulumi.get(__response__, 'pi_image_name'),
+        shared=pulumi.get(__response__, 'shared'),
         size=pulumi.get(__response__, 'size'),
         source_checksum=pulumi.get(__response__, 'source_checksum'),
         state=pulumi.get(__response__, 'state'),
         storage_pool=pulumi.get(__response__, 'storage_pool'),
         storage_type=pulumi.get(__response__, 'storage_type'),
-        user_tags=pulumi.get(__response__, 'user_tags')))
+        user_tags=pulumi.get(__response__, 'user_tags'),
+        volumes=pulumi.get(__response__, 'volumes')))

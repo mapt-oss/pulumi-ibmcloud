@@ -23,14 +23,15 @@ class PiCaptureArgs:
                  pi_capture_name: pulumi.Input[_builtins.str],
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_instance_name: pulumi.Input[_builtins.str],
-                 pi_capture_cloud_storage_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_storage_image_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_capture_cloud_storage_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_storage_image_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiCapture resource.
+
         :param pulumi.Input[_builtins.str] pi_capture_destination: Destination for the deployable image
         :param pulumi.Input[_builtins.str] pi_capture_name: Name of the capture to create. Note : this must be unique
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -109,94 +110,95 @@ class PiCaptureArgs:
 
     @_builtins.property
     @pulumi.getter(name="piCaptureCloudStorageAccessKey")
-    def pi_capture_cloud_storage_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_cloud_storage_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of Cloud Storage Access Key
         """
         return pulumi.get(self, "pi_capture_cloud_storage_access_key")
 
     @pi_capture_cloud_storage_access_key.setter
-    def pi_capture_cloud_storage_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_cloud_storage_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_cloud_storage_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureCloudStorageRegion")
-    def pi_capture_cloud_storage_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_cloud_storage_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         List of Regions to use
         """
         return pulumi.get(self, "pi_capture_cloud_storage_region")
 
     @pi_capture_cloud_storage_region.setter
-    def pi_capture_cloud_storage_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_cloud_storage_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_cloud_storage_region", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureCloudStorageSecretKey")
-    def pi_capture_cloud_storage_secret_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_cloud_storage_secret_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Cloud Storage Secret Key
         """
         return pulumi.get(self, "pi_capture_cloud_storage_secret_key")
 
     @pi_capture_cloud_storage_secret_key.setter
-    def pi_capture_cloud_storage_secret_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_cloud_storage_secret_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_cloud_storage_secret_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureStorageImagePath")
-    def pi_capture_storage_image_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_storage_image_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Storage Image Path (bucket-name [/folder/../..])
         """
         return pulumi.get(self, "pi_capture_storage_image_path")
 
     @pi_capture_storage_image_path.setter
-    def pi_capture_storage_image_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_storage_image_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_storage_image_path", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureVolumeIds")
-    def pi_capture_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_capture_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Data volume IDs
         """
         return pulumi.get(self, "pi_capture_volume_ids")
 
     @pi_capture_volume_ids.setter
-    def pi_capture_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_capture_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_capture_volume_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiCaptureState:
     def __init__(__self__, *,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_storage_image_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_storage_image_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PiCapture resources.
+
         :param pulumi.Input[_builtins.str] crn: The CRN of the resource.
         :param pulumi.Input[_builtins.str] image_id: The image id of the capture instance.
         :param pulumi.Input[_builtins.str] pi_capture_cloud_storage_access_key: Name of Cloud Storage Access Key
@@ -237,146 +239,146 @@ class _PiCaptureState:
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of the resource.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The image id of the capture instance.
         """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
-    def image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureCloudStorageAccessKey")
-    def pi_capture_cloud_storage_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_cloud_storage_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of Cloud Storage Access Key
         """
         return pulumi.get(self, "pi_capture_cloud_storage_access_key")
 
     @pi_capture_cloud_storage_access_key.setter
-    def pi_capture_cloud_storage_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_cloud_storage_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_cloud_storage_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureCloudStorageRegion")
-    def pi_capture_cloud_storage_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_cloud_storage_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         List of Regions to use
         """
         return pulumi.get(self, "pi_capture_cloud_storage_region")
 
     @pi_capture_cloud_storage_region.setter
-    def pi_capture_cloud_storage_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_cloud_storage_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_cloud_storage_region", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureCloudStorageSecretKey")
-    def pi_capture_cloud_storage_secret_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_cloud_storage_secret_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Cloud Storage Secret Key
         """
         return pulumi.get(self, "pi_capture_cloud_storage_secret_key")
 
     @pi_capture_cloud_storage_secret_key.setter
-    def pi_capture_cloud_storage_secret_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_cloud_storage_secret_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_cloud_storage_secret_key", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureDestination")
-    def pi_capture_destination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_destination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination for the deployable image
         """
         return pulumi.get(self, "pi_capture_destination")
 
     @pi_capture_destination.setter
-    def pi_capture_destination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_destination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_destination", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureName")
-    def pi_capture_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the capture to create. Note : this must be unique
         """
         return pulumi.get(self, "pi_capture_name")
 
     @pi_capture_name.setter
-    def pi_capture_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureStorageImagePath")
-    def pi_capture_storage_image_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_capture_storage_image_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud Storage Image Path (bucket-name [/folder/../..])
         """
         return pulumi.get(self, "pi_capture_storage_image_path")
 
     @pi_capture_storage_image_path.setter
-    def pi_capture_storage_image_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_capture_storage_image_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_capture_storage_image_path", value)
 
     @_builtins.property
     @pulumi.getter(name="piCaptureVolumeIds")
-    def pi_capture_volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_capture_volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of Data volume IDs
         """
         return pulumi.get(self, "pi_capture_volume_ids")
 
     @pi_capture_volume_ids.setter
-    def pi_capture_volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_capture_volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_capture_volume_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance Name of the Power VM
         """
         return pulumi.get(self, "pi_instance_name")
 
     @pi_instance_name.setter
-    def pi_instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of user tags attached to the resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
@@ -386,19 +388,20 @@ class PiCapture(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_capture_cloud_storage_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_storage_image_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_capture_cloud_storage_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_storage_image_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiCapture resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_capture_cloud_storage_access_key: Name of Cloud Storage Access Key
@@ -420,6 +423,7 @@ class PiCapture(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiCapture resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiCaptureArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -435,16 +439,16 @@ class PiCapture(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_capture_cloud_storage_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_cloud_storage_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_storage_image_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_capture_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_capture_cloud_storage_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_cloud_storage_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_storage_image_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_capture_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -486,18 +490,18 @@ class PiCapture(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_capture_cloud_storage_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_capture_cloud_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_capture_cloud_storage_secret_key: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_capture_destination: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_capture_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_capture_storage_image_path: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_capture_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiCapture':
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_capture_cloud_storage_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_capture_cloud_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_capture_cloud_storage_secret_key: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_capture_destination: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_capture_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_capture_storage_image_path: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_capture_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PiCapture':
         """
         Get an existing PiCapture resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

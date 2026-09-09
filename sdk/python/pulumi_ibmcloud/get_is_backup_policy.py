@@ -234,8 +234,8 @@ def get_is_backup_policy(identifier: Optional[_builtins.str] = None,
         resource_groups=pulumi.get(__ret__, 'resource_groups'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         scopes=pulumi.get(__ret__, 'scopes'))
-def get_is_backup_policy_output(identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_backup_policy_output(identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBackupPolicyResult]:
     """
     Use this data source to access information about an existing resource.

@@ -27,6 +27,7 @@ class IamAccountSettingsTemplateAssignmentArgs:
                  template_version: pulumi.Input[_builtins.int]):
         """
         The set of arguments for constructing a IamAccountSettingsTemplateAssignment resource.
+
         :param pulumi.Input[_builtins.str] target: Assignment target.
         :param pulumi.Input[_builtins.str] target_type: Assignment target type.
         :param pulumi.Input[_builtins.str] template_id: Template Id.
@@ -89,29 +90,26 @@ class IamAccountSettingsTemplateAssignmentArgs:
 @pulumi.input_type
 class _IamAccountSettingsTemplateAssignmentState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contexts: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentContextArgs']]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 histories: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentHistoryArgs']]]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentResourceArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.int]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentResourceArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IamAccountSettingsTemplateAssignment resources.
+
         :param pulumi.Input[_builtins.str] account_id: Enterprise account Id.
-        :param pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentContextArgs']]] contexts: Context with key properties for problem determination.
         :param pulumi.Input[_builtins.str] created_at: Assignment created at.
         :param pulumi.Input[_builtins.str] created_by_id: IAMid of the identity that created the assignment.
         :param pulumi.Input[_builtins.str] entity_tag: Entity tag for this assignment record.
-        :param pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentHistoryArgs']]] histories: Assignment history.
         :param pulumi.Input[_builtins.str] href: Href.
         :param pulumi.Input[_builtins.str] last_modified_at: Assignment modified at.
         :param pulumi.Input[_builtins.str] last_modified_by_id: IAMid of the identity that last modified the assignment.
@@ -124,16 +122,12 @@ class _IamAccountSettingsTemplateAssignmentState:
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
-        if contexts is not None:
-            pulumi.set(__self__, "contexts", contexts)
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
         if created_by_id is not None:
             pulumi.set(__self__, "created_by_id", created_by_id)
         if entity_tag is not None:
             pulumi.set(__self__, "entity_tag", entity_tag)
-        if histories is not None:
-            pulumi.set(__self__, "histories", histories)
         if href is not None:
             pulumi.set(__self__, "href", href)
         if last_modified_at is not None:
@@ -155,182 +149,158 @@ class _IamAccountSettingsTemplateAssignmentState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enterprise account Id.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
-    @pulumi.getter
-    def contexts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentContextArgs']]]]:
-        """
-        Context with key properties for problem determination.
-        """
-        return pulumi.get(self, "contexts")
-
-    @contexts.setter
-    def contexts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentContextArgs']]]]):
-        pulumi.set(self, "contexts", value)
-
-    @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Assignment created at.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAMid of the identity that created the assignment.
         """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
-    def created_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_id", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Entity tag for this assignment record.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
     @pulumi.getter
-    def histories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentHistoryArgs']]]]:
-        """
-        Assignment history.
-        """
-        return pulumi.get(self, "histories")
-
-    @histories.setter
-    def histories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentHistoryArgs']]]]):
-        pulumi.set(self, "histories", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Href.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedAt")
-    def last_modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Assignment modified at.
         """
         return pulumi.get(self, "last_modified_at")
 
     @last_modified_at.setter
-    def last_modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_at", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedById")
-    def last_modified_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAMid of the identity that last modified the assignment.
         """
         return pulumi.get(self, "last_modified_by_id")
 
     @last_modified_by_id.setter
-    def last_modified_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentResourceArgs']]]]:
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentResourceArgs']]]]:
         """
         Status breakdown per target account of IAM resources created or errors encountered in attempting to create those IAM resources. IAM resources are only included in the response providing the assignment is not in progress. IAM resources are also only included when getting a single assignment, and excluded by list APIs.
         """
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentResourceArgs']]]]):
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccountSettingsTemplateAssignmentResourceArgs']]]]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Assignment status.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Assignment target.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Assignment target type.
         """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
-    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Template Id.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
     @_builtins.property
     @pulumi.getter(name="templateVersion")
-    def template_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def template_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Template version.
         """
         return pulumi.get(self, "template_version")
 
     @template_version.setter
-    def template_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def template_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "template_version", value)
 
 
@@ -340,13 +310,14 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a IamAccountSettingsTemplateAssignment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] target: Assignment target.
@@ -362,6 +333,7 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccountSettingsTemplateAssignment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccountSettingsTemplateAssignmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -377,10 +349,10 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 template_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 template_version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -403,11 +375,9 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
                 raise TypeError("Missing required property 'template_version'")
             __props__.__dict__["template_version"] = template_version
             __props__.__dict__["account_id"] = None
-            __props__.__dict__["contexts"] = None
             __props__.__dict__["created_at"] = None
             __props__.__dict__["created_by_id"] = None
             __props__.__dict__["entity_tag"] = None
-            __props__.__dict__["histories"] = None
             __props__.__dict__["href"] = None
             __props__.__dict__["last_modified_at"] = None
             __props__.__dict__["last_modified_by_id"] = None
@@ -423,21 +393,19 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            contexts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentContextArgs', 'IamAccountSettingsTemplateAssignmentContextArgsDict']]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-            histories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentHistoryArgs', 'IamAccountSettingsTemplateAssignmentHistoryArgsDict']]]]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentResourceArgs', 'IamAccountSettingsTemplateAssignmentResourceArgsDict']]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[_builtins.str]] = None,
-            target_type: Optional[pulumi.Input[_builtins.str]] = None,
-            template_id: Optional[pulumi.Input[_builtins.str]] = None,
-            template_version: Optional[pulumi.Input[_builtins.int]] = None) -> 'IamAccountSettingsTemplateAssignment':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentResourceArgs', 'IamAccountSettingsTemplateAssignmentResourceArgsDict', 'outputs.IamAccountSettingsTemplateAssignmentResource']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            template_id: pulumi.Input[Optional[_builtins.str]] = None,
+            template_version: pulumi.Input[Optional[_builtins.int]] = None) -> 'IamAccountSettingsTemplateAssignment':
         """
         Get an existing IamAccountSettingsTemplateAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -446,15 +414,13 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: Enterprise account Id.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentContextArgs', 'IamAccountSettingsTemplateAssignmentContextArgsDict']]]] contexts: Context with key properties for problem determination.
         :param pulumi.Input[_builtins.str] created_at: Assignment created at.
         :param pulumi.Input[_builtins.str] created_by_id: IAMid of the identity that created the assignment.
         :param pulumi.Input[_builtins.str] entity_tag: Entity tag for this assignment record.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentHistoryArgs', 'IamAccountSettingsTemplateAssignmentHistoryArgsDict']]]] histories: Assignment history.
         :param pulumi.Input[_builtins.str] href: Href.
         :param pulumi.Input[_builtins.str] last_modified_at: Assignment modified at.
         :param pulumi.Input[_builtins.str] last_modified_by_id: IAMid of the identity that last modified the assignment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentResourceArgs', 'IamAccountSettingsTemplateAssignmentResourceArgsDict']]]] resources: Status breakdown per target account of IAM resources created or errors encountered in attempting to create those IAM resources. IAM resources are only included in the response providing the assignment is not in progress. IAM resources are also only included when getting a single assignment, and excluded by list APIs.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccountSettingsTemplateAssignmentResourceArgs', 'IamAccountSettingsTemplateAssignmentResourceArgsDict', 'outputs.IamAccountSettingsTemplateAssignmentResource']]]] resources: Status breakdown per target account of IAM resources created or errors encountered in attempting to create those IAM resources. IAM resources are only included in the response providing the assignment is not in progress. IAM resources are also only included when getting a single assignment, and excluded by list APIs.
         :param pulumi.Input[_builtins.str] status: Assignment status.
         :param pulumi.Input[_builtins.str] target: Assignment target.
         :param pulumi.Input[_builtins.str] target_type: Assignment target type.
@@ -466,11 +432,9 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
         __props__ = _IamAccountSettingsTemplateAssignmentState.__new__(_IamAccountSettingsTemplateAssignmentState)
 
         __props__.__dict__["account_id"] = account_id
-        __props__.__dict__["contexts"] = contexts
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["created_by_id"] = created_by_id
         __props__.__dict__["entity_tag"] = entity_tag
-        __props__.__dict__["histories"] = histories
         __props__.__dict__["href"] = href
         __props__.__dict__["last_modified_at"] = last_modified_at
         __props__.__dict__["last_modified_by_id"] = last_modified_by_id
@@ -489,14 +453,6 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
         Enterprise account Id.
         """
         return pulumi.get(self, "account_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def contexts(self) -> pulumi.Output[Sequence['outputs.IamAccountSettingsTemplateAssignmentContext']]:
-        """
-        Context with key properties for problem determination.
-        """
-        return pulumi.get(self, "contexts")
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -521,14 +477,6 @@ class IamAccountSettingsTemplateAssignment(pulumi.CustomResource):
         Entity tag for this assignment record.
         """
         return pulumi.get(self, "entity_tag")
-
-    @_builtins.property
-    @pulumi.getter
-    def histories(self) -> pulumi.Output[Sequence['outputs.IamAccountSettingsTemplateAssignmentHistory']]:
-        """
-        Assignment history.
-        """
-        return pulumi.get(self, "histories")
 
     @_builtins.property
     @pulumi.getter

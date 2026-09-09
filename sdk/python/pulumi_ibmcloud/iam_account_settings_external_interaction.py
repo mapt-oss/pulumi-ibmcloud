@@ -23,9 +23,10 @@ class IamAccountSettingsExternalInteractionArgs:
     def __init__(__self__, *,
                  account_id: pulumi.Input[_builtins.str],
                  external_account_identity_interaction: pulumi.Input['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs'],
-                 accept_language: Optional[pulumi.Input[_builtins.str]] = None):
+                 accept_language: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamAccountSettingsExternalInteraction resource.
+
         :param pulumi.Input[_builtins.str] account_id: The account ID that the Access Management Account Settings belong to.
         :param pulumi.Input['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs'] external_account_identity_interaction: How external accounts can interact in relation to the requested account.
         :param pulumi.Input[_builtins.str] accept_language: Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
@@ -61,25 +62,26 @@ class IamAccountSettingsExternalInteractionArgs:
 
     @_builtins.property
     @pulumi.getter(name="acceptLanguage")
-    def accept_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def accept_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
         """
         return pulumi.get(self, "accept_language")
 
     @accept_language.setter
-    def accept_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def accept_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "accept_language", value)
 
 
 @pulumi.input_type
 class _IamAccountSettingsExternalInteractionState:
     def __init__(__self__, *,
-                 accept_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_account_identity_interaction: Optional[pulumi.Input['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs']] = None):
+                 accept_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_account_identity_interaction: pulumi.Input[Optional['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs']] = None):
         """
         Input properties used for looking up and filtering IamAccountSettingsExternalInteraction resources.
+
         :param pulumi.Input[_builtins.str] accept_language: Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
         :param pulumi.Input[_builtins.str] account_id: The account ID that the Access Management Account Settings belong to.
         :param pulumi.Input['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs'] external_account_identity_interaction: How external accounts can interact in relation to the requested account.
@@ -93,38 +95,38 @@ class _IamAccountSettingsExternalInteractionState:
 
     @_builtins.property
     @pulumi.getter(name="acceptLanguage")
-    def accept_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def accept_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
         """
         return pulumi.get(self, "accept_language")
 
     @accept_language.setter
-    def accept_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def accept_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "accept_language", value)
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The account ID that the Access Management Account Settings belong to.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalAccountIdentityInteraction")
-    def external_account_identity_interaction(self) -> Optional[pulumi.Input['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs']]:
+    def external_account_identity_interaction(self) -> pulumi.Input[Optional['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs']]:
         """
         How external accounts can interact in relation to the requested account.
         """
         return pulumi.get(self, "external_account_identity_interaction")
 
     @external_account_identity_interaction.setter
-    def external_account_identity_interaction(self, value: Optional[pulumi.Input['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs']]):
+    def external_account_identity_interaction(self, value: pulumi.Input[Optional['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs']]):
         pulumi.set(self, "external_account_identity_interaction", value)
 
 
@@ -134,17 +136,18 @@ class IamAccountSettingsExternalInteraction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accept_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_account_identity_interaction: Optional[pulumi.Input[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict']]] = None,
+                 accept_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_account_identity_interaction: pulumi.Input[Optional[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict', 'outputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction']]] = None,
                  __props__=None):
         """
         Create a IamAccountSettingsExternalInteraction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] accept_language: Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
         :param pulumi.Input[_builtins.str] account_id: The account ID that the Access Management Account Settings belong to.
-        :param pulumi.Input[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict']] external_account_identity_interaction: How external accounts can interact in relation to the requested account.
+        :param pulumi.Input[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict', 'outputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction']] external_account_identity_interaction: How external accounts can interact in relation to the requested account.
         """
         ...
     @overload
@@ -154,6 +157,7 @@ class IamAccountSettingsExternalInteraction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccountSettingsExternalInteraction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccountSettingsExternalInteractionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -169,9 +173,9 @@ class IamAccountSettingsExternalInteraction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accept_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_account_identity_interaction: Optional[pulumi.Input[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict']]] = None,
+                 accept_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_account_identity_interaction: pulumi.Input[Optional[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict', 'outputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -198,9 +202,9 @@ class IamAccountSettingsExternalInteraction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            accept_language: Optional[pulumi.Input[_builtins.str]] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_account_identity_interaction: Optional[pulumi.Input[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict']]] = None) -> 'IamAccountSettingsExternalInteraction':
+            accept_language: pulumi.Input[Optional[_builtins.str]] = None,
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_account_identity_interaction: pulumi.Input[Optional[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict', 'outputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction']]] = None) -> 'IamAccountSettingsExternalInteraction':
         """
         Get an existing IamAccountSettingsExternalInteraction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -210,7 +214,7 @@ class IamAccountSettingsExternalInteraction(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] accept_language: Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
         :param pulumi.Input[_builtins.str] account_id: The account ID that the Access Management Account Settings belong to.
-        :param pulumi.Input[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict']] external_account_identity_interaction: How external accounts can interact in relation to the requested account.
+        :param pulumi.Input[Union['IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgs', 'IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionArgsDict', 'outputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction']] external_account_identity_interaction: How external accounts can interact in relation to the requested account.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

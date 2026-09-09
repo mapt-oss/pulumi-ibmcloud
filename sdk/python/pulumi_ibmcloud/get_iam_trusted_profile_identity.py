@@ -145,9 +145,9 @@ def get_iam_trusted_profile_identity(identifier_id: Optional[_builtins.str] = No
         identity_type=pulumi.get(__ret__, 'identity_type'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         type=pulumi.get(__ret__, 'type'))
-def get_iam_trusted_profile_identity_output(identifier_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            identity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                                            profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_trusted_profile_identity_output(identifier_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            identity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                                            profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTrustedProfileIdentityResult]:
     """
     Use this data source to access information about an existing resource.

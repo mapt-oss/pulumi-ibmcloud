@@ -43,6 +43,10 @@ export class TgConnection extends pulumi.CustomResource {
      */
     declare public readonly baseNetworkType: pulumi.Output<string>;
     /**
+     * The networkType 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
+     */
+    declare public readonly cidr: pulumi.Output<string | undefined>;
+    /**
      * The Transit Gateway Connection identifier
      */
     declare public /*out*/ readonly connectionId: pulumi.Output<string>;
@@ -79,7 +83,7 @@ export class TgConnection extends pulumi.CustomResource {
      */
     declare public readonly networkId: pulumi.Output<string>;
     /**
-     * Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+     * Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
      */
     declare public readonly networkType: pulumi.Output<string>;
     /**
@@ -115,7 +119,7 @@ export class TgConnection extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly updatedAt: pulumi.Output<string>;
     /**
-     * Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     * Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
      */
     declare public readonly zone: pulumi.Output<string | undefined>;
 
@@ -134,6 +138,7 @@ export class TgConnection extends pulumi.CustomResource {
             const state = argsOrState as TgConnectionState | undefined;
             resourceInputs["baseConnectionId"] = state?.baseConnectionId;
             resourceInputs["baseNetworkType"] = state?.baseNetworkType;
+            resourceInputs["cidr"] = state?.cidr;
             resourceInputs["connectionId"] = state?.connectionId;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["defaultPrefixFilter"] = state?.defaultPrefixFilter;
@@ -163,6 +168,7 @@ export class TgConnection extends pulumi.CustomResource {
             }
             resourceInputs["baseConnectionId"] = args?.baseConnectionId;
             resourceInputs["baseNetworkType"] = args?.baseNetworkType;
+            resourceInputs["cidr"] = args?.cidr;
             resourceInputs["defaultPrefixFilter"] = args?.defaultPrefixFilter;
             resourceInputs["gateway"] = args?.gateway;
             resourceInputs["localGatewayIp"] = args?.localGatewayIp;
@@ -195,87 +201,91 @@ export interface TgConnectionState {
     /**
      * The ID of a networkType 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
      */
-    baseConnectionId?: pulumi.Input<string>;
+    baseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
      */
-    baseNetworkType?: pulumi.Input<string>;
+    baseNetworkType?: pulumi.Input<string | undefined>;
+    /**
+     * The networkType 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
+     */
+    cidr?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection identifier
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that this connection was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * Whether to permit or deny the prefix filter
      */
-    defaultPrefixFilter?: pulumi.Input<string>;
+    defaultPrefixFilter?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway identifier
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    localGatewayIp?: pulumi.Input<string>;
+    localGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    localTunnelIp?: pulumi.Input<string>;
+    localTunnelIp?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic').
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associatedNetworkType is 'classic' and the GRE tunnel is in a different account than the gateway.
      */
-    networkAccountId?: pulumi.Input<string>;
+    networkAccountId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or powerVirtualServer gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
      */
-    networkId?: pulumi.Input<string>;
+    networkId?: pulumi.Input<string | undefined>;
     /**
-     * Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+     * Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
      */
-    networkType?: pulumi.Input<string>;
+    networkType?: pulumi.Input<string | undefined>;
     /**
      * The crn of the transit gateway
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
     /**
      * The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    remoteBgpAsn?: pulumi.Input<number>;
+    remoteBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    remoteGatewayIp?: pulumi.Input<string>;
+    remoteGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    remoteTunnelIp?: pulumi.Input<string>;
+    remoteTunnelIp?: pulumi.Input<string | undefined>;
     /**
      * Only visible for cross account connections, this field represents the status of the request to connect the given network between accounts.Possible values: [pending,approved,rejected,expired,detached]
      */
-    requestStatus?: pulumi.Input<string>;
+    requestStatus?: pulumi.Input<string | undefined>;
     /**
      * What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
      */
-    tunnels?: pulumi.Input<pulumi.Input<inputs.TgConnectionTunnel>[]>;
+    tunnels?: pulumi.Input<pulumi.Input<inputs.TgConnectionTunnel>[] | undefined>;
     /**
      * The date and time that this connection was last updated
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
     /**
-     * Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     * Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -285,15 +295,19 @@ export interface TgConnectionArgs {
     /**
      * The ID of a networkType 'classic' connection a tunnel is configured over. This field only applies to network type 'gre_tunnel' connections.
      */
-    baseConnectionId?: pulumi.Input<string>;
+    baseConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The type of network the unbound gre tunnel is targeting. This field is required for network type 'unbound_gre_tunnel'.
      */
-    baseNetworkType?: pulumi.Input<string>;
+    baseNetworkType?: pulumi.Input<string | undefined>;
+    /**
+     * The networkType 'vpn_gateway' connections use 'cidr' to specify the CIDR to use for the VPN GRE tunnels
+     */
+    cidr?: pulumi.Input<string | undefined>;
     /**
      * Whether to permit or deny the prefix filter
      */
-    defaultPrefixFilter?: pulumi.Input<string>;
+    defaultPrefixFilter?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway identifier
      */
@@ -301,45 +315,45 @@ export interface TgConnectionArgs {
     /**
      * The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    localGatewayIp?: pulumi.Input<string>;
+    localGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    localTunnelIp?: pulumi.Input<string>;
+    localTunnelIp?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this transit gateway. If unspecified, the name will be the network name (the name of the VPC in the case of network type 'vpc', and the word Classic, in the case of network type 'classic').
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required for type 'unbound_gre_tunnel' when the associatedNetworkType is 'classic' and the GRE tunnel is in a different account than the gateway.
      */
-    networkAccountId?: pulumi.Input<string>;
+    networkAccountId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' or 'directlink' or 'power_virtual_server'. The value of this is the CRN of the VPC or direct link or powerVirtualServer gateway to be connected. This field is required to be unspecified for network type 'classic', 'gre_tunnel', and 'unbound_gre_tunnel'.
      */
-    networkId?: pulumi.Input<string>;
+    networkId?: pulumi.Input<string | undefined>;
     /**
-     * Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre)
+     * Defines what type of network is connected via this connection. Allowable values (classic,directlink,vpc,gre_tunnel,unbound_gre_tunnel,power_virtual_server,redundant_gre,vpn_gateway)
      */
     networkType: pulumi.Input<string>;
     /**
      * The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    remoteBgpAsn?: pulumi.Input<number>;
+    remoteBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    remoteGatewayIp?: pulumi.Input<string>;
+    remoteGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The remote tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    remoteTunnelIp?: pulumi.Input<string>;
+    remoteTunnelIp?: pulumi.Input<string | undefined>;
     /**
      * List of GRE tunnels for a transit gateway redundant GRE tunnel connection. This field is required for 'redundant_gre' connections
      */
-    tunnels?: pulumi.Input<pulumi.Input<inputs.TgConnectionTunnel>[]>;
+    tunnels?: pulumi.Input<pulumi.Input<inputs.TgConnectionTunnel>[] | undefined>;
     /**
-     * Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
+     * Location of connection. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections and optional for network type 'vpn_gateway' connections
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }

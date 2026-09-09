@@ -83,6 +83,14 @@ export class IsImage extends pulumi.CustomResource {
      */
     declare public readonly href: pulumi.Output<string>;
     /**
+     * Specifies the minimum lifecycle status that an image must reach before Terraform considers the resource creation successful and proceeds. This allows users to control when the ibmcloud.IsImage resource should complete its provisioning cycle.
+     */
+    declare public readonly minimumAcceptableStatus: pulumi.Output<string | undefined>;
+    /**
+     * The minimum size (in gigabytes) of a volume onto which this image may be provisioned.
+     */
+    declare public /*out*/ readonly minimumProvisionedSize: pulumi.Output<number>;
+    /**
      * Image name
      */
     declare public readonly name: pulumi.Output<string>;
@@ -146,6 +154,10 @@ export class IsImage extends pulumi.CustomResource {
      * Whether the image is publicly visible or private to the account
      */
     declare public /*out*/ readonly visibility: pulumi.Output<string>;
+    /**
+     * The zones in which this image is available for use.If the image has a status of `available` or `deprecated`, this will include all zones in the region.If the image has a status of `partiallyAvailable`, this will include one or more zones in the region.If the image has a status of `failed`, `obsolete`, `pending`, or `unusable`, this will be empty.
+     */
+    declare public /*out*/ readonly zones: pulumi.Output<outputs.IsImageZone[]>;
 
     /**
      * Create a IsImage resource with the given unique name, arguments, and options.
@@ -172,6 +184,8 @@ export class IsImage extends pulumi.CustomResource {
             resourceInputs["encryptionKey"] = state?.encryptionKey;
             resourceInputs["file"] = state?.file;
             resourceInputs["href"] = state?.href;
+            resourceInputs["minimumAcceptableStatus"] = state?.minimumAcceptableStatus;
+            resourceInputs["minimumProvisionedSize"] = state?.minimumProvisionedSize;
             resourceInputs["name"] = state?.name;
             resourceInputs["obsolescenceAt"] = state?.obsolescenceAt;
             resourceInputs["obsolete"] = state?.obsolete;
@@ -188,6 +202,7 @@ export class IsImage extends pulumi.CustomResource {
             resourceInputs["tags"] = state?.tags;
             resourceInputs["userDataFormat"] = state?.userDataFormat;
             resourceInputs["visibility"] = state?.visibility;
+            resourceInputs["zones"] = state?.zones;
         } else {
             const args = argsOrState as IsImageArgs | undefined;
             resourceInputs["accessTags"] = args?.accessTags;
@@ -197,6 +212,7 @@ export class IsImage extends pulumi.CustomResource {
             resourceInputs["encryptedDataKey"] = args?.encryptedDataKey;
             resourceInputs["encryptionKey"] = args?.encryptionKey;
             resourceInputs["href"] = args?.href;
+            resourceInputs["minimumAcceptableStatus"] = args?.minimumAcceptableStatus;
             resourceInputs["name"] = args?.name;
             resourceInputs["obsolescenceAt"] = args?.obsolescenceAt;
             resourceInputs["obsolete"] = args?.obsolete;
@@ -209,6 +225,7 @@ export class IsImage extends pulumi.CustomResource {
             resourceInputs["crn"] = undefined /*out*/;
             resourceInputs["encryption"] = undefined /*out*/;
             resourceInputs["file"] = undefined /*out*/;
+            resourceInputs["minimumProvisionedSize"] = undefined /*out*/;
             resourceInputs["resourceControllerUrl"] = undefined /*out*/;
             resourceInputs["resourceCrn"] = undefined /*out*/;
             resourceInputs["resourceGroupName"] = undefined /*out*/;
@@ -218,6 +235,7 @@ export class IsImage extends pulumi.CustomResource {
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["userDataFormat"] = undefined /*out*/;
             resourceInputs["visibility"] = undefined /*out*/;
+            resourceInputs["zones"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IsImage.__pulumiType, name, resourceInputs, opts);
@@ -231,115 +249,127 @@ export interface IsImageState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsImageAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsImageAllowedUse | undefined>;
     /**
      * The SHA256 checksum of this image
      */
-    checksum?: pulumi.Input<string>;
+    checksum?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the image was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Set to deprecate. You can set an image to `deprecated` as a warning to transition away from soon-to-be obsolete images. Deprecated images can be used to provision resources.
      */
-    deprecate?: pulumi.Input<boolean>;
+    deprecate?: pulumi.Input<boolean | undefined>;
     /**
      * The deprecation date and time (UTC) for this image. If absent, no deprecation date and time has been set.
      */
-    deprecationAt?: pulumi.Input<string>;
+    deprecationAt?: pulumi.Input<string | undefined>;
     /**
      * A base64-encoded, encrypted representation of the key that was used to encrypt the data for this image
      */
-    encryptedDataKey?: pulumi.Input<string>;
+    encryptedDataKey?: pulumi.Input<string | undefined>;
     /**
      * The type of encryption used on the image
      */
-    encryption?: pulumi.Input<string>;
+    encryption?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the Key Protect Root Key or Hyper Protect Crypto Service Root Key for this resource
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * Details for the stored image file
      */
-    file?: pulumi.Input<number>;
+    file?: pulumi.Input<number | undefined>;
     /**
      * Image Href value
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Specifies the minimum lifecycle status that an image must reach before Terraform considers the resource creation successful and proceeds. This allows users to control when the ibmcloud.IsImage resource should complete its provisioning cycle.
+     */
+    minimumAcceptableStatus?: pulumi.Input<string | undefined>;
+    /**
+     * The minimum size (in gigabytes) of a volume onto which this image may be provisioned.
+     */
+    minimumProvisionedSize?: pulumi.Input<number | undefined>;
     /**
      * Image name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The obsolescence date and time (UTC) for this image. If absent, no obsolescence date and time has been set.
      */
-    obsolescenceAt?: pulumi.Input<string>;
+    obsolescenceAt?: pulumi.Input<string | undefined>;
     /**
      * Set to obsolete. You can set an image to `obsolete` as a warning to transition away from soon-to-be deleted images. You can't use obsolete images to provision resources.
      */
-    obsolete?: pulumi.Input<boolean>;
+    obsolete?: pulumi.Input<boolean | undefined>;
     /**
      * Image Operating system
      */
-    operatingSystem?: pulumi.Input<string>;
+    operatingSystem?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this image
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * The minimum size (in gigabytes) of a volume onto which this image may be provisioned
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * Image volume id
      */
-    sourceVolume?: pulumi.Input<string>;
+    sourceVolume?: pulumi.Input<string | undefined>;
     /**
      * The status of this image
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Tags for the image
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user data format for this image
      */
-    userDataFormat?: pulumi.Input<string>;
+    userDataFormat?: pulumi.Input<string | undefined>;
     /**
      * Whether the image is publicly visible or private to the account
      */
-    visibility?: pulumi.Input<string>;
+    visibility?: pulumi.Input<string | undefined>;
+    /**
+     * The zones in which this image is available for use.If the image has a status of `available` or `deprecated`, this will include all zones in the region.If the image has a status of `partiallyAvailable`, this will include one or more zones in the region.If the image has a status of `failed`, `obsolete`, `pending`, or `unusable`, this will be empty.
+     */
+    zones?: pulumi.Input<pulumi.Input<inputs.IsImageZone>[] | undefined>;
 }
 
 /**
@@ -349,57 +379,61 @@ export interface IsImageArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsImageAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsImageAllowedUse | undefined>;
     /**
      * Set to deprecate. You can set an image to `deprecated` as a warning to transition away from soon-to-be obsolete images. Deprecated images can be used to provision resources.
      */
-    deprecate?: pulumi.Input<boolean>;
+    deprecate?: pulumi.Input<boolean | undefined>;
     /**
      * The deprecation date and time (UTC) for this image. If absent, no deprecation date and time has been set.
      */
-    deprecationAt?: pulumi.Input<string>;
+    deprecationAt?: pulumi.Input<string | undefined>;
     /**
      * A base64-encoded, encrypted representation of the key that was used to encrypt the data for this image
      */
-    encryptedDataKey?: pulumi.Input<string>;
+    encryptedDataKey?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the Key Protect Root Key or Hyper Protect Crypto Service Root Key for this resource
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * Image Href value
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Specifies the minimum lifecycle status that an image must reach before Terraform considers the resource creation successful and proceeds. This allows users to control when the ibmcloud.IsImage resource should complete its provisioning cycle.
+     */
+    minimumAcceptableStatus?: pulumi.Input<string | undefined>;
     /**
      * Image name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The obsolescence date and time (UTC) for this image. If absent, no obsolescence date and time has been set.
      */
-    obsolescenceAt?: pulumi.Input<string>;
+    obsolescenceAt?: pulumi.Input<string | undefined>;
     /**
      * Set to obsolete. You can set an image to `obsolete` as a warning to transition away from soon-to-be deleted images. You can't use obsolete images to provision resources.
      */
-    obsolete?: pulumi.Input<boolean>;
+    obsolete?: pulumi.Input<boolean | undefined>;
     /**
      * Image Operating system
      */
-    operatingSystem?: pulumi.Input<string>;
+    operatingSystem?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this image
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Image volume id
      */
-    sourceVolume?: pulumi.Input<string>;
+    sourceVolume?: pulumi.Input<string | undefined>;
     /**
      * Tags for the image
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

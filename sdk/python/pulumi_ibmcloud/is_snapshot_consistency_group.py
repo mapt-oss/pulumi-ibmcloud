@@ -22,13 +22,14 @@ __all__ = ['IsSnapshotConsistencyGroupArgs', 'IsSnapshotConsistencyGroup']
 class IsSnapshotConsistencyGroupArgs:
     def __init__(__self__, *,
                  snapshots: pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 delete_snapshots_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 delete_snapshots_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IsSnapshotConsistencyGroup resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]] snapshots: The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.bool] delete_snapshots_on_delete: Indicates whether deleting the snapshot consistency group will also delete the snapshots in the group.
@@ -62,85 +63,88 @@ class IsSnapshotConsistencyGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteSnapshotsOnDelete")
-    def delete_snapshots_on_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_snapshots_on_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether deleting the snapshot consistency group will also delete the snapshots in the group.
         """
         return pulumi.get(self, "delete_snapshots_on_delete")
 
     @delete_snapshots_on_delete.setter
-    def delete_snapshots_on_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_snapshots_on_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_snapshots_on_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this snapshot consistency group. The name is unique across all snapshot consistency groups in the region.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group Id
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Snapshot Consistency Group tags list
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _IsSnapshotConsistencyGroupState:
     def __init__(__self__, *,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 backup_policy_plans: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyPlanArgs']]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_snapshots_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 snapshot_references: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotReferenceArgs']]]] = None,
-                 snapshots: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_policy_jobs: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyJobArgs']]]] = None,
+                 backup_policy_plans: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyPlanArgs']]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_snapshots_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 snapshot_references: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotReferenceArgs']]]] = None,
+                 snapshots: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IsSnapshotConsistencyGroup resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
+        :param pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyJobArgs']]] backup_policy_jobs: If present, the backup policy job that created this snapshot consistency group. Snapshot consistency groups with the same backup policy job identifier represent snapshots of the same instance across different storage generations.
         :param pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyPlanArgs']]] backup_policy_plans: If present, the backup policy plan which created this snapshot consistency group.
         :param pulumi.Input[_builtins.str] created_at: The date and time that this snapshot consistency group was created.
         :param pulumi.Input[_builtins.str] crn: The CRN of this snapshot consistency group.
@@ -157,6 +161,8 @@ class _IsSnapshotConsistencyGroupState:
         """
         if access_tags is not None:
             pulumi.set(__self__, "access_tags", access_tags)
+        if backup_policy_jobs is not None:
+            pulumi.set(__self__, "backup_policy_jobs", backup_policy_jobs)
         if backup_policy_plans is not None:
             pulumi.set(__self__, "backup_policy_plans", backup_policy_plans)
         if created_at is not None:
@@ -186,170 +192,182 @@ class _IsSnapshotConsistencyGroupState:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="backupPolicyJobs")
+    def backup_policy_jobs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyJobArgs']]]]:
+        """
+        If present, the backup policy job that created this snapshot consistency group. Snapshot consistency groups with the same backup policy job identifier represent snapshots of the same instance across different storage generations.
+        """
+        return pulumi.get(self, "backup_policy_jobs")
+
+    @backup_policy_jobs.setter
+    def backup_policy_jobs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyJobArgs']]]]):
+        pulumi.set(self, "backup_policy_jobs", value)
+
+    @_builtins.property
     @pulumi.getter(name="backupPolicyPlans")
-    def backup_policy_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyPlanArgs']]]]:
+    def backup_policy_plans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyPlanArgs']]]]:
         """
         If present, the backup policy plan which created this snapshot consistency group.
         """
         return pulumi.get(self, "backup_policy_plans")
 
     @backup_policy_plans.setter
-    def backup_policy_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyPlanArgs']]]]):
+    def backup_policy_plans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupBackupPolicyPlanArgs']]]]):
         pulumi.set(self, "backup_policy_plans", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that this snapshot consistency group was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN of this snapshot consistency group.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteSnapshotsOnDelete")
-    def delete_snapshots_on_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_snapshots_on_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether deleting the snapshot consistency group will also delete the snapshots in the group.
         """
         return pulumi.get(self, "delete_snapshots_on_delete")
 
     @delete_snapshots_on_delete.setter
-    def delete_snapshots_on_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_snapshots_on_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_snapshots_on_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this snapshot consistency group.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of this snapshot consistency group.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this snapshot consistency group. The name is unique across all snapshot consistency groups in the region.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource group Id
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceTags")
-    def service_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def service_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The [service tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags)[`is.instance:` prefix](https://cloud.ibm.com/docs/vpc?topic=vpc-snapshots-vpc-faqs) associated with this snapshot consistency group.
         """
         return pulumi.get(self, "service_tags")
 
     @service_tags.setter
-    def service_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def service_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotReferences")
-    def snapshot_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotReferenceArgs']]]]:
+    def snapshot_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotReferenceArgs']]]]:
         """
         The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
         """
         return pulumi.get(self, "snapshot_references")
 
     @snapshot_references.setter
-    def snapshot_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotReferenceArgs']]]]):
+    def snapshot_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotReferenceArgs']]]]):
         pulumi.set(self, "snapshot_references", value)
 
     @_builtins.property
     @pulumi.getter
-    def snapshots(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]]]:
+    def snapshots(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]]]:
         """
         The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
         """
         return pulumi.get(self, "snapshots")
 
     @snapshots.setter
-    def snapshots(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]]]):
+    def snapshots(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsSnapshotConsistencyGroupSnapshotArgs']]]]):
         pulumi.set(self, "snapshots", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Snapshot Consistency Group tags list
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
@@ -359,22 +377,23 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 delete_snapshots_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict']]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 delete_snapshots_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict', 'outputs.IsSnapshotConsistencyGroupSnapshot']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a IsSnapshotConsistencyGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input[_builtins.bool] delete_snapshots_on_delete: Indicates whether deleting the snapshot consistency group will also delete the snapshots in the group.
         :param pulumi.Input[_builtins.str] name: The name for this snapshot consistency group. The name is unique across all snapshot consistency groups in the region.
         :param pulumi.Input[_builtins.str] resource_group: Resource group Id
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict']]]] snapshots: The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict', 'outputs.IsSnapshotConsistencyGroupSnapshot']]]] snapshots: The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Snapshot Consistency Group tags list
         """
         ...
@@ -385,6 +404,7 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsSnapshotConsistencyGroup resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsSnapshotConsistencyGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -400,12 +420,12 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 delete_snapshots_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict']]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 delete_snapshots_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict', 'outputs.IsSnapshotConsistencyGroupSnapshot']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -423,6 +443,7 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'snapshots'")
             __props__.__dict__["snapshots"] = snapshots
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["backup_policy_jobs"] = None
             __props__.__dict__["backup_policy_plans"] = None
             __props__.__dict__["created_at"] = None
             __props__.__dict__["crn"] = None
@@ -441,20 +462,21 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            backup_policy_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupBackupPolicyPlanArgs', 'IsSnapshotConsistencyGroupBackupPolicyPlanArgsDict']]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_snapshots_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            service_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            snapshot_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotReferenceArgs', 'IsSnapshotConsistencyGroupSnapshotReferenceArgsDict']]]]] = None,
-            snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsSnapshotConsistencyGroup':
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            backup_policy_jobs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupBackupPolicyJobArgs', 'IsSnapshotConsistencyGroupBackupPolicyJobArgsDict', 'outputs.IsSnapshotConsistencyGroupBackupPolicyJob']]]]] = None,
+            backup_policy_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupBackupPolicyPlanArgs', 'IsSnapshotConsistencyGroupBackupPolicyPlanArgsDict', 'outputs.IsSnapshotConsistencyGroupBackupPolicyPlan']]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_snapshots_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            service_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            snapshot_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotReferenceArgs', 'IsSnapshotConsistencyGroupSnapshotReferenceArgsDict', 'outputs.IsSnapshotConsistencyGroupSnapshotReference']]]]] = None,
+            snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict', 'outputs.IsSnapshotConsistencyGroupSnapshot']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsSnapshotConsistencyGroup':
         """
         Get an existing IsSnapshotConsistencyGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -463,7 +485,8 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupBackupPolicyPlanArgs', 'IsSnapshotConsistencyGroupBackupPolicyPlanArgsDict']]]] backup_policy_plans: If present, the backup policy plan which created this snapshot consistency group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupBackupPolicyJobArgs', 'IsSnapshotConsistencyGroupBackupPolicyJobArgsDict', 'outputs.IsSnapshotConsistencyGroupBackupPolicyJob']]]] backup_policy_jobs: If present, the backup policy job that created this snapshot consistency group. Snapshot consistency groups with the same backup policy job identifier represent snapshots of the same instance across different storage generations.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupBackupPolicyPlanArgs', 'IsSnapshotConsistencyGroupBackupPolicyPlanArgsDict', 'outputs.IsSnapshotConsistencyGroupBackupPolicyPlan']]]] backup_policy_plans: If present, the backup policy plan which created this snapshot consistency group.
         :param pulumi.Input[_builtins.str] created_at: The date and time that this snapshot consistency group was created.
         :param pulumi.Input[_builtins.str] crn: The CRN of this snapshot consistency group.
         :param pulumi.Input[_builtins.bool] delete_snapshots_on_delete: Indicates whether deleting the snapshot consistency group will also delete the snapshots in the group.
@@ -473,8 +496,8 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_group: Resource group Id
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_tags: The [service tags](https://cloud.ibm.com/apidocs/tagging#types-of-tags)[`is.instance:` prefix](https://cloud.ibm.com/docs/vpc?topic=vpc-snapshots-vpc-faqs) associated with this snapshot consistency group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotReferenceArgs', 'IsSnapshotConsistencyGroupSnapshotReferenceArgsDict']]]] snapshot_references: The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict']]]] snapshots: The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotReferenceArgs', 'IsSnapshotConsistencyGroupSnapshotReferenceArgsDict', 'outputs.IsSnapshotConsistencyGroupSnapshotReference']]]] snapshot_references: The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsSnapshotConsistencyGroupSnapshotArgs', 'IsSnapshotConsistencyGroupSnapshotArgsDict', 'outputs.IsSnapshotConsistencyGroupSnapshot']]]] snapshots: The member snapshots that are data-consistent with respect to captured time. (may be[deleted](https://cloud.ibm.com/apidocs/vpc#deleted-resources)).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Snapshot Consistency Group tags list
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -482,6 +505,7 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
         __props__ = _IsSnapshotConsistencyGroupState.__new__(_IsSnapshotConsistencyGroupState)
 
         __props__.__dict__["access_tags"] = access_tags
+        __props__.__dict__["backup_policy_jobs"] = backup_policy_jobs
         __props__.__dict__["backup_policy_plans"] = backup_policy_plans
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["crn"] = crn
@@ -504,6 +528,14 @@ class IsSnapshotConsistencyGroup(pulumi.CustomResource):
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="backupPolicyJobs")
+    def backup_policy_jobs(self) -> pulumi.Output[Sequence['outputs.IsSnapshotConsistencyGroupBackupPolicyJob']]:
+        """
+        If present, the backup policy job that created this snapshot consistency group. Snapshot consistency groups with the same backup policy job identifier represent snapshots of the same instance across different storage generations.
+        """
+        return pulumi.get(self, "backup_policy_jobs")
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyPlans")

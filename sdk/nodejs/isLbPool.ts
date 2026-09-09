@@ -39,6 +39,10 @@ export class IsLbPool extends pulumi.CustomResource {
      */
     declare public readonly algorithm: pulumi.Output<string>;
     /**
+     * The client authentication to use for this pool. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https.
+     */
+    declare public readonly clientAuthentication: pulumi.Output<outputs.IsLbPoolClientAuthentication | undefined>;
+    /**
      * The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
      */
     declare public readonly failsafePolicy: pulumi.Output<outputs.IsLbPoolFailsafePolicy>;
@@ -46,6 +50,10 @@ export class IsLbPool extends pulumi.CustomResource {
      * Load Blancer health delay time period
      */
     declare public readonly healthDelay: pulumi.Output<number>;
+    /**
+     * The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
+     */
+    declare public readonly healthMonitor: pulumi.Output<outputs.IsLbPoolHealthMonitor>;
     /**
      * Health monitor Port the LB Pool
      */
@@ -95,6 +103,10 @@ export class IsLbPool extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly relatedCrn: pulumi.Output<string>;
     /**
+     * The server authentication to use for this pool. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https.
+     */
+    declare public readonly serverAuthentication: pulumi.Output<outputs.IsLbPoolServerAuthentication>;
+    /**
      * Load Balancer Pool session persisence app cookie name.
      */
     declare public readonly sessionPersistenceAppCookieName: pulumi.Output<string | undefined>;
@@ -121,8 +133,10 @@ export class IsLbPool extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IsLbPoolState | undefined;
             resourceInputs["algorithm"] = state?.algorithm;
+            resourceInputs["clientAuthentication"] = state?.clientAuthentication;
             resourceInputs["failsafePolicy"] = state?.failsafePolicy;
             resourceInputs["healthDelay"] = state?.healthDelay;
+            resourceInputs["healthMonitor"] = state?.healthMonitor;
             resourceInputs["healthMonitorPort"] = state?.healthMonitorPort;
             resourceInputs["healthMonitorUrl"] = state?.healthMonitorUrl;
             resourceInputs["healthRetries"] = state?.healthRetries;
@@ -135,6 +149,7 @@ export class IsLbPool extends pulumi.CustomResource {
             resourceInputs["provisioningStatus"] = state?.provisioningStatus;
             resourceInputs["proxyProtocol"] = state?.proxyProtocol;
             resourceInputs["relatedCrn"] = state?.relatedCrn;
+            resourceInputs["serverAuthentication"] = state?.serverAuthentication;
             resourceInputs["sessionPersistenceAppCookieName"] = state?.sessionPersistenceAppCookieName;
             resourceInputs["sessionPersistenceHttpCookieName"] = state?.sessionPersistenceHttpCookieName;
             resourceInputs["sessionPersistenceType"] = state?.sessionPersistenceType;
@@ -162,8 +177,10 @@ export class IsLbPool extends pulumi.CustomResource {
                 throw new Error("Missing required property 'protocol'");
             }
             resourceInputs["algorithm"] = args?.algorithm;
+            resourceInputs["clientAuthentication"] = args?.clientAuthentication;
             resourceInputs["failsafePolicy"] = args?.failsafePolicy;
             resourceInputs["healthDelay"] = args?.healthDelay;
+            resourceInputs["healthMonitor"] = args?.healthMonitor;
             resourceInputs["healthMonitorPort"] = args?.healthMonitorPort;
             resourceInputs["healthMonitorUrl"] = args?.healthMonitorUrl;
             resourceInputs["healthRetries"] = args?.healthRetries;
@@ -173,6 +190,7 @@ export class IsLbPool extends pulumi.CustomResource {
             resourceInputs["name"] = args?.name;
             resourceInputs["protocol"] = args?.protocol;
             resourceInputs["proxyProtocol"] = args?.proxyProtocol;
+            resourceInputs["serverAuthentication"] = args?.serverAuthentication;
             resourceInputs["sessionPersistenceAppCookieName"] = args?.sessionPersistenceAppCookieName;
             resourceInputs["sessionPersistenceType"] = args?.sessionPersistenceType;
             resourceInputs["poolId"] = undefined /*out*/;
@@ -192,75 +210,87 @@ export interface IsLbPoolState {
     /**
      * Load Balancer Pool algorithm
      */
-    algorithm?: pulumi.Input<string>;
+    algorithm?: pulumi.Input<string | undefined>;
+    /**
+     * The client authentication to use for this pool. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https.
+     */
+    clientAuthentication?: pulumi.Input<inputs.IsLbPoolClientAuthentication | undefined>;
     /**
      * The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
      */
-    failsafePolicy?: pulumi.Input<inputs.IsLbPoolFailsafePolicy>;
+    failsafePolicy?: pulumi.Input<inputs.IsLbPoolFailsafePolicy | undefined>;
     /**
      * Load Blancer health delay time period
      */
-    healthDelay?: pulumi.Input<number>;
+    healthDelay?: pulumi.Input<number | undefined>;
+    /**
+     * The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
+     */
+    healthMonitor?: pulumi.Input<inputs.IsLbPoolHealthMonitor | undefined>;
     /**
      * Health monitor Port the LB Pool
      */
-    healthMonitorPort?: pulumi.Input<number>;
+    healthMonitorPort?: pulumi.Input<number | undefined>;
     /**
      * Health monitor URL of LB Pool
      */
-    healthMonitorUrl?: pulumi.Input<string>;
+    healthMonitorUrl?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer health retry count
      */
-    healthRetries?: pulumi.Input<number>;
+    healthRetries?: pulumi.Input<number | undefined>;
     /**
      * Load Balancer health timeout interval
      */
-    healthTimeout?: pulumi.Input<number>;
+    healthTimeout?: pulumi.Input<number | undefined>;
     /**
      * Load Balancer health type
      */
-    healthType?: pulumi.Input<string>;
+    healthType?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer ID
      */
-    lb?: pulumi.Input<string>;
+    lb?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Pool name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The LB Pool id
      */
-    poolId?: pulumi.Input<string>;
+    poolId?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Protocol
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * Status of the LB Pool
      */
-    provisioningStatus?: pulumi.Input<string>;
+    provisioningStatus?: pulumi.Input<string | undefined>;
     /**
      * PROXY protocol setting for this pool
      */
-    proxyProtocol?: pulumi.Input<string>;
+    proxyProtocol?: pulumi.Input<string | undefined>;
     /**
      * The crn of the LB resource
      */
-    relatedCrn?: pulumi.Input<string>;
+    relatedCrn?: pulumi.Input<string | undefined>;
+    /**
+     * The server authentication to use for this pool. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https.
+     */
+    serverAuthentication?: pulumi.Input<inputs.IsLbPoolServerAuthentication | undefined>;
     /**
      * Load Balancer Pool session persisence app cookie name.
      */
-    sessionPersistenceAppCookieName?: pulumi.Input<string>;
+    sessionPersistenceAppCookieName?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Pool session persisence http cookie name.
      */
-    sessionPersistenceHttpCookieName?: pulumi.Input<string>;
+    sessionPersistenceHttpCookieName?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Pool session persisence type.
      */
-    sessionPersistenceType?: pulumi.Input<string>;
+    sessionPersistenceType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -272,21 +302,29 @@ export interface IsLbPoolArgs {
      */
     algorithm: pulumi.Input<string>;
     /**
+     * The client authentication to use for this pool. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https.
+     */
+    clientAuthentication?: pulumi.Input<inputs.IsLbPoolClientAuthentication | undefined>;
+    /**
      * The failsafe policy to use for this pool.If unspecified, the default failsafe policy action from the profile will be used.
      */
-    failsafePolicy?: pulumi.Input<inputs.IsLbPoolFailsafePolicy>;
+    failsafePolicy?: pulumi.Input<inputs.IsLbPoolFailsafePolicy | undefined>;
     /**
      * Load Blancer health delay time period
      */
     healthDelay: pulumi.Input<number>;
     /**
+     * The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
+     */
+    healthMonitor?: pulumi.Input<inputs.IsLbPoolHealthMonitor | undefined>;
+    /**
      * Health monitor Port the LB Pool
      */
-    healthMonitorPort?: pulumi.Input<number>;
+    healthMonitorPort?: pulumi.Input<number | undefined>;
     /**
      * Health monitor URL of LB Pool
      */
-    healthMonitorUrl?: pulumi.Input<string>;
+    healthMonitorUrl?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer health retry count
      */
@@ -306,7 +344,7 @@ export interface IsLbPoolArgs {
     /**
      * Load Balancer Pool name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Protocol
      */
@@ -314,13 +352,17 @@ export interface IsLbPoolArgs {
     /**
      * PROXY protocol setting for this pool
      */
-    proxyProtocol?: pulumi.Input<string>;
+    proxyProtocol?: pulumi.Input<string | undefined>;
+    /**
+     * The server authentication to use for this pool. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https.
+     */
+    serverAuthentication?: pulumi.Input<inputs.IsLbPoolServerAuthentication | undefined>;
     /**
      * Load Balancer Pool session persisence app cookie name.
      */
-    sessionPersistenceAppCookieName?: pulumi.Input<string>;
+    sessionPersistenceAppCookieName?: pulumi.Input<string | undefined>;
     /**
      * Load Balancer Pool session persisence type.
      */
-    sessionPersistenceType?: pulumi.Input<string>;
+    sessionPersistenceType?: pulumi.Input<string | undefined>;
 }

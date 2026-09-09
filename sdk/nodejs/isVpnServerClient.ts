@@ -97,23 +97,23 @@ export interface IsVpnServerClientState {
     /**
      * The delete to use for this VPN client to be deleted or not, when false, client is disconneted and when set to true client is deleted.
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * description of the result.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * status code of the result.
      */
-    statusCode?: pulumi.Input<number>;
+    statusCode?: pulumi.Input<number | undefined>;
     /**
      * The VPN Client identifier.
      */
-    vpnClient?: pulumi.Input<string>;
+    vpnClient?: pulumi.Input<string | undefined>;
     /**
      * The VPN server identifier.
      */
-    vpnServer?: pulumi.Input<string>;
+    vpnServer?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -123,7 +123,7 @@ export interface IsVpnServerClientArgs {
     /**
      * The delete to use for this VPN client to be deleted or not, when false, client is disconneted and when set to true client is deleted.
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * The VPN Client identifier.
      */

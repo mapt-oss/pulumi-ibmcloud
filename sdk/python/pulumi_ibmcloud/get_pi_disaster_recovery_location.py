@@ -92,7 +92,7 @@ def get_pi_disaster_recovery_location(pi_cloud_instance_id: Optional[_builtins.s
         location=pulumi.get(__ret__, 'location'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         replication_sites=pulumi.get(__ret__, 'replication_sites'))
-def get_pi_disaster_recovery_location_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_disaster_recovery_location_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiDisasterRecoveryLocationResult]:
     """
     Use this data source to access information about an existing resource.

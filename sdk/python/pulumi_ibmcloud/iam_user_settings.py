@@ -20,9 +20,10 @@ __all__ = ['IamUserSettingsArgs', 'IamUserSettings']
 class IamUserSettingsArgs:
     def __init__(__self__, *,
                  iam_id: pulumi.Input[_builtins.str],
-                 allowed_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 allowed_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IamUserSettings resource.
+
         :param pulumi.Input[_builtins.str] iam_id: User's IAM ID or or email of user
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_ip_addresses: List of allowed IPv4 or IPv6 addresses
         """
@@ -44,24 +45,25 @@ class IamUserSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedIpAddresses")
-    def allowed_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of allowed IPv4 or IPv6 addresses
         """
         return pulumi.get(self, "allowed_ip_addresses")
 
     @allowed_ip_addresses.setter
-    def allowed_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_ip_addresses", value)
 
 
 @pulumi.input_type
 class _IamUserSettingsState:
     def __init__(__self__, *,
-                 allowed_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamUserSettings resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_ip_addresses: List of allowed IPv4 or IPv6 addresses
         :param pulumi.Input[_builtins.str] iam_id: User's IAM ID or or email of user
         """
@@ -72,26 +74,26 @@ class _IamUserSettingsState:
 
     @_builtins.property
     @pulumi.getter(name="allowedIpAddresses")
-    def allowed_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of allowed IPv4 or IPv6 addresses
         """
         return pulumi.get(self, "allowed_ip_addresses")
 
     @allowed_ip_addresses.setter
-    def allowed_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="iamId")
-    def iam_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User's IAM ID or or email of user
         """
         return pulumi.get(self, "iam_id")
 
     @iam_id.setter
-    def iam_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_id", value)
 
 
@@ -101,11 +103,12 @@ class IamUserSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 allowed_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamUserSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_ip_addresses: List of allowed IPv4 or IPv6 addresses
@@ -119,6 +122,7 @@ class IamUserSettings(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamUserSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamUserSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -134,8 +138,8 @@ class IamUserSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 iam_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 allowed_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 iam_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -159,8 +163,8 @@ class IamUserSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            iam_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamUserSettings':
+            allowed_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            iam_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamUserSettings':
         """
         Get an existing IamUserSettings resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

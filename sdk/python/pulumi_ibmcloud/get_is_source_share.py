@@ -111,7 +111,7 @@ def get_is_source_share(share_replica: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         share_replica=pulumi.get(__ret__, 'share_replica'))
-def get_is_source_share_output(share_replica: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_source_share_output(share_replica: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSourceShareResult]:
     """
     Use this data source to access information about an existing resource.

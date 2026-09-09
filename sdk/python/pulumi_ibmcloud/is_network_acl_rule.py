@@ -26,20 +26,35 @@ class IsNetworkAclRuleInitArgs:
                  direction: pulumi.Input[_builtins.str],
                  network_acl: pulumi.Input[_builtins.str],
                  source: pulumi.Input[_builtins.str],
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp: Optional[pulumi.Input['IsNetworkAclRuleIcmpArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input['IsNetworkAclRuleTcpArgs']] = None,
-                 udp: Optional[pulumi.Input['IsNetworkAclRuleUdpArgs']] = None):
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 icmp: pulumi.Input[Optional['IsNetworkAclRuleIcmpArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 tcp: pulumi.Input[Optional['IsNetworkAclRuleTcpArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional['IsNetworkAclRuleUdpArgs']] = None):
         """
         The set of arguments for constructing a IsNetworkAclRule resource.
+
         :param pulumi.Input[_builtins.str] action: Whether to allow or deny matching traffic
         :param pulumi.Input[_builtins.str] destination: The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] network_acl: Network ACL id
         :param pulumi.Input[_builtins.str] source: The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
         :param pulumi.Input[_builtins.str] before: The rule that this rule is immediately before. If absent, this is the last rule.
+        :param pulumi.Input[_builtins.int] code: The ICMP traffic code to allow. Valid values from 0 to 255.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
+        :param pulumi.Input[_builtins.int] port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
+        :param pulumi.Input[_builtins.int] source_port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] source_port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] type: The ICMP traffic type to allow. Valid values from 0 to 254.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "destination", destination)
@@ -48,12 +63,35 @@ class IsNetworkAclRuleInitArgs:
         pulumi.set(__self__, "source", source)
         if before is not None:
             pulumi.set(__self__, "before", before)
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if icmp is not None:
+            warnings.warn("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""", DeprecationWarning)
+            pulumi.log.warn("""icmp is deprecated: icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
         if icmp is not None:
             pulumi.set(__self__, "icmp", icmp)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if port_max is not None:
+            pulumi.set(__self__, "port_max", port_max)
+        if port_min is not None:
+            pulumi.set(__self__, "port_min", port_min)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if source_port_max is not None:
+            pulumi.set(__self__, "source_port_max", source_port_max)
+        if source_port_min is not None:
+            pulumi.set(__self__, "source_port_min", source_port_min)
+        if tcp is not None:
+            warnings.warn("""tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tcp is deprecated: tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
         if tcp is not None:
             pulumi.set(__self__, "tcp", tcp)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if udp is not None:
+            warnings.warn("""udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""", DeprecationWarning)
+            pulumi.log.warn("""udp is deprecated: udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
         if udp is not None:
             pulumi.set(__self__, "udp", udp)
 
@@ -119,97 +157,202 @@ class IsNetworkAclRuleInitArgs:
 
     @_builtins.property
     @pulumi.getter
-    def before(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The rule that this rule is immediately before. If absent, this is the last rule.
         """
         return pulumi.get(self, "before")
 
     @before.setter
-    def before(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before", value)
 
     @_builtins.property
     @pulumi.getter
-    def icmp(self) -> Optional[pulumi.Input['IsNetworkAclRuleIcmpArgs']]:
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The ICMP traffic code to allow. Valid values from 0 to 255.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def icmp(self) -> pulumi.Input[Optional['IsNetworkAclRuleIcmpArgs']]:
         return pulumi.get(self, "icmp")
 
     @icmp.setter
-    def icmp(self, value: Optional[pulumi.Input['IsNetworkAclRuleIcmpArgs']]):
+    def icmp(self, value: pulumi.Input[Optional['IsNetworkAclRuleIcmpArgs']]):
         pulumi.set(self, "icmp", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="portMax")
+    def port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The highest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "port_max")
+
+    @port_max.setter
+    def port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_max", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portMin")
+    def port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The lowest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "port_min")
+
+    @port_min.setter
+    def port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_min", value)
+
+    @_builtins.property
     @pulumi.getter
-    def tcp(self) -> Optional[pulumi.Input['IsNetworkAclRuleTcpArgs']]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the network protocol
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "protocol", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePortMax")
+    def source_port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The highest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "source_port_max")
+
+    @source_port_max.setter
+    def source_port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "source_port_max", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePortMin")
+    def source_port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The lowest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "source_port_min")
+
+    @source_port_min.setter
+    def source_port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "source_port_min", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
+    def tcp(self) -> pulumi.Input[Optional['IsNetworkAclRuleTcpArgs']]:
         return pulumi.get(self, "tcp")
 
     @tcp.setter
-    def tcp(self, value: Optional[pulumi.Input['IsNetworkAclRuleTcpArgs']]):
+    def tcp(self, value: pulumi.Input[Optional['IsNetworkAclRuleTcpArgs']]):
         pulumi.set(self, "tcp", value)
 
     @_builtins.property
     @pulumi.getter
-    def udp(self) -> Optional[pulumi.Input['IsNetworkAclRuleUdpArgs']]:
+    def type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The ICMP traffic type to allow. Valid values from 0 to 254.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
+    def udp(self) -> pulumi.Input[Optional['IsNetworkAclRuleUdpArgs']]:
         return pulumi.get(self, "udp")
 
     @udp.setter
-    def udp(self, value: Optional[pulumi.Input['IsNetworkAclRuleUdpArgs']]):
+    def udp(self, value: pulumi.Input[Optional['IsNetworkAclRuleUdpArgs']]):
         pulumi.set(self, "udp", value)
 
 
 @pulumi.input_type
 class _IsNetworkAclRuleState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp: Optional[pulumi.Input['IsNetworkAclRuleIcmpArgs']] = None,
-                 ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input['IsNetworkAclRuleTcpArgs']] = None,
-                 udp: Optional[pulumi.Input['IsNetworkAclRuleUdpArgs']] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp: pulumi.Input[Optional['IsNetworkAclRuleIcmpArgs']] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 tcp: pulumi.Input[Optional['IsNetworkAclRuleTcpArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional['IsNetworkAclRuleUdpArgs']] = None):
         """
         Input properties used for looking up and filtering IsNetworkAclRule resources.
+
         :param pulumi.Input[_builtins.str] action: Whether to allow or deny matching traffic
         :param pulumi.Input[_builtins.str] before: The rule that this rule is immediately before. If absent, this is the last rule.
+        :param pulumi.Input[_builtins.int] code: The ICMP traffic code to allow. Valid values from 0 to 255.
         :param pulumi.Input[_builtins.str] destination: The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] href: The url of the rule.
         :param pulumi.Input[_builtins.str] ip_version: The IP version for this rule.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] network_acl: Network ACL id
-        :param pulumi.Input[_builtins.str] protocol: The protocol of the rule.
+        :param pulumi.Input[_builtins.int] port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
         :param pulumi.Input[_builtins.str] rule_id: The network acl rule id.
         :param pulumi.Input[_builtins.str] source: The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
+        :param pulumi.Input[_builtins.int] source_port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] source_port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] type: The ICMP traffic type to allow. Valid values from 0 to 254.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
         if before is not None:
             pulumi.set(__self__, "before", before)
+        if code is not None:
+            pulumi.set(__self__, "code", code)
         if destination is not None:
             pulumi.set(__self__, "destination", destination)
         if direction is not None:
             pulumi.set(__self__, "direction", direction)
         if href is not None:
             pulumi.set(__self__, "href", href)
+        if icmp is not None:
+            warnings.warn("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""", DeprecationWarning)
+            pulumi.log.warn("""icmp is deprecated: icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
         if icmp is not None:
             pulumi.set(__self__, "icmp", icmp)
         if ip_version is not None:
@@ -218,174 +361,265 @@ class _IsNetworkAclRuleState:
             pulumi.set(__self__, "name", name)
         if network_acl is not None:
             pulumi.set(__self__, "network_acl", network_acl)
+        if port_max is not None:
+            pulumi.set(__self__, "port_max", port_max)
+        if port_min is not None:
+            pulumi.set(__self__, "port_min", port_min)
         if protocol is not None:
             pulumi.set(__self__, "protocol", protocol)
         if rule_id is not None:
             pulumi.set(__self__, "rule_id", rule_id)
         if source is not None:
             pulumi.set(__self__, "source", source)
+        if source_port_max is not None:
+            pulumi.set(__self__, "source_port_max", source_port_max)
+        if source_port_min is not None:
+            pulumi.set(__self__, "source_port_min", source_port_min)
+        if tcp is not None:
+            warnings.warn("""tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tcp is deprecated: tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
         if tcp is not None:
             pulumi.set(__self__, "tcp", tcp)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if udp is not None:
+            warnings.warn("""udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""", DeprecationWarning)
+            pulumi.log.warn("""udp is deprecated: udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
         if udp is not None:
             pulumi.set(__self__, "udp", udp)
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether to allow or deny matching traffic
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def before(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The rule that this rule is immediately before. If absent, this is the last rule.
         """
         return pulumi.get(self, "before")
 
     @before.setter
-    def before(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The ICMP traffic code to allow. Valid values from 0 to 255.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
         """
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter
-    def direction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def direction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Direction of traffic to enforce, either inbound or outbound
         """
         return pulumi.get(self, "direction")
 
     @direction.setter
-    def direction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def direction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "direction", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The url of the rule.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def icmp(self) -> Optional[pulumi.Input['IsNetworkAclRuleIcmpArgs']]:
+    @_utilities.deprecated("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def icmp(self) -> pulumi.Input[Optional['IsNetworkAclRuleIcmpArgs']]:
         return pulumi.get(self, "icmp")
 
     @icmp.setter
-    def icmp(self, value: Optional[pulumi.Input['IsNetworkAclRuleIcmpArgs']]):
+    def icmp(self, value: pulumi.Input[Optional['IsNetworkAclRuleIcmpArgs']]):
         pulumi.set(self, "icmp", value)
 
     @_builtins.property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP version for this rule.
         """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
-    def ip_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAcl")
-    def network_acl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_acl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network ACL id
         """
         return pulumi.get(self, "network_acl")
 
     @network_acl.setter
-    def network_acl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_acl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_acl", value)
 
     @_builtins.property
-    @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @pulumi.getter(name="portMax")
+    def port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The protocol of the rule.
+        The highest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "port_max")
+
+    @port_max.setter
+    def port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_max", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portMin")
+    def port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The lowest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "port_min")
+
+    @port_min.setter
+    def port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port_min", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the network protocol
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleId")
-    def rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network acl rule id.
         """
         return pulumi.get(self, "rule_id")
 
     @rule_id.setter
-    def rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
+    @pulumi.getter(name="sourcePortMax")
+    def source_port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The highest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "source_port_max")
+
+    @source_port_max.setter
+    def source_port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "source_port_max", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePortMin")
+    def source_port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The lowest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "source_port_min")
+
+    @source_port_min.setter
+    def source_port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "source_port_min", value)
+
+    @_builtins.property
     @pulumi.getter
-    def tcp(self) -> Optional[pulumi.Input['IsNetworkAclRuleTcpArgs']]:
+    @_utilities.deprecated("""tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
+    def tcp(self) -> pulumi.Input[Optional['IsNetworkAclRuleTcpArgs']]:
         return pulumi.get(self, "tcp")
 
     @tcp.setter
-    def tcp(self, value: Optional[pulumi.Input['IsNetworkAclRuleTcpArgs']]):
+    def tcp(self, value: pulumi.Input[Optional['IsNetworkAclRuleTcpArgs']]):
         pulumi.set(self, "tcp", value)
 
     @_builtins.property
     @pulumi.getter
-    def udp(self) -> Optional[pulumi.Input['IsNetworkAclRuleUdpArgs']]:
+    def type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The ICMP traffic type to allow. Valid values from 0 to 254.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
+    def udp(self) -> pulumi.Input[Optional['IsNetworkAclRuleUdpArgs']]:
         return pulumi.get(self, "udp")
 
     @udp.setter
-    def udp(self, value: Optional[pulumi.Input['IsNetworkAclRuleUdpArgs']]):
+    def udp(self, value: pulumi.Input[Optional['IsNetworkAclRuleUdpArgs']]):
         pulumi.set(self, "udp", value)
 
 
@@ -395,28 +629,43 @@ class IsNetworkAclRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp: Optional[pulumi.Input[Union['IsNetworkAclRuleIcmpArgs', 'IsNetworkAclRuleIcmpArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input[Union['IsNetworkAclRuleTcpArgs', 'IsNetworkAclRuleTcpArgsDict']]] = None,
-                 udp: Optional[pulumi.Input[Union['IsNetworkAclRuleUdpArgs', 'IsNetworkAclRuleUdpArgsDict']]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp: pulumi.Input[Optional[Union['IsNetworkAclRuleIcmpArgs', 'IsNetworkAclRuleIcmpArgsDict', 'outputs.IsNetworkAclRuleIcmp']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 tcp: pulumi.Input[Optional[Union['IsNetworkAclRuleTcpArgs', 'IsNetworkAclRuleTcpArgsDict', 'outputs.IsNetworkAclRuleTcp']]] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional[Union['IsNetworkAclRuleUdpArgs', 'IsNetworkAclRuleUdpArgsDict', 'outputs.IsNetworkAclRuleUdp']]] = None,
                  __props__=None):
         """
         Create a IsNetworkAclRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Whether to allow or deny matching traffic
         :param pulumi.Input[_builtins.str] before: The rule that this rule is immediately before. If absent, this is the last rule.
+        :param pulumi.Input[_builtins.int] code: The ICMP traffic code to allow. Valid values from 0 to 255.
         :param pulumi.Input[_builtins.str] destination: The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] name: The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] network_acl: Network ACL id
+        :param pulumi.Input[_builtins.int] port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
         :param pulumi.Input[_builtins.str] source: The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
+        :param pulumi.Input[_builtins.int] source_port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] source_port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] type: The ICMP traffic type to allow. Valid values from 0 to 254.
         """
         ...
     @overload
@@ -426,6 +675,7 @@ class IsNetworkAclRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsNetworkAclRule resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsNetworkAclRuleInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -441,16 +691,23 @@ class IsNetworkAclRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp: Optional[pulumi.Input[Union['IsNetworkAclRuleIcmpArgs', 'IsNetworkAclRuleIcmpArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp: Optional[pulumi.Input[Union['IsNetworkAclRuleTcpArgs', 'IsNetworkAclRuleTcpArgsDict']]] = None,
-                 udp: Optional[pulumi.Input[Union['IsNetworkAclRuleUdpArgs', 'IsNetworkAclRuleUdpArgsDict']]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp: pulumi.Input[Optional[Union['IsNetworkAclRuleIcmpArgs', 'IsNetworkAclRuleIcmpArgsDict', 'outputs.IsNetworkAclRuleIcmp']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 tcp: pulumi.Input[Optional[Union['IsNetworkAclRuleTcpArgs', 'IsNetworkAclRuleTcpArgsDict', 'outputs.IsNetworkAclRuleTcp']]] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None,
+                 udp: pulumi.Input[Optional[Union['IsNetworkAclRuleUdpArgs', 'IsNetworkAclRuleUdpArgsDict', 'outputs.IsNetworkAclRuleUdp']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -464,6 +721,7 @@ class IsNetworkAclRule(pulumi.CustomResource):
                 raise TypeError("Missing required property 'action'")
             __props__.__dict__["action"] = action
             __props__.__dict__["before"] = before
+            __props__.__dict__["code"] = code
             if destination is None and not opts.urn:
                 raise TypeError("Missing required property 'destination'")
             __props__.__dict__["destination"] = destination
@@ -475,14 +733,19 @@ class IsNetworkAclRule(pulumi.CustomResource):
             if network_acl is None and not opts.urn:
                 raise TypeError("Missing required property 'network_acl'")
             __props__.__dict__["network_acl"] = network_acl
+            __props__.__dict__["port_max"] = port_max
+            __props__.__dict__["port_min"] = port_min
+            __props__.__dict__["protocol"] = protocol
             if source is None and not opts.urn:
                 raise TypeError("Missing required property 'source'")
             __props__.__dict__["source"] = source
+            __props__.__dict__["source_port_max"] = source_port_max
+            __props__.__dict__["source_port_min"] = source_port_min
             __props__.__dict__["tcp"] = tcp
+            __props__.__dict__["type"] = type
             __props__.__dict__["udp"] = udp
             __props__.__dict__["href"] = None
             __props__.__dict__["ip_version"] = None
-            __props__.__dict__["protocol"] = None
             __props__.__dict__["rule_id"] = None
         super(IsNetworkAclRule, __self__).__init__(
             'ibmcloud:index/isNetworkAclRule:IsNetworkAclRule',
@@ -494,20 +757,26 @@ class IsNetworkAclRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            before: Optional[pulumi.Input[_builtins.str]] = None,
-            destination: Optional[pulumi.Input[_builtins.str]] = None,
-            direction: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            icmp: Optional[pulumi.Input[Union['IsNetworkAclRuleIcmpArgs', 'IsNetworkAclRuleIcmpArgsDict']]] = None,
-            ip_version: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_acl: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            tcp: Optional[pulumi.Input[Union['IsNetworkAclRuleTcpArgs', 'IsNetworkAclRuleTcpArgsDict']]] = None,
-            udp: Optional[pulumi.Input[Union['IsNetworkAclRuleUdpArgs', 'IsNetworkAclRuleUdpArgsDict']]] = None) -> 'IsNetworkAclRule':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            before: pulumi.Input[Optional[_builtins.str]] = None,
+            code: pulumi.Input[Optional[_builtins.int]] = None,
+            destination: pulumi.Input[Optional[_builtins.str]] = None,
+            direction: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            icmp: pulumi.Input[Optional[Union['IsNetworkAclRuleIcmpArgs', 'IsNetworkAclRuleIcmpArgsDict', 'outputs.IsNetworkAclRuleIcmp']]] = None,
+            ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_acl: pulumi.Input[Optional[_builtins.str]] = None,
+            port_max: pulumi.Input[Optional[_builtins.int]] = None,
+            port_min: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_port_max: pulumi.Input[Optional[_builtins.int]] = None,
+            source_port_min: pulumi.Input[Optional[_builtins.int]] = None,
+            tcp: pulumi.Input[Optional[Union['IsNetworkAclRuleTcpArgs', 'IsNetworkAclRuleTcpArgsDict', 'outputs.IsNetworkAclRuleTcp']]] = None,
+            type: pulumi.Input[Optional[_builtins.int]] = None,
+            udp: pulumi.Input[Optional[Union['IsNetworkAclRuleUdpArgs', 'IsNetworkAclRuleUdpArgsDict', 'outputs.IsNetworkAclRuleUdp']]] = None) -> 'IsNetworkAclRule':
         """
         Get an existing IsNetworkAclRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -517,15 +786,21 @@ class IsNetworkAclRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Whether to allow or deny matching traffic
         :param pulumi.Input[_builtins.str] before: The rule that this rule is immediately before. If absent, this is the last rule.
+        :param pulumi.Input[_builtins.int] code: The ICMP traffic code to allow. Valid values from 0 to 255.
         :param pulumi.Input[_builtins.str] destination: The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
         :param pulumi.Input[_builtins.str] direction: Direction of traffic to enforce, either inbound or outbound
         :param pulumi.Input[_builtins.str] href: The url of the rule.
         :param pulumi.Input[_builtins.str] ip_version: The IP version for this rule.
         :param pulumi.Input[_builtins.str] name: The user-defined name for this rule. Names must be unique within the network ACL the rule resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
         :param pulumi.Input[_builtins.str] network_acl: Network ACL id
-        :param pulumi.Input[_builtins.str] protocol: The protocol of the rule.
+        :param pulumi.Input[_builtins.int] port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.str] protocol: The name of the network protocol
         :param pulumi.Input[_builtins.str] rule_id: The network acl rule id.
         :param pulumi.Input[_builtins.str] source: The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.
+        :param pulumi.Input[_builtins.int] source_port_max: The highest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] source_port_min: The lowest port in the range of ports to be matched
+        :param pulumi.Input[_builtins.int] type: The ICMP traffic type to allow. Valid values from 0 to 254.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -533,6 +808,7 @@ class IsNetworkAclRule(pulumi.CustomResource):
 
         __props__.__dict__["action"] = action
         __props__.__dict__["before"] = before
+        __props__.__dict__["code"] = code
         __props__.__dict__["destination"] = destination
         __props__.__dict__["direction"] = direction
         __props__.__dict__["href"] = href
@@ -540,10 +816,15 @@ class IsNetworkAclRule(pulumi.CustomResource):
         __props__.__dict__["ip_version"] = ip_version
         __props__.__dict__["name"] = name
         __props__.__dict__["network_acl"] = network_acl
+        __props__.__dict__["port_max"] = port_max
+        __props__.__dict__["port_min"] = port_min
         __props__.__dict__["protocol"] = protocol
         __props__.__dict__["rule_id"] = rule_id
         __props__.__dict__["source"] = source
+        __props__.__dict__["source_port_max"] = source_port_max
+        __props__.__dict__["source_port_min"] = source_port_min
         __props__.__dict__["tcp"] = tcp
+        __props__.__dict__["type"] = type
         __props__.__dict__["udp"] = udp
         return IsNetworkAclRule(resource_name, opts=opts, __props__=__props__)
 
@@ -562,6 +843,14 @@ class IsNetworkAclRule(pulumi.CustomResource):
         The rule that this rule is immediately before. If absent, this is the last rule.
         """
         return pulumi.get(self, "before")
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> pulumi.Output[_builtins.int]:
+        """
+        The ICMP traffic code to allow. Valid values from 0 to 255.
+        """
+        return pulumi.get(self, "code")
 
     @_builtins.property
     @pulumi.getter
@@ -589,7 +878,8 @@ class IsNetworkAclRule(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def icmp(self) -> pulumi.Output[Optional['outputs.IsNetworkAclRuleIcmp']]:
+    @_utilities.deprecated("""icmp is deprecated, use 'protocol', 'code', and 'type' instead.""")
+    def icmp(self) -> pulumi.Output['outputs.IsNetworkAclRuleIcmp']:
         return pulumi.get(self, "icmp")
 
     @_builtins.property
@@ -617,10 +907,26 @@ class IsNetworkAclRule(pulumi.CustomResource):
         return pulumi.get(self, "network_acl")
 
     @_builtins.property
+    @pulumi.getter(name="portMax")
+    def port_max(self) -> pulumi.Output[_builtins.int]:
+        """
+        The highest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "port_max")
+
+    @_builtins.property
+    @pulumi.getter(name="portMin")
+    def port_min(self) -> pulumi.Output[_builtins.int]:
+        """
+        The lowest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "port_min")
+
+    @_builtins.property
     @pulumi.getter
     def protocol(self) -> pulumi.Output[_builtins.str]:
         """
-        The protocol of the rule.
+        The name of the network protocol
         """
         return pulumi.get(self, "protocol")
 
@@ -641,12 +947,38 @@ class IsNetworkAclRule(pulumi.CustomResource):
         return pulumi.get(self, "source")
 
     @_builtins.property
+    @pulumi.getter(name="sourcePortMax")
+    def source_port_max(self) -> pulumi.Output[_builtins.int]:
+        """
+        The highest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "source_port_max")
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePortMin")
+    def source_port_min(self) -> pulumi.Output[_builtins.int]:
+        """
+        The lowest port in the range of ports to be matched
+        """
+        return pulumi.get(self, "source_port_min")
+
+    @_builtins.property
     @pulumi.getter
-    def tcp(self) -> pulumi.Output[Optional['outputs.IsNetworkAclRuleTcp']]:
+    @_utilities.deprecated("""tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
+    def tcp(self) -> pulumi.Output['outputs.IsNetworkAclRuleTcp']:
         return pulumi.get(self, "tcp")
 
     @_builtins.property
     @pulumi.getter
-    def udp(self) -> pulumi.Output[Optional['outputs.IsNetworkAclRuleUdp']]:
+    def type(self) -> pulumi.Output[_builtins.int]:
+        """
+        The ICMP traffic type to allow. Valid values from 0 to 254.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.""")
+    def udp(self) -> pulumi.Output['outputs.IsNetworkAclRuleUdp']:
         return pulumi.get(self, "udp")
 

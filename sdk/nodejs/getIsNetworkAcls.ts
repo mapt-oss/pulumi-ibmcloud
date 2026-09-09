@@ -44,5 +44,5 @@ export function getIsNetworkAclsOutput(args?: GetIsNetworkAclsOutputArgs, opts?:
  * A collection of arguments for invoking getIsNetworkAcls.
  */
 export interface GetIsNetworkAclsOutputArgs {
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

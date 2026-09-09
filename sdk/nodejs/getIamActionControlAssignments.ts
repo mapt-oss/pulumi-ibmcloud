@@ -48,6 +48,6 @@ export function getIamActionControlAssignmentsOutput(args?: GetIamActionControlA
  * A collection of arguments for invoking getIamActionControlAssignments.
  */
 export interface GetIamActionControlAssignmentsOutputArgs {
-    templateId?: pulumi.Input<string>;
-    templateVersion?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
+    templateVersion?: pulumi.Input<string | undefined>;
 }

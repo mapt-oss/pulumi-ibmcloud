@@ -159,59 +159,59 @@ export interface IsReservationState {
     /**
      * The affinity policy to use for this reservation
      */
-    affinityPolicy?: pulumi.Input<string>;
+    affinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * The capacity reservation configuration to use
      */
-    capacity?: pulumi.Input<inputs.IsReservationCapacity>;
+    capacity?: pulumi.Input<inputs.IsReservationCapacity | undefined>;
     /**
      * The committed use configuration to use for this reservation
      */
-    committedUse?: pulumi.Input<inputs.IsReservationCommittedUse>;
+    committedUse?: pulumi.Input<inputs.IsReservationCommittedUse | undefined>;
     /**
      * The date and time that the reservation was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this reservation.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The URL for this reservation.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of this reservation.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * Reservation name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The profile to use for this reservation.
      */
-    profile?: pulumi.Input<inputs.IsReservationProfile>;
+    profile?: pulumi.Input<inputs.IsReservationProfile | undefined>;
     /**
      * The committed use configuration to use for this reservation
      */
-    resourceGroup?: pulumi.Input<inputs.IsReservationResourceGroup>;
+    resourceGroup?: pulumi.Input<inputs.IsReservationResourceGroup | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The status of the reservation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The committed use configuration to use for this reservation
      */
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsReservationStatusReason>[]>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsReservationStatusReason>[] | undefined>;
     /**
      * The globally unique name for this zone.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -221,7 +221,7 @@ export interface IsReservationArgs {
     /**
      * The affinity policy to use for this reservation
      */
-    affinityPolicy?: pulumi.Input<string>;
+    affinityPolicy?: pulumi.Input<string | undefined>;
     /**
      * The capacity reservation configuration to use
      */
@@ -233,7 +233,7 @@ export interface IsReservationArgs {
     /**
      * Reservation name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The profile to use for this reservation.
      */
@@ -241,7 +241,7 @@ export interface IsReservationArgs {
     /**
      * The committed use configuration to use for this reservation
      */
-    resourceGroup?: pulumi.Input<inputs.IsReservationResourceGroup>;
+    resourceGroup?: pulumi.Input<inputs.IsReservationResourceGroup | undefined>;
     /**
      * The globally unique name for this zone.
      */

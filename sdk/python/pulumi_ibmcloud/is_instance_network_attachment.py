@@ -22,10 +22,11 @@ __all__ = ['IsInstanceNetworkAttachmentInitArgs', 'IsInstanceNetworkAttachment']
 class IsInstanceNetworkAttachmentInitArgs:
     def __init__(__self__, *,
                  instance: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']] = None):
         """
         The set of arguments for constructing a IsInstanceNetworkAttachment resource.
+
         :param pulumi.Input[_builtins.str] instance: The virtual server instance identifier.
         :param pulumi.Input[_builtins.str] name: The name for this instance network attachment. The name is unique across all network attachments for the instance.
         :param pulumi.Input['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs'] virtual_network_interface: A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
@@ -50,44 +51,45 @@ class IsInstanceNetworkAttachmentInitArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this instance network attachment. The name is unique across all network attachments for the instance.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]:
         """
         A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]):
         pulumi.set(self, "virtual_network_interface", value)
 
 
 @pulumi.input_type
 class _IsInstanceNetworkAttachmentState:
     def __init__(__self__, *,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-                 port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']] = None):
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']] = None):
         """
         Input properties used for looking up and filtering IsInstanceNetworkAttachment resources.
+
         :param pulumi.Input[_builtins.str] created_at: The date and time that the instance network attachment was created.
         :param pulumi.Input[_builtins.str] href: The URL for this instance network attachment.
         :param pulumi.Input[_builtins.str] instance: The virtual server instance identifier.
@@ -122,122 +124,122 @@ class _IsInstanceNetworkAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the instance network attachment was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this instance network attachment.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual server instance identifier.
         """
         return pulumi.get(self, "instance")
 
     @instance.setter
-    def instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the instance network attachment.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this instance network attachment. The name is unique across all network attachments for the instance.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAttachment")
-    def network_attachment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_attachment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this instance network attachment.
         """
         return pulumi.get(self, "network_attachment")
 
     @network_attachment.setter
-    def network_attachment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_attachment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="portSpeed")
-    def port_speed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_speed(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port speed for this instance network attachment in Mbps.
         """
         return pulumi.get(self, "port_speed")
 
     @port_speed.setter
-    def port_speed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_speed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_speed", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The instance network attachment type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]:
         """
         A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs']]):
         pulumi.set(self, "virtual_network_interface", value)
 
 
@@ -247,17 +249,18 @@ class IsInstanceNetworkAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict']]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkAttachmentVirtualNetworkInterface']]] = None,
                  __props__=None):
         """
         Create a IsInstanceNetworkAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] instance: The virtual server instance identifier.
         :param pulumi.Input[_builtins.str] name: The name for this instance network attachment. The name is unique across all network attachments for the instance.
-        :param pulumi.Input[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict']] virtual_network_interface: A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
+        :param pulumi.Input[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkAttachmentVirtualNetworkInterface']] virtual_network_interface: A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         """
         ...
     @overload
@@ -267,6 +270,7 @@ class IsInstanceNetworkAttachment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceNetworkAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceNetworkAttachmentInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -282,9 +286,9 @@ class IsInstanceNetworkAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict']]] = None,
+                 instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkAttachmentVirtualNetworkInterface']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -316,16 +320,16 @@ class IsInstanceNetworkAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            instance: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-            port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_network_interface: Optional[pulumi.Input[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict']]] = None) -> 'IsInstanceNetworkAttachment':
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            instance: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+            port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_network_interface: pulumi.Input[Optional[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkAttachmentVirtualNetworkInterface']]] = None) -> 'IsInstanceNetworkAttachment':
         """
         Get an existing IsInstanceNetworkAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -342,7 +346,7 @@ class IsInstanceNetworkAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] port_speed: The port speed for this instance network attachment in Mbps.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.str] type: The instance network attachment type.
-        :param pulumi.Input[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict']] virtual_network_interface: A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
+        :param pulumi.Input[Union['IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsInstanceNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsInstanceNetworkAttachmentVirtualNetworkInterface']] virtual_network_interface: A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

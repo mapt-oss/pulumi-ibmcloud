@@ -50,7 +50,7 @@ export function getIsPrivatePathServiceGatewayEndpointGatewayBindingsOutput(args
  * A collection of arguments for invoking getIsPrivatePathServiceGatewayEndpointGatewayBindings.
  */
 export interface GetIsPrivatePathServiceGatewayEndpointGatewayBindingsOutputArgs {
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     privatePathServiceGateway: pulumi.Input<string>;
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

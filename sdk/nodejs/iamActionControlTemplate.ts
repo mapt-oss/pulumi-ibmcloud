@@ -135,51 +135,51 @@ export interface IamActionControlTemplateState {
     /**
      * Enterprise account ID where this template is created.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * The action control template ID.
      */
-    actionControlTemplateId?: pulumi.Input<string>;
+    actionControlTemplateId?: pulumi.Input<string | undefined>;
     /**
      * The action control properties that are created in an action resource when the template is assigned.
      */
-    actionControls?: pulumi.Input<pulumi.Input<inputs.IamActionControlTemplateActionControl>[]>;
+    actionControls?: pulumi.Input<pulumi.Input<inputs.IamActionControlTemplateActionControl>[] | undefined>;
     /**
      * Committed status of the template. If committed is set to true, then the template version can no longer be updated.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * The UTC timestamp when the action control template was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The IAM ID of the entity that created the action control template.
      */
-    createdById?: pulumi.Input<string>;
+    createdById?: pulumi.Input<string | undefined>;
     /**
      * Description of the action control template. This is shown to users in the enterprise account. Use this to describe the purpose or context of the action control for enterprise users managing IAM templates.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The href URL that links to the action control templates API by action control template ID.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The UTC timestamp when the action control template was last modified.
      */
-    lastModifiedAt?: pulumi.Input<string>;
+    lastModifiedAt?: pulumi.Input<string | undefined>;
     /**
      * The IAM ID of the entity that last modified the action control template.
      */
-    lastModifiedById?: pulumi.Input<string>;
+    lastModifiedById?: pulumi.Input<string | undefined>;
     /**
      * Required field when creating a new template. Otherwise, this field is optional. If the field is included, it changes the name value for all existing versions of the template.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Template Version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -189,17 +189,17 @@ export interface IamActionControlTemplateArgs {
     /**
      * The action control properties that are created in an action resource when the template is assigned.
      */
-    actionControls?: pulumi.Input<pulumi.Input<inputs.IamActionControlTemplateActionControl>[]>;
+    actionControls?: pulumi.Input<pulumi.Input<inputs.IamActionControlTemplateActionControl>[] | undefined>;
     /**
      * Committed status of the template. If committed is set to true, then the template version can no longer be updated.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the action control template. This is shown to users in the enterprise account. Use this to describe the purpose or context of the action control for enterprise users managing IAM templates.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Required field when creating a new template. Otherwise, this field is optional. If the field is included, it changes the name value for all existing versions of the template.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

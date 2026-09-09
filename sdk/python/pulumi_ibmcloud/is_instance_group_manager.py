@@ -22,15 +22,16 @@ __all__ = ['IsInstanceGroupManagerArgs', 'IsInstanceGroupManager']
 class IsInstanceGroupManagerArgs:
     def __init__(__self__, *,
                  instance_group: pulumi.Input[_builtins.str],
-                 aggregation_window: Optional[pulumi.Input[_builtins.int]] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-                 manager_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 aggregation_window: pulumi.Input[Optional[_builtins.int]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+                 manager_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsInstanceGroupManager resource.
+
         :param pulumi.Input[_builtins.str] instance_group: instance group ID
         :param pulumi.Input[_builtins.int] aggregation_window: The time window in seconds to aggregate metrics prior to evaluation
         :param pulumi.Input[_builtins.int] cooldown: The duration of time in seconds to pause further scale actions after scaling has taken place
@@ -70,105 +71,106 @@ class IsInstanceGroupManagerArgs:
 
     @_builtins.property
     @pulumi.getter(name="aggregationWindow")
-    def aggregation_window(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def aggregation_window(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The time window in seconds to aggregate metrics prior to evaluation
         """
         return pulumi.get(self, "aggregation_window")
 
     @aggregation_window.setter
-    def aggregation_window(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def aggregation_window(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "aggregation_window", value)
 
     @_builtins.property
     @pulumi.getter
-    def cooldown(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cooldown(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The duration of time in seconds to pause further scale actions after scaling has taken place
         """
         return pulumi.get(self, "cooldown")
 
     @cooldown.setter
-    def cooldown(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cooldown(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cooldown", value)
 
     @_builtins.property
     @pulumi.getter(name="enableManager")
-    def enable_manager(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_manager(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         enable instance group manager
         """
         return pulumi.get(self, "enable_manager")
 
     @enable_manager.setter
-    def enable_manager(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_manager(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_manager", value)
 
     @_builtins.property
     @pulumi.getter(name="managerType")
-    def manager_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def manager_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of instance group manager.
         """
         return pulumi.get(self, "manager_type")
 
     @manager_type.setter
-    def manager_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def manager_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "manager_type", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMembershipCount")
-    def max_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of members in a managed instance group
         """
         return pulumi.get(self, "max_membership_count")
 
     @max_membership_count.setter
-    def max_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_membership_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minMembershipCount")
-    def min_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum number of members in a managed instance group
         """
         return pulumi.get(self, "min_membership_count")
 
     @min_membership_count.setter
-    def min_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_membership_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group manager name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsInstanceGroupManagerState:
     def __init__(__self__, *,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupManagerActionArgs']]]] = None,
-                 aggregation_window: Optional[pulumi.Input[_builtins.int]] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 manager_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 manager_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 actions: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupManagerActionArgs']]]] = None,
+                 aggregation_window: pulumi.Input[Optional[_builtins.int]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 manager_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 manager_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IsInstanceGroupManager resources.
+
         :param pulumi.Input[_builtins.int] aggregation_window: The time window in seconds to aggregate metrics prior to evaluation
         :param pulumi.Input[_builtins.int] cooldown: The duration of time in seconds to pause further scale actions after scaling has taken place
         :param pulumi.Input[_builtins.bool] enable_manager: enable instance group manager
@@ -205,131 +207,131 @@ class _IsInstanceGroupManagerState:
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupManagerActionArgs']]]]:
+    def actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupManagerActionArgs']]]]:
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceGroupManagerActionArgs']]]]):
+    def actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceGroupManagerActionArgs']]]]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="aggregationWindow")
-    def aggregation_window(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def aggregation_window(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The time window in seconds to aggregate metrics prior to evaluation
         """
         return pulumi.get(self, "aggregation_window")
 
     @aggregation_window.setter
-    def aggregation_window(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def aggregation_window(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "aggregation_window", value)
 
     @_builtins.property
     @pulumi.getter
-    def cooldown(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cooldown(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The duration of time in seconds to pause further scale actions after scaling has taken place
         """
         return pulumi.get(self, "cooldown")
 
     @cooldown.setter
-    def cooldown(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cooldown(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cooldown", value)
 
     @_builtins.property
     @pulumi.getter(name="enableManager")
-    def enable_manager(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_manager(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         enable instance group manager
         """
         return pulumi.get(self, "enable_manager")
 
     @enable_manager.setter
-    def enable_manager(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_manager(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_manager", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceGroup")
-    def instance_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group ID
         """
         return pulumi.get(self, "instance_group")
 
     @instance_group.setter
-    def instance_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_group", value)
 
     @_builtins.property
     @pulumi.getter(name="managerId")
-    def manager_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def manager_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group manager ID
         """
         return pulumi.get(self, "manager_id")
 
     @manager_id.setter
-    def manager_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def manager_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "manager_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managerType")
-    def manager_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def manager_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of instance group manager.
         """
         return pulumi.get(self, "manager_type")
 
     @manager_type.setter
-    def manager_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def manager_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "manager_type", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMembershipCount")
-    def max_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of members in a managed instance group
         """
         return pulumi.get(self, "max_membership_count")
 
     @max_membership_count.setter
-    def max_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_membership_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minMembershipCount")
-    def min_membership_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_membership_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum number of members in a managed instance group
         """
         return pulumi.get(self, "min_membership_count")
 
     @min_membership_count.setter
-    def min_membership_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_membership_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_membership_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group manager name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of Policies associated with instancegroup manager
         """
         return pulumi.get(self, "policies")
 
     @policies.setter
-    def policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policies", value)
 
 
@@ -339,17 +341,18 @@ class IsInstanceGroupManager(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_window: Optional[pulumi.Input[_builtins.int]] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 manager_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 aggregation_window: pulumi.Input[Optional[_builtins.int]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 manager_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceGroupManager resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] aggregation_window: The time window in seconds to aggregate metrics prior to evaluation
@@ -369,6 +372,7 @@ class IsInstanceGroupManager(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceGroupManager resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceGroupManagerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -384,14 +388,14 @@ class IsInstanceGroupManager(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_window: Optional[pulumi.Input[_builtins.int]] = None,
-                 cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-                 enable_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 manager_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 aggregation_window: pulumi.Input[Optional[_builtins.int]] = None,
+                 cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 manager_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -424,17 +428,17 @@ class IsInstanceGroupManager(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceGroupManagerActionArgs', 'IsInstanceGroupManagerActionArgsDict']]]]] = None,
-            aggregation_window: Optional[pulumi.Input[_builtins.int]] = None,
-            cooldown: Optional[pulumi.Input[_builtins.int]] = None,
-            enable_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-            instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-            manager_id: Optional[pulumi.Input[_builtins.str]] = None,
-            manager_type: Optional[pulumi.Input[_builtins.str]] = None,
-            max_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-            min_membership_count: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsInstanceGroupManager':
+            actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceGroupManagerActionArgs', 'IsInstanceGroupManagerActionArgsDict', 'outputs.IsInstanceGroupManagerAction']]]]] = None,
+            aggregation_window: pulumi.Input[Optional[_builtins.int]] = None,
+            cooldown: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+            instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+            manager_id: pulumi.Input[Optional[_builtins.str]] = None,
+            manager_type: pulumi.Input[Optional[_builtins.str]] = None,
+            max_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_membership_count: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IsInstanceGroupManager':
         """
         Get an existing IsInstanceGroupManager resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

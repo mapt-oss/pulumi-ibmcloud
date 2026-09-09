@@ -82,7 +82,7 @@ def get_is_virtual_network_interface_floating_ips(virtual_network_interface: Opt
         floating_ips=pulumi.get(__ret__, 'floating_ips'),
         id=pulumi.get(__ret__, 'id'),
         virtual_network_interface=pulumi.get(__ret__, 'virtual_network_interface'))
-def get_is_virtual_network_interface_floating_ips_output(virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_virtual_network_interface_floating_ips_output(virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVirtualNetworkInterfaceFloatingIpsResult]:
     """
     Use this data source to access information about an existing resource.

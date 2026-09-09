@@ -184,83 +184,83 @@ export interface IsImageDeprecateState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The SHA256 checksum of this image
      */
-    checksum?: pulumi.Input<string>;
+    checksum?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the image was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The deprecation date and time (UTC) for this image. If absent, no deprecation date and time has been set.
      */
-    deprecationAt?: pulumi.Input<string>;
+    deprecationAt?: pulumi.Input<string | undefined>;
     /**
      * A base64-encoded, encrypted representation of the key that was used to encrypt the data for this image
      */
-    encryptedDataKey?: pulumi.Input<string>;
+    encryptedDataKey?: pulumi.Input<string | undefined>;
     /**
      * The type of encryption used on the image
      */
-    encryption?: pulumi.Input<string>;
+    encryption?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the Key Protect Root Key or Hyper Protect Crypto Service Root Key for this resource
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * Details for the stored image file
      */
-    file?: pulumi.Input<number>;
+    file?: pulumi.Input<number | undefined>;
     /**
      * Image Href value
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Image identifier
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * Image name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The obsolescence date and time (UTC) for this image. If absent, no obsolescence date and time has been set.
      */
-    obsolescenceAt?: pulumi.Input<string>;
+    obsolescenceAt?: pulumi.Input<string | undefined>;
     /**
      * Image Operating system
      */
-    operatingSystem?: pulumi.Input<string>;
+    operatingSystem?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this image
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The minimum size (in gigabytes) of a volume onto which this image may be provisioned
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * Image volume id
      */
-    sourceVolume?: pulumi.Input<string>;
+    sourceVolume?: pulumi.Input<string | undefined>;
     /**
      * The status of this image
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Tags for the image
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether the image is publicly visible or private to the account
      */
-    visibility?: pulumi.Input<string>;
+    visibility?: pulumi.Input<string | undefined>;
 }
 
 /**

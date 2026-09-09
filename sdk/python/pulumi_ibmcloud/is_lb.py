@@ -22,18 +22,19 @@ __all__ = ['IsLbArgs', 'IsLb']
 class IsLbArgs:
     def __init__(__self__, *,
                  subnets: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dns: Optional[pulumi.Input['IsLbDnsArgs']] = None,
-                 logging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dns: pulumi.Input[Optional['IsLbDnsArgs']] = None,
+                 logging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsLb resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnets: Load Balancer subnets list
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
         :param pulumi.Input['IsLbDnsArgs'] dns: The DNS configuration for this load balancer.
@@ -80,163 +81,172 @@ class IsLbArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def dns(self) -> Optional[pulumi.Input['IsLbDnsArgs']]:
+    def dns(self) -> pulumi.Input[Optional['IsLbDnsArgs']]:
         """
         The DNS configuration for this load balancer.
         """
         return pulumi.get(self, "dns")
 
     @dns.setter
-    def dns(self, value: Optional[pulumi.Input['IsLbDnsArgs']]):
+    def dns(self, value: pulumi.Input[Optional['IsLbDnsArgs']]):
         pulumi.set(self, "dns", value)
 
     @_builtins.property
     @pulumi.getter
-    def logging(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def logging(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Logging of Load Balancer
         """
         return pulumi.get(self, "logging")
 
     @logging.setter
-    def logging(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def logging(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "logging", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The profile to use for this load balancer.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="routeMode")
-    def route_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether route mode is enabled for this load balancer
         """
         return pulumi.get(self, "route_mode")
 
     @route_mode.setter
-    def route_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Load Balancer securitygroups list
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer type
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 @pulumi.input_type
 class _IsLbState:
     def __init__(__self__, *,
-                 access_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attached_load_balancer_pool_members: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbAttachedLoadBalancerPoolMemberArgs']]]] = None,
-                 availability: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns: Optional[pulumi.Input['IsLbDnsArgs']] = None,
-                 failsafe_policy_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_groups_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 logging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbPrivateIpArgs']]]] = None,
-                 private_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_group_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_ip_session_persistence_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 udp_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 advanced_health_checks_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 asymmetric_routing_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 attached_load_balancer_pool_members: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbAttachedLoadBalancerPoolMemberArgs']]]] = None,
+                 availability: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns: pulumi.Input[Optional['IsLbDnsArgs']] = None,
+                 failsafe_policy_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 fqdn_pool_members_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_groups_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 logging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mtls_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbPrivateIpArgs']]]] = None,
+                 private_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_group_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_ip_session_persistence_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 udp_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsLb resources.
+
         :param pulumi.Input[_builtins.str] access_mode: The access mode of this load balancer
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
+        :param pulumi.Input[_builtins.bool] advanced_health_checks_supported: Indicates whether this load balancer supports advanced health checks.
+        :param pulumi.Input[_builtins.bool] asymmetric_routing_supported: Indicates whether this load balancer supports asymmetric routing.
         :param pulumi.Input[Sequence[pulumi.Input['IsLbAttachedLoadBalancerPoolMemberArgs']]] attached_load_balancer_pool_members: The load balancer pool members attached to this load balancer.
         :param pulumi.Input[_builtins.str] availability: The availability of this load balancer
         :param pulumi.Input[_builtins.str] crn: The CRN for this Load Balancer
         :param pulumi.Input['IsLbDnsArgs'] dns: The DNS configuration for this load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] failsafe_policy_actions: The supported `failsafe_policy.action` values for this load balancer's pools.
+        :param pulumi.Input[_builtins.bool] fqdn_pool_members_supported: Indicates whether this load balancer supports pool members specified by their fully qualified domain names.
         :param pulumi.Input[_builtins.bool] instance_groups_supported: Indicates whether this load balancer supports instance groups.
         :param pulumi.Input[_builtins.bool] logging: Logging of Load Balancer
+        :param pulumi.Input[_builtins.bool] mtls_supported: Indicates whether this load balancer supports mTLS.
         :param pulumi.Input[_builtins.str] name: Load Balancer name
         :param pulumi.Input[Sequence[pulumi.Input['IsLbPrivateIpArgs']]] private_ip: The private IP addresses assigned to this load balancer.
         :param pulumi.Input[_builtins.str] profile: The profile to use for this load balancer.
@@ -255,6 +265,10 @@ class _IsLbState:
             pulumi.set(__self__, "access_mode", access_mode)
         if access_tags is not None:
             pulumi.set(__self__, "access_tags", access_tags)
+        if advanced_health_checks_supported is not None:
+            pulumi.set(__self__, "advanced_health_checks_supported", advanced_health_checks_supported)
+        if asymmetric_routing_supported is not None:
+            pulumi.set(__self__, "asymmetric_routing_supported", asymmetric_routing_supported)
         if attached_load_balancer_pool_members is not None:
             pulumi.set(__self__, "attached_load_balancer_pool_members", attached_load_balancer_pool_members)
         if availability is not None:
@@ -265,12 +279,16 @@ class _IsLbState:
             pulumi.set(__self__, "dns", dns)
         if failsafe_policy_actions is not None:
             pulumi.set(__self__, "failsafe_policy_actions", failsafe_policy_actions)
+        if fqdn_pool_members_supported is not None:
+            pulumi.set(__self__, "fqdn_pool_members_supported", fqdn_pool_members_supported)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if instance_groups_supported is not None:
             pulumi.set(__self__, "instance_groups_supported", instance_groups_supported)
         if logging is not None:
             pulumi.set(__self__, "logging", logging)
+        if mtls_supported is not None:
+            pulumi.set(__self__, "mtls_supported", mtls_supported)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if operating_status is not None:
@@ -314,338 +332,386 @@ class _IsLbState:
 
     @_builtins.property
     @pulumi.getter(name="accessMode")
-    def access_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The access mode of this load balancer
         """
         return pulumi.get(self, "access_mode")
 
     @access_mode.setter
-    def access_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="accessTags")
-    def access_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def access_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
 
     @access_tags.setter
-    def access_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def access_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "access_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="advancedHealthChecksSupported")
+    def advanced_health_checks_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether this load balancer supports advanced health checks.
+        """
+        return pulumi.get(self, "advanced_health_checks_supported")
+
+    @advanced_health_checks_supported.setter
+    def advanced_health_checks_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "advanced_health_checks_supported", value)
+
+    @_builtins.property
+    @pulumi.getter(name="asymmetricRoutingSupported")
+    def asymmetric_routing_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether this load balancer supports asymmetric routing.
+        """
+        return pulumi.get(self, "asymmetric_routing_supported")
+
+    @asymmetric_routing_supported.setter
+    def asymmetric_routing_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "asymmetric_routing_supported", value)
+
+    @_builtins.property
     @pulumi.getter(name="attachedLoadBalancerPoolMembers")
-    def attached_load_balancer_pool_members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsLbAttachedLoadBalancerPoolMemberArgs']]]]:
+    def attached_load_balancer_pool_members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsLbAttachedLoadBalancerPoolMemberArgs']]]]:
         """
         The load balancer pool members attached to this load balancer.
         """
         return pulumi.get(self, "attached_load_balancer_pool_members")
 
     @attached_load_balancer_pool_members.setter
-    def attached_load_balancer_pool_members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbAttachedLoadBalancerPoolMemberArgs']]]]):
+    def attached_load_balancer_pool_members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbAttachedLoadBalancerPoolMemberArgs']]]]):
         pulumi.set(self, "attached_load_balancer_pool_members", value)
 
     @_builtins.property
     @pulumi.getter
-    def availability(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability of this load balancer
         """
         return pulumi.get(self, "availability")
 
     @availability.setter
-    def availability(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this Load Balancer
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def dns(self) -> Optional[pulumi.Input['IsLbDnsArgs']]:
+    def dns(self) -> pulumi.Input[Optional['IsLbDnsArgs']]:
         """
         The DNS configuration for this load balancer.
         """
         return pulumi.get(self, "dns")
 
     @dns.setter
-    def dns(self, value: Optional[pulumi.Input['IsLbDnsArgs']]):
+    def dns(self, value: pulumi.Input[Optional['IsLbDnsArgs']]):
         pulumi.set(self, "dns", value)
 
     @_builtins.property
     @pulumi.getter(name="failsafePolicyActions")
-    def failsafe_policy_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def failsafe_policy_actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The supported `failsafe_policy.action` values for this load balancer's pools.
         """
         return pulumi.get(self, "failsafe_policy_actions")
 
     @failsafe_policy_actions.setter
-    def failsafe_policy_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def failsafe_policy_actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "failsafe_policy_actions", value)
 
     @_builtins.property
+    @pulumi.getter(name="fqdnPoolMembersSupported")
+    def fqdn_pool_members_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether this load balancer supports pool members specified by their fully qualified domain names.
+        """
+        return pulumi.get(self, "fqdn_pool_members_supported")
+
+    @fqdn_pool_members_supported.setter
+    def fqdn_pool_members_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "fqdn_pool_members_supported", value)
+
+    @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceGroupsSupported")
-    def instance_groups_supported(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def instance_groups_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this load balancer supports instance groups.
         """
         return pulumi.get(self, "instance_groups_supported")
 
     @instance_groups_supported.setter
-    def instance_groups_supported(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def instance_groups_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "instance_groups_supported", value)
 
     @_builtins.property
     @pulumi.getter
-    def logging(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def logging(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Logging of Load Balancer
         """
         return pulumi.get(self, "logging")
 
     @logging.setter
-    def logging(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def logging(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "logging", value)
 
     @_builtins.property
+    @pulumi.getter(name="mtlsSupported")
+    def mtls_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether this load balancer supports mTLS.
+        """
+        return pulumi.get(self, "mtls_supported")
+
+    @mtls_supported.setter
+    def mtls_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "mtls_supported", value)
+
+    @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingStatus")
-    def operating_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "operating_status")
 
     @operating_status.setter
-    def operating_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_status", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsLbPrivateIpArgs']]]]:
+    def private_ip(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsLbPrivateIpArgs']]]]:
         """
         The private IP addresses assigned to this load balancer.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsLbPrivateIpArgs']]]]):
+    def private_ip(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsLbPrivateIpArgs']]]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIps")
-    def private_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def private_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "private_ips")
 
     @private_ips.setter
-    def private_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def private_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "private_ips", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The profile to use for this load balancer.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIps")
-    def public_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def public_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "public_ips")
 
     @public_ips.setter
-    def public_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def public_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "public_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceControllerUrl")
-    def resource_controller_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_controller_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         """
         return pulumi.get(self, "resource_controller_url")
 
     @resource_controller_url.setter
-    def resource_controller_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_controller_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_controller_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroupName")
-    def resource_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group name in which resource is provisioned
         """
         return pulumi.get(self, "resource_group_name")
 
     @resource_group_name.setter
-    def resource_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the resource
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="routeMode")
-    def route_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def route_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether route mode is enabled for this load balancer
         """
         return pulumi.get(self, "route_mode")
 
     @route_mode.setter
-    def route_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def route_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "route_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroupSupported")
-    def security_group_supported(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def security_group_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Security Group Supported for this Load Balancer
         """
         return pulumi.get(self, "security_group_supported")
 
     @security_group_supported.setter
-    def security_group_supported(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def security_group_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "security_group_supported", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Load Balancer securitygroups list
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceIpSessionPersistenceSupported")
-    def source_ip_session_persistence_supported(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def source_ip_session_persistence_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this load balancer supports source IP session persistence.
         """
         return pulumi.get(self, "source_ip_session_persistence_supported")
 
     @source_ip_session_persistence_supported.setter
-    def source_ip_session_persistence_supported(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def source_ip_session_persistence_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "source_ip_session_persistence_supported", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Load Balancer subnets list
         """
         return pulumi.get(self, "subnets")
 
     @subnets.setter
-    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "subnets", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Load Balancer type
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="udpSupported")
-    def udp_supported(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def udp_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this load balancer supports UDP.
         """
         return pulumi.get(self, "udp_supported")
 
     @udp_supported.setter
-    def udp_supported(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def udp_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "udp_supported", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -655,24 +721,25 @@ class IsLb(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dns: Optional[pulumi.Input[Union['IsLbDnsArgs', 'IsLbDnsArgsDict']]] = None,
-                 logging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dns: pulumi.Input[Optional[Union['IsLbDnsArgs', 'IsLbDnsArgsDict', 'outputs.IsLbDns']]] = None,
+                 logging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsLb resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
-        :param pulumi.Input[Union['IsLbDnsArgs', 'IsLbDnsArgsDict']] dns: The DNS configuration for this load balancer.
+        :param pulumi.Input[Union['IsLbDnsArgs', 'IsLbDnsArgsDict', 'outputs.IsLbDns']] dns: The DNS configuration for this load balancer.
         :param pulumi.Input[_builtins.bool] logging: Logging of Load Balancer
         :param pulumi.Input[_builtins.str] name: Load Balancer name
         :param pulumi.Input[_builtins.str] profile: The profile to use for this load balancer.
@@ -689,6 +756,7 @@ class IsLb(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsLb resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsLbArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -704,17 +772,17 @@ class IsLb(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dns: Optional[pulumi.Input[Union['IsLbDnsArgs', 'IsLbDnsArgsDict']]] = None,
-                 logging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dns: pulumi.Input[Optional[Union['IsLbDnsArgs', 'IsLbDnsArgsDict', 'outputs.IsLbDns']]] = None,
+                 logging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -738,12 +806,16 @@ class IsLb(pulumi.CustomResource):
             __props__.__dict__["tags"] = tags
             __props__.__dict__["type"] = type
             __props__.__dict__["access_mode"] = None
+            __props__.__dict__["advanced_health_checks_supported"] = None
+            __props__.__dict__["asymmetric_routing_supported"] = None
             __props__.__dict__["attached_load_balancer_pool_members"] = None
             __props__.__dict__["availability"] = None
             __props__.__dict__["crn"] = None
             __props__.__dict__["failsafe_policy_actions"] = None
+            __props__.__dict__["fqdn_pool_members_supported"] = None
             __props__.__dict__["hostname"] = None
             __props__.__dict__["instance_groups_supported"] = None
+            __props__.__dict__["mtls_supported"] = None
             __props__.__dict__["operating_status"] = None
             __props__.__dict__["private_ip"] = None
             __props__.__dict__["private_ips"] = None
@@ -766,36 +838,40 @@ class IsLb(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            access_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attached_load_balancer_pool_members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsLbAttachedLoadBalancerPoolMemberArgs', 'IsLbAttachedLoadBalancerPoolMemberArgsDict']]]]] = None,
-            availability: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            dns: Optional[pulumi.Input[Union['IsLbDnsArgs', 'IsLbDnsArgsDict']]] = None,
-            failsafe_policy_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_groups_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-            logging: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_status: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsLbPrivateIpArgs', 'IsLbPrivateIpArgsDict']]]]] = None,
-            private_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            public_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            resource_controller_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            route_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_group_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            source_ip_session_persistence_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            subnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            udp_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsLb':
+            access_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            access_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            advanced_health_checks_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            asymmetric_routing_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            attached_load_balancer_pool_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsLbAttachedLoadBalancerPoolMemberArgs', 'IsLbAttachedLoadBalancerPoolMemberArgsDict', 'outputs.IsLbAttachedLoadBalancerPoolMember']]]]] = None,
+            availability: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            dns: pulumi.Input[Optional[Union['IsLbDnsArgs', 'IsLbDnsArgsDict', 'outputs.IsLbDns']]] = None,
+            failsafe_policy_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            fqdn_pool_members_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_groups_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            logging: pulumi.Input[Optional[_builtins.bool]] = None,
+            mtls_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_status: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsLbPrivateIpArgs', 'IsLbPrivateIpArgsDict', 'outputs.IsLbPrivateIp']]]]] = None,
+            private_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_controller_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            route_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_group_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            source_ip_session_persistence_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            udp_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsLb':
         """
         Get an existing IsLb resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -805,15 +881,19 @@ class IsLb(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_mode: The access mode of this load balancer
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_tags: List of access management tags
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbAttachedLoadBalancerPoolMemberArgs', 'IsLbAttachedLoadBalancerPoolMemberArgsDict']]]] attached_load_balancer_pool_members: The load balancer pool members attached to this load balancer.
+        :param pulumi.Input[_builtins.bool] advanced_health_checks_supported: Indicates whether this load balancer supports advanced health checks.
+        :param pulumi.Input[_builtins.bool] asymmetric_routing_supported: Indicates whether this load balancer supports asymmetric routing.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbAttachedLoadBalancerPoolMemberArgs', 'IsLbAttachedLoadBalancerPoolMemberArgsDict', 'outputs.IsLbAttachedLoadBalancerPoolMember']]]] attached_load_balancer_pool_members: The load balancer pool members attached to this load balancer.
         :param pulumi.Input[_builtins.str] availability: The availability of this load balancer
         :param pulumi.Input[_builtins.str] crn: The CRN for this Load Balancer
-        :param pulumi.Input[Union['IsLbDnsArgs', 'IsLbDnsArgsDict']] dns: The DNS configuration for this load balancer.
+        :param pulumi.Input[Union['IsLbDnsArgs', 'IsLbDnsArgsDict', 'outputs.IsLbDns']] dns: The DNS configuration for this load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] failsafe_policy_actions: The supported `failsafe_policy.action` values for this load balancer's pools.
+        :param pulumi.Input[_builtins.bool] fqdn_pool_members_supported: Indicates whether this load balancer supports pool members specified by their fully qualified domain names.
         :param pulumi.Input[_builtins.bool] instance_groups_supported: Indicates whether this load balancer supports instance groups.
         :param pulumi.Input[_builtins.bool] logging: Logging of Load Balancer
+        :param pulumi.Input[_builtins.bool] mtls_supported: Indicates whether this load balancer supports mTLS.
         :param pulumi.Input[_builtins.str] name: Load Balancer name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbPrivateIpArgs', 'IsLbPrivateIpArgsDict']]]] private_ip: The private IP addresses assigned to this load balancer.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsLbPrivateIpArgs', 'IsLbPrivateIpArgsDict', 'outputs.IsLbPrivateIp']]]] private_ip: The private IP addresses assigned to this load balancer.
         :param pulumi.Input[_builtins.str] profile: The profile to use for this load balancer.
         :param pulumi.Input[_builtins.str] resource_controller_url: The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
         :param pulumi.Input[_builtins.str] resource_group_name: The resource group name in which resource is provisioned
@@ -832,14 +912,18 @@ class IsLb(pulumi.CustomResource):
 
         __props__.__dict__["access_mode"] = access_mode
         __props__.__dict__["access_tags"] = access_tags
+        __props__.__dict__["advanced_health_checks_supported"] = advanced_health_checks_supported
+        __props__.__dict__["asymmetric_routing_supported"] = asymmetric_routing_supported
         __props__.__dict__["attached_load_balancer_pool_members"] = attached_load_balancer_pool_members
         __props__.__dict__["availability"] = availability
         __props__.__dict__["crn"] = crn
         __props__.__dict__["dns"] = dns
         __props__.__dict__["failsafe_policy_actions"] = failsafe_policy_actions
+        __props__.__dict__["fqdn_pool_members_supported"] = fqdn_pool_members_supported
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["instance_groups_supported"] = instance_groups_supported
         __props__.__dict__["logging"] = logging
+        __props__.__dict__["mtls_supported"] = mtls_supported
         __props__.__dict__["name"] = name
         __props__.__dict__["operating_status"] = operating_status
         __props__.__dict__["private_ip"] = private_ip
@@ -877,6 +961,22 @@ class IsLb(pulumi.CustomResource):
         List of access management tags
         """
         return pulumi.get(self, "access_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="advancedHealthChecksSupported")
+    def advanced_health_checks_supported(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether this load balancer supports advanced health checks.
+        """
+        return pulumi.get(self, "advanced_health_checks_supported")
+
+    @_builtins.property
+    @pulumi.getter(name="asymmetricRoutingSupported")
+    def asymmetric_routing_supported(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether this load balancer supports asymmetric routing.
+        """
+        return pulumi.get(self, "asymmetric_routing_supported")
 
     @_builtins.property
     @pulumi.getter(name="attachedLoadBalancerPoolMembers")
@@ -919,6 +1019,14 @@ class IsLb(pulumi.CustomResource):
         return pulumi.get(self, "failsafe_policy_actions")
 
     @_builtins.property
+    @pulumi.getter(name="fqdnPoolMembersSupported")
+    def fqdn_pool_members_supported(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether this load balancer supports pool members specified by their fully qualified domain names.
+        """
+        return pulumi.get(self, "fqdn_pool_members_supported")
+
+    @_builtins.property
     @pulumi.getter
     def hostname(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "hostname")
@@ -938,6 +1046,14 @@ class IsLb(pulumi.CustomResource):
         Logging of Load Balancer
         """
         return pulumi.get(self, "logging")
+
+    @_builtins.property
+    @pulumi.getter(name="mtlsSupported")
+    def mtls_supported(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether this load balancer supports mTLS.
+        """
+        return pulumi.get(self, "mtls_supported")
 
     @_builtins.property
     @pulumi.getter

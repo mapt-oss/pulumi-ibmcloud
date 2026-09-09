@@ -154,8 +154,8 @@ def get_is_instance_cluster_network_attachment(instance_cluster_network_attachme
         lifecycle_state=pulumi.get(__ret__, 'lifecycle_state'),
         name=pulumi.get(__ret__, 'name'),
         resource_type=pulumi.get(__ret__, 'resource_type'))
-def get_is_instance_cluster_network_attachment_output(instance_cluster_network_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_instance_cluster_network_attachment_output(instance_cluster_network_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsInstanceClusterNetworkAttachmentResult]:
     """
     Use this data source to access information about an existing resource.

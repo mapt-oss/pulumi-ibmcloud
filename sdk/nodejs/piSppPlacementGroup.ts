@@ -112,31 +112,31 @@ export interface PiSppPlacementGroupState {
     /**
      * The CRN of the resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Member SPP IDs that are the SPP placement group members
      */
-    members?: pulumi.Input<pulumi.Input<string>[]>;
+    members?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * PI cloud instance ID
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Name of the SPP placement group
      */
-    piSppPlacementGroupName?: pulumi.Input<string>;
+    piSppPlacementGroupName?: pulumi.Input<string | undefined>;
     /**
      * Policy of the SPP placement group
      */
-    piSppPlacementGroupPolicy?: pulumi.Input<string>;
+    piSppPlacementGroupPolicy?: pulumi.Input<string | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * SPP placement group ID
      */
-    sppPlacementGroupId?: pulumi.Input<string>;
+    sppPlacementGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -158,5 +158,5 @@ export interface PiSppPlacementGroupArgs {
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

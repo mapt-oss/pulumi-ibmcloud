@@ -106,9 +106,9 @@ def get_iam_access_group_policy(access_group_id: Optional[_builtins.str] = None,
         policies=pulumi.get(__ret__, 'policies'),
         sort=pulumi.get(__ret__, 'sort'),
         transaction_id=pulumi.get(__ret__, 'transaction_id'))
-def get_iam_access_group_policy_output(access_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       sort: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       transaction_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_access_group_policy_output(access_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       sort: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       transaction_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamAccessGroupPolicyResult]:
     """
     Use this data source to access information about an existing resource.

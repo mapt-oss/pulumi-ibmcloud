@@ -23,6 +23,7 @@ class IsPrivatePathServiceGatewayRevokeAccountArgs:
                  private_path_service_gateway: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsPrivatePathServiceGatewayRevokeAccount resource.
+
         :param pulumi.Input[_builtins.str] account: The account for this access policy.
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
         """
@@ -57,10 +58,11 @@ class IsPrivatePathServiceGatewayRevokeAccountArgs:
 @pulumi.input_type
 class _IsPrivatePathServiceGatewayRevokeAccountState:
     def __init__(__self__, *,
-                 account: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None):
+                 account: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsPrivatePathServiceGatewayRevokeAccount resources.
+
         :param pulumi.Input[_builtins.str] account: The account for this access policy.
         :param pulumi.Input[_builtins.str] private_path_service_gateway: The private path service gateway identifier.
         """
@@ -71,26 +73,26 @@ class _IsPrivatePathServiceGatewayRevokeAccountState:
 
     @_builtins.property
     @pulumi.getter
-    def account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The account for this access policy.
         """
         return pulumi.get(self, "account")
 
     @account.setter
-    def account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account", value)
 
     @_builtins.property
     @pulumi.getter(name="privatePathServiceGateway")
-    def private_path_service_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_path_service_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private path service gateway identifier.
         """
         return pulumi.get(self, "private_path_service_gateway")
 
     @private_path_service_gateway.setter
-    def private_path_service_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_path_service_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_path_service_gateway", value)
 
 
@@ -100,11 +102,12 @@ class IsPrivatePathServiceGatewayRevokeAccount(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 account: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsPrivatePathServiceGatewayRevokeAccount resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account: The account for this access policy.
@@ -118,6 +121,7 @@ class IsPrivatePathServiceGatewayRevokeAccount(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsPrivatePathServiceGatewayRevokeAccount resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsPrivatePathServiceGatewayRevokeAccountArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -133,8 +137,8 @@ class IsPrivatePathServiceGatewayRevokeAccount(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 account: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -160,8 +164,8 @@ class IsPrivatePathServiceGatewayRevokeAccount(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account: Optional[pulumi.Input[_builtins.str]] = None,
-            private_path_service_gateway: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsPrivatePathServiceGatewayRevokeAccount':
+            account: pulumi.Input[Optional[_builtins.str]] = None,
+            private_path_service_gateway: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsPrivatePathServiceGatewayRevokeAccount':
         """
         Get an existing IsPrivatePathServiceGatewayRevokeAccount resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

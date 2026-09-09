@@ -47,5 +47,5 @@ export function getPiVirtualSerialNumbersOutput(args: GetPiVirtualSerialNumbersO
  */
 export interface GetPiVirtualSerialNumbersOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
 }

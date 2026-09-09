@@ -59,9 +59,9 @@ export function getPiPlacementGroupOutput(args: GetPiPlacementGroupOutputArgs, o
  */
 export interface GetPiPlacementGroupOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    piPlacementGroupId?: pulumi.Input<string>;
+    piPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * @deprecated The piPlacementGroupName field is deprecated. Please use piPlacementGroupId instead.
      */
-    piPlacementGroupName?: pulumi.Input<string>;
+    piPlacementGroupName?: pulumi.Input<string | undefined>;
 }

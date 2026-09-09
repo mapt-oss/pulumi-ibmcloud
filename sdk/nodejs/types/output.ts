@@ -328,7 +328,7 @@ export interface CosBucketObjectLockConfigurationObjectLockConfigurationObjectLo
      */
     days?: number;
     /**
-     * Retention modes apply different levels of protection to the objects.
+     * Retention modes apply different levels of protection to the objects. Valid values: COMPLIANCE, GOVERNANCE.
      */
     mode: string;
     /**
@@ -1616,7 +1616,7 @@ export interface GetIamAccountSettingsUserMfa {
      */
     iamId: string;
     /**
-     * MFA trait definitions as follows:  * NONE - No MFA trait set  * NONE_NO_ROPC- No MFA, disable CLI logins with only a password  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
+     * MFA trait definitions as follows:  * NONE - No MFA trait set  * NONE_NO_ROPC- No MFA, disable CLI logins with only a password  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - Security Key MFA for all users.
      */
     mfa: string;
     /**
@@ -2370,6 +2370,129 @@ export interface GetIamEffectiveAccountSettingsEffectiveUserMfa {
     userName: string;
 }
 
+export interface GetIamIdentityPreferencesPreference {
+    /**
+     * Account ID of the preference, only present for scope 'account'.
+     */
+    accountId: string;
+    /**
+     * Unique ID of the preference.
+     */
+    id: string;
+    /**
+     * Scope of the preference, 'global' or 'account'.
+     */
+    scope: string;
+    /**
+     * Service of the preference.
+     */
+    service: string;
+    /**
+     * List of values of the preference, only one value property is set, either 'value_string' or 'value_list_of_strings' is present.
+     */
+    valueListOfStrings: string[];
+    /**
+     * String value of the preference, only one value property is set, either 'value_string' or 'value_list_of_strings' is present.
+     */
+    valueString: string;
+}
+
+export interface GetIamIdpAccountSettingsIdp {
+    /**
+     * Whether the IDP is active in this account.
+     */
+    active: boolean;
+    /**
+     * Strategy for Cloud User representatives.
+     */
+    cloudUserStrategy: string;
+    /**
+     * Identity provider ID.
+     */
+    idpId: string;
+    /**
+     * Name of the IDP.
+     */
+    idpName: string;
+    /**
+     * Type of the IDP.
+     */
+    idpType: string;
+    /**
+     * Account that owns the IDP.
+     */
+    ownerAccount: string;
+    /**
+     * Name of the account that owns the IDP.
+     */
+    ownerAccountName: string;
+    /**
+     * Whether the IDP is the default in this account.
+     */
+    uiDefault: boolean;
+}
+
+export interface GetIamIdpShareScope {
+    /**
+     * ID of the account or enterprise.
+     */
+    id: string;
+    /**
+     * Type of share scope.
+     */
+    type: string;
+}
+
+export interface GetIamIdpsIdp {
+    /**
+     * Account where the IdP resides.
+     */
+    accountId: string;
+    /**
+     * Whether the IDP is active.
+     */
+    active: boolean;
+    /**
+     * Timestamp when the IDP was created.
+     */
+    createdAt: string;
+    /**
+     * Version of the IDP.
+     */
+    entityTag: string;
+    /**
+     * Unique identifier of the IDP.
+     */
+    idpId: string;
+    /**
+     * Timestamp when the IDP was last modified.
+     */
+    modifiedAt: string;
+    /**
+     * Name of the Identity Provider.
+     */
+    name: string;
+    /**
+     * List of targets which can consume the IdP.
+     */
+    shareScopes: outputs.GetIamIdpsIdpShareScope[];
+    /**
+     * Type of the IDP.
+     */
+    type: string;
+}
+
+export interface GetIamIdpsIdpShareScope {
+    /**
+     * ID of the account or enterprise.
+     */
+    id: string;
+    /**
+     * Type of share scope.
+     */
+    type: string;
+}
+
 export interface GetIamPolicyAssignmentResource {
     /**
      * Set of properties for the assigned resource.
@@ -2688,9 +2811,13 @@ export interface GetIamPolicyTemplatePolicyTemplatePolicy {
      */
     resources: outputs.GetIamPolicyTemplatePolicyTemplatePolicyResource[];
     /**
+     * Role template references for assignment.
+     */
+    roleTemplateReferences?: outputs.GetIamPolicyTemplatePolicyTemplatePolicyRoleTemplateReference[];
+    /**
      * Role names of the policy definition
      */
-    roles: string[];
+    roles?: string[];
     /**
      * Rule conditions enforced by the policy
      */
@@ -2699,6 +2826,10 @@ export interface GetIamPolicyTemplatePolicyTemplatePolicy {
      * Operator that multiple rule conditions are evaluated over
      */
     ruleOperator?: string;
+    /**
+     * The subject attributes for authorization type templates
+     */
+    subjects: outputs.GetIamPolicyTemplatePolicyTemplatePolicySubject[];
     /**
      * The policy type; either 'access' or 'authorization'.
      */
@@ -2746,6 +2877,17 @@ export interface GetIamPolicyTemplatePolicyTemplatePolicyResourceTag {
     value: string;
 }
 
+export interface GetIamPolicyTemplatePolicyTemplatePolicyRoleTemplateReference {
+    /**
+     * Role template id
+     */
+    id: string;
+    /**
+     * Role template version
+     */
+    version: string;
+}
+
 export interface GetIamPolicyTemplatePolicyTemplatePolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
@@ -2780,6 +2922,28 @@ export interface GetIamPolicyTemplatePolicyTemplatePolicyRuleConditionCondition 
     values: string[];
 }
 
+export interface GetIamPolicyTemplatePolicyTemplatePolicySubject {
+    /**
+     * List of resource attributes to which the policy grants access.
+     */
+    attributes: outputs.GetIamPolicyTemplatePolicyTemplatePolicySubjectAttribute[];
+}
+
+export interface GetIamPolicyTemplatePolicyTemplatePolicySubjectAttribute {
+    /**
+     * The name of a resource attribute.
+     */
+    key: string;
+    /**
+     * The operator of an attribute.
+     */
+    operator: string;
+    /**
+     * The value of a rule or resource attribute; can be boolean or string for resource attribute. Can be string or an array of strings (e.g., array of days to permit access) for rule attribute.
+     */
+    value: string;
+}
+
 export interface GetIamPolicyTemplateVersionPolicy {
     /**
      * Allows the customer to use their own words to record the purpose/context related to a policy.
@@ -2793,6 +2957,10 @@ export interface GetIamPolicyTemplateVersionPolicy {
      * The resource attributes to which the policy grants access.
      */
     resources: outputs.GetIamPolicyTemplateVersionPolicyResource[];
+    /**
+     * Role template references for assignment.
+     */
+    roleTemplateReferences?: outputs.GetIamPolicyTemplateVersionPolicyRoleTemplateReference[];
     /**
      * Role names of the policy definition
      */
@@ -2852,6 +3020,17 @@ export interface GetIamPolicyTemplateVersionPolicyResourceTag {
     value: string;
 }
 
+export interface GetIamPolicyTemplateVersionPolicyRoleTemplateReference {
+    /**
+     * Role template id
+     */
+    id: string;
+    /**
+     * Role template version
+     */
+    version: string;
+}
+
 export interface GetIamPolicyTemplateVersionPolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
@@ -2884,6 +3063,402 @@ export interface GetIamPolicyTemplateVersionPolicyRuleConditionCondition {
      * Value of the condition
      */
     values: string[];
+}
+
+export interface GetIamRoleAssignmentResource {
+    /**
+     * Set of properties of the assigned resource or error message if assignment failed.
+     */
+    roles: outputs.GetIamRoleAssignmentResourceRole[];
+    /**
+     * assignment target account and type.
+     */
+    targets: outputs.GetIamRoleAssignmentResourceTarget[];
+}
+
+export interface GetIamRoleAssignmentResourceRole {
+    /**
+     * Body parameters for assignment error.
+     */
+    errorMessages: outputs.GetIamRoleAssignmentResourceRoleErrorMessage[];
+    /**
+     * On success, it includes the role assigned.
+     */
+    resourceCreateds: outputs.GetIamRoleAssignmentResourceRoleResourceCreated[];
+}
+
+export interface GetIamRoleAssignmentResourceRoleErrorMessage {
+    /**
+     * Internal status code for the error.
+     */
+    code: string;
+    /**
+     * Internal error code.
+     */
+    errorCode: string;
+    /**
+     * The errors encountered during the response.
+     */
+    errors: outputs.GetIamRoleAssignmentResourceRoleErrorMessageError[];
+    /**
+     * Error message detailing the nature of the error.
+     */
+    message: string;
+    /**
+     * Name of the error.
+     */
+    name: string;
+    /**
+     * The HTTP error code of the response.
+     */
+    statusCode: number;
+    /**
+     * The unique transaction ID for the request.
+     */
+    trace: string;
+}
+
+export interface GetIamRoleAssignmentResourceRoleErrorMessageError {
+    /**
+     * The API error code for the error.
+     */
+    code: string;
+    /**
+     * Additional error details.
+     */
+    details: outputs.GetIamRoleAssignmentResourceRoleErrorMessageErrorDetail[];
+    /**
+     * The error message returned by the API.
+     */
+    message: string;
+    /**
+     * Additional info for error.
+     */
+    moreInfo: string;
+}
+
+export interface GetIamRoleAssignmentResourceRoleErrorMessageErrorDetail {
+    /**
+     * Details of conflicting resource.
+     */
+    conflictsWiths: outputs.GetIamRoleAssignmentResourceRoleErrorMessageErrorDetailConflictsWith[];
+}
+
+export interface GetIamRoleAssignmentResourceRoleErrorMessageErrorDetailConflictsWith {
+    /**
+     * The revision number of the resource.
+     */
+    etag: string;
+    /**
+     * The conflicting policy ID.
+     */
+    policy: string;
+    /**
+     * The conflicting role of ID.
+     */
+    role: string;
+}
+
+export interface GetIamRoleAssignmentResourceRoleResourceCreated {
+    /**
+     * role id.
+     */
+    id: string;
+}
+
+export interface GetIamRoleAssignmentResourceTarget {
+    /**
+     * ID of the target account.
+     */
+    id: string;
+    /**
+     * Assignment target type.
+     */
+    type: string;
+}
+
+export interface GetIamRoleAssignmentTarget {
+    /**
+     * ID of the target account.
+     */
+    id: string;
+    /**
+     * Assignment target type.
+     */
+    type: string;
+}
+
+export interface GetIamRoleAssignmentTemplate {
+    /**
+     * Action control template ID.
+     */
+    id: string;
+    /**
+     * Action control template version.
+     */
+    version: string;
+}
+
+export interface GetIamRoleAssignmentsAssignment {
+    /**
+     * The account GUID that the role control assignments belong to.
+     */
+    accountId: string;
+    /**
+     * The UTC timestamp when the role control assignment was created.
+     */
+    createdAt: string;
+    /**
+     * The IAM ID of the entity that created the role control assignment.
+     */
+    createdById: string;
+    /**
+     * The href URL that links to the role control assignments API by role control assignment ID.
+     */
+    href: string;
+    /**
+     * Action control assignment ID.
+     */
+    id: string;
+    /**
+     * The UTC timestamp when the role control assignment was last modified.
+     */
+    lastModifiedAt: string;
+    /**
+     * The IAM ID of the entity that last modified the role control assignment.
+     */
+    lastModifiedById: string;
+    /**
+     * The current operation of the role control assignment.
+     */
+    operation: string;
+    /**
+     * Resources created when role control template is assigned.
+     */
+    resources: outputs.GetIamRoleAssignmentsAssignmentResource[];
+    /**
+     * The role control assignment status.
+     */
+    status: string;
+    /**
+     * assignment target account and type.
+     */
+    targets: outputs.GetIamRoleAssignmentsAssignmentTarget[];
+    /**
+     * The role control template id and version that will be assigned.
+     */
+    templates: outputs.GetIamRoleAssignmentsAssignmentTemplate[];
+}
+
+export interface GetIamRoleAssignmentsAssignmentResource {
+    /**
+     * Set of properties of the assigned resource or error message if assignment failed.
+     */
+    roles: outputs.GetIamRoleAssignmentsAssignmentResourceRole[];
+    /**
+     * assignment target account and type.
+     */
+    targets: outputs.GetIamRoleAssignmentsAssignmentResourceTarget[];
+}
+
+export interface GetIamRoleAssignmentsAssignmentResourceRole {
+    /**
+     * The error response from API.
+     */
+    errorMessages: outputs.GetIamRoleAssignmentsAssignmentResourceRoleErrorMessage[];
+    /**
+     * On success, it includes the role control assigned.
+     */
+    resourceCreateds: outputs.GetIamRoleAssignmentsAssignmentResourceRoleResourceCreated[];
+}
+
+export interface GetIamRoleAssignmentsAssignmentResourceRoleErrorMessage {
+    /**
+     * Internal status code for the error.
+     */
+    code: string;
+    /**
+     * Internal error code.
+     */
+    errorCode: string;
+    /**
+     * The errors encountered during the response.
+     */
+    errors: outputs.GetIamRoleAssignmentsAssignmentResourceRoleErrorMessageError[];
+    /**
+     * Error message detailing the nature of the error.
+     */
+    message: string;
+    /**
+     * Name of the error.
+     */
+    name: string;
+    /**
+     * The HTTP error code of the response.
+     */
+    statusCode: number;
+    /**
+     * The unique transrole ID for the request.
+     */
+    trace: string;
+}
+
+export interface GetIamRoleAssignmentsAssignmentResourceRoleErrorMessageError {
+    /**
+     * The API error code for the error.
+     */
+    code: string;
+    /**
+     * Additional error details.
+     */
+    details: outputs.GetIamRoleAssignmentsAssignmentResourceRoleErrorMessageErrorDetail[];
+    /**
+     * The error message returned by the API.
+     */
+    message: string;
+    /**
+     * Additional info for error.
+     */
+    moreInfo: string;
+}
+
+export interface GetIamRoleAssignmentsAssignmentResourceRoleErrorMessageErrorDetail {
+    /**
+     * Details of conflicting resource.
+     */
+    conflictsWiths: outputs.GetIamRoleAssignmentsAssignmentResourceRoleErrorMessageErrorDetailConflictsWith[];
+}
+
+export interface GetIamRoleAssignmentsAssignmentResourceRoleErrorMessageErrorDetailConflictsWith {
+    /**
+     * The revision number of the resource.
+     */
+    etag: string;
+    /**
+     * The conflicting policy ID.
+     */
+    policy: string;
+    /**
+     * The conflicting role of ID.
+     */
+    role: string;
+}
+
+export interface GetIamRoleAssignmentsAssignmentResourceRoleResourceCreated {
+    /**
+     * role control id.
+     */
+    id: string;
+}
+
+export interface GetIamRoleAssignmentsAssignmentResourceTarget {
+    /**
+     * ID of the target account.
+     */
+    id: string;
+    /**
+     * Assignment target type.
+     */
+    type: string;
+}
+
+export interface GetIamRoleAssignmentsAssignmentTarget {
+    /**
+     * ID of the target account.
+     */
+    id: string;
+    /**
+     * Assignment target type.
+     */
+    type: string;
+}
+
+export interface GetIamRoleAssignmentsAssignmentTemplate {
+    /**
+     * Action control template ID.
+     */
+    id: string;
+    /**
+     * Action control template version.
+     */
+    version: string;
+}
+
+export interface GetIamRoleTemplateRoleTemplate {
+    /**
+     * account id where this template will be created.
+     */
+    accountId: string;
+    /**
+     * Template version committed status.
+     */
+    committed: boolean;
+    /**
+     * description of template purpose.
+     */
+    description: string;
+    /**
+     * The role template ID.
+     */
+    id: string;
+    /**
+     * name of template.
+     */
+    name: string;
+    /**
+     * The role properties that are created in an action resource when the template is assigned.
+     */
+    roles: outputs.GetIamRoleTemplateRoleTemplateRole[];
+    /**
+     * Template version.
+     */
+    version: string;
+}
+
+export interface GetIamRoleTemplateRoleTemplateRole {
+    /**
+     * List of actions to control access.
+     */
+    actions: string[];
+    /**
+     * Description of the role.
+     */
+    description?: string;
+    /**
+     * The display the name of the role that is shown in the console.
+     */
+    displayName: string;
+    /**
+     * The name of the role that is used in the CRN. This must be alphanumeric and capitalized.
+     */
+    name: string;
+    /**
+     * The service name that the role refers.
+     */
+    serviceName: string;
+}
+
+export interface GetIamRoleTemplateVersionRole {
+    /**
+     * List of actions to  access.
+     */
+    actions: string[];
+    /**
+     * Description of the role .
+     */
+    description: string;
+    /**
+     * The display the name of the role that is shown in the console.
+     */
+    displayName: string;
+    /**
+     * The name of the role that is used in the CRN. This must be alphanumeric and capitalized.
+     */
+    name: string;
+    /**
+     * The service name that the role  refers.
+     */
+    serviceName: string;
 }
 
 export interface GetIamRolesRole {
@@ -3039,6 +3614,17 @@ export interface GetIamServicePolicyPolicyRuleConditionCondition {
     values: string[];
 }
 
+export interface GetIamTrustedProfileActivity {
+    /**
+     * Authentication count, number of times the entity was authenticated.
+     */
+    authnCount: number;
+    /**
+     * Time when the entity was last authenticated.
+     */
+    lastAuthn: string;
+}
+
 export interface GetIamTrustedProfileClaimRuleCondition {
     /**
      * The claim to evaluate against. [Learn more](https://www.terraform.io/docs/account?topic=account-iam-condition-properties&interface=ui#cr-attribute-names).
@@ -3060,7 +3646,7 @@ export interface GetIamTrustedProfileClaimRulesRule {
      */
     conditions: outputs.GetIamTrustedProfileClaimRulesRuleCondition[];
     /**
-     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
     crType: string;
     /**
@@ -3187,7 +3773,7 @@ export interface GetIamTrustedProfileLinkLink {
 
 export interface GetIamTrustedProfileLinksLink {
     /**
-     * The compute resource type. Valid values are VSI, IKS_SA, ROKS_SA.
+     * The compute resource type. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
     crType: string;
     /**
@@ -4869,6 +5455,43 @@ export interface GetIsBackupPolicyScope {
     resourceType: string;
 }
 
+export interface GetIsBareMetalServerCapacitiesCapacity {
+    /**
+     * The profile available in the zone
+     */
+    profiles: outputs.GetIsBareMetalServerCapacitiesCapacityProfile[];
+    /**
+     * The zone where one or more bare metal servers of the profile are available
+     */
+    zones: outputs.GetIsBareMetalServerCapacitiesCapacityZone[];
+}
+
+export interface GetIsBareMetalServerCapacitiesCapacityProfile {
+    /**
+     * The URL for this bare metal server profile
+     */
+    href: string;
+    /**
+     * The name for this bare metal server profile
+     */
+    name: string;
+    /**
+     * The resource type
+     */
+    resourceType: string;
+}
+
+export interface GetIsBareMetalServerCapacitiesCapacityZone {
+    /**
+     * The URL for this zone
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone
+     */
+    name: string;
+}
+
 export interface GetIsBareMetalServerCpus {
     /**
      * The CPU architecture
@@ -5981,6 +6604,17 @@ export interface GetIsBareMetalServerProfileVirtualNetworkInterfacesSupported {
     value: boolean;
 }
 
+export interface GetIsBareMetalServerProfileZone {
+    /**
+     * The URL for this zone.
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone.
+     */
+    name: string;
+}
+
 export interface GetIsBareMetalServerProfilesProfile {
     /**
      * The total bandwidth (in megabits per second) shared across the network interfaces of a bare metal server with this profile
@@ -6044,6 +6678,10 @@ export interface GetIsBareMetalServerProfilesProfile {
      * Indicates whether this profile supports virtual network interfaces.
      */
     virtualNetworkInterfacesSupporteds: outputs.GetIsBareMetalServerProfilesProfileVirtualNetworkInterfacesSupported[];
+    /**
+     * Zones in this region that support this bare metal server profile
+     */
+    zones: outputs.GetIsBareMetalServerProfilesProfileZone[];
 }
 
 export interface GetIsBareMetalServerProfilesProfileBandwidth {
@@ -6249,6 +6887,17 @@ export interface GetIsBareMetalServerProfilesProfileVirtualNetworkInterfacesSupp
      * The value for this profile field.
      */
     value: boolean;
+}
+
+export interface GetIsBareMetalServerProfilesProfileZone {
+    /**
+     * The URL for this zone
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone
+     */
+    name: string;
 }
 
 export interface GetIsBareMetalServerReservation {
@@ -7026,7 +7675,7 @@ export interface GetIsBareMetalServersServerTrustedPlatformModule {
 
 export interface GetIsClusterNetworkInterfaceLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -7218,7 +7867,7 @@ export interface GetIsClusterNetworkInterfacesInterface {
     resourceType: string;
     subnets: outputs.GetIsClusterNetworkInterfacesInterfaceSubnet[];
     /**
-     * The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The target of this cluster network interface.If absent, this cluster network interface is not attached to a target.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     targets: outputs.GetIsClusterNetworkInterfacesInterfaceTarget[];
     /**
@@ -7233,7 +7882,7 @@ export interface GetIsClusterNetworkInterfacesInterface {
 
 export interface GetIsClusterNetworkInterfacesInterfaceLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -7376,7 +8025,7 @@ export interface GetIsClusterNetworkInterfacesInterfaceZone {
 
 export interface GetIsClusterNetworkLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -7432,7 +8081,7 @@ export interface GetIsClusterNetworkProfileZone {
 
 export interface GetIsClusterNetworkProfilesProfile {
     /**
-     * The product family this cluster network profile belongs to.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The product family this cluster network profile belongs to.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     family: string;
     /**
@@ -7500,7 +8149,7 @@ export interface GetIsClusterNetworkResourceGroup {
 
 export interface GetIsClusterNetworkSubnetLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -7526,7 +8175,7 @@ export interface GetIsClusterNetworkSubnetPrefix {
 
 export interface GetIsClusterNetworkSubnetReservedIpLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -7603,7 +8252,7 @@ export interface GetIsClusterNetworkSubnetReservedIpsReservedIp {
      */
     name: string;
     /**
-     * The owner of the cluster network subnet reserved IPThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The owner of the cluster network subnet reserved IPThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     owner: string;
     /**
@@ -7618,7 +8267,7 @@ export interface GetIsClusterNetworkSubnetReservedIpsReservedIp {
 
 export interface GetIsClusterNetworkSubnetReservedIpsReservedIpLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -7679,7 +8328,7 @@ export interface GetIsClusterNetworkSubnetsSubnet {
      */
     id: string;
     /**
-     * The IP version for this cluster network subnet.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The IP version for this cluster network subnet.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     ipVersion: string;
     /**
@@ -7710,7 +8359,7 @@ export interface GetIsClusterNetworkSubnetsSubnet {
 
 export interface GetIsClusterNetworkSubnetsSubnetLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -7825,7 +8474,7 @@ export interface GetIsClusterNetworksClusterNetwork {
 
 export interface GetIsClusterNetworksClusterNetworkLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -9394,6 +10043,10 @@ export interface GetIsIkePoliciesIkePolicy {
      */
     authenticationAlgorithm: string;
     /**
+     * The authentication algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    authenticationAlgorithms: string[];
+    /**
      * The VPN gateway connections that use this IKE policy.
      */
     connections: outputs.GetIsIkePoliciesIkePolicyConnection[];
@@ -9406,9 +10059,17 @@ export interface GetIsIkePoliciesIkePolicy {
      */
     dhGroup: number;
     /**
+     * The Diffie-Hellman groups to use for IKE negotiation.The order of the Diffie-Hellman groups in this array indicates their priority for negotiation, with each Diffie-Hellman group having priority over the one after it.
+     */
+    dhGroups: number[];
+    /**
      * The encryption algorithm.
      */
     encryptionAlgorithm: string;
+    /**
+     * The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    encryptionAlgorithms: string[];
     /**
      * The IKE policy's canonical URL.
      */
@@ -9812,6 +10473,17 @@ export interface GetIsImageStatusReason {
     moreInfo: string;
 }
 
+export interface GetIsImageZone {
+    /**
+     * The URL for this zone.
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone.
+     */
+    name: string;
+}
+
 export interface GetIsImagesImage {
     /**
      * List of access tags
@@ -9846,6 +10518,10 @@ export interface GetIsImagesImage {
      * The unique identifier for this image
      */
     id: string;
+    /**
+     * The minimum size (in gigabytes) of a volume onto which this image may be provisioned.
+     */
+    minimumProvisionedSize: number;
     /**
      * Image name
      */
@@ -9883,6 +10559,10 @@ export interface GetIsImagesImage {
      * Whether the image is publicly visible or private to the account
      */
     visibility: string;
+    /**
+     * The zones in which this image is available for use.If the image has a status of `available` or `deprecated`, this will include all zones in the region.If the image has a status of `partiallyAvailable`, this will include one or more zones in the region.If the image has a status of `failed`, `obsolete`, `pending`, or `unusable`, this will be empty.
+     */
+    zones: outputs.GetIsImagesImageZone[];
 }
 
 export interface GetIsImagesImageAllowedUse {
@@ -10018,6 +10698,35 @@ export interface GetIsImagesImageStatusReason {
      * Link to documentation about this status reason.
      */
     moreInfo: string;
+}
+
+export interface GetIsImagesImageZone {
+    /**
+     * The URL for this zone.
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone.
+     */
+    name: string;
+}
+
+export interface GetIsInstanceAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.See [virtual server instance availability class](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    class: string;
+}
+
+export interface GetIsInstanceAvailabilityPolicy {
+    /**
+     * The action to perform if the compute host experiences a failure:- `restart`: Restart the virtual server instance- `stop`: Leave the virtual server instance stopped. See [handling host failures](https://cloud.ibm.com/docs/vpc?topic=vpc-host-failure-recovery-policies) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    hostFailure: string;
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    preemption: string;
 }
 
 export interface GetIsInstanceBootVolume {
@@ -10239,7 +10948,7 @@ export interface GetIsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSub
 
 export interface GetIsInstanceClusterNetworkAttachmentLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -10407,7 +11116,7 @@ export interface GetIsInstanceClusterNetworkAttachmentsClusterNetworkAttachmentC
 
 export interface GetIsInstanceClusterNetworkAttachmentsClusterNetworkAttachmentLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -11875,6 +12584,25 @@ export interface GetIsInstancePrimaryNetworkInterfacePrimaryIp {
     resourceType: string;
 }
 
+export interface GetIsInstanceProfileAvailabilityClass {
+    /**
+     * The default availability class for an instance with this profile.
+     */
+    default: string;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: string[];
+}
+
 export interface GetIsInstanceProfileBandwidth {
     /**
      * The default value for this profile field.
@@ -12155,6 +12883,25 @@ export interface GetIsInstanceProfileNetworkAttachmentCount {
     type: string;
 }
 
+export interface GetIsInstanceProfileNetworkBandwidthMode {
+    /**
+     * The default value for this profile field.
+     */
+    default: string;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: string[];
+}
+
 export interface GetIsInstanceProfileNetworkInterfaceCount {
     /**
      * The maximum value for this profile field
@@ -12233,6 +12980,32 @@ export interface GetIsInstanceProfileSupportedClusterNetworkProfile {
     resourceType: string;
 }
 
+export interface GetIsInstanceProfileSupportedVcpuCount {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: number[];
+}
+
+export interface GetIsInstanceProfileThreadsPerCore {
+    /**
+     * The default threads per core values for an instance with this profile.
+     */
+    default: number;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The permitted threads per core values for an instance with this profile.
+     */
+    values: number[];
+}
+
 export interface GetIsInstanceProfileTotalVolumeBandwidth {
     /**
      * The default value for this profile field.
@@ -12273,6 +13046,17 @@ export interface GetIsInstanceProfileVcpuArchitecture {
      * The VCPU architecture for an instance with this profile.
      */
     value: string;
+}
+
+export interface GetIsInstanceProfileVcpuBurstLimit {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: number;
 }
 
 export interface GetIsInstanceProfileVcpuCount {
@@ -12317,6 +13101,21 @@ export interface GetIsInstanceProfileVcpuManufacturer {
     value: string;
 }
 
+export interface GetIsInstanceProfileVcpuPercentage {
+    /**
+     * The default value for this profile field.
+     */
+    default: number;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: number[];
+}
+
 export interface GetIsInstanceProfileVolumeBandwidthQosMode {
     /**
      * The default volume bandwidth QoS mode for this profile.
@@ -12332,6 +13131,17 @@ export interface GetIsInstanceProfileVolumeBandwidthQosMode {
     values: string[];
 }
 
+export interface GetIsInstanceProfileZone {
+    /**
+     * The URL for this zone.
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone.
+     */
+    name: string;
+}
+
 export interface GetIsInstanceProfilesProfile {
     /**
      * The default OS architecture for an instance with this profile.
@@ -12345,6 +13155,7 @@ export interface GetIsInstanceProfilesProfile {
      * The supported OS architecture(s) for an instance with this profile.
      */
     architectureValues: string[];
+    availabilityClasses: outputs.GetIsInstanceProfilesProfileAvailabilityClass[];
     bandwidths: outputs.GetIsInstanceProfilesProfileBandwidth[];
     clusterNetworkAttachmentCounts: outputs.GetIsInstanceProfilesProfileClusterNetworkAttachmentCount[];
     confidentialComputeModes: outputs.GetIsInstanceProfilesProfileConfidentialComputeMode[];
@@ -12379,6 +13190,7 @@ export interface GetIsInstanceProfilesProfile {
     memories: outputs.GetIsInstanceProfilesProfileMemory[];
     name: string;
     networkAttachmentCounts: outputs.GetIsInstanceProfilesProfileNetworkAttachmentCount[];
+    networkBandwidthModes: outputs.GetIsInstanceProfilesProfileNetworkBandwidthMode[];
     networkInterfaceCounts: outputs.GetIsInstanceProfilesProfileNetworkInterfaceCount[];
     numaCounts: outputs.GetIsInstanceProfilesProfileNumaCount[];
     portSpeeds: outputs.GetIsInstanceProfilesProfilePortSpeed[];
@@ -12396,13 +13208,54 @@ export interface GetIsInstanceProfilesProfile {
      */
     supportedClusterNetworkProfiles: outputs.GetIsInstanceProfilesProfileSupportedClusterNetworkProfile[];
     /**
+     * The supported values for vcpu count for an instance with this profile.
+     *
+     * @deprecated The supportedVcpuCount attribute is deprecated and will be removed in a future release. Use vcpuCount instead, which exposes the same permitted values via its `values` sub-attribute when `type` is `enum`.
+     */
+    supportedVcpuCounts: outputs.GetIsInstanceProfilesProfileSupportedVcpuCount[];
+    /**
+     * The threads per core configuration for this profile.
+     */
+    threadsPerCores: outputs.GetIsInstanceProfilesProfileThreadsPerCore[];
+    /**
      * The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes. An increase in this value will result in a corresponding decrease to total_network_bandwidth.
      */
     totalVolumeBandwidths: outputs.GetIsInstanceProfilesProfileTotalVolumeBandwidth[];
     vcpuArchitectures: outputs.GetIsInstanceProfilesProfileVcpuArchitecture[];
+    /**
+     * The permitted value for VCPU burst limit percentage for an instance with this profile.
+     */
+    vcpuBurstLimits: outputs.GetIsInstanceProfilesProfileVcpuBurstLimit[];
     vcpuCounts: outputs.GetIsInstanceProfilesProfileVcpuCount[];
     vcpuManufacturers: outputs.GetIsInstanceProfilesProfileVcpuManufacturer[];
+    /**
+     * The permitted values for VCPU percentage for an instance with this profile.
+     */
+    vcpuPercentages: outputs.GetIsInstanceProfilesProfileVcpuPercentage[];
     volumeBandwidthQosModes: outputs.GetIsInstanceProfilesProfileVolumeBandwidthQosMode[];
+    /**
+     * The zones in this region that support this instance profile.
+     */
+    zones: outputs.GetIsInstanceProfilesProfileZone[];
+}
+
+export interface GetIsInstanceProfilesProfileAvailabilityClass {
+    /**
+     * The default availability class for an instance with this profile.
+     */
+    default: string;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: string[];
 }
 
 export interface GetIsInstanceProfilesProfileBandwidth {
@@ -12685,6 +13538,25 @@ export interface GetIsInstanceProfilesProfileNetworkAttachmentCount {
     type: string;
 }
 
+export interface GetIsInstanceProfilesProfileNetworkBandwidthMode {
+    /**
+     * The default value for this profile field.
+     */
+    default: string;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: string[];
+}
+
 export interface GetIsInstanceProfilesProfileNetworkInterfaceCount {
     /**
      * The maximum value for this profile field
@@ -12763,6 +13635,32 @@ export interface GetIsInstanceProfilesProfileSupportedClusterNetworkProfile {
     resourceType: string;
 }
 
+export interface GetIsInstanceProfilesProfileSupportedVcpuCount {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: number[];
+}
+
+export interface GetIsInstanceProfilesProfileThreadsPerCore {
+    /**
+     * The default threads per core values for an instance with this profile.
+     */
+    default: number;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The permitted threads per core values for an instance with this profile.
+     */
+    values: number[];
+}
+
 export interface GetIsInstanceProfilesProfileTotalVolumeBandwidth {
     /**
      * The default value for this profile field.
@@ -12803,6 +13701,17 @@ export interface GetIsInstanceProfilesProfileVcpuArchitecture {
      * The VCPU architecture for an instance with this profile.
      */
     value: string;
+}
+
+export interface GetIsInstanceProfilesProfileVcpuBurstLimit {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: number;
 }
 
 export interface GetIsInstanceProfilesProfileVcpuCount {
@@ -12847,6 +13756,21 @@ export interface GetIsInstanceProfilesProfileVcpuManufacturer {
     value: string;
 }
 
+export interface GetIsInstanceProfilesProfileVcpuPercentage {
+    /**
+     * The default value for this profile field.
+     */
+    default: number;
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The permitted values for this profile field.
+     */
+    values: number[];
+}
+
 export interface GetIsInstanceProfilesProfileVolumeBandwidthQosMode {
     /**
      * The default volume bandwidth QoS mode for this profile.
@@ -12860,6 +13784,17 @@ export interface GetIsInstanceProfilesProfileVolumeBandwidthQosMode {
      * The permitted volume bandwidth QoS modes for an instance using this profile.
      */
     values: string[];
+}
+
+export interface GetIsInstanceProfilesProfileZone {
+    /**
+     * The URL for this zone.
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone.
+     */
+    name: string;
 }
 
 export interface GetIsInstanceReservation {
@@ -12941,6 +13876,220 @@ export interface GetIsInstanceReservationDeleted {
     moreInfo: string;
 }
 
+export interface GetIsInstanceSoftwareAttachment {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds: outputs.GetIsInstanceSoftwareAttachmentDeleted[];
+    /**
+     * The URL for this instance software attachment.
+     */
+    href: string;
+    /**
+     * The unique identifier for this instance software attachment.
+     */
+    id: string;
+    /**
+     * The name for this instance software attachment. The name is unique across all instance software attachments for the instance.
+     */
+    name: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentCatalogOffering {
+    /**
+     * The billing plan for the catalog offering version associated with this instance softwareattachment.If absent, no billing plan is associated with the catalog offering version (free).
+     */
+    plans: outputs.GetIsInstanceSoftwareAttachmentCatalogOfferingPlan[];
+    /**
+     * The catalog offering version associated with this instance software attachment.
+     */
+    versions: outputs.GetIsInstanceSoftwareAttachmentCatalogOfferingVersion[];
+}
+
+export interface GetIsInstanceSoftwareAttachmentCatalogOfferingPlan {
+    /**
+     * The CRN for this[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering version's billing plan.
+     */
+    crn: string;
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds: outputs.GetIsInstanceSoftwareAttachmentCatalogOfferingPlanDeleted[];
+}
+
+export interface GetIsInstanceSoftwareAttachmentCatalogOfferingPlanDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentCatalogOfferingVersion {
+    /**
+     * The CRN for this version of a[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering.
+     */
+    crn: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentEntitlement {
+    /**
+     * The licensed software for this instance software attachment entitlement.
+     */
+    licensedSoftwares: outputs.GetIsInstanceSoftwareAttachmentEntitlementLicensedSoftware[];
+}
+
+export interface GetIsInstanceSoftwareAttachmentEntitlementLicensedSoftware {
+    /**
+     * The SKU for this licensed software.
+     */
+    sku: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `failedRegistration`: the software instance's registration to Resource Controller,  which includes creation of any required software license(s), has failed. Delete the  instance and provision it again. If the problem persists, contact IBM Support.- `internalError`: internal error (contact IBM support)- `pendingRegistration`: the software instance's registration to Resource Controller,  and the creation of any required software license(s), is being processed.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentOfferingInstance {
+    /**
+     * The CRN for the software offering instance registered with Resource Controller that is associated with the instance software attachment.
+     */
+    crn: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachment {
+    /**
+     * The [catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user)offering for this instance software attachment. May be absent if`software_attachment.lifecycle_state` is not `stable`.
+     */
+    catalogOfferings: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOffering[];
+    /**
+     * The date and time that the instance software attachment was created.
+     */
+    createdAt: string;
+    /**
+     * The entitlement for the licensed software for this instance software attachment.
+     */
+    entitlements: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentEntitlement[];
+    /**
+     * The URL for this instance software attachment.
+     */
+    href: string;
+    /**
+     * The unique identifier for this instance software attachment.
+     */
+    id: string;
+    /**
+     * The lifecycle reasons for this instance software attachment (if any).
+     */
+    lifecycleReasons: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentLifecycleReason[];
+    /**
+     * The lifecycle state of the instance software attachment.
+     */
+    lifecycleState: string;
+    /**
+     * The name for this instance software attachment. The name is unique across all instance software attachments for the instance.
+     */
+    name: string;
+    offeringInstances: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentOfferingInstance[];
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOffering {
+    /**
+     * The billing plan for the catalog offering version associated with this instance softwareattachment.If absent, no billing plan is associated with the catalog offering version (free).
+     */
+    plans: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOfferingPlan[];
+    /**
+     * The catalog offering version associated with this instance software attachment.
+     */
+    versions: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOfferingVersion[];
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOfferingPlan {
+    /**
+     * The CRN for this[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering version's billing plan.
+     */
+    crn: string;
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOfferingPlanDeleted[];
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOfferingPlanDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentCatalogOfferingVersion {
+    /**
+     * The CRN for this version of a[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering.
+     */
+    crn: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentEntitlement {
+    /**
+     * The licensed software for this instance software attachment entitlement.
+     */
+    licensedSoftwares: outputs.GetIsInstanceSoftwareAttachmentsSoftwareAttachmentEntitlementLicensedSoftware[];
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentEntitlementLicensedSoftware {
+    /**
+     * The SKU for this licensed software.
+     */
+    sku: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `failedRegistration`: the software instance's registration to Resource Controller,  which includes creation of any required software license(s), has failed. Delete the  instance and provision it again. If the problem persists, contact IBM Support.- `internalError`: internal error (contact IBM support)- `pendingRegistration`: the software instance's registration to Resource Controller,  and the creation of any required software license(s), is being processed.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsInstanceSoftwareAttachmentsSoftwareAttachmentOfferingInstance {
+    /**
+     * The CRN for the software offering instance registered with Resource Controller that is associated with the instance software attachment.
+     */
+    crn: string;
+}
+
 export interface GetIsInstanceStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
@@ -12954,6 +14103,24 @@ export interface GetIsInstanceStatusReason {
      * Link to documentation about this status reason
      */
     moreInfo: string;
+}
+
+export interface GetIsInstanceTemplateAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.If `spot` is specified, the virtual server instance:- `reservation_affinity.policy` must be `disabled`- `placementTarget` must not specify a dedicated host or dedicated host group.
+     */
+    class: string;
+}
+
+export interface GetIsInstanceTemplateAvailabilityPolicy {
+    /**
+     * The action to perform if the compute host experiences a failure:- `restart`: Restart the virtual server instance- `stop`: Leave the virtual server instance stopped. See [handling host failures](https://cloud.ibm.com/docs/vpc?topic=vpc-host-failure-recovery-policies) for details.
+     */
+    hostFailure: string;
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.
+     */
+    preemption: string;
 }
 
 export interface GetIsInstanceTemplateBootVolumeAttachment {
@@ -13485,6 +14652,13 @@ export interface GetIsInstanceTemplateReservationAffinity {
     pool: string;
 }
 
+export interface GetIsInstanceTemplateVcpus {
+    /**
+     * The percentage of VCPU clock cycles allocated to the instance.The virtual server instance `vcpu.percentage` must be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is not `disabled`.If unspecified, the default for `vcpuPercentage` from the profile will be used.
+     */
+    percentage: number;
+}
+
 export interface GetIsInstanceTemplateVolumeAttachment {
     deleteVolumeOnInstanceDelete: boolean;
     name: string;
@@ -13540,6 +14714,11 @@ export interface GetIsInstanceTemplateVolumeAttachmentVolumePrototypeAllowedUse 
 }
 
 export interface GetIsInstanceTemplatesTemplate {
+    availabilities: outputs.GetIsInstanceTemplatesTemplateAvailability[];
+    /**
+     * The availability policy to use for this virtual server instance.
+     */
+    availabilityPolicies: outputs.GetIsInstanceTemplatesTemplateAvailabilityPolicy[];
     /**
      * The availability policy to use for this virtual server instance. The action to perform if the compute host experiences a failure.
      */
@@ -13601,10 +14780,15 @@ export interface GetIsInstanceTemplatesTemplate {
     reservationAffinities: outputs.GetIsInstanceTemplatesTemplateReservationAffinity[];
     resourceGroup: string;
     /**
+     * The threads per core for this virtual server instance.
+     */
+    threadsPerCore: number;
+    /**
      * The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
      */
     totalVolumeBandwidth: number;
     userData: string;
+    vcpus: outputs.GetIsInstanceTemplatesTemplateVcpus[];
     volumeAttachments: outputs.GetIsInstanceTemplatesTemplateVolumeAttachment[];
     /**
      * The volume bandwidth QoS mode for this virtual server instance.
@@ -13612,6 +14796,24 @@ export interface GetIsInstanceTemplatesTemplate {
     volumeBandwidthQosMode: string;
     vpc: string;
     zone: string;
+}
+
+export interface GetIsInstanceTemplatesTemplateAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.If `spot` is specified, the virtual server instance:- `reservation_affinity.policy` must be `disabled`- `placementTarget` must not specify a dedicated host or dedicated host group.
+     */
+    class: string;
+}
+
+export interface GetIsInstanceTemplatesTemplateAvailabilityPolicy {
+    /**
+     * The action to perform if the compute host experiences a failure:- `restart`: Restart the virtual server instance- `stop`: Leave the virtual server instance stopped. See [handling host failures](https://cloud.ibm.com/docs/vpc?topic=vpc-host-failure-recovery-policies) for details.
+     */
+    hostFailure: string;
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.
+     */
+    preemption: string;
 }
 
 export interface GetIsInstanceTemplatesTemplateBootVolumeAttachment {
@@ -14143,6 +15345,13 @@ export interface GetIsInstanceTemplatesTemplateReservationAffinity {
     pool: string;
 }
 
+export interface GetIsInstanceTemplatesTemplateVcpus {
+    /**
+     * The percentage of VCPU clock cycles allocated to the instance.The virtual server instance `vcpu.percentage` must be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is not `disabled`.If unspecified, the default for `vcpuPercentage` from the profile will be used.
+     */
+    percentage: number;
+}
+
 export interface GetIsInstanceTemplatesTemplateVolumeAttachment {
     deleteVolumeOnInstanceDelete: boolean;
     name: string;
@@ -14199,17 +15408,29 @@ export interface GetIsInstanceTemplatesTemplateVolumeAttachmentVolumePrototypeAl
 
 export interface GetIsInstanceVcpus {
     /**
-     * Instance vCPU Architecture
+     * The VCPU architecture.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     architecture: string;
+    bursts: outputs.GetIsInstanceVcpusBurst[];
     /**
-     * Instance vCPU count
+     * The number of VCPUs assigned.
      */
     count: number;
     /**
-     * Instance vCPU Manufacturer
+     * The VCPU manufacturer.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     manufacturer: string;
+    /**
+     * The percentage of VCPU time allocated to the virtual server instance.The virtual server instance `vcpu.percentage` will be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is `disabled`.
+     */
+    percentage: number;
+}
+
+export interface GetIsInstanceVcpusBurst {
+    /**
+     * The maximum percentage the virtual server instance will exceed its allocated share of VCPU time.The maximum value for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    limit: number;
 }
 
 export interface GetIsInstanceVolumeAttachment {
@@ -14325,6 +15546,11 @@ export interface GetIsInstancesInstance {
      * list of access tags for the instance
      */
     accessTags: string[];
+    availabilities: outputs.GetIsInstancesInstanceAvailability[];
+    /**
+     * The availability policy for this virtual server instance.
+     */
+    availabilityPolicies: outputs.GetIsInstancesInstanceAvailabilityPolicy[];
     /**
      * The availability policy to use for this virtual server instance. The action to perform if the compute host experiences a failure.
      */
@@ -14447,6 +15673,10 @@ export interface GetIsInstancesInstance {
      */
     resourceGroup: string;
     /**
+     * The software attachments for this instance.
+     */
+    softwareAttachments: outputs.GetIsInstancesInstanceSoftwareAttachment[];
+    /**
      * Instance status
      */
     status: string;
@@ -14459,6 +15689,10 @@ export interface GetIsInstancesInstance {
      */
     tags: string[];
     /**
+     * The threads per core for this virtual server instance.
+     */
+    threadsPerCore: number;
+    /**
      * The amount of bandwidth (in megabits per second) allocated exclusively to instance network interfaces.
      */
     totalNetworkBandwidth: number;
@@ -14467,7 +15701,7 @@ export interface GetIsInstancesInstance {
      */
     totalVolumeBandwidth: number;
     /**
-     * Instance vcpu
+     * The virtual server instance VCPU configuration.
      */
     vcpus: outputs.GetIsInstancesInstanceVcpus[];
     /**
@@ -14486,6 +15720,24 @@ export interface GetIsInstancesInstance {
      * Instance zone
      */
     zone: string;
+}
+
+export interface GetIsInstancesInstanceAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.See [virtual server instance availability class](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    class: string;
+}
+
+export interface GetIsInstancesInstanceAvailabilityPolicy {
+    /**
+     * The action to perform if the compute host experiences a failure:- `restart`: Restart the virtual server instance- `stop`: Leave the virtual server instance stopped. See [handling host failures](https://cloud.ibm.com/docs/vpc?topic=vpc-host-failure-recovery-policies) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    hostFailure: string;
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    preemption: string;
 }
 
 export interface GetIsInstancesInstanceBootVolume {
@@ -15158,6 +16410,36 @@ export interface GetIsInstancesInstanceReservationDeleted {
     moreInfo: string;
 }
 
+export interface GetIsInstancesInstanceSoftwareAttachment {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds: outputs.GetIsInstancesInstanceSoftwareAttachmentDeleted[];
+    /**
+     * The URL for this instance software attachment.
+     */
+    href: string;
+    /**
+     * The unique identifier for this instance software attachment.
+     */
+    id: string;
+    /**
+     * The name for this instance software attachment. The name is unique across all instance software attachments for the instance.
+     */
+    name: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface GetIsInstancesInstanceSoftwareAttachmentDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
 export interface GetIsInstancesInstanceStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
@@ -15175,17 +16457,29 @@ export interface GetIsInstancesInstanceStatusReason {
 
 export interface GetIsInstancesInstanceVcpus {
     /**
-     * Instance vcpu architecture
+     * The VCPU architecture.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     architecture: string;
+    bursts: outputs.GetIsInstancesInstanceVcpusBurst[];
     /**
-     * Instance vcpu count
+     * The number of VCPUs assigned.
      */
     count: number;
     /**
-     * Instance vcpu manufacturer
+     * The VCPU manufacturer.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     manufacturer: string;
+    /**
+     * The percentage of VCPU time allocated to the virtual server instance.The virtual server instance `vcpu.percentage` will be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is `disabled`.
+     */
+    percentage: number;
+}
+
+export interface GetIsInstancesInstanceVcpusBurst {
+    /**
+     * The maximum percentage the virtual server instance will exceed its allocated share of VCPU time.The maximum value for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    limit: number;
 }
 
 export interface GetIsInstancesInstanceVolumeAttachment {
@@ -15217,6 +16511,10 @@ export interface GetIsIpsecPoliciesIpsecPolicy {
      */
     authenticationAlgorithm: string;
     /**
+     * The authentication algorithms to use for IPsec Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    authenticationAlgorithms: string[];
+    /**
      * The VPN gateway connections that use this IPsec policy.
      */
     connections: outputs.GetIsIpsecPoliciesIpsecPolicyConnection[];
@@ -15232,6 +16530,10 @@ export interface GetIsIpsecPoliciesIpsecPolicy {
      * The encryption algorithm.
      */
     encryptionAlgorithm: string;
+    /**
+     * The encryption algorithms to use for IKE Negotiation.The order of the algorithms in this array indicates their priority for negotiation, with each algorithm having priority over the one after it.
+     */
+    encryptionAlgorithms: string[];
     /**
      * The IPsec policy's canonical URL.
      */
@@ -15252,6 +16554,10 @@ export interface GetIsIpsecPoliciesIpsecPolicy {
      * Perfect Forward Secrecy.
      */
     pfs: string;
+    /**
+     * The Perfect Forward Secrecy groups to use for IPsec negotiation.The order of the Perfect Forward Secrecy groups in this array indicates their priority for negotiation, with each Perfect Forward Secrecy group having priority over the one after it.
+     */
+    pfsGroups: string[];
     /**
      * The resource group for this IPsec policy.
      */
@@ -15390,6 +16696,24 @@ export interface GetIsLbDn {
 }
 
 export interface GetIsLbListenerCertificateInstance {
+    /**
+     * The CRN for this certificate instance.
+     */
+    crn: string;
+}
+
+export interface GetIsLbListenerClientAuthentication {
+    /**
+     * The certificate instance used for the listener client certificate authority.
+     */
+    certificateAuthorities: outputs.GetIsLbListenerClientAuthenticationCertificateAuthority[];
+    /**
+     * A PEM-encoded certificate revocation list (CRL) used for the listener.
+     */
+    certificateRevocationList: string;
+}
+
+export interface GetIsLbListenerClientAuthenticationCertificateAuthority {
     /**
      * The CRN for this certificate instance.
      */
@@ -15602,7 +16926,7 @@ export interface GetIsLbListenerPolicyDeleted {
 
 export interface GetIsLbListenerPolicyRule {
     /**
-     * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
+     * If present, this property indicates the referenced resource has been deleted and provides some supplementary information.
      */
     deleteds: outputs.GetIsLbListenerPolicyRuleDeleted[];
     /**
@@ -15728,6 +17052,10 @@ export interface GetIsLbListenersListener {
      */
     certificateInstances: outputs.GetIsLbListenersListenerCertificateInstance[];
     /**
+     * The client authentication to use for this listener.
+     */
+    clientAuthentications: outputs.GetIsLbListenersListenerClientAuthentication[];
+    /**
      * The connection limit of the listener.
      */
     connectionLimit: number;
@@ -15782,6 +17110,24 @@ export interface GetIsLbListenersListener {
 }
 
 export interface GetIsLbListenersListenerCertificateInstance {
+    /**
+     * The CRN for this certificate instance.
+     */
+    crn: string;
+}
+
+export interface GetIsLbListenersListenerClientAuthentication {
+    /**
+     * The certificate instance used for the listener client certificate authority.
+     */
+    certificateAuthorities: outputs.GetIsLbListenersListenerClientAuthenticationCertificateAuthority[];
+    /**
+     * A PEM-encoded certificate revocation list (CRL) used for the listener.
+     */
+    certificateRevocationList: string;
+}
+
+export interface GetIsLbListenersListenerClientAuthenticationCertificateAuthority {
     /**
      * The CRN for this certificate instance.
      */
@@ -15917,9 +17263,23 @@ export interface GetIsLbPool {
     sessionPersistence: {[key: string]: string};
 }
 
+export interface GetIsLbPoolClientAuthentication {
+    /**
+     * The certificate instance used for this pool.
+     */
+    certificateInstances: outputs.GetIsLbPoolClientAuthenticationCertificateInstance[];
+}
+
+export interface GetIsLbPoolClientAuthenticationCertificateInstance {
+    /**
+     * The CRN for this certificate instance.
+     */
+    crn: string;
+}
+
 export interface GetIsLbPoolFailsafePolicy {
     /**
-     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     action: string;
     /**
@@ -15927,7 +17287,7 @@ export interface GetIsLbPoolFailsafePolicy {
      */
     healthyMemberThresholdCount: number;
     /**
-     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     targets: outputs.GetIsLbPoolFailsafePolicyTarget[];
 }
@@ -15960,7 +17320,7 @@ export interface GetIsLbPoolFailsafePolicyTargetDeleted {
 
 export interface GetIsLbPoolHealthMonitor {
     /**
-     * The health check interval in seconds. Interval must be greater than timeout value.
+     * The seconds to wait between health checks.
      */
     delay: number;
     /**
@@ -15968,21 +17328,60 @@ export interface GetIsLbPoolHealthMonitor {
      */
     maxRetries: number;
     /**
-     * The health check port number. If specified, this overrides the ports specified in the server member resources.
+     * The health check port.If present, this overrides the pool member port values.
      */
     port: number;
+    requests: outputs.GetIsLbPoolHealthMonitorRequest[];
+    responses: outputs.GetIsLbPoolHealthMonitorResponse[];
     /**
-     * The health check timeout in seconds.
+     * The seconds to wait for a response to a health check.
      */
     timeout: number;
     /**
-     * The protocol type of this load balancer pool health monitor.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the health monitor on which the unexpected property value was encountered.
+     * The protocol type used for health checks.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     type: string;
     /**
-     * The health check URL path. Applicable only if the health monitor `type` is `http` or`https`. This value must be in the format of an [origin-form request target](https://tools.ietf.org/html/rfc7230#section-5.3.1).
+     * The health check URL path, in the format of an [origin-form request target](https://tools.ietf.org/html/rfc7230#section-5.3.1).
      */
     urlPath: string;
+}
+
+export interface GetIsLbPoolHealthMonitorRequest {
+    /**
+     * The HTTP request body used for health checks.If absent, the health checks will ignore the request body.
+     */
+    body: string;
+    /**
+     * The HTTP request headers used for health checks.If absent, the health checks will ignore the request headers.
+     */
+    headers: outputs.GetIsLbPoolHealthMonitorRequestHeader[];
+    /**
+     * The HTTP request method used for health checks.
+     */
+    method: string;
+}
+
+export interface GetIsLbPoolHealthMonitorRequestHeader {
+    /**
+     * The field of an HTTP request header used for health checks.
+     */
+    field: string;
+    /**
+     * The value of an HTTP request header used for health checks.
+     */
+    value: string;
+}
+
+export interface GetIsLbPoolHealthMonitorResponse {
+    /**
+     * The PCRE-flavor regular expression that HTTP response bodies must match for successful health checks.If absent, health checks will ignore any response body.
+     */
+    bodyRegex: string;
+    /**
+     * The HTTP response codes expected for successful health checks.
+     */
+    codes: string[];
 }
 
 export interface GetIsLbPoolInstanceGroup {
@@ -16051,6 +17450,10 @@ export interface GetIsLbPoolMemberTarget {
      */
     deleteds: outputs.GetIsLbPoolMemberTargetDeleted[];
     /**
+     * A fully qualified domain name for this resource.
+     */
+    fqdn: string;
+    /**
      * The URL for this virtual server instance.
      */
     href: string;
@@ -16062,6 +17465,10 @@ export interface GetIsLbPoolMemberTarget {
      * The user-defined name for this virtual server instance (and default system hostname).
      */
     name: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
 }
 
 export interface GetIsLbPoolMemberTargetDeleted {
@@ -16120,6 +17527,10 @@ export interface GetIsLbPoolMembersMemberTarget {
      */
     deleteds: outputs.GetIsLbPoolMembersMemberTargetDeleted[];
     /**
+     * A fully qualified domain name for this resource.
+     */
+    fqdn: string;
+    /**
      * The URL for this virtual server instance.
      */
     href: string;
@@ -16131,6 +17542,10 @@ export interface GetIsLbPoolMembersMemberTarget {
      * The user-defined name for this virtual server instance (and default system hostname).
      */
     name: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
 }
 
 export interface GetIsLbPoolMembersMemberTargetDeleted {
@@ -16138,6 +17553,24 @@ export interface GetIsLbPoolMembersMemberTargetDeleted {
      * Link to documentation about deleted resources.
      */
     moreInfo: string;
+}
+
+export interface GetIsLbPoolServerAuthentication {
+    /**
+     * The certificate authority used for this pool.
+     */
+    certificateAuthorities: outputs.GetIsLbPoolServerAuthenticationCertificateAuthority[];
+    /**
+     * If set to true, the backend server certificate is verified.
+     */
+    verifyCertificate: boolean;
+}
+
+export interface GetIsLbPoolServerAuthenticationCertificateAuthority {
+    /**
+     * The CRN for this certificate instance.
+     */
+    crn: string;
 }
 
 export interface GetIsLbPoolSessionPersistence {
@@ -16157,12 +17590,16 @@ export interface GetIsLbPoolsPool {
      */
     algorithm: string;
     /**
+     * The client authentication used for this pool.
+     */
+    clientAuthentications: outputs.GetIsLbPoolsPoolClientAuthentication[];
+    /**
      * The date and time that this pool was created.
      */
     createdAt: string;
     failsafePolicies: outputs.GetIsLbPoolsPoolFailsafePolicy[];
     /**
-     * The health monitor of this pool.
+     * The health monitor of this pool.If this pool has a member targeting a load balancer then:- If the targeted load balancer has multiple subnets, this health monitor is used to  direct traffic to the available subnets.- The health checks spawned by this health monitor is handled as any other traffic  (that is, subject to the configuration of listeners and pools on the target load  balancer).- This health monitor does not affect how pool member health is determined within the  target load balancer.For more information, see [Private Path network load balancer frequently askedquestions](https://cloud.ibm.com/docs/vpc?topic=vpc-nlb-faqs#ppnlb-faqs).
      */
     healthMonitors: outputs.GetIsLbPoolsPoolHealthMonitor[];
     /**
@@ -16198,14 +17635,32 @@ export interface GetIsLbPoolsPool {
      */
     proxyProtocol: string;
     /**
+     * The server authentication used for this pool. This property will be absent if the pool.protocol is not https.
+     */
+    serverAuthentications: outputs.GetIsLbPoolsPoolServerAuthentication[];
+    /**
      * The session persistence of this pool.The enumerated values for this property are expected to expand in the future. Whenprocessing this property, check for and log unknown values. Optionally haltprocessing and surface the error, or bypass the pool on which the unexpectedproperty value was encountered.
      */
     sessionPersistences: outputs.GetIsLbPoolsPoolSessionPersistence[];
 }
 
+export interface GetIsLbPoolsPoolClientAuthentication {
+    /**
+     * The certificate instance used for this pool.
+     */
+    certificateInstances: outputs.GetIsLbPoolsPoolClientAuthenticationCertificateInstance[];
+}
+
+export interface GetIsLbPoolsPoolClientAuthenticationCertificateInstance {
+    /**
+     * The CRN for this certificate instance.
+     */
+    crn: string;
+}
+
 export interface GetIsLbPoolsPoolFailsafePolicy {
     /**
-     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     action: string;
     /**
@@ -16213,7 +17668,7 @@ export interface GetIsLbPoolsPoolFailsafePolicy {
      */
     healthyMemberThresholdCount: number;
     /**
-     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     targets: outputs.GetIsLbPoolsPoolFailsafePolicyTarget[];
 }
@@ -16246,7 +17701,7 @@ export interface GetIsLbPoolsPoolFailsafePolicyTargetDeleted {
 
 export interface GetIsLbPoolsPoolHealthMonitor {
     /**
-     * The health check interval in seconds. Interval must be greater than timeout value.
+     * The seconds to wait between health checks.
      */
     delay: number;
     /**
@@ -16254,21 +17709,60 @@ export interface GetIsLbPoolsPoolHealthMonitor {
      */
     maxRetries: number;
     /**
-     * The health check port number. If specified, this overrides the ports specified in the server member resources.
+     * The health check port.If present, this overrides the pool member port values.
      */
     port: number;
+    requests: outputs.GetIsLbPoolsPoolHealthMonitorRequest[];
+    responses: outputs.GetIsLbPoolsPoolHealthMonitorResponse[];
     /**
-     * The health check timeout in seconds.
+     * The seconds to wait for a response to a health check.
      */
     timeout: number;
     /**
-     * The protocol type of this load balancer pool health monitor.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the health monitor on which the unexpected property value was encountered.
+     * The protocol type used for health checks.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     type: string;
     /**
-     * The health check URL path. Applicable only if the health monitor `type` is `http` or`https`. This value must be in the format of an [origin-form request target](https://tools.ietf.org/html/rfc7230#section-5.3.1).
+     * The health check URL path, in the format of an [origin-form request target](https://tools.ietf.org/html/rfc7230#section-5.3.1).
      */
     urlPath: string;
+}
+
+export interface GetIsLbPoolsPoolHealthMonitorRequest {
+    /**
+     * The HTTP request body used for health checks.If absent, the health checks will ignore the request body.
+     */
+    body: string;
+    /**
+     * The HTTP request headers used for health checks.If absent, the health checks will ignore the request headers.
+     */
+    headers: outputs.GetIsLbPoolsPoolHealthMonitorRequestHeader[];
+    /**
+     * The HTTP request method used for health checks.
+     */
+    method: string;
+}
+
+export interface GetIsLbPoolsPoolHealthMonitorRequestHeader {
+    /**
+     * The field of an HTTP request header used for health checks.
+     */
+    field: string;
+    /**
+     * The value of an HTTP request header used for health checks.
+     */
+    value: string;
+}
+
+export interface GetIsLbPoolsPoolHealthMonitorResponse {
+    /**
+     * The PCRE-flavor regular expression that HTTP response bodies must match for successful health checks.If absent, health checks will ignore any response body.
+     */
+    bodyRegex: string;
+    /**
+     * The HTTP response codes expected for successful health checks.
+     */
+    codes: string[];
 }
 
 export interface GetIsLbPoolsPoolInstanceGroup {
@@ -16323,6 +17817,24 @@ export interface GetIsLbPoolsPoolMemberDeleted {
     moreInfo: string;
 }
 
+export interface GetIsLbPoolsPoolServerAuthentication {
+    /**
+     * The certificate authority used for this pool.
+     */
+    certificateAuthorities: outputs.GetIsLbPoolsPoolServerAuthenticationCertificateAuthority[];
+    /**
+     * If set to true, the backend server certificate is verified.
+     */
+    verifyCertificate: boolean;
+}
+
+export interface GetIsLbPoolsPoolServerAuthenticationCertificateAuthority {
+    /**
+     * The CRN for this certificate instance.
+     */
+    crn: string;
+}
+
 export interface GetIsLbPoolsPoolSessionPersistence {
     /**
      * The session persistence cookie name. Applicable only for type `appCookie`. Names starting with `IBM` are not allowed.
@@ -16372,6 +17884,17 @@ export interface GetIsLbProfileAccessMode {
     values: string[];
 }
 
+export interface GetIsLbProfileAdvancedHealthChecksSupported {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: boolean;
+}
+
 export interface GetIsLbProfileFailsafePolicyAction {
     /**
      * The default failsafe policy action for this profile.
@@ -16385,6 +17908,17 @@ export interface GetIsLbProfileFailsafePolicyAction {
      * The supported failsafe policy actions.
      */
     values: string[];
+}
+
+export interface GetIsLbProfileFqdnPoolMembersSupported {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: boolean;
 }
 
 export interface GetIsLbProfileTargetableLoadBalancerProfile {
@@ -16418,6 +17952,15 @@ export interface GetIsLbProfilesLbProfile {
      * The access mode for a load balancer with this profile
      */
     accessModes: outputs.GetIsLbProfilesLbProfileAccessMode[];
+    advancedHealthChecksSupporteds: outputs.GetIsLbProfilesLbProfileAdvancedHealthChecksSupported[];
+    /**
+     * The asymmetric routing support for a load balancer with this profile
+     */
+    asymmetricRoutingSupported: boolean;
+    /**
+     * The asymmetric routing support type for a load balancer with this profile
+     */
+    asymmetricRoutingSupportedType: string;
     /**
      * The availability mode for a load balancer with this profile
      */
@@ -16427,6 +17970,7 @@ export interface GetIsLbProfilesLbProfile {
      * The product family this load balancer profile belongs to
      */
     family: string;
+    fqdnPoolMembersSupporteds: outputs.GetIsLbProfilesLbProfileFqdnPoolMembersSupported[];
     /**
      * The URL for this load balancer profile
      */
@@ -16435,6 +17979,14 @@ export interface GetIsLbProfilesLbProfile {
      * The instance groups support for the load balancer with this profile
      */
     instanceGroupsSupporteds: outputs.GetIsLbProfilesLbProfileInstanceGroupsSupported[];
+    /**
+     * The mTLS support for a load balancer with this profile
+     */
+    mtlsSupported: boolean;
+    /**
+     * The mTLS support for a load balancer with this profile depends on its configuration
+     */
+    mtlsSupportedType: string;
     /**
      * The name for this load balancer profile
      */
@@ -16481,6 +18033,17 @@ export interface GetIsLbProfilesLbProfileAccessMode {
     values: string[];
 }
 
+export interface GetIsLbProfilesLbProfileAdvancedHealthChecksSupported {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: boolean;
+}
+
 export interface GetIsLbProfilesLbProfileAvailability {
     /**
      * The type of availability, one of [fixed, dependent]
@@ -16505,6 +18068,17 @@ export interface GetIsLbProfilesLbProfileFailsafePolicyAction {
      * The supported failsafe policy actions.
      */
     values: string[];
+}
+
+export interface GetIsLbProfilesLbProfileFqdnPoolMembersSupported {
+    /**
+     * The type for this profile field.
+     */
+    type: string;
+    /**
+     * The value for this profile field.
+     */
+    value: boolean;
 }
 
 export interface GetIsLbProfilesLbProfileInstanceGroupsSupported {
@@ -16565,6 +18139,14 @@ export interface GetIsLbsLoadBalancer {
      */
     accessTags: string[];
     /**
+     * Indicates whether this load balancer supports advanced health checks.
+     */
+    advancedHealthChecksSupported: boolean;
+    /**
+     * Indicates whether this load balancer supports asymmetric routing.
+     */
+    asymmetricRoutingSupported: boolean;
+    /**
      * The load balancer pool members attached to this load balancer.
      */
     attachedLoadBalancerPoolMembers: outputs.GetIsLbsLoadBalancerAttachedLoadBalancerPoolMember[];
@@ -16589,6 +18171,10 @@ export interface GetIsLbsLoadBalancer {
      */
     failsafePolicyActions: string[];
     /**
+     * Indicates whether this load balancer supports pool members specified by their fully qualified domain names.
+     */
+    fqdnPoolMembersSupported: boolean;
+    /**
      * Load Balancer Host Name
      */
     hostname: string;
@@ -16601,6 +18187,10 @@ export interface GetIsLbsLoadBalancer {
      * Load Balancer Listeners list
      */
     listeners: outputs.GetIsLbsLoadBalancerListener[];
+    /**
+     * Indicates whether this load balancer supports mTLS.
+     */
+    mtlsSupported: boolean;
     /**
      * Load Balancer name
      */
@@ -16837,7 +18427,7 @@ export interface GetIsNetworkAclRule {
      */
     name: string;
     /**
-     * The protocol to enforce.
+     * The name of the network protocol
      */
     protocol: string;
     /**
@@ -16963,7 +18553,7 @@ export interface GetIsNetworkAclRulesRule {
      */
     name: string;
     /**
-     * The protocol to enforce.
+     * The name of the network protocol
      */
     protocol: string;
     /**
@@ -18340,6 +19930,10 @@ export interface GetIsSecurityGroupRule {
      * The local IP address or range of local IP addresses to which this rule will allow inbound traffic (or from which, for outbound traffic). A CIDR block of 0.0.0.0/0 allows traffic to all local IP addresses (or from all local IP addresses, for outbound rules).
      */
     locals: outputs.GetIsSecurityGroupRuleLocal[];
+    /**
+     * The name for this security group rule. The name is unique across all rules in the security group.
+     */
+    name: string;
     portMax: number;
     portMin: number;
     protocol: string;
@@ -18429,6 +20023,10 @@ export interface GetIsSecurityGroupRulesRule {
      */
     locals: outputs.GetIsSecurityGroupRulesRuleLocal[];
     /**
+     * The name for this security group rule. The name is unique across all rules in the security group.
+     */
+    name: string;
+    /**
      * The inclusive upper bound of TCP/UDP port range.
      */
     portMax: number;
@@ -18437,7 +20035,7 @@ export interface GetIsSecurityGroupRulesRule {
      */
     portMin: number;
     /**
-     * The protocol to enforce.
+     * The name of the network protocol.
      */
     protocol: string;
     /**
@@ -18606,6 +20204,10 @@ export interface GetIsSecurityGroupsSecurityGroupRule {
      */
     locals: outputs.GetIsSecurityGroupsSecurityGroupRuleLocal[];
     /**
+     * The name for this security group rule. The name is unique across all rules in the security group.
+     */
+    name: string;
+    /**
      * The inclusive upper bound of TCP/UDP port range.
      */
     portMax: number;
@@ -18614,7 +20216,7 @@ export interface GetIsSecurityGroupsSecurityGroupRule {
      */
     portMin: number;
     /**
-     * The protocol to enforce.
+     * The name of the network protocol.
      */
     protocol: string;
     /**
@@ -18828,7 +20430,7 @@ export interface GetIsShareAccessorBindingAccessorRemoteRegion {
 
 export interface GetIsShareAccessorBindingsAccessorBinding {
     /**
-     * The accessor for this share accessor binding.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The accessor for this share accessor binding.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     accessors: outputs.GetIsShareAccessorBindingsAccessorBindingAccessor[];
     /**
@@ -19867,7 +21469,7 @@ export interface GetIsShareSnapshotResourceGroup {
 
 export interface GetIsShareSnapshotStatusReason {
     /**
-     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -19941,7 +21543,7 @@ export interface GetIsShareSnapshotsSnapshot {
      */
     resourceType: string;
     /**
-     * The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `statusReasons`)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The status of the share snapshot:- `available`: The share snapshot is available for use.- `failed`: The share snapshot is irrecoverably unusable.- `pending`: The share snapshot is being provisioned and is not yet usable.- `unusable`: The share snapshot is not currently usable (see `statusReasons`)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     status: string;
     /**
@@ -20031,7 +21633,7 @@ export interface GetIsShareSnapshotsSnapshotResourceGroup {
 
 export interface GetIsShareSnapshotsSnapshotStatusReason {
     /**
-     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -20257,7 +21859,7 @@ export interface GetIsSharesShare {
      */
     sourceShares: outputs.GetIsSharesShareSourceShare[];
     /**
-     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
      */
     sourceSnapshots: outputs.GetIsSharesShareSourceSnapshot[];
     /**
@@ -20634,9 +22236,35 @@ export interface GetIsSnapshotClonesClone {
     zone: string;
 }
 
+export interface GetIsSnapshotConsistencyGroupBackupPolicyJob {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
+     */
+    deleteds: outputs.GetIsSnapshotConsistencyGroupBackupPolicyJobDeleted[];
+    /**
+     * The URL for this backup policy job.
+     */
+    href: string;
+    /**
+     * The unique identifier for this backup policy job.
+     */
+    id: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface GetIsSnapshotConsistencyGroupBackupPolicyJobDeleted {
+    /**
+     * Link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
 export interface GetIsSnapshotConsistencyGroupBackupPolicyPlan {
     /**
-     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     * If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
      */
     deleteds: outputs.GetIsSnapshotConsistencyGroupBackupPolicyPlanDeleted[];
     /**
@@ -20749,6 +22377,10 @@ export interface GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroup {
      */
     accessTags: string[];
     /**
+     * If present, the backup policy job that created this snapshot consistency group. Snapshot consistency groups with the same backup policy job identifier represent snapshots of the same instance across different storage generations.
+     */
+    backupPolicyJobs: outputs.GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroupBackupPolicyJob[];
+    /**
      * If present, the backup policy plan which created this snapshot consistency group.
      */
     backupPolicyPlans: outputs.GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroupBackupPolicyPlan[];
@@ -20800,6 +22432,32 @@ export interface GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroup {
      * User Tags for the snapshot consistency group
      */
     tags: string[];
+}
+
+export interface GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroupBackupPolicyJob {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
+     */
+    deleteds: outputs.GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroupBackupPolicyJobDeleted[];
+    /**
+     * The URL for this backup policy job.
+     */
+    href: string;
+    /**
+     * The unique identifier for this backup policy job.
+     */
+    id: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroupBackupPolicyJobDeleted {
+    /**
+     * Link to documentation about deleted resources.
+     */
+    moreInfo: string;
 }
 
 export interface GetIsSnapshotConsistencyGroupsSnapshotConsistencyGroupBackupPolicyPlan {
@@ -21635,6 +23293,10 @@ export interface GetIsVirtualEndpointGatewayIp {
      * Endpoint gateway IP resource type
      */
     resourceType: string;
+    /**
+     * The Subnet id
+     */
+    subnet: string;
 }
 
 export interface GetIsVirtualEndpointGatewayIpsIp {
@@ -21698,6 +23360,87 @@ export interface GetIsVirtualEndpointGatewayLifecycleReason {
     moreInfo: string;
 }
 
+export interface GetIsVirtualEndpointGatewayResourceBindingLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsVirtualEndpointGatewayResourceBindingTarget {
+    crn: string;
+}
+
+export interface GetIsVirtualEndpointGatewayResourceBindingsResourceBinding {
+    /**
+     * The date and time that the resource binding was created.
+     */
+    createdAt: string;
+    /**
+     * The URL for this endpoint gateway resource binding.
+     */
+    href: string;
+    /**
+     * The unique identifier for this endpoint gateway resource binding.
+     */
+    id: string;
+    /**
+     * The reasons for the current `lifecycleState` (if any).
+     */
+    lifecycleReasons: outputs.GetIsVirtualEndpointGatewayResourceBindingsResourceBindingLifecycleReason[];
+    /**
+     * The lifecycle state of the resource binding.
+     */
+    lifecycleState: string;
+    /**
+     * The name for this resource binding. The name is unique across all resource bindings for the endpoint gateway.
+     */
+    name: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+    /**
+     * The fully qualified domain name of the service endpoint for the resource targeted by this resource binding.
+     */
+    serviceEndpoint: string;
+    /**
+     * The target for this endpoint gateway resource binding.
+     */
+    targets: outputs.GetIsVirtualEndpointGatewayResourceBindingsResourceBindingTarget[];
+    /**
+     * The type of resource binding:- `weak`: The binding is not dependent on the existence of the target resource.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    type: string;
+}
+
+export interface GetIsVirtualEndpointGatewayResourceBindingsResourceBindingLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsVirtualEndpointGatewayResourceBindingsResourceBindingTarget {
+    crn: string;
+}
+
 export interface GetIsVirtualEndpointGatewayTarget {
     /**
      * The target crn
@@ -21720,6 +23463,8 @@ export interface GetIsVirtualEndpointGatewaysVirtualEndpointGateway {
     accessTags: string[];
     /**
      * Indicates whether to allow this endpoint gateway to participate in DNS resolution bindings with a VPC that has dns.enable_hub set to true.
+     *
+     * @deprecated This property has been deprecated in favor of dns_resolution_binding_mode.
      */
     allowDnsResolutionBinding: boolean;
     /**
@@ -21730,6 +23475,10 @@ export interface GetIsVirtualEndpointGatewaysVirtualEndpointGateway {
      * The CRN for this Endpoint Gateway
      */
     crn: string;
+    /**
+     * The DNS resolution binding mode used for this endpoint gateway:- `disabled`: The endpoint gateway is not participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing).- `primary`: The endpoint gateway is participating in [DNS sharing for VPE gateways]   (https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway resides in   has a DNS resolution binding to another VPC.- `perResourceBinding`: The endpoint gateway is participating in [DNS sharing for VPE   gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpe-dns-sharing) if the VPC this endpoint gateway   resides in has a DNS resolution binding to another VPC, and resource binding is   enabled for the `target` service.
+     */
+    dnsResolutionBindingMode: string;
     /**
      * Endpoint gateway health state
      */
@@ -22499,6 +24248,143 @@ export interface GetIsVolumeInstanceProfilesInstanceProfile {
     resourceType: string;
 }
 
+export interface GetIsVolumeJobParameter {
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.If specified, the volume profile must not have a `bandwidth.type` of `dependent`.
+     */
+    bandwidth: number;
+    /**
+     * The maximum I/O operations per second (IOPS) for this volume.If specified, the volume profile must not have a `iops.type` of `dependent`.
+     */
+    iops: number;
+    /**
+     * Identifies a volume profile by a unique property.
+     */
+    profiles: outputs.GetIsVolumeJobParameterProfile[];
+}
+
+export interface GetIsVolumeJobParameterProfile {
+    /**
+     * The URL for this volume profile.
+     */
+    href: string;
+    /**
+     * The globally unique name for this volume profile.
+     */
+    name: string;
+}
+
+export interface GetIsVolumeJobStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the status reason.
+     */
+    message: string;
+    /**
+     * A link to documentation about this status reason.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsVolumeJobsJob {
+    /**
+     * Indicates whether this volume job will be automatically deleted after it completes. At present, this is always `false`, but may be modifiable in the future.
+     */
+    autoDelete: boolean;
+    /**
+     * The date and time that the volume job was completed.If absent, the volume job has not yet completed.
+     */
+    completedAt: string;
+    /**
+     * The date and time that the volume job was created.
+     */
+    createdAt: string;
+    /**
+     * The date and time that the volume job is estimated to complete.If absent, the volume job is still queued and has not yet started.
+     */
+    estimatedCompletionAt: string;
+    /**
+     * The URL for this volume job.
+     */
+    href: string;
+    /**
+     * The unique identifier for this volume job.
+     */
+    id: string;
+    /**
+     * The type of volume job.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    jobType: string;
+    /**
+     * The name for this volume job. The name must not be used by another volume job for this volume.
+     */
+    name: string;
+    /**
+     * The parameters to use after the volume is migrated.
+     */
+    parameters: outputs.GetIsVolumeJobsJobParameter[];
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+    /**
+     * The date and time that the volume job was started.If absent, the volume job has not yet started.
+     */
+    startedAt: string;
+    /**
+     * The status of this volume job:- `deleting`:   job is being deleted- `failed`:     job could not be completed successfully- `queued`:     job is queued- `running`:    job is in progress- `succeeded`:  job was completed successfully- `canceling`: job is being canceled- `canceled`:  job is canceledThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    status: string;
+    /**
+     * The reasons for the current status (if any).
+     */
+    statusReasons: outputs.GetIsVolumeJobsJobStatusReason[];
+}
+
+export interface GetIsVolumeJobsJobParameter {
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.If specified, the volume profile must not have a `bandwidth.type` of `dependent`.
+     */
+    bandwidth: number;
+    /**
+     * The maximum I/O operations per second (IOPS) for this volume.If specified, the volume profile must not have a `iops.type` of `dependent`.
+     */
+    iops: number;
+    /**
+     * Identifies a volume profile by a unique property.
+     */
+    profiles: outputs.GetIsVolumeJobsJobParameterProfile[];
+}
+
+export interface GetIsVolumeJobsJobParameterProfile {
+    /**
+     * The URL for this volume profile.
+     */
+    href: string;
+    /**
+     * The globally unique name for this volume profile.
+     */
+    name: string;
+}
+
+export interface GetIsVolumeJobsJobStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the status reason.
+     */
+    message: string;
+    /**
+     * A link to documentation about this status reason.
+     */
+    moreInfo: string;
+}
+
 export interface GetIsVolumeOperatingSystem {
     /**
      * The operating system architecture.
@@ -22655,7 +24541,7 @@ export interface GetIsVolumeProfilesProfile {
     bootCapacities: outputs.GetIsVolumeProfilesProfileBootCapacity[];
     capacities: outputs.GetIsVolumeProfilesProfileCapacity[];
     /**
-     * The product family this volume profile belongs to.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The product family this volume profile belongs to.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     family: string;
     /**
@@ -24184,6 +26070,10 @@ export interface GetIsVpcSecurityGroupRule {
      * IP version: ipv4
      */
     ipVersion: string;
+    /**
+     * The name for this security group rule. The name must not be used by another rule in the security group.
+     */
+    name: string;
     portMax: number;
     portMin: number;
     protocol: string;
@@ -24702,6 +26592,10 @@ export interface GetIsVpnGatewayConnectionPeer {
      */
     address: string;
     /**
+     * The peer autonomous system number (ASN) for this VPN gateway connection.
+     */
+    asn: number;
+    /**
      * The peer CIDRs for this resource.
      */
     cidrs: string[];
@@ -24747,6 +26641,14 @@ export interface GetIsVpnGatewayConnectionStatusReason {
 
 export interface GetIsVpnGatewayConnectionTunnel {
     /**
+     * The IP address of the neighbor on the virtual tunnel interface.
+     */
+    neighborIp: string;
+    /**
+     * BGP routing protocol state.
+     */
+    protocolState: string;
+    /**
      * The IP address of the VPN gateway member in which the tunnel resides.
      */
     publicIpAddress: string;
@@ -24754,6 +26656,10 @@ export interface GetIsVpnGatewayConnectionTunnel {
      * The status of the VPN Tunnel.
      */
     status: string;
+    /**
+     * The IP address of the virtual tunnel interface.
+     */
+    tunnelInterfaceIp: string;
 }
 
 export interface GetIsVpnGatewayConnectionsConnection {
@@ -24887,6 +26793,10 @@ export interface GetIsVpnGatewayConnectionsConnectionPeer {
      */
     address: string;
     /**
+     * The peer autonomous system number (ASN) for this VPN gateway connection.
+     */
+    asn: number;
+    /**
      * The peer CIDRs for this resource.
      */
     cidrs: string[];
@@ -24936,9 +26846,21 @@ export interface GetIsVpnGatewayConnectionsConnectionTunnel {
      */
     address: string;
     /**
+     * The IP address of the neighbor on the virtual tunnel interface.
+     */
+    neighborIp: string;
+    /**
+     * BGP routing protocol state.
+     */
+    protocolState: string;
+    /**
      * The status of the VPN Tunnel
      */
     status: string;
+    /**
+     * The IP address of the virtual tunnel interface.
+     */
+    tunnelInterfaceIp: string;
 }
 
 export interface GetIsVpnGatewayHealthReason {
@@ -25003,6 +26925,124 @@ export interface GetIsVpnGatewayResourceGroup {
      * The user-defined name for this resource group.
      */
     name: string;
+}
+
+export interface GetIsVpnGatewayServiceConnectionCreator {
+    /**
+     * The CRN for transit gateway resource.
+     */
+    crn: string;
+    /**
+     * The unique identifier for transit gateway resource.
+     */
+    id: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface GetIsVpnGatewayServiceConnectionLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * Link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsVpnGatewayServiceConnectionStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason. The enumerated values for this property may https://cloud.ibm.com/apidocs/vpc#property-value-expansion in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this VPN service connection's status.
+     */
+    message: string;
+    /**
+     * Link to documentation about this status reason.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsVpnGatewayServiceConnectionsServiceConnection {
+    /**
+     * The date and time that this VPN service connection was created.
+     */
+    createdAt: string;
+    creators: outputs.GetIsVpnGatewayServiceConnectionsServiceConnectionCreator[];
+    /**
+     * The unique identifier for this VPN gateway service connection
+     */
+    id: string;
+    /**
+     * The reasons for the current `lifecycleState` (if any).
+     */
+    lifecycleReasons: outputs.GetIsVpnGatewayServiceConnectionsServiceConnectionLifecycleReason[];
+    /**
+     * The lifecycle state of the VPN service connection.
+     */
+    lifecycleState: string;
+    /**
+     * The status of this service connection:- `up`: operating normally- `degraded`: operating with compromised performance- `down`: not operational.
+     */
+    status: string;
+    /**
+     * The reasons for the current VPN service connection status (if any).
+     */
+    statusReasons: outputs.GetIsVpnGatewayServiceConnectionsServiceConnectionStatusReason[];
+}
+
+export interface GetIsVpnGatewayServiceConnectionsServiceConnectionCreator {
+    /**
+     * The CRN for transit gateway resource.
+     */
+    crn: string;
+    /**
+     * The unique identifier for transit gateway resource.
+     */
+    id: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface GetIsVpnGatewayServiceConnectionsServiceConnectionLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * Link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface GetIsVpnGatewayServiceConnectionsServiceConnectionStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason. The enumerated values for this property may https://cloud.ibm.com/apidocs/vpc#property-value-expansion in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this VPN service connection's status.
+     */
+    message: string;
+    /**
+     * Link to documentation about this status reason.
+     */
+    moreInfo: string;
 }
 
 export interface GetIsVpnGatewaySubnet {
@@ -25071,6 +27111,10 @@ export interface GetIsVpnGatewaysVpnGateway {
      */
     accessTags: string[];
     /**
+     * The additional CIDRs advertised through any enabled routing protocol (for example, BGP). The routing protocol will advertise routes with these CIDRs and VPC prefixes as route destinations.
+     */
+    advertisedCidrs: string[];
+    /**
      * The date and time that this VPN gateway was created
      */
     createdAt: string;
@@ -25091,6 +27135,10 @@ export interface GetIsVpnGatewaysVpnGateway {
      * The lifecycle state of the VPN route.
      */
     lifecycleState: string;
+    /**
+     * The local autonomous system number (ASN) for this VPN gateway and its connections.
+     */
+    localAsn: number;
     /**
      * Collection of VPN gateway members
      */
@@ -25912,7 +27960,7 @@ export interface GetPiAvailableHostsAvailableHost {
      */
     availableCores: number;
     /**
-     * Memory capacity of the host (in GB).
+     * Memory capacity of the host (in GiB).
      */
     availableMemory: number;
     /**
@@ -25951,7 +27999,7 @@ export interface GetPiCatalogImagesImage {
      */
     diskFormat: string;
     /**
-     * The Endianness order.
+     * The endianness order.
      */
     endianness: string;
     /**
@@ -25982,6 +28030,14 @@ export interface GetPiCatalogImagesImage {
      * Operating System.
      */
     operatingSystem: string;
+    /**
+     * Indicates whether the image is shared.
+     */
+    shared: boolean;
+    /**
+     * Checksum of the image.
+     */
+    sourceChecksum: string;
     /**
      * The state of an Operating System.
      */
@@ -26385,7 +28441,7 @@ export interface GetPiHostCapacity {
      */
     availableCores: number;
     /**
-     * Amount of memory currently available (in GB).
+     * Amount of memory currently available (in GiB).
      */
     availableMemory: number;
     /**
@@ -26393,7 +28449,7 @@ export interface GetPiHostCapacity {
      */
     reservedCore: number;
     /**
-     * Amount of memory reserved for system use (in GB).
+     * Amount of memory reserved for system use (in GiB).
      */
     reservedMemory: number;
     /**
@@ -26401,7 +28457,7 @@ export interface GetPiHostCapacity {
      */
     totalCore: number;
     /**
-     * Total amount of memory of the host (in GB).
+     * Total amount of memory of the host (in GiB).
      */
     totalMemory: number;
     /**
@@ -26409,7 +28465,7 @@ export interface GetPiHostCapacity {
      */
     usedCore: number;
     /**
-     * Amount of memory used on the host (in GB).
+     * Amount of memory used on the host (in GiB).
      */
     usedMemory: number;
 }
@@ -26487,7 +28543,7 @@ export interface GetPiHostsHostCapacity {
      */
     availableCores: number;
     /**
-     * Amount of memory currently available (in GB).
+     * Amount of memory currently available (in GiB).
      */
     availableMemory: number;
     /**
@@ -26495,7 +28551,7 @@ export interface GetPiHostsHostCapacity {
      */
     reservedCore: number;
     /**
-     * Amount of memory reserved for system use (in GB).
+     * Amount of memory reserved for system use (in GiB).
      */
     reservedMemory: number;
     /**
@@ -26503,7 +28559,7 @@ export interface GetPiHostsHostCapacity {
      */
     totalCore: number;
     /**
-     * Total amount of memory of the host (in GB).
+     * Total amount of memory of the host (in GiB).
      */
     totalMemory: number;
     /**
@@ -26511,20 +28567,59 @@ export interface GetPiHostsHostCapacity {
      */
     usedCore: number;
     /**
-     * Amount of memory used on the host (in GB).
+     * Amount of memory used on the host (in GiB).
      */
     usedMemory: number;
 }
 
+export interface GetPiImageVolume {
+    /**
+     * Indicates if the volume is boot capable.
+     */
+    bootable: boolean;
+    /**
+     * The volume name of the image.
+     */
+    name: string;
+    /**
+     * The volume size of the image.
+     */
+    size: number;
+    /**
+     * The volume ID of the image.
+     */
+    volumeId: string;
+}
+
 export interface GetPiImagesImageInfo {
+    /**
+     * The CPU architecture that the image is designed for.
+     */
+    architecture: string;
+    /**
+     * The container format.
+     */
+    containerFormat: string;
     /**
      * The CRN of this resource.
      */
     crn: string;
     /**
+     * The disk format.
+     */
+    diskFormat: string;
+    /**
+     * The endianness order.
+     */
+    endianness: string;
+    /**
      * The hyper link of an image.
      */
     href: string;
+    /**
+     * Hypervision Type.
+     */
+    hypervisor: string;
     /**
      * The unique identifier of an image.
      */
@@ -26537,6 +28632,14 @@ export interface GetPiImagesImageInfo {
      * The name of an image.
      */
     name: string;
+    /**
+     * The operating system that is installed with the image.
+     */
+    operatingSystem: string;
+    /**
+     * Indicates whether the image is shared.
+     */
+    shared: boolean;
     /**
      * Checksum of the image.
      */
@@ -26557,6 +28660,39 @@ export interface GetPiImagesImageInfo {
      * List of user tags attached to the resource.
      */
     userTags: string[];
+}
+
+export interface GetPiInstanceDefaultTrustedProfile {
+    /**
+     * If set to true, the system will create a link to the specified trusted profile during server creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the server is deleted.
+     */
+    autolink: boolean;
+    /**
+     * The target of the trusted profile.
+     */
+    targets: outputs.GetPiInstanceDefaultTrustedProfileTarget[];
+}
+
+export interface GetPiInstanceDefaultTrustedProfileTarget {
+    /**
+     * The CRN for the trusted profile.
+     */
+    crn: string;
+    /**
+     * Unique identifier for the trusted profile.
+     */
+    id: string;
+    /**
+     * name of the trusted profile.
+     */
+    name?: string;
+}
+
+export interface GetPiInstanceMetadataService {
+    /**
+     * Indicates whether the metadata service endpoint will be available to the virtual server.
+     */
+    enabled: boolean;
 }
 
 export interface GetPiInstanceNetwork {
@@ -26596,6 +28732,53 @@ export interface GetPiInstanceNetwork {
      * The type of the network.
      */
     type: string;
+}
+
+export interface GetPiInstanceNetworksNetwork {
+    /**
+     * The external IP address of the instance.
+     */
+    externalIp: string;
+    /**
+     * Link to this PVM instance network.
+     */
+    href: string;
+    /**
+     * The IP address of the instance.
+     */
+    ipAddress: string;
+    /**
+     * The MAC address of the instance.
+     */
+    macAddress: string;
+    /**
+     * The network ID of the instance.
+     */
+    networkId: string;
+    /**
+     * ID of the network interface.
+     */
+    networkInterfaceId: string;
+    /**
+     * The network name of the instance.
+     */
+    networkName: string;
+    /**
+     * IDs of the network security groups that the network interface is a member of.
+     */
+    networkSecurityGroupIds: string[];
+    /**
+     * Links to the network security groups that the network interface is a member of.
+     */
+    networkSecurityGroupsHreves: string[];
+    /**
+     * The type of the network.
+     */
+    type: string;
+    /**
+     * Version of the network information.
+     */
+    version: number;
 }
 
 export interface GetPiInstanceSnapshotsInstanceSnapshot {
@@ -26666,9 +28849,21 @@ export interface GetPiInstanceVirtualSerialNumber {
 
 export interface GetPiInstanceVolumesInstanceVolume {
     /**
+     * Indicates if the volume is auxiliary or not.
+     */
+    auxiliary: boolean;
+    /**
+     * The auxiliary volume name.
+     */
+    auxiliaryVolumeName: string;
+    /**
      * Indicates if the volume is boot capable.
      */
     bootable: boolean;
+    /**
+     * The name of consistency group at storage controller level.
+     */
+    consistencyGroupName: string;
     /**
      * Date volume was created.
      */
@@ -26678,9 +28873,17 @@ export interface GetPiInstanceVolumesInstanceVolume {
      */
     crn: string;
     /**
+     * Indicates if the volume should be deleted when the server terminates.
+     */
+    deleteOnTermination: boolean;
+    /**
      * The freeze time of remote copy.
      */
     freezeTime: string;
+    /**
+     * The volume group id in which the volume belongs.
+     */
+    groupId: string;
     /**
      * The hyper link of the volume.
      */
@@ -26690,17 +28893,37 @@ export interface GetPiInstanceVolumesInstanceVolume {
      */
     id: string;
     /**
+     * Amount of iops assigned to the volume
+     */
+    ioThrottleRate: string;
+    /**
      * The last updated date of the volume.
      */
     lastUpdateDate: string;
+    /**
+     * Indicates master volume name
+     */
+    masterVolumeName: string;
+    /**
+     * Mirroring state for replication enabled volume
+     */
+    mirroringState: string;
     /**
      * The name of the volume.
      */
     name: string;
     /**
+     * Indicates if the volume does not exist on storage controller.
+     */
+    outOfBandDeleted: boolean;
+    /**
      * Volume pool, name of storage pool where the volume is located.
      */
     pool: string;
+    /**
+     * Indicates whether master/aux volume is playing the primary role.
+     */
+    primaryRole: string;
     /**
      * Indicates if the volume should be replication enabled or not.
      */
@@ -26710,11 +28933,19 @@ export interface GetPiInstanceVolumesInstanceVolume {
      */
     replicationSites: string[];
     /**
+     * The replication status of the volume.
+     */
+    replicationStatus: string;
+    /**
+     * The replication type of the volume, 'metro' or 'global'.
+     */
+    replicationType: string;
+    /**
      * Indicates if the volume is shareable between VMs.
      */
     shreable: boolean;
     /**
-     * The size of this volume in GB.
+     * The size of this volume in GiB.
      */
     size: number;
     /**
@@ -26729,9 +28960,127 @@ export interface GetPiInstanceVolumesInstanceVolume {
      * List of user tags attached to the resource.
      */
     userTags: string[];
+    /**
+     * Name of the storage pool where the volume is located.
+     */
+    volumePool: string;
+    /**
+     * Name of storage template used to create the volume.
+     */
+    volumeType: string;
+    /**
+     * The world wide name of the volume.
+     */
+    wwn: string;
+}
+
+export interface GetPiInstanceVpmemVolume {
+    /**
+     * The date and time when the volume was created.
+     */
+    creationDate: string;
+    /**
+     * The CRN for this resource.
+     */
+    crn: string;
+    /**
+     * Error code for the vPMEM volume.
+     */
+    errorCode: string;
+    /**
+     * Link to vPMEM volume resource.
+     */
+    href: string;
+    /**
+     * Volume Name.
+     */
+    name: string;
+    /**
+     * PVM Instance ID which the volume is attached to.
+     */
+    pvmInstanceId: string;
+    /**
+     * Reason for error.
+     */
+    reason: string;
+    /**
+     * Volume size (GiB).
+     */
+    size: number;
+    /**
+     * Status of the volume.
+     */
+    status: string;
+    /**
+     * The date and time when the volume was updated.
+     */
+    updatedDate: string;
+    /**
+     * List of user tags.
+     */
+    userTags: string[];
+    /**
+     * Volume ID.
+     */
+    volumeId: string;
+}
+
+export interface GetPiInstanceVpmemVolumesVolume {
+    /**
+     * The date and time when the volume was created.
+     */
+    creationDate: string;
+    /**
+     * The CRN for this resource.
+     */
+    crn: string;
+    /**
+     * Error code for the vPMEM volume.
+     */
+    errorCode: string;
+    /**
+     * Link to vPMEM volume resource.
+     */
+    href: string;
+    /**
+     * Volume Name.
+     */
+    name: string;
+    /**
+     * PVM Instance ID which the volume is attached to.
+     */
+    pvmInstanceId: string;
+    /**
+     * Reason for error.
+     */
+    reason: string;
+    /**
+     * Volume size (GiB).
+     */
+    size: number;
+    /**
+     * Status of the volume.
+     */
+    status: string;
+    /**
+     * The date and time when the volume was updated.
+     */
+    updatedDate: string;
+    /**
+     * List of user tags.
+     */
+    userTags: string[];
+    /**
+     * Volume ID.
+     */
+    volumeId: string;
 }
 
 export interface GetPiInstancesPvmInstance {
+    /**
+     * Indicates if the server allows server to be restarted from remote.
+     */
+    allowRemoteRestart: boolean;
     /**
      * The CRN of this resource.
      */
@@ -26740,6 +29089,10 @@ export interface GetPiInstancesPvmInstance {
      * The dedicated host ID where the shared processor pool resides.
      */
     dedicatedHostId: string;
+    /**
+     * Default IAM trusted profile to use for this virtual server instance.
+     */
+    defaultTrustedProfiles: outputs.GetPiInstancesPvmInstanceDefaultTrustedProfile[];
     /**
      * Effective processor compatibility mode.
      */
@@ -26753,7 +29106,7 @@ export interface GetPiInstancesPvmInstance {
      */
     healthStatus: string;
     /**
-     * The VTL license repository capacity TB value.
+     * The VTL license repository capacity TiB value.
      */
     licenseRepositoryCapacity: number;
     /**
@@ -26772,6 +29125,10 @@ export interface GetPiInstancesPvmInstance {
      * The amount of memory that is allocated to the instance.
      */
     memory: number;
+    /**
+     * The metadata service configuration.
+     */
+    metadataServices: outputs.GetPiInstancesPvmInstanceMetadataService[];
     /**
      * The minimum number of virtual cores that can be assigned without rebooting the instance.
      */
@@ -26853,6 +29210,39 @@ export interface GetPiInstancesPvmInstance {
      * Virtual Serial Number information
      */
     virtualSerialNumbers: outputs.GetPiInstancesPvmInstanceVirtualSerialNumber[];
+}
+
+export interface GetPiInstancesPvmInstanceDefaultTrustedProfile {
+    /**
+     * If set to true, the system will create a link to the specified trusted profile during server creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the server is deleted.
+     */
+    autolink: boolean;
+    /**
+     * The target of the trusted profile.
+     */
+    targets: outputs.GetPiInstancesPvmInstanceDefaultTrustedProfileTarget[];
+}
+
+export interface GetPiInstancesPvmInstanceDefaultTrustedProfileTarget {
+    /**
+     * The CRN for the trusted profile.
+     */
+    crn: string;
+    /**
+     * Unique identifier for the trusted profile.
+     */
+    id: string;
+    /**
+     * name of the trusted profile.
+     */
+    name?: string;
+}
+
+export interface GetPiInstancesPvmInstanceMetadataService {
+    /**
+     * Indicates whether the metadata service endpoint will be available to the virtual server.
+     */
+    enabled: boolean;
 }
 
 export interface GetPiInstancesPvmInstanceNetwork {
@@ -27001,6 +29391,10 @@ export interface GetPiNetworkInterfacesInterface {
      * The network interface's crn.
      */
     crn: string;
+    /**
+     * The external ip address for pub-vlan networks.
+     */
+    externalIp: string;
     /**
      * The unique network interface ID.
      */
@@ -27621,9 +30015,13 @@ export interface GetPiNetworksNetwork {
      */
     crn: string;
     /**
-     * Indicates if the network DHCP Managed.
+     * DHCP enabled network.
      */
     dhcpManaged: boolean;
+    /**
+     * DHCP enabled network.
+     */
+    enableDhcp: boolean;
     /**
      * The hyper link of a network.
      */
@@ -27796,7 +30194,22 @@ export interface GetPiRoutesRoute {
     userTags: string[];
 }
 
+export interface GetPiSapProfileVpmemVolume {
+    /**
+     * Maximum percent of memory to be assigned for carved out vPMEM volume.
+     */
+    maxPercent?: number;
+    /**
+     * Minimum percent of memory to be assigned for carved out vPMEM volume.
+     */
+    minPercent?: number;
+}
+
 export interface GetPiSapProfilesProfile {
+    /**
+     * Accelerated SAP Application Performance Standard.
+     */
+    asaps: number;
     /**
      * Has certification been performed on profile.
      */
@@ -27810,11 +30223,15 @@ export interface GetPiSapProfilesProfile {
      */
     defaultSystem: string;
     /**
+     * Profile is deprecated.
+     */
+    deprecated: boolean;
+    /**
      * Requires full system for deployment.
      */
     fullSystemProfile: boolean;
     /**
-     * Amount of memory (in GB).
+     * Amount of memory (in GiB).
      */
     memory: number;
     /**
@@ -27834,9 +30251,24 @@ export interface GetPiSapProfilesProfile {
      */
     type: string;
     /**
+     * vpmem volume.
+     */
+    vpmemVolumes: outputs.GetPiSapProfilesProfileVpmemVolume[];
+    /**
      * Workload Type.
      */
     workloadTypes: string[];
+}
+
+export interface GetPiSapProfilesProfileVpmemVolume {
+    /**
+     * Maximum percent of memory to be assigned for carved out vPMEM volume.
+     */
+    maxPercent?: number;
+    /**
+     * Minimum percent of memory to be assigned for carved out vPMEM volume.
+     */
+    minPercent?: number;
 }
 
 export interface GetPiSharedProcessorPoolInstance {
@@ -27965,7 +30397,7 @@ export interface GetPiSppPlacementGroupsSppPlacementGroup {
 
 export interface GetPiStoragePoolsCapacityStoragePoolsCapacity {
     /**
-     * Maximum allocation storage size (GB).
+     * Maximum allocation storage size (GiB).
      */
     maxAllocationSize: number;
     /**
@@ -27981,7 +30413,7 @@ export interface GetPiStoragePoolsCapacityStoragePoolsCapacity {
      */
     storageType: string;
     /**
-     * Total pool capacity (GB).
+     * Total pool capacity (GiB).
      */
     totalCapacity: number;
 }
@@ -28003,7 +30435,7 @@ export interface GetPiStorageTiersRegionStorageTier {
 
 export interface GetPiStorageTypeCapacityStoragePoolsCapacity {
     /**
-     * Maximum allocation storage size (GB).
+     * Maximum allocation storage size (GiB).
      */
     maxAllocationSize: number;
     /**
@@ -28015,7 +30447,7 @@ export interface GetPiStorageTypeCapacityStoragePoolsCapacity {
      */
     storageType: string;
     /**
-     * Total pool capacity (GB).
+     * Total pool capacity (GiB).
      */
     totalCapacity: number;
 }
@@ -28037,7 +30469,7 @@ export interface GetPiStorageTypesCapacityStorageTypesCapacity {
 
 export interface GetPiStorageTypesCapacityStorageTypesCapacityStoragePoolsCapacity {
     /**
-     * Maximum allocation storage size (GB).
+     * Maximum allocation storage size (GiB).
      */
     maxAllocationSize: number;
     /**
@@ -28049,22 +30481,22 @@ export interface GetPiStorageTypesCapacityStorageTypesCapacityStoragePoolsCapaci
      */
     storageType: string;
     /**
-     * Total pool capacity (GB).
+     * Total pool capacity (GiB).
      */
     totalCapacity: number;
 }
 
 export interface GetPiSystemPoolsSystemPool {
     /**
-     * Advertised capacity cores and memory (GB).
+     * Advertised capacity cores and memory (GiB).
      */
     capacity: {[key: string]: string};
     /**
-     * Processor to Memory (GB) Ratio.
+     * Processor to Memory (GiB) Ratio.
      */
     coreMemoryRatio: number;
     /**
-     * Maximum configurable cores and memory (GB) (aggregated from all hosts).
+     * Maximum configurable cores and memory (GiB) (aggregated from all hosts).
      */
     maxAvailable: {[key: string]: string};
     /**
@@ -28538,7 +30970,7 @@ export interface GetPiVolumesVolume {
      */
     shreable: boolean;
     /**
-     * The size of the volume in GB.
+     * The size of the volume in GiB.
      */
     size: number;
     /**
@@ -28667,6 +31099,124 @@ export interface GetPiWorkspacesWorkspacePiWorkspaceDetailPowerEdgeRouter {
     type: string;
 }
 
+export interface GetResourceGroupsResourceGroup {
+    /**
+     * Account ID
+     */
+    accountId: string;
+    /**
+     * The date when the resource group was initially created.
+     */
+    createdAt: string;
+    /**
+     * The full CRN associated with the resource group
+     */
+    crn: string;
+    /**
+     * The ID of the resource group
+     */
+    id: string;
+    /**
+     * Default Resource group
+     */
+    isDefault: boolean;
+    /**
+     * Resource group name
+     */
+    name: string;
+    /**
+     * The URL to access the payment methods details that associated with the resource group.
+     */
+    paymentMethodsUrl: string;
+    /**
+     * An alpha-numeric value identifying the quota ID associated with the resource group.
+     */
+    quotaId: string;
+    /**
+     * The URL to access the quota details that associated with the resource group.
+     */
+    quotaUrl: string;
+    /**
+     * An array of the resources that linked to the resource group
+     */
+    resourceLinkages: string[];
+    /**
+     * State of the resource group
+     */
+    state: string;
+    /**
+     * The URL to access the team details that associated with the resource group.
+     */
+    teamsUrl: string;
+    /**
+     * The date when the resource group was last updated.
+     */
+    updatedAt: string;
+}
+
+export interface GetResourceReclamationsReclamation {
+    /**
+     * The account ID.
+     */
+    accountId: string;
+    /**
+     * The date/time when created (RFC3339).
+     */
+    createdAt: string;
+    /**
+     * The subject who created this reclamation.
+     */
+    createdBy: string;
+    /**
+     * Custom properties set on the reclamation.
+     */
+    customProperties: {[key: string]: string};
+    /**
+     * The full CRN associated with this reclamation.
+     */
+    entityCrn: string;
+    /**
+     * The entity ID for this reclamation.
+     */
+    entityId: string;
+    /**
+     * The entity type ID for this reclamation.
+     */
+    entityTypeId: string;
+    /**
+     * The ID associated with the reclamation.
+     */
+    id: string;
+    /**
+     * The policy ID for the reclamation.
+     */
+    policyId: string;
+    /**
+     * The resource group ID.
+     */
+    resourceGroupId: string;
+    /**
+     * The resource instance ID associated with the reclamation.
+     */
+    resourceInstanceId: string;
+    /**
+     * The state of this reclamation.
+     */
+    state: string;
+    /**
+     * When the reclamation retention period ends (RFC3339).
+     */
+    targetTime: string;
+    /**
+     * The date/time when last updated (RFC3339).
+     */
+    updatedAt: string;
+    /**
+     * The subject who updated this reclamation.
+     */
+    updatedBy: string;
+}
+
 export interface GetTgConnectionPrefixFiltersPrefixFilter {
     /**
      * Whether to permit or deny the prefix filter
@@ -28702,6 +31252,7 @@ export interface GetTgConnectionPrefixFiltersPrefixFilter {
 export interface GetTgGatewayConnection {
     baseConnectionId: string;
     baseNetworkType: string;
+    cidr: string;
     createdAt: string;
     /**
      * Whether to permit or deny the prefix filter
@@ -29397,15 +31948,15 @@ export interface IamAccountSettingsRestrictUserDomain {
     /**
      * The list of allowed email patterns. Wildcard syntax is supported, '*' represents any sequence of zero or more characters in the string, except for '.' and '@'. The sequence ends if a '.' or '@' was found. '**' represents any sequence of zero or more characters in the string - without limit.
      */
-    invitationEmailAllowPatterns: string[];
+    invitationEmailAllowPatterns?: string[];
     /**
      * The realm that the restrictions apply to.
      */
-    realmId: string;
+    realmId?: string;
     /**
      * When true invites will only be possible to the domain patterns provided, otherwise invites are unrestricted.
      */
-    restrictInvitation: boolean;
+    restrictInvitation?: boolean;
 }
 
 export interface IamAccountSettingsTemplateAccountSettings {
@@ -29490,80 +32041,6 @@ export interface IamAccountSettingsTemplateAccountSettingsUserMfa {
     mfa: string;
 }
 
-export interface IamAccountSettingsTemplateAssignmentContext {
-    /**
-     * The cluster name.
-     */
-    clusterName: string;
-    /**
-     * The elapsed time in msec.
-     */
-    elapsedTime: string;
-    /**
-     * The finish time of the request.
-     */
-    endTime: string;
-    /**
-     * The host of the server instance processing the request.
-     */
-    host: string;
-    /**
-     * The instance ID of the server instance processing the request.
-     */
-    instanceId: string;
-    /**
-     * The operation of the inbound REST request.
-     */
-    operation: string;
-    /**
-     * The start time of the request.
-     */
-    startTime: string;
-    /**
-     * The thread ID of the server instance processing the request.
-     */
-    threadId: string;
-    /**
-     * The transaction ID of the inbound REST request.
-     */
-    transactionId: string;
-    /**
-     * The URL of that cluster.
-     */
-    url: string;
-    /**
-     * The user agent of the inbound REST request.
-     */
-    userAgent: string;
-}
-
-export interface IamAccountSettingsTemplateAssignmentHistory {
-    /**
-     * Action of the history entry.
-     */
-    action: string;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId: string;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount: string;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message: string;
-    /**
-     * Params of the history entry.
-     */
-    params: string[];
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp: string;
-}
-
 export interface IamAccountSettingsTemplateAssignmentResource {
     accountSettings: outputs.IamAccountSettingsTemplateAssignmentResourceAccountSetting[];
     /**
@@ -29611,33 +32088,6 @@ export interface IamAccountSettingsTemplateAssignmentResourceAccountSettingResou
      * Id of the created resource.
      */
     id: string;
-}
-
-export interface IamAccountSettingsTemplateHistory {
-    /**
-     * Action of the history entry.
-     */
-    action: string;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId: string;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount: string;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message: string;
-    /**
-     * Params of the history entry.
-     */
-    params: string[];
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp: string;
 }
 
 export interface IamAccountSettingsUserMfa {
@@ -29839,6 +32289,99 @@ export interface IamAuthorizationPolicySubjectAttribute {
     value: string;
 }
 
+export interface IamIdpProperties {
+    /**
+     * Identity Provider configuration.
+     */
+    idp?: outputs.IamIdpPropertiesIdp;
+    /**
+     * Service Provider configuration.
+     */
+    sp?: outputs.IamIdpPropertiesSp;
+}
+
+export interface IamIdpPropertiesIdp {
+    /**
+     * SAML IDP entity ID. Required for SAML when xmlImport is false.
+     */
+    entityId?: string;
+    /**
+     * SAML IDP logout URL (optional).
+     */
+    logoutUrl?: string;
+    /**
+     * Redirect binding URL. Required for SAML when xmlImport is false.
+     */
+    redirectBindingUrl?: string;
+    /**
+     * Indicates if IDP wants requests to be signed.
+     */
+    wantRequestSigned?: boolean;
+    /**
+     * Flag indicating if IdP should be imported from metadata.xml.
+     */
+    xmlImport?: boolean;
+}
+
+export interface IamIdpPropertiesSp {
+    /**
+     * Indicates if responses should be encrypted.
+     */
+    encryptResponse?: boolean;
+    /**
+     * Enables IDP-initiated login.
+     */
+    idpInitiatedLoginEnabled?: boolean;
+    /**
+     * URLs for IDP-initiated login.
+     */
+    idpInitiatedUrls?: string[];
+    /**
+     * Enables logout URL when available.
+     */
+    logoutUrlEnabledWhenAvailable?: boolean;
+    /**
+     * Indicates if SP wants assertions to be signed.
+     */
+    wantAssertionSigned?: boolean;
+    /**
+     * Indicates if SP wants responses to be signed.
+     */
+    wantResponseSigned?: boolean;
+}
+
+export interface IamIdpSecrets {
+    /**
+     * Identity Provider secrets.
+     */
+    idp?: outputs.IamIdpSecretsIdp;
+    /**
+     * Service Provider secrets.
+     */
+    sp?: outputs.IamIdpSecretsSp;
+}
+
+export interface IamIdpSecretsIdp {
+    /**
+     * Flag indicating if secrets should be imported from metadata.xml.
+     */
+    xmlImport?: boolean;
+}
+
+export interface IamIdpSecretsSp {
+}
+
+export interface IamIdpShareScope {
+    /**
+     * ID of the account or enterprise.
+     */
+    id?: string;
+    /**
+     * Type of share scope. Valid values: account, enterprise.
+     */
+    type?: string;
+}
+
 export interface IamPolicyAssignmentResource {
     /**
      * Set of properties for the assigned resource.
@@ -29969,6 +32512,10 @@ export interface IamPolicyTemplatePolicy {
      */
     resources?: outputs.IamPolicyTemplatePolicyResource[];
     /**
+     * Role template references for assignment.
+     */
+    roleTemplateReferences?: outputs.IamPolicyTemplatePolicyRoleTemplateReference[];
+    /**
      * Role names of the policy definition
      */
     roles?: string[];
@@ -30029,6 +32576,17 @@ export interface IamPolicyTemplatePolicyResourceTag {
      * The value of an access management tag.
      */
     value: string;
+}
+
+export interface IamPolicyTemplatePolicyRoleTemplateReference {
+    /**
+     * Role template id
+     */
+    id: string;
+    /**
+     * Role template version
+     */
+    version: string;
 }
 
 export interface IamPolicyTemplatePolicyRuleCondition {
@@ -30101,6 +32659,10 @@ export interface IamPolicyTemplateVersionPolicy {
      */
     resource?: outputs.IamPolicyTemplateVersionPolicyResource;
     /**
+     * Role template references for assignment.
+     */
+    roleTemplateReferences?: outputs.IamPolicyTemplateVersionPolicyRoleTemplateReference[];
+    /**
      * Role names of the policy definition
      */
     roles?: string[];
@@ -30163,6 +32725,17 @@ export interface IamPolicyTemplateVersionPolicyResourceTag {
     value: string;
 }
 
+export interface IamPolicyTemplateVersionPolicyRoleTemplateReference {
+    /**
+     * Role template id
+     */
+    id: string;
+    /**
+     * Role template version
+     */
+    version: string;
+}
+
 export interface IamPolicyTemplateVersionPolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
@@ -30217,6 +32790,175 @@ export interface IamPolicyTemplateVersionPolicySubjectAttribute {
      * The value of a rule or resource attribute; can be boolean or string for resource attribute. Can be string or an array of strings (e.g., array of days to permit access) for rule attribute.
      */
     value: string;
+}
+
+export interface IamRoleAssignmentResource {
+    /**
+     * Set of properties of the assigned resource or error message if assignment failed.
+     */
+    roles: outputs.IamRoleAssignmentResourceRole[];
+    /**
+     * assignment target details
+     */
+    target: {[key: string]: string};
+}
+
+export interface IamRoleAssignmentResourceRole {
+    /**
+     * The error response from API.
+     */
+    errorMessages: outputs.IamRoleAssignmentResourceRoleErrorMessage[];
+    /**
+     * On success, it includes the role assigned.
+     */
+    resourceCreateds: outputs.IamRoleAssignmentResourceRoleResourceCreated[];
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessage {
+    /**
+     * Internal status code for the error.
+     */
+    code: string;
+    /**
+     * Internal error code.
+     */
+    errorCode: string;
+    /**
+     * The errors encountered during the response.
+     */
+    errors: outputs.IamRoleAssignmentResourceRoleErrorMessageError[];
+    /**
+     * Error message detailing the nature of the error.
+     */
+    message: string;
+    /**
+     * Name of the error.
+     */
+    name: string;
+    /**
+     * The HTTP error code of the response.
+     */
+    statusCode: number;
+    /**
+     * The unique transaction ID for the request.
+     */
+    trace: string;
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessageError {
+    /**
+     * The API error code for the error.
+     */
+    code: string;
+    /**
+     * Additional error details.
+     */
+    details: outputs.IamRoleAssignmentResourceRoleErrorMessageErrorDetail[];
+    /**
+     * The error message returned by the API.
+     */
+    message: string;
+    /**
+     * Additional info for error.
+     */
+    moreInfo: string;
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessageErrorDetail {
+    /**
+     * Details of conflicting resource.
+     */
+    conflictsWiths: outputs.IamRoleAssignmentResourceRoleErrorMessageErrorDetailConflictsWith[];
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessageErrorDetailConflictsWith {
+    /**
+     * The revision number of the resource.
+     */
+    etag: string;
+    /**
+     * The conflicting policy ID.
+     */
+    policy: string;
+    /**
+     * The conflicting role of ID.
+     */
+    role: string;
+}
+
+export interface IamRoleAssignmentResourceRoleResourceCreated {
+    /**
+     * role id.
+     */
+    id: string;
+}
+
+export interface IamRoleAssignmentTarget {
+    /**
+     * ID of the target account.
+     */
+    id: string;
+    /**
+     * Assignment target type.
+     */
+    type: string;
+}
+
+export interface IamRoleAssignmentTemplates {
+    /**
+     * role template id.
+     */
+    id: string;
+    /**
+     * role template version.
+     */
+    version: string;
+}
+
+export interface IamRoleTemplateRole {
+    /**
+     * The actions of the role.
+     */
+    actions: string[];
+    /**
+     * Description of the role.
+     */
+    description?: string;
+    /**
+     * The display the name of the role that is shown in the console.
+     */
+    displayName: string;
+    /**
+     * The name of the role that is used in the CRN. This must be alphanumeric and capitalized.
+     */
+    name: string;
+    /**
+     * The service name that the role refers.
+     */
+    serviceName: string;
+}
+
+export interface IamRoleTemplateVersionRole {
+    /**
+     * The actions of the role.
+     */
+    actions: string[];
+    /**
+     * Description of the role.
+     */
+    description?: string;
+    /**
+     * The display the name of the role that is shown in the console.
+     */
+    displayName: string;
+    /**
+     * The name of the role that is used in the CRN. This must be alphanumeric and capitalized.
+     */
+    name: string;
+    /**
+     * The service name that the role refers.
+     */
+    serviceName: string;
 }
 
 export interface IamServicePolicyResourceAttribute {
@@ -30320,6 +33062,17 @@ export interface IamServicePolicyRuleConditionCondition {
      * Value of the condition
      */
     values: string[];
+}
+
+export interface IamTrustedProfileActivity {
+    /**
+     * Authentication count, number of times the entity was authenticated.
+     */
+    authnCount: number;
+    /**
+     * Time when the entity was last authenticated.
+     */
+    lastAuthn: string;
 }
 
 export interface IamTrustedProfileClaimRuleCondition {
@@ -30513,80 +33266,6 @@ export interface IamTrustedProfilePolicyRuleConditionCondition {
     values: string[];
 }
 
-export interface IamTrustedProfileTemplateAssignmentContext {
-    /**
-     * The cluster name.
-     */
-    clusterName: string;
-    /**
-     * The elapsed time in msec.
-     */
-    elapsedTime: string;
-    /**
-     * The finish time of the request.
-     */
-    endTime: string;
-    /**
-     * The host of the server instance processing the request.
-     */
-    host: string;
-    /**
-     * The instance ID of the server instance processing the request.
-     */
-    instanceId: string;
-    /**
-     * The operation of the inbound REST request.
-     */
-    operation: string;
-    /**
-     * The start time of the request.
-     */
-    startTime: string;
-    /**
-     * The thread ID of the server instance processing the request.
-     */
-    threadId: string;
-    /**
-     * The transaction ID of the inbound REST request.
-     */
-    transactionId: string;
-    /**
-     * The URL of that cluster.
-     */
-    url: string;
-    /**
-     * The user agent of the inbound REST request.
-     */
-    userAgent: string;
-}
-
-export interface IamTrustedProfileTemplateAssignmentHistory {
-    /**
-     * Action of the history entry.
-     */
-    action: string;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId: string;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount: string;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message: string;
-    /**
-     * Params of the history entry.
-     */
-    params: string[];
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp: string;
-}
-
 export interface IamTrustedProfileTemplateAssignmentResource {
     /**
      * Policy resource(s) included only for trusted profile assignments with policy references.
@@ -30695,33 +33374,6 @@ export interface IamTrustedProfileTemplateAssignmentResourceProfileResourceCreat
      * Id of the created resource.
      */
     id: string;
-}
-
-export interface IamTrustedProfileTemplateHistory {
-    /**
-     * Action of the history entry.
-     */
-    action: string;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId: string;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount: string;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message: string;
-    /**
-     * Params of the history entry.
-     */
-    params: string[];
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp: string;
 }
 
 export interface IamTrustedProfileTemplatePolicyTemplateReference {
@@ -31965,7 +34617,7 @@ export interface IsBareMetalServerTrustedPlatformModule {
 
 export interface IsClusterNetworkInterfaceLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -32112,7 +34764,7 @@ export interface IsClusterNetworkInterfaceZone {
 
 export interface IsClusterNetworkLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -32127,7 +34779,7 @@ export interface IsClusterNetworkLifecycleReason {
 
 export interface IsClusterNetworkSubnetLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -32153,7 +34805,7 @@ export interface IsClusterNetworkSubnetPrefixes {
 
 export interface IsClusterNetworkSubnetReservedIpLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -32567,6 +35219,17 @@ export interface IsImageExportJobStorageObject {
     name: string;
 }
 
+export interface IsImageZone {
+    /**
+     * The URL for this zone.
+     */
+    href: string;
+    /**
+     * The globally unique name for this zone.
+     */
+    name: string;
+}
+
 export interface IsInstanceActionStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
@@ -32580,6 +35243,24 @@ export interface IsInstanceActionStatusReason {
      * Link to documentation about this status reason
      */
     moreInfo: string;
+}
+
+export interface IsInstanceAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.See [virtual server instance availability class](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future. To change the availability class, the instance status must be stopping or stopped.
+     */
+    class: string;
+}
+
+export interface IsInstanceAvailabilityPolicy {
+    /**
+     * The action to perform if the compute host experiences a failure:- `restart`: Restart the virtual server instance- `stop`: Leave the virtual server instance stopped. See [handling host failures](https://cloud.ibm.com/docs/vpc?topic=vpc-host-failure-recovery-policies) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    hostFailure: string;
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    preemption: string;
 }
 
 export interface IsInstanceBootVolume {
@@ -32823,7 +35504,7 @@ export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSubnet
 
 export interface IsInstanceClusterNetworkAttachmentLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -33555,6 +36236,126 @@ export interface IsInstancePrimaryNetworkInterfacePrimaryIp {
     resourceType: string;
 }
 
+export interface IsInstanceReinitializeBootVolumeAttachment {
+    /**
+     * Indicates whether the volume will be deleted when the instance is deleted
+     */
+    deleteVolumeOnInstanceDelete?: boolean;
+    /**
+     * The name of the boot volume attachment
+     */
+    name?: string;
+    /**
+     * The boot volume attachment configuration for reinitialization by volume
+     */
+    volume?: outputs.IsInstanceReinitializeBootVolumeAttachmentVolume;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolume {
+    /**
+     * The allowed use configuration for this volume
+     */
+    allowedUse?: outputs.IsInstanceReinitializeBootVolumeAttachmentVolumeAllowedUse;
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.
+     */
+    bandwidth?: number;
+    /**
+     * The capacity to use for the volume (in gigabytes).
+     */
+    capacity?: number;
+    /**
+     * The root key to use to wrap the data encryption key for the volume.
+     */
+    encryptionKey?: outputs.IsInstanceReinitializeBootVolumeAttachmentVolumeEncryptionKey;
+    /**
+     * The ID of the volume to attach as boot volume
+     */
+    id?: string;
+    /**
+     * The maximum I/O operations per second (IOPS) to use for this volume.
+     */
+    iops?: number;
+    /**
+     * The name for this volume.
+     */
+    name?: string;
+    /**
+     * The profile for this volume.
+     */
+    profile?: outputs.IsInstanceReinitializeBootVolumeAttachmentVolumeProfile;
+    /**
+     * The resource group to use for this volume.
+     */
+    resourceGroup?: string;
+    /**
+     * The snapshot to use as a source for the volume's data. The specified snapshot may be in a different account, subject to IAM policies.
+     */
+    sourceSnapshot?: outputs.IsInstanceReinitializeBootVolumeAttachmentVolumeSourceSnapshot;
+    /**
+     * The user tags associated with this volume.
+     */
+    userTags?: string[];
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeAllowedUse {
+    /**
+     * The API version with which to evaluate the expressions.
+     */
+    apiVersion: string;
+    /**
+     * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
+     */
+    bareMetalServer?: string;
+    /**
+     * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
+     */
+    instance?: string;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeEncryptionKey {
+    /**
+     * The CRN of the Key Protect Root Key for this resource.
+     */
+    crn: string;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeProfile {
+    /**
+     * The globally unique name for this volume profile
+     */
+    name: string;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeSourceSnapshot {
+    /**
+     * The ID of the snapshot
+     */
+    id: string;
+}
+
+export interface IsInstanceReinitializeDefaultTrustedProfile {
+    /**
+     * If set to true, the system will create a link to the specified target trusted profile.
+     */
+    autoLink: boolean;
+    /**
+     * The default trusted profile configuration to use for this virtual server instance.
+     */
+    target: outputs.IsInstanceReinitializeDefaultTrustedProfileTarget;
+}
+
+export interface IsInstanceReinitializeDefaultTrustedProfileTarget {
+    /**
+     * The CRN for this trusted profile
+     */
+    crn?: string;
+    /**
+     * The unique identifier for this trusted profile
+     */
+    id?: string;
+}
+
 export interface IsInstanceReservation {
     /**
      * The CRN for this reservation.
@@ -33634,6 +36435,108 @@ export interface IsInstanceReservationDeleted {
     moreInfo: string;
 }
 
+export interface IsInstanceSoftwareAttachment {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds: outputs.IsInstanceSoftwareAttachmentDeleted[];
+    /**
+     * The URL for this instance software attachment.
+     */
+    href: string;
+    /**
+     * The unique identifier for this instance software attachment.
+     */
+    id: string;
+    /**
+     * The name for this instance software attachment. The name is unique across all instance software attachments for the instance.
+     */
+    name: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOffering {
+    /**
+     * The billing plan for the catalog offering version associated with this instance softwareattachment.If absent, no billing plan is associated with the catalog offering version (free).
+     */
+    plans: outputs.IsInstanceSoftwareAttachmentCatalogOfferingPlan[];
+    /**
+     * The catalog offering version associated with this instance software attachment.
+     */
+    versions: outputs.IsInstanceSoftwareAttachmentCatalogOfferingVersion[];
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOfferingPlan {
+    /**
+     * The CRN for this[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering version's billing plan.
+     */
+    crn: string;
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds: outputs.IsInstanceSoftwareAttachmentCatalogOfferingPlanDeleted[];
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOfferingPlanDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOfferingVersion {
+    /**
+     * The CRN for this version of a[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering.
+     */
+    crn: string;
+}
+
+export interface IsInstanceSoftwareAttachmentDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
+export interface IsInstanceSoftwareAttachmentEntitlement {
+    /**
+     * The licensed software for this instance software attachment entitlement.
+     */
+    licensedSoftwares: outputs.IsInstanceSoftwareAttachmentEntitlementLicensedSoftware[];
+}
+
+export interface IsInstanceSoftwareAttachmentEntitlementLicensedSoftware {
+    /**
+     * The SKU for this licensed software.
+     */
+    sku: string;
+}
+
+export interface IsInstanceSoftwareAttachmentLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `failedRegistration`: the software instance's registration to Resource Controller,  which includes creation of any required software license(s), has failed. Delete the  instance and provision it again. If the problem persists, contact IBM Support.- `internalError`: internal error (contact IBM support)- `pendingRegistration`: the software instance's registration to Resource Controller,  and the creation of any required software license(s), is being processed.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface IsInstanceSoftwareAttachmentOfferingInstance {
+    /**
+     * The CRN for the software offering instance registered with Resource Controller that is associated with the instance software attachment.
+     */
+    crn: string;
+}
+
 export interface IsInstanceStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
@@ -33647,6 +36550,20 @@ export interface IsInstanceStatusReason {
      * Link to documentation about this status reason
      */
     moreInfo: string;
+}
+
+export interface IsInstanceTemplateAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.If `spot` is specified, the virtual server instance:- `reservation_affinity.policy` must be `disabled`- `placementTarget` must not specify a dedicated host or dedicated host group.
+     */
+    class?: string;
+}
+
+export interface IsInstanceTemplateAvailabilityPolicy {
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.
+     */
+    preemption?: string;
 }
 
 export interface IsInstanceTemplateBootVolume {
@@ -34224,6 +37141,13 @@ export interface IsInstanceTemplateReservationAffinityPool {
     id: string;
 }
 
+export interface IsInstanceTemplateVcpu {
+    /**
+     * The percentage of VCPU clock cycles allocated to the instance.The virtual server instance `vcpu.percentage` must be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is not `disabled`.If unspecified, the default for `vcpuPercentage` from the profile will be used.
+     */
+    percentage?: number;
+}
+
 export interface IsInstanceTemplateVolumeAttachment {
     /**
      * If set to true, when deleting the instance the volume will also be deleted.
@@ -34291,12 +37215,30 @@ export interface IsInstanceTemplateVolumeAttachmentVolumePrototypeAllowedUse {
 }
 
 export interface IsInstanceVcpus {
+    /**
+     * The VCPU architecture.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
     architecture: string;
+    bursts: outputs.IsInstanceVcpusBurst[];
+    /**
+     * The number of VCPUs assigned.
+     */
     count: number;
     /**
-     * The VCPU manufacturer
+     * The VCPU manufacturer.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     manufacturer: string;
+    /**
+     * The percentage of VCPU time allocated to the virtual server instance.The virtual server instance `vcpu.percentage` will be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is `disabled`.
+     */
+    percentage: number;
+}
+
+export interface IsInstanceVcpusBurst {
+    /**
+     * The maximum percentage the virtual server instance will exceed its allocated share of VCPU time.The maximum value for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    limit: number;
 }
 
 export interface IsInstanceVolumeAttachment {
@@ -34418,6 +37360,17 @@ export interface IsLbDns {
     zoneId: string;
 }
 
+export interface IsLbListenerClientAuthentication {
+    /**
+     * The certificate instance to use for the listener client certificate authority. Required if certificateRevocationList is specified.
+     */
+    certificateAuthority: string;
+    /**
+     * A PEM-encoded (with the label X509 CRL) certificate revocation list (CRL) to use for the listener. The CRL must be formatted using the X.509 standard as described in RFC 5280. If specified, certificateAuthority must also be specified.
+     */
+    certificateRevocationList?: string;
+}
+
 export interface IsLbListenerHttpsRedirect {
     /**
      * The HTTP status code for this redirect.
@@ -34536,9 +37489,16 @@ export interface IsLbListenerPolicyTargetListenerDeleted {
     moreInfo: string;
 }
 
+export interface IsLbPoolClientAuthentication {
+    /**
+     * The CRN of the certificate instance to use for client authentication.
+     */
+    certificateInstance: string;
+}
+
 export interface IsLbPoolFailsafePolicy {
     /**
-     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     action: string;
     /**
@@ -34546,7 +37506,7 @@ export interface IsLbPoolFailsafePolicy {
      */
     healthyMemberThresholdCount: number;
     /**
-     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     target?: outputs.IsLbPoolFailsafePolicyTarget;
 }
@@ -34577,6 +37537,59 @@ export interface IsLbPoolFailsafePolicyTargetDeleted {
     moreInfo: string;
 }
 
+export interface IsLbPoolHealthMonitor {
+    request?: outputs.IsLbPoolHealthMonitorRequest;
+    response?: outputs.IsLbPoolHealthMonitorResponse;
+}
+
+export interface IsLbPoolHealthMonitorRequest {
+    /**
+     * The HTTP request body used for health checks.If absent, the health checks will ignore the request body.
+     */
+    body?: string;
+    /**
+     * The HTTP request headers used for health checks.If absent, the health checks will ignore the request headers.
+     */
+    headers?: outputs.IsLbPoolHealthMonitorRequestHeader[];
+    /**
+     * The HTTP request method used for health checks.
+     */
+    method: string;
+}
+
+export interface IsLbPoolHealthMonitorRequestHeader {
+    /**
+     * The field of an HTTP request header used for health checks.
+     */
+    field?: string;
+    /**
+     * The value of an HTTP request header used for health checks.
+     */
+    value?: string;
+}
+
+export interface IsLbPoolHealthMonitorResponse {
+    /**
+     * The PCRE-flavor regular expression that HTTP response bodies must match for successful health checks.If absent, health checks will ignore any response body.
+     */
+    bodyRegex?: string;
+    /**
+     * The HTTP response codes expected for successful health checks.
+     */
+    codes?: string[];
+}
+
+export interface IsLbPoolServerAuthentication {
+    /**
+     * The backend server certificate authority instance to use for server certificate verification. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https. If specified, verifyCertificate must be true.
+     */
+    certificateAuthority?: string;
+    /**
+     * Indicates whether server certificate verification is enabled. If set to true, the backend server certificate is verified by: certificateAuthority if specified, the system default certificate authorities, if certificateAuthority is not specified.
+     */
+    verifyCertificate: boolean;
+}
+
 export interface IsLbPrivateIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
@@ -34602,68 +37615,105 @@ export interface IsLbPrivateIp {
 
 export interface IsNetworkAclRule {
     action: string;
+    /**
+     * The ICMP traffic code to allow. Valid values from 0 to 255.
+     */
+    code: number;
     destination: string;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
     direction: string;
-    icmp?: outputs.IsNetworkAclRuleIcmp;
+    /**
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
+     */
+    icmp: outputs.IsNetworkAclRuleIcmp;
     id: string;
     ipVersion: string;
     name: string;
+    /**
+     * The highest port in the range of ports to be matched
+     */
+    portMax: number;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    portMin: number;
+    /**
+     * The name of the network protocol
+     */
+    protocol: string;
     source: string;
+    /**
+     * The highest port in the range of ports to be matched
+     */
+    sourcePortMax: number;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    sourcePortMin: number;
     subnets: number;
-    tcp?: outputs.IsNetworkAclRuleTcp;
-    udp?: outputs.IsNetworkAclRuleUdp;
+    /**
+     * @deprecated tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    tcp: outputs.IsNetworkAclRuleTcp;
+    /**
+     * The ICMP traffic type to allow. Valid values from 0 to 254.
+     */
+    type: number;
+    /**
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    udp: outputs.IsNetworkAclRuleUdp;
 }
 
 export interface IsNetworkAclRuleIcmp {
     /**
      * The ICMP traffic code to allow. Valid values from 0 to 255.
      */
-    code?: number;
+    code: number;
     /**
      * The ICMP traffic type to allow. Valid values from 0 to 254.
      */
-    type?: number;
+    type: number;
 }
 
 export interface IsNetworkAclRuleTcp {
     /**
      * The highest port in the range of ports to be matched
      */
-    portMax?: number;
+    portMax: number;
     /**
      * The lowest port in the range of ports to be matched
      */
-    portMin?: number;
+    portMin: number;
     /**
      * The highest port in the range of ports to be matched
      */
-    sourcePortMax?: number;
+    sourcePortMax: number;
     /**
      * The lowest port in the range of ports to be matched
      */
-    sourcePortMin?: number;
+    sourcePortMin: number;
 }
 
 export interface IsNetworkAclRuleUdp {
     /**
      * The highest port in the range of ports to be matched
      */
-    portMax?: number;
+    portMax: number;
     /**
      * The lowest port in the range of ports to be matched
      */
-    portMin?: number;
+    portMin: number;
     /**
      * The highest port in the range of ports to be matched
      */
-    sourcePortMax?: number;
+    sourcePortMax: number;
     /**
      * The lowest port in the range of ports to be matched
      */
-    sourcePortMin?: number;
+    sourcePortMin: number;
 }
 
 export interface IsPublicAddressRangeResourceGroup {
@@ -34917,6 +37967,10 @@ export interface IsSecurityGroupRule {
      * Security group local ip: an IP address, a CIDR block
      */
     local: string;
+    /**
+     * The name for this security group rule. The name is unique across all rules in the security group.
+     */
+    name: string;
     portMax: number;
     portMin: number;
     protocol: string;
@@ -34928,18 +37982,18 @@ export interface IsSecurityGroupRule {
 }
 
 export interface IsSecurityGroupRuleIcmp {
-    code?: number;
-    type?: number;
+    code: number;
+    type: number;
 }
 
 export interface IsSecurityGroupRuleTcp {
-    portMax?: number;
-    portMin?: number;
+    portMax: number;
+    portMin: number;
 }
 
 export interface IsSecurityGroupRuleUdp {
-    portMax?: number;
-    portMin?: number;
+    portMax: number;
+    portMin: number;
 }
 
 export interface IsShareAccessorBinding {
@@ -35491,7 +38545,7 @@ export interface IsShareSnapshotResourceGroup {
 
 export interface IsShareSnapshotStatusReason {
     /**
-     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     code: string;
     /**
@@ -35610,6 +38664,32 @@ export interface IsSnapshotCatalogOffering {
 }
 
 export interface IsSnapshotCatalogOfferingDeleted {
+    /**
+     * Link to documentation about deleted resources.
+     */
+    moreInfo: string;
+}
+
+export interface IsSnapshotConsistencyGroupBackupPolicyJob {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
+     */
+    deleteds: outputs.IsSnapshotConsistencyGroupBackupPolicyJobDeleted[];
+    /**
+     * The URL for this backup policy job.
+     */
+    href: string;
+    /**
+     * The unique identifier for this backup policy job.
+     */
+    id: string;
+    /**
+     * The resource type.
+     */
+    resourceType: string;
+}
+
+export interface IsSnapshotConsistencyGroupBackupPolicyJobDeleted {
     /**
      * Link to documentation about deleted resources.
      */
@@ -35884,6 +38964,10 @@ export interface IsSubnetNetworkAclAttachmentRule {
      */
     name: string;
     /**
+     * The name of the network protocol
+     */
+    protocol: string;
+    /**
      * The source CIDR block
      */
     source: string;
@@ -35997,7 +39081,7 @@ export interface IsVirtualEndpointGatewayIp {
     /**
      * The Subnet id
      */
-    subnet?: string;
+    subnet: string;
 }
 
 export interface IsVirtualEndpointGatewayIpTarget {
@@ -36028,6 +39112,25 @@ export interface IsVirtualEndpointGatewayLifecycleReason {
      * Link to documentation about the reason for this lifecycle state.
      */
     moreInfo: string;
+}
+
+export interface IsVirtualEndpointGatewayResourceBindingLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message: string;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo: string;
+}
+
+export interface IsVirtualEndpointGatewayResourceBindingTarget {
+    crn?: string;
 }
 
 export interface IsVirtualEndpointGatewayTarget {
@@ -36240,6 +39343,88 @@ export interface IsVolumeHealthReason {
     message: string;
     /**
      * Link to documentation about the reason for this health state.
+     */
+    moreInfo: string;
+}
+
+export interface IsVolumeJobCancelParameter {
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.If specified, the volume profile must not have a `bandwidth.type` of `dependent`.
+     */
+    bandwidth: number;
+    /**
+     * The maximum I/O operations per second (IOPS) for this volume.If specified, the volume profile must not have a `iops.type` of `dependent`.
+     */
+    iops: number;
+    /**
+     * Identifies a volume profile by a unique property.
+     */
+    profile: outputs.IsVolumeJobCancelParameterProfile;
+}
+
+export interface IsVolumeJobCancelParameterProfile {
+    /**
+     * The URL for this volume profile.
+     */
+    href: string;
+    /**
+     * The globally unique name for this volume profile.
+     */
+    name: string;
+}
+
+export interface IsVolumeJobCancelStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the status reason.
+     */
+    message: string;
+    /**
+     * A link to documentation about this status reason.
+     */
+    moreInfo: string;
+}
+
+export interface IsVolumeJobParameters {
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.If specified, the volume profile must not have a `bandwidth.type` of `dependent`.
+     */
+    bandwidth?: number;
+    /**
+     * The maximum I/O operations per second (IOPS) for this volume.If specified, the volume profile must not have a `iops.type` of `dependent`.
+     */
+    iops?: number;
+    /**
+     * Identifies a volume profile by a unique property.
+     */
+    profile: outputs.IsVolumeJobParametersProfile;
+}
+
+export interface IsVolumeJobParametersProfile {
+    /**
+     * The URL for this volume profile.
+     */
+    href?: string;
+    /**
+     * The globally unique name for this volume profile.
+     */
+    name?: string;
+}
+
+export interface IsVolumeJobStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code: string;
+    /**
+     * An explanation of the status reason.
+     */
+    message: string;
+    /**
+     * A link to documentation about this status reason.
      */
     moreInfo: string;
 }
@@ -36727,6 +39912,10 @@ export interface IsVpnGatewayConnectionPeer {
      */
     address: string;
     /**
+     * The peer autonomous system number (ASN) for this VPN gateway connection.
+     */
+    asn: number;
+    /**
      * VPN gateway connection peer CIDRs
      */
     cidrs: string[];
@@ -36776,9 +39965,21 @@ export interface IsVpnGatewayConnectionTunnel {
      */
     address: string;
     /**
+     * The IP address of the neighbor on the virtual tunnel interface.
+     */
+    neighborIp: string;
+    /**
+     * BGP routing protocol state.
+     */
+    protocolState: string;
+    /**
      * The status of the VPN Tunnel
      */
     status: string;
+    /**
+     * The IP address of the virtual tunnel interface.
+     */
+    tunnelInterfaceIp: string;
 }
 
 export interface IsVpnGatewayHealthReason {
@@ -37016,7 +40217,7 @@ export interface PiHostCapacity {
      */
     availableCores: number;
     /**
-     * Amount of memory currently available (in GB).
+     * Amount of memory currently available (in GiB).
      */
     availableMemory: number;
     /**
@@ -37024,7 +40225,7 @@ export interface PiHostCapacity {
      */
     reservedCore: number;
     /**
-     * Amount of memory reserved for system use (in GB).
+     * Amount of memory reserved for system use (in GiB).
      */
     reservedMemory: number;
     /**
@@ -37032,7 +40233,7 @@ export interface PiHostCapacity {
      */
     totalCore: number;
     /**
-     * Total amount of memory of the host (in GB).
+     * Total amount of memory of the host (in GiB).
      */
     totalMemory: number;
     /**
@@ -37040,7 +40241,7 @@ export interface PiHostCapacity {
      */
     usedCore: number;
     /**
-     * Amount of memory used on the host (in GB).
+     * Amount of memory used on the host (in GiB).
      */
     usedMemory: number;
 }
@@ -37101,6 +40302,32 @@ export interface PiImagePiImageImportDetails {
     vendor: string;
 }
 
+export interface PiInstancePiDefaultTrustedProfile {
+    /**
+     * If set to true, the system will create a link to the specified trusted profile during server creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the server is deleted.
+     */
+    autolink: boolean;
+    /**
+     * Either the ID or the CRN of the target.
+     */
+    target: outputs.PiInstancePiDefaultTrustedProfileTarget;
+}
+
+export interface PiInstancePiDefaultTrustedProfileTarget {
+    /**
+     * The CRN for the trusted profile.
+     */
+    crn?: string;
+    /**
+     * Unique identifier for the trusted profile.
+     */
+    id?: string;
+    /**
+     * name of the trusted profile.
+     */
+    name?: string;
+}
+
 export interface PiInstancePiDeploymentTarget {
     /**
      * The uuid of the host group or host.
@@ -37110,6 +40337,17 @@ export interface PiInstancePiDeploymentTarget {
      * The deployment target type. Supported values are `host` and `hostGroup`.
      */
     type: string;
+}
+
+export interface PiInstancePiMetadataService {
+    /**
+     * Indicates whether the metadata service endpoint will be available to the virtual server.
+     */
+    enabled: boolean;
+    /**
+     * when true, allow the metadata service to be disabled while the VM is active.
+     */
+    forceDisable?: boolean;
 }
 
 export interface PiInstancePiNetwork {
@@ -37146,6 +40384,138 @@ export interface PiInstancePiVirtualSerialNumber {
      * Software tier. Enum: ["P05", "P10", "P20", "P30"].
      */
     softwareTier: string;
+}
+
+export interface PiInstancePiVpmemVolume {
+    /**
+     * Volume base name.
+     */
+    name: string;
+    /**
+     * Volume size (GiB).
+     */
+    size: number;
+    /**
+     * Volume ID.
+     */
+    volumeId: string;
+}
+
+export interface PiInstanceVpmemVolume {
+    /**
+     * The date and time when the volume was created.
+     */
+    creationDate: string;
+    /**
+     * The CRN for this resource.
+     */
+    crn: string;
+    /**
+     * Error code for the vPMEM volume.
+     */
+    errorCode: string;
+    /**
+     * Link to vPMEM volume resource.
+     */
+    href: string;
+    /**
+     * Volume Name.
+     */
+    name: string;
+    /**
+     * PVM Instance ID which the volume is attached to.
+     */
+    pvmInstanceId: string;
+    /**
+     * Reason for error.
+     */
+    reason: string;
+    /**
+     * Volume size (GiB).
+     */
+    size: number;
+    /**
+     * Status of the volume.
+     */
+    status: string;
+    /**
+     * The date and time when the volume was updated.
+     */
+    updatedDate: string;
+    /**
+     * List of user tags.
+     */
+    userTags: string[];
+    /**
+     * Volume ID.
+     */
+    volumeId: string;
+}
+
+export interface PiInstanceVpmemVolumesPiVpmemVolume {
+    /**
+     * Volume base name.
+     */
+    name: string;
+    /**
+     * Volume size (GiB).
+     */
+    size: number;
+    /**
+     * Volume ID.
+     */
+    volumeId: string;
+}
+
+export interface PiInstanceVpmemVolumesVolume {
+    /**
+     * The date and time when the volume was created.
+     */
+    creationDate: string;
+    /**
+     * The CRN for this resource.
+     */
+    crn: string;
+    /**
+     * Error code for the vPMEM volume.
+     */
+    errorCode: string;
+    /**
+     * Link to vPMEM volume resource.
+     */
+    href: string;
+    /**
+     * Volume Name.
+     */
+    name: string;
+    /**
+     * PVM Instance ID which the volume is attached to.
+     */
+    pvmInstanceId: string;
+    /**
+     * Reason for error.
+     */
+    reason: string;
+    /**
+     * Volume size (GiB).
+     */
+    size: number;
+    /**
+     * Status of the volume.
+     */
+    status: string;
+    /**
+     * The date and time when the volume was updated.
+     */
+    updatedDate: string;
+    /**
+     * List of user tags.
+     */
+    userTags: string[];
+    /**
+     * Volume ID.
+     */
+    volumeId: string;
 }
 
 export interface PiNetworkAddressGroupMember {
@@ -37812,7 +41182,7 @@ export interface PiVolumeOnboardingPiOnboardingVolume {
      */
     piAuxiliaryVolumes?: outputs.PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume[];
     /**
-     * The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+     * The CRN of the workspace in which the primary volume is located.
      */
     piSourceCrn: string;
 }

@@ -23,9 +23,10 @@ class IsBareMetalServerDiskInitArgs:
     def __init__(__self__, *,
                  bare_metal_server: pulumi.Input[_builtins.str],
                  disk: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsBareMetalServerDisk resource.
+
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.str] disk: Bare metal server disk identifier
         :param pulumi.Input[_builtins.str] name: Bare metal server disk name
@@ -61,37 +62,38 @@ class IsBareMetalServerDiskInitArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server disk name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsBareMetalServerDiskState:
     def __init__(__self__, *,
-                 allowed_uses: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerDiskAllowedUseArgs']]]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None):
+                 allowed_uses: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerDiskAllowedUseArgs']]]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IsBareMetalServerDisk resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerDiskAllowedUseArgs']]] allowed_uses: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.str] created_at: The date and time that the disk was created.
         :param pulumi.Input[_builtins.str] disk: Bare metal server disk identifier
         :param pulumi.Input[_builtins.str] href: The URL for this bare metal server disk.
-        :param pulumi.Input[_builtins.str] interface_type: The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] interface_type: The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] name: Bare metal server disk name
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.int] size: The size of the disk in GB (gigabytes).
@@ -117,110 +119,110 @@ class _IsBareMetalServerDiskState:
 
     @_builtins.property
     @pulumi.getter(name="allowedUses")
-    def allowed_uses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerDiskAllowedUseArgs']]]]:
+    def allowed_uses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerDiskAllowedUseArgs']]]]:
         """
         The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
         """
         return pulumi.get(self, "allowed_uses")
 
     @allowed_uses.setter
-    def allowed_uses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerDiskAllowedUseArgs']]]]):
+    def allowed_uses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerDiskAllowedUseArgs']]]]):
         pulumi.set(self, "allowed_uses", value)
 
     @_builtins.property
     @pulumi.getter(name="bareMetalServer")
-    def bare_metal_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bare_metal_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server identifier
         """
         return pulumi.get(self, "bare_metal_server")
 
     @bare_metal_server.setter
-    def bare_metal_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bare_metal_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bare_metal_server", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the disk was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def disk(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disk(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server disk identifier
         """
         return pulumi.get(self, "disk")
 
     @disk.setter
-    def disk(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disk(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disk", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this bare metal server disk.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceType")
-    def interface_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def interface_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "interface_type")
 
     @interface_type.setter
-    def interface_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def interface_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "interface_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server disk name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The size of the disk in GB (gigabytes).
         """
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size", value)
 
 
@@ -230,12 +232,13 @@ class IsBareMetalServerDisk(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsBareMetalServerDisk resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
@@ -250,6 +253,7 @@ class IsBareMetalServerDisk(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBareMetalServerDisk resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBareMetalServerDiskInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -265,9 +269,9 @@ class IsBareMetalServerDisk(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -300,15 +304,15 @@ class IsBareMetalServerDisk(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_uses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerDiskAllowedUseArgs', 'IsBareMetalServerDiskAllowedUseArgsDict']]]]] = None,
-            bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            disk: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            size: Optional[pulumi.Input[_builtins.int]] = None) -> 'IsBareMetalServerDisk':
+            allowed_uses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerDiskAllowedUseArgs', 'IsBareMetalServerDiskAllowedUseArgsDict', 'outputs.IsBareMetalServerDiskAllowedUse']]]]] = None,
+            bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            disk: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            size: pulumi.Input[Optional[_builtins.int]] = None) -> 'IsBareMetalServerDisk':
         """
         Get an existing IsBareMetalServerDisk resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -316,12 +320,12 @@ class IsBareMetalServerDisk(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerDiskAllowedUseArgs', 'IsBareMetalServerDiskAllowedUseArgsDict']]]] allowed_uses: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerDiskAllowedUseArgs', 'IsBareMetalServerDiskAllowedUseArgsDict', 'outputs.IsBareMetalServerDiskAllowedUse']]]] allowed_uses: The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.str] created_at: The date and time that the disk was created.
         :param pulumi.Input[_builtins.str] disk: Bare metal server disk identifier
         :param pulumi.Input[_builtins.str] href: The URL for this bare metal server disk.
-        :param pulumi.Input[_builtins.str] interface_type: The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        :param pulumi.Input[_builtins.str] interface_type: The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         :param pulumi.Input[_builtins.str] name: Bare metal server disk name
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.int] size: The size of the disk in GB (gigabytes).
@@ -385,7 +389,7 @@ class IsBareMetalServerDisk(pulumi.CustomResource):
     @pulumi.getter(name="interfaceType")
     def interface_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+        The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
         """
         return pulumi.get(self, "interface_type")
 

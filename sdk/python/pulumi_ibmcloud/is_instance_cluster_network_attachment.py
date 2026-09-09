@@ -23,10 +23,11 @@ class IsInstanceClusterNetworkAttachmentInitArgs:
     def __init__(__self__, *,
                  cluster_network_interface: pulumi.Input['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs'],
                  instance_id: pulumi.Input[_builtins.str],
-                 before: Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 before: pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentBeforeArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsInstanceClusterNetworkAttachment resource.
+
         :param pulumi.Input['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs'] cluster_network_interface: The cluster network interface for this instance cluster network attachment.
         :param pulumi.Input[_builtins.str] instance_id: The virtual server instance identifier.
         :param pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs'] before: The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
@@ -65,43 +66,44 @@ class IsInstanceClusterNetworkAttachmentInitArgs:
 
     @_builtins.property
     @pulumi.getter
-    def before(self) -> Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs']]:
+    def before(self) -> pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentBeforeArgs']]:
         """
         The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
         """
         return pulumi.get(self, "before")
 
     @before.setter
-    def before(self, value: Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs']]):
+    def before(self, value: pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentBeforeArgs']]):
         pulumi.set(self, "before", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsInstanceClusterNetworkAttachmentState:
     def __init__(__self__, *,
-                 before: Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs']] = None,
-                 cluster_network_interface: Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs']] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_cluster_network_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs']]]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 before: pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentBeforeArgs']] = None,
+                 cluster_network_interface: pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs']] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_cluster_network_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs']]]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceClusterNetworkAttachment resources.
+
         :param pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs'] before: The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
         :param pulumi.Input['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs'] cluster_network_interface: The cluster network interface for this instance cluster network attachment.
         :param pulumi.Input[_builtins.str] href: The URL for this instance cluster network attachment.
@@ -133,110 +135,110 @@ class _IsInstanceClusterNetworkAttachmentState:
 
     @_builtins.property
     @pulumi.getter
-    def before(self) -> Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs']]:
+    def before(self) -> pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentBeforeArgs']]:
         """
         The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
         """
         return pulumi.get(self, "before")
 
     @before.setter
-    def before(self, value: Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentBeforeArgs']]):
+    def before(self, value: pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentBeforeArgs']]):
         pulumi.set(self, "before", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterNetworkInterface")
-    def cluster_network_interface(self) -> Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs']]:
+    def cluster_network_interface(self) -> pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs']]:
         """
         The cluster network interface for this instance cluster network attachment.
         """
         return pulumi.get(self, "cluster_network_interface")
 
     @cluster_network_interface.setter
-    def cluster_network_interface(self, value: Optional[pulumi.Input['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs']]):
+    def cluster_network_interface(self, value: pulumi.Input[Optional['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs']]):
         pulumi.set(self, "cluster_network_interface", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this instance cluster network attachment.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceClusterNetworkAttachmentId")
-    def instance_cluster_network_attachment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_cluster_network_attachment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for this instance cluster network attachment.
         """
         return pulumi.get(self, "instance_cluster_network_attachment_id")
 
     @instance_cluster_network_attachment_id.setter
-    def instance_cluster_network_attachment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_cluster_network_attachment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_cluster_network_attachment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual server instance identifier.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleReasons")
-    def lifecycle_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs']]]]:
+    def lifecycle_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs']]]]:
         """
         The reasons for the current `lifecycle_state` (if any).
         """
         return pulumi.get(self, "lifecycle_reasons")
 
     @lifecycle_reasons.setter
-    def lifecycle_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs']]]]):
+    def lifecycle_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs']]]]):
         pulumi.set(self, "lifecycle_reasons", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the instance cluster network attachment.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
 
@@ -246,17 +248,18 @@ class IsInstanceClusterNetworkAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 before: Optional[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict']]] = None,
-                 cluster_network_interface: Optional[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict']]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentBefore']]] = None,
+                 cluster_network_interface: pulumi.Input[Optional[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterface']]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceClusterNetworkAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict']] before: The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
-        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict']] cluster_network_interface: The cluster network interface for this instance cluster network attachment.
+        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentBefore']] before: The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
+        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterface']] cluster_network_interface: The cluster network interface for this instance cluster network attachment.
         :param pulumi.Input[_builtins.str] instance_id: The virtual server instance identifier.
         :param pulumi.Input[_builtins.str] name: The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
         """
@@ -268,6 +271,7 @@ class IsInstanceClusterNetworkAttachment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceClusterNetworkAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceClusterNetworkAttachmentInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -283,10 +287,10 @@ class IsInstanceClusterNetworkAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 before: Optional[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict']]] = None,
-                 cluster_network_interface: Optional[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict']]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentBefore']]] = None,
+                 cluster_network_interface: pulumi.Input[Optional[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterface']]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -319,15 +323,15 @@ class IsInstanceClusterNetworkAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            before: Optional[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict']]] = None,
-            cluster_network_interface: Optional[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict']]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_cluster_network_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs', 'IsInstanceClusterNetworkAttachmentLifecycleReasonArgsDict']]]]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceClusterNetworkAttachment':
+            before: pulumi.Input[Optional[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentBefore']]] = None,
+            cluster_network_interface: pulumi.Input[Optional[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterface']]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_cluster_network_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs', 'IsInstanceClusterNetworkAttachmentLifecycleReasonArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentLifecycleReason']]]]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceClusterNetworkAttachment':
         """
         Get an existing IsInstanceClusterNetworkAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -335,12 +339,12 @@ class IsInstanceClusterNetworkAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict']] before: The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
-        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict']] cluster_network_interface: The cluster network interface for this instance cluster network attachment.
+        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentBeforeArgs', 'IsInstanceClusterNetworkAttachmentBeforeArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentBefore']] before: The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
+        :param pulumi.Input[Union['IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgs', 'IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterface']] cluster_network_interface: The cluster network interface for this instance cluster network attachment.
         :param pulumi.Input[_builtins.str] href: The URL for this instance cluster network attachment.
         :param pulumi.Input[_builtins.str] instance_cluster_network_attachment_id: The unique identifier for this instance cluster network attachment.
         :param pulumi.Input[_builtins.str] instance_id: The virtual server instance identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs', 'IsInstanceClusterNetworkAttachmentLifecycleReasonArgsDict']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsInstanceClusterNetworkAttachmentLifecycleReasonArgs', 'IsInstanceClusterNetworkAttachmentLifecycleReasonArgsDict', 'outputs.IsInstanceClusterNetworkAttachmentLifecycleReason']]]] lifecycle_reasons: The reasons for the current `lifecycle_state` (if any).
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of the instance cluster network attachment.
         :param pulumi.Input[_builtins.str] name: The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.

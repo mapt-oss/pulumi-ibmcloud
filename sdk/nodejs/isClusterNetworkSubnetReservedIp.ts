@@ -76,7 +76,7 @@ export class IsClusterNetworkSubnetReservedIp extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * The owner of the cluster network subnet reserved IPThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The owner of the cluster network subnet reserved IPThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     declare public /*out*/ readonly owner: pulumi.Output<string>;
     /**
@@ -150,56 +150,56 @@ export interface IsClusterNetworkSubnetReservedIpState {
     /**
      * The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this cluster network subnet reserved IP member will be automatically deleted when either `target` is deleted, or the cluster network subnet reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The cluster network identifier.
      */
-    clusterNetworkId?: pulumi.Input<string>;
+    clusterNetworkId?: pulumi.Input<string | undefined>;
     /**
      * The cluster network subnet identifier.
      */
-    clusterNetworkSubnetId?: pulumi.Input<string>;
+    clusterNetworkSubnetId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network subnet reserved IP.
      */
-    clusterNetworkSubnetReservedIpId?: pulumi.Input<string>;
+    clusterNetworkSubnetReservedIpId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the cluster network subnet reserved IP was created.
      */
-    createdAt?: pulumi.Input<string>;
-    etag?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * The URL for this cluster network subnet reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current `lifecycleState` (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetReservedIpLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetReservedIpLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the cluster network subnet reserved IP.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network subnet reserved IP. The name is unique across all reserved IPs in a cluster network subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
-     * The owner of the cluster network subnet reserved IPThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The owner of the cluster network subnet reserved IPThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The target this cluster network subnet reserved IP is bound to.If absent, this cluster network subnet reserved IP is provider-owned or unbound.
      */
-    targets?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetReservedIpTarget>[]>;
+    targets?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetReservedIpTarget>[] | undefined>;
 }
 
 /**
@@ -209,11 +209,11 @@ export interface IsClusterNetworkSubnetReservedIpArgs {
     /**
      * The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this cluster network subnet reserved IP member will be automatically deleted when either `target` is deleted, or the cluster network subnet reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The cluster network identifier.
      */
@@ -225,5 +225,5 @@ export interface IsClusterNetworkSubnetReservedIpArgs {
     /**
      * The name for this cluster network subnet reserved IP. The name is unique across all reserved IPs in a cluster network subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -87,15 +87,15 @@ export interface IamAccountSettingsExternalInteractionState {
     /**
      * Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
      */
-    acceptLanguage?: pulumi.Input<string>;
+    acceptLanguage?: pulumi.Input<string | undefined>;
     /**
      * The account ID that the Access Management Account Settings belong to.
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * How external accounts can interact in relation to the requested account.
      */
-    externalAccountIdentityInteraction?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction>;
+    externalAccountIdentityInteraction?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction | undefined>;
 }
 
 /**
@@ -105,7 +105,7 @@ export interface IamAccountSettingsExternalInteractionArgs {
     /**
      * Language code for translations* `default` - English* `de` -  German (Standard)* `en` - English* `es` - Spanish (Spain)* `fr` - French (Standard)* `it` - Italian (Standard)* `ja` - Japanese* `ko` - Korean* `pt-br` - Portuguese (Brazil)* `zh-cn` - Chinese (Simplified, PRC)* `zh-tw` - (Chinese, Taiwan).
      */
-    acceptLanguage?: pulumi.Input<string>;
+    acceptLanguage?: pulumi.Input<string | undefined>;
     /**
      * The account ID that the Access Management Account Settings belong to.
      */

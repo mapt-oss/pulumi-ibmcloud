@@ -133,41 +133,41 @@ export interface ComputeDedicatedHostState {
     /**
      * The capacity that the dedicated host's CPU allocation is restricted to.
      */
-    cpuCount?: pulumi.Input<number>;
+    cpuCount?: pulumi.Input<number | undefined>;
     /**
      * The data center in which the dedicatated host is to be provisioned.
      */
-    datacenter?: pulumi.Input<string>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * The capacity that the dedicated host's disk allocation is restricted to.
      */
-    diskCapacity?: pulumi.Input<number>;
+    diskCapacity?: pulumi.Input<number | undefined>;
     /**
      * The domain of dedicatated host.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * The flavor of the dedicatated host.
      */
-    flavor?: pulumi.Input<string>;
+    flavor?: pulumi.Input<string | undefined>;
     /**
      * The host name of dedicatated host.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * The billing type for the dedicatated host.
      */
-    hourlyBilling?: pulumi.Input<boolean>;
+    hourlyBilling?: pulumi.Input<boolean | undefined>;
     /**
      * The capacity that the dedicated host's memory allocation is restricted to.
      */
-    memoryCapacity?: pulumi.Input<number>;
+    memoryCapacity?: pulumi.Input<number | undefined>;
     /**
      * The hostname of the primary router that the dedicated host is associated with.
      */
-    routerHostname?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    waitTimeMinutes?: pulumi.Input<number>;
+    routerHostname?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    waitTimeMinutes?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -185,7 +185,7 @@ export interface ComputeDedicatedHostArgs {
     /**
      * The flavor of the dedicatated host.
      */
-    flavor?: pulumi.Input<string>;
+    flavor?: pulumi.Input<string | undefined>;
     /**
      * The host name of dedicatated host.
      */
@@ -193,11 +193,11 @@ export interface ComputeDedicatedHostArgs {
     /**
      * The billing type for the dedicatated host.
      */
-    hourlyBilling?: pulumi.Input<boolean>;
+    hourlyBilling?: pulumi.Input<boolean | undefined>;
     /**
      * The hostname of the primary router that the dedicated host is associated with.
      */
     routerHostname: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    waitTimeMinutes?: pulumi.Input<number>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    waitTimeMinutes?: pulumi.Input<number | undefined>;
 }

@@ -178,10 +178,10 @@ def get_is_vpc_address_prefix(address_prefix: Optional[_builtins.str] = None,
         vpc=pulumi.get(__ret__, 'vpc'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'),
         zones=pulumi.get(__ret__, 'zones'))
-def get_is_vpc_address_prefix_output(address_prefix: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     address_prefix_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     vpc: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_vpc_address_prefix_output(address_prefix: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     address_prefix_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     vpc: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpcAddressPrefixResult]:
     """
     Use this data source to access information about an existing resource.

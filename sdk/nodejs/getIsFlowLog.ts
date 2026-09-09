@@ -58,6 +58,6 @@ export function getIsFlowLogOutput(args?: GetIsFlowLogOutputArgs, opts?: pulumi.
  * A collection of arguments for invoking getIsFlowLog.
  */
 export interface GetIsFlowLogOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

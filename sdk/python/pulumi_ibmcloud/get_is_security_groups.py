@@ -118,10 +118,10 @@ def get_is_security_groups(resource_group: Optional[_builtins.str] = None,
         vpc_crn=pulumi.get(__ret__, 'vpc_crn'),
         vpc_id=pulumi.get(__ret__, 'vpc_id'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'))
-def get_is_security_groups_output(resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  vpc_crn: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  vpc_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_security_groups_output(resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  vpc_crn: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  vpc_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSecurityGroupsResult]:
     """
     Use this data source to access information about an existing resource.

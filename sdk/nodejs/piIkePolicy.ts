@@ -136,39 +136,39 @@ export interface PiIkePolicyState {
     /**
      * PI cloud instance ID
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Authentication for the IKE Policy
      */
-    piPolicyAuthentication?: pulumi.Input<string>;
+    piPolicyAuthentication?: pulumi.Input<string | undefined>;
     /**
      * DH group of the IKE Policy
      */
-    piPolicyDhGroup?: pulumi.Input<number>;
+    piPolicyDhGroup?: pulumi.Input<number | undefined>;
     /**
      * Encryption of the IKE Policy
      */
-    piPolicyEncryption?: pulumi.Input<string>;
+    piPolicyEncryption?: pulumi.Input<string | undefined>;
     /**
      * Policy key lifetime
      */
-    piPolicyKeyLifetime?: pulumi.Input<number>;
+    piPolicyKeyLifetime?: pulumi.Input<number | undefined>;
     /**
      * Name of the IKE Policy
      */
-    piPolicyName?: pulumi.Input<string>;
+    piPolicyName?: pulumi.Input<string | undefined>;
     /**
      * Preshared key used in this IKE Policy (length of preshared key must be even)
      */
-    piPolicyPresharedKey?: pulumi.Input<string>;
+    piPolicyPresharedKey?: pulumi.Input<string | undefined>;
     /**
      * Version of the IKE Policy
      */
-    piPolicyVersion?: pulumi.Input<number>;
+    piPolicyVersion?: pulumi.Input<number | undefined>;
     /**
      * IKE Policy ID
      */
-    policyId?: pulumi.Input<string>;
+    policyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -182,7 +182,7 @@ export interface PiIkePolicyArgs {
     /**
      * Authentication for the IKE Policy
      */
-    piPolicyAuthentication?: pulumi.Input<string>;
+    piPolicyAuthentication?: pulumi.Input<string | undefined>;
     /**
      * DH group of the IKE Policy
      */

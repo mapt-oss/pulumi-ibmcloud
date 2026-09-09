@@ -106,9 +106,9 @@ def get_is_cluster_network_interfaces(cluster_network_id: Optional[_builtins.str
         interfaces=pulumi.get(__ret__, 'interfaces'),
         name=pulumi.get(__ret__, 'name'),
         sort=pulumi.get(__ret__, 'sort'))
-def get_is_cluster_network_interfaces_output(cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             sort: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_cluster_network_interfaces_output(cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             sort: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsClusterNetworkInterfacesResult]:
     """
     Use this data source to access information about an existing resource.

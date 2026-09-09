@@ -25,11 +25,12 @@ class IsReservationArgs:
                  committed_use: pulumi.Input['IsReservationCommittedUseArgs'],
                  profile: pulumi.Input['IsReservationProfileArgs'],
                  zone: pulumi.Input[_builtins.str],
-                 affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input['IsReservationResourceGroupArgs']] = None):
+                 affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional['IsReservationResourceGroupArgs']] = None):
         """
         The set of arguments for constructing a IsReservation resource.
+
         :param pulumi.Input['IsReservationCapacityArgs'] capacity: The capacity reservation configuration to use
         :param pulumi.Input['IsReservationCommittedUseArgs'] committed_use: The committed use configuration to use for this reservation
         :param pulumi.Input['IsReservationProfileArgs'] profile: The profile to use for this reservation.
@@ -99,60 +100,61 @@ class IsReservationArgs:
 
     @_builtins.property
     @pulumi.getter(name="affinityPolicy")
-    def affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The affinity policy to use for this reservation
         """
         return pulumi.get(self, "affinity_policy")
 
     @affinity_policy.setter
-    def affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Reservation name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input['IsReservationResourceGroupArgs']]:
+    def resource_group(self) -> pulumi.Input[Optional['IsReservationResourceGroupArgs']]:
         """
         The committed use configuration to use for this reservation
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input['IsReservationResourceGroupArgs']]):
+    def resource_group(self, value: pulumi.Input[Optional['IsReservationResourceGroupArgs']]):
         pulumi.set(self, "resource_group", value)
 
 
 @pulumi.input_type
 class _IsReservationState:
     def __init__(__self__, *,
-                 affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity: Optional[pulumi.Input['IsReservationCapacityArgs']] = None,
-                 committed_use: Optional[pulumi.Input['IsReservationCommittedUseArgs']] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input['IsReservationProfileArgs']] = None,
-                 resource_group: Optional[pulumi.Input['IsReservationResourceGroupArgs']] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input['IsReservationStatusReasonArgs']]]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity: pulumi.Input[Optional['IsReservationCapacityArgs']] = None,
+                 committed_use: pulumi.Input[Optional['IsReservationCommittedUseArgs']] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional['IsReservationProfileArgs']] = None,
+                 resource_group: pulumi.Input[Optional['IsReservationResourceGroupArgs']] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input['IsReservationStatusReasonArgs']]]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsReservation resources.
+
         :param pulumi.Input[_builtins.str] affinity_policy: The affinity policy to use for this reservation
         :param pulumi.Input['IsReservationCapacityArgs'] capacity: The capacity reservation configuration to use
         :param pulumi.Input['IsReservationCommittedUseArgs'] committed_use: The committed use configuration to use for this reservation
@@ -199,170 +201,170 @@ class _IsReservationState:
 
     @_builtins.property
     @pulumi.getter(name="affinityPolicy")
-    def affinity_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def affinity_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The affinity policy to use for this reservation
         """
         return pulumi.get(self, "affinity_policy")
 
     @affinity_policy.setter
-    def affinity_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def affinity_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "affinity_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input['IsReservationCapacityArgs']]:
+    def capacity(self) -> pulumi.Input[Optional['IsReservationCapacityArgs']]:
         """
         The capacity reservation configuration to use
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input['IsReservationCapacityArgs']]):
+    def capacity(self, value: pulumi.Input[Optional['IsReservationCapacityArgs']]):
         pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="committedUse")
-    def committed_use(self) -> Optional[pulumi.Input['IsReservationCommittedUseArgs']]:
+    def committed_use(self) -> pulumi.Input[Optional['IsReservationCommittedUseArgs']]:
         """
         The committed use configuration to use for this reservation
         """
         return pulumi.get(self, "committed_use")
 
     @committed_use.setter
-    def committed_use(self, value: Optional[pulumi.Input['IsReservationCommittedUseArgs']]):
+    def committed_use(self, value: pulumi.Input[Optional['IsReservationCommittedUseArgs']]):
         pulumi.set(self, "committed_use", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the reservation was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CRN for this reservation.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this reservation.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of this reservation.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Reservation name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input['IsReservationProfileArgs']]:
+    def profile(self) -> pulumi.Input[Optional['IsReservationProfileArgs']]:
         """
         The profile to use for this reservation.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input['IsReservationProfileArgs']]):
+    def profile(self, value: pulumi.Input[Optional['IsReservationProfileArgs']]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input['IsReservationResourceGroupArgs']]:
+    def resource_group(self) -> pulumi.Input[Optional['IsReservationResourceGroupArgs']]:
         """
         The committed use configuration to use for this reservation
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input['IsReservationResourceGroupArgs']]):
+    def resource_group(self, value: pulumi.Input[Optional['IsReservationResourceGroupArgs']]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the reservation.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusReasons")
-    def status_reasons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsReservationStatusReasonArgs']]]]:
+    def status_reasons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsReservationStatusReasonArgs']]]]:
         """
         The committed use configuration to use for this reservation
         """
         return pulumi.get(self, "status_reasons")
 
     @status_reasons.setter
-    def status_reasons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsReservationStatusReasonArgs']]]]):
+    def status_reasons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsReservationStatusReasonArgs']]]]):
         pulumi.set(self, "status_reasons", value)
 
     @_builtins.property
     @pulumi.getter
-    def zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique name for this zone.
         """
         return pulumi.get(self, "zone")
 
     @zone.setter
-    def zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone", value)
 
 
@@ -372,24 +374,25 @@ class IsReservation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity: Optional[pulumi.Input[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict']]] = None,
-                 committed_use: Optional[pulumi.Input[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict']]] = None,
-                 resource_group: Optional[pulumi.Input[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict']]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity: pulumi.Input[Optional[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict', 'outputs.IsReservationCapacity']]] = None,
+                 committed_use: pulumi.Input[Optional[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict', 'outputs.IsReservationCommittedUse']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict', 'outputs.IsReservationProfile']]] = None,
+                 resource_group: pulumi.Input[Optional[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict', 'outputs.IsReservationResourceGroup']]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsReservation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] affinity_policy: The affinity policy to use for this reservation
-        :param pulumi.Input[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict']] capacity: The capacity reservation configuration to use
-        :param pulumi.Input[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict']] committed_use: The committed use configuration to use for this reservation
+        :param pulumi.Input[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict', 'outputs.IsReservationCapacity']] capacity: The capacity reservation configuration to use
+        :param pulumi.Input[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict', 'outputs.IsReservationCommittedUse']] committed_use: The committed use configuration to use for this reservation
         :param pulumi.Input[_builtins.str] name: Reservation name
-        :param pulumi.Input[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict']] profile: The profile to use for this reservation.
-        :param pulumi.Input[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict']] resource_group: The committed use configuration to use for this reservation
+        :param pulumi.Input[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict', 'outputs.IsReservationProfile']] profile: The profile to use for this reservation.
+        :param pulumi.Input[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict', 'outputs.IsReservationResourceGroup']] resource_group: The committed use configuration to use for this reservation
         :param pulumi.Input[_builtins.str] zone: The globally unique name for this zone.
         """
         ...
@@ -400,6 +403,7 @@ class IsReservation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsReservation resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsReservationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -415,13 +419,13 @@ class IsReservation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity: Optional[pulumi.Input[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict']]] = None,
-                 committed_use: Optional[pulumi.Input[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict']]] = None,
-                 resource_group: Optional[pulumi.Input[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict']]] = None,
-                 zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity: pulumi.Input[Optional[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict', 'outputs.IsReservationCapacity']]] = None,
+                 committed_use: pulumi.Input[Optional[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict', 'outputs.IsReservationCommittedUse']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict', 'outputs.IsReservationProfile']]] = None,
+                 resource_group: pulumi.Input[Optional[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict', 'outputs.IsReservationResourceGroup']]] = None,
+                 zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -463,20 +467,20 @@ class IsReservation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            affinity_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            capacity: Optional[pulumi.Input[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict']]] = None,
-            committed_use: Optional[pulumi.Input[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict']]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            profile: Optional[pulumi.Input[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict']]] = None,
-            resource_group: Optional[pulumi.Input[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict']]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_reasons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsReservationStatusReasonArgs', 'IsReservationStatusReasonArgsDict']]]]] = None,
-            zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsReservation':
+            affinity_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity: pulumi.Input[Optional[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict', 'outputs.IsReservationCapacity']]] = None,
+            committed_use: pulumi.Input[Optional[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict', 'outputs.IsReservationCommittedUse']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict', 'outputs.IsReservationProfile']]] = None,
+            resource_group: pulumi.Input[Optional[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict', 'outputs.IsReservationResourceGroup']]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_reasons: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsReservationStatusReasonArgs', 'IsReservationStatusReasonArgsDict', 'outputs.IsReservationStatusReason']]]]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsReservation':
         """
         Get an existing IsReservation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -485,18 +489,18 @@ class IsReservation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] affinity_policy: The affinity policy to use for this reservation
-        :param pulumi.Input[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict']] capacity: The capacity reservation configuration to use
-        :param pulumi.Input[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict']] committed_use: The committed use configuration to use for this reservation
+        :param pulumi.Input[Union['IsReservationCapacityArgs', 'IsReservationCapacityArgsDict', 'outputs.IsReservationCapacity']] capacity: The capacity reservation configuration to use
+        :param pulumi.Input[Union['IsReservationCommittedUseArgs', 'IsReservationCommittedUseArgsDict', 'outputs.IsReservationCommittedUse']] committed_use: The committed use configuration to use for this reservation
         :param pulumi.Input[_builtins.str] created_at: The date and time that the reservation was created.
         :param pulumi.Input[_builtins.str] crn: The CRN for this reservation.
         :param pulumi.Input[_builtins.str] href: The URL for this reservation.
         :param pulumi.Input[_builtins.str] lifecycle_state: The lifecycle state of this reservation.
         :param pulumi.Input[_builtins.str] name: Reservation name
-        :param pulumi.Input[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict']] profile: The profile to use for this reservation.
-        :param pulumi.Input[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict']] resource_group: The committed use configuration to use for this reservation
+        :param pulumi.Input[Union['IsReservationProfileArgs', 'IsReservationProfileArgsDict', 'outputs.IsReservationProfile']] profile: The profile to use for this reservation.
+        :param pulumi.Input[Union['IsReservationResourceGroupArgs', 'IsReservationResourceGroupArgsDict', 'outputs.IsReservationResourceGroup']] resource_group: The committed use configuration to use for this reservation
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.str] status: The status of the reservation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsReservationStatusReasonArgs', 'IsReservationStatusReasonArgsDict']]]] status_reasons: The committed use configuration to use for this reservation
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsReservationStatusReasonArgs', 'IsReservationStatusReasonArgsDict', 'outputs.IsReservationStatusReason']]]] status_reasons: The committed use configuration to use for this reservation
         :param pulumi.Input[_builtins.str] zone: The globally unique name for this zone.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

@@ -114,7 +114,7 @@ class AwaitableGetIsVirtualNetworkInterfaceFloatingIpResult(GetIsVirtualNetworkI
             virtual_network_interface=self.virtual_network_interface)
 
 
-def get_is_virtual_network_interface_floating_ip(deleteds: Optional[Sequence[Union['GetIsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'GetIsVirtualNetworkInterfaceFloatingIpDeletedArgsDict']]] = None,
+def get_is_virtual_network_interface_floating_ip(deleteds: Optional[Sequence[Union['GetIsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'GetIsVirtualNetworkInterfaceFloatingIpDeletedArgsDict', 'outputs.GetIsVirtualNetworkInterfaceFloatingIpDeletedResult']]] = None,
                                                  floating_ip: Optional[_builtins.str] = None,
                                                  virtual_network_interface: Optional[_builtins.str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIsVirtualNetworkInterfaceFloatingIpResult:
@@ -137,9 +137,9 @@ def get_is_virtual_network_interface_floating_ip(deleteds: Optional[Sequence[Uni
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         virtual_network_interface=pulumi.get(__ret__, 'virtual_network_interface'))
-def get_is_virtual_network_interface_floating_ip_output(deleteds: Optional[pulumi.Input[Optional[Sequence[Union['GetIsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'GetIsVirtualNetworkInterfaceFloatingIpDeletedArgsDict']]]]] = None,
-                                                        floating_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_virtual_network_interface_floating_ip_output(deleteds: pulumi.Input[Optional[Optional[Sequence[Union['GetIsVirtualNetworkInterfaceFloatingIpDeletedArgs', 'GetIsVirtualNetworkInterfaceFloatingIpDeletedArgsDict', 'outputs.GetIsVirtualNetworkInterfaceFloatingIpDeletedResult']]]]] = None,
+                                                        floating_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVirtualNetworkInterfaceFloatingIpResult]:
     """
     Use this data source to access information about an existing resource.

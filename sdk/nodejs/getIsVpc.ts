@@ -77,6 +77,6 @@ export function getIsVpcOutput(args?: GetIsVpcOutputArgs, opts?: pulumi.InvokeOu
  * A collection of arguments for invoking getIsVpc.
  */
 export interface GetIsVpcOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

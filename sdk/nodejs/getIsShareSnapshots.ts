@@ -52,7 +52,7 @@ export function getIsShareSnapshotsOutput(args?: GetIsShareSnapshotsOutputArgs, 
  * A collection of arguments for invoking getIsShareSnapshots.
  */
 export interface GetIsShareSnapshotsOutputArgs {
-    backupPolicyPlan?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    share?: pulumi.Input<string>;
+    backupPolicyPlan?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    share?: pulumi.Input<string | undefined>;
 }

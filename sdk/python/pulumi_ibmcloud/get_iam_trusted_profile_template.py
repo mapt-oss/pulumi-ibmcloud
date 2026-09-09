@@ -223,9 +223,9 @@ def get_iam_trusted_profile_template(include_history: Optional[_builtins.bool] =
         profiles=pulumi.get(__ret__, 'profiles'),
         template_id=pulumi.get(__ret__, 'template_id'),
         version=pulumi.get(__ret__, 'version'))
-def get_iam_trusted_profile_template_output(include_history: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                            template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_trusted_profile_template_output(include_history: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                            template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTrustedProfileTemplateResult]:
     """
     Use this data source to access information about an existing resource.

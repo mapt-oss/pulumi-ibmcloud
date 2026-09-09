@@ -22,6 +22,7 @@ class IamAccessGroupAccountSettingsArgs:
                  public_access_enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a IamAccessGroupAccountSettings resource.
+
         :param pulumi.Input[_builtins.bool] public_access_enabled: Flag to enable/disable public access groups
         """
         pulumi.set(__self__, "public_access_enabled", public_access_enabled)
@@ -42,10 +43,11 @@ class IamAccessGroupAccountSettingsArgs:
 @pulumi.input_type
 class _IamAccessGroupAccountSettingsState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_access_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_access_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering IamAccessGroupAccountSettings resources.
+
         :param pulumi.Input[_builtins.str] account_id: Id of the account
         :param pulumi.Input[_builtins.bool] public_access_enabled: Flag to enable/disable public access groups
         """
@@ -56,26 +58,26 @@ class _IamAccessGroupAccountSettingsState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Id of the account
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="publicAccessEnabled")
-    def public_access_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def public_access_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to enable/disable public access groups
         """
         return pulumi.get(self, "public_access_enabled")
 
     @public_access_enabled.setter
-    def public_access_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def public_access_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "public_access_enabled", value)
 
 
@@ -85,10 +87,11 @@ class IamAccessGroupAccountSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 public_access_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 public_access_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a IamAccessGroupAccountSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] public_access_enabled: Flag to enable/disable public access groups
@@ -101,6 +104,7 @@ class IamAccessGroupAccountSettings(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccessGroupAccountSettings resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccessGroupAccountSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -116,7 +120,7 @@ class IamAccessGroupAccountSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 public_access_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 public_access_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -140,8 +144,8 @@ class IamAccessGroupAccountSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            public_access_enabled: Optional[pulumi.Input[_builtins.bool]] = None) -> 'IamAccessGroupAccountSettings':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            public_access_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'IamAccessGroupAccountSettings':
         """
         Get an existing IamAccessGroupAccountSettings resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

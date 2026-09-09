@@ -47,5 +47,5 @@ export function getIsBackupPolicyPlansOutput(args: GetIsBackupPolicyPlansOutputA
  */
 export interface GetIsBackupPolicyPlansOutputArgs {
     backupPolicyId: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

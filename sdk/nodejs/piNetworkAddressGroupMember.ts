@@ -117,35 +117,35 @@ export interface PiNetworkAddressGroupMemberState {
     /**
      * The network address group's crn.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The list of IP addresses in CIDR notation (for example 192.168.66.2/32) in the Network Address Group.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkAddressGroupMemberMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.PiNetworkAddressGroupMemberMember>[] | undefined>;
     /**
      * The name of the Network Address Group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The member to add in CIDR format.
      */
-    piCidr?: pulumi.Input<string>;
+    piCidr?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Network Address Group ID.
      */
-    piNetworkAddressGroupId?: pulumi.Input<string>;
+    piNetworkAddressGroupId?: pulumi.Input<string | undefined>;
     /**
      * The network address group member id to remove.
      */
-    piNetworkAddressGroupMemberId?: pulumi.Input<string>;
+    piNetworkAddressGroupMemberId?: pulumi.Input<string | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -155,7 +155,7 @@ export interface PiNetworkAddressGroupMemberArgs {
     /**
      * The member to add in CIDR format.
      */
-    piCidr?: pulumi.Input<string>;
+    piCidr?: pulumi.Input<string | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -167,5 +167,5 @@ export interface PiNetworkAddressGroupMemberArgs {
     /**
      * The network address group member id to remove.
      */
-    piNetworkAddressGroupMemberId?: pulumi.Input<string>;
+    piNetworkAddressGroupMemberId?: pulumi.Input<string | undefined>;
 }

@@ -24,10 +24,11 @@ class IsBareMetalServerInitializationArgs:
                  bare_metal_server: pulumi.Input[_builtins.str],
                  image: pulumi.Input[_builtins.str],
                  keys: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 default_trusted_profile: Optional[pulumi.Input['IsBareMetalServerInitializationDefaultTrustedProfileArgs']] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_trusted_profile: pulumi.Input[Optional['IsBareMetalServerInitializationDefaultTrustedProfileArgs']] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsBareMetalServerInitialization resource.
+
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.str] image: The image to be used when provisioning the bare metal server.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the bare metal server
@@ -80,39 +81,40 @@ class IsBareMetalServerInitializationArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfile")
-    def default_trusted_profile(self) -> Optional[pulumi.Input['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]:
+    def default_trusted_profile(self) -> pulumi.Input[Optional['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]:
         """
         The default trusted profile configuration for the bare metal server
         """
         return pulumi.get(self, "default_trusted_profile")
 
     @default_trusted_profile.setter
-    def default_trusted_profile(self, value: Optional[pulumi.Input['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]):
+    def default_trusted_profile(self, value: pulumi.Input[Optional['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]):
         pulumi.set(self, "default_trusted_profile", value)
 
     @_builtins.property
     @pulumi.getter(name="userData")
-    def user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server user data to replace initialization
         """
         return pulumi.get(self, "user_data")
 
     @user_data.setter
-    def user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_data", value)
 
 
 @pulumi.input_type
 class _IsBareMetalServerInitializationState:
     def __init__(__self__, *,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile: Optional[pulumi.Input['IsBareMetalServerInitializationDefaultTrustedProfileArgs']] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None):
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile: pulumi.Input[Optional['IsBareMetalServerInitializationDefaultTrustedProfileArgs']] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsBareMetalServerInitialization resources.
+
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input['IsBareMetalServerInitializationDefaultTrustedProfileArgs'] default_trusted_profile: The default trusted profile configuration for the bare metal server
         :param pulumi.Input[_builtins.str] image: The image to be used when provisioning the bare metal server.
@@ -132,62 +134,62 @@ class _IsBareMetalServerInitializationState:
 
     @_builtins.property
     @pulumi.getter(name="bareMetalServer")
-    def bare_metal_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bare_metal_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server identifier
         """
         return pulumi.get(self, "bare_metal_server")
 
     @bare_metal_server.setter
-    def bare_metal_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bare_metal_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bare_metal_server", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTrustedProfile")
-    def default_trusted_profile(self) -> Optional[pulumi.Input['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]:
+    def default_trusted_profile(self) -> pulumi.Input[Optional['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]:
         """
         The default trusted profile configuration for the bare metal server
         """
         return pulumi.get(self, "default_trusted_profile")
 
     @default_trusted_profile.setter
-    def default_trusted_profile(self, value: Optional[pulumi.Input['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]):
+    def default_trusted_profile(self, value: pulumi.Input[Optional['IsBareMetalServerInitializationDefaultTrustedProfileArgs']]):
         pulumi.set(self, "default_trusted_profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The image to be used when provisioning the bare metal server.
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         SSH key Ids for the bare metal server
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter(name="userData")
-    def user_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server user data to replace initialization
         """
         return pulumi.get(self, "user_data")
 
     @user_data.setter
-    def user_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_data", value)
 
 
@@ -197,18 +199,19 @@ class IsBareMetalServerInitialization(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile: Optional[pulumi.Input[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict']]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile: pulumi.Input[Optional[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerInitializationDefaultTrustedProfile']]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsBareMetalServerInitialization resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
-        :param pulumi.Input[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict']] default_trusted_profile: The default trusted profile configuration for the bare metal server
+        :param pulumi.Input[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerInitializationDefaultTrustedProfile']] default_trusted_profile: The default trusted profile configuration for the bare metal server
         :param pulumi.Input[_builtins.str] image: The image to be used when provisioning the bare metal server.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the bare metal server
         :param pulumi.Input[_builtins.str] user_data: Bare metal server user data to replace initialization
@@ -221,6 +224,7 @@ class IsBareMetalServerInitialization(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBareMetalServerInitialization resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBareMetalServerInitializationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -236,11 +240,11 @@ class IsBareMetalServerInitialization(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trusted_profile: Optional[pulumi.Input[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict']]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_data: Optional[pulumi.Input[_builtins.str]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trusted_profile: pulumi.Input[Optional[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerInitializationDefaultTrustedProfile']]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_data: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -271,11 +275,11 @@ class IsBareMetalServerInitialization(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-            default_trusted_profile: Optional[pulumi.Input[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict']]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            user_data: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsBareMetalServerInitialization':
+            bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+            default_trusted_profile: pulumi.Input[Optional[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerInitializationDefaultTrustedProfile']]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            user_data: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsBareMetalServerInitialization':
         """
         Get an existing IsBareMetalServerInitialization resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -284,7 +288,7 @@ class IsBareMetalServerInitialization(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
-        :param pulumi.Input[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict']] default_trusted_profile: The default trusted profile configuration for the bare metal server
+        :param pulumi.Input[Union['IsBareMetalServerInitializationDefaultTrustedProfileArgs', 'IsBareMetalServerInitializationDefaultTrustedProfileArgsDict', 'outputs.IsBareMetalServerInitializationDefaultTrustedProfile']] default_trusted_profile: The default trusted profile configuration for the bare metal server
         :param pulumi.Input[_builtins.str] image: The image to be used when provisioning the bare metal server.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] keys: SSH key Ids for the bare metal server
         :param pulumi.Input[_builtins.str] user_data: Bare metal server user data to replace initialization

@@ -163,55 +163,55 @@ export interface PiVpnConnectionState {
     /**
      * VPN connection ID
      */
-    connectionId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
     /**
      * Status of the VPN connection
      */
-    connectionStatus?: pulumi.Input<string>;
+    connectionStatus?: pulumi.Input<string | undefined>;
     /**
      * Dead Peer Detection
      */
-    deadPeerDetections?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    deadPeerDetections?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Public IP address of the VPN Gateway (vSRX) attached to this VPN Connection
      */
-    gatewayAddress?: pulumi.Input<string>;
+    gatewayAddress?: pulumi.Input<string | undefined>;
     /**
      * Local Gateway address, only in 'route' mode
      */
-    localGatewayAddress?: pulumi.Input<string>;
+    localGatewayAddress?: pulumi.Input<string | undefined>;
     /**
      * PI cloud instance ID
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of IKE Policy selected for this VPN Connection
      */
-    piIkePolicyId?: pulumi.Input<string>;
+    piIkePolicyId?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier of IPSec Policy selected for this VPN Connection
      */
-    piIpsecPolicyId?: pulumi.Input<string>;
+    piIpsecPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Set of network IDs to attach to this VPN connection
      */
-    piNetworks?: pulumi.Input<pulumi.Input<string>[]>;
+    piNetworks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Peer Gateway address
      */
-    piPeerGatewayAddress?: pulumi.Input<string>;
+    piPeerGatewayAddress?: pulumi.Input<string | undefined>;
     /**
      * Set of CIDR of peer subnets
      */
-    piPeerSubnets?: pulumi.Input<pulumi.Input<string>[]>;
+    piPeerSubnets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Mode used by this VPN Connection, either 'policy' or 'route'
      */
-    piVpnConnectionMode?: pulumi.Input<string>;
+    piVpnConnectionMode?: pulumi.Input<string | undefined>;
     /**
      * Name of the VPN Connection
      */
-    piVpnConnectionName?: pulumi.Input<string>;
+    piVpnConnectionName?: pulumi.Input<string | undefined>;
 }
 
 /**

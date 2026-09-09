@@ -24,9 +24,10 @@ class CosBucketObjectLockConfigurationArgs:
                  bucket_crn: pulumi.Input[_builtins.str],
                  bucket_location: pulumi.Input[_builtins.str],
                  object_lock_configuration: pulumi.Input['CosBucketObjectLockConfigurationObjectLockConfigurationArgs'],
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CosBucketObjectLockConfiguration resource.
+
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input['CosBucketObjectLockConfigurationObjectLockConfigurationArgs'] object_lock_configuration: Bucket level object lock settings includes Days, Years, Mode.
@@ -76,26 +77,27 @@ class CosBucketObjectLockConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
 
 @pulumi.input_type
 class _CosBucketObjectLockConfigurationState:
     def __init__(__self__, *,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_configuration: Optional[pulumi.Input['CosBucketObjectLockConfigurationObjectLockConfigurationArgs']] = None):
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_configuration: pulumi.Input[Optional['CosBucketObjectLockConfigurationObjectLockConfigurationArgs']] = None):
         """
         Input properties used for looking up and filtering CosBucketObjectLockConfiguration resources.
+
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
@@ -112,50 +114,50 @@ class _CosBucketObjectLockConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="bucketCrn")
-    def bucket_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket CRN
         """
         return pulumi.get(self, "bucket_crn")
 
     @bucket_crn.setter
-    def bucket_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketLocation")
-    def bucket_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket location
         """
         return pulumi.get(self, "bucket_location")
 
     @bucket_location.setter
-    def bucket_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_location", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLockConfiguration")
-    def object_lock_configuration(self) -> Optional[pulumi.Input['CosBucketObjectLockConfigurationObjectLockConfigurationArgs']]:
+    def object_lock_configuration(self) -> pulumi.Input[Optional['CosBucketObjectLockConfigurationObjectLockConfigurationArgs']]:
         """
         Bucket level object lock settings includes Days, Years, Mode.
         """
         return pulumi.get(self, "object_lock_configuration")
 
     @object_lock_configuration.setter
-    def object_lock_configuration(self, value: Optional[pulumi.Input['CosBucketObjectLockConfigurationObjectLockConfigurationArgs']]):
+    def object_lock_configuration(self, value: pulumi.Input[Optional['CosBucketObjectLockConfigurationObjectLockConfigurationArgs']]):
         pulumi.set(self, "object_lock_configuration", value)
 
 
@@ -165,19 +167,20 @@ class CosBucketObjectLockConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_configuration: Optional[pulumi.Input[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict']]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_configuration: pulumi.Input[Optional[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict', 'outputs.CosBucketObjectLockConfigurationObjectLockConfiguration']]] = None,
                  __props__=None):
         """
         Create a CosBucketObjectLockConfiguration resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict']] object_lock_configuration: Bucket level object lock settings includes Days, Years, Mode.
+        :param pulumi.Input[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict', 'outputs.CosBucketObjectLockConfigurationObjectLockConfiguration']] object_lock_configuration: Bucket level object lock settings includes Days, Years, Mode.
         """
         ...
     @overload
@@ -187,6 +190,7 @@ class CosBucketObjectLockConfiguration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CosBucketObjectLockConfiguration resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CosBucketObjectLockConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -202,10 +206,10 @@ class CosBucketObjectLockConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_configuration: Optional[pulumi.Input[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict']]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_configuration: pulumi.Input[Optional[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict', 'outputs.CosBucketObjectLockConfigurationObjectLockConfiguration']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -235,10 +239,10 @@ class CosBucketObjectLockConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-            object_lock_configuration: Optional[pulumi.Input[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict']]] = None) -> 'CosBucketObjectLockConfiguration':
+            bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            object_lock_configuration: pulumi.Input[Optional[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict', 'outputs.CosBucketObjectLockConfigurationObjectLockConfiguration']]] = None) -> 'CosBucketObjectLockConfiguration':
         """
         Get an existing CosBucketObjectLockConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -249,7 +253,7 @@ class CosBucketObjectLockConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict']] object_lock_configuration: Bucket level object lock settings includes Days, Years, Mode.
+        :param pulumi.Input[Union['CosBucketObjectLockConfigurationObjectLockConfigurationArgs', 'CosBucketObjectLockConfigurationObjectLockConfigurationArgsDict', 'outputs.CosBucketObjectLockConfigurationObjectLockConfiguration']] object_lock_configuration: Bucket level object lock settings includes Days, Years, Mode.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

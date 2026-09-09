@@ -63,9 +63,9 @@ export function getIsBackupPolicyJobsOutput(args: GetIsBackupPolicyJobsOutputArg
  */
 export interface GetIsBackupPolicyJobsOutputArgs {
     backupPolicyId: pulumi.Input<string>;
-    backupPolicyPlanId?: pulumi.Input<string>;
-    sourceId?: pulumi.Input<string>;
-    status?: pulumi.Input<string>;
-    targetSnapshotsCrns?: pulumi.Input<pulumi.Input<string>[]>;
-    targetSnapshotsIds?: pulumi.Input<pulumi.Input<string>[]>;
+    backupPolicyPlanId?: pulumi.Input<string | undefined>;
+    sourceId?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string | undefined>;
+    targetSnapshotsCrns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    targetSnapshotsIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -22,15 +22,16 @@ __all__ = ['IsBareMetalServerNetworkAttachmentInitArgs', 'IsBareMetalServerNetwo
 class IsBareMetalServerNetworkAttachmentInitArgs:
     def __init__(__self__, *,
                  bare_metal_server: pulumi.Input[_builtins.str],
-                 allow_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None):
+                 allow_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a IsBareMetalServerNetworkAttachment resource.
+
         :param pulumi.Input[_builtins.str] bare_metal_server: The bare metal server identifier.
         :param pulumi.Input[_builtins.bool] allow_to_float: Indicates if the bare metal server network attachment can automatically float to any other server within the same `resource_group`. The bare metal server network attachment will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to bare metal server network attachments with `vlan` interface type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] allowed_vlans: Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) attachment.
@@ -70,111 +71,112 @@ class IsBareMetalServerNetworkAttachmentInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowToFloat")
-    def allow_to_float(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_to_float(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the bare metal server network attachment can automatically float to any other server within the same `resource_group`. The bare metal server network attachment will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to bare metal server network attachments with `vlan` interface type.
         """
         return pulumi.get(self, "allow_to_float")
 
     @allow_to_float.setter
-    def allow_to_float(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_to_float(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_to_float", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedVlans")
-    def allowed_vlans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def allowed_vlans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) attachment.
         """
         return pulumi.get(self, "allowed_vlans")
 
     @allowed_vlans.setter
-    def allowed_vlans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def allowed_vlans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "allowed_vlans", value)
 
     @_builtins.property
     @pulumi.getter(name="hardStop")
-    def hard_stop(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hard_stop(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Only used for PCI network attachments, whether to hard/immediately stop server
         """
         return pulumi.get(self, "hard_stop")
 
     @hard_stop.setter
-    def hard_stop(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hard_stop(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hard_stop", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceType")
-    def interface_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def interface_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network attachment's interface type:- `pci`: a physical PCI device which can only be created or deleted when the bare metal  server is stopped  - Has an `allowed_vlans` property which controls the VLANs that will be permitted    to use the PCI attachment  - Cannot directly use an IEEE 802.1q VLAN tag.- `vlan`: a virtual device, used through a `pci` device that has the `vlan` in its  array of `allowed_vlans`.  - Must use an IEEE 802.1q tag.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
         """
         return pulumi.get(self, "interface_type")
 
     @interface_type.setter
-    def interface_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def interface_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "interface_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this bare metal server network attachment. The name is unique across all network attachments for the bare metal server.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]:
         """
         A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]):
         pulumi.set(self, "virtual_network_interface", value)
 
     @_builtins.property
     @pulumi.getter
-    def vlan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vlan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this attachment.
         """
         return pulumi.get(self, "vlan")
 
     @vlan.setter
-    def vlan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vlan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vlan", value)
 
 
 @pulumi.input_type
 class _IsBareMetalServerNetworkAttachmentState:
     def __init__(__self__, *,
-                 allow_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 floating_bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-                 port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']] = None,
-                 virtual_network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None):
+                 allow_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 floating_bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']] = None,
+                 virtual_network_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IsBareMetalServerNetworkAttachment resources.
+
         :param pulumi.Input[_builtins.bool] allow_to_float: Indicates if the bare metal server network attachment can automatically float to any other server within the same `resource_group`. The bare metal server network attachment will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to bare metal server network attachments with `vlan` interface type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] allowed_vlans: Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) attachment.
         :param pulumi.Input[_builtins.str] bare_metal_server: The bare metal server identifier.
@@ -230,206 +232,206 @@ class _IsBareMetalServerNetworkAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="allowToFloat")
-    def allow_to_float(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_to_float(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the bare metal server network attachment can automatically float to any other server within the same `resource_group`. The bare metal server network attachment will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to bare metal server network attachments with `vlan` interface type.
         """
         return pulumi.get(self, "allow_to_float")
 
     @allow_to_float.setter
-    def allow_to_float(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_to_float(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_to_float", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedVlans")
-    def allowed_vlans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def allowed_vlans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) attachment.
         """
         return pulumi.get(self, "allowed_vlans")
 
     @allowed_vlans.setter
-    def allowed_vlans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def allowed_vlans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "allowed_vlans", value)
 
     @_builtins.property
     @pulumi.getter(name="bareMetalServer")
-    def bare_metal_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bare_metal_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bare metal server identifier.
         """
         return pulumi.get(self, "bare_metal_server")
 
     @bare_metal_server.setter
-    def bare_metal_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bare_metal_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bare_metal_server", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the bare metal server network attachment was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="floatingBareMetalServer")
-    def floating_bare_metal_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def floating_bare_metal_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bare metal server identifier of the server where the attachment is floated to(only applicated for allow_to_float true).
         """
         return pulumi.get(self, "floating_bare_metal_server")
 
     @floating_bare_metal_server.setter
-    def floating_bare_metal_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def floating_bare_metal_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "floating_bare_metal_server", value)
 
     @_builtins.property
     @pulumi.getter(name="hardStop")
-    def hard_stop(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hard_stop(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Only used for PCI network attachments, whether to hard/immediately stop server
         """
         return pulumi.get(self, "hard_stop")
 
     @hard_stop.setter
-    def hard_stop(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hard_stop(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hard_stop", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this bare metal server network attachment.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceType")
-    def interface_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def interface_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network attachment's interface type:- `pci`: a physical PCI device which can only be created or deleted when the bare metal  server is stopped  - Has an `allowed_vlans` property which controls the VLANs that will be permitted    to use the PCI attachment  - Cannot directly use an IEEE 802.1q VLAN tag.- `vlan`: a virtual device, used through a `pci` device that has the `vlan` in its  array of `allowed_vlans`.  - Must use an IEEE 802.1q tag.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
         """
         return pulumi.get(self, "interface_type")
 
     @interface_type.setter
-    def interface_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def interface_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "interface_type", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the bare metal server network attachment.
         """
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this bare metal server network attachment. The name is unique across all network attachments for the bare metal server.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkAttachment")
-    def network_attachment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_attachment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network attachment's id.
         """
         return pulumi.get(self, "network_attachment")
 
     @network_attachment.setter
-    def network_attachment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_attachment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="portSpeed")
-    def port_speed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_speed(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port speed for this bare metal server network attachment in Mbps.
         """
         return pulumi.get(self, "port_speed")
 
     @port_speed.setter
-    def port_speed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_speed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_speed", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bare metal server network attachment type.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]:
         """
         A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs']]):
         pulumi.set(self, "virtual_network_interface", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterfaceId")
-    def virtual_network_interface_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtual_network_interface_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual_network_interface's id.
         """
         return pulumi.get(self, "virtual_network_interface_id")
 
     @virtual_network_interface_id.setter
-    def virtual_network_interface_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtual_network_interface_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtual_network_interface_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def vlan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vlan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this attachment.
         """
         return pulumi.get(self, "vlan")
 
     @vlan.setter
-    def vlan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vlan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vlan", value)
 
 
@@ -439,17 +441,18 @@ class IsBareMetalServerNetworkAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict']]] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None,
+                 allow_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface']]] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a IsBareMetalServerNetworkAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_to_float: Indicates if the bare metal server network attachment can automatically float to any other server within the same `resource_group`. The bare metal server network attachment will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to bare metal server network attachments with `vlan` interface type.
@@ -458,7 +461,7 @@ class IsBareMetalServerNetworkAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] hard_stop: Only used for PCI network attachments, whether to hard/immediately stop server
         :param pulumi.Input[_builtins.str] interface_type: The network attachment's interface type:- `pci`: a physical PCI device which can only be created or deleted when the bare metal  server is stopped  - Has an `allowed_vlans` property which controls the VLANs that will be permitted    to use the PCI attachment  - Cannot directly use an IEEE 802.1q VLAN tag.- `vlan`: a virtual device, used through a `pci` device that has the `vlan` in its  array of `allowed_vlans`.  - Must use an IEEE 802.1q tag.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
         :param pulumi.Input[_builtins.str] name: The name for this bare metal server network attachment. The name is unique across all network attachments for the bare metal server.
-        :param pulumi.Input[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict']] virtual_network_interface: A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
+        :param pulumi.Input[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface']] virtual_network_interface: A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         :param pulumi.Input[_builtins.int] vlan: Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this attachment.
         """
         ...
@@ -469,6 +472,7 @@ class IsBareMetalServerNetworkAttachment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBareMetalServerNetworkAttachment resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBareMetalServerNetworkAttachmentInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -484,14 +488,14 @@ class IsBareMetalServerNetworkAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict']]] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None,
+                 allow_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface']]] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -530,23 +534,23 @@ class IsBareMetalServerNetworkAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-            allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            floating_bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-            hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-            port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_network_interface: Optional[pulumi.Input[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict']]] = None,
-            virtual_network_interface_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vlan: Optional[pulumi.Input[_builtins.int]] = None) -> 'IsBareMetalServerNetworkAttachment':
+            allow_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+            allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            floating_bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+            hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+            port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_network_interface: pulumi.Input[Optional[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface']]] = None,
+            virtual_network_interface_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan: pulumi.Input[Optional[_builtins.int]] = None) -> 'IsBareMetalServerNetworkAttachment':
         """
         Get an existing IsBareMetalServerNetworkAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -568,7 +572,7 @@ class IsBareMetalServerNetworkAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] port_speed: The port speed for this bare metal server network attachment in Mbps.
         :param pulumi.Input[_builtins.str] resource_type: The resource type.
         :param pulumi.Input[_builtins.str] type: The bare metal server network attachment type.
-        :param pulumi.Input[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict']] virtual_network_interface: A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
+        :param pulumi.Input[Union['IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgs', 'IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceArgsDict', 'outputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface']] virtual_network_interface: A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
         :param pulumi.Input[_builtins.str] virtual_network_interface_id: The virtual_network_interface's id.
         :param pulumi.Input[_builtins.int] vlan: Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this attachment.
         """

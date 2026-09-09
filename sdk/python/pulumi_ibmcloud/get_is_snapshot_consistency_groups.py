@@ -27,7 +27,10 @@ class GetIsSnapshotConsistencyGroupsResult:
     """
     A collection of values returned by getIsSnapshotConsistencyGroups.
     """
-    def __init__(__self__, backup_policy_plan=None, id=None, name=None, resource_group=None, snapshot_consistency_groups=None):
+    def __init__(__self__, backup_policy_job=None, backup_policy_plan=None, id=None, name=None, resource_group=None, snapshot_consistency_groups=None):
+        if backup_policy_job and not isinstance(backup_policy_job, str):
+            raise TypeError("Expected argument 'backup_policy_job' to be a str")
+        pulumi.set(__self__, "backup_policy_job", backup_policy_job)
         if backup_policy_plan and not isinstance(backup_policy_plan, str):
             raise TypeError("Expected argument 'backup_policy_plan' to be a str")
         pulumi.set(__self__, "backup_policy_plan", backup_policy_plan)
@@ -43,6 +46,11 @@ class GetIsSnapshotConsistencyGroupsResult:
         if snapshot_consistency_groups and not isinstance(snapshot_consistency_groups, list):
             raise TypeError("Expected argument 'snapshot_consistency_groups' to be a list")
         pulumi.set(__self__, "snapshot_consistency_groups", snapshot_consistency_groups)
+
+    @_builtins.property
+    @pulumi.getter(name="backupPolicyJob")
+    def backup_policy_job(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "backup_policy_job")
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyPlan")
@@ -79,6 +87,7 @@ class AwaitableGetIsSnapshotConsistencyGroupsResult(GetIsSnapshotConsistencyGrou
         if False:
             yield self
         return GetIsSnapshotConsistencyGroupsResult(
+            backup_policy_job=self.backup_policy_job,
             backup_policy_plan=self.backup_policy_plan,
             id=self.id,
             name=self.name,
@@ -86,7 +95,8 @@ class AwaitableGetIsSnapshotConsistencyGroupsResult(GetIsSnapshotConsistencyGrou
             snapshot_consistency_groups=self.snapshot_consistency_groups)
 
 
-def get_is_snapshot_consistency_groups(backup_policy_plan: Optional[_builtins.str] = None,
+def get_is_snapshot_consistency_groups(backup_policy_job: Optional[_builtins.str] = None,
+                                       backup_policy_plan: Optional[_builtins.str] = None,
                                        name: Optional[_builtins.str] = None,
                                        resource_group: Optional[_builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIsSnapshotConsistencyGroupsResult:
@@ -94,6 +104,7 @@ def get_is_snapshot_consistency_groups(backup_policy_plan: Optional[_builtins.st
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['backupPolicyJob'] = backup_policy_job
     __args__['backupPolicyPlan'] = backup_policy_plan
     __args__['name'] = name
     __args__['resourceGroup'] = resource_group
@@ -101,25 +112,29 @@ def get_is_snapshot_consistency_groups(backup_policy_plan: Optional[_builtins.st
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getIsSnapshotConsistencyGroups:getIsSnapshotConsistencyGroups', __args__, opts=opts, typ=GetIsSnapshotConsistencyGroupsResult).value
 
     return AwaitableGetIsSnapshotConsistencyGroupsResult(
+        backup_policy_job=pulumi.get(__ret__, 'backup_policy_job'),
         backup_policy_plan=pulumi.get(__ret__, 'backup_policy_plan'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         snapshot_consistency_groups=pulumi.get(__ret__, 'snapshot_consistency_groups'))
-def get_is_snapshot_consistency_groups_output(backup_policy_plan: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_snapshot_consistency_groups_output(backup_policy_job: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              backup_policy_plan: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSnapshotConsistencyGroupsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
+    __args__['backupPolicyJob'] = backup_policy_job
     __args__['backupPolicyPlan'] = backup_policy_plan
     __args__['name'] = name
     __args__['resourceGroup'] = resource_group
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getIsSnapshotConsistencyGroups:getIsSnapshotConsistencyGroups', __args__, opts=opts, typ=GetIsSnapshotConsistencyGroupsResult)
     return __ret__.apply(lambda __response__: GetIsSnapshotConsistencyGroupsResult(
+        backup_policy_job=pulumi.get(__response__, 'backup_policy_job'),
         backup_policy_plan=pulumi.get(__response__, 'backup_policy_plan'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),

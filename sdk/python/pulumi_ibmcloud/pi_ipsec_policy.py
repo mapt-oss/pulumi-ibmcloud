@@ -25,9 +25,10 @@ class PiIpsecPolicyArgs:
                  pi_policy_key_lifetime: pulumi.Input[_builtins.int],
                  pi_policy_name: pulumi.Input[_builtins.str],
                  pi_policy_pfs: pulumi.Input[_builtins.bool],
-                 pi_policy_authentication: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_policy_authentication: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiIpsecPolicy resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
         :param pulumi.Input[_builtins.int] pi_policy_dh_group: DH group of the IPSec Policy
         :param pulumi.Input[_builtins.str] pi_policy_encryption: Encryption of the IPSec Policy
@@ -119,30 +120,31 @@ class PiIpsecPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="piPolicyAuthentication")
-    def pi_policy_authentication(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_policy_authentication(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authentication for the IPSec Policy
         """
         return pulumi.get(self, "pi_policy_authentication")
 
     @pi_policy_authentication.setter
-    def pi_policy_authentication(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_policy_authentication(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_policy_authentication", value)
 
 
 @pulumi.input_type
 class _PiIpsecPolicyState:
     def __init__(__self__, *,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_authentication: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_policy_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_pfs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_authentication: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_policy_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_pfs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiIpsecPolicy resources.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
         :param pulumi.Input[_builtins.str] pi_policy_authentication: Authentication for the IPSec Policy
         :param pulumi.Input[_builtins.int] pi_policy_dh_group: DH group of the IPSec Policy
@@ -171,98 +173,98 @@ class _PiIpsecPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI cloud instance ID
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piPolicyAuthentication")
-    def pi_policy_authentication(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_policy_authentication(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authentication for the IPSec Policy
         """
         return pulumi.get(self, "pi_policy_authentication")
 
     @pi_policy_authentication.setter
-    def pi_policy_authentication(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_policy_authentication(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_policy_authentication", value)
 
     @_builtins.property
     @pulumi.getter(name="piPolicyDhGroup")
-    def pi_policy_dh_group(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_policy_dh_group(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         DH group of the IPSec Policy
         """
         return pulumi.get(self, "pi_policy_dh_group")
 
     @pi_policy_dh_group.setter
-    def pi_policy_dh_group(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_policy_dh_group(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_policy_dh_group", value)
 
     @_builtins.property
     @pulumi.getter(name="piPolicyEncryption")
-    def pi_policy_encryption(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_policy_encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Encryption of the IPSec Policy
         """
         return pulumi.get(self, "pi_policy_encryption")
 
     @pi_policy_encryption.setter
-    def pi_policy_encryption(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_policy_encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_policy_encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="piPolicyKeyLifetime")
-    def pi_policy_key_lifetime(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pi_policy_key_lifetime(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Policy key lifetime
         """
         return pulumi.get(self, "pi_policy_key_lifetime")
 
     @pi_policy_key_lifetime.setter
-    def pi_policy_key_lifetime(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pi_policy_key_lifetime(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pi_policy_key_lifetime", value)
 
     @_builtins.property
     @pulumi.getter(name="piPolicyName")
-    def pi_policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the IPSec Policy
         """
         return pulumi.get(self, "pi_policy_name")
 
     @pi_policy_name.setter
-    def pi_policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_policy_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piPolicyPfs")
-    def pi_policy_pfs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pi_policy_pfs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Perfect Forward Secrecy
         """
         return pulumi.get(self, "pi_policy_pfs")
 
     @pi_policy_pfs.setter
-    def pi_policy_pfs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pi_policy_pfs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pi_policy_pfs", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IPSec policy ID
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_id", value)
 
 
@@ -272,16 +274,17 @@ class PiIpsecPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_authentication: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_policy_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_pfs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_authentication: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_policy_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_pfs: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Create a PiIpsecPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI cloud instance ID
@@ -300,6 +303,7 @@ class PiIpsecPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiIpsecPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiIpsecPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -315,13 +319,13 @@ class PiIpsecPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_authentication: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_policy_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-                 pi_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_policy_pfs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_authentication: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_policy_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+                 pi_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_policy_pfs: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -361,14 +365,14 @@ class PiIpsecPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_policy_authentication: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_policy_dh_group: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_policy_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_policy_key_lifetime: Optional[pulumi.Input[_builtins.int]] = None,
-            pi_policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_policy_pfs: Optional[pulumi.Input[_builtins.bool]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiIpsecPolicy':
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_policy_authentication: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_policy_dh_group: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_policy_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_policy_key_lifetime: pulumi.Input[Optional[_builtins.int]] = None,
+            pi_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_policy_pfs: pulumi.Input[Optional[_builtins.bool]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiIpsecPolicy':
         """
         Get an existing PiIpsecPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

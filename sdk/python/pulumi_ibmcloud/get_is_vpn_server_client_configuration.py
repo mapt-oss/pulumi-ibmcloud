@@ -93,8 +93,8 @@ def get_is_vpn_server_client_configuration(file_path: Optional[_builtins.str] = 
         id=pulumi.get(__ret__, 'id'),
         vpn_server=pulumi.get(__ret__, 'vpn_server'),
         vpn_server_client_configuration=pulumi.get(__ret__, 'vpn_server_client_configuration'))
-def get_is_vpn_server_client_configuration_output(file_path: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  vpn_server: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_vpn_server_client_configuration_output(file_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  vpn_server: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsVpnServerClientConfigurationResult]:
     """
     Use this data source to access information about an existing resource.

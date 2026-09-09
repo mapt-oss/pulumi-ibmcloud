@@ -279,179 +279,179 @@ export class ComputeVmInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ComputeVmInstance resources.
  */
 export interface ComputeVmInstanceState {
-    blockStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
-    bulkVms?: pulumi.Input<pulumi.Input<inputs.ComputeVmInstanceBulkVm>[]>;
-    cores?: pulumi.Input<number>;
-    datacenter?: pulumi.Input<string>;
+    blockStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    bulkVms?: pulumi.Input<pulumi.Input<inputs.ComputeVmInstanceBulkVm>[] | undefined>;
+    cores?: pulumi.Input<number | undefined>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * The user provided datacenter options
      */
-    datacenterChoices?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[]>;
-    dedicatedAcctHostOnly?: pulumi.Input<boolean>;
-    dedicatedHostId?: pulumi.Input<number>;
-    dedicatedHostName?: pulumi.Input<string>;
-    disks?: pulumi.Input<pulumi.Input<number>[]>;
-    domain?: pulumi.Input<string>;
-    evault?: pulumi.Input<number>;
-    fileStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
+    datacenterChoices?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[] | undefined>;
+    dedicatedAcctHostOnly?: pulumi.Input<boolean | undefined>;
+    dedicatedHostId?: pulumi.Input<number | undefined>;
+    dedicatedHostName?: pulumi.Input<string | undefined>;
+    disks?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    evault?: pulumi.Input<number | undefined>;
+    fileStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Flavor key name used to provision vm.
      */
-    flavorKeyName?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    hourlyBilling?: pulumi.Input<boolean>;
-    imageId?: pulumi.Input<number>;
-    ipAddressId?: pulumi.Input<number>;
-    ipAddressIdPrivate?: pulumi.Input<number>;
-    ipv4Address?: pulumi.Input<string>;
-    ipv4AddressPrivate?: pulumi.Input<string>;
-    ipv6Address?: pulumi.Input<string>;
-    ipv6AddressId?: pulumi.Input<number>;
-    ipv6Enabled?: pulumi.Input<boolean>;
-    ipv6StaticEnabled?: pulumi.Input<boolean>;
-    localDisk?: pulumi.Input<boolean>;
-    memory?: pulumi.Input<number>;
-    networkSpeed?: pulumi.Input<number>;
-    notes?: pulumi.Input<string>;
-    osReferenceCode?: pulumi.Input<string>;
+    flavorKeyName?: pulumi.Input<string | undefined>;
+    hostname?: pulumi.Input<string | undefined>;
+    hourlyBilling?: pulumi.Input<boolean | undefined>;
+    imageId?: pulumi.Input<number | undefined>;
+    ipAddressId?: pulumi.Input<number | undefined>;
+    ipAddressIdPrivate?: pulumi.Input<number | undefined>;
+    ipv4Address?: pulumi.Input<string | undefined>;
+    ipv4AddressPrivate?: pulumi.Input<string | undefined>;
+    ipv6Address?: pulumi.Input<string | undefined>;
+    ipv6AddressId?: pulumi.Input<number | undefined>;
+    ipv6Enabled?: pulumi.Input<boolean | undefined>;
+    ipv6StaticEnabled?: pulumi.Input<boolean | undefined>;
+    localDisk?: pulumi.Input<boolean | undefined>;
+    memory?: pulumi.Input<number | undefined>;
+    networkSpeed?: pulumi.Input<number | undefined>;
+    notes?: pulumi.Input<string | undefined>;
+    osReferenceCode?: pulumi.Input<string | undefined>;
     /**
      * The placement group id
      */
-    placementGroupId?: pulumi.Input<number>;
+    placementGroupId?: pulumi.Input<number | undefined>;
     /**
      * The placement group name
      */
-    placementGroupName?: pulumi.Input<string>;
-    postInstallScriptUri?: pulumi.Input<string>;
-    privateInterfaceId?: pulumi.Input<number>;
-    privateNetworkOnly?: pulumi.Input<boolean>;
-    privateSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[]>;
-    privateSubnet?: pulumi.Input<string>;
-    privateSubnetId?: pulumi.Input<number>;
-    privateVlanId?: pulumi.Input<number>;
-    publicBandwidthLimited?: pulumi.Input<number>;
-    publicBandwidthUnlimited?: pulumi.Input<boolean>;
-    publicInterfaceId?: pulumi.Input<number>;
-    publicIpv6Subnet?: pulumi.Input<string>;
-    publicIpv6SubnetId?: pulumi.Input<number>;
-    publicSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[]>;
-    publicSubnet?: pulumi.Input<string>;
-    publicSubnetId?: pulumi.Input<number>;
-    publicVlanId?: pulumi.Input<number>;
+    placementGroupName?: pulumi.Input<string | undefined>;
+    postInstallScriptUri?: pulumi.Input<string | undefined>;
+    privateInterfaceId?: pulumi.Input<number | undefined>;
+    privateNetworkOnly?: pulumi.Input<boolean | undefined>;
+    privateSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    privateSubnet?: pulumi.Input<string | undefined>;
+    privateSubnetId?: pulumi.Input<number | undefined>;
+    privateVlanId?: pulumi.Input<number | undefined>;
+    publicBandwidthLimited?: pulumi.Input<number | undefined>;
+    publicBandwidthUnlimited?: pulumi.Input<boolean | undefined>;
+    publicInterfaceId?: pulumi.Input<number | undefined>;
+    publicIpv6Subnet?: pulumi.Input<string | undefined>;
+    publicIpv6SubnetId?: pulumi.Input<number | undefined>;
+    publicSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    publicSubnet?: pulumi.Input<string | undefined>;
+    publicSubnetId?: pulumi.Input<number | undefined>;
+    publicVlanId?: pulumi.Input<number | undefined>;
     /**
      * Quote ID for Quote based provisioning
      */
-    quoteId?: pulumi.Input<number>;
+    quoteId?: pulumi.Input<number | undefined>;
     /**
      * The reserved group id
      */
-    reservedCapacityId?: pulumi.Input<number>;
+    reservedCapacityId?: pulumi.Input<number | undefined>;
     /**
      * The reserved group id
      */
-    reservedCapacityName?: pulumi.Input<string>;
+    reservedCapacityName?: pulumi.Input<string | undefined>;
     /**
      * The primary disk of reserved instance
      */
-    reservedInstancePrimaryDisk?: pulumi.Input<number>;
+    reservedInstancePrimaryDisk?: pulumi.Input<number | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
-    secondaryIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
-    secondaryIpCount?: pulumi.Input<number>;
-    sshKeyIds?: pulumi.Input<pulumi.Input<number>[]>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    transient?: pulumi.Input<boolean>;
-    userMetadata?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
+    secondaryIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    secondaryIpCount?: pulumi.Input<number | undefined>;
+    sshKeyIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    transient?: pulumi.Input<boolean | undefined>;
+    userMetadata?: pulumi.Input<string | undefined>;
     /**
      * @deprecated This field is deprecated. Use timeouts block instead
      */
-    waitTimeMinutes?: pulumi.Input<number>;
+    waitTimeMinutes?: pulumi.Input<number | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ComputeVmInstance resource.
  */
 export interface ComputeVmInstanceArgs {
-    blockStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
-    bulkVms?: pulumi.Input<pulumi.Input<inputs.ComputeVmInstanceBulkVm>[]>;
-    cores?: pulumi.Input<number>;
-    datacenter?: pulumi.Input<string>;
+    blockStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    bulkVms?: pulumi.Input<pulumi.Input<inputs.ComputeVmInstanceBulkVm>[] | undefined>;
+    cores?: pulumi.Input<number | undefined>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * The user provided datacenter options
      */
-    datacenterChoices?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[]>;
-    dedicatedAcctHostOnly?: pulumi.Input<boolean>;
-    dedicatedHostId?: pulumi.Input<number>;
-    dedicatedHostName?: pulumi.Input<string>;
-    disks?: pulumi.Input<pulumi.Input<number>[]>;
-    domain?: pulumi.Input<string>;
-    evault?: pulumi.Input<number>;
-    fileStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
+    datacenterChoices?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[] | undefined>;
+    dedicatedAcctHostOnly?: pulumi.Input<boolean | undefined>;
+    dedicatedHostId?: pulumi.Input<number | undefined>;
+    dedicatedHostName?: pulumi.Input<string | undefined>;
+    disks?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    evault?: pulumi.Input<number | undefined>;
+    fileStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Flavor key name used to provision vm.
      */
-    flavorKeyName?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    hourlyBilling?: pulumi.Input<boolean>;
-    imageId?: pulumi.Input<number>;
-    ipv6Enabled?: pulumi.Input<boolean>;
-    ipv6StaticEnabled?: pulumi.Input<boolean>;
-    localDisk?: pulumi.Input<boolean>;
-    memory?: pulumi.Input<number>;
-    networkSpeed?: pulumi.Input<number>;
-    notes?: pulumi.Input<string>;
-    osReferenceCode?: pulumi.Input<string>;
+    flavorKeyName?: pulumi.Input<string | undefined>;
+    hostname?: pulumi.Input<string | undefined>;
+    hourlyBilling?: pulumi.Input<boolean | undefined>;
+    imageId?: pulumi.Input<number | undefined>;
+    ipv6Enabled?: pulumi.Input<boolean | undefined>;
+    ipv6StaticEnabled?: pulumi.Input<boolean | undefined>;
+    localDisk?: pulumi.Input<boolean | undefined>;
+    memory?: pulumi.Input<number | undefined>;
+    networkSpeed?: pulumi.Input<number | undefined>;
+    notes?: pulumi.Input<string | undefined>;
+    osReferenceCode?: pulumi.Input<string | undefined>;
     /**
      * The placement group id
      */
-    placementGroupId?: pulumi.Input<number>;
+    placementGroupId?: pulumi.Input<number | undefined>;
     /**
      * The placement group name
      */
-    placementGroupName?: pulumi.Input<string>;
-    postInstallScriptUri?: pulumi.Input<string>;
-    privateNetworkOnly?: pulumi.Input<boolean>;
-    privateSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[]>;
-    privateSubnet?: pulumi.Input<string>;
-    privateVlanId?: pulumi.Input<number>;
-    publicBandwidthLimited?: pulumi.Input<number>;
-    publicBandwidthUnlimited?: pulumi.Input<boolean>;
-    publicSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[]>;
-    publicSubnet?: pulumi.Input<string>;
-    publicVlanId?: pulumi.Input<number>;
+    placementGroupName?: pulumi.Input<string | undefined>;
+    postInstallScriptUri?: pulumi.Input<string | undefined>;
+    privateNetworkOnly?: pulumi.Input<boolean | undefined>;
+    privateSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    privateSubnet?: pulumi.Input<string | undefined>;
+    privateVlanId?: pulumi.Input<number | undefined>;
+    publicBandwidthLimited?: pulumi.Input<number | undefined>;
+    publicBandwidthUnlimited?: pulumi.Input<boolean | undefined>;
+    publicSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    publicSubnet?: pulumi.Input<string | undefined>;
+    publicVlanId?: pulumi.Input<number | undefined>;
     /**
      * Quote ID for Quote based provisioning
      */
-    quoteId?: pulumi.Input<number>;
+    quoteId?: pulumi.Input<number | undefined>;
     /**
      * The reserved group id
      */
-    reservedCapacityId?: pulumi.Input<number>;
+    reservedCapacityId?: pulumi.Input<number | undefined>;
     /**
      * The reserved group id
      */
-    reservedCapacityName?: pulumi.Input<string>;
+    reservedCapacityName?: pulumi.Input<string | undefined>;
     /**
      * The primary disk of reserved instance
      */
-    reservedInstancePrimaryDisk?: pulumi.Input<number>;
-    secondaryIpCount?: pulumi.Input<number>;
-    sshKeyIds?: pulumi.Input<pulumi.Input<number>[]>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    transient?: pulumi.Input<boolean>;
-    userMetadata?: pulumi.Input<string>;
+    reservedInstancePrimaryDisk?: pulumi.Input<number | undefined>;
+    secondaryIpCount?: pulumi.Input<number | undefined>;
+    sshKeyIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    transient?: pulumi.Input<boolean | undefined>;
+    userMetadata?: pulumi.Input<string | undefined>;
     /**
      * @deprecated This field is deprecated. Use timeouts block instead
      */
-    waitTimeMinutes?: pulumi.Input<number>;
+    waitTimeMinutes?: pulumi.Input<number | undefined>;
 }

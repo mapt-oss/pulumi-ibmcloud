@@ -23,6 +23,7 @@ class IsVirtualNetworkInterfaceIpInitArgs:
                  virtual_network_interface: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsVirtualNetworkInterfaceIp resource.
+
         :param pulumi.Input[_builtins.str] reserved_ip: The reserved ip identifier.
         :param pulumi.Input[_builtins.str] virtual_network_interface: The virtual network interface identifier.
         """
@@ -57,14 +58,15 @@ class IsVirtualNetworkInterfaceIpInitArgs:
 @pulumi.input_type
 class _IsVirtualNetworkInterfaceIpState:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsVirtualNetworkInterfaceIp resources.
+
         :param pulumi.Input[_builtins.str] address: The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
         :param pulumi.Input[_builtins.str] href: The URL for this reserved IP.
         :param pulumi.Input[_builtins.str] name: The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
@@ -87,74 +89,74 @@ class _IsVirtualNetworkInterfaceIpState:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this reserved IP.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedIp")
-    def reserved_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reserved_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reserved ip identifier.
         """
         return pulumi.get(self, "reserved_ip")
 
     @reserved_ip.setter
-    def reserved_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reserved_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reserved_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualNetworkInterface")
-    def virtual_network_interface(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtual_network_interface(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual network interface identifier.
         """
         return pulumi.get(self, "virtual_network_interface")
 
     @virtual_network_interface.setter
-    def virtual_network_interface(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtual_network_interface(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtual_network_interface", value)
 
 
@@ -164,11 +166,12 @@ class IsVirtualNetworkInterfaceIp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+                 reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVirtualNetworkInterfaceIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] reserved_ip: The reserved ip identifier.
@@ -182,6 +185,7 @@ class IsVirtualNetworkInterfaceIp(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVirtualNetworkInterfaceIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVirtualNetworkInterfaceIpInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -197,8 +201,8 @@ class IsVirtualNetworkInterfaceIp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None,
+                 reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,12 +232,12 @@ class IsVirtualNetworkInterfaceIp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address: Optional[pulumi.Input[_builtins.str]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_network_interface: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsVirtualNetworkInterfaceIp':
+            address: pulumi.Input[Optional[_builtins.str]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_network_interface: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsVirtualNetworkInterfaceIp':
         """
         Get an existing IsVirtualNetworkInterfaceIp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

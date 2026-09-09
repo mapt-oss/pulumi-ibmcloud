@@ -223,8 +223,8 @@ def get_pi_cloud_connection(pi_cloud_connection_name: Optional[_builtins.str] = 
         user_ip_address=pulumi.get(__ret__, 'user_ip_address'),
         vpc_crns=pulumi.get(__ret__, 'vpc_crns'),
         vpc_enabled=pulumi.get(__ret__, 'vpc_enabled'))
-def get_pi_cloud_connection_output(pi_cloud_connection_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                   pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_cloud_connection_output(pi_cloud_connection_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                   pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiCloudConnectionResult]:
     """
     Use this data source to access information about an existing resource.

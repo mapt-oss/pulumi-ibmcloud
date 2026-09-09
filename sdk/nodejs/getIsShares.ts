@@ -49,6 +49,6 @@ export function getIsSharesOutput(args?: GetIsSharesOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getIsShares.
  */
 export interface GetIsSharesOutputArgs {
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

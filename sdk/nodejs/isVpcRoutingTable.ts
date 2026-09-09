@@ -177,76 +177,76 @@ export interface IsVpcRoutingTableState {
     /**
      * The filters specifying the resources that may create routes in this routing table, The resource type: vpnGateway or vpn_server
      */
-    acceptRoutesFromResourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    acceptRoutesFromResourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The ingress sources to advertise routes to. Routes in the table with `advertise` enabled will be advertised to these sources.
      */
-    advertiseRoutesTos?: pulumi.Input<pulumi.Input<string>[]>;
+    advertiseRoutesTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Routing table Created At
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The routing table CRN.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Routing table Href
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this is the default routing table for this VPC
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * Routing table Lifecycle State
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this routing table.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this volume.
      */
-    resourceGroups?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableResourceGroup>[]>;
+    resourceGroups?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableResourceGroup>[] | undefined>;
     /**
      * Routing table Resource Type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
      */
-    routeDirectLinkIngress?: pulumi.Input<boolean>;
+    routeDirectLinkIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from the internet. For this to succeed, the VPC must not already have a routing table with this property set to true.
      */
-    routeInternetIngress?: pulumi.Input<boolean>;
+    routeInternetIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from Transit Gateway to this VPC.
      */
-    routeTransitGatewayIngress?: pulumi.Input<boolean>;
+    routeTransitGatewayIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from subnets in other zones in this VPC.
      */
-    routeVpcZoneIngress?: pulumi.Input<boolean>;
+    routeVpcZoneIngress?: pulumi.Input<boolean | undefined>;
     /**
      * The routing table identifier.
      */
-    routingTable?: pulumi.Input<string>;
-    subnets?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableSubnet>[]>;
+    routingTable?: pulumi.Input<string | undefined>;
+    subnets?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableSubnet>[] | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The VPC identifier.
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -256,39 +256,39 @@ export interface IsVpcRoutingTableArgs {
     /**
      * The filters specifying the resources that may create routes in this routing table, The resource type: vpnGateway or vpn_server
      */
-    acceptRoutesFromResourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    acceptRoutesFromResourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The ingress sources to advertise routes to. Routes in the table with `advertise` enabled will be advertised to these sources.
      */
-    advertiseRoutesTos?: pulumi.Input<pulumi.Input<string>[]>;
+    advertiseRoutesTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user-defined name for this routing table.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from Direct Link to this VPC.
      */
-    routeDirectLinkIngress?: pulumi.Input<boolean>;
+    routeDirectLinkIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from the internet. For this to succeed, the VPC must not already have a routing table with this property set to true.
      */
-    routeInternetIngress?: pulumi.Input<boolean>;
+    routeInternetIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from Transit Gateway to this VPC.
      */
-    routeTransitGatewayIngress?: pulumi.Input<boolean>;
+    routeTransitGatewayIngress?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, this routing table will be used to route traffic that originates from subnets in other zones in this VPC.
      */
-    routeVpcZoneIngress?: pulumi.Input<boolean>;
+    routeVpcZoneIngress?: pulumi.Input<boolean | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The VPC identifier.
      */

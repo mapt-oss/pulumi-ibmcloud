@@ -52,7 +52,7 @@ export function getIsReservationsOutput(args?: GetIsReservationsOutputArgs, opts
  * A collection of arguments for invoking getIsReservations.
  */
 export interface GetIsReservationsOutputArgs {
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    zoneName?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    zoneName?: pulumi.Input<string | undefined>;
 }

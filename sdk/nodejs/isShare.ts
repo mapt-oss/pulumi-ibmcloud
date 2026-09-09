@@ -179,7 +179,7 @@ export class IsShare extends pulumi.CustomResource {
      */
     declare public readonly sourceShareCrn: pulumi.Output<string>;
     /**
-     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
      */
     declare public readonly sourceSnapshot: pulumi.Output<outputs.IsShareSourceSnapshot>;
     /**
@@ -303,163 +303,163 @@ export interface IsShareState {
     /**
      * The access control mode for the share:
      */
-    accessControlMode?: pulumi.Input<string>;
+    accessControlMode?: pulumi.Input<string | undefined>;
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The accessor binding role of this file share:- `none`: This file share is not participating in access with another file share- `origin`: This file share is the origin for one or more file shares  (which may be in other accounts)- `accessor`: This file share is providing access to another file share  (which may be in another account).
      */
-    accessorBindingRole?: pulumi.Input<string>;
+    accessorBindingRole?: pulumi.Input<string | undefined>;
     /**
      * The accessor bindings for this file share. Each accessor binding identifies a resource (possibly in another account) with access to this file share's data.
      */
-    accessorBindings?: pulumi.Input<pulumi.Input<inputs.IsShareAccessorBinding>[]>;
+    accessorBindings?: pulumi.Input<pulumi.Input<inputs.IsShareAccessorBinding>[] | undefined>;
     /**
      * The access protocols to allow for this share
      */
-    allowedAccessProtocols?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedAccessProtocols?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Allowed transit encryption modes
      */
-    allowedTransitEncryptionModes?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedTransitEncryptionModes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Availability mode of the share.
      */
-    availabilityMode?: pulumi.Input<string>;
+    availabilityMode?: pulumi.Input<string | undefined>;
     /**
      * The bandwidth for the file share.
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * The date and time that the file share is created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this share.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The type of encryption used for this file share.
      */
-    encryption?: pulumi.Input<string>;
+    encryption?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the key to use for encrypting this file share.If no encryption key is provided, the share will not be encrypted.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * The URL for this share.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The owner assigned to the file share at creation.
      */
-    initialOwner?: pulumi.Input<inputs.IsShareInitialOwner>;
+    initialOwner?: pulumi.Input<inputs.IsShareInitialOwner | undefined>;
     /**
      * The maximum input/output operation performance bandwidth per second for the file share.
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * The date and time that the file share was last synchronized to its replica.This property will be present when the `replicationRole` is `source`.
      */
-    lastSyncAt?: pulumi.Input<string>;
+    lastSyncAt?: pulumi.Input<string | undefined>;
     /**
      * The latest job associated with this file share.This property will be absent if no jobs have been created for this file share.
      */
-    latestJobs?: pulumi.Input<pulumi.Input<inputs.IsShareLatestJob>[]>;
+    latestJobs?: pulumi.Input<pulumi.Input<inputs.IsShareLatestJob>[] | undefined>;
     /**
      * Information about the latest synchronization for this file share.
      */
-    latestSyncs?: pulumi.Input<pulumi.Input<inputs.IsShareLatestSync>[]>;
+    latestSyncs?: pulumi.Input<pulumi.Input<inputs.IsShareLatestSync>[] | undefined>;
     /**
      * The reasons for the current lifecycleState (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsShareLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsShareLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the file share.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
      */
-    mountTargets?: pulumi.Input<pulumi.Input<inputs.IsShareMountTarget>[]>;
+    mountTargets?: pulumi.Input<pulumi.Input<inputs.IsShareMountTarget>[] | undefined>;
     /**
      * The unique user-defined name for this file share. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The origin share this accessor share is referring to.This property will be present when the `accessorBindingRole` is `accessor`.
      */
-    originShare?: pulumi.Input<inputs.IsShareOriginShare>;
+    originShare?: pulumi.Input<inputs.IsShareOriginShare | undefined>;
     /**
      * The globally unique name for this share profile.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`sourceShare` referencing this file share.
      */
-    replicaShare?: pulumi.Input<inputs.IsShareReplicaShare>;
+    replicaShare?: pulumi.Input<inputs.IsShareReplicaShare | undefined>;
     /**
      * The cron specification for the file share replication schedule.Replication of a share can be scheduled to occur at most once per hour.
      */
-    replicationCronSpec?: pulumi.Input<string>;
+    replicationCronSpec?: pulumi.Input<string | undefined>;
     /**
      * The replication role of the file share.* `none`: This share is not participating in replication.* `replica`: This share is a replication target.* `source`: This share is a replication source.
      */
-    replicationRole?: pulumi.Input<string>;
+    replicationRole?: pulumi.Input<string | undefined>;
     /**
      * The replication status of the file share.* `initializing`: This share is initializing replication.* `active`: This share is actively participating in replication.* `failoverPending`: This share is performing a replication failover.* `splitPending`: This share is performing a replication split.* `none`: This share is not participating in replication.* `degraded`: This share's replication sync is degraded.* `syncPending`: This share is performing a replication sync.
      */
-    replicationStatus?: pulumi.Input<string>;
+    replicationStatus?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current replication status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
      */
-    replicationStatusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareReplicationStatusReason>[]>;
+    replicationStatusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareReplicationStatusReason>[] | undefined>;
     /**
      * The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The size of the file share rounded up to the next gigabyte.
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * The total number of snapshots for this share.
      */
-    snapshotCount?: pulumi.Input<number>;
+    snapshotCount?: pulumi.Input<number | undefined>;
     /**
      * The total size (in gigabytes) of snapshots used for this file share.
      */
-    snapshotSize?: pulumi.Input<number>;
+    snapshotSize?: pulumi.Input<number | undefined>;
     /**
      * The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
      */
-    sourceShare?: pulumi.Input<string>;
+    sourceShare?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
      */
-    sourceShareCrn?: pulumi.Input<string>;
+    sourceShareCrn?: pulumi.Input<string | undefined>;
     /**
-     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
      */
-    sourceSnapshot?: pulumi.Input<inputs.IsShareSourceSnapshot>;
+    sourceSnapshot?: pulumi.Input<inputs.IsShareSourceSnapshot | undefined>;
     /**
      * The storage generation for this share
      */
-    storageGeneration?: pulumi.Input<number>;
+    storageGeneration?: pulumi.Input<number | undefined>;
     /**
      * User Tags for the file share
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The globally unique name of the zone this file share will reside in.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -469,85 +469,85 @@ export interface IsShareArgs {
     /**
      * The access control mode for the share:
      */
-    accessControlMode?: pulumi.Input<string>;
+    accessControlMode?: pulumi.Input<string | undefined>;
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The access protocols to allow for this share
      */
-    allowedAccessProtocols?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedAccessProtocols?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Allowed transit encryption modes
      */
-    allowedTransitEncryptionModes?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedTransitEncryptionModes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The bandwidth for the file share.
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * The CRN of the key to use for encrypting this file share.If no encryption key is provided, the share will not be encrypted.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * The owner assigned to the file share at creation.
      */
-    initialOwner?: pulumi.Input<inputs.IsShareInitialOwner>;
+    initialOwner?: pulumi.Input<inputs.IsShareInitialOwner | undefined>;
     /**
      * The maximum input/output operation performance bandwidth per second for the file share.
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * The share targets for this file share.Share targets mounted from a replica must be mounted read-only.
      */
-    mountTargets?: pulumi.Input<pulumi.Input<inputs.IsShareMountTarget>[]>;
+    mountTargets?: pulumi.Input<pulumi.Input<inputs.IsShareMountTarget>[] | undefined>;
     /**
      * The unique user-defined name for this file share. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The origin share this accessor share is referring to.This property will be present when the `accessorBindingRole` is `accessor`.
      */
-    originShare?: pulumi.Input<inputs.IsShareOriginShare>;
+    originShare?: pulumi.Input<inputs.IsShareOriginShare | undefined>;
     /**
      * The globally unique name for this share profile.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * Configuration for a replica file share to create and associate with this file share. Ifunspecified, a replica may be subsequently added by creating a new file share with a`sourceShare` referencing this file share.
      */
-    replicaShare?: pulumi.Input<inputs.IsShareReplicaShare>;
+    replicaShare?: pulumi.Input<inputs.IsShareReplicaShare | undefined>;
     /**
      * The cron specification for the file share replication schedule.Replication of a share can be scheduled to occur at most once per hour.
      */
-    replicationCronSpec?: pulumi.Input<string>;
+    replicationCronSpec?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the resource group to use. If unspecified, the account's [default resourcegroup](https://cloud.ibm.com/apidocs/resource-manager#introduction) is used.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The size of the file share rounded up to the next gigabyte.
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * The ID of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
      */
-    sourceShare?: pulumi.Input<string>;
+    sourceShare?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the source file share for this replica file share. The specified file share must not already have a replica, and must not be a replica.
      */
-    sourceShareCrn?: pulumi.Input<string>;
+    sourceShareCrn?: pulumi.Input<string | undefined>;
     /**
-     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
+     * The snapshot from which this share was cloned.This property will be present when the share was created from a snapshot.The resources supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in thefuture.
      */
-    sourceSnapshot?: pulumi.Input<inputs.IsShareSourceSnapshot>;
+    sourceSnapshot?: pulumi.Input<inputs.IsShareSourceSnapshot | undefined>;
     /**
      * User Tags for the file share
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The globally unique name of the zone this file share will reside in.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }

@@ -100,19 +100,19 @@ export function getIsSnapshotsOutput(args?: GetIsSnapshotsOutputArgs, opts?: pul
  * A collection of arguments for invoking getIsSnapshots.
  */
 export interface GetIsSnapshotsOutputArgs {
-    backupPolicyPlanId?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    snapshotConsistencyGroupCrn?: pulumi.Input<string>;
-    snapshotConsistencyGroupId?: pulumi.Input<string>;
-    snapshotCopiesCrn?: pulumi.Input<string>;
-    snapshotCopiesId?: pulumi.Input<string>;
-    snapshotCopiesName?: pulumi.Input<string>;
-    snapshotCopiesRemoteRegionName?: pulumi.Input<string>;
-    snapshotSourceVolumeRemoteRegionName?: pulumi.Input<string>;
-    sourceImage?: pulumi.Input<string>;
-    sourceSnapshotId?: pulumi.Input<string>;
-    sourceSnapshotRemoteRegionName?: pulumi.Input<string>;
-    sourceVolume?: pulumi.Input<string>;
-    tag?: pulumi.Input<string>;
+    backupPolicyPlanId?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    snapshotConsistencyGroupCrn?: pulumi.Input<string | undefined>;
+    snapshotConsistencyGroupId?: pulumi.Input<string | undefined>;
+    snapshotCopiesCrn?: pulumi.Input<string | undefined>;
+    snapshotCopiesId?: pulumi.Input<string | undefined>;
+    snapshotCopiesName?: pulumi.Input<string | undefined>;
+    snapshotCopiesRemoteRegionName?: pulumi.Input<string | undefined>;
+    snapshotSourceVolumeRemoteRegionName?: pulumi.Input<string | undefined>;
+    sourceImage?: pulumi.Input<string | undefined>;
+    sourceSnapshotId?: pulumi.Input<string | undefined>;
+    sourceSnapshotRemoteRegionName?: pulumi.Input<string | undefined>;
+    sourceVolume?: pulumi.Input<string | undefined>;
+    tag?: pulumi.Input<string | undefined>;
 }

@@ -82,7 +82,7 @@ def get_pi_available_hosts(pi_cloud_instance_id: Optional[_builtins.str] = None,
         available_hosts=pulumi.get(__ret__, 'available_hosts'),
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'))
-def get_pi_available_hosts_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_available_hosts_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiAvailableHostsResult]:
     """
     Use this data source to access information about an existing resource.

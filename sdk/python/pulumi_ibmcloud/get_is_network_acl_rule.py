@@ -204,8 +204,8 @@ def get_is_network_acl_rule(name: Optional[_builtins.str] = None,
         source=pulumi.get(__ret__, 'source'),
         tcps=pulumi.get(__ret__, 'tcps'),
         udps=pulumi.get(__ret__, 'udps'))
-def get_is_network_acl_rule_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                   network_acl: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_network_acl_rule_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                   network_acl: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsNetworkAclRuleResult]:
     """
     Use this data source to access information about an existing resource.

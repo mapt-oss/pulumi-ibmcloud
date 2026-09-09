@@ -62,11 +62,11 @@ export function getIamServicePolicyOutput(args?: GetIamServicePolicyOutputArgs, 
  * A collection of arguments for invoking getIamServicePolicy.
  */
 export interface GetIamServicePolicyOutputArgs {
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * @deprecated This field is deprecated and will be removed starting with this 1.82.0 release. Please use iamId field instead.
      */
-    iamServiceId?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
-    transactionId?: pulumi.Input<string>;
+    iamServiceId?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
+    transactionId?: pulumi.Input<string | undefined>;
 }

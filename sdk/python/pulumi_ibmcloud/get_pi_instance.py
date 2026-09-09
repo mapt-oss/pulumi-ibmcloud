@@ -27,13 +27,19 @@ class GetPiInstanceResult:
     """
     A collection of values returned by getPiInstance.
     """
-    def __init__(__self__, crn=None, dedicated_host_id=None, deployment_type=None, effective_processor_compatibility_mode=None, fault=None, health_status=None, ibmi_css=None, ibmi_pha=None, ibmi_rds=None, ibmi_rds_users=None, id=None, license_repository_capacity=None, max_virtual_cores=None, maxmem=None, maxproc=None, memory=None, min_virtual_cores=None, minmem=None, minproc=None, networks=None, pi_cloud_instance_id=None, pi_instance_name=None, pin_policy=None, placement_group_id=None, preferred_processor_compatibility_mode=None, processors=None, proctype=None, server_name=None, shared_processor_pool=None, shared_processor_pool_id=None, status=None, storage_connection=None, storage_pool=None, storage_pool_affinity=None, storage_type=None, user_tags=None, virtual_cores_assigned=None, virtual_serial_numbers=None, volumes=None):
+    def __init__(__self__, allow_remote_restart=None, crn=None, dedicated_host_id=None, default_trusted_profiles=None, deployment_type=None, effective_processor_compatibility_mode=None, fault=None, health_status=None, ibmi_css=None, ibmi_pha=None, ibmi_rds=None, ibmi_rds_users=None, id=None, license_repository_capacity=None, max_virtual_cores=None, maxmem=None, maxproc=None, memory=None, metadata_services=None, min_virtual_cores=None, minmem=None, minproc=None, networks=None, pi_cloud_instance_id=None, pi_instance_id=None, pi_instance_name=None, pin_policy=None, placement_group_id=None, preferred_processor_compatibility_mode=None, processors=None, proctype=None, server_name=None, shared_processor_pool=None, shared_processor_pool_id=None, status=None, storage_connection=None, storage_pool=None, storage_pool_affinity=None, storage_type=None, user_tags=None, virtual_cores_assigned=None, virtual_serial_numbers=None, volumes=None, vpmem_volumes=None):
+        if allow_remote_restart and not isinstance(allow_remote_restart, bool):
+            raise TypeError("Expected argument 'allow_remote_restart' to be a bool")
+        pulumi.set(__self__, "allow_remote_restart", allow_remote_restart)
         if crn and not isinstance(crn, str):
             raise TypeError("Expected argument 'crn' to be a str")
         pulumi.set(__self__, "crn", crn)
         if dedicated_host_id and not isinstance(dedicated_host_id, str):
             raise TypeError("Expected argument 'dedicated_host_id' to be a str")
         pulumi.set(__self__, "dedicated_host_id", dedicated_host_id)
+        if default_trusted_profiles and not isinstance(default_trusted_profiles, list):
+            raise TypeError("Expected argument 'default_trusted_profiles' to be a list")
+        pulumi.set(__self__, "default_trusted_profiles", default_trusted_profiles)
         if deployment_type and not isinstance(deployment_type, str):
             raise TypeError("Expected argument 'deployment_type' to be a str")
         pulumi.set(__self__, "deployment_type", deployment_type)
@@ -76,6 +82,9 @@ class GetPiInstanceResult:
         if memory and not isinstance(memory, float):
             raise TypeError("Expected argument 'memory' to be a float")
         pulumi.set(__self__, "memory", memory)
+        if metadata_services and not isinstance(metadata_services, list):
+            raise TypeError("Expected argument 'metadata_services' to be a list")
+        pulumi.set(__self__, "metadata_services", metadata_services)
         if min_virtual_cores and not isinstance(min_virtual_cores, int):
             raise TypeError("Expected argument 'min_virtual_cores' to be a int")
         pulumi.set(__self__, "min_virtual_cores", min_virtual_cores)
@@ -91,6 +100,9 @@ class GetPiInstanceResult:
         if pi_cloud_instance_id and not isinstance(pi_cloud_instance_id, str):
             raise TypeError("Expected argument 'pi_cloud_instance_id' to be a str")
         pulumi.set(__self__, "pi_cloud_instance_id", pi_cloud_instance_id)
+        if pi_instance_id and not isinstance(pi_instance_id, str):
+            raise TypeError("Expected argument 'pi_instance_id' to be a str")
+        pulumi.set(__self__, "pi_instance_id", pi_instance_id)
         if pi_instance_name and not isinstance(pi_instance_name, str):
             raise TypeError("Expected argument 'pi_instance_name' to be a str")
         pulumi.set(__self__, "pi_instance_name", pi_instance_name)
@@ -145,6 +157,14 @@ class GetPiInstanceResult:
         if volumes and not isinstance(volumes, list):
             raise TypeError("Expected argument 'volumes' to be a list")
         pulumi.set(__self__, "volumes", volumes)
+        if vpmem_volumes and not isinstance(vpmem_volumes, list):
+            raise TypeError("Expected argument 'vpmem_volumes' to be a list")
+        pulumi.set(__self__, "vpmem_volumes", vpmem_volumes)
+
+    @_builtins.property
+    @pulumi.getter(name="allowRemoteRestart")
+    def allow_remote_restart(self) -> _builtins.bool:
+        return pulumi.get(self, "allow_remote_restart")
 
     @_builtins.property
     @pulumi.getter
@@ -155,6 +175,11 @@ class GetPiInstanceResult:
     @pulumi.getter(name="dedicatedHostId")
     def dedicated_host_id(self) -> _builtins.str:
         return pulumi.get(self, "dedicated_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultTrustedProfiles")
+    def default_trusted_profiles(self) -> Sequence['outputs.GetPiInstanceDefaultTrustedProfileResult']:
+        return pulumi.get(self, "default_trusted_profiles")
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
@@ -230,6 +255,11 @@ class GetPiInstanceResult:
         return pulumi.get(self, "memory")
 
     @_builtins.property
+    @pulumi.getter(name="metadataServices")
+    def metadata_services(self) -> Sequence['outputs.GetPiInstanceMetadataServiceResult']:
+        return pulumi.get(self, "metadata_services")
+
+    @_builtins.property
     @pulumi.getter(name="minVirtualCores")
     def min_virtual_cores(self) -> _builtins.int:
         return pulumi.get(self, "min_virtual_cores")
@@ -255,8 +285,14 @@ class GetPiInstanceResult:
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @_builtins.property
+    @pulumi.getter(name="piInstanceId")
+    def pi_instance_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "pi_instance_id")
+
+    @_builtins.property
     @pulumi.getter(name="piInstanceName")
-    def pi_instance_name(self) -> _builtins.str:
+    @_utilities.deprecated("""The pi_instance_name field is deprecated. Please use pi_instance_id instead""")
+    def pi_instance_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "pi_instance_name")
 
     @_builtins.property
@@ -344,6 +380,11 @@ class GetPiInstanceResult:
     def volumes(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "volumes")
 
+    @_builtins.property
+    @pulumi.getter(name="vpmemVolumes")
+    def vpmem_volumes(self) -> Sequence['outputs.GetPiInstanceVpmemVolumeResult']:
+        return pulumi.get(self, "vpmem_volumes")
+
 
 class AwaitableGetPiInstanceResult(GetPiInstanceResult):
     # pylint: disable=using-constant-test
@@ -351,8 +392,10 @@ class AwaitableGetPiInstanceResult(GetPiInstanceResult):
         if False:
             yield self
         return GetPiInstanceResult(
+            allow_remote_restart=self.allow_remote_restart,
             crn=self.crn,
             dedicated_host_id=self.dedicated_host_id,
+            default_trusted_profiles=self.default_trusted_profiles,
             deployment_type=self.deployment_type,
             effective_processor_compatibility_mode=self.effective_processor_compatibility_mode,
             fault=self.fault,
@@ -367,11 +410,13 @@ class AwaitableGetPiInstanceResult(GetPiInstanceResult):
             maxmem=self.maxmem,
             maxproc=self.maxproc,
             memory=self.memory,
+            metadata_services=self.metadata_services,
             min_virtual_cores=self.min_virtual_cores,
             minmem=self.minmem,
             minproc=self.minproc,
             networks=self.networks,
             pi_cloud_instance_id=self.pi_cloud_instance_id,
+            pi_instance_id=self.pi_instance_id,
             pi_instance_name=self.pi_instance_name,
             pin_policy=self.pin_policy,
             placement_group_id=self.placement_group_id,
@@ -389,10 +434,12 @@ class AwaitableGetPiInstanceResult(GetPiInstanceResult):
             user_tags=self.user_tags,
             virtual_cores_assigned=self.virtual_cores_assigned,
             virtual_serial_numbers=self.virtual_serial_numbers,
-            volumes=self.volumes)
+            volumes=self.volumes,
+            vpmem_volumes=self.vpmem_volumes)
 
 
 def get_pi_instance(pi_cloud_instance_id: Optional[_builtins.str] = None,
+                    pi_instance_id: Optional[_builtins.str] = None,
                     pi_instance_name: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPiInstanceResult:
     """
@@ -400,13 +447,16 @@ def get_pi_instance(pi_cloud_instance_id: Optional[_builtins.str] = None,
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('ibmcloud:index/getPiInstance:getPiInstance', __args__, opts=opts, typ=GetPiInstanceResult).value
 
     return AwaitableGetPiInstanceResult(
+        allow_remote_restart=pulumi.get(__ret__, 'allow_remote_restart'),
         crn=pulumi.get(__ret__, 'crn'),
         dedicated_host_id=pulumi.get(__ret__, 'dedicated_host_id'),
+        default_trusted_profiles=pulumi.get(__ret__, 'default_trusted_profiles'),
         deployment_type=pulumi.get(__ret__, 'deployment_type'),
         effective_processor_compatibility_mode=pulumi.get(__ret__, 'effective_processor_compatibility_mode'),
         fault=pulumi.get(__ret__, 'fault'),
@@ -421,11 +471,13 @@ def get_pi_instance(pi_cloud_instance_id: Optional[_builtins.str] = None,
         maxmem=pulumi.get(__ret__, 'maxmem'),
         maxproc=pulumi.get(__ret__, 'maxproc'),
         memory=pulumi.get(__ret__, 'memory'),
+        metadata_services=pulumi.get(__ret__, 'metadata_services'),
         min_virtual_cores=pulumi.get(__ret__, 'min_virtual_cores'),
         minmem=pulumi.get(__ret__, 'minmem'),
         minproc=pulumi.get(__ret__, 'minproc'),
         networks=pulumi.get(__ret__, 'networks'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__ret__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__ret__, 'pi_instance_name'),
         pin_policy=pulumi.get(__ret__, 'pin_policy'),
         placement_group_id=pulumi.get(__ret__, 'placement_group_id'),
@@ -443,21 +495,26 @@ def get_pi_instance(pi_cloud_instance_id: Optional[_builtins.str] = None,
         user_tags=pulumi.get(__ret__, 'user_tags'),
         virtual_cores_assigned=pulumi.get(__ret__, 'virtual_cores_assigned'),
         virtual_serial_numbers=pulumi.get(__ret__, 'virtual_serial_numbers'),
-        volumes=pulumi.get(__ret__, 'volumes'))
-def get_pi_instance_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           pi_instance_name: Optional[pulumi.Input[_builtins.str]] = None,
+        volumes=pulumi.get(__ret__, 'volumes'),
+        vpmem_volumes=pulumi.get(__ret__, 'vpmem_volumes'))
+def get_pi_instance_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           pi_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           pi_instance_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiInstanceResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['piCloudInstanceId'] = pi_cloud_instance_id
+    __args__['piInstanceId'] = pi_instance_id
     __args__['piInstanceName'] = pi_instance_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('ibmcloud:index/getPiInstance:getPiInstance', __args__, opts=opts, typ=GetPiInstanceResult)
     return __ret__.apply(lambda __response__: GetPiInstanceResult(
+        allow_remote_restart=pulumi.get(__response__, 'allow_remote_restart'),
         crn=pulumi.get(__response__, 'crn'),
         dedicated_host_id=pulumi.get(__response__, 'dedicated_host_id'),
+        default_trusted_profiles=pulumi.get(__response__, 'default_trusted_profiles'),
         deployment_type=pulumi.get(__response__, 'deployment_type'),
         effective_processor_compatibility_mode=pulumi.get(__response__, 'effective_processor_compatibility_mode'),
         fault=pulumi.get(__response__, 'fault'),
@@ -472,11 +529,13 @@ def get_pi_instance_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins
         maxmem=pulumi.get(__response__, 'maxmem'),
         maxproc=pulumi.get(__response__, 'maxproc'),
         memory=pulumi.get(__response__, 'memory'),
+        metadata_services=pulumi.get(__response__, 'metadata_services'),
         min_virtual_cores=pulumi.get(__response__, 'min_virtual_cores'),
         minmem=pulumi.get(__response__, 'minmem'),
         minproc=pulumi.get(__response__, 'minproc'),
         networks=pulumi.get(__response__, 'networks'),
         pi_cloud_instance_id=pulumi.get(__response__, 'pi_cloud_instance_id'),
+        pi_instance_id=pulumi.get(__response__, 'pi_instance_id'),
         pi_instance_name=pulumi.get(__response__, 'pi_instance_name'),
         pin_policy=pulumi.get(__response__, 'pin_policy'),
         placement_group_id=pulumi.get(__response__, 'placement_group_id'),
@@ -494,4 +553,5 @@ def get_pi_instance_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins
         user_tags=pulumi.get(__response__, 'user_tags'),
         virtual_cores_assigned=pulumi.get(__response__, 'virtual_cores_assigned'),
         virtual_serial_numbers=pulumi.get(__response__, 'virtual_serial_numbers'),
-        volumes=pulumi.get(__response__, 'volumes')))
+        volumes=pulumi.get(__response__, 'volumes'),
+        vpmem_volumes=pulumi.get(__response__, 'vpmem_volumes')))

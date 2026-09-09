@@ -108,27 +108,27 @@ export interface PiVolumeGroupActionState {
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Performs an action (start stop reset ) on a volume group(one at a time).
      */
-    piVolumeGroupAction?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupAction>;
+    piVolumeGroupAction?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupAction | undefined>;
     /**
      * Volume Group ID
      */
-    piVolumeGroupId?: pulumi.Input<string>;
+    piVolumeGroupId?: pulumi.Input<string | undefined>;
     /**
      * Volume Group Replication Status
      */
-    replicationStatus?: pulumi.Input<string>;
+    replicationStatus?: pulumi.Input<string | undefined>;
     /**
      * Volume Group ID
      */
-    volumeGroupName?: pulumi.Input<string>;
+    volumeGroupName?: pulumi.Input<string | undefined>;
     /**
      * Volume Group Status
      */
-    volumeGroupStatus?: pulumi.Input<string>;
+    volumeGroupStatus?: pulumi.Input<string | undefined>;
 }
 
 /**

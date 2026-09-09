@@ -29,6 +29,7 @@ export interface GetIsLbPoolArgs {
  */
 export interface GetIsLbPoolResult {
     readonly algorithm: string;
+    readonly clientAuthentications: outputs.GetIsLbPoolClientAuthentication[];
     readonly createdAt: string;
     readonly failsafePolicies: outputs.GetIsLbPoolFailsafePolicy[];
     readonly healthMonitors: outputs.GetIsLbPoolHealthMonitor[];
@@ -45,6 +46,7 @@ export interface GetIsLbPoolResult {
     readonly protocol: string;
     readonly provisioningStatus: string;
     readonly proxyProtocol: string;
+    readonly serverAuthentications: outputs.GetIsLbPoolServerAuthentication[];
     readonly sessionPersistences: outputs.GetIsLbPoolSessionPersistence[];
 }
 export function getIsLbPoolOutput(args: GetIsLbPoolOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIsLbPoolResult> {
@@ -60,7 +62,7 @@ export function getIsLbPoolOutput(args: GetIsLbPoolOutputArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getIsLbPool.
  */
 export interface GetIsLbPoolOutputArgs {
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     lb: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -64,8 +64,8 @@ export function getIsVpcRoutingTableRouteOutput(args: GetIsVpcRoutingTableRouteO
  * A collection of arguments for invoking getIsVpcRoutingTableRoute.
  */
 export interface GetIsVpcRoutingTableRouteOutputArgs {
-    name?: pulumi.Input<string>;
-    routeId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    routeId?: pulumi.Input<string | undefined>;
     routingTable: pulumi.Input<string>;
     vpc: pulumi.Input<string>;
 }

@@ -82,7 +82,7 @@ def get_pi_system_pools(pi_cloud_instance_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         pi_cloud_instance_id=pulumi.get(__ret__, 'pi_cloud_instance_id'),
         system_pools=pulumi.get(__ret__, 'system_pools'))
-def get_pi_system_pools_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_system_pools_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiSystemPoolsResult]:
     """
     Use this data source to access information about an existing resource.

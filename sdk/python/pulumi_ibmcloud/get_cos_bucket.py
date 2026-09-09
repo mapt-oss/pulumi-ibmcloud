@@ -392,12 +392,12 @@ def get_cos_bucket(bucket_name: Optional[_builtins.str] = None,
         storage_class=pulumi.get(__ret__, 'storage_class'),
         website_configurations=pulumi.get(__ret__, 'website_configurations'),
         website_endpoint=pulumi.get(__ret__, 'website_endpoint'))
-def get_cos_bucket_output(bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                          bucket_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          bucket_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          endpoint_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          resource_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          satellite_location_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cos_bucket_output(bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                          bucket_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          bucket_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          endpoint_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          resource_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          satellite_location_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCosBucketResult]:
     """
     Use this data source to access information about an existing resource.

@@ -176,9 +176,9 @@ def get_is_network_acl(name: Optional[_builtins.str] = None,
         subnets=pulumi.get(__ret__, 'subnets'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_is_network_acl_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              network_acl: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_network_acl_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              network_acl: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsNetworkAclResult]:
     """
     Use this data source to access information about an existing resource.

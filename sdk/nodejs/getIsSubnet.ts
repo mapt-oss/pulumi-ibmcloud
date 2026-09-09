@@ -69,7 +69,7 @@ export function getIsSubnetOutput(args?: GetIsSubnetOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getIsSubnet.
  */
 export interface GetIsSubnetOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    vpc?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    vpc?: pulumi.Input<string | undefined>;
 }

@@ -25,6 +25,7 @@ class IsVirtualEndpointGatewayIpInitArgs:
                  reserved_ip: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IsVirtualEndpointGatewayIp resource.
+
         :param pulumi.Input[_builtins.str] gateway: Endpoint gateway ID
         :param pulumi.Input[_builtins.str] reserved_ip: Endpoint gateway IP id
         """
@@ -59,16 +60,17 @@ class IsVirtualEndpointGatewayIpInitArgs:
 @pulumi.input_type
 class _IsVirtualEndpointGatewayIpState:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpTargetArgs']]]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpTargetArgs']]]] = None):
         """
         Input properties used for looking up and filtering IsVirtualEndpointGatewayIp resources.
+
         :param pulumi.Input[_builtins.str] address: Endpoint gateway IP address
         :param pulumi.Input[_builtins.bool] auto_delete: Endpoint gateway IP auto delete
         :param pulumi.Input[_builtins.str] created_at: Endpoint gateway IP created date and time
@@ -97,98 +99,98 @@ class _IsVirtualEndpointGatewayIpState:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway IP address
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
-    def auto_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Endpoint gateway IP auto delete
         """
         return pulumi.get(self, "auto_delete")
 
     @auto_delete.setter
-    def auto_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway IP created date and time
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway ID
         """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
-    def gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway IP name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedIp")
-    def reserved_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reserved_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway IP id
         """
         return pulumi.get(self, "reserved_ip")
 
     @reserved_ip.setter
-    def reserved_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reserved_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reserved_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint gateway IP resource type
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpTargetArgs']]]]:
+    def targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpTargetArgs']]]]:
         """
         Endpoint gateway detail
         """
         return pulumi.get(self, "targets")
 
     @targets.setter
-    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpTargetArgs']]]]):
+    def targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsVirtualEndpointGatewayIpTargetArgs']]]]):
         pulumi.set(self, "targets", value)
 
 
@@ -198,11 +200,12 @@ class IsVirtualEndpointGatewayIp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsVirtualEndpointGatewayIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] gateway: Endpoint gateway ID
@@ -216,6 +219,7 @@ class IsVirtualEndpointGatewayIp(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsVirtualEndpointGatewayIp resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsVirtualEndpointGatewayIpInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -231,8 +235,8 @@ class IsVirtualEndpointGatewayIp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,14 +268,14 @@ class IsVirtualEndpointGatewayIp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            reserved_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpTargetArgs', 'IsVirtualEndpointGatewayIpTargetArgsDict']]]]] = None) -> 'IsVirtualEndpointGatewayIp':
+            address: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpTargetArgs', 'IsVirtualEndpointGatewayIpTargetArgsDict', 'outputs.IsVirtualEndpointGatewayIpTarget']]]]] = None) -> 'IsVirtualEndpointGatewayIp':
         """
         Get an existing IsVirtualEndpointGatewayIp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -286,7 +290,7 @@ class IsVirtualEndpointGatewayIp(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Endpoint gateway IP name
         :param pulumi.Input[_builtins.str] reserved_ip: Endpoint gateway IP id
         :param pulumi.Input[_builtins.str] resource_type: Endpoint gateway IP resource type
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpTargetArgs', 'IsVirtualEndpointGatewayIpTargetArgsDict']]]] targets: Endpoint gateway detail
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsVirtualEndpointGatewayIpTargetArgs', 'IsVirtualEndpointGatewayIpTargetArgsDict', 'outputs.IsVirtualEndpointGatewayIpTarget']]]] targets: Endpoint gateway detail
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

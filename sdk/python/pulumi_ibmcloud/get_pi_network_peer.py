@@ -244,8 +244,8 @@ def get_pi_network_peer(pi_cloud_instance_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         updated_date=pulumi.get(__ret__, 'updated_date'),
         vlan=pulumi.get(__ret__, 'vlan'))
-def get_pi_network_peer_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               pi_network_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_network_peer_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               pi_network_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiNetworkPeerResult]:
     """
     Use this data source to access information about an existing resource.

@@ -22,21 +22,24 @@ class CosBucketObjectArgs:
                  bucket_crn: pulumi.Input[_builtins.str],
                  bucket_location: pulumi.Input[_builtins.str],
                  key: pulumi.Input[_builtins.str],
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_base64: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_lock_legal_hold_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_retain_until_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 website_redirect: Optional[pulumi.Input[_builtins.str]] = None):
+                 bypass_governance_retention: pulumi.Input[Optional[_builtins.bool]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_base64: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_lock_legal_hold_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_retain_until_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 website_redirect: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CosBucketObject resource.
+
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] key: COS object key
+        :param pulumi.Input[_builtins.bool] bypass_governance_retention: Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
         :param pulumi.Input[_builtins.str] content: COS object content
         :param pulumi.Input[_builtins.str] content_base64: COS object content in base64 encoding
         :param pulumi.Input[_builtins.str] content_file: COS object content file path
@@ -51,6 +54,8 @@ class CosBucketObjectArgs:
         pulumi.set(__self__, "bucket_crn", bucket_crn)
         pulumi.set(__self__, "bucket_location", bucket_location)
         pulumi.set(__self__, "key", key)
+        if bypass_governance_retention is not None:
+            pulumi.set(__self__, "bypass_governance_retention", bypass_governance_retention)
         if content is not None:
             pulumi.set(__self__, "content", content)
         if content_base64 is not None:
@@ -109,153 +114,168 @@ class CosBucketObjectArgs:
         pulumi.set(self, "key", value)
 
     @_builtins.property
+    @pulumi.getter(name="bypassGovernanceRetention")
+    def bypass_governance_retention(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
+        """
+        return pulumi.get(self, "bypass_governance_retention")
+
+    @bypass_governance_retention.setter
+    def bypass_governance_retention(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "bypass_governance_retention", value)
+
+    @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object content
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="contentBase64")
-    def content_base64(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_base64(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object content in base64 encoding
         """
         return pulumi.get(self, "content_base64")
 
     @content_base64.setter
-    def content_base64(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_base64(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_base64", value)
 
     @_builtins.property
     @pulumi.getter(name="contentFile")
-    def content_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object content file path
         """
         return pulumi.get(self, "content_file")
 
     @content_file.setter
-    def content_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_file", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object MD5 hexdigest
         """
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         COS buckets need to be empty before they can be deleted. force_delete option empty the bucket and delete it.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLockLegalHoldStatus")
-    def object_lock_legal_hold_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_lock_legal_hold_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An object lock configuration on the object, the valid states are ON/OFF. When ON prevents deletion of the object version.
         """
         return pulumi.get(self, "object_lock_legal_hold_status")
 
     @object_lock_legal_hold_status.setter
-    def object_lock_legal_hold_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_lock_legal_hold_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_lock_legal_hold_status", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLockMode")
-    def object_lock_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_lock_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Retention modes apply different levels of protection to the objects.
         """
         return pulumi.get(self, "object_lock_mode")
 
     @object_lock_mode.setter
-    def object_lock_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_lock_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_lock_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLockRetainUntilDate")
-    def object_lock_retain_until_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_lock_retain_until_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An object cannot be deleted when the current time is earlier than the retainUntilDate. After this date, the object can be deleted.
         """
         return pulumi.get(self, "object_lock_retain_until_date")
 
     @object_lock_retain_until_date.setter
-    def object_lock_retain_until_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_lock_retain_until_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_lock_retain_until_date", value)
 
     @_builtins.property
     @pulumi.getter(name="websiteRedirect")
-    def website_redirect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def website_redirect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Redirect a request to another object or an URL
         """
         return pulumi.get(self, "website_redirect")
 
     @website_redirect.setter
-    def website_redirect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def website_redirect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "website_redirect", value)
 
 
 @pulumi.input_type
 class _CosBucketObjectState:
     def __init__(__self__, *,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_base64: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_length: Optional[pulumi.Input[_builtins.int]] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_legal_hold_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_retain_until_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_sql_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 website_redirect: Optional[pulumi.Input[_builtins.str]] = None):
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 bypass_governance_retention: pulumi.Input[Optional[_builtins.bool]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_base64: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_legal_hold_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_retain_until_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_sql_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 website_redirect: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CosBucketObject resources.
+
         :param pulumi.Input[_builtins.str] body: COS object body
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
+        :param pulumi.Input[_builtins.bool] bypass_governance_retention: Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
         :param pulumi.Input[_builtins.str] content: COS object content
         :param pulumi.Input[_builtins.str] content_base64: COS object content in base64 encoding
         :param pulumi.Input[_builtins.str] content_file: COS object content file path
@@ -278,6 +298,8 @@ class _CosBucketObjectState:
             pulumi.set(__self__, "bucket_crn", bucket_crn)
         if bucket_location is not None:
             pulumi.set(__self__, "bucket_location", bucket_location)
+        if bypass_governance_retention is not None:
+            pulumi.set(__self__, "bypass_governance_retention", bypass_governance_retention)
         if content is not None:
             pulumi.set(__self__, "content", content)
         if content_base64 is not None:
@@ -313,227 +335,239 @@ class _CosBucketObjectState:
 
     @_builtins.property
     @pulumi.getter
-    def body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object body
         """
         return pulumi.get(self, "body")
 
     @body.setter
-    def body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketCrn")
-    def bucket_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket CRN
         """
         return pulumi.get(self, "bucket_crn")
 
     @bucket_crn.setter
-    def bucket_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketLocation")
-    def bucket_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket location
         """
         return pulumi.get(self, "bucket_location")
 
     @bucket_location.setter
-    def bucket_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_location", value)
 
     @_builtins.property
+    @pulumi.getter(name="bypassGovernanceRetention")
+    def bypass_governance_retention(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
+        """
+        return pulumi.get(self, "bypass_governance_retention")
+
+    @bypass_governance_retention.setter
+    def bypass_governance_retention(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "bypass_governance_retention", value)
+
+    @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object content
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="contentBase64")
-    def content_base64(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_base64(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object content in base64 encoding
         """
         return pulumi.get(self, "content_base64")
 
     @content_base64.setter
-    def content_base64(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_base64(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_base64", value)
 
     @_builtins.property
     @pulumi.getter(name="contentFile")
-    def content_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object content file path
         """
         return pulumi.get(self, "content_file")
 
     @content_file.setter
-    def content_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_file", value)
 
     @_builtins.property
     @pulumi.getter(name="contentLength")
-    def content_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def content_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         COS object content length
         """
         return pulumi.get(self, "content_length")
 
     @content_length.setter
-    def content_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def content_length(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "content_length", value)
 
     @_builtins.property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object content type
         """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
-    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object MD5 hexdigest
         """
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         COS buckets need to be empty before they can be deleted. force_delete option empty the bucket and delete it.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object key
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModified")
-    def last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS object last modified date
         """
         return pulumi.get(self, "last_modified")
 
     @last_modified.setter
-    def last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLockLegalHoldStatus")
-    def object_lock_legal_hold_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_lock_legal_hold_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An object lock configuration on the object, the valid states are ON/OFF. When ON prevents deletion of the object version.
         """
         return pulumi.get(self, "object_lock_legal_hold_status")
 
     @object_lock_legal_hold_status.setter
-    def object_lock_legal_hold_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_lock_legal_hold_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_lock_legal_hold_status", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLockMode")
-    def object_lock_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_lock_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Retention modes apply different levels of protection to the objects.
         """
         return pulumi.get(self, "object_lock_mode")
 
     @object_lock_mode.setter
-    def object_lock_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_lock_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_lock_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLockRetainUntilDate")
-    def object_lock_retain_until_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_lock_retain_until_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An object cannot be deleted when the current time is earlier than the retainUntilDate. After this date, the object can be deleted.
         """
         return pulumi.get(self, "object_lock_retain_until_date")
 
     @object_lock_retain_until_date.setter
-    def object_lock_retain_until_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_lock_retain_until_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_lock_retain_until_date", value)
 
     @_builtins.property
     @pulumi.getter(name="objectSqlUrl")
-    def object_sql_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_sql_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Access the object using an SQL Query instance.The reference url is used to perform queries against objects storing structured data.
         """
         return pulumi.get(self, "object_sql_url")
 
     @object_sql_url.setter
-    def object_sql_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_sql_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_sql_url", value)
 
     @_builtins.property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "version_id")
 
     @version_id.setter
-    def version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="websiteRedirect")
-    def website_redirect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def website_redirect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Redirect a request to another object or an URL
         """
         return pulumi.get(self, "website_redirect")
 
     @website_redirect.setter
-    def website_redirect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def website_redirect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "website_redirect", value)
 
 
@@ -543,26 +577,29 @@ class CosBucketObject(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_base64: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_legal_hold_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_retain_until_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 website_redirect: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 bypass_governance_retention: pulumi.Input[Optional[_builtins.bool]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_base64: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_legal_hold_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_retain_until_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 website_redirect: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a CosBucketObject resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
+        :param pulumi.Input[_builtins.bool] bypass_governance_retention: Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
         :param pulumi.Input[_builtins.str] content: COS object content
         :param pulumi.Input[_builtins.str] content_base64: COS object content in base64 encoding
         :param pulumi.Input[_builtins.str] content_file: COS object content file path
@@ -583,6 +620,7 @@ class CosBucketObject(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CosBucketObject resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CosBucketObjectArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -598,19 +636,20 @@ class CosBucketObject(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_base64: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_legal_hold_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_lock_retain_until_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 website_redirect: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 bypass_governance_retention: pulumi.Input[Optional[_builtins.bool]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_base64: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_legal_hold_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_lock_retain_until_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 website_redirect: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -626,6 +665,7 @@ class CosBucketObject(pulumi.CustomResource):
             if bucket_location is None and not opts.urn:
                 raise TypeError("Missing required property 'bucket_location'")
             __props__.__dict__["bucket_location"] = bucket_location
+            __props__.__dict__["bypass_governance_retention"] = bypass_governance_retention
             __props__.__dict__["content"] = content
             __props__.__dict__["content_base64"] = content_base64
             __props__.__dict__["content_file"] = content_file
@@ -655,25 +695,26 @@ class CosBucketObject(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            body: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-            content: Optional[pulumi.Input[_builtins.str]] = None,
-            content_base64: Optional[pulumi.Input[_builtins.str]] = None,
-            content_file: Optional[pulumi.Input[_builtins.str]] = None,
-            content_length: Optional[pulumi.Input[_builtins.int]] = None,
-            content_type: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            object_lock_legal_hold_status: Optional[pulumi.Input[_builtins.str]] = None,
-            object_lock_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            object_lock_retain_until_date: Optional[pulumi.Input[_builtins.str]] = None,
-            object_sql_url: Optional[pulumi.Input[_builtins.str]] = None,
-            version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            website_redirect: Optional[pulumi.Input[_builtins.str]] = None) -> 'CosBucketObject':
+            body: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+            bypass_governance_retention: pulumi.Input[Optional[_builtins.bool]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            content_base64: pulumi.Input[Optional[_builtins.str]] = None,
+            content_file: pulumi.Input[Optional[_builtins.str]] = None,
+            content_length: pulumi.Input[Optional[_builtins.int]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            object_lock_legal_hold_status: pulumi.Input[Optional[_builtins.str]] = None,
+            object_lock_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            object_lock_retain_until_date: pulumi.Input[Optional[_builtins.str]] = None,
+            object_sql_url: pulumi.Input[Optional[_builtins.str]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            website_redirect: pulumi.Input[Optional[_builtins.str]] = None) -> 'CosBucketObject':
         """
         Get an existing CosBucketObject resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -684,6 +725,7 @@ class CosBucketObject(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] body: COS object body
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
+        :param pulumi.Input[_builtins.bool] bypass_governance_retention: Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
         :param pulumi.Input[_builtins.str] content: COS object content
         :param pulumi.Input[_builtins.str] content_base64: COS object content in base64 encoding
         :param pulumi.Input[_builtins.str] content_file: COS object content file path
@@ -707,6 +749,7 @@ class CosBucketObject(pulumi.CustomResource):
         __props__.__dict__["body"] = body
         __props__.__dict__["bucket_crn"] = bucket_crn
         __props__.__dict__["bucket_location"] = bucket_location
+        __props__.__dict__["bypass_governance_retention"] = bypass_governance_retention
         __props__.__dict__["content"] = content
         __props__.__dict__["content_base64"] = content_base64
         __props__.__dict__["content_file"] = content_file
@@ -748,6 +791,14 @@ class CosBucketObject(pulumi.CustomResource):
         COS bucket location
         """
         return pulumi.get(self, "bucket_location")
+
+    @_builtins.property
+    @pulumi.getter(name="bypassGovernanceRetention")
+    def bypass_governance_retention(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Allows deleting or modifying object versions locked with GOVERNANCE mode. Required to bypass governance-mode retention when updating or deleting objects.
+        """
+        return pulumi.get(self, "bypass_governance_retention")
 
     @_builtins.property
     @pulumi.getter

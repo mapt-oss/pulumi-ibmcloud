@@ -22,11 +22,12 @@ class PiNetworkPortAttachArgs:
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_instance_id: pulumi.Input[_builtins.str],
                  pi_network_name: pulumi.Input[_builtins.str],
-                 pi_network_port_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_port_ipaddress: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 pi_network_port_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_port_ipaddress: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PiNetworkPortAttach resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_instance_id: Instance id to attach the network port to.
         :param pulumi.Input[_builtins.str] pi_network_name: The network ID or name.
@@ -82,57 +83,58 @@ class PiNetworkPortAttachArgs:
 
     @_builtins.property
     @pulumi.getter(name="piNetworkPortDescription")
-    def pi_network_port_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_port_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description for the Network Port.
         """
         return pulumi.get(self, "pi_network_port_description")
 
     @pi_network_port_description.setter
-    def pi_network_port_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_port_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_port_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkPortIpaddress")
-    def pi_network_port_ipaddress(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_port_ipaddress(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The requested ip address of this port
         """
         return pulumi.get(self, "pi_network_port_ipaddress")
 
     @pi_network_port_ipaddress.setter
-    def pi_network_port_ipaddress(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_port_ipaddress(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_port_ipaddress", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
 
 @pulumi.input_type
 class _PiNetworkPortAttachState:
     def __init__(__self__, *,
-                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 macaddress: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_port_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_port_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_port_ipaddress: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 public_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 macaddress: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_port_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_port_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_port_ipaddress: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 public_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiNetworkPortAttach resources.
+
         :param pulumi.Input[_builtins.str] mac_address: The MAC address of the port.
         :param pulumi.Input[_builtins.str] macaddress: The MAC address of the instance.
         :param pulumi.Input[_builtins.str] network_port_id: The ID of the port.
@@ -173,135 +175,135 @@ class _PiNetworkPortAttachState:
 
     @_builtins.property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MAC address of the port.
         """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
-    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Deprecated, use mac_address instead""")
-    def macaddress(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def macaddress(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MAC address of the instance.
         """
         return pulumi.get(self, "macaddress")
 
     @macaddress.setter
-    def macaddress(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def macaddress(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "macaddress", value)
 
     @_builtins.property
     @pulumi.getter(name="networkPortId")
-    def network_port_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_port_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the port.
         """
         return pulumi.get(self, "network_port_id")
 
     @network_port_id.setter
-    def network_port_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_port_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_port_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceId")
-    def pi_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance id to attach the network port to.
         """
         return pulumi.get(self, "pi_instance_id")
 
     @pi_instance_id.setter
-    def pi_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkName")
-    def pi_network_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network ID or name.
         """
         return pulumi.get(self, "pi_network_name")
 
     @pi_network_name.setter
-    def pi_network_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_name", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkPortDescription")
-    def pi_network_port_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_port_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description for the Network Port.
         """
         return pulumi.get(self, "pi_network_port_description")
 
     @pi_network_port_description.setter
-    def pi_network_port_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_port_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_port_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piNetworkPortIpaddress")
-    def pi_network_port_ipaddress(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_network_port_ipaddress(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The requested ip address of this port
         """
         return pulumi.get(self, "pi_network_port_ipaddress")
 
     @pi_network_port_ipaddress.setter
-    def pi_network_port_ipaddress(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_network_port_ipaddress(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_network_port_ipaddress", value)
 
     @_builtins.property
     @pulumi.getter(name="piUserTags")
-    def pi_user_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pi_user_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The user tags attached to this resource.
         """
         return pulumi.get(self, "pi_user_tags")
 
     @pi_user_tags.setter
-    def pi_user_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pi_user_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pi_user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIp")
-    def public_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public IP associated with the port.
         """
         return pulumi.get(self, "public_ip")
 
     @public_ip.setter
-    def public_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the port.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -311,15 +313,16 @@ class PiNetworkPortAttach(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_port_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_port_ipaddress: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_port_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_port_ipaddress: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a PiNetworkPortAttach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
@@ -337,6 +340,7 @@ class PiNetworkPortAttach(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiNetworkPortAttach resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiNetworkPortAttachArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -352,12 +356,12 @@ class PiNetworkPortAttach(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_port_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_network_port_ipaddress: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_port_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_network_port_ipaddress: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -394,17 +398,17 @@ class PiNetworkPortAttach(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-            macaddress: Optional[pulumi.Input[_builtins.str]] = None,
-            network_port_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_network_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_network_port_description: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_network_port_ipaddress: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_user_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            public_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiNetworkPortAttach':
+            mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            macaddress: pulumi.Input[Optional[_builtins.str]] = None,
+            network_port_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_network_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_network_port_description: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_network_port_ipaddress: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_user_tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            public_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiNetworkPortAttach':
         """
         Get an existing PiNetworkPortAttach resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

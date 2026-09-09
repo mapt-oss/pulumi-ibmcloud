@@ -138,47 +138,47 @@ export interface PiVolumeCloneState {
     /**
      * The List of cloned volumes.
      */
-    cloneVolumes?: pulumi.Input<pulumi.Input<inputs.PiVolumeCloneCloneVolume>[]>;
+    cloneVolumes?: pulumi.Input<pulumi.Input<inputs.PiVolumeCloneCloneVolume>[] | undefined>;
     /**
      * The reason the clone volumes task has failed.
      */
-    failureReason?: pulumi.Input<string>;
+    failureReason?: pulumi.Input<string | undefined>;
     /**
      * The completion percentage of the volume clone task.
      */
-    percentComplete?: pulumi.Input<number>;
+    percentComplete?: pulumi.Input<number | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the cloned volume should have replication enabled. If no value is provided, it will default to the replication status of the source volume(s).
      */
-    piReplicationEnabled?: pulumi.Input<boolean>;
+    piReplicationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The storage tier for the cloned volume(s).
      */
-    piTargetStorageTier?: pulumi.Input<string>;
+    piTargetStorageTier?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The base name of the newly cloned volume(s).
      */
-    piVolumeCloneName?: pulumi.Input<string>;
+    piVolumeCloneName?: pulumi.Input<string | undefined>;
     /**
      * List of volumes to be cloned.
      */
-    piVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The status of the volume clone task.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The ID of the volume clone task.
      */
-    taskId?: pulumi.Input<string>;
+    taskId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -192,15 +192,15 @@ export interface PiVolumeCloneArgs {
     /**
      * Indicates whether the cloned volume should have replication enabled. If no value is provided, it will default to the replication status of the source volume(s).
      */
-    piReplicationEnabled?: pulumi.Input<boolean>;
+    piReplicationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The storage tier for the cloned volume(s).
      */
-    piTargetStorageTier?: pulumi.Input<string>;
+    piTargetStorageTier?: pulumi.Input<string | undefined>;
     /**
      * The user tags attached to this resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The base name of the newly cloned volume(s).
      */

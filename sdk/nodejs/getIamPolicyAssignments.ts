@@ -56,8 +56,8 @@ export function getIamPolicyAssignmentsOutput(args?: GetIamPolicyAssignmentsOutp
  * A collection of arguments for invoking getIamPolicyAssignments.
  */
 export interface GetIamPolicyAssignmentsOutputArgs {
-    acceptLanguage?: pulumi.Input<string>;
-    templateId?: pulumi.Input<string>;
-    templateVersion?: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
+    acceptLanguage?: pulumi.Input<string | undefined>;
+    templateId?: pulumi.Input<string | undefined>;
+    templateVersion?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string | undefined>;
 }

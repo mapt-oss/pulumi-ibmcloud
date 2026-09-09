@@ -106,9 +106,9 @@ def get_iam_trusted_profiles(account_id: Optional[_builtins.str] = None,
         include_history=pulumi.get(__ret__, 'include_history'),
         name=pulumi.get(__ret__, 'name'),
         profiles=pulumi.get(__ret__, 'profiles'))
-def get_iam_trusted_profiles_output(account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    include_history: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_trusted_profiles_output(account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    include_history: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTrustedProfilesResult]:
     """
     Use this data source to access information about an existing resource.

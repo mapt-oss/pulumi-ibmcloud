@@ -82,7 +82,7 @@ def get_is_bare_metal_server_disks(bare_metal_server: Optional[_builtins.str] = 
         bare_metal_server=pulumi.get(__ret__, 'bare_metal_server'),
         disks=pulumi.get(__ret__, 'disks'),
         id=pulumi.get(__ret__, 'id'))
-def get_is_bare_metal_server_disks_output(bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_bare_metal_server_disks_output(bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerDisksResult]:
     """
     Use this data source to access information about an existing resource.

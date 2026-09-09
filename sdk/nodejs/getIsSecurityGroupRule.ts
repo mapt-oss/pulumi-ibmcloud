@@ -35,6 +35,7 @@ export interface GetIsSecurityGroupRuleResult {
     readonly id: string;
     readonly ipVersion: string;
     readonly locals: outputs.GetIsSecurityGroupRuleLocal[];
+    readonly name: string;
     readonly portMax: number;
     readonly portMin: number;
     readonly protocol: string;

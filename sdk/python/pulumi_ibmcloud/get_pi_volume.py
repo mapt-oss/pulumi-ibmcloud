@@ -366,9 +366,9 @@ def get_pi_volume(pi_cloud_instance_id: Optional[_builtins.str] = None,
         volume_pool=pulumi.get(__ret__, 'volume_pool'),
         volume_type=pulumi.get(__ret__, 'volume_type'),
         wwn=pulumi.get(__ret__, 'wwn'))
-def get_pi_volume_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         pi_volume_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         pi_volume_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pi_volume_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         pi_volume_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         pi_volume_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiVolumeResult]:
     """
     Use this data source to access information about an existing resource.

@@ -55,7 +55,7 @@ export class IsBareMetalServerDisk extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly href: pulumi.Output<string>;
     /**
-     * The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
     declare public /*out*/ readonly interfaceType: pulumi.Output<string>;
     /**
@@ -123,39 +123,39 @@ export interface IsBareMetalServerDiskState {
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUses?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerDiskAllowedUse>[]>;
+    allowedUses?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerDiskAllowedUse>[] | undefined>;
     /**
      * Bare metal server identifier
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the disk was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * Bare metal server disk identifier
      */
-    disk?: pulumi.Input<string>;
+    disk?: pulumi.Input<string | undefined>;
     /**
      * The URL for this bare metal server disk.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
-     * The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * The disk attachment interface used:- `fcp`: Fiber Channel Protocol- `sata`: Serial Advanced Technology Attachment- `nvme`: Non-Volatile Memory ExpressThe enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * Bare metal server disk name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The size of the disk in GB (gigabytes).
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -173,5 +173,5 @@ export interface IsBareMetalServerDiskArgs {
     /**
      * Bare metal server disk name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

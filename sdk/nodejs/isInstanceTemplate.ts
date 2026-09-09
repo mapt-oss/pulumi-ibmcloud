@@ -34,10 +34,15 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
         return obj['__pulumiType'] === IsInstanceTemplate.__pulumiType;
     }
 
+    declare public readonly availability: pulumi.Output<outputs.IsInstanceTemplateAvailability | undefined>;
     /**
-     * The availability policy to use for this virtual server instance
+     * The availability policy to use for this virtual server instance.
      */
-    declare public readonly availabilityPolicyHostFailure: pulumi.Output<string>;
+    declare public readonly availabilityPolicy: pulumi.Output<outputs.IsInstanceTemplateAvailabilityPolicy | undefined>;
+    /**
+     * The availability policy to use for this virtual server instance template
+     */
+    declare public readonly availabilityPolicyHostFailure: pulumi.Output<string | undefined>;
     declare public readonly bootVolume: pulumi.Output<outputs.IsInstanceTemplateBootVolume>;
     /**
      * The catalog offering or offering version to use when provisioning this virtual server instance template. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
@@ -128,6 +133,10 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
      */
     declare public readonly resourceGroup: pulumi.Output<string>;
     /**
+     * The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
+     */
+    declare public readonly threadsPerCore: pulumi.Output<number>;
+    /**
      * The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
      */
     declare public readonly totalVolumeBandwidth: pulumi.Output<number | undefined>;
@@ -135,6 +144,7 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
      * User data given for the instance
      */
     declare public readonly userData: pulumi.Output<string | undefined>;
+    declare public readonly vcpu: pulumi.Output<outputs.IsInstanceTemplateVcpu | undefined>;
     declare public readonly volumeAttachments: pulumi.Output<outputs.IsInstanceTemplateVolumeAttachment[] | undefined>;
     /**
      * The volume bandwidth QoS mode for this virtual server instance.
@@ -162,6 +172,8 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IsInstanceTemplateState | undefined;
+            resourceInputs["availability"] = state?.availability;
+            resourceInputs["availabilityPolicy"] = state?.availabilityPolicy;
             resourceInputs["availabilityPolicyHostFailure"] = state?.availabilityPolicyHostFailure;
             resourceInputs["bootVolume"] = state?.bootVolume;
             resourceInputs["catalogOffering"] = state?.catalogOffering;
@@ -187,8 +199,10 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
             resourceInputs["profile"] = state?.profile;
             resourceInputs["reservationAffinities"] = state?.reservationAffinities;
             resourceInputs["resourceGroup"] = state?.resourceGroup;
+            resourceInputs["threadsPerCore"] = state?.threadsPerCore;
             resourceInputs["totalVolumeBandwidth"] = state?.totalVolumeBandwidth;
             resourceInputs["userData"] = state?.userData;
+            resourceInputs["vcpu"] = state?.vcpu;
             resourceInputs["volumeAttachments"] = state?.volumeAttachments;
             resourceInputs["volumeBandwidthQosMode"] = state?.volumeBandwidthQosMode;
             resourceInputs["vpc"] = state?.vpc;
@@ -207,6 +221,8 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
             if (args?.zone === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zone'");
             }
+            resourceInputs["availability"] = args?.availability;
+            resourceInputs["availabilityPolicy"] = args?.availabilityPolicy;
             resourceInputs["availabilityPolicyHostFailure"] = args?.availabilityPolicyHostFailure;
             resourceInputs["bootVolume"] = args?.bootVolume;
             resourceInputs["catalogOffering"] = args?.catalogOffering;
@@ -230,8 +246,10 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
             resourceInputs["profile"] = args?.profile;
             resourceInputs["reservationAffinities"] = args?.reservationAffinities;
             resourceInputs["resourceGroup"] = args?.resourceGroup;
+            resourceInputs["threadsPerCore"] = args?.threadsPerCore;
             resourceInputs["totalVolumeBandwidth"] = args?.totalVolumeBandwidth;
             resourceInputs["userData"] = args?.userData;
+            resourceInputs["vcpu"] = args?.vcpu;
             resourceInputs["volumeAttachments"] = args?.volumeAttachments;
             resourceInputs["volumeBandwidthQosMode"] = args?.volumeBandwidthQosMode;
             resourceInputs["vpc"] = args?.vpc;
@@ -248,167 +266,182 @@ export class IsInstanceTemplate extends pulumi.CustomResource {
  * Input properties used for looking up and filtering IsInstanceTemplate resources.
  */
 export interface IsInstanceTemplateState {
+    availability?: pulumi.Input<inputs.IsInstanceTemplateAvailability | undefined>;
     /**
-     * The availability policy to use for this virtual server instance
+     * The availability policy to use for this virtual server instance.
      */
-    availabilityPolicyHostFailure?: pulumi.Input<string>;
-    bootVolume?: pulumi.Input<inputs.IsInstanceTemplateBootVolume>;
+    availabilityPolicy?: pulumi.Input<inputs.IsInstanceTemplateAvailabilityPolicy | undefined>;
+    /**
+     * The availability policy to use for this virtual server instance template
+     */
+    availabilityPolicyHostFailure?: pulumi.Input<string | undefined>;
+    bootVolume?: pulumi.Input<inputs.IsInstanceTemplateBootVolume | undefined>;
     /**
      * The catalog offering or offering version to use when provisioning this virtual server instance template. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
      */
-    catalogOffering?: pulumi.Input<inputs.IsInstanceTemplateCatalogOffering>;
+    catalogOffering?: pulumi.Input<inputs.IsInstanceTemplateCatalogOffering | undefined>;
     /**
      * The cluster network attachments to create for this virtual server instance. A cluster network attachment represents a device that is connected to a cluster network. The number of network attachments must match one of the values from the instance profile's `clusterNetworkAttachmentCount` before the instance can be started.
      */
-    clusterNetworkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachment>[]>;
+    clusterNetworkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachment>[] | undefined>;
     /**
      * The confidential compute mode to use for this virtual server instance.If unspecified, the default confidential compute mode from the profile will be used.
      */
-    confidentialComputeMode?: pulumi.Input<string>;
+    confidentialComputeMode?: pulumi.Input<string | undefined>;
     /**
      * The CRN for the instance
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Unique Identifier of the Dedicated Host where the instance will be placed
      */
-    dedicatedHost?: pulumi.Input<string>;
+    dedicatedHost?: pulumi.Input<string | undefined>;
     /**
      * Unique Identifier of the Dedicated Host Group where the instance will be placed
      */
-    dedicatedHostGroup?: pulumi.Input<string>;
+    dedicatedHostGroup?: pulumi.Input<string | undefined>;
     /**
      * If set to `true`, the system will create a link to the specified `target` trusted profile during instance creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the instance is deleted.
      */
-    defaultTrustedProfileAutoLink?: pulumi.Input<boolean>;
+    defaultTrustedProfileAutoLink?: pulumi.Input<boolean | undefined>;
     /**
      * The unique identifier or CRN of the default IAM trusted profile to use for this virtual server instance.
      */
-    defaultTrustedProfileTarget?: pulumi.Input<string>;
+    defaultTrustedProfileTarget?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether secure boot is enabled for this virtual server instance.If unspecified, the default secure boot mode from the profile will be used.
      */
-    enableSecureBoot?: pulumi.Input<boolean>;
+    enableSecureBoot?: pulumi.Input<boolean | undefined>;
     /**
      * image name
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * SSH key Ids for the instance template
      */
-    keys?: pulumi.Input<pulumi.Input<string>[]>;
+    keys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The metadata service configuration
      */
-    metadataService?: pulumi.Input<inputs.IsInstanceTemplateMetadataService>;
+    metadataService?: pulumi.Input<inputs.IsInstanceTemplateMetadataService | undefined>;
     /**
      * Indicates whether the metadata service endpoint is available to the virtual server instance
      *
      * @deprecated Use metadataService instead
      */
-    metadataServiceEnabled?: pulumi.Input<boolean>;
+    metadataServiceEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Instance Template name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The network attachments for this virtual server instance, including the primary network attachment.
      */
-    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachment>[]>;
-    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkInterface>[]>;
+    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachment>[] | undefined>;
+    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkInterface>[] | undefined>;
     /**
      * Unique Identifier of the Placement Group for restricting the placement of the instance
      */
-    placementGroup?: pulumi.Input<string>;
+    placementGroup?: pulumi.Input<string | undefined>;
     /**
      * The placement restrictions for the virtual server instance.
      */
-    placementTargets?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePlacementTarget>[]>;
+    placementTargets?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePlacementTarget>[] | undefined>;
     /**
      * The primary network attachment for this virtual server instance.
      */
-    primaryNetworkAttachment?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachment>;
+    primaryNetworkAttachment?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachment | undefined>;
     /**
      * Primary Network interface info
      */
-    primaryNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkInterface>;
+    primaryNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkInterface | undefined>;
     /**
      * Profile info
      */
-    profile?: pulumi.Input<string>;
-    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateReservationAffinity>[]>;
+    profile?: pulumi.Input<string | undefined>;
+    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateReservationAffinity>[] | undefined>;
     /**
      * Instance template resource group
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    /**
+     * The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
+     */
+    threadsPerCore?: pulumi.Input<number | undefined>;
     /**
      * The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
      */
-    totalVolumeBandwidth?: pulumi.Input<number>;
+    totalVolumeBandwidth?: pulumi.Input<number | undefined>;
     /**
      * User data given for the instance
      */
-    userData?: pulumi.Input<string>;
-    volumeAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateVolumeAttachment>[]>;
+    userData?: pulumi.Input<string | undefined>;
+    vcpu?: pulumi.Input<inputs.IsInstanceTemplateVcpu | undefined>;
+    volumeAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateVolumeAttachment>[] | undefined>;
     /**
      * The volume bandwidth QoS mode for this virtual server instance.
      */
-    volumeBandwidthQosMode?: pulumi.Input<string>;
+    volumeBandwidthQosMode?: pulumi.Input<string | undefined>;
     /**
      * VPC id
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * Zone name
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a IsInstanceTemplate resource.
  */
 export interface IsInstanceTemplateArgs {
+    availability?: pulumi.Input<inputs.IsInstanceTemplateAvailability | undefined>;
     /**
-     * The availability policy to use for this virtual server instance
+     * The availability policy to use for this virtual server instance.
      */
-    availabilityPolicyHostFailure?: pulumi.Input<string>;
-    bootVolume?: pulumi.Input<inputs.IsInstanceTemplateBootVolume>;
+    availabilityPolicy?: pulumi.Input<inputs.IsInstanceTemplateAvailabilityPolicy | undefined>;
+    /**
+     * The availability policy to use for this virtual server instance template
+     */
+    availabilityPolicyHostFailure?: pulumi.Input<string | undefined>;
+    bootVolume?: pulumi.Input<inputs.IsInstanceTemplateBootVolume | undefined>;
     /**
      * The catalog offering or offering version to use when provisioning this virtual server instance template. If an offering is specified, the latest version of that offering will be used. The specified offering or offering version may be in a different account in the same enterprise, subject to IAM policies.
      */
-    catalogOffering?: pulumi.Input<inputs.IsInstanceTemplateCatalogOffering>;
+    catalogOffering?: pulumi.Input<inputs.IsInstanceTemplateCatalogOffering | undefined>;
     /**
      * The cluster network attachments to create for this virtual server instance. A cluster network attachment represents a device that is connected to a cluster network. The number of network attachments must match one of the values from the instance profile's `clusterNetworkAttachmentCount` before the instance can be started.
      */
-    clusterNetworkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachment>[]>;
+    clusterNetworkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachment>[] | undefined>;
     /**
      * The confidential compute mode to use for this virtual server instance.If unspecified, the default confidential compute mode from the profile will be used.
      */
-    confidentialComputeMode?: pulumi.Input<string>;
+    confidentialComputeMode?: pulumi.Input<string | undefined>;
     /**
      * Unique Identifier of the Dedicated Host where the instance will be placed
      */
-    dedicatedHost?: pulumi.Input<string>;
+    dedicatedHost?: pulumi.Input<string | undefined>;
     /**
      * Unique Identifier of the Dedicated Host Group where the instance will be placed
      */
-    dedicatedHostGroup?: pulumi.Input<string>;
+    dedicatedHostGroup?: pulumi.Input<string | undefined>;
     /**
      * If set to `true`, the system will create a link to the specified `target` trusted profile during instance creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the instance is deleted.
      */
-    defaultTrustedProfileAutoLink?: pulumi.Input<boolean>;
+    defaultTrustedProfileAutoLink?: pulumi.Input<boolean | undefined>;
     /**
      * The unique identifier or CRN of the default IAM trusted profile to use for this virtual server instance.
      */
-    defaultTrustedProfileTarget?: pulumi.Input<string>;
+    defaultTrustedProfileTarget?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether secure boot is enabled for this virtual server instance.If unspecified, the default secure boot mode from the profile will be used.
      */
-    enableSecureBoot?: pulumi.Input<boolean>;
+    enableSecureBoot?: pulumi.Input<boolean | undefined>;
     /**
      * image name
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * SSH key Ids for the instance template
      */
@@ -416,56 +449,61 @@ export interface IsInstanceTemplateArgs {
     /**
      * The metadata service configuration
      */
-    metadataService?: pulumi.Input<inputs.IsInstanceTemplateMetadataService>;
+    metadataService?: pulumi.Input<inputs.IsInstanceTemplateMetadataService | undefined>;
     /**
      * Indicates whether the metadata service endpoint is available to the virtual server instance
      *
      * @deprecated Use metadataService instead
      */
-    metadataServiceEnabled?: pulumi.Input<boolean>;
+    metadataServiceEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Instance Template name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The network attachments for this virtual server instance, including the primary network attachment.
      */
-    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachment>[]>;
-    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkInterface>[]>;
+    networkAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachment>[] | undefined>;
+    networkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkInterface>[] | undefined>;
     /**
      * Unique Identifier of the Placement Group for restricting the placement of the instance
      */
-    placementGroup?: pulumi.Input<string>;
+    placementGroup?: pulumi.Input<string | undefined>;
     /**
      * The primary network attachment for this virtual server instance.
      */
-    primaryNetworkAttachment?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachment>;
+    primaryNetworkAttachment?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachment | undefined>;
     /**
      * Primary Network interface info
      */
-    primaryNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkInterface>;
+    primaryNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkInterface | undefined>;
     /**
      * Profile info
      */
     profile: pulumi.Input<string>;
-    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateReservationAffinity>[]>;
+    reservationAffinities?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateReservationAffinity>[] | undefined>;
     /**
      * Instance template resource group
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    /**
+     * The threads per core to use for this virtual server instance. Must be one of the values in the profile's threads_per_core.values. If unspecified, the default threads per core from the profile will be used.
+     */
+    threadsPerCore?: pulumi.Input<number | undefined>;
     /**
      * The amount of bandwidth (in megabits per second) allocated exclusively to instance storage volumes
      */
-    totalVolumeBandwidth?: pulumi.Input<number>;
+    totalVolumeBandwidth?: pulumi.Input<number | undefined>;
     /**
      * User data given for the instance
      */
-    userData?: pulumi.Input<string>;
-    volumeAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateVolumeAttachment>[]>;
+    userData?: pulumi.Input<string | undefined>;
+    vcpu?: pulumi.Input<inputs.IsInstanceTemplateVcpu | undefined>;
+    volumeAttachments?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateVolumeAttachment>[] | undefined>;
     /**
      * The volume bandwidth QoS mode for this virtual server instance.
      */
-    volumeBandwidthQosMode?: pulumi.Input<string>;
+    volumeBandwidthQosMode?: pulumi.Input<string | undefined>;
     /**
      * VPC id
      */

@@ -184,127 +184,127 @@ export interface ProviderArgs {
      *
      * @deprecated This field is deprecated please use ibmcloud_api_key
      */
-    bluemixApiKey?: pulumi.Input<string>;
+    bluemixApiKey?: pulumi.Input<string | undefined>;
     /**
      * The timeout (in seconds) to set for any Bluemix API calls made.
      *
      * @deprecated This field is deprecated please use ibmcloud_timeout
      */
-    bluemixTimeout?: pulumi.Input<number>;
+    bluemixTimeout?: pulumi.Input<number | undefined>;
     /**
      * Path of the file that contains private and public regional endpoints mapping
      */
-    endpointsFilePath?: pulumi.Input<string>;
+    endpointsFilePath?: pulumi.Input<string | undefined>;
     /**
      * The IBM Cloud Function namespace
      *
      * @deprecated This field will be deprecated soon
      */
-    functionNamespace?: pulumi.Input<string>;
+    functionNamespace?: pulumi.Input<string | undefined>;
     /**
      * Generation of Virtual Private Cloud. Default is 2
      *
      * @deprecated The generation field is deprecated and will be removed after couple of releases
      */
-    generation?: pulumi.Input<number>;
+    generation?: pulumi.Input<number | undefined>;
     /**
      * The Classic Infrastructure API Key
      */
-    iaasClassicApiKey?: pulumi.Input<string>;
+    iaasClassicApiKey?: pulumi.Input<string | undefined>;
     /**
      * The Classic Infrastructure Endpoint
      */
-    iaasClassicEndpointUrl?: pulumi.Input<string>;
+    iaasClassicEndpointUrl?: pulumi.Input<string | undefined>;
     /**
      * The timeout (in seconds) to set for any Classic Infrastructure API calls made.
      */
-    iaasClassicTimeout?: pulumi.Input<number>;
+    iaasClassicTimeout?: pulumi.Input<number | undefined>;
     /**
      * The Classic Infrastructure API user name
      */
-    iaasClassicUsername?: pulumi.Input<string>;
+    iaasClassicUsername?: pulumi.Input<string | undefined>;
     /**
      * IAM Trusted Profile ID
      */
-    iamProfileId?: pulumi.Input<string>;
+    iamProfileId?: pulumi.Input<string | undefined>;
     /**
      * IAM Trusted Profile Name
      */
-    iamProfileName?: pulumi.Input<string>;
+    iamProfileName?: pulumi.Input<string | undefined>;
     /**
      * IAM Authentication refresh token
      */
-    iamRefreshToken?: pulumi.Input<string>;
+    iamRefreshToken?: pulumi.Input<string | undefined>;
     /**
      * IAM Authentication token
      */
-    iamToken?: pulumi.Input<string>;
+    iamToken?: pulumi.Input<string | undefined>;
     /**
      * The IBM Cloud account ID
      */
-    ibmcloudAccountId?: pulumi.Input<string>;
+    ibmcloudAccountId?: pulumi.Input<string | undefined>;
     /**
      * The IBM Cloud API Key
      */
-    ibmcloudApiKey?: pulumi.Input<string>;
+    ibmcloudApiKey?: pulumi.Input<string | undefined>;
     /**
      * The timeout (in seconds) to set for any IBM Cloud API calls made.
      */
-    ibmcloudTimeout?: pulumi.Input<number>;
+    ibmcloudTimeout?: pulumi.Input<number | undefined>;
     /**
      * The retry count to set for API calls.
      */
-    maxRetries?: pulumi.Input<number>;
+    maxRetries?: pulumi.Input<number | undefined>;
     /**
      * Private Endpoint type used by the service endpoints. Example: vpe.
      */
-    privateEndpointType?: pulumi.Input<string>;
+    privateEndpointType?: pulumi.Input<string | undefined>;
     /**
      * The IBM cloud Region (for example 'us-south').
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * The Resource group id.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The next generation infrastructure service endpoint url.
      *
      * @deprecated This field is deprecated use generation
      */
-    riaasEndpoint?: pulumi.Input<string>;
+    riaasEndpoint?: pulumi.Input<string | undefined>;
     /**
      * The SoftLayer API Key
      *
      * @deprecated This field is deprecated please use iaas_classic_api_key
      */
-    softlayerApiKey?: pulumi.Input<string>;
+    softlayerApiKey?: pulumi.Input<string | undefined>;
     /**
      * The Softlayer Endpoint
      *
      * @deprecated This field is deprecated please use iaas_classic_endpoint_url
      */
-    softlayerEndpointUrl?: pulumi.Input<string>;
+    softlayerEndpointUrl?: pulumi.Input<string | undefined>;
     /**
      * The timeout (in seconds) to set for any SoftLayer API calls made.
      *
      * @deprecated This field is deprecated please use iaas_classic_timeout
      */
-    softlayerTimeout?: pulumi.Input<number>;
+    softlayerTimeout?: pulumi.Input<number | undefined>;
     /**
      * The SoftLayer user name
      *
      * @deprecated This field is deprecated please use iaas_classic_username
      */
-    softlayerUsername?: pulumi.Input<string>;
+    softlayerUsername?: pulumi.Input<string | undefined>;
     /**
      * Visibility of the provider if it is private or public.
      */
-    visibility?: pulumi.Input<string>;
+    visibility?: pulumi.Input<string | undefined>;
     /**
      * The IBM cloud Region zone (for example 'us-south-1') for power resources.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 export namespace Provider {

@@ -82,7 +82,7 @@ def get_iam_service_id(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         service_ids=pulumi.get(__ret__, 'service_ids'))
-def get_iam_service_id_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_service_id_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamServiceIdResult]:
     """
     Use this data source to access information about an existing resource.

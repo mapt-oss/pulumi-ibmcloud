@@ -24,9 +24,10 @@ class CosBucketWebsiteConfigurationArgs:
                  bucket_crn: pulumi.Input[_builtins.str],
                  bucket_location: pulumi.Input[_builtins.str],
                  website_configuration: pulumi.Input['CosBucketWebsiteConfigurationWebsiteConfigurationArgs'],
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CosBucketWebsiteConfiguration resource.
+
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input['CosBucketWebsiteConfigurationWebsiteConfigurationArgs'] website_configuration: Configuration for Hosting a static website on COS with public access.
@@ -76,27 +77,28 @@ class CosBucketWebsiteConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
 
 @pulumi.input_type
 class _CosBucketWebsiteConfigurationState:
     def __init__(__self__, *,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 website_configuration: Optional[pulumi.Input['CosBucketWebsiteConfigurationWebsiteConfigurationArgs']] = None,
-                 website_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 website_configuration: pulumi.Input[Optional['CosBucketWebsiteConfigurationWebsiteConfigurationArgs']] = None,
+                 website_endpoint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CosBucketWebsiteConfiguration resources.
+
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
@@ -115,59 +117,59 @@ class _CosBucketWebsiteConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="bucketCrn")
-    def bucket_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket CRN
         """
         return pulumi.get(self, "bucket_crn")
 
     @bucket_crn.setter
-    def bucket_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_crn", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketLocation")
-    def bucket_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS bucket location
         """
         return pulumi.get(self, "bucket_location")
 
     @bucket_location.setter
-    def bucket_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_location", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         COS endpoint type: public, private, direct
         """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
-    def endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="websiteConfiguration")
-    def website_configuration(self) -> Optional[pulumi.Input['CosBucketWebsiteConfigurationWebsiteConfigurationArgs']]:
+    def website_configuration(self) -> pulumi.Input[Optional['CosBucketWebsiteConfigurationWebsiteConfigurationArgs']]:
         """
         Configuration for Hosting a static website on COS with public access.
         """
         return pulumi.get(self, "website_configuration")
 
     @website_configuration.setter
-    def website_configuration(self, value: Optional[pulumi.Input['CosBucketWebsiteConfigurationWebsiteConfigurationArgs']]):
+    def website_configuration(self, value: pulumi.Input[Optional['CosBucketWebsiteConfigurationWebsiteConfigurationArgs']]):
         pulumi.set(self, "website_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="websiteEndpoint")
-    def website_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def website_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "website_endpoint")
 
     @website_endpoint.setter
-    def website_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def website_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "website_endpoint", value)
 
 
@@ -177,19 +179,20 @@ class CosBucketWebsiteConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 website_configuration: Optional[pulumi.Input[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict']]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 website_configuration: pulumi.Input[Optional[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict', 'outputs.CosBucketWebsiteConfigurationWebsiteConfiguration']]] = None,
                  __props__=None):
         """
         Create a CosBucketWebsiteConfiguration resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict']] website_configuration: Configuration for Hosting a static website on COS with public access.
+        :param pulumi.Input[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict', 'outputs.CosBucketWebsiteConfigurationWebsiteConfiguration']] website_configuration: Configuration for Hosting a static website on COS with public access.
         """
         ...
     @overload
@@ -199,6 +202,7 @@ class CosBucketWebsiteConfiguration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CosBucketWebsiteConfiguration resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param CosBucketWebsiteConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -214,10 +218,10 @@ class CosBucketWebsiteConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 website_configuration: Optional[pulumi.Input[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict']]] = None,
+                 bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 website_configuration: pulumi.Input[Optional[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict', 'outputs.CosBucketWebsiteConfigurationWebsiteConfiguration']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -248,11 +252,11 @@ class CosBucketWebsiteConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_location: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-            website_configuration: Optional[pulumi.Input[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict']]] = None,
-            website_endpoint: Optional[pulumi.Input[_builtins.str]] = None) -> 'CosBucketWebsiteConfiguration':
+            bucket_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_location: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            website_configuration: pulumi.Input[Optional[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict', 'outputs.CosBucketWebsiteConfigurationWebsiteConfiguration']]] = None,
+            website_endpoint: pulumi.Input[Optional[_builtins.str]] = None) -> 'CosBucketWebsiteConfiguration':
         """
         Get an existing CosBucketWebsiteConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -263,7 +267,7 @@ class CosBucketWebsiteConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bucket_crn: COS bucket CRN
         :param pulumi.Input[_builtins.str] bucket_location: COS bucket location
         :param pulumi.Input[_builtins.str] endpoint_type: COS endpoint type: public, private, direct
-        :param pulumi.Input[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict']] website_configuration: Configuration for Hosting a static website on COS with public access.
+        :param pulumi.Input[Union['CosBucketWebsiteConfigurationWebsiteConfigurationArgs', 'CosBucketWebsiteConfigurationWebsiteConfigurationArgsDict', 'outputs.CosBucketWebsiteConfigurationWebsiteConfiguration']] website_configuration: Configuration for Hosting a static website on COS with public access.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

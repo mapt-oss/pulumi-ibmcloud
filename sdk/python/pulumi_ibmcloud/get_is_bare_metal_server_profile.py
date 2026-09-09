@@ -27,7 +27,7 @@ class GetIsBareMetalServerProfileResult:
     """
     A collection of values returned by getIsBareMetalServerProfile.
     """
-    def __init__(__self__, bandwidths=None, console_types=None, cpu_architectures=None, cpu_core_counts=None, cpu_socket_counts=None, disks=None, family=None, href=None, id=None, memories=None, name=None, network_attachment_counts=None, network_interface_counts=None, os_architectures=None, reservation_terms=None, resource_type=None, supported_trusted_platform_module_modes=None, virtual_network_interfaces_supporteds=None):
+    def __init__(__self__, bandwidths=None, console_types=None, cpu_architectures=None, cpu_core_counts=None, cpu_socket_counts=None, disks=None, family=None, href=None, id=None, memories=None, name=None, network_attachment_counts=None, network_interface_counts=None, os_architectures=None, reservation_terms=None, resource_type=None, supported_trusted_platform_module_modes=None, virtual_network_interfaces_supporteds=None, zones=None):
         if bandwidths and not isinstance(bandwidths, list):
             raise TypeError("Expected argument 'bandwidths' to be a list")
         pulumi.set(__self__, "bandwidths", bandwidths)
@@ -82,6 +82,9 @@ class GetIsBareMetalServerProfileResult:
         if virtual_network_interfaces_supporteds and not isinstance(virtual_network_interfaces_supporteds, list):
             raise TypeError("Expected argument 'virtual_network_interfaces_supporteds' to be a list")
         pulumi.set(__self__, "virtual_network_interfaces_supporteds", virtual_network_interfaces_supporteds)
+        if zones and not isinstance(zones, list):
+            raise TypeError("Expected argument 'zones' to be a list")
+        pulumi.set(__self__, "zones", zones)
 
     @_builtins.property
     @pulumi.getter
@@ -176,6 +179,11 @@ class GetIsBareMetalServerProfileResult:
     def virtual_network_interfaces_supporteds(self) -> Sequence['outputs.GetIsBareMetalServerProfileVirtualNetworkInterfacesSupportedResult']:
         return pulumi.get(self, "virtual_network_interfaces_supporteds")
 
+    @_builtins.property
+    @pulumi.getter
+    def zones(self) -> Sequence['outputs.GetIsBareMetalServerProfileZoneResult']:
+        return pulumi.get(self, "zones")
+
 
 class AwaitableGetIsBareMetalServerProfileResult(GetIsBareMetalServerProfileResult):
     # pylint: disable=using-constant-test
@@ -200,7 +208,8 @@ class AwaitableGetIsBareMetalServerProfileResult(GetIsBareMetalServerProfileResu
             reservation_terms=self.reservation_terms,
             resource_type=self.resource_type,
             supported_trusted_platform_module_modes=self.supported_trusted_platform_module_modes,
-            virtual_network_interfaces_supporteds=self.virtual_network_interfaces_supporteds)
+            virtual_network_interfaces_supporteds=self.virtual_network_interfaces_supporteds,
+            zones=self.zones)
 
 
 def get_is_bare_metal_server_profile(name: Optional[_builtins.str] = None,
@@ -231,8 +240,9 @@ def get_is_bare_metal_server_profile(name: Optional[_builtins.str] = None,
         reservation_terms=pulumi.get(__ret__, 'reservation_terms'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         supported_trusted_platform_module_modes=pulumi.get(__ret__, 'supported_trusted_platform_module_modes'),
-        virtual_network_interfaces_supporteds=pulumi.get(__ret__, 'virtual_network_interfaces_supporteds'))
-def get_is_bare_metal_server_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+        virtual_network_interfaces_supporteds=pulumi.get(__ret__, 'virtual_network_interfaces_supporteds'),
+        zones=pulumi.get(__ret__, 'zones'))
+def get_is_bare_metal_server_profile_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsBareMetalServerProfileResult]:
     """
     Use this data source to access information about an existing resource.
@@ -259,4 +269,5 @@ def get_is_bare_metal_server_profile_output(name: Optional[pulumi.Input[_builtin
         reservation_terms=pulumi.get(__response__, 'reservation_terms'),
         resource_type=pulumi.get(__response__, 'resource_type'),
         supported_trusted_platform_module_modes=pulumi.get(__response__, 'supported_trusted_platform_module_modes'),
-        virtual_network_interfaces_supporteds=pulumi.get(__response__, 'virtual_network_interfaces_supporteds')))
+        virtual_network_interfaces_supporteds=pulumi.get(__response__, 'virtual_network_interfaces_supporteds'),
+        zones=pulumi.get(__response__, 'zones')))

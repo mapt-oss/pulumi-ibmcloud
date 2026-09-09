@@ -122,7 +122,7 @@ def get_is_cluster_network_profile(name: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         supported_instance_profiles=pulumi.get(__ret__, 'supported_instance_profiles'),
         zones=pulumi.get(__ret__, 'zones'))
-def get_is_cluster_network_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_cluster_network_profile_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsClusterNetworkProfileResult]:
     """
     Use this data source to access information about an existing resource.

@@ -48,6 +48,6 @@ export function getIsFloatingIpsOutput(args?: GetIsFloatingIpsOutputArgs, opts?:
  * A collection of arguments for invoking getIsFloatingIps.
  */
 export interface GetIsFloatingIpsOutputArgs {
-    name?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
 }

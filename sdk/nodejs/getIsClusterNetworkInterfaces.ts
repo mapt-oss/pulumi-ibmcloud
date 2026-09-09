@@ -51,6 +51,6 @@ export function getIsClusterNetworkInterfacesOutput(args: GetIsClusterNetworkInt
  */
 export interface GetIsClusterNetworkInterfacesOutputArgs {
     clusterNetworkId: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    sort?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    sort?: pulumi.Input<string | undefined>;
 }

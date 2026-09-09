@@ -22,9 +22,10 @@ class PiInstanceActionArgs:
                  pi_action: pulumi.Input[_builtins.str],
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_instance_id: pulumi.Input[_builtins.str],
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiInstanceAction resource.
+
         :param pulumi.Input[_builtins.str] pi_action: PVM instance action type
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI Cloud instance id
         :param pulumi.Input[_builtins.str] pi_instance_id: PVM instance ID
@@ -74,29 +75,30 @@ class PiInstanceActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="piHealthStatus")
-    def pi_health_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_health_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set the health status of the PVM instance to connect it faster
         """
         return pulumi.get(self, "pi_health_status")
 
     @pi_health_status.setter
-    def pi_health_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_health_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_health_status", value)
 
 
 @pulumi.input_type
 class _PiInstanceActionState:
     def __init__(__self__, *,
-                 health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 progress: Optional[pulumi.Input[_builtins.float]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 progress: pulumi.Input[Optional[_builtins.float]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiInstanceAction resources.
+
         :param pulumi.Input[_builtins.str] health_status: The PVM's health status value
         :param pulumi.Input[_builtins.str] pi_action: PVM instance action type
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: PI Cloud instance id
@@ -122,86 +124,86 @@ class _PiInstanceActionState:
 
     @_builtins.property
     @pulumi.getter(name="healthStatus")
-    def health_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The PVM's health status value
         """
         return pulumi.get(self, "health_status")
 
     @health_status.setter
-    def health_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_status", value)
 
     @_builtins.property
     @pulumi.getter(name="piAction")
-    def pi_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM instance action type
         """
         return pulumi.get(self, "pi_action")
 
     @pi_action.setter
-    def pi_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_action", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PI Cloud instance id
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piHealthStatus")
-    def pi_health_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_health_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set the health status of the PVM instance to connect it faster
         """
         return pulumi.get(self, "pi_health_status")
 
     @pi_health_status.setter
-    def pi_health_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_health_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_health_status", value)
 
     @_builtins.property
     @pulumi.getter(name="piInstanceId")
-    def pi_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         PVM instance ID
         """
         return pulumi.get(self, "pi_instance_id")
 
     @pi_instance_id.setter
-    def pi_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def progress(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def progress(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The progress of an operation
         """
         return pulumi.get(self, "progress")
 
     @progress.setter
-    def progress(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def progress(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the PVM instance
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -211,13 +213,14 @@ class PiInstanceAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a PiInstanceAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_action: PVM instance action type
@@ -233,6 +236,7 @@ class PiInstanceAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiInstanceAction resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiInstanceActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -248,10 +252,10 @@ class PiInstanceAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -284,13 +288,13 @@ class PiInstanceAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            health_status: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_action: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_health_status: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            progress: Optional[pulumi.Input[_builtins.float]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiInstanceAction':
+            health_status: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_action: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_health_status: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            progress: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiInstanceAction':
         """
         Get an existing PiInstanceAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

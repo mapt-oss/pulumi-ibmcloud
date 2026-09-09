@@ -94,19 +94,19 @@ export interface PiVolumeAttachState {
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * PI Instance Id
      */
-    piInstanceId?: pulumi.Input<string>;
+    piInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Id of the volume to attach. Note these volumes should have been created
      */
-    piVolumeId?: pulumi.Input<string>;
+    piVolumeId?: pulumi.Input<string | undefined>;
     /**
      * The status of the volume.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 /**

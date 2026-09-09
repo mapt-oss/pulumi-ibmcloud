@@ -96,19 +96,19 @@ export interface CosBucketReplicationRuleState {
     /**
      * COS bucket CRN
      */
-    bucketCrn?: pulumi.Input<string>;
+    bucketCrn?: pulumi.Input<string | undefined>;
     /**
      * COS bucket location
      */
-    bucketLocation?: pulumi.Input<string>;
+    bucketLocation?: pulumi.Input<string | undefined>;
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
      */
-    replicationRules?: pulumi.Input<pulumi.Input<inputs.CosBucketReplicationRuleReplicationRule>[]>;
+    replicationRules?: pulumi.Input<pulumi.Input<inputs.CosBucketReplicationRuleReplicationRule>[] | undefined>;
 }
 
 /**
@@ -126,7 +126,7 @@ export interface CosBucketReplicationRuleArgs {
     /**
      * COS endpoint type: public, private, direct
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * Replicate objects between buckets, replicate across source and destination. A container for replication rules can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
      */

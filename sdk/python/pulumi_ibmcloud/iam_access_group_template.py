@@ -21,14 +21,15 @@ __all__ = ['IamAccessGroupTemplateArgs', 'IamAccessGroupTemplate']
 @pulumi.input_type
 class IamAccessGroupTemplateArgs:
     def __init__(__self__, *,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input['IamAccessGroupTemplateGroupArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional['IamAccessGroupTemplateGroupArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamAccessGroupTemplate resource.
+
         :param pulumi.Input[_builtins.bool] committed: A boolean indicating whether the access group template is committed. You must commit a template before you can assign it to child accounts.
         :param pulumi.Input[_builtins.str] description: The description of the access group template.
         :param pulumi.Input['IamAccessGroupTemplateGroupArgs'] group: Access Group Component.
@@ -51,96 +52,97 @@ class IamAccessGroupTemplateArgs:
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A boolean indicating whether the access group template is committed. You must commit a template before you can assign it to child accounts.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the access group template.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input['IamAccessGroupTemplateGroupArgs']]:
+    def group(self) -> pulumi.Input[Optional['IamAccessGroupTemplateGroupArgs']]:
         """
         Access Group Component.
         """
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input['IamAccessGroupTemplateGroupArgs']]):
+    def group(self, value: pulumi.Input[Optional['IamAccessGroupTemplateGroupArgs']]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the access group template.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyTemplateReferences")
-    def policy_template_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]:
+    def policy_template_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]:
         """
         References to policy templates assigned to the access group template.
         """
         return pulumi.get(self, "policy_template_references")
 
     @policy_template_references.setter
-    def policy_template_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]):
+    def policy_template_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]):
         pulumi.set(self, "policy_template_references", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional transaction id for the request.
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
 
 @pulumi.input_type
 class _IamAccessGroupTemplateState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input['IamAccessGroupTemplateGroupArgs']] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional['IamAccessGroupTemplateGroupArgs']] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamAccessGroupTemplate resources.
+
         :param pulumi.Input[_builtins.str] account_id: The ID of the account to which the access group template is assigned.
         :param pulumi.Input[_builtins.bool] committed: A boolean indicating whether the access group template is committed. You must commit a template before you can assign it to child accounts.
         :param pulumi.Input[_builtins.str] created_at: The date and time when the access group template was created.
@@ -187,170 +189,170 @@ class _IamAccessGroupTemplateState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the account to which the access group template is assigned.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A boolean indicating whether the access group template is committed. You must commit a template before you can assign it to child accounts.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the access group template was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the user who created the access group template.
         """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
-    def created_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the access group template.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def group(self) -> Optional[pulumi.Input['IamAccessGroupTemplateGroupArgs']]:
+    def group(self) -> pulumi.Input[Optional['IamAccessGroupTemplateGroupArgs']]:
         """
         Access Group Component.
         """
         return pulumi.get(self, "group")
 
     @group.setter
-    def group(self, value: Optional[pulumi.Input['IamAccessGroupTemplateGroupArgs']]):
+    def group(self, value: pulumi.Input[Optional['IamAccessGroupTemplateGroupArgs']]):
         pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the access group template resource.
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedAt")
-    def last_modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the access group template was last modified.
         """
         return pulumi.get(self, "last_modified_at")
 
     @last_modified_at.setter
-    def last_modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_at", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedById")
-    def last_modified_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the user who last modified the access group template.
         """
         return pulumi.get(self, "last_modified_by_id")
 
     @last_modified_by_id.setter
-    def last_modified_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the access group template.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyTemplateReferences")
-    def policy_template_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]:
+    def policy_template_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]:
         """
         References to policy templates assigned to the access group template.
         """
         return pulumi.get(self, "policy_template_references")
 
     @policy_template_references.setter
-    def policy_template_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]):
+    def policy_template_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamAccessGroupTemplatePolicyTemplateReferenceArgs']]]]):
         pulumi.set(self, "policy_template_references", value)
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Template ID.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
     @_builtins.property
     @pulumi.getter(name="transactionId")
-    def transaction_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transaction_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional transaction id for the request.
         """
         return pulumi.get(self, "transaction_id")
 
     @transaction_id.setter
-    def transaction_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transaction_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transaction_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the access group template.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -360,22 +362,23 @@ class IamAccessGroupTemplate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict']]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict', 'outputs.IamAccessGroupTemplateGroup']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamAccessGroupTemplatePolicyTemplateReference']]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamAccessGroupTemplate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] committed: A boolean indicating whether the access group template is committed. You must commit a template before you can assign it to child accounts.
         :param pulumi.Input[_builtins.str] description: The description of the access group template.
-        :param pulumi.Input[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict']] group: Access Group Component.
+        :param pulumi.Input[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict', 'outputs.IamAccessGroupTemplateGroup']] group: Access Group Component.
         :param pulumi.Input[_builtins.str] name: The name of the access group template.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict']]]] policy_template_references: References to policy templates assigned to the access group template.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamAccessGroupTemplatePolicyTemplateReference']]]] policy_template_references: References to policy templates assigned to the access group template.
         :param pulumi.Input[_builtins.str] transaction_id: An optional transaction id for the request.
         """
         ...
@@ -386,6 +389,7 @@ class IamAccessGroupTemplate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamAccessGroupTemplate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamAccessGroupTemplateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -401,12 +405,12 @@ class IamAccessGroupTemplate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 group: Optional[pulumi.Input[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict']]]]] = None,
-                 transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 group: pulumi.Input[Optional[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict', 'outputs.IamAccessGroupTemplateGroup']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamAccessGroupTemplatePolicyTemplateReference']]]]] = None,
+                 transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -440,20 +444,20 @@ class IamAccessGroupTemplate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            committed: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            group: Optional[pulumi.Input[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict']]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict']]]]] = None,
-            template_id: Optional[pulumi.Input[_builtins.str]] = None,
-            transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'IamAccessGroupTemplate':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            committed: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict', 'outputs.IamAccessGroupTemplateGroup']]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamAccessGroupTemplatePolicyTemplateReference']]]]] = None,
+            template_id: pulumi.Input[Optional[_builtins.str]] = None,
+            transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamAccessGroupTemplate':
         """
         Get an existing IamAccessGroupTemplate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -466,12 +470,12 @@ class IamAccessGroupTemplate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_at: The date and time when the access group template was created.
         :param pulumi.Input[_builtins.str] created_by_id: The ID of the user who created the access group template.
         :param pulumi.Input[_builtins.str] description: The description of the access group template.
-        :param pulumi.Input[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict']] group: Access Group Component.
+        :param pulumi.Input[Union['IamAccessGroupTemplateGroupArgs', 'IamAccessGroupTemplateGroupArgsDict', 'outputs.IamAccessGroupTemplateGroup']] group: Access Group Component.
         :param pulumi.Input[_builtins.str] href: The URL of the access group template resource.
         :param pulumi.Input[_builtins.str] last_modified_at: The date and time when the access group template was last modified.
         :param pulumi.Input[_builtins.str] last_modified_by_id: The ID of the user who last modified the access group template.
         :param pulumi.Input[_builtins.str] name: The name of the access group template.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict']]]] policy_template_references: References to policy templates assigned to the access group template.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamAccessGroupTemplatePolicyTemplateReferenceArgs', 'IamAccessGroupTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamAccessGroupTemplatePolicyTemplateReference']]]] policy_template_references: References to policy templates assigned to the access group template.
         :param pulumi.Input[_builtins.str] template_id: Template ID.
         :param pulumi.Input[_builtins.str] transaction_id: An optional transaction id for the request.
         :param pulumi.Input[_builtins.str] version: The version of the access group template.

@@ -147,51 +147,51 @@ export interface PiCaptureState {
     /**
      * The CRN of the resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The image id of the capture instance.
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * Name of Cloud Storage Access Key
      */
-    piCaptureCloudStorageAccessKey?: pulumi.Input<string>;
+    piCaptureCloudStorageAccessKey?: pulumi.Input<string | undefined>;
     /**
      * List of Regions to use
      */
-    piCaptureCloudStorageRegion?: pulumi.Input<string>;
+    piCaptureCloudStorageRegion?: pulumi.Input<string | undefined>;
     /**
      * Name of the Cloud Storage Secret Key
      */
-    piCaptureCloudStorageSecretKey?: pulumi.Input<string>;
+    piCaptureCloudStorageSecretKey?: pulumi.Input<string | undefined>;
     /**
      * Destination for the deployable image
      */
-    piCaptureDestination?: pulumi.Input<string>;
+    piCaptureDestination?: pulumi.Input<string | undefined>;
     /**
      * Name of the capture to create. Note : this must be unique
      */
-    piCaptureName?: pulumi.Input<string>;
+    piCaptureName?: pulumi.Input<string | undefined>;
     /**
      * Cloud Storage Image Path (bucket-name [/folder/../..])
      */
-    piCaptureStorageImagePath?: pulumi.Input<string>;
+    piCaptureStorageImagePath?: pulumi.Input<string | undefined>;
     /**
      * List of Data volume IDs
      */
-    piCaptureVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piCaptureVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Instance Name of the Power VM
      */
-    piInstanceName?: pulumi.Input<string>;
+    piInstanceName?: pulumi.Input<string | undefined>;
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -201,15 +201,15 @@ export interface PiCaptureArgs {
     /**
      * Name of Cloud Storage Access Key
      */
-    piCaptureCloudStorageAccessKey?: pulumi.Input<string>;
+    piCaptureCloudStorageAccessKey?: pulumi.Input<string | undefined>;
     /**
      * List of Regions to use
      */
-    piCaptureCloudStorageRegion?: pulumi.Input<string>;
+    piCaptureCloudStorageRegion?: pulumi.Input<string | undefined>;
     /**
      * Name of the Cloud Storage Secret Key
      */
-    piCaptureCloudStorageSecretKey?: pulumi.Input<string>;
+    piCaptureCloudStorageSecretKey?: pulumi.Input<string | undefined>;
     /**
      * Destination for the deployable image
      */
@@ -221,11 +221,11 @@ export interface PiCaptureArgs {
     /**
      * Cloud Storage Image Path (bucket-name [/folder/../..])
      */
-    piCaptureStorageImagePath?: pulumi.Input<string>;
+    piCaptureStorageImagePath?: pulumi.Input<string | undefined>;
     /**
      * List of Data volume IDs
      */
-    piCaptureVolumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    piCaptureVolumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The GUID of the service instance associated with an account.
      */
@@ -237,5 +237,5 @@ export interface PiCaptureArgs {
     /**
      * List of user tags attached to the resource.
      */
-    piUserTags?: pulumi.Input<pulumi.Input<string>[]>;
+    piUserTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

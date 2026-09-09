@@ -23,11 +23,12 @@ class TgConnectionPrefixFilterArgs:
                  connection_id: pulumi.Input[_builtins.str],
                  gateway: pulumi.Input[_builtins.str],
                  prefix: pulumi.Input[_builtins.str],
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 le: Optional[pulumi.Input[_builtins.int]] = None):
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 le: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a TgConnectionPrefixFilter resource.
+
         :param pulumi.Input[_builtins.str] action: Whether to permit or deny the prefix filter
         :param pulumi.Input[_builtins.str] connection_id: The Transit Gateway Connection identifier
         :param pulumi.Input[_builtins.str] gateway: The Transit Gateway identifier
@@ -97,56 +98,57 @@ class TgConnectionPrefixFilterArgs:
 
     @_builtins.property
     @pulumi.getter
-    def before(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier of prefix filter that handles ordering
         """
         return pulumi.get(self, "before")
 
     @before.setter
-    def before(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before", value)
 
     @_builtins.property
     @pulumi.getter
-    def ge(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ge(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IP Prefix GE
         """
         return pulumi.get(self, "ge")
 
     @ge.setter
-    def ge(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ge(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ge", value)
 
     @_builtins.property
     @pulumi.getter
-    def le(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def le(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IP Prefix LE
         """
         return pulumi.get(self, "le")
 
     @le.setter
-    def le(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def le(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "le", value)
 
 
 @pulumi.input_type
 class _TgConnectionPrefixFilterState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 le: Optional[pulumi.Input[_builtins.int]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_at: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 le: pulumi.Input[Optional[_builtins.int]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_at: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TgConnectionPrefixFilter resources.
+
         :param pulumi.Input[_builtins.str] action: Whether to permit or deny the prefix filter
         :param pulumi.Input[_builtins.str] before: Identifier of prefix filter that handles ordering
         :param pulumi.Input[_builtins.str] connection_id: The Transit Gateway Connection identifier
@@ -181,122 +183,122 @@ class _TgConnectionPrefixFilterState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether to permit or deny the prefix filter
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def before(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def before(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier of prefix filter that handles ordering
         """
         return pulumi.get(self, "before")
 
     @before.setter
-    def before(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def before(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "before", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionId")
-    def connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Transit Gateway Connection identifier
         """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
-    def connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that this prefix filter was created
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="filterId")
-    def filter_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Transit Gateway Connection Prefix Filter identifier
         """
         return pulumi.get(self, "filter_id")
 
     @filter_id.setter
-    def filter_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Transit Gateway identifier
         """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
-    def gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway", value)
 
     @_builtins.property
     @pulumi.getter
-    def ge(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ge(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IP Prefix GE
         """
         return pulumi.get(self, "ge")
 
     @ge.setter
-    def ge(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ge(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ge", value)
 
     @_builtins.property
     @pulumi.getter
-    def le(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def le(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         IP Prefix LE
         """
         return pulumi.get(self, "le")
 
     @le.setter
-    def le(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def le(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "le", value)
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP Prefix
         """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that this prefix filter was last updated
         """
         return pulumi.get(self, "updated_at")
 
     @updated_at.setter
-    def updated_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_at", value)
 
 
@@ -306,16 +308,17 @@ class TgConnectionPrefixFilter(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 le: Optional[pulumi.Input[_builtins.int]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 le: pulumi.Input[Optional[_builtins.int]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a TgConnectionPrefixFilter resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Whether to permit or deny the prefix filter
@@ -334,6 +337,7 @@ class TgConnectionPrefixFilter(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a TgConnectionPrefixFilter resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param TgConnectionPrefixFilterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -349,13 +353,13 @@ class TgConnectionPrefixFilter(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 before: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ge: Optional[pulumi.Input[_builtins.int]] = None,
-                 le: Optional[pulumi.Input[_builtins.int]] = None,
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 before: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ge: pulumi.Input[Optional[_builtins.int]] = None,
+                 le: pulumi.Input[Optional[_builtins.int]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -393,16 +397,16 @@ class TgConnectionPrefixFilter(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            before: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-            gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            ge: Optional[pulumi.Input[_builtins.int]] = None,
-            le: Optional[pulumi.Input[_builtins.int]] = None,
-            prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            updated_at: Optional[pulumi.Input[_builtins.str]] = None) -> 'TgConnectionPrefixFilter':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            before: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+            gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            ge: pulumi.Input[Optional[_builtins.int]] = None,
+            le: pulumi.Input[Optional[_builtins.int]] = None,
+            prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'TgConnectionPrefixFilter':
         """
         Get an existing TgConnectionPrefixFilter resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -193,8 +193,8 @@ def get_pi_instance_snapshot(pi_cloud_instance_id: Optional[_builtins.str] = Non
         status_detail=pulumi.get(__ret__, 'status_detail'),
         user_tags=pulumi.get(__ret__, 'user_tags'),
         volume_snapshots=pulumi.get(__ret__, 'volume_snapshots'))
-def get_pi_instance_snapshot_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    pi_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_instance_snapshot_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    pi_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiInstanceSnapshotResult]:
     """
     Use this data source to access information about an existing resource.

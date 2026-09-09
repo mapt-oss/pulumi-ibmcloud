@@ -82,7 +82,7 @@ def get_is_snapshot_instance_profiles(identifier: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         identifier=pulumi.get(__ret__, 'identifier'),
         instance_profiles=pulumi.get(__ret__, 'instance_profiles'))
-def get_is_snapshot_instance_profiles_output(identifier: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_snapshot_instance_profiles_output(identifier: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsSnapshotInstanceProfilesResult]:
     """
     Use this data source to access information about an existing resource.

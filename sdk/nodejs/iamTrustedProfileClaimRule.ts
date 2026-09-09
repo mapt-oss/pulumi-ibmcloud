@@ -39,7 +39,7 @@ export class IamTrustedProfileClaimRule extends pulumi.CustomResource {
      */
     declare public readonly conditions: pulumi.Output<outputs.IamTrustedProfileClaimRuleCondition[]>;
     /**
-     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
     declare public readonly crType: pulumi.Output<string | undefined>;
     /**
@@ -138,47 +138,47 @@ export interface IamTrustedProfileClaimRuleState {
     /**
      * Conditions of this claim rule.
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileClaimRuleCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileClaimRuleCondition>[] | undefined>;
     /**
-     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
-    crType?: pulumi.Input<string>;
+    crType?: pulumi.Input<string | undefined>;
     /**
      * If set contains a date time string of the creation date in ISO format.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * version of the claim rule.
      */
-    entityTag?: pulumi.Input<string>;
+    entityTag?: pulumi.Input<string | undefined>;
     /**
      * Session expiration in seconds.
      */
-    expiration?: pulumi.Input<number>;
+    expiration?: pulumi.Input<number | undefined>;
     /**
      * If set contains a date time string of the last modification date in ISO format.
      */
-    modifiedAt?: pulumi.Input<string>;
+    modifiedAt?: pulumi.Input<string | undefined>;
     /**
      * Name of the claim rule to be created or updated.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of the trusted profile to create a claim rule.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * The realm name of the Idp this claim rule applies to.
      */
-    realmName?: pulumi.Input<string>;
+    realmName?: pulumi.Input<string | undefined>;
     /**
      * the unique identifier of the claim rule.
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
     /**
      * Type of the calim rule, either 'Profile-SAML' or 'Profile-CR'.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -190,17 +190,17 @@ export interface IamTrustedProfileClaimRuleArgs {
      */
     conditions: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileClaimRuleCondition>[]>;
     /**
-     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, IKS_SA, ROKS_SA.
+     * The compute resource type. Not required if type is Profile-SAML. Valid values are VSI, PVS, BMS, IKS_SA, ROKS_SA, CE.
      */
-    crType?: pulumi.Input<string>;
+    crType?: pulumi.Input<string | undefined>;
     /**
      * Session expiration in seconds.
      */
-    expiration?: pulumi.Input<number>;
+    expiration?: pulumi.Input<number | undefined>;
     /**
      * Name of the claim rule to be created or updated.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of the trusted profile to create a claim rule.
      */
@@ -208,7 +208,7 @@ export interface IamTrustedProfileClaimRuleArgs {
     /**
      * The realm name of the Idp this claim rule applies to.
      */
-    realmName?: pulumi.Input<string>;
+    realmName?: pulumi.Input<string | undefined>;
     /**
      * Type of the calim rule, either 'Profile-SAML' or 'Profile-CR'.
      */

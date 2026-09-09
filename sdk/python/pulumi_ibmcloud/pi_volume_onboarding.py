@@ -23,9 +23,10 @@ class PiVolumeOnboardingArgs:
     def __init__(__self__, *,
                  pi_cloud_instance_id: pulumi.Input[_builtins.str],
                  pi_onboarding_volumes: pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]],
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PiVolumeOnboarding resource.
+
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]] pi_onboarding_volumes: List of onboarding volumes.
         :param pulumi.Input[_builtins.str] pi_description: Description of the volume onboarding operation
@@ -61,32 +62,33 @@ class PiVolumeOnboardingArgs:
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the volume onboarding operation
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
 
 @pulumi.input_type
 class _PiVolumeOnboardingState:
     def __init__(__self__, *,
-                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 onboarding_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_onboarding_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]]] = None,
-                 progress: Optional[pulumi.Input[_builtins.float]] = None,
-                 results_onboarded_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 results_volume_onboarding_failures: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 onboarding_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_onboarding_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]]] = None,
+                 progress: pulumi.Input[Optional[_builtins.float]] = None,
+                 results_onboarded_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 results_volume_onboarding_failures: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PiVolumeOnboarding resources.
+
         :param pulumi.Input[_builtins.str] create_time: The create time of volume onboarding operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] input_volumes: List of volumes requested to be onboarded.
         :param pulumi.Input[_builtins.str] onboarding_id: The volume onboarding ID.
@@ -121,122 +123,122 @@ class _PiVolumeOnboardingState:
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The create time of volume onboarding operation.
         """
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter(name="inputVolumes")
-    def input_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def input_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes requested to be onboarded.
         """
         return pulumi.get(self, "input_volumes")
 
     @input_volumes.setter
-    def input_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def input_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "input_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="onboardingId")
-    def onboarding_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def onboarding_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume onboarding ID.
         """
         return pulumi.get(self, "onboarding_id")
 
     @onboarding_id.setter
-    def onboarding_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def onboarding_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "onboarding_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piCloudInstanceId")
-    def pi_cloud_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_cloud_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The GUID of the service instance associated with an account.
         """
         return pulumi.get(self, "pi_cloud_instance_id")
 
     @pi_cloud_instance_id.setter
-    def pi_cloud_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_cloud_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_cloud_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="piDescription")
-    def pi_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pi_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the volume onboarding operation
         """
         return pulumi.get(self, "pi_description")
 
     @pi_description.setter
-    def pi_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pi_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pi_description", value)
 
     @_builtins.property
     @pulumi.getter(name="piOnboardingVolumes")
-    def pi_onboarding_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]]]:
+    def pi_onboarding_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]]]:
         """
         List of onboarding volumes.
         """
         return pulumi.get(self, "pi_onboarding_volumes")
 
     @pi_onboarding_volumes.setter
-    def pi_onboarding_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]]]):
+    def pi_onboarding_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeOnboardingPiOnboardingVolumeArgs']]]]):
         pulumi.set(self, "pi_onboarding_volumes", value)
 
     @_builtins.property
     @pulumi.getter
-    def progress(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def progress(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The progress of volume onboarding operation.
         """
         return pulumi.get(self, "progress")
 
     @progress.setter
-    def progress(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def progress(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "progress", value)
 
     @_builtins.property
     @pulumi.getter(name="resultsOnboardedVolumes")
-    def results_onboarded_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def results_onboarded_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of volumes which are onboarded successfully.
         """
         return pulumi.get(self, "results_onboarded_volumes")
 
     @results_onboarded_volumes.setter
-    def results_onboarded_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def results_onboarded_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "results_onboarded_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="resultsVolumeOnboardingFailures")
-    def results_volume_onboarding_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs']]]]:
+    def results_volume_onboarding_failures(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs']]]]:
         """
         The volume onboarding failure details.
         """
         return pulumi.get(self, "results_volume_onboarding_failures")
 
     @results_volume_onboarding_failures.setter
-    def results_volume_onboarding_failures(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs']]]]):
+    def results_volume_onboarding_failures(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs']]]]):
         pulumi.set(self, "results_volume_onboarding_failures", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of volume onboarding operation.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -246,17 +248,18 @@ class PiVolumeOnboarding(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_onboarding_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_onboarding_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict', 'outputs.PiVolumeOnboardingPiOnboardingVolume']]]]] = None,
                  __props__=None):
         """
         Create a PiVolumeOnboarding resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_description: Description of the volume onboarding operation
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict']]]] pi_onboarding_volumes: List of onboarding volumes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict', 'outputs.PiVolumeOnboardingPiOnboardingVolume']]]] pi_onboarding_volumes: List of onboarding volumes.
         """
         ...
     @overload
@@ -266,6 +269,7 @@ class PiVolumeOnboarding(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a PiVolumeOnboarding resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param PiVolumeOnboardingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -281,9 +285,9 @@ class PiVolumeOnboarding(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 pi_onboarding_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict']]]]] = None,
+                 pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 pi_onboarding_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict', 'outputs.PiVolumeOnboardingPiOnboardingVolume']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -317,16 +321,16 @@ class PiVolumeOnboarding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            create_time: Optional[pulumi.Input[_builtins.str]] = None,
-            input_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            onboarding_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_description: Optional[pulumi.Input[_builtins.str]] = None,
-            pi_onboarding_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict']]]]] = None,
-            progress: Optional[pulumi.Input[_builtins.float]] = None,
-            results_onboarded_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            results_volume_onboarding_failures: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs', 'PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict']]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'PiVolumeOnboarding':
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            input_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            onboarding_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_description: pulumi.Input[Optional[_builtins.str]] = None,
+            pi_onboarding_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict', 'outputs.PiVolumeOnboardingPiOnboardingVolume']]]]] = None,
+            progress: pulumi.Input[Optional[_builtins.float]] = None,
+            results_onboarded_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            results_volume_onboarding_failures: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs', 'PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict', 'outputs.PiVolumeOnboardingResultsVolumeOnboardingFailure']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'PiVolumeOnboarding':
         """
         Get an existing PiVolumeOnboarding resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -339,10 +343,10 @@ class PiVolumeOnboarding(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] onboarding_id: The volume onboarding ID.
         :param pulumi.Input[_builtins.str] pi_cloud_instance_id: The GUID of the service instance associated with an account.
         :param pulumi.Input[_builtins.str] pi_description: Description of the volume onboarding operation
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict']]]] pi_onboarding_volumes: List of onboarding volumes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingPiOnboardingVolumeArgs', 'PiVolumeOnboardingPiOnboardingVolumeArgsDict', 'outputs.PiVolumeOnboardingPiOnboardingVolume']]]] pi_onboarding_volumes: List of onboarding volumes.
         :param pulumi.Input[_builtins.float] progress: The progress of volume onboarding operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] results_onboarded_volumes: List of volumes which are onboarded successfully.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs', 'PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict']]]] results_volume_onboarding_failures: The volume onboarding failure details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PiVolumeOnboardingResultsVolumeOnboardingFailureArgs', 'PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict', 'outputs.PiVolumeOnboardingResultsVolumeOnboardingFailure']]]] results_volume_onboarding_failures: The volume onboarding failure details.
         :param pulumi.Input[_builtins.str] status: The status of volume onboarding operation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

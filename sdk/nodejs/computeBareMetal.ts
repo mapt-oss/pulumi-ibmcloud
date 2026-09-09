@@ -258,197 +258,197 @@ export class ComputeBareMetal extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ComputeBareMetal resources.
  */
 export interface ComputeBareMetalState {
-    blockStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
-    datacenter?: pulumi.Input<string>;
-    diskKeyNames?: pulumi.Input<pulumi.Input<string>[]>;
+    blockStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    datacenter?: pulumi.Input<string | undefined>;
+    diskKeyNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Domain name
      */
-    domain?: pulumi.Input<string>;
-    extendedHardwareTesting?: pulumi.Input<boolean>;
-    fileStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
+    domain?: pulumi.Input<string | undefined>;
+    extendedHardwareTesting?: pulumi.Input<boolean | undefined>;
+    fileStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Fixed config preset value
      */
-    fixedConfigPreset?: pulumi.Input<string>;
+    fixedConfigPreset?: pulumi.Input<string | undefined>;
     /**
      * The unique global identifier of the bare metal server
      */
-    globalIdentifier?: pulumi.Input<string>;
-    gpuKeyName?: pulumi.Input<string>;
-    gpuSecondaryKeyName?: pulumi.Input<string>;
+    globalIdentifier?: pulumi.Input<string | undefined>;
+    gpuKeyName?: pulumi.Input<string | undefined>;
+    gpuSecondaryKeyName?: pulumi.Input<string | undefined>;
     /**
      * Host name
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * Enables hourly billing
      */
-    hourlyBilling?: pulumi.Input<boolean>;
+    hourlyBilling?: pulumi.Input<boolean | undefined>;
     /**
      * OS image template ID
      */
-    imageTemplateId?: pulumi.Input<number>;
-    ipv6Address?: pulumi.Input<string>;
-    ipv6AddressId?: pulumi.Input<number>;
+    imageTemplateId?: pulumi.Input<number | undefined>;
+    ipv6Address?: pulumi.Input<string | undefined>;
+    ipv6AddressId?: pulumi.Input<number | undefined>;
     /**
      * Boolean value true if IPV6 ia enabled or false
      */
-    ipv6Enabled?: pulumi.Input<boolean>;
+    ipv6Enabled?: pulumi.Input<boolean | undefined>;
     /**
      * boolean value true if ipv6 static is enabled else false
      */
-    ipv6StaticEnabled?: pulumi.Input<boolean>;
-    memory?: pulumi.Input<number>;
+    ipv6StaticEnabled?: pulumi.Input<boolean | undefined>;
+    memory?: pulumi.Input<number | undefined>;
     /**
      * Network speed in MBPS
      */
-    networkSpeed?: pulumi.Input<number>;
+    networkSpeed?: pulumi.Input<number | undefined>;
     /**
      * Optional notes info
      */
-    notes?: pulumi.Input<string>;
-    osKeyName?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
+    osKeyName?: pulumi.Input<string | undefined>;
     /**
      * OS refernece code value
      */
-    osReferenceCode?: pulumi.Input<string>;
-    packageKeyName?: pulumi.Input<string>;
-    postInstallScriptUri?: pulumi.Input<string>;
-    privateIpv4Address?: pulumi.Input<string>;
-    privateIpv4AddressId?: pulumi.Input<number>;
+    osReferenceCode?: pulumi.Input<string | undefined>;
+    packageKeyName?: pulumi.Input<string | undefined>;
+    postInstallScriptUri?: pulumi.Input<string | undefined>;
+    privateIpv4Address?: pulumi.Input<string | undefined>;
+    privateIpv4AddressId?: pulumi.Input<number | undefined>;
     /**
      * only private network configured if is true
      */
-    privateNetworkOnly?: pulumi.Input<boolean>;
-    privateSubnet?: pulumi.Input<string>;
-    privateVlanId?: pulumi.Input<number>;
-    processKeyName?: pulumi.Input<string>;
-    publicBandwidth?: pulumi.Input<number>;
-    publicIpv4Address?: pulumi.Input<string>;
-    publicIpv4AddressId?: pulumi.Input<number>;
-    publicSubnet?: pulumi.Input<string>;
-    publicVlanId?: pulumi.Input<number>;
+    privateNetworkOnly?: pulumi.Input<boolean | undefined>;
+    privateSubnet?: pulumi.Input<string | undefined>;
+    privateVlanId?: pulumi.Input<number | undefined>;
+    processKeyName?: pulumi.Input<string | undefined>;
+    publicBandwidth?: pulumi.Input<number | undefined>;
+    publicIpv4Address?: pulumi.Input<string | undefined>;
+    publicIpv4AddressId?: pulumi.Input<number | undefined>;
+    publicSubnet?: pulumi.Input<string | undefined>;
+    publicVlanId?: pulumi.Input<number | undefined>;
     /**
      * Quote ID for Quote based provisioning
      */
-    quoteId?: pulumi.Input<number>;
-    redundantNetwork?: pulumi.Input<boolean>;
-    redundantPowerSupply?: pulumi.Input<boolean>;
-    restrictedNetwork?: pulumi.Input<boolean>;
-    secondaryIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    quoteId?: pulumi.Input<number | undefined>;
+    redundantNetwork?: pulumi.Input<boolean | undefined>;
+    redundantPowerSupply?: pulumi.Input<boolean | undefined>;
+    restrictedNetwork?: pulumi.Input<boolean | undefined>;
+    secondaryIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Secondary IP addresses count
      */
-    secondaryIpCount?: pulumi.Input<number>;
-    softwareGuardExtensions?: pulumi.Input<boolean>;
+    secondaryIpCount?: pulumi.Input<number | undefined>;
+    softwareGuardExtensions?: pulumi.Input<boolean | undefined>;
     /**
      * SSH KEY IDS list
      */
-    sshKeyIds?: pulumi.Input<pulumi.Input<number>[]>;
-    storageGroups?: pulumi.Input<pulumi.Input<inputs.ComputeBareMetalStorageGroup>[]>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    sshKeyIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    storageGroups?: pulumi.Input<pulumi.Input<inputs.ComputeBareMetalStorageGroup>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * TCP monitoring enabled if set as true
      */
-    tcpMonitoring?: pulumi.Input<boolean>;
-    unbondedNetwork?: pulumi.Input<boolean>;
+    tcpMonitoring?: pulumi.Input<boolean | undefined>;
+    unbondedNetwork?: pulumi.Input<boolean | undefined>;
     /**
      * User metadata info
      */
-    userMetadata?: pulumi.Input<string>;
+    userMetadata?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ComputeBareMetal resource.
  */
 export interface ComputeBareMetalArgs {
-    blockStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
-    datacenter?: pulumi.Input<string>;
-    diskKeyNames?: pulumi.Input<pulumi.Input<string>[]>;
+    blockStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    datacenter?: pulumi.Input<string | undefined>;
+    diskKeyNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Domain name
      */
     domain: pulumi.Input<string>;
-    extendedHardwareTesting?: pulumi.Input<boolean>;
-    fileStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
+    extendedHardwareTesting?: pulumi.Input<boolean | undefined>;
+    fileStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Fixed config preset value
      */
-    fixedConfigPreset?: pulumi.Input<string>;
-    gpuKeyName?: pulumi.Input<string>;
-    gpuSecondaryKeyName?: pulumi.Input<string>;
+    fixedConfigPreset?: pulumi.Input<string | undefined>;
+    gpuKeyName?: pulumi.Input<string | undefined>;
+    gpuSecondaryKeyName?: pulumi.Input<string | undefined>;
     /**
      * Host name
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * Enables hourly billing
      */
-    hourlyBilling?: pulumi.Input<boolean>;
+    hourlyBilling?: pulumi.Input<boolean | undefined>;
     /**
      * OS image template ID
      */
-    imageTemplateId?: pulumi.Input<number>;
+    imageTemplateId?: pulumi.Input<number | undefined>;
     /**
      * Boolean value true if IPV6 ia enabled or false
      */
-    ipv6Enabled?: pulumi.Input<boolean>;
+    ipv6Enabled?: pulumi.Input<boolean | undefined>;
     /**
      * boolean value true if ipv6 static is enabled else false
      */
-    ipv6StaticEnabled?: pulumi.Input<boolean>;
-    memory?: pulumi.Input<number>;
+    ipv6StaticEnabled?: pulumi.Input<boolean | undefined>;
+    memory?: pulumi.Input<number | undefined>;
     /**
      * Network speed in MBPS
      */
-    networkSpeed?: pulumi.Input<number>;
+    networkSpeed?: pulumi.Input<number | undefined>;
     /**
      * Optional notes info
      */
-    notes?: pulumi.Input<string>;
-    osKeyName?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
+    osKeyName?: pulumi.Input<string | undefined>;
     /**
      * OS refernece code value
      */
-    osReferenceCode?: pulumi.Input<string>;
-    packageKeyName?: pulumi.Input<string>;
-    postInstallScriptUri?: pulumi.Input<string>;
+    osReferenceCode?: pulumi.Input<string | undefined>;
+    packageKeyName?: pulumi.Input<string | undefined>;
+    postInstallScriptUri?: pulumi.Input<string | undefined>;
     /**
      * only private network configured if is true
      */
-    privateNetworkOnly?: pulumi.Input<boolean>;
-    privateSubnet?: pulumi.Input<string>;
-    privateVlanId?: pulumi.Input<number>;
-    processKeyName?: pulumi.Input<string>;
-    publicBandwidth?: pulumi.Input<number>;
-    publicSubnet?: pulumi.Input<string>;
-    publicVlanId?: pulumi.Input<number>;
+    privateNetworkOnly?: pulumi.Input<boolean | undefined>;
+    privateSubnet?: pulumi.Input<string | undefined>;
+    privateVlanId?: pulumi.Input<number | undefined>;
+    processKeyName?: pulumi.Input<string | undefined>;
+    publicBandwidth?: pulumi.Input<number | undefined>;
+    publicSubnet?: pulumi.Input<string | undefined>;
+    publicVlanId?: pulumi.Input<number | undefined>;
     /**
      * Quote ID for Quote based provisioning
      */
-    quoteId?: pulumi.Input<number>;
-    redundantNetwork?: pulumi.Input<boolean>;
-    redundantPowerSupply?: pulumi.Input<boolean>;
-    restrictedNetwork?: pulumi.Input<boolean>;
+    quoteId?: pulumi.Input<number | undefined>;
+    redundantNetwork?: pulumi.Input<boolean | undefined>;
+    redundantPowerSupply?: pulumi.Input<boolean | undefined>;
+    restrictedNetwork?: pulumi.Input<boolean | undefined>;
     /**
      * Secondary IP addresses count
      */
-    secondaryIpCount?: pulumi.Input<number>;
-    softwareGuardExtensions?: pulumi.Input<boolean>;
+    secondaryIpCount?: pulumi.Input<number | undefined>;
+    softwareGuardExtensions?: pulumi.Input<boolean | undefined>;
     /**
      * SSH KEY IDS list
      */
-    sshKeyIds?: pulumi.Input<pulumi.Input<number>[]>;
-    storageGroups?: pulumi.Input<pulumi.Input<inputs.ComputeBareMetalStorageGroup>[]>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    sshKeyIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    storageGroups?: pulumi.Input<pulumi.Input<inputs.ComputeBareMetalStorageGroup>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * TCP monitoring enabled if set as true
      */
-    tcpMonitoring?: pulumi.Input<boolean>;
-    unbondedNetwork?: pulumi.Input<boolean>;
+    tcpMonitoring?: pulumi.Input<boolean | undefined>;
+    unbondedNetwork?: pulumi.Input<boolean | undefined>;
     /**
      * User metadata info
      */
-    userMetadata?: pulumi.Input<string>;
+    userMetadata?: pulumi.Input<string | undefined>;
 }

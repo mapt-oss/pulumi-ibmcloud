@@ -123,39 +123,39 @@ export interface IsInstanceClusterNetworkAttachmentState {
     /**
      * The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
      */
-    before?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentBefore>;
+    before?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentBefore | undefined>;
     /**
      * The cluster network interface for this instance cluster network attachment.
      */
-    clusterNetworkInterface?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterface>;
+    clusterNetworkInterface?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterface | undefined>;
     /**
      * The URL for this instance cluster network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance cluster network attachment.
      */
-    instanceClusterNetworkAttachmentId?: pulumi.Input<string>;
+    instanceClusterNetworkAttachmentId?: pulumi.Input<string | undefined>;
     /**
      * The virtual server instance identifier.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current `lifecycleState` (if any).
      */
-    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentLifecycleReason>[]>;
+    lifecycleReasons?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentLifecycleReason>[] | undefined>;
     /**
      * The lifecycle state of the instance cluster network attachment.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -165,7 +165,7 @@ export interface IsInstanceClusterNetworkAttachmentArgs {
     /**
      * The instance cluster network attachment that is immediately before. If absent, this is thelast instance cluster network attachment.
      */
-    before?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentBefore>;
+    before?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentBefore | undefined>;
     /**
      * The cluster network interface for this instance cluster network attachment.
      */
@@ -177,5 +177,5 @@ export interface IsInstanceClusterNetworkAttachmentArgs {
     /**
      * The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -23,24 +23,27 @@ class IsLbListenerArgs:
     def __init__(__self__, *,
                  lb: pulumi.Input[_builtins.str],
                  protocol: pulumi.Input[_builtins.str],
-                 accept_proxy_protocol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect: Optional[pulumi.Input['IsLbListenerHttpsRedirectArgs']] = None,
-                 https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 idle_connection_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_min: Optional[pulumi.Input[_builtins.int]] = None):
+                 accept_proxy_protocol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_authentication: pulumi.Input[Optional['IsLbListenerClientAuthenticationArgs']] = None,
+                 connection_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect: pulumi.Input[Optional['IsLbListenerHttpsRedirectArgs']] = None,
+                 https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 idle_connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a IsLbListener resource.
+
         :param pulumi.Input[_builtins.str] lb: Loadbalancer listener ID
         :param pulumi.Input[_builtins.str] protocol: Loadbalancer protocol
         :param pulumi.Input[_builtins.bool] accept_proxy_protocol: Listener will forward proxy protocol
         :param pulumi.Input[_builtins.str] certificate_instance: certificate instance for the Loadbalancer
+        :param pulumi.Input['IsLbListenerClientAuthenticationArgs'] client_authentication: The client authentication to use for this listener. Supported by load balancers with mtls_supported set to true. The listener must have a protocol of https.
         :param pulumi.Input[_builtins.int] connection_limit: Connection limit for Loadbalancer
         :param pulumi.Input[_builtins.str] default_pool: Loadbalancer default pool info
         :param pulumi.Input['IsLbListenerHttpsRedirectArgs'] https_redirect: If present, the target listener that requests are redirected to.
@@ -58,6 +61,8 @@ class IsLbListenerArgs:
             pulumi.set(__self__, "accept_proxy_protocol", accept_proxy_protocol)
         if certificate_instance is not None:
             pulumi.set(__self__, "certificate_instance", certificate_instance)
+        if client_authentication is not None:
+            pulumi.set(__self__, "client_authentication", client_authentication)
         if connection_limit is not None:
             pulumi.set(__self__, "connection_limit", connection_limit)
         if default_pool is not None:
@@ -114,176 +119,191 @@ class IsLbListenerArgs:
 
     @_builtins.property
     @pulumi.getter(name="acceptProxyProtocol")
-    def accept_proxy_protocol(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def accept_proxy_protocol(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Listener will forward proxy protocol
         """
         return pulumi.get(self, "accept_proxy_protocol")
 
     @accept_proxy_protocol.setter
-    def accept_proxy_protocol(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def accept_proxy_protocol(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "accept_proxy_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateInstance")
-    def certificate_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         certificate instance for the Loadbalancer
         """
         return pulumi.get(self, "certificate_instance")
 
     @certificate_instance.setter
-    def certificate_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_instance", value)
 
     @_builtins.property
+    @pulumi.getter(name="clientAuthentication")
+    def client_authentication(self) -> pulumi.Input[Optional['IsLbListenerClientAuthenticationArgs']]:
+        """
+        The client authentication to use for this listener. Supported by load balancers with mtls_supported set to true. The listener must have a protocol of https.
+        """
+        return pulumi.get(self, "client_authentication")
+
+    @client_authentication.setter
+    def client_authentication(self, value: pulumi.Input[Optional['IsLbListenerClientAuthenticationArgs']]):
+        pulumi.set(self, "client_authentication", value)
+
+    @_builtins.property
     @pulumi.getter(name="connectionLimit")
-    def connection_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def connection_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Connection limit for Loadbalancer
         """
         return pulumi.get(self, "connection_limit")
 
     @connection_limit.setter
-    def connection_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def connection_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "connection_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultPool")
-    def default_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Loadbalancer default pool info
         """
         return pulumi.get(self, "default_pool")
 
     @default_pool.setter
-    def default_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirect")
-    def https_redirect(self) -> Optional[pulumi.Input['IsLbListenerHttpsRedirectArgs']]:
+    def https_redirect(self) -> pulumi.Input[Optional['IsLbListenerHttpsRedirectArgs']]:
         """
         If present, the target listener that requests are redirected to.
         """
         return pulumi.get(self, "https_redirect")
 
     @https_redirect.setter
-    def https_redirect(self, value: Optional[pulumi.Input['IsLbListenerHttpsRedirectArgs']]):
+    def https_redirect(self, value: pulumi.Input[Optional['IsLbListenerHttpsRedirectArgs']]):
         pulumi.set(self, "https_redirect", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirectListener")
     @_utilities.deprecated("""Please use the argument 'https_redirect'""")
-    def https_redirect_listener(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def https_redirect_listener(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the listener that will be set as http redirect target
         """
         return pulumi.get(self, "https_redirect_listener")
 
     @https_redirect_listener.setter
-    def https_redirect_listener(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def https_redirect_listener(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "https_redirect_listener", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirectStatusCode")
     @_utilities.deprecated("""Please use the argument 'https_redirect'""")
-    def https_redirect_status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def https_redirect_status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The HTTP status code to be returned in the redirect response
         """
         return pulumi.get(self, "https_redirect_status_code")
 
     @https_redirect_status_code.setter
-    def https_redirect_status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def https_redirect_status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "https_redirect_status_code", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirectUri")
     @_utilities.deprecated("""Please use the argument 'https_redirect'""")
-    def https_redirect_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def https_redirect_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Target URI where traffic will be redirected
         """
         return pulumi.get(self, "https_redirect_uri")
 
     @https_redirect_uri.setter
-    def https_redirect_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def https_redirect_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "https_redirect_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="idleConnectionTimeout")
-    def idle_connection_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def idle_connection_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         idle connection timeout of listener
         """
         return pulumi.get(self, "idle_connection_timeout")
 
     @idle_connection_timeout.setter
-    def idle_connection_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def idle_connection_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "idle_connection_timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Loadbalancer listener port
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="portMax")
-    def port_max(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The inclusive upper bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener
         """
         return pulumi.get(self, "port_max")
 
     @port_max.setter
-    def port_max(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_max", value)
 
     @_builtins.property
     @pulumi.getter(name="portMin")
-    def port_min(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The inclusive lower bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener.
         """
         return pulumi.get(self, "port_min")
 
     @port_min.setter
-    def port_min(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_min", value)
 
 
 @pulumi.input_type
 class _IsLbListenerState:
     def __init__(__self__, *,
-                 accept_proxy_protocol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect: Optional[pulumi.Input['IsLbListenerHttpsRedirectArgs']] = None,
-                 https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 idle_connection_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_min: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 accept_proxy_protocol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_authentication: pulumi.Input[Optional['IsLbListenerClientAuthenticationArgs']] = None,
+                 connection_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect: pulumi.Input[Optional['IsLbListenerHttpsRedirectArgs']] = None,
+                 https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 idle_connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsLbListener resources.
+
         :param pulumi.Input[_builtins.bool] accept_proxy_protocol: Listener will forward proxy protocol
         :param pulumi.Input[_builtins.str] certificate_instance: certificate instance for the Loadbalancer
+        :param pulumi.Input['IsLbListenerClientAuthenticationArgs'] client_authentication: The client authentication to use for this listener. Supported by load balancers with mtls_supported set to true. The listener must have a protocol of https.
         :param pulumi.Input[_builtins.int] connection_limit: Connection limit for Loadbalancer
         :param pulumi.Input[_builtins.str] default_pool: Loadbalancer default pool info
         :param pulumi.Input['IsLbListenerHttpsRedirectArgs'] https_redirect: If present, the target listener that requests are redirected to.
@@ -303,6 +323,8 @@ class _IsLbListenerState:
             pulumi.set(__self__, "accept_proxy_protocol", accept_proxy_protocol)
         if certificate_instance is not None:
             pulumi.set(__self__, "certificate_instance", certificate_instance)
+        if client_authentication is not None:
+            pulumi.set(__self__, "client_authentication", client_authentication)
         if connection_limit is not None:
             pulumi.set(__self__, "connection_limit", connection_limit)
         if default_pool is not None:
@@ -345,206 +367,218 @@ class _IsLbListenerState:
 
     @_builtins.property
     @pulumi.getter(name="acceptProxyProtocol")
-    def accept_proxy_protocol(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def accept_proxy_protocol(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Listener will forward proxy protocol
         """
         return pulumi.get(self, "accept_proxy_protocol")
 
     @accept_proxy_protocol.setter
-    def accept_proxy_protocol(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def accept_proxy_protocol(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "accept_proxy_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateInstance")
-    def certificate_instance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         certificate instance for the Loadbalancer
         """
         return pulumi.get(self, "certificate_instance")
 
     @certificate_instance.setter
-    def certificate_instance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_instance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_instance", value)
 
     @_builtins.property
+    @pulumi.getter(name="clientAuthentication")
+    def client_authentication(self) -> pulumi.Input[Optional['IsLbListenerClientAuthenticationArgs']]:
+        """
+        The client authentication to use for this listener. Supported by load balancers with mtls_supported set to true. The listener must have a protocol of https.
+        """
+        return pulumi.get(self, "client_authentication")
+
+    @client_authentication.setter
+    def client_authentication(self, value: pulumi.Input[Optional['IsLbListenerClientAuthenticationArgs']]):
+        pulumi.set(self, "client_authentication", value)
+
+    @_builtins.property
     @pulumi.getter(name="connectionLimit")
-    def connection_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def connection_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Connection limit for Loadbalancer
         """
         return pulumi.get(self, "connection_limit")
 
     @connection_limit.setter
-    def connection_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def connection_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "connection_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultPool")
-    def default_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Loadbalancer default pool info
         """
         return pulumi.get(self, "default_pool")
 
     @default_pool.setter
-    def default_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_pool", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirect")
-    def https_redirect(self) -> Optional[pulumi.Input['IsLbListenerHttpsRedirectArgs']]:
+    def https_redirect(self) -> pulumi.Input[Optional['IsLbListenerHttpsRedirectArgs']]:
         """
         If present, the target listener that requests are redirected to.
         """
         return pulumi.get(self, "https_redirect")
 
     @https_redirect.setter
-    def https_redirect(self, value: Optional[pulumi.Input['IsLbListenerHttpsRedirectArgs']]):
+    def https_redirect(self, value: pulumi.Input[Optional['IsLbListenerHttpsRedirectArgs']]):
         pulumi.set(self, "https_redirect", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirectListener")
     @_utilities.deprecated("""Please use the argument 'https_redirect'""")
-    def https_redirect_listener(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def https_redirect_listener(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the listener that will be set as http redirect target
         """
         return pulumi.get(self, "https_redirect_listener")
 
     @https_redirect_listener.setter
-    def https_redirect_listener(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def https_redirect_listener(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "https_redirect_listener", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirectStatusCode")
     @_utilities.deprecated("""Please use the argument 'https_redirect'""")
-    def https_redirect_status_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def https_redirect_status_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The HTTP status code to be returned in the redirect response
         """
         return pulumi.get(self, "https_redirect_status_code")
 
     @https_redirect_status_code.setter
-    def https_redirect_status_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def https_redirect_status_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "https_redirect_status_code", value)
 
     @_builtins.property
     @pulumi.getter(name="httpsRedirectUri")
     @_utilities.deprecated("""Please use the argument 'https_redirect'""")
-    def https_redirect_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def https_redirect_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Target URI where traffic will be redirected
         """
         return pulumi.get(self, "https_redirect_uri")
 
     @https_redirect_uri.setter
-    def https_redirect_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def https_redirect_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "https_redirect_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="idleConnectionTimeout")
-    def idle_connection_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def idle_connection_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         idle connection timeout of listener
         """
         return pulumi.get(self, "idle_connection_timeout")
 
     @idle_connection_timeout.setter
-    def idle_connection_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def idle_connection_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "idle_connection_timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def lb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Loadbalancer listener ID
         """
         return pulumi.get(self, "lb")
 
     @lb.setter
-    def lb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lb", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerId")
-    def listener_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "listener_id")
 
     @listener_id.setter
-    def listener_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Loadbalancer listener port
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="portMax")
-    def port_max(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_max(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The inclusive upper bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener
         """
         return pulumi.get(self, "port_max")
 
     @port_max.setter
-    def port_max(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_max(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_max", value)
 
     @_builtins.property
     @pulumi.getter(name="portMin")
-    def port_min(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_min(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The inclusive lower bound of the range of ports used by this listener. Only load balancers in the `network` family support more than one port per listener.
         """
         return pulumi.get(self, "port_min")
 
     @port_min.setter
-    def port_min(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_min(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_min", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Loadbalancer protocol
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedCrn")
-    def related_crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The crn of the LB resource
         """
         return pulumi.get(self, "related_crn")
 
     @related_crn.setter
-    def related_crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Loadbalancer listener status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
@@ -554,30 +588,33 @@ class IsLbListener(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accept_proxy_protocol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect: Optional[pulumi.Input[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict']]] = None,
-                 https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 idle_connection_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_min: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
+                 accept_proxy_protocol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_authentication: pulumi.Input[Optional[Union['IsLbListenerClientAuthenticationArgs', 'IsLbListenerClientAuthenticationArgsDict', 'outputs.IsLbListenerClientAuthentication']]] = None,
+                 connection_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect: pulumi.Input[Optional[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict', 'outputs.IsLbListenerHttpsRedirect']]] = None,
+                 https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 idle_connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsLbListener resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] accept_proxy_protocol: Listener will forward proxy protocol
         :param pulumi.Input[_builtins.str] certificate_instance: certificate instance for the Loadbalancer
+        :param pulumi.Input[Union['IsLbListenerClientAuthenticationArgs', 'IsLbListenerClientAuthenticationArgsDict', 'outputs.IsLbListenerClientAuthentication']] client_authentication: The client authentication to use for this listener. Supported by load balancers with mtls_supported set to true. The listener must have a protocol of https.
         :param pulumi.Input[_builtins.int] connection_limit: Connection limit for Loadbalancer
         :param pulumi.Input[_builtins.str] default_pool: Loadbalancer default pool info
-        :param pulumi.Input[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict']] https_redirect: If present, the target listener that requests are redirected to.
+        :param pulumi.Input[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict', 'outputs.IsLbListenerHttpsRedirect']] https_redirect: If present, the target listener that requests are redirected to.
         :param pulumi.Input[_builtins.str] https_redirect_listener: ID of the listener that will be set as http redirect target
         :param pulumi.Input[_builtins.int] https_redirect_status_code: The HTTP status code to be returned in the redirect response
         :param pulumi.Input[_builtins.str] https_redirect_uri: Target URI where traffic will be redirected
@@ -596,6 +633,7 @@ class IsLbListener(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsLbListener resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsLbListenerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -611,20 +649,21 @@ class IsLbListener(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 accept_proxy_protocol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_instance: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 default_pool: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect: Optional[pulumi.Input[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict']]] = None,
-                 https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-                 https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 idle_connection_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 lb: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_max: Optional[pulumi.Input[_builtins.int]] = None,
-                 port_min: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
+                 accept_proxy_protocol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_instance: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_authentication: pulumi.Input[Optional[Union['IsLbListenerClientAuthenticationArgs', 'IsLbListenerClientAuthenticationArgsDict', 'outputs.IsLbListenerClientAuthentication']]] = None,
+                 connection_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 default_pool: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect: pulumi.Input[Optional[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict', 'outputs.IsLbListenerHttpsRedirect']]] = None,
+                 https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+                 https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 idle_connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 lb: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_max: pulumi.Input[Optional[_builtins.int]] = None,
+                 port_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -636,6 +675,7 @@ class IsLbListener(pulumi.CustomResource):
 
             __props__.__dict__["accept_proxy_protocol"] = accept_proxy_protocol
             __props__.__dict__["certificate_instance"] = certificate_instance
+            __props__.__dict__["client_authentication"] = client_authentication
             __props__.__dict__["connection_limit"] = connection_limit
             __props__.__dict__["default_pool"] = default_pool
             __props__.__dict__["https_redirect"] = https_redirect
@@ -665,23 +705,24 @@ class IsLbListener(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            accept_proxy_protocol: Optional[pulumi.Input[_builtins.bool]] = None,
-            certificate_instance: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_limit: Optional[pulumi.Input[_builtins.int]] = None,
-            default_pool: Optional[pulumi.Input[_builtins.str]] = None,
-            https_redirect: Optional[pulumi.Input[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict']]] = None,
-            https_redirect_listener: Optional[pulumi.Input[_builtins.str]] = None,
-            https_redirect_status_code: Optional[pulumi.Input[_builtins.int]] = None,
-            https_redirect_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            idle_connection_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            lb: Optional[pulumi.Input[_builtins.str]] = None,
-            listener_id: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            port_max: Optional[pulumi.Input[_builtins.int]] = None,
-            port_min: Optional[pulumi.Input[_builtins.int]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            related_crn: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsLbListener':
+            accept_proxy_protocol: pulumi.Input[Optional[_builtins.bool]] = None,
+            certificate_instance: pulumi.Input[Optional[_builtins.str]] = None,
+            client_authentication: pulumi.Input[Optional[Union['IsLbListenerClientAuthenticationArgs', 'IsLbListenerClientAuthenticationArgsDict', 'outputs.IsLbListenerClientAuthentication']]] = None,
+            connection_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            default_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            https_redirect: pulumi.Input[Optional[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict', 'outputs.IsLbListenerHttpsRedirect']]] = None,
+            https_redirect_listener: pulumi.Input[Optional[_builtins.str]] = None,
+            https_redirect_status_code: pulumi.Input[Optional[_builtins.int]] = None,
+            https_redirect_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            idle_connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            lb: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            port_max: pulumi.Input[Optional[_builtins.int]] = None,
+            port_min: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            related_crn: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsLbListener':
         """
         Get an existing IsLbListener resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -691,9 +732,10 @@ class IsLbListener(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] accept_proxy_protocol: Listener will forward proxy protocol
         :param pulumi.Input[_builtins.str] certificate_instance: certificate instance for the Loadbalancer
+        :param pulumi.Input[Union['IsLbListenerClientAuthenticationArgs', 'IsLbListenerClientAuthenticationArgsDict', 'outputs.IsLbListenerClientAuthentication']] client_authentication: The client authentication to use for this listener. Supported by load balancers with mtls_supported set to true. The listener must have a protocol of https.
         :param pulumi.Input[_builtins.int] connection_limit: Connection limit for Loadbalancer
         :param pulumi.Input[_builtins.str] default_pool: Loadbalancer default pool info
-        :param pulumi.Input[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict']] https_redirect: If present, the target listener that requests are redirected to.
+        :param pulumi.Input[Union['IsLbListenerHttpsRedirectArgs', 'IsLbListenerHttpsRedirectArgsDict', 'outputs.IsLbListenerHttpsRedirect']] https_redirect: If present, the target listener that requests are redirected to.
         :param pulumi.Input[_builtins.str] https_redirect_listener: ID of the listener that will be set as http redirect target
         :param pulumi.Input[_builtins.int] https_redirect_status_code: The HTTP status code to be returned in the redirect response
         :param pulumi.Input[_builtins.str] https_redirect_uri: Target URI where traffic will be redirected
@@ -712,6 +754,7 @@ class IsLbListener(pulumi.CustomResource):
 
         __props__.__dict__["accept_proxy_protocol"] = accept_proxy_protocol
         __props__.__dict__["certificate_instance"] = certificate_instance
+        __props__.__dict__["client_authentication"] = client_authentication
         __props__.__dict__["connection_limit"] = connection_limit
         __props__.__dict__["default_pool"] = default_pool
         __props__.__dict__["https_redirect"] = https_redirect
@@ -744,6 +787,14 @@ class IsLbListener(pulumi.CustomResource):
         certificate instance for the Loadbalancer
         """
         return pulumi.get(self, "certificate_instance")
+
+    @_builtins.property
+    @pulumi.getter(name="clientAuthentication")
+    def client_authentication(self) -> pulumi.Output[Optional['outputs.IsLbListenerClientAuthentication']]:
+        """
+        The client authentication to use for this listener. Supported by load balancers with mtls_supported set to true. The listener must have a protocol of https.
+        """
+        return pulumi.get(self, "client_authentication")
 
     @_builtins.property
     @pulumi.getter(name="connectionLimit")

@@ -133,8 +133,8 @@ def get_pi_host_group(pi_cloud_instance_id: Optional[_builtins.str] = None,
         pi_host_group_id=pulumi.get(__ret__, 'pi_host_group_id'),
         primary=pulumi.get(__ret__, 'primary'),
         secondaries=pulumi.get(__ret__, 'secondaries'))
-def get_pi_host_group_output(pi_cloud_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             pi_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pi_host_group_output(pi_cloud_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             pi_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPiHostGroupResult]:
     """
     Use this data source to access information about an existing resource.

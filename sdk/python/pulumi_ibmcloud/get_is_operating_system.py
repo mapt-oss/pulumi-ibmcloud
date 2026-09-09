@@ -161,7 +161,7 @@ def get_is_operating_system(name: Optional[_builtins.str] = None,
         user_data_format=pulumi.get(__ret__, 'user_data_format'),
         vendor=pulumi.get(__ret__, 'vendor'),
         version=pulumi.get(__ret__, 'version'))
-def get_is_operating_system_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_is_operating_system_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsOperatingSystemResult]:
     """
     Use this data source to access information about an existing resource.

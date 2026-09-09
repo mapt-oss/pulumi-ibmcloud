@@ -102,28 +102,28 @@ export class IamPolicyTemplateVersion extends pulumi.CustomResource {
  * Input properties used for looking up and filtering IamPolicyTemplateVersion resources.
  */
 export interface IamPolicyTemplateVersionState {
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * Template version committed status.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * description of template purpose.
      */
-    description?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The core set of properties associated with the template's policy objet.
      */
-    policy?: pulumi.Input<inputs.IamPolicyTemplateVersionPolicy>;
+    policy?: pulumi.Input<inputs.IamPolicyTemplateVersionPolicy | undefined>;
     /**
      * The policy template ID and Version.
      */
-    templateId?: pulumi.Input<string>;
+    templateId?: pulumi.Input<string | undefined>;
     /**
      * Template Version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -133,12 +133,12 @@ export interface IamPolicyTemplateVersionArgs {
     /**
      * Template version committed status.
      */
-    committed?: pulumi.Input<boolean>;
+    committed?: pulumi.Input<boolean | undefined>;
     /**
      * description of template purpose.
      */
-    description?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The core set of properties associated with the template's policy objet.
      */

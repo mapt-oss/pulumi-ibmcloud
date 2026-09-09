@@ -23,18 +23,19 @@ class IsBareMetalServerNetworkInterfaceInitArgs:
     def __init__(__self__, *,
                  bare_metal_server: pulumi.Input[_builtins.str],
                  subnet: pulumi.Input[_builtins.str],
-                 allow_interface_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input['IsBareMetalServerNetworkInterfacePrimaryIpArgs']] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None):
+                 allow_interface_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional['IsBareMetalServerNetworkInterfacePrimaryIpArgs']] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a IsBareMetalServerNetworkInterface resource.
+
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.str] subnet: The id of the associated subnet
         :param pulumi.Input[_builtins.bool] allow_interface_to_float: Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
@@ -97,150 +98,151 @@ class IsBareMetalServerNetworkInterfaceInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowInterfaceToFloat")
-    def allow_interface_to_float(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_interface_to_float(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
         """
         return pulumi.get(self, "allow_interface_to_float")
 
     @allow_interface_to_float.setter
-    def allow_interface_to_float(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_interface_to_float(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_interface_to_float", value)
 
     @_builtins.property
     @pulumi.getter(name="allowIpSpoofing")
-    def allow_ip_spoofing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_ip_spoofing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         """
         return pulumi.get(self, "allow_ip_spoofing")
 
     @allow_ip_spoofing.setter
-    def allow_ip_spoofing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_ip_spoofing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_ip_spoofing", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedVlans")
-    def allowed_vlans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def allowed_vlans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowed_vlans array for one PCI type adapter per bare metal server.
         """
         return pulumi.get(self, "allowed_vlans")
 
     @allowed_vlans.setter
-    def allowed_vlans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def allowed_vlans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "allowed_vlans", value)
 
     @_builtins.property
     @pulumi.getter(name="enableInfrastructureNat")
-    def enable_infrastructure_nat(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_infrastructure_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the VPC infrastructure performs any needed NAT operations. If false, the packet is passed unmodified to/from the network interface, allowing the workload to perform any needed NAT operations.
         """
         return pulumi.get(self, "enable_infrastructure_nat")
 
     @enable_infrastructure_nat.setter
-    def enable_infrastructure_nat(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_infrastructure_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_infrastructure_nat", value)
 
     @_builtins.property
     @pulumi.getter(name="hardStop")
-    def hard_stop(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hard_stop(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Only used for PCI network interfaces, whether to hard/immediately stop server
         """
         return pulumi.get(self, "hard_stop")
 
     @hard_stop.setter
-    def hard_stop(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hard_stop(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hard_stop", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceType")
-    def interface_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def interface_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network interface type: [ pci, vlan, hipersocket ]
         """
         return pulumi.get(self, "interface_type")
 
     @interface_type.setter
-    def interface_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def interface_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "interface_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this network interface
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]:
         """
         title: IPv4, The IP address.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Collection of security groups ids
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def vlan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vlan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
         """
         return pulumi.get(self, "vlan")
 
     @vlan.setter
-    def vlan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vlan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vlan", value)
 
 
 @pulumi.input_type
 class _IsBareMetalServerNetworkInterfaceState:
     def __init__(__self__, *,
-                 allow_interface_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 floating_ips: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceFloatingIpArgs']]]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 href: Optional[pulumi.Input[_builtins.str]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_interface: Optional[pulumi.Input[_builtins.str]] = None,
-                 port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-                 primary_ip: Optional[pulumi.Input['IsBareMetalServerNetworkInterfacePrimaryIpArgs']] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None):
+                 allow_interface_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceFloatingIpArgs']]]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_interface: pulumi.Input[Optional[_builtins.str]] = None,
+                 port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+                 primary_ip: pulumi.Input[Optional['IsBareMetalServerNetworkInterfacePrimaryIpArgs']] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IsBareMetalServerNetworkInterface resources.
+
         :param pulumi.Input[_builtins.bool] allow_interface_to_float: Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
         :param pulumi.Input[_builtins.bool] allow_ip_spoofing: Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] allowed_vlans: Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowed_vlans array for one PCI type adapter per bare metal server.
@@ -305,242 +307,242 @@ class _IsBareMetalServerNetworkInterfaceState:
 
     @_builtins.property
     @pulumi.getter(name="allowInterfaceToFloat")
-    def allow_interface_to_float(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_interface_to_float(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
         """
         return pulumi.get(self, "allow_interface_to_float")
 
     @allow_interface_to_float.setter
-    def allow_interface_to_float(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_interface_to_float(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_interface_to_float", value)
 
     @_builtins.property
     @pulumi.getter(name="allowIpSpoofing")
-    def allow_ip_spoofing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_ip_spoofing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
         """
         return pulumi.get(self, "allow_ip_spoofing")
 
     @allow_ip_spoofing.setter
-    def allow_ip_spoofing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_ip_spoofing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_ip_spoofing", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedVlans")
-    def allowed_vlans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def allowed_vlans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowed_vlans array for one PCI type adapter per bare metal server.
         """
         return pulumi.get(self, "allowed_vlans")
 
     @allowed_vlans.setter
-    def allowed_vlans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def allowed_vlans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "allowed_vlans", value)
 
     @_builtins.property
     @pulumi.getter(name="bareMetalServer")
-    def bare_metal_server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bare_metal_server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Bare metal server identifier
         """
         return pulumi.get(self, "bare_metal_server")
 
     @bare_metal_server.setter
-    def bare_metal_server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bare_metal_server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bare_metal_server", value)
 
     @_builtins.property
     @pulumi.getter(name="enableInfrastructureNat")
-    def enable_infrastructure_nat(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_infrastructure_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the VPC infrastructure performs any needed NAT operations. If false, the packet is passed unmodified to/from the network interface, allowing the workload to perform any needed NAT operations.
         """
         return pulumi.get(self, "enable_infrastructure_nat")
 
     @enable_infrastructure_nat.setter
-    def enable_infrastructure_nat(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_infrastructure_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_infrastructure_nat", value)
 
     @_builtins.property
     @pulumi.getter(name="floatingIps")
-    def floating_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceFloatingIpArgs']]]]:
+    def floating_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceFloatingIpArgs']]]]:
         """
         The floating IPs associated with this network interface.
         """
         return pulumi.get(self, "floating_ips")
 
     @floating_ips.setter
-    def floating_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceFloatingIpArgs']]]]):
+    def floating_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IsBareMetalServerNetworkInterfaceFloatingIpArgs']]]]):
         pulumi.set(self, "floating_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="hardStop")
-    def hard_stop(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hard_stop(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Only used for PCI network interfaces, whether to hard/immediately stop server
         """
         return pulumi.get(self, "hard_stop")
 
     @hard_stop.setter
-    def hard_stop(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hard_stop(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hard_stop", value)
 
     @_builtins.property
     @pulumi.getter
-    def href(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL for this network interface
         """
         return pulumi.get(self, "href")
 
     @href.setter
-    def href(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "href", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceType")
-    def interface_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def interface_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network interface type: [ pci, vlan, hipersocket ]
         """
         return pulumi.get(self, "interface_type")
 
     @interface_type.setter
-    def interface_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def interface_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "interface_type", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MAC address of the interface. If absent, the value is not known.
         """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
-    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-defined name for this network interface
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterface")
-    def network_interface(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_interface(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bare metal server network interface identifier
         """
         return pulumi.get(self, "network_interface")
 
     @network_interface.setter
-    def network_interface(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_interface(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_interface", value)
 
     @_builtins.property
     @pulumi.getter(name="portSpeed")
-    def port_speed(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port_speed(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network interface port speed in Mbps
         """
         return pulumi.get(self, "port_speed")
 
     @port_speed.setter
-    def port_speed(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port_speed(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port_speed", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]:
+    def primary_ip(self) -> pulumi.Input[Optional['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]:
         """
         title: IPv4, The IP address.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]):
+    def primary_ip(self, value: pulumi.Input[Optional['IsBareMetalServerNetworkInterfacePrimaryIpArgs']]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource type : [ subnet_reserved_ip ]
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Collection of security groups ids
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the network interface : [ available, deleting, failed, pending ]
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the associated subnet
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of this bare metal server network interface : [ primary, secondary ]
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def vlan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vlan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
         """
         return pulumi.get(self, "vlan")
 
     @vlan.setter
-    def vlan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vlan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vlan", value)
 
 
@@ -550,21 +552,22 @@ class IsBareMetalServerNetworkInterface(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_interface_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None,
+                 allow_interface_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict', 'outputs.IsBareMetalServerNetworkInterfacePrimaryIp']]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Create a IsBareMetalServerNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_interface_to_float: Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
@@ -575,7 +578,7 @@ class IsBareMetalServerNetworkInterface(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] hard_stop: Only used for PCI network interfaces, whether to hard/immediately stop server
         :param pulumi.Input[_builtins.str] interface_type: The network interface type: [ pci, vlan, hipersocket ]
         :param pulumi.Input[_builtins.str] name: The user-defined name for this network interface
-        :param pulumi.Input[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict']] primary_ip: title: IPv4, The IP address.
+        :param pulumi.Input[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict', 'outputs.IsBareMetalServerNetworkInterfacePrimaryIp']] primary_ip: title: IPv4, The IP address.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_groups: Collection of security groups ids
         :param pulumi.Input[_builtins.str] subnet: The id of the associated subnet
         :param pulumi.Input[_builtins.int] vlan: Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
@@ -588,6 +591,7 @@ class IsBareMetalServerNetworkInterface(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsBareMetalServerNetworkInterface resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsBareMetalServerNetworkInterfaceInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -603,18 +607,18 @@ class IsBareMetalServerNetworkInterface(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_interface_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict']]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan: Optional[pulumi.Input[_builtins.int]] = None,
+                 allow_interface_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict', 'outputs.IsBareMetalServerNetworkInterfacePrimaryIp']]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -658,26 +662,26 @@ class IsBareMetalServerNetworkInterface(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_interface_to_float: Optional[pulumi.Input[_builtins.bool]] = None,
-            allow_ip_spoofing: Optional[pulumi.Input[_builtins.bool]] = None,
-            allowed_vlans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            bare_metal_server: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_infrastructure_nat: Optional[pulumi.Input[_builtins.bool]] = None,
-            floating_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceFloatingIpArgs', 'IsBareMetalServerNetworkInterfaceFloatingIpArgsDict']]]]] = None,
-            hard_stop: Optional[pulumi.Input[_builtins.bool]] = None,
-            href: Optional[pulumi.Input[_builtins.str]] = None,
-            interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-            mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_interface: Optional[pulumi.Input[_builtins.str]] = None,
-            port_speed: Optional[pulumi.Input[_builtins.int]] = None,
-            primary_ip: Optional[pulumi.Input[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict']]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            security_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            vlan: Optional[pulumi.Input[_builtins.int]] = None) -> 'IsBareMetalServerNetworkInterface':
+            allow_interface_to_float: pulumi.Input[Optional[_builtins.bool]] = None,
+            allow_ip_spoofing: pulumi.Input[Optional[_builtins.bool]] = None,
+            allowed_vlans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            bare_metal_server: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_infrastructure_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+            floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceFloatingIpArgs', 'IsBareMetalServerNetworkInterfaceFloatingIpArgsDict', 'outputs.IsBareMetalServerNetworkInterfaceFloatingIp']]]]] = None,
+            hard_stop: pulumi.Input[Optional[_builtins.bool]] = None,
+            href: pulumi.Input[Optional[_builtins.str]] = None,
+            interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+            mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_interface: pulumi.Input[Optional[_builtins.str]] = None,
+            port_speed: pulumi.Input[Optional[_builtins.int]] = None,
+            primary_ip: pulumi.Input[Optional[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict', 'outputs.IsBareMetalServerNetworkInterfacePrimaryIp']]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            security_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan: pulumi.Input[Optional[_builtins.int]] = None) -> 'IsBareMetalServerNetworkInterface':
         """
         Get an existing IsBareMetalServerNetworkInterface resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -690,7 +694,7 @@ class IsBareMetalServerNetworkInterface(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] allowed_vlans: Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowed_vlans array for one PCI type adapter per bare metal server.
         :param pulumi.Input[_builtins.str] bare_metal_server: Bare metal server identifier
         :param pulumi.Input[_builtins.bool] enable_infrastructure_nat: If true, the VPC infrastructure performs any needed NAT operations. If false, the packet is passed unmodified to/from the network interface, allowing the workload to perform any needed NAT operations.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceFloatingIpArgs', 'IsBareMetalServerNetworkInterfaceFloatingIpArgsDict']]]] floating_ips: The floating IPs associated with this network interface.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IsBareMetalServerNetworkInterfaceFloatingIpArgs', 'IsBareMetalServerNetworkInterfaceFloatingIpArgsDict', 'outputs.IsBareMetalServerNetworkInterfaceFloatingIp']]]] floating_ips: The floating IPs associated with this network interface.
         :param pulumi.Input[_builtins.bool] hard_stop: Only used for PCI network interfaces, whether to hard/immediately stop server
         :param pulumi.Input[_builtins.str] href: The URL for this network interface
         :param pulumi.Input[_builtins.str] interface_type: The network interface type: [ pci, vlan, hipersocket ]
@@ -698,7 +702,7 @@ class IsBareMetalServerNetworkInterface(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The user-defined name for this network interface
         :param pulumi.Input[_builtins.str] network_interface: The bare metal server network interface identifier
         :param pulumi.Input[_builtins.int] port_speed: The network interface port speed in Mbps
-        :param pulumi.Input[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict']] primary_ip: title: IPv4, The IP address.
+        :param pulumi.Input[Union['IsBareMetalServerNetworkInterfacePrimaryIpArgs', 'IsBareMetalServerNetworkInterfacePrimaryIpArgsDict', 'outputs.IsBareMetalServerNetworkInterfacePrimaryIp']] primary_ip: title: IPv4, The IP address.
         :param pulumi.Input[_builtins.str] resource_type: The resource type : [ subnet_reserved_ip ]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_groups: Collection of security groups ids
         :param pulumi.Input[_builtins.str] status: The status of the network interface : [ available, deleting, failed, pending ]

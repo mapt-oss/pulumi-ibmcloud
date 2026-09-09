@@ -127,35 +127,35 @@ export interface PiIpsecPolicyState {
     /**
      * PI cloud instance ID
      */
-    piCloudInstanceId?: pulumi.Input<string>;
+    piCloudInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Authentication for the IPSec Policy
      */
-    piPolicyAuthentication?: pulumi.Input<string>;
+    piPolicyAuthentication?: pulumi.Input<string | undefined>;
     /**
      * DH group of the IPSec Policy
      */
-    piPolicyDhGroup?: pulumi.Input<number>;
+    piPolicyDhGroup?: pulumi.Input<number | undefined>;
     /**
      * Encryption of the IPSec Policy
      */
-    piPolicyEncryption?: pulumi.Input<string>;
+    piPolicyEncryption?: pulumi.Input<string | undefined>;
     /**
      * Policy key lifetime
      */
-    piPolicyKeyLifetime?: pulumi.Input<number>;
+    piPolicyKeyLifetime?: pulumi.Input<number | undefined>;
     /**
      * Name of the IPSec Policy
      */
-    piPolicyName?: pulumi.Input<string>;
+    piPolicyName?: pulumi.Input<string | undefined>;
     /**
      * Perfect Forward Secrecy
      */
-    piPolicyPfs?: pulumi.Input<boolean>;
+    piPolicyPfs?: pulumi.Input<boolean | undefined>;
     /**
      * IPSec policy ID
      */
-    policyId?: pulumi.Input<string>;
+    policyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -169,7 +169,7 @@ export interface PiIpsecPolicyArgs {
     /**
      * Authentication for the IPSec Policy
      */
-    piPolicyAuthentication?: pulumi.Input<string>;
+    piPolicyAuthentication?: pulumi.Input<string | undefined>;
     /**
      * DH group of the IPSec Policy
      */

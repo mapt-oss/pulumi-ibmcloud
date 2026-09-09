@@ -111,31 +111,31 @@ export interface IsVirtualNetworkInterfaceFloatingIpState {
     /**
      * The globally unique IP address.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this floating IP.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceFloatingIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceFloatingIpDeleted>[] | undefined>;
     /**
      * The floating IP identifier
      */
-    floatingIp?: pulumi.Input<string>;
+    floatingIp?: pulumi.Input<string | undefined>;
     /**
      * The URL for this floating IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this floating IP. The name is unique across all floating IPs in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The virtual network interface identifier
      */
-    virtualNetworkInterface?: pulumi.Input<string>;
+    virtualNetworkInterface?: pulumi.Input<string | undefined>;
 }
 
 /**

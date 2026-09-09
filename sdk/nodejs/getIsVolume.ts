@@ -81,7 +81,7 @@ export function getIsVolumeOutput(args?: GetIsVolumeOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getIsVolume.
  */
 export interface GetIsVolumeOutputArgs {
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    zone?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    zone?: pulumi.Input<string | undefined>;
 }

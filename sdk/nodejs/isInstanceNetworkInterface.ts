@@ -164,66 +164,66 @@ export interface IsInstanceNetworkInterfaceState {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time that the network interface was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The ID of the floating IP to attach to this network interface
      */
-    floatingIp?: pulumi.Input<string>;
+    floatingIp?: pulumi.Input<string | undefined>;
     /**
      * The floating IPs associated with this network interface.
      */
-    floatingIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkInterfaceFloatingIp>[]>;
+    floatingIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkInterfaceFloatingIp>[] | undefined>;
     /**
      * The URL for this network interface.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the instance.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this network interface. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The globally unique ID of this network interface
      */
-    networkInterface?: pulumi.Input<string>;
+    networkInterface?: pulumi.Input<string | undefined>;
     /**
      * The network interface port speed in Mbps.
      */
-    portSpeed?: pulumi.Input<number>;
+    portSpeed?: pulumi.Input<number | undefined>;
     /**
      * The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkInterfacePrimaryIp | undefined>;
     /**
      * The primary IPv4 address. If specified, it must be an available address on the network interface's subnet. If unspecified, an available address on the subnet will be automatically selected.
      *
      * @deprecated primary_ipv4_address is deprecated and support will be removed. Use primaryIp instead
      */
-    primaryIpv4Address?: pulumi.Input<string>;
+    primaryIpv4Address?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceType?: pulumi.Input<string | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The status of the network interface.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the subnet.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
     /**
      * The type of this network interface as it relates to an instance.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -233,11 +233,11 @@ export interface IsInstanceNetworkInterfaceArgs {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If false, source IP spoofing is prevented on this interface. If true, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the floating IP to attach to this network interface
      */
-    floatingIp?: pulumi.Input<string>;
+    floatingIp?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the instance.
      */
@@ -245,18 +245,18 @@ export interface IsInstanceNetworkInterfaceArgs {
     /**
      * The user-defined name for this network interface. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkInterfacePrimaryIp | undefined>;
     /**
      * The primary IPv4 address. If specified, it must be an available address on the network interface's subnet. If unspecified, an available address on the subnet will be automatically selected.
      *
      * @deprecated primary_ipv4_address is deprecated and support will be removed. Use primaryIp instead
      */
-    primaryIpv4Address?: pulumi.Input<string>;
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    primaryIpv4Address?: pulumi.Input<string | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier of the subnet.
      */

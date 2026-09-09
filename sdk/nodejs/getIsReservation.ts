@@ -63,8 +63,8 @@ export function getIsReservationOutput(args?: GetIsReservationOutputArgs, opts?:
  * A collection of arguments for invoking getIsReservation.
  */
 export interface GetIsReservationOutputArgs {
-    capacities?: pulumi.Input<pulumi.Input<inputs.GetIsReservationCapacityArgs>[]>;
-    committedUses?: pulumi.Input<pulumi.Input<inputs.GetIsReservationCommittedUseArgs>[]>;
-    identifier?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    capacities?: pulumi.Input<pulumi.Input<inputs.GetIsReservationCapacityArgs>[] | undefined>;
+    committedUses?: pulumi.Input<pulumi.Input<inputs.GetIsReservationCommittedUseArgs>[] | undefined>;
+    identifier?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

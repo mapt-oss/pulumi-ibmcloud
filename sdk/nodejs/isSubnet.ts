@@ -193,87 +193,87 @@ export interface IsSubnetState {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The number of IPv4 addresses in this subnet that are not in-use, and have not been reserved by the user or the provider.
      */
-    availableIpv4AddressCount?: pulumi.Input<number>;
+    availableIpv4AddressCount?: pulumi.Input<number | undefined>;
     /**
      * The crn of the resource
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The IP version(s) to support for this subnet.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * IPV4 subnet - CIDR block
      */
-    ipv4CidrBlock?: pulumi.Input<string>;
+    ipv4CidrBlock?: pulumi.Input<string | undefined>;
     /**
      * Subnet name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The network ACL for this subnet
      */
-    networkAcl?: pulumi.Input<string>;
+    networkAcl?: pulumi.Input<string | undefined>;
     /**
      * Public Gateway of the subnet
      */
-    publicGateway?: pulumi.Input<string>;
+    publicGateway?: pulumi.Input<string | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The crn of the resource
      */
-    resourceCrn?: pulumi.Input<string>;
+    resourceCrn?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this subnet
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource group name in which resource is provisioned
      */
-    resourceGroupName?: pulumi.Input<string>;
+    resourceGroupName?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
     /**
      * routing table id that is associated with the subnet
      */
-    routingTable?: pulumi.Input<string>;
+    routingTable?: pulumi.Input<string | undefined>;
     /**
      * routing table crn that is associated with the subnet.
      */
-    routingTableCrn?: pulumi.Input<string>;
+    routingTableCrn?: pulumi.Input<string | undefined>;
     /**
      * The status of the subnet
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The total number of IPv4 addresses in this subnet.
      */
-    totalIpv4AddressCount?: pulumi.Input<number>;
+    totalIpv4AddressCount?: pulumi.Input<number | undefined>;
     /**
      * VPC instance ID
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
     /**
      * Subnet zone info
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -283,47 +283,47 @@ export interface IsSubnetArgs {
     /**
      * List of access management tags
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IP version(s) to support for this subnet.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * IPV4 subnet - CIDR block
      */
-    ipv4CidrBlock?: pulumi.Input<string>;
+    ipv4CidrBlock?: pulumi.Input<string | undefined>;
     /**
      * Subnet name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The network ACL for this subnet
      */
-    networkAcl?: pulumi.Input<string>;
+    networkAcl?: pulumi.Input<string | undefined>;
     /**
      * Public Gateway of the subnet
      */
-    publicGateway?: pulumi.Input<string>;
+    publicGateway?: pulumi.Input<string | undefined>;
     /**
      * The resource group for this subnet
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * routing table id that is associated with the subnet
      */
-    routingTable?: pulumi.Input<string>;
+    routingTable?: pulumi.Input<string | undefined>;
     /**
      * routing table crn that is associated with the subnet.
      */
-    routingTableCrn?: pulumi.Input<string>;
+    routingTableCrn?: pulumi.Input<string | undefined>;
     /**
      * List of tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The total number of IPv4 addresses in this subnet.
      */
-    totalIpv4AddressCount?: pulumi.Input<number>;
+    totalIpv4AddressCount?: pulumi.Input<number | undefined>;
     /**
      * VPC instance ID
      */

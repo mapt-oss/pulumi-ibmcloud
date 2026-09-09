@@ -59,7 +59,7 @@ export function getIamTrustedProfileTemplateOutput(args: GetIamTrustedProfileTem
  * A collection of arguments for invoking getIamTrustedProfileTemplate.
  */
 export interface GetIamTrustedProfileTemplateOutputArgs {
-    includeHistory?: pulumi.Input<boolean>;
+    includeHistory?: pulumi.Input<boolean | undefined>;
     templateId: pulumi.Input<string>;
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

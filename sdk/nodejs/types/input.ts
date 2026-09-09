@@ -6,87 +6,87 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
 export interface ComputeAutoscaleGroupVirtualGuestMemberTemplate {
-    blockStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
-    bulkVms?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVm>[]>;
-    cores?: pulumi.Input<number>;
-    datacenter?: pulumi.Input<string>;
+    blockStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    bulkVms?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVm>[] | undefined>;
+    cores?: pulumi.Input<number | undefined>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * The user provided datacenter options
      */
-    datacenterChoices?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[]>;
-    dedicatedAcctHostOnly?: pulumi.Input<boolean>;
-    dedicatedHostId?: pulumi.Input<number>;
-    dedicatedHostName?: pulumi.Input<string>;
-    disks?: pulumi.Input<pulumi.Input<number>[]>;
-    domain?: pulumi.Input<string>;
-    evault?: pulumi.Input<number>;
-    fileStorageIds?: pulumi.Input<pulumi.Input<number>[]>;
+    datacenterChoices?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[] | undefined>;
+    dedicatedAcctHostOnly?: pulumi.Input<boolean | undefined>;
+    dedicatedHostId?: pulumi.Input<number | undefined>;
+    dedicatedHostName?: pulumi.Input<string | undefined>;
+    disks?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    domain?: pulumi.Input<string | undefined>;
+    evault?: pulumi.Input<number | undefined>;
+    fileStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Flavor key name used to provision vm.
      */
-    flavorKeyName?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    hourlyBilling?: pulumi.Input<boolean>;
-    imageId?: pulumi.Input<number>;
-    ipAddressId?: pulumi.Input<number>;
-    ipAddressIdPrivate?: pulumi.Input<number>;
-    ipv4Address?: pulumi.Input<string>;
-    ipv4AddressPrivate?: pulumi.Input<string>;
-    ipv6Address?: pulumi.Input<string>;
-    ipv6AddressId?: pulumi.Input<number>;
-    ipv6Enabled?: pulumi.Input<boolean>;
-    ipv6StaticEnabled?: pulumi.Input<boolean>;
-    localDisk?: pulumi.Input<boolean>;
-    memory?: pulumi.Input<number>;
-    networkSpeed?: pulumi.Input<number>;
-    notes?: pulumi.Input<string>;
-    osReferenceCode?: pulumi.Input<string>;
+    flavorKeyName?: pulumi.Input<string | undefined>;
+    hostname?: pulumi.Input<string | undefined>;
+    hourlyBilling?: pulumi.Input<boolean | undefined>;
+    imageId?: pulumi.Input<number | undefined>;
+    ipAddressId?: pulumi.Input<number | undefined>;
+    ipAddressIdPrivate?: pulumi.Input<number | undefined>;
+    ipv4Address?: pulumi.Input<string | undefined>;
+    ipv4AddressPrivate?: pulumi.Input<string | undefined>;
+    ipv6Address?: pulumi.Input<string | undefined>;
+    ipv6AddressId?: pulumi.Input<number | undefined>;
+    ipv6Enabled?: pulumi.Input<boolean | undefined>;
+    ipv6StaticEnabled?: pulumi.Input<boolean | undefined>;
+    localDisk?: pulumi.Input<boolean | undefined>;
+    memory?: pulumi.Input<number | undefined>;
+    networkSpeed?: pulumi.Input<number | undefined>;
+    notes?: pulumi.Input<string | undefined>;
+    osReferenceCode?: pulumi.Input<string | undefined>;
     /**
      * The placement group id
      */
-    placementGroupId?: pulumi.Input<number>;
+    placementGroupId?: pulumi.Input<number | undefined>;
     /**
      * The placement group name
      */
-    placementGroupName?: pulumi.Input<string>;
-    postInstallScriptUri?: pulumi.Input<string>;
-    privateInterfaceId?: pulumi.Input<number>;
-    privateNetworkOnly?: pulumi.Input<boolean>;
-    privateSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[]>;
-    privateSubnet?: pulumi.Input<string>;
-    privateSubnetId?: pulumi.Input<number>;
-    privateVlanId?: pulumi.Input<number>;
-    publicBandwidthLimited?: pulumi.Input<number>;
-    publicBandwidthUnlimited?: pulumi.Input<boolean>;
-    publicInterfaceId?: pulumi.Input<number>;
-    publicIpv6Subnet?: pulumi.Input<string>;
-    publicIpv6SubnetId?: pulumi.Input<number>;
-    publicSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[]>;
-    publicSubnet?: pulumi.Input<string>;
-    publicSubnetId?: pulumi.Input<number>;
-    publicVlanId?: pulumi.Input<number>;
+    placementGroupName?: pulumi.Input<string | undefined>;
+    postInstallScriptUri?: pulumi.Input<string | undefined>;
+    privateInterfaceId?: pulumi.Input<number | undefined>;
+    privateNetworkOnly?: pulumi.Input<boolean | undefined>;
+    privateSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    privateSubnet?: pulumi.Input<string | undefined>;
+    privateSubnetId?: pulumi.Input<number | undefined>;
+    privateVlanId?: pulumi.Input<number | undefined>;
+    publicBandwidthLimited?: pulumi.Input<number | undefined>;
+    publicBandwidthUnlimited?: pulumi.Input<boolean | undefined>;
+    publicInterfaceId?: pulumi.Input<number | undefined>;
+    publicIpv6Subnet?: pulumi.Input<string | undefined>;
+    publicIpv6SubnetId?: pulumi.Input<number | undefined>;
+    publicSecurityGroupIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    publicSubnet?: pulumi.Input<string | undefined>;
+    publicSubnetId?: pulumi.Input<number | undefined>;
+    publicVlanId?: pulumi.Input<number | undefined>;
     /**
      * Quote ID for Quote based provisioning
      */
-    quoteId?: pulumi.Input<number>;
+    quoteId?: pulumi.Input<number | undefined>;
     /**
      * The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance
      */
-    resourceControllerUrl?: pulumi.Input<string>;
+    resourceControllerUrl?: pulumi.Input<string | undefined>;
     /**
      * The name of the resource
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the resource
      */
-    resourceStatus?: pulumi.Input<string>;
-    secondaryIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
-    secondaryIpCount?: pulumi.Input<number>;
-    sshKeyIds?: pulumi.Input<pulumi.Input<number>[]>;
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
-    transient?: pulumi.Input<boolean>;
-    userMetadata?: pulumi.Input<string>;
+    resourceStatus?: pulumi.Input<string | undefined>;
+    secondaryIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    secondaryIpCount?: pulumi.Input<number | undefined>;
+    sshKeyIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    transient?: pulumi.Input<boolean | undefined>;
+    userMetadata?: pulumi.Input<string | undefined>;
 }
 
 export interface ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVm {
@@ -95,15 +95,15 @@ export interface ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVm {
 }
 
 export interface ComputeAutoscalePolicyTrigger {
-    date?: pulumi.Input<string>;
-    id?: pulumi.Input<number>;
-    schedule?: pulumi.Input<string>;
+    date?: pulumi.Input<string | undefined>;
+    id?: pulumi.Input<number | undefined>;
+    schedule?: pulumi.Input<string | undefined>;
     type: pulumi.Input<string>;
-    watches?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscalePolicyTriggerWatch>[]>;
+    watches?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscalePolicyTriggerWatch>[] | undefined>;
 }
 
 export interface ComputeAutoscalePolicyTriggerWatch {
-    id?: pulumi.Input<number>;
+    id?: pulumi.Input<number | undefined>;
     metric: pulumi.Input<string>;
     operator: pulumi.Input<string>;
     period: pulumi.Input<number>;
@@ -114,7 +114,7 @@ export interface ComputeBareMetalStorageGroup {
     /**
      * Array size of harddrives list
      */
-    arraySize?: pulumi.Input<number>;
+    arraySize?: pulumi.Input<number | undefined>;
     /**
      * Array type ID
      */
@@ -126,7 +126,7 @@ export interface ComputeBareMetalStorageGroup {
     /**
      * Partition template ID
      */
-    partitionTemplateId?: pulumi.Input<number>;
+    partitionTemplateId?: pulumi.Input<number | undefined>;
 }
 
 export interface ComputeVmInstanceBulkVm {
@@ -138,7 +138,7 @@ export interface CosBucketAbortIncompleteMultipartUploadDay {
     /**
      * Specifies the number of days when the specific rule action takes effect.
      */
-    daysAfterInitiation?: pulumi.Input<number>;
+    daysAfterInitiation?: pulumi.Input<number | undefined>;
     /**
      * Enable or disable rule for a bucket
      */
@@ -146,30 +146,30 @@ export interface CosBucketAbortIncompleteMultipartUploadDay {
     /**
      * The rule applies to any objects with keys that match this prefix
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the rule. Rules allow you to set a specific time frame after which objects are deleted. Set Rule ID for cos bucket
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
 }
 
 export interface CosBucketActivityTracking {
     /**
      * When the activityTrackerCrn is not populated, then enabled events are sent to the Activity Tracker instance associated to the container's location unless otherwise specified in the Activity Tracker Event Routing service configuration.If `activityTrackerCrn` is populated, then enabled events are sent to the Activity Tracker instance specified and bucket management events are always enabled.
      */
-    activityTrackerCrn?: pulumi.Input<string>;
+    activityTrackerCrn?: pulumi.Input<string | undefined>;
     /**
      * If set to `true`, all bucket management events will be sent to Activity Tracker.This field only applies if `activityTrackerCrn` is not populated.
      */
-    managementEvents?: pulumi.Input<boolean>;
+    managementEvents?: pulumi.Input<boolean | undefined>;
     /**
      * If set to `true`, all object read events (i.e. downloads) will be sent to Activity Tracker.
      */
-    readDataEvents?: pulumi.Input<boolean>;
+    readDataEvents?: pulumi.Input<boolean | undefined>;
     /**
      * If set to `true`, all object write events (i.e. uploads) will be sent to Activity Tracker.
      */
-    writeDataEvents?: pulumi.Input<boolean>;
+    writeDataEvents?: pulumi.Input<boolean | undefined>;
 }
 
 export interface CosBucketArchiveRule {
@@ -184,7 +184,7 @@ export interface CosBucketArchiveRule {
     /**
      * Unique identifier for the rule.Archive rules allow you to set a specific time frame after which objects transition to the archive. Set Rule ID for cos bucket
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the storage class/archive type to which you want the object to transition. It can be Glacier or Accelerated
      */
@@ -195,11 +195,11 @@ export interface CosBucketExpireRule {
     /**
      * Specify a rule to expire the current version of objects in bucket after a specific date.
      */
-    date?: pulumi.Input<string>;
+    date?: pulumi.Input<string | undefined>;
     /**
      * Specifies the number of days when the specific rule action takes effect.
      */
-    days?: pulumi.Input<number>;
+    days?: pulumi.Input<number | undefined>;
     /**
      * Enable or disable an expire rule for a bucket
      */
@@ -207,50 +207,50 @@ export interface CosBucketExpireRule {
     /**
      * Expired object delete markers can be automatically cleaned up to improve performance in bucket. This cannot be used alongside version expiration.
      */
-    expiredObjectDeleteMarker?: pulumi.Input<boolean>;
+    expiredObjectDeleteMarker?: pulumi.Input<boolean | undefined>;
     /**
      * The rule applies to any objects with keys that match this prefix
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the rule.Expire rules allow you to set a specific time frame after which objects are deleted. Set Rule ID for cos bucket
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRule {
-    abortIncompleteMultipartUpload?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleAbortIncompleteMultipartUpload>;
-    expiration?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleExpiration>;
+    abortIncompleteMultipartUpload?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleAbortIncompleteMultipartUpload | undefined>;
+    expiration?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleExpiration | undefined>;
     filter: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleFilter>;
-    noncurrentVersionExpiration?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleNoncurrentVersionExpiration>;
+    noncurrentVersionExpiration?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleNoncurrentVersionExpiration | undefined>;
     ruleId: pulumi.Input<string>;
     status: pulumi.Input<string>;
-    transition?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleTransition>;
+    transition?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleTransition | undefined>;
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRuleAbortIncompleteMultipartUpload {
-    daysAfterInitiation?: pulumi.Input<number>;
+    daysAfterInitiation?: pulumi.Input<number | undefined>;
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRuleExpiration {
-    date?: pulumi.Input<string>;
-    days?: pulumi.Input<number>;
-    expiredObjectDeleteMarker?: pulumi.Input<boolean>;
+    date?: pulumi.Input<string | undefined>;
+    days?: pulumi.Input<number | undefined>;
+    expiredObjectDeleteMarker?: pulumi.Input<boolean | undefined>;
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRuleFilter {
-    and?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleFilterAnd>;
-    objectSizeGreaterThan?: pulumi.Input<number>;
-    objectSizeLessThan?: pulumi.Input<number>;
-    prefix?: pulumi.Input<string>;
-    tag?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleFilterTag>;
+    and?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleFilterAnd | undefined>;
+    objectSizeGreaterThan?: pulumi.Input<number | undefined>;
+    objectSizeLessThan?: pulumi.Input<number | undefined>;
+    prefix?: pulumi.Input<string | undefined>;
+    tag?: pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleFilterTag | undefined>;
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRuleFilterAnd {
-    objectSizeGreaterThan?: pulumi.Input<number>;
-    objectSizeLessThan?: pulumi.Input<number>;
-    prefix?: pulumi.Input<string>;
-    tags?: pulumi.Input<pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleFilterAndTag>[]>;
+    objectSizeGreaterThan?: pulumi.Input<number | undefined>;
+    objectSizeLessThan?: pulumi.Input<number | undefined>;
+    prefix?: pulumi.Input<string | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.CosBucketLifecycleConfigurationLifecycleRuleFilterAndTag>[] | undefined>;
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRuleFilterAndTag {
@@ -264,12 +264,12 @@ export interface CosBucketLifecycleConfigurationLifecycleRuleFilterTag {
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRuleNoncurrentVersionExpiration {
-    noncurrentDays?: pulumi.Input<number>;
+    noncurrentDays?: pulumi.Input<number | undefined>;
 }
 
 export interface CosBucketLifecycleConfigurationLifecycleRuleTransition {
-    date?: pulumi.Input<string>;
-    days?: pulumi.Input<number>;
+    date?: pulumi.Input<string | undefined>;
+    days?: pulumi.Input<number | undefined>;
     storageClass: pulumi.Input<string>;
 }
 
@@ -277,15 +277,15 @@ export interface CosBucketMetricsMonitoring {
     /**
      * When the metricsMonitoringCrn is not populated, then enabled metrics are sent to the monitoring instance associated to the container's location unless otherwise specified in the Metrics Router service configuration.If metricsMonitoringCrn is populated, then enabled events are sent to the Metrics Monitoring instance specified.
      */
-    metricsMonitoringCrn?: pulumi.Input<string>;
+    metricsMonitoringCrn?: pulumi.Input<string | undefined>;
     /**
      * If set to true, all request metrics (i.e. `rest.object.head`) will be sent to the monitoring service.
      */
-    requestMetricsEnabled?: pulumi.Input<boolean>;
+    requestMetricsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, all usage metrics (i.e. `bytesUsed`) will be sent to the monitoring service.
      */
-    usageMetricsEnabled?: pulumi.Input<boolean>;
+    usageMetricsEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 export interface CosBucketNoncurrentVersionExpiration {
@@ -296,15 +296,15 @@ export interface CosBucketNoncurrentVersionExpiration {
     /**
      * Specifies the number of days when the specific rule action takes effect.
      */
-    noncurrentDays?: pulumi.Input<number>;
+    noncurrentDays?: pulumi.Input<number | undefined>;
     /**
      * The rule applies to any objects with keys that match this prefix
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the rule.Expire rules allow you to set a specific time frame after which objects are deleted. Set Rule ID for cos bucket
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
 }
 
 export interface CosBucketObjectLockConfigurationObjectLockConfiguration {
@@ -312,43 +312,43 @@ export interface CosBucketObjectLockConfigurationObjectLockConfiguration {
      * Enable object lock on a COS bucket. This can be used to enable objectlock on an existing bucket
      */
     objectLockEnabled: pulumi.Input<string>;
-    objectLockRule?: pulumi.Input<inputs.CosBucketObjectLockConfigurationObjectLockConfigurationObjectLockRule>;
+    objectLockRule?: pulumi.Input<inputs.CosBucketObjectLockConfigurationObjectLockConfigurationObjectLockRule | undefined>;
 }
 
 export interface CosBucketObjectLockConfigurationObjectLockConfigurationObjectLockRule {
     /**
      * An object lock configuration on the object at a bucket level, in the form of a days , years and mode that establishes a point in time after which the object can be deleted. This is applied at bucket level hence it is by default applied to all the object in the bucket unless a seperate retention period is set on the object.
      */
-    defaultRetention?: pulumi.Input<inputs.CosBucketObjectLockConfigurationObjectLockConfigurationObjectLockRuleDefaultRetention>;
+    defaultRetention?: pulumi.Input<inputs.CosBucketObjectLockConfigurationObjectLockConfigurationObjectLockRuleDefaultRetention | undefined>;
 }
 
 export interface CosBucketObjectLockConfigurationObjectLockConfigurationObjectLockRuleDefaultRetention {
     /**
      * Retention period in terms of days after which the object can be deleted.
      */
-    days?: pulumi.Input<number>;
+    days?: pulumi.Input<number | undefined>;
     /**
-     * Retention modes apply different levels of protection to the objects.
+     * Retention modes apply different levels of protection to the objects. Valid values: COMPLIANCE, GOVERNANCE.
      */
     mode: pulumi.Input<string>;
     /**
      * Retention period in terms of years after which the object can be deleted.
      */
-    years?: pulumi.Input<number>;
+    years?: pulumi.Input<number | undefined>;
 }
 
 export interface CosBucketObjectVersioning {
     /**
      * Enable or suspend the versioning for objects in the bucket
      */
-    enable?: pulumi.Input<boolean>;
+    enable?: pulumi.Input<boolean | undefined>;
 }
 
 export interface CosBucketReplicationRuleReplicationRule {
     /**
      * Indicates whether to replicate delete markers. It should be either Enable or Disable
      */
-    deletemarkerReplicationStatus?: pulumi.Input<boolean>;
+    deletemarkerReplicationStatus?: pulumi.Input<boolean | undefined>;
     /**
      * The Cloud Resource Name (CRN) of the bucket where you want COS to store the results
      */
@@ -360,15 +360,15 @@ export interface CosBucketReplicationRuleReplicationRule {
     /**
      * The rule applies to any objects with keys that match this prefix
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * A priority is associated with each rule. There may be cases where multiple rules may be applicable to an object that is uploaded.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * A unique identifier for the rule. The maximum value is 255 characters.
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
 }
 
 export interface CosBucketRetentionRule {
@@ -387,30 +387,30 @@ export interface CosBucketRetentionRule {
     /**
      * Enable or disable the permanent retention policy on the bucket
      */
-    permanent?: pulumi.Input<boolean>;
+    permanent?: pulumi.Input<boolean | undefined>;
 }
 
 export interface CosBucketWebsiteConfigurationWebsiteConfiguration {
     /**
      * This is returned when an error occurs.
      */
-    errorDocument?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationErrorDocument>;
+    errorDocument?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationErrorDocument | undefined>;
     /**
      * Home or the default page of the website.
      */
-    indexDocument?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationIndexDocument>;
+    indexDocument?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationIndexDocument | undefined>;
     /**
      * Redirect requests can be set to specific page documents, individual routing rules, or redirect all requests globally to one bucket or domain.
      */
-    redirectAllRequestsTo?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationRedirectAllRequestsTo>;
+    redirectAllRequestsTo?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationRedirectAllRequestsTo | undefined>;
     /**
      * Rules that define when a redirect is applied and the redirect behavior.
      */
-    routingRule?: pulumi.Input<pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRule>[]>;
+    routingRule?: pulumi.Input<pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRule>[] | undefined>;
     /**
      * Rules that define when a redirect is applied and the redirect behavior.
      */
-    routingRules?: pulumi.Input<string>;
+    routingRules?: pulumi.Input<string | undefined>;
 }
 
 export interface CosBucketWebsiteConfigurationWebsiteConfigurationErrorDocument {
@@ -423,14 +423,14 @@ export interface CosBucketWebsiteConfigurationWebsiteConfigurationIndexDocument 
 
 export interface CosBucketWebsiteConfigurationWebsiteConfigurationRedirectAllRequestsTo {
     hostName: pulumi.Input<string>;
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
 }
 
 export interface CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRule {
     /**
      * A condition that must be met for the specified redirect to be applie.
      */
-    condition?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleCondition>;
+    condition?: pulumi.Input<inputs.CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleCondition | undefined>;
     /**
      * .
      */
@@ -441,34 +441,34 @@ export interface CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleCon
     /**
      * The HTTP error code when the redirect is applied. Valid codes are 4XX or 5XX..
      */
-    httpErrorCodeReturnedEquals?: pulumi.Input<string>;
+    httpErrorCodeReturnedEquals?: pulumi.Input<string | undefined>;
     /**
      * The object key name prefix when the redirect is applied..
      */
-    keyPrefixEquals?: pulumi.Input<string>;
+    keyPrefixEquals?: pulumi.Input<string | undefined>;
 }
 
 export interface CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRedirect {
     /**
      * The host name the request should be redirected to.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * The HTTP redirect code to use on the response. Valid codes are 3XX except 300..
      */
-    httpRedirectCode?: pulumi.Input<string>;
+    httpRedirectCode?: pulumi.Input<string | undefined>;
     /**
      * Protocol to be used in the Location header that is returned in the response.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The prefix of the object key name that replaces the value of KeyPrefixEquals in the redirect request.
      */
-    replaceKeyPrefixWith?: pulumi.Input<string>;
+    replaceKeyPrefixWith?: pulumi.Input<string | undefined>;
     /**
      * The object key to be used in the Location header that is returned in the response.
      */
-    replaceKeyWith?: pulumi.Input<string>;
+    replaceKeyWith?: pulumi.Input<string | undefined>;
 }
 
 export interface GetIsReservationCapacity {
@@ -498,23 +498,23 @@ export interface GetIsReservationCapacityArgs {
     /**
      * The amount allocated to this capacity reservation.
      */
-    allocated?: pulumi.Input<number>;
+    allocated?: pulumi.Input<number | undefined>;
     /**
      * The amount of this capacity reservation available for new attachments.
      */
-    available?: pulumi.Input<number>;
+    available?: pulumi.Input<number | undefined>;
     /**
      * The status of the capacity reservation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The total amount of this capacity reservation.
      */
-    total?: pulumi.Input<number>;
+    total?: pulumi.Input<number | undefined>;
     /**
      * The amount of this capacity reservation used by existing attachments.
      */
-    used?: pulumi.Input<number>;
+    used?: pulumi.Input<number | undefined>;
 }
 
 export interface GetIsReservationCommittedUse {
@@ -536,15 +536,15 @@ export interface GetIsReservationCommittedUseArgs {
     /**
      * The expiration date and time for this committed use reservation.
      */
-    expirationAt?: pulumi.Input<string>;
+    expirationAt?: pulumi.Input<string | undefined>;
     /**
      * The policy to apply when the committed use term expires.
      */
-    expirationPolicy?: pulumi.Input<string>;
+    expirationPolicy?: pulumi.Input<string | undefined>;
     /**
      * The term for this committed use reservation.
      */
-    term?: pulumi.Input<string>;
+    term?: pulumi.Input<string | undefined>;
 }
 
 export interface GetIsSnapshotSourceSnapshot {
@@ -582,31 +582,31 @@ export interface GetIsSnapshotSourceSnapshotArgs {
     /**
      * The CRN of the source snapshot.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.GetIsSnapshotSourceSnapshotDeletedArgs>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.GetIsSnapshotSourceSnapshotDeletedArgs>[] | undefined>;
     /**
      * The URL for the source snapshot.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the source snapshot.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for the source snapshot. The name is unique across all snapshots in the source snapshot's native region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource is remote to this region,and identifies the native region.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.GetIsSnapshotSourceSnapshotRemoteArgs>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.GetIsSnapshotSourceSnapshotRemoteArgs>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface GetIsSnapshotSourceSnapshotDeleted {
@@ -620,7 +620,7 @@ export interface GetIsSnapshotSourceSnapshotDeletedArgs {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface GetIsSnapshotSourceSnapshotRemote {
@@ -638,11 +638,11 @@ export interface GetIsSnapshotSourceSnapshotRemoteArgs {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface GetIsVirtualNetworkInterfaceFloatingIpDeleted {
@@ -666,8 +666,8 @@ export interface IamAccessGroupDynamicRuleCondition {
 }
 
 export interface IamAccessGroupMembersMember {
-    iamId?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccessGroupPolicyResourceAttribute {
@@ -678,7 +678,7 @@ export interface IamAccessGroupPolicyResourceAttribute {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -693,7 +693,7 @@ export interface IamAccessGroupPolicyResourceTag {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -704,50 +704,50 @@ export interface IamAccessGroupPolicyResources {
     /**
      * Set resource attributes in the form of 'name=value,name=value....
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Region of the policy definition
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Resource of the policy definition
      */
-    resource?: pulumi.Input<string>;
+    resource?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * ID of resource instance of the policy definition
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of the policy definition
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service name of the policy definition
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * Service group id of the policy definition
      */
-    serviceGroupId?: pulumi.Input<string>;
+    serviceGroupId?: pulumi.Input<string | undefined>;
     /**
      * Service type of the policy definition
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccessGroupPolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyRuleConditionCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupPolicyRuleConditionCondition>[] | undefined>;
     /**
      * Key of the condition
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Operator of the condition
      */
@@ -755,7 +755,7 @@ export interface IamAccessGroupPolicyRuleCondition {
     /**
      * Value of the condition
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamAccessGroupPolicyRuleConditionCondition {
@@ -777,19 +777,19 @@ export interface IamAccessGroupTemplateGroup {
     /**
      * Access group action controls component.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupActionControls | undefined>;
     /**
      * Assertions Input Component.
      */
-    assertions?: pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertions>;
+    assertions?: pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertions | undefined>;
     /**
      * Access group description. This is shown in child accounts.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Array of enterprise users to add to the template. All enterprise users that you add to the template must be invited to the child accounts where the template is assigned.
      */
-    members?: pulumi.Input<inputs.IamAccessGroupTemplateGroupMembers>;
+    members?: pulumi.Input<inputs.IamAccessGroupTemplateGroupMembers | undefined>;
     /**
      * Give the access group a unique name that doesn't conflict with other templates access group name in the given account. This is shown in child accounts.
      */
@@ -800,137 +800,137 @@ export interface IamAccessGroupTemplateGroupActionControls {
     /**
      * Control whether or not access group administrators in child accounts can add access policies to the enterprise-managed access group in their account.
      */
-    access?: pulumi.Input<inputs.IamAccessGroupTemplateGroupActionControlsAccess>;
+    access?: pulumi.Input<inputs.IamAccessGroupTemplateGroupActionControlsAccess | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupActionControlsAccess {
     /**
      * Action control for adding access policies to an enterprise-managed access group in a child account. If an access group administrator in a child account adds a policy, they can always update or remove it.
      */
-    add?: pulumi.Input<boolean>;
+    add?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupAssertions {
     /**
      * Control whether or not access group administrators in child accounts can add, remove, and update dynamic rules for the enterprise-managed access group in their account. The inner level RuleActionControls override these action controls.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsActionControls | undefined>;
     /**
      * Dynamic rules to automatically add federated users to access groups based on specific identity attributes.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsRule>[] | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupAssertionsActionControls {
     /**
      * Action control for adding dynamic rules to an enterprise-managed access group. If an access group administrator in a child account adds a dynamic rule, they can always update or remove it.
      */
-    add?: pulumi.Input<boolean>;
+    add?: pulumi.Input<boolean | undefined>;
     /**
      * Action control for removing enterprise-managed dynamic rules in an enterprise-managed access group.
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupAssertionsRule {
     /**
      * Control whether or not access group administrators in child accounts can update and remove this dynamic rule in the enterprise-managed access group in their account.This overrides outer level AssertionsActionControls.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsRuleActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsRuleActionControls | undefined>;
     /**
      * Conditions of membership. You can think of this as a key:value pair.
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsRuleCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateGroupAssertionsRuleCondition>[] | undefined>;
     /**
      * Session duration in hours. Access group membership is revoked after this time period expires. Users must log back in to refresh their access group membership.
      */
-    expiration?: pulumi.Input<number>;
+    expiration?: pulumi.Input<number | undefined>;
     /**
      * Dynamic rule name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The identity provider (IdP) URL.
      */
-    realmName?: pulumi.Input<string>;
+    realmName?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupAssertionsRuleActionControls {
     /**
      * Action control for removing this enterprise-managed dynamic rule.
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupAssertionsRuleCondition {
     /**
      * The key in the key:value pair.
      */
-    claim?: pulumi.Input<string>;
+    claim?: pulumi.Input<string | undefined>;
     /**
      * Compares the claim and the value.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * The value in the key:value pair.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupMembers {
     /**
      * Control whether or not access group administrators in child accounts can add and remove members from the enterprise-managed access group in their account.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupMembersActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateGroupMembersActionControls | undefined>;
     /**
      * Array of service IDs to add to the template.
      */
-    services?: pulumi.Input<pulumi.Input<string>[]>;
+    services?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Array of enterprise users to add to the template. All enterprise users that you add to the template must be invited to the child accounts where the template is assigned.
      */
-    users?: pulumi.Input<pulumi.Input<string>[]>;
+    users?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamAccessGroupTemplateGroupMembersActionControls {
     /**
      * Action control for adding child account members to an enterprise-managed access group. If an access group administrator in a child account adds a member, they can always remove them.
      */
-    add?: pulumi.Input<boolean>;
+    add?: pulumi.Input<boolean | undefined>;
     /**
      * Action control for removing enterprise-managed members from an enterprise-managed access group.
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplatePolicyTemplateReference {
     /**
      * Policy template ID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Policy template version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroup {
     /**
      * Access group action controls component.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupActionControls | undefined>;
     /**
      * Assertions Input Component.
      */
-    assertions?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertions>;
+    assertions?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertions | undefined>;
     /**
      * Access group description. This is shown in child accounts.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Array of enterprise users to add to the template. All enterprise users that you add to the template must be invited to the child accounts where the template is assigned.
      */
-    members?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupMembers>;
+    members?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupMembers | undefined>;
     /**
      * Give the access group a unique name that doesn't conflict with other templates access group name in the given account. This is shown in child accounts.
      */
@@ -941,118 +941,118 @@ export interface IamAccessGroupTemplateVersionGroupActionControls {
     /**
      * Control whether or not access group administrators in child accounts can add access policies to the enterprise-managed access group in their account.
      */
-    access?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupActionControlsAccess>;
+    access?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupActionControlsAccess | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupActionControlsAccess {
     /**
      * Action control for adding access policies to an enterprise-managed access group in a child account. If an access group administrator in a child account adds a policy, they can always update or remove it.
      */
-    add?: pulumi.Input<boolean>;
+    add?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupAssertions {
     /**
      * Control whether or not access group administrators in child accounts can add, remove, and update dynamic rules for the enterprise-managed access group in their account. The inner level RuleActionControls override these `remove` and `update` action controls.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsActionControls | undefined>;
     /**
      * Dynamic rules to automatically add federated users to access groups based on specific identity attributes.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsRule>[] | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupAssertionsActionControls {
     /**
      * Action control for adding dynamic rules to an enterprise-managed access group. If an access group administrator in a child account adds a dynamic rule, they can always update or remove it.
      */
-    add?: pulumi.Input<boolean>;
+    add?: pulumi.Input<boolean | undefined>;
     /**
      * Action control for removing enterprise-managed dynamic rules in an enterprise-managed access group.
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupAssertionsRule {
     /**
      * Control whether or not access group administrators in child accounts can update and remove this dynamic rule in the enterprise-managed access group in their account.This overrides outer level AssertionsActionControls.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsRuleActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsRuleActionControls | undefined>;
     /**
      * Conditions of membership. You can think of this as a key:value pair.
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsRuleCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupAssertionsRuleCondition>[] | undefined>;
     /**
      * Session duration in hours. Access group membership is revoked after this time period expires. Users must log back in to refresh their access group membership.
      */
-    expiration?: pulumi.Input<number>;
+    expiration?: pulumi.Input<number | undefined>;
     /**
      * Dynamic rule name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The identity provider (IdP) URL.
      */
-    realmName?: pulumi.Input<string>;
+    realmName?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupAssertionsRuleActionControls {
     /**
      * Action control for removing this enterprise-managed dynamic rule.
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupAssertionsRuleCondition {
     /**
      * The key in the key:value pair.
      */
-    claim?: pulumi.Input<string>;
+    claim?: pulumi.Input<string | undefined>;
     /**
      * Compares the claim and the value.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * The value in the key:value pair.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupMembers {
     /**
      * Control whether or not access group administrators in child accounts can add and remove members from the enterprise-managed access group in their account.
      */
-    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupMembersActionControls>;
+    actionControls?: pulumi.Input<inputs.IamAccessGroupTemplateVersionGroupMembersActionControls | undefined>;
     /**
      * Array of service IDs to add to the template.
      */
-    services?: pulumi.Input<pulumi.Input<string>[]>;
+    services?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Array of enterprise users to add to the template. All enterprise users that you add to the template must be invited to the child accounts where the template is assigned.
      */
-    users?: pulumi.Input<pulumi.Input<string>[]>;
+    users?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionGroupMembersActionControls {
     /**
      * Action control for adding child account members to an enterprise-managed access group. If an access group administrator in a child account adds a member, they can always remove them.
      */
-    add?: pulumi.Input<boolean>;
+    add?: pulumi.Input<boolean | undefined>;
     /**
      * Action control for removing enterprise-managed members from an enterprise-managed access group.
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccessGroupTemplateVersionPolicyTemplateReference {
     /**
      * Policy template ID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Policy template version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccountSettingsExternalInteractionExternalAccountIdentityInteraction {
@@ -1066,15 +1066,15 @@ export interface IamAccountSettingsExternalInteractionExternalAccountIdentityInt
     /**
      * The core set of properties associated with a service identity type.
      */
-    service?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionIdentityTypesService>;
+    service?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionIdentityTypesService | undefined>;
     /**
      * The core set of properties associated with a serviceID identity type.
      */
-    serviceId?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionIdentityTypesServiceId>;
+    serviceId?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionIdentityTypesServiceId | undefined>;
     /**
      * The core set of properties associated with a user identity type.
      */
-    user?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionIdentityTypesUser>;
+    user?: pulumi.Input<inputs.IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionIdentityTypesUser | undefined>;
 }
 
 export interface IamAccountSettingsExternalInteractionExternalAccountIdentityInteractionIdentityTypesService {
@@ -1114,105 +1114,105 @@ export interface IamAccountSettingsHistory {
     /**
      * Action of the history entry.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of the identity which triggered the action.
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * Account of the identity which triggered the action.
      */
-    iamIdAccount?: pulumi.Input<string>;
+    iamIdAccount?: pulumi.Input<string | undefined>;
     /**
      * Message which summarizes the executed action.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Params of the history entry.
      */
-    params?: pulumi.Input<pulumi.Input<string>[]>;
+    params?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Timestamp when the action was triggered.
      */
-    timestamp?: pulumi.Input<string>;
+    timestamp?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccountSettingsRestrictUserDomain {
     /**
      * The list of allowed email patterns. Wildcard syntax is supported, '*' represents any sequence of zero or more characters in the string, except for '.' and '@'. The sequence ends if a '.' or '@' was found. '**' represents any sequence of zero or more characters in the string - without limit.
      */
-    invitationEmailAllowPatterns?: pulumi.Input<pulumi.Input<string>[]>;
+    invitationEmailAllowPatterns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The realm that the restrictions apply to.
      */
-    realmId?: pulumi.Input<string>;
+    realmId?: pulumi.Input<string | undefined>;
     /**
      * When true invites will only be possible to the domain patterns provided, otherwise invites are unrestricted.
      */
-    restrictInvitation?: pulumi.Input<boolean>;
+    restrictInvitation?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccountSettingsTemplateAccountSettings {
     /**
      * Defines the IP addresses and subnets from which IAM tokens can be created for the account.
      */
-    allowedIpAddresses?: pulumi.Input<string>;
+    allowedIpAddresses?: pulumi.Input<string | undefined>;
     /**
      * Defines the max allowed sessions per identity required by the account. Valid values:  * Any whole number greater than 0  * NOT_SET - To unset account setting and use service default.
      */
-    maxSessionsPerIdentity?: pulumi.Input<string>;
+    maxSessionsPerIdentity?: pulumi.Input<string | undefined>;
     /**
      * Defines the MFA trait for the account. Valid values:  * NONE - No MFA trait set  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
      */
-    mfa?: pulumi.Input<string>;
+    mfa?: pulumi.Input<string | undefined>;
     /**
      * Defines whether or not creating platform API keys is access controlled. Valid values:  * RESTRICTED - to apply access control  * NOT_RESTRICTED - to remove access control  * NOT_SET - to 'unset' a previous set value.
      */
-    restrictCreatePlatformApikey?: pulumi.Input<string>;
+    restrictCreatePlatformApikey?: pulumi.Input<string | undefined>;
     /**
      * Defines whether or not creating a service ID is access controlled. Valid values:  * RESTRICTED - only users assigned the 'Service ID creator' role on the IAM Identity Service can create service IDs, including the account owner  * NOT_RESTRICTED - all members of an account can create service IDs  * NOT_SET - to 'unset' a previous set value.
      */
-    restrictCreateServiceId?: pulumi.Input<string>;
-    restrictUserDomains?: pulumi.Input<inputs.IamAccountSettingsTemplateAccountSettingsRestrictUserDomains>;
+    restrictCreateServiceId?: pulumi.Input<string | undefined>;
+    restrictUserDomains?: pulumi.Input<inputs.IamAccountSettingsTemplateAccountSettingsRestrictUserDomains | undefined>;
     /**
      * Defines whether or not user visibility is access controlled. Valid values:  * RESTRICTED - users can view only specific types of users in the account, such as those the user has invited to the account, or descendants of those users based on the classic infrastructure hierarchy  * NOT_RESTRICTED - any user in the account can view other users from the Users page in IBM Cloud console  * NOT_SET - to 'unset' a previous set value.
      */
-    restrictUserListVisibility?: pulumi.Input<string>;
+    restrictUserListVisibility?: pulumi.Input<string | undefined>;
     /**
      * Defines the session expiration in seconds for the account. Valid values:  * Any whole number between between '900' and '86400'  * NOT_SET - To unset account setting and use service default.
      */
-    sessionExpirationInSeconds?: pulumi.Input<string>;
+    sessionExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the period of time in seconds in which a session will be invalidated due to inactivity. Valid values:  * Any whole number between '900' and '7200'  * NOT_SET - To unset account setting and use service default.
      */
-    sessionInvalidationInSeconds?: pulumi.Input<string>;
+    sessionInvalidationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the access token expiration in seconds. Valid values:  * Any whole number between '900' and '3600'  * NOT_SET - To unset account setting and use service default.
      */
-    systemAccessTokenExpirationInSeconds?: pulumi.Input<string>;
+    systemAccessTokenExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * Defines the refresh token expiration in seconds. Valid values:  * Any whole number between '900' and '259200'  * NOT_SET - To unset account setting and use service default.
      */
-    systemRefreshTokenExpirationInSeconds?: pulumi.Input<string>;
+    systemRefreshTokenExpirationInSeconds?: pulumi.Input<string | undefined>;
     /**
      * List of users that are exempted from the MFA requirement of the account.
      */
-    userMfas?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAccountSettingsUserMfa>[]>;
+    userMfas?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAccountSettingsUserMfa>[] | undefined>;
 }
 
 export interface IamAccountSettingsTemplateAccountSettingsRestrictUserDomains {
-    accountSufficient?: pulumi.Input<boolean>;
+    accountSufficient?: pulumi.Input<boolean | undefined>;
     /**
      * Defines if account invitations are restricted to specified domains. To remove an entry for a realm_id, perform an update (PUT) request with only the realmId set.
      */
-    restrictions?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAccountSettingsRestrictUserDomainsRestriction>[]>;
+    restrictions?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAccountSettingsRestrictUserDomainsRestriction>[] | undefined>;
 }
 
 export interface IamAccountSettingsTemplateAccountSettingsRestrictUserDomainsRestriction {
     /**
      * The list of allowed email patterns. Wildcard syntax is supported, '*' represents any sequence of zero or more characters in the string, except for '.' and '@'. The sequence ends if a '.' or '@' was found. '**' represents any sequence of zero or more characters in the string - without limit.
      */
-    invitationEmailAllowPatterns?: pulumi.Input<pulumi.Input<string>[]>;
+    invitationEmailAllowPatterns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The realm that the restrictions apply to.
      */
@@ -1220,7 +1220,7 @@ export interface IamAccountSettingsTemplateAccountSettingsRestrictUserDomainsRes
     /**
      * When true invites will only be possible to the domain patterns provided, otherwise invites are unrestricted.
      */
-    restrictInvitation?: pulumi.Input<boolean>;
+    restrictInvitation?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IamAccountSettingsTemplateAccountSettingsUserMfa {
@@ -1234,188 +1234,87 @@ export interface IamAccountSettingsTemplateAccountSettingsUserMfa {
     mfa: pulumi.Input<string>;
 }
 
-export interface IamAccountSettingsTemplateAssignmentContext {
-    /**
-     * The cluster name.
-     */
-    clusterName?: pulumi.Input<string>;
-    /**
-     * The elapsed time in msec.
-     */
-    elapsedTime?: pulumi.Input<string>;
-    /**
-     * The finish time of the request.
-     */
-    endTime?: pulumi.Input<string>;
-    /**
-     * The host of the server instance processing the request.
-     */
-    host?: pulumi.Input<string>;
-    /**
-     * The instance ID of the server instance processing the request.
-     */
-    instanceId?: pulumi.Input<string>;
-    /**
-     * The operation of the inbound REST request.
-     */
-    operation?: pulumi.Input<string>;
-    /**
-     * The start time of the request.
-     */
-    startTime?: pulumi.Input<string>;
-    /**
-     * The thread ID of the server instance processing the request.
-     */
-    threadId?: pulumi.Input<string>;
-    /**
-     * The transaction ID of the inbound REST request.
-     */
-    transactionId?: pulumi.Input<string>;
-    /**
-     * The URL of that cluster.
-     */
-    url?: pulumi.Input<string>;
-    /**
-     * The user agent of the inbound REST request.
-     */
-    userAgent?: pulumi.Input<string>;
-}
-
-export interface IamAccountSettingsTemplateAssignmentHistory {
-    /**
-     * Action of the history entry.
-     */
-    action?: pulumi.Input<string>;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId?: pulumi.Input<string>;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount?: pulumi.Input<string>;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message?: pulumi.Input<string>;
-    /**
-     * Params of the history entry.
-     */
-    params?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp?: pulumi.Input<string>;
-}
-
 export interface IamAccountSettingsTemplateAssignmentResource {
-    accountSettings?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResourceAccountSetting>[]>;
+    accountSettings?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResourceAccountSetting>[] | undefined>;
     /**
      * Target account where the IAM resource is created.
      */
-    target: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccountSettingsTemplateAssignmentResourceAccountSetting {
     /**
      * Body parameters for assignment error.
      */
-    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResourceAccountSettingErrorMessage>[]>;
+    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResourceAccountSettingErrorMessage>[] | undefined>;
     /**
      * Body parameters for created resource.
      */
-    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResourceAccountSettingResourceCreated>[]>;
+    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamAccountSettingsTemplateAssignmentResourceAccountSettingResourceCreated>[] | undefined>;
     /**
      * Status for the target account's assignment.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccountSettingsTemplateAssignmentResourceAccountSettingErrorMessage {
     /**
      * Internal error code.
      */
-    errorCode?: pulumi.Input<string>;
+    errorCode?: pulumi.Input<string | undefined>;
     /**
      * Error message detailing the nature of the error.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Name of the error.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Internal status code for the error.
      */
-    statusCode?: pulumi.Input<string>;
+    statusCode?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccountSettingsTemplateAssignmentResourceAccountSettingResourceCreated {
     /**
      * Id of the created resource.
      */
-    id?: pulumi.Input<string>;
-}
-
-export interface IamAccountSettingsTemplateHistory {
-    /**
-     * Action of the history entry.
-     */
-    action?: pulumi.Input<string>;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId?: pulumi.Input<string>;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount?: pulumi.Input<string>;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message?: pulumi.Input<string>;
-    /**
-     * Params of the history entry.
-     */
-    params?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IamAccountSettingsUserMfa {
     /**
      * optional description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * email of the user.
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * The iamId of the user.
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * Defines the MFA requirement for the user. Valid values:  * NONE - No MFA trait set  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
      */
-    mfa?: pulumi.Input<string>;
+    mfa?: pulumi.Input<string | undefined>;
     /**
      * name of the user account.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * userName of the user.
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
 }
 
 export interface IamActionControlAssignmentResource {
     /**
      * Set of properties of the assigned resource or error message if assignment failed.
      */
-    actionControls?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControl>[]>;
+    actionControls?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControl>[] | undefined>;
     /**
      * assignment target details
      */
@@ -1426,90 +1325,90 @@ export interface IamActionControlAssignmentResourceActionControl {
     /**
      * The error response from API.
      */
-    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessage>[]>;
+    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessage>[] | undefined>;
     /**
      * On success, it includes the action control assigned.
      */
-    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlResourceCreated>[]>;
+    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlResourceCreated>[] | undefined>;
 }
 
 export interface IamActionControlAssignmentResourceActionControlErrorMessage {
     /**
      * Internal status code for the error.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * Internal error code.
      */
-    errorCode?: pulumi.Input<string>;
+    errorCode?: pulumi.Input<string | undefined>;
     /**
      * The errors encountered during the response.
      */
-    errors?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessageError>[]>;
+    errors?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessageError>[] | undefined>;
     /**
      * Error message detailing the nature of the error.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Name of the error.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The HTTP error code of the response.
      */
-    statusCode?: pulumi.Input<number>;
+    statusCode?: pulumi.Input<number | undefined>;
     /**
      * The unique transaction ID for the request.
      */
-    trace?: pulumi.Input<string>;
+    trace?: pulumi.Input<string | undefined>;
 }
 
 export interface IamActionControlAssignmentResourceActionControlErrorMessageError {
     /**
      * The API error code for the error.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * Additional error details.
      */
-    details?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessageErrorDetail>[]>;
+    details?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessageErrorDetail>[] | undefined>;
     /**
      * The error message returned by the API.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Additional info for error.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IamActionControlAssignmentResourceActionControlErrorMessageErrorDetail {
     /**
      * Details of conflicting resource.
      */
-    conflictsWiths?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessageErrorDetailConflictsWith>[]>;
+    conflictsWiths?: pulumi.Input<pulumi.Input<inputs.IamActionControlAssignmentResourceActionControlErrorMessageErrorDetailConflictsWith>[] | undefined>;
 }
 
 export interface IamActionControlAssignmentResourceActionControlErrorMessageErrorDetailConflictsWith {
     /**
      * The revision number of the resource.
      */
-    etag?: pulumi.Input<string>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * The conflicting policy ID.
      */
-    policy?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
     /**
      * The conflicting role of ID.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
 }
 
 export interface IamActionControlAssignmentResourceActionControlResourceCreated {
     /**
      * action control id.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IamActionControlAssignmentTemplates {
@@ -1531,7 +1430,7 @@ export interface IamActionControlTemplateActionControl {
     /**
      * Description of the action control.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The service name that the action control refers.
      */
@@ -1546,7 +1445,7 @@ export interface IamActionControlTemplateVersionActionControl {
     /**
      * Description of the action control.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The service name that the action control refers.
      */
@@ -1561,7 +1460,7 @@ export interface IamAuthorizationPolicyResourceAttribute {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -1576,18 +1475,111 @@ export interface IamAuthorizationPolicySubjectAttribute {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
     value: pulumi.Input<string>;
 }
 
+export interface IamIdpProperties {
+    /**
+     * Identity Provider configuration.
+     */
+    idp?: pulumi.Input<inputs.IamIdpPropertiesIdp | undefined>;
+    /**
+     * Service Provider configuration.
+     */
+    sp?: pulumi.Input<inputs.IamIdpPropertiesSp | undefined>;
+}
+
+export interface IamIdpPropertiesIdp {
+    /**
+     * SAML IDP entity ID. Required for SAML when xmlImport is false.
+     */
+    entityId?: pulumi.Input<string | undefined>;
+    /**
+     * SAML IDP logout URL (optional).
+     */
+    logoutUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Redirect binding URL. Required for SAML when xmlImport is false.
+     */
+    redirectBindingUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates if IDP wants requests to be signed.
+     */
+    wantRequestSigned?: pulumi.Input<boolean | undefined>;
+    /**
+     * Flag indicating if IdP should be imported from metadata.xml.
+     */
+    xmlImport?: pulumi.Input<boolean | undefined>;
+}
+
+export interface IamIdpPropertiesSp {
+    /**
+     * Indicates if responses should be encrypted.
+     */
+    encryptResponse?: pulumi.Input<boolean | undefined>;
+    /**
+     * Enables IDP-initiated login.
+     */
+    idpInitiatedLoginEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * URLs for IDP-initiated login.
+     */
+    idpInitiatedUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Enables logout URL when available.
+     */
+    logoutUrlEnabledWhenAvailable?: pulumi.Input<boolean | undefined>;
+    /**
+     * Indicates if SP wants assertions to be signed.
+     */
+    wantAssertionSigned?: pulumi.Input<boolean | undefined>;
+    /**
+     * Indicates if SP wants responses to be signed.
+     */
+    wantResponseSigned?: pulumi.Input<boolean | undefined>;
+}
+
+export interface IamIdpSecrets {
+    /**
+     * Identity Provider secrets.
+     */
+    idp?: pulumi.Input<inputs.IamIdpSecretsIdp | undefined>;
+    /**
+     * Service Provider secrets.
+     */
+    sp?: pulumi.Input<inputs.IamIdpSecretsSp | undefined>;
+}
+
+export interface IamIdpSecretsIdp {
+    /**
+     * Flag indicating if secrets should be imported from metadata.xml.
+     */
+    xmlImport?: pulumi.Input<boolean | undefined>;
+}
+
+export interface IamIdpSecretsSp {
+}
+
+export interface IamIdpShareScope {
+    /**
+     * ID of the account or enterprise.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Type of share scope. Valid values: account, enterprise.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
 export interface IamPolicyAssignmentResource {
     /**
      * Set of properties for the assigned resource.
      */
-    policies?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicy>[]>;
+    policies?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicy>[] | undefined>;
     /**
      * assignment target details
      */
@@ -1598,94 +1590,94 @@ export interface IamPolicyAssignmentResourcePolicy {
     /**
      * The error response from API.
      */
-    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessage>[]>;
+    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessage>[] | undefined>;
     /**
      * On success, includes the  policy assigned.
      */
-    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyResourceCreated>[]>;
+    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyResourceCreated>[] | undefined>;
     /**
      * policy status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface IamPolicyAssignmentResourcePolicyErrorMessage {
     /**
      * Internal status code for the error.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * Internal error code.
      */
-    errorCode?: pulumi.Input<string>;
+    errorCode?: pulumi.Input<string | undefined>;
     /**
      * The errors encountered during the response.
      */
-    errors?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessageError>[]>;
+    errors?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessageError>[] | undefined>;
     /**
      * Error message detailing the nature of the error.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Name of the error.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The HTTP error code of the response.
      */
-    statusCode?: pulumi.Input<number>;
+    statusCode?: pulumi.Input<number | undefined>;
     /**
      * The unique transaction ID for the request.
      */
-    trace?: pulumi.Input<string>;
+    trace?: pulumi.Input<string | undefined>;
 }
 
 export interface IamPolicyAssignmentResourcePolicyErrorMessageError {
     /**
      * The API error code for the error.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * Additional error details.
      */
-    details?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessageErrorDetail>[]>;
+    details?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessageErrorDetail>[] | undefined>;
     /**
      * The error message returned by the API.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Additional info for error.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IamPolicyAssignmentResourcePolicyErrorMessageErrorDetail {
     /**
      * Details of conflicting resource.
      */
-    conflictsWiths?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessageErrorDetailConflictsWith>[]>;
+    conflictsWiths?: pulumi.Input<pulumi.Input<inputs.IamPolicyAssignmentResourcePolicyErrorMessageErrorDetailConflictsWith>[] | undefined>;
 }
 
 export interface IamPolicyAssignmentResourcePolicyErrorMessageErrorDetailConflictsWith {
     /**
      * The revision number of the resource.
      */
-    etag?: pulumi.Input<string>;
+    etag?: pulumi.Input<string | undefined>;
     /**
      * The conflicting policy id.
      */
-    policy?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
     /**
      * The conflicting role id.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
 }
 
 export interface IamPolicyAssignmentResourcePolicyResourceCreated {
     /**
      * policy id.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IamPolicyAssignmentTemplates {
@@ -1703,31 +1695,35 @@ export interface IamPolicyTemplatePolicy {
     /**
      * Allows the customer to use their own words to record the purpose/context related to a policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Indicates pattern of rule, either 'time-based-conditions:once', 'time-based-conditions:weekly:all-day', or 'time-based-conditions:weekly:custom-hours'.
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * The resource attributes to which the policy grants access.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyResource>[] | undefined>;
+    /**
+     * Role template references for assignment.
+     */
+    roleTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyRoleTemplateReference>[] | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
+    ruleOperator?: pulumi.Input<string | undefined>;
     /**
      * The subject attributes for authorization type templates
      */
-    subjects?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicySubject>[]>;
+    subjects?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicySubject>[] | undefined>;
     /**
      * The policy type; either 'access' or 'authorization'.
      */
@@ -1742,7 +1738,7 @@ export interface IamPolicyTemplatePolicyResource {
     /**
      * Optional list of resource tags to which the policy grants access.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyResourceTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyResourceTag>[] | undefined>;
 }
 
 export interface IamPolicyTemplatePolicyResourceAttribute {
@@ -1775,15 +1771,26 @@ export interface IamPolicyTemplatePolicyResourceTag {
     value: pulumi.Input<string>;
 }
 
+export interface IamPolicyTemplatePolicyRoleTemplateReference {
+    /**
+     * Role template id
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Role template version
+     */
+    version: pulumi.Input<string>;
+}
+
 export interface IamPolicyTemplatePolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyRuleConditionCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplatePolicyRuleConditionCondition>[] | undefined>;
     /**
      * Key of the condition
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Operator of the condition
      */
@@ -1791,7 +1798,7 @@ export interface IamPolicyTemplatePolicyRuleCondition {
     /**
      * Value of the condition
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamPolicyTemplatePolicyRuleConditionCondition {
@@ -1835,31 +1842,35 @@ export interface IamPolicyTemplateVersionPolicy {
     /**
      * Allows the customer to use their own words to record the purpose/context related to a policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Indicates pattern of rule, either 'time-based-conditions:once', 'time-based-conditions:weekly:all-day', or 'time-based-conditions:weekly:custom-hours'.
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
     /**
      * The resource attributes to which the policy grants access.
      */
-    resource?: pulumi.Input<inputs.IamPolicyTemplateVersionPolicyResource>;
+    resource?: pulumi.Input<inputs.IamPolicyTemplateVersionPolicyResource | undefined>;
+    /**
+     * Role template references for assignment.
+     */
+    roleTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicyRoleTemplateReference>[] | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule conditions enforced by the policy
      */
-    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicyRuleCondition>[]>;
+    ruleConditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicyRuleCondition>[] | undefined>;
     /**
      * Operator that multiple rule conditions are evaluated over
      */
-    ruleOperator?: pulumi.Input<string>;
+    ruleOperator?: pulumi.Input<string | undefined>;
     /**
      * The subject attributes for authorization type templates
      */
-    subjects?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicySubject>[]>;
+    subjects?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicySubject>[] | undefined>;
     /**
      * The policy type; either 'access' or 'authorization'.
      */
@@ -1874,7 +1885,7 @@ export interface IamPolicyTemplateVersionPolicyResource {
     /**
      * Optional list of resource tags to which the policy grants access.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicyResourceTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicyResourceTag>[] | undefined>;
 }
 
 export interface IamPolicyTemplateVersionPolicyResourceAttribute {
@@ -1907,15 +1918,26 @@ export interface IamPolicyTemplateVersionPolicyResourceTag {
     value: pulumi.Input<string>;
 }
 
+export interface IamPolicyTemplateVersionPolicyRoleTemplateReference {
+    /**
+     * Role template id
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Role template version
+     */
+    version: pulumi.Input<string>;
+}
+
 export interface IamPolicyTemplateVersionPolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicyRuleConditionCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamPolicyTemplateVersionPolicyRuleConditionCondition>[] | undefined>;
     /**
      * Key of the condition
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Operator of the condition
      */
@@ -1923,7 +1945,7 @@ export interface IamPolicyTemplateVersionPolicyRuleCondition {
     /**
      * Value of the condition
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamPolicyTemplateVersionPolicyRuleConditionCondition {
@@ -1963,6 +1985,175 @@ export interface IamPolicyTemplateVersionPolicySubjectAttribute {
     value: pulumi.Input<string>;
 }
 
+export interface IamRoleAssignmentResource {
+    /**
+     * Set of properties of the assigned resource or error message if assignment failed.
+     */
+    roles?: pulumi.Input<pulumi.Input<inputs.IamRoleAssignmentResourceRole>[] | undefined>;
+    /**
+     * assignment target details
+     */
+    target: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface IamRoleAssignmentResourceRole {
+    /**
+     * The error response from API.
+     */
+    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamRoleAssignmentResourceRoleErrorMessage>[] | undefined>;
+    /**
+     * On success, it includes the role assigned.
+     */
+    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamRoleAssignmentResourceRoleResourceCreated>[] | undefined>;
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessage {
+    /**
+     * Internal status code for the error.
+     */
+    code?: pulumi.Input<string | undefined>;
+    /**
+     * Internal error code.
+     */
+    errorCode?: pulumi.Input<string | undefined>;
+    /**
+     * The errors encountered during the response.
+     */
+    errors?: pulumi.Input<pulumi.Input<inputs.IamRoleAssignmentResourceRoleErrorMessageError>[] | undefined>;
+    /**
+     * Error message detailing the nature of the error.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the error.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The HTTP error code of the response.
+     */
+    statusCode?: pulumi.Input<number | undefined>;
+    /**
+     * The unique transaction ID for the request.
+     */
+    trace?: pulumi.Input<string | undefined>;
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessageError {
+    /**
+     * The API error code for the error.
+     */
+    code?: pulumi.Input<string | undefined>;
+    /**
+     * Additional error details.
+     */
+    details?: pulumi.Input<pulumi.Input<inputs.IamRoleAssignmentResourceRoleErrorMessageErrorDetail>[] | undefined>;
+    /**
+     * The error message returned by the API.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * Additional info for error.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessageErrorDetail {
+    /**
+     * Details of conflicting resource.
+     */
+    conflictsWiths?: pulumi.Input<pulumi.Input<inputs.IamRoleAssignmentResourceRoleErrorMessageErrorDetailConflictsWith>[] | undefined>;
+}
+
+export interface IamRoleAssignmentResourceRoleErrorMessageErrorDetailConflictsWith {
+    /**
+     * The revision number of the resource.
+     */
+    etag?: pulumi.Input<string | undefined>;
+    /**
+     * The conflicting policy ID.
+     */
+    policy?: pulumi.Input<string | undefined>;
+    /**
+     * The conflicting role of ID.
+     */
+    role?: pulumi.Input<string | undefined>;
+}
+
+export interface IamRoleAssignmentResourceRoleResourceCreated {
+    /**
+     * role id.
+     */
+    id?: pulumi.Input<string | undefined>;
+}
+
+export interface IamRoleAssignmentTarget {
+    /**
+     * ID of the target account.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * Assignment target type.
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface IamRoleAssignmentTemplates {
+    /**
+     * role template id.
+     */
+    id: pulumi.Input<string>;
+    /**
+     * role template version.
+     */
+    version: pulumi.Input<string>;
+}
+
+export interface IamRoleTemplateRole {
+    /**
+     * The actions of the role.
+     */
+    actions: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Description of the role.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * The display the name of the role that is shown in the console.
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * The name of the role that is used in the CRN. This must be alphanumeric and capitalized.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The service name that the role refers.
+     */
+    serviceName: pulumi.Input<string>;
+}
+
+export interface IamRoleTemplateVersionRole {
+    /**
+     * The actions of the role.
+     */
+    actions: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Description of the role.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * The display the name of the role that is shown in the console.
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * The name of the role that is used in the CRN. This must be alphanumeric and capitalized.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The service name that the role refers.
+     */
+    serviceName?: pulumi.Input<string | undefined>;
+}
+
 export interface IamServicePolicyResourceAttribute {
     /**
      * Name of attribute.
@@ -1971,7 +2162,7 @@ export interface IamServicePolicyResourceAttribute {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -1986,7 +2177,7 @@ export interface IamServicePolicyResourceTag {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -1997,50 +2188,50 @@ export interface IamServicePolicyResources {
     /**
      * Set resource attributes in the form of 'name=value,name=value....
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Region of the policy definition
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Resource of the policy definition
      */
-    resource?: pulumi.Input<string>;
+    resource?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * ID of resource instance of the policy definition
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of the policy definition
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service name of the policy definition
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * Service group id of the policy definition
      */
-    serviceGroupId?: pulumi.Input<string>;
+    serviceGroupId?: pulumi.Input<string | undefined>;
     /**
      * Service type of the policy definition
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IamServicePolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyRuleConditionCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamServicePolicyRuleConditionCondition>[] | undefined>;
     /**
      * Key of the condition
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Operator of the condition
      */
@@ -2048,7 +2239,7 @@ export interface IamServicePolicyRuleCondition {
     /**
      * Value of the condition
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamServicePolicyRuleConditionCondition {
@@ -2064,6 +2255,17 @@ export interface IamServicePolicyRuleConditionCondition {
      * Value of the condition
      */
     values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface IamTrustedProfileActivity {
+    /**
+     * Authentication count, number of times the entity was authenticated.
+     */
+    authnCount?: pulumi.Input<number | undefined>;
+    /**
+     * Time when the entity was last authenticated.
+     */
+    lastAuthn?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileClaimRuleCondition {
@@ -2085,38 +2287,38 @@ export interface IamTrustedProfileHistory {
     /**
      * Action of the history entry.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of the identity which triggered the action.
      */
-    iamId?: pulumi.Input<string>;
+    iamId?: pulumi.Input<string | undefined>;
     /**
      * Account of the identity which triggered the action.
      */
-    iamIdAccount?: pulumi.Input<string>;
+    iamIdAccount?: pulumi.Input<string | undefined>;
     /**
      * Message which summarizes the executed action.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Params of the history entry.
      */
-    params?: pulumi.Input<pulumi.Input<string>[]>;
+    params?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Timestamp when the action was triggered.
      */
-    timestamp?: pulumi.Input<string>;
+    timestamp?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileIdentitiesIdentity {
     /**
      * Only valid for the type user. Accounts from which a user can assume the trusted profile.
      */
-    accounts?: pulumi.Input<pulumi.Input<string>[]>;
+    accounts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Description of the identity that can assume the trusted profile. This is optional field for all the types of identities. When this field is not set for the identity type 'serviceid' then the description of the service id is used. Description is recommended for the identity type 'crn' E.g. 'Instance 1234 of IBM Cloud Service project'.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of the identity.
      */
@@ -2135,23 +2337,23 @@ export interface IamTrustedProfileLinkLink {
     /**
      * Component name of the compute resource, only required if crType is CE.
      */
-    componentName?: pulumi.Input<string>;
+    componentName?: pulumi.Input<string | undefined>;
     /**
      * Component type of the compute resource, only required if crType is CE.
      */
-    componentType?: pulumi.Input<string>;
+    componentType?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the compute resource.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Name of the compute resource, only required if crType is IKS_SA or ROKS_SA.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The compute resource namespace, only required if crType is IKS_SA or ROKS_SA.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfilePolicyResourceAttribute {
@@ -2162,7 +2364,7 @@ export interface IamTrustedProfilePolicyResourceAttribute {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -2177,7 +2379,7 @@ export interface IamTrustedProfilePolicyResourceTag {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -2188,50 +2390,50 @@ export interface IamTrustedProfilePolicyResources {
     /**
      * Set resource attributes in the form of 'name=value,name=value....
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Region of the policy definition
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Resource of the policy definition
      */
-    resource?: pulumi.Input<string>;
+    resource?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * ID of resource instance of the policy definition
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of the policy definition
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service name of the policy definition
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * Service group id of the policy definition
      */
-    serviceGroupId?: pulumi.Input<string>;
+    serviceGroupId?: pulumi.Input<string | undefined>;
     /**
      * Service type of the policy definition
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfilePolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyRuleConditionCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfilePolicyRuleConditionCondition>[] | undefined>;
     /**
      * Key of the condition
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Operator of the condition
      */
@@ -2239,7 +2441,7 @@ export interface IamTrustedProfilePolicyRuleCondition {
     /**
      * Value of the condition
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamTrustedProfilePolicyRuleConditionCondition {
@@ -2257,215 +2459,114 @@ export interface IamTrustedProfilePolicyRuleConditionCondition {
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface IamTrustedProfileTemplateAssignmentContext {
-    /**
-     * The cluster name.
-     */
-    clusterName?: pulumi.Input<string>;
-    /**
-     * The elapsed time in msec.
-     */
-    elapsedTime?: pulumi.Input<string>;
-    /**
-     * The finish time of the request.
-     */
-    endTime?: pulumi.Input<string>;
-    /**
-     * The host of the server instance processing the request.
-     */
-    host?: pulumi.Input<string>;
-    /**
-     * The instance ID of the server instance processing the request.
-     */
-    instanceId?: pulumi.Input<string>;
-    /**
-     * The operation of the inbound REST request.
-     */
-    operation?: pulumi.Input<string>;
-    /**
-     * The start time of the request.
-     */
-    startTime?: pulumi.Input<string>;
-    /**
-     * The thread ID of the server instance processing the request.
-     */
-    threadId?: pulumi.Input<string>;
-    /**
-     * The transaction ID of the inbound REST request.
-     */
-    transactionId?: pulumi.Input<string>;
-    /**
-     * The URL of that cluster.
-     */
-    url?: pulumi.Input<string>;
-    /**
-     * The user agent of the inbound REST request.
-     */
-    userAgent?: pulumi.Input<string>;
-}
-
-export interface IamTrustedProfileTemplateAssignmentHistory {
-    /**
-     * Action of the history entry.
-     */
-    action?: pulumi.Input<string>;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId?: pulumi.Input<string>;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount?: pulumi.Input<string>;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message?: pulumi.Input<string>;
-    /**
-     * Params of the history entry.
-     */
-    params?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp?: pulumi.Input<string>;
-}
-
 export interface IamTrustedProfileTemplateAssignmentResource {
     /**
      * Policy resource(s) included only for trusted profile assignments with policy references.
      */
-    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReference>[]>;
-    profiles?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourceProfile>[]>;
+    policyTemplateReferences?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReference>[] | undefined>;
+    profiles?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourceProfile>[] | undefined>;
     /**
      * Target account where the IAM resource is created.
      */
-    target: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReference {
     /**
      * Body parameters for assignment error.
      */
-    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReferenceErrorMessage>[]>;
+    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReferenceErrorMessage>[] | undefined>;
     /**
      * Policy Template Id, only returned for a profile assignment with policy references.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Body parameters for created resource.
      */
-    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReferenceResourceCreated>[]>;
+    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReferenceResourceCreated>[] | undefined>;
     /**
      * Status for the target account's assignment.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Policy version, only returned for a profile assignment with policy references.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReferenceErrorMessage {
     /**
      * Internal error code.
      */
-    errorCode?: pulumi.Input<string>;
+    errorCode?: pulumi.Input<string | undefined>;
     /**
      * Error message detailing the nature of the error.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Name of the error.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Internal status code for the error.
      */
-    statusCode?: pulumi.Input<string>;
+    statusCode?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileTemplateAssignmentResourcePolicyTemplateReferenceResourceCreated {
     /**
      * Id of the created resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileTemplateAssignmentResourceProfile {
     /**
      * Body parameters for assignment error.
      */
-    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourceProfileErrorMessage>[]>;
+    errorMessages?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourceProfileErrorMessage>[] | undefined>;
     /**
      * Policy Template Id, only returned for a profile assignment with policy references.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Body parameters for created resource.
      */
-    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourceProfileResourceCreated>[]>;
+    resourceCreateds?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateAssignmentResourceProfileResourceCreated>[] | undefined>;
     /**
      * Status for the target account's assignment.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Policy version, only returned for a profile assignment with policy references.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileTemplateAssignmentResourceProfileErrorMessage {
     /**
      * Internal error code.
      */
-    errorCode?: pulumi.Input<string>;
+    errorCode?: pulumi.Input<string | undefined>;
     /**
      * Error message detailing the nature of the error.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Name of the error.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Internal status code for the error.
      */
-    statusCode?: pulumi.Input<string>;
+    statusCode?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileTemplateAssignmentResourceProfileResourceCreated {
     /**
      * Id of the created resource.
      */
-    id?: pulumi.Input<string>;
-}
-
-export interface IamTrustedProfileTemplateHistory {
-    /**
-     * Action of the history entry.
-     */
-    action?: pulumi.Input<string>;
-    /**
-     * IAM ID of the identity which triggered the action.
-     */
-    iamId?: pulumi.Input<string>;
-    /**
-     * Account of the identity which triggered the action.
-     */
-    iamIdAccount?: pulumi.Input<string>;
-    /**
-     * Message which summarizes the executed action.
-     */
-    message?: pulumi.Input<string>;
-    /**
-     * Params of the history entry.
-     */
-    params?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Timestamp when the action was triggered.
-     */
-    timestamp?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IamTrustedProfileTemplatePolicyTemplateReference {
@@ -2483,11 +2584,11 @@ export interface IamTrustedProfileTemplateProfile {
     /**
      * Description of the Profile.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Identities for the Profile.
      */
-    identities?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateProfileIdentity>[]>;
+    identities?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateProfileIdentity>[] | undefined>;
     /**
      * Name of the Profile.
      */
@@ -2495,18 +2596,18 @@ export interface IamTrustedProfileTemplateProfile {
     /**
      * Rules for the Profile.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateProfileRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IamTrustedProfileTemplateProfileRule>[] | undefined>;
 }
 
 export interface IamTrustedProfileTemplateProfileIdentity {
     /**
      * Only valid for the type user. Accounts from which a user can assume the trusted profile.
      */
-    accounts?: pulumi.Input<pulumi.Input<string>[]>;
+    accounts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Description of the identity that can assume the trusted profile. This is optional field for all the types of identities. When this field is not set for the identity type 'serviceid' then the description of the service id is used. Description is recommended for the identity type 'crn' E.g. 'Instance 1234 of IBM Cloud Service project'.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * IAM ID of the identity.
      */
@@ -2529,15 +2630,15 @@ export interface IamTrustedProfileTemplateProfileRule {
     /**
      * Session expiration in seconds, only required if type is 'Profile-SAML'.
      */
-    expiration?: pulumi.Input<number>;
+    expiration?: pulumi.Input<number | undefined>;
     /**
      * Name of the claim rule to be created or updated.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The realm name of the Idp this claim rule applies to. This field is required only if the type is specified as 'Profile-SAML'.
      */
-    realmName?: pulumi.Input<string>;
+    realmName?: pulumi.Input<string | undefined>;
     /**
      * Type of the claim rule.
      */
@@ -2563,11 +2664,11 @@ export interface IamUserInviteClassicInfraRole {
     /**
      * permission set for claasic infrastructure
      */
-    permissionSet?: pulumi.Input<string>;
+    permissionSet?: pulumi.Input<string | undefined>;
     /**
      * List of permissions for claasic infrastructure
      */
-    permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamUserInviteCloudFoundryRole {
@@ -2579,7 +2680,7 @@ export interface IamUserInviteCloudFoundryRole {
      * GUID of Organization
      */
     organizationGuid: pulumi.Input<string>;
-    spaces?: pulumi.Input<pulumi.Input<inputs.IamUserInviteCloudFoundryRoleSpace>[]>;
+    spaces?: pulumi.Input<pulumi.Input<inputs.IamUserInviteCloudFoundryRoleSpace>[] | undefined>;
 }
 
 export interface IamUserInviteCloudFoundryRoleSpace {
@@ -2597,8 +2698,8 @@ export interface IamUserInviteIamPolicy {
     /**
      * Give access to all account management services
      */
-    accountManagement?: pulumi.Input<boolean>;
-    resources?: pulumi.Input<pulumi.Input<inputs.IamUserInviteIamPolicyResource>[]>;
+    accountManagement?: pulumi.Input<boolean | undefined>;
+    resources?: pulumi.Input<pulumi.Input<inputs.IamUserInviteIamPolicyResource>[] | undefined>;
     /**
      * Role names of the policy definition
      */
@@ -2609,139 +2710,139 @@ export interface IamUserInviteIamPolicyResource {
     /**
      * Set resource attributes in the form of 'name=value,name=value....
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Region of the policy definition
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Resource of the policy definition
      */
-    resource?: pulumi.Input<string>;
+    resource?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * ID of resource instance of the policy definition
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of the policy definition
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service name of the policy definition
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
 }
 
 export interface IamUserInviteInvitedUser {
     /**
      * access group ids to associate the inviting user
      */
-    accessGroups?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserAccessGroup>[]>;
+    accessGroups?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserAccessGroup>[] | undefined>;
     /**
      * ibm id or email of user
      */
-    userId?: pulumi.Input<string>;
-    userPolicies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserUserPolicy>[]>;
+    userId?: pulumi.Input<string | undefined>;
+    userPolicies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserUserPolicy>[] | undefined>;
 }
 
 export interface IamUserInviteInvitedUserAccessGroup {
     /**
      * Name of the access group
      */
-    name?: pulumi.Input<string>;
-    policies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserAccessGroupPolicy>[]>;
+    name?: pulumi.Input<string | undefined>;
+    policies?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserAccessGroupPolicy>[] | undefined>;
 }
 
 export interface IamUserInviteInvitedUserAccessGroupPolicy {
-    id?: pulumi.Input<string>;
-    resources?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserAccessGroupPolicyResource>[]>;
+    id?: pulumi.Input<string | undefined>;
+    resources?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserAccessGroupPolicyResource>[] | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamUserInviteInvitedUserAccessGroupPolicyResource {
     /**
      * Set resource attributes in the form of 'name=value,name=value....
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Region of the policy definition
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Resource of the policy definition
      */
-    resource?: pulumi.Input<string>;
+    resource?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * ID of resource instance of the policy definition
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of the policy definition
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service name of the policy definition
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * Service type of the policy definition
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IamUserInviteInvitedUserUserPolicy {
-    id?: pulumi.Input<string>;
-    resources?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserUserPolicyResource>[]>;
+    id?: pulumi.Input<string | undefined>;
+    resources?: pulumi.Input<pulumi.Input<inputs.IamUserInviteInvitedUserUserPolicyResource>[] | undefined>;
     /**
      * Role names of the policy definition
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamUserInviteInvitedUserUserPolicyResource {
     /**
      * Set resource attributes in the form of 'name=value,name=value....
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Region of the policy definition
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Resource of the policy definition
      */
-    resource?: pulumi.Input<string>;
+    resource?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * ID of resource instance of the policy definition
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of the policy definition
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service name of the policy definition
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * Service type of the policy definition
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IamUserPolicyResourceAttribute {
@@ -2752,7 +2853,7 @@ export interface IamUserPolicyResourceAttribute {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -2767,7 +2868,7 @@ export interface IamUserPolicyResourceTag {
     /**
      * Operator of attribute.
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Value of attribute.
      */
@@ -2778,50 +2879,50 @@ export interface IamUserPolicyResources {
     /**
      * Set resource attributes in the form of 'name=value,name=value....
      */
-    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Region of the policy definition
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * Resource of the policy definition
      */
-    resource?: pulumi.Input<string>;
+    resource?: pulumi.Input<string | undefined>;
     /**
      * ID of the resource group.
      */
-    resourceGroupId?: pulumi.Input<string>;
+    resourceGroupId?: pulumi.Input<string | undefined>;
     /**
      * ID of resource instance of the policy definition
      */
-    resourceInstanceId?: pulumi.Input<string>;
+    resourceInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Resource type of the policy definition
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service name of the policy definition
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
     /**
      * Service group id of the policy definition
      */
-    serviceGroupId?: pulumi.Input<string>;
+    serviceGroupId?: pulumi.Input<string | undefined>;
     /**
      * Service type of the policy definition
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IamUserPolicyRuleCondition {
     /**
      * Additional Rule conditions enforced by the policy
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyRuleConditionCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.IamUserPolicyRuleConditionCondition>[] | undefined>;
     /**
      * Key of the condition
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Operator of the condition
      */
@@ -2829,7 +2930,7 @@ export interface IamUserPolicyRuleCondition {
     /**
      * Value of the condition
      */
-    values?: pulumi.Input<pulumi.Input<string>[]>;
+    values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IamUserPolicyRuleConditionCondition {
@@ -2851,48 +2952,48 @@ export interface IsBackupPolicyHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBackupPolicyPlanClonePolicy {
     /**
      * The maximum number of recent snapshots (per source) that will keep clones.
      */
-    maxSnapshots?: pulumi.Input<number>;
+    maxSnapshots?: pulumi.Input<number | undefined>;
     /**
      * The zone this backup policy plan will create snapshot clones in.
      */
-    zones?: pulumi.Input<pulumi.Input<string>[]>;
+    zones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IsBackupPolicyPlanDeletionTrigger {
     /**
      * The maximum number of days to keep each backup after creation.
      */
-    deleteAfter?: pulumi.Input<number>;
+    deleteAfter?: pulumi.Input<number | undefined>;
     /**
      * The maximum number of recent backups to keep. If unspecified, there will be no maximum.
      */
-    deleteOverCount?: pulumi.Input<string>;
+    deleteOverCount?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBackupPolicyPlanRemoteRegionPolicy {
     /**
      * The maximum number of recent remote copies to keep in this region.
      */
-    deleteOverCount?: pulumi.Input<number>;
+    deleteOverCount?: pulumi.Input<number | undefined>;
     /**
      * The CRN of the [Key Protect Root Key](https://cloud.ibm.com/docs/key-protect?topic=key-protect-getting-started-tutorial) or [Hyper Protect Crypto Services Root Key](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) for this resource.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
@@ -2903,188 +3004,188 @@ export interface IsBackupPolicyScope {
     /**
      * The CRN for this enterprise.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this enterprise or account.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerActionStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerCpus {
     /**
      * The CPU architecture
      */
-    architecture?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
     /**
      * The total number of cores
      */
-    coreCount?: pulumi.Input<number>;
+    coreCount?: pulumi.Input<number | undefined>;
     /**
      * The total number of CPU sockets
      */
-    socketCount?: pulumi.Input<number>;
+    socketCount?: pulumi.Input<number | undefined>;
     /**
      * The total number of hardware threads per core
      */
-    threadsPerCore?: pulumi.Input<number>;
+    threadsPerCore?: pulumi.Input<number | undefined>;
 }
 
 export interface IsBareMetalServerDefaultTrustedProfile {
     /**
      * If set to true, the system will create a link to the specified target trusted profile during server creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the server is deleted.
      */
-    autoLink?: pulumi.Input<boolean>;
+    autoLink?: pulumi.Input<boolean | undefined>;
     /**
      * The default IAM trusted profile to use for this bare metal server
      */
-    target?: pulumi.Input<inputs.IsBareMetalServerDefaultTrustedProfileTarget>;
+    target?: pulumi.Input<inputs.IsBareMetalServerDefaultTrustedProfileTarget | undefined>;
 }
 
 export interface IsBareMetalServerDefaultTrustedProfileTarget {
     /**
      * The CRN for this trusted profile
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this trusted profile
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerDisk {
     /**
      * The usage constraints to match against the requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUses?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerDiskAllowedUse>[]>;
+    allowedUses?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerDiskAllowedUse>[] | undefined>;
     /**
      * The URL for this bare metal server disk
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this bare metal server disk
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The disk interface used for attaching the disk. Supported values are [ nvme, sata ]
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this disk
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The size of the disk in GB (gigabytes)
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
 }
 
 export interface IsBareMetalServerDiskAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * An image can only be used for bare metal instantiation if this expression resolves to true.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerInitializationDefaultTrustedProfile {
     /**
      * If set to true, the system will create a link to the specified target trusted profile during server initialization.
      */
-    autoLink?: pulumi.Input<boolean>;
+    autoLink?: pulumi.Input<boolean | undefined>;
     /**
      * The default IAM trusted profile to use for this bare metal server
      */
-    target?: pulumi.Input<inputs.IsBareMetalServerInitializationDefaultTrustedProfileTarget>;
+    target?: pulumi.Input<inputs.IsBareMetalServerInitializationDefaultTrustedProfileTarget | undefined>;
 }
 
 export interface IsBareMetalServerInitializationDefaultTrustedProfileTarget {
     /**
      * The CRN for this trusted profile
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this trusted profile
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerMetadataService {
     /**
      * Indicates whether the metadata service endpoint will be available to the bare metal server
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The communication protocol to use for the metadata service endpoint. Applies only when the metadata service is enabled.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkAttachment {
     /**
      * Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
      */
-    allowToFloat?: pulumi.Input<boolean>;
+    allowToFloat?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowedVlans array for one PCI type adapter per bare metal server.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentDeleted>[] | undefined>;
     /**
      * The URL for this bare metal server network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this bare metal server network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The network interface type: [ pci, vlan, hipersocket ]
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The name for this bare metal server network attachment. The name is unique across all network attachments for the bare metal server.
      */
@@ -3092,100 +3193,100 @@ export interface IsBareMetalServerNetworkAttachment {
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface>[]>;
+    virtualNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterface>[] | undefined>;
     /**
      * Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
      */
-    vlan?: pulumi.Input<number>;
+    vlan?: pulumi.Input<number | undefined>;
 }
 
 export interface IsBareMetalServerNetworkAttachmentDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkAttachmentVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The crn of the virtual network interface.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The virtual network interface id for this bare metal server network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the bare metal server networkattachment.
      */
-    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfacePrimaryIp | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
@@ -3193,89 +3294,89 @@ export interface IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkAttachmentVirtualNetworkInterfaceIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkAttachmentVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkInterface {
     /**
      * Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
      */
-    allowInterfaceToFloat?: pulumi.Input<boolean>;
+    allowInterfaceToFloat?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowedVlans array for one PCI type adapter per bare metal server.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * If true, the VPC infrastructure performs any needed NAT operations. If false, the packet is passed unmodified to/from the network interface, allowing the workload to perform any needed NAT operations.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this network interface
      */
-    href?: pulumi.Input<string>;
-    id?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The network interface type: [ pci, vlan, hipersocket ]
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this network interface. If unspecified, the name will be a hyphenated list of randomly-selected words
      */
     name: pulumi.Input<string>;
-    portSpeed?: pulumi.Input<number>;
+    portSpeed?: pulumi.Input<number | undefined>;
     /**
      * title: IPv4, The IP address.
      */
-    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsBareMetalServerNetworkInterfacePrimaryIp | undefined>;
     /**
      * Collection of security group ids
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet
      */
@@ -3283,211 +3384,211 @@ export interface IsBareMetalServerNetworkInterface {
     /**
      * Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
      */
-    vlan?: pulumi.Input<number>;
+    vlan?: pulumi.Input<number | undefined>;
 }
 
 export interface IsBareMetalServerNetworkInterfaceAllowFloatFloatingIp {
     /**
      * The globally unique IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The globally unique IP identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkInterfaceAllowFloatPrimaryIp {
     /**
      * The globally unique IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this reserved IP
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkInterfaceFloatingIp {
     /**
      * The globally unique IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The globally unique IP identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerNetworkInterfacePrimaryIp {
     /**
      * The globally unique IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If set to true, this reserved IP will be automatically deleted when the target is deleted or when the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this reserved IP
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this reserved IP
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type: [ subnetReservedIp ]
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkAttachment {
     /**
      * Indicates if the interface can float to any other server within the same resource_group. The interface will float automatically if the network detects a GARP or RARP on another bare metal server in the resource group. Applies only to vlan type interfaces.
      */
-    allowInterfaceToFloat?: pulumi.Input<boolean>;
+    allowInterfaceToFloat?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowedVlans array for one PCI type adapter per bare metal server.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentDeleted>[] | undefined>;
     /**
      * The URL for this bare metal server network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this bare metal server network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The network interface type: [ pci, vlan, hipersocket ]
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The name for this bare metal server network attachment. The name is unique across all network attachments for the bare metal server.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the bare metal server network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterface | undefined>;
     /**
      * Indicates the 802.1Q VLAN ID tag that must be used for all traffic on this interface
      */
-    vlan?: pulumi.Input<number>;
+    vlan?: pulumi.Input<number | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkAttachmentDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The crn of the virtual network interface.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The virtual network interface id for this bare metal server network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the bare metal server networkattachment.
      */
-    primaryIp?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
@@ -3495,79 +3596,79 @@ export interface IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfac
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerPrimaryNetworkInterface {
     /**
      * Indicates whether IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates what VLAN IDs (for VLAN type only) can use this physical (PCI type) interface. A given VLAN can only be in the allowedVlans array for one PCI type adapter per bare metal server.
      */
-    allowedVlans?: pulumi.Input<pulumi.Input<number>[]>;
+    allowedVlans?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * If true, the VPC infrastructure performs any needed NAT operations. If false, the packet is passed unmodified to/from the network interface, allowing the workload to perform any needed NAT operations.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this network interface
      */
-    href?: pulumi.Input<string>;
-    id?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The network interface type: [ pci, hipersocket ]
      */
-    interfaceType?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    portSpeed?: pulumi.Input<number>;
+    interfaceType?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    portSpeed?: pulumi.Input<number | undefined>;
     /**
      * title: IPv4, The IP address.
      */
-    primaryIp?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkInterfacePrimaryIp>;
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    primaryIp?: pulumi.Input<inputs.IsBareMetalServerPrimaryNetworkInterfacePrimaryIp | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     subnet: pulumi.Input<string>;
 }
 
@@ -3575,320 +3676,320 @@ export interface IsBareMetalServerPrimaryNetworkInterfacePrimaryIp {
     /**
      * The globally unique IP address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this reserved IP
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerReservation {
     /**
      * The CRN for this reservation.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationDeleted>[] | undefined>;
     /**
      * The URL for this reservation.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reservation.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this reservation. The name is unique across all reservations in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerReservationAffinity {
     /**
      * The reservation affinity policy to use for this bare metal server.
      */
-    policy?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
     /**
      * The pool of reservations available for use by this bare metal server.
      */
-    pools?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinityPool>[]>;
+    pools?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinityPool>[] | undefined>;
 }
 
 export interface IsBareMetalServerReservationAffinityPool {
     /**
      * The CRN for this reservation.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinityPoolDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsBareMetalServerReservationAffinityPoolDeleted>[] | undefined>;
     /**
      * The URL for this reservation.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reservation.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this reservation. The name is unique across all reservations in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerReservationAffinityPoolDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerReservationDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsBareMetalServerTrustedPlatformModule {
     /**
      * Indicates whether the trusted platform module is enabled.
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The trusted platform module mode to use. The specified value must be listed in the bare metal server profile's supported_trusted_platform_module_modes
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * The trusted platform module (TPM) mode:: disabled: No TPM functionality, tpm_2: TPM 2.0. The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered. Enum: [ disabled, tpm2 ]
      */
-    supportedModes?: pulumi.Input<pulumi.Input<string>[]>;
+    supportedModes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IsClusterNetworkInterfaceLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address is pending allocation, the value will be `0.0.0.0`.This property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) to support IPv6 addresses in the future.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this cluster network subnet reserved IP member will be automatically deleted when either target is deleted, or the cluster network subnet reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this cluster network subnet reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network subnet reserved IP.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network subnet reserved IP. The name is unique across all reserved IPs in a cluster network subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfaceSubnet {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceSubnetDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceSubnetDeleted>[] | undefined>;
     /**
      * The URL for this cluster network subnet.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network subnet.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfaceSubnetDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfaceTarget {
     /**
      * The URL for this instance cluster network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance cluster network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfaceVpc {
     /**
      * The CRN for this VPC.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceVpcDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkInterfaceVpcDeleted>[] | undefined>;
     /**
      * The URL for this VPC.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPC.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this VPC. The name is unique across all VPCs in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfaceVpcDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkInterfaceZone {
     /**
      * The URL for this zone.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this zone.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkSubnetLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkSubnetPrefixes {
     /**
      * The allocation policy for this subnet prefix:- `auto`: Subnets created by total count in this cluster network can use this prefix.
      */
-    allocationPolicy?: pulumi.Input<string>;
+    allocationPolicy?: pulumi.Input<string | undefined>;
     /**
      * The CIDR block for this prefix.
      */
@@ -3897,62 +3998,62 @@ export interface IsClusterNetworkSubnetPrefixes {
 
 export interface IsClusterNetworkSubnetReservedIpLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkSubnetReservedIpTarget {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetReservedIpTargetDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkSubnetReservedIpTargetDeleted>[] | undefined>;
     /**
      * The URL for this cluster network interface.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network interface.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkSubnetReservedIpTargetDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkVpc {
     /**
      * The CRN for this VPC.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkVpcDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsClusterNetworkVpcDeleted>[] | undefined>;
     /**
      * The URL for this VPC.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPC.
      */
@@ -3960,110 +4061,110 @@ export interface IsClusterNetworkVpc {
     /**
      * The name for this VPC. The name is unique across all VPCs in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsClusterNetworkVpcDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostAvailableVcpus {
     /**
      * The VCPU architecture.
      */
-    architecture?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
     /**
      * The number of VCPUs assigned.
      */
-    count?: pulumi.Input<number>;
+    count?: pulumi.Input<number | undefined>;
 }
 
 export interface IsDedicatedHostDisk {
     /**
      * The remaining space left for instance placement in GB (gigabytes).
      */
-    available?: pulumi.Input<number>;
+    available?: pulumi.Input<number | undefined>;
     /**
      * The date and time that the disk was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The URL for this disk.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this disk.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Instance disks that are on this dedicated host disk.
      */
-    instanceDisks?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDiskInstanceDisk>[]>;
+    instanceDisks?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDiskInstanceDisk>[] | undefined>;
     /**
      * The disk interface used for attaching the diskThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of this dedicated host disk.
      */
-    lifecycleState?: pulumi.Input<string>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The user-defined or system-provided name for this disk.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this dedicated host disk is available for instance disk creation.
      */
-    provisionable?: pulumi.Input<boolean>;
+    provisionable?: pulumi.Input<boolean | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The size of the disk in GB (gigabytes).
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * The instance disk interfaces supported for this dedicated host disk.
      */
-    supportedInstanceInterfaceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    supportedInstanceInterfaceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IsDedicatedHostDiskInstanceDisk {
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDiskInstanceDiskDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostDiskInstanceDiskDeleted>[] | undefined>;
     /**
      * The URL for this instance disk.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance disk.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this disk.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostDiskInstanceDiskDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostDiskManagementDisk {
@@ -4081,201 +4182,201 @@ export interface IsDedicatedHostGroupDedicatedHost {
     /**
      * The CRN for this dedicated host.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostGroupDedicatedHostDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostGroupDedicatedHostDeleted>[] | undefined>;
     /**
      * The URL for this dedicated host.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this dedicated host.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this dedicated host. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostGroupDedicatedHostDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostGroupSupportedInstanceProfile {
     /**
      * The URL for this virtual server instance profile.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this virtual server instance profile.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostInstance {
     /**
      * The CRN for this virtual server instance.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostInstanceDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostInstanceDeleted>[] | undefined>;
     /**
      * The URL for this virtual server instance.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this virtual server instance.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this virtual server instance (and default system hostname).
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostInstanceDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostNuma {
     /**
      * The total number of NUMA nodes for this dedicated host
      */
-    count?: pulumi.Input<number>;
+    count?: pulumi.Input<number | undefined>;
     /**
      * The NUMA nodes for this dedicated host.
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostNumaNode>[]>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.IsDedicatedHostNumaNode>[] | undefined>;
 }
 
 export interface IsDedicatedHostNumaNode {
     /**
      * The available VCPU for this NUMA node.
      */
-    availableVcpu?: pulumi.Input<number>;
+    availableVcpu?: pulumi.Input<number | undefined>;
     /**
      * The total VCPU capacity for this NUMA node.
      */
-    vcpu?: pulumi.Input<number>;
+    vcpu?: pulumi.Input<number | undefined>;
 }
 
 export interface IsDedicatedHostSupportedInstanceProfile {
     /**
      * The URL for this virtual server instance profile.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this virtual server instance profile.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsDedicatedHostVcpus {
     /**
      * The VCPU architecture.
      */
-    architecture?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
     /**
      * The number of VCPUs assigned.
      */
-    count?: pulumi.Input<number>;
+    count?: pulumi.Input<number | undefined>;
 }
 
 export interface IsFloatingIpTargetList {
     /**
      * The CRN for this public gateway.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsFloatingIpTargetListDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsFloatingIpTargetListDeleted>[] | undefined>;
     /**
      * The URL for this network interface.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this network interface.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this network interface.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
      */
-    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsFloatingIpTargetListPrimaryIp>[]>;
+    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsFloatingIpTargetListPrimaryIp>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsFloatingIpTargetListDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsFloatingIpTargetListPrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The URL for this reserved IP
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsIkePolicyVpnConnection {
-    href?: pulumi.Input<string>;
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsImageAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using this image.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this image.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsImageExportJobStatusReason {
@@ -4290,18 +4391,18 @@ export interface IsImageExportJobStatusReason {
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsImageExportJobStorageBucket {
     /**
      * CRN of this Cloud Object Storage bucket
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * Name of this Cloud Object Storage bucket
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsImageExportJobStorageObject {
@@ -4311,117 +4412,146 @@ export interface IsImageExportJobStorageObject {
     name: pulumi.Input<string>;
 }
 
+export interface IsImageZone {
+    /**
+     * The URL for this zone.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * The globally unique name for this zone.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
 export interface IsInstanceActionStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.See [virtual server instance availability class](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future. To change the availability class, the instance status must be stopping or stopped.
+     */
+    class?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceAvailabilityPolicy {
+    /**
+     * The action to perform if the compute host experiences a failure:- `restart`: Restart the virtual server instance- `stop`: Leave the virtual server instance stopped. See [handling host failures](https://cloud.ibm.com/docs/vpc?topic=vpc-host-failure-recovery-policies) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    hostFailure?: pulumi.Input<string | undefined>;
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    preemption?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceBootVolume {
     /**
      * The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsInstanceBootVolumeAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsInstanceBootVolumeAllowedUse | undefined>;
     /**
      * Auto delete boot volume along with instance
      */
-    autoDeleteVolume?: pulumi.Input<boolean>;
+    autoDeleteVolume?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    bandwidth?: pulumi.Input<number>;
-    encryption?: pulumi.Input<string>;
-    iops?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    profile?: pulumi.Input<string>;
-    size?: pulumi.Input<number>;
-    snapshot?: pulumi.Input<string>;
-    snapshotCrn?: pulumi.Input<string>;
+    bandwidth?: pulumi.Input<number | undefined>;
+    encryption?: pulumi.Input<string | undefined>;
+    iops?: pulumi.Input<number | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    profile?: pulumi.Input<string | undefined>;
+    size?: pulumi.Input<number | undefined>;
+    snapshot?: pulumi.Input<string | undefined>;
+    snapshotCrn?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the volume instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier for this volume
      */
-    volumeId?: pulumi.Input<string>;
+    volumeId?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceBootVolumeAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceCatalogOffering {
     /**
      * If present, this property indicates the referenced resource has been deleted and provides some supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceCatalogOfferingDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceCatalogOfferingDeleted>[] | undefined>;
     /**
      * Identifies a catalog offering by a unique CRN property
      */
-    offeringCrn?: pulumi.Input<string>;
+    offeringCrn?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this catalog offering version's billing plan
      */
-    planCrn?: pulumi.Input<string>;
+    planCrn?: pulumi.Input<string | undefined>;
     /**
      * Identifies a version of a catalog offering by a unique CRN property
      */
-    versionCrn?: pulumi.Input<string>;
+    versionCrn?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceCatalogOfferingDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetwork {
     /**
      * The CRN for this cluster network.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkDeleted>[] | undefined>;
     /**
      * The URL for this cluster network.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network. The name must not be used by another cluster network in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachment {
@@ -4432,11 +4562,11 @@ export interface IsInstanceClusterNetworkAttachment {
     /**
      * The URL for this instance cluster network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance cluster network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network attachment. Names must be unique within the instance the cluster network attachment resides in. If unspecified, the name will be a hyphenated list of randomly-selected words. Names starting with `ibm-` are reserved for provider-owned resources, and are not allowed.
      */
@@ -4444,14 +4574,14 @@ export interface IsInstanceClusterNetworkAttachment {
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachmentBefore {
     /**
      * The URL for this instance cluster network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance cluster network attachment.
      */
@@ -4459,38 +4589,38 @@ export interface IsInstanceClusterNetworkAttachmentBefore {
     /**
      * The name for this instance cluster network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterface {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceDeleted>[] | undefined>;
     /**
      * The URL for this cluster network interface.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network interface.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network interface. The name is unique across all interfaces in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP for this cluster network interface.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimaryIp | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     subnet: pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSubnet>;
 }
 
@@ -4498,7 +4628,7 @@ export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceDelete
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimaryIp {
@@ -4509,7 +4639,7 @@ export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimar
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this cluster network subnet reserved IP.
      */
@@ -4525,25 +4655,25 @@ export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimar
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSubnet {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSubnetDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSubnetDeleted>[] | undefined>;
     /**
      * The URL for this cluster network subnet.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network subnet.
      */
@@ -4551,71 +4681,71 @@ export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSubnet
     /**
      * The name for this cluster network subnet. The name is unique across all cluster network subnets in the cluster network.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachmentClusterNetworkInterfaceSubnetDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkAttachmentLifecycleReason {
     /**
-     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceClusterNetworkDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceDisk {
     /**
      * The date and time that the disk was created.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The URL for this instance disk.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance disk.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The disk interface used for attaching the disk.The enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected property value was encountered.
      */
-    interfaceType?: pulumi.Input<string>;
+    interfaceType?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this disk.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The size of the disk in GB (gigabytes).
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
 }
 
 export interface IsInstanceDiskManagementDisk {
@@ -4633,250 +4763,250 @@ export interface IsInstanceGpus {
     /**
      * The number of GPUs assigned to the instance
      */
-    count?: pulumi.Input<number>;
+    count?: pulumi.Input<number | undefined>;
     /**
      * The GPU manufacturer
      */
-    manufacturer?: pulumi.Input<string>;
+    manufacturer?: pulumi.Input<string | undefined>;
     /**
      * The overall amount of GPU memory in GiB (gibibytes)
      */
-    memory?: pulumi.Input<number>;
+    memory?: pulumi.Input<number | undefined>;
     /**
      * The GPU model
      */
-    model?: pulumi.Input<string>;
+    model?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceGroupManagerAction {
-    instanceGroupManagerAction?: pulumi.Input<string>;
-    instanceGroupManagerActionName?: pulumi.Input<string>;
-    resourceType?: pulumi.Input<string>;
+    instanceGroupManagerAction?: pulumi.Input<string | undefined>;
+    instanceGroupManagerActionName?: pulumi.Input<string | undefined>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceGroupMembershipInstance {
     /**
      * The CRN for this virtual server instance.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this virtual server instance (and default system hostname).
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this virtual server instance.
      */
-    virtualServerInstance?: pulumi.Input<string>;
+    virtualServerInstance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceGroupMembershipInstanceTemplate {
     /**
      * The CRN for this instance template.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance template.
      */
-    instanceTemplate?: pulumi.Input<string>;
+    instanceTemplate?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this instance template.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceLifecycleReason {
     /**
      * A snake case string succinctly identifying the reason for this lifecycle state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceMetadataService {
     /**
      * Indicates whether the metadata service endpoint will be available to the virtual server instance
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The communication protocol to use for the metadata service endpoint. Applies only when the metadata service is enabled.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The hop limit (IP time to live) for IP response packets from the metadata service
      */
-    responseHopLimit?: pulumi.Input<number>;
+    responseHopLimit?: pulumi.Input<number | undefined>;
 }
 
 export interface IsInstanceNetworkAttachment {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentDeleted>[] | undefined>;
     /**
      * The URL for this instance network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this instance network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the network attachment.
      */
-    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentPrimaryIp>[]>;
+    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentPrimaryIp>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterface | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentPrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentPrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentPrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentPrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The crn of the virtual network interface.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The virtual network interface id for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the instance networkattachment.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfacePrimaryIp | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
@@ -4884,70 +5014,70 @@ export interface IsInstanceNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentVirtualNetworkInterfaceIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this primaryIp will be automatically deleted when `vni` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkInterface {
     /**
      * Indicates whether IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceNetworkInterfacePrimaryIp | undefined>;
     /**
      * @deprecated primary_ipv4_address is deprecated and support will be removed. Use primaryIp instead
      */
-    primaryIpv4Address?: pulumi.Input<string>;
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    primaryIpv4Address?: pulumi.Input<string | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     subnet: pulumi.Input<string>;
 }
 
@@ -4955,245 +5085,245 @@ export interface IsInstanceNetworkInterfaceFloatingIp {
     /**
      * The globally unique IP address.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this floating IP.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkInterfaceFloatingIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceNetworkInterfaceFloatingIpDeleted>[] | undefined>;
     /**
      * The URL for this floating IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this floating IP.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this floating IP.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkInterfaceFloatingIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceNetworkInterfacePrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this reserved IP
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePlacementTarget {
     /**
      * The CRN for this placement target.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePlacementTargetDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePlacementTargetDeleted>[] | undefined>;
     /**
      * The URL for this placement target.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this placement target.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this placement target.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePlacementTargetDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachment {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentDeleted>[] | undefined>;
     /**
      * The URL for this instance network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this instance network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the network attachment.
      */
-    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentPrimaryIp>[]>;
+    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentPrimaryIp>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterface | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentPrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentPrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentPrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentPrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The crn of the virtual network interface.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The virtual network interface id for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the instance networkattachment.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
@@ -5201,74 +5331,74 @@ export interface IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved ip will be automatically deleted when `target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstancePrimaryNetworkInterface {
     /**
      * Indicates whether IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * @deprecated This field is deprected
      */
-    portSpeed?: pulumi.Input<number>;
+    portSpeed?: pulumi.Input<number | undefined>;
     /**
      * The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstancePrimaryNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstancePrimaryNetworkInterfacePrimaryIp | undefined>;
     /**
      * @deprecated primary_ipv4_address is deprecated and support will be removed. Use primaryIp instead
      */
-    primaryIpv4Address?: pulumi.Input<string>;
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    primaryIpv4Address?: pulumi.Input<string | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     subnet: pulumi.Input<string>;
 }
 
@@ -5276,186 +5406,422 @@ export interface IsInstancePrimaryNetworkInterfacePrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this reserved IP
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachment {
+    /**
+     * Indicates whether the volume will be deleted when the instance is deleted
+     */
+    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean | undefined>;
+    /**
+     * The name of the boot volume attachment
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The boot volume attachment configuration for reinitialization by volume
+     */
+    volume?: pulumi.Input<inputs.IsInstanceReinitializeBootVolumeAttachmentVolume | undefined>;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolume {
+    /**
+     * The allowed use configuration for this volume
+     */
+    allowedUse?: pulumi.Input<inputs.IsInstanceReinitializeBootVolumeAttachmentVolumeAllowedUse | undefined>;
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.
+     */
+    bandwidth?: pulumi.Input<number | undefined>;
+    /**
+     * The capacity to use for the volume (in gigabytes).
+     */
+    capacity?: pulumi.Input<number | undefined>;
+    /**
+     * The root key to use to wrap the data encryption key for the volume.
+     */
+    encryptionKey?: pulumi.Input<inputs.IsInstanceReinitializeBootVolumeAttachmentVolumeEncryptionKey | undefined>;
+    /**
+     * The ID of the volume to attach as boot volume
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * The maximum I/O operations per second (IOPS) to use for this volume.
+     */
+    iops?: pulumi.Input<number | undefined>;
+    /**
+     * The name for this volume.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The profile for this volume.
+     */
+    profile?: pulumi.Input<inputs.IsInstanceReinitializeBootVolumeAttachmentVolumeProfile | undefined>;
+    /**
+     * The resource group to use for this volume.
+     */
+    resourceGroup?: pulumi.Input<string | undefined>;
+    /**
+     * The snapshot to use as a source for the volume's data. The specified snapshot may be in a different account, subject to IAM policies.
+     */
+    sourceSnapshot?: pulumi.Input<inputs.IsInstanceReinitializeBootVolumeAttachmentVolumeSourceSnapshot | undefined>;
+    /**
+     * The user tags associated with this volume.
+     */
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeAllowedUse {
+    /**
+     * The API version with which to evaluate the expressions.
+     */
+    apiVersion: pulumi.Input<string>;
+    /**
+     * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
+     */
+    bareMetalServer?: pulumi.Input<string | undefined>;
+    /**
+     * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
+     */
+    instance?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeEncryptionKey {
+    /**
+     * The CRN of the Key Protect Root Key for this resource.
+     */
+    crn: pulumi.Input<string>;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeProfile {
+    /**
+     * The globally unique name for this volume profile
+     */
+    name: pulumi.Input<string>;
+}
+
+export interface IsInstanceReinitializeBootVolumeAttachmentVolumeSourceSnapshot {
+    /**
+     * The ID of the snapshot
+     */
+    id: pulumi.Input<string>;
+}
+
+export interface IsInstanceReinitializeDefaultTrustedProfile {
+    /**
+     * If set to true, the system will create a link to the specified target trusted profile.
+     */
+    autoLink: pulumi.Input<boolean>;
+    /**
+     * The default trusted profile configuration to use for this virtual server instance.
+     */
+    target: pulumi.Input<inputs.IsInstanceReinitializeDefaultTrustedProfileTarget>;
+}
+
+export interface IsInstanceReinitializeDefaultTrustedProfileTarget {
+    /**
+     * The CRN for this trusted profile
+     */
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * The unique identifier for this trusted profile
+     */
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceReservation {
     /**
      * The CRN for this reservation.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceReservationDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceReservationDeleted>[] | undefined>;
     /**
      * The URL for this reservation.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reservation.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this reservation. The name is unique across all reservations in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceReservationAffinity {
     /**
      * The reservation affinity policy to use for this virtual server instance.
      */
-    policy?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
     /**
      * The pool of reservations available for use by this virtual server instance.
      */
-    pools?: pulumi.Input<pulumi.Input<inputs.IsInstanceReservationAffinityPool>[]>;
+    pools?: pulumi.Input<pulumi.Input<inputs.IsInstanceReservationAffinityPool>[] | undefined>;
 }
 
 export interface IsInstanceReservationAffinityPool {
     /**
      * The CRN for this reservation.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceReservationAffinityPoolDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceReservationAffinityPoolDeleted>[] | undefined>;
     /**
      * The URL for this reservation.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reservation.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this reservation. The name is unique across all reservations in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceReservationAffinityPoolDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceReservationDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachment {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceSoftwareAttachmentDeleted>[] | undefined>;
+    /**
+     * The URL for this instance software attachment.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * The unique identifier for this instance software attachment.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * The name for this instance software attachment. The name is unique across all instance software attachments for the instance.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The resource type.
+     */
+    resourceType?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOffering {
+    /**
+     * The billing plan for the catalog offering version associated with this instance softwareattachment.If absent, no billing plan is associated with the catalog offering version (free).
+     */
+    plans?: pulumi.Input<pulumi.Input<inputs.IsInstanceSoftwareAttachmentCatalogOfferingPlan>[] | undefined>;
+    /**
+     * The catalog offering version associated with this instance software attachment.
+     */
+    versions?: pulumi.Input<pulumi.Input<inputs.IsInstanceSoftwareAttachmentCatalogOfferingVersion>[] | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOfferingPlan {
+    /**
+     * The CRN for this[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering version's billing plan.
+     */
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
+     */
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceSoftwareAttachmentCatalogOfferingPlanDeleted>[] | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOfferingPlanDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentCatalogOfferingVersion {
+    /**
+     * The CRN for this version of a[catalog](https://cloud.ibm.com/docs/account?topic=account-restrict-by-user) offering.
+     */
+    crn?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentDeleted {
+    /**
+     * A link to documentation about deleted resources.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentEntitlement {
+    /**
+     * The licensed software for this instance software attachment entitlement.
+     */
+    licensedSoftwares?: pulumi.Input<pulumi.Input<inputs.IsInstanceSoftwareAttachmentEntitlementLicensedSoftware>[] | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentEntitlementLicensedSoftware {
+    /**
+     * The SKU for this licensed software.
+     */
+    sku?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `failedRegistration`: the software instance's registration to Resource Controller,  which includes creation of any required software license(s), has failed. Delete the  instance and provision it again. If the problem persists, contact IBM Support.- `internalError`: internal error (contact IBM support)- `pendingRegistration`: the software instance's registration to Resource Controller,  and the creation of any required software license(s), is being processed.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code?: pulumi.Input<string | undefined>;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceSoftwareAttachmentOfferingInstance {
+    /**
+     * The CRN for the software offering instance registered with Resource Controller that is associated with the instance software attachment.
+     */
+    crn?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceTemplateAvailability {
+    /**
+     * The availability class for the virtual server instance.- `spot`: The virtual server instance may be preempted.- `standard`: The virtual server instance will not be preempted.If `spot` is specified, the virtual server instance:- `reservation_affinity.policy` must be `disabled`- `placementTarget` must not specify a dedicated host or dedicated host group.
+     */
+    class?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceTemplateAvailabilityPolicy {
+    /**
+     * The action to perform if the virtual server instance is preempted:- `delete`: Delete the virtual server instance- `stop`: Leave the virtual server instance stopped. See [virtual server instance preemption](https://cloud.ibm.com/docs/vpc?topic=vpc-spot-instances-virtual-servers#spot-instances-preemption) for details.
+     */
+    preemption?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateBootVolume {
     /**
      * The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsInstanceTemplateBootVolumeAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsInstanceTemplateBootVolumeAllowedUse | undefined>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    bandwidth?: pulumi.Input<number>;
-    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean>;
-    encryption?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    profile?: pulumi.Input<string>;
-    size?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
+    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean | undefined>;
+    encryption?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    profile?: pulumi.Input<string | undefined>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * The snapshot to create this virtual server instance template from
      */
-    sourceSnapshot?: pulumi.Input<string>;
+    sourceSnapshot?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the volume instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IsInstanceTemplateBootVolumeAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateCatalogOffering {
     /**
      * If present, this property indicates the referenced resource has been deleted and provides some supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateCatalogOfferingDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateCatalogOfferingDeleted>[] | undefined>;
     /**
      * Identifies a catalog offering by a unique CRN property
      */
-    offeringCrn?: pulumi.Input<string>;
+    offeringCrn?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this catalog offering version's billing plan
      */
-    planCrn?: pulumi.Input<string>;
+    planCrn?: pulumi.Input<string | undefined>;
     /**
      * Identifies a version of a catalog offering by a unique CRN property
      */
-    versionCrn?: pulumi.Input<string>;
+    versionCrn?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateCatalogOfferingDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateClusterNetworkAttachment {
@@ -5466,258 +5832,258 @@ export interface IsInstanceTemplateClusterNetworkAttachment {
     /**
      * The name for this cluster network attachment. Names must be unique within the instance the cluster network attachment resides in. If unspecified, the name will be a hyphenated list of randomly-selected words. Names starting with `ibm-` are reserved for provider-owned resources, and are not allowed.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateClusterNetworkAttachmentClusterNetworkInterface {
     /**
      * Indicates whether this cluster network interface will be automatically deleted when `target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this cluster network interface.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network interface.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network interface. The name must not be used by another interface in the cluster network. Names beginning with `ibm-` are reserved for provider-owned resources, and are not allowed. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address to bind to the cluster network interface. May be eithera cluster network subnet reserved IP identity, or a cluster network subnet reserved IPprototype object which will be used to create a new cluster network subnet reserved IP.If a cluster network subnet reserved IP identity is provided, the specified clusternetwork subnet reserved IP must be unbound.If a cluster network subnet reserved IP prototype object with an address is provided,the address must be available on the cluster network interface's cluster networksubnet. If no address is specified, an available address on the cluster network subnetwill be automatically selected and reserved.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachmentClusterNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachmentClusterNetworkInterfacePrimaryIp | undefined>;
     /**
      * The associated cluster network subnet. Required if `primaryIp` does not specify acluster network subnet reserved IP identity.
      */
-    subnet?: pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachmentClusterNetworkInterfaceSubnet>;
+    subnet?: pulumi.Input<inputs.IsInstanceTemplateClusterNetworkAttachmentClusterNetworkInterfaceSubnet | undefined>;
 }
 
 export interface IsInstanceTemplateClusterNetworkAttachmentClusterNetworkInterfacePrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.If unspecified, an available address on the subnet will automatically be selected.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this cluster network subnet reserved IP member will be automatically deleted when either `target` is deleted, or the cluster network subnet reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The URL for this cluster network subnet reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network subnet reserved IP.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this cluster network subnet reserved IP. The name must not be used by another reserved IP in the cluster network subnet. Names starting with `ibm-` are reserved for provider-owned resources, and are not allowed. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateClusterNetworkAttachmentClusterNetworkInterfaceSubnet {
     /**
      * The URL for this cluster network subnet.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this cluster network subnet.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateMetadataService {
     /**
      * Indicates whether the metadata service endpoint will be available to the virtual server instance
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The communication protocol to use for the metadata service endpoint. Applies only when the metadata service is enabled.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The hop limit (IP time to live) for IP response packets from the metadata service
      */
-    responseHopLimit?: pulumi.Input<number>;
+    responseHopLimit?: pulumi.Input<number | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkAttachment {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentDeleted>[] | undefined>;
     /**
      * The URL for this instance network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this instance network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterface | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkAttachmentDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkAttachmentVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The virtual network interface id for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the instance networkattachment.
      */
-    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfacePrimaryIp>[]>;
+    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfacePrimaryIp>[] | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfaceIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateNetworkInterface {
-    allowIpSpoofing?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceTemplateNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceTemplateNetworkInterfacePrimaryIp | undefined>;
     /**
      * @deprecated primary_ipv4_address is deprecated and support will be removed. Use primaryIp instead
      */
-    primaryIpv4Address?: pulumi.Input<string>;
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    primaryIpv4Address?: pulumi.Input<string | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     subnet: pulumi.Input<string>;
 }
 
@@ -5725,209 +6091,209 @@ export interface IsInstanceTemplateNetworkInterfacePrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePlacementTarget {
     /**
      * The CRN for this placement target.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The URL for this placement target.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this placement target.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkAttachment {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentDeleted>[] | undefined>;
     /**
      * The URL for this instance network attachment.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this instance network attachment. The name is unique across all network attachments for the instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A virtual network interface for the instance network attachment. This can be specified using an existing virtual network interface, or a prototype object for a new virtual network interface.
      */
-    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterface>;
+    virtualNetworkInterface?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterface | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkAttachmentDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * The virtual network interface id for this instance network attachment.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The reserved IPs bound to this virtual network interface.May be empty when `lifecycleState` is `pending`.
      */
-    ips?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfaceIp>[]>;
+    ips?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfaceIp>[] | undefined>;
     /**
      * The name for this virtual network interface. The name is unique across all virtual network interfaces in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address of the virtual network interface for the instance networkattachment.
      */
-    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp>[]>;
+    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp>[] | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * The resource group id for this virtual network interface.
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet id.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfaceIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfaceIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved ip will be automatically deleted when `target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkAttachmentVirtualNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplatePrimaryNetworkInterface {
-    allowIpSpoofing?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The primary IP address to bind to the network interface. This can be specified using an existing reserved IP, or a prototype object for a new reserved IP.
      */
-    primaryIp?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsInstanceTemplatePrimaryNetworkInterfacePrimaryIp | undefined>;
     /**
      * @deprecated primary_ipv4_address is deprecated and support will be removed. Use primaryIp instead
      */
-    primaryIpv4Address?: pulumi.Input<string>;
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    primaryIpv4Address?: pulumi.Input<string | undefined>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     subnet: pulumi.Input<string>;
 }
 
@@ -5935,37 +6301,44 @@ export interface IsInstanceTemplatePrimaryNetworkInterfacePrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceTemplateReservationAffinity {
     /**
      * The reservation affinity policy to use for this virtual server instance.
      */
-    policy?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
     /**
      * The pool of reservations available for use by this virtual server instance.
      */
-    pools?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateReservationAffinityPool>[]>;
+    pools?: pulumi.Input<pulumi.Input<inputs.IsInstanceTemplateReservationAffinityPool>[] | undefined>;
 }
 
 export interface IsInstanceTemplateReservationAffinityPool {
     /**
      * The unique identifier for this reservation.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
+}
+
+export interface IsInstanceTemplateVcpu {
+    /**
+     * The percentage of VCPU clock cycles allocated to the instance.The virtual server instance `vcpu.percentage` must be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is not `disabled`.If unspecified, the default for `vcpuPercentage` from the profile will be used.
+     */
+    percentage?: pulumi.Input<number | undefined>;
 }
 
 export interface IsInstanceTemplateVolumeAttachment {
@@ -5980,19 +6353,19 @@ export interface IsInstanceTemplateVolumeAttachment {
     /**
      * The unique identifier for this volume.
      */
-    volume?: pulumi.Input<string>;
-    volumePrototype?: pulumi.Input<inputs.IsInstanceTemplateVolumeAttachmentVolumePrototype>;
+    volume?: pulumi.Input<string | undefined>;
+    volumePrototype?: pulumi.Input<inputs.IsInstanceTemplateVolumeAttachmentVolumePrototype | undefined>;
 }
 
 export interface IsInstanceTemplateVolumeAttachmentVolumePrototype {
     /**
      * The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsInstanceTemplateVolumeAttachmentVolumePrototypeAllowedUse>;
+    allowedUse?: pulumi.Input<inputs.IsInstanceTemplateVolumeAttachmentVolumePrototypeAllowedUse | undefined>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    bandwidth?: pulumi.Input<number>;
+    bandwidth?: pulumi.Input<number | undefined>;
     /**
      * The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
      */
@@ -6000,11 +6373,11 @@ export interface IsInstanceTemplateVolumeAttachmentVolumePrototype {
     /**
      * The CRN of the [Key Protect Root Key](https://cloud.ibm.com/docs/key-protect?topic=key-protect-getting-started-tutorial) or [Hyper Protect Crypto Service Root Key](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) for this resource.
      */
-    encryptionKey?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string | undefined>;
     /**
      * The maximum I/O operations per second (IOPS) for the volume.
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * The  globally unique name for the volume profile to use for this volume.
      */
@@ -6012,143 +6385,161 @@ export interface IsInstanceTemplateVolumeAttachmentVolumePrototype {
     /**
      * The snapshot to use as a source for the volume's data.
      */
-    sourceSnapshot?: pulumi.Input<string>;
+    sourceSnapshot?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the volume instance
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IsInstanceTemplateVolumeAttachmentVolumePrototypeAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceVcpus {
-    architecture?: pulumi.Input<string>;
-    count?: pulumi.Input<number>;
     /**
-     * The VCPU manufacturer
+     * The VCPU architecture.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    manufacturer?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
+    bursts?: pulumi.Input<pulumi.Input<inputs.IsInstanceVcpusBurst>[] | undefined>;
+    /**
+     * The number of VCPUs assigned.
+     */
+    count?: pulumi.Input<number | undefined>;
+    /**
+     * The VCPU manufacturer.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    manufacturer?: pulumi.Input<string | undefined>;
+    /**
+     * The percentage of VCPU time allocated to the virtual server instance.The virtual server instance `vcpu.percentage` will be `100` when:- The virtual server instance `placementTarget` is a dedicated host or dedicated  host group.- The virtual server instance `reservation_affinity.policy` is `disabled`.
+     */
+    percentage?: pulumi.Input<number | undefined>;
+}
+
+export interface IsInstanceVcpusBurst {
+    /**
+     * The maximum percentage the virtual server instance will exceed its allocated share of VCPU time.The maximum value for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    limit?: pulumi.Input<number | undefined>;
 }
 
 export interface IsInstanceVolumeAttachment {
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    volumeCrn?: pulumi.Input<string>;
-    volumeId?: pulumi.Input<string>;
-    volumeName?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    volumeCrn?: pulumi.Input<string | undefined>;
+    volumeId?: pulumi.Input<string | undefined>;
+    volumeName?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceVolumeAttachmentAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsInstanceVolumePrototype {
     /**
      * The usage constraints to be matched against requested instance or bare metal server properties to determine compatibility.
      */
-    allowedUse?: pulumi.Input<inputs.IsInstanceVolumePrototypeAllowedUse>;
-    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean>;
-    id?: pulumi.Input<string>;
+    allowedUse?: pulumi.Input<inputs.IsInstanceVolumePrototypeAllowedUse | undefined>;
+    deleteVolumeOnInstanceDelete?: pulumi.Input<boolean | undefined>;
+    id?: pulumi.Input<string | undefined>;
     name: pulumi.Input<string>;
     /**
      * The maximum bandwidth (in megabits per second) for the volume. For this property to be specified, the volume storageGeneration must be 2.
      */
-    volumeBandwidth?: pulumi.Input<number>;
+    volumeBandwidth?: pulumi.Input<number | undefined>;
     /**
      * The capacity of the volume in gigabytes. The specified minimum and maximum capacity values for creating or updating volumes may expand in the future.
      */
-    volumeCapacity?: pulumi.Input<number>;
-    volumeCrn?: pulumi.Input<string>;
+    volumeCapacity?: pulumi.Input<number | undefined>;
+    volumeCrn?: pulumi.Input<string | undefined>;
     /**
      * The CRN of the [Key Protect Root Key](https://cloud.ibm.com/docs/key-protect?topic=key-protect-getting-started-tutorial) or [Hyper Protect Crypto Service Root Key](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) for this resource.
      */
-    volumeEncryptionKey?: pulumi.Input<string>;
-    volumeId?: pulumi.Input<string>;
+    volumeEncryptionKey?: pulumi.Input<string | undefined>;
+    volumeId?: pulumi.Input<string | undefined>;
     /**
      * The maximum I/O operations per second (IOPS) for the volume.
      */
-    volumeIops?: pulumi.Input<number>;
-    volumeName?: pulumi.Input<string>;
+    volumeIops?: pulumi.Input<number | undefined>;
+    volumeName?: pulumi.Input<string | undefined>;
     /**
      * The  globally unique name for the volume profile to use for this volume.
      */
-    volumeProfile?: pulumi.Input<string>;
-    volumeResourceType?: pulumi.Input<string>;
+    volumeProfile?: pulumi.Input<string | undefined>;
+    volumeResourceType?: pulumi.Input<string | undefined>;
     /**
      * The snapshot from which to clone the volume
      */
-    volumeSourceSnapshot?: pulumi.Input<string>;
+    volumeSourceSnapshot?: pulumi.Input<string | undefined>;
     /**
      * UserTags for the volume instance
      */
-    volumeTags?: pulumi.Input<pulumi.Input<string>[]>;
+    volumeTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IsInstanceVolumePrototypeAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsIpsecPolicyVpnConnection {
-    href?: pulumi.Input<string>;
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbAttachedLoadBalancerPoolMember {
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbAttachedLoadBalancerPoolMemberDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbAttachedLoadBalancerPoolMemberDeleted>[] | undefined>;
     /**
      * The URL for this load balancer pool member.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this load balancer pool member.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbAttachedLoadBalancerPoolMemberDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbDns {
@@ -6162,6 +6553,17 @@ export interface IsLbDns {
     zoneId: pulumi.Input<string>;
 }
 
+export interface IsLbListenerClientAuthentication {
+    /**
+     * The certificate instance to use for the listener client certificate authority. Required if certificateRevocationList is specified.
+     */
+    certificateAuthority: pulumi.Input<string>;
+    /**
+     * A PEM-encoded (with the label X509 CRL) certificate revocation list (CRL) to use for the listener. The CRL must be formatted using the X.509 standard as described in RFC 5280. If specified, certificateAuthority must also be specified.
+     */
+    certificateRevocationList?: pulumi.Input<string | undefined>;
+}
+
 export interface IsLbListenerHttpsRedirect {
     /**
      * The HTTP status code for this redirect.
@@ -6171,18 +6573,18 @@ export interface IsLbListenerHttpsRedirect {
     /**
      * The redirect relative target URI.
      */
-    uri?: pulumi.Input<string>;
+    uri?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbListenerHttpsRedirectListener {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbListenerHttpsRedirectListenerDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbListenerHttpsRedirectListenerDeleted>[] | undefined>;
     /**
      * The listener's canonical URL.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this load balancer listener.
      */
@@ -6193,7 +6595,7 @@ export interface IsLbListenerHttpsRedirectListenerDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbListenerPolicyRule {
@@ -6204,11 +6606,11 @@ export interface IsLbListenerPolicyRule {
     /**
      * HTTP header field. This is only applicable to rule type.
      */
-    field?: pulumi.Input<string>;
+    field?: pulumi.Input<string | undefined>;
     /**
      * Rule ID
      */
-    ruleId?: pulumi.Input<string>;
+    ruleId?: pulumi.Input<string | undefined>;
     /**
      * Type of the rule
      */
@@ -6223,50 +6625,50 @@ export interface IsLbListenerPolicyTarget {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyTargetDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyTargetDeleted>[] | undefined>;
     /**
      * The pool's canonical URL.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The HTTP status code for this redirect.
      */
-    httpStatusCode?: pulumi.Input<number>;
+    httpStatusCode?: pulumi.Input<number | undefined>;
     /**
      * The unique identifier for this load balancer pool.
      */
-    id?: pulumi.Input<string>;
-    listener?: pulumi.Input<inputs.IsLbListenerPolicyTargetListener>;
+    id?: pulumi.Input<string | undefined>;
+    listener?: pulumi.Input<inputs.IsLbListenerPolicyTargetListener | undefined>;
     /**
      * The name for this load balancer pool. The name is unique across all pools for the load balancer.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The redirect relative target URI.
      */
-    uri?: pulumi.Input<string>;
+    uri?: pulumi.Input<string | undefined>;
     /**
      * The redirect target URL.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbListenerPolicyTargetDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbListenerPolicyTargetListener {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyTargetListenerDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbListenerPolicyTargetListenerDeleted>[] | undefined>;
     /**
      * The listener's canonical URL.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this load balancer listener.
      */
@@ -6277,152 +6679,249 @@ export interface IsLbListenerPolicyTargetListenerDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsLbPoolClientAuthentication {
+    /**
+     * The CRN of the certificate instance to use for client authentication.
+     */
+    certificateInstance: pulumi.Input<string>;
 }
 
 export interface IsLbPoolFailsafePolicy {
     /**
-     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A load balancer failsafe policy action:- `forward`: Forwards requests to the `target` pool.- `fail`: Rejects requests with an HTTP `503` status code.The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The healthy member count at which the failsafe policy action will be triggered. At present, this is always `0`, but may be modifiable in the future.
      */
-    healthyMemberThresholdCount?: pulumi.Input<number>;
+    healthyMemberThresholdCount?: pulumi.Input<number | undefined>;
     /**
-     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * If `action` is `forward`, the target pool to forward to.If `action` is `fail`, this property will be absent.The targets supported by this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    target?: pulumi.Input<inputs.IsLbPoolFailsafePolicyTarget>;
+    target?: pulumi.Input<inputs.IsLbPoolFailsafePolicyTarget | undefined>;
 }
 
 export interface IsLbPoolFailsafePolicyTarget {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbPoolFailsafePolicyTargetDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsLbPoolFailsafePolicyTargetDeleted>[] | undefined>;
     /**
      * The URL for this load balancer pool.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this load balancer pool.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this load balancer pool. The name is unique across all pools for the load balancer.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsLbPoolFailsafePolicyTargetDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsLbPoolHealthMonitor {
+    request?: pulumi.Input<inputs.IsLbPoolHealthMonitorRequest | undefined>;
+    response?: pulumi.Input<inputs.IsLbPoolHealthMonitorResponse | undefined>;
+}
+
+export interface IsLbPoolHealthMonitorRequest {
+    /**
+     * The HTTP request body used for health checks.If absent, the health checks will ignore the request body.
+     */
+    body?: pulumi.Input<string | undefined>;
+    /**
+     * The HTTP request headers used for health checks.If absent, the health checks will ignore the request headers.
+     */
+    headers?: pulumi.Input<pulumi.Input<inputs.IsLbPoolHealthMonitorRequestHeader>[] | undefined>;
+    /**
+     * The HTTP request method used for health checks.
+     */
+    method: pulumi.Input<string>;
+}
+
+export interface IsLbPoolHealthMonitorRequestHeader {
+    /**
+     * The field of an HTTP request header used for health checks.
+     */
+    field?: pulumi.Input<string | undefined>;
+    /**
+     * The value of an HTTP request header used for health checks.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface IsLbPoolHealthMonitorResponse {
+    /**
+     * The PCRE-flavor regular expression that HTTP response bodies must match for successful health checks.If absent, health checks will ignore any response body.
+     */
+    bodyRegex?: pulumi.Input<string | undefined>;
+    /**
+     * The HTTP response codes expected for successful health checks.
+     */
+    codes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface IsLbPoolServerAuthentication {
+    /**
+     * The backend server certificate authority instance to use for server certificate verification. Supported by load balancers with mtlsSupported set to true. The pool must have a protocol of https. If specified, verifyCertificate must be true.
+     */
+    certificateAuthority?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether server certificate verification is enabled. If set to true, the backend server certificate is verified by: certificateAuthority if specified, the system default certificate authorities, if certificateAuthority is not specified.
+     */
+    verifyCertificate?: pulumi.Input<boolean | undefined>;
 }
 
 export interface IsLbPrivateIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The URL for this reserved IP
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this reserved IP. If unspecified, the name will be a hyphenated list of randomly-selected words. Names must be unique within the subnet the reserved IP resides in.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Identifies a reserved IP by a unique property.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsNetworkAclRule {
     action: pulumi.Input<string>;
+    /**
+     * The ICMP traffic code to allow. Valid values from 0 to 255.
+     */
+    code?: pulumi.Input<number | undefined>;
     destination: pulumi.Input<string>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
     direction: pulumi.Input<string>;
-    icmp?: pulumi.Input<inputs.IsNetworkAclRuleIcmp>;
-    id?: pulumi.Input<string>;
-    ipVersion?: pulumi.Input<string>;
+    /**
+     * @deprecated icmp is deprecated, use 'protocol', 'code', and 'type' instead.
+     */
+    icmp?: pulumi.Input<inputs.IsNetworkAclRuleIcmp | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    ipVersion?: pulumi.Input<string | undefined>;
     name: pulumi.Input<string>;
+    /**
+     * The highest port in the range of ports to be matched
+     */
+    portMax?: pulumi.Input<number | undefined>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    portMin?: pulumi.Input<number | undefined>;
+    /**
+     * The name of the network protocol
+     */
+    protocol?: pulumi.Input<string | undefined>;
     source: pulumi.Input<string>;
-    subnets?: pulumi.Input<number>;
-    tcp?: pulumi.Input<inputs.IsNetworkAclRuleTcp>;
-    udp?: pulumi.Input<inputs.IsNetworkAclRuleUdp>;
+    /**
+     * The highest port in the range of ports to be matched
+     */
+    sourcePortMax?: pulumi.Input<number | undefined>;
+    /**
+     * The lowest port in the range of ports to be matched
+     */
+    sourcePortMin?: pulumi.Input<number | undefined>;
+    subnets?: pulumi.Input<number | undefined>;
+    /**
+     * @deprecated tcp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    tcp?: pulumi.Input<inputs.IsNetworkAclRuleTcp | undefined>;
+    /**
+     * The ICMP traffic type to allow. Valid values from 0 to 254.
+     */
+    type?: pulumi.Input<number | undefined>;
+    /**
+     * @deprecated udp is deprecated, use 'protocol', 'port_min', 'port_max', 'source_port_min', and 'source_port_max' instead.
+     */
+    udp?: pulumi.Input<inputs.IsNetworkAclRuleUdp | undefined>;
 }
 
 export interface IsNetworkAclRuleIcmp {
     /**
      * The ICMP traffic code to allow. Valid values from 0 to 255.
      */
-    code?: pulumi.Input<number>;
+    code?: pulumi.Input<number | undefined>;
     /**
      * The ICMP traffic type to allow. Valid values from 0 to 254.
      */
-    type?: pulumi.Input<number>;
+    type?: pulumi.Input<number | undefined>;
 }
 
 export interface IsNetworkAclRuleTcp {
     /**
      * The highest port in the range of ports to be matched
      */
-    portMax?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
     /**
      * The lowest port in the range of ports to be matched
      */
-    portMin?: pulumi.Input<number>;
+    portMin?: pulumi.Input<number | undefined>;
     /**
      * The highest port in the range of ports to be matched
      */
-    sourcePortMax?: pulumi.Input<number>;
+    sourcePortMax?: pulumi.Input<number | undefined>;
     /**
      * The lowest port in the range of ports to be matched
      */
-    sourcePortMin?: pulumi.Input<number>;
+    sourcePortMin?: pulumi.Input<number | undefined>;
 }
 
 export interface IsNetworkAclRuleUdp {
     /**
      * The highest port in the range of ports to be matched
      */
-    portMax?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
     /**
      * The lowest port in the range of ports to be matched
      */
-    portMin?: pulumi.Input<number>;
+    portMin?: pulumi.Input<number | undefined>;
     /**
      * The highest port in the range of ports to be matched
      */
-    sourcePortMax?: pulumi.Input<number>;
+    sourcePortMax?: pulumi.Input<number | undefined>;
     /**
      * The lowest port in the range of ports to be matched
      */
-    sourcePortMin?: pulumi.Input<number>;
+    sourcePortMin?: pulumi.Input<number | undefined>;
 }
 
 export interface IsPublicAddressRangeResourceGroup {
     /**
      * The URL for this resource group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this resource group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsPublicAddressRangeTarget {
@@ -6440,143 +6939,143 @@ export interface IsPublicAddressRangeTargetVpc {
     /**
      * The CRN for this VPC.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsPublicAddressRangeTargetVpcDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsPublicAddressRangeTargetVpcDeleted>[] | undefined>;
     /**
      * The URL for this VPC.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPC.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this VPC. The name is unique across all VPCs in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsPublicAddressRangeTargetVpcDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsPublicAddressRangeTargetZone {
     /**
      * The URL for this zone.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this zone.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsReservationActivateCapacity {
     /**
      * The amount allocated to this capacity reservation.
      */
-    allocated?: pulumi.Input<number>;
+    allocated?: pulumi.Input<number | undefined>;
     /**
      * The amount of this capacity reservation available for new attachments.
      */
-    available?: pulumi.Input<number>;
+    available?: pulumi.Input<number | undefined>;
     /**
      * The status of the capacity reservation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The total amount to use for this capacity reservation.
      */
-    total?: pulumi.Input<number>;
+    total?: pulumi.Input<number | undefined>;
     /**
      * The amount of this capacity reservation used by existing attachments.
      */
-    used?: pulumi.Input<number>;
+    used?: pulumi.Input<number | undefined>;
 }
 
 export interface IsReservationActivateCommittedUse {
     /**
      * The expiration date and time for this committed use reservation.
      */
-    expirationAt?: pulumi.Input<string>;
+    expirationAt?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of days to keep each backup after creation.
      */
-    expirationPolicy?: pulumi.Input<string>;
+    expirationPolicy?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of recent backups to keep. If unspecified, there will be no maximum.
      */
-    term?: pulumi.Input<string>;
+    term?: pulumi.Input<string | undefined>;
 }
 
 export interface IsReservationActivateProfile {
     /**
      * The URL for this virtual server instance profile.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this virtual server instance profile.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type of the profile.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsReservationActivateResourceGroup {
     /**
      * The URL for this resource group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this resource group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsReservationActivateStatusReason {
     /**
      * snake case string succinctly identifying the status reason.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsReservationCapacity {
     /**
      * The amount allocated to this capacity reservation.
      */
-    allocated?: pulumi.Input<number>;
+    allocated?: pulumi.Input<number | undefined>;
     /**
      * The amount of this capacity reservation available for new attachments.
      */
-    available?: pulumi.Input<number>;
+    available?: pulumi.Input<number | undefined>;
     /**
      * The status of the capacity reservation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The total amount to use for this capacity reservation.
      */
@@ -6584,18 +7083,18 @@ export interface IsReservationCapacity {
     /**
      * The amount of this capacity reservation used by existing attachments.
      */
-    used?: pulumi.Input<number>;
+    used?: pulumi.Input<number | undefined>;
 }
 
 export interface IsReservationCommittedUse {
     /**
      * The expiration date and time for this committed use reservation.
      */
-    expirationAt?: pulumi.Input<string>;
+    expirationAt?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of days to keep each backup after creation.
      */
-    expirationPolicy?: pulumi.Input<string>;
+    expirationPolicy?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of recent backups to keep. If unspecified, there will be no maximum.
      */
@@ -6606,7 +7105,7 @@ export interface IsReservationProfile {
     /**
      * The URL for this virtual server instance profile.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this virtual server instance profile.
      */
@@ -6621,7 +7120,7 @@ export interface IsReservationResourceGroup {
     /**
      * The URL for this resource group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group
      */
@@ -6629,14 +7128,14 @@ export interface IsReservationResourceGroup {
     /**
      * The name for this resource group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsReservationStatusReason {
     /**
      * snake case string succinctly identifying the status reason.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason
      */
@@ -6644,147 +7143,151 @@ export interface IsReservationStatusReason {
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSecurityGroupRule {
-    code?: pulumi.Input<number>;
+    code?: pulumi.Input<number | undefined>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     /**
      * IP version: ipv4
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * Security group local ip: an IP address, a CIDR block
      */
-    local?: pulumi.Input<string>;
-    portMax?: pulumi.Input<number>;
-    portMin?: pulumi.Input<number>;
-    protocol?: pulumi.Input<string>;
+    local?: pulumi.Input<string | undefined>;
+    /**
+     * The name for this security group rule. The name is unique across all rules in the security group.
+     */
+    name?: pulumi.Input<string | undefined>;
+    portMax?: pulumi.Input<number | undefined>;
+    portMin?: pulumi.Input<number | undefined>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * Security group id: an IP address, a CIDR block, or a single security group identifier
      */
-    remote?: pulumi.Input<string>;
-    type?: pulumi.Input<number>;
+    remote?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<number | undefined>;
 }
 
 export interface IsSecurityGroupRuleIcmp {
-    code?: pulumi.Input<number>;
-    type?: pulumi.Input<number>;
+    code?: pulumi.Input<number | undefined>;
+    type?: pulumi.Input<number | undefined>;
 }
 
 export interface IsSecurityGroupRuleTcp {
-    portMax?: pulumi.Input<number>;
-    portMin?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
+    portMin?: pulumi.Input<number | undefined>;
 }
 
 export interface IsSecurityGroupRuleUdp {
-    portMax?: pulumi.Input<number>;
-    portMin?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
+    portMin?: pulumi.Input<number | undefined>;
 }
 
 export interface IsShareAccessorBinding {
     /**
      * The URL for this share accessor binding.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this share accessor binding.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareInitialOwner {
     /**
      * The initial group identifier for the file share.
      */
-    gid?: pulumi.Input<number>;
+    gid?: pulumi.Input<number | undefined>;
     /**
      * The initial user identifier for the file share.
      */
-    uid?: pulumi.Input<number>;
+    uid?: pulumi.Input<number | undefined>;
 }
 
 export interface IsShareLatestJob {
     /**
      * The status of the file share job.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the file share job on which the unexpected property value was encountered.* `cancelled`: This job has been cancelled.* `failed`: This job has failed.* `queued`: This job is queued.* `running`: This job is running.* `succeeded`: This job completed successfully.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the file share job status (if any).The enumerated reason code values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the resource on which the unexpected reason code was encountered.
      */
-    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareLatestJobStatusReason>[]>;
+    statusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareLatestJobStatusReason>[] | undefined>;
     /**
      * The type of the file share job.The enumerated values for this property will expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the file share job on which the unexpected property value was encountered.* `replicationFailover`: This is a share replication failover job.* `replicationInit`: This is a share replication is initialization job.* `replicationSplit`: This is a share replication split job.* `replicationSync`: This is a share replication synchronization job.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareLatestJobStatusReason {
     /**
      * A snake case string succinctly identifying the status reason.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareLatestSync {
     /**
      * The completed date and time of last synchronization between the replica share and its source.
      */
-    completedAt?: pulumi.Input<string>;
+    completedAt?: pulumi.Input<string | undefined>;
     /**
      * The data transferred (in bytes) in the last synchronization between the replica and its source.
      */
-    dataTransferred?: pulumi.Input<number>;
+    dataTransferred?: pulumi.Input<number | undefined>;
     /**
      * The start date and time of last synchronization between the replica share and its source.
      */
-    startedAt?: pulumi.Input<string>;
+    startedAt?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareLifecycleReason {
     /**
      * A reason code for this lifecycle state
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareMountTarget {
     /**
      * The protocol to use to access the share for this share mount target.
      */
-    accessProtocol?: pulumi.Input<string>;
+    accessProtocol?: pulumi.Input<string | undefined>;
     /**
      * Href of this mount target
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * ID of this mount target
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
@@ -6792,199 +7295,199 @@ export interface IsShareMountTarget {
     /**
      * Resource type of mount target
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The transit encryption mode.
      */
-    transitEncryption?: pulumi.Input<string>;
+    transitEncryption?: pulumi.Input<string | undefined>;
     /**
      * VNI for mount target.
      */
-    virtualNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterface>[]>;
+    virtualNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterface>[] | undefined>;
     /**
      * The unique identifier of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareMountTargetVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * CRN of this VNI
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * href of virtual network interface
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * ID of this VNI
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Name of this VNI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * VNI for mount target.
      */
-    primaryIp?: pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterfacePrimaryIp>;
+    primaryIp?: pulumi.Input<inputs.IsShareMountTargetVirtualNetworkInterfacePrimaryIp | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * Resource group id
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Resource type of VNI
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups to use for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet. Required if primaryIp is not specified.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareMountTargetVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * href of primary ip
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Name for reserved IP
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of reserved IP
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * Resource type of primary ip
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareOriginShare {
     /**
      * The CRN for this file share.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareDeleted>[] | undefined>;
     /**
      * The URL for this file share.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this file share.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this share. The name is unique across all shares in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareOriginShareDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareOriginShareRemote {
     /**
      * If present, this property indicates that the referenced resource is remote to thisaccount, and identifies the owning account.
      */
-    accounts?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareRemoteAccount>[]>;
+    accounts?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareRemoteAccount>[] | undefined>;
     /**
      * If present, this property indicates that the referenced resource is remote to thisregion, and identifies the native region.
      */
-    regions?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareRemoteRegion>[]>;
+    regions?: pulumi.Input<pulumi.Input<inputs.IsShareOriginShareRemoteRegion>[] | undefined>;
 }
 
 export interface IsShareOriginShareRemoteAccount {
     /**
      * The unique identifier for this account.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareOriginShareRemoteRegion {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareReplicaShare {
     /**
      * List of access management tags for this replica share
      */
-    accessTags?: pulumi.Input<pulumi.Input<string>[]>;
+    accessTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The CRN for this replica share.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The href for this replica share.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The ID of this replica file share.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The maximum input/output operation per second (IOPS) for the file share.
      */
-    iops?: pulumi.Input<number>;
+    iops?: pulumi.Input<number | undefined>;
     /**
      * The share targets for this replica file share.Share targets mounted from a replica must be mounted read-only.
      */
-    mountTargets?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareMountTarget>[]>;
+    mountTargets?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareMountTarget>[] | undefined>;
     /**
      * The unique user-defined name for this file share.
      */
@@ -7000,155 +7503,155 @@ export interface IsShareReplicaShare {
     /**
      * The replication role of the file share.
      */
-    replicationRole?: pulumi.Input<string>;
+    replicationRole?: pulumi.Input<string | undefined>;
     /**
      * The replication status of the file share.
      */
-    replicationStatus?: pulumi.Input<string>;
+    replicationStatus?: pulumi.Input<string | undefined>;
     /**
      * The reasons for the current replication status.
      */
-    replicationStatusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareReplicationStatusReason>[]>;
+    replicationStatusReasons?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareReplicationStatusReason>[] | undefined>;
     /**
      * User Tags for the replica share
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the zone this replica file share will reside in. Must be a different zone in the same region as the source share.
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareReplicaShareMountTarget {
     /**
      * The protocol to use to access the share for this share mount target.
      */
-    accessProtocol?: pulumi.Input<string>;
+    accessProtocol?: pulumi.Input<string | undefined>;
     /**
      * href of mount target
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * ID of this share target.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this share target. Names must be unique within the share the share target resides in. If unspecified, the name will be a hyphenated list of randomly-selected words.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource type of virtual network interface
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The transit encryption mode.
      */
-    transitEncryption?: pulumi.Input<string>;
+    transitEncryption?: pulumi.Input<string | undefined>;
     /**
      * VNI for mount target.
      */
-    virtualNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareMountTargetVirtualNetworkInterface>[]>;
+    virtualNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareMountTargetVirtualNetworkInterface>[] | undefined>;
     /**
      * The ID of the VPC in which instances can mount the file share using this share target.This property will be removed in a future release.The `subnet` property should be used instead.
      */
-    vpc?: pulumi.Input<string>;
+    vpc?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareReplicaShareMountTargetVirtualNetworkInterface {
     /**
      * Indicates whether source IP spoofing is allowed on this interface. If `false`, source IP spoofing is prevented on this interface. If `true`, source IP spoofing is allowed on this interface.
      */
-    allowIpSpoofing?: pulumi.Input<boolean>;
+    allowIpSpoofing?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this virtual network interface will be automatically deleted when`target` is deleted.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * CRN of virtual network interface
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If `true`:- The VPC infrastructure performs any needed NAT operations.- `floatingIps` must not have more than one floating IP.If `false`:- Packets are passed unchanged to/from the network interface,  allowing the workload to perform any needed NAT operations.- `allowIpSpoofing` must be `false`.- If the virtual network interface is attached:  - The target `resourceType` must be `bareMetalServerNetworkAttachment`.  - The target `interfaceType` must not be `hipersocket`.
      */
-    enableInfrastructureNat?: pulumi.Input<boolean>;
+    enableInfrastructureNat?: pulumi.Input<boolean | undefined>;
     /**
      * href of virtual network interface
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * ID of this VNI
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Name of this VNI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * VNI for mount target.
      */
-    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareMountTargetVirtualNetworkInterfacePrimaryIp>[]>;
+    primaryIps?: pulumi.Input<pulumi.Input<inputs.IsShareReplicaShareMountTargetVirtualNetworkInterfacePrimaryIp>[] | undefined>;
     /**
      * The protocol state filtering mode used for this virtual network interface.
      */
-    protocolStateFilteringMode?: pulumi.Input<string>;
+    protocolStateFilteringMode?: pulumi.Input<string | undefined>;
     /**
      * Resource group id
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Resource type of primary ip
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The security groups to use for this virtual network interface.
      */
-    securityGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    securityGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The associated subnet. Required if primaryIp is not specified.
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareReplicaShareMountTargetVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address to reserve, which must not already be reserved on the subnet.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * href of primary ip
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * Name for reserved IP
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of reserved IP
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * Resource type of primary ip
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareReplicaShareReplicationStatusReason {
     /**
      * A snake case string succinctly identifying the status reason.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareReplicationStatusReason {
@@ -7163,228 +7666,254 @@ export interface IsShareReplicationStatusReason {
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSnapshotBackupPolicyPlan {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlanDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlanDeleted>[] | undefined>;
     /**
      * The URL for this backup policy plan.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this backup policy plan.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this backup policy plan. The name is unique across all plans in the backup policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlanRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlanRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSnapshotBackupPolicyPlanDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSnapshotBackupPolicyPlanRemote {
     /**
      * If present, this property indicates that the referenced resource is remote to thisregion, and identifies the native region.
      */
-    regions?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlanRemoteRegion>[]>;
+    regions?: pulumi.Input<pulumi.Input<inputs.IsShareSnapshotBackupPolicyPlanRemoteRegion>[] | undefined>;
 }
 
 export interface IsShareSnapshotBackupPolicyPlanRemoteRegion {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSnapshotResourceGroup {
     /**
      * The URL for this resource group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this resource group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSnapshotStatusReason {
     /**
-     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     * A reason code for the status:- `encryptionKeyDeleted`: File share snapshot is unusable  because its `encryptionKey` was deleted- `internalError`: Internal error (contact IBM support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSnapshotZone {
     /**
      * The URL for this zone.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this zone.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSourceSnapshot {
     /**
      * The CRN for this share snapshot.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsShareSourceSnapshotDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsShareSourceSnapshotDeleted>[] | undefined>;
     /**
      * The URL for this share snapshot.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this share snapshot.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this share snapshot. The name is unique across all snapshots for the file share.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsShareSourceSnapshotDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotAllowedUse {
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this snapshot.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this snapshot.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by a virtual server instance provisioned using this image.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotBackupPolicyPlan {
     /**
      * If present, this property indicates the referenced resource has been deleted and provides some supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotBackupPolicyPlanDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotBackupPolicyPlanDeleted>[] | undefined>;
     /**
      * The URL for this backup policy plan.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this backup policy plan.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this backup policy plan.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of resource referenced
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotBackupPolicyPlanDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotCatalogOffering {
     /**
      * If present, this property indicates the referenced resource has been deleted and provides some supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCatalogOfferingDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCatalogOfferingDeleted>[] | undefined>;
     /**
      * The CRN for this catalog offering version's billing plan
      */
-    planCrn?: pulumi.Input<string>;
+    planCrn?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this version of a catalog offering
      */
-    versionCrn?: pulumi.Input<string>;
+    versionCrn?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotCatalogOfferingDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsSnapshotConsistencyGroupBackupPolicyJob {
+    /**
+     * If present, this property indicates the referenced resource has been deleted, and provides some supplementary information.
+     */
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyJobDeleted>[] | undefined>;
+    /**
+     * The URL for this backup policy job.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * The unique identifier for this backup policy job.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * The resource type.
+     */
+    resourceType?: pulumi.Input<string | undefined>;
+}
+
+export interface IsSnapshotConsistencyGroupBackupPolicyJobDeleted {
+    /**
+     * Link to documentation about deleted resources.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotConsistencyGroupBackupPolicyPlan {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyPlanDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyPlanDeleted>[] | undefined>;
     /**
      * The URL for this backup policy plan.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this backup policy plan.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this backup policy plan. The name is unique across all plans in the backup policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource is remote to this region,and identifies the native region.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyPlanRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupBackupPolicyPlanRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotConsistencyGroupBackupPolicyPlanDeleted {
@@ -7398,18 +7927,18 @@ export interface IsSnapshotConsistencyGroupBackupPolicyPlanRemote {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotConsistencyGroupSnapshot {
     /**
      * The name for this snapshot. The name is unique across all snapshots in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The volume to create this snapshot from.
      */
@@ -7417,372 +7946,395 @@ export interface IsSnapshotConsistencyGroupSnapshot {
     /**
      * User Tags for the snapshot
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface IsSnapshotConsistencyGroupSnapshotReference {
     /**
      * The CRN of this snapshot.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshotReferenceDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshotReferenceDeleted>[] | undefined>;
     /**
      * The URL for this snapshot.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this snapshot.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this snapshot. The name is unique across all snapshots in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource is remote to this region,and identifies the native region.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshotReferenceRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotConsistencyGroupSnapshotReferenceRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotConsistencyGroupSnapshotReferenceDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotConsistencyGroupSnapshotReferenceRemote {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotCopy {
     /**
      * The CRN for the copied snapshot.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCopyDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCopyDeleted>[] | undefined>;
     /**
      * The URL for the copied snapshot.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the copied snapshot.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for the copied snapshot. The name is unique across all snapshots in the copied snapshot's native region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource is remote to this region,and identifies the native region.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCopyRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotCopyRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotCopyDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotCopyRemote {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotSnapshotConsistencyGroup {
     /**
      * The CRN of this snapshot consistency group.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSnapshotConsistencyGroupDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSnapshotConsistencyGroupDeleted>[] | undefined>;
     /**
      * The URL for the snapshot consistency group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the snapshot consistency group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for the snapshot consistency group. The name is unique across all snapshot consistency groups in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotSnapshotConsistencyGroupDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotSourceSnapshot {
     /**
      * The CRN of the source snapshot.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSourceSnapshotDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSourceSnapshotDeleted>[] | undefined>;
     /**
      * The URL for the source snapshot.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the source snapshot.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for the source snapshot. The name is unique across all snapshots in the source snapshot's native region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource is remote to this region,and identifies the native region.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSourceSnapshotRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsSnapshotSourceSnapshotRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotSourceSnapshotDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSnapshotSourceSnapshotRemote {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSubnetNetworkAclAttachmentRule {
     /**
      * Whether to allow or deny matching traffic
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The destination CIDR block
      */
-    destination?: pulumi.Input<string>;
+    destination?: pulumi.Input<string | undefined>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
-    direction?: pulumi.Input<string>;
-    icmps?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRuleIcmp>[]>;
+    direction?: pulumi.Input<string | undefined>;
+    icmps?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRuleIcmp>[] | undefined>;
     /**
      * The unique identifier for this Network ACL rule
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The IP version for this rule
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The name of the network protocol
+     */
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The source CIDR block
      */
-    source?: pulumi.Input<string>;
-    tcps?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRuleTcp>[]>;
-    udps?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRuleUdp>[]>;
+    source?: pulumi.Input<string | undefined>;
+    tcps?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRuleTcp>[] | undefined>;
+    udps?: pulumi.Input<pulumi.Input<inputs.IsSubnetNetworkAclAttachmentRuleUdp>[] | undefined>;
 }
 
 export interface IsSubnetNetworkAclAttachmentRuleIcmp {
     /**
      * The ICMP traffic code to allow
      */
-    code?: pulumi.Input<number>;
+    code?: pulumi.Input<number | undefined>;
     /**
      * The ICMP traffic type to allow
      */
-    type?: pulumi.Input<number>;
+    type?: pulumi.Input<number | undefined>;
 }
 
 export interface IsSubnetNetworkAclAttachmentRuleTcp {
     /**
      * The inclusive upper bound of TCP destination port range
      */
-    portMax?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
     /**
      * The inclusive lower bound of TCP destination port range
      */
-    portMin?: pulumi.Input<number>;
+    portMin?: pulumi.Input<number | undefined>;
     /**
      * The inclusive upper bound of TCP source port range
      */
-    sourcePortMax?: pulumi.Input<number>;
+    sourcePortMax?: pulumi.Input<number | undefined>;
     /**
      * The inclusive lower bound of TCP source port range
      */
-    sourcePortMin?: pulumi.Input<number>;
+    sourcePortMin?: pulumi.Input<number | undefined>;
 }
 
 export interface IsSubnetNetworkAclAttachmentRuleUdp {
     /**
      * The inclusive upper bound of UDP destination port range
      */
-    portMax?: pulumi.Input<number>;
+    portMax?: pulumi.Input<number | undefined>;
     /**
      * The inclusive lower bound of UDP destination port range
      */
-    portMin?: pulumi.Input<number>;
+    portMin?: pulumi.Input<number | undefined>;
     /**
      * The inclusive upper bound of UDP source port range
      */
-    sourcePortMax?: pulumi.Input<number>;
+    sourcePortMax?: pulumi.Input<number | undefined>;
     /**
      * The inclusive lower bound of UDP source port range
      */
-    sourcePortMin?: pulumi.Input<number>;
+    sourcePortMin?: pulumi.Input<number | undefined>;
 }
 
 export interface IsSubnetRoutingTableAttachmentResourceGroup {
     /**
      * The URL for this resource group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this resource group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSubnetRoutingTableAttachmentRoute {
     /**
      * route ID
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * route name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsSubnetRoutingTableAttachmentSubnet {
     /**
      * Subnet ID
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Subnet name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualEndpointGatewayIp {
     /**
      * The IP Address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The IPs id
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The IPs name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The VPE Resource Type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The Subnet id
      */
-    subnet?: pulumi.Input<string>;
+    subnet?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualEndpointGatewayIpTarget {
     /**
      * The IPs target id
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The IPs target name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Endpoint gateway resource type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualEndpointGatewayLifecycleReason {
     /**
      * A snake case string succinctly identifying the reason for this lifecycle state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsVirtualEndpointGatewayResourceBindingLifecycleReason {
+    /**
+     * A reason code for this lifecycle state:- `internalError`: internal error (contact IBM support)- `resourceSuspendedByProvider`: The resource has been suspended (contact IBM  support)The enumerated values for this property may [expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code?: pulumi.Input<string | undefined>;
+    /**
+     * An explanation of the reason for this lifecycle state.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * A link to documentation about the reason for this lifecycle state.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsVirtualEndpointGatewayResourceBindingTarget {
+    crn?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualEndpointGatewayTarget {
     /**
      * The target crn
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The target name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The target resource type
      */
@@ -7793,30 +8345,30 @@ export interface IsVirtualNetworkInterfaceFloatingIpDeleted {
     /**
      * Link to documentation about deleted resources
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfaceIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
@@ -7824,634 +8376,716 @@ export interface IsVirtualNetworkInterfaceIp {
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfaceIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfacePrimaryIp {
     /**
      * The IP address.If the address has not yet been selected, the value will be `0.0.0.0`.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this reserved IP member will be automatically deleted when either target is deleted, or the reserved IP is unbound.
      */
-    autoDelete?: pulumi.Input<boolean>;
+    autoDelete?: pulumi.Input<boolean | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfacePrimaryIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfacePrimaryIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The name for this reserved IP. The name is unique across all reserved IPs in a subnet.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    reservedIp?: pulumi.Input<string>;
+    reservedIp?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfacePrimaryIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfaceTarget {
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceTargetDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceTargetDeleted>[] | undefined>;
     /**
      * The URL for this share mount target.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this share mount target.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this share mount target. The name is unique across all mount targets for the file share.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfaceTargetDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfaceVpc {
     /**
      * The CRN for this VPC.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceVpcDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVirtualNetworkInterfaceVpcDeleted>[] | undefined>;
     /**
      * The URL for this VPC.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPC.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this VPC. The name is unique across all VPCs in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVirtualNetworkInterfaceVpcDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVolumeAllowedUse {
     /**
      * The API version with which to evaluate the expressions.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a bare metal server provisioned using the image data in this volume.
      */
-    bareMetalServer?: pulumi.Input<string>;
+    bareMetalServer?: pulumi.Input<string | undefined>;
     /**
      * The expression that must be satisfied by the properties of a virtual server instance provisioned using this volume.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVolumeCatalogOffering {
     /**
      * If present, this property indicates the referenced resource has been deleted and provides some supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVolumeCatalogOfferingDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVolumeCatalogOfferingDeleted>[] | undefined>;
     /**
      * The CRN for this catalog offering version's billing plan
      */
-    planCrn?: pulumi.Input<string>;
+    planCrn?: pulumi.Input<string | undefined>;
     /**
      * The CRN for this version of a catalog offering
      */
-    versionCrn?: pulumi.Input<string>;
+    versionCrn?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVolumeCatalogOfferingDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVolumeHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsVolumeJobCancelParameter {
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.If specified, the volume profile must not have a `bandwidth.type` of `dependent`.
+     */
+    bandwidth?: pulumi.Input<number | undefined>;
+    /**
+     * The maximum I/O operations per second (IOPS) for this volume.If specified, the volume profile must not have a `iops.type` of `dependent`.
+     */
+    iops?: pulumi.Input<number | undefined>;
+    /**
+     * Identifies a volume profile by a unique property.
+     */
+    profile: pulumi.Input<inputs.IsVolumeJobCancelParameterProfile>;
+}
+
+export interface IsVolumeJobCancelParameterProfile {
+    /**
+     * The URL for this volume profile.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * The globally unique name for this volume profile.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface IsVolumeJobCancelStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code?: pulumi.Input<string | undefined>;
+    /**
+     * An explanation of the status reason.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * A link to documentation about this status reason.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
+}
+
+export interface IsVolumeJobParameters {
+    /**
+     * The maximum bandwidth (in megabits per second) for the volume.If specified, the volume profile must not have a `bandwidth.type` of `dependent`.
+     */
+    bandwidth?: pulumi.Input<number | undefined>;
+    /**
+     * The maximum I/O operations per second (IOPS) for this volume.If specified, the volume profile must not have a `iops.type` of `dependent`.
+     */
+    iops?: pulumi.Input<number | undefined>;
+    /**
+     * Identifies a volume profile by a unique property.
+     */
+    profile: pulumi.Input<inputs.IsVolumeJobParametersProfile>;
+}
+
+export interface IsVolumeJobParametersProfile {
+    /**
+     * The URL for this volume profile.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * The globally unique name for this volume profile.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface IsVolumeJobStatusReason {
+    /**
+     * A snake case string succinctly identifying the status reason.The enumerated values for this property may[expand](https://cloud.ibm.com/apidocs/vpc#property-value-expansion) in the future.
+     */
+    code?: pulumi.Input<string | undefined>;
+    /**
+     * An explanation of the status reason.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * A link to documentation about this status reason.
+     */
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVolumeOperatingSystem {
     /**
      * The operating system architecture.
      */
-    architecture?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
     /**
      * Images with this operating system can only be used on dedicated hosts or dedicated host groups.
      */
-    dedicatedHostOnly?: pulumi.Input<boolean>;
+    dedicatedHostOnly?: pulumi.Input<boolean | undefined>;
     /**
      * A unique, display-friendly name for the operating system.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The software family for this operating system.
      */
-    family?: pulumi.Input<string>;
+    family?: pulumi.Input<string | undefined>;
     /**
      * The URL for this operating system.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this operating system.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The vendor of the operating system.
      */
-    vendor?: pulumi.Input<string>;
+    vendor?: pulumi.Input<string | undefined>;
     /**
      * The major release version of this operating system.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVolumeStatusReason {
     /**
      * A snake case string succinctly identifying the status reason
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcCseSourceAddress {
     /**
      * Cloud service endpoint IP Address
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Location info of CSE Address
      */
-    zoneName?: pulumi.Input<string>;
+    zoneName?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDns {
     /**
      * Indicates whether this VPC is enabled as a DNS name resolution hub.
      */
-    enableHub?: pulumi.Input<boolean>;
+    enableHub?: pulumi.Input<boolean | undefined>;
     /**
      * The number of DNS resolution bindings for this VPC.
      */
-    resolutionBindingCount?: pulumi.Input<number>;
+    resolutionBindingCount?: pulumi.Input<number | undefined>;
     /**
      * The DNS resolver configuration for the VPC.
      */
-    resolver?: pulumi.Input<inputs.IsVpcDnsResolver>;
+    resolver?: pulumi.Input<inputs.IsVpcDnsResolver | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingEndpointGateway {
     /**
      * The CRN for this endpoint gateway.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The URL for this endpoint gateway.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this endpoint gateway.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this endpoint gateway. The name is unique across all endpoint gateways in the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGatewayRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGatewayRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingEndpointGatewayRemote {
     /**
      * If present, this property indicates that the referenced resource is remote to thisaccount, and identifies the owning account.
      */
-    accounts?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGatewayRemoteAccount>[]>;
+    accounts?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGatewayRemoteAccount>[] | undefined>;
     /**
      * If present, this property indicates that the referenced resource is remote to thisregion, and identifies the native region.
      */
-    regions?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGatewayRemoteRegion>[]>;
+    regions?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingEndpointGatewayRemoteRegion>[] | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingEndpointGatewayRemoteAccount {
     /**
      * The unique identifier for this account.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingEndpointGatewayRemoteRegion {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingVpc {
     /**
      * The CRN for this VPC.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * The URL for this VPC.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPC.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this VPC. The name is unique across all VPCs in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates that the resource associated with this referenceis remote and therefore may not be directly retrievable.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingVpcRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingVpcRemote>[] | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingVpcRemote {
     /**
      * If present, this property indicates that the referenced resource is remote to thisaccount, and identifies the owning account.
      */
-    accounts?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingVpcRemoteAccount>[]>;
+    accounts?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingVpcRemoteAccount>[] | undefined>;
     /**
      * If present, this property indicates that the referenced resource is remote to thisregion, and identifies the native region.
      */
-    regions?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingVpcRemoteRegion>[]>;
+    regions?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolutionBindingVpcRemoteRegion>[] | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingVpcRemoteAccount {
     /**
      * The unique identifier for this account.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolutionBindingVpcRemoteRegion {
     /**
      * The URL for this region.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The globally unique name for this region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolver {
     /**
      * The configuration of the system DNS resolver for this VPC.- `customResolver`: A custom DNS resolver is configured for this VPC.- `privateResolver`: A private DNS resolver is configured for this VPC. Applicable when  the VPC has either or both of the following:    - at least one endpoint gateway residing in it    - a [DNS Services](https://cloud.ibm.com/docs/dns-svcs) private zone configured for it- `default`: The provider default DNS resolvers are configured for this VPC.  This system DNS resolver configuration is used when the VPC has:  - no custom DNS resolver configured for it, and  - no endpoint gateways residing in it, and  - no [DNS Services](https://cloud.ibm.com/docs/dns-svcs) private zone configured for it.
      */
-    configuration?: pulumi.Input<string>;
+    configuration?: pulumi.Input<string | undefined>;
     /**
      * The VPC dns binding id whose DNS resolver provides the DNS server addresses for this VPC.
      */
-    dnsBindingId?: pulumi.Input<string>;
+    dnsBindingId?: pulumi.Input<string | undefined>;
     /**
      * The VPC dns binding name whose DNS resolver provides the DNS server addresses for this VPC.
      */
-    dnsBindingName?: pulumi.Input<string>;
+    dnsBindingName?: pulumi.Input<string | undefined>;
     /**
      * The manually specified DNS servers for this VPC.
      */
-    manualServers?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolverManualServer>[]>;
+    manualServers?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolverManualServer>[] | undefined>;
     /**
      * The DNS servers for this VPC. The servers are populated:- by the system when `dns.resolver.type` is `system`- using the DNS servers in `dns.resolver.vpc` when `dns.resolver.type` is `delegated`- using `dns.resolver.manual_servers` when the `dns.resolver.type` is `manual`.
      */
-    servers?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolverServer>[]>;
+    servers?: pulumi.Input<pulumi.Input<inputs.IsVpcDnsResolverServer>[] | undefined>;
     /**
      * The type of the DNS resolver used for the VPC.- `delegated`: DNS server addresses are provided by the DNS resolver of the VPC               specified in `dns.resolver.vpc`.- `manual`: DNS server addresses are specified in `dns.resolver.manual_servers`.- `system`: DNS server addresses are provided by the system.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The VPC crn whose DNS resolver provides the DNS server addresses for this VPC.The VPC may be remote and therefore may not be directly retrievable.
      */
-    vpcCrn?: pulumi.Input<string>;
+    vpcCrn?: pulumi.Input<string | undefined>;
     /**
      * The VPC id whose DNS resolver provides the DNS server addresses for this VPC.The VPC may be remote and therefore may not be directly retrievable.
      */
-    vpcId?: pulumi.Input<string>;
+    vpcId?: pulumi.Input<string | undefined>;
     /**
      * The VPC name whose DNS resolver provides the DNS server addresses for this VPC.The VPC may be remote and therefore may not be directly retrievable.
      */
-    vpcName?: pulumi.Input<string>;
+    vpcName?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this account.
      */
-    vpcRemoteAccountId?: pulumi.Input<string>;
+    vpcRemoteAccountId?: pulumi.Input<string | undefined>;
     /**
      * Region name. If present, this property indicates that the referenced resource is remote to this region, and identifies the native region.
      */
-    vpcRemoteRegion?: pulumi.Input<string>;
+    vpcRemoteRegion?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolverManualServer {
     /**
      * The IP address.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The name of the zone. If present, DHCP configuration for this zone will have this DNS server listed first.
      */
-    zoneAffinity?: pulumi.Input<string>;
+    zoneAffinity?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcDnsResolverServer {
     /**
      * The IP address.This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * Zone name, if present, DHCP configuration for this zone will have this DNS server listed first.
      */
-    zoneAffinity?: pulumi.Input<string>;
+    zoneAffinity?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcPublicAddressRange {
     /**
      * The CRN for this public address range.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted, and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpcPublicAddressRangeDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpcPublicAddressRangeDeleted>[] | undefined>;
     /**
      * The URL for this public address range.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this public address range.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name for this public address range. The name is unique across all public address ranges in the region.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcPublicAddressRangeDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcRoutingTableResourceGroup {
     /**
      * The URL for this resource group.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this resource group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this resource group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcRoutingTableRouteCreator {
     /**
      * The VPN gateway's CRN.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableRouteCreatorDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpcRoutingTableRouteCreatorDeleted>[] | undefined>;
     /**
      * The VPN gateway's canonical URL.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPN gateway.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined name for this VPN gateway.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcRoutingTableRouteCreatorDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcRoutingTableSubnet {
     /**
      * Subnet ID
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Subnet name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpcSecurityGroup {
     /**
      * Security group id
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * Security group name
      */
-    groupName?: pulumi.Input<string>;
+    groupName?: pulumi.Input<string | undefined>;
     /**
      * Security Rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.IsVpcSecurityGroupRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.IsVpcSecurityGroupRule>[] | undefined>;
 }
 
 export interface IsVpcSecurityGroupRule {
-    code?: pulumi.Input<number>;
+    code?: pulumi.Input<number | undefined>;
     /**
      * Direction of traffic to enforce, either inbound or outbound
      */
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     /**
      * IP version: ipv4
      */
-    ipVersion?: pulumi.Input<string>;
-    portMax?: pulumi.Input<number>;
-    portMin?: pulumi.Input<number>;
-    protocol?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
+    portMax?: pulumi.Input<number | undefined>;
+    portMin?: pulumi.Input<number | undefined>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * Security group id: an IP address, a CIDR block, or a single security group identifier
      */
-    remote?: pulumi.Input<string>;
+    remote?: pulumi.Input<string | undefined>;
     /**
      * Rule ID
      */
-    ruleId?: pulumi.Input<string>;
-    type?: pulumi.Input<number>;
+    ruleId?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<number | undefined>;
 }
 
 export interface IsVpcSubnet {
     /**
      * Available IPv4 address count in the subnet
      */
-    availableIpv4AddressCount?: pulumi.Input<number>;
+    availableIpv4AddressCount?: pulumi.Input<number | undefined>;
     /**
      * subnet ID
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * subent name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * subnet status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Total IPv4 address count in the subnet
      */
-    totalIpv4AddressCount?: pulumi.Input<number>;
+    totalIpv4AddressCount?: pulumi.Input<number | undefined>;
     /**
      * subnet location
      */
-    zone?: pulumi.Input<string>;
+    zone?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayConnectionLocal {
     /**
      * VPN gateway connection local CIDRs
      */
-    cidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    cidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The local IKE identities.A VPN gateway in static route mode consists of two members in active-active mode. The first identity applies to the first member, and the second identity applies to the second member.
      */
-    ikeIdentities?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionLocalIkeIdentity>[]>;
+    ikeIdentities?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayConnectionLocalIkeIdentity>[] | undefined>;
 }
 
 export interface IsVpnGatewayConnectionLocalIkeIdentity {
@@ -8462,30 +9096,34 @@ export interface IsVpnGatewayConnectionLocalIkeIdentity {
     /**
      * The IKE identity FQDN value.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayConnectionPeer {
     /**
      * The IP address of the peer VPN gateway for this connection.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
+    /**
+     * The peer autonomous system number (ASN) for this VPN gateway connection.
+     */
+    asn?: pulumi.Input<number | undefined>;
     /**
      * VPN gateway connection peer CIDRs
      */
-    cidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    cidrs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The FQDN of the peer VPN gateway for this connection.
      */
-    fqdn?: pulumi.Input<string>;
+    fqdn?: pulumi.Input<string | undefined>;
     /**
      * The peer IKE identity.
      */
-    ikeIdentity?: pulumi.Input<inputs.IsVpnGatewayConnectionPeerIkeIdentity>;
+    ikeIdentity?: pulumi.Input<inputs.IsVpnGatewayConnectionPeerIkeIdentity | undefined>;
     /**
      * Indicates whether `peer.address` or `peer.fqdn` is used.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayConnectionPeerIkeIdentity {
@@ -8496,123 +9134,135 @@ export interface IsVpnGatewayConnectionPeerIkeIdentity {
     /**
      * The IKE identity FQDN value.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayConnectionStatusReason {
     /**
      * A snake case string succinctly identifying the status reason.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the status reason.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about this status reason.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayConnectionTunnel {
     /**
      * The IP address of the VPN gateway member in which the tunnel resides
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
+    /**
+     * The IP address of the neighbor on the virtual tunnel interface.
+     */
+    neighborIp?: pulumi.Input<string | undefined>;
+    /**
+     * BGP routing protocol state.
+     */
+    protocolState?: pulumi.Input<string | undefined>;
     /**
      * The status of the VPN Tunnel
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
+    /**
+     * The IP address of the virtual tunnel interface.
+     */
+    tunnelInterfaceIp?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayLifecycleReason {
     /**
      * A snake case string succinctly identifying the reason for this lifecycle state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayMember {
     /**
      * The public IP address assigned to the VPN gateway member
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * The private IP address assigned to the VPN gateway member
      */
-    privateAddress?: pulumi.Input<string>;
+    privateAddress?: pulumi.Input<string | undefined>;
     /**
      * The high availability role assigned to the VPN gateway member
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The status of the VPN gateway member
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayVpc {
     /**
      * The CRN for this VPC.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayVpcDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpnGatewayVpcDeleted>[] | undefined>;
     /**
      * The URL for this VPC.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPC.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnGatewayVpcDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerClientAuthentication {
     /**
      * The crn of certificate instance to use for the VPN client certificate authority (CA).
      */
-    clientCaCrn?: pulumi.Input<string>;
+    clientCaCrn?: pulumi.Input<string | undefined>;
     /**
      * The type of identity provider to be used by the VPN client.- `iam`: IBM identity and access managementThe enumerated values for this property are expected to expand in the future. When processing this property, check for and log unknown values. Optionally halt processing and surface the error, or bypass the route on which the unexpected property value was encountered.
      */
-    identityProvider?: pulumi.Input<string>;
+    identityProvider?: pulumi.Input<string | undefined>;
     /**
      * The type of authentication.
      */
@@ -8623,170 +9273,170 @@ export interface IsVpnServerHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerLifecycleReason {
     /**
      * A snake case string succinctly identifying the reason for this lifecycle state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerPrivateIp {
     /**
      * The IP address. This property may add support for IPv6 addresses in the future. When processing a value in this property, verify that the address is in an expected format. If it is not, log an error. Optionally halt processing and surface the error, or bypass the resource on which the unexpected IP address format was encountered.
      */
-    address?: pulumi.Input<string>;
+    address?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpnServerPrivateIpDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpnServerPrivateIpDeleted>[] | undefined>;
     /**
      * The URL for this reserved IP.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this reserved IP.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The user-defined or system-provided name for this reserved IP.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerPrivateIpDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerRouteHealthReason {
     /**
      * A snake case string succinctly identifying the reason for this health state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this health state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this health state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerRouteLifecycleReason {
     /**
      * A snake case string succinctly identifying the reason for this lifecycle state.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * An explanation of the reason for this lifecycle state.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Link to documentation about the reason for this lifecycle state.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerVpc {
     /**
      * The CRN for this VPC.
      */
-    crn?: pulumi.Input<string>;
+    crn?: pulumi.Input<string | undefined>;
     /**
      * If present, this property indicates the referenced resource has been deleted and providessome supplementary information.
      */
-    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpnServerVpcDeleted>[]>;
+    deleteds?: pulumi.Input<pulumi.Input<inputs.IsVpnServerVpcDeleted>[] | undefined>;
     /**
      * The URL for this VPC.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for this VPC.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The unique user-defined name for this VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 export interface IsVpnServerVpcDeleted {
     /**
      * Link to documentation about deleted resources.
      */
-    moreInfo?: pulumi.Input<string>;
+    moreInfo?: pulumi.Input<string | undefined>;
 }
 
 export interface PiDhcpLease {
     /**
      * The IP of the PVM Instance
      */
-    instanceIp?: pulumi.Input<string>;
+    instanceIp?: pulumi.Input<string | undefined>;
     /**
      * The MAC Address of the PVM Instance
      */
-    instanceMac?: pulumi.Input<string>;
+    instanceMac?: pulumi.Input<string | undefined>;
 }
 
 export interface PiHostCapacity {
     /**
      * Number of cores currently available.
      */
-    availableCores?: pulumi.Input<number>;
+    availableCores?: pulumi.Input<number | undefined>;
     /**
-     * Amount of memory currently available (in GB).
+     * Amount of memory currently available (in GiB).
      */
-    availableMemory?: pulumi.Input<number>;
+    availableMemory?: pulumi.Input<number | undefined>;
     /**
      * Number of cores reserved for system use.
      */
-    reservedCore?: pulumi.Input<number>;
+    reservedCore?: pulumi.Input<number | undefined>;
     /**
-     * Amount of memory reserved for system use (in GB).
+     * Amount of memory reserved for system use (in GiB).
      */
-    reservedMemory?: pulumi.Input<number>;
+    reservedMemory?: pulumi.Input<number | undefined>;
     /**
      * Total number of cores of the host.
      */
-    totalCore?: pulumi.Input<number>;
+    totalCore?: pulumi.Input<number | undefined>;
     /**
-     * Total amount of memory of the host (in GB).
+     * Total amount of memory of the host (in GiB).
      */
-    totalMemory?: pulumi.Input<number>;
+    totalMemory?: pulumi.Input<number | undefined>;
     /**
      * Number of cores in use on the host.
      */
-    usedCore?: pulumi.Input<number>;
+    usedCore?: pulumi.Input<number | undefined>;
     /**
-     * Amount of memory used on the host (in GB).
+     * Amount of memory used on the host (in GiB).
      */
-    usedMemory?: pulumi.Input<number>;
+    usedMemory?: pulumi.Input<number | undefined>;
 }
 
 export interface PiHostGroupPiHost {
@@ -8801,14 +9451,14 @@ export interface PiHostGroupPiHost {
     /**
      * List of user tags attached to the resource.
      */
-    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface PiHostGroupPiSecondary {
     /**
      * Name of the host group to create in the secondary workspace.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * ID of the workspace to share the host group with.
      */
@@ -8827,7 +9477,7 @@ export interface PiHostPiHost {
     /**
      * List of user tags attached to the resource.
      */
-    userTags?: pulumi.Input<pulumi.Input<string>[]>;
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface PiImagePiImageImportDetails {
@@ -8845,6 +9495,32 @@ export interface PiImagePiImageImportDetails {
     vendor: pulumi.Input<string>;
 }
 
+export interface PiInstancePiDefaultTrustedProfile {
+    /**
+     * If set to true, the system will create a link to the specified trusted profile during server creation. Regardless of whether a link is created by the system or manually using the IAM Identity service, it will be automatically deleted when the server is deleted.
+     */
+    autolink?: pulumi.Input<boolean | undefined>;
+    /**
+     * Either the ID or the CRN of the target.
+     */
+    target: pulumi.Input<inputs.PiInstancePiDefaultTrustedProfileTarget>;
+}
+
+export interface PiInstancePiDefaultTrustedProfileTarget {
+    /**
+     * The CRN for the trusted profile.
+     */
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier for the trusted profile.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * name of the trusted profile.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
 export interface PiInstancePiDeploymentTarget {
     /**
      * The uuid of the host group or host.
@@ -8856,32 +9532,43 @@ export interface PiInstancePiDeploymentTarget {
     type: pulumi.Input<string>;
 }
 
+export interface PiInstancePiMetadataService {
+    /**
+     * Indicates whether the metadata service endpoint will be available to the virtual server.
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * when true, allow the metadata service to be disabled while the VM is active.
+     */
+    forceDisable?: pulumi.Input<boolean | undefined>;
+}
+
 export interface PiInstancePiNetwork {
-    externalIp?: pulumi.Input<string>;
-    ipAddress?: pulumi.Input<string>;
-    macAddress?: pulumi.Input<string>;
+    externalIp?: pulumi.Input<string | undefined>;
+    ipAddress?: pulumi.Input<string | undefined>;
+    macAddress?: pulumi.Input<string | undefined>;
     networkId: pulumi.Input<string>;
     /**
      * ID of the network interface.
      */
-    networkInterfaceId?: pulumi.Input<string>;
-    networkName?: pulumi.Input<string>;
+    networkInterfaceId?: pulumi.Input<string | undefined>;
+    networkName?: pulumi.Input<string | undefined>;
     /**
      * Network security groups that the network interface is a member of. There is a limit of 1 network security group in the array. If not specified, default network security group is used.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Links to the network security groups that the network interface is a member of.
      */
-    networkSecurityGroupsHreves?: pulumi.Input<pulumi.Input<string>[]>;
-    type?: pulumi.Input<string>;
+    networkSecurityGroupsHreves?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiInstancePiVirtualSerialNumber {
     /**
      * Description of the Virtual Serial Number
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Provide an existing reserved Virtual Serial Number or specify 'auto-assign' for auto generated Virtual Serial Number.
      */
@@ -8889,40 +9576,172 @@ export interface PiInstancePiVirtualSerialNumber {
     /**
      * Software tier. Enum: ["P05", "P10", "P20", "P30"].
      */
-    softwareTier?: pulumi.Input<string>;
+    softwareTier?: pulumi.Input<string | undefined>;
+}
+
+export interface PiInstancePiVpmemVolume {
+    /**
+     * Volume base name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Volume size (GiB).
+     */
+    size: pulumi.Input<number>;
+    /**
+     * Volume ID.
+     */
+    volumeId?: pulumi.Input<string | undefined>;
+}
+
+export interface PiInstanceVpmemVolume {
+    /**
+     * The date and time when the volume was created.
+     */
+    creationDate?: pulumi.Input<string | undefined>;
+    /**
+     * The CRN for this resource.
+     */
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * Error code for the vPMEM volume.
+     */
+    errorCode?: pulumi.Input<string | undefined>;
+    /**
+     * Link to vPMEM volume resource.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Volume Name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * PVM Instance ID which the volume is attached to.
+     */
+    pvmInstanceId?: pulumi.Input<string | undefined>;
+    /**
+     * Reason for error.
+     */
+    reason?: pulumi.Input<string | undefined>;
+    /**
+     * Volume size (GiB).
+     */
+    size?: pulumi.Input<number | undefined>;
+    /**
+     * Status of the volume.
+     */
+    status?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time when the volume was updated.
+     */
+    updatedDate?: pulumi.Input<string | undefined>;
+    /**
+     * List of user tags.
+     */
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Volume ID.
+     */
+    volumeId?: pulumi.Input<string | undefined>;
+}
+
+export interface PiInstanceVpmemVolumesPiVpmemVolume {
+    /**
+     * Volume base name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * Volume size (GiB).
+     */
+    size: pulumi.Input<number>;
+    /**
+     * Volume ID.
+     */
+    volumeId?: pulumi.Input<string | undefined>;
+}
+
+export interface PiInstanceVpmemVolumesVolume {
+    /**
+     * The date and time when the volume was created.
+     */
+    creationDate?: pulumi.Input<string | undefined>;
+    /**
+     * The CRN for this resource.
+     */
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * Error code for the vPMEM volume.
+     */
+    errorCode?: pulumi.Input<string | undefined>;
+    /**
+     * Link to vPMEM volume resource.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Volume Name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * PVM Instance ID which the volume is attached to.
+     */
+    pvmInstanceId?: pulumi.Input<string | undefined>;
+    /**
+     * Reason for error.
+     */
+    reason?: pulumi.Input<string | undefined>;
+    /**
+     * Volume size (GiB).
+     */
+    size?: pulumi.Input<number | undefined>;
+    /**
+     * Status of the volume.
+     */
+    status?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time when the volume was updated.
+     */
+    updatedDate?: pulumi.Input<string | undefined>;
+    /**
+     * List of user tags.
+     */
+    userTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Volume ID.
+     */
+    volumeId?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkAddressGroupMember {
     /**
      * The IP addresses in CIDR notation for example 192.168.1.5/32.
      */
-    cidr?: pulumi.Input<string>;
+    cidr?: pulumi.Input<string | undefined>;
     /**
      * The id of the Network Address Group member IP addresses.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkAddressGroupMemberMember {
     /**
      * The IP addresses in CIDR notation for example 192.168.1.5/32.
      */
-    cidr?: pulumi.Input<string>;
+    cidr?: pulumi.Input<string | undefined>;
     /**
      * The id of the Network Address Group member IP addresses.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkInterfaceInstance {
     /**
      * Link to instance resource.
      */
-    href?: pulumi.Input<string>;
+    href?: pulumi.Input<string | undefined>;
     /**
      * The attached instance ID.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkNetworkAddressTranslation {
@@ -8931,93 +9750,93 @@ export interface PiNetworkNetworkAddressTranslation {
      *
      * @deprecated This field is deprecated
      */
-    sourceIp?: pulumi.Input<string>;
+    sourceIp?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkPeerExportRouteFilter {
     /**
      * Action of the filter.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Time stamp for create route filter.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * Direction of the filter.
      */
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     /**
      * Error description.
      */
-    error?: pulumi.Input<string>;
+    error?: pulumi.Input<string | undefined>;
     /**
      * The minimum matching length of the prefix-set.
      */
-    ge?: pulumi.Input<number>;
+    ge?: pulumi.Input<number | undefined>;
     /**
      * Priority or order of the filter.
      */
-    index?: pulumi.Input<number>;
+    index?: pulumi.Input<number | undefined>;
     /**
      * The maximum matching length of the prefix-set.
      */
-    le?: pulumi.Input<number>;
+    le?: pulumi.Input<number | undefined>;
     /**
      * IP prefix representing an address and mask length of the prefix-set.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * Route filter ID.
      */
-    routeFilterId?: pulumi.Input<string>;
+    routeFilterId?: pulumi.Input<string | undefined>;
     /**
      * Status of the route filter.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkPeerImportRouteFilter {
     /**
      * Action of the filter.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Time stamp for create route filter.
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * Direction of the filter.
      */
-    direction?: pulumi.Input<string>;
+    direction?: pulumi.Input<string | undefined>;
     /**
      * Error description.
      */
-    error?: pulumi.Input<string>;
+    error?: pulumi.Input<string | undefined>;
     /**
      * The minimum matching length of the prefix-set.
      */
-    ge?: pulumi.Input<number>;
+    ge?: pulumi.Input<number | undefined>;
     /**
      * Priority or order of the filter.
      */
-    index?: pulumi.Input<number>;
+    index?: pulumi.Input<number | undefined>;
     /**
      * The maximum matching length of the prefix-set.
      */
-    le?: pulumi.Input<number>;
+    le?: pulumi.Input<number | undefined>;
     /**
      * IP prefix representing an address and mask length of the prefix-set.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * Route filter ID.
      */
-    routeFilterId?: pulumi.Input<string>;
+    routeFilterId?: pulumi.Input<string | undefined>;
     /**
      * Status of the route filter.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkPiIpaddressRange {
@@ -9043,13 +9862,13 @@ export interface PiNetworkPiNetworkPeer {
      *
      * @deprecated This field is deprecated
      */
-    networkAddressTranslation?: pulumi.Input<inputs.PiNetworkPiNetworkPeerNetworkAddressTranslation>;
+    networkAddressTranslation?: pulumi.Input<inputs.PiNetworkPiNetworkPeerNetworkAddressTranslation | undefined>;
     /**
      * Type of the network peer.
      *
      * @deprecated This field is deprecated
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkPiNetworkPeerNetworkAddressTranslation {
@@ -9065,222 +9884,222 @@ export interface PiNetworkSecurityGroupMember {
     /**
      * The ID of the member in a network security group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The mac address of a network interface included if the type is network-interface.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * The network ID of a network interface included if the type is network-interface.
      */
-    networkInterfaceId?: pulumi.Input<string>;
+    networkInterfaceId?: pulumi.Input<string | undefined>;
     /**
      * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The type of member.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupMemberMember {
     /**
      * The ID of the member in a network security group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The mac address of a network interface included if the type is network-interface.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * The network ID of a network interface included if the type is network-interface.
      */
-    networkInterfaceId?: pulumi.Input<string>;
+    networkInterfaceId?: pulumi.Input<string | undefined>;
     /**
      * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The type of member.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupMemberRule {
     /**
      * The action to take if the rule matches network traffic.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The list of destination port.
      */
-    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleDestinationPort>[]>;
+    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleDestinationPort>[] | undefined>;
     /**
      * The ID of the rule in a network security group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The list of protocol.
      */
-    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleProtocol>[]>;
+    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleProtocol>[] | undefined>;
     /**
      * List of remote.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleRemote>[] | undefined>;
     /**
      * List of source port
      */
-    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleSourcePort>[]>;
+    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleSourcePort>[] | undefined>;
 }
 
 export interface PiNetworkSecurityGroupMemberRuleDestinationPort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupMemberRuleProtocol {
     /**
      * IIf icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
      */
-    icmpType?: pulumi.Input<string>;
+    icmpType?: pulumi.Input<string | undefined>;
     /**
      * If tcp type, the list of TCP flags and if not present then all flags are matched.
      */
-    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleProtocolTcpFlag>[]>;
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupMemberRuleProtocolTcpFlag>[] | undefined>;
     /**
      * The protocol of the network traffic.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupMemberRuleProtocolTcpFlag {
     /**
      * TCP flag.
      */
-    flag?: pulumi.Input<string>;
+    flag?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupMemberRuleRemote {
     /**
      * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The type of remote group the rules apply to.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupMemberRuleSourcePort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRule {
     /**
      * The action to take if the rule matches network traffic.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The list of destination port.
      */
-    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleDestinationPort>[]>;
+    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleDestinationPort>[] | undefined>;
     /**
      * The ID of the rule in a network security group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The list of protocol.
      */
-    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleProtocol>[]>;
+    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleProtocol>[] | undefined>;
     /**
      * List of remote.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRemote>[] | undefined>;
     /**
      * ist of source port
      */
-    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleSourcePort>[]>;
+    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleSourcePort>[] | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleDestinationPort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleMember {
     /**
      * The ID of the member in a network security group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The mac address of a network interface included if the type is network-interface.
      */
-    macAddress?: pulumi.Input<string>;
+    macAddress?: pulumi.Input<string | undefined>;
     /**
      * The network ID of a network interface included if the type is network-interface.
      */
-    networkInterfaceId?: pulumi.Input<string>;
+    networkInterfaceId?: pulumi.Input<string | undefined>;
     /**
      * If ipv4-address type, then IPv4 address or if network-interface type, then network interface ID.
      */
-    target?: pulumi.Input<string>;
+    target?: pulumi.Input<string | undefined>;
     /**
      * The type of member.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRulePiDestinationPort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRulePiDestinationPorts {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRulePiProtocol {
     /**
      * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
      */
-    icmpType?: pulumi.Input<string>;
+    icmpType?: pulumi.Input<string | undefined>;
     /**
      * If tcp type, the list of TCP flags and if not present then all flags are matched.
      */
-    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRulePiProtocolTcpFlag>[]>;
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRulePiProtocolTcpFlag>[] | undefined>;
     /**
      * The protocol of the network traffic.
      */
@@ -9298,220 +10117,220 @@ export interface PiNetworkSecurityGroupRulePiRemote {
     /**
      * The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The type of remote group (MAC addresses, IP addresses, CIDRs, external CIDRs) that are the originators of rule's network traffic to match.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRulePiSourcePort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRulePiSourcePorts {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleProtocol {
     /**
      * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
      */
-    icmpType?: pulumi.Input<string>;
+    icmpType?: pulumi.Input<string | undefined>;
     /**
      * If tcp type, the list of TCP flags and if not present then all flags are matched.
      */
-    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleProtocolTcpFlag>[]>;
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleProtocolTcpFlag>[] | undefined>;
     /**
      * The protocol of the network traffic.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleProtocolTcpFlag {
     /**
      * TCP flag.
      */
-    flag?: pulumi.Input<string>;
+    flag?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleRemote {
     /**
      * The ID of the remote Network Address Group or network security group the rules apply to. Not required for default-network-address-group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The type of remote group the rules apply to.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleRule {
     /**
      * The action to take if the rule matches network traffic.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Destination port ranges.
      */
-    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleDestinationPort>[]>;
+    destinationPorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleDestinationPort>[] | undefined>;
     /**
      * The ID of the rule in a network security group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The list of protocol.
      */
-    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleProtocol>[]>;
+    protocols?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleProtocol>[] | undefined>;
     /**
      * List of remote.
      */
-    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleRemote>[]>;
+    remotes?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleRemote>[] | undefined>;
     /**
      * Source port ranges.
      */
-    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleSourcePort>[]>;
+    sourcePorts?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleSourcePort>[] | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleRuleDestinationPort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleRuleProtocol {
     /**
      * If icmp type, a ICMP packet type affected by ICMP rules and if not present then all types are matched.
      */
-    icmpType?: pulumi.Input<string>;
+    icmpType?: pulumi.Input<string | undefined>;
     /**
      * If tcp type, the list of TCP flags and if not present then all flags are matched.
      */
-    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleProtocolTcpFlag>[]>;
+    tcpFlags?: pulumi.Input<pulumi.Input<inputs.PiNetworkSecurityGroupRuleRuleProtocolTcpFlag>[] | undefined>;
     /**
      * The protocol of the network traffic.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleRuleProtocolTcpFlag {
     /**
      * TCP flag.
      */
-    flag?: pulumi.Input<string>;
+    flag?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleRuleRemote {
     /**
      * The ID of the remote network address group or network security group the rules apply to. Not required for default-network-address-group.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The type of remote group the rules apply to.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleRuleSourcePort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiNetworkSecurityGroupRuleSourcePort {
     /**
      * The end of the port range, if applicable. If the value is not present then the default value of 65535 will be the maximum port number.
      */
-    maximum?: pulumi.Input<number>;
+    maximum?: pulumi.Input<number | undefined>;
     /**
      * The start of the port range, if applicable. If the value is not present then the default value of 1 will be the minimum port number.
      */
-    minimum?: pulumi.Input<number>;
+    minimum?: pulumi.Input<number | undefined>;
 }
 
 export interface PiSharedProcessorPoolInstance {
     /**
      * Availability zone for the server instances.
      */
-    availabilityZone?: pulumi.Input<string>;
+    availabilityZone?: pulumi.Input<string | undefined>;
     /**
      * The amount of cpus for the server instance.
      */
-    cpus?: pulumi.Input<number>;
+    cpus?: pulumi.Input<number | undefined>;
     /**
      * The server instance ID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The amount of memory for the server instance.
      */
-    memory?: pulumi.Input<number>;
+    memory?: pulumi.Input<number | undefined>;
     /**
      * The server instance name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Status of the instance.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Identifies if uncapped or not.
      */
-    uncapped?: pulumi.Input<boolean>;
+    uncapped?: pulumi.Input<boolean | undefined>;
     /**
      * The amout of vcpus for the server instance.
      */
-    vcpus?: pulumi.Input<number>;
+    vcpus?: pulumi.Input<number | undefined>;
 }
 
 export interface PiVolumeCloneCloneVolume {
     /**
      * The ID of the newly cloned volume.
      */
-    cloneVolumeId?: pulumi.Input<string>;
+    cloneVolumeId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the source volume.
      */
-    sourceVolumeId?: pulumi.Input<string>;
+    sourceVolumeId?: pulumi.Input<string | undefined>;
 }
 
 export interface PiVolumeGroupActionPiVolumeGroupAction {
     /**
      * Performs reset action on the volume group to update its status value.
      */
-    reset?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionReset>;
+    reset?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionReset | undefined>;
     /**
      * Performs start action on a volume group.
      */
-    start?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionStart>;
+    start?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionStart | undefined>;
     /**
      * Performs stop action on a volume group.
      */
-    stop?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionStop>;
+    stop?: pulumi.Input<inputs.PiVolumeGroupActionPiVolumeGroupActionStop | undefined>;
 }
 
 export interface PiVolumeGroupActionPiVolumeGroupActionReset {
@@ -9539,24 +10358,24 @@ export interface PiVolumeGroupStatusDescriptionError {
     /**
      * The volume group error key.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The failure message providing more details about the error key.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * List of volume IDs, which failed to be added to or removed from the volume group, with the given error.
      */
-    volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    volumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface PiVolumeOnboardingPiOnboardingVolume {
     /**
      * List auxiliary volumes.
      */
-    piAuxiliaryVolumes?: pulumi.Input<pulumi.Input<inputs.PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume>[]>;
+    piAuxiliaryVolumes?: pulumi.Input<pulumi.Input<inputs.PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume>[] | undefined>;
     /**
-     * The crn of source service broker instance from where auxiliary volumes need to be onboarded.
+     * The CRN of the workspace in which the primary volume is located.
      */
     piSourceCrn: pulumi.Input<string>;
 }
@@ -9569,34 +10388,34 @@ export interface PiVolumeOnboardingPiOnboardingVolumePiAuxiliaryVolume {
     /**
      * The display name of auxiliary volume which is to be onboarded.
      */
-    piDisplayName?: pulumi.Input<string>;
+    piDisplayName?: pulumi.Input<string | undefined>;
 }
 
 export interface PiVolumeOnboardingResultsVolumeOnboardingFailure {
     /**
      * The failure reason for the volumes which have failed to be onboarded
      */
-    failureMessage?: pulumi.Input<string>;
+    failureMessage?: pulumi.Input<string | undefined>;
     /**
      * List of volumes which have failed to be onboarded
      */
-    volumes?: pulumi.Input<pulumi.Input<string>[]>;
+    volumes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface ResourceInstancePlanHistory {
-    resourcePlanId?: pulumi.Input<string>;
-    startDate?: pulumi.Input<string>;
+    resourcePlanId?: pulumi.Input<string | undefined>;
+    startDate?: pulumi.Input<string | undefined>;
 }
 
 export interface TgConnectionTunnel {
     /**
      * The date and time that this connection was created
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * The local network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    localBgpAsn?: pulumi.Input<number>;
+    localBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The local gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
@@ -9605,7 +10424,7 @@ export interface TgConnectionTunnel {
      * The local tunnel IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
     localTunnelIp: pulumi.Input<string>;
-    mtu?: pulumi.Input<number>;
+    mtu?: pulumi.Input<number | undefined>;
     /**
      * The user-defined name for this tunnel connection.
      */
@@ -9613,7 +10432,7 @@ export interface TgConnectionTunnel {
     /**
      * The remote network BGP ASN. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
-    remoteBgpAsn?: pulumi.Input<number>;
+    remoteBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The remote gateway IP address. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
@@ -9625,15 +10444,15 @@ export interface TgConnectionTunnel {
     /**
      * What is the current configuration state of this connection. Possible values: [attached,failed,pending,deleting,detaching,detached]
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The Transit Gateway Connection tunnel identifier
      */
-    tunnelId?: pulumi.Input<string>;
+    tunnelId?: pulumi.Input<string | undefined>;
     /**
      * The date and time that this connection was last updated
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
     /**
      * Location of GRE tunnel. This field only applies to network type 'gre_tunnel' and 'unbound_gre_tunnel' connections.
      */
@@ -9644,35 +10463,35 @@ export interface TgRouteReportConnection {
     /**
      * Collection of transit gateway connection's bgps
      */
-    bgps?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnectionBgp>[]>;
-    id?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
+    bgps?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnectionBgp>[] | undefined>;
+    id?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Collection of transit gateway connection's used routes
      */
-    routes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnectionRoute>[]>;
-    type?: pulumi.Input<string>;
+    routes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportConnectionRoute>[] | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 export interface TgRouteReportConnectionBgp {
-    asPath?: pulumi.Input<string>;
-    isUsed?: pulumi.Input<boolean>;
-    localPreference?: pulumi.Input<string>;
-    prefix?: pulumi.Input<string>;
+    asPath?: pulumi.Input<string | undefined>;
+    isUsed?: pulumi.Input<boolean | undefined>;
+    localPreference?: pulumi.Input<string | undefined>;
+    prefix?: pulumi.Input<string | undefined>;
 }
 
 export interface TgRouteReportConnectionRoute {
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
 }
 
 export interface TgRouteReportOverlappingRoute {
     /**
      * Collection of transit gateway overlapping route's details
      */
-    routes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportOverlappingRouteRoute>[]>;
+    routes?: pulumi.Input<pulumi.Input<inputs.TgRouteReportOverlappingRouteRoute>[] | undefined>;
 }
 
 export interface TgRouteReportOverlappingRouteRoute {
-    connectionId?: pulumi.Input<string>;
-    prefix?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string | undefined>;
+    prefix?: pulumi.Input<string | undefined>;
 }

@@ -21,15 +21,16 @@ __all__ = ['IamTrustedProfileTemplateArgs', 'IamTrustedProfileTemplate']
 @pulumi.input_type
 class IamTrustedProfileTemplateArgs:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]] = None,
-                 profile: Optional[pulumi.Input['IamTrustedProfileTemplateProfileArgs']] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]] = None,
+                 profile: pulumi.Input[Optional['IamTrustedProfileTemplateProfileArgs']] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamTrustedProfileTemplate resource.
+
         :param pulumi.Input[_builtins.str] account_id: ID of the account where the template resides.
         :param pulumi.Input[_builtins.bool] committed: Committed flag determines if the template is ready for assignment.
         :param pulumi.Input[_builtins.str] description: The description of the trusted profile template. Describe the template for enterprise account users.
@@ -55,109 +56,109 @@ class IamTrustedProfileTemplateArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the account where the template resides.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Committed flag determines if the template is ready for assignment.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the trusted profile template. Describe the template for enterprise account users.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the trusted profile template. This is visible only in the enterprise account.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyTemplateReferences")
-    def policy_template_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]:
+    def policy_template_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]:
         """
         Existing policy templates that you can reference to assign access in the trusted profile component.
         """
         return pulumi.get(self, "policy_template_references")
 
     @policy_template_references.setter
-    def policy_template_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]):
+    def policy_template_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]):
         pulumi.set(self, "policy_template_references", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input['IamTrustedProfileTemplateProfileArgs']]:
+    def profile(self) -> pulumi.Input[Optional['IamTrustedProfileTemplateProfileArgs']]:
         """
         Input body parameters for the TemplateProfileComponent.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input['IamTrustedProfileTemplateProfileArgs']]):
+    def profile(self, value: pulumi.Input[Optional['IamTrustedProfileTemplateProfileArgs']]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the the template.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
 
 @pulumi.input_type
 class _IamTrustedProfileTemplateState:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crn: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-                 histories: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplateHistoryArgs']]]] = None,
-                 last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]] = None,
-                 profile: Optional[pulumi.Input['IamTrustedProfileTemplateProfileArgs']] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]] = None,
+                 profile: pulumi.Input[Optional['IamTrustedProfileTemplateProfileArgs']] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering IamTrustedProfileTemplate resources.
+
         :param pulumi.Input[_builtins.str] account_id: ID of the account where the template resides.
         :param pulumi.Input[_builtins.bool] committed: Committed flag determines if the template is ready for assignment.
         :param pulumi.Input[_builtins.str] created_at: Timestamp of when the template was created.
@@ -165,7 +166,6 @@ class _IamTrustedProfileTemplateState:
         :param pulumi.Input[_builtins.str] crn: Cloud resource name.
         :param pulumi.Input[_builtins.str] description: The description of the trusted profile template. Describe the template for enterprise account users.
         :param pulumi.Input[_builtins.str] entity_tag: Entity tag for this templateId-version combination.
-        :param pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplateHistoryArgs']]] histories: History of the trusted profile template.
         :param pulumi.Input[_builtins.str] last_modified_at: Timestamp of when the template was last modified.
         :param pulumi.Input[_builtins.str] last_modified_by_id: IAMid of the identity that made the latest modification.
         :param pulumi.Input[_builtins.str] name: The name of the trusted profile template. This is visible only in the enterprise account.
@@ -188,8 +188,6 @@ class _IamTrustedProfileTemplateState:
             pulumi.set(__self__, "description", description)
         if entity_tag is not None:
             pulumi.set(__self__, "entity_tag", entity_tag)
-        if histories is not None:
-            pulumi.set(__self__, "histories", histories)
         if last_modified_at is not None:
             pulumi.set(__self__, "last_modified_at", last_modified_at)
         if last_modified_by_id is not None:
@@ -207,182 +205,170 @@ class _IamTrustedProfileTemplateState:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the account where the template resides.
         """
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def committed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def committed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Committed flag determines if the template is ready for assignment.
         """
         return pulumi.get(self, "committed")
 
     @committed.setter
-    def committed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def committed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "committed", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timestamp of when the template was created.
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAMid of the creator.
         """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
-    def created_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def crn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud resource name.
         """
         return pulumi.get(self, "crn")
 
     @crn.setter
-    def crn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crn", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the trusted profile template. Describe the template for enterprise account users.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTag")
-    def entity_tag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_tag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Entity tag for this templateId-version combination.
         """
         return pulumi.get(self, "entity_tag")
 
     @entity_tag.setter
-    def entity_tag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_tag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_tag", value)
 
     @_builtins.property
-    @pulumi.getter
-    def histories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplateHistoryArgs']]]]:
-        """
-        History of the trusted profile template.
-        """
-        return pulumi.get(self, "histories")
-
-    @histories.setter
-    def histories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplateHistoryArgs']]]]):
-        pulumi.set(self, "histories", value)
-
-    @_builtins.property
     @pulumi.getter(name="lastModifiedAt")
-    def last_modified_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timestamp of when the template was last modified.
         """
         return pulumi.get(self, "last_modified_at")
 
     @last_modified_at.setter
-    def last_modified_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_at", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedById")
-    def last_modified_by_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_by_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IAMid of the identity that made the latest modification.
         """
         return pulumi.get(self, "last_modified_by_id")
 
     @last_modified_by_id.setter
-    def last_modified_by_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_by_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_by_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the trusted profile template. This is visible only in the enterprise account.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyTemplateReferences")
-    def policy_template_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]:
+    def policy_template_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]:
         """
         Existing policy templates that you can reference to assign access in the trusted profile component.
         """
         return pulumi.get(self, "policy_template_references")
 
     @policy_template_references.setter
-    def policy_template_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]):
+    def policy_template_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IamTrustedProfileTemplatePolicyTemplateReferenceArgs']]]]):
         pulumi.set(self, "policy_template_references", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input['IamTrustedProfileTemplateProfileArgs']]:
+    def profile(self) -> pulumi.Input[Optional['IamTrustedProfileTemplateProfileArgs']]:
         """
         Input body parameters for the TemplateProfileComponent.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input['IamTrustedProfileTemplateProfileArgs']]):
+    def profile(self, value: pulumi.Input[Optional['IamTrustedProfileTemplateProfileArgs']]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="templateId")
-    def template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the the template.
         """
         return pulumi.get(self, "template_id")
 
     @template_id.setter
-    def template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "template_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the the template.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -392,24 +378,25 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict']]]]] = None,
-                 profile: Optional[pulumi.Input[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict']]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamTrustedProfileTemplatePolicyTemplateReference']]]]] = None,
+                 profile: pulumi.Input[Optional[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict', 'outputs.IamTrustedProfileTemplateProfile']]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IamTrustedProfileTemplate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: ID of the account where the template resides.
         :param pulumi.Input[_builtins.bool] committed: Committed flag determines if the template is ready for assignment.
         :param pulumi.Input[_builtins.str] description: The description of the trusted profile template. Describe the template for enterprise account users.
         :param pulumi.Input[_builtins.str] name: The name of the trusted profile template. This is visible only in the enterprise account.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict']]]] policy_template_references: Existing policy templates that you can reference to assign access in the trusted profile component.
-        :param pulumi.Input[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict']] profile: Input body parameters for the TemplateProfileComponent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamTrustedProfileTemplatePolicyTemplateReference']]]] policy_template_references: Existing policy templates that you can reference to assign access in the trusted profile component.
+        :param pulumi.Input[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict', 'outputs.IamTrustedProfileTemplateProfile']] profile: Input body parameters for the TemplateProfileComponent.
         :param pulumi.Input[_builtins.str] template_id: ID of the the template.
         """
         ...
@@ -420,6 +407,7 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IamTrustedProfileTemplate resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IamTrustedProfileTemplateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -435,13 +423,13 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 committed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict']]]]] = None,
-                 profile: Optional[pulumi.Input[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict']]] = None,
-                 template_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 committed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamTrustedProfileTemplatePolicyTemplateReference']]]]] = None,
+                 profile: pulumi.Input[Optional[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict', 'outputs.IamTrustedProfileTemplateProfile']]] = None,
+                 template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -462,7 +450,6 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
             __props__.__dict__["created_by_id"] = None
             __props__.__dict__["crn"] = None
             __props__.__dict__["entity_tag"] = None
-            __props__.__dict__["histories"] = None
             __props__.__dict__["last_modified_at"] = None
             __props__.__dict__["last_modified_by_id"] = None
             __props__.__dict__["version"] = None
@@ -476,21 +463,20 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_id: Optional[pulumi.Input[_builtins.str]] = None,
-            committed: Optional[pulumi.Input[_builtins.bool]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            crn: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_tag: Optional[pulumi.Input[_builtins.str]] = None,
-            histories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplateHistoryArgs', 'IamTrustedProfileTemplateHistoryArgsDict']]]]] = None,
-            last_modified_at: Optional[pulumi.Input[_builtins.str]] = None,
-            last_modified_by_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_template_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict']]]]] = None,
-            profile: Optional[pulumi.Input[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict']]] = None,
-            template_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'IamTrustedProfileTemplate':
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            committed: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            crn: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_tag: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_at: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modified_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_template_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamTrustedProfileTemplatePolicyTemplateReference']]]]] = None,
+            profile: pulumi.Input[Optional[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict', 'outputs.IamTrustedProfileTemplateProfile']]] = None,
+            template_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'IamTrustedProfileTemplate':
         """
         Get an existing IamTrustedProfileTemplate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -505,12 +491,11 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] crn: Cloud resource name.
         :param pulumi.Input[_builtins.str] description: The description of the trusted profile template. Describe the template for enterprise account users.
         :param pulumi.Input[_builtins.str] entity_tag: Entity tag for this templateId-version combination.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplateHistoryArgs', 'IamTrustedProfileTemplateHistoryArgsDict']]]] histories: History of the trusted profile template.
         :param pulumi.Input[_builtins.str] last_modified_at: Timestamp of when the template was last modified.
         :param pulumi.Input[_builtins.str] last_modified_by_id: IAMid of the identity that made the latest modification.
         :param pulumi.Input[_builtins.str] name: The name of the trusted profile template. This is visible only in the enterprise account.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict']]]] policy_template_references: Existing policy templates that you can reference to assign access in the trusted profile component.
-        :param pulumi.Input[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict']] profile: Input body parameters for the TemplateProfileComponent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IamTrustedProfileTemplatePolicyTemplateReferenceArgs', 'IamTrustedProfileTemplatePolicyTemplateReferenceArgsDict', 'outputs.IamTrustedProfileTemplatePolicyTemplateReference']]]] policy_template_references: Existing policy templates that you can reference to assign access in the trusted profile component.
+        :param pulumi.Input[Union['IamTrustedProfileTemplateProfileArgs', 'IamTrustedProfileTemplateProfileArgsDict', 'outputs.IamTrustedProfileTemplateProfile']] profile: Input body parameters for the TemplateProfileComponent.
         :param pulumi.Input[_builtins.str] template_id: ID of the the template.
         :param pulumi.Input[_builtins.int] version: Version of the the template.
         """
@@ -525,7 +510,6 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
         __props__.__dict__["crn"] = crn
         __props__.__dict__["description"] = description
         __props__.__dict__["entity_tag"] = entity_tag
-        __props__.__dict__["histories"] = histories
         __props__.__dict__["last_modified_at"] = last_modified_at
         __props__.__dict__["last_modified_by_id"] = last_modified_by_id
         __props__.__dict__["name"] = name
@@ -590,14 +574,6 @@ class IamTrustedProfileTemplate(pulumi.CustomResource):
         Entity tag for this templateId-version combination.
         """
         return pulumi.get(self, "entity_tag")
-
-    @_builtins.property
-    @pulumi.getter
-    def histories(self) -> pulumi.Output[Sequence['outputs.IamTrustedProfileTemplateHistory']]:
-        """
-        History of the trusted profile template.
-        """
-        return pulumi.get(self, "histories")
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedAt")

@@ -82,7 +82,7 @@ def get_is_public_gateways(resource_group: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         public_gateways=pulumi.get(__ret__, 'public_gateways'),
         resource_group=pulumi.get(__ret__, 'resource_group'))
-def get_is_public_gateways_output(resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_is_public_gateways_output(resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIsPublicGatewaysResult]:
     """
     Use this data source to access information about an existing resource.

@@ -24,9 +24,10 @@ class IsInstanceGroupManagerPolicyArgs:
                  metric_type: pulumi.Input[_builtins.str],
                  metric_value: pulumi.Input[_builtins.int],
                  policy_type: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IsInstanceGroupManagerPolicy resource.
+
         :param pulumi.Input[_builtins.str] instance_group: instance group ID
         :param pulumi.Input[_builtins.str] instance_group_manager: Instance group manager ID
         :param pulumi.Input[_builtins.str] metric_type: The type of metric to be evaluated
@@ -104,29 +105,30 @@ class IsInstanceGroupManagerPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group manager policy name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IsInstanceGroupManagerPolicyState:
     def __init__(__self__, *,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IsInstanceGroupManagerPolicy resources.
+
         :param pulumi.Input[_builtins.str] instance_group: instance group ID
         :param pulumi.Input[_builtins.str] instance_group_manager: Instance group manager ID
         :param pulumi.Input[_builtins.str] metric_type: The type of metric to be evaluated
@@ -152,86 +154,86 @@ class _IsInstanceGroupManagerPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="instanceGroup")
-    def instance_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group ID
         """
         return pulumi.get(self, "instance_group")
 
     @instance_group.setter
-    def instance_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_group", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceGroupManager")
-    def instance_group_manager(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_group_manager(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Instance group manager ID
         """
         return pulumi.get(self, "instance_group_manager")
 
     @instance_group_manager.setter
-    def instance_group_manager(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_group_manager(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_group_manager", value)
 
     @_builtins.property
     @pulumi.getter(name="metricType")
-    def metric_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of metric to be evaluated
         """
         return pulumi.get(self, "metric_type")
 
     @metric_type.setter
-    def metric_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_type", value)
 
     @_builtins.property
     @pulumi.getter(name="metricValue")
-    def metric_value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def metric_value(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The metric value to be evaluated
         """
         return pulumi.get(self, "metric_value")
 
     @metric_value.setter
-    def metric_value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def metric_value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "metric_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         instance group manager policy name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Policy ID
         """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
-    def policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="policyType")
-    def policy_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Policy for the Instance Group
         """
         return pulumi.get(self, "policy_type")
 
     @policy_type.setter
-    def policy_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_type", value)
 
 
@@ -241,15 +243,16 @@ class IsInstanceGroupManagerPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a IsInstanceGroupManagerPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] instance_group: instance group ID
@@ -267,6 +270,7 @@ class IsInstanceGroupManagerPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a IsInstanceGroupManagerPolicy resource with the given unique name, props, and options.
+
         :param str resource_name: The name of the resource.
         :param IsInstanceGroupManagerPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -282,12 +286,12 @@ class IsInstanceGroupManagerPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -324,13 +328,13 @@ class IsInstanceGroupManagerPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            instance_group: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_group_manager: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_type: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_value: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IsInstanceGroupManagerPolicy':
+            instance_group: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_group_manager: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_value: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IsInstanceGroupManagerPolicy':
         """
         Get an existing IsInstanceGroupManagerPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

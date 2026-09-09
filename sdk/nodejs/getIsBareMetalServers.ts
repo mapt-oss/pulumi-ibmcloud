@@ -72,12 +72,12 @@ export function getIsBareMetalServersOutput(args?: GetIsBareMetalServersOutputAr
  * A collection of arguments for invoking getIsBareMetalServers.
  */
 export interface GetIsBareMetalServersOutputArgs {
-    name?: pulumi.Input<string>;
-    networkInterfacesSubnet?: pulumi.Input<string>;
-    networkInterfacesSubnetCrn?: pulumi.Input<string>;
-    networkInterfacesSubnetName?: pulumi.Input<string>;
-    resourceGroup?: pulumi.Input<string>;
-    vpc?: pulumi.Input<string>;
-    vpcCrn?: pulumi.Input<string>;
-    vpcName?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    networkInterfacesSubnet?: pulumi.Input<string | undefined>;
+    networkInterfacesSubnetCrn?: pulumi.Input<string | undefined>;
+    networkInterfacesSubnetName?: pulumi.Input<string | undefined>;
+    resourceGroup?: pulumi.Input<string | undefined>;
+    vpc?: pulumi.Input<string | undefined>;
+    vpcCrn?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string | undefined>;
 }

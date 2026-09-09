@@ -55,6 +55,6 @@ export function getIsBareMetalServerInitializationOutput(args: GetIsBareMetalSer
  */
 export interface GetIsBareMetalServerInitializationOutputArgs {
     bareMetalServer: pulumi.Input<string>;
-    passphrase?: pulumi.Input<string>;
-    privateKey?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
+    privateKey?: pulumi.Input<string | undefined>;
 }

@@ -51,6 +51,6 @@ export function getPiCatalogImagesOutput(args: GetPiCatalogImagesOutputArgs, opt
  */
 export interface GetPiCatalogImagesOutputArgs {
     piCloudInstanceId: pulumi.Input<string>;
-    sap?: pulumi.Input<boolean>;
-    vtl?: pulumi.Input<boolean>;
+    sap?: pulumi.Input<boolean | undefined>;
+    vtl?: pulumi.Input<boolean | undefined>;
 }
