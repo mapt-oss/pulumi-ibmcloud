@@ -189,6 +189,7 @@ func Provider() tfbridge.ProviderInfo {
 		// "ibm_container_", // Kubernetes
 		// "ibm_dns_",       // DNS
 		"ibm_iam_", // IAM
+		"ibm_cm_",  // Catalog Management (Private Catalog, Offerings, Versions)
 		// Add more as needed - see resource_filter.go for full list
 	}
 

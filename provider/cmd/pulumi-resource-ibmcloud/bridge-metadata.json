@@ -1,6 +1,851 @@
 {
     "auto-aliasing": {
         "resources": {
+            "ibm_cm_account": {
+                "current": "ibmcloud:index/cmAccount:CmAccount",
+                "fields": {
+                    "account_filters": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "category_filters": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "filter": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "id_filters": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "exclude": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "include": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "terraform_engines": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "da_creation": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "polling_info": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "last_polling_status": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "scopes": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_cm_catalog": {
+                "current": "ibmcloud:index/cmCatalog:CmCatalog",
+                "fields": {
+                    "catalog_filters": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "category_filters": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "filter": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "id_filters": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "exclude": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "include": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "features": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "target_account_contexts": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "trusted_profile": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_cm_object": {
+                "current": "ibmcloud:index/cmObject:CmObject",
+                "fields": {
+                    "publish": {
+                        "maxItemsOne": false
+                    },
+                    "state": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_cm_offering": {
+                "current": "ibmcloud:index/cmOffering:CmOffering",
+                "fields": {
+                    "badges": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "constraints": {
+                                    "maxItemsOne": false
+                                },
+                                "learn_more_links": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "deprecate_pending": {
+                        "maxItemsOne": false
+                    },
+                    "features": {
+                        "maxItemsOne": false
+                    },
+                    "image_pull_keys": {
+                        "maxItemsOne": false
+                    },
+                    "keywords": {
+                        "maxItemsOne": false
+                    },
+                    "kinds": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "additional_features": {
+                                    "maxItemsOne": false
+                                },
+                                "plans": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "additional_features": {
+                                                "maxItemsOne": false
+                                            },
+                                            "deployments": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "tags": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "tags": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tags": {
+                                    "maxItemsOne": false
+                                },
+                                "versions": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "configuration": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "custom_config": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "associations": {
+                                                                        "maxItemsOne": true,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "parameters": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "options": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "deprecate_pending": {
+                                                "maxItemsOne": false
+                                            },
+                                            "entitlement": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "part_numbers": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "flavor": {
+                                                "maxItemsOne": true
+                                            },
+                                            "iam_permissions": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "resources": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "role_crns": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "role_crns": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "install": {
+                                                "maxItemsOne": true
+                                            },
+                                            "licenses": {
+                                                "maxItemsOne": false
+                                            },
+                                            "metadata": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "file": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "images": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "modules": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "offering_reference": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "flavors": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "operating_system": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "vsi_vpc": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "file": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "images": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "operating_system": {
+                                                                        "maxItemsOne": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "outputs": {
+                                                "maxItemsOne": false
+                                            },
+                                            "pre_install": {
+                                                "maxItemsOne": false
+                                            },
+                                            "required_resources": {
+                                                "maxItemsOne": false
+                                            },
+                                            "solution_info": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "architecture_diagrams": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "diagram": {
+                                                                        "maxItemsOne": true,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "url_proxy": {
+                                                                                    "maxItemsOne": true
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "cost_estimate": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "projects": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "breakdown": {
+                                                                                    "maxItemsOne": false,
+                                                                                    "elem": {
+                                                                                        "fields": {
+                                                                                            "resources": {
+                                                                                                "maxItemsOne": false,
+                                                                                                "elem": {
+                                                                                                    "fields": {
+                                                                                                        "cost_components": {
+                                                                                                            "maxItemsOne": false
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "diff": {
+                                                                                    "maxItemsOne": false,
+                                                                                    "elem": {
+                                                                                        "fields": {
+                                                                                            "resources": {
+                                                                                                "maxItemsOne": false,
+                                                                                                "elem": {
+                                                                                                    "fields": {
+                                                                                                        "cost_components": {
+                                                                                                            "maxItemsOne": false
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "past_breakdown": {
+                                                                                    "maxItemsOne": false,
+                                                                                    "elem": {
+                                                                                        "fields": {
+                                                                                            "resources": {
+                                                                                                "maxItemsOne": false,
+                                                                                                "elem": {
+                                                                                                    "fields": {
+                                                                                                        "cost_components": {
+                                                                                                            "maxItemsOne": false
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "summary": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "summary": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "dependencies": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "flavors": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "features": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "state": {
+                                                "maxItemsOne": true
+                                            },
+                                            "tags": {
+                                                "maxItemsOne": false
+                                            },
+                                            "validation": {
+                                                "maxItemsOne": true
+                                            },
+                                            "whitelisted_accounts": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "media": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "url_proxy": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "provider_info": {
+                        "maxItemsOne": true
+                    },
+                    "rating": {
+                        "maxItemsOne": false
+                    },
+                    "repo_info": {
+                        "maxItemsOne": false
+                    },
+                    "share_with_access_list": {
+                        "maxItemsOne": false
+                    },
+                    "support": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "locations": {
+                                    "maxItemsOne": false
+                                },
+                                "support_details": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "availability": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "times": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "response_wait_time": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "support_escalation": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "escalation_wait_time": {
+                                                "maxItemsOne": false
+                                            },
+                                            "response_wait_time": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_cm_offering_instance": {
+                "current": "ibmcloud:index/cmOfferingInstance:CmOfferingInstance",
+                "fields": {
+                    "cluster_namespaces": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_cm_validation": {
+                "current": "ibmcloud:index/cmValidation:CmValidation",
+                "fields": {
+                    "environment_variables": {
+                        "maxItemsOne": false
+                    },
+                    "schematics": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "tags": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_cm_version": {
+                "current": "ibmcloud:index/cmVersion:CmVersion",
+                "fields": {
+                    "configuration": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "custom_config": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "associations": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "parameters": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "options": {
+                                    "maxItemsOne": false
+                                },
+                                "value_constraints": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "deprecate_pending": {
+                        "maxItemsOne": false
+                    },
+                    "entitlement": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "part_numbers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "flavor": {
+                        "maxItemsOne": true
+                    },
+                    "iam_permissions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "resources": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "role_crns": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "role_crns": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "import_metadata": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "file": {
+                                    "maxItemsOne": true
+                                },
+                                "images": {
+                                    "maxItemsOne": false
+                                },
+                                "operating_system": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "install": {
+                        "maxItemsOne": true
+                    },
+                    "licenses": {
+                        "maxItemsOne": false
+                    },
+                    "metadata": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "modules": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "offering_reference": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "flavors": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "vsi_vpc": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "file": {
+                                                "maxItemsOne": false
+                                            },
+                                            "images": {
+                                                "maxItemsOne": false
+                                            },
+                                            "operating_system": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {
+                        "maxItemsOne": false
+                    },
+                    "pre_install": {
+                        "maxItemsOne": false
+                    },
+                    "required_resources": {
+                        "maxItemsOne": false
+                    },
+                    "solution_info": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "architecture_diagrams": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "diagram": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "url_proxy": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "cost_estimate": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "projects": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "breakdown": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "resources": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "cost_components": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "diff": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "resources": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "cost_components": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "past_breakdown": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "resources": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "cost_components": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "summary": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "summary": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "dependencies": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "flavors": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "features": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "state": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "target_kinds": {
+                        "maxItemsOne": false
+                    },
+                    "validation": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "ibm_compute_autoscale_group": {
                 "current": "ibmcloud:index/computeAutoscaleGroup:ComputeAutoscaleGroup",
                 "fields": {
@@ -4824,6 +5669,829 @@
             }
         },
         "datasources": {
+            "ibm_cm_account": {
+                "current": "ibmcloud:index/getCmAccount:getCmAccount",
+                "fields": {
+                    "account_filters": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "category_filters": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "filter": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "id_filters": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "exclude": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "include": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "terraform_engines": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "da_creation": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "polling_info": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "last_polling_status": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "scopes": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_cm_catalog": {
+                "current": "ibmcloud:index/getCmCatalog:getCmCatalog",
+                "fields": {
+                    "catalog_filters": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "category_filters": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "filter": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "id_filters": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "exclude": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "include": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "filter_terms": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "features": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "target_account_contexts": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "trusted_profile": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_cm_object": {
+                "current": "ibmcloud:index/getCmObject:getCmObject",
+                "fields": {
+                    "publish": {
+                        "maxItemsOne": false
+                    },
+                    "state": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_cm_offering": {
+                "current": "ibmcloud:index/getCmOffering:getCmOffering",
+                "fields": {
+                    "badges": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "constraints": {
+                                    "maxItemsOne": false
+                                },
+                                "learn_more_links": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "deprecate_pending": {
+                        "maxItemsOne": false
+                    },
+                    "features": {
+                        "maxItemsOne": false
+                    },
+                    "image_pull_keys": {
+                        "maxItemsOne": false
+                    },
+                    "keywords": {
+                        "maxItemsOne": false
+                    },
+                    "kinds": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "additional_features": {
+                                    "maxItemsOne": false
+                                },
+                                "plans": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "additional_features": {
+                                                "maxItemsOne": false
+                                            },
+                                            "deployments": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "tags": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "tags": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "tags": {
+                                    "maxItemsOne": false
+                                },
+                                "versions": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "configuration": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "custom_config": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "associations": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "parameters": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "options": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "deprecate_pending": {
+                                                "maxItemsOne": false
+                                            },
+                                            "entitlement": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "part_numbers": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "flavor": {
+                                                "maxItemsOne": false
+                                            },
+                                            "iam_permissions": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "resources": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "role_crns": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "role_crns": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "install": {
+                                                "maxItemsOne": false
+                                            },
+                                            "licenses": {
+                                                "maxItemsOne": false
+                                            },
+                                            "metadata": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "file": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "images": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "modules": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "offering_reference": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "flavors": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "operating_system": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "vsi_vpc": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "file": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "images": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "operating_system": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "outputs": {
+                                                "maxItemsOne": false
+                                            },
+                                            "pre_install": {
+                                                "maxItemsOne": false
+                                            },
+                                            "required_resources": {
+                                                "maxItemsOne": false
+                                            },
+                                            "solution_info": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "architecture_diagrams": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "diagram": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "url_proxy": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "cost_estimate": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "projects": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "breakdown": {
+                                                                                    "maxItemsOne": false,
+                                                                                    "elem": {
+                                                                                        "fields": {
+                                                                                            "resources": {
+                                                                                                "maxItemsOne": false,
+                                                                                                "elem": {
+                                                                                                    "fields": {
+                                                                                                        "cost_components": {
+                                                                                                            "maxItemsOne": false
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "diff": {
+                                                                                    "maxItemsOne": false,
+                                                                                    "elem": {
+                                                                                        "fields": {
+                                                                                            "resources": {
+                                                                                                "maxItemsOne": false,
+                                                                                                "elem": {
+                                                                                                    "fields": {
+                                                                                                        "cost_components": {
+                                                                                                            "maxItemsOne": false
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "past_breakdown": {
+                                                                                    "maxItemsOne": false,
+                                                                                    "elem": {
+                                                                                        "fields": {
+                                                                                            "resources": {
+                                                                                                "maxItemsOne": false,
+                                                                                                "elem": {
+                                                                                                    "fields": {
+                                                                                                        "cost_components": {
+                                                                                                            "maxItemsOne": false
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "summary": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "summary": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "dependencies": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "flavors": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "features": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "state": {
+                                                "maxItemsOne": false
+                                            },
+                                            "tags": {
+                                                "maxItemsOne": false
+                                            },
+                                            "validation": {
+                                                "maxItemsOne": false
+                                            },
+                                            "whitelisted_accounts": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "media": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "url_proxy": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "provider_info": {
+                        "maxItemsOne": false
+                    },
+                    "rating": {
+                        "maxItemsOne": false
+                    },
+                    "repo_info": {
+                        "maxItemsOne": false
+                    },
+                    "share_with_access_list": {
+                        "maxItemsOne": false
+                    },
+                    "support": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "locations": {
+                                    "maxItemsOne": false
+                                },
+                                "support_details": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "availability": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "times": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "response_wait_time": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "support_escalation": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "escalation_wait_time": {
+                                                "maxItemsOne": false
+                                            },
+                                            "response_wait_time": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_cm_offering_instance": {
+                "current": "ibmcloud:index/getCmOfferingInstance:getCmOfferingInstance",
+                "fields": {
+                    "cluster_namespaces": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_cm_preset": {
+                "current": "ibmcloud:index/getCmPreset:getCmPreset"
+            },
+            "ibm_cm_version": {
+                "current": "ibmcloud:index/getCmVersion:getCmVersion",
+                "fields": {
+                    "configuration": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "custom_config": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "associations": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "parameters": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "options": {
+                                    "maxItemsOne": false
+                                },
+                                "value_constraints": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "deprecate_pending": {
+                        "maxItemsOne": false
+                    },
+                    "entitlement": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "part_numbers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "flavor": {
+                        "maxItemsOne": false
+                    },
+                    "iam_permissions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "resources": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "role_crns": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "role_crns": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "install": {
+                        "maxItemsOne": false
+                    },
+                    "licenses": {
+                        "maxItemsOne": false
+                    },
+                    "metadata": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "file": {
+                                    "maxItemsOne": false
+                                },
+                                "images": {
+                                    "maxItemsOne": false
+                                },
+                                "modules": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "offering_reference": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "flavors": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "operating_system": {
+                                    "maxItemsOne": false
+                                },
+                                "vsi_vpc": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "file": {
+                                                "maxItemsOne": false
+                                            },
+                                            "images": {
+                                                "maxItemsOne": false
+                                            },
+                                            "operating_system": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {
+                        "maxItemsOne": false
+                    },
+                    "pre_install": {
+                        "maxItemsOne": false
+                    },
+                    "required_resources": {
+                        "maxItemsOne": false
+                    },
+                    "solution_info": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "architecture_diagrams": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "diagram": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "url_proxy": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "cost_estimate": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "projects": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "breakdown": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "resources": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "cost_components": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "diff": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "resources": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "cost_components": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "past_breakdown": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "resources": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "cost_components": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "summary": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "summary": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "dependencies": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "flavors": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "features": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "state": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "validation": {
+                        "maxItemsOne": false
+                    },
+                    "whitelisted_accounts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "ibm_compute_bare_metal": {
                 "current": "ibmcloud:index/getComputeBareMetal:getComputeBareMetal",
                 "fields": {
