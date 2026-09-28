@@ -53,7 +53,7 @@ replace (
 )
 
 require (
-	github.com/IBM-Cloud/terraform-provider-ibm v2.6.0+incompatible
+	github.com/IBM-Cloud/terraform-provider-ibm v0.0.0-20260916133310-47b375093d0c
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.40.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.128.0
 )

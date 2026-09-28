@@ -6901,8 +6901,6 @@
                     "requiredOutputs": [
                         "description",
                         "email",
-                        "iamId",
-                        "mfa",
                         "name",
                         "userName"
                     ]
@@ -93220,8 +93218,7 @@
                 "sessionExpirationInSeconds",
                 "sessionInvalidationInSeconds",
                 "systemAccessTokenExpirationInSeconds",
-                "systemRefreshTokenExpirationInSeconds",
-                "userMfas"
+                "systemRefreshTokenExpirationInSeconds"
             ],
             "inputProperties": {
                 "allowedIpAddresses": {
