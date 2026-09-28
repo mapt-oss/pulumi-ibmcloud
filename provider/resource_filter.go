@@ -56,6 +56,9 @@ func FilterUnusedResources(info *tfbridge.ProviderInfo) {
 		"ibm_event_": false, // Event Streams/Kafka (disable if not needed)
 		"ibm_mq_":    false, // MQ (disable if not needed)
 
+		// Catalog Management (Private Catalog, Offerings, Versions)
+		"ibm_cm_": true,
+
 		// Backup & Recovery
 		"ibm_backup_recovery_": false, // Backup Recovery (this has HUGE types!)
 	}
